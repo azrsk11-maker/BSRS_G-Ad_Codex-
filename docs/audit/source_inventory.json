@@ -1,0 +1,195 @@
+{
+  "files": [
+    {
+      "path": "artifact_manifest.json",
+      "bytes": 2803,
+      "sha256": "77aa89c51efe259b623da287f412bd04124d5a82e1c17f0a8311a4f6eb345609",
+      "lines": 84,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 15,
+        "str": 36,
+        "list": 2,
+        "int": 14
+      },
+      "root_type": "dict",
+      "root_records": 6
+    },
+    {
+      "path": "BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+      "bytes": 92437,
+      "sha256": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4",
+      "lines": 1055,
+      "read_mode": "full_utf8_decode"
+    },
+    {
+      "path": "Codex_Execution_Brief.md",
+      "bytes": 5150,
+      "sha256": "3b94d9e2acab5a267036c7104ce0ca6334a933ff49d653332338764307011a71",
+      "lines": 46,
+      "read_mode": "full_utf8_decode"
+    },
+    {
+      "path": "company_config.json",
+      "bytes": 3924,
+      "sha256": "7312ac7d9b4f2bb648c8ad3c6107ae502e47004b110fa6a18cbe8eaf31f18e88",
+      "lines": 122,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 9,
+        "str": 39,
+        "list": 4,
+        "int": 8,
+        "bool": 42,
+        "NoneType": 7
+      },
+      "root_type": "dict",
+      "root_records": 17
+    },
+    {
+      "path": "negative_research_plan.json",
+      "bytes": 2259,
+      "sha256": "d55d692fb0a3dc37e24649ac4f4550164152bf10bfa6bca5c79d7faf2b8f61b1",
+      "lines": 48,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 8,
+        "int": 9,
+        "list": 1,
+        "str": 21
+      },
+      "root_type": "dict",
+      "root_records": 3
+    },
+    {
+      "path": "page_family_allocation.json",
+      "bytes": 3105,
+      "sha256": "4bc29e0c4c5460391bcf2506876ce6e306b344c963a9f07717db79aef911deb4",
+      "lines": 111,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 16,
+        "int": 32,
+        "list": 1,
+        "str": 45
+      },
+      "root_type": "dict",
+      "root_records": 3
+    },
+    {
+      "path": "planned_campaign_page_registry.json",
+      "bytes": 354143,
+      "sha256": "4cb1101bd54e687674938a368a73e6eacd3cee5a4743d2046f2d8bc6abef7b65",
+      "lines": 10082,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "list": 1,
+        "dict": 360,
+        "str": 3960,
+        "int": 360,
+        "NoneType": 4320,
+        "bool": 720
+      },
+      "root_type": "list",
+      "root_records": 360
+    },
+    {
+      "path": "planning_validation.json",
+      "bytes": 5333,
+      "sha256": "e5cc13925f57235029ac375cbfdc03ae71ec2bb1b5ec492337aa69b70cd057c8",
+      "lines": 261,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 40,
+        "str": 84,
+        "list": 6,
+        "bool": 45,
+        "int": 41
+      },
+      "root_type": "dict",
+      "root_records": 8
+    },
+    {
+      "path": "positive_intent_taxonomy.json",
+      "bytes": 19741,
+      "sha256": "0a9f96ad27d7673cca4a4c778501038b55292510c2d6c4e9f1bb4aee67bcc5af",
+      "lines": 562,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "list": 1,
+        "dict": 70,
+        "str": 350,
+        "bool": 70
+      },
+      "root_type": "list",
+      "root_records": 70
+    },
+    {
+      "path": "README.md",
+      "bytes": 1449,
+      "sha256": "7f35e2231f65f9ebbdf1c06bd96c78084f849593bcd747ff05599016aa470df8",
+      "lines": 21,
+      "read_mode": "full_utf8_decode"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 5765,
+      "sha256": "c040bedd152239d392900ea4c56df78887f4d2bd2d280ce38ffc673a429264fa",
+      "lines": 156,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "list": 1,
+        "dict": 22,
+        "str": 109,
+        "NoneType": 1
+      },
+      "root_type": "list",
+      "root_records": 22
+    },
+    {
+      "path": "validate_planning_package.py",
+      "bytes": 8319,
+      "sha256": "fd221e3bc843d5b91dc5cbc03715327f2c81a63ecbc10faa1dc1c589d94b9fc2",
+      "lines": 100,
+      "read_mode": "full_utf8_decode"
+    },
+    {
+      "path": "website_tracking_acceptance_tests.json",
+      "bytes": 7881,
+      "sha256": "97f181d92f2401e6fa7bc4ee0e2551d65bb542ae68ab7c07a58da571d5c77cab",
+      "lines": 263,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 33,
+        "str": 131,
+        "list": 1,
+        "NoneType": 64
+      },
+      "root_type": "dict",
+      "root_records": 4
+    },
+    {
+      "path": "Website_Tracking_Addendum_v3.md",
+      "bytes": 16522,
+      "sha256": "dbf55d930673fcb33f17d28b9076149a001d79d83a495947975e0eba3520574a",
+      "lines": 161,
+      "read_mode": "full_utf8_decode"
+    },
+    {
+      "path": "website_tracking_contract.json",
+      "bytes": 10224,
+      "sha256": "981cce6c4a656a6c999d0aecc501c1136e59ff38fb5b2db1495900413417c26f",
+      "lines": 300,
+      "read_mode": "full_parse_and_recursive_visit",
+      "node_counts": {
+        "dict": 30,
+        "str": 193,
+        "NoneType": 15,
+        "bool": 23,
+        "list": 5
+      },
+      "root_type": "dict",
+      "root_records": 13
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "scope": "OFFLINE_FOUNDATION_NOT_PRODUCTION_ACCEPTANCE",
+  "passed": true,
+  "release_authorized": false,
+  "elapsed_seconds": 1.301379,
+  "checks": [
+    {
+      "check": "entire-source-integrity",
+      "passed": true,
+      "details": {
+        "files_read": 15,
+        "registry_rows_fully_checked": 360,
+        "upstream_check_count": 38,
+        "additional_check_count": 14
+      }
+    },
+    {
+      "check": "native-page-manifest-build",
+      "passed": true,
+      "details": {
+        "pages": 360,
+        "apply_supported": false
+      }
+    },
+    {
+      "check": "native-wordpress-tests-present",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "check": "native-wordpress-behavior",
+      "passed": true,
+      "details": {
+        "exit": 0,
+        "elapsed_seconds": 0.282207
+      }
+    },
+    {
+      "check": "keyword-system-tests-present",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "check": "keyword-system-behavior",
+      "passed": true,
+      "details": {
+        "exit": 0,
+        "elapsed_seconds": 0.202642
+      }
+    },
+    {
+      "check": "efficiency-tests-present",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "check": "efficiency-behavior",
+      "passed": true,
+      "details": {
+        "exit": 0,
+        "elapsed_seconds": 0.343975
+      }
+    },
+    {
+      "check": "node-runtime",
+      "passed": true,
+      "details": "required for tracking/privacy/HTTP safety checks"
+    },
+    {
+      "check": "tracking-tests-present",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "check": "tracking-and-commercial-behavior",
+      "passed": true,
+      "details": {
+        "exit": 0,
+        "elapsed_seconds": 0.291418
+      }
+    },
+    {
+      "check": "runtime-evidence-honesty",
+      "passed": true,
+      "details": {
+        "exit": 0,
+        "elapsed_seconds": 0.099798
+      }
+    },
+    {
+      "check": "native-php-runtime",
+      "passed": null,
+      "details": "NOT_EXECUTED locally; mandatory separate CI check"
+    },
+    {
+      "check": "ci-has-no-production-secret-or-deployer",
+      "passed": true,
+      "details": "validation-only workflow"
+    }
+  ],
+  "behavior_tests_passed": 96,
+  "executed_on": "2026-11-07"
+}

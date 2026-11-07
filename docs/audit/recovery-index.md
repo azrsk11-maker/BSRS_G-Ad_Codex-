@@ -1,0 +1,55 @@
+# Historical source recovery index
+
+Read-only recovery,7November2026. The300briefs and640idea records **are locally recoverable**. They are absent from the new15-file specification pack, but present in the earlier user ZIP and derived project registers. This corrects any interpretation that those originals are unavailable. No archive was bulk-extracted, copied into the new repository, executed or deployed; selected public requirement JSON members were parsed for IDs/counts/schema and provenance. No lead workbook, prospect record, session secret or production financial data was read.
+
+## Recovered files and provenance
+
+Source ZIP:`owner-supplied black-swan-no-crm-implementation.zip`,1,168,996bytes, SHA256`08a689590b812cd7eac46baf8a5e1fe23f2ced94168d8982012498e003c84794`. Its central directory was inspected; only the selected planning records and original document metadata below were opened. Hashing the archive did not extract its files.
+
+| Artifact | Exact count / status | SHA256 |
+|---|---|---|
+| ZIP member `black-swan-implementation/full-scope/pages/page-registry.json` |300records,300unique`page_id`;1,970,085bytes |`db9f0dcfea2511afb850d8a2d7feb2856658b5d02f9bd7ff359ae0e456c855da`|
+| Historical local `work/v2-implementation/content/page-brief-register-300.json` |300records; original ID set and route strings preserved;2,229,615bytes |`76e49ccb094a1af0f13d9447f263e8e8d1d314ba31c6d6d84d5e0eb16f9eff31`|
+| ZIP member `black-swan-implementation/full-scope/catalogue/catalogue-all-640.json` |640records,640unique`catalogue_id`;1,610,593bytes |`3a555995f4e58af8bbe62a7b518c67405df54ad844897005a277a34b680099ea`|
+| Historical local `work/v2-implementation/catalogue/catalogue-640-feasibility.json` |640records; original IDs,titles and stored wording hashes preserved;2,433,804bytes |`fb96781704d0363f87fa18eaa4d4bcd25037cf83c9f853d86ca7985ee73c9e57`|
+| ZIP member `black-swan-implementation/reference/original-owner-brief.docx` |100,075bytes; source hash matches the catalogue's recorded origin |`915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04`|
+| Downloads `BlackSwan_Real_Estate_Google_Ads_Codex_Master_Redraft_No_CRM_v3_Lead_Routing_Added.docx` |100,075bytes; byte-identical to embedded original-owner brief |`915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04`|
+
+Historical local paths above resolve below `the historical Black Swan implementation source root (owner-local)`. Exact schemas and aggregate provenance are in `recovery-facts.json`; full record contents are not duplicated here.
+
+## Original page identities and categories
+
+First/last original IDs are`BSRE-PAGE-DEVELOPER-001` and`BSRE-PAGE-COMPARISON-EVENT-020`. Both recovered registers have exactly these category totals:
+
+| Original category | Count | Corresponding new planning family (category-level only) |
+|---|---:|---|
+| developer |30|DEV|
+| community |40|COM|
+| project |50|PRJ|
+| off_plan |30|OFP|
+| luxury |20|LUX|
+| ready |20|RDY|
+| roi |20|ROI|
+| commercial |20|CML|
+| international |30|INT|
+| finance |20|PRC|
+| comparison_event |20|CMP|
+| **Total** |**300**|First11new family counts agree arithmetically|
+
+The new60slots are residential rental20,commercial leasing15,seller15 andlandlord10. This arithmetic does not establish a semantic one-to-one migration. Preserve original IDs/routes, distinguish public useful content from paid unlisted/noindex variants, and review the item-level crosswalk before changing identities or destinations. Do not regenerate the old300as if they were missing.
+
+The page schema includes stable ID/category/template/route/proposedURL, draft headings/metadata, intent/query/decision brief, body modules, required evidence/source/entity status, geography/language, batch, conversion route/CTA/tracking/form context, related pages, indexing recommendation, source date/claim expiry/owner roles, and explicit content/CMS/live/release statuses.
+
+In these recovered **historical register snapshots**, all300are marked briefprepared, contentnotdrafted, CMSnotimplemented, notlive and publish_readyfalse. Evidence classes are115research-context-only,47named-candidate-evidence-pending and138methodology/primary-source-pending. Their indexing recommendation permits reviewed public indexing later and paid noindex variants. These stored statuses are not a new audit of current WordPress or later30page drafts; newer page-level evidence may supersede them.
+
+## Original catalogue identities and classifications
+
+IDs span`A001`–`A240`,`B001`–`B200`,`C001`–`C200`:240audience/signal ideas,200tactics and200strategies. The original catalogue has635catalogued-not-activated and5deferred-cross-business records. The derived feasibility register classifies180IMPLEMENTABLE,116RESEARCH,339CONDITIONAL and5EXCLUDED. “Implementable” is a classification, not completion, provider availability, authorization or activation. The five excluded cross-business records stay excluded.
+
+All640derived IDs, original titles and recorded original-wording hashes match the recovered source catalogue. This verifies preservation between those two registers, not independent fidelity of every wording hash to the full Word document. The schema retains original source/documenthash/table/row references, mechanism, classification basis/confidence, prerequisites, eligibility/consent, activation support/availability, review/policy gates, historical budget constraints and present implementation state. The640ideas are not640extra keywords or live audiences.
+
+## D1 identity remains unresolved
+
+The new Master cites`BlackSwan_Google_Ads_Master_Dossier(1).docx`asD1. That exact filename was not located in bounded filename searches ofDownloads and the old source tree. A recovered original-owner brief is available and hash-reconciled, but its internal core title is **BlackSwan Real Estate Google Ads Codex Master Redraft v2**, while its Downloads filename saysv3LeadRoutingAdded. Treat the byte hash as authoritative identity for this recovered document; do not silently relabel itD1 or assume a renamed document proves equivalence.
+
+Next: preserve the recovered manifest, use the original300/640stable IDs in the crosswalk/classification audit, and obtain a D1 identity/location or explicit owner confirmation of equivalence if its independent content is needed. Continue unaffected development. No additional whole-archive scan or copy is needed.

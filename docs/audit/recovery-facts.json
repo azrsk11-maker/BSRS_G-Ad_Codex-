@@ -1,0 +1,458 @@
+{
+  "scope": "BOUNDED_PUBLIC_SPECIFICATION_RECOVERY_ONLY",
+  "source_root": "historical implementation source root (owner-local; not copied)",
+  "files": [
+    {
+      "label": "zip:page_registry",
+      "bytes": 1970085,
+      "sha256": "db9f0dcfea2511afb850d8a2d7feb2856658b5d02f9bd7ff359ae0e456c855da",
+      "rows": 300,
+      "id_field": "page_id",
+      "unique_ids": 300,
+      "first_id": "BSRE-PAGE-DEVELOPER-001",
+      "last_id": "BSRE-PAGE-COMPARISON-EVENT-020",
+      "schema_fields": [
+        "page_id",
+        "category_id",
+        "category_label",
+        "template_family",
+        "route",
+        "proposed_url",
+        "working_title",
+        "h1_draft",
+        "meta_title_draft",
+        "meta_description_draft",
+        "canonical_proposed",
+        "primary_intent_id",
+        "secondary_intent_ids",
+        "primary_query",
+        "distinct_question",
+        "distinct_content_brief",
+        "body_outline",
+        "required_modules",
+        "required_evidence",
+        "source_ids",
+        "source_scope",
+        "entity_evidence_status",
+        "related_entity_ids",
+        "entity_id_status",
+        "territory_or_residence_context",
+        "language",
+        "locale",
+        "priority_batch",
+        "conversion_flow_id",
+        "conversion_route",
+        "cta_configuration",
+        "tracking_events",
+        "conditional_tracking_requirements",
+        "form_context",
+        "campaign_family",
+        "alternatives_brief",
+        "related_page_ids",
+        "index_recommendation",
+        "source_checked_date",
+        "claim_expiry_policy",
+        "content_owner_role",
+        "inventory_owner_role",
+        "brief_status",
+        "brief_prepared",
+        "metadata_status",
+        "content_status",
+        "content_prepared",
+        "source_verified",
+        "evidence_status",
+        "cms_status",
+        "live_status",
+        "publish_ready",
+        "qa_status",
+        "blocker_summary"
+      ],
+      "category_field": "category_id",
+      "category_counts": {
+        "developer": 30,
+        "community": 40,
+        "project": 50,
+        "off_plan": 30,
+        "luxury": 20,
+        "ready": 20,
+        "roi": 20,
+        "commercial": 20,
+        "international": 30,
+        "finance": 20,
+        "comparison_event": 20
+      },
+      "category_targets": [
+        {
+          "category_id": "developer",
+          "label": "Dubai developers",
+          "target": 30
+        },
+        {
+          "category_id": "community",
+          "label": "Dubai communities and neighborhoods",
+          "target": 40
+        },
+        {
+          "category_id": "project",
+          "label": "Individual developments and projects",
+          "target": 50
+        },
+        {
+          "category_id": "off_plan",
+          "label": "Off-plan and payment-plan opportunities",
+          "target": 30
+        },
+        {
+          "category_id": "luxury",
+          "label": "Luxury, villas and branded residences",
+          "target": 20
+        },
+        {
+          "category_id": "ready",
+          "label": "Ready and secondary-market properties",
+          "target": 20
+        },
+        {
+          "category_id": "roi",
+          "label": "Investment ROI and rental-yield comparisons",
+          "target": 20
+        },
+        {
+          "category_id": "commercial",
+          "label": "Commercial real estate",
+          "target": 20
+        },
+        {
+          "category_id": "international",
+          "label": "International investor acquisition",
+          "target": 30
+        },
+        {
+          "category_id": "finance",
+          "label": "Mortgage, Golden Visa and buying procedures",
+          "target": 20
+        },
+        {
+          "category_id": "comparison_event",
+          "label": "Competitor, portal and exhibition intent",
+          "target": 20
+        }
+      ],
+      "source_document": null,
+      "source_document_sha256": null
+    },
+    {
+      "label": "zip:catalogue",
+      "bytes": 1610593,
+      "sha256": "3a555995f4e58af8bbe62a7b518c67405df54ad844897005a277a34b680099ea",
+      "rows": 640,
+      "id_field": "catalogue_id",
+      "unique_ids": 640,
+      "first_id": "A001",
+      "last_id": "C200",
+      "schema_fields": [
+        "catalogue_id",
+        "appendix",
+        "original_number",
+        "section_heading",
+        "original_title",
+        "original_activation_or_meaning",
+        "source_document",
+        "source_document_sha256",
+        "source_reference",
+        "source_body_child",
+        "source_table_number",
+        "source_row_number",
+        "source_number_cell",
+        "original_wording_sha256",
+        "mechanism",
+        "classification_rule",
+        "classification_confidence",
+        "priority",
+        "prerequisites",
+        "eligibility",
+        "consent",
+        "supported_activation",
+        "availability",
+        "status",
+        "implementation_status",
+        "launch_decision",
+        "review_required",
+        "budget_constraint",
+        "no_crm",
+        "policy_refs"
+      ],
+      "category_field": "appendix",
+      "category_counts": {
+        "A": 240,
+        "B": 200,
+        "C": 200
+      },
+      "category_targets": null,
+      "source_document": null,
+      "source_document_sha256": "915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04",
+      "appendix_counts": {
+        "A": 240,
+        "B": 200,
+        "C": 200
+      },
+      "source_doc_names": [
+        "reference/original-owner-brief.docx"
+      ],
+      "source_doc_hashes": [
+        "915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04"
+      ],
+      "classifications": {
+        "CATALOGUED_NOT_ACTIVATED": 635,
+        "DEFERRED_CROSS_BUSINESS": 5
+      }
+    },
+    {
+      "label": "local:page_briefs",
+      "bytes": 2229615,
+      "sha256": "76e49ccb094a1af0f13d9447f263e8e8d1d314ba31c6d6d84d5e0eb16f9eff31",
+      "rows": 300,
+      "id_field": "page_id",
+      "unique_ids": 300,
+      "first_id": "BSRE-PAGE-DEVELOPER-001",
+      "last_id": "BSRE-PAGE-COMPARISON-EVENT-020",
+      "schema_fields": [
+        "page_id",
+        "category_id",
+        "category_label",
+        "template_family",
+        "route",
+        "proposed_url",
+        "working_title",
+        "h1_draft",
+        "meta_title_draft",
+        "meta_description_draft",
+        "canonical_proposed",
+        "primary_intent_id",
+        "secondary_intent_ids",
+        "primary_query",
+        "distinct_question",
+        "distinct_content_brief",
+        "body_outline",
+        "required_modules",
+        "required_evidence",
+        "source_ids",
+        "source_scope",
+        "entity_evidence_status",
+        "related_entity_ids",
+        "entity_id_status",
+        "territory_or_residence_context",
+        "language",
+        "locale",
+        "priority_batch",
+        "conversion_flow_id",
+        "conversion_route",
+        "cta_configuration",
+        "tracking_events",
+        "conditional_tracking_requirements",
+        "form_context",
+        "campaign_family",
+        "alternatives_brief",
+        "related_page_ids",
+        "index_recommendation",
+        "source_checked_date",
+        "claim_expiry_policy",
+        "content_owner_role",
+        "inventory_owner_role",
+        "brief_status",
+        "brief_prepared",
+        "metadata_status",
+        "content_status",
+        "content_prepared",
+        "source_verified",
+        "evidence_status",
+        "cms_status",
+        "live_status",
+        "publish_ready",
+        "qa_status",
+        "blocker_summary",
+        "v2_policy",
+        "v2_status",
+        "v2_publication_decision",
+        "v2_source_review_required",
+        "v2_launch_geography",
+        "v2_campaign_activation",
+        "v2_budget_dependency",
+        "v2_operational_requirement"
+      ],
+      "category_field": "category_id",
+      "category_counts": {
+        "developer": 30,
+        "community": 40,
+        "project": 50,
+        "off_plan": 30,
+        "luxury": 20,
+        "ready": 20,
+        "roi": 20,
+        "commercial": 20,
+        "international": 30,
+        "finance": 20,
+        "comparison_event": 20
+      },
+      "category_targets": [
+        {
+          "category_id": "developer",
+          "label": "Dubai developers",
+          "target": 30
+        },
+        {
+          "category_id": "community",
+          "label": "Dubai communities and neighborhoods",
+          "target": 40
+        },
+        {
+          "category_id": "project",
+          "label": "Individual developments and projects",
+          "target": 50
+        },
+        {
+          "category_id": "off_plan",
+          "label": "Off-plan and payment-plan opportunities",
+          "target": 30
+        },
+        {
+          "category_id": "luxury",
+          "label": "Luxury, villas and branded residences",
+          "target": 20
+        },
+        {
+          "category_id": "ready",
+          "label": "Ready and secondary-market properties",
+          "target": 20
+        },
+        {
+          "category_id": "roi",
+          "label": "Investment ROI and rental-yield comparisons",
+          "target": 20
+        },
+        {
+          "category_id": "commercial",
+          "label": "Commercial real estate",
+          "target": 20
+        },
+        {
+          "category_id": "international",
+          "label": "International investor acquisition",
+          "target": 30
+        },
+        {
+          "category_id": "finance",
+          "label": "Mortgage, Golden Visa and buying procedures",
+          "target": 20
+        },
+        {
+          "category_id": "comparison_event",
+          "label": "Competitor, portal and exhibition intent",
+          "target": 20
+        }
+      ],
+      "source_document": "full-scope/pages/page-registry.json",
+      "source_document_sha256": null
+    },
+    {
+      "label": "local:catalogue_feasibility",
+      "bytes": 2433804,
+      "sha256": "fb96781704d0363f87fa18eaa4d4bcd25037cf83c9f853d86ca7985ee73c9e57",
+      "rows": 640,
+      "id_field": "catalogue_id",
+      "unique_ids": 640,
+      "first_id": "A001",
+      "last_id": "C200",
+      "schema_fields": [
+        "catalogue_id",
+        "appendix",
+        "original_number",
+        "section_heading",
+        "original_title",
+        "original_activation_or_meaning",
+        "source_document",
+        "source_document_sha256",
+        "source_reference",
+        "source_body_child",
+        "source_table_number",
+        "source_row_number",
+        "source_number_cell",
+        "original_wording_sha256",
+        "mechanism",
+        "classification_rule",
+        "classification_confidence",
+        "priority",
+        "prerequisites",
+        "eligibility",
+        "consent",
+        "supported_activation",
+        "availability",
+        "status",
+        "implementation_status",
+        "launch_decision",
+        "review_required",
+        "no_crm",
+        "policy_refs",
+        "source_budget_constraint_historical",
+        "budget_constraint_current",
+        "implementation_class",
+        "classification_basis",
+        "classification_rationale",
+        "required_gates",
+        "current_implementation_state",
+        "initial_launch_relationship",
+        "current_geography",
+        "activation_evidence_verified",
+        "provider_or_audience_access_verified",
+        "source_wording_preserved"
+      ],
+      "category_field": "appendix",
+      "category_counts": {
+        "A": 240,
+        "B": 200,
+        "C": 200
+      },
+      "category_targets": null,
+      "source_document": null,
+      "source_document_sha256": null,
+      "appendix_counts": {
+        "A": 240,
+        "B": 200,
+        "C": 200
+      },
+      "source_doc_names": [
+        "reference/original-owner-brief.docx"
+      ],
+      "source_doc_hashes": [
+        "915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04"
+      ],
+      "classifications": {
+        "RESEARCH": 116,
+        "CONDITIONAL": 339,
+        "IMPLEMENTABLE": 180,
+        "EXCLUDED": 5
+      }
+    }
+  ],
+  "archive": {
+    "path": "black-swan-no-crm-implementation.zip",
+    "bytes": 1168996,
+    "sha256": "08a689590b812cd7eac46baf8a5e1fe23f2ced94168d8982012498e003c84794"
+  },
+  "zip:page_registry_to_local:page_briefs": {
+    "ids_preserved": true
+  },
+  "zip:catalogue_to_local:catalogue_feasibility": {
+    "ids_preserved": true
+  },
+  "embedded_original_docx": {
+    "bytes": 100075,
+    "sha256": "915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04",
+    "core_title": "BlackSwan Real Estate Google Ads Codex Master Redraft v2"
+  },
+  "download_docx": {
+    "filename": "BlackSwan_Real_Estate_Google_Ads_Codex_Master_Redraft_No_CRM_v3_Lead_Routing_Added.docx",
+    "bytes": 100075,
+    "sha256": "915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04"
+  }
+}
