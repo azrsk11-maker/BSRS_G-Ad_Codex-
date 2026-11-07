@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-07",
+  "scope": "OFFLINE_CONTINUATION_NOT_PRODUCTION_ACCEPTANCE",
+  "local_foundation_passed": true,
+  "elapsed_seconds": 4.551965,
+  "behavior_tests_discovered": 146,
+  "behavior_tests_passed_locally": 145,
+  "skipped_locally": {
+    "count": 1,
+    "reason": "Windows symlink creation unavailable; Linux CI must exercise it"
+  },
+  "source_integrity_checks": 52,
+  "native_php": "Delegated to required native-wordpress-check CI job",
+  "historical_keyword_placements": 82,
+  "distinct_unapproved_candidates": 41,
+  "reviewed_positive": 0,
+  "reviewed_negative": 0,
+  "release_authorized": false,
+  "production_changes": false,
+  "peer_review": "Historical intake provenance and release-packet consistency findings corrected and accepted",
+  "source_hashes": {
+    "tools/check_repository.py": "c953ade0327d79c1ad7cdec6133af90566d2f7c1f294f7b55732bcf18e288d84",
+    "tools/keyword-system/historical_intake.py": "078bad6db2fc0b7bd2e74df6b66e8adde94c2a262dfa0f2c2d96378d609a7c99",
+    "tools/keyword-system/test_historical_intake.py": "b92eb7406cf4adc7e6c916a50c4e0560d200c12642ed4de5313daa70b9d19098",
+    "tools/release-control/release_packet.py": "c39c7cc53e3cba23eea1926bac3bb97a28cfd70fab9ca855b93dc81299dbf3c7",
+    "tools/release-control/test_release_packet.py": "d9ba8a65f081ee2b270b8189846cccf30276d87a1eedcf9474ae8f0eccfbb6fe"
+  }
+}
