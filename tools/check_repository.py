@@ -41,7 +41,7 @@ def run_checks(require_php=False):
                                        json.loads((specdir/"page_family_allocation.json").read_text(encoding="utf-8-sig")))
     saved = json.loads((ROOT/"tools/native-wordpress/native-page-manifest.json").read_text(encoding="utf-8-sig"))
     record("native-page-manifest-build", compiled == saved, {"pages": compiled["page_count"], "apply_supported": False})
-    for folder in ("native-wordpress", "keyword-system", "efficiency"):
+    for folder in ("native-wordpress", "keyword-system", "efficiency", "release-control"):
         target = ROOT / "tools" / folder
         tests = list(target.glob("test_*.py"))
         record(folder + "-tests-present", len(tests) > 0, len(tests))
