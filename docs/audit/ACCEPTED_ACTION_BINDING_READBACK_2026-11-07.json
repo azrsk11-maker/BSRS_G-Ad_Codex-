@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "status": "READ_ONLY_OBSERVATION_NOT_RELEASE_ACCEPTANCE",
+  "observed_date_utc": "2026-11-07",
+  "account_id": "573-038-4686",
+  "wordpress_readiness": {
+    "source_page": "https://blackswanrealestate.ae/wp-admin/tools.php?page=bsre-enquiries",
+    "checks": {
+      "HTTPS Black Swan Real Estate home": "Configured",
+      "Rate-limit schema marker": "Configured",
+      "Protected consent schema version 2": "Configured",
+      "Receiver deployment URL configured": "Configured",
+      "Server signing secret configured": "Configured",
+      "Published site privacy notice configured": "Configured",
+      "At least one registered service at its published path": "Configured",
+      "Routing enable flag": "Configured"
+    },
+    "master_measurement_enabled": false,
+    "analytics_destination_enabled": false,
+    "advertising_destination_enabled": false,
+    "qa_exclusion_marker_active": false,
+    "stored_ads_destination": "AW-18394393537/jLZgCMrFo6odEMHXkMNE",
+    "service_pages": {
+      "off-plan": 26751,
+      "resale": 26752,
+      "rent": 26753,
+      "sell": 26754,
+      "let": 26755
+    },
+    "service_status": "publish",
+    "limits": "These are local configuration indicators, not actual delivery, retention, privacy or conversion acceptance. No private settings or enquiry records were exported."
+  },
+  "stored_destination_action": {
+    "action_id": "7873290954",
+    "name": "BSRE Accepted Enquiry (Secondary)",
+    "conversion_id": "18394393537",
+    "conversion_label": "jLZgCMrFo6odEMHXkMNE",
+    "created_date_display": "10/26/2026",
+    "optimization": "SECONDARY",
+    "count": "ONE",
+    "value_policy_display": "Use different values. If there is no value, use AED0.",
+    "click_through_window_days": 90,
+    "engaged_view_window_days": 3,
+    "view_through_window_days": 1,
+    "attribution_model": "DATA_DRIVEN",
+    "enhanced_conversions": "NOT_CONFIGURED",
+    "data_source_domain_observed": "lplife.blackswanrealestate.ae",
+    "event_setup_observed": "Manual event",
+    "label_matches_wordpress": true,
+    "source_binding_acceptance": "NOT_EXECUTED",
+    "runtime_acceptance": "NOT_EXECUTED"
+  },
+  "distinct_previously_observed_action": {
+    "action_id": "7859602954",
+    "name": "accepted_enquiry",
+    "conversion_label": "4aaqCIqM4KMdEMHXkMNE",
+    "evidence": "docs/audit/ADS_MEASUREMENT_READBACK_2026-11-07.json",
+    "limits": "Earlier observation retained; not re-read in this capture and not an automatic replacement for the stored destination."
+  },
+  "conclusion": "Stored label identity is resolved to a distinct real action. This is not an inherently invalid WordPress label. Single accepted-action selection, value policy, source binding and deduplication remain unresolved.",
+  "owner_decision_evidence": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/5#issuecomment-6708434090",
+  "private_evidence": [
+    {
+      "name": "readiness-native.txt",
+      "sha256": "509c107e7dc5e1e8705244068883da2fff2ec5b2de919caaabcf5fdee1f8019c",
+      "bytes": 24634
+    },
+    {
+      "name": "dedicated-accepted-action-native.txt",
+      "sha256": "9f91aea366802a039d496e7ff87a9b38a9a90e9f4b488ec509c9f77007cce7c5",
+      "bytes": 9108
+    }
+  ],
+  "runtime_mapping": null,
+  "production_authorized": false,
+  "production_changes": 0,
+  "events_sent": 0
+}
