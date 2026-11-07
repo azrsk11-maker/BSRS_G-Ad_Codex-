@@ -8,7 +8,7 @@ Verified 7 November 2026. This document records capabilities, not credentials or
 | Chrome | Connected extension successfully read Ads, GTM, GA4 and owner GitHub; ordinary file chooser uploads work | One browser writer. Keep signed-in profiles distinct. After ambiguous writes read back; do not retry submissions blindly |
 | WordPress | Public site responds; authenticated admin navigation reaches login | User sign-in is needed to refresh installed-source and release access. Existing deployment was reviewed plugin ZIP replacement plus source/asset readback |
 | Hostinger | Owner-managed site, CDN headers observed; existing control-panel tab is at authentication | Current selected site, staging, plan/runtime, backups and recovery unverified; no SSH/FTP/git deployment credentials available |
-| Google Ads | Real Estate account read-only snapshot in audit/LIVE_READBACK_2026-11-07.json | No Ads API mutator or advertiser credentials configured. Existing campaigns paused. Labels/goals/provider compatibility need further readback |
+| Google Ads | Real Estate account read-only snapshots in audit/LIVE_READBACK_2026-11-07.json and audit/ADS_MEASUREMENT_READBACK_2026-11-07.json; full 20-campaign status baseline, accepted tag ID/label and displayed goals observed | No Ads API mutator configured. Zero enabled campaigns. Accepted action shows legacy lplife data source; qualified action has no associated import connection. Remaining settings, conversion-customer ownership, binding and provider compatibility need verification |
 | GA4 and GTM | Dedicated identifiers verified in the same readback; GTM live version empty, collection inactive | Do not infer full runtime installation, consent acceptance or conversion delivery from account identity |
 | Apps Script / private Sheets / email | Historical signed WordPress → receiver → private Sheet → authenticated email flow; deployed receiver Version2 uses wire1 and26columns | Preserve owner-only bindings/outbox. Editor HEAD is not deployed source. No live Sheet ID, webhook signature, receiver secret or lead data is included here |
 | Calendar/staff | Previous Nov4 attendance confirmation exists; completion/invite unverified | Do not schedule past dates or infer capacity from login. Confirm readiness and attendance before any new meeting |
@@ -23,6 +23,8 @@ Verified 7 November 2026. This document records capabilities, not credentials or
 - Web research: use current primary Google/platform sources. Source access/facts are recorded in audit/research-evidence.md; do not invent current platform limits or regard source citations as business inventory/advertising-rights evidence.
 
 No automatic deployment bridge, production Google credentials, CRM synchronization, call/WhatsApp verification provider, viewing booking provider or live property feed was established. Future capabilities require actual supported providers, business evidence, scoped approval and acceptance tests.
+
+Verified identifiers are retained in `config/tracking/verified-destinations.unpublished.json` as dated observations only. The register is not imported into the runtime contract, has no approved mapping, and authorizes no publication or test conversion. An action ID differs from its Google Ads tag conversion ID; do not substitute one for the other or reuse the accepted-enquiry label for the offline qualified action.
 
 ## Efficient continuation
 
