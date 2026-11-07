@@ -18,6 +18,8 @@ Every unresolved owner judgment is a GitHub issue labeled `owner-decision-requir
 
 No production publisher, Ads mutator, deployment credentials or live tracking uploader is included in this foundation. CI tests local/synthetic artifacts only. A merge cannot deploy anything.
 
+Validation runs on PR updates targeting main; open a draft PR when beginning a branch. It does not also run identical jobs on each push event. Both required check names and administrator-enforced review remain unchanged.
+
 Three separate environments were created and verified on 7 November: `production-website`, `production-tracking`, and `production-google-ads`. Each requires the repository owner as reviewer, prevents self-review, disables administrator bypass and allows protected branches only. No deployment secrets or jobs were added. These controls apply to future workflows that explicitly reference the appropriate environment; they do not control manual changes in provider UIs.
 
 Future deployment jobs additionally require separately authorized scoped secrets and a release manifest pinned to a reviewed commit. Keep website publication, tracking publication and Ads activation separate approval records. Creating an environment does not itself authorize a deployment.
@@ -25,6 +27,8 @@ Future deployment jobs additionally require separately authorized scoped secrets
 A valid release record identifies the approved action, target website/account, exact commit and artifact hashes, affected page/campaign IDs, budget/serving window where applicable, acceptance evidence, expiry/window, responsible operator and recovery trigger. Financial approval must separately state monthly/cash-risk authority; a daily average is not a hard daily ceiling.
 
 No user credentials should be entered in issues. Sign-in happens in the real service UI. Provider access, GitHub collaborators, OAuth scopes, workbook sharing and any expanded security-sensitive access need their own specific authorization.
+
+The [local release-packet checker](../tools/release-control/README.md) checks exact source/evidence hashes, scope, review/decision references, expiry, budget totals and rollback bindings. It always denies execution and cannot authenticate approvals. WT-031/032 publication/readback evidence is a post-publication obligation for website/tracking changes and must already exist before Ads activation. Passing this checker never substitutes for authenticated owner authorization or protected environment review.
 
 ## Recovery
 
