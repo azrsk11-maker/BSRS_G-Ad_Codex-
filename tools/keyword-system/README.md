@@ -1,6 +1,6 @@
 # Offline keyword research controls
 
-This is implemented development, not a completed14,000/14,000library or an Ads uploader. It uses Python's standard library and never makes a network request. `data/` begins empty, so no invented phrases, volume, evidence or approvals are mixed into business research. Test fixtures live only in the test module and are explicitly synthetic.
+This is implemented development, not a completed14,000/14,000library or an Ads uploader. It uses Python's standard library and never makes a network request. Reviewed `data/` remains empty. The separate [historical intake](staging/historical-intake.json) preserves 82 original draft placements as 41 unapproved phrase candidates, with exact source provenance and no inferred metrics or new campaign mapping. See [the intake report](../../docs/audit/KEYWORD_SEED_INTAKE.md). Synthetic fixtures exist only in test modules.
 
 ## Run
 
@@ -31,7 +31,18 @@ Protected-query matching uses token postings to avoid a blind all-pairs scan. Ex
 
 Per-campaign service coverage is precomputed once, and reports count actual lexical comparisons. `positive_library_coverage_verified:false` remains explicit: this prototype has not reconciled every reviewed positive phrase and its legitimate long-tail queries against the protected corpus. That missing completeness certificate blocks release; a passing selected corpus is not a claim of no lost demand.
 
-Official Google guidance was rechecked on7November2026; see [research evidence](../research-evidence.md). Google documents automatic negative-keyword casing/misspelling handling but separate synonym/plural considerations. This simulator does not emulate misspellings or special symbol/operator behavior. Proposed-cap diagnostics flag account-list1,000, per-shared-list5,000,20shared-lists and direct-campaign proposals already exceeding the10,000campaign limit. They are lower-bound checks; actual existing/inherited counts and platform combination accounting remain unverified. No exclusive ad-group negative limit is invented from the broader targeting-item allowance.
+Official Google guidance was rechecked on7November2026; see [research evidence](../../docs/audit/research-evidence.md). Google documents automatic negative-keyword casing/misspelling handling but separate synonym/plural considerations. This simulator does not emulate misspellings or special symbol/operator behavior. Proposed-cap diagnostics flag account-list1,000, per-shared-list5,000,20shared-lists and direct-campaign proposals already exceeding the10,000campaign limit. They are lower-bound checks; actual existing/inherited counts and platform combination accounting remain unverified. No exclusive ad-group negative limit is invented from the broader targeting-item allowance.
+
+## Reproduce the historical staging intake
+
+From this directory, provide the original owner's ZIP explicitly:
+
+```powershell
+python -B historical_intake.py --archive '<path-to-original-zip>' --intake-date 2026-11-07 --output staging/historical-intake.json --report staging/intake-validation.json
+python -B -m unittest -q test_historical_intake.py test_keyword_audit.py
+```
+
+The archive and selected members must match the reviewed checksums. Changed sources require a separate review; do not bypass the pins to make a replacement import succeed. The intake date records when provenance was captured and is not a source-freshness or review date. This command never edits the reviewed master.
 
 ## Deployment boundary
 
