@@ -1,0 +1,50 @@
+{
+  "observed_at_utc": "2026-11-07T05:24:46.150Z",
+  "diagnostic_preceding_request_count": 1,
+  "diagnostic_redirect": {
+    "status": 302,
+    "path": "/sitemap.xml",
+    "same_origin": true,
+    "query_present": false
+  },
+  "route": {
+    "requested_path": "/sitemap_index.xml",
+    "final_url": "https://blackswanrealestate.ae/sitemap.xml",
+    "status": 200,
+    "redirects": [
+      {
+        "status": 302,
+        "from": "https://blackswanrealestate.ae/sitemap_index.xml",
+        "to": "https://blackswanrealestate.ae/sitemap.xml"
+      }
+    ],
+    "http_calls": 2,
+    "response_bytes": 3476,
+    "final_request_elapsed_ms": 502,
+    "headers": {
+      "content_type": "text/xml",
+      "server": "hcdn",
+      "x_robots_tag": [
+        "follow",
+        "noindex"
+      ],
+      "csp_present": true,
+      "csp_directive_names": [
+        "upgrade-insecure-requests"
+      ],
+      "cache_control_directives": [],
+      "hostinger_header_evidence": [
+        "x-hcdn-cache-status",
+        "x-hcdn-request-id",
+        "x-hcdn-upstream-rt"
+      ]
+    },
+    "sitemap": {
+      "sitemap_index_present": true,
+      "urlset_present": false,
+      "child_sitemap_count": 19,
+      "enquire_url_seen_in_this_response": false,
+      "children_not_fetched": true
+    }
+  }
+}
