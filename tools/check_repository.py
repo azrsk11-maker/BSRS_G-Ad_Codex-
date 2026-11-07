@@ -41,6 +41,8 @@ def run_checks(require_php=False):
                                        json.loads((specdir/"page_family_allocation.json").read_text(encoding="utf-8-sig")))
     saved = json.loads((ROOT/"tools/native-wordpress/native-page-manifest.json").read_text(encoding="utf-8-sig"))
     record("native-page-manifest-build", compiled == saved, {"pages": compiled["page_count"], "apply_supported": False})
+    run("keyword-research-capture-consistency", [sys.executable, "-B", str(
+        ROOT / "docs/audit/keyword-research-2026-11-07/verify_capture.py")])
     for folder in ("native-wordpress", "keyword-system", "efficiency", "release-control"):
         target = ROOT / "tools" / folder
         tests = list(target.glob("test_*.py"))
