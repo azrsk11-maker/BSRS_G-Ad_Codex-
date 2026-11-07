@@ -1,0 +1,314 @@
+"""Isolated synthetic packet tests. Never upload these fixtures or conversions."""
+import copy
+import hashlib
+import json
+from pathlib import Path
+import tempfile
+import unittest
+
+from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, instant, load_json, validate, verify_file
+
+COMMIT = "a" * 40
+NOW = instant("2026-11-07T06:00:00Z")
+
+
+class ReleasePacketTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.packet = self.fixture()
+
+    def write(self, name, value):
+        path = self.root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(value, sort_keys=True), encoding="utf-8")
+        return {"path": name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+
+    def fixture(self, kind="WEBSITE_PUBLICATION"):
+        artifact = self.write("artifacts/synthetic.json", {"test_only": True})
+        self.source_hashes = {artifact["path"]: artifact["sha256"]}
+        resources = [{"page_id": "BSRE-LP0001", "campaign_key": "BSRE-C0001", "campaign_id": "999999999", "wordpress_page_id": 999999, "url": ORIGIN + "/synthetic-only/"}]
+        if kind.startswith("ADS_"):
+            resources = [{"page_id": f"BSRE-LP{n:04}", "campaign_key": f"BSRE-C{n:04}", "campaign_id": campaign_id, "wordpress_page_id": 999000+n, "url": ORIGIN + f"/synthetic-only-{n}/"} for n, campaign_id in enumerate(sorted(CURRENT_CAMPAIGNS), 1)]
+        page_ids = sorted(r["page_id"] for r in resources)
+        rollback = self.write("recovery/synthetic.json", {"test_only": True, "commit": COMMIT, "resource_page_ids": page_ids, "target_origin": ORIGIN, "ads_account": ACCOUNT, "resources": resources, "previous_versions": {p: "synthetic-previous-version" for p in page_ids}})
+        proposal = {"release_id": "BSRE-REL-SYNTHETIC-ONLY", "kind": kind,
+            "created_at_utc": "2026-11-07T01:00:00Z", "commit": COMMIT,
+            "operator": "synthetic-operator", "pusher": "synthetic-pusher",
+            "target_origin": ORIGIN, "ads_account": ACCOUNT,
+            "resources": resources,
+            "artifacts": [artifact], "rollback": {"before_manifest": rollback, "instructions": self.write("recovery/instructions.md", {"test_only": True}),
+                "preserve_accepted_records": True, "preserve_outbox": True, "reactivate_old_campaigns": False,
+                "reapply_retention_before_reopen": True, "encrypted_owner_only_backup_days": 30},
+            "post_release": {"readback_required": True, "pause_on_mismatch": True, "preserve_intake": True},
+            "media_limits": None, "change": {"native_page_ids": sorted(r["wordpress_page_id"] for r in resources), "preserve_main_site": True, "reviewed_content_only": True}}
+        if kind.startswith("ADS_"):
+            proposal["media_limits"] = {"aggregate_average_daily_fils": 200000, "monthly_media_ceiling_fils": 6080000,
+                "cash_risk_ceiling_fils": 3040000, "accepts_normal_overdelivery": True, "excluding_vat": True,
+                "currency": "AED", "timezone": "Asia/Dubai", "old_campaigns_remain_paused_removed": True,
+                "campaign_budgets": [{"campaign_id": r["campaign_id"], "average_daily_fils": 50000} for r in resources]}
+            old = [{"id": str(888000000+n), "status": "PAUSED"} for n in range(16)]
+            before = {"account": ACCOUNT, "observed_at_utc": "2026-11-07T02:00:00Z", "campaigns": old + [{"id": r["campaign_id"], "status": "PAUSED", "average_daily_fils": 50000} for r in resources]}
+            after = copy.deepcopy(before)
+            for row in after["campaigns"]:
+                if row["id"] in CURRENT_CAMPAIGNS:
+                    row.update({"final_url": next(r["url"] for r in resources if r["campaign_id"] == row["id"]), "settings": copy.deepcopy(ADS_SAFE_SETTINGS), "max_cpc_fils": 500 if row["id"] == "24378494098" else 2000})
+                    if kind == "ADS_ACTIVATION":
+                        row["status"] = "ENABLED"
+            proposal["change"] = {"before_state": self.write("scope/before.json", before), "after_state": self.write("scope/after.json", after)}
+        elif kind == "TRACKING_PUBLICATION":
+            proposal["change"] = {"gtm_container_id": "GTM-NW8WXKRF", "ga4_measurement_id": "G-W01P9W3NWE", "version_before": 1, "version_after": 2, "enhanced_matching": False, "personalization": False, "audience_exports": False, "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "configuration_diff": self.write("scope/tracking.json", {"target_container": "GTM-NW8WXKRF", "measurement_id": "G-W01P9W3NWE", "before_version": 1, "after_version": 2, "before": TRACKING_AFTER, "after": TRACKING_AFTER})}
+        proposal_hash = digest(proposal)
+        evidence = []
+        for gate in sorted(GATES | (POSTFLIGHT_GATES if kind.startswith("ADS_") else set())):
+            result = {"test_only": True, "gate_id": gate, "status": "PASS", "proposal_sha256": proposal_hash,
+                "commit": COMMIT, "resource_page_ids": page_ids, "method": "AUTHENTICATED_STAGING_ACCEPTANCE",
+                "reviewer": "synthetic-reviewer", "observed_at_utc": "2026-11-07T02:00:00Z", "valid_until_utc": "2026-11-07T08:00:00Z", "production_synthetic_conversions": 0}
+            if gate == "KEYWORD_SCOPE":
+                result["counts"] = {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}
+            evidence.append({"gate_id": gate, "file": self.write("evidence/" + gate + ".json", result)})
+        packet = {"schema_version": 1, "proposal": proposal, "evidence": evidence,
+            "review": {"repository": REPO, "commit": COMMIT, "approver": "synthetic-reviewer", "state": "APPROVED",
+                "reviewed_at_utc": "2026-11-07T03:00:00Z", "checks": [{"name": n, "commit": COMMIT, "conclusion": "success"} for n in sorted(CHECKS)]},
+            "decisions": [{"issue": n, "owner": OWNER, "state": "APPROVED", "proposal_sha256": proposal_hash,
+                "comment_url": f"https://github.com/{REPO}/issues/{n}#issuecomment-999999", "decided_at_utc": "2026-11-07T03:00:00Z"} for n in range(1, 8)]}
+        packet["approval"] = {"owner": OWNER, "kind": kind, "valid_from_utc": "2026-11-07T05:00:00Z", "expires_at_utc": "2026-11-07T07:00:00Z", "decided_at_utc": "2026-11-07T04:00:00Z", "comment_url": f"https://github.com/{REPO}/issues/1#issuecomment-999999"}
+        self.reapprove(packet)
+        return packet
+
+    def reapprove(self, packet):
+        value = digest({k: v for k, v in packet.items() if k != "approval"})
+        packet["approval"]["packet_sha256"] = value
+        packet["approval"]["statement"] = f"AUTHORIZE {packet['proposal']['kind']} {packet['proposal']['release_id']} {value}"
+
+    def check(self, packet=None, **kw):
+        return validate(packet or self.packet, self.root, now=NOW, checkout_head=kw.get("head", COMMIT), checkout_clean=kw.get("clean", True), source_hashes=kw.get("source_hashes", self.source_hashes))
+
+    def change_evidence(self, gate, key, value):
+        ref = next(r for r in self.packet["evidence"] if r["gate_id"] == gate)
+        data = load_json(self.root / ref["file"]["path"])
+        data[key] = value
+        ref["file"] = self.write(ref["file"]["path"], data)
+        self.reapprove(self.packet)
+
+    def test_consistent_offline_packet_never_authorizes(self):
+        result = self.check()
+        self.assertTrue(result["packet_consistent"], result)
+        self.assertFalse(result["execution_allowed"])
+        self.assertFalse(result["release_authorized"])
+        self.assertEqual(result["next_gate"], "AUTHENTICATED_OWNER_AND_PLATFORM_VERIFICATION")
+        self.assertEqual(result["post_publication_readback_required"], ["WT-031", "WT-032"])
+
+    def test_empty_or_malformed_packet_fails_closed(self):
+        for packet in (None, [], {}, {"schema_version": 1}, {**self.packet, "extra": True}):
+            with self.subTest(packet_type=type(packet).__name__):
+                self.assertFalse(validate(packet, self.root)["packet_consistent"])
+
+    def test_dirty_or_changed_head_invalidates_packet(self):
+        self.assertFalse(self.check(clean=False)["packet_consistent"])
+        self.assertFalse(self.check(head="b" * 40)["packet_consistent"])
+
+    def test_artifact_bytes_must_match(self):
+        (self.root / "artifacts/synthetic.json").write_text("changed")
+        self.assertIn("MALFORMED_OR_UNREADABLE_PACKET:ValueError:ARTIFACT_HASH_MISMATCH", self.check()["errors"])
+
+    def test_paths_cannot_read_other_locations(self):
+        for name in ("../outside.json", "/outside.json", "C:/secret.json", "artifacts/../secret.json", ".git/config", "artifacts\\test.json", "artifacts//synthetic.json"):
+            with self.subTest(name=name), self.assertRaises((ValueError, FileNotFoundError)):
+                verify_file(self.root, {"path": name, "sha256": "a" * 64})
+
+    def test_symlink_escape_is_rejected(self):
+        link = self.root / "alias.json"
+        try:
+            link.symlink_to(self.root / "artifacts/synthetic.json")
+        except OSError:
+            self.skipTest("Host does not allow symlink creation; CI exercises this case")
+        with self.assertRaisesRegex(ValueError, "SYMLINK"):
+            verify_file(self.root, {"path": "alias.json", "sha256": self.packet["proposal"]["artifacts"][0]["sha256"]})
+
+    def test_unreviewable_or_oversized_files_rejected(self):
+        ref = self.write("secret.key", "synthetic")
+        with self.assertRaisesRegex(ValueError, "FILE_TYPE"):
+            verify_file(self.root, ref)
+        (self.root / "large.json").write_bytes(b" " * 2000001)
+        with self.assertRaisesRegex(ValueError, "TOO_LARGE"):
+            load_json(self.root / "large.json")
+
+    def test_duplicate_json_keys_and_nan_rejected(self):
+        for value in ('{"a":1,"a":2}', '{"a":NaN}'):
+            path = self.root / "invalid.json"
+            path.write_text(value)
+            with self.assertRaises(ValueError):
+                load_json(path)
+
+    def test_approval_cannot_transfer_to_another_action(self):
+        self.packet["approval"]["kind"] = "TRACKING_PUBLICATION"
+        self.assertIn("SEPARATE_EXACT_PACKET_APPROVAL_REQUIRED", self.check()["errors"])
+
+    def test_proposal_change_invalidates_evidence_and_approval(self):
+        self.packet["proposal"]["resources"][0]["url"] = ORIGIN + "/changed/"
+        result = self.check()
+        self.assertTrue(any(e.startswith("EVIDENCE_SCOPE_MISMATCH") for e in result["errors"]))
+        self.assertIn("SEPARATE_EXACT_PACKET_APPROVAL_REQUIRED", result["errors"])
+
+    def test_resource_bijection_and_planned_id_range(self):
+        for key, value in (("page_id", "BSRE-LP0361"), ("campaign_key", "BSRE-C0002"), ("url", ORIGIN + "/?email=private"), ("wordpress_page_id", True)):
+            packet = copy.deepcopy(self.packet)
+            packet["proposal"]["resources"][0][key] = value
+            self.assertFalse(self.check(packet)["packet_consistent"])
+        self.packet["proposal"]["resources"].append(copy.deepcopy(self.packet["proposal"]["resources"][0]))
+        self.assertIn("DEDICATED_CAMPAIGN_PAGE_BIJECTION", self.check()["errors"])
+
+    def test_missing_or_duplicate_gate_cannot_be_waived(self):
+        self.packet["evidence"].pop()
+        self.assertIn("ALL_REQUIRED_GATES_EXACTLY_ONCE", self.check()["errors"])
+        self.packet["evidence"].append(copy.deepcopy(self.packet["evidence"][0]))
+        self.assertIn("ALL_REQUIRED_GATES_EXACTLY_ONCE", self.check()["errors"])
+
+    def test_isolated_tests_do_not_close_runtime_gates(self):
+        for method in ("LOCAL_UNIT_TEST", "PUBLIC_HTTP_GET", "CI_SUCCESS"):
+            self.change_evidence("WT-014", "method", method)
+            self.assertIn("COMPLETE_ACCEPTANCE_METHOD_REQUIRED:WT-014", self.check()["errors"])
+
+    def test_partial_evidence_or_other_resource_fails(self):
+        self.change_evidence("WT-014", "status", "PARTIAL")
+        self.assertIn("GATE_NOT_PASS:WT-014", self.check()["errors"])
+        self.change_evidence("WT-014", "resource_page_ids", ["BSRE-LP0002"])
+        self.assertIn("EVIDENCE_SCOPE_MISMATCH:WT-014", self.check()["errors"])
+
+    def test_stale_or_future_evidence_fails(self):
+        for timestamp in ("2026-11-06T02:00:00Z", "2026-11-08T02:00:00Z"):
+            self.change_evidence("WT-014", "observed_at_utc", timestamp)
+            self.assertIn("EVIDENCE_TIME_OUTSIDE_PROPOSAL", self.check()["errors"])
+
+    def test_master_keyword_deficit_still_blocks(self):
+        self.change_evidence("KEYWORD_SCOPE", "counts", {"unique_reviewed_positive": 0, "unique_reviewed_negative": 0, "planned_pairs": 360, "unresolved_protected_conflicts": 0})
+        self.assertIn("MASTER_COUNTS_OR_REVIEWED_POLICY_CHANGE_REQUIRED", self.check()["errors"])
+
+    def test_synthetic_conversions_and_boolean_count_rejected(self):
+        for count in (1, False, "0"):
+            self.change_evidence("WT-014", "production_synthetic_conversions", count)
+            self.assertIn("NO_SYNTHETIC_GOOGLE_CONVERSIONS", self.check()["errors"])
+
+    def test_review_by_last_pusher_and_wrong_checks_rejected(self):
+        self.packet["review"]["approver"] = "SYNTHETIC-PUSHER"
+        self.packet["review"]["checks"][0]["commit"] = "b" * 40
+        errors = self.check()["errors"]
+        self.assertIn("INDEPENDENT_EXACT_HEAD_REVIEW_REQUIRED", errors)
+        self.assertIn("EXACT_HEAD_REQUIRED_CHECKS", errors)
+
+    def test_owner_decisions_must_exist_and_match(self):
+        self.packet["decisions"].pop()
+        self.packet["decisions"][0]["owner"] = "someone-else"
+        self.packet["decisions"][1]["comment_url"] = "https://example.com/"
+        errors = self.check()["errors"]
+        for code in ("OWNER_DECISIONS_UNRESOLVED", "OWNER_DECISION_SCOPE_REQUIRED", "EXACT_OWNER_COMMENT_REFERENCE"):
+            self.assertIn(code, errors)
+
+    def test_window_expiry_and_approval_before_evidence(self):
+        self.packet["approval"]["expires_at_utc"] = "2026-11-07T06:00:00Z"
+        self.assertIn("APPROVAL_WINDOW_INVALID", self.check()["errors"])
+        self.packet["approval"]["decided_at_utc"] = "2026-11-07T01:00:00Z"
+        self.assertIn("APPROVAL_PRECEDES_EVIDENCE_OR_REVIEW", self.check()["errors"])
+
+    def test_recovery_cannot_overwrite_intake_or_resume_old_ads(self):
+        self.packet["proposal"]["rollback"]["preserve_outbox"] = False
+        self.packet["proposal"]["rollback"]["reactivate_old_campaigns"] = True
+        self.assertIn("SCOPED_RECOVERY_INVARIANTS", self.check()["errors"])
+
+    def test_ads_require_post_publication_evidence(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        self.assertTrue(self.check(packet)["packet_consistent"])
+        packet["evidence"] = [e for e in packet["evidence"] if e["gate_id"] not in POSTFLIGHT_GATES]
+        self.assertIn("ALL_REQUIRED_GATES_EXACTLY_ONCE", self.check(packet)["errors"])
+
+    def test_budget_mutation_invalidates_approval(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        packet["proposal"]["media_limits"]["aggregate_average_daily_fils"] += 1
+        errors = self.check(packet)["errors"]
+        self.assertIn("AGGREGATE_BUDGET_MISMATCH", errors)
+        self.assertIn("SEPARATE_EXACT_PACKET_APPROVAL_REQUIRED", errors)
+
+    def test_website_cannot_carry_spend_approval(self):
+        self.packet["proposal"]["media_limits"] = {"aggregate_average_daily_fils": 200000}
+        self.assertIn("WEBSITE_OR_TRACKING_CANNOT_AUTHORIZE_SPEND", self.check()["errors"])
+
+    def test_ignored_source_cannot_claim_reviewed_commit(self):
+        self.assertIn("ARTIFACT_NOT_IN_REVIEWED_COMMIT", self.check(source_hashes={})["errors"])
+
+    def test_changed_bytes_rejected_before_json_parse(self):
+        ref = self.write("late.json", {"test_only": True})
+        (self.root / "late.json").write_text('{"different":true}')
+        with self.assertRaisesRegex(ValueError, "HASH_MISMATCH"):
+            load_json(self.root / "late.json", ref["sha256"])
+
+    def test_evidence_expiry_limits_approval_window(self):
+        self.change_evidence("SOURCE_TRUTH", "valid_until_utc", "2026-11-07T06:30:00Z")
+        self.assertIn("APPROVAL_OUTLIVES_EVIDENCE", self.check()["errors"])
+        self.change_evidence("SOURCE_TRUTH", "valid_until_utc", "2026-11-07T05:30:00Z")
+        self.assertIn("EVIDENCE_EXPIRED", self.check()["errors"])
+
+    def test_rollback_manifest_requires_exact_versions(self):
+        self.packet["proposal"]["rollback"]["before_manifest"] = self.write("recovery/empty.json", {})
+        self.assertIn("EXACT_SCOPED_ROLLBACK_VERSIONS_REQUIRED", self.check()["errors"])
+
+    def test_old_campaign_reactivation_and_mutation_are_blocked(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        ref = packet["proposal"]["change"]["after_state"]
+        data = load_json(self.root / ref["path"])
+        data["campaigns"][0]["status"] = "ENABLED"
+        packet["proposal"]["change"]["after_state"] = self.write(ref["path"], data)
+        self.assertIn("OLD_CAMPAIGN_BASELINE_MUST_STAY_FROZEN", self.check(packet)["errors"])
+
+    def test_three_campaign_exception_is_not_accepted(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        packet["proposal"]["resources"].pop()
+        self.assertIn("FULL_FOUR_CAMPAIGN_LAUNCH_REQUIRED", self.check(packet)["errors"])
+
+    def test_tracking_requires_verified_container_and_safe_modes(self):
+        packet = self.fixture("TRACKING_PUBLICATION")
+        self.assertTrue(self.check(packet)["packet_consistent"])
+        packet["proposal"]["change"]["gtm_container_id"] = "GTM-OTHER"
+        packet["proposal"]["change"]["enhanced_matching"] = True
+        errors = self.check(packet)["errors"]
+        self.assertIn("VERIFIED_TRACKING_DESTINATIONS_REQUIRED", errors)
+        self.assertIn("LAUNCH_MEASUREMENT_BOUNDARIES", errors)
+
+    def test_configuration_cannot_activate_advertising(self):
+        packet = self.fixture("ADS_CONFIGURATION")
+        self.assertTrue(self.check(packet)["packet_consistent"])
+        ref = packet["proposal"]["change"]["after_state"]
+        data = load_json(self.root / ref["path"])
+        data["campaigns"][-1]["status"] = "ENABLED"
+        packet["proposal"]["change"]["after_state"] = self.write(ref["path"], data)
+        self.assertIn("ADS_ACTION_STATUS_MISMATCH", self.check(packet)["errors"])
+
+    def test_tracking_diff_cannot_contradict_safe_summary(self):
+        packet = self.fixture("TRACKING_PUBLICATION")
+        ref = packet["proposal"]["change"]["configuration_diff"]
+        data = load_json(self.root / ref["path"])
+        data["after"]["enhanced_matching"] = True
+        packet["proposal"]["change"]["configuration_diff"] = self.write(ref["path"], data)
+        self.assertIn("NORMALIZED_TRACKING_DIFF_CONTRADICTS_SAFE_SCOPE", self.check(packet)["errors"])
+
+    def test_ads_diff_cannot_change_destination_or_enable_expansion(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        ref = packet["proposal"]["change"]["after_state"]
+        data = load_json(self.root / ref["path"])
+        data["campaigns"][-1]["final_url"] = "https://wrong.example/"
+        data["campaigns"][-1]["settings"]["ai_max"] = True
+        packet["proposal"]["change"]["after_state"] = self.write(ref["path"], data)
+        self.assertIn("ADS_AFTER_STATE_CONTRADICTS_SCOPE", self.check(packet)["errors"])
+
+    def test_rollback_native_id_and_account_must_match(self):
+        ref = self.packet["proposal"]["rollback"]["before_manifest"]
+        data = load_json(self.root / ref["path"])
+        data["resources"][0]["wordpress_page_id"] = 123
+        data["ads_account"] = "123-456-7890"
+        self.packet["proposal"]["rollback"]["before_manifest"] = self.write(ref["path"], data)
+        self.assertIn("EXACT_SCOPED_ROLLBACK_VERSIONS_REQUIRED", self.check()["errors"])
+
+
+if __name__ == "__main__":
+    unittest.main()
