@@ -57,14 +57,14 @@ def run_checks(require_php=False):
             str(specdir/"website_tracking_contract.json"), str(specdir/"website_tracking_acceptance_tests.json"),
             str(ROOT/"tools/website-tracking/tracking-evidence-2026-11-07.json")])
     php = shutil.which("php")
-    if php:
+    if require_php and php:
         for path in sorted((ROOT/"tools/native-wordpress").rglob("*.php")):
             run("php-lint-" + path.name, [php, "-l", str(path)])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
     else:
-        results.append({"check":"native-php-runtime", "passed":None, "details":"NOT_EXECUTED locally; mandatory separate CI check"})
+        results.append({"check":"native-php-runtime", "passed":None, "details":"Delegated to mandatory native-wordpress-check CI job; use --require-php to run here"})
     for path in ROOT.rglob("*"):
         if not path.is_file() or any(part in (".git", "__pycache__", "test-output", ".cache") for part in path.parts):
             continue
