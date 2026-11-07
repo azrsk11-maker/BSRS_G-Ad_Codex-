@@ -16,11 +16,13 @@ from unittest import mock
 import coverage_audit as ca
 import keyword_audit as ka
 from test_keyword_audit import positive, negative, SOURCES, CAMPAIGNS, CONTEXT, SCOPE_BINDINGS, TODAY
+from test_positive_admission import complete_positive
 
 
 def fixture():
     p = positive()
     p["ad_group_key"] = "QA-G1"
+    p = complete_positive(p, CAMPAIGNS, CONTEXT, SOURCES)
     q = {"query_id": "QA-Q1", "text": "apartment rental near school with parking", "positive_ids": ["QA-P1"],
          "campaign_keys": ["QA-C1"], "services": ["residential_rental"], "must_serve": True,
          "source_id": "QA-SOURCE", "source_reference": "TEST_ONLY:long-tail", "review_state": "REVIEWED",
@@ -363,7 +365,7 @@ class SuppliedCoverageTests(unittest.TestCase):
                         row = data["positive_library"][0]
                         writer = csv.DictWriter(handle, fieldnames=list(row))
                         writer.writeheader()
-                        writer.writerow({key: "" if value is None else value for key, value in row.items()})
+                        writer.writerow({key: json.dumps(value) if key in ka.JSON_FIELDS else "" if value is None else value for key, value in row.items()})
                 paths = {"records": record_path}
                 for key in ["sources", "campaigns", "campaign_context", "protected_queries"]:
                     paths[key] = root / (key + ".json")

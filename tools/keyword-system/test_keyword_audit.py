@@ -9,6 +9,7 @@ import tempfile
 import unittest
 
 import keyword_audit as ka
+from test_positive_admission import complete_campaigns, complete_positive, complete_sources
 
 TODAY = date(2026, 11, 7)
 SOURCES = [{"source_id": "QA-SOURCE", "kind": "research_hypothesis", "approved_for_research": True,
@@ -25,18 +26,21 @@ SCOPE_BINDINGS = {"account_id": "573-038-4686", "evidence_ref": "TEST_ONLY:accou
                                            "ad_groups": {"QA-G1": {"google_ad_group_id": "2001", "evidence_ref": "TEST_ONLY:group"}}},
                                 "QA-C2": {"google_campaign_id": "1002", "evidence_ref": "TEST_ONLY:campaign"}},
                   "shared_lists": {"QA-LIST": {"google_shared_list_id": "3001", "evidence_ref": "TEST_ONLY:list", "campaign_keys": ["QA-C1"]}}}
+SOURCES = complete_sources(SOURCES)
+CAMPAIGNS = complete_campaigns(CAMPAIGNS)
 
 
 def positive():
-    return {"keyword_id": "QA-P1", "original_text": "apartment rental near school", "language": "en", "match_type": "PHRASE",
+    row = {"keyword_id": "QA-P1", "original_text": "apartment rental near school", "language": "en", "match_type": "PHRASE",
             "source_id": "QA-SOURCE", "source_reference": "TEST_ONLY:reference", "evidence_ref": "TEST_ONLY:review",
             "review_state": "REVIEWED", "reviewer": "qa-researcher", "reviewed_on": "2026-11-01", "valid_until": "2026-12-01",
             "volume": None, "cpc": None, "primary_campaign_key": "QA-C1", "ad_group_key": "QA-GROUP1", "landing_page_id": "QA-LP1"}
+    return complete_positive(row, CAMPAIGNS, CONTEXT, SOURCES)
 
 
 def negative():
     row = positive()
-    for key in ["primary_campaign_key", "ad_group_key", "landing_page_id"]:
+    for key in ka.POSITIVE_FIELDS:
         row.pop(key)
     row.update(keyword_id="QA-N1", negative_id="QA-N1", original_text="broker exam course", normalized_text="broker exam course",
                source_type="research_hypothesis", observed_query=None, observation_date=None, reason_code="ACADEMIC_ONLY",
@@ -132,6 +136,7 @@ class KeywordAuditTests(unittest.TestCase):
         row["volume"] = 100
         row["metric_evidence"] = {"volume": {"provider": "TEST_ONLY:provider", "reference": "TEST_ONLY:metric",
                                                "observed_on": "2026-11-01", "valid_until": "2026-12-01"}}
+        row = complete_positive(row, CAMPAIGNS, CONTEXT, SOURCES)
         report = audit("positive", [row])
         self.assertTrue(report["structural_pass"])
         self.assertIn("hypothesis", report["records"][0]["warnings"][0])

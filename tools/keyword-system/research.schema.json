@@ -45,8 +45,33 @@
     },
     "positive": {
       "allOf": [{"$ref": "#/$defs/common"}],
-      "required": ["primary_campaign_key", "ad_group_key", "landing_page_id"],
-      "properties": {"primary_campaign_key": {"$ref": "#/$defs/text"}, "ad_group_key": {"$ref": "#/$defs/text"}, "landing_page_id": {"$ref": "#/$defs/text"}}
+      "description": "Master sections 4, 5, 9 and 10 admission evidence. Families/signals/emirates/segments are read from immutable source JSON and checked against artifact_manifest. Intent tier and transaction intent remain reviewed text because the Master supplies no controlled vocabulary. Property destination is an explicit list of one or more source-defined emirates, separate from audience origin. No field creates deployment permission.",
+      "required": ["primary_campaign_key", "ad_group_key", "landing_page_id", "family_code", "signal_ids", "property_destination", "audience_origin", "property_segment", "transaction_intent", "intent_tier", "admission_reviews"],
+      "properties": {
+        "primary_campaign_key": {"$ref": "#/$defs/text"}, "ad_group_key": {"$ref": "#/$defs/text"}, "landing_page_id": {"$ref": "#/$defs/text"},
+        "family_code": {"$ref": "#/$defs/text"},
+        "signal_ids": {"allOf": [{"$ref": "#/$defs/strings"}], "minItems": 1},
+        "property_destination": {"allOf": [{"$ref": "#/$defs/strings"}], "minItems": 1},
+        "audience_origin": {"$ref": "#/$defs/text"}, "property_segment": {"$ref": "#/$defs/text"},
+        "transaction_intent": {"$ref": "#/$defs/text"}, "intent_tier": {"$ref": "#/$defs/text"},
+        "admission_reviews": {
+          "type": "object", "additionalProperties": false,
+          "required": ["inventory_service", "language", "landing_page", "claims", "intent_geography"],
+          "properties": {
+            "inventory_service": {"allOf": [{"$ref": "#/$defs/admission_review"}], "required": ["offer_basis"], "properties": {"offer_basis": {"enum": ["verified_inventory", "advisory_offer", "owner_mandate_service"]}}},
+            "language": {"allOf": [{"$ref": "#/$defs/admission_review"}], "required": ["ad_page_sales_supported"], "properties": {"ad_page_sales_supported": {"const": true}}},
+            "landing_page": {"$ref": "#/$defs/admission_review"}, "claims": {"$ref": "#/$defs/admission_review"}, "intent_geography": {"$ref": "#/$defs/admission_review"}
+          }
+        }
+      }
+    },
+    "admission_review": {
+      "description": "Independent source/reference authenticity is still required. References/reviewers/identities must contain meaningful single-line text with no control/format characters or punctuation-only content; runtime applies this to legacy positive research evidence too. subject_sha256 binds the exact record (excluding admission_reviews), campaign, campaign context, selected research/review sources and source-contract digests. Factual admission reviews cannot use research_hypothesis evidence. Dated review must not predate supporting evidence.",
+      "type": "object",
+      "required": ["status", "reviewer", "evidence_ref", "source_id", "reviewed_on", "valid_until", "subject_sha256"],
+      "properties": {"status": {"const": "PASS"}, "reviewer": {"$ref": "#/$defs/text"}, "evidence_ref": {"$ref": "#/$defs/text"},
+        "source_id": {"$ref": "#/$defs/text"}, "reviewed_on": {"$ref": "#/$defs/date"}, "valid_until": {"$ref": "#/$defs/date"},
+        "subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
     },
     "negative": {
       "allOf": [{"$ref": "#/$defs/common"}],

@@ -25,9 +25,12 @@ SERVICES = {"residential_offplan", "residential_ready_secondary", "residential_r
             "commercial_ready", "commercial_leasing", "seller_supply", "landlord_supply"}
 PROTECTED_TOKENS = set("rent rental lease cheap affordable free mortgage salary vacancy guide reviews complaint floorplan brochure yield roi commercial office school india uk dubai sharjah ajman fujairah".split())
 PROTECTED_PHRASES = {"payment plan", "floor plan", "service charges", "abu dhabi", "ras al khaimah", "umm al quwain"}
-LIST_FIELDS = {"eligible_campaigns", "ineligible_campaigns", "service_applicability", "protected_query_conflicts", "deployed_resource_ids"}
-JSON_FIELDS = LIST_FIELDS | {"scope_target", "metric_evidence"}
+LIST_FIELDS = {"eligible_campaigns", "ineligible_campaigns", "service_applicability", "protected_query_conflicts", "deployed_resource_ids", "signal_ids", "property_destination"}
+JSON_FIELDS = LIST_FIELDS | {"scope_target", "metric_evidence", "admission_reviews"}
 NULL_FIELDS = {"volume", "cpc", "observation_date", "observed_query", "estimated_lost_coverage", "deployed_at", "rollback_reference"}
+ADMISSION_PURPOSES = {"inventory_service", "language", "landing_page", "claims", "intent_geography"}
+POSITIVE_FIELDS = {"primary_campaign_key", "ad_group_key", "landing_page_id", "family_code", "signal_ids",
+                   "property_destination", "audience_origin", "property_segment", "transaction_intent", "intent_tier", "admission_reviews"}
 
 
 def duplicate_safe_object(pairs):
@@ -175,6 +178,154 @@ def fresh(record, at, errors, label, start="observed_on", end="valid_until"):
         errors.append(label + ": missing/invalid evidence dates")
 
 
+def load_positive_contract(spec_root=None):
+    """Read source-defined vocabularies/allocations; never infer business facts.
+
+    No copied 70-signal taxonomy or invented intent-tier vocabulary. Existing
+    manifest digests verify the same bytes parsed here. The report/row reviews
+    bind the manifest and source hashes, not a claim of real owner approval.
+    """
+    root = Path(spec_root) if spec_root is not None else Path(__file__).resolve().parents[2] / "docs" / "google-ads"
+    manifest_bytes = (root / "artifact_manifest.json").read_bytes()
+    manifest = parse_json_bytes(manifest_bytes)
+    expected = {item["path"]: item["sha256"] for item in manifest["artifacts"]}
+    parsed, hashes = {}, {"artifact_manifest.json": hashlib.sha256(manifest_bytes).hexdigest()}
+    for role, filename in {"config": "company_config.json", "allocation": "page_family_allocation.json", "taxonomy": "positive_intent_taxonomy.json"}.items():
+        content = (root / filename).read_bytes()
+        digest = hashlib.sha256(content).hexdigest()
+        if expected.get(filename) != digest:
+            raise ValueError("positive contract source hash mismatch: " + filename)
+        hashes[filename] = digest
+        parsed[role] = parse_json_bytes(content)
+    config, allocation, taxonomy = parsed["config"], parsed["allocation"], parsed["taxonomy"]
+    families = {row["code"]: row for row in allocation["families"]}
+    signals = {row["signal_id"]: row for row in taxonomy}
+    if len(families) != len(allocation["families"]) or len(signals) != len(taxonomy):
+        raise ValueError("duplicate source family/signal identity")
+    if allocation["positive_target"] != TARGET or sum(row["positive_research_target"] for row in families.values()) != TARGET:
+        raise ValueError("source family allocations do not reconcile to the agreed positive target")
+    if sum(row["pages"] for row in families.values()) != config["targets"]["planned_campaign_page_pairs"] or len(signals) != config["targets"]["positive_signals"]:
+        raise ValueError("source page/signal planning counts do not reconcile")
+    return {"families": families, "signals": signals, "destinations": config["scope"]["property_destinations"],
+            "segments": config["scope"]["segments"], "source_sha256": hashes}
+
+
+def known_text(value):
+    """Meaningful single-line evidence/identity; reject invisible format controls."""
+    return (nonblank(value) and any(character.isalnum() for character in value)
+            and not any(unicodedata.category(character) in {"Cc", "Cf"} for character in value)
+            and normalize(value) not in {"unknown", "tbd", "todo", "source_required", "placeholder"})
+
+
+def unique_strings(value):
+    return isinstance(value, list) and bool(value) and all(known_text(item) for item in value) and len(set(value)) == len(value)
+
+
+def positive_admission_subject(row, campaign, context, sources, contract):
+    """Bind reviews to exact content, ownership and selected source versions."""
+    source_index = sources if isinstance(sources, dict) else {item["source_id"]: item for item in sources if isinstance(item.get("source_id"), str)}
+    reviews = row.get("admission_reviews", {})
+    source_ids = {row.get("source_id")} if isinstance(row.get("source_id"), str) else set()
+    if isinstance(reviews, dict):
+        source_ids.update(review["source_id"] for review in reviews.values()
+                          if isinstance(review, dict) and isinstance(review.get("source_id"), str))
+    subject = {"record": {key: value for key, value in row.items() if key != "admission_reviews"},
+               "campaign": campaign, "campaign_context": context,
+               "sources": {key: source_index.get(key) for key in sorted(source_ids)},
+               "source_contract_sha256": contract["source_sha256"]}
+    return hashlib.sha256(json.dumps(subject, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False).encode("utf-8")).hexdigest()
+
+
+def validate_positive_admission(row, campaign, context, sources, contract, at, errors):
+    if contract is None:
+        errors.append("positive source admission contract unavailable")
+        return
+    campaign = campaign if isinstance(campaign, dict) else {}
+    for field in ("keyword_id", "source_id", "source_reference", "evidence_ref", "reviewer", "primary_campaign_key", "ad_group_key", "landing_page_id"):
+        if not known_text(row.get(field)):
+            errors.append("positive " + field + " needs meaningful single-line text without control/format characters")
+    family = row.get("family_code")
+    if not isinstance(family, str) or family not in contract["families"] or family != campaign.get("family_code"):
+        errors.append("positive family is unknown or differs from campaign ownership")
+    signals = row.get("signal_ids")
+    if not unique_strings(signals) or not all(identity in contract["signals"] for identity in signals):
+        errors.append("positive signal_ids need unique known source-taxonomy identities")
+    destinations = row.get("property_destination")
+    if not unique_strings(destinations) or not set(destinations) <= set(contract["destinations"]):
+        errors.append("property_destination needs explicit unique source-defined emirates")
+    elif not unique_strings(campaign.get("property_destination")) or set(destinations) != set(campaign["property_destination"]):
+        errors.append("property destination differs from reviewed campaign; unknown planning slots remain held")
+    for field in ("audience_origin", "language"):
+        if not known_text(row.get(field)) or row.get(field) != campaign.get(field):
+            errors.append(field + " missing or differs from reviewed campaign")
+    if not isinstance(row.get("language"), str) or not re.fullmatch(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*", row["language"]):
+        errors.append("language must be an explicit reviewed language tag; syntax is not proof of sales support")
+    segment = row.get("property_segment")
+    if not isinstance(segment, str) or segment not in contract["segments"] or segment not in context.get("services", []):
+        errors.append("property segment unknown or unsupported by reviewed campaign service context")
+    if not known_text(context.get("evidence_ref")):
+        errors.append("positive campaign service context evidence required")
+    fresh(context, at, errors, "positive campaign context", "reviewed_on")
+    for field in ("transaction_intent", "intent_tier"):
+        if not known_text(row.get(field)):
+            errors.append(field + " must be explicit reviewed text; the source defines no invented tier enum")
+    reviews = row.get("admission_reviews")
+    if not isinstance(reviews, dict) or set(reviews) != ADMISSION_PURPOSES:
+        errors.append("all five inventory/service, language, page, claims and intent/geography reviews required")
+        return
+    try:
+        subject_hash = positive_admission_subject(row, campaign, context, sources, contract)
+    except (TypeError, ValueError):
+        errors.append("positive admission subject cannot be canonically hashed")
+        return
+    source_index = sources if isinstance(sources, dict) else {item["source_id"]: item for item in sources if isinstance(item.get("source_id"), str)}
+    primary_source = source_index.get(row.get("source_id"), {})
+    if not known_text(primary_source.get("evidence_ref")):
+        errors.append("positive research source needs meaningful single-line evidence reference")
+    supporting_dates = [row.get("reviewed_on"), context.get("reviewed_on"), primary_source.get("observed_on")]
+    metric_evidence = row.get("metric_evidence", {})
+    if isinstance(metric_evidence, dict):
+        supporting_dates.extend(evidence.get("observed_on") for metric, evidence in metric_evidence.items()
+                                if metric in {"volume", "cpc"} and row.get(metric) is not None and isinstance(evidence, dict))
+    for purpose in sorted(ADMISSION_PURPOSES):
+        review = reviews[purpose]
+        if not isinstance(review, dict):
+            errors.append("admission review must be an object: " + purpose)
+            continue
+        if review.get("status") != "PASS" or not known_text(review.get("reviewer")) or not known_text(review.get("evidence_ref")):
+            errors.append("admission review PASS, named reviewer and evidence required: " + purpose)
+        fresh(review, at, errors, "admission review " + purpose, "reviewed_on")
+        if review.get("subject_sha256") != subject_hash:
+            errors.append("admission review does not bind exact content/ownership/source: " + purpose)
+        source_id = review.get("source_id")
+        source = source_index.get(source_id, {}) if known_text(source_id) else {}
+        if source.get("kind") not in {"first_party_observed", "authorized_partner_observed", "official_reference"} or source.get("approved_for_research") is not True or not known_text(source.get("evidence_ref")):
+            errors.append("admission factual review needs non-hypothesis source evidence: " + purpose)
+        fresh(source, at, errors, "admission source " + purpose)
+        try:
+            if iso_day(review.get("reviewed_on")) < max(iso_day(value) for value in supporting_dates + [source.get("observed_on")]):
+                errors.append("admission review predates its research/context/source evidence: " + purpose)
+        except (TypeError, ValueError):
+            errors.append("admission evidence dates invalid: " + purpose)
+        if purpose == "language" and review.get("ad_page_sales_supported") is not True:
+            errors.append("complete ad-page-sales language support not confirmed")
+        if purpose == "inventory_service" and (not isinstance(review.get("offer_basis"), str) or review.get("offer_basis") not in {"verified_inventory", "advisory_offer", "owner_mandate_service"}):
+            errors.append("inventory/service review must identify actual inventory or lawful advisory/owner mandate offer")
+
+
+def positive_family_reconciliation(records, contract):
+    if contract is None:
+        return {"source_contract_available": False, "within_allocations": False, "exact_family_targets_pass": False}
+    counts = Counter(row["family_code"] for row in records)
+    rows = [{"family_code": code, "reviewed_rows": counts[code], "target": family["positive_research_target"],
+             "deficit": max(0, family["positive_research_target"] - counts[code]),
+             "excess": max(0, counts[code] - family["positive_research_target"])} for code, family in contract["families"].items()]
+    return {"source_contract_available": True, "source_sha256": contract["source_sha256"], "families": rows,
+            "within_allocations": all(row["excess"] == 0 for row in rows),
+            "exact_family_targets_pass": all(row["deficit"] == row["excess"] == 0 for row in rows),
+            "reallocation_policy": "No automatic quota changes; a recorded source-plan reconciliation requires separate reviewed implementation"}
+
+
 def audit(kind, records, sources, campaigns, campaign_context, protected_queries, at, scope_bindings=None,
           positive_library=None, coverage_review=None):
     if kind not in {"positive", "negative"}:
@@ -199,6 +350,12 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
         if not isinstance(context.get("services"), list) or not all(isinstance(item, str) for item in context["services"]):
             raise ValueError("campaign context services must be a string list")
     global_errors = []
+    positive_contract = None
+    if kind == "positive":
+        try:
+            positive_contract = load_positive_contract()
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            global_errors.append("positive admission source contract unavailable: " + str(error))
     source_index = unique_index(sources, "source_id", global_errors, "sources")
     campaign_index = unique_index(campaigns, "campaign_key", global_errors, "campaigns")
     context_index = unique_index(campaign_context, "campaign_key", global_errors, "campaign context")
@@ -258,7 +415,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
                          "deployed_resource_ids", "deployed_at", "rollback_reference"}
     for number, (row, norm) in enumerate(zip(records, prepared), 1):
         errors, warnings, deployment_holds = [], [], []
-        missing = (required | (negative_required if kind == "negative" else {"primary_campaign_key", "ad_group_key", "landing_page_id"})) - set(row)
+        missing = (required | (negative_required if kind == "negative" else POSITIVE_FIELDS)) - set(row)
         if missing:
             errors.append("missing fields: " + ",".join(sorted(missing)))
         if not nonblank(row.get("keyword_id")) or ids[row.get("keyword_id")] != 1:
@@ -308,6 +465,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
                 errors.append("unknown primary campaign or page ownership mismatch")
             if not nonblank(row.get("ad_group_key")):
                 errors.append("ad_group_key required")
+            validate_positive_admission(row, campaign, context_index.get(row.get("primary_campaign_key"), {}), source_index, positive_contract, at, errors)
             if match == "BROAD":
                 warnings.append("broad match research only; a separate approved experiment is required for deployment")
                 deployment_holds.append("broad match requires separate experiment approval")
@@ -437,6 +595,11 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
         "capacity": proposed_capacity(accepted) if kind == "negative" else None,
         "matching_limit": "Conservative lexical simulator; not Google close-variant/platform acceptance or proof corpus is complete",
     }
+    if kind == "positive":
+        allocation = positive_family_reconciliation(accepted, positive_contract)
+        report["positive_family_allocation"] = allocation
+        report["exact_target_pass"] = report["exact_target_pass"] and allocation["exact_family_targets_pass"]
+        report["positive_admission_limit"] = "Evidence consistency only; reviewer/source authenticity, semantic fitness and production authorization remain external gates"
     if positive_library is not None or coverage_review is not None:
         if kind != "negative":
             raise ValueError("Full supplied-library coverage is evaluated on the negative audit only")

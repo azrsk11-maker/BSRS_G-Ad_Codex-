@@ -1,6 +1,6 @@
 # Offline keyword research controls
 
-This is implemented development, not a completed14,000/14,000library or an Ads uploader. It uses Python's standard library and never makes a network request. Reviewed `data/` remains empty. The separate [historical intake](staging/historical-intake.json) preserves 82 original draft placements as 41 unapproved phrase candidates, with exact source provenance and no inferred metrics or new campaign mapping. See [the intake report](../../docs/audit/KEYWORD_SEED_INTAKE.md). Synthetic fixtures exist only in test modules.
+This is implemented development, not a completed14,000/14,000library or an Ads uploader. It uses Python's standard library and never makes a network request. Reviewed `data/` remains empty. Separate historical staging preserves [82 positive placements / 41 candidates](staging/historical-intake.json) and [27 negative placements / nine candidates](staging/historical-negative-intake.json), all unapproved with exact source provenance and no inferred metrics or current mappings. See [the intake report](../../docs/audit/KEYWORD_SEED_INTAKE.md). Synthetic fixtures exist only in test modules.
 
 ## Run
 
@@ -22,6 +22,16 @@ Every phrase retains original text and a computed NFKC/casefold/collapsed-whites
 Reviewed research rows require dated unexpired source evidence and review references. Observed versus hypothesis evidence remains distinct. Hypotheses carry explicit warnings; they are not measured demand. Missing volume/CPC stays null. Numeric metrics require their own provider/reference/date window; those references still need independent factual verification. Draft/rejected/held rows remain visible but do not count as reviewed. The research and approval stages are separate: a reviewed negative may count toward the research master while still **unapproved and undeployable**.
 
 Positive ownership resolves a known campaign to its exact designated landing-page identity and requires an ad-group design key. Real platform IDs are never generated. Additional placements belong in a separate future placement register; repeating them in the master creates a duplicate failure. Broad research is allowed but explicitly held from deployment pending an approved experiment.
+
+### Positive research admission
+
+Master §§4–5 require more than a unique phrase and a nonblank language. Positive rows now carry explicit `family_code`, `signal_ids`, `property_destination`, `audience_origin`, `property_segment`, `transaction_intent` and `intent_tier`. Families, 70 signal identities, seven UAE property destinations, segments and research allocations come from the unchanged source pack and its manifest hashes. The source defines no controlled intent-tier vocabulary, so the implementation requires reviewed text rather than inventing categories. Audience origin is separate from property destination. Unknown planning values are held, not filled from campaign names.
+
+`admission_reviews` contains five dated evidence references: `inventory_service`, `language`, `landing_page`, `claims` and `intent_geography`. Each needs a PASS decision, reviewer, non-hypothesis factual source and a `subject_sha256` binding to the exact keyword record, selected sources, campaign/page ownership, service context and source-contract version. This is evidence-consistency validation; a hash or reviewer-shaped string cannot authenticate approval or establish commercial truth. External evidence and semantic review remain necessary.
+
+Language must agree with the reviewed campaign and have a complete ad–page–sales support assertion. Inventory/service evidence may describe verified inventory, a genuine advisory offer or an owner mandate service; current buyer-side stock is not imposed on legitimate owner services. Missing/stale evidence, mismatched source versions or changed mappings hold the row. Seed hypotheses remain distinguishable from measured demand, and volume/CPC remain null unless separately evidenced.
+
+The report reconciles admitted phrases against each of the 15 source-defined family allocations. Partial libraries honestly show deficits; an overall 14,000 count cannot conceal missing or excessive family allocations. Source catalogue values are loaded once per positive audit and indexed for row checks. No automatic allocation change, candidate promotion, live write or export is provided. See `test_positive_admission.py` for synthetic examples; never copy those review assertions into genuine research records.
 
 Negatives retain the Master§6metadata, narrow explicitscope, eligible/ineligiblecampaigns, reason, services, risk, approval and deployment state. Shared-list and account scopes cannot hide unknown/excluded campaigns. Every eligible campaign needs dated service evidence and protected-query coverage; missing coverage fails closed. Protected terms requireHIGHreview. Actual exclusion approval has a separate reference/date and an approver distinct from the research reviewer. This is provenance checking, not cryptographic validation that a named person really approved a change.
 
@@ -57,6 +67,17 @@ python -B -m unittest -q test_historical_intake.py test_keyword_audit.py
 ```
 
 The archive and selected members must match the reviewed checksums. Changed sources require a separate review; do not bypass the pins to make a replacement import succeed. The intake date records when provenance was captured and is not a source-freshness or review date. This command never edits the reviewed master.
+
+## Historical negative staging
+
+`historical_negative_intake.py` reads the pinned original ZIP and verifies both identical negative CSV copies. It preserves original phrase, match type, campaign/ad-group, proposed scope, risk, reason and `CANDIDATE ONLY` decision as historical claims. Current scopes, service applicability, freshness, reviewer, risk assessment and approval remain unknown. The 27 placements become nine distinct staging candidates, contributing zero reviewed, approved or deployed negatives. The separate canonical original-record checksum prevents self-consistent rewrites of the preserved fields or multiline source locators.
+
+```powershell
+python -B historical_negative_intake.py --archive '<path-to-original-zip>' --intake-date 2026-11-07 --output staging/historical-negative-intake.json --report staging/negative-intake-validation.json
+python -B -m unittest -q test_historical_negative_intake.py
+```
+
+The importer hashes and parses the same bounded archive snapshot. Both output paths are checked against input and each other, including existing hardlink aliases. It does not extract the ZIP, write the reviewed master, invent current evidence or offer an Ads export. A passing staging receipt establishes historical preservation only; every proposed exclusion still needs current relevance, scope and protected-intent review.
 
 ## Deployment boundary
 
