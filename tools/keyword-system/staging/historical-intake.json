@@ -1,0 +1,4251 @@
+{
+  "schema_version": "bsre-historical-keyword-intake-v1",
+  "intake_date": "2026-11-07",
+  "source": {
+    "archive_basename": "black-swan-no-crm-implementation.zip",
+    "archive_sha256": "08a689590b812cd7eac46baf8a5e1fe23f2ced94168d8982012498e003c84794",
+    "source_classification": "OWNER_SUPPLIED_HISTORICAL_DRAFT_NOT_CURRENT_ACCOUNT_EVIDENCE",
+    "freshness_verified": false,
+    "selected_members": [
+      {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "sha256": "87eefba1d96fbdde0b7a83dee5d0bb36c4c3ad8516f5ca5ac37c7166a0e5646f",
+        "bytes": 7863
+      },
+      {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "sha256": "80da168affeedbec3a81b6c035df605025b48b13f2ecb089f83e203727f1918e",
+        "bytes": 24507
+      },
+      {
+        "member": "black-swan-implementation/full-scope/campaigns/keywords.csv",
+        "sha256": "87eefba1d96fbdde0b7a83dee5d0bb36c4c3ad8516f5ca5ac37c7166a0e5646f",
+        "bytes": 7863
+      }
+    ],
+    "duplicate_copy_byte_identical": true
+  },
+  "scope": "UNAPPROVED_HISTORICAL_RESEARCH_INTAKE_NOT_LIVE_STATE",
+  "new_360_mapping_assigned": false,
+  "deployment_export_allowed": false,
+  "counts": {
+    "historical_placements": 82,
+    "distinct_unreviewed_candidates": 41,
+    "reviewed_positive_rows": 0,
+    "approved_rows": 0,
+    "deployed_rows_from_this_intake": 0,
+    "reviewed_positive_target": 14000,
+    "reviewed_positive_deficit": 14000,
+    "historical_match_types": {
+      "Exact": 41,
+      "Phrase": 41
+    },
+    "historical_campaign_names": {
+      "BSRE_SEARCH_BRAND_EN": 8,
+      "BSRE_SEARCH_BUYERS_EN": 34,
+      "BSRE_SEARCH_TENANTS_EN": 16,
+      "BSRE_SEARCH_OWNERS_EN": 24
+    },
+    "historical_ad_group_names": {
+      "Black Swan Brand": 8,
+      "Dubai Off-Plan Buyers": 16,
+      "Dubai Resale Buyers": 18,
+      "Dubai Immediate Rentals": 16,
+      "Dubai Sellers": 12,
+      "Dubai Landlords": 12
+    }
+  },
+  "required_before_reviewed_promotion": [
+    "Verify current service/entity relevance and source freshness",
+    "Review original language, spelling, meaning and protected intent",
+    "Resolve approved primary campaign/ad-group/page ownership under the new registry",
+    "Record independent reviewer, dated evidence and expiry; leave unmeasured volume/CPC null",
+    "Reconcile historical placements against current account without recreating or replaying imports"
+  ],
+  "placements": [
+    {
+      "placement_id": "LEGACY-PLACEMENT-0001",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 1,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 1,
+        "start_line": 2,
+        "end_line": 2
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "black swan real estate",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "black swan real estate",
+        "Match type": "Exact",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0002",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 2,
+        "start_line": 3,
+        "end_line": 3
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 2,
+        "start_line": 3,
+        "end_line": 3
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "black swan real estate",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "black swan real estate",
+        "Match type": "Phrase",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0003",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 3,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 3,
+        "start_line": 4,
+        "end_line": 4
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "black swan real estate dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "black swan real estate dubai",
+        "Match type": "Exact",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0004",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 4,
+        "start_line": 5,
+        "end_line": 5
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 4,
+        "start_line": 5,
+        "end_line": 5
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "black swan real estate dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "black swan real estate dubai",
+        "Match type": "Phrase",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0005",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 5,
+        "start_line": 6,
+        "end_line": 6
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 5,
+        "start_line": 6,
+        "end_line": 6
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "blackswan real estate",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "blackswan real estate",
+        "Match type": "Exact",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0006",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 6,
+        "start_line": 7,
+        "end_line": 7
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 6,
+        "start_line": 7,
+        "end_line": 7
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "blackswan real estate",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "blackswan real estate",
+        "Match type": "Phrase",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0007",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 7,
+        "start_line": 8,
+        "end_line": 8
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 7,
+        "start_line": 8,
+        "end_line": 8
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "blackswan realestate",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "blackswan realestate",
+        "Match type": "Exact",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0008",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 8,
+        "start_line": 9,
+        "end_line": 9
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 8,
+        "start_line": 9,
+        "end_line": 9
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Black Swan Brand",
+        "Ad group status": "Paused",
+        "Keyword": "blackswan realestate",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BRAND_EN",
+        "Ad group": "Black Swan Brand",
+        "Keyword": "blackswan realestate",
+        "Match type": "Phrase",
+        "Role": "service_selection",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Brand navigation",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0009",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 9,
+        "start_line": 10,
+        "end_line": 10
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 9,
+        "start_line": 10,
+        "end_line": 10
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan property dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan property dubai",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0010",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 10,
+        "start_line": 11,
+        "end_line": 11
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 10,
+        "start_line": 11,
+        "end_line": 11
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan property dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan property dubai",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0011",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 11,
+        "start_line": 12,
+        "end_line": 12
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 11,
+        "start_line": 12,
+        "end_line": 12
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy off plan property dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "buy off plan property dubai",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0012",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 12,
+        "start_line": 13,
+        "end_line": 13
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 12,
+        "start_line": 13,
+        "end_line": 13
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy off plan property dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "buy off plan property dubai",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0013",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 13,
+        "start_line": 14,
+        "end_line": 14
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 13,
+        "start_line": 14,
+        "end_line": 14
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai off plan homes",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "dubai off plan homes",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0014",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 14,
+        "start_line": 15,
+        "end_line": 15
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 14,
+        "start_line": 15,
+        "end_line": 15
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai off plan homes",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "dubai off plan homes",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0015",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 15,
+        "start_line": 16,
+        "end_line": 16
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 15,
+        "start_line": 16,
+        "end_line": 16
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan apartments dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan apartments dubai",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0016",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 16,
+        "start_line": 17,
+        "end_line": 17
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 16,
+        "start_line": 17,
+        "end_line": 17
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan apartments dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan apartments dubai",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0017",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 17,
+        "start_line": 18,
+        "end_line": 18
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 17,
+        "start_line": 18,
+        "end_line": 18
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy off plan apartment dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "buy off plan apartment dubai",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0018",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 18,
+        "start_line": 19,
+        "end_line": 19
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 18,
+        "start_line": 19,
+        "end_line": 19
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy off plan apartment dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "buy off plan apartment dubai",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0019",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 19,
+        "start_line": 20,
+        "end_line": 20
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 19,
+        "start_line": 20,
+        "end_line": 20
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan villas dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan villas dubai",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0020",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 20,
+        "start_line": 21,
+        "end_line": 21
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 20,
+        "start_line": 21,
+        "end_line": 21
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan villas dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan villas dubai",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0021",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 21,
+        "start_line": 22,
+        "end_line": 22
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 21,
+        "start_line": 22,
+        "end_line": 22
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai new launch property",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "dubai new launch property",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0022",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 22,
+        "start_line": 23,
+        "end_line": 23
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 22,
+        "start_line": 23,
+        "end_line": 23
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai new launch property",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "dubai new launch property",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0023",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 23,
+        "start_line": 24,
+        "end_line": 24
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 23,
+        "start_line": 24,
+        "end_line": 24
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan homes for sale dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan homes for sale dubai",
+        "Match type": "Exact",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0024",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 24,
+        "start_line": 25,
+        "end_line": 25
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 24,
+        "start_line": 25,
+        "end_line": 25
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "off plan homes for sale dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Off-Plan Buyers",
+        "Keyword": "off plan homes for sale dubai",
+        "Match type": "Phrase",
+        "Role": "off_plan",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/off-plan/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0025",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 25,
+        "start_line": 26,
+        "end_line": 26
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 25,
+        "start_line": 26,
+        "end_line": 26
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai resale property",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "dubai resale property",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0026",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 26,
+        "start_line": 27,
+        "end_line": 27
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 26,
+        "start_line": 27,
+        "end_line": 27
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai resale property",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "dubai resale property",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0027",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 27,
+        "start_line": 28,
+        "end_line": 28
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 27,
+        "start_line": 28,
+        "end_line": 28
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy resale property dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "buy resale property dubai",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0028",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 28,
+        "start_line": 29,
+        "end_line": 29
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 28,
+        "start_line": 29,
+        "end_line": 29
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy resale property dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "buy resale property dubai",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0029",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 29,
+        "start_line": 30,
+        "end_line": 30
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 29,
+        "start_line": 30,
+        "end_line": 30
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale property for sale dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale property for sale dubai",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0030",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 30,
+        "start_line": 31,
+        "end_line": 31
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 30,
+        "start_line": 31,
+        "end_line": 31
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale property for sale dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale property for sale dubai",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0031",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 31,
+        "start_line": 32,
+        "end_line": 32
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 31,
+        "start_line": 32,
+        "end_line": 32
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale apartments dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale apartments dubai",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0032",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 32,
+        "start_line": 33,
+        "end_line": 33
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 32,
+        "start_line": 33,
+        "end_line": 33
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale apartments dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale apartments dubai",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0033",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 33,
+        "start_line": 34,
+        "end_line": 34
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 33,
+        "start_line": 34,
+        "end_line": 34
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy resale apartment dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "buy resale apartment dubai",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0034",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 34,
+        "start_line": 35,
+        "end_line": 35
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 34,
+        "start_line": 35,
+        "end_line": 35
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "buy resale apartment dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "buy resale apartment dubai",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0035",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 35,
+        "start_line": 36,
+        "end_line": 36
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 35,
+        "start_line": 36,
+        "end_line": 36
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale villas dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale villas dubai",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0036",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 36,
+        "start_line": 37,
+        "end_line": 37
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 36,
+        "start_line": 37,
+        "end_line": 37
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale villas dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale villas dubai",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0037",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 37,
+        "start_line": 38,
+        "end_line": 38
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 37,
+        "start_line": 38,
+        "end_line": 38
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai secondary market property",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "dubai secondary market property",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0038",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 38,
+        "start_line": 39,
+        "end_line": 39
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 38,
+        "start_line": 39,
+        "end_line": 39
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai secondary market property",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "dubai secondary market property",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0039",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 39,
+        "start_line": 40,
+        "end_line": 40
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 39,
+        "start_line": 40,
+        "end_line": 40
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale homes dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale homes dubai",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0040",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 40,
+        "start_line": 41,
+        "end_line": 41
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 40,
+        "start_line": 41,
+        "end_line": 41
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "resale homes dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "resale homes dubai",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0041",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 41,
+        "start_line": 42,
+        "end_line": 42
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 41,
+        "start_line": 42,
+        "end_line": 42
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai resale homes for sale",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "dubai resale homes for sale",
+        "Match type": "Exact",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0042",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 42,
+        "start_line": 43,
+        "end_line": 43
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 42,
+        "start_line": 43,
+        "end_line": 43
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Resale Buyers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai resale homes for sale",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_BUYERS_EN",
+        "Ad group": "Dubai Resale Buyers",
+        "Keyword": "dubai resale homes for sale",
+        "Match type": "Phrase",
+        "Role": "resale",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/resale/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0043",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 43,
+        "start_line": 44,
+        "end_line": 44
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 43,
+        "start_line": 44,
+        "end_line": 44
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "property for rent dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "property for rent dubai",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0044",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 44,
+        "start_line": 45,
+        "end_line": 45
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 44,
+        "start_line": 45,
+        "end_line": 45
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "property for rent dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "property for rent dubai",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0045",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 45,
+        "start_line": 46,
+        "end_line": 46
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 45,
+        "start_line": 46,
+        "end_line": 46
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "rent apartment dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "rent apartment dubai",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0046",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 46,
+        "start_line": 47,
+        "end_line": 47
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 46,
+        "start_line": 47,
+        "end_line": 47
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "rent apartment dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "rent apartment dubai",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0047",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 47,
+        "start_line": 48,
+        "end_line": 48
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 47,
+        "start_line": 48,
+        "end_line": 48
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "apartments for rent dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "apartments for rent dubai",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0048",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 48,
+        "start_line": 49,
+        "end_line": 49
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 48,
+        "start_line": 49,
+        "end_line": 49
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "apartments for rent dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "apartments for rent dubai",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0049",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 49,
+        "start_line": 50,
+        "end_line": 50
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 49,
+        "start_line": 50,
+        "end_line": 50
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "rent villa dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "rent villa dubai",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0050",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 50,
+        "start_line": 51,
+        "end_line": 51
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 50,
+        "start_line": 51,
+        "end_line": 51
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "rent villa dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "rent villa dubai",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0051",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 51,
+        "start_line": 52,
+        "end_line": 52
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 51,
+        "start_line": 52,
+        "end_line": 52
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "villas for rent dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "villas for rent dubai",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0052",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 52,
+        "start_line": 53,
+        "end_line": 53
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 52,
+        "start_line": 53,
+        "end_line": 53
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "villas for rent dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "villas for rent dubai",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0053",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 53,
+        "start_line": 54,
+        "end_line": 54
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 53,
+        "start_line": 54,
+        "end_line": 54
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "dubai homes for rent",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "dubai homes for rent",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0054",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 54,
+        "start_line": 55,
+        "end_line": 55
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 54,
+        "start_line": 55,
+        "end_line": 55
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "dubai homes for rent",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "dubai homes for rent",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0055",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 55,
+        "start_line": 56,
+        "end_line": 56
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 55,
+        "start_line": 56,
+        "end_line": 56
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "dubai rental properties",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "dubai rental properties",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0056",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 56,
+        "start_line": 57,
+        "end_line": 57
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 56,
+        "start_line": 57,
+        "end_line": 57
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "dubai rental properties",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "dubai rental properties",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0057",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 57,
+        "start_line": 58,
+        "end_line": 58
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 57,
+        "start_line": 58,
+        "end_line": 58
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "ready to move apartments for rent dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "ready to move apartments for rent dubai",
+        "Match type": "Exact",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0058",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 58,
+        "start_line": 59,
+        "end_line": 59
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 58,
+        "start_line": 59,
+        "end_line": 59
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Immediate Rentals",
+        "Ad group status": "Paused",
+        "Keyword": "ready to move apartments for rent dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_TENANTS_EN",
+        "Ad group": "Dubai Immediate Rentals",
+        "Keyword": "ready to move apartments for rent dubai",
+        "Match type": "Phrase",
+        "Role": "tenant",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/rent/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0059",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 59,
+        "start_line": 60,
+        "end_line": 60
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 59,
+        "start_line": 60,
+        "end_line": 60
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my property dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my property dubai",
+        "Match type": "Exact",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0060",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 60,
+        "start_line": 61,
+        "end_line": 61
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 60,
+        "start_line": 61,
+        "end_line": 61
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my property dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my property dubai",
+        "Match type": "Phrase",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0061",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 61,
+        "start_line": 62,
+        "end_line": 62
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 61,
+        "start_line": 62,
+        "end_line": 62
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my apartment dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my apartment dubai",
+        "Match type": "Exact",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0062",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 62,
+        "start_line": 63,
+        "end_line": 63
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 62,
+        "start_line": 63,
+        "end_line": 63
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my apartment dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my apartment dubai",
+        "Match type": "Phrase",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0063",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 63,
+        "start_line": 64,
+        "end_line": 64
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 63,
+        "start_line": 64,
+        "end_line": 64
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my villa dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my villa dubai",
+        "Match type": "Exact",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0064",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 64,
+        "start_line": 65,
+        "end_line": 65
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 64,
+        "start_line": 65,
+        "end_line": 65
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my villa dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my villa dubai",
+        "Match type": "Phrase",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0065",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 65,
+        "start_line": 66,
+        "end_line": 66
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 65,
+        "start_line": 66,
+        "end_line": 66
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai property selling agent",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "dubai property selling agent",
+        "Match type": "Exact",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0066",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 66,
+        "start_line": 67,
+        "end_line": 67
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 66,
+        "start_line": 67,
+        "end_line": 67
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "dubai property selling agent",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "dubai property selling agent",
+        "Match type": "Phrase",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0067",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 67,
+        "start_line": 68,
+        "end_line": 68
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 67,
+        "start_line": 68,
+        "end_line": 68
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "list property for sale dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "list property for sale dubai",
+        "Match type": "Exact",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0068",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 68,
+        "start_line": 69,
+        "end_line": 69
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 68,
+        "start_line": 69,
+        "end_line": 69
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "list property for sale dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "list property for sale dubai",
+        "Match type": "Phrase",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0069",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 69,
+        "start_line": 70,
+        "end_line": 70
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 69,
+        "start_line": 70,
+        "end_line": 70
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my home dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my home dubai",
+        "Match type": "Exact",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0070",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 70,
+        "start_line": 71,
+        "end_line": 71
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 70,
+        "start_line": 71,
+        "end_line": 71
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Sellers",
+        "Ad group status": "Paused",
+        "Keyword": "sell my home dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Sellers",
+        "Keyword": "sell my home dubai",
+        "Match type": "Phrase",
+        "Role": "seller",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/sell/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0071",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 71,
+        "start_line": 72,
+        "end_line": 72
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 71,
+        "start_line": 72,
+        "end_line": 72
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "rent out my property dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "rent out my property dubai",
+        "Match type": "Exact",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0072",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 72,
+        "start_line": 73,
+        "end_line": 73
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 72,
+        "start_line": 73,
+        "end_line": 73
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "rent out my property dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "rent out my property dubai",
+        "Match type": "Phrase",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0073",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 73,
+        "start_line": 74,
+        "end_line": 74
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 73,
+        "start_line": 74,
+        "end_line": 74
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "rent out my apartment dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "rent out my apartment dubai",
+        "Match type": "Exact",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0074",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 74,
+        "start_line": 75,
+        "end_line": 75
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 74,
+        "start_line": 75,
+        "end_line": 75
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "rent out my apartment dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "rent out my apartment dubai",
+        "Match type": "Phrase",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0075",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 75,
+        "start_line": 76,
+        "end_line": 76
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 75,
+        "start_line": 76,
+        "end_line": 76
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "rent out my villa dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "rent out my villa dubai",
+        "Match type": "Exact",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0076",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 76,
+        "start_line": 77,
+        "end_line": 77
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 76,
+        "start_line": 77,
+        "end_line": 77
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "rent out my villa dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "rent out my villa dubai",
+        "Match type": "Phrase",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0077",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 77,
+        "start_line": 78,
+        "end_line": 78
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 77,
+        "start_line": 78,
+        "end_line": 78
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "list property for rent dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "list property for rent dubai",
+        "Match type": "Exact",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0078",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 78,
+        "start_line": 79,
+        "end_line": 79
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 78,
+        "start_line": 79,
+        "end_line": 79
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "list property for rent dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "list property for rent dubai",
+        "Match type": "Phrase",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0079",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 79,
+        "start_line": 80,
+        "end_line": 80
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 79,
+        "start_line": 80,
+        "end_line": 80
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "letting agent dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "letting agent dubai",
+        "Match type": "Exact",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0080",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 80,
+        "start_line": 81,
+        "end_line": 81
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 80,
+        "start_line": 81,
+        "end_line": 81
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "letting agent dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "letting agent dubai",
+        "Match type": "Phrase",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0081",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 81,
+        "start_line": 82,
+        "end_line": 82
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 81,
+        "start_line": 82,
+        "end_line": 82
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "let my property dubai",
+        "Criterion Type": "Exact",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "let my property dubai",
+        "Match type": "Exact",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    },
+    {
+      "placement_id": "LEGACY-PLACEMENT-0082",
+      "keyword_source_locator": {
+        "member": "black-swan-implementation/campaigns/keywords.csv",
+        "record_ordinal": 82,
+        "start_line": 83,
+        "end_line": 83
+      },
+      "metadata_source_locator": {
+        "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+        "record_ordinal": 82,
+        "start_line": 83,
+        "end_line": 83
+      },
+      "original_keyword_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Campaign status": "Paused",
+        "Ad group": "Dubai Landlords",
+        "Ad group status": "Paused",
+        "Keyword": "let my property dubai",
+        "Criterion Type": "Phrase",
+        "Status": "Paused"
+      },
+      "original_metadata_fields": {
+        "Campaign": "BSRE_SEARCH_OWNERS_EN",
+        "Ad group": "Dubai Landlords",
+        "Keyword": "let my property dubai",
+        "Match type": "Phrase",
+        "Role": "landlord",
+        "Proposed final URL": "https://blackswanrealestate.ae/enquire/let/",
+        "Readiness": "Paused; demand, CPC and existing-account overlap must be inspected",
+        "Reason": "Explicit service intent; confirm supported property types and suitability during qualification",
+        "Live-account evidence": "NOT VERIFIED"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "LEGACY-POS-0001",
+      "original_text": "black swan real estate",
+      "original_text_variants": [
+        "black swan real estate"
+      ],
+      "normalized_text": "black swan real estate",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0001",
+        "LEGACY-PLACEMENT-0002"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0002",
+      "original_text": "black swan real estate dubai",
+      "original_text_variants": [
+        "black swan real estate dubai"
+      ],
+      "normalized_text": "black swan real estate dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0003",
+        "LEGACY-PLACEMENT-0004"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0003",
+      "original_text": "blackswan real estate",
+      "original_text_variants": [
+        "blackswan real estate"
+      ],
+      "normalized_text": "blackswan real estate",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0005",
+        "LEGACY-PLACEMENT-0006"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0004",
+      "original_text": "blackswan realestate",
+      "original_text_variants": [
+        "blackswan realestate"
+      ],
+      "normalized_text": "blackswan realestate",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0007",
+        "LEGACY-PLACEMENT-0008"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0005",
+      "original_text": "off plan property dubai",
+      "original_text_variants": [
+        "off plan property dubai"
+      ],
+      "normalized_text": "off plan property dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0009",
+        "LEGACY-PLACEMENT-0010"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0006",
+      "original_text": "buy off plan property dubai",
+      "original_text_variants": [
+        "buy off plan property dubai"
+      ],
+      "normalized_text": "buy off plan property dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0011",
+        "LEGACY-PLACEMENT-0012"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0007",
+      "original_text": "dubai off plan homes",
+      "original_text_variants": [
+        "dubai off plan homes"
+      ],
+      "normalized_text": "dubai off plan homes",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0013",
+        "LEGACY-PLACEMENT-0014"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0008",
+      "original_text": "off plan apartments dubai",
+      "original_text_variants": [
+        "off plan apartments dubai"
+      ],
+      "normalized_text": "off plan apartments dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0015",
+        "LEGACY-PLACEMENT-0016"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0009",
+      "original_text": "buy off plan apartment dubai",
+      "original_text_variants": [
+        "buy off plan apartment dubai"
+      ],
+      "normalized_text": "buy off plan apartment dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0017",
+        "LEGACY-PLACEMENT-0018"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0010",
+      "original_text": "off plan villas dubai",
+      "original_text_variants": [
+        "off plan villas dubai"
+      ],
+      "normalized_text": "off plan villas dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0019",
+        "LEGACY-PLACEMENT-0020"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0011",
+      "original_text": "dubai new launch property",
+      "original_text_variants": [
+        "dubai new launch property"
+      ],
+      "normalized_text": "dubai new launch property",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0021",
+        "LEGACY-PLACEMENT-0022"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0012",
+      "original_text": "off plan homes for sale dubai",
+      "original_text_variants": [
+        "off plan homes for sale dubai"
+      ],
+      "normalized_text": "off plan homes for sale dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0023",
+        "LEGACY-PLACEMENT-0024"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0013",
+      "original_text": "dubai resale property",
+      "original_text_variants": [
+        "dubai resale property"
+      ],
+      "normalized_text": "dubai resale property",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0025",
+        "LEGACY-PLACEMENT-0026"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0014",
+      "original_text": "buy resale property dubai",
+      "original_text_variants": [
+        "buy resale property dubai"
+      ],
+      "normalized_text": "buy resale property dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0027",
+        "LEGACY-PLACEMENT-0028"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0015",
+      "original_text": "resale property for sale dubai",
+      "original_text_variants": [
+        "resale property for sale dubai"
+      ],
+      "normalized_text": "resale property for sale dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0029",
+        "LEGACY-PLACEMENT-0030"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0016",
+      "original_text": "resale apartments dubai",
+      "original_text_variants": [
+        "resale apartments dubai"
+      ],
+      "normalized_text": "resale apartments dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0031",
+        "LEGACY-PLACEMENT-0032"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0017",
+      "original_text": "buy resale apartment dubai",
+      "original_text_variants": [
+        "buy resale apartment dubai"
+      ],
+      "normalized_text": "buy resale apartment dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0033",
+        "LEGACY-PLACEMENT-0034"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0018",
+      "original_text": "resale villas dubai",
+      "original_text_variants": [
+        "resale villas dubai"
+      ],
+      "normalized_text": "resale villas dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0035",
+        "LEGACY-PLACEMENT-0036"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0019",
+      "original_text": "dubai secondary market property",
+      "original_text_variants": [
+        "dubai secondary market property"
+      ],
+      "normalized_text": "dubai secondary market property",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0037",
+        "LEGACY-PLACEMENT-0038"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0020",
+      "original_text": "resale homes dubai",
+      "original_text_variants": [
+        "resale homes dubai"
+      ],
+      "normalized_text": "resale homes dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0039",
+        "LEGACY-PLACEMENT-0040"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0021",
+      "original_text": "dubai resale homes for sale",
+      "original_text_variants": [
+        "dubai resale homes for sale"
+      ],
+      "normalized_text": "dubai resale homes for sale",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0041",
+        "LEGACY-PLACEMENT-0042"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0022",
+      "original_text": "property for rent dubai",
+      "original_text_variants": [
+        "property for rent dubai"
+      ],
+      "normalized_text": "property for rent dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0043",
+        "LEGACY-PLACEMENT-0044"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0023",
+      "original_text": "rent apartment dubai",
+      "original_text_variants": [
+        "rent apartment dubai"
+      ],
+      "normalized_text": "rent apartment dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0045",
+        "LEGACY-PLACEMENT-0046"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0024",
+      "original_text": "apartments for rent dubai",
+      "original_text_variants": [
+        "apartments for rent dubai"
+      ],
+      "normalized_text": "apartments for rent dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0047",
+        "LEGACY-PLACEMENT-0048"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0025",
+      "original_text": "rent villa dubai",
+      "original_text_variants": [
+        "rent villa dubai"
+      ],
+      "normalized_text": "rent villa dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0049",
+        "LEGACY-PLACEMENT-0050"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0026",
+      "original_text": "villas for rent dubai",
+      "original_text_variants": [
+        "villas for rent dubai"
+      ],
+      "normalized_text": "villas for rent dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0051",
+        "LEGACY-PLACEMENT-0052"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0027",
+      "original_text": "dubai homes for rent",
+      "original_text_variants": [
+        "dubai homes for rent"
+      ],
+      "normalized_text": "dubai homes for rent",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0053",
+        "LEGACY-PLACEMENT-0054"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0028",
+      "original_text": "dubai rental properties",
+      "original_text_variants": [
+        "dubai rental properties"
+      ],
+      "normalized_text": "dubai rental properties",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0055",
+        "LEGACY-PLACEMENT-0056"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0029",
+      "original_text": "ready to move apartments for rent dubai",
+      "original_text_variants": [
+        "ready to move apartments for rent dubai"
+      ],
+      "normalized_text": "ready to move apartments for rent dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0057",
+        "LEGACY-PLACEMENT-0058"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0030",
+      "original_text": "sell my property dubai",
+      "original_text_variants": [
+        "sell my property dubai"
+      ],
+      "normalized_text": "sell my property dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0059",
+        "LEGACY-PLACEMENT-0060"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0031",
+      "original_text": "sell my apartment dubai",
+      "original_text_variants": [
+        "sell my apartment dubai"
+      ],
+      "normalized_text": "sell my apartment dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0061",
+        "LEGACY-PLACEMENT-0062"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0032",
+      "original_text": "sell my villa dubai",
+      "original_text_variants": [
+        "sell my villa dubai"
+      ],
+      "normalized_text": "sell my villa dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0063",
+        "LEGACY-PLACEMENT-0064"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0033",
+      "original_text": "dubai property selling agent",
+      "original_text_variants": [
+        "dubai property selling agent"
+      ],
+      "normalized_text": "dubai property selling agent",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0065",
+        "LEGACY-PLACEMENT-0066"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0034",
+      "original_text": "list property for sale dubai",
+      "original_text_variants": [
+        "list property for sale dubai"
+      ],
+      "normalized_text": "list property for sale dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0067",
+        "LEGACY-PLACEMENT-0068"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0035",
+      "original_text": "sell my home dubai",
+      "original_text_variants": [
+        "sell my home dubai"
+      ],
+      "normalized_text": "sell my home dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0069",
+        "LEGACY-PLACEMENT-0070"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0036",
+      "original_text": "rent out my property dubai",
+      "original_text_variants": [
+        "rent out my property dubai"
+      ],
+      "normalized_text": "rent out my property dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0071",
+        "LEGACY-PLACEMENT-0072"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0037",
+      "original_text": "rent out my apartment dubai",
+      "original_text_variants": [
+        "rent out my apartment dubai"
+      ],
+      "normalized_text": "rent out my apartment dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0073",
+        "LEGACY-PLACEMENT-0074"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0038",
+      "original_text": "rent out my villa dubai",
+      "original_text_variants": [
+        "rent out my villa dubai"
+      ],
+      "normalized_text": "rent out my villa dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0075",
+        "LEGACY-PLACEMENT-0076"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0039",
+      "original_text": "list property for rent dubai",
+      "original_text_variants": [
+        "list property for rent dubai"
+      ],
+      "normalized_text": "list property for rent dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0077",
+        "LEGACY-PLACEMENT-0078"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0040",
+      "original_text": "letting agent dubai",
+      "original_text_variants": [
+        "letting agent dubai"
+      ],
+      "normalized_text": "letting agent dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0079",
+        "LEGACY-PLACEMENT-0080"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    },
+    {
+      "candidate_id": "LEGACY-POS-0041",
+      "original_text": "let my property dubai",
+      "original_text_variants": [
+        "let my property dubai"
+      ],
+      "normalized_text": "let my property dubai",
+      "placement_ids": [
+        "LEGACY-PLACEMENT-0081",
+        "LEGACY-PLACEMENT-0082"
+      ],
+      "match_types_seen": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "source_id": "HISTORICAL-DRAFT-ZIP",
+      "source_kind": "historical_draft_archive",
+      "review_state": "CANDIDATE",
+      "approval_state": "PENDING",
+      "mapping_status": "OWNER_REVIEW_REQUIRED",
+      "language": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "valid_until": null,
+      "source_observed_on": null,
+      "volume": null,
+      "cpc": null,
+      "primary_campaign_key": null,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "approval_reference": null
+    }
+  ]
+}
