@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.cache/
+.env
+.env.*
+!.env.example
+node_modules/
+private/
+secrets/
+*.pem
+*.key
+*.sqlite*
+*.log
+*.jsonl
+local-*.json
+test-output/
