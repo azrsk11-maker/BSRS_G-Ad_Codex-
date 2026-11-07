@@ -1,0 +1,111 @@
+{
+  "page_target": 360,
+  "positive_target": 14000,
+  "families": [
+    {
+      "code": "DEV",
+      "family": "Developer",
+      "pages": 30,
+      "positive_research_target": 1000,
+      "decision": "Developer selection and verified available alternatives"
+    },
+    {
+      "code": "COM",
+      "family": "Community",
+      "pages": 40,
+      "positive_research_target": 1500,
+      "decision": "Location, commute, suitability and comparison"
+    },
+    {
+      "code": "PRJ",
+      "family": "Named project",
+      "pages": 50,
+      "positive_research_target": 2100,
+      "decision": "Project-specific purchase and availability"
+    },
+    {
+      "code": "OFP",
+      "family": "Off-plan and payment plan",
+      "pages": 30,
+      "positive_research_target": 1300,
+      "decision": "Purchase structure, milestones and delivery risk"
+    },
+    {
+      "code": "LUX",
+      "family": "Luxury, villas and branded residences",
+      "pages": 20,
+      "positive_research_target": 700,
+      "decision": "Premium property suitability and comparison"
+    },
+    {
+      "code": "RDY",
+      "family": "Ready and secondary",
+      "pages": 20,
+      "positive_research_target": 1000,
+      "decision": "Vacant possession, tenanted investment and resale"
+    },
+    {
+      "code": "ROI",
+      "family": "Investment and ROI",
+      "pages": 20,
+      "positive_research_target": 900,
+      "decision": "Net income, ownership cost and exit scenarios"
+    },
+    {
+      "code": "CML",
+      "family": "Commercial purchase",
+      "pages": 20,
+      "positive_research_target": 1200,
+      "decision": "Off-plan and ready commercial acquisition"
+    },
+    {
+      "code": "INT",
+      "family": "International buyer",
+      "pages": 30,
+      "positive_research_target": 800,
+      "decision": "UAE property acquisition from approved source markets"
+    },
+    {
+      "code": "PRC",
+      "family": "Finance, residency and transaction process",
+      "pages": 20,
+      "positive_research_target": 700,
+      "decision": "Property-linked readiness, costs and completion"
+    },
+    {
+      "code": "CMP",
+      "family": "Brand, broker, portal and event comparison",
+      "pages": 20,
+      "positive_research_target": 600,
+      "decision": "Brand demand, genuine alternatives and event intent"
+    },
+    {
+      "code": "RNT",
+      "family": "Residential rental",
+      "pages": 20,
+      "positive_research_target": 1000,
+      "decision": "Tenant requirements and suitable available homes"
+    },
+    {
+      "code": "CLS",
+      "family": "Commercial leasing",
+      "pages": 15,
+      "positive_research_target": 600,
+      "decision": "Operational premises and occupancy requirements"
+    },
+    {
+      "code": "SEL",
+      "family": "Seller acquisition",
+      "pages": 15,
+      "positive_research_target": 350,
+      "decision": "Valuation, sale readiness and listing instructions"
+    },
+    {
+      "code": "LND",
+      "family": "Landlord acquisition",
+      "pages": 10,
+      "positive_research_target": 250,
+      "decision": "Letting instructions and tenant sourcing"
+    }
+  ]
+}
