@@ -1,0 +1,14 @@
+{
+  "status": "PASS_STAGING_ONLY",
+  "historical_placements": 27,
+  "distinct_unreviewed_candidates": 9,
+  "reviewed_negative_rows": 0,
+  "approved_exclusion_rows": 0,
+  "deployed_rows_from_this_intake": 0,
+  "reviewed_negative_target": 14000,
+  "reviewed_negative_deficit": 14000,
+  "current_scope_assigned": false,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "intake_sha256": "740b9e74e0a02ef263807f62a457b1ee7f5fef2caf984f75fca9c031898d8fd4"
+}
