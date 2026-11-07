@@ -10,6 +10,7 @@ from collections import Counter, defaultdict
 import csv
 from datetime import date
 import hashlib
+import io
 import json
 from pathlib import Path
 import re
@@ -38,9 +39,13 @@ def duplicate_safe_object(pairs):
     return result
 
 
-def load_json(path: Path):
-    return json.loads(path.read_text(encoding="utf-8-sig"), object_pairs_hook=duplicate_safe_object,
+def parse_json_bytes(content: bytes):
+    return json.loads(content.decode("utf-8-sig"), object_pairs_hook=duplicate_safe_object,
                       parse_constant=lambda value: (_ for _ in ()).throw(ValueError("Invalid number " + value)))
+
+
+def load_json(path: Path):
+    return parse_json_bytes(path.read_bytes())
 
 
 def normalize(text: str) -> str:
@@ -71,13 +76,14 @@ def negative_matches(text, match_type, query):
     raise ValueError("Unsupported negative match type")
 
 
-def read_records(path: Path):
+def read_records(path: Path, *, content=None):
+    content = path.read_bytes() if content is None else content
     if path.suffix.lower() == ".json":
-        result = load_json(path)
+        result = parse_json_bytes(content)
         if not isinstance(result, list):
             raise ValueError("JSON input must be an array of record objects")
     elif path.suffix.lower() == ".csv":
-        with path.open(encoding="utf-8-sig", newline="") as handle:
+        with io.StringIO(content.decode("utf-8-sig"), newline="") as handle:
             reader = csv.DictReader(handle)
             fields = reader.fieldnames or []
             if len(set(fields)) != len(fields):
@@ -169,7 +175,8 @@ def fresh(record, at, errors, label, start="observed_on", end="valid_until"):
         errors.append(label + ": missing/invalid evidence dates")
 
 
-def audit(kind, records, sources, campaigns, campaign_context, protected_queries, at, scope_bindings=None):
+def audit(kind, records, sources, campaigns, campaign_context, protected_queries, at, scope_bindings=None,
+          positive_library=None, coverage_review=None):
     if kind not in {"positive", "negative"}:
         raise ValueError("kind must be positive or negative")
     if not isinstance(at, date):
@@ -207,7 +214,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
     coverage_by_campaign = defaultdict(set)
     lexical_comparisons = 0
     for key, query in query_index.items():
-        if not nonblank(query.get("text")) or query.get("must_serve") is not True:
+        if not nonblank(query.get("text")) or not tokens(query.get("text", "")) or query.get("must_serve") is not True:
             global_errors.append("protected queries: text and must_serve=true required " + key)
         if not nonblank(query.get("evidence_ref")):
             global_errors.append("protected queries: evidence reference required " + key)
@@ -256,7 +263,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             errors.append("missing fields: " + ",".join(sorted(missing)))
         if not nonblank(row.get("keyword_id")) or ids[row.get("keyword_id")] != 1:
             errors.append("missing/duplicate keyword_id")
-        if not norm or re.search(r"[\[\]\"]", norm) or norm in {"source_required", "tbd", "todo", "placeholder", "unknown"} or any(unicodedata.category(ch) in {"Cc", "Cf"} for ch in norm):
+        if not norm or not tokens(norm) or re.search(r"[\[\]\"]", norm) or norm in {"source_required", "tbd", "todo", "placeholder", "unknown"} or any(unicodedata.category(ch) in {"Cc", "Cf"} for ch in norm):
             errors.append("blank, placeholder or invalid match wrapper")
         if len(duplicates.get(norm, [])) > 1:
             errors.append("duplicate normalized phrase; wrappers and language do not create uniqueness")
@@ -414,7 +421,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
         if valid:
             accepted.append(row)
     reviewed = len(accepted)
-    return {
+    report = {
         "schema_version": "1.0", "kind": kind, "as_of": at.isoformat(), "scope": "OFFLINE_RESEARCH_ONLY",
         "input_rows": len(records), "distinct_nonblank_phrases": len(duplicates),
         "reviewed_eligible_rows": reviewed, "excluded_rows": len(records) - reviewed,
@@ -430,6 +437,36 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
         "capacity": proposed_capacity(accepted) if kind == "negative" else None,
         "matching_limit": "Conservative lexical simulator; not Google close-variant/platform acceptance or proof corpus is complete",
     }
+    if positive_library is not None or coverage_review is not None:
+        if kind != "negative":
+            raise ValueError("Full supplied-library coverage is evaluated on the negative audit only")
+        from coverage_audit import evaluate_coverage
+        positive_report = None
+        if isinstance(positive_library, list) and all(isinstance(row, dict) for row in positive_library):
+            positive_report = audit("positive", positive_library, sources, campaigns, campaign_context, protected_queries, at, scope_bindings)
+        coverage = evaluate_coverage(positive_library, records, sources, campaigns, campaign_context,
+                                     protected_queries, scope_bindings, coverage_review, positive_report, report, at)
+        report["supplied_library_coverage"] = coverage
+        report["positive_library_coverage_verified"] = coverage["conflict_free_coverage_verified"]
+        report["protected_corpus_status"] = coverage["status"]
+        conflicts_by_row = defaultdict(list)
+        for conflict in coverage["conflicts"]:
+            conflicts_by_row[conflict["negative_row"]].append(conflict)
+        for row in report["records"]:
+            if conflicts_by_row[row["row"]]:
+                row["errors"].append("supplied positive/long-tail conflict; see namespaced coverage matrix")
+                row["reviewed_eligible"] = False
+            if not coverage["conflict_free_coverage_verified"]:
+                row["deployment_holds"].append("complete supplied-library coverage has not passed")
+            row["exclusion_approved"] = row["exclusion_approved"] and row["reviewed_eligible"] and coverage["conflict_free_coverage_verified"]
+        reviewed = sum(row["reviewed_eligible"] for row in report["records"])
+        report.update(reviewed_eligible_rows=reviewed, excluded_rows=len(records) - reviewed,
+                      approved_exclusion_rows=sum(row["exclusion_approved"] for row in report["records"]),
+                      deficit=max(0, TARGET - reviewed), excess=max(0, reviewed - TARGET),
+                      exact_target_pass=reviewed == TARGET and not global_errors and not coverage["errors"],
+                      structural_pass=report["structural_pass"] and not coverage["errors"] and not coverage["conflicts"],
+                      capacity=proposed_capacity([record for record, result in zip(records, report["records"]) if result["reviewed_eligible"]]))
+    return report
 
 
 def release_gate(positive, negative, approval):
@@ -470,23 +507,45 @@ def main():
     parser.add_argument("--protected", type=Path, required=True)
     parser.add_argument("--as-of", type=iso_day, required=True)
     parser.add_argument("--scope-bindings", type=Path)
+    parser.add_argument("--positive-library", type=Path, help="Complete supplied positive master for negative coverage; never the unapproved historical staging intake")
+    parser.add_argument("--coverage-review", type=Path, help="Dated reviewed corpus manifest with exact canonical input hashes")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     inputs = [args.input, args.sources, args.campaigns, args.campaign_context, args.protected]
     if args.scope_bindings:
         inputs.append(args.scope_bindings)
+    if bool(args.positive_library) != bool(args.coverage_review) or args.positive_library and args.kind != "negative":
+        parser.error("--positive-library and --coverage-review are required together for a negative audit")
+    if args.positive_library:
+        inputs.extend([args.positive_library, args.coverage_review])
     try:
         ensure_output_is_not_input(args.output, inputs)
     except ValueError as error:
         parser.error(str(error))
-    report = audit(args.kind, read_records(args.input), load_json(args.sources), load_json(args.campaigns),
-                   load_json(args.campaign_context), load_json(args.protected), args.as_of,
-                   load_json(args.scope_bindings) if args.scope_bindings else None)
     roles = ["records", "sources", "campaigns", "campaign_context", "protected_queries"] + (["scope_bindings"] if args.scope_bindings else [])
-    report["input_sha256"] = {role: {"filename": p.name, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()} for role, p in zip(roles, inputs)}
+    if args.positive_library:
+        roles.extend(["positive_library", "coverage_review"])
+    # Each input is read once. Parsing and raw provenance use identical bytes,
+    # even if an editor changes a file while the audit is running.
+    snapshots = {role: path.read_bytes() for role, path in zip(roles, inputs)}
+    report = audit(args.kind, read_records(args.input, content=snapshots["records"]),
+                   parse_json_bytes(snapshots["sources"]), parse_json_bytes(snapshots["campaigns"]),
+                   parse_json_bytes(snapshots["campaign_context"]), parse_json_bytes(snapshots["protected_queries"]), args.as_of,
+                   parse_json_bytes(snapshots["scope_bindings"]) if args.scope_bindings else None,
+                   read_records(args.positive_library, content=snapshots["positive_library"]) if args.positive_library else None,
+                   parse_json_bytes(snapshots["coverage_review"]) if args.coverage_review else None)
+    report["input_sha256"] = {role: {"filename": p.name, "sha256": hashlib.sha256(snapshots[role]).hexdigest()} for role, p in zip(roles, inputs)}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps({k: v for k, v in report.items() if k not in {"records", "input_sha256", "protected_conflicts"}}, indent=2))
+    summary = {k: v for k, v in report.items() if k not in {"records", "input_sha256", "protected_conflicts", "supplied_library_coverage"}}
+    if "supplied_library_coverage" in report:
+        coverage = report["supplied_library_coverage"]
+        summary["supplied_library_coverage"] = {key: coverage[key] for key in (
+            "status", "evaluation_complete", "conflict_free_coverage_verified", "positive_library_rows",
+            "negative_library_rows", "protected_query_rows", "positives_with_long_tail", "indexed_cases",
+            "applicable_case_pairs", "lexical_comparisons_executed", "pairs_pruned_by_token_index")}
+        summary["supplied_library_coverage"].update(error_count=len(coverage["errors"]), conflict_count=len(coverage["conflicts"]))
+    print(json.dumps(summary, indent=2))
     return 0 if report["structural_pass"] else 1
 
 

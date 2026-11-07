@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bsre:supplied-keyword-coverage:1.0",
+  "title": "Dated review of exact supplied keyword datasets, never deployment approval",
+  "type": "object",
+  "required": ["version", "matcher_version", "coverage_claim", "review_state", "reviewer", "evidence_ref", "reviewed_on", "valid_until", "bindings", "expected_positive_ids", "expected_query_ids", "ad_group_designs"],
+  "properties": {
+    "version": {"const": "1.0"},
+    "matcher_version": {"const": "BSRE_LEXICAL_V1"},
+    "coverage_claim": {"const": "COMPLETE_SUPPLIED_LIBRARY_AND_REVIEWED_CORPUS_ONLY"},
+    "review_state": {"const": "REVIEWED"},
+    "reviewer": {"$ref": "#/$defs/text"},
+    "evidence_ref": {"$ref": "#/$defs/text"},
+    "reviewed_on": {"$ref": "#/$defs/date"},
+    "valid_until": {"$ref": "#/$defs/date"},
+    "bindings": {
+      "type": "object",
+      "required": ["positive_library", "negative_library", "sources", "campaigns", "campaign_context", "protected_queries", "scope_bindings"],
+      "additionalProperties": false,
+      "properties": {
+        "positive_library": {"$ref": "#/$defs/sha256"},
+        "negative_library": {"$ref": "#/$defs/sha256"},
+        "sources": {"$ref": "#/$defs/sha256"},
+        "campaigns": {"$ref": "#/$defs/sha256"},
+        "campaign_context": {"$ref": "#/$defs/sha256"},
+        "protected_queries": {"$ref": "#/$defs/sha256"},
+        "scope_bindings": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "expected_positive_ids": {"$ref": "#/$defs/identities"},
+    "expected_query_ids": {"$ref": "#/$defs/identities"},
+    "ad_group_designs": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["campaign_key", "ad_group_key", "landing_page_id", "reviewer", "evidence_ref", "reviewed_on", "valid_until"],
+        "properties": {
+          "campaign_key": {"$ref": "#/$defs/text"}, "ad_group_key": {"$ref": "#/$defs/text"},
+          "landing_page_id": {"$ref": "#/$defs/text"}, "reviewer": {"$ref": "#/$defs/text"},
+          "evidence_ref": {"$ref": "#/$defs/text"}, "reviewed_on": {"$ref": "#/$defs/date"},
+          "valid_until": {"$ref": "#/$defs/date"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "date": {"type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+    "protected_query_extension": {
+      "description": "These fields extend every research.schema.json protected_query when complete supplied-library coverage is requested. Positive IDs determine exact campaign/service scope; every positive requires at least one LONG_TAIL lexical extension. COUNTEREXAMPLE cases supplement but cannot replace it.",
+      "type": "object",
+      "required": ["positive_ids", "query_kind", "source_id", "source_reference", "review_state", "reviewer"],
+      "properties": {
+        "positive_ids": {"$ref": "#/$defs/identities"},
+        "query_kind": {"enum": ["LONG_TAIL", "COUNTEREXAMPLE"]},
+        "source_id": {"$ref": "#/$defs/text"}, "source_reference": {"$ref": "#/$defs/text"},
+        "review_state": {"const": "REVIEWED"}, "reviewer": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}
