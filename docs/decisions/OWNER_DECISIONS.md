@@ -29,5 +29,8 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 | DEC-05 | [OPEN #5](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/5) | Main-site/shared GA4 migration boundary while preserving legacy tracking |
 | DEC-06 | [OPEN #6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6) | Separate reviewer/execution identity and authorized access needed for remaining audit |
 | DEC-07 | [OPEN #7](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/7) | Identity/location of the cited D1 dossier; original300briefs/640catalogue recovered, but D1 equivalence unverified |
+| DEC-08 | [OPEN #9](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/9) | Isolated native WordPress staging preparation/use; prove outbound/data isolation before any copy; no full production clone assumed |
+
+7 November access update: the owner signed into WordPress and Hostinger. Read-only authenticated installed-plugin/source, main-site hosting, staging and backup inspection succeeded. This resolves DEC-06's sign-in dependency only; it does not nominate a reviewer or authorize staging creation. The installed source view is partial, and backup presence does not establish a tested recovery. See [the deployment readback](../audit/WEBSITE_DEPLOYMENT_READBACK_2026-11-07.json). DEC-08 remains unapproved.
 
 No pending option is approved. Record owner account, exact comment URL, date, chosen option, authorized actions and exclusions when resolved. An answer does not authorize unrelated deployment. See `../audit/INCONSISTENCIES.md` for detailed source reconciliation.
