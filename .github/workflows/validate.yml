@@ -32,3 +32,17 @@ jobs:
           php -l tools/native-wordpress/native-draft-preview.php
           php -l tools/native-wordpress/tests/native-draft-preview-test.php
           php tools/native-wordpress/tests/native-draft-preview-test.php
+      # Site Health on 7 November reports production PHP 8.2.35.
+      # Keep the runner-runtime check above and explicitly cover its 8.2 minor.
+      - name: Select production PHP minor
+        uses: shivammathur/setup-php@ec406be512d7077f68eed36e63f4d91bc006edc4 # 2.35.4
+        with:
+          php-version: '8.2'
+          coverage: none
+      - name: Validate native adapter on production PHP minor
+        run: |
+          php --version
+          php -r 'exit(PHP_MAJOR_VERSION === 8 && PHP_MINOR_VERSION === 2 ? 0 : 1);'
+          php -l tools/native-wordpress/native-draft-preview.php
+          php -l tools/native-wordpress/tests/native-draft-preview-test.php
+          php tools/native-wordpress/tests/native-draft-preview-test.php
