@@ -78,7 +78,8 @@
       "data_source_domain_observed": "lplife.blackswanrealestate.ae",
       "event_setup_observed": "Manual event",
       "owned_site_binding_status": "UNRESOLVED_LEGACY_SOURCE_BINDING",
-      "runtime_acceptance": "NOT_EXECUTED"
+      "runtime_acceptance": "NOT_EXECUTED",
+      "semantic_role_status": "PREVIOUSLY_OBSERVED_DISTINCT_ACTION_NOT_AUTOMATIC_WORDPRESS_TARGET"
     },
     "qualified_lead": {
       "identity_status": "VERIFIED_NATIVE_UI_READBACK",
@@ -111,10 +112,38 @@
       "associated_connections_observed": 0,
       "scheduled_import_acceptance": "NOT_EXECUTED",
       "runtime_acceptance": "NOT_EXECUTED"
+    },
+    "stored_wordpress_accepted_candidate": {
+      "action_id": "7873290954",
+      "name": "BSRE Accepted Enquiry (Secondary)",
+      "conversion_id": "18394393537",
+      "conversion_label": "jLZgCMrFo6odEMHXkMNE",
+      "created_date_display": "10/26/2026",
+      "optimization": "SECONDARY",
+      "count": "ONE",
+      "value_policy_display": "Use different values. If there is no value, use AED0.",
+      "click_through_window_days": 90,
+      "engaged_view_window_days": 3,
+      "view_through_window_days": 1,
+      "attribution_model": "DATA_DRIVEN",
+      "enhanced_conversions": "NOT_CONFIGURED",
+      "data_source_domain_observed": "lplife.blackswanrealestate.ae",
+      "event_setup_observed": "Manual event",
+      "label_matches_wordpress": true,
+      "source_binding_acceptance": "NOT_EXECUTED",
+      "runtime_acceptance": "NOT_EXECUTED",
+      "identity_status": "VERIFIED_NATIVE_UI_READBACK",
+      "observed_date_utc": "2026-11-07",
+      "evidence": {
+        "path": "docs/audit/ACCEPTED_ACTION_BINDING_READBACK_2026-11-07.json",
+        "json_pointer": "/stored_destination_action"
+      },
+      "selection_status": "UNAPPROVED_CANDIDATE_KEEP_RUNTIME_UNASSIGNED"
     }
   },
   "unresolved_gates": [
     "Verify conversion-account ownership separately from the Ads customer ID; do not infer cross-account ownership.",
+    "Select exactly one reviewed accepted-enquiry destination: the WordPress-stored dedicated action and previously observed accepted_enquiry are distinct. Reconcile value policy and source binding; never enable both by inference.",
     "Resolve DEC-05 and the accepted-enquiry legacy lplife source binding without replacing or modifying legacy tags.",
     "Verify real receipt, original/current purpose permission and event-ID compatibility; do not invent or rewrite identifiers to satisfy a prototype.",
     "Complete supported destination deduplication, consent, QA/admin exclusion, CSP and full outgoing-payload acceptance; One counting is not that evidence.",
