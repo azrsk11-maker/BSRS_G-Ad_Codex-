@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "status": "READ_ONLY_FROZEN_BASELINE_NOT_AUTHORIZATION",
+  "observed_date_utc": "2026-11-07",
+  "account_id": "573-038-4686",
+  "preservation_rule": "Keep all old paused campaigns paused and removed campaigns removed; never reactivate them.",
+  "campaigns": [
+    {
+      "id": "24155057422",
+      "name": "BSRE | Search | Australia | Overseas Buyers",
+      "status": "Removed",
+      "average_daily_budget_aed": 200
+    },
+    {
+      "id": "24230718615",
+      "name": "BSRE | PMax | Dubai | Leads",
+      "status": "Removed",
+      "average_daily_budget_aed": 150
+    },
+    {
+      "id": "24236347619",
+      "name": "BSRE | PMax | Dubai | Leads",
+      "status": "Removed",
+      "average_daily_budget_aed": 150
+    },
+    {
+      "id": "24150698534",
+      "name": "BSRE | Search | Germany | Overseas Buyers",
+      "status": "Paused",
+      "average_daily_budget_aed": 76.03
+    },
+    {
+      "id": "24155034442",
+      "name": "BSRE | Search | Dubai | Leads",
+      "status": "Paused",
+      "average_daily_budget_aed": 456.19
+    },
+    {
+      "id": "24155553763",
+      "name": "BSRE | Search | Canada | Overseas Buyers",
+      "status": "Paused",
+      "average_daily_budget_aed": 76.03
+    },
+    {
+      "id": "24155555722",
+      "name": "BSRE | Search | Saudi Arabia | Overseas Buyers",
+      "status": "Paused",
+      "average_daily_budget_aed": 76.03
+    },
+    {
+      "id": "24241801813",
+      "name": "BSRE | PMax | Dubai | Leads",
+      "status": "Paused",
+      "average_daily_budget_aed": 57.02
+    },
+    {
+      "id": "24271138041",
+      "name": "BSRE | Search | Dubai Sales | LP",
+      "status": "Paused",
+      "average_daily_budget_aed": 19.01
+    },
+    {
+      "id": "24271196121",
+      "name": "BSRE | Search | Dubai Buyers",
+      "status": "Paused",
+      "average_daily_budget_aed": 38.02
+    },
+    {
+      "id": "24271198545",
+      "name": "BSRE | Search | International Investors",
+      "status": "Paused",
+      "average_daily_budget_aed": 38.02
+    },
+    {
+      "id": "24271199472",
+      "name": "BSRE | Search | Landlords & Sellers",
+      "status": "Paused",
+      "average_daily_budget_aed": 26.8
+    },
+    {
+      "id": "24276622514",
+      "name": "BSRE | Search | Brand",
+      "status": "Paused",
+      "average_daily_budget_aed": 1.9
+    },
+    {
+      "id": "24282277141",
+      "name": "BSRE | Search | Competitor (Optional)",
+      "status": "Paused",
+      "average_daily_budget_aed": 1.9
+    },
+    {
+      "id": "24315232758",
+      "name": "Leads-Performance Max-5-october",
+      "status": "Paused",
+      "average_daily_budget_aed": 95.04
+    },
+    {
+      "id": "24323098746",
+      "name": "BSRE | Search | Australia | Major Cities",
+      "status": "Paused",
+      "average_daily_budget_aed": 38.01
+    },
+    {
+      "id": "24367388382",
+      "name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+      "status": "Paused",
+      "average_daily_budget_aed": 400
+    },
+    {
+      "id": "24372566774",
+      "name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+      "status": "Paused",
+      "average_daily_budget_aed": 1200
+    },
+    {
+      "id": "24378494092",
+      "name": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+      "status": "Paused",
+      "average_daily_budget_aed": 300
+    },
+    {
+      "id": "24378494098",
+      "name": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+      "status": "Paused",
+      "average_daily_budget_aed": 100
+    }
+  ]
+}
