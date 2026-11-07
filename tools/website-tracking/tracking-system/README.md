@@ -1,0 +1,28 @@
+# Offline tracking contract prototype
+
+This dependency-free Node module is development evidence. It is **not deployed, a Google tag installer, a browser SDK, a production permission authority, or an offline import client**. It makes no network calls, reads no cookie/local storage, changes no website/account, and writes no lead or financial record.
+
+`contract.mjs` supplies:
+
+- An explicit reviewed campaign/page/CTA registry. Unresolved planning rows do not become actual URLs or metadata. Current fixture paths are synthetic planning examples, not published pages.
+- A strict input key allowlist and registry-derived public payload. Names, email, phone, free text, arbitrary URL/referrer/UTM fields and query/hash-bearing URLs are rejected. Private lead/evidence/permission metadata stays internal; a supported opaque transaction ID is sent only in the simulated Ads payload.
+- Independent analytics/advertising permission checks. Unknown, malformed, expired, unverified, ineligible, admin or QA contexts deny measurement. Enquiry intake is outside this module and remains possible without measurement permission.
+- Advertising-only capture of exact `gclid`, `gbraid`, `wbraid` values without granting analytics. The 512-character alphanumeric/underscore/hyphen bound is a conservative local supported-input rule, not a claim about every Google identifier limit. Unsupported values reject; they are never trimmed, lowercased, truncated or fabricated. Captured IDs never enter this prototype's GA4 payload.
+- A legacy `bsre_lead_accepted`/`form_submit` to v3 `form_accepted` adapter requiring durable server-confirmed receipt evidence. It maps once to GA4 `generate_lead`; native Ads accepted-enquiry preparation requires its own reviewed destination and stays Secondary. Retried events cannot upgrade the original analytics, advertising or ad-user-data decision.
+- Specialized CTA normalization, navigation identity for page views, and an atomic in-memory reservation ledger. Same ID/same payload suppresses; same ID/changed payload conflicts. All destination validation happens before reservations. Status is `prepared_only_not_delivered`, never delivery success.
+- Reviewed native Ads route plus supported `transaction_id` mapping requirements. Custom `event_id` is not treated as universal destination deduplication. Google documents duplicate handling for the same conversion action and transaction ID in [Google Ads Help](https://support.google.com/google-ads/answer/6386790).
+- Strict evidence-source requirements for calls/conversations, bookings, qualification, transactions and commission. Browser clicks cannot establish these outcomes. Commercial outcomes remain withheld with `REVIEWED_OFFLINE_ADAPTER_REQUIRED` even with simulated evidence.
+
+Google's [consent setup documentation](https://developers.google.com/tag-platform/security/guides/consent) distinguishes `ad_user_data` from storage permission. This prototype therefore requires both current and originally captured ad-user-data permission before preparing the accepted-enquiry Ads payload. It does not implement Consent Mode, a consent banner, signature verification or Google runtime behavior.
+
+## Required before production use
+
+1. Replace all synthetic fixtures with approved, evidence-backed native registry values; bind stable metadata in the real CMS and preserve public-main-site continuation. The current URL validator deliberately supports only reviewed `/lp/bsre-c####/` and existing `/enquire/` routes; arbitrary main-site path coverage needs a reviewed route registry, not a permissive regex.
+2. Supply cryptographically authenticated server eligibility, actual original/current permissions and durable acceptance. The JavaScript booleans/evidence objects are trusted test inputs, not security proof. Never expose this API as a public acceptance authority.
+3. Reconcile legacy event semantics and old wire-1 receipt fields. The new `original_ad_user_data` requirement and strict `bsre-event-<UUIDv4>` opaque Ads transaction identifier are intentionally not evidence that the deployed receiver already provides these shapes; a reviewed compatible adapter or explicit held state is necessary. Never rewrite or fabricate an existing identifier silently.
+4. Implement durable dispatch/outbox state, concurrency safety, same-ID retry and reconciliation across browser reloads/server restarts. The in-memory ledger resets with the process and cannot establish production GA4 or Ads deduplication. A shared producer identity is required to prevent generic/specialized duplicate clicks; different fabricated IDs cannot be correlated by this prototype.
+5. Use the account's actual verified action/tag configuration, provider-supported dedup field, consent behavior and full-payload diagnostics. Default Google automatic fields, enhanced measurement, referrers, storage and SDK URL handling are not exercised by unit tests. Do not import the same accepted receipt from GA4 as a second Ads action.
+6. Maintain separate GCLID-only qualified-outcome export approval and actual Data Manager capability. This module neither uploads outcomes nor validates finance/qualification records. Names/contact data never belong in its analytics payload.
+7. Complete browser/native/security/recovery acceptance and separate owner authorization before any production write.
+
+Run `node --test tracking-system/contract.test.mjs` from the parent directory. Sixteen tests passed in the combined run recorded in the audit. Fictional IDs such as `G-TESTONLY00` and `AW-999999999/testonly` exist only in unit fixtures; no Google endpoint is called.
