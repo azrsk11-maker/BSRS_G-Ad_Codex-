@@ -104,3 +104,7 @@ Hostinger Staging offers creation, with no existing environment listed. Daily ba
 The native CI job retains its original runner-runtime check and now also selects the observed production PHP8.2 minor with a commit-pinned setup action. It asserts the selected major/minor before lint and the existing isolated17-check harness. This is minor-version development coverage, not exact8.2.35 parity or installed-site acceptance. No new behavior tests or production credentials were added. Current-head CI must pass after upload.
 
 Required local foundation validation passed in6.633136s after these changes; no local PHP runtime is available. The new PHP8.2 native step remains unexecuted until current-head CI runs. This is not production acceptance.
+
+## Complete enquiry source text comparison - 7 November 2026
+
+The [30-member installed-source receipt](audit/INSTALLED_SOURCE_COMPARISON_2026-11-07.json) compares authenticated editor-only copies with the pinned reviewed 0.2.12 package. All 30 expected members were captured: 28 byte-exact; the PHP entry point matches after newline normalization; assets.css omits a leading LF in the editor, resolved by a single public GET matching all target bytes. No file update, lead submission or configuration export occurred. This establishes editor-text/package correspondence, not a host filesystem dump, companion/private-settings review, routing/delivery, retention or runtime conversion acceptance. No independent peer review of this new capture is claimed. Isolated staging remains held under issue9.
