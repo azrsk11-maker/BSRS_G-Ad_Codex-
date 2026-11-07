@@ -39,6 +39,16 @@ Independent review found and prompted repairs to two structural checks: the vali
 
 ## Next independent review work
 
+### Negative candidate recovery — 7 November 2026
+
+The separate [negative staging](../../tools/keyword-system/staging/historical-negative-intake.json) preserves 27 original placements as **nine distinct, unapproved phrases**. Both original members are byte-identical: `campaigns/negative-keywords-candidates.csv` and `full-scope/campaigns/negative-keywords.csv` under `black-swan-implementation/`. Each is 5,532 bytes, SHA256 `3a388e1b46a5e083d07b9f97624618bd889ea2f71753deb21d3866f7f64e3257`.
+
+Original campaign/ad-group, match type, scope, risk, reason and `CANDIDATE ONLY` fields are historical claims, not current approved exclusions. Current mappings and review facts remain null. Reviewed, approved and deployed negatives remain zero; the researched-negative deficit remains 14,000. No prior negative wording is automatically safe to deploy.
+
+The importer pins the original ZIP, both members and canonical original records; it reads/hashes/parses one bounded archive snapshot. Fifteen focused tests and independent review verified counts, mutation rejection, exact staging reproduction and source-preserving output guards. Extra independent hardlink tests passed; Windows denied symlink creation, so that extra path case is not claimed locally. [Validation receipt](../../tools/keyword-system/staging/negative-intake-validation.json). Output SHA256: `740b9e74e0a02ef263807f62a457b1ee7f5fef2caf984f75fca9c031898d8fd4`.
+
+### Current-evidence review
+
 1. Review each original phrase for current Real Estate service/entity relevance, language, grammar and overlap. Source provenance does not establish current demand or inventory.
 2. Collect permitted source evidence with real review dates and expiry rules. Leave unmeasured volume/CPC null; unknown metrics alone are not a reason to invent estimates.
 3. Resolve the new campaign/ad-group/page ownership through the approved crosswalk and existing [owner decision #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1). Do not parse old campaign names into new IDs.
