@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-07",
+  "suite": "test_keyword_audit.py",
+  "interpreter": "Python 3.12.14 via existing jcodemunch venv",
+  "command": "python -B -m unittest -v test_keyword_audit.py",
+  "tests_run": 32,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_seconds_reported_by_unittest": 0.020,
+  "fixture_classification": "SYNTHETIC_ONLY_NOT_RESEARCH_MASTER_OR_PLATFORM_DATA",
+  "production_calls": 0,
+  "deployment_exports": 0,
+  "scope": "Offline validator behavior; not live keyword relevance, complete corpus, source truth or platform acceptance"
+}
