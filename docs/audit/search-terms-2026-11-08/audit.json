@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "scope": "COUNT_ONLY_PRIVATE_HISTORICAL_QUERY_AVAILABILITY_NOT_PERFORMANCE_OR_ADMISSION",
+  "account_id": "573-038-4686",
+  "observed_date_dubai": "2026-11-08",
+  "report_window": {
+    "start": "2026-10-01",
+    "end": "2026-10-31"
+  },
+  "ui_scope": {
+    "campaigns": "ALL",
+    "campaign_status": "ALL",
+    "ad_group_status": "ALL",
+    "table_filters": "NONE"
+  },
+  "source": {
+    "sha256": "2b3a1cc6811e1a285cf7bd09a460aca8bb0ce0175446d016ce7d6494b9ffe305",
+    "bytes": 675640,
+    "private_native_evidence_sha256": "62e9eddbe36f3b2707e3ea1302de448a33543cc32a50836eea3df7a848229984",
+    "private_raw_committed": false
+  },
+  "summary": {
+    "source_rows": 5010,
+    "query_placement_rows": 5005,
+    "distinct_raw_search_terms": 3691,
+    "distinct_normalized_search_terms": 3691,
+    "repeated_raw_query_occurrences": 1314,
+    "repeated_normalized_query_occurrences": 1314,
+    "duplicate_query_placement_rows": 0,
+    "repeated_query_campaign_ad_group_context_rows": 20,
+    "distinct_campaign_labels": 8,
+    "distinct_nonblank_campaign_ad_group_label_pairs": 15,
+    "distinct_campaign_ad_group_label_pairs_including_blank": 16,
+    "distinct_nonblank_ad_group_labels": 13,
+    "blank_ad_group_rows": 131,
+    "footer_rows": 5,
+    "footer_counts": {
+      "Total: Search terms": 1,
+      "Total: Other search terms": 1,
+      "Total: Account": 1,
+      "Total: Search": 1,
+      "Total: Performance Max": 1
+    },
+    "privacy_flagged_records": 1,
+    "manual_disclosure_review_required_records": 5005
+  },
+  "resource_ids_available": false,
+  "source_visibility": {
+    "disclosed_terms_only": true,
+    "all_searches_or_history_proven": false,
+    "other_search_terms_footer_present": true,
+    "undisclosed_term_count": "UNKNOWN"
+  },
+  "lexical_overlap_counts": {
+    "reported_unique_normalized": 3691,
+    "planner_idea_unique_normalized": 7735,
+    "intersection": 74,
+    "reported_only": 3617,
+    "idea_only": 7661,
+    "combined_lexical_union": 11352
+  },
+  "idea_manifest_pins": {
+    "docs/audit/keyword-discovery-2026-11-08/capture.json": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+    "docs/audit/keyword-discovery-supply-2026-11-08/capture.json": "279b71e166ecbb3806af143549a99f559ac7846ffa9396497f266b871a2012a7"
+  },
+  "controls": {
+    "public_disclosure_authorized": false,
+    "deployment_authorized": false,
+    "negative_authorized": false,
+    "qualification_authorized": false,
+    "all_records_require_manual_disclosure_review": true,
+    "unflagged_records_are_not_verified_safe": true,
+    "performance_financial_conversion_cells_retained": false
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "classification_inherited": false,
+  "private_records_committed": false
+}
