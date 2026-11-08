@@ -1,6 +1,7 @@
 /** Offline report calculation only. No imports from live systems, writes or inferred finance policy. */
 const UNKNOWN='UNKNOWN_SOURCE', SCALE=1000000;
 const ID=/^[a-zA-Z][a-zA-Z0-9:_-]{0,100}$/;
+const isIdentifier=value=>typeof value==='string'&&ID.test(value);
 const requiredPolicy={currency:'AED',timezone:'Asia/Dubai',commission_basis:'gross_cash_including_vat',
   refunds_basis:'net_of_vat',cost_basis:'separate_not_already_netted',media_basis:'actual_ads_cost_excluding_vat',
   allocation_model:'explicit_transaction_weights_ppm'};
@@ -12,7 +13,7 @@ const stamp=value=>{
   require(Math.abs(offset)<=14*60&&new Date(parsed+offset*60000).toISOString().slice(0,19)===value.slice(0,19),'INVALID_CALENDAR_DATE');
   return parsed;
 };
-const campaign=value=>{require(value===null||/^BSRE-C\d{4}$/.test(value),'CAMPAIGN_OR_EXPLICIT_UNKNOWN_REQUIRED');return value??UNKNOWN;};
+const campaign=value=>{require(value===null||(typeof value==='string'&&/^BSRE-C\d{4}$/.test(value)),'CAMPAIGN_OR_EXPLICIT_UNKNOWN_REQUIRED');return value??UNKNOWN;};
 function attribution(value,sourceClass=value===null?'unknown':'ads'){
   campaign(value);require(['ads','other','unknown'].includes(sourceClass),'SOURCE_CLASS_REQUIRED');
   require(sourceClass==='ads'||value===null,'NON_ADS_CAMPAIGN_CONFLICT');
@@ -21,7 +22,7 @@ function attribution(value,sourceClass=value===null?'unknown':'ads'){
 const canonical=value=>JSON.stringify(value,(_,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v);
 const amount=value=>{require(Number.isSafeInteger(value)&&value>=0&&value<=1e12,'NONNEGATIVE_MINOR_UNITS_REQUIRED');return value;};
 const add=(a,b)=>{const sum=a+b;require(Number.isSafeInteger(sum),'AGGREGATE_OVERFLOW');return sum;};
-function verified(row){require(row.verified===true&&ID.test(row.source_ref||''),'VERIFIED_SOURCE_REQUIRED');}
+function verified(row){require(row.verified===true&&isIdentifier(row.source_ref),'VERIFIED_SOURCE_REQUIRED');}
 function unique(rows,key){
   const map=new Map();for(const row of rows){const k=key(row);const previous=map.get(k);
     if(previous)require(canonical(previous)===canonical(row),'DUPLICATE_ID_CONFLICT');else map.set(k,row);}
@@ -39,9 +40,9 @@ function allocate(value,weights){
 
 export function commercialReport(input,policy){
   const blockers=[];
-  if(policy?.approved!==true||!ID.test(policy?.approval_ref||''))blockers.push('FINANCE_POLICY_APPROVAL_REQUIRED');
+  if(policy?.approved!==true||!isIdentifier(policy?.approval_ref))blockers.push('FINANCE_POLICY_APPROVAL_REQUIRED');
   for(const [key,value] of Object.entries(requiredPolicy))if(policy?.[key]!==value)blockers.push(`FINANCE_POLICY_${key.toUpperCase()}_REQUIRED`);
-  if(input?.verified_export!==true||!ID.test(input?.source_ref||''))blockers.push('VERIFIED_SANITIZED_EXPORT_REQUIRED');
+  if(input?.verified_export!==true||!isIdentifier(input?.source_ref))blockers.push('VERIFIED_SANITIZED_EXPORT_REQUIRED');
   for(const key of ['spend','transactions','collections','qualifications','opportunities'])if(input?.complete?.[key]!==true)blockers.push(`COMPLETE_${key.toUpperCase()}_SOURCE_REQUIRED`);
   if(blockers.length)return {status:'BLOCKED',blockers,metrics:null,network_calls:0,production_writes:0};
   require(exact(input,['verified_export','source_ref','complete','from','to','spend','transactions','collections','qualifications','opportunities']),'UNKNOWN_INPUT_FIELD');
@@ -54,7 +55,7 @@ export function commercialReport(input,policy){
     allocated_collected_net_revenue_minor:0,allocated_contribution_before_acquisition_minor:0,allocated_nonmedia_acquisition_minor:0,
     allocated_transaction_weight_in_window_ppm:0,allocated_cash_receipt_transaction_weight_ppm:0});return rows.get(key);};
   const transactionMap=new Map();
-  const transactions=unique(input.transactions,row=>{require(ID.test(row.transaction_ref||''),'TRANSACTION_ID_REQUIRED');return row.transaction_ref;});
+  const transactions=unique(input.transactions,row=>{require(isIdentifier(row.transaction_ref),'TRANSACTION_ID_REQUIRED');return row.transaction_ref;});
   for(const row of transactions){
     require(exact(row,['transaction_ref','closed_at','allocations','verified','source_ref']),'UNKNOWN_TRANSACTION_FIELD');verified(row);stamp(row.closed_at);
     require(Array.isArray(row.allocations)&&row.allocations.length>0,'TRANSACTION_ALLOCATION_REQUIRED');const seen=new Set();let sum=0;
@@ -70,7 +71,7 @@ export function commercialReport(input,policy){
     const minor=amount(row.amount_minor);if(inWindow(at)){const target=get(attribution(row.campaign_key,'ads'));target.media_spend_minor=add(target.media_spend_minor,minor);}
   }
   const collectedTransactions=new Set();let collectedNet=0,contribution=0,nonmedia=0;
-  for(const row of unique(input.collections,row=>{require(ID.test(row.record_id||''),'COLLECTION_RECORD_ID_REQUIRED');return row.record_id;})){
+  for(const row of unique(input.collections,row=>{require(isIdentifier(row.record_id),'COLLECTION_RECORD_ID_REQUIRED');return row.record_id;})){
     require(exact(row,['record_id','transaction_ref','collected_at','gross_commission_minor','vat_minor','refund_minor','pass_through_minor',
       'agent_payout_minor','referral_payout_minor','direct_cost_minor','nonmedia_acquisition_minor','verified','source_ref']),'UNKNOWN_COLLECTION_FIELD');verified(row);
     const t=transactionMap.get(row.transaction_ref);require(t,'COLLECTION_TRANSACTION_MISSING');
@@ -88,9 +89,9 @@ export function commercialReport(input,policy){
   }
   for(const ref of collectedTransactions)for(const w of transactionMap.get(ref).allocations)get(attribution(w.campaign_key,w.source_class)).allocated_cash_receipt_transaction_weight_ppm+=w.weight_ppm;
   const persons=new Map(),uncertainPeople=new Set(),earliestVerified=new Map();let unresolved=0,notFirst=0;
-  for(const row of unique(input.qualifications,row=>{require(ID.test(row.record_id||''),'QUALIFICATION_RECORD_ID_REQUIRED');return row.record_id;})){
+  for(const row of unique(input.qualifications,row=>{require(isIdentifier(row.record_id),'QUALIFICATION_RECORD_ID_REQUIRED');return row.record_id;})){
     require(exact(row,['record_id','person_ref','qualified_at','campaign_key','source_class','first_ever_confirmed','history_verified','verified','source_ref']),'UNKNOWN_QUALIFICATION_FIELD');verified(row);
-    require(ID.test(row.person_ref||'')&&typeof row.first_ever_confirmed==='boolean'&&typeof row.history_verified==='boolean','QUALIFICATION_HISTORY_REQUIRED');
+    require(isIdentifier(row.person_ref)&&typeof row.first_ever_confirmed==='boolean'&&typeof row.history_verified==='boolean','QUALIFICATION_HISTORY_REQUIRED');
     const at=stamp(row.qualified_at),sourceKey=attribution(row.campaign_key,row.source_class);
     if(!row.history_verified){unresolved++;uncertainPeople.add(row.person_ref);continue;}
     earliestVerified.set(row.person_ref,Math.min(earliestVerified.get(row.person_ref)??Infinity,at));
@@ -102,9 +103,9 @@ export function commercialReport(input,policy){
     require(stamp(row.qualified_at)===earliestVerified.get(row.person_ref),'EARLIER_QUALIFICATION_CONTRADICTS_FIRST');
     if(!uncertainPeople.has(row.person_ref)&&inWindow(row.qualified_at))get(attribution(row.campaign_key,row.source_class)).first_ever_qualified_people++;
   }
-  for(const row of unique(input.opportunities,row=>{require(ID.test(row.opportunity_ref||''),'OPPORTUNITY_ID_REQUIRED');return row.opportunity_ref;})){
+  for(const row of unique(input.opportunities,row=>{require(isIdentifier(row.opportunity_ref),'OPPORTUNITY_ID_REQUIRED');return row.opportunity_ref;})){
     require(exact(row,['opportunity_ref','person_ref','created_at','campaign_key','source_class','verified','source_ref']),'UNKNOWN_OPPORTUNITY_FIELD');verified(row);
-    require(ID.test(row.person_ref||''),'PERSON_REFERENCE_REQUIRED');const key=attribution(row.campaign_key,row.source_class);if(inWindow(row.created_at))get(key).opportunities++;
+    require(isIdentifier(row.person_ref),'PERSON_REFERENCE_REQUIRED');const key=attribution(row.campaign_key,row.source_class);if(inWindow(row.created_at))get(key).opportunities++;
   }
   const campaigns=[...rows.values()].sort((a,b)=>a.campaign_key.localeCompare(b.campaign_key));
   const qualificationBySource={ads:0,other:0,unknown:0};

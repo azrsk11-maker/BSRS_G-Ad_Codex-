@@ -16,6 +16,24 @@ test('missing approved finance rules and incomplete sources block, never become 
   assert.equal(commercialReport(fixture(),{}).metrics,null);const f=fixture();f.complete.collections=false;
   assert.equal(commercialReport(f,policy).status,'BLOCKED');
 });
+test('array identifiers cannot bypass source verification, attribution or deduplication',()=>{
+  const f=fixture();
+  assert.equal(commercialReport(f,{...policy,approval_ref:[policy.approval_ref]}).status,'BLOCKED');
+  assert.equal(commercialReport({...f,source_ref:[f.source_ref]},policy).status,'BLOCKED');
+  for(const [collection,field,error] of [
+    ['spend','source_ref',/VERIFIED_SOURCE_REQUIRED/],
+    ['spend','campaign_key',/CAMPAIGN_OR_EXPLICIT_UNKNOWN_REQUIRED/],
+    ['collections','record_id',/COLLECTION_RECORD_ID_REQUIRED/],
+    ['qualifications','person_ref',/QUALIFICATION_HISTORY_REQUIRED/],
+    ['opportunities','opportunity_ref',/OPPORTUNITY_ID_REQUIRED/],
+    ['transactions','transaction_ref',/TRANSACTION_ID_REQUIRED/],
+  ]){
+    const input=fixture();
+    const row=input[collection][0];
+    row[field]=[row[field]];
+    assert.throws(()=>commercialReport(input,policy),error);
+  }
+});
 test('commission excludes explicit VAT refund pass-through and separately accounted costs',()=>{
   const r=commercialReport(fixture(),policy);assert.equal(r.totals.collected_net_revenue_minor,98000);
   assert.equal(r.totals.contribution_before_acquisition_minor,51000);
