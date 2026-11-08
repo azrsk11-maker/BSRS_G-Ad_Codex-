@@ -19,17 +19,21 @@ from cryptography.hazmat.primitives.asymmetric import ec
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--chrome", type=Path, required=True, help="Path to an installed Chrome executable")
 parser.add_argument("--withdrawal-outage", action="store_true")
+parser.add_argument("--narrow", action="store_true")
 args = parser.parse_args()
 if not args.chrome.is_file():
     parser.error("--chrome must point to an existing executable")
 root = Path(__file__).resolve().parent
 bridge = (root / "fixtures/bsre-enquiries/assets/consent-bridge.js").read_bytes()
+stylesheet = (root / "fixtures/bsre-enquiries/assets/consent.css").read_bytes()
 scenario = (root / "consent-browser-probe.js").read_bytes()
 fail_withdrawal = args.withdrawal_outage
-html = b'<!doctype html><body><script defer src="/config.js"></script><script defer src="/bridge.js"></script><script defer src="/test.js"></script>'
+html = b'<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/consent.css"><body><script defer src="/config.js"></script><script defer src="/bridge.js"></script><script defer src="/test.js"></script>'
 config = b'window.BSRETrackingConfig={cmpProviderId:"bsre_first_party_v1",consentContextEndpoint:location.origin+"/context",consentUpdateEndpoint:location.origin+"/update"};'
 if fail_withdrawal:
     config += b"window.BSREProbeWithdrawalOutage=true;"
+if args.narrow:
+    config += b"window.BSREProbeNarrow=true;"
 result = {}
 withdrawal_failure_sent = False
 
@@ -42,7 +46,7 @@ class Fixture(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", kind)
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; base-uri 'none'")
+        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'")
         if cookie:
             self.send_header("Set-Cookie", cookie)
         self.end_headers()
@@ -52,6 +56,7 @@ class Fixture(BaseHTTPRequestHandler):
         assets = {"/browser": (html, "text/html"), "/browser-return": (html, "text/html"), "/browser-pending": (html, "text/html"),
                   "/browser-peer": (html, "text/html"),
                   "/config.js": (config, "text/javascript"), "/bridge.js": (bridge, "text/javascript"),
+                  "/consent.css": (stylesheet, "text/css"),
                   "/test.js": (scenario, "text/javascript")}
         if self.path in assets:
             self.send(*assets[self.path])
@@ -110,7 +115,10 @@ with TemporaryDirectory(prefix="bsre-browser-fixture-") as temp:
         command = [str(args.chrome.resolve()), "--headless", "--disable-popup-blocking",
                 f"--user-data-dir={directory / 'profile'}", "--disable-background-networking",
                 "--disable-quic", "--proxy-server=http://127.0.0.1:1", "--no-first-run",
-                f"--ignore-certificate-errors-spki-list={pin}", origin + "/browser"]
+                f"--ignore-certificate-errors-spki-list={pin}"]
+        if args.narrow:
+            command.extend(["--window-size=500,700", "--force-device-scale-factor=1.5"])
+        command.append(origin + "/browser")
         with subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) as browser:
             try:
                 deadline = time.monotonic() + 20

@@ -24,6 +24,18 @@
       check(inputs.length === 2 && inputs.every(input => !input.checked), 'native_dom_defaults_off');
       check(inputs[0].labels[0].textContent.startsWith('Analytics') &&
         inputs[1].labels[0].textContent.startsWith('Ad measurement'), 'separate_labelled_choices');
+      if (window.BSREProbeNarrow) {
+        check(innerWidth <= 500 && matchMedia('(max-width: 760px)').matches, 'narrow_viewport_' + innerWidth);
+        const root = document.getElementById('bsre-consent');
+        const panel = document.getElementById('bsre-consent-panel');
+        check(getComputedStyle(root).position === 'static' && panel.scrollWidth === panel.clientWidth,
+          'narrow_panel_no_horizontal_overflow');
+        const buttons = ['Reject optional measurement', 'Save choices', 'Close preferences'].map(control);
+        const bounds = buttons.map(button => button.getBoundingClientRect());
+        check(bounds.every(rect => rect.height >= 44 && rect.left >= 0 && rect.right <= innerWidth),
+          'narrow_buttons_fit_with_touch_height');
+        check(bounds[0].bottom <= bounds[1].top && bounds[1].bottom <= bounds[2].top, 'narrow_buttons_stack');
+      }
       inputs[1].click();
       const save = control('Save choices');
       save.focus();
