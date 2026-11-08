@@ -56,6 +56,10 @@ check($result['draft_request']['post_parent'] === 10 && $result['actual_url'] ==
 $bad = $manifest; $bad['pages'][1]['landing_page_id'] = $bad['pages'][0]['landing_page_id'];
 rejects(fn() => $preview($bad), 'duplicated');
 $bad = $manifest; $bad['pages'][0]['proposed_path'] = '/lp/../admin/';
+foreach (['google_campaign_id' => '12345678901', 'page_version' => 1] as $field => $value) {
+    $bound = $manifest; $bound['pages'][1][$field] = $value;
+    rejects(fn() => $preview($bound), 'already deployed');
+}
 rejects(fn() => $preview($bad), 'Invalid');
 $bad = $manifest; $bad['native_policy']['post_status'] = 'publish';
 rejects(fn() => $preview($bad), 'draft-only');

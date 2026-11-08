@@ -38,7 +38,8 @@ function preview(array $manifest, string $campaign_key, string $nonce, string $m
             isset($seen_campaigns[$key]) || isset($seen_pages[$landing]) || isset($seen_paths[$path]) ||
             ($page['content_state'] ?? '') !== 'BLOCKED_SOURCE_REQUIRED' ||
             ($page['path_status'] ?? '') !== 'PROPOSED_NOT_VERIFIED' ||
-            ($page['actual_url'] ?? null) !== null || ($page['cms_page_id'] ?? null) !== null) {
+            ($page['actual_url'] ?? null) !== null || ($page['cms_page_id'] ?? null) !== null ||
+            ($page['google_campaign_id'] ?? null) !== null || ($page['page_version'] ?? null) !== null) {
             throw new \RuntimeException('Invalid, duplicated or already deployed page mapping.');
         }
         $seen_campaigns[$key] = true; $seen_pages[$landing] = true; $seen_paths[$path] = true;
