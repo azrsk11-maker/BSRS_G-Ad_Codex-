@@ -48,3 +48,13 @@ The existing lexical matcher found zero exact collisions against the 570 explici
 The eight seeds have zero normalized duplicates in that proposal file (SHA256 `e5e5375f451eb8c92b721105efe8cdadf72d4c9101ddae58e96a66adc9a307e5`). These are lexical diagnostics for the tested corpus. Keep ambiguous valuation, Ejari and rent-index phrases held for intent review. Each master gains zero admitted rows from this batch.
 
 Before release, confirm the responsible reviewer, permitted service remit, accurate page placement and any use of inventory or asset rights. Keep the approved cohort and campaign-level exclusion scope separate from this draft.
+
+## Historical Keyword Planner readback
+
+On 8 November 2026, Real Estate account 573-038-4686 returned all eight submitted phrases in a historical metrics export. The UI showed United Arab Emirates, all languages and Google. The CSV covers 1 October 2025 through 30 September 2026. The research UI automatically saved a Planner plan. No campaign was created or edited.
+
+- Dubai Land Department rental index calculator returned 40 average monthly searches, Low competition and competition index 6. The monthly values were 40, 20, 30, 40, 40, 30, 70, 40, 50, 50, 40 and 20. These are provider estimates for the observed settings.
+- The other seven exact seeds had blank volume, competition and bid fields. Blank values remain unknown. The result does not establish owner acquisition intent or justify excluding the calculator phrase across the account.
+- All eight remain held for business and scope review. Zero approved, deployed or master keyword rows were added.
+
+Private source export is Keyword Stats 2026-11-08 at 22_48_18.csv with SHA256 e9ef5ce0d9da17f0be870171126d020a5aa95f94a5f3a8c95f4721237456797d. Local validation matched all eight keywords against the submitted seeds and confirmed exactly one populated average. The raw export and account-specific columns stay outside the repository.
