@@ -67,3 +67,9 @@ The shared `client-page.mjs` fixture preserves the earlier recovery driver. It s
 ### Firefox experiment
 
 At aa3dd9c, isolated run 42510983081 passed loopback HTTPS, then Firefox ESR reported a denied user-namespace operation and failed to launch its tab subprocess. The experiment used the existing container restrictions and a disposable profile with the loopback certificate. The bridge scenario never executed. Its source is retained in the experiment commit; the required lab retains the verified HTTPS checks while a compatible browser runtime is evaluated.
+
+### Windows Chrome consent bridge probe
+
+A disposable headless Chrome 156.0.8078.79 profile ran the original browser scenario from aa3dd9c against the pinned consent bridge (SHA256 490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993). The 9 November 2026 run returned PASS in one local execution (4.39 seconds command wall time). It exercised real browser DOM rendering, default denial, advertising-only choice, Secure/HttpOnly preference cookies across navigation, synchronous withdrawal, owned storage and cookie clearing, preservation of an unrelated cookie, and denial after refresh.
+
+The HTTPS endpoint was loopback-only. It used an ephemeral key with a Chrome process-scoped SPKI pin, a page policy limiting connections to the same origin, and an unavailable loopback proxy for external destinations. The ordinary browser profile and OS trust store were untouched. The fixture simulated consent responses, so this verifies the bridge's browser behavior, separately from the native PHP/WordPress tests. It does not establish browser-to-WordPress or Google acceptance or kernel-level isolation of the Windows host.
