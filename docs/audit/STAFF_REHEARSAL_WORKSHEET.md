@@ -13,7 +13,7 @@ Use this worksheet with [staff readiness issue #4](https://github.com/azrsk11-ma
 | 14:45–14:55 | Simulate a failed import, privacy request and uncovered absence. | Who acts, when the backlog becomes unmanageable, how a pause would be requested and when coverage resumes. |
 | 14:55–15:00 | Record results and unresolved failures. | Owner review reference and explicit pass or hold for the rehearsal. |
 
-For each synthetic case, keep a private row with the case key, ready time, first contact attempt, staff completion, hands-on minutes, outcome and any rework. Use Dubai local time. Record each missed 30-minute first-contact target separately. Publish only aggregates and review references, without contact details or production record IDs.
+For each synthetic case, keep a private row with the case key, accepted time, assignment time, first documented outreach attempt, successful contact time if any, staff completion, hands-on minutes, outcome and any rework. Use Dubai local time. Measure the 30-minute response target from acceptance to the first documented call or message attempt, counting only staffed minutes. Record successful contact separately. An unanswered attempt cannot establish contactability or qualification. Report any late or missing attempt separately and publish only aggregates and review references, without contact details or production record IDs.
 
 ## Verify operating capacity separately
 
