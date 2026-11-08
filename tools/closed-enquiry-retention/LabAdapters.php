@@ -1,0 +1,197 @@
+<?php
+declare(strict_types=1);
+namespace BSRE\ClosedRetention;
+require_once __DIR__ . '/Workflow.php';
+
+/** All provider mutations below affect only explicitly supplied synthetic arrays. */
+final class MemoryResource implements ResourceAdapter
+{
+    public array $rows;
+    public int $deletes = 0;
+    public $afterDelete = null;
+    public $beforeDelete = null;
+    public function __construct(array $rows) { $this->rows = $rows; }
+    public function inventory(string $requestId): array
+    {
+        return array_values(array_filter($this->rows, fn($row) => $row['request_id'] === $requestId));
+    }
+    public function read(string $key): ?array { return $this->rows[$key] ?? null; }
+    public function removeExact(array $binding): void
+    {
+        if ($this->beforeDelete) ($this->beforeDelete)($this, $binding);
+        $actual = $this->rows[$binding['key']] ?? null;
+        if ($actual === null || Workflow::digest($actual) !== Workflow::digest($binding)) throw new \RuntimeException('Synthetic compare failed');
+        unset($this->rows[$binding['key']]);
+        $this->deletes++;
+        if ($this->afterDelete) ($this->afterDelete)($this, $binding);
+    }
+}
+
+final class LabAuthority implements Authority
+{
+    public ?string $approved = null;
+    public array $actions = ['PURGE'];
+    public array $receipts = [];
+    public $afterManualMail = null;
+    public function canReview(string $actor): bool { return $actor === 'synthetic-owner'; }
+    public function canApply(string $actor, string $planDigest, int $now, string $action): bool
+    {
+        return $this->canReview($actor) && in_array($action, $this->actions, true)
+            && $this->approved !== null && hash_equals($this->approved, $planDigest);
+    }
+    public function mailReceipt(string $actor, string $planDigest, string $messageId): ?array
+    {
+        return $this->canReview($actor) ? ($this->receipts[$planDigest][$messageId] ?? null) : null;
+    }
+}
+
+final class MemoryJournal implements Journal
+{
+    public array $closures = [];
+    public array $journals = [];
+    public bool $incomplete = false;
+    public bool $markerFails = false;
+    public int $expiredUnresolved = 0;
+    public ?string $floor = null;
+    public $beforeSave = null;
+    private array $locks = [];
+    public function locked(string $closureId, callable $operation)
+    {
+        if (isset($this->locks[$closureId])) throw new \RuntimeException('Synthetic lock busy');
+        $this->locks[$closureId] = true;
+        try { return $operation(); } finally { unset($this->locks[$closureId]); }
+    }
+    public function closure(string $closureId): ?array { return $this->closures[$closureId] ?? null; }
+    public function journal(string $planId): ?array { return $this->journals[$planId] ?? null; }
+    public function save(array &$record): void
+    {
+        if ($this->beforeSave) ($this->beforeSave)($this, $record);
+        $old = $this->journals[$record['plan']['digest']] ?? null;
+        if ($record['revision'] !== ($old['revision'] ?? 0)) throw new \RuntimeException('JOURNAL_REVISION_CONFLICT');
+        $record['revision']++;
+        $this->journals[$record['plan']['digest']] = $record;
+    }
+    public function markHistoryIncomplete(): void { if (!$this->markerFails) $this->incomplete = true; }
+    public function historyIncomplete(): bool { return $this->incomplete; }
+    public function pinAdmissionFloor(string $policyHash): void { $this->floor ??= $policyHash; }
+    public function admissionFloor(): ?string { return $this->floor; }
+    public function forget(string $closureId, string $planId, bool $keepClosure = false): void
+    {
+        unset($this->journals[$planId]);
+        if ($keepClosure) $this->expiredUnresolved++;
+        else unset($this->closures[$closureId]);
+    }
+}
+
+/** Explicit synthetic readback, with no production enforcement claim. */
+final class LabAdmission implements Admission
+{
+    public array $value;
+    public function __construct(int $now)
+    {
+        $gate = ['contract' => 'bsre-retention-admission-v1', 'mode' => 'ENFORCED',
+            'generation' => str_repeat('a', 64), 'activated_at' => $now - 1000,
+            'max_age_seconds' => 900, 'audience' => str_repeat('b', 64)];
+        $this->value = ['wp' => $gate + ['routes_installed' => true, 'store_installed' => true], 'receiver' => $gate,
+            'source_hashes' => ['wp' => str_repeat('c', 64), 'receiver' => str_repeat('d', 64)],
+            'restore_policy_hash' => str_repeat('f', 64),
+            'evidence_reference' => 'synthetic-runtime-only', 'evidence_hash' => str_repeat('e', 64),
+            'observed_at' => $now, 'expires_at' => $now + 300];
+    }
+    public function readback(int $now): ?array { return $this->value; }
+    public function refresh(int $now): void { $this->value['observed_at'] = $now; $this->value['expires_at'] = $now + 300; }
+}
+
+/** MariaDB journal with committed intents and a connection-owned closure lease. */
+final class LabSqlJournal implements Journal
+{
+    private $db;
+    private string $prefix;
+    private array $leases = [];
+    public function __construct($db)
+    {
+        if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
+            || wp_get_environment_type() !== 'local' || home_url() !== 'http://bsre.invalid'
+            || $db->prefix !== 'closed_retention_synthetic_') throw new \RuntimeException('ISOLATED_LAB_ONLY');
+        $this->db = $db;
+        $this->prefix = $db->prefix;
+    }
+    public function install(): void
+    {
+        foreach (['closures' => 'id char(36) PRIMARY KEY, body mediumtext NOT NULL',
+            'jobs' => 'id char(64) PRIMARY KEY, revision bigint unsigned NOT NULL, body mediumtext NOT NULL',
+            'meta' => 'id tinyint PRIMARY KEY, incomplete tinyint NOT NULL, expired_unresolved bigint unsigned NOT NULL, admission_floor char(64) NULL'] as $name => $columns) {
+            $this->query("CREATE TABLE IF NOT EXISTS {$this->prefix}{$name} ($columns) ENGINE=InnoDB");
+        }
+        $this->query("INSERT IGNORE INTO {$this->prefix}meta VALUES (1,0,0,NULL)");
+    }
+    public function locked(string $closureId, callable $operation)
+    {
+        $name = 'bsre-closed-' . substr(hash('sha256', $closureId), 0, 40);
+        if (isset($this->leases[$closureId])) throw new \RuntimeException('CLOSURE_LEASE_BUSY');
+        $result = $this->db->get_var($this->db->prepare('SELECT GET_LOCK(%s,0)', $name));
+        if ((string) $result !== '1') throw new \RuntimeException('CLOSURE_LEASE_BUSY');
+        $this->leases[$closureId] = true;
+        try { return $operation(); }
+        finally { unset($this->leases[$closureId]); $this->db->get_var($this->db->prepare('SELECT RELEASE_LOCK(%s)', $name)); }
+    }
+    public function putClosure(array $closure): void
+    {
+        $this->locked($closure['closure_id'], function () use ($closure) {
+            $old = $this->closure($closure['closure_id']);
+            if ($old !== null && $closure['revision'] !== $old['revision'] + 1) throw new \RuntimeException('CLOSURE_REVISION_CONFLICT');
+            $this->query($this->db->prepare("INSERT INTO {$this->prefix}closures VALUES (%s,%s) ON DUPLICATE KEY UPDATE body=VALUES(body)",
+                $closure['closure_id'], json_encode($closure, JSON_THROW_ON_ERROR)));
+        });
+    }
+    public function closure(string $closureId): ?array { return $this->read('closures', $closureId); }
+    public function journal(string $planId): ?array { return $this->read('jobs', $planId); }
+    public function save(array &$record): void
+    {
+        if (!isset($this->leases[$record['plan']['closure_id']])) throw new \RuntimeException('CLOSURE_LEASE_REQUIRED');
+        $next = $record;
+        $next['revision']++;
+        $json = json_encode($next, JSON_THROW_ON_ERROR);
+        if ($record['revision'] === 0) {
+            $query = $this->db->prepare("INSERT IGNORE INTO {$this->prefix}jobs VALUES (%s,%d,%s)", $record['plan']['digest'], 1, $json);
+        } else {
+            $query = $this->db->prepare("UPDATE {$this->prefix}jobs SET revision=%d,body=%s WHERE id=%s AND revision=%d",
+                $next['revision'], $json, $record['plan']['digest'], $record['revision']);
+        }
+        if ($this->db->query($query) !== 1 || $this->journal($record['plan']['digest']) !== $next) throw new \RuntimeException('JOURNAL_REVISION_OR_STORAGE_CONFLICT');
+        $record = $next;
+    }
+    public function markHistoryIncomplete(): void { $this->query("UPDATE {$this->prefix}meta SET incomplete=1 WHERE id=1"); }
+    public function historyIncomplete(): bool { return (string) $this->db->get_var("SELECT incomplete FROM {$this->prefix}meta WHERE id=1") === '1'; }
+    public function pinAdmissionFloor(string $policyHash): void
+    {
+        $this->query($this->db->prepare("UPDATE {$this->prefix}meta SET admission_floor=%s WHERE id=1 AND admission_floor IS NULL", $policyHash));
+    }
+    public function admissionFloor(): ?string
+    {
+        return $this->db->get_var("SELECT admission_floor FROM {$this->prefix}meta WHERE id=1");
+    }
+    public function forget(string $closureId, string $planId, bool $keepClosure = false): void
+    {
+        $this->query('START TRANSACTION');
+        try {
+            $this->query($this->db->prepare("DELETE FROM {$this->prefix}jobs WHERE id=%s", $planId));
+            if ($keepClosure) $this->query("UPDATE {$this->prefix}meta SET expired_unresolved=expired_unresolved+1 WHERE id=1");
+            else $this->query($this->db->prepare("DELETE FROM {$this->prefix}closures WHERE id=%s", $closureId));
+            $this->query('COMMIT');
+        } catch (\Throwable $error) { $this->db->query('ROLLBACK'); throw $error; }
+    }
+    private function read(string $table, string $id): ?array
+    {
+        $this->db->last_error = '';
+        $raw = $this->db->get_var($this->db->prepare("SELECT body FROM {$this->prefix}{$table} WHERE id=%s", $id));
+        if ($this->db->last_error !== '') throw new \RuntimeException('JOURNAL_STORAGE_FAILED');
+        if ($raw === null) return null;
+        if (!is_string($raw) || strlen($raw) > 262144) throw new \RuntimeException('JOURNAL_INVALID');
+        return json_decode($raw, true, 32, JSON_THROW_ON_ERROR);
+    }
+    private function query(string $sql): void
+    {
+        if ($this->db->query($sql) === false) throw new \RuntimeException('JOURNAL_STORAGE_FAILED');
+    }
+}

@@ -29,6 +29,7 @@ COPY tools/staging-lab/purpose-client-interop.php tools/staging-lab/purpose-clie
 COPY tools/staging-lab/purpose-concurrency.php /opt/lab/
 COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs tools/website-tracking/tracking-system/retention-admission-bridge.mjs tools/website-tracking/tracking-system/retention-admission-client.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/retention-admission.test.php tools/website-tracking/tracking-system/retention-admission-native.php /opt/lab/retention-admission/
+COPY tools/closed-enquiry-retention /opt/lab/closed-enquiry-retention
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
