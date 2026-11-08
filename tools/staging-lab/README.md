@@ -63,3 +63,7 @@ A second run of `client-interop.php --upstream` uses the source-pinned receipt-s
 The harness checks original decision headers, exact permitted attribution, current service destinations, stored consent/click evidence, raw WordPress and normalized receiver fingerprints, receipt identity, destination payload privacy and duplicate submission suppression. It also withdraws and regrants through the actual consent API, preserving the original capture and blocking its old export. Local consent-evidence eligibility is distinct from a genuine qualified Google import.
 
 The shared `client-page.mjs` fixture preserves the earlier recovery driver. It simulates DOM, storage, the bridge snapshot and provider sinks. The PHP harness seeds an anonymous intake cookie because there is no browser cookie jar, and supplies a mature synthetic challenge to avoid twenty timing sleeps. Native browser cookie/consent-bridge behavior, challenge timing and live Google acceptance remain outside this run. No measurement network destination or real business record is used.
+
+### Firefox experiment
+
+At aa3dd9c, isolated run 42510983081 passed loopback HTTPS, then Firefox ESR reported a denied user-namespace operation and failed to launch its tab subprocess. The experiment used the existing container restrictions and a disposable profile with the loopback certificate. The bridge scenario never executed. Its source is retained in the experiment commit; the required lab retains the verified HTTPS checks while a compatible browser runtime is evaluated.
