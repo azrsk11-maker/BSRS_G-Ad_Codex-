@@ -5,6 +5,8 @@ $_SERVER['HTTPS'] = 'on'; $_SERVER['SERVER_PORT'] = '443';
 $_SERVER['REQUEST_METHOD'] = 'POST';
 require '/opt/wordpress/wp-load.php';
 require '/opt/lab/consent-retention/LinkageReconciliation.php';
+require '/opt/lab/receipt-recovery/receipt-recovery-wordpress.php';
+add_action('rest_api_init', 'BSRE\\ReceiptRecovery\\register_routes');
 add_filter('home_url', fn($url, $path) => 'https://blackswanrealestate.ae' . ($path === '' ? '' : '/' . ltrim($path, '/')), 10, 2);
 $checks = []; $calls = 0; $lose_ack = false; $last_receipt = null;
 function receive_check(string $name, bool $ok): void {
@@ -66,11 +68,32 @@ foreach (E\SERVICES as $slug => $service) {
  receive_check($slug . '_same_receipt', $retry->get_data()['lead_id'] === $accepted->get_data()['lead_id']);
 }
 $_SERVER['REMOTE_ADDR'] = '198.51.100.199'; $_COOKIE = [E\COOKIE => bin2hex(random_bytes(32))];
-$p['request_id'] = wp_generate_uuid4(); $requestIds[] = $p['request_id']; $raw = wp_json_encode($p); $lose_ack = true;
+$previousRequest = $p['request_id'];
+$lose_ack = true;
+function receipt_recovery_request(string $operation, string $body): WP_REST_Response {
+    $request = new WP_REST_Request('POST', '/bsre/v1/receipt-recovery/' . $operation);
+    foreach (['origin' => 'https://blackswanrealestate.ae', 'content-type' => 'application/json', 'sec-fetch-site' => 'same-origin',
+        'x-bsre-csrf' => E\csrf_token($_COOKIE[E\COOKIE], time() - 3, wp_salt('auth'))] as $key => $value) $request->set_header($key, $value);
+    $request->set_body($body);
+    return rest_do_request($request);
+}
+$mint = receipt_recovery_request('proof', '{}');
+receive_check('recovery_mints_new_request', $mint->get_status() === 200 && $mint->get_data()['request_id'] !== $previousRequest);
+$p['request_id'] = $mint->get_data()['request_id'];
+$requestIds[] = $p['request_id'];
+$raw = wp_json_encode($p);
+$recoveryBody = wp_json_encode(['proof' => $mint->get_data()['proof']]);
+receive_check('recovery_cannot_mint_for_existing_request', receipt_recovery_request('proof', wp_json_encode(['request_id' => $p['request_id']]))->get_status() === 400);
 $lost = submit_synthetic($raw); $stored_receipt = $last_receipt;
 receive_check('lost_ack_retryable', $lost->get_status() === 503 && $lost->get_data()['retryable'] === true);
+receive_check('recovery_holds_unlinked_delivery', receipt_recovery_request('status', $recoveryBody)->get_data() === ['status' => 'UNCONFIRMED']);
 $recovered = submit_synthetic($raw);
 receive_check('durable_receipt_reused', $recovered->get_status() === 200 && $recovered->get_data()['lead_id'] === $stored_receipt['lead_id']);
+$callsBeforeRecovery = $calls;
+receive_check('recovery_reads_linked_receipt_only', receipt_recovery_request('status', $recoveryBody)->get_data() === ['status' => 'ACCEPTED', 'reference' => $stored_receipt['lead_id']]);
+$_COOKIE[E\COOKIE] = bin2hex(random_bytes(32));
+receive_check('recovery_denies_other_session', receipt_recovery_request('status', $recoveryBody)->get_data() === ['status' => 'UNCONFIRMED']);
+receive_check('recovery_does_not_call_receiver', $calls === $callsBeforeRecovery);
 $state = receiver_bridge(['op'=>'outbox']);
 receive_check('outbox_batch_cap', count($state['mail']) === 5);
 $state = receiver_bridge(['op'=>'outbox']);
