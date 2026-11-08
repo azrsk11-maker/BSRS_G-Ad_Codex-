@@ -41,7 +41,7 @@ The current candidate requires SENT plus exact message bindings. Confirmed-never
 
 Run `php -n tools/closed-enquiry-retention/test_workflow.php` with the verified PHP8.2 binary. Forty-five focused checks cover calendar limits, default holds, exact approval, malformed/stale/shared bindings, outbox ambiguity, owner action/receipt/independent absence, interrupted deletes, fresh same-configuration readback, nonidentifying policy floor, direct mailbox binding conflicts, last-step reopening, history flags, corrupt journals and thirty-day cleanup.
 
-The native harness is `native-test.php`, copied with this directory to `/opt/lab/closed-enquiry-retention/` and run after the existing WordPress bootstrap. It uses real MariaDB for durable intent, a fresh-connection resume, closure lease, CAS conflict and cleanup checks. Resource deletion stays in synthetic memory adapters. Native execution is pending until the parent records the current-head CI result.
+The native harness is `native-test.php`, copied with this directory to `/opt/lab/closed-enquiry-retention/` and run after the existing WordPress bootstrap. At3181639 it passed12checks using realMariaDB for durableintent, freshconnectionresume, closurelease, CASconflict andcleanup, alongside45purecontractchecks. Resource deletion stays in synthetic memory adapters. Evidence is `../../docs/audit/CLOSED_RETENTION_LAB_2026-11-08.json`; liveprovider andproduction acceptance remain open.
 
 ## Policy provenance
 
