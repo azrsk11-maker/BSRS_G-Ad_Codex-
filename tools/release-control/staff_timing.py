@@ -4,7 +4,7 @@ from datetime import timedelta, timezone
 import json
 from pathlib import Path
 
-from release_packet import instant
+from release_packet import instant, load_json
 
 DUBAI = timezone(timedelta(hours=4))
 SHIFT_START = 10 * 3600
@@ -61,11 +61,7 @@ def main():
     parser.add_argument("evidence", type=Path)
     args = parser.parse_args()
     try:
-        with args.evidence.open("rb") as stream:
-            raw = stream.read(2_000_001)
-        if len(raw) > 2_000_000:
-            raise ValueError("Evidence too large")
-        result = summarize(json.loads(raw))
+        result = summarize(load_json(args.evidence))
     except (OSError, ValueError, TypeError, OverflowError):
         print(json.dumps({"error": "INVALID_PRIVATE_TIMING_EVIDENCE"}))
         return 2
