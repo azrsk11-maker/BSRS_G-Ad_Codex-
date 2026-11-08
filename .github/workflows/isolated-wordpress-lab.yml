@@ -6,6 +6,7 @@ on:
       - '.github/workflows/isolated-wordpress-lab.yml'
       - 'tools/staging-lab/**'
       - 'tools/consent-retention/**'
+      - 'tools/recovery-package/**'
       - 'tools/native-wordpress/**'
 permissions:
   contents: read
