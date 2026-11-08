@@ -392,7 +392,9 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                 need(type(capacity.get("peak_first_contact_sample_count")) is int and
                      capacity["peak_first_contact_sample_count"] > 0 and
                      type(capacity.get("peak_first_contact_max_seconds")) is int and
-                     0 <= capacity["peak_first_contact_max_seconds"] <= 1800,
+                     0 <= capacity["peak_first_contact_max_seconds"] <= 1800 and
+                     all(type(capacity.get(key)) is int and capacity[key] == 0
+                         for key in ("missing_first_attempt_count", "late_first_attempt_count")),
                      "PEAK_FIRST_CONTACT_EVIDENCE_WITHIN_30_MINUTES_REQUIRED")
         review = packet["review"]
         need(isinstance(review, dict) and review.get("commit") == commit and review.get("repository") == REPO and match(LOGIN, review.get("approver")) and review.get("approver", "").lower() != proposal["pusher"].lower() and review.get("state") == "APPROVED", "INDEPENDENT_EXACT_HEAD_REVIEW_REQUIRED")

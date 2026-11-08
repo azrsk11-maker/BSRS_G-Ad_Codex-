@@ -101,6 +101,7 @@ class ReleasePacketTests(unittest.TestCase):
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
                     "measured_daily_capacity": 100, "reviewed_launch_daily_load": 90,
                     "peak_first_contact_sample_count": 15, "peak_first_contact_max_seconds": 1800,
+                    "missing_first_attempt_count": 0, "late_first_attempt_count": 0,
                     "coverage": "DAILY_10:00_19:00_Asia/Dubai",
                     "pause_on_absence_or_unmanageable_backlog": True,
                 })
@@ -381,7 +382,8 @@ class ReleasePacketTests(unittest.TestCase):
 
     def test_activation_requires_observed_peak_first_contact_within_target(self):
         for changes in ({"peak_first_contact_sample_count": 0}, {"peak_first_contact_max_seconds": 1801},
-                        {"peak_first_contact_max_seconds": None}, {"peak_first_contact_max_seconds": False}):
+                        {"peak_first_contact_max_seconds": None}, {"peak_first_contact_max_seconds": False},
+                        {"missing_first_attempt_count": 1}, {"late_first_attempt_count": 1}):
             with self.subTest(changes=changes):
                 packet = self.fixture("ADS_ACTIVATION")
                 evidence = next(e for e in packet["evidence"] if e["gate_id"] == "STAFF_CAPACITY")
