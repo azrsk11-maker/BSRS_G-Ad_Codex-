@@ -50,6 +50,8 @@ final class RetirementLedger {
     }
     public function record(array $snapshot,array $plan,int $now,array $ledger): array {
         $anchor=$ledger['anchor']; $planHash=hash('sha256',json_encode($plan,JSON_THROW_ON_ERROR));
+        $pending=count(array_filter($snapshot['history'],fn($row)=>in_array('bsre_consent_history:'.$row['receipt'],$plan['eligible'],true)));
+        if ($anchor['sequence']+$pending>1000) throw new \RuntimeException('LEDGER_CAPACITY_EXCEEDED');
         foreach($snapshot['history'] as $history) {
             if (!in_array('bsre_consent_history:'.$history['receipt'],$plan['eligible'],true)) continue;
             $row=['sequence_no'=>++$anchor['sequence'],'previous_hash'=>$anchor['hash'],'subject_key'=>$history['subject_key'],'receipt'=>$history['receipt'],'revision'=>(int)$history['revision'],'row_hash'=>self::rowHash($history),'retired_at'=>$now,'expires_at'=>$now+2592000,'plan_hash'=>$planHash];
