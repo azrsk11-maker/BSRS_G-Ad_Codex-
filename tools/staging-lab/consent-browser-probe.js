@@ -9,22 +9,42 @@
     }
     check(predicate(), name);
   }
+  function control(label) {
+    const button = [...document.querySelectorAll('#bsre-consent button')].find(node => node.textContent === label);
+    check(button, 'missing_control_' + label);
+    return button;
+  }
   try {
     check(window.isSecureContext && location.protocol === 'https:', 'secure_context');
     check(await bridge.refresh(), 'context_request');
     if (location.pathname === '/browser-peer') return;
     if (location.pathname === '/browser') {
       check(!bridge.getSnapshot().known && denied(), 'fresh_default_denied');
-      check(document.querySelectorAll('#bsre-consent input[type=checkbox]').length === 2, 'native_dom');
-      check(await bridge.save({analytics: false, ad_measurement: true, personalization: false}), 'advertising_choice');
+      const inputs = [...document.querySelectorAll('#bsre-consent input[type=checkbox]')];
+      check(inputs.length === 2 && inputs.every(input => !input.checked), 'native_dom_defaults_off');
+      check(inputs[0].labels[0].textContent.startsWith('Analytics') &&
+        inputs[1].labels[0].textContent.startsWith('Ad measurement'), 'separate_labelled_choices');
+      inputs[1].click();
+      const save = control('Save choices');
+      save.focus();
+      save.click();
+      await eventually(() => bridge.permissions().advertising && !bridge.isPending(), 'advertising_choice');
       check(bridge.permissions().advertising && !bridge.permissions().analytics, 'purpose_separation');
+      const toggle = control('Measurement preferences');
+      check(document.activeElement === toggle && toggle.getAttribute('aria-expanded') === 'false', 'save_restores_toggle_focus');
+      toggle.click();
+      const heading = document.getElementById('bsre-consent-heading');
+      check(document.activeElement === heading && toggle.getAttribute('aria-expanded') === 'true', 'open_focuses_heading');
+      heading.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', bubbles: true}));
+      check(document.activeElement === toggle && toggle.getAttribute('aria-expanded') === 'false', 'escape_restores_toggle_focus');
       location.replace('/browser-return');
       return;
     }
     if (location.pathname === '/browser-pending') {
       check(denied() && bridge.isPending(), 'pending_denial_survives_reload');
       check(!bridge.measurementEligible(), 'pending_not_eligible');
-      check(await bridge.save({analytics: false, ad_measurement: false, personalization: false}), 'retry_acknowledged');
+      control('Reject optional measurement').click();
+      await eventually(() => denied() && !bridge.isPending(), 'retry_acknowledged');
       check(denied() && !bridge.isPending(), 'retry_stays_denied');
       await fetch('/browser-result', {method: 'POST', body: JSON.stringify({status: 'PASS'})});
       return;

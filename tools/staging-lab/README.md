@@ -86,3 +86,5 @@ python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>' --w
 Both commands must return PASS. The fixture is optional and uses no account profile. The isolated WordPress job remains separate.
 
 Both cases also verify that a separate same-origin Chrome tab starts with the acknowledged advertising grant and stops measurement when the first tab withdraws. The second tab clears its own advertising session storage and preserves unrelated storage. Under HTTP 503 it stays pending and denied. Both scenarios passed in 6.47 seconds combined in the disposable profile. Live backend behavior remains outside this check.
+
+The probe exercises the rendered checkboxes and Save choices button, checks their labels and default states, and verifies focus when preferences open, save or close on a dispatched Escape event. It uses the rendered Reject button for the outage retry. Both scenarios passed with these assertions in 7.07 seconds combined. This checks DOM behavior without certifying physical keyboard navigation or mobile layout.
