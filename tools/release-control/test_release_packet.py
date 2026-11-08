@@ -226,6 +226,11 @@ class ReleasePacketTests(unittest.TestCase):
         self.assertIn("INDEPENDENT_EXACT_HEAD_REVIEW_REQUIRED", errors)
         self.assertIn("EXACT_HEAD_REQUIRED_CHECKS", errors)
 
+    def test_release_requires_isolated_wordpress_on_the_reviewed_head(self):
+        checks = self.packet["review"]["checks"]
+        checks[:] = [row for row in checks if row["name"] != "isolated-native-wordpress"]
+        self.assertIn("EXACT_HEAD_REQUIRED_CHECKS", self.check()["errors"])
+
     def test_owner_decisions_must_exist_and_match(self):
         self.packet["decisions"].pop()
         self.packet["decisions"][0]["owner"] = "someone-else"
