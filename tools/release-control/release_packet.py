@@ -205,6 +205,9 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                     expected_url = next(r["url"] for r in resources if r["campaign_id"] == campaign_id)
                     need(after_row.get("final_url") == expected_url and digest(after_row.get("settings")) == digest(ADS_SAFE_SETTINGS), "ADS_AFTER_STATE_CONTRADICTS_SCOPE")
                     need(type(after_row.get("max_cpc_fils")) is int and after_row["max_cpc_fils"] == (500 if campaign_id == "24378494098" else 2000), "APPROVED_CPC_LIMIT_REQUIRED")
+                    if proposal["kind"] == "ADS_ACTIVATION":
+                        need(digest({**before, "status": "ENABLED"}) == digest(after_row),
+                             "ACTIVATION_MAY_CHANGE_ONLY_CAMPAIGN_STATUS")
                 else:
                     need(before == after_row, "OUT_OF_SCOPE_CAMPAIGN_CHANGE")
         rollback = proposal["rollback"]

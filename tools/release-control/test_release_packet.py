@@ -50,11 +50,13 @@ class ReleasePacketTests(unittest.TestCase):
                 "campaign_budgets": [{"campaign_id": r["campaign_id"], "average_daily_fils": LAUNCH_BUDGET_FILS[r["campaign_id"]]} for r in resources]}
             old = [{"id": identity, "status": status} for identity, status in frozen_legacy_statuses().items()]
             before = {"account": ACCOUNT, "observed_at_utc": "2026-11-07T02:00:00Z", "campaigns": old + [{"id": r["campaign_id"], "status": "PAUSED", "average_daily_fils": LAUNCH_BUDGET_FILS[r["campaign_id"]]} for r in resources]}
-            after = copy.deepcopy(before)
-            for row in after["campaigns"]:
+            for row in before["campaigns"]:
                 if row["id"] in CURRENT_CAMPAIGNS:
                     row.update({"final_url": next(r["url"] for r in resources if r["campaign_id"] == row["id"]), "settings": copy.deepcopy(ADS_SAFE_SETTINGS), "max_cpc_fils": 500 if row["id"] == "24378494098" else 2000})
-                    if kind == "ADS_ACTIVATION":
+            after = copy.deepcopy(before)
+            if kind == "ADS_ACTIVATION":
+                for row in after["campaigns"]:
+                    if row["id"] in CURRENT_CAMPAIGNS:
                         row["status"] = "ENABLED"
             proposal["change"] = {"before_state": self.write("scope/before.json", before), "after_state": self.write("scope/after.json", after)}
         elif kind == "TRACKING_PUBLICATION":
@@ -257,6 +259,15 @@ class ReleasePacketTests(unittest.TestCase):
         before["campaigns"][-1]["average_daily_fils"] -= 100
         packet["proposal"]["change"]["before_state"] = self.write("scope/before.json", before)
         self.assertIn("ACTIVATION_REQUIRES_PRECONFIGURED_LAUNCH_BUDGETS", self.check(packet)["errors"])
+
+    def test_activation_cannot_also_repair_destination_or_targeting(self):
+        for field in ("final_url", "settings", "max_cpc_fils"):
+            with self.subTest(field=field):
+                packet = self.fixture("ADS_ACTIVATION")
+                before = json.loads((self.root / "scope/before.json").read_text(encoding="utf-8"))
+                before["campaigns"][-1].pop(field)
+                packet["proposal"]["change"]["before_state"] = self.write("scope/before.json", before)
+                self.assertIn("ACTIVATION_MAY_CHANGE_ONLY_CAMPAIGN_STATUS", self.check(packet)["errors"])
 
     def test_matching_before_and_after_cannot_substitute_for_frozen_legacy_campaign(self):
         for replacement in ({"id": "999999999"}, {"status": "PAUSED"}):
