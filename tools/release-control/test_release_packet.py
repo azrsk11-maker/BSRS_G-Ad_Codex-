@@ -83,6 +83,7 @@ class ReleasePacketTests(unittest.TestCase):
                 result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
                     "measured_daily_capacity": 100, "reviewed_launch_daily_load": 90,
+                    "peak_first_contact_sample_count": 15, "peak_first_contact_max_seconds": 1800,
                     "coverage": "DAILY_10:00_19:00_Asia/Dubai",
                     "pause_on_absence_or_unmanageable_backlog": True,
                 })
@@ -320,6 +321,18 @@ class ReleasePacketTests(unittest.TestCase):
                 result["effective_exclusions"].update(changes)
                 evidence["file"] = self.write(path, result)
                 self.assertIn("EFFECTIVE_NEGATIVE_SCOPE_READBACK_REQUIRED", self.check(packet)["errors"])
+
+    def test_activation_requires_observed_peak_first_contact_within_target(self):
+        for changes in ({"peak_first_contact_sample_count": 0}, {"peak_first_contact_max_seconds": 1801},
+                        {"peak_first_contact_max_seconds": None}, {"peak_first_contact_max_seconds": False}):
+            with self.subTest(changes=changes):
+                packet = self.fixture("ADS_ACTIVATION")
+                evidence = next(e for e in packet["evidence"] if e["gate_id"] == "STAFF_CAPACITY")
+                path = evidence["file"]["path"]
+                result = json.loads((self.root / path).read_text(encoding="utf-8"))
+                result["staff_capacity"].update(changes)
+                evidence["file"] = self.write(path, result)
+                self.assertIn("PEAK_FIRST_CONTACT_EVIDENCE_WITHIN_30_MINUTES_REQUIRED", self.check(packet)["errors"])
 
     def test_activation_rejects_reenabled_held_account_lead_form(self):
         packet = self.fixture("ADS_ACTIVATION")
