@@ -42,7 +42,7 @@ class Fixture(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", kind)
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; base-uri 'none'")
+        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; frame-src 'self'; base-uri 'none'")
         if cookie:
             self.send_header("Set-Cookie", cookie)
         self.end_headers()
@@ -50,6 +50,7 @@ class Fixture(BaseHTTPRequestHandler):
 
     def do_GET(self):
         assets = {"/browser": (html, "text/html"), "/browser-return": (html, "text/html"), "/browser-pending": (html, "text/html"),
+                  "/browser-peer": (html, "text/html"),
                   "/config.js": (config, "text/javascript"), "/bridge.js": (bridge, "text/javascript"),
                   "/test.js": (scenario, "text/javascript")}
         if self.path in assets:
