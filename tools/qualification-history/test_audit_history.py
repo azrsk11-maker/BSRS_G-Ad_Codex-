@@ -131,7 +131,11 @@ class AuditHistoryTests(unittest.TestCase):
             report, preview, _ = _inspect(ledger, binding, snapshots, NOW)
             self.assertIn("AMBIGUOUS_PURPOSE_HISTORY", report["export_held"][0]["codes"])
             self.assertEqual(preview["rows"], [])
-        for field, value in (("conversion_action_id", "7873290954"), ("conversion_name", "wrong_action")):
+        for field, value in (
+            ("conversion_action_id", "7873290954"), ("conversion_name", "wrong_action"),
+            ("conversion_owner_customer_id", "615-904-3329"),
+            ("conversion_owner_customer_id", "999-999-9999"),
+        ):
             with self.subTest(field=field):
                 report, preview, _ = _inspect(ledger, dict(binding, **{field: value}), [purpose], NOW)
                 self.assertIn("ACTION_BINDING_NOT_VERIFIED", report["export_held"][0]["codes"])

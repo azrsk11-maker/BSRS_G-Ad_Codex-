@@ -163,8 +163,7 @@ def _inspect(data,binding,purpose_rows,now,from_day=None,to_day=None,source_revi
     history_complete=data.get("history_complete") is True and bool(data.get("history_evidence_reference"))
     preview=[]; export_held=[]
     binding_ok=(binding.get("customer_id")=="573-038-4686" and
-      re.fullmatch(r"\d{10}",str(binding.get("conversion_owner_customer_id","")).replace("-","")) and
-      str(binding.get("conversion_owner_customer_id","")).replace("-","")!="6159043329" and
+      str(binding.get("conversion_owner_customer_id")) in {"573-038-4686","5730384686"} and
       str(binding.get("conversion_action_id"))==QUALIFIED_ADS_ACTION_ID and
       binding.get("conversion_name")==QUALIFIED_ADS_ACTION_NAME and binding.get("mapping_verified") is True and
       binding.get("stage_key")=="qualified_lead" and binding.get("identifier_route")=="GCLID_ONLY")
