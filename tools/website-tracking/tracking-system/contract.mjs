@@ -13,6 +13,10 @@ const EVIDENCE_SOURCES={form_accepted:['server_confirmed'],viewing_request:['ser
   commission_collected:['finance_ledger']};
 const OFFLINE_EVENTS=new Set(['conversation_verified','qualified_lead','mandate_signed','offer_submitted','transaction_closed','commission_collected']);
 const SPECIAL_CTA={phone:'phone_click',whatsapp:'whatsapp_click',email:'email_click'};
+const SERVICE_PATHS=new Map([
+  ['off_plan','/enquire/off-plan/'],['resale','/enquire/resale/'],['tenant','/enquire/rent/'],
+  ['seller','/enquire/sell/'],['landlord','/enquire/let/'],
+]);
 const CODE=/^[a-z][a-z0-9_-]{0,63}$/;
 const ID=/^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const exactKeys=(object, allowed)=>Boolean(object)&&typeof object==='object'&&!Array.isArray(object)&&Object.keys(object).every(k=>allowed.includes(k));
@@ -40,7 +44,9 @@ export function acceptedSubmissionUrl(wireBody, capture, receipt){
   require(createHash('sha256').update(wireBody).digest('hex')===capture.fingerprint,'ACCEPTED_WIRE_FINGERPRINT_MISMATCH');
   const payload=JSON.parse(wireBody);
   require(typeof payload?.request_id==='string'&&payload.request_id.toLowerCase()===capture.request_id,'ACCEPTED_WIRE_REQUEST_MISMATCH');
-  return queryFreeUrl(payload.landing_page);
+  const servicePath=SERVICE_PATHS.get(payload.role);
+  require(servicePath!==undefined&&payload.landing_page===ORIGIN+servicePath,'ACCEPTED_WIRE_SERVICE_ROUTE_MISMATCH');
+  return payload.landing_page;
 }
 
 export function createRegistry(records){

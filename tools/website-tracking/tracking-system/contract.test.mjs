@@ -39,7 +39,7 @@ test('accepted enquiry binds a reviewed service route without leaking it to dest
   const bound=createRegistry([{...record,ctas:[{...form,submission_path:'/enquire/off-plan/'},resale,phone]}]);
   const event=raw();
   event.requested_url=record.path;
-  const wire=JSON.stringify({request_id:'synthetic-request',landing_page:'https://blackswanrealestate.ae/enquire/off-plan/'});
+  const wire=JSON.stringify({request_id:'synthetic-request',role:'off_plan',landing_page:'https://blackswanrealestate.ae/enquire/off-plan/'});
   const capture={request_id:'synthetic-request',state:'ACCEPTED',delivery_pending:0,uncertain:0,
     lead_id:event.receipt.lead_id,event_id:event.receipt.event_id,
     fingerprint:createHash('sha256').update(wire).digest('hex')};
@@ -60,7 +60,12 @@ test('accepted enquiry binds a reviewed service route without leaking it to dest
   assert.throws(()=>normalizeEvent(event,registry),/SUBMISSION_ROUTE_MISMATCH/);
   assert.throws(()=>normalizeEvent({...event,requested_url:'/enquire/off-plan/'},bound),/PAGE_URL_MISMATCH/);
   assert.throws(()=>normalizeEvent({...event,cta_id:resale.cta_id},bound),/SUBMISSION_ROUTE_MISMATCH/);
-  const resaleWire=wire.replace('off-plan','resale');
+  for(const landing_page of ['/enquire/off-plan/','https://blackswanrealestate.ae/enquire/','https://blackswanrealestate.ae/enquire/resale/']){
+    const wrongService=JSON.stringify({...JSON.parse(wire),landing_page});
+    const wrongCapture={...capture,fingerprint:createHash('sha256').update(wrongService).digest('hex')};
+    assert.throws(()=>acceptedSubmissionUrl(wrongService,wrongCapture,event.receipt),/SERVICE_ROUTE_MISMATCH/);
+  }
+  const resaleWire=wire.replace('off-plan','resale').replace('off_plan','resale');
   const resaleCapture={...capture,fingerprint:createHash('sha256').update(resaleWire).digest('hex')};
   const resaleEvent={...event,cta_id:resale.cta_id,receipt:{...event.receipt,
     submission_url:acceptedSubmissionUrl(resaleWire,resaleCapture,event.receipt)}};
