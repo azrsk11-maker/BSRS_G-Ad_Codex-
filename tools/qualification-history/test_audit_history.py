@@ -142,6 +142,10 @@ class AuditHistoryTests(unittest.TestCase):
                 self.assertEqual(preview["rows"], [])
         for field, value, hold in (
             ("withdrawn_at_utc", "2026-11-07T12:00:00Z", "PURPOSE_WITHDRAWN"),
+            ("withdrawn_at_utc", "", "INVALID_WITHDRAWAL_TIME"),
+            ("withdrawn_at_utc", False, "INVALID_WITHDRAWAL_TIME"),
+            ("withdrawn_at_utc", 0, "INVALID_WITHDRAWAL_TIME"),
+            ("withdrawn_at_utc", "2026-11-10T12:00:00Z", "INVALID_WITHDRAWAL_TIME"),
             ("expires_at_utc", NOW.isoformat(), "PURPOSE_EXPIRED"),
             ("click_id", "Different-Synthetic-Click", "CLICK_ID_JOIN_MISMATCH"),
         ):

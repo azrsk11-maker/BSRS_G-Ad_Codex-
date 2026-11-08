@@ -182,9 +182,10 @@ def _inspect(data,binding,purpose_rows,now,from_day=None,to_day=None,source_revi
             if p["ad_user_data"]!="GRANTED" or p["ad_personalization"]!="DENIED":codes.append("PURPOSE_STATE_NOT_SUPPORTED")
             if r.get("ad_user_data")!=p["ad_user_data"] or r.get("ad_personalization")!=p["ad_personalization"]:codes.append("CONSENT_STATE_JOIN_MISMATCH")
             if not all(isinstance(p[x],str) and p[x] and p[x]!="none" for x in ("evidence_id","decision_version","notice_version")):codes.append("MISSING_PURPOSE_EVIDENCE")
-            if p["withdrawn_at_utc"]:
+            if p["withdrawn_at_utc"] is not None:
                 try:
-                    if when(p["withdrawn_at_utc"])<=now:codes.append("PURPOSE_WITHDRAWN")
+                    withdrawal=when(p["withdrawn_at_utc"])
+                    codes.append("PURPOSE_WITHDRAWN" if withdrawal<=now else "INVALID_WITHDRAWAL_TIME")
                 except ValueError:codes.append("INVALID_WITHDRAWAL_TIME")
             try:
                 if when(p["expires_at_utc"])<=now:codes.append("PURPOSE_EXPIRED")
