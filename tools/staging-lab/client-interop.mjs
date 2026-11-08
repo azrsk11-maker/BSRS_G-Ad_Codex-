@@ -4,10 +4,10 @@ import {readFileSync} from 'node:fs';
 import {createInterface} from 'node:readline';
 import {randomUUID} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
-import {buildReceiptClientCandidate} from '/opt/lab/tracking-system/build-receipt-client-candidate.mjs';
+import {buildAttributionClientCandidate} from '/opt/lab/tracking-system/build-attribution-client-candidate.mjs';
 
 const original = readFileSync('/opt/wordpress/wp-content/plugins/bsre-enquiries/assets/lead.js');
-const client = buildReceiptClientCandidate(original);
+const client = buildAttributionClientCandidate(original);
 const origin = 'https://blackswanrealestate.ae';
 const pendingKey = 'BSRE_PENDING_ENQUIRY_V1';
 const checks = {};

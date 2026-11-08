@@ -339,3 +339,19 @@ Local required foundation passed in33.646001seconds. Final focused receiver chec
 
 Executed at a6a1cb1. Isolated WordPress run42501114637/job128793861605 passed all84upstream recovery checks and all prior lab phases. Foundation42501114414 passed. All240local/remote files matched. Independent review confirmed the final race change. Five role journeys recover the exact receipt after upstream loss without replaying intake, preserve original capture evidence and retain one row/email copy each. Invalid/expired/cross-session proofs and an absent capture cause no receiver query. The [executed receipt](audit/UPSTREAM_RECEIPT_RECOVERY_2026-11-08.json) preserves exact scope. Production, native browser, real Google services and owner-dependent gates remain unaccepted.
 
+## Measured repository verification improvement
+
+Added a pinned raw-byte comparison using one Git object batch in place of per-file Git processes. The JSON report remains equivalent on a controlled real-tree comparison. The final containment-checked candidate took2.1997987s versus32.4701715s for the original helper on identical245local/241remote inputs, with expected draft differences in both reports. This is one ordered pair, potentially affected by cache warming, and proves no total token/API or project-wide speedup. Public evidence is audit/worktree-verifier-benchmark-2026-11-08.json.
+
+Independent review identified a Windows junction boundary gap. The final version rejects junctions and paths resolving outside the repository. Fourteen focused tests passed and two Windows capability cases were skipped; junction/containment branches use mocks after a real junction fixture was blocked by tool policy. New CLI returns1for differences and2for incomplete verification. No fetch, repository write or production action is performed by comparison.
+
+## Enquiry client acquisition continuity
+
+The composed source-pinned client now preserves permitted analytics acquisition over queryless hub/service continuation and same-origin navigation. The current service page remains separate in the intake payload. Review reproduced a mixed-touch defect where older UTM source A could combine with later click B. The final candidate groups only snapshots captured together with a private UUID, shared capture time and landing page. Missing/legacy grouping cannot authorize a merge, and the private UUID never enters the wire payload.
+
+Seventeen attribution cases plus seven receipt regressions passed24/24 in506.8042ms on the parent run. Tests cover mixed and reverse-purpose captures, equal timestamps/paths across different captures, old state, UUID failure, delayed consent, refusal/expiry/withdrawal, exclusions, storage failures and unchanged retry bodies. The actual client script is executed with DOM/storage/provider doubles. The existing WordPress harness now consumes the composed candidate with its TEST-only exclusions; consented native attribution and browser/Google acceptance remain open. Current-head CI must verify combined recovery remains intact. Original fixture sources, production and Ads are unchanged.
+
+Independent final review reran24/24tests and the original mixed-touch reproduction successfully. The common wire still prioritizes an ad-bearing snapshot over later analytics-only context, preserving existing policy. Complete independent-purpose history transport requires a reviewed contract change; this candidate does not close that requirement.
+
+Required local foundation passed in52.870339seconds with the new verifier and attribution tests included. This broader run has additional work and is not used as a before/after speed comparison. Current-head native CI remains required before the combined candidate can be accepted for review.
+
