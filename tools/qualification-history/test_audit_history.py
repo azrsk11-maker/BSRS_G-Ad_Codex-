@@ -122,6 +122,15 @@ class AuditHistoryTests(unittest.TestCase):
         self.assertEqual(preview["rows"][0]["google_click_id"], row["click_id"])
         self.assertEqual(preview["rows"][0]["order_id"], row["order_id"])
         self.assertEqual(preview["rows"][0]["conversion_time"], "2026-11-01 12:00:00+04:00")
+        equivalent = dict(purpose, observed_at_utc="2026-11-01T10:55:00+04:00")
+        report, preview, _ = _inspect(ledger, binding, [purpose, equivalent], NOW)
+        self.assertEqual(report["export_held"], [])
+        self.assertEqual(len(preview["rows"]), 1)
+        conflicting = dict(equivalent, withdrawn_at_utc="2026-11-07T12:00:00Z")
+        for snapshots in ([purpose, conflicting], [conflicting, purpose]):
+            report, preview, _ = _inspect(ledger, binding, snapshots, NOW)
+            self.assertIn("AMBIGUOUS_PURPOSE_HISTORY", report["export_held"][0]["codes"])
+            self.assertEqual(preview["rows"], [])
         for field, value in (("conversion_action_id", "7873290954"), ("conversion_name", "wrong_action")):
             with self.subTest(field=field):
                 report, preview, _ = _inspect(ledger, dict(binding, **{field: value}), [purpose], NOW)

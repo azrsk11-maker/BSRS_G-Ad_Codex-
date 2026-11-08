@@ -94,7 +94,8 @@ def _inspect(data,binding,purpose_rows,now,from_day=None,to_day=None,source_revi
     for p in purpose_rows:
         if not isinstance(p,dict) or set(p)-PURPOSE_FIELDS:fail("EXTRA_PURPOSE_FIELD_CONTACT_DATA_FORBIDDEN")
         if not set(PURPOSE_FIELDS)<=set(p):fail("INCOMPLETE_PURPOSE_ADAPTER")
-        when(p["observed_at_utc"]); purpose_by_lead[p["lead_id"]].append(p)
+        observed=when(p["observed_at_utc"]).astimezone(timezone.utc).isoformat()
+        purpose_by_lead[p["lead_id"]].append(dict(p, observed_at_utc=observed))
     # Never guess the winner of conflicting observations at the same timestamp.
     ambiguous_purpose=set()
     for lead,items in purpose_by_lead.items():
