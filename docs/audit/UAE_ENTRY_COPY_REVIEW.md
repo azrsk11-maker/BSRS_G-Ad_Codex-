@@ -50,3 +50,19 @@ Review whether the existing hub can serve as this campaign’s dedicated entry. 
 - Have the nominated factual reviewer approve each service description and destination. The draft includes no prices, listings, guarantees or availability claims.
 - Test each entry and follow-on CTA on desktop, mobile and keyboard. Verify attribution through the CTA, preserve the current intake and consent flow, and check that a page or CTA interaction does not count as an accepted enquiry.
 - Preserve noindex and ad crawler access. Require separate publication and Ads approvals before any live change.
+
+## Entry-to-enquiry attribution review
+
+Record the dedicated entry as the acquisition page and the chosen enquiry route as the submission page. The same-origin CTA must use a clean URL. Preserve permitted acquisition context through the existing purpose-specific state and bind it to the durable receipt on the server. An internal navigation must neither start a new acquisition nor forward a click ID in the URL.
+
+The current [event contract](../../tools/website-tracking/tracking-system/contract.mjs) validates a supplied event URL against its registered campaign entry URL. Do not send the service-page URL as that entry URL or rewrite the observed submission URL to make the prototype accept it. The integration needs an explicit binding for the separate submission route, with raw attribution and receipt correlation kept private.
+
+| Review journey | Evidence needed |
+|---|---|
+| Buyers or Owners chooses either service | The registered entry CTA resolves to the exact service route. The enquiry retains the original campaign attribution, with the service route recorded separately. |
+| Brand opens the hub then a service | The hub and subsequent internal CTA preserve the original Brand acquisition. Neither interaction produces an enquiry conversion. |
+| Tenants uses the rental form directly | An in-page CTA keeps the same navigation context. Only the accepted receipt can produce the enquiry conversion. |
+| Consent is refused or withdrawn before submission | The enquiry can still be delivered. Browser measurement stops and denied advertising identifiers are omitted from subsequent export. |
+| Acknowledgment is lost and the visitor retries | The same durable lead and event IDs reconcile to one intake result. CTA clicks and a replayed receipt do not produce an extra conversion. |
+
+The offline attribution and event tests cover separate portions of this flow. Final acceptance needs an isolated end-to-end test with the approved native entries, their real CTA bindings and the actual service routes.
