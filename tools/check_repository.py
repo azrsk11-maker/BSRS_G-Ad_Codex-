@@ -44,6 +44,7 @@ def run_checks(require_php=False):
     run("keyword-research-capture-consistency", [sys.executable, "-B", str(
         ROOT / "docs/audit/keyword-research-2026-11-07/verify_capture.py")])
     run("keyword-discovery-capture-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-discovery-2026-11-08/verify_capture.py")])
+    run("keyword-supply-discovery-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-discovery-supply-2026-11-08/verify_capture.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("primary-plugin-fixture-provenance", [sys.executable, "-B", str(
         ROOT / "tools/staging-lab/verify_fixture.py")])
