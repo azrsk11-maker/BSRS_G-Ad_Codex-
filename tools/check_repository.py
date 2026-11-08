@@ -54,6 +54,7 @@ def run_checks(require_php=False):
     node = shutil.which("node")
     record("node-runtime", bool(node), "required for tracking/privacy/HTTP safety checks")
     if node:
+        run("encrypted-recovery-package", [node, "--test", str(ROOT / "tools/recovery-package/package.test.mjs")])
         run("retention-candidate-source-pin", [node, "--test", str(ROOT / "tools/consent-retention/candidate.test.mjs")])
         run("pinned-receiver-idempotency-outbox", [node, "--test", str(ROOT / "tools/staging-lab/receiver.test.mjs")])
         tests = sorted((ROOT/"tools/website-tracking").rglob("*.test.mjs"))
