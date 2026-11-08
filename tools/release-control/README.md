@@ -23,6 +23,8 @@ The current policy retains the Master's full 14,000/14,000 reviewed-count gate. 
 
 Collect fresh evidence in account 573-038-4686. Bind each result to the proposal and reviewed commit, and capture the source and observation time before reducing it to the packet fields.
 
+The campaign language field is held pending [owner decision #11](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/11). Google documents automatic language matching for Search and says legacy language criteria do not govern serving. A dash in the UI or a legacy API criterion cannot certify English-only targeting. A bounded scan of the dated launch inventory found no non-Latin letters in 114 ad copy components and 82 keyword rows, and identified six distinct native destinations. This is a script check for review. It does not establish English language quality, the language of the current landing pages, or audience eligibility. [Google Ads language criteria](https://developers.google.com/google-ads/api/docs/targeting/criteria?hl=en#language_targeting_criteria)
+
 | Check | What the operator verifies | Packet result |
 |---|---|---|
 | Campaign inventory | Match all four launch IDs and the [frozen legacy inventory](../../docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json). Read the existing Search settings, CPC caps and AED 1,200 / 400 / 300 / 100 average daily split. | Campaign before/after records differ only by the four status changes. Legacy campaign rows retain their recorded Paused or Removed status. |
