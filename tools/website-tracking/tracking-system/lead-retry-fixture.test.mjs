@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {test} from 'node:test';
 import {runInNewContext} from 'node:vm';
+import {buildReloadGuardCandidate} from './build-reload-guard-candidate.mjs';
 
 const source = readFileSync(new URL('../../staging-lab/fixtures/bsre-enquiries/assets/lead.js', import.meta.url), 'utf8');
 const origin = 'https://blackswanrealestate.ae';
@@ -9,7 +10,7 @@ const snapshot = {known: true, acknowledged: true, measurement_eligible: true,
   preferences: {analytics: true, ad_measurement: true}, decision_version: 'test-consent', notice_version: 'test-notice'};
 const receipt = {accepted: true, lead_id: 'TEST_ONLY_LEAD', event_id: 'TEST_ONLY_EVENT', measurement: snapshot};
 
-function page({uuid, store, reply}) {
+function page({uuid, store, reply, client = source}) {
   const handlers = new Map(), requests = [], ads = [], ga4 = [];
   const button = {dataset: {}, textContent: 'Submit'}, status = {dataset: {}};
   const form = {
@@ -23,7 +24,7 @@ function page({uuid, store, reply}) {
     BSRELeadConfig: {endpoint: origin + '/wp-json/bsre/v1/lead', measurementEligible: true},
     BSREConsentBridge: {permissions: () => ({analytics: true, advertising: true}), measurementEligible: () => true,
       getSnapshot: () => snapshot, normalizeSnapshot: value => value},
-    sessionStorage: {getItem: key => store.get(key), setItem: (key, value) => store.set(key, value)},
+    sessionStorage: {getItem: key => store.get(key), setItem: (key, value) => store.set(key, value), removeItem: key => store.delete(key)},
     setTimeout() {}, clearTimeout() {}, addEventListener() {}, dispatchEvent() {}, CustomEvent: class {},
     async fetch(url, request) {
       assert.equal(url, window.BSRELeadConfig.endpoint);
@@ -33,7 +34,7 @@ function page({uuid, store, reply}) {
   };
   const document = {readyState: 'complete', referrer: '', querySelector: () => form,
     querySelectorAll: selector => selector === 'form[data-bsre-form]' ? [form] : []};
-  runInNewContext(source, {window, document, URL, AbortController});
+  runInNewContext(client, {window, document, URL, AbortController});
   window.BSREMeasurement.connect('ads', event => ads.push(event));
   window.BSREMeasurement.connect('ga4', event => ga4.push(event));
   return {submit: () => handlers.get('submit')({preventDefault() {}}), requests, ads, ga4, status};
@@ -56,6 +57,27 @@ test('lost acknowledgement retries the exact body and emits one accepted event p
   assert.equal(f.ga4.length, 1);
   assert.equal(f.ga4[0].event_name, 'generate_lead');
   assert.equal(Object.hasOwn(f.ga4[0].parameters, 'event_id'), false);
+});
+
+test('candidate holds a fresh submission after reload until the original attempt resolves', async () => {
+  const client = buildReloadGuardCandidate(Buffer.from(source));
+  const store = new Map();
+  const first = page({client, uuid: '00000000-0000-4000-8000-000000000001', store, reply(attempt) {
+    if (attempt === 1) throw new Error('Synthetic lost acknowledgement');
+    return receipt;
+  }});
+  await first.submit();
+  assert.equal(store.get('BSRE_PENDING_ENQUIRY_V1'), '1');
+  const reloaded = page({client, uuid: '00000000-0000-4000-8000-000000000002', store, reply: () => receipt});
+  await reloaded.submit();
+  assert.equal(reloaded.requests.length, 0);
+  assert.match(reloaded.status.textContent, /earlier enquiry.*unconfirmed/);
+  await first.submit();
+  assert.equal(first.requests[0].body, first.requests[1].body);
+  assert.equal(first.ads.length, 1);
+  assert.equal(store.has('BSRE_PENDING_ENQUIRY_V1'), false);
+  await reloaded.submit();
+  assert.equal(reloaded.requests.length, 1);
 });
 
 test('a known receipt is suppressed after same-session reload, but the form creates a new request UUID', async () => {
