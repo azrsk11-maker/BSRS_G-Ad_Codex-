@@ -15,6 +15,11 @@ $receiverCalls = 0;
 $leadRequests = 0;
 $sessions = 0;
 $requestIds = [];
+$upstreamMode = in_array('--upstream', $argv, true);
+$statusCalls = 0;
+$acceptedReceipts = [];
+$originalCaptures = [];
+if ($upstreamMode) define('BSRE_RECEIPT_STATUS_ENABLED', true);
 function client_check(string $name, bool $ok): void {
     global $checks;
     if (!$ok) throw new RuntimeException('Client integration check failed: ' . $name);
@@ -34,7 +39,9 @@ define('BSRE_ROUTING_ENABLED', true);
 client_check('five_synthetic_native_routes_ready', count(Intake\live_paths()) === 5 && Intake\ready());
 wp_set_current_user(0);
 
-$receiver = proc_open(['node', '/opt/lab/receiver-bridge.mjs'], [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => STDERR], $receiverPipes);
+$receiverCommand = ['node', '/opt/lab/receiver-bridge.mjs'];
+if ($upstreamMode) array_push($receiverCommand, '--receipt-status', '/opt/lab/tracking-system/build-receipt-status-candidate.mjs');
+$receiver = proc_open($receiverCommand, [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => STDERR], $receiverPipes);
 client_check('receiver_process_started', is_resource($receiver));
 stream_set_timeout($receiverPipes[1], 10);
 function client_receiver(array $command): array {
@@ -46,15 +53,30 @@ function client_receiver(array $command): array {
     if ($reply === false || !str_ends_with($reply, "\n")) throw new RuntimeException('Receiver pipe reply incomplete');
     return json_decode($reply, true, 512, JSON_THROW_ON_ERROR);
 }
-add_filter('pre_http_request', function($pre, $args, $url) use (&$receiverCalls) {
+add_filter('pre_http_request', function($pre, $args, $url) use (&$receiverCalls, &$statusCalls, &$acceptedReceipts, $upstreamMode) {
     client_check('receiver_destination_is_synthetic_only', $url === BSRE_LEAD_RECEIVER_URL);
+    $envelope = json_decode($args['body'], true, 16, JSON_THROW_ON_ERROR);
+    if (($envelope['purpose'] ?? '') === 'bsre-receipt-status-v1') {
+        $statusCalls++;
+        client_check('status_lookup_requires_upstream_mode', $upstreamMode);
+        client_check('status_lookup_has_no_contact_payload', array_keys($envelope) === ['version', 'purpose', 'request_id', 'timestamp', 'signature']);
+        $receipt = client_receiver(['op' => 'post', 'raw' => $args['body']]);
+        return ['headers' => [], 'body' => wp_json_encode($receipt), 'response' => ['code' => 200]];
+    }
     $receiverCalls++;
     $receipt = client_receiver(['op' => 'post', 'raw' => $args['body']]);
     client_check('receiver_accepts_actual_client_payload', ($receipt['accepted'] ?? false) === true);
+    if ($upstreamMode) {
+        $payload = json_decode($envelope['body'], true, 32, JSON_THROW_ON_ERROR);
+        $acceptedReceipts[$payload['request_id']] = $receipt;
+        return new WP_Error('synthetic_upstream_acknowledgement_lost');
+    }
     return ['headers' => [], 'body' => wp_json_encode($receipt), 'response' => ['code' => 200]];
 }, PHP_INT_MAX, 3);
 
-$client = proc_open(['node', '/opt/lab/client-interop.mjs'], [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => STDERR], $clientPipes);
+$clientCommand = ['node', '/opt/lab/client-interop.mjs'];
+if ($upstreamMode) $clientCommand[] = '--upstream';
+$client = proc_open($clientCommand, [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => STDERR], $clientPipes);
 client_check('client_process_started', is_resource($client));
 stream_set_timeout($clientPipes[1], 20);
 $complete = false;
@@ -69,7 +91,9 @@ while (($line = fgets($clientPipes[1], 1000000)) !== false) {
         // A mature synthetic challenge avoids wall-clock sleeps in this CLI lab.
         $reply = ['csrf' => Intake\csrf_token($_COOKIE[Intake\COOKIE], time() - 3, wp_salt('auth'))];
     } elseif ($operation === 'stats') {
-        $reply = ['lead_requests' => $leadRequests, 'receiver_calls' => $receiverCalls];
+        $last = $requestIds ? $requestIds[count($requestIds) - 1] : '';
+        $reply = ['lead_requests' => $leadRequests, 'receiver_calls' => $receiverCalls,
+            'status_calls' => $statusCalls, 'accepted_reference' => $acceptedReceipts[$last]['lead_id'] ?? null];
     } elseif ($operation === 'request') {
         $path = parse_url($message['url'] ?? '', PHP_URL_PATH);
         client_check('client_uses_only_allowed_local_routes',
@@ -92,6 +116,14 @@ while (($line = fgets($clientPipes[1], 1000000)) !== false) {
         }
         $response = rest_do_request($request);
         $reply = ['status' => $response->get_status(), 'body' => $response->get_data()];
+        if ($upstreamMode && $path === '/wp-json/bsre/v1/lead') {
+            $originalCaptures[$payload['request_id']] = $wpdb->get_row($wpdb->prepare(
+                "SELECT * FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s", $payload['request_id']
+            ), ARRAY_A);
+            client_check('upstream_loss_precedes_wordpress_linkage', $reply['status'] === 503
+                && $originalCaptures[$payload['request_id']]['state'] === 'STAGED'
+                && (int) $originalCaptures[$payload['request_id']]['delivery_pending'] === 1);
+        }
         if (str_ends_with($path, '/status')) {
             client_check('recovery_response_is_reference_only', array_keys($reply['body']) === ['status', 'reference']
                 && $reply['body']['status'] === 'ACCEPTED');
@@ -126,9 +158,52 @@ $captures = $wpdb->get_results($wpdb->prepare(
 client_check('all_five_wordpress_receipts_durably_linked', count($captures) === 5
     && count(array_filter($captures, fn($row) => $row['state'] !== 'ACCEPTED' || (int) $row['delivery_pending'] !== 0
         || $row['lead_id'] === '' || $row['event_id'] === '')) === 0);
+if ($upstreamMode) {
+    client_check('one_read_only_receiver_lookup_per_role', $statusCalls === 5);
+    foreach ($originalCaptures as $id => $original) {
+        $current = $wpdb->get_row($wpdb->prepare(
+            "SELECT * FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s", $id
+        ), ARRAY_A);
+        client_check('recovered_ids_match_receiver_' . count($checks), $current['lead_id'] === $acceptedReceipts[$id]['lead_id']
+            && $current['event_id'] === $acceptedReceipts[$id]['event_id']);
+        foreach (['state', 'delivery_pending', 'lead_id', 'event_id'] as $key) {
+            unset($current[$key], $original[$key]);
+        }
+        client_check('original_capture_evidence_preserved_' . count($checks), $current === $original);
+    }
+    $before = $statusCalls;
+    foreach (['invalid', BSRE\ReceiptRecovery\issue($requestIds[0], $_COOKIE[Intake\COOKIE], wp_salt('auth'), time() - 901),
+        BSRE\ReceiptRecovery\issue(wp_generate_uuid4(), $_COOKIE[Intake\COOKIE], wp_salt('auth'), time()),
+        BSRE\ReceiptRecovery\issue($requestIds[0], str_repeat('a', 64), wp_salt('auth'), time())] as $proof) {
+        $request = new WP_REST_Request('POST', '/bsre/v1/receipt-recovery/status');
+        $request->set_header('origin', 'https://blackswanrealestate.ae');
+        $request->set_header('content-type', 'application/json');
+        $request->set_header('x-bsre-csrf', Intake\csrf_token($_COOKIE[Intake\COOKIE], time() - 3, wp_salt('auth')));
+        $request->set_body(wp_json_encode(['proof' => $proof]));
+        client_check('unauthorized_or_absent_capture_unconfirmed_' . count($checks),
+            rest_do_request($request)->get_data() === ['status' => 'UNCONFIRMED']);
+    }
+    client_check('invalid_proofs_and_missing_capture_do_not_query_receiver', $statusCalls === $before);
+    $lastId = $requestIds[count($requestIds) - 1];
+    Intake\consent_repository()->uncertain($lastId, $originalCaptures[$lastId]['fingerprint']);
+    $request->set_body(wp_json_encode(['proof' => BSRE\ReceiptRecovery\issue($lastId,
+        $_COOKIE[Intake\COOKIE], wp_salt('auth'), time())]));
+    $rechecked = rest_do_request($request)->get_data();
+    client_check('late_timeout_flag_reconciles_without_receipt_replacement', $rechecked === [
+        'status' => 'ACCEPTED', 'reference' => $acceptedReceipts[$lastId]['lead_id']]
+        && $statusCalls === $before + 1);
+    $id = $requestIds[0];
+    try {
+        Intake\consent_repository()->link($id, $originalCaptures[$id]['fingerprint'],
+            'BSRE-' . wp_generate_uuid4(), 'evt_' . wp_generate_uuid4());
+        throw new RuntimeException('Conflicting receipt was accepted');
+    } catch (RuntimeException $error) {
+        client_check('established_receipt_cannot_be_replaced', $error->getMessage() === 'Consent receipt conflict.');
+    }
+}
 fclose($receiverPipes[0]);
 fclose($receiverPipes[1]);
 client_check('receiver_completed_cleanly', proc_close($receiver) === 0);
-echo wp_json_encode(['phase' => 'wordpress_client_receiver_interop', 'status' => 'PASS', 'checks' => $checks,
+echo wp_json_encode(['phase' => $upstreamMode ? 'wordpress_upstream_receipt_recovery' : 'wordpress_client_receiver_interop', 'status' => 'PASS', 'checks' => $checks,
     'synthetic_only' => true, 'dom_and_storage_are_doubles' => true, 'network_transport_is_pipe' => true,
     'google_services_are_doubles' => true, 'browser_acceptance' => false, 'production_acceptance' => false]) . "\n";

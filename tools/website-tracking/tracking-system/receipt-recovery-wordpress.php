@@ -6,6 +6,28 @@ namespace BSRE\ReceiptRecovery;
 use BSRE\Enquiries as Intake;
 
 require_once __DIR__ . '/receipt-recovery.php';
+require_once __DIR__ . '/receipt-status.php';
+
+/** Opt-in candidate. No original body or contact fields are persisted or resent. */
+function resolve_pending_capture(array $row): array
+{
+    if (!defined('BSRE_RECEIPT_STATUS_ENABLED') || BSRE_RECEIPT_STATUS_ENABLED !== true
+        || !Intake\ready() || !in_array($row['state'] ?? null, ['STAGED', 'ACCEPTED'], true)
+        || !in_array($row['delivery_pending'] ?? null, [1, '1'], true)
+        || !is_string($row['lead_id'] ?? null) || !is_string($row['event_id'] ?? null)
+        || (($row['lead_id'] === '') !== ($row['event_id'] === ''))
+        || !preg_match('/\A[0-9a-f]{64}\z/', $row['fingerprint'] ?? '')) return $row;
+
+    $envelope = status_request($row['request_id'], BSRE_LEAD_HMAC_SECRET, (int) floor(microtime(true) * 1000));
+    // Reuse the existing HTTPS, bounded-response and restricted-redirect transport.
+    $response = Intake\send_envelope(BSRE_LEAD_RECEIVER_URL, wp_json_encode($envelope));
+    if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) return $row;
+    $receipt = status_receipt(json_decode(wp_remote_retrieve_body($response), false, 4), $row['request_id']);
+    if ($receipt === null) return $row;
+    // A late timeout may mark an already-linked row pending again. The repository
+    // locks and refuses conflicting IDs, so rechecking can safely clear that flag.
+    return Intake\consent_repository()->link($row['request_id'], $row['fingerprint'], $receipt['lead_id'], $receipt['event_id']);
+}
 
 // The isolated lab explicitly registers these handlers. The installed plugin
 // has no registration or include for this candidate.
@@ -55,8 +77,9 @@ function handle(\WP_REST_Request $request, string $operation): \WP_REST_Response
     }
     return Intake\response(200, recover($body->proof, $session, $secret, $now, static function (string $id) use ($wpdb) {
         $table = $wpdb->prefix . 'bsre_consent_captures';
-        return $wpdb->get_row($wpdb->prepare(
-            "SELECT request_id,state,delivery_pending,lead_id,event_id FROM {$table} WHERE request_id=%s LIMIT 1", $id
+        $row = $wpdb->get_row($wpdb->prepare(
+            "SELECT request_id,fingerprint,state,delivery_pending,lead_id,event_id FROM {$table} WHERE request_id=%s LIMIT 1", $id
         ), ARRAY_A);
+        return is_array($row) ? resolve_pending_capture($row) : null;
     }));
 }

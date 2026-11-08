@@ -11,6 +11,7 @@ const client = buildReceiptClientCandidate(original);
 const origin = 'https://blackswanrealestate.ae';
 const pendingKey = 'BSRE_PENDING_ENQUIRY_V1';
 const checks = {};
+const upstreamMode = process.argv.includes('--upstream');
 const input = createInterface({input: process.stdin, crlfDelay: Infinity});
 let waiting;
 input.on('line', line => {
@@ -89,6 +90,7 @@ function page({slug, role, timeline, csrf, store, blank = false, loseAcknowledge
       requests.push({url, request});
       const result = await command({op: 'request', url, method: request.method,
         credentials: request.credentials, headers: request.headers, body: request.body});
+      if (url.endsWith('/lead')) acceptedResponse = result;
       if (url.endsWith('/lead') && loseAcknowledgement) {
         acceptedResponse = result;
         loseAcknowledgement = false;
@@ -118,10 +120,12 @@ async function main() {
   for (const [slug, role, timeline] of services) {
     const setup = await command({op: 'session'});
     const store = new Map();
-    const first = page({slug, role, timeline, csrf: setup.csrf, store, loseAcknowledgement: true});
+    const first = page({slug, role, timeline, csrf: setup.csrf, store, loseAcknowledgement: !upstreamMode});
     await first.submit();
-    check(slug + '_lost_ack_after_real_acceptance', first.acceptedResponse?.status === 200
-      && first.acceptedResponse.body.accepted === true && first.status.dataset.state === 'error');
+    check(slug + (upstreamMode ? '_lost_upstream_ack_before_local_linkage' : '_lost_ack_after_real_acceptance'),
+      (upstreamMode ? first.acceptedResponse?.status === 503 && first.acceptedResponse.body.accepted === false
+        : first.acceptedResponse?.status === 200 && first.acceptedResponse.body.accepted === true)
+      && first.status.dataset.state === 'error');
     const proofRequest = first.requests.find(item => item.url.endsWith('/proof'));
     const leadRequest = first.requests.find(item => item.url.endsWith('/lead'));
     const proof = store.get(pendingKey);
@@ -135,7 +139,7 @@ async function main() {
     const reloaded = page({slug, role, timeline, csrf: setup.csrf, store, blank: true});
     await reloaded.submit();
     check(slug + '_blank_reload_recovers_real_reference', reloaded.status.dataset.state === 'success'
-      && reloaded.status.textContent.includes(first.acceptedResponse.body.lead_id));
+      && reloaded.status.textContent.includes(upstreamMode ? before.accepted_reference : first.acceptedResponse.body.lead_id));
     check(slug + '_recovery_request_uses_only_proof', reloaded.requests.length === 1
       && reloaded.requests[0].url.endsWith('/status')
       && JSON.stringify(JSON.parse(reloaded.requests[0].request.body)) === JSON.stringify({proof}));
@@ -144,7 +148,8 @@ async function main() {
     await reloaded.submit();
     const after = await command({op: 'stats'});
     check(slug + '_reload_never_replays_intake', before.lead_requests === after.lead_requests
-      && before.receiver_calls === after.receiver_calls && reloaded.requests.length === 1);
+      && before.receiver_calls === after.receiver_calls && reloaded.requests.length === 1
+      && after.status_calls - before.status_calls === (upstreamMode ? 1 : 0));
     check(slug + '_synthetic_recovery_emits_no_measurement', first.measurement.length + reloaded.measurement.length === 0);
   }
   await command({op: 'complete', checks});

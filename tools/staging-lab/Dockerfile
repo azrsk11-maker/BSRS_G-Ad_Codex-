@@ -14,7 +14,8 @@ COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-
 COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/fixtures/receiver-v2
 COPY tools/consent-retention /opt/lab/consent-retention
 COPY tools/recovery-package /opt/lab/recovery-package
-COPY tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php /opt/lab/receipt-recovery/
+COPY tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/receipt-status.test.php /opt/lab/receipt-recovery/
+COPY tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs /opt/lab/tracking-system/
 COPY tools/staging-lab/client-interop.php tools/staging-lab/client-interop.mjs /opt/lab/
 COPY tools/staging-lab/browser-prerequisites.php /opt/lab/
