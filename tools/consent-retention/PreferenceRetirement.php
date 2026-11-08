@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace BSRE\RetentionReview;
 if (!defined('ABSPATH')) exit;
 require_once __DIR__ . '/RetentionInventory.php';
+require_once __DIR__ . '/RetirementLedger.php';
 
 /** Real SQL candidate, deliberately restricted to the disposable synthetic lab.
  * No hooks, scheduler, public route or live authority is installed by this file.
@@ -10,11 +11,13 @@ require_once __DIR__ . '/RetentionInventory.php';
 final class PreferenceRetirement {
     private $db;
     private $clock;
+    private RetirementLedger $ledger;
     public function __construct($db, ?callable $clock = null) {
         if (!defined('BSRE_RETENTION_LAB') || BSRE_RETENTION_LAB !== true ||
             wp_get_environment_type() !== 'local' || $db->prefix !== 'retention_synthetic_' ||
             home_url() !== 'http://bsre.invalid') throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db; $this->clock = $clock ?? fn() => time();
+        $this->ledger = new RetirementLedger($db);
     }
     private function query(string $sql): int {
         $result = $this->db->query($sql);
@@ -28,6 +31,8 @@ final class PreferenceRetirement {
     }
     public function installLabAudit(): void {
         $this->query("CREATE TABLE IF NOT EXISTS {$this->db->prefix}bsre_retention_audit (plan_hash char(64) PRIMARY KEY, applied_at bigint unsigned NOT NULL, actor bigint unsigned NOT NULL, deleted_rows int unsigned NOT NULL) ENGINE=InnoDB");
+        $this->query("CREATE TABLE IF NOT EXISTS {$this->db->prefix}bsre_restore_audit (plan_hash char(64) PRIMARY KEY, applied_at bigint unsigned NOT NULL, actor bigint unsigned NOT NULL, reapplied_rows int unsigned NOT NULL, ledger_sequence bigint unsigned NOT NULL) ENGINE=InnoDB");
+        $this->ledger->install();
     }
     private function authorize(): void {
         if (!current_user_can('manage_options')) throw new \RuntimeException('OWNER_REQUIRED');
@@ -68,6 +73,7 @@ final class PreferenceRetirement {
         $now = ($this->clock)();
         if (!isset($plan['created_at'],$plan['expires_at']) || !is_int($plan['created_at']) || !is_int($plan['expires_at']) || $now < $plan['created_at'] || $now >= $plan['expires_at'] || $plan['expires_at'] !== $plan['created_at']+900) throw new \RuntimeException('PLAN_EXPIRED_OR_INVALID');
         return $this->transaction(function() use ($plan,$now) {
+            $ledger = $this->ledger->read(true);
             $audit = $this->db->get_row($this->db->prepare('SHOW TABLE STATUS WHERE Name=%s', $this->db->prefix.'bsre_retention_audit'), ARRAY_A);
             if (!is_array($audit) || strtolower($audit['Engine']) !== 'innodb') throw new \RuntimeException('TRANSACTIONAL_AUDIT_REQUIRED');
             $snapshot = $this->snapshot(true);
@@ -82,9 +88,49 @@ final class PreferenceRetirement {
                 $deleted += $this->query($this->db->prepare("DELETE FROM {$this->db->prefix}{$table} WHERE {$pk}=%s", $id));
             }
             if ($deleted !== count($plan['eligible'])) throw new \RuntimeException('DELETE_COUNT_CONFLICT');
+            $anchor = $this->ledger->record($snapshot,$plan,$now,$ledger);
             $hash = self::digest($plan);
             $this->query($this->db->prepare("INSERT INTO {$this->db->prefix}bsre_retention_audit (plan_hash,applied_at,actor,deleted_rows) VALUES (%s,%d,%d,%d)", $hash,$now,get_current_user_id(),$deleted));
-            return ['scope'=>'SYNTHETIC_ONLY','plan_hash'=>$hash,'deleted_rows'=>$deleted,'production_acceptance'=>false];
+            return ['scope'=>'SYNTHETIC_ONLY','plan_hash'=>$hash,'deleted_rows'=>$deleted,'ledger_anchor'=>$anchor,'production_acceptance'=>false];
+        });
+    }
+    /** Private synthetic snapshot only; caller must encrypt and restrict it. */
+    public function backupSnapshot(): array {
+        $this->authorize();
+        return $this->transaction(fn() => $this->snapshot(false));
+    }
+    public function ledgerAnchor(): array {
+        $this->authorize();
+        return $this->transaction(fn() => $this->ledger->read(false)['anchor']);
+    }
+    public function previewRestore(array $metadata,array $trustedAnchor): array {
+        $this->authorize();
+        return $this->transaction(fn() => $this->ledger->restorePlan($this->snapshot(false),$metadata,$trustedAnchor,$this->ledger->read(false),($this->clock)()));
+    }
+    public static function restoreApproval(array $plan): string { return 'REDELETE_SYNTHETIC_RESTORE:' . self::digest($plan); }
+    public function applyRestore(array $plan,string $approval,array $trustedAnchor): array {
+        $this->authorize();
+        if (!defined('BSRE_RETENTION_APPLY_ENABLED') || BSRE_RETENTION_APPLY_ENABLED!==true) throw new \RuntimeException('APPLY_DISABLED');
+        if (!hash_equals(self::restoreApproval($plan),$approval)) throw new \RuntimeException('EXACT_RESTORE_APPROVAL_REQUIRED');
+        $now=($this->clock)();
+        if (!isset($plan['created_at'],$plan['expires_at']) || !is_int($plan['created_at']) || !is_int($plan['expires_at']) || $now<$plan['created_at'] || $now>=$plan['expires_at'] || $plan['expires_at']!==$plan['created_at']+900) throw new \RuntimeException('PLAN_EXPIRED_OR_INVALID');
+        return $this->transaction(function() use ($plan,$trustedAnchor,$now) {
+            $audit=$this->db->get_row($this->db->prepare('SHOW TABLE STATUS WHERE Name=%s',$this->db->prefix.'bsre_restore_audit'),ARRAY_A);
+            if (!$audit || strtolower($audit['Engine'])!=='innodb') throw new \RuntimeException('TRANSACTIONAL_AUDIT_REQUIRED');
+            $ledger=$this->ledger->read(true); $snapshot=$this->snapshot(true);
+            $expected=$this->ledger->restorePlan($snapshot,$plan['backup'],$trustedAnchor,$ledger,$plan['created_at']);
+            // Check package freshness at execution, in addition to plan freshness.
+            $this->ledger->restorePlan($snapshot,$plan['backup'],$trustedAnchor,$ledger,$now);
+            if (!hash_equals(self::digest($expected),self::digest($plan))) throw new \RuntimeException('RESTORE_PLAN_STALE_OR_ALTERED');
+            $deleted=0;
+            foreach($plan['eligible'] as $ref) {
+                [$table,$id]=explode(':',$ref,2);
+                $pk=$table==='bsre_consent_state'?'subject_key':'receipt';
+                $deleted+=$this->query($this->db->prepare("DELETE FROM {$this->db->prefix}{$table} WHERE {$pk}=%s",$id));
+            }
+            if ($deleted!==count($plan['eligible'])) throw new \RuntimeException('RESTORE_DELETE_COUNT_CONFLICT');
+            $this->query($this->db->prepare("INSERT INTO {$this->db->prefix}bsre_restore_audit (plan_hash,applied_at,actor,reapplied_rows,ledger_sequence) VALUES (%s,%d,%d,%d,%d)",self::digest($plan),$now,get_current_user_id(),$deleted,$ledger['anchor']['sequence']));
+            return ['scope'=>'SYNTHETIC_ONLY','reapplied_rows'=>$deleted,'ledger_anchor'=>$ledger['anchor'],'reopen_authorized'=>false,'production_acceptance'=>false];
         });
     }
 }
