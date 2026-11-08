@@ -19,6 +19,8 @@ test('missing approved finance rules and incomplete sources block, never become 
 test('commission excludes explicit VAT refund pass-through and separately accounted costs',()=>{
   const r=commercialReport(fixture(),policy);assert.equal(r.totals.collected_net_revenue_minor,98000);
   assert.equal(r.totals.contribution_before_acquisition_minor,51000);
+  assert.equal(r.totals.post_acquisition_contribution_minor,40000);
+  assert.equal(r.campaigns.reduce((s,c)=>s+c.post_acquisition_contribution_minor,0),40000);
   assert.equal(r.campaigns.reduce((s,c)=>s+c.allocated_collected_net_revenue_minor,0),98000);
   assert.equal(r.totals.transactions_closed_in_window,1);assert.equal(r.totals.transactions_with_cash_receipts_in_window,1);
 });
@@ -96,5 +98,9 @@ test('other-source and unknown qualifications stay distinct from unmapped Ads',(
   const r=commercialReport(f,policy);for(const key of ['OTHER_SOURCE','UNKNOWN_SOURCE','ADS_UNMAPPED'])assert.equal(r.campaigns.find(c=>c.campaign_key===key).first_ever_qualified_people,1);
   assert.equal(r.campaigns.find(c=>c.campaign_key==='ADS_UNMAPPED').media_spend_minor,10000);
   assert.equal(r.campaigns.find(c=>c.campaign_key==='ADS_UNMAPPED').observed_period_spend_per_first_qualification_aed,100);
+  assert.deepEqual(r.totals.first_ever_qualified_people_by_source,{ads:1,other:1,unknown:1});
+  assert.equal(r.totals.observed_period_ads_spend_per_first_qualification_aed,100);
+  for(const key of ['OTHER_SOURCE','UNKNOWN_SOURCE'])assert.equal(r.campaigns.find(c=>c.campaign_key===key).observed_period_spend_per_first_qualification_aed,null);
+  f.qualifications.pop();assert.equal(commercialReport(f,policy).totals.observed_period_ads_spend_per_first_qualification_aed,null);
   f.qualifications[0].campaign_key='BSRE-C0001';assert.throws(()=>commercialReport(f,policy),/NON_ADS_CAMPAIGN_CONFLICT/);
 });

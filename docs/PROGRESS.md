@@ -309,3 +309,5 @@ Both workflows passed for the isolated WordPress route integration. The next cli
 
 The candidate now falls back to the normal enquiry request when proof issuance is unavailable or invalid. An ambiguous fallback attempt retains the one-bit session marker, and retry on the original page still reuses the exact request. Same-tab reload holds a fresh submission, with manual receipt checking when no proof exists. Five focused tests pass. Actual browser integration and production acceptance remain open.
 
+Commercial reporting now exposes total contribution after acquisition costs and first-ever qualifications split by Ads, other and unknown sources. The descriptive period Ads cost per qualification uses only Ads-attributed outcomes, including verified Ads outcomes without a mapped campaign. The metric is null for other and unknown sources and when the Ads denominator is zero. All 16 synthetic report checks pass. Finance policy approval, verified ledgers and cohort performance remain pending.
+

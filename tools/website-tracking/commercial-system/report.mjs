@@ -107,12 +107,19 @@ export function commercialReport(input,policy){
     require(ID.test(row.person_ref||''),'PERSON_REFERENCE_REQUIRED');const key=attribution(row.campaign_key,row.source_class);if(inWindow(row.created_at))get(key).opportunities++;
   }
   const campaigns=[...rows.values()].sort((a,b)=>a.campaign_key.localeCompare(b.campaign_key));
+  const qualificationBySource={ads:0,other:0,unknown:0};
   for(const row of campaigns){row.post_acquisition_contribution_minor=add(add(row.allocated_contribution_before_acquisition_minor,-row.allocated_nonmedia_acquisition_minor),-row.media_spend_minor);
-    row.observed_period_spend_per_first_qualification_aed=row.first_ever_qualified_people?row.media_spend_minor/100/row.first_ever_qualified_people:null;}
+    const source=row.campaign_key==='OTHER_SOURCE'?'other':row.campaign_key===UNKNOWN?'unknown':'ads';
+    qualificationBySource[source]+=row.first_ever_qualified_people;
+    row.observed_period_spend_per_first_qualification_aed=source==='ads'&&row.first_ever_qualified_people?row.media_spend_minor/100/row.first_ever_qualified_people:null;}
+  const totalMedia=campaigns.reduce((sum,row)=>add(sum,row.media_spend_minor),0);
   return {status:'CALCULATED_OFFLINE_NOT_RECONCILED_WITH_PROVIDER',source_ref:input.source_ref,policy_approval_ref:policy.approval_ref,
     window:{from:input.from,to:input.to,end_exclusive:true,timezone:'Asia/Dubai'},currency:'AED',money_unit:'minor_units',campaigns,
-    totals:{media_spend_minor:campaigns.reduce((s,r)=>add(s,r.media_spend_minor),0),collected_net_revenue_minor:collectedNet,
+    totals:{media_spend_minor:totalMedia,collected_net_revenue_minor:collectedNet,
       contribution_before_acquisition_minor:contribution,nonmedia_acquisition_minor:nonmedia,
+      post_acquisition_contribution_minor:add(add(contribution,-nonmedia),-totalMedia),
+      first_ever_qualified_people_by_source:qualificationBySource,
+      observed_period_ads_spend_per_first_qualification_aed:qualificationBySource.ads?totalMedia/100/qualificationBySource.ads:null,
       transactions_closed_in_window:transactions.filter(t=>inWindow(t.closed_at)).length,
       transactions_with_cash_receipts_in_window:collectedTransactions.size,first_ever_qualified_people:campaigns.reduce((s,r)=>s+r.first_ever_qualified_people,0),
       opportunities:campaigns.reduce((s,r)=>s+r.opportunities,0)},
