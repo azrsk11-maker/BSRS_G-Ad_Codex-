@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-08",
+  "source_files": [
+    {
+      "file": "sellers.json",
+      "batch_id": "KP-SUPPLY-20261108-SELLERS",
+      "sha256": "ad59fa643c50af4b2e03782428979a841e64ed17557f8e376280fe57f151781e",
+      "bytes": 19266,
+      "records": 18,
+      "distinct_normalized": 18,
+      "source_bytes": 4366,
+      "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401"
+    },
+    {
+      "file": "landlords.json",
+      "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+      "sha256": "a1c5ab276d12b76541508ad00587a9d2c3f0ddd01b75c7be63c842bfe3690c11",
+      "bytes": 14714,
+      "records": 13,
+      "distinct_normalized": 13,
+      "source_bytes": 3178,
+      "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51"
+    }
+  ],
+  "totals": {
+    "export_rows": 31,
+    "distinct_normalized_phrases": 31,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Separate focused seller/landlord seed experiments; no original capture or classifications changed.",
+    "Supplied seeds are hypotheses; returned provider idea rows are not proof of served search queries.",
+    "All20seeds have separate exact exported rows; no close-variant grouping or demand sum inferred."
+  ]
+}
