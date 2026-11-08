@@ -1,5 +1,15 @@
 # Implementation progress — 7 November 2026
 
+## 9 November continuation checkpoint
+
+- PR #8 remained open. All three required checks passed on reviewed feature head `77a91a2`. Independent human review remains outstanding under [issue #6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6). Separate production authorization is still required.
+- The offline activation validator now requires the exact Search language decision, fresh effective negative scope across all four campaigns, measured peak first contact within 30 minutes, and issue #10's marketing-only retention evidence and 30-day recovery rehearsal. See the [operator checklist](../tools/release-control/README.md) and [staff worksheet](audit/STAFF_REHEARSAL_WORKSHEET.md).
+- The 360-pair WordPress preview pins the reviewed identities and passes the PHP harness with the checked-in manifest. Public sampling of the proposed namespace produced 16 HTTP 404 responses. Authenticated route and source checks remain open. The dedicated-page launch cohort still needs [issue #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1). See the [native preview evidence](../tools/native-wordpress/README.md).
+- Exact comparison of the saved Ads export reconciled 19 of 27 historical negative placements. The legacy broad list conflicts with protected property and Brand examples offline. Current scope verification and both reviewed keyword libraries remain outstanding. See the [negative screen and reconciliation](audit/HISTORICAL_NEGATIVE_PROTECTED_PROBE.md).
+- The tracking bridge binds accepted service routes, deduplicates offline reservations and checks the exact reviewed qualified-lead action. Real Data Manager credentials, scheduling and genuine conversion reconciliation remain unverified. [Tracking readback](audit/TRACKING_CONFIGURATION_READBACK_2026-11-08.md).
+- Commercial ratios are withheld when qualification history is unresolved. Verified finance inputs and [issue #3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) remain required. No production, Ads or mailbox changes were made in this continuation.
+
+
 The bounded Phase 0 discovery and offline development foundation are implemented; authenticated website/deployment inspection remains incomplete. Production acceptance, researched keyword masters, page construction/publication and activation are **not complete**. Current live snapshot: **17 paused campaigns, 3 removed, 0 enabled**. No website, Google Ads, live tracking or financial records were changed in this phase.
 
 ## Completed and tested
