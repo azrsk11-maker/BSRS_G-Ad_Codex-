@@ -65,3 +65,17 @@ Every historical row is held for item review. The review must either retain it a
 The owner-local review queue preserves all 640 IDs and the prerequisites in the hash-pinned feasibility register. A round-trip check reconciled every ID. Route the 173 Search intent items to page evidence, campaign scope, budget and tracking review. Route the seven measurement or campaign controls to native configuration readback and consent review where applicable. The remaining 116 require source or mechanism research, 339 are held for dependencies, and five remain out of scope. None has activation authority from this classification.
 
 Review Search candidates against the fixed UAE launch cohort and the full keyword admission criteria. Review measurement controls against the current consent and campaign evidence. Counts measure review workload and do not add keywords, pages or enabled entities.
+
+### Seven controls reconciled to current evidence
+
+| Catalogue ID | Evidence and status | Remaining acceptance |
+|---|---|---|
+| C139 Sold-out suppression | No authoritative availability feed or named inventory steward is documented. | Test stale and sold-out inputs against reviewed inventory and approved alternatives before any ad or route changes. |
+| C141 Match-type tests | [Keyword readback](KEYWORD_URL_READBACK_2026-11-07.json) covers the 82 exact/phrase launch keywords. [Campaign readback](CAMPAIGN_CONTROLS_READBACK_2026-11-07.json) shows broad-match settings off. | Keep the broad experiment conditional on separate approval, an explicit test design and qualification measurement. |
+| C157 Negative architecture | [Scope readback](TARGETING_NEGATIVE_READBACK_2026-11-07.json) and the [offline validator](../../tools/keyword-system/README.md) cover observed exclusions and scoped lexical tests. | Reconcile inherited scopes against the complete reviewed protected corpus and fresh live associations before any import. |
+| C158 Search-term harvesting | [Historical query audit](search-terms-2026-11-08/README.md) demonstrates a private read-only intake. | Establish staffed cadence and confirm private disclosure and admission review. One capture does not demonstrate recurring operation. |
+| C171 Primary and secondary conversions | [Ads goals readback](ADS_MEASUREMENT_READBACK_2026-11-07.json) shows accepted enquiry secondary and qualified lead primary, with the qualified goal misconfigured and no import source connected. | Verify the custom-goal exclusions, destination deduplication and restricted import evidence. |
+| C172 Optimization stage | The [campaign readback](CAMPAIGN_CONTROLS_READBACK_2026-11-07.json) records capped Maximize Clicks. | Retain the launch policy and require genuine reconciled outcomes before separately approving a qualified-lead bidding change. |
+| C173 GCLID preservation | [Isolated WordPress evidence](PURPOSE_ATTRIBUTION_LAB_2026-11-08.json) covers the purpose-specific candidate. | Validate actual browser withdrawal, accepted lead linkage and the restricted scheduled import path before using it for reporting or bidding. |
+
+These statuses use dated readbacks and isolated results. No catalogue control is accepted for production solely on this review.
