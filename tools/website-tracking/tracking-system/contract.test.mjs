@@ -35,7 +35,8 @@ test('preserved receiver event ID becomes the exact native Ads deduplication ID'
 
 test('accepted enquiry binds a reviewed service route without leaking it to destinations',()=>{
   const [form,phone]=record.ctas;
-  const bound=createRegistry([{...record,ctas:[{...form,submission_path:'/enquire/off-plan/'},phone]}]);
+  const resale={...form,cta_id:'bsre-resale-enquiry',form_id:'bsre-resale-form',submission_path:'/enquire/resale/'};
+  const bound=createRegistry([{...record,ctas:[{...form,submission_path:'/enquire/off-plan/'},resale,phone]}]);
   const event=raw();
   event.requested_url=record.path;
   const wire=JSON.stringify({request_id:'synthetic-request',landing_page:'https://blackswanrealestate.ae/enquire/off-plan/'});
@@ -58,6 +59,14 @@ test('accepted enquiry binds a reviewed service route without leaking it to dest
   }
   assert.throws(()=>normalizeEvent(event,registry),/SUBMISSION_ROUTE_MISMATCH/);
   assert.throws(()=>normalizeEvent({...event,requested_url:'/enquire/off-plan/'},bound),/PAGE_URL_MISMATCH/);
+  assert.throws(()=>normalizeEvent({...event,cta_id:resale.cta_id},bound),/SUBMISSION_ROUTE_MISMATCH/);
+  const resaleWire=wire.replace('off-plan','resale');
+  const resaleCapture={...capture,fingerprint:createHash('sha256').update(resaleWire).digest('hex')};
+  const resaleEvent={...event,cta_id:resale.cta_id,receipt:{...event.receipt,
+    submission_url:acceptedSubmissionUrl(resaleWire,resaleCapture,event.receipt)}};
+  const resaleResult=prepareDestinations(resaleEvent,options({registry:bound}));
+  assert.equal(resaleResult.output.length,2);
+  assert.doesNotMatch(JSON.stringify(resaleResult.output),/submission_|enquire\/resale/);
 });
 
 test('legacy accepted names adapt to one canonical event and keep internal metadata out of GA4',()=>{
