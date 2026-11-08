@@ -20,3 +20,16 @@ These are proposed protected-intent examples for reviewer discussion. They were 
 The 9 November offline screen compares the nine archived negative candidates against all 12 examples before assigning scope. The existing simulator uses the six original phrase negatives and three original exact negatives from [historical intake](../../tools/keyword-system/staging/historical-negative-intake.json). The 108 comparisons found zero lexical conflicts. As controls, all nine negatives matched their own literal text, and the three exact negatives did not match that text with an added word.
 
 Keep all nine candidates pending. The review still needs the current campaign or ad-group scope, inherited negatives, legitimate long-tail coverage against the reviewed positive master, and independent sign-off. Treat any changed match type or scope as a new review. This screen provides no platform approval or coverage certificate.
+
+## Campaign crosswalk for read-only reconciliation
+
+| Archived campaign label | Paused Real Estate campaign ID | Historical placements |
+| --- | --- | ---: |
+| BSRE_SEARCH_BUYERS_EN | 24372566774 | 6 phrase |
+| BSRE_SEARCH_OWNERS_EN | 24367388382 | 6 phrase |
+| BSRE_SEARCH_TENANTS_EN | 24378494092 | 6 phrase |
+| BSRE_SEARCH_BRAND_EN | 24378494098 | 6 phrase, 3 exact |
+
+The proposed crosswalk uses the historical service labels and the [paused campaign readback](ADS_PAUSED_READBACK_2026-11-08.json) for account 573-038-4686. The [inspected export summary](../PROGRESS.md) separately records 19 existing V2 exclusions, with four employment phrases per campaign and three exact Brand exclusions. It also records a 29-negative shared list attached only to six older campaigns in that export.
+
+The 27 historical placements are a reconciliation input. Compare each archived placement with native account ID, campaign ID, match type and text, then record whether it already exists, is absent or is covered by a different scope. The aggregate difference of eight does not identify the missing placements. Keep candidates held until exact overlap and inherited account or manager controls are verified. Preserve the existing exclusions during review.
