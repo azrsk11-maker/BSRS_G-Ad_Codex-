@@ -38,6 +38,10 @@ Assertions cover HMAC/JSON interoperability, all role receipts, TEST exclusion, 
 
 ## Form client and receipt recovery
 
+The optional `browser-prerequisites.php` probe runs before WordPress. It checks the current container's ability to create an unprivileged user namespace, followed by a user and mount namespace if the first probe succeeds. Each subprocess has a two-second limit. Missing commands, failed attempts and timeouts are distinguished. The check is informational and does not change isolation settings or install a browser.
+
+Chromium's sandbox depends on kernel mechanisms available in its execution environment. The kernel's no-new-privileges flag prevents privilege elevation through setuid programs. A failed namespace probe is evidence about that operation in this container, without establishing its cause or whether every Chromium configuration is unavailable. A successful probe also leaves Chromium startup and HTTPS test-origin acceptance unverified. [Chromium sandbox source](https://chromium.googlesource.com/chromium/src.git/+/master/sandbox/linux), [Linux no-new-privileges documentation](https://www.kernel.org/doc/html/latest/userspace-api/no_new_privs.html), [unshare manual](https://man7.org/linux/man-pages/man1/unshare.1.html)
+
 `client-interop.php` runs the source-pinned form candidate through real WordPress proof, lead and receipt-status handlers. A Node process executes the JavaScript form with DOM and session storage doubles. Fetch calls cross a local process pipe into WordPress. The existing pinned receiver runs in a second process with Sheet and email doubles. Kernel network isolation applies throughout.
 
 For each of the five roles, the client obtains a session-bound proof and submits a synthetic enquiry. The harness discards the acknowledgement only after WordPress has accepted and linked the receipt. A blank reloaded form then recovers the reference through the status handler. Assertions require one intake and receiver call per role, one durable row and email copy per request, and no measurement event during recovery. The proof is the only browser-session storage entry in these journeys.

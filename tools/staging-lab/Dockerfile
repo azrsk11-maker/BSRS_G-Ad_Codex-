@@ -17,6 +17,7 @@ COPY tools/recovery-package /opt/lab/recovery-package
 COPY tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php /opt/lab/receipt-recovery/
 COPY tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs /opt/lab/tracking-system/
 COPY tools/staging-lab/client-interop.php tools/staging-lab/client-interop.mjs /opt/lab/
+COPY tools/staging-lab/browser-prerequisites.php /opt/lab/
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 USER mysql
