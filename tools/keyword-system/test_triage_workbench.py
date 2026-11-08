@@ -38,6 +38,16 @@ def document(*rows):
 
 
 class TriageWorkbenchTests(unittest.TestCase):
+    def test_exact_token_aliases_keep_order_and_independent_result_lists(self):
+        result = tw.compile_workbench(corpus(), document(
+            proposal("cheap flat", "NEGATIVE_EXACT_REVIEW"),
+            proposal("cheap-flat", "NEGATIVE_EXACT_REVIEW")))
+        first, second = result["diagnostics"]["exact_negative_tests"]
+        self.assertEqual(first["observed_lexical_matches"], ["cheap flat", "cheap-flat"])
+        self.assertEqual(second["observed_lexical_matches"], first["observed_lexical_matches"])
+        first["observed_lexical_matches"].clear()
+        self.assertEqual(second["observed_lexical_matches"], ["cheap flat", "cheap-flat"])
+
     def test_verified_capture_preserves_all_occurrences_without_metrics(self):
         result = tw.load_corpus(Path(__file__).resolve().parents[2])
         self.assertEqual(len(result["sources"]), 4)

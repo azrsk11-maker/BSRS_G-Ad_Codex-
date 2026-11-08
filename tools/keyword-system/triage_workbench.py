@@ -126,10 +126,16 @@ def compile_workbench(corpus: dict, proposals: dict) -> dict:
     protected = {k for k, p in assessments.items() if p["disposition"] == "POSITIVE_REVIEW" or
                  (p["disposition"] == "HOLD" and p["protect_against_generic"])}
     exact_tests = []
+    # EXACT uses the same token equality as negative_matches. Index once rather
+    # than normalizing every observed phrase again for every exact proposal.
+    exact_index = {}
+    if any(p["disposition"] == "NEGATIVE_EXACT_REVIEW" for p in assessments.values()):
+        for query in sorted(corpus["entries"]):
+            exact_index.setdefault(tuple(tokens(query)), []).append(query)
     for key, proposal in sorted(assessments.items()):
         if proposal["disposition"] != "NEGATIVE_EXACT_REVIEW":
             continue
-        hits = [query for query in sorted(corpus["entries"]) if negative_matches(key, "EXACT", query)]
+        hits = list(exact_index.get(tuple(tokens(key)), ()))
         exact_tests.append({"negative": key, "negative_scope_proposal": deepcopy(NEGATIVE_SCOPE),
                             "observed_phrases_tested": len(corpus["entries"]), "observed_lexical_matches": hits,
                             "protected_lexical_collisions": sorted(set(hits) & protected)})
