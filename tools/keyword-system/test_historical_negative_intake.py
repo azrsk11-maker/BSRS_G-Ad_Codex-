@@ -18,6 +18,7 @@ from keyword_audit import negative_matches
 
 
 STAGING = Path(__file__).with_name("staging")
+AUDIT = Path(__file__).resolve().parents[2] / "docs/audit"
 
 
 def document():
@@ -44,7 +45,7 @@ def archive_bytes(entries):
 
 class HistoricalNegativeIntakeTests(unittest.TestCase):
     def test_historical_negatives_against_proposed_protected_phrases(self):
-        audit = Path(__file__).resolve().parents[2] / "docs/audit/HISTORICAL_NEGATIVE_PROTECTED_PROBE.md"
+        audit = AUDIT / "HISTORICAL_NEGATIVE_PROTECTED_PROBE.md"
         rows = [line.split("|")[1:3] for line in audit.read_text(encoding="utf-8").splitlines()
                 if line.startswith(("| buyers/", "| owners/", "| tenants/", "| brand "))]
         phrases = [phrase.strip() for _, phrase in rows]
@@ -62,6 +63,23 @@ class HistoricalNegativeIntakeTests(unittest.TestCase):
                 if mode == "EXACT":
                     self.assertFalse(negative_matches(text, mode, text + " dubai"))
                 self.assertEqual([phrase for phrase in phrases if negative_matches(text, mode, phrase)], [])
+
+    def test_legacy_broad_list_matches_protected_counterexamples(self):
+        evidence = json.loads((AUDIT / "TARGETING_NEGATIVE_READBACK_2026-11-07.json").read_text(encoding="utf-8"))
+        shared = evidence["shared_list"]
+        self.assertFalse(shared["attached_to_v2_campaigns_in_this_account_export"])
+        terms = shared["keywords_in_export_order"]
+        self.assertEqual(len(set(terms)), 29)
+        audit = (AUDIT / "HISTORICAL_NEGATIVE_PROTECTED_PROBE.md").read_text(encoding="utf-8")
+        section = audit.split("## Legacy shared-list counterexamples\n", 1)[1]
+        examples = [line.split("|")[1:4] for line in section.splitlines()
+                    if line.startswith(("| Off-plan ", "| Resale ", "| Sellers ", "| Landlords ", "| Tenants ", "| Brand "))]
+        self.assertEqual(len(examples), 6)
+        self.assertEqual(len({funnel for funnel, _, _ in examples}), 6)
+        for _, phrase, expected in examples:
+            with self.subTest(phrase=phrase):
+                matches = {term for term in terms if negative_matches(term, "BROAD", phrase.strip())}
+                self.assertEqual(matches, {term.strip() for term in expected.split(",")})
 
     def test_reconstruction_matches_exact_pinned_source_and_staging(self):
         raw = original_member_bytes()
