@@ -1,17 +1,44 @@
 import assert from 'node:assert/strict';
-import {spawn} from 'node:child_process';
-import {request} from 'node:http';
+import {execFileSync, spawn} from 'node:child_process';
+import {mkdtempSync, readFileSync, rmSync} from 'node:fs';
+import {request} from 'node:https';
+import {connect} from 'node:net';
+import {join} from 'node:path';
+import {createServer} from 'node:tls';
 
 const host = '127.0.0.1';
 const port = 18763;
 const origin = 'https://blackswanrealestate.ae';
+const temporary = mkdtempSync('/tmp/bsre-consent-tls-');
+let key, cert;
+try {
+  const keyPath = join(temporary, 'key.pem');
+  const certPath = join(temporary, 'cert.pem');
+  execFileSync('openssl', ['req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-days', '1',
+    '-subj', '/CN=BSRE Synthetic Loopback', '-addext', 'subjectAltName=IP:127.0.0.1',
+    '-keyout', keyPath, '-out', certPath], {timeout: 10000, stdio: 'ignore'});
+  key = readFileSync(keyPath);
+  cert = readFileSync(certPath);
+} finally {
+  rmSync(temporary, {recursive: true});
+}
+const sockets = new Set();
+const tls = createServer({key, cert, minVersion: 'TLSv1.2'}, client => {
+  const upstream = connect({host, port});
+  sockets.add(client);
+  client.on('error', () => upstream.destroy());
+  upstream.on('error', () => client.destroy());
+  client.on('close', () => { sockets.delete(client); upstream.destroy(); });
+  upstream.on('close', () => client.destroy());
+  client.pipe(upstream).pipe(client);
+});
 const server = spawn('php', ['-d', 'sendmail_path=/bin/false', '-S', host + ':' + port,
   '/opt/lab/consent-http-router.php'], {stdio: ['ignore', 'ignore', 'pipe']});
 const exited = new Promise(resolve => server.once('close', resolve));
 
-function post(path, body, headers = {}) {
+function post(path, body, headers = {}, ca = cert) {
   return new Promise((resolve, reject) => {
-    const req = request({host, port, path, method: 'POST',
+    const req = request({host, port: tls.address().port, path, method: 'POST', ca, agent: false,
       headers: {origin, 'sec-fetch-site': 'same-origin', 'content-type': 'application/json', ...headers}},
     response => {
       let data = '';
@@ -56,6 +83,11 @@ try {
       }
     });
   });
+  await new Promise((resolve, reject) => {
+    tls.once('error', reject);
+    tls.listen(0, host, resolve);
+  });
+  await assert.rejects(post('/context', {}, {}, null), {code: 'DEPTH_ZERO_SELF_SIGNED_CERT'});
   const first = await post('/context', {});
   assert.equal(first.status, 200);
   assert.equal(first.body.known, false);
@@ -84,10 +116,13 @@ try {
   assert.equal(after.status, 200);
   assert.equal(after.body.known, true);
   assert.deepEqual(after.body.preferences, {analytics: false, ad_measurement: false, personalization: false});
-  console.log(JSON.stringify({phase: 'consent_loopback_http', status: 'PASS',
-    checks: ['cookie_attributes', 'foreign_origin_denied', 'csrf_required', 'advertising_only_round_trip', 'withdrawal_round_trip'],
-    client: 'Node HTTP with explicit cookie replay', tls: 'simulated termination flag', browser_verified: false}));
+  console.log(JSON.stringify({phase: 'consent_loopback_https', status: 'PASS',
+    checks: ['untrusted_certificate_rejected', 'trusted_loopback_tls', 'cookie_attributes', 'foreign_origin_denied',
+      'csrf_required', 'advertising_only_round_trip', 'withdrawal_round_trip'],
+    client: 'Node HTTPS with explicit cookie replay', tls: 'loopback TLS termination', browser_verified: false}));
 } finally {
+  for (const socket of sockets) socket.destroy();
+  tls.close();
   server.kill('SIGKILL');
   await exited;
 }

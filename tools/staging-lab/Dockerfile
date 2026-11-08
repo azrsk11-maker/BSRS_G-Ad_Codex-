@@ -1,6 +1,6 @@
 FROM php:8.2-cli-bookworm@sha256:ce09ca1d4b532edf9b0347b44a1968a80d9175addb581c450ba0c9a43fa0c5ea
 # Official dependencies only; no WordPress or custom PHP executes at build time.
-RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates nodejs \
+RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates nodejs openssl \
     && docker-php-ext-install mysqli sockets \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
