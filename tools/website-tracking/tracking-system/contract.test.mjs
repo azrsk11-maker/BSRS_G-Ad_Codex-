@@ -98,7 +98,12 @@ test('retry cannot upgrade the original capture permission',()=>{
 test('input field injection and query or external URL leak reject',()=>{
   for(const field of ['email','phone','free_text','page_referrer','utm_term'])assert.throws(()=>normalizeEvent({...raw(),[field]:'PRIVATE'},registry),/UNKNOWN_EVENT_FIELD/);
   for(const url of ['/lp/bsre-c0001/?email=private@example.test','https://other.example/','/lp/bsre-c0001/#token',
-    '/lp/bsre-c0001/?','/enquire/rent/#'])assert.throws(()=>queryFreeUrl(url),/URL_NOT_APPROVED/);
+    '/lp/bsre-c0001/?','/enquire/rent/#','/private/../enquire/rent/',
+    '/private/%2e%2e/enquire/rent/','//blackswanrealestate.ae/enquire/rent/',
+    ' https://blackswanrealestate.ae/enquire/rent/','https://blackswanrealestate.ae:443/enquire/rent/']) {
+    assert.throws(()=>queryFreeUrl(url),/URL_NOT_APPROVED/);
+  }
+  assert.equal(queryFreeUrl('/enquire/rent/'),queryFreeUrl('https://blackswanrealestate.ae/enquire/rent/'));
 });
 test('registry binds campaign page version and CTA, rejects accidental reuse',()=>{
   assert.throws(()=>normalizeEvent({...raw(),landing_page_id:'BSRE-LP0002'},registry),/CONTEXT_MISMATCH/);
