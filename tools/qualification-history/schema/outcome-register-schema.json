@@ -1,0 +1,618 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bsre:standalone-outcome-register:1",
+  "title": "Black Swan Real Estate standalone no-CRM outcome record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outcome_id",
+    "lead_id",
+    "canonical_lead_id",
+    "person_key",
+    "person_dedup_confirmed",
+    "role",
+    "stage",
+    "occurred_at_utc",
+    "recorded_at_utc",
+    "recorded_by",
+    "qualification_status",
+    "is_test",
+    "source_evidence_reference",
+    "export_state"
+  ],
+  "properties": {
+    "outcome_id": {
+      "description": "Immutable ID for this genuine business outcome; keep stable across export retries.",
+      "type": "string",
+      "format": "uuid",
+      "minLength": 1
+    },
+    "lead_id": {
+      "description": "Original intake BSRE lead ID; link to the protected intake register.",
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_lead_id": {
+      "description": "Canonical intake record after manual person/role deduplication.",
+      "type": "string",
+      "minLength": 1
+    },
+    "person_key": {
+      "description": "Private opaque person reference; never send to GA4 or derive from exposed contact data.",
+      "type": "string",
+      "minLength": 1
+    },
+    "person_dedup_confirmed": {
+      "description": "Staff confirmed unique person/canonical mapping; required true for a qualified target count.",
+      "type": "boolean"
+    },
+    "role": {
+      "description": "One of the five actual enquiry roles.",
+      "type": "string",
+      "enum": [
+        "off_plan",
+        "resale",
+        "tenant",
+        "seller",
+        "landlord"
+      ],
+      "minLength": 1
+    },
+    "stage": {
+      "description": "Genuine confirmed business stage; no stage inferred from a click or form answer.",
+      "type": "string",
+      "enum": [
+        "lead_created",
+        "qualified_prospect",
+        "meeting_booked",
+        "consultation_completed",
+        "viewing_booked",
+        "viewing_completed",
+        "eoi_submitted",
+        "reservation_paid",
+        "spa_signed",
+        "commission_received",
+        "repeat_investor",
+        "referral_received"
+      ],
+      "minLength": 1
+    },
+    "occurred_at_utc": {
+      "description": "Actual stage occurrence with explicit UTC Z suffix.",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$",
+      "minLength": 1
+    },
+    "occurred_at_dubai": {
+      "description": "Same instant displayed with +04:00; do not independently invent or round it.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "pattern": "\\+04:00$"
+    },
+    "recorded_at_utc": {
+      "description": "When the operator recorded this ledger entry; distinct from occurrence time.",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$",
+      "minLength": 1
+    },
+    "recorded_by": {
+      "description": "Authorized staff reviewer reference; no fabricated roster.",
+      "type": "string",
+      "minLength": 1
+    },
+    "assigned_to": {
+      "description": "Current responsible consultant reference; handovers do not create new prospects.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qualification_status": {
+      "description": "Staff-reviewed status; raw acceptance and form answers never set QUALIFIED.",
+      "type": "string",
+      "enum": [
+        "UNREVIEWED",
+        "PENDING_CONTACT",
+        "PENDING_TIMING",
+        "PENDING_FIT",
+        "PENDING_AUTHORITY",
+        "QUALIFIED",
+        "DISQUALIFIED",
+        "DUPLICATE",
+        "TEST"
+      ],
+      "minLength": 1
+    },
+    "qualification_reason": {
+      "description": "Concise business reason; avoid unnecessary sensitive/free-text personal data.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contact_confirmed": {
+      "description": "Actual staff contactability confirmation, not merely valid phone syntax.",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "budget_inventory_fit_confirmed": {
+      "description": "Verified suitable budget/service/inventory fit where applicable; null if not applicable/pending.",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "timeline_confirmed": {
+      "description": "Role-specific actual timeline verified by staff.",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "authority_confirmed": {
+      "description": "Owner/representative authority verified for seller/landlord; null if not applicable.",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "duplicate_of_lead_id": {
+      "description": "Canonical original when this enquiry is a duplicate; retain history.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_test": {
+      "description": "Authorized labelled test rows must be true and never exported/counted as qualified.",
+      "type": "boolean"
+    },
+    "privacy_evidence_reference": {
+      "description": "Private reference to actual consent/CMP/notice/permission evidence relevant to processing/export.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ad_user_data": {
+      "description": "Actual permission state for the chosen import; do not infer from newsletter/contact permission.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "GRANTED",
+        "DENIED",
+        "UNSPECIFIED",
+        null
+      ]
+    },
+    "ad_personalization": {
+      "description": "Separate actual personalization state; validate requirements for chosen use.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "GRANTED",
+        "DENIED",
+        "UNSPECIFIED",
+        null
+      ]
+    },
+    "click_id_type": {
+      "description": "Only an actually captured identifier supported by the verified current import route.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "GCLID",
+        "GBRAID",
+        "WBRAID",
+        "NONE",
+        null
+      ]
+    },
+    "click_id": {
+      "description": "Restricted legitimately captured attribution value; never fabricate, log publicly or send to GA4.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conversion_action_id": {
+      "description": "Verified Real Estate Google Ads action ID; blank until account readback.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conversion_name": {
+      "description": "Exact verified conversion name for the chosen import method.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "order_id": {
+      "description": "Opaque stable ID based on outcome_id; distinct per genuine stage/occurrence.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conversion_value": {
+      "description": "Actual/evidence-based configurable value; no invented permanent value.",
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "conversion_currency": {
+      "description": "ISO currency of the verified conversion value/action; AED only when actually applicable.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Z]{3}$"
+    },
+    "value_basis": {
+      "description": "Actual commission/contribution or documented expected-value model/version; separate property sale price.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "export_state": {
+      "description": "Review/import lifecycle; planned exports do not equal confirmed imports.",
+      "type": "string",
+      "enum": [
+        "NOT_READY",
+        "REVIEW_REQUIRED",
+        "READY",
+        "EXPORTED",
+        "PENDING_RESULT",
+        "IMPORTED",
+        "REJECTED",
+        "ADJUSTMENT_REQUIRED",
+        "RETRACTED",
+        "EXCLUDED"
+      ],
+      "minLength": 1
+    },
+    "export_batch_id": {
+      "description": "Immutable reviewed standalone batch reference.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exported_at_utc": {
+      "description": "Actual export time; blank before export.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "import_job_id": {
+      "description": "Observed Google Ads import job/receipt reference; blank before a real job.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "import_result": {
+      "description": "Observed row/job result; never default to success.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "import_error_code": {
+      "description": "Safe actual error code without credentials or raw personal payload.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "adjusts_outcome_id": {
+      "description": "Existing outcome being corrected/retracted with the supported platform adjustment process.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "source_evidence_reference": {
+      "description": "Private source record proving the outcome/occurrence; not a bearer URL.",
+      "type": "string",
+      "minLength": 1
+    },
+    "staff_notes": {
+      "description": "Restricted minimal operational notes; never put this field in analytics/export by default.",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "x-csv_order": [
+    "outcome_id",
+    "lead_id",
+    "canonical_lead_id",
+    "person_key",
+    "person_dedup_confirmed",
+    "role",
+    "stage",
+    "occurred_at_utc",
+    "occurred_at_dubai",
+    "recorded_at_utc",
+    "recorded_by",
+    "assigned_to",
+    "qualification_status",
+    "qualification_reason",
+    "contact_confirmed",
+    "budget_inventory_fit_confirmed",
+    "timeline_confirmed",
+    "authority_confirmed",
+    "duplicate_of_lead_id",
+    "is_test",
+    "privacy_evidence_reference",
+    "ad_user_data",
+    "ad_personalization",
+    "click_id_type",
+    "click_id",
+    "conversion_action_id",
+    "conversion_name",
+    "order_id",
+    "conversion_value",
+    "conversion_currency",
+    "value_basis",
+    "export_state",
+    "export_batch_id",
+    "exported_at_utc",
+    "import_job_id",
+    "import_result",
+    "import_error_code",
+    "adjusts_outcome_id",
+    "source_evidence_reference",
+    "staff_notes"
+  ],
+  "x-template_status": "HEADER_ONLY_NO_LEADS",
+  "x-csv_null_convention": "Blank optional CSV cell means null; explicit booleans are true/false. No sample records supplied.",
+  "x-stage_guardrails": {
+    "qualified_prospect": "Non-test, person_dedup_confirmed true, staff contact/timing/fit evidence and owner authority where applicable; first-ever qualification per person counts once.",
+    "commission_received": "Actual received commission evidence/time/value; not property sale price or expected commission.",
+    "export": "Verify customer/action/identifier support/current permission/window, exclude tests/duplicates and keep stable outcome/order IDs; no upload is performed here."
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "qualified_prospect"
+          }
+        },
+        "required": [
+          "stage"
+        ]
+      },
+      "then": {
+        "required": [
+          "contact_confirmed",
+          "timeline_confirmed",
+          "qualification_reason"
+        ],
+        "properties": {
+          "qualification_status": {
+            "const": "QUALIFIED"
+          },
+          "person_dedup_confirmed": {
+            "const": true
+          },
+          "is_test": {
+            "const": false
+          },
+          "contact_confirmed": {
+            "const": true
+          },
+          "timeline_confirmed": {
+            "const": true
+          },
+          "qualification_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "qualified_prospect"
+          },
+          "role": {
+            "enum": [
+              "off_plan",
+              "resale",
+              "tenant"
+            ]
+          }
+        },
+        "required": [
+          "stage",
+          "role"
+        ]
+      },
+      "then": {
+        "required": [
+          "budget_inventory_fit_confirmed"
+        ],
+        "properties": {
+          "budget_inventory_fit_confirmed": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "qualified_prospect"
+          },
+          "role": {
+            "enum": [
+              "seller",
+              "landlord"
+            ]
+          }
+        },
+        "required": [
+          "stage",
+          "role"
+        ]
+      },
+      "then": {
+        "required": [
+          "authority_confirmed"
+        ],
+        "properties": {
+          "authority_confirmed": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "is_test": {
+            "const": true
+          }
+        },
+        "required": [
+          "is_test"
+        ]
+      },
+      "then": {
+        "properties": {
+          "export_state": {
+            "enum": [
+              "NOT_READY",
+              "EXCLUDED"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "export_state": {
+            "enum": [
+              "READY",
+              "EXPORTED",
+              "PENDING_RESULT",
+              "IMPORTED"
+            ]
+          }
+        },
+        "required": [
+          "export_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "privacy_evidence_reference",
+          "click_id_type",
+          "click_id",
+          "conversion_action_id",
+          "conversion_name",
+          "order_id"
+        ],
+        "properties": {
+          "is_test": {
+            "const": false
+          },
+          "person_dedup_confirmed": {
+            "const": true
+          },
+          "click_id_type": {
+            "enum": [
+              "GCLID",
+              "GBRAID",
+              "WBRAID"
+            ]
+          },
+          "click_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "privacy_evidence_reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conversion_action_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conversion_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "order_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "commission_received"
+          }
+        },
+        "required": [
+          "stage"
+        ]
+      },
+      "then": {
+        "required": [
+          "conversion_value",
+          "conversion_currency",
+          "value_basis"
+        ],
+        "properties": {
+          "conversion_value": {
+            "type": "number",
+            "minimum": 0
+          },
+          "conversion_currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "value_basis": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ],
+  "x-platform-limit": "Local schema validation does not establish consent sufficiency, identifier eligibility, import format compatibility, attribution windows, live action mappings or actual business evidence; verify them separately."
+}

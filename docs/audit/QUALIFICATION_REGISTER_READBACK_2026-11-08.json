@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "scope": "READ_ONLY_REGISTER_STRUCTURE_AND_AGGREGATES",
+  "observed_date_dubai": "2026-11-08",
+  "access": {
+    "account_scope": "Real Estate marketing account",
+    "sharing_ui_label": "Private to only me",
+    "protected_tab_labels": [
+      "Google Ads Leads",
+      "Qualified Outcomes",
+      "Staff guide",
+      "History review",
+      "Source review",
+      "Queue and retention",
+      "Daily handover"
+    ],
+    "sharing_permissions_changed": false,
+    "full_acl_inspected": false,
+    "private_workbook_id_published": false
+  },
+  "intake": {
+    "sha256": "54753ee91df2da30dff294a8725dabd69002d4e4f5a949d45b6c7aeac5d77f0f",
+    "bytes": 17363,
+    "header_exact_match": true,
+    "columns": 26,
+    "nonempty_rows": 12,
+    "explicit_test_rows": 12,
+    "rows_requiring_classification": 0,
+    "email_status_counts": {
+      "SENT": 12
+    },
+    "qualification_status_counts": {
+      "UNREVIEWED": 12
+    },
+    "duplicate_request_ids": 0,
+    "duplicate_lead_ids": 0,
+    "duplicate_event_ids": 0,
+    "missing_receipt_ids": 0,
+    "normalized_payload_hash_mismatches": 0
+  },
+  "outcomes": {
+    "sha256": "b913d424ae2d54b72900288cbd9b59700265f65e757228b6a33a91c464a6f081",
+    "bytes": 639,
+    "columns": 40,
+    "header_exact_match": true,
+    "nonempty_rows": 0
+  },
+  "history_completeness_verified": false,
+  "validated_projection": {
+    "schema": "bsre-qualification-history-audit-v1",
+    "scope": "LOCAL_AGGREGATE_REVIEW_ONLY",
+    "status": "AUDITED_WITH_HOLDS",
+    "fixture_only": false,
+    "evaluated_at_utc": "2026-11-08T17:23:41+00:00",
+    "history": {
+      "complete_attested": false,
+      "truth_independently_verified": false,
+      "staff_attested_first_qualification_total": null
+    },
+    "counts": {
+      "intake_rows_supplied": 12,
+      "outcome_rows_supplied": 0,
+      "outcomes_with_hold_codes": 0,
+      "held_person_mappings": 0,
+      "tied_first_qualification_people": 0,
+      "unambiguous_first_qualifications_in_supplied_window": 0
+    },
+    "provided_history_by_dubai_day": {},
+    "provided_history_by_role": {},
+    "provided_history_by_source": {
+      "ADS_ATTRIBUTED": 0,
+      "OTHER_SOURCE": 0,
+      "UNKNOWN_SOURCE": 0
+    },
+    "outcome_hold_counts": {},
+    "source_review_hold_counts": {},
+    "source_review_bound_to_ledger_bytes": false,
+    "source_evidence_truth_independently_verified": false,
+    "contains_record_identifiers_or_click_data": false,
+    "upload_supported": false
+  },
+  "limits": [
+    "These exports establish the current working register only; historical completeness is unverified.",
+    "CSV export does not prove native Boolean cell types. The empty outcome register required no Boolean conversion.",
+    "Explicit test labels are exclusion evidence, not genuine prospect evidence.",
+    "Stored SENT states do not establish freshly verified email delivery.",
+    "No raw rows, contacts, notes, IDs or click identifiers are included in this report."
+  ],
+  "cells_changed": false,
+  "import_or_upload_performed": false
+}
