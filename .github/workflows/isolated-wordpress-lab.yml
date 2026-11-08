@@ -8,6 +8,7 @@ on:
       - 'tools/consent-retention/**'
       - 'tools/recovery-package/**'
       - 'tools/native-wordpress/**'
+      - 'tools/release-control/**'
       - 'tools/website-tracking/tracking-system/receipt-recovery*.php'
       - 'tools/website-tracking/tracking-system/receipt-status*.php'
       - 'tools/website-tracking/tracking-system/build-*-candidate.mjs'
