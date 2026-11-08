@@ -313,3 +313,5 @@ Commercial reporting now exposes total contribution after acquisition costs and 
 
 Preliminary review of all 31 supplemental seller and landlord discovery identities is recorded in [the supply intent review](audit/keyword-discovery-supply-2026-11-08/INTENT_REVIEW.md). Seven Dubai seller and seven Dubai landlord candidates remain subject to factual service and destination review. Seventeen phrases stay held for geography, buyer intent or ambiguous agency intent. Exact phrase coverage was checked against the pinned capture. This adds zero entries to either reviewed master and proposes zero negatives.
 
+The owner candidate cross-check found seven literal identities already in the dated Owners keyword export. Four additional identities overlap in intent, one requires tenant-sourcing evidence and two commercial terms require an explicit service remit and suitable intake. Both existing owner routes returned HTTP 200 with form markers. Dated ad group and route mappings are recorded in the supply intent review. The 360-slot ownership decision and factual admission remain open.
+
