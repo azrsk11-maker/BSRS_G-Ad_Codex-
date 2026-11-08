@@ -16,6 +16,7 @@ WT_GATES = {f"WT-{n:03}" for n in range(1, 31)}
 POSTFLIGHT_GATES = {"WT-031", "WT-032"}
 BRAND_POLICY_GATE = "BRAND_POLICY"
 SERVING_CHILDREN_GATE = "SERVING_CHILDREN"
+ASSET_HOLDS_GATE = "ASSET_HOLDS"
 BRAND_CAMPAIGN_ID = "24378494098"
 BRAND_AD_GROUP_ID = "204397706114"
 BRAND_AD_ID = "828621612889"
@@ -111,6 +112,16 @@ def reviewed_launch_children():
                 or len({row["id"] for row in children}) != len(children) or sum(counts.values()) != len(children)):
             raise ValueError("INVALID_REVIEWED_LAUNCH_CHILD_INVENTORY")
     return result
+
+
+def held_account_asset_ids():
+    path = FROZEN_BASELINE_PATH.parent / "asset-audit-2026-11-07/capture.json"
+    capture = load_json(path)
+    cells = [row["configuration"] for row in capture["account_associations"]]
+    identities = {row["Item ID"] for row in cells if row["Asset status"] == "Paused"}
+    if capture["account_id"] != ACCOUNT or len(identities) != len(cells) or len(cells) != 17:
+        raise ValueError("INVALID_REVIEWED_ASSET_HOLDS")
+    return identities
 
 
 def verify_file(root, record):
@@ -272,7 +283,7 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
         evidence = rows(packet["evidence"])
         required_gates = GATES | (POSTFLIGHT_GATES if proposal["kind"].startswith("ADS_") else set())
         if proposal["kind"] == "ADS_ACTIVATION":
-            required_gates.update({BRAND_POLICY_GATE, SERVING_CHILDREN_GATE})
+            required_gates.update({BRAND_POLICY_GATE, SERVING_CHILDREN_GATE, ASSET_HOLDS_GATE})
         need(len(evidence) == len(required_gates) and {x.get("gate_id") for x in evidence} == required_gates, "ALL_REQUIRED_GATES_EXACTLY_ONCE")
         latest_evidence = created
         evidence_expiries = []
@@ -302,6 +313,14 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                      all(sorted(map(digest, rows(observed[kind]))) == sorted(map(digest, items))
                          for kind, items in expected.items()),
                      "EXACT_REVIEWED_LAUNCH_CHILD_IDENTITIES_AND_STATUSES_REQUIRED")
+            if row["gate_id"] == ASSET_HOLDS_GATE and proposal["kind"] == "ADS_ACTIVATION":
+                assets = result.get("account_asset_statuses")
+                need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and
+                     result.get("account") == ACCOUNT and isinstance(assets, dict) and
+                     all(assets.get(identity) == "PAUSED" for identity in held_account_asset_ids()) and
+                     result.get("unreviewed_effective_asset_count") == 0 and
+                     type(result["unreviewed_effective_asset_count"]) is int,
+                     "KNOWN_ASSET_HOLDS_AND_EFFECTIVE_ASSOCIATIONS_REQUIRED")
             observed = instant(result.get("observed_at_utc"))
             need(created <= observed <= now, "EVIDENCE_TIME_OUTSIDE_PROPOSAL")
             latest_evidence = max(latest_evidence, observed)

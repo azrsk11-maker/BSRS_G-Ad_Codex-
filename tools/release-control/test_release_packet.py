@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, frozen_legacy_statuses, instant, load_json, validate, verify_file
-from release_packet import reviewed_launch_children
+from release_packet import held_account_asset_ids, reviewed_launch_children
 
 COMMIT = "a" * 40
 NOW = instant("2026-11-07T06:00:00Z")
@@ -66,7 +66,7 @@ class ReleasePacketTests(unittest.TestCase):
         evidence = []
         gates = GATES | (POSTFLIGHT_GATES if kind.startswith("ADS_") else set())
         if kind == "ADS_ACTIVATION":
-            gates.update({"BRAND_POLICY", "SERVING_CHILDREN"})
+            gates.update({"BRAND_POLICY", "SERVING_CHILDREN", "ASSET_HOLDS"})
         for gate in sorted(gates):
             result = {"test_only": True, "gate_id": gate, "status": "PASS", "proposal_sha256": proposal_hash,
                 "commit": COMMIT, "resource_page_ids": page_ids, "method": "AUTHENTICATED_STAGING_ACCEPTANCE",
@@ -88,6 +88,10 @@ class ReleasePacketTests(unittest.TestCase):
                     "24378494092": {"ad_groups": 1, "ads": 1, "keywords": 16},
                     "24378494098": {"ad_groups": 1, "ads": 1, "keywords": 8},
                 }
+            if gate == "ASSET_HOLDS":
+                result.update(method="AUTHENTICATED_CONFIGURATION_READBACK", account=ACCOUNT,
+                              account_asset_statuses=dict.fromkeys(held_account_asset_ids(), "PAUSED"),
+                              unreviewed_effective_asset_count=0)
             evidence.append({"gate_id": gate, "file": self.write("evidence/" + gate + ".json", result)})
         packet = {"schema_version": 1, "proposal": proposal, "evidence": evidence,
             "review": {"repository": REPO, "commit": COMMIT, "approver": "synthetic-reviewer", "state": "APPROVED",
@@ -271,6 +275,15 @@ class ReleasePacketTests(unittest.TestCase):
         result["enabled_reviewed_children"]["24378494098"]["keywords"] = 0
         evidence["file"] = self.write(path, result)
         self.assertIn("ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED", self.check(packet)["errors"])
+
+    def test_activation_rejects_reenabled_held_account_lead_form(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(e for e in packet["evidence"] if e["gate_id"] == "ASSET_HOLDS")
+        path = evidence["file"]["path"]
+        result = json.loads((self.root / path).read_text(encoding="utf-8"))
+        result["account_asset_statuses"]["424492800514"] = "ENABLED"
+        evidence["file"] = self.write(path, result)
+        self.assertIn("KNOWN_ASSET_HOLDS_AND_EFFECTIVE_ASSOCIATIONS_REQUIRED", self.check(packet)["errors"])
 
     def test_activation_rejects_same_count_keyword_substitution(self):
         packet = self.fixture("ADS_ACTIVATION")
