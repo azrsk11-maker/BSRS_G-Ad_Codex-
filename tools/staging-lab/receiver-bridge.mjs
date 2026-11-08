@@ -13,6 +13,7 @@ for await(const line of createInterface({input:process.stdin,crlfDelay:Infinity}
  const command=JSON.parse(line); let result;
  if(command.op==='post') result=l.postWire(command.raw);
  else if(command.op==='outbox') {l.context.processLeadOutbox();result={headers:l.context.LEAD_HEADERS,rows:l.rows.slice(1),mail:l.mail};}
+ else if(command.op==='snapshot') result={headers:l.context.LEAD_HEADERS,rows:l.rows.slice(1),mail:l.mail};
  else throw Error('Unsupported synthetic bridge operation');
  process.stdout.write(JSON.stringify(result)+'\n');
 }

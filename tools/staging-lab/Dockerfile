@@ -26,6 +26,7 @@ COPY tools/website-tracking/tracking-system/purpose-attribution.php tools/websit
 COPY tools/website-tracking/tracking-system/build-purpose-retention-candidate.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/purpose-retention.php /opt/lab/purpose-retention/
 COPY tools/staging-lab/purpose-client-interop.php tools/staging-lab/purpose-client-interop.mjs /opt/lab/
+COPY tools/staging-lab/purpose-concurrency.php /opt/lab/
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \

@@ -8,6 +8,7 @@ require '/opt/lab/purpose/store.php';
 require '/opt/lab/purpose/purpose-attribution.php';
 require '/opt/lab/purpose/intake.php';
 require '/opt/lab/receipt-recovery/receipt-recovery-wordpress.php';
+require '/opt/lab/purpose-concurrency.php';
 define('BSRE_PURPOSE_ATTRIBUTION_ENABLED',true);
 define('BSRE_RECEIPT_STATUS_ENABLED',true);
 define('BSRE_LEAD_RECEIVER_URL','https://script.google.com/macros/s/BSRE_SYNTHETIC_NOT_DEPLOYED/exec');
@@ -79,6 +80,7 @@ while(($line=fgets($pipes[1],1000000))!==false){
     }elseif($op==='inspect'){
         $id=$message['request_id'];purpose_check('inspect_current_request',$id===$current['id']);
         $row=$wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s",$id),ARRAY_A);
+        if($scenarios===8) foreach(purpose_concurrency_test($current,$bodies[$id],$row)as$name=>$passed) purpose_check('concurrency_'.$name,$passed);
         P\assert_record($row);$saved=json_decode($row['purpose_json'],true,12,JSON_THROW_ON_ERROR);
         $values=['wire_hash_bound'=>$row['fingerprint']===hash('sha256',$wireBodies[$id]),'durable_ids_linked'=>$row['lead_id']===$receipts[$id]['lead_id']&&$row['event_id']===$receipts[$id]['event_id'],
             'four_slots_present'=>isset($saved['analytics'],$saved['advertising']),
@@ -110,6 +112,14 @@ while(($line=fgets($pipes[1],1000000))!==false){
     if($complete)break;
 }
 fclose($pipes[0]);fclose($pipes[1]);purpose_check('client_exit',proc_close($client)===0&&$complete&&$scenarios===20);
-$outbox=purpose_receiver(['op'=>'outbox']);purpose_check('twenty_rows_and_mails',count($outbox['rows'])===20&&count($outbox['mail'])===20&&count($outbox['headers'])===26);
+// The preserved receiver attempts at most five messages per outbox invocation.
+// Drain the known twenty-row synthetic fixture in four bounded batches.
+for ($batch = 1; $batch <= 4; $batch++) {
+    $outbox = purpose_receiver(['op'=>'outbox']);
+    purpose_check('outbox_batch_' . $batch, count($outbox['rows']) === 20
+        && count($outbox['mail']) === $batch * 5 && count($outbox['headers']) === 26);
+}
+$recheck = purpose_receiver(['op'=>'outbox']);
+purpose_check('outbox_recheck_has_no_duplicate_mail', count($recheck['mail']) === 20);
 fclose($receiver[0]);fclose($receiver[1]);purpose_check('receiver_exit',proc_close($bridge)===0);
 echo wp_json_encode(['phase'=>'purpose_client_wordpress_receiver','status'=>'PASS','checks'=>$checks,'synthetic_only'=>true,'browser_and_google_are_doubles'=>true,'retention_restore_accepted'=>false,'production_acceptance'=>false])."\n";

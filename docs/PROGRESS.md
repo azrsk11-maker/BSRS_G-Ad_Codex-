@@ -393,3 +393,7 @@ Independent review and focused tests passed6newclient tests and30purePHP asserti
 
 Mixed legacy-export/private-read lock-order concurrency stress remains open, along with actual browser cookie/bridge and payload acceptance, submission-closure/email retention, genuine account/resource mapping and separately authorized deployment. See `tools/website-tracking/tracking-system/purpose-attribution-candidate.md` for the exact candidate boundary.
 
+The first native run atf24d784 passed the preceding baseline phases and reached the final new outbox assertion. It failed because the test expected20emails from one invocation of the preserved five-message batch. The corrected test drains four bounded batches and checks no later duplicates. Seven focused client tests pass, including a direct pinned-receiver batch regression. The receiver limit and production sources are unchanged.
+
+Added a deterministic native concurrency fixture using the actual private reader and purpose intake route. It holds a real capture lock while an unchanged retry encounters the native one-second MariaDB lock timeout, then checks rollback, state-lock release, exact wire/sidecar/receipt preservation, denied measurement for the failed capture attempt and subsequent unchanged retry. A read-only synthetic receiver snapshot avoids sending mail during concurrency comparison. Eleven receiver tests and PHP/JS syntax checks pass. Current-head native timeout/restore execution remains pending; this fixture does not certify all possible deadlock schedules.
+

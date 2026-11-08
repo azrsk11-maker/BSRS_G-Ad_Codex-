@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {buildPurposeClientCandidate, buildPurposeStoreCandidate, buildPurposeIntakeCandidate} from './build-purpose-attribution-candidate.mjs';
 import {buildPurposeRetention} from './build-purpose-retention-candidate.mjs';
+import {lab} from '../../staging-lab/receiver-lab.mjs';
 
 const root = new URL('../../staging-lab/fixtures/bsre-enquiries/', import.meta.url);
 const source = readFileSync(new URL('assets/lead.js', root));
@@ -51,6 +52,17 @@ test('retention and restore candidates preserve scoped existing logic and add hi
   }
   const fixture=buildPurposeRetention(readFileSync(new URL('../../staging-lab/restore.php',import.meta.url)),'restore');
   assert.match(fixture,/Synthetic_Retention_Click/);assert.match(fixture,/purpose_retention_restore_rehearsal/);
+});
+test('preserved receiver delivers twenty accepted rows in four bounded outbox batches',()=>{
+  const receiver=lab();
+  for(let index=0;index<20;index++)assert.equal(receiver.post(receiver.payload()).accepted,true);
+  for(let batch=1;batch<=4;batch++){
+    const result=receiver.context.processLeadOutbox();
+    assert.equal(result.sent,5);assert.equal(receiver.mail.length,batch*5);
+  }
+  assert.equal(receiver.context.processLeadOutbox().sent,0);
+  assert.equal(receiver.rows.length,21);assert.equal(receiver.mail.length,20);
+  assert.equal(new Set(receiver.rows.slice(1).map(row=>row[1])).size,20);
 });
 test('full independent latest histories travel privately while wire retains original schema',async()=>{
   const store=new Map();const clock=Date.now()-10000;
