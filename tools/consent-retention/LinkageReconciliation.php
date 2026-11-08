@@ -44,7 +44,8 @@ final class LinkageReconciliation {
             if (isset($captures[$id])) { $add('DUPLICATE_CAPTURE_REQUEST'); $globalHold=true; }
             $captures[$id][]=$capture;
             if ($capture['subject_key']==='') { $add('CAPTURE_SUBJECT_UNKNOWN'); $globalHold=true; }
-            if ((int)$capture['known']!==1 || (int)$capture['uncertain']!==0 || (int)$capture['delivery_pending']!==0 || (int)$capture['ad_measurement']!==1 || (int)$capture['eligible']!==1 || (int)$capture['preference_expires_at']<=time()) $permissionHolds++;
+            if ((int)$capture['known']!==1 || (int)$capture['uncertain']!==0 || (int)$capture['delivery_pending']!==0 || (int)$capture['ad_measurement']!==1 || (int)$capture['eligible']!==1 || (int)$capture['preference_expires_at']<=time() ||
+                (int)$capture['personalization']!==0 || trim($capture['notice_version'])==='' || (int)$capture['original_revision']<1 || (int)$capture['created_at']<=0 || (int)$capture['created_at']>time() || $capture['state']!=='ACCEPTED') $permissionHolds++;
         }
         foreach($snapshot['receiver_rows'] as $row) {
             if (!is_array($row) || !array_is_list($row) || count($row)!==26) self::invalid();
