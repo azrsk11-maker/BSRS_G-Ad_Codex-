@@ -7,6 +7,7 @@ import tempfile
 import unittest
 
 from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, frozen_legacy_statuses, instant, load_json, validate, verify_file
+from release_packet import reviewed_launch_children
 
 COMMIT = "a" * 40
 NOW = instant("2026-11-07T06:00:00Z")
@@ -80,6 +81,7 @@ class ReleasePacketTests(unittest.TestCase):
             if gate == "SERVING_CHILDREN":
                 result["method"] = "AUTHENTICATED_CONFIGURATION_READBACK"
                 result["account"] = ACCOUNT
+                result["children"] = reviewed_launch_children()
                 result["enabled_reviewed_children"] = {
                     "24372566774": {"ad_groups": 2, "ads": 2, "keywords": 34},
                     "24367388382": {"ad_groups": 2, "ads": 2, "keywords": 24},
@@ -269,6 +271,17 @@ class ReleasePacketTests(unittest.TestCase):
         result["enabled_reviewed_children"]["24378494098"]["keywords"] = 0
         evidence["file"] = self.write(path, result)
         self.assertIn("ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED", self.check(packet)["errors"])
+
+    def test_activation_rejects_same_count_keyword_substitution(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(e for e in packet["evidence"] if e["gate_id"] == "SERVING_CHILDREN")
+        path = evidence["file"]["path"]
+        result = json.loads((self.root / path).read_text(encoding="utf-8"))
+        result["children"]["keywords"][0]["id"] = "999999999"
+        evidence["file"] = self.write(path, result)
+        errors = self.check(packet)["errors"]
+        self.assertIn("EXACT_REVIEWED_LAUNCH_CHILD_IDENTITIES_AND_STATUSES_REQUIRED", errors)
+        self.assertNotIn("ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED", errors)
 
     def test_website_cannot_carry_spend_approval(self):
         self.packet["proposal"]["media_limits"] = {"aggregate_average_daily_fils": 200000}

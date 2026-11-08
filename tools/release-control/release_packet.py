@@ -92,6 +92,25 @@ def frozen_legacy_statuses():
     return legacy
 
 
+def reviewed_launch_children():
+    audit_dir = FROZEN_BASELINE_PATH.parent
+    ads = load_json(audit_dir / "ACCOUNT_AD_URL_READBACK_2026-11-07.json")["ads_in_export_order"]
+    keywords = load_json(audit_dir / "KEYWORD_URL_READBACK_2026-11-07.json")["keywords"]
+    result = {
+        "ad_groups": [{"campaign_id": row["Campaign ID"], "id": row["Ad group ID"], "status": "ENABLED"} for row in ads],
+        "ads": [{"campaign_id": row["Campaign ID"], "ad_group_id": row["Ad group ID"],
+                 "id": row["Ad ID"], "status": "ENABLED"} for row in ads],
+        "keywords": [{"campaign_id": row["Campaign ID"], "ad_group_id": row["Ad group ID"],
+                      "id": row["Keyword ID"], "status": "ENABLED"} for row in keywords],
+    }
+    for kind, children in result.items():
+        counts = {identity: sum(row["campaign_id"] == identity for row in children) for identity in CURRENT_CAMPAIGNS}
+        if (counts != {identity: expected[kind] for identity, expected in LAUNCH_ENABLED_CHILD_COUNTS.items()}
+                or len({row["id"] for row in children}) != len(children) or sum(counts.values()) != len(children)):
+            raise ValueError("INVALID_REVIEWED_LAUNCH_CHILD_INVENTORY")
+    return result
+
+
 def verify_file(root, record):
     """Only explicit bounded repository-relative files; no symlink/private paths."""
     if not isinstance(record, dict) or set(record) != {"path", "sha256"}:
@@ -275,6 +294,12 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                      result.get("account") == ACCOUNT and
                      digest(result.get("enabled_reviewed_children")) == digest(LAUNCH_ENABLED_CHILD_COUNTS),
                      "ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED")
+                expected = reviewed_launch_children()
+                observed = result.get("children")
+                need(isinstance(observed, dict) and observed.keys() == expected.keys() and
+                     all(sorted(map(digest, rows(observed[kind]))) == sorted(map(digest, items))
+                         for kind, items in expected.items()),
+                     "EXACT_REVIEWED_LAUNCH_CHILD_IDENTITIES_AND_STATUSES_REQUIRED")
             observed = instant(result.get("observed_at_utc"))
             need(created <= observed <= now, "EVIDENCE_TIME_OUTSIDE_PROPOSAL")
             latest_evidence = max(latest_evidence, observed)
