@@ -26,3 +26,13 @@ Google's [consent setup documentation](https://developers.google.com/tag-platfor
 7. Complete browser/native/security/recovery acceptance and separate owner authorization before any production write.
 
 Run `node --test tracking-system/contract.test.mjs` from the parent directory. Sixteen tests passed in the combined run recorded in the audit. Fictional IDs such as `G-TESTONLY00` and `AW-999999999/testonly` exist only in unit fixtures; no Google endpoint is called.
+
+## Private session-only first/latest advertising attribution
+
+`attribution-state.mjs` adds a pure state reducer and private durable-receipt context. It preserves first/latest acquisition snapshots across internal navigation; only explicit trusted verified external-acquisition evidence and a reviewed campaign/page registry binding can create a new touch. Unknown URLs, self-referrers and UTMs do not establish acquisition authority. Test booleans are not cryptographic verification.
+
+Exact `gclid`/`gbraid`/`wbraid` bytes and optional six UTM / three Google-ID strings remain private. Unknown fields, controls, unsupported values and oversize reject instead of truncating; missing values stay absent. Numeric Google identifiers remain strings, not invented resource bindings. Bounded UTM text may still contain contact/free text and is **not certified safe for disclosure**. No private attribution object is passed into GA4 or the existing public event normalizer.
+
+This state uses the advertising purpose independently of analytics. Advertising-only consent works; analytics-only attribution is not implemented by this module. State is session-only: session changes, expiry, denial, admin/QA or unverifiable permission prevent reuse. Withdrawal clears the owned reducer state even if configuration is unavailable. The caller must replace its slot with the returned `next_state` and dispose of old copies; immutable JavaScript snapshots cannot erase arbitrary prior references. Original touch permissions survive retries without upgrades.
+
+Eleven focused tests cover A → internal public navigation → B → private accepted receipt, metadata/ID exactness and immutable snapshots, consent/session/withdrawal boundaries, evidence/registry validation and retries/conflicts. Native website persistence, main-site route bindings, authenticated acquisition/consent/receipt evidence, compatible wire-v1 sidecar packaging, durable dispatch and live WT-017 acceptance remain open. This is independently testable development progress, not completion of the full attribution contract. Run `node --test tracking-system/attribution-state.test.mjs`; mandatory repository CI discovers it automatically.
