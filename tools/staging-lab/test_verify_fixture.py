@@ -2,6 +2,7 @@
 import errno
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -80,9 +81,11 @@ class FixtureVerifierTests(unittest.TestCase):
         try:
             member.symlink_to(outside)
         except NotImplementedError as error:
+            if os.name != "nt":
+                raise
             self.skipTest("Filesystem/user cannot create symlinks: " + type(error).__name__)
         except OSError as error:
-            if error.errno not in (errno.EACCES, errno.EPERM, errno.ENOTSUP) and getattr(error, "winerror", None) != 1314:
+            if os.name != "nt" or (error.errno not in (errno.EACCES, errno.EPERM, errno.ENOTSUP) and getattr(error, "winerror", None) != 1314):
                 raise
             self.skipTest("Filesystem/user cannot create symlinks: " + type(error).__name__)
         self.assert_denied(self.run_verifier(), "Symlink is not an accepted fixture")
