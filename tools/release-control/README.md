@@ -40,7 +40,7 @@ On 8 November 2026, direct HTTPS requests to all six destinations in the dated a
 
 The dated campaign and keyword readbacks showed paused children. If a fresh readback confirms that state, prepare a separate configuration proposal while the parent campaigns are paused. Keep the preflight evidence open until the relevant operation has explicit authorization and a verified readback.
 
-The activation staffing gate requires owner-reviewed references to a completed rehearsal and measured daily capacity. Compare capacity with the reviewed enquiry load at the full launch allocation. Record daily 10:00–19:00 Dubai coverage and the instruction to pause during uncovered absences or unmanageable backlog. The stated 300 enquiries per day remains an estimate until measured.
+The activation staffing gate requires owner-reviewed references to a completed rehearsal and measured daily capacity. Compare capacity with the reviewed enquiry load at the full launch allocation. Record daily 10:00–19:00 Dubai coverage and the instruction to pause during uncovered absences or unmanageable backlog. The stated 300 enquiries per day remains an estimate until measured. Use the [staff rehearsal worksheet](../../docs/audit/STAFF_REHEARSAL_WORKSHEET.md) to collect the evidence.
 
 ## Use
 
