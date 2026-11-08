@@ -18,6 +18,8 @@ This implements part of Master sections 18/21/24 and [the repository governance 
 
 For Ads activation, `RETENTION_RECOVERY` must reference the reviewed exact-copy reconciliation for the marketing mailbox and a completed restore rehearsal. Record the owner-controlled manifest mode from issue #10, a maximum 30-day recovery window, and evidence that deletions are reapplied before restored services reopen. The reviewer checks the underlying evidence. The packet does not grant mailbox access or authorize a production purge.
 
+For Ads activation, `QUALIFICATION_HISTORY` must reference reviewed qualification history and authenticated readbacks of the restricted source access and Data Manager schedule. Bind the route to Real Estate account 573-038-4686 and action 7878013428 using GCLID only. Verify that the connection identity can access only the dedicated export and cannot reach the private intake workbook. Keep the gate open if that restriction is unverified. Reconcile genuine eligible conversions separately when available. See the [tracking readback](../../docs/audit/TRACKING_CONFIGURATION_READBACK_2026-11-08.md).
+
 The isolated workflow includes changes under `tools/release-control/` in its pull-request path filter. This allows a PR changing only the release checker to obtain the exact-head evidence the checker requires.
 
 Website/tracking preflight requires WT-001 through WT-030 and the seven additional gates. WT-031/032 require actual publication/readback evidence and remain **post-publication obligations**, not manufactured preflight passes. Ads actions require that publication evidence already exists. Production readback must still follow every authorized operation. A consistent packet is not evidence that a deployment happened.

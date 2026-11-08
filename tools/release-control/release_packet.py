@@ -357,6 +357,16 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                          exclusions.get("unresolved_effective_conflicts") == 0 and
                          type(exclusions.get("unresolved_effective_conflicts")) is int,
                          "EFFECTIVE_NEGATIVE_SCOPE_READBACK_REQUIRED")
+            if row["gate_id"] == "QUALIFICATION_HISTORY" and proposal["kind"] == "ADS_ACTIVATION":
+                imports = result.get("qualified_import")
+                need(isinstance(imports, dict) and imports.get("account") == ACCOUNT and
+                     imports.get("conversion_action_id") == "7878013428" and
+                     imports.get("route") == "SCHEDULED_DATA_MANAGER_GCLID_ONLY" and
+                     imports.get("export_only_access_verified") is True and
+                     match(ID_REF, imports.get("history_evidence_ref")) and
+                     match(ID_REF, imports.get("source_access_readback_ref")) and
+                     match(ID_REF, imports.get("schedule_readback_ref")),
+                     "RESTRICTED_QUALIFIED_IMPORT_READBACK_REQUIRED")
             if row["gate_id"] == "RETENTION_RECOVERY" and proposal["kind"] == "ADS_ACTIVATION":
                 retention = result.get("retention_recovery")
                 need(isinstance(retention, dict) and
