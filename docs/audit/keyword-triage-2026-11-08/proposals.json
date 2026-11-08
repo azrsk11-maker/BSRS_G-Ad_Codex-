@@ -1,0 +1,1020 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-08",
+  "proposals": [
+    {
+      "text": "apartments for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "villas for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "townhouses for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "buy apartment in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "houses for sale in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "buy house in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai homes for sale",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai villa for sale",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "flat for sale in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "apartment dubai for sale",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "buy home in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "townhouses for sale in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Explicit home-purchase wording; readiness, inventory/advisory offer and destination evidence still required.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "property for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PURCHASE_SEGMENT_UNRESOLVED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase wording is relevant, but property segment and off-plan versus resale ownership remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "buy property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PURCHASE_SEGMENT_UNRESOLVED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase wording is relevant, but property segment and off-plan versus resale ownership remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai properties for sale",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PURCHASE_SEGMENT_UNRESOLVED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase wording is relevant, but property segment and off-plan versus resale ownership remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai property for sale",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PURCHASE_SEGMENT_UNRESOLVED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase wording is relevant, but property segment and off-plan versus resale ownership remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "off plan properties dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "OFFPLAN_PURCHASE_SEGMENT_UNRESOLVED",
+      "possible_services": [
+        "residential_offplan",
+        "commercial_offplan"
+      ],
+      "reason": "Off-plan/launch research wording; no project existence, launch date, delivery or availability claim is approved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "new property launches dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "OFFPLAN_PURCHASE_SEGMENT_UNRESOLVED",
+      "possible_services": [
+        "residential_offplan",
+        "commercial_offplan"
+      ],
+      "reason": "Off-plan/launch research wording; no project existence, launch date, delivery or availability claim is approved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "apartments for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "apartments for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "villas for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "townhouses for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "studio for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "long term rent dubai",
+      "disposition": "HOLD",
+      "intent": "RENTAL_ASSET_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Rental wording lacks an asset term; vehicles, premises or other rentals cannot be ruled out. Do not infer residential intent from the discovery seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "furnished apartments for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai rental properties",
+      "disposition": "HOLD",
+      "intent": "PROPERTY_RENTAL_SEGMENT_AND_ROLE_UNRESOLVED",
+      "possible_services": [
+        "residential_rental",
+        "commercial_leasing",
+        "landlord_supply"
+      ],
+      "reason": "Property rental wording is present, but residential versus commercial and tenant versus owner instruction are unresolved. No primary campaign/page owner is assigned.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "rent in dubai",
+      "disposition": "HOLD",
+      "intent": "RENTAL_ASSET_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Rental wording lacks an asset term; vehicles, premises or other rentals cannot be ruled out. Do not infer residential intent from the discovery seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "2 bedroom apartment for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "studio apartment for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "flat for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "RESIDENTIAL_TENANT_ENQUIRY",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Residential rental wording; actual available homes, lease terms and staff-supported enquiry path require evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "sell property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_INSTRUCTION",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Seller/listing-instruction wording, distinct from buyer searches; authority/mandate must be verified from genuine enquiries.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "sell apartment dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_INSTRUCTION",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Seller/listing-instruction wording, distinct from buyer searches; authority/mandate must be verified from genuine enquiries.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "sell villa dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_INSTRUCTION",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Seller/listing-instruction wording, distinct from buyer searches; authority/mandate must be verified from genuine enquiries.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "list property for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_INSTRUCTION",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Seller/listing-instruction wording, distinct from buyer searches; authority/mandate must be verified from genuine enquiries.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "rent out property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_INSTRUCTION",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Landlord-side agent/letting wording, distinct from tenant demand; no owner authority or property availability is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "let property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_INSTRUCTION",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Landlord-side agent/letting wording, distinct from tenant demand; no owner authority or property availability is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "list property for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_INSTRUCTION",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Landlord-side agent/letting wording, distinct from tenant demand; no owner authority or property availability is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "landlord agent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_INSTRUCTION",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Landlord-side agent/letting wording, distinct from tenant demand; no owner authority or property availability is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "office for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "COMMERCIAL_PURCHASE",
+      "possible_services": [
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Commercial purchase wording; use, tenure, current inventory/advisory offer and ownership mapping are unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "shop for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "COMMERCIAL_PURCHASE",
+      "possible_services": [
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Commercial purchase wording; use, tenure, current inventory/advisory offer and ownership mapping are unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "office for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "retail space for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "warehouse for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "office space for rent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "shop for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "warehouse for rent in al quoz",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "small office for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "small office space for rent in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PHYSICAL_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Physical premises leasing wording; availability, permitted use, lease terms and responsible consultant require verification.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "land for sale dubai",
+      "disposition": "HOLD",
+      "intent": "LAND_USE_UNRESOLVED",
+      "possible_services": [
+        "commercial_ready",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property purchase intent, but land use, permitted use/buildability, mandate and matching native destination remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "land for sale in dubai",
+      "disposition": "HOLD",
+      "intent": "LAND_USE_UNRESOLVED",
+      "possible_services": [
+        "commercial_ready",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property purchase intent, but land use, permitted use/buildability, mandate and matching native destination remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "buy land in dubai",
+      "disposition": "HOLD",
+      "intent": "LAND_USE_UNRESOLVED",
+      "possible_services": [
+        "commercial_ready",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property purchase intent, but land use, permitted use/buildability, mandate and matching native destination remain unresolved.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai real estate",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai property",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "apartments in dubai",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "furnished apartments dubai",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "flats in dubai",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "warehouse in dubai",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "commercial property dubai",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "building for sale dubai",
+      "disposition": "HOLD",
+      "intent": "TRANSACTION_OR_PROPERTY_USE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "The phrase alone does not establish a supported transaction/service and one campaign/page owner; do not infer intent from its seed batch.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agents dubai",
+      "disposition": "HOLD",
+      "intent": "BROKER_OR_COMPANY_COMPARISON_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Broker/company wording can serve several roles; do not treat company or agent as a Business Setup exclusion or infer affiliation.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate companies in dubai",
+      "disposition": "HOLD",
+      "intent": "BROKER_OR_COMPANY_COMPARISON_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Broker/company wording can serve several roles; do not treat company or agent as a Business Setup exclusion or infer affiliation.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agency dubai",
+      "disposition": "HOLD",
+      "intent": "BROKER_OR_COMPANY_COMPARISON_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Broker/company wording can serve several roles; do not treat company or agent as a Business Setup exclusion or infer affiliation.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai real estate investment",
+      "disposition": "HOLD",
+      "intent": "POSITIONING_OR_INVESTMENT_EVIDENCE_REQUIRED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase readiness/property segment is unresolved; no yield, appreciation, luxury, waterfront or inventory claim is verified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai waterfront property",
+      "disposition": "HOLD",
+      "intent": "POSITIONING_OR_INVESTMENT_EVIDENCE_REQUIRED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase readiness/property segment is unresolved; no yield, appreciation, luxury, waterfront or inventory claim is verified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai luxury property",
+      "disposition": "HOLD",
+      "intent": "POSITIONING_OR_INVESTMENT_EVIDENCE_REQUIRED",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Purchase readiness/property segment is unresolved; no yield, appreciation, luxury, waterfront or inventory claim is verified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "arabian ranches 3",
+      "disposition": "HOLD",
+      "intent": "ENTITY_IDENTITY_AND_OFFER_REQUIRED",
+      "possible_services": [],
+      "reason": "Named entity needs verified identity, inventory/advisory basis, rights/claims and native page mapping; no affiliation or availability is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai hills estate",
+      "disposition": "HOLD",
+      "intent": "ENTITY_IDENTITY_AND_OFFER_REQUIRED",
+      "possible_services": [],
+      "reason": "Named entity needs verified identity, inventory/advisory basis, rights/claims and native page mapping; no affiliation or availability is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "damac properties dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_IDENTITY_AND_OFFER_REQUIRED",
+      "possible_services": [],
+      "reason": "Named entity needs verified identity, inventory/advisory basis, rights/claims and native page mapping; no affiliation or availability is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "damac hills 2 rent",
+      "disposition": "HOLD",
+      "intent": "ENTITY_IDENTITY_AND_OFFER_REQUIRED",
+      "possible_services": [],
+      "reason": "Named entity needs verified identity, inventory/advisory basis, rights/claims and native page mapping; no affiliation or availability is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "property valuation dubai",
+      "disposition": "HOLD",
+      "intent": "VALUATION_SERVICE_EVIDENCE_REQUIRED",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Valuation interest is relevant to seller discovery, but the actual service, scope and claims must be evidenced.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "property finder dubai rent",
+      "disposition": "HOLD",
+      "intent": "PORTAL_COMPARISON_POLICY_REVIEW",
+      "possible_services": [
+        "residential_rental"
+      ],
+      "reason": "Rental intent plus portal wording; require genuine comparison/claims and trademark-policy review, never claim official affiliation.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "holiday homes dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_PROVIDER_OR_BOUNDARY_UNVERIFIED",
+      "possible_services": [],
+      "reason": "Actual short-stay/shared/virtual service or provider and Real Estate versus Business Setup boundary are unverified; not an automatic exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "short term rentals dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_PROVIDER_OR_BOUNDARY_UNVERIFIED",
+      "possible_services": [],
+      "reason": "Actual short-stay/shared/virtual service or provider and Real Estate versus Business Setup boundary are unverified; not an automatic exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "shared office space dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_PROVIDER_OR_BOUNDARY_UNVERIFIED",
+      "possible_services": [],
+      "reason": "Actual short-stay/shared/virtual service or provider and Real Estate versus Business Setup boundary are unverified; not an automatic exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "monthly office rental dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_PROVIDER_OR_BOUNDARY_UNVERIFIED",
+      "possible_services": [],
+      "reason": "Actual short-stay/shared/virtual service or provider and Real Estate versus Business Setup boundary are unverified; not an automatic exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "virtual office for rent in dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_PROVIDER_OR_BOUNDARY_UNVERIFIED",
+      "possible_services": [],
+      "reason": "Actual short-stay/shared/virtual service or provider and Real Estate versus Business Setup boundary are unverified; not an automatic exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "villa for daily rent in dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_PROVIDER_OR_BOUNDARY_UNVERIFIED",
+      "possible_services": [],
+      "reason": "Actual short-stay/shared/virtual service or provider and Real Estate versus Business Setup boundary are unverified; not an automatic exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "cheap apartment for rent in dubai monthly",
+      "disposition": "HOLD",
+      "intent": "PRICE_AND_TERM_OFFER_EVIDENCE_REQUIRED",
+      "possible_services": [],
+      "reason": "Aspirational price/term query is not evidence of an available offer; do not invent stock/pricing or exclude a budget word globally.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "studio for rent in dubai monthly 1500",
+      "disposition": "HOLD",
+      "intent": "PRICE_AND_TERM_OFFER_EVIDENCE_REQUIRED",
+      "possible_services": [],
+      "reason": "Aspirational price/term query is not evidence of an available offer; do not invent stock/pricing or exclude a budget word globally.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "villas for sale in dubai for 1 million",
+      "disposition": "HOLD",
+      "intent": "PRICE_AND_TERM_OFFER_EVIDENCE_REQUIRED",
+      "possible_services": [],
+      "reason": "Aspirational price/term query is not evidence of an available offer; do not invent stock/pricing or exclude a budget word globally.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": []
+    },
+    {
+      "text": "cheap apartments for sale in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "BUDGET_RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Property-purchase intent remains; affordability and actual offer must be verified, not rejected solely for cheap.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "cheap"
+      ]
+    },
+    {
+      "text": "business bay apartments for sale",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "COMMUNITY_RESIDENTIAL_PURCHASE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan"
+      ],
+      "reason": "Property-purchase wording with a location phrase; Business Bay must not be removed by a blanket business exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "business"
+      ]
+    },
+    {
+      "text": "office for rent in business bay",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "COMMUNITY_COMMERCIAL_LEASING",
+      "possible_services": [
+        "commercial_leasing"
+      ],
+      "reason": "Premises-leasing wording; a blanket business exclusion would suppress this Real Estate intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "business"
+      ]
+    },
+    {
+      "text": "hotel apartments for sale in dubai marina",
+      "disposition": "HOLD",
+      "intent": "PROPERTY_PURCHASE_WITH_SPECIAL_USE_EVIDENCE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Explicit property-for-sale wording can differ from accommodation bookings; use/tenure/provider and claims need verification before admission or exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "hotel"
+      ]
+    },
+    {
+      "text": "dubai holiday homes for sale",
+      "disposition": "HOLD",
+      "intent": "PROPERTY_PURCHASE_WITH_SPECIAL_USE_EVIDENCE",
+      "possible_services": [
+        "residential_ready_secondary",
+        "residential_offplan",
+        "commercial_ready",
+        "commercial_offplan"
+      ],
+      "reason": "Explicit property-for-sale wording can differ from accommodation bookings; use/tenure/provider and claims need verification before admission or exclusion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "holiday"
+      ]
+    },
+    {
+      "text": "used furniture for sale dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "NON_PROPERTY_GOODS",
+      "possible_services": [],
+      "reason": "The full phrase requests furniture goods rather than premises. Consider this full EXACT phrase only in explicitly reviewed campaign scopes; do not block furniture as a broad account term.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "furniture sale dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "NON_PROPERTY_GOODS",
+      "possible_services": [],
+      "reason": "The full phrase requests furniture goods rather than premises. Consider this full EXACT phrase only in explicitly reviewed campaign scopes; do not block furniture as a broad account term.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "old furniture for sale dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "NON_PROPERTY_GOODS",
+      "possible_services": [],
+      "reason": "The full phrase requests furniture goods rather than premises. Consider this full EXACT phrase only in explicitly reviewed campaign scopes; do not block furniture as a broad account term.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "old furniture for sale in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "NON_PROPERTY_GOODS",
+      "possible_services": [],
+      "reason": "The full phrase requests furniture goods rather than premises. Consider this full EXACT phrase only in explicitly reviewed campaign scopes; do not block furniture as a broad account term.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "annual car lease dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "NON_PROPERTY_VEHICLE_LEASE",
+      "possible_services": [],
+      "reason": "The full phrase requests a vehicle lease rather than a property lease. Full EXACT/campaign-scoped proposal only; never exclude annual or lease globally.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    }
+  ]
+}
