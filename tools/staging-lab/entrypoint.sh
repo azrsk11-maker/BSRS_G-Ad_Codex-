@@ -27,3 +27,5 @@ php -d sendmail_path=/bin/false /opt/lab/consented-client-interop.php
 php -d sendmail_path=/bin/false /opt/lab/purpose-client-interop.php
 BSRE_PURPOSE_FIXTURE=/opt/wordpress/wp-content/plugins/bsre-enquiries BSRE_RETENTION_SOURCE=/opt/lab/consent-retention php -d sendmail_path=/bin/false /opt/lab/purpose/purpose-attribution.test.php
 php -d sendmail_path=/bin/false /opt/lab/purpose-retention/restore.php
+php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission.test.php
+php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission-native.php
