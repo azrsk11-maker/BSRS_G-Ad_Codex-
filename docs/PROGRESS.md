@@ -311,3 +311,5 @@ The candidate now falls back to the normal enquiry request when proof issuance i
 
 Commercial reporting now exposes total contribution after acquisition costs and first-ever qualifications split by Ads, other and unknown sources. The descriptive period Ads cost per qualification uses only Ads-attributed outcomes, including verified Ads outcomes without a mapped campaign. The metric is null for other and unknown sources and when the Ads denominator is zero. All 16 synthetic report checks pass. Finance policy approval, verified ledgers and cohort performance remain pending.
 
+Preliminary review of all 31 supplemental seller and landlord discovery identities is recorded in [the supply intent review](audit/keyword-discovery-supply-2026-11-08/INTENT_REVIEW.md). Seven Dubai seller and seven Dubai landlord candidates remain subject to factual service and destination review. Seventeen phrases stay held for geography, buyer intent or ambiguous agency intent. Exact phrase coverage was checked against the pinned capture. This adds zero entries to either reviewed master and proposes zero negatives.
+
