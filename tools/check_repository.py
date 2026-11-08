@@ -67,6 +67,7 @@ def run_checks(require_php=False):
     if require_php and php:
         for path in sorted((ROOT/"tools/native-wordpress").rglob("*.php")):
             run("php-lint-" + path.name, [php, "-l", str(path)])
+        run("linkage-reconciliation-behavior", [php, str(ROOT/"tools/consent-retention/linkage.test.php")])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
