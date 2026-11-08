@@ -57,6 +57,12 @@ Record the dedicated entry as the acquisition page and the chosen enquiry route 
 
 The offline [event contract](../../tools/website-tracking/tracking-system/contract.mjs) validates a supplied event URL against its registered campaign entry URL. A reviewed form CTA can declare a separate submission path. The prototype checks the server-confirmed receipt against that path and keeps the submission URL out of GA4 and Ads payloads. The production caller must establish the receipt and route from authoritative server context before using this binding.
 
+### Source of the receipt binding
+
+The [pinned intake handler](../../tools/staging-lab/fixtures/bsre-enquiries/bsre-enquiries.php) retains the validated wire body in request memory through upstream acceptance and passes it to `consent_link_accepted`. That is where a server integration can derive the route from the original body after checking the accepted capture fingerprint and IDs. The consent table stores the fingerprint, not the body. Avoid persisting a second copy of the contact-bearing body for measurement.
+
+The [proof-only recovery handler](../../tools/website-tracking/tracking-system/receipt-recovery-wordpress.php) reads capture identifiers and status without the original body. A recovery using that path can return the existing lead reference but cannot establish a new submission-route binding. Preserve its no-measurement behavior. An exact-body retry must verify the same fingerprint and receipt and preserve the existing conversion deduplication rules.
+
 | Review journey | Evidence needed |
 |---|---|
 | Buyers or Owners chooses either service | The registered entry CTA resolves to the exact service route. The enquiry retains the original campaign attribution, with the service route recorded separately. |
