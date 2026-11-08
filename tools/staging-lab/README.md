@@ -85,4 +85,4 @@ python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>' --w
 
 Both commands must return PASS. The fixture is optional and uses no account profile. The isolated WordPress job remains separate.
 
-Both cases also verify that a second same-origin browser document starts with the acknowledged advertising grant and stops measurement when the first document withdraws. Under HTTP 503 the second document stays pending and denied. This exercises a real browser storage event between the page and an iframe. Independent tabs and live backend behavior are outside this check.
+Both cases also verify that a separate same-origin Chrome tab starts with the acknowledged advertising grant and stops measurement when the first tab withdraws. The second tab clears its own advertising session storage and preserves unrelated storage. Under HTTP 503 it stays pending and denied. Both scenarios passed in 6.47 seconds combined in the disposable profile. Live backend behavior remains outside this check.

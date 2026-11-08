@@ -42,7 +42,7 @@ class Fixture(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", kind)
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; frame-src 'self'; base-uri 'none'")
+        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; base-uri 'none'")
         if cookie:
             self.send_header("Set-Cookie", cookie)
         self.end_headers()
@@ -107,7 +107,7 @@ with TemporaryDirectory(prefix="bsre-browser-fixture-") as temp:
         tls.load_cert_chain(directory / "cert.pem", directory / "key.pem")
         server.socket = tls.wrap_socket(server.socket, server_side=True)
         server.timeout = 0.5
-        command = [str(args.chrome.resolve()), "--headless",
+        command = [str(args.chrome.resolve()), "--headless", "--disable-popup-blocking",
                 f"--user-data-dir={directory / 'profile'}", "--disable-background-networking",
                 "--disable-quic", "--proxy-server=http://127.0.0.1:1", "--no-first-run",
                 f"--ignore-certificate-errors-spki-list={pin}", origin + "/browser"]
