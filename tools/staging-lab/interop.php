@@ -4,6 +4,7 @@ use BSRE\Enquiries as E;
 $_SERVER['HTTPS'] = 'on'; $_SERVER['SERVER_PORT'] = '443';
 $_SERVER['REQUEST_METHOD'] = 'POST';
 require '/opt/wordpress/wp-load.php';
+require '/opt/lab/consent-retention/LinkageReconciliation.php';
 add_filter('home_url', fn($url, $path) => 'https://blackswanrealestate.ae' . ($path === '' ? '' : '/' . ltrim($path, '/')), 10, 2);
 $checks = []; $calls = 0; $lose_ack = false; $last_receipt = null;
 function receive_check(string $name, bool $ok): void {
@@ -49,6 +50,7 @@ function submit_synthetic(string $raw, ?string $csrf = null): WP_REST_Response {
     return rest_do_request($r);
 }
 $timelines = ['off-plan' => 'Within 1 month', 'resale' => 'Within 1 month', 'rent' => 'Immediate / move now', 'sell' => 'As soon as practical', 'let' => 'Vacant / available to discuss now'];
+$requestIds = [];
 $index = 110;
 foreach (E\SERVICES as $slug => $service) {
     $_SERVER['REMOTE_ADDR'] = '198.51.100.' . $index++;
@@ -56,6 +58,7 @@ foreach (E\SERVICES as $slug => $service) {
     $p = ['request_id' => wp_generate_uuid4(), 'role' => $service['role'], 'name' => 'TEST synthetic ' . $slug, 'phone' => '+971500000000', 'email' => 'fixture@example.invalid', 'country' => 'UAE', 'area' => 'Synthetic fixture', 'budget' => 'To discuss', 'timeline' => $timelines[$slug], 'funding' => 'To discuss', 'property_type' => 'Apartment', 'property_details' => 'SYNTHETIC NOT INVENTORY', 'authority' => in_array($slug, ['sell', 'let']) ? 'owner' : '', 'contact_consent' => true, 'marketing_consent' => false, 'campaign' => 'SYNTHETIC_LAB_ONLY', 'landing_page' => 'https://blackswanrealestate.ae/enquire/' . $slug . '/', 'website' => '', 'started_at' => (time() - 5) * 1000];
 
  $p['name'] = "TEST synthetic caf\u{00e9} \u{1f3e0}";
+ $requestIds[] = $p['request_id'];
  $raw = wp_json_encode($p); $accepted = submit_synthetic($raw);
  receive_check($slug . '_actual_receipt', $accepted->get_status() === 200 && $accepted->get_data()['lead_id'] === $last_receipt['lead_id'] && $accepted->get_data()['event_id'] === $last_receipt['event_id']);
  receive_check($slug . '_measurement_excluded', $accepted->get_data()['measurement_eligible'] === false);
@@ -63,7 +66,7 @@ foreach (E\SERVICES as $slug => $service) {
  receive_check($slug . '_same_receipt', $retry->get_data()['lead_id'] === $accepted->get_data()['lead_id']);
 }
 $_SERVER['REMOTE_ADDR'] = '198.51.100.199'; $_COOKIE = [E\COOKIE => bin2hex(random_bytes(32))];
-$p['request_id'] = wp_generate_uuid4(); $raw = wp_json_encode($p); $lose_ack = true;
+$p['request_id'] = wp_generate_uuid4(); $requestIds[] = $p['request_id']; $raw = wp_json_encode($p); $lose_ack = true;
 $lost = submit_synthetic($raw); $stored_receipt = $last_receipt;
 receive_check('lost_ack_retryable', $lost->get_status() === 503 && $lost->get_data()['retryable'] === true);
 $recovered = submit_synthetic($raw);
@@ -80,6 +83,27 @@ foreach ($state['rows'] as $i=>$row) {
 }
 $again = receiver_bridge(['op'=>'outbox']);
 receive_check('no_duplicate_mail', count($again['mail']) === 6);
+
+$slots=implode(',',array_fill(0,count($requestIds),'%s'));
+$wpRows=$wpdb->get_results($wpdb->prepare("SELECT * FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id IN ({$slots}) ORDER BY request_id",...$requestIds),ARRAY_A);
+$linkage=['source'=>'SYNTHETIC_PIPE_SESSION','captures'=>$wpRows,'receiver_headers'=>$again['headers'],'receiver_rows'=>$again['rows']];
+$report=BSRE\RetentionReview\LinkageReconciliation::assess($linkage);
+receive_check('actual_capture_receiver_pairs_linked', count($wpRows)===6 && $report['matched_request_receipts']===6);
+$rawHashes=array_column($wpRows,'fingerprint','request_id'); $distinct=0;
+foreach($again['rows'] as $row)if($rawHashes[strtolower($row[0])]!==$row[4])$distinct++;
+receive_check('actual_raw_normalized_domains_distinct', $distinct===6 && $report['fingerprint_domains']==='WORDPRESS_RAW_AND_RECEIVER_NORMALIZED_DISTINCT');
+receive_check('unknown_actual_subjects_hold_exclusion', $report['global_linkage_hold'] && $report['issues']['CAPTURE_SUBJECT_UNKNOWN']===6 && !$report['deletion_authorized']);
+$gap=$linkage; array_pop($gap['captures']); $diagnostic=BSRE\RetentionReview\LinkageReconciliation::assess($gap);
+receive_check('missing_actual_capture_held', $diagnostic['issues']['CAPTURE_MISSING']===1 && $diagnostic['global_linkage_hold']);
+$gap=$linkage; $gap['captures'][0]['event_id']='evt_77777777-7777-4777-8777-777777777777'; $diagnostic=BSRE\RetentionReview\LinkageReconciliation::assess($gap);
+receive_check('conflicting_actual_receipt_held', $diagnostic['issues']['RECEIPT_ID_CONFLICT']===1);
+$gap=$linkage; $gap['receiver_rows'][0][5].=' '; $diagnostic=BSRE\RetentionReview\LinkageReconciliation::assess($gap);
+receive_check('corrupt_actual_normalized_payload_held', $diagnostic['issues']['RECEIVER_PAYLOAD_DIGEST_MISMATCH']===1);
+$gap=$linkage; $gap['receiver_rows'][0][6]='AMBIGUOUS'; $diagnostic=BSRE\RetentionReview\LinkageReconciliation::assess($gap);
+receive_check('actual_outbox_status_is_not_delivery_proof', $diagnostic['outbox_holds']===1 && !$diagnostic['mail_delivery_verified']);
+$redacted=json_encode($report,JSON_THROW_ON_ERROR); $privateAbsent=true;
+foreach($again['rows'] as $row)foreach([$row[0],$row[1],$row[2]] as $identifier)if(str_contains($redacted,$identifier))$privateAbsent=false;
+receive_check('linkage_reports_omit_actual_identifiers', $privateAbsent && !$report['historical_coverage_verified'] && !$report['import_authorized']);
 fclose($pipes[0]); fclose($pipes[1]);
 receive_check('bridge_clean_exit', proc_close($process) === 0);
 echo wp_json_encode(['phase'=>'wordpress_receiver_interop','status'=>'PASS','checks'=>$checks,'synthetic_only'=>true,'google_services_are_doubles'=>true,'network_transport_is_pipe'=>true,'live_delivery_accepted'=>false,'production_acceptance'=>false]) . "\n";
