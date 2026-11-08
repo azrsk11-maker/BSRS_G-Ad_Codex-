@@ -6,7 +6,7 @@
       "original_relative_path": "work/v2-implementation/outcomes/qualification_tools.py",
       "original_sha256": "61c7e4b53ba3c93b20b9c5a636ae8a3ccfdb5637768e9aa33b2a17ac6c6fc693",
       "derived_relative_path": "qualification_core.py",
-      "derived_sha256": "ccee36fa397def558d572638b772a3cad2fe2967d1fe15d58de558ebc14f53a3",
+      "derived_sha256": "b53c7dd5566b3f76184209ca4d7da4d824e0485b2aa5b6a6ec1429d1913ca348",
       "derivation": "Remove write/export CLI and unused CLI imports; retain _inspect business core; expose reporting-only wrapper with optional existing source review."
     },
     {

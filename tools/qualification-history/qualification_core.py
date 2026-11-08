@@ -10,6 +10,8 @@ from qualification_sources import source_report
 DUBAI=timezone(timedelta(hours=4))
 HERE=Path(__file__).resolve().parent
 ROLES={"off_plan","resale","tenant","seller","landlord"}
+QUALIFIED_ADS_ACTION_ID="7878013428"
+QUALIFIED_ADS_ACTION_NAME="qualified_lead"
 INTAKE_FIELDS={"lead_id","role","accepted_at_utc","is_test"}
 PURPOSE_FIELDS={"lead_id","evidence_id","decision_version","notice_version","observed_at_utc",
  "expires_at_utc","acknowledged","measurement_eligible","ad_measurement","ad_user_data","ad_personalization",
@@ -162,8 +164,8 @@ def _inspect(data,binding,purpose_rows,now,from_day=None,to_day=None,source_revi
     binding_ok=(binding.get("customer_id")=="573-038-4686" and
       re.fullmatch(r"\d{10}",str(binding.get("conversion_owner_customer_id","")).replace("-","")) and
       str(binding.get("conversion_owner_customer_id","")).replace("-","")!="6159043329" and
-      re.fullmatch(r"\d+",str(binding.get("conversion_action_id",""))) and
-      bool(binding.get("conversion_name")) and binding.get("mapping_verified") is True and
+      str(binding.get("conversion_action_id"))==QUALIFIED_ADS_ACTION_ID and
+      binding.get("conversion_name")==QUALIFIED_ADS_ACTION_NAME and binding.get("mapping_verified") is True and
       binding.get("stage_key")=="qualified_lead" and binding.get("identifier_route")=="GCLID_ONLY")
     for day,r in selected:
         codes=[]

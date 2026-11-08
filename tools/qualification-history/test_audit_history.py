@@ -13,6 +13,7 @@ import unittest
 from unittest.mock import patch
 
 import audit_history as audit
+from qualification_core import _inspect
 
 HERE = Path(__file__).resolve().parent
 NOW = datetime(2026, 11, 8, 12, tzinfo=timezone.utc)
@@ -86,6 +87,25 @@ def source_fixture(ledger, digest):
 
 
 class AuditHistoryTests(unittest.TestCase):
+    def test_preview_requires_the_reviewed_qualified_action(self):
+        binding = {
+            "customer_id": "573-038-4686",
+            "conversion_owner_customer_id": "573-038-4686",
+            "conversion_action_id": "7878013428",
+            "conversion_name": "qualified_lead",
+            "mapping_verified": True,
+            "stage_key": "qualified_lead",
+            "identifier_route": "GCLID_ONLY",
+        }
+        report, preview, _ = _inspect(ledger_fixture(), binding, [], NOW)
+        self.assertNotIn("ACTION_BINDING_NOT_VERIFIED", report["export_held"][0]["codes"])
+        self.assertEqual(preview["rows"], [])
+        for field, value in (("conversion_action_id", "7873290954"), ("conversion_name", "wrong_action")):
+            with self.subTest(field=field):
+                report, preview, _ = _inspect(ledger_fixture(), dict(binding, **{field: value}), [], NOW)
+                self.assertIn("ACTION_BINDING_NOT_VERIFIED", report["export_held"][0]["codes"])
+                self.assertEqual(preview["rows"], [])
+
     def run_audit(self, ledger=None, **kwargs):
         return audit.audit_history(ledger if ledger is not None else ledger_fixture(), NOW, **kwargs)
 
