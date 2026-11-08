@@ -19,6 +19,20 @@ function raw(event='bsre_lead_accepted') {return {event,schema_version:1,campaig
   evidence:{source:'server_confirmed',verified:true,reference:'qa-durable-receipt'}};}
 function options(overrides={}) {return {registry,consent:structuredClone(consent),mappings:structuredClone(mappings),ledger:new PrototypeLedger(),now:NOW,...overrides};}
 
+test('preserved receiver event ID becomes the exact native Ads deduplication ID',()=>{
+  const event=raw();
+  const receiverId='evt_00000000-0000-4000-8000-000000000001';
+  event.internal_event_id=receiverId;
+  event.receipt.event_id=receiverId;
+  const opts=options();
+  const first=prepareDestinations(event,opts).output.find(item=>item.destination==='ads');
+  assert.equal(first.payload.transaction_id,receiverId);
+  assert.equal(first.status,'prepared_only_not_delivered');
+  const retry=prepareDestinations(event,opts).output.find(item=>item.destination==='ads');
+  assert.equal(retry.status,'duplicate_suppressed');
+  assert.deepEqual(retry.payload,first.payload);
+});
+
 test('accepted enquiry binds a reviewed service route without leaking it to destinations',()=>{
   const [form,phone]=record.ctas;
   const bound=createRegistry([{...record,ctas:[{...form,submission_path:'/enquire/off-plan/'},phone]}]);

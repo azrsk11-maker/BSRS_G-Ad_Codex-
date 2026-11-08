@@ -177,7 +177,7 @@ export function prepareDestinations(raw,{registry,consent,mappings={},ledger,now
     require(normalized.internal_event_id.length<=64,'ADS_TRANSACTION_ID_OVERSIZED');
     // A transmitted opaque ID must not accidentally be a phone/email/free-text value.
     // Existing producers need reviewed compatibility; never rewrite an ID silently.
-    require(/^bsre-event-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(normalized.internal_event_id),
+    require(/^(?:bsre-event-|evt_)[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(normalized.internal_event_id),
       'OPAQUE_ADS_TRANSACTION_ID_REQUIRED');
     const payload={event_name:'conversion',send_to:mapping.send_to,transaction_id:normalized.internal_event_id};
     output.push({destination:'ads',payload});candidates.push({destination:mapping.send_to,event:normalized.event,identity:businessId,payload});
