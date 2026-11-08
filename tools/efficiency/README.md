@@ -72,3 +72,11 @@ The [controlled comparison](../../docs/audit/worktree-verifier-benchmark-2026-11
 The nonempty batch comparison uses five Git processes independent of shared-file count. The original algorithm launches one `git show` per shared file plus three discovery/ref calls. These process counts follow the executed algorithms; they are not provider API counts.
 
 The focused suite has16cases. Fourteen passed and two Windows capability cases were skipped. Junction detection and resolved-path escape checks ran through mocks because the attempted real junction fixture was blocked by tool policy. Linux CI must exercise newline filenames and supported symlink creation. Independent review verified the final containment fix.
+
+## Inline tree publication
+
+For an explicitly reviewed batch of UTF-8 regular files, pass each file as a GitHub tree entry with `path`, `mode`, `type: blob` and `content`. Read the raw bytes and decode UTF-8 without newline conversion. Preserve each file's mode and pin the base tree to the expected feature-branch head. For binary files, use the existing blob path. [GitHub tree API](https://docs.github.com/en/rest/git/trees#create-a-tree)
+
+A three-file no-change probe on ff546e6 included the project rules, this README and the retention-admission receipt. The connector returned the exact original tree hash in one request (0.916 seconds). The previous method would require three blob requests and one tree request for the same inputs. The request-count comparison follows the two procedures. No comparable elapsed-time or token saving was measured.
+
+Create the candidate commit, fetch its exact SHA and run `verify_worktree.py --ref <candidate-sha>` before moving the branch when the checkout represents that candidate. Require byte equality, confirm only the reviewed paths and modes changed, then use the expected-head guard and a non-force update. Read back the branch and current-head checks.

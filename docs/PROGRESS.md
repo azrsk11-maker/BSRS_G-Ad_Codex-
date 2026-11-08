@@ -425,3 +425,7 @@ Requiredlocalfoundation passed in58.279274seconds with114tracking/commercialNode
 
 Nativeexecution at3181639 passed Foundation42509423841 and isolatedWordPress42509423853/job128819040122. All284local/remote files matched. The45closed-retentioncontract checks and12nativejournalchecks passed, including committedintent/history/floor before outcome deletion, freshconnectionresume, closurelease exclusion, staleCAS rejection and30dayprivatecleanup. Manualmailproviderresources remain synthetic; the nativejournal is actualMariaDB. Earlieradmission/purpose/receiverphases also passed. Receipt is `audit/CLOSED_RETENTION_LAB_2026-11-08.json`. Genuineclosure/mailcollectors, ownerUI, providerdelete/readback, externalrollbackfloor/custody and productionrelease remain open.
 
+
+## Publication efficiency
+
+Verified inline UTF-8 tree creation against three existing reviewed files on ff546e6. The single connector request returned the exact original tree SHA in 0.916 seconds. This replaces three per-file blob calls plus tree creation for that sample. The procedure and pre-ref verification are documented in `tools/efficiency/README.md`. Browser execution remains a separate acceptance requirement.
