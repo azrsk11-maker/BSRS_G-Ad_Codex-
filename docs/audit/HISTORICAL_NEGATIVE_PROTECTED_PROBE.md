@@ -37,3 +37,18 @@ The proposed crosswalk uses the historical service labels and the [paused campai
 The original private export matched the SHA-256 and 1,191-row count in the [targeting and negative readback](TARGETING_NEGATIVE_READBACK_2026-11-07.json). The report carries campaign names, which were joined to IDs using that readback. Comparing campaign, match type and unwrapped keyword text confirmed that all 19 exported V2 campaign exclusions are among the 27 archived placements.
 
 The eight placements absent at the direct campaign level in that export are the phrase negatives **real estate interview questions** and **real estate vacancies**, each across all four campaigns. This is dated evidence. Recheck these eight placements and any account or manager exclusions before considering a change. Preserve all 19 observed exclusions during review. No candidates were approved or applied.
+
+## Legacy shared-list counterexamples
+
+The 29 broad exclusions from the saved readback produced zero matches against the initial 12 examples. A second screen used ordinary property and brand searches that contain terms from the list. The same simulator found seven matches across six searches in 174 comparisons.
+
+| Funnel | Proposed protected search | Simulated broad exclusions |
+| --- | --- | --- |
+| Off-plan | buy off plan studio apartment in dubai | studio |
+| Resale | buy resale studio in dubai near metro | studio |
+| Sellers | sell my studio apartment in dubai | studio |
+| Landlords | let my studio apartment in dubai | studio |
+| Tenants | dubai rental studio near me | studio, near me |
+| Brand | black swan real estate company dubai | company |
+
+These are constructed examples, with no inventory or volume claims. The list had no V2 attachment in the saved export. The lexical counterexamples support holding any V2 reuse of the legacy list pending review of individual terms and their scopes. Live Google matching and current attachments require separate verification.
