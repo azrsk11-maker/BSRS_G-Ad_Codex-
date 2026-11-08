@@ -14,3 +14,4 @@ done
 mariadb --no-defaults --user=root --socket=/tmp/bsre.sock -e 'CREATE DATABASE bsre_synthetic;'
 php -d sendmail_path=/bin/false /opt/lab/native.php
 php -d sendmail_path=/bin/false /opt/lab/plugin.php
+php -d sendmail_path=/bin/false /opt/lab/transport.php

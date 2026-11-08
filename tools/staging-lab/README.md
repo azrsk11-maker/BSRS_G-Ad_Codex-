@@ -1,5 +1,7 @@
 # Disposable native WordPress lab
 
+The transport extension in `transport.php` exercises the actual WordPress HTTP API with preempted synthetic responses: exact wire-v1 body/HMAC, POST-to-GET Google-content redirect without forwarding lead bodies, TLS/redirect/response bounds, rejected foreign redirects, and preserved timeout/503 failures. Kernel network isolation remains enforced. This is not a deployed receiver, live delivery, or all-five-role `/lead` acceptance; those remain separate tests/gates. The endpoint strings are explicitly non-deployed mocks.
+
 Owner explicitly approved preparation and execution on 8 November 2026 in Codex: “Approve isolated GitHub Actions test lab.” See [DEC-08](../../docs/decisions/OWNER_DECISIONS.md) and [issue #9](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/9). This authorizes this synthetic test only, not Hostinger cloning, production, Ads or paid hosting/overages.
 
 The CLI-only container uses WordPress **7.1.4** (the version observed in Site Health) and PHP8.2. The official version API and archive were retrieved over HTTPS on 8 November; the 35,378,819-byte archive SHA256 is pinned in the Dockerfile. The official PHP base manifest digest is pinned; Debian package versions are resolved at build time and the actual database/PHP versions appear in the receipt. The image ID and reviewed source hashes are recorded in Actions. This is not a reproducible-build certificate or LiteSpeed/theme/plugin parity.
