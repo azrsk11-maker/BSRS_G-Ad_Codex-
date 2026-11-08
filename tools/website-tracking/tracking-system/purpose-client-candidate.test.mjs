@@ -46,12 +46,22 @@ test('retention and restore candidates preserve scoped existing logic and add hi
   for(const name of ['PreferenceRetirement','RetirementLedger']){
     const bytes=readFileSync(new URL('../../consent-retention/'+name+'.php',import.meta.url));
     const code=buildPurposeRetention(bytes,name);assert.match(code,/namespace BSRE\\PurposeRetention/);
+    const prefix=code.match(/\$db->prefix\s*!==\s*'([^']+)'/);
+    assert.equal(prefix?.[1],'purpose_retention_synthetic_');
+    assert.match(code,/BSRE_RETENTION_LAB/);assert.match(code,/wp_get_environment_type\(\)\s*!==\s*'local'/);
+    assert.match(code,/home_url\(\)\s*!==\s*'http:\/\/bsre\.invalid'/);
+    assert.ok(!code.includes("'retention_synthetic_'"));
     if(name==='RetirementLedger')assert.match(code,/assertRestoreReferences/);
     else assert.match(code,/purpose_retention_synthetic_/);
     assert.throws(()=>buildPurposeRetention(Buffer.concat([bytes,Buffer.from(' ')]),name),/SOURCE_CHANGED/);
   }
   const fixture=buildPurposeRetention(readFileSync(new URL('../../staging-lab/restore.php',import.meta.url)),'restore');
   assert.match(fixture,/Synthetic_Retention_Click/);assert.match(fixture,/purpose_retention_restore_rehearsal/);
+  assert.match(fixture,/\$db->prefix='purpose_retention_synthetic_'/);
+  assert.ok(!fixture.includes("'retention_synthetic_'"));
+  for(const name of ['purpose_seed_has_all_four_fields','purpose_seed_input_hash_matches',
+    'purpose_seed_has_nonempty_permitted_clicks','purpose_restore_keeps_exact_nonempty_sidecar',
+    'nested_fixture_keeps_valid_primary_decision','nested_only_retired_touch_blocks_restore'])assert.ok(fixture.includes(name));
 });
 test('preserved receiver delivers twenty accepted rows in four bounded outbox batches',()=>{
   const receiver=lab();
