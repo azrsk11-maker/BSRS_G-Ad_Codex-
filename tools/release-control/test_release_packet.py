@@ -65,7 +65,7 @@ class ReleasePacketTests(unittest.TestCase):
         evidence = []
         gates = GATES | (POSTFLIGHT_GATES if kind.startswith("ADS_") else set())
         if kind == "ADS_ACTIVATION":
-            gates.add("BRAND_POLICY")
+            gates.update({"BRAND_POLICY", "SERVING_CHILDREN"})
         for gate in sorted(gates):
             result = {"test_only": True, "gate_id": gate, "status": "PASS", "proposal_sha256": proposal_hash,
                 "commit": COMMIT, "resource_page_ids": page_ids, "method": "AUTHENTICATED_STAGING_ACCEPTANCE",
@@ -77,6 +77,15 @@ class ReleasePacketTests(unittest.TestCase):
                 result["brand_policy"] = {"account": ACCOUNT, "campaign_id": "24378494098",
                     "ad_group_id": "204397706114", "ad_id": "828621612889", "policy_status": "APPROVED",
                     "final_url": next(r["url"] for r in resources if r["campaign_id"] == "24378494098")}
+            if gate == "SERVING_CHILDREN":
+                result["method"] = "AUTHENTICATED_CONFIGURATION_READBACK"
+                result["account"] = ACCOUNT
+                result["enabled_reviewed_children"] = {
+                    "24372566774": {"ad_groups": 2, "ads": 2, "keywords": 34},
+                    "24367388382": {"ad_groups": 2, "ads": 2, "keywords": 24},
+                    "24378494092": {"ad_groups": 1, "ads": 1, "keywords": 16},
+                    "24378494098": {"ad_groups": 1, "ads": 1, "keywords": 8},
+                }
             evidence.append({"gate_id": gate, "file": self.write("evidence/" + gate + ".json", result)})
         packet = {"schema_version": 1, "proposal": proposal, "evidence": evidence,
             "review": {"repository": REPO, "commit": COMMIT, "approver": "synthetic-reviewer", "state": "APPROVED",
@@ -251,6 +260,15 @@ class ReleasePacketTests(unittest.TestCase):
         self.assertIn("EXACT_BRAND_AD_POLICY_APPROVAL_REQUIRED", self.check(packet)["errors"])
         packet["evidence"].remove(evidence)
         self.assertIn("ALL_REQUIRED_GATES_EXACTLY_ONCE", self.check(packet)["errors"])
+
+    def test_activation_rejects_paused_launch_keywords(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(e for e in packet["evidence"] if e["gate_id"] == "SERVING_CHILDREN")
+        path = evidence["file"]["path"]
+        result = json.loads((self.root / path).read_text(encoding="utf-8"))
+        result["enabled_reviewed_children"]["24378494098"]["keywords"] = 0
+        evidence["file"] = self.write(path, result)
+        self.assertIn("ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED", self.check(packet)["errors"])
 
     def test_website_cannot_carry_spend_approval(self):
         self.packet["proposal"]["media_limits"] = {"aggregate_average_daily_fils": 200000}

@@ -2,6 +2,8 @@
 
 This read-only tool checks the internal consistency of a proposed production release. It **always returns `execution_allowed:false` and `release_authorized:false`**, including for a completely consistent packet. JSON assertions cannot authenticate the owner, a reviewer, business evidence, provider state or deployment permissions. There is no network client, deployment job, credentials store or production writer.
 
+Activation requires authenticated Brand policy evidence and enabled counts for the six reviewed ad groups, six ads and 82 keywords, split by campaign. Compare the full live child identities and statuses to the reviewed inventory before recording the counts. The 7 November readbacks showed paused ad groups and keywords. Reverify before release. Any required child configuration is a separate authorized step while parent campaigns are paused.
+
 This implements part of Master sections 18/21/24 and [the repository governance contract](../../docs/GOVERNANCE.md). It does not close the open [owner decisions](../../docs/decisions/OWNER_DECISIONS.md) or the live acceptance gates. The seven additional named gates summarize source truth, keyword scope, durable routing/retry, retention/recovery, staffing, qualification history and scoped rollback. They supplement the supplied WT tests; the supplied specification files are unchanged.
 
 ## Checks

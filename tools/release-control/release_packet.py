@@ -15,9 +15,16 @@ KINDS = {"WEBSITE_PUBLICATION", "TRACKING_PUBLICATION", "ADS_CONFIGURATION", "AD
 WT_GATES = {f"WT-{n:03}" for n in range(1, 31)}
 POSTFLIGHT_GATES = {"WT-031", "WT-032"}
 BRAND_POLICY_GATE = "BRAND_POLICY"
+SERVING_CHILDREN_GATE = "SERVING_CHILDREN"
 BRAND_CAMPAIGN_ID = "24378494098"
 BRAND_AD_GROUP_ID = "204397706114"
 BRAND_AD_ID = "828621612889"
+LAUNCH_ENABLED_CHILD_COUNTS = {
+    "24372566774": {"ad_groups": 2, "ads": 2, "keywords": 34},
+    "24367388382": {"ad_groups": 2, "ads": 2, "keywords": 24},
+    "24378494092": {"ad_groups": 1, "ads": 1, "keywords": 16},
+    "24378494098": {"ad_groups": 1, "ads": 1, "keywords": 8},
+}
 EXTRA_GATES = {"SOURCE_TRUTH", "KEYWORD_SCOPE", "ROUTING_RETRY", "RETENTION_RECOVERY", "STAFF_CAPACITY", "QUALIFICATION_HISTORY", "SCOPED_ROLLBACK"}
 GATES = WT_GATES | EXTRA_GATES
 METHODS = {"AUTHENTICATED_STAGING_ACCEPTANCE", "AUTHENTICATED_CONFIGURATION_READBACK", "OWNER_REVIEWED_BUSINESS_EVIDENCE"}
@@ -244,7 +251,7 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
         evidence = rows(packet["evidence"])
         required_gates = GATES | (POSTFLIGHT_GATES if proposal["kind"].startswith("ADS_") else set())
         if proposal["kind"] == "ADS_ACTIVATION":
-            required_gates.add(BRAND_POLICY_GATE)
+            required_gates.update({BRAND_POLICY_GATE, SERVING_CHILDREN_GATE})
         need(len(evidence) == len(required_gates) and {x.get("gate_id") for x in evidence} == required_gates, "ALL_REQUIRED_GATES_EXACTLY_ONCE")
         latest_evidence = created
         evidence_expiries = []
@@ -263,6 +270,11 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                          "ad_group_id": BRAND_AD_GROUP_ID, "ad_id": BRAND_AD_ID,
                          "final_url": brand_url, "policy_status": "APPROVED"},
                      "EXACT_BRAND_AD_POLICY_APPROVAL_REQUIRED")
+            if row["gate_id"] == SERVING_CHILDREN_GATE and proposal["kind"] == "ADS_ACTIVATION":
+                need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and
+                     result.get("account") == ACCOUNT and
+                     digest(result.get("enabled_reviewed_children")) == digest(LAUNCH_ENABLED_CHILD_COUNTS),
+                     "ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED")
             observed = instant(result.get("observed_at_utc"))
             need(created <= observed <= now, "EVIDENCE_TIME_OUTSIDE_PROPOSAL")
             latest_evidence = max(latest_evidence, observed)
