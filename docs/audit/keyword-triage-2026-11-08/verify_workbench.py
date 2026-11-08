@@ -9,8 +9,8 @@ sys.path.insert(0,str(ROOT/'tools/keyword-system'))
 from triage_workbench import load_corpus,compile_workbench
 from keyword_audit import parse_json_bytes
 PINS={
-  "proposals.json": "31ef2bc99e54038d2f22d3610b1cf682fce9f1c06441b5874d06ae39bb2a176a",
-  "workbench.json": "8324fba806361e8f26ad933049ba5a6a19b53a56fe268c284691bee2f2168405"
+  "proposals.json": "e5e5375f451eb8c92b721105efe8cdadf72d4c9101ddae58e96a66adc9a307e5",
+  "workbench.json": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477"
 }
 def verify():
     values={}
