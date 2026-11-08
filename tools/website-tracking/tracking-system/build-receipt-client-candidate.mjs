@@ -32,7 +32,7 @@ export function buildReceiptClientCandidate(bytes) {
   replace('  function markPendingEnquiry(pending) {', '  function markPendingEnquiry(pending, proof) {');
   replace("window.sessionStorage.setItem(PENDING_ENQUIRY_KEY, '1')", 'window.sessionStorage.setItem(PENDING_ENQUIRY_KEY, proof)');
   replace("    let requestId = '';", "    let requestId = '';\n    let attemptProof = '';");
-  replace('        markPendingEnquiry(true);', '        markPendingEnquiry(true, attemptProof);');
+  replace('        markPendingEnquiry(true);', "        markPendingEnquiry(true, attemptProof || '1');");
   replace(`      if (!attemptBody && hasPendingEnquiry()) {
         showStatus(status, 'Receipt of an earlier enquiry in this tab is still unconfirmed. Please contact us by phone or WhatsApp to check it before submitting again.', 'error');
         return;
@@ -55,10 +55,14 @@ export function buildReceiptClientCandidate(bytes) {
             showStatus(status, 'Your earlier enquiry was received. Reference: ' + result.reference + '.', 'success');
             return;
           }
-          const result = await recoveryRequest(endpoint, 'proof', {});
-          if (!validProof(result?.proof) || result.request_id !== result.proof.split('.')[0]) throw new Error('Invalid recovery proof');
-          requestId = result.request_id;
-          attemptProof = result.proof;
+          try {
+            const result = await recoveryRequest(endpoint, 'proof', {});
+            if (validProof(result?.proof) && result.request_id === result.proof.split('.')[0]) {
+              requestId = result.request_id;
+              attemptProof = result.proof;
+            }
+          } catch (_) { /* Proof issuance never submits a lead. Use the normal intake path. */ }
+          if (hasPendingEnquiry()) throw new Error('Another submission is pending');
         } catch (_) {
           showStatus(status, hasPendingEnquiry() ? 'Your earlier enquiry is still unconfirmed. Please contact us by phone or WhatsApp to check it.' : 'The form could not prepare a secure enquiry. Please try again or contact us by phone or WhatsApp.', 'error');
           return;

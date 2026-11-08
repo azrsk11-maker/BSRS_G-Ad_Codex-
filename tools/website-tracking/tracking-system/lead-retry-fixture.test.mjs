@@ -93,6 +93,29 @@ test('recovery client uses server UUID, then recovers a receipt without replayin
   assert.equal(store.has('BSRE_PENDING_ENQUIRY_V1'), false);
 });
 
+test('proof outage preserves intake and ambiguous reload still holds a new submission', async () => {
+  const client = buildReceiptClientCandidate(Buffer.from(source));
+  const store = new Map();
+  const uuid = '00000000-0000-4000-8000-000000000012';
+  let proofCalls = 0;
+  const recovery = async () => { proofCalls++; return {ok: false}; };
+  const first = page({client, store, uuid, recovery, reply(attempt) {
+    if (attempt === 1) throw new Error('Synthetic lost acknowledgement');
+    return receipt;
+  }});
+  await first.submit();
+  assert.equal(JSON.parse(first.requests[0].body).request_id, uuid);
+  assert.equal(store.get('BSRE_PENDING_ENQUIRY_V1'), '1');
+  const reload = page({client, store, recovery, reply: () => assert.fail('Unexpected intake')});
+  await reload.submit();
+  assert.equal(reload.requests.length, 0);
+  await first.submit();
+  assert.equal(proofCalls, 1);
+  assert.equal(first.requests[0].body, first.requests[1].body);
+  assert.equal(first.ads.length, 1);
+  assert.equal(store.has('BSRE_PENDING_ENQUIRY_V1'), false);
+});
+
 test('candidate holds a fresh submission after reload until the original attempt resolves', async () => {
   const client = buildReloadGuardCandidate(Buffer.from(source));
   const store = new Map();
