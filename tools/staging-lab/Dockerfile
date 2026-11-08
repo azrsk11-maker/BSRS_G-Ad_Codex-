@@ -21,6 +21,7 @@ COPY tools/website-tracking/tracking-system/build-attribution-client-candidate.m
 COPY tools/staging-lab/client-interop.php tools/staging-lab/client-interop.mjs /opt/lab/
 COPY tools/staging-lab/client-page.mjs tools/staging-lab/consented-client-interop.php tools/staging-lab/consented-client-interop.mjs /opt/lab/
 COPY tools/staging-lab/browser-prerequisites.php /opt/lab/
+COPY tools/staging-lab/consent-http-router.php tools/staging-lab/consent-http.mjs /opt/lab/
 COPY tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/purpose-attribution.test.php tools/website-tracking/tracking-system/purpose-retention.php /opt/lab/purpose/
 COPY tools/website-tracking/tracking-system/build-purpose-retention-candidate.mjs /opt/lab/tracking-system/
