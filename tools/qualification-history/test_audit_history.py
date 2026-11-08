@@ -131,6 +131,12 @@ class AuditHistoryTests(unittest.TestCase):
             report, preview, _ = _inspect(ledger, binding, snapshots, NOW)
             self.assertIn("AMBIGUOUS_PURPOSE_HISTORY", report["export_held"][0]["codes"])
             self.assertEqual(preview["rows"], [])
+        withdrawn = dict(purpose, observed_at_utc="2026-11-07T12:00:00Z",
+                         withdrawn_at_utc="2026-11-07T12:00:00Z")
+        later = dict(purpose, observed_at_utc="2026-11-08T09:00:00Z")
+        report, preview, _ = _inspect(ledger, binding, [purpose, withdrawn, later], NOW)
+        self.assertIn("PURPOSE_WITHDRAWN", report["export_held"][0]["codes"])
+        self.assertEqual(preview["rows"], [])
         for field, value in (
             ("conversion_action_id", "7873290954"), ("conversion_name", "wrong_action"),
             ("conversion_owner_customer_id", "615-904-3329"),
