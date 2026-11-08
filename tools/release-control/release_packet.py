@@ -14,6 +14,10 @@ ACCOUNT = "573-038-4686"
 KINDS = {"WEBSITE_PUBLICATION", "TRACKING_PUBLICATION", "ADS_CONFIGURATION", "ADS_ACTIVATION"}
 WT_GATES = {f"WT-{n:03}" for n in range(1, 31)}
 POSTFLIGHT_GATES = {"WT-031", "WT-032"}
+BRAND_POLICY_GATE = "BRAND_POLICY"
+BRAND_CAMPAIGN_ID = "24378494098"
+BRAND_AD_GROUP_ID = "204397706114"
+BRAND_AD_ID = "828621612889"
 EXTRA_GATES = {"SOURCE_TRUTH", "KEYWORD_SCOPE", "ROUTING_RETRY", "RETENTION_RECOVERY", "STAFF_CAPACITY", "QUALIFICATION_HISTORY", "SCOPED_ROLLBACK"}
 GATES = WT_GATES | EXTRA_GATES
 METHODS = {"AUTHENTICATED_STAGING_ACCEPTANCE", "AUTHENTICATED_CONFIGURATION_READBACK", "OWNER_REVIEWED_BUSINESS_EVIDENCE"}
@@ -239,6 +243,8 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
         proposal_hash = digest(proposal)
         evidence = rows(packet["evidence"])
         required_gates = GATES | (POSTFLIGHT_GATES if proposal["kind"].startswith("ADS_") else set())
+        if proposal["kind"] == "ADS_ACTIVATION":
+            required_gates.add(BRAND_POLICY_GATE)
         need(len(evidence) == len(required_gates) and {x.get("gate_id") for x in evidence} == required_gates, "ALL_REQUIRED_GATES_EXACTLY_ONCE")
         latest_evidence = created
         evidence_expiries = []
@@ -250,6 +256,13 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             need(result.get("gate_id") == row["gate_id"] and result.get("status") == "PASS", "GATE_NOT_PASS:" + str(row["gate_id"]))
             need(result.get("proposal_sha256") == proposal_hash and result.get("commit") == commit and result.get("resource_page_ids") == sorted(resource_ids), "EVIDENCE_SCOPE_MISMATCH:" + str(row["gate_id"]))
             need(result.get("method") in METHODS and match(LOGIN, result.get("reviewer")), "COMPLETE_ACCEPTANCE_METHOD_REQUIRED:" + str(row["gate_id"]))
+            if row["gate_id"] == BRAND_POLICY_GATE and proposal["kind"] == "ADS_ACTIVATION":
+                brand_url = next((r["url"] for r in resources if r["campaign_id"] == BRAND_CAMPAIGN_ID), None)
+                need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and brand_url is not None and
+                     result.get("brand_policy") == {"account": ACCOUNT, "campaign_id": BRAND_CAMPAIGN_ID,
+                         "ad_group_id": BRAND_AD_GROUP_ID, "ad_id": BRAND_AD_ID,
+                         "final_url": brand_url, "policy_status": "APPROVED"},
+                     "EXACT_BRAND_AD_POLICY_APPROVAL_REQUIRED")
             observed = instant(result.get("observed_at_utc"))
             need(created <= observed <= now, "EVIDENCE_TIME_OUTSIDE_PROPOSAL")
             latest_evidence = max(latest_evidence, observed)

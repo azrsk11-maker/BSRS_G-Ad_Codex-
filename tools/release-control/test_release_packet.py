@@ -63,12 +63,20 @@ class ReleasePacketTests(unittest.TestCase):
             proposal["change"] = {"gtm_container_id": "GTM-NW8WXKRF", "ga4_measurement_id": "G-W01P9W3NWE", "version_before": 1, "version_after": 2, "enhanced_matching": False, "personalization": False, "audience_exports": False, "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "configuration_diff": self.write("scope/tracking.json", {"target_container": "GTM-NW8WXKRF", "measurement_id": "G-W01P9W3NWE", "before_version": 1, "after_version": 2, "before": TRACKING_AFTER, "after": TRACKING_AFTER})}
         proposal_hash = digest(proposal)
         evidence = []
-        for gate in sorted(GATES | (POSTFLIGHT_GATES if kind.startswith("ADS_") else set())):
+        gates = GATES | (POSTFLIGHT_GATES if kind.startswith("ADS_") else set())
+        if kind == "ADS_ACTIVATION":
+            gates.add("BRAND_POLICY")
+        for gate in sorted(gates):
             result = {"test_only": True, "gate_id": gate, "status": "PASS", "proposal_sha256": proposal_hash,
                 "commit": COMMIT, "resource_page_ids": page_ids, "method": "AUTHENTICATED_STAGING_ACCEPTANCE",
                 "reviewer": "synthetic-reviewer", "observed_at_utc": "2026-11-07T02:00:00Z", "valid_until_utc": "2026-11-07T08:00:00Z", "production_synthetic_conversions": 0}
             if gate == "KEYWORD_SCOPE":
                 result["counts"] = {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}
+            if gate == "BRAND_POLICY":
+                result["method"] = "AUTHENTICATED_CONFIGURATION_READBACK"
+                result["brand_policy"] = {"account": ACCOUNT, "campaign_id": "24378494098",
+                    "ad_group_id": "204397706114", "ad_id": "828621612889", "policy_status": "APPROVED",
+                    "final_url": next(r["url"] for r in resources if r["campaign_id"] == "24378494098")}
             evidence.append({"gate_id": gate, "file": self.write("evidence/" + gate + ".json", result)})
         packet = {"schema_version": 1, "proposal": proposal, "evidence": evidence,
             "review": {"repository": REPO, "commit": COMMIT, "approver": "synthetic-reviewer", "state": "APPROVED",
@@ -231,6 +239,18 @@ class ReleasePacketTests(unittest.TestCase):
         errors = self.check(packet)["errors"]
         self.assertIn("AGGREGATE_BUDGET_MISMATCH", errors)
         self.assertIn("SEPARATE_EXACT_PACKET_APPROVAL_REQUIRED", errors)
+
+    def test_activation_requires_exact_brand_ad_policy_readback(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        self.assertTrue(self.check(packet)["packet_consistent"])
+        evidence = next(e for e in packet["evidence"] if e["gate_id"] == "BRAND_POLICY")
+        path = evidence["file"]["path"]
+        result = json.loads((self.root / path).read_text(encoding="utf-8"))
+        result["brand_policy"]["policy_status"] = "PENDING"
+        evidence["file"] = self.write(path, result)
+        self.assertIn("EXACT_BRAND_AD_POLICY_APPROVAL_REQUIRED", self.check(packet)["errors"])
+        packet["evidence"].remove(evidence)
+        self.assertIn("ALL_REQUIRED_GATES_EXACTLY_ONCE", self.check(packet)["errors"])
 
     def test_website_cannot_carry_spend_approval(self):
         self.packet["proposal"]["media_limits"] = {"aggregate_average_daily_fils": 200000}
