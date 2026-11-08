@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "observed_end_utc": "2026-11-08T17:10:32Z",
+  "scope": "NATIVE_ADMIN_READBACK_AND_SERVED_CLIENT_BASELINE",
+  "method": "Windows Computer Use with screenshot verification of active Chrome URL",
+  "administration": {
+    "url": "https://blackswanrealestate.ae/wp-admin/tools.php?page=bsre-enquiries",
+    "authenticated_admin_observed": true,
+    "readiness_checks_configured": 8,
+    "master_measurement_enabled": false,
+    "analytics_destination_enabled": false,
+    "advertising_destination_enabled": false,
+    "ads_destination": "AW-18394393537/jLZgCMrFo6odEMHXkMNE",
+    "qa_exclusion_marker_active": false,
+    "settings_saved": false
+  },
+  "public_page": {
+    "url": "https://blackswanrealestate.ae/enquire/rent/",
+    "status": 200,
+    "sha256": "016680848942d7df9c94cde913bf23fc6c2e2220d3243fb902aa368ebd2857b4",
+    "cache_control": "no-store, private, max-age=0",
+    "request_authentication": "none"
+  },
+  "public_configuration": {
+    "enabled": false,
+    "analytics_enabled": false,
+    "advertising_enabled": false,
+    "config_version": "gm1-a9408dc4457c1ec70020c2e0e428d9f1",
+    "runtime_endpoint": "https://blackswanrealestate.ae/wp-json/bsre/v1/measurement/runtime"
+  },
+  "served_assets": [
+    {
+      "name": "assets.css",
+      "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/assets.css?ver=0.2.12",
+      "status": 200,
+      "bytes": 11954,
+      "sha256": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+      "fixture_sha256": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+      "byte_equal": true,
+      "cache_control": "public, max-age=604800",
+      "cache_age": "95268"
+    },
+    {
+      "name": "consent.css",
+      "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/consent.css?ver=0.2.12",
+      "status": 200,
+      "bytes": 2093,
+      "sha256": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+      "fixture_sha256": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+      "byte_equal": true,
+      "cache_control": "public, max-age=604800",
+      "cache_age": null
+    },
+    {
+      "name": "consent-bridge.js",
+      "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/consent-bridge.js?ver=0.2.12",
+      "status": 200,
+      "bytes": 18242,
+      "sha256": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+      "fixture_sha256": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+      "byte_equal": true,
+      "cache_control": "public, max-age=604800",
+      "cache_age": null
+    },
+    {
+      "name": "wordpress.js",
+      "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/wordpress.js?ver=0.2.12",
+      "status": 200,
+      "bytes": 2303,
+      "sha256": "dd85e87e930e449136887af826e91aefffa9af429b39fe30c610621b101cef18",
+      "fixture_sha256": "dd85e87e930e449136887af826e91aefffa9af429b39fe30c610621b101cef18",
+      "byte_equal": true,
+      "cache_control": "public, max-age=604800",
+      "cache_age": null
+    },
+    {
+      "name": "lead.js",
+      "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/lead.js?ver=0.2.12",
+      "status": 200,
+      "bytes": 26591,
+      "sha256": "3d469cccef9891702ba1462e29f17ba3135261fff23ea2a40c052aa6afb99154",
+      "fixture_sha256": "3d469cccef9891702ba1462e29f17ba3135261fff23ea2a40c052aa6afb99154",
+      "byte_equal": true,
+      "cache_control": "public, max-age=604800",
+      "cache_age": null
+    },
+    {
+      "name": "google-measurement.js",
+      "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/google-measurement.js?ver=0.2.12",
+      "status": 200,
+      "bytes": 6239,
+      "sha256": "2e87c3c715d74e09b459d02d706f72008b2edcfd73d0401bd6bfcbee64e9b837",
+      "fixture_sha256": "2e87c3c715d74e09b459d02d706f72008b2edcfd73d0401bd6bfcbee64e9b837",
+      "byte_equal": true,
+      "cache_control": "public, max-age=604800",
+      "cache_age": null
+    }
+  ],
+  "source_http_gets": 7,
+  "native_ui": {
+    "page": "https://blackswanrealestate.ae/enquire/rent/",
+    "observed_browser_zoom_percent": 67,
+    "initial_analytics_choice_checked": false,
+    "initial_ad_measurement_choice_checked": false,
+    "close_control_hides_preferences": true,
+    "space_reopens_after_close": true,
+    "escape_hides_panel_and_visually_returns_focus": true,
+    "preference_choices_saved": 0,
+    "forms_submitted": 0
+  },
+  "limits": [
+    "This verifies served client assets and visible settings, not all current server PHP source.",
+    "Assets permit seven-day CDN caching; one returned Age 95268. Origin-cache bypass was not attempted.",
+    "Native accessibility trees also included inactive Chrome documents; active screenshots and URL scoped observations.",
+    "Preference persistence, withdrawal network effects, full payload privacy and real conversions were not exercised.",
+    "The new recovery and attribution candidates remain undeployed; these browser checks cover the preserved baseline."
+  ],
+  "production_configuration_changes": false,
+  "release_authorized": false
+}

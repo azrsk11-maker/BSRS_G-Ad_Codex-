@@ -363,3 +363,13 @@ The harness asserts original decision headers, permitted exact click capture, ac
 
 Independent source review found no blocking defect in the PHP/JS integration. Required local foundation passed in50.632314seconds. The review confirms server-side withdrawal/export acceptance is distinct from browser consent-change propagation, which this matrix does not execute.
 
+Executed the20-scenario matrix at0625ed2. IsolatedWordPress42502947827/job128799425247 and Foundation42502947768 passed. The consented phase records871namedassertions and all249files matched. Actual WordPress original evidence, receipt/fingerprint domains, per-purpose emission rules, withdrawal/regrant export blocking and one row/email per scenario passed. Public execution note is PR8comment6724420622. Browser cookie/bridge propagation, timing and live Google acceptance remain separate.
+
+## Native browser and current WordPress readback
+
+Windows Computer Use successfully accessed the existing Chrome window and authenticated WordPress admin on8November. The previous disabled Browser Use connector is no longer a universal access blocker. Active screenshots verified all eight readiness items configured, master/analytics/advertising controls unchecked, no active QA marker and stored Ads destination AW-18394393537/jLZgCMrFo6odEMHXkMNE. No settings were saved.
+
+Seven public GETs verified the rent page and all six BSRE assets. Every asset exactly matches the preserved0.2.12 fixture; public runtime flags are also allfalse. Assets permit seven-day caching, and one returned Age95268, so this proves the served bytes rather than an uncached origin inspection. New recovery/attribution candidates remain undeployed. Source receipt is audit/LIVE_WORDPRESS_READBACK_2026-11-08.json.
+
+On the current baseline in Chrome at67%zoom, the optional choices were visually unchecked. Closing preferences, reopening with Space and dismissing with Escape worked; Escape visibly restored focus to the preferences button. No preferences or forms were submitted. Full persistence, withdrawal/payload, mobile and candidate-browser acceptance remain open. Native accessibility trees included other open documents, so screenshots and the active address scoped these observations.
+
