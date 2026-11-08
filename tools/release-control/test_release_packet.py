@@ -73,6 +73,12 @@ class ReleasePacketTests(unittest.TestCase):
                 "reviewer": "synthetic-reviewer", "observed_at_utc": "2026-11-07T02:00:00Z", "valid_until_utc": "2026-11-07T08:00:00Z", "production_synthetic_conversions": 0}
             if gate == "KEYWORD_SCOPE":
                 result["counts"] = {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}
+                if kind == "ADS_ACTIVATION":
+                    result.update(method="AUTHENTICATED_CONFIGURATION_READBACK", effective_exclusions={
+                        "account": ACCOUNT, "readback_ref": "TEST_ONLY:effective-negatives",
+                        "campaign_ids": sorted(CURRENT_CAMPAIGNS), "account_and_manager_scope_reviewed": True,
+                        "legacy_shared_list_attached": False, "unresolved_effective_conflicts": 0,
+                    })
             if gate == "STAFF_CAPACITY" and kind == "ADS_ACTIVATION":
                 result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
@@ -301,6 +307,19 @@ class ReleasePacketTests(unittest.TestCase):
                 result["staff_capacity"].update(changes)
                 evidence["file"] = self.write(path, result)
                 self.assertIn("REHEARSED_STAFF_CAPACITY_MUST_COVER_REVIEWED_LAUNCH_LOAD", self.check(packet)["errors"])
+
+    def test_activation_requires_current_effective_negative_scope(self):
+        for changes in ({"readback_ref": ""}, {"legacy_shared_list_attached": True},
+                        {"account_and_manager_scope_reviewed": False}, {"campaign_ids": []},
+                        {"unresolved_effective_conflicts": False}):
+            with self.subTest(changes=changes):
+                packet = self.fixture("ADS_ACTIVATION")
+                evidence = next(e for e in packet["evidence"] if e["gate_id"] == "KEYWORD_SCOPE")
+                path = evidence["file"]["path"]
+                result = json.loads((self.root / path).read_text(encoding="utf-8"))
+                result["effective_exclusions"].update(changes)
+                evidence["file"] = self.write(path, result)
+                self.assertIn("EFFECTIVE_NEGATIVE_SCOPE_READBACK_REQUIRED", self.check(packet)["errors"])
 
     def test_activation_rejects_reenabled_held_account_lead_form(self):
         packet = self.fixture("ADS_ACTIVATION")

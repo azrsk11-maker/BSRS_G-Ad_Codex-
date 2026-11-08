@@ -346,6 +346,17 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             if row["gate_id"] == "KEYWORD_SCOPE":
                 counts = result.get("counts")
                 need(isinstance(counts, dict) and all(type(v) is int for v in counts.values()) and counts == {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}, "MASTER_COUNTS_OR_REVIEWED_POLICY_CHANGE_REQUIRED")
+                if proposal["kind"] == "ADS_ACTIVATION":
+                    exclusions = result.get("effective_exclusions")
+                    need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and
+                         isinstance(exclusions, dict) and exclusions.get("account") == ACCOUNT and
+                         match(ID_REF, exclusions.get("readback_ref")) and
+                         exclusions.get("campaign_ids") == sorted(CURRENT_CAMPAIGNS) and
+                         exclusions.get("account_and_manager_scope_reviewed") is True and
+                         exclusions.get("legacy_shared_list_attached") is False and
+                         exclusions.get("unresolved_effective_conflicts") == 0 and
+                         type(exclusions.get("unresolved_effective_conflicts")) is int,
+                         "EFFECTIVE_NEGATIVE_SCOPE_READBACK_REQUIRED")
             if row["gate_id"] == "STAFF_CAPACITY" and proposal["kind"] == "ADS_ACTIVATION":
                 capacity = result.get("staff_capacity")
                 need(result.get("method") == "OWNER_REVIEWED_BUSINESS_EVIDENCE" and
