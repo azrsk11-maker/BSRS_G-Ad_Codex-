@@ -32,7 +32,37 @@ export function buildReceiptClientCandidate(bytes) {
   replace('  function markPendingEnquiry(pending) {', '  function markPendingEnquiry(pending, proof) {');
   replace("window.sessionStorage.setItem(PENDING_ENQUIRY_KEY, '1')", 'window.sessionStorage.setItem(PENDING_ENQUIRY_KEY, proof)');
   replace("    let requestId = '';", "    let requestId = '';\n    let attemptProof = '';");
+  replace("            requestId = ''; attemptBody = '';", "            attemptProof = '';\n            requestId = ''; attemptBody = '';");
   replace('        markPendingEnquiry(true);', "        markPendingEnquiry(true, attemptProof || '1');");
+  // Recovery has no form values to validate. New submissions still call the
+  // native reportValidity() below before obtaining a proof or sending a lead.
+  replace("    form.addEventListener('submit', async function (event) {", "    form.noValidate = true;\n    form.addEventListener('submit', async function (event) {");
+  replace('      if (!form.reportValidity()) return;', String.raw`      // Recover a previous receipt before requiring blank reloaded fields.
+      if (!attemptBody && hasPendingEnquiry()) {
+        pending = true;
+        button.disabled = true;
+        try {
+          const endpoint = safeEndpoint();
+          const proof = recoveryProof();
+          if (!endpoint || !validProof(proof)) throw new Error('Recovery proof unavailable');
+          const result = await recoveryRequest(endpoint, 'status', {proof});
+          if (result?.status !== 'ACCEPTED' || typeof result.reference !== 'string' || !/^[A-Za-z0-9._:-]{1,150}$/.test(result.reference)) {
+            throw new Error('Receipt unconfirmed');
+          }
+          markPendingEnquiry(false);
+          completed = true;
+          button.textContent = 'Enquiry received';
+          button.dataset.complete = 'true';
+          showStatus(status, 'Your earlier enquiry was received. Reference: ' + result.reference + '.', 'success');
+        } catch (_) {
+          showStatus(status, 'Your earlier enquiry is still unconfirmed. Please contact us by phone or WhatsApp to check it.', 'error');
+        } finally {
+          pending = false;
+          if (!completed) button.disabled = false;
+        }
+        return;
+      }
+      if (!form.reportValidity()) return;`);
   replace(`      if (!attemptBody && hasPendingEnquiry()) {
         showStatus(status, 'Receipt of an earlier enquiry in this tab is still unconfirmed. Please contact us by phone or WhatsApp to check it before submitting again.', 'error');
         return;
@@ -41,20 +71,7 @@ export function buildReceiptClientCandidate(bytes) {
         pending = true;
         button.disabled = true;
         try {
-          if (hasPendingEnquiry()) {
-            const proof = recoveryProof();
-            if (!validProof(proof)) throw new Error('Recovery proof unavailable');
-            const result = await recoveryRequest(endpoint, 'status', {proof});
-            if (result?.status !== 'ACCEPTED' || typeof result.reference !== 'string' || !/^[A-Za-z0-9._:-]{1,150}$/.test(result.reference)) {
-              throw new Error('Receipt unconfirmed');
-            }
-            markPendingEnquiry(false);
-            completed = true;
-            button.textContent = 'Enquiry received';
-            button.dataset.complete = 'true';
-            showStatus(status, 'Your earlier enquiry was received. Reference: ' + result.reference + '.', 'success');
-            return;
-          }
+          attemptProof = '';
           try {
             const result = await recoveryRequest(endpoint, 'proof', {});
             if (validProof(result?.proof) && result.request_id === result.proof.split('.')[0]) {

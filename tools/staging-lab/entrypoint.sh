@@ -17,5 +17,6 @@ php -d sendmail_path=/bin/false /opt/lab/plugin.php
 php -d sendmail_path=/bin/false /opt/lab/transport.php
 php -d sendmail_path=/bin/false /opt/lab/receive.php
 php -d sendmail_path=/bin/false /opt/lab/interop.php
+php -d sendmail_path=/bin/false /opt/lab/client-interop.php
 php -d sendmail_path=/bin/false /opt/lab/retention.php
 php -d sendmail_path=/bin/false /opt/lab/restore.php

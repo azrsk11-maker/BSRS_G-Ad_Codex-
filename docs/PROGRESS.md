@@ -315,3 +315,11 @@ Preliminary review of all 31 supplemental seller and landlord discovery identiti
 
 The owner candidate cross-check found seven literal identities already in the dated Owners keyword export. Four additional identities overlap in intent, one requires tenant-sourcing evidence and two commercial terms require an explicit service remit and suitable intake. Both existing owner routes returned HTTP 200 with form markers. Dated ad group and route mappings are recorded in the supply intent review. The 360-slot ownership decision and factual admission remain open.
 
+## Combined enquiry client and WordPress recovery acceptance
+
+Independent review reproduced two client defects in the recovery candidate. Required fields and native form validation could prevent a blank reloaded form from reaching status lookup. A rejected attempt could retain an obsolete proof during a later proof outage. Both paths are corrected. Seven focused form tests passed, including blank recovery with unchecked contact consent, new-form validation and stale-proof rejection. The reviewer reran the tests and confirmed both corrections.
+
+The isolated lab now combines the source-pinned JavaScript client, actual WordPress REST handlers and database, and pinned receiver over local pipes. Five role journeys simulate acknowledgement loss after WordPress receipt linkage and use a blank reload to recover the same reference. The harness checks intake and receiver call counts, stored proof scope, durable rows, email deduplication and absence of recovery measurement. DOM, storage and Google services remain doubles. Execution requires current-head lab acceptance. Upstream acknowledgement loss before WordPress linkage still needs exact-body retry or reconciliation. Current browser access is disabled in Work settings, so authenticated WordPress and browser acceptance remain pending. Full goal and owner-decision gates remain open.
+
+Required local foundation passed in 22.962871 seconds. The new PHP harness passed syntax validation and the Node harness passed syntax plus 45 simulated transport checks. These are preparation results for the combined WordPress run. The isolated workflow now watches the tracking candidates and PHP recovery files it consumes, so changes to those dependencies trigger the lab. No speed improvement is inferred from these task timings.
+

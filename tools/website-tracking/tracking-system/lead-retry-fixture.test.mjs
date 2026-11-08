@@ -11,14 +11,14 @@ const snapshot = {known: true, acknowledged: true, measurement_eligible: true,
   preferences: {analytics: true, ad_measurement: true}, decision_version: 'test-consent', notice_version: 'test-notice'};
 const receipt = {accepted: true, lead_id: 'TEST_ONLY_LEAD', event_id: 'TEST_ONLY_EVENT', measurement: snapshot};
 
-function page({uuid, store, reply, client = source, recovery}) {
+function page({uuid, store, reply, client = source, recovery, valid = true, contactConsent = true}) {
   const handlers = new Map(), requests = [], ads = [], ga4 = [];
   const button = {dataset: {}, textContent: 'Submit'}, status = {dataset: {}};
   const form = {
     dataset: {role: 'tenant', landingPath: '/enquire/rent/'},
-    elements: {namedItem: name => ({name: {value: 'Synthetic Fixture'}, contact_consent: {checked: true}})[name]},
+    elements: {namedItem: name => ({name: {value: valid ? 'Synthetic Fixture' : ''}, contact_consent: {checked: contactConsent}})[name]},
     querySelector: selector => selector === '[data-bsre-status]' ? status : button,
-    reportValidity: () => true, addEventListener: (type, listener) => handlers.set(type, listener),
+    reportValidity: () => valid, addEventListener: (type, listener) => handlers.set(type, listener),
   };
   const window = {
     location: new URL(origin + '/enquire/rent/'), crypto: {randomUUID: () => uuid},
@@ -31,7 +31,8 @@ function page({uuid, store, reply, client = source, recovery}) {
       if (recovery && url.startsWith(origin + '/wp-json/bsre/v1/receipt-recovery/')) return recovery(url, request);
       assert.equal(url, window.BSRELeadConfig.endpoint);
       requests.push(request);
-      return {ok: true, json: async () => reply(requests.length)};
+      const result = await reply(requests.length);
+      return result?.syntheticResponse === true ? result : {ok: true, json: async () => result};
     },
   };
   const document = {readyState: 'complete', referrer: '', querySelector: () => form,
@@ -39,7 +40,7 @@ function page({uuid, store, reply, client = source, recovery}) {
   runInNewContext(client, {window, document, URL, AbortController});
   window.BSREMeasurement.connect('ads', event => ads.push(event));
   window.BSREMeasurement.connect('ga4', event => ga4.push(event));
-  return {submit: () => handlers.get('submit')({preventDefault() {}}), requests, ads, ga4, status};
+  return {submit: () => handlers.get('submit')({preventDefault() {}}), requests, ads, ga4, status, form};
 }
 
 test('lost acknowledgement retries the exact body and emits one accepted event per destination', async () => {
@@ -82,7 +83,8 @@ test('recovery client uses server UUID, then recovers a receipt without replayin
   await first.submit();
   assert.equal(JSON.parse(first.requests[0].body).request_id, uuid);
   assert.equal(store.get('BSRE_PENDING_ENQUIRY_V1'), proof);
-  const reload = page({client, store, recovery, reply: () => assert.fail('Unexpected intake')});
+  const reload = page({client, store, recovery, valid: false, contactConsent: false, reply: () => assert.fail('Unexpected intake')});
+  assert.equal(reload.form.noValidate, true);
   await reload.submit();
   assert.equal(reload.status.dataset.state, 'error');
   linked = true;
@@ -91,6 +93,35 @@ test('recovery client uses server UUID, then recovers a receipt without replayin
   assert.match(reload.status.textContent, /TEST_ONLY_LEAD/);
   assert.equal(reload.requests.length + reload.ads.length + reload.ga4.length, 0);
   assert.equal(store.has('BSRE_PENDING_ENQUIRY_V1'), false);
+});
+
+test('candidate still validates a new empty form before proof or intake calls', async () => {
+  const f = page({client: buildReceiptClientCandidate(Buffer.from(source)), store: new Map(), valid: false,
+    recovery: () => assert.fail('Unexpected proof request'), reply: () => assert.fail('Unexpected intake')});
+  await f.submit();
+  assert.equal(f.requests.length, 0);
+});
+
+test('validation rejection retires its proof before a later proof outage and new request', async () => {
+  const client = buildReceiptClientCandidate(Buffer.from(source));
+  const store = new Map();
+  const proofId = '00000000-0000-4000-8000-000000000011';
+  const fallbackId = '00000000-0000-4000-8000-000000000099';
+  let proofCalls = 0;
+  const f = page({client, store, uuid: fallbackId,
+    recovery: async () => ++proofCalls === 1
+      ? {ok: true, json: async () => ({request_id: proofId, proof: proofId + '.1800000000.' + 'a'.repeat(64)})}
+      : {ok: false},
+    reply: attempt => {
+      if (attempt === 1) return {syntheticResponse: true, ok: false, status: 422,
+        json: async () => ({accepted: false, code: 'VALIDATION_FAILED'})};
+      throw new Error('Synthetic lost acknowledgement');
+    }});
+  await f.submit();
+  assert.equal(store.has('BSRE_PENDING_ENQUIRY_V1'), false);
+  await f.submit();
+  assert.equal(JSON.parse(f.requests[1].body).request_id, fallbackId);
+  assert.equal(store.get('BSRE_PENDING_ENQUIRY_V1'), '1');
 });
 
 test('proof outage preserves intake and ambiguous reload still holds a new submission', async () => {
