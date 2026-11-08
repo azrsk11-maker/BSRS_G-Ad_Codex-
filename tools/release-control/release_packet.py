@@ -30,6 +30,7 @@ LAUNCH_BUDGET_FILS = {
     "24378494098": 10_000,
 }
 CURRENT_CAMPAIGNS = set(LAUNCH_BUDGET_FILS)
+FROZEN_BASELINE_PATH = Path(__file__).resolve().parents[2] / "docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json"
 TRACKING_AFTER = {"enhanced_matching": False, "personalization": False, "audience_exports": False,
     "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "auto_form_collection": False,
     "page_view_producers": 1, "accepted_enquiry_route": "NATIVE_ADS_SECONDARY", "qualified_import": "GCLID_ONLY_DATA_MANAGER"}
@@ -66,6 +67,18 @@ def instant(value):
     if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", value):
         raise ValueError("UTC_SECONDS_REQUIRED")
     return datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+
+
+def frozen_legacy_statuses():
+    baseline = load_json(FROZEN_BASELINE_PATH)
+    campaigns = baseline["campaigns"]
+    statuses = {row["id"]: row["status"].upper() for row in campaigns}
+    legacy = {identity: status for identity, status in statuses.items() if identity not in CURRENT_CAMPAIGNS}
+    if (baseline["account_id"] != ACCOUNT or len(statuses) != len(campaigns) or
+            not CURRENT_CAMPAIGNS.issubset(statuses) or len(legacy) != 16 or
+            set(legacy.values()) != {"PAUSED", "REMOVED"}):
+        raise ValueError("INVALID_REVIEWED_FROZEN_BASELINE")
+    return legacy
 
 
 def verify_file(root, record):
@@ -178,7 +191,10 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             after_map = {r.get("id"): r for r in after_rows}
             need(len(before_map) == len(before_rows) and len(after_map) == len(after_rows) and set(before_map) == set(after_map) and CURRENT_CAMPAIGNS.issubset(before_map), "COMPLETE_UNIQUE_BEFORE_AFTER_CAMPAIGNS")
             old_ids = set(before_map) - CURRENT_CAMPAIGNS
-            need(len(old_ids) >= 16 and all(before_map[i].get("status") in {"PAUSED", "REMOVED"} and before_map[i] == after_map.get(i) for i in old_ids), "OLD_CAMPAIGN_BASELINE_MUST_STAY_FROZEN")
+            frozen = frozen_legacy_statuses()
+            need(all(before_map.get(i, {}).get("status") == status for i, status in frozen.items()),
+                 "KNOWN_LEGACY_CAMPAIGN_IDS_AND_STATUSES_REQUIRED")
+            need(all(before_map[i].get("status") in {"PAUSED", "REMOVED"} and before_map[i] == after_map.get(i) for i in old_ids), "OLD_CAMPAIGN_BASELINE_MUST_STAY_FROZEN")
             for campaign_id in CURRENT_CAMPAIGNS:
                 before, after_row = before_map.get(campaign_id, {}), after_map.get(campaign_id, {})
                 need(before.get("status") == "PAUSED", "NEW_CAMPAIGNS_START_PAUSED")

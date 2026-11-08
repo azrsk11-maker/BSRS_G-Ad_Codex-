@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, instant, load_json, validate, verify_file
+from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, frozen_legacy_statuses, instant, load_json, validate, verify_file
 
 COMMIT = "a" * 40
 NOW = instant("2026-11-07T06:00:00Z")
@@ -48,7 +48,7 @@ class ReleasePacketTests(unittest.TestCase):
                 "cash_risk_ceiling_fils": 3040000, "accepts_normal_overdelivery": True, "excluding_vat": True,
                 "currency": "AED", "timezone": "Asia/Dubai", "old_campaigns_remain_paused_removed": True,
                 "campaign_budgets": [{"campaign_id": r["campaign_id"], "average_daily_fils": LAUNCH_BUDGET_FILS[r["campaign_id"]]} for r in resources]}
-            old = [{"id": str(888000000+n), "status": "PAUSED"} for n in range(16)]
+            old = [{"id": identity, "status": status} for identity, status in frozen_legacy_statuses().items()]
             before = {"account": ACCOUNT, "observed_at_utc": "2026-11-07T02:00:00Z", "campaigns": old + [{"id": r["campaign_id"], "status": "PAUSED", "average_daily_fils": LAUNCH_BUDGET_FILS[r["campaign_id"]]} for r in resources]}
             after = copy.deepcopy(before)
             for row in after["campaigns"]:
@@ -257,6 +257,19 @@ class ReleasePacketTests(unittest.TestCase):
         before["campaigns"][-1]["average_daily_fils"] -= 100
         packet["proposal"]["change"]["before_state"] = self.write("scope/before.json", before)
         self.assertIn("ACTIVATION_REQUIRES_PRECONFIGURED_LAUNCH_BUDGETS", self.check(packet)["errors"])
+
+    def test_matching_before_and_after_cannot_substitute_for_frozen_legacy_campaign(self):
+        for replacement in ({"id": "999999999"}, {"status": "PAUSED"}):
+            with self.subTest(replacement=replacement):
+                packet = self.fixture("ADS_ACTIVATION")
+                change = packet["proposal"]["change"]
+                for phase in ("before", "after"):
+                    name = f"scope/{phase}.json"
+                    state = json.loads((self.root / name).read_text(encoding="utf-8"))
+                    removed = next(row for row in state["campaigns"] if row["status"] == "REMOVED")
+                    removed.update(replacement)
+                    change[f"{phase}_state"] = self.write(name, state)
+                self.assertIn("KNOWN_LEGACY_CAMPAIGN_IDS_AND_STATUSES_REQUIRED", self.check(packet)["errors"])
 
     def test_ignored_source_cannot_claim_reviewed_commit(self):
         self.assertIn("ARTIFACT_NOT_IN_REVIEWED_COMMIT", self.check(source_hashes={})["errors"])
