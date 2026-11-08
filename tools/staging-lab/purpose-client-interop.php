@@ -73,6 +73,18 @@ while(($line=fgets($pipes[1],1000000))!==false){
         if(str_ends_with($path,'/purpose-lead')){
             $envelope=json_decode($message['body'],true,12,JSON_THROW_ON_ERROR);$wire=json_decode($envelope['wire_body'],true,12,JSON_THROW_ON_ERROR);$id=$wire['request_id'];
             purpose_check('synthetic_contacts_only',str_starts_with($wire['name'],'SYNTHETIC purpose ')&&$wire['email']==='fixture@example.invalid');
+            if($scenarios===1){
+                $wrong=$wire;
+                $wrong['request_id']=wp_generate_uuid4();
+                $wrong['landing_page']='https://blackswanrealestate.ae/enquire/rent/';
+                $invalid=$envelope;
+                $invalid['wire_body']=wp_json_encode($wrong);
+                $rejected=purpose_request('purpose-lead',wp_json_encode($invalid),$message['headers']);
+                purpose_check('wrong_role_service_rejected_before_acceptance',$rejected->get_status()===400&&
+                    ($rejected->get_data()['code']??null)==='VALIDATION_FAILED');
+                $unexpected=$wpdb->get_var($wpdb->prepare("SELECT request_id FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s",$wrong['request_id']));
+                purpose_check('wrong_role_service_creates_no_capture',$unexpected===null);
+            }
             $wireBodies[$id]=$envelope['wire_body'];$bodies[$id]=$message['body'];$current['id']=$id;
         }
         $response=purpose_request(substr($path,strlen('/wp-json/bsre/v1/')),$message['body'],$message['headers']);
