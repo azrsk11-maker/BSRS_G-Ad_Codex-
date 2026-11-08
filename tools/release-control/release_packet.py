@@ -23,7 +23,13 @@ COMMIT = re.compile(r"[0-9a-f]{40}\Z")
 LOGIN = re.compile(r"[A-Za-z0-9][A-Za-z0-9-]{0,38}\Z")
 MAX_BYTES = 2_000_000
 MAX_ARTIFACT_BYTES = 64_000_000
-CURRENT_CAMPAIGNS = {"24372566774", "24367388382", "24378494092", "24378494098"}
+LAUNCH_BUDGET_FILS = {
+    "24372566774": 120_000,
+    "24367388382": 40_000,
+    "24378494092": 30_000,
+    "24378494098": 10_000,
+}
+CURRENT_CAMPAIGNS = set(LAUNCH_BUDGET_FILS)
 TRACKING_AFTER = {"enhanced_matching": False, "personalization": False, "audience_exports": False,
     "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "auto_form_collection": False,
     "page_view_producers": 1, "accepted_enquiry_route": "NATIVE_ADS_SECONDARY", "qualified_import": "GCLID_ONLY_DATA_MANAGER"}
@@ -202,6 +208,12 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             need(len(budgets) == len(resources) and {b.get("campaign_id") for b in budgets} == set(campaign_ids) and all(type(b.get("average_daily_fils")) is int and b["average_daily_fils"] > 0 for b in budgets), "EXACT_CAMPAIGN_BUDGET_POOLS_REQUIRED")
             need(sum(b["average_daily_fils"] for b in budgets) == media["aggregate_average_daily_fils"], "AGGREGATE_BUDGET_MISMATCH")
             need(all(after_map.get(b["campaign_id"], {}).get("average_daily_fils") == b["average_daily_fils"] for b in budgets), "BUDGET_DIFF_MISMATCH")
+            if proposal["kind"] == "ADS_ACTIVATION":
+                need({b["campaign_id"]: b["average_daily_fils"] for b in budgets} == LAUNCH_BUDGET_FILS,
+                     "APPROVED_LAUNCH_BUDGET_SPLIT_REQUIRED")
+                need(all(type(before_map[i].get("average_daily_fils")) is int and
+                         before_map[i]["average_daily_fils"] == amount for i, amount in LAUNCH_BUDGET_FILS.items()),
+                     "ACTIVATION_REQUIRES_PRECONFIGURED_LAUNCH_BUDGETS")
             need(media.get("old_campaigns_remain_paused_removed") is True, "OLD_CAMPAIGNS_CANNOT_RESUME")
         else:
             need(media is None, "WEBSITE_OR_TRACKING_CANNOT_AUTHORIZE_SPEND")

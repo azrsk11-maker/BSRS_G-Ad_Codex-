@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, instant, load_json, validate, verify_file
+from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, instant, load_json, validate, verify_file
 
 COMMIT = "a" * 40
 NOW = instant("2026-11-07T06:00:00Z")
@@ -47,9 +47,9 @@ class ReleasePacketTests(unittest.TestCase):
             proposal["media_limits"] = {"aggregate_average_daily_fils": 200000, "monthly_media_ceiling_fils": 6080000,
                 "cash_risk_ceiling_fils": 3040000, "accepts_normal_overdelivery": True, "excluding_vat": True,
                 "currency": "AED", "timezone": "Asia/Dubai", "old_campaigns_remain_paused_removed": True,
-                "campaign_budgets": [{"campaign_id": r["campaign_id"], "average_daily_fils": 50000} for r in resources]}
+                "campaign_budgets": [{"campaign_id": r["campaign_id"], "average_daily_fils": LAUNCH_BUDGET_FILS[r["campaign_id"]]} for r in resources]}
             old = [{"id": str(888000000+n), "status": "PAUSED"} for n in range(16)]
-            before = {"account": ACCOUNT, "observed_at_utc": "2026-11-07T02:00:00Z", "campaigns": old + [{"id": r["campaign_id"], "status": "PAUSED", "average_daily_fils": 50000} for r in resources]}
+            before = {"account": ACCOUNT, "observed_at_utc": "2026-11-07T02:00:00Z", "campaigns": old + [{"id": r["campaign_id"], "status": "PAUSED", "average_daily_fils": LAUNCH_BUDGET_FILS[r["campaign_id"]]} for r in resources]}
             after = copy.deepcopy(before)
             for row in after["campaigns"]:
                 if row["id"] in CURRENT_CAMPAIGNS:
@@ -233,6 +233,30 @@ class ReleasePacketTests(unittest.TestCase):
     def test_website_cannot_carry_spend_approval(self):
         self.packet["proposal"]["media_limits"] = {"aggregate_average_daily_fils": 200000}
         self.assertIn("WEBSITE_OR_TRACKING_CANNOT_AUTHORIZE_SPEND", self.check()["errors"])
+
+    def test_activation_rejects_budget_redistribution_at_same_total(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        proposal = packet["proposal"]
+        budgets = proposal["media_limits"]["campaign_budgets"]
+        budgets[0]["average_daily_fils"] += 100
+        budgets[1]["average_daily_fils"] -= 100
+        after = json.loads((self.root / "scope/after.json").read_text(encoding="utf-8"))
+        adjusted = {b["campaign_id"]: b["average_daily_fils"] for b in budgets}
+        for row in after["campaigns"]:
+            if row["id"] in adjusted:
+                row["average_daily_fils"] = adjusted[row["id"]]
+        proposal["change"]["after_state"] = self.write("scope/after.json", after)
+        errors = self.check(packet)["errors"]
+        self.assertIn("APPROVED_LAUNCH_BUDGET_SPLIT_REQUIRED", errors)
+        self.assertNotIn("AGGREGATE_BUDGET_MISMATCH", errors)
+        self.assertNotIn("BUDGET_DIFF_MISMATCH", errors)
+
+    def test_activation_cannot_also_configure_launch_budget(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        before = json.loads((self.root / "scope/before.json").read_text(encoding="utf-8"))
+        before["campaigns"][-1]["average_daily_fils"] -= 100
+        packet["proposal"]["change"]["before_state"] = self.write("scope/before.json", before)
+        self.assertIn("ACTIVATION_REQUIRES_PRECONFIGURED_LAUNCH_BUDGETS", self.check(packet)["errors"])
 
     def test_ignored_source_cannot_claim_reviewed_commit(self):
         self.assertIn("ARTIFACT_NOT_IN_REVIEWED_COMMIT", self.check(source_hashes={})["errors"])
