@@ -47,6 +47,7 @@ def run_checks(require_php=False):
     run("keyword-supply-discovery-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-discovery-supply-2026-11-08/verify_capture.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
+    run("private-query-triage-count-integrity", [sys.executable, "-B", str(ROOT / "docs/audit/private-query-triage-counts-2026-11-08/verify_counts.py")])
     run("primary-plugin-fixture-provenance", [sys.executable, "-B", str(
         ROOT / "tools/staging-lab/verify_fixture.py")])
     for folder in ("native-wordpress", "keyword-system", "efficiency", "release-control", "staging-lab"):
