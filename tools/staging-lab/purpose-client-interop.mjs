@@ -2,6 +2,7 @@
 import {readFileSync} from 'node:fs';
 import {createInterface} from 'node:readline';
 import {buildPurposeClientCandidate} from '/opt/lab/tracking-system/build-purpose-attribution-candidate.mjs';
+import {acceptedSubmissionUrl} from '/opt/lab/tracking-system/contract.mjs';
 import {createClientPage} from './client-page.mjs';
 const client = buildPurposeClientCandidate(readFileSync('/opt/wordpress/wp-content/plugins/bsre-enquiries/assets/lead.js'));
 const origin = 'https://blackswanrealestate.ae';
@@ -36,6 +37,8 @@ async function main(){
       check(key+'_advertising_click_retained',!advertising||envelope.attribution.advertising.last.parameters.gclid==='Exact_Click.A~9');
       const inspected=await command({op:'inspect',request_id:JSON.parse(envelope.wire_body).request_id});
       for(const [name,passed]of Object.entries(inspected.checks))check(key+'_'+name,passed===true);
+      check(key+'_accepted_wire_binds_exact_service',
+        acceptedSubmissionUrl(envelope.wire_body,inspected.synthetic_capture,page.acceptedResponse.body)===origin+'/enquire/'+slug+'/');
     }
   }
   await command({op:'complete',checks});

@@ -105,7 +105,9 @@ while(($line=fgets($pipes[1],1000000))!==false){
         wp_set_current_user($owner->ID);$after=P\private_history($wpdb,$id,time());wp_set_current_user(0);
         $values['withdrawal_regrant_keeps_both_histories_denied']=$after['analytics']['first']===null&&$after['advertising']['first']===null;
         foreach($values as$name=>$passed)purpose_check($scenarios.'_'.$name,$passed);
-        $reply=['checks'=>$values];
+        $reply=['checks'=>$values,'synthetic_capture'=>array_intersect_key($row,array_flip([
+            'request_id','fingerprint','state','delivery_pending','uncertain','lead_id','event_id',
+        ]))];
     }elseif($op==='complete'){$complete=true;$checks=array_merge($checks,$message['checks']);$reply=['ok'=>true];}
     else throw new RuntimeException('Unsupported purpose operation');
     $encoded=wp_json_encode($reply)."\n";fwrite($pipes[0],$encoded);fflush($pipes[0]);
