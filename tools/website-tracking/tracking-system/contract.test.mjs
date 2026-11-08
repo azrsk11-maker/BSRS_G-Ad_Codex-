@@ -18,6 +18,25 @@ function raw(event='bsre_lead_accepted') {return {event,schema_version:1,campaig
   evidence:{source:'server_confirmed',verified:true,reference:'qa-durable-receipt'}};}
 function options(overrides={}) {return {registry,consent:structuredClone(consent),mappings:structuredClone(mappings),ledger:new PrototypeLedger(),now:NOW,...overrides};}
 
+test('accepted enquiry binds a reviewed service route without leaking it to destinations',()=>{
+  const [form,phone]=record.ctas;
+  const bound=createRegistry([{...record,ctas:[{...form,submission_path:'/enquire/off-plan/'},phone]}]);
+  const event=raw();
+  event.requested_url=record.path;
+  event.receipt.submission_url='/enquire/off-plan/';
+  const normalized=normalizeEvent(event,bound);
+  assert.equal(normalized.parameters.page_location,queryFreeUrl(record.path));
+  assert.equal(normalized.private_submission_url,queryFreeUrl('/enquire/off-plan/'));
+  const result=prepareDestinations(event,options({registry:bound}));
+  assert.equal(result.output.length,2);
+  assert.doesNotMatch(JSON.stringify(result.output),/submission_|enquire\/off-plan/);
+  for(const submission_url of [undefined,'/enquire/resale/','https://wrong.example/enquire/off-plan/','/enquire/off-plan/?gclid=test']){
+    assert.throws(()=>normalizeEvent({...event,receipt:{...event.receipt,submission_url}},bound),/SUBMISSION_ROUTE_MISMATCH|URL_NOT_APPROVED/);
+  }
+  assert.throws(()=>normalizeEvent(event,registry),/SUBMISSION_ROUTE_MISMATCH/);
+  assert.throws(()=>normalizeEvent({...event,requested_url:'/enquire/off-plan/'},bound),/PAGE_URL_MISMATCH/);
+});
+
 test('legacy accepted names adapt to one canonical event and keep internal metadata out of GA4',()=>{
   const result=prepareDestinations(raw(),options());assert.equal(result.normalized_event,'form_accepted');assert.equal(result.output.length,2);
   const ga4=result.output.find(o=>o.destination==='ga4');assert.equal(ga4.payload.event_name,'generate_lead');

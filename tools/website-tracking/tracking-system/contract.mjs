@@ -42,20 +42,28 @@ export function createRegistry(records){
     require(/^\d+\.\d+\.\d+$/.test(raw.page_version)&&/^[A-Z]{2,8}$/.test(raw.page_family),'VERSION_AND_FAMILY_REQUIRED');
     require(EMIRATES.has(raw.property_destination)&&SEGMENTS.has(raw.property_segment),'PROPERTY_CONTEXT_REQUIRED');
     require(['buy','rent','sell','let','research'].includes(raw.transaction_intent)&&/^[a-z]{2}$/.test(raw.language),'INTENT_LANGUAGE_REQUIRED');
-    require(Array.isArray(raw.ctas)&&raw.ctas.length>0,'CTA_REGISTRY_REQUIRED');const ctas=new Map();
+    require(Array.isArray(raw.ctas)&&raw.ctas.length>0,'CTA_REGISTRY_REQUIRED');const ctas=new Map(), submissionUrls=new Map();
     for(const cta of raw.ctas){
-      require(exactKeys(cta,['cta_id','cta_type','cta_position','form_id','destination_key']),'UNKNOWN_CTA_FIELD');
+      require(exactKeys(cta,['cta_id','cta_type','cta_position','form_id','destination_key','submission_path']),'UNKNOWN_CTA_FIELD');
       require(code(cta.cta_id)&&cta.cta_id.startsWith('bsre-')&&!ctas.has(cta.cta_id),'STABLE_UNIQUE_CTA_REQUIRED');
       require(['phone','whatsapp','email','form','link','brochure','floorplan','viewing','calculator','comparison'].includes(cta.cta_type),'CTA_TYPE_INVALID');
       require(['header','body','footer','sticky'].includes(cta.cta_position)&&code(cta.destination_key),'CTA_POSITION_DESTINATION_INVALID');
-      require(cta.form_id===null||code(cta.form_id),'FORM_ID_INVALID');ctas.set(cta.cta_id,freeze(cta));
+      require(cta.form_id===null||code(cta.form_id),'FORM_ID_INVALID');
+      const {submission_path: submissionPath,...publicCta}=cta;
+      if(submissionPath!==undefined){
+        require(cta.cta_type==='form'&&code(cta.form_id)&&typeof submissionPath==='string'&&
+          /^\/enquire\/(?:off-plan|resale|rent|sell|let)\/$/.test(submissionPath),'SUBMISSION_ROUTE_NOT_REVIEWED');
+        submissionUrls.set(cta.cta_id,queryFreeUrl(submissionPath));
+      }
+      ctas.set(cta.cta_id,freeze(publicCta));
     }
     const {ctas:ignored,path,...context}=raw;
-    byKey.set(raw.campaign_key,{context:freeze(context),url,ctas});pages.add(raw.landing_page_id);paths.add(url);
+    byKey.set(raw.campaign_key,{context:freeze(context),url,ctas,submissionUrls});pages.add(raw.landing_page_id);paths.add(url);
   }
   // Do not expose mutable registry Maps to callers.
   return Object.freeze({resolve(campaignKey){const row=byKey.get(campaignKey);return row?{
-    context:freeze(row.context),url:row.url,ctas:new Map([...row.ctas].map(([k,v])=>[k,freeze(v)]))}:null;}});
+    context:freeze(row.context),url:row.url,ctas:new Map([...row.ctas].map(([k,v])=>[k,freeze(v)])),
+    submissionUrls:new Map(row.submissionUrls)}:null;}});
 }
 
 export function permissionAllowed(consent,purpose,now=Date.now()){
@@ -100,14 +108,21 @@ export function normalizeEvent(raw,registry){
     require(exactKeys(raw.evidence,['source','verified','reference'])&&raw.evidence.verified===true&&id(raw.evidence.reference)&&
       EVIDENCE_SOURCES[event].includes(raw.evidence.source),'AUTHORITATIVE_OUTCOME_EVIDENCE_REQUIRED');
   }
+  let submissionUrl;
   if(event==='form_accepted'){
     const r=raw.receipt;
-    require(exactKeys(r,['accepted','durable','lead_id','event_id','original_analytics','original_advertising','original_ad_user_data'])&&
+    require(exactKeys(r,['accepted','durable','lead_id','event_id','original_analytics','original_advertising','original_ad_user_data','submission_url'])&&
       r.accepted===true&&r.durable===true&&id(r.lead_id)&&r.event_id===raw.internal_event_id&&
       typeof r.original_analytics==='boolean'&&typeof r.original_advertising==='boolean'&&typeof r.original_ad_user_data==='boolean','DURABLE_RECEIPT_REQUIRED');
+    const expected=page.submissionUrls.get(raw.cta_id);
+    if(expected!==undefined||r.submission_url!==undefined){
+      require(expected!==undefined&&typeof r.submission_url==='string'&&queryFreeUrl(r.submission_url)===expected,'SUBMISSION_ROUTE_MISMATCH');
+      submissionUrl=expected;
+    }
   }else require(raw.receipt===undefined,'RECEIPT_EVENT_MISMATCH');
   return {event,internal_event_id:raw.internal_event_id,navigation_id:raw.navigation_id||null,
     parameters:{...page.context,page_location:page.url,...(cta||{}),...(event==='form_error'?{error_category:raw.error_category}:{})},
+    ...(submissionUrl===undefined?{}:{private_submission_url:submissionUrl}),
     original_permissions:raw.receipt?{analytics:raw.receipt.original_analytics,advertising:raw.receipt.original_advertising,
       ad_user_data:raw.receipt.original_ad_user_data}:null};
 }

@@ -55,7 +55,7 @@ Review whether the existing hub can serve as this campaign’s dedicated entry. 
 
 Record the dedicated entry as the acquisition page and the chosen enquiry route as the submission page. The same-origin CTA must use a clean URL. Preserve permitted acquisition context through the existing purpose-specific state and bind it to the durable receipt on the server. An internal navigation must neither start a new acquisition nor forward a click ID in the URL.
 
-The current [event contract](../../tools/website-tracking/tracking-system/contract.mjs) validates a supplied event URL against its registered campaign entry URL. Do not send the service-page URL as that entry URL or rewrite the observed submission URL to make the prototype accept it. The integration needs an explicit binding for the separate submission route, with raw attribution and receipt correlation kept private.
+The offline [event contract](../../tools/website-tracking/tracking-system/contract.mjs) validates a supplied event URL against its registered campaign entry URL. A reviewed form CTA can declare a separate submission path. The prototype checks the server-confirmed receipt against that path and keeps the submission URL out of GA4 and Ads payloads. The production caller must establish the receipt and route from authoritative server context before using this binding.
 
 | Review journey | Evidence needed |
 |---|---|
