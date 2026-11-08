@@ -33,6 +33,7 @@ jobs:
           php -l tools/native-wordpress/tests/native-draft-preview-test.php
           php tools/native-wordpress/tests/native-draft-preview-test.php
           php tools/consent-retention/linkage.test.php
+          php tools/website-tracking/tracking-system/receipt-recovery.test.php
       # Site Health on 7 November reports production PHP 8.2.35.
       # Keep the runner-runtime check above and explicitly cover its 8.2 minor.
       - name: Select production PHP minor
