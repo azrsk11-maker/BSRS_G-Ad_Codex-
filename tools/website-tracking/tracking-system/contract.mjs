@@ -145,14 +145,16 @@ export class PrototypeLedger{
     return this.reserveBatch([{destination,event,identity,payload}])[0];
   }
   reserveBatch(candidates){
-    const staged=new Map(this.#records), statuses=[];
+    const staged=new Map(), statuses=[];
     for(const {destination,event,identity,payload} of candidates){
       require(id(identity),'DEDUPE_ID_INVALID');const key=`${destination}:${event}:${identity}`;
-      const digest=createHash('sha256').update(JSON.stringify(payload)).digest('hex');const previous=staged.get(key);
+      const digest=createHash('sha256').update(JSON.stringify(payload)).digest('hex');
+      const previous=staged.get(key)??this.#records.get(key);
       if(previous){require(previous===digest,'SAME_ID_CHANGED_PAYLOAD_CONFLICT');statuses.push('duplicate_suppressed');}
       else{staged.set(key,digest);statuses.push('prepared_only_not_delivered');}
     }
-    this.#records=staged;return statuses;
+    for(const [key,digest] of staged)this.#records.set(key,digest);
+    return statuses;
   }
 }
 

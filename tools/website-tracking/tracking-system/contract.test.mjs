@@ -118,6 +118,15 @@ test('retries and specialized/generic duplicates reuse one destination reservati
   assert.equal(prepareDestinations(click,opts).normalized_event,'phone_click');
   assert.equal(prepareDestinations({...click,event:'phone_click'},opts).output[0].status,'duplicate_suppressed');
 });
+test('failed reservation batch leaves no additions and identical same-batch rows deduplicate',()=>{
+  const ledger=new PrototypeLedger();
+  const row={destination:'offline',event:'form_accepted',identity:'batch-event-01',payload:{value:1}};
+  assert.throws(()=>ledger.reserveBatch([row,{...row,payload:{value:2}}]),/SAME_ID_CHANGED_PAYLOAD_CONFLICT/);
+  assert.deepEqual(ledger.reserveBatch([row,row]),['prepared_only_not_delivered','duplicate_suppressed']);
+  assert.throws(()=>ledger.reserveBatch([{...row,identity:'batch-event-02'},{...row,payload:{value:2}}]),/SAME_ID_CHANGED_PAYLOAD_CONFLICT/);
+  assert.deepEqual(ledger.reserveBatch([{...row,identity:'batch-event-02'}]),['prepared_only_not_delivered']);
+});
+
 test('same event ID with changed body is a conflict',()=>{
   const ledger=new PrototypeLedger();ledger.reserve('ga4','form_accepted','QA-1',{page:'a'});
   assert.throws(()=>ledger.reserve('ga4','form_accepted','QA-1',{page:'b'}),/SAME_ID_CHANGED/);
