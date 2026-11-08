@@ -323,3 +323,5 @@ The isolated lab now combines the source-pinned JavaScript client, actual WordPr
 
 Required local foundation passed in 22.962871 seconds. The new PHP harness passed syntax validation and the Node harness passed syntax plus 45 simulated transport checks. These are preparation results for the combined WordPress run. The isolated workflow now watches the tracking candidates and PHP recovery files it consumes, so changes to those dependencies trigger the lab. No speed improvement is inferred from these task timings.
 
+Executed combined acceptance at commit e14bf0d on 8 November. All 63 client/WordPress/receiver assertions passed in isolated job 128789737853, including 45 role-specific checks. Foundation and native PHP jobs passed at the same commit. All 234 local and remote repository files matched. The [executed receipt](audit/CLIENT_RECOVERY_LAB_2026-11-08.json) records exact scope and limitations. Each role recovered a durable reference after browser acknowledgement loss, with one intake and receiver call and one synthetic row/email per request. Browser rendering, provider delivery and upstream uncertainty remain distinct acceptance work.
+
