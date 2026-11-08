@@ -113,7 +113,7 @@ export function commercialReport(input,policy){
     const source=row.campaign_key==='OTHER_SOURCE'?'other':row.campaign_key===UNKNOWN?'unknown':'ads';
     qualificationBySource[source]+=row.first_ever_qualified_people;
     const mappedAdsCampaign=source==='ads'&&row.campaign_key!=='ADS_UNMAPPED';
-    row.observed_period_spend_per_first_qualification_aed=mappedAdsCampaign&&row.first_ever_qualified_people?row.media_spend_minor/100/row.first_ever_qualified_people:null;}
+    row.observed_period_spend_per_first_qualification_aed=mappedAdsCampaign&&uncertainPeople.size===0&&row.first_ever_qualified_people?row.media_spend_minor/100/row.first_ever_qualified_people:null;}
   const totalMedia=campaigns.reduce((sum,row)=>add(sum,row.media_spend_minor),0);
   return {status:'CALCULATED_OFFLINE_NOT_RECONCILED_WITH_PROVIDER',source_ref:input.source_ref,policy_approval_ref:policy.approval_ref,
     window:{from:input.from,to:input.to,end_exclusive:true,timezone:'Asia/Dubai'},currency:'AED',money_unit:'minor_units',campaigns,
@@ -121,12 +121,12 @@ export function commercialReport(input,policy){
       contribution_before_acquisition_minor:contribution,nonmedia_acquisition_minor:nonmedia,
       post_acquisition_contribution_minor:add(add(contribution,-nonmedia),-totalMedia),
       first_ever_qualified_people_by_source:qualificationBySource,
-      observed_period_ads_spend_per_first_qualification_aed:qualificationBySource.ads?totalMedia/100/qualificationBySource.ads:null,
+      observed_period_ads_spend_per_first_qualification_aed:uncertainPeople.size===0&&qualificationBySource.ads?totalMedia/100/qualificationBySource.ads:null,
       transactions_closed_in_window:transactions.filter(t=>inWindow(t.closed_at)).length,
       transactions_with_cash_receipts_in_window:collectedTransactions.size,first_ever_qualified_people:campaigns.reduce((s,r)=>s+r.first_ever_qualified_people,0),
       opportunities:campaigns.reduce((s,r)=>s+r.opportunities,0)},
     exclusions:{unresolved_qualification_history:unresolved,people_held_for_unresolved_history:uncertainPeople.size,not_first_qualification:notFirst},
-    metric_limits:['Period spend divided by period first qualifications is descriptive, not cohort CPQL.',
+    metric_limits:['Period spend divided by period first qualifications is descriptive and withheld while any qualification history is unresolved.',
       'Cash-receipt transaction counts are not new collected customers and may recur in another installment period.',
       'Other source, genuinely unknown source and Ads with missing campaign mapping remain separate rows. Zero denominators return null. No pipeline value, property price, CAC or ROAS is inferred.'],
     network_calls:0,production_writes:0};

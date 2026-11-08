@@ -85,6 +85,16 @@ test('prior or inconsistent first-ever qualification cannot inflate counts',()=>
   const h=fixture();h.qualifications.push({...h.qualifications[0],record_id:'synthetic-uncertain',history_verified:false});
   assert.equal(commercialReport(h,policy).totals.first_ever_qualified_people,0);
 });
+test('unresolved history withholds spend ratios while preserving verified totals',()=>{
+  const f=fixture();
+  f.qualifications.push({...f.qualifications[0],record_id:'synthetic-uncertain-2',
+    person_ref:'synthetic-another-person',history_verified:false});
+  const r=commercialReport(f,policy);
+  assert.equal(r.totals.first_ever_qualified_people,1);
+  assert.equal(r.totals.media_spend_minor,10000);
+  assert.equal(r.totals.observed_period_ads_spend_per_first_qualification_aed,null);
+  assert.equal(r.campaigns.find(c=>c.campaign_key==='BSRE-C0001').observed_period_spend_per_first_qualification_aed,null);
+});
 test('same first qualification instant with different offset is one person',()=>{
   const f=fixture();f.qualifications.push({...f.qualifications[0],record_id:'synthetic-qual-utc',qualified_at:'2026-11-02T08:00:00Z'});
   assert.equal(commercialReport(f,policy).totals.first_ever_qualified_people,1);
