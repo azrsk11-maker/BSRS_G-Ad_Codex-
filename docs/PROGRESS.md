@@ -297,3 +297,5 @@ The preserved parent orchestrator drops an accepted event if its iframe has yet 
 
 A fifth test runs the candidate parent and preserved child together. A simulated message channel delivers the handshake, lease and queued receipt through both actual scripts. Replaying the same receipt after activation yields a single native Ads command with the original transaction ID and a synthetic destination. Browser scheduling, provider delivery and cross-reload deduplication remain open.
 
+Two further offline tests execute the preserved enquiry form client with a simulated receiver. A lost acknowledgement followed by a retry on the same page sends byte-identical request bodies and emits one accepted event per configured destination after receipt. A reload with the same session store suppresses a previously seen receipt if the receiver returns it again. The reloaded form generates a new request UUID, so an ambiguous submission followed by a reload can create a separate enquiry. Recovery across reloads and provider deduplication still require separate acceptance.
+
