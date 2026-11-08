@@ -59,3 +59,9 @@ Next: preserve the recovered manifest, use the original300/640stable IDs in the 
 The owner-local worksheet joins all 300 original brief IDs to candidate slot pools in 11 paid families. A round-trip check matched every brief ID and category to the recovered ZIP member above and every candidate slot ID to the paid registry (SHA256 4cb1101bd54e687674938a368a73e6eacd3cee5a4743d2046f2d8bc6abef7b65). The remaining 60 slots belong to the four expansion families and have no historical counterpart assigned. All 360 paid slots still have a blank actual URL and no release approval.
 
 Every historical row is held for item review. The review must either retain it as public content or link it to a paid adaptation with a distinct purpose and a verified service, audience and destination. A family match does not identify which paid slot to use. Keep the original brief ID and route in either case. Confirm the cohort and crosswalk policy in [issue #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1). The worksheet stays outside the shared repository and contains no deployment instructions.
+
+## Catalogue evidence review queues
+
+The owner-local review queue preserves all 640 IDs and the prerequisites in the hash-pinned feasibility register. A round-trip check reconciled every ID. Route the 173 Search intent items to page evidence, campaign scope, budget and tracking review. Route the seven measurement or campaign controls to native configuration readback and consent review where applicable. The remaining 116 require source or mechanism research, 339 are held for dependencies, and five remain out of scope. None has activation authority from this classification.
+
+Review Search candidates against the fixed UAE launch cohort and the full keyword admission criteria. Review measurement controls against the current consent and campaign evidence. Counts measure review workload and do not add keywords, pages or enabled entities.
