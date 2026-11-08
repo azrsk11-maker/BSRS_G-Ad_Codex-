@@ -75,3 +75,12 @@ A disposable headless Chrome 156.0.8078.79 profile ran the original browser scen
 The HTTPS endpoint was loopback-only. It used an ephemeral key with a Chrome process-scoped SPKI pin, a page policy limiting connections to the same origin, and an unavailable loopback proxy for external destinations. The ordinary browser profile and OS trust store were untouched. The fixture simulated consent responses, so this verifies the bridge's browser behavior, separately from the native PHP/WordPress tests. It does not establish browser-to-WordPress or Google acceptance or kernel-level isolation of the Windows host.
 
 The same disposable Chrome probe passed an injected HTTP 503 on the first withdrawal attempt (2.33 seconds command wall time). The old server cookie still represented advertising consent. The browser denied measurement immediately, stayed denied and ineligible after navigating to a fresh page, and cleared its pending marker only after an acknowledged retry. The fixture verifies the browser's response to an outage and recovery. It does not simulate a WordPress storage failure or establish live Google acceptance.
+
+To reproduce on Windows with an existing Chrome installation and a Python environment with `cryptography`, run from this directory:
+
+```powershell
+python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>'
+python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>' --withdrawal-outage
+```
+
+Both commands must return PASS. The fixture is optional and uses no account profile. The isolated WordPress job remains separate.
