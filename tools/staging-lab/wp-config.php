@@ -21,5 +21,5 @@ define('AUTH_KEY', 'synthetic-not-for-production');
 define('SECURE_AUTH_KEY', 'synthetic-not-for-production-2');
 define('LOGGED_IN_KEY', 'synthetic-not-for-production-3');
 define('NONCE_KEY', 'synthetic-not-for-production-4');
-define('ABSPATH', __DIR__ . '/');
+if (!defined('ABSPATH')) define('ABSPATH', __DIR__ . '/');
 require_once ABSPATH . 'wp-settings.php';
