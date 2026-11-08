@@ -2,8 +2,6 @@
 
 This read-only tool checks the internal consistency of a proposed production release. It **always returns `execution_allowed:false` and `release_authorized:false`**, including for a completely consistent packet. JSON assertions cannot authenticate the owner, a reviewer, business evidence, provider state or deployment permissions. There is no network client, deployment job, credentials store or production writer.
 
-Activation requires authenticated Brand policy evidence and enabled counts for the six reviewed ad groups, six ads and 82 keywords, split by campaign. Compare the full live child identities and statuses to the reviewed inventory before recording the counts. The 7 November readbacks showed paused ad groups and keywords. Reverify before release. Any required child configuration is a separate authorized step while parent campaigns are paused.
-
 This implements part of Master sections 18/21/24 and [the repository governance contract](../../docs/GOVERNANCE.md). It does not close the open [owner decisions](../../docs/decisions/OWNER_DECISIONS.md) or the live acceptance gates. The seven additional named gates summarize source truth, keyword scope, durable routing/retry, retention/recovery, staffing, qualification history and scoped rollback. They supplement the supplied WT tests; the supplied specification files are unchanged.
 
 ## Checks
@@ -20,6 +18,20 @@ This implements part of Master sections 18/21/24 and [the repository governance 
 Website/tracking preflight requires WT-001 through WT-030 and the seven additional gates. WT-031/032 require actual publication/readback evidence and remain **post-publication obligations**, not manufactured preflight passes. Ads actions require that publication evidence already exists. Production readback must still follow every authorized operation. A consistent packet is not evidence that a deployment happened.
 
 The current policy retains the Master's full 14,000/14,000 reviewed-count gate. Owner issue #1 must resolve the pilot-versus-full-library question before any relaxation is designed and reviewed. Historical draft candidates do not satisfy it. All seven currently open owner decisions are held by this initial packet policy; future applicability changes require review.
+
+## Ads activation evidence
+
+Collect fresh evidence in account 573-038-4686. Bind each result to the proposal and reviewed commit, and capture the source and observation time before reducing it to the packet fields.
+
+| Check | What the operator verifies | Packet result |
+|---|---|---|
+| Campaign inventory | Match all four launch IDs and the [frozen legacy inventory](../../docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json). Read the existing Search settings, CPC caps and AED 1,200 / 400 / 300 / 100 average daily split. | Campaign before/after records differ only by the four status changes. Legacy campaign rows retain their recorded Paused or Removed status. |
+| Brand | Read the exact Brand ad and its landing URL from the Ads table. Use the policy approval status. Ad strength is a separate field. | `BRAND_POLICY` binds account, campaign, ad group, ad, URL and Approved status. |
+| Ad groups, ads and keywords | Export the reviewed children by campaign. Compare the exact IDs and parent assignments to the [ad](../../docs/audit/ACCOUNT_AD_URL_READBACK_2026-11-07.json) and [keyword](../../docs/audit/KEYWORD_URL_READBACK_2026-11-07.json) inventories. Use entity status. A paused parent can prevent serving even when a child is enabled. | `SERVING_CHILDREN` records exact enabled IDs and the per-campaign split for six groups, six ads and 82 keywords. |
+| Account and effective assets | Compare the [17 account holds](../../docs/audit/asset-audit-2026-11-07/README.md) by Item ID. Inspect inherited associations that can apply to the four campaigns. | `ASSET_HOLDS` records paused statuses and the count of unreviewed effective assets. |
+| Automation | Inspect rules, scripts, solutions and auto-apply. Identify relevant manager-level automation and external writers with the account owner. | `AUTOMATION` covers all those surfaces. A missing readback leaves the gate open. |
+
+The dated campaign and keyword readbacks showed paused children. If a fresh readback confirms that state, prepare a separate configuration proposal while the parent campaigns are paused. Keep the preflight evidence open until the relevant operation has explicit authorization and a verified readback.
 
 ## Use
 
