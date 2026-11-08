@@ -42,6 +42,7 @@ CHECKS = {"offline-validation", "native-wordpress-check", "isolated-native-wordp
 SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 COMMIT = re.compile(r"[0-9a-f]{40}\Z")
 LOGIN = re.compile(r"[A-Za-z0-9][A-Za-z0-9-]{0,38}\Z")
+ID_REF = re.compile(r"[A-Za-z0-9][A-Za-z0-9:_-]{0,127}\Z")
 MAX_BYTES = 2_000_000
 MAX_ARTIFACT_BYTES = 64_000_000
 LAUNCH_BUDGET_FILS = {
@@ -345,6 +346,18 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             if row["gate_id"] == "KEYWORD_SCOPE":
                 counts = result.get("counts")
                 need(isinstance(counts, dict) and all(type(v) is int for v in counts.values()) and counts == {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}, "MASTER_COUNTS_OR_REVIEWED_POLICY_CHANGE_REQUIRED")
+            if row["gate_id"] == "STAFF_CAPACITY" and proposal["kind"] == "ADS_ACTIVATION":
+                capacity = result.get("staff_capacity")
+                need(result.get("method") == "OWNER_REVIEWED_BUSINESS_EVIDENCE" and
+                     isinstance(capacity, dict) and
+                     match(ID_REF, capacity.get("completed_rehearsal_ref")) and
+                     match(ID_REF, capacity.get("capacity_evidence_ref")) and
+                     type(capacity.get("measured_daily_capacity")) is int and
+                     type(capacity.get("reviewed_launch_daily_load")) is int and
+                     capacity["measured_daily_capacity"] >= capacity["reviewed_launch_daily_load"] > 0 and
+                     capacity.get("coverage") == "DAILY_10:00_19:00_Asia/Dubai" and
+                     capacity.get("pause_on_absence_or_unmanageable_backlog") is True,
+                     "REHEARSED_STAFF_CAPACITY_MUST_COVER_REVIEWED_LAUNCH_LOAD")
         review = packet["review"]
         need(isinstance(review, dict) and review.get("commit") == commit and review.get("repository") == REPO and match(LOGIN, review.get("approver")) and review.get("approver", "").lower() != proposal["pusher"].lower() and review.get("state") == "APPROVED", "INDEPENDENT_EXACT_HEAD_REVIEW_REQUIRED")
         reviewed = instant(review.get("reviewed_at_utc"))

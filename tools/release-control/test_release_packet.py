@@ -73,6 +73,13 @@ class ReleasePacketTests(unittest.TestCase):
                 "reviewer": "synthetic-reviewer", "observed_at_utc": "2026-11-07T02:00:00Z", "valid_until_utc": "2026-11-07T08:00:00Z", "production_synthetic_conversions": 0}
             if gate == "KEYWORD_SCOPE":
                 result["counts"] = {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}
+            if gate == "STAFF_CAPACITY" and kind == "ADS_ACTIVATION":
+                result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
+                    "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
+                    "measured_daily_capacity": 100, "reviewed_launch_daily_load": 90,
+                    "coverage": "DAILY_10:00_19:00_Asia/Dubai",
+                    "pause_on_absence_or_unmanageable_backlog": True,
+                })
             if gate == "BRAND_POLICY":
                 result["method"] = "AUTHENTICATED_CONFIGURATION_READBACK"
                 result["brand_policy"] = {"account": ACCOUNT, "campaign_id": "24378494098",
@@ -283,6 +290,17 @@ class ReleasePacketTests(unittest.TestCase):
         result["enabled_reviewed_children"]["24378494098"]["keywords"] = 0
         evidence["file"] = self.write(path, result)
         self.assertIn("ALL_REVIEWED_LAUNCH_CHILDREN_MUST_ALREADY_BE_ENABLED", self.check(packet)["errors"])
+
+    def test_activation_requires_rehearsal_and_capacity_above_reviewed_load(self):
+        for changes in ({"completed_rehearsal_ref": ""}, {"measured_daily_capacity": 89}):
+            with self.subTest(changes=changes):
+                packet = self.fixture("ADS_ACTIVATION")
+                evidence = next(e for e in packet["evidence"] if e["gate_id"] == "STAFF_CAPACITY")
+                path = evidence["file"]["path"]
+                result = json.loads((self.root / path).read_text(encoding="utf-8"))
+                result["staff_capacity"].update(changes)
+                evidence["file"] = self.write(path, result)
+                self.assertIn("REHEARSED_STAFF_CAPACITY_MUST_COVER_REVIEWED_LAUNCH_LOAD", self.check(packet)["errors"])
 
     def test_activation_rejects_reenabled_held_account_lead_form(self):
         packet = self.fixture("ADS_ACTIVATION")
