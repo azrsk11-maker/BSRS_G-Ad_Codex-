@@ -1,0 +1,40 @@
+name: Isolated WordPress lab
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/isolated-wordpress-lab.yml'
+      - 'tools/staging-lab/**'
+      - 'tools/native-wordpress/**'
+permissions:
+  contents: read
+concurrency:
+  group: isolated-lab-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  isolated-native-wordpress:
+    # Standard public-repository hosted runner; no paid/self-hosted runner.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Confirm public repository and review exact source
+        env:
+          REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+        run: |
+          test "$REPOSITORY_VISIBILITY" = public
+          sha256sum tools/staging-lab/* tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json
+      - name: Build official dependencies without executing WordPress
+        run: docker build --pull --file tools/staging-lab/Dockerfile --tag bsre-isolated-lab .
+      - name: Run non-root CLI lab with kernel network isolation
+        run: |
+          docker image inspect bsre-isolated-lab --format 'Image={{.Id}}'
+          docker create --name bsre-isolated-lab --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 1g --cpus 2 --pids-limit 128 --tmpfs /tmp:rw,noexec,nosuid,size=512m,mode=1777 bsre-isolated-lab
+          docker inspect bsre-isolated-lab --format 'Network={{.HostConfig.NetworkMode}} ReadOnly={{.HostConfig.ReadonlyRootfs}} User={{.Config.User}} CapDrop={{json .HostConfig.CapDrop}} Security={{json .HostConfig.SecurityOpt}} Binds={{json .HostConfig.Binds}} Mounts={{json .Mounts}}'
+          docker start --attach bsre-isolated-lab
+          test "$(docker inspect bsre-isolated-lab --format '{{.State.ExitCode}}')" = 0
+      - name: Remove disposable container and synthetic tmpfs
+        if: always()
+        run: docker rm --force bsre-isolated-lab >/dev/null 2>&1 || true
