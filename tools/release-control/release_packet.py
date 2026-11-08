@@ -380,11 +380,16 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
         need(created <= reviewed <= now, "REVIEW_TIME_INVALID")
         checks = rows(review.get("checks"), 10)
         need(len(checks) == len(CHECKS) and {c.get("name") for c in checks} == CHECKS and all(c.get("commit") == commit and c.get("conclusion") == "success" for c in checks), "EXACT_HEAD_REQUIRED_CHECKS")
-        decisions = rows(packet["decisions"], 7)
-        need(len(decisions) == 7 and all(type(d.get("issue")) is int for d in decisions) and {d.get("issue") for d in decisions} == set(range(1, 8)), "OWNER_DECISIONS_UNRESOLVED")
+        required_decisions = set(range(1, 8))
+        if proposal["kind"] == "ADS_ACTIVATION":
+            required_decisions.add(11)
+        decisions = rows(packet["decisions"], len(required_decisions))
+        need(len(decisions) == len(required_decisions) and all(type(d.get("issue")) is int for d in decisions) and {d.get("issue") for d in decisions} == required_decisions, "OWNER_DECISIONS_UNRESOLVED")
         latest_decision = created
         for decision in decisions:
             need(decision.get("owner") == OWNER and decision.get("state") == "APPROVED" and decision.get("proposal_sha256") == proposal_hash, "OWNER_DECISION_SCOPE_REQUIRED")
+            if decision["issue"] == 11:
+                need(decision.get("option") == "A", "ENGLISH_FIRST_AUTOMATIC_MATCHING_APPROVAL_REQUIRED")
             need(isinstance(decision.get("comment_url"), str) and re.fullmatch(r"https://github\.com/" + re.escape(REPO) + r"/issues/" + str(decision.get("issue")) + r"#issuecomment-[1-9]\d*", decision["comment_url"]), "EXACT_OWNER_COMMENT_REFERENCE")
             decision_time = instant(decision.get("decided_at_utc"))
             need(created <= decision_time <= now, "OWNER_DECISION_TIME_INVALID")

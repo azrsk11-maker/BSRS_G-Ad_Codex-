@@ -115,6 +115,9 @@ class ReleasePacketTests(unittest.TestCase):
                 "reviewed_at_utc": "2026-11-07T03:00:00Z", "checks": [{"name": n, "commit": COMMIT, "conclusion": "success"} for n in sorted(CHECKS)]},
             "decisions": [{"issue": n, "owner": OWNER, "state": "APPROVED", "proposal_sha256": proposal_hash,
                 "comment_url": f"https://github.com/{REPO}/issues/{n}#issuecomment-999999", "decided_at_utc": "2026-11-07T03:00:00Z"} for n in range(1, 8)]}
+        if kind == "ADS_ACTIVATION":
+            packet["decisions"].append({**packet["decisions"][0], "issue": 11, "option": "A",
+                "comment_url": f"https://github.com/{REPO}/issues/11#issuecomment-999999"})
         packet["approval"] = {"owner": OWNER, "kind": kind, "valid_from_utc": "2026-11-07T05:00:00Z", "expires_at_utc": "2026-11-07T07:00:00Z", "decided_at_utc": "2026-11-07T04:00:00Z", "comment_url": f"https://github.com/{REPO}/issues/1#issuecomment-999999"}
         self.reapprove(packet)
         return packet
@@ -276,6 +279,16 @@ class ReleasePacketTests(unittest.TestCase):
         errors = self.check(packet)["errors"]
         self.assertIn("AGGREGATE_BUDGET_MISMATCH", errors)
         self.assertIn("SEPARATE_EXACT_PACKET_APPROVAL_REQUIRED", errors)
+
+    def test_activation_requires_owner_language_option_a(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        self.assertNotIn("ENGLISH_FIRST_AUTOMATIC_MATCHING_APPROVAL_REQUIRED", self.check(packet)["errors"])
+        packet["decisions"][-1]["option"] = "B"
+        self.reapprove(packet)
+        self.assertIn("ENGLISH_FIRST_AUTOMATIC_MATCHING_APPROVAL_REQUIRED", self.check(packet)["errors"])
+        packet["decisions"].pop()
+        self.reapprove(packet)
+        self.assertIn("OWNER_DECISIONS_UNRESOLVED", self.check(packet)["errors"])
 
     def test_activation_requires_exact_brand_ad_policy_readback(self):
         packet = self.fixture("ADS_ACTIVATION")
