@@ -9,6 +9,7 @@ RUN curl --fail --location --proto '=https' --tlsv1.2 https://wordpress.org/word
     && tar -xzf wordpress.tar.gz && rm wordpress.tar.gz
 COPY tools/staging-lab/wp-config.php /opt/wordpress/wp-config.php
 COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json /opt/reviewed/
-COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-lab/entrypoint.sh /opt/lab/
+COPY tools/staging-lab/fixtures/bsre-enquiries /opt/wordpress/wp-content/plugins/bsre-enquiries
+COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-lab/plugin.php tools/staging-lab/entrypoint.sh /opt/lab/
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]
