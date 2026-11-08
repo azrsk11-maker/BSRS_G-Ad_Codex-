@@ -97,13 +97,44 @@ class AuditHistoryTests(unittest.TestCase):
             "stage_key": "qualified_lead",
             "identifier_route": "GCLID_ONLY",
         }
-        report, preview, _ = _inspect(ledger_fixture(), binding, [], NOW)
-        self.assertNotIn("ACTION_BINDING_NOT_VERIFIED", report["export_held"][0]["codes"])
-        self.assertEqual(preview["rows"], [])
+        ledger = ledger_fixture()
+        row = ledger["records"][0]
+        row.update(
+            export_state="READY", privacy_evidence_reference="SYNTHETIC-PURPOSE",
+            ad_user_data="GRANTED", ad_personalization="DENIED",
+            click_id_type="GCLID", click_id="Synthetic_Click-ID.1",
+            conversion_action_id="7878013428", conversion_name="qualified_lead",
+            order_id="BSRE:" + row["outcome_id"],
+        )
+        purpose = dict(
+            lead_id=row["lead_id"], evidence_id=row["privacy_evidence_reference"],
+            decision_version="test-v1", notice_version="test-v1",
+            observed_at_utc="2026-11-01T06:55:00Z", expires_at_utc="2027-01-01T00:00:00Z",
+            acknowledged=True, measurement_eligible=True, ad_measurement=True,
+            ad_user_data="GRANTED", ad_personalization="DENIED", withdrawn_at_utc=None,
+            click_id_type="GCLID", click_id=row["click_id"],
+            attribution_captured_at_utc="2026-11-01T06:56:00Z", record_integrity_verified=True,
+        )
+        report, preview, _ = _inspect(ledger, binding, [purpose], NOW)
+        self.assertEqual(report["export_held"], [])
+        self.assertTrue(preview["UPLOAD_PROHIBITED"])
+        self.assertEqual(len(preview["rows"]), 1)
+        self.assertEqual(preview["rows"][0]["google_click_id"], row["click_id"])
+        self.assertEqual(preview["rows"][0]["order_id"], row["order_id"])
+        self.assertEqual(preview["rows"][0]["conversion_time"], "2026-11-01 12:00:00+04:00")
         for field, value in (("conversion_action_id", "7873290954"), ("conversion_name", "wrong_action")):
             with self.subTest(field=field):
-                report, preview, _ = _inspect(ledger_fixture(), dict(binding, **{field: value}), [], NOW)
+                report, preview, _ = _inspect(ledger, dict(binding, **{field: value}), [purpose], NOW)
                 self.assertIn("ACTION_BINDING_NOT_VERIFIED", report["export_held"][0]["codes"])
+                self.assertEqual(preview["rows"], [])
+        for field, value, hold in (
+            ("withdrawn_at_utc", "2026-11-07T12:00:00Z", "PURPOSE_WITHDRAWN"),
+            ("expires_at_utc", NOW.isoformat(), "PURPOSE_EXPIRED"),
+            ("click_id", "Different-Synthetic-Click", "CLICK_ID_JOIN_MISMATCH"),
+        ):
+            with self.subTest(field=field):
+                report, preview, _ = _inspect(ledger, binding, [dict(purpose, **{field: value})], NOW)
+                self.assertIn(hold, report["export_held"][0]["codes"])
                 self.assertEqual(preview["rows"], [])
 
     def run_audit(self, ledger=None, **kwargs):
