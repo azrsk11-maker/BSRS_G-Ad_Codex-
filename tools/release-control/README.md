@@ -33,6 +33,8 @@ The campaign language field is held pending [owner decision #11](https://github.
 | Account and effective assets | Compare the [17 account holds](../../docs/audit/asset-audit-2026-11-07/README.md) by Item ID. Inspect inherited associations that can apply to the four campaigns. | `ASSET_HOLDS` records paused statuses and the count of unreviewed effective assets. |
 | Automation | Inspect rules, scripts, solutions and auto-apply. Identify relevant manager-level automation and external writers with the account owner. | `AUTOMATION` covers all those surfaces. A missing readback leaves the gate open. |
 
+On 8 November 2026, direct HTTPS requests to all six destinations in the dated ad inventory returned HTTP 200 at the original URL, with `html lang="en"` and English page titles. This verifies the observed page language signals and availability. Full rendered copy, editorial approval and automatic Search audience behavior remain outside that check.
+
 The dated campaign and keyword readbacks showed paused children. If a fresh readback confirms that state, prepare a separate configuration proposal while the parent campaigns are paused. Keep the preflight evidence open until the relevant operation has explicit authorization and a verified readback.
 
 ## Use
