@@ -2,9 +2,8 @@
 // come from the real WordPress handlers in client-interop.php.
 import {readFileSync} from 'node:fs';
 import {createInterface} from 'node:readline';
-import {randomUUID} from 'node:crypto';
-import {runInNewContext} from 'node:vm';
 import {buildAttributionClientCandidate} from '/opt/lab/tracking-system/build-attribution-client-candidate.mjs';
+import {createClientPage} from './client-page.mjs';
 
 const original = readFileSync('/opt/wordpress/wp-content/plugins/bsre-enquiries/assets/lead.js');
 const client = buildAttributionClientCandidate(original);
@@ -45,68 +44,8 @@ function command(value) {
   });
 }
 
-function page({slug, role, timeline, csrf, store, blank = false, loseAcknowledgement = false}) {
-  const handlers = new Map();
-  const button = {dataset: {}, textContent: 'Submit'};
-  const status = {dataset: {}};
-  const requests = [];
-  const measurement = [];
-  let acceptedResponse;
-  const values = blank ? {} : {
-    name: 'TEST synthetic client ' + slug,
-    phone: '+971500000000', email: 'fixture@example.invalid', country: 'UAE',
-    area: 'Synthetic fixture', budget: 'To discuss', timeline, funding: 'To discuss',
-    property_type: 'Apartment', property_details: 'SYNTHETIC NOT INVENTORY',
-    authority: ['seller', 'landlord'].includes(role) ? 'owner' : '',
-  };
-  const form = {
-    dataset: {role, landingPath: '/enquire/' + slug + '/', campaign: 'SYNTHETIC_LAB_ONLY'},
-    elements: {namedItem(name) {
-      if (name === 'contact_consent') return {checked: !blank};
-      if (name === 'marketing_consent') return {checked: false};
-      return {value: values[name] || ''};
-    }},
-    querySelector: selector => selector === '[data-bsre-status]' ? status : button,
-    reportValidity: () => !blank,
-    addEventListener: (type, listener) => handlers.set(type, listener),
-  };
-  const window = {
-    location: new URL(origin + '/enquire/' + slug + '/'),
-    crypto: {randomUUID},
-    BSRELeadConfig: {endpoint: origin + '/wp-json/bsre/v1/lead', csrfToken: csrf, measurementEligible: false},
-    BSREConsentBridge: {
-      permissions: () => ({analytics: false, advertising: false}),
-      measurementEligible: () => false,
-      getSnapshot: () => null,
-      normalizeSnapshot: value => value,
-    },
-    sessionStorage: {
-      getItem: key => store.get(key) ?? null,
-      setItem: (key, value) => store.set(key, value),
-      removeItem: key => store.delete(key),
-    },
-    setTimeout, clearTimeout, addEventListener() {}, dispatchEvent() {}, CustomEvent: class {},
-    async fetch(url, request) {
-      requests.push({url, request});
-      const result = await command({op: 'request', url, method: request.method,
-        credentials: request.credentials, headers: request.headers, body: request.body});
-      if (url.endsWith('/lead')) acceptedResponse = result;
-      if (url.endsWith('/lead') && loseAcknowledgement) {
-        acceptedResponse = result;
-        loseAcknowledgement = false;
-        throw new Error('synthetic_browser_acknowledgement_loss');
-      }
-      return {ok: result.status >= 200 && result.status < 300, status: result.status,
-        json: async () => result.body};
-    },
-  };
-  const document = {readyState: 'complete', referrer: '', querySelector: () => form,
-    querySelectorAll: selector => selector === 'form[data-bsre-form]' ? [form] : []};
-  runInNewContext(client, {window, document, URL, AbortController});
-  window.BSREMeasurement.connect('ads', event => measurement.push(event));
-  window.BSREMeasurement.connect('ga4', event => measurement.push(event));
-  return {submit: () => handlers.get('submit')({preventDefault() {}}), requests, measurement,
-    status, button, get acceptedResponse() { return acceptedResponse; }};
+function page(options) {
+  return createClientPage({client, origin, request: data => command({op: 'request', ...data}), ...options});
 }
 
 async function main() {

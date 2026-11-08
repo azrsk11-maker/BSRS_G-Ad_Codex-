@@ -355,3 +355,11 @@ Independent final review reran24/24tests and the original mixed-touch reproducti
 
 Required local foundation passed in52.870339seconds with the new verifier and attribution tests included. This broader run has additional work and is not used as a before/after speed comparison. Current-head native CI remains required before the combined candidate can be accepted for review.
 
+## Consented client to WordPress acceptance matrix
+
+Prepared20normal client intake journeys across five roles and refusal/analytics-only/advertising-only/both choices. The shared VM page fixture now serves the earlier recovery driver and the new consented driver. The new PHP harness uses actual WordPress consent context/update, intake handlers, stored original evidence and pinned receiver, followed by withdrawal/regrant and outbox checks. It compares the raw WordPress fingerprint and normalized receiver fingerprint in their distinct domains.
+
+The harness asserts original decision headers, permitted exact click capture, acquisition/current-page separation, sink payload privacy, single intake and durable receipt identity. Every scenario must be inspected and withdrawn, and regrant must not restore the earlier record's export eligibility. All data is synthetic and all Google services remain doubles. The pipe seeds the anonymous intake cookie and ages its synthetic challenge; browser cookie/consent-bridge and timing acceptance remain open. PHP/Node syntax and local driver smoke checks passed. Actual matrix execution requires current-head isolated CI.
+
+Independent source review found no blocking defect in the PHP/JS integration. Required local foundation passed in50.632314seconds. The review confirms server-side withdrawal/export acceptance is distinct from browser consent-change propagation, which this matrix does not execute.
+

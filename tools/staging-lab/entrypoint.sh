@@ -23,3 +23,4 @@ php -d sendmail_path=/bin/false /opt/lab/receipt-recovery/receipt-status.test.ph
 php -d sendmail_path=/bin/false /opt/lab/client-interop.php --upstream
 php -d sendmail_path=/bin/false /opt/lab/retention.php
 php -d sendmail_path=/bin/false /opt/lab/restore.php
+php -d sendmail_path=/bin/false /opt/lab/consented-client-interop.php
