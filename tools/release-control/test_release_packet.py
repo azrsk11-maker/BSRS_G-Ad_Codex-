@@ -79,6 +79,15 @@ class ReleasePacketTests(unittest.TestCase):
                         "campaign_ids": sorted(CURRENT_CAMPAIGNS), "account_and_manager_scope_reviewed": True,
                         "legacy_shared_list_attached": False, "unresolved_effective_conflicts": 0,
                     })
+            if gate == "RETENTION_RECOVERY" and kind == "ADS_ACTIVATION":
+                result["retention_recovery"] = {
+                    "mailbox": "marketing@blackswanrealestate.ae",
+                    "mailbox_mode": "OWNER_CONTROLLED_EXACT_MANIFEST",
+                    "mailbox_reconciliation_ref": "TEST_ONLY:mailbox-reconciliation",
+                    "restore_rehearsal_ref": "TEST_ONLY:restore-rehearsal",
+                    "backup_max_days": 30,
+                    "reapply_deletions_before_reopen": True,
+                }
             if gate == "STAFF_CAPACITY" and kind == "ADS_ACTIVATION":
                 result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
@@ -279,6 +288,19 @@ class ReleasePacketTests(unittest.TestCase):
         errors = self.check(packet)["errors"]
         self.assertIn("AGGREGATE_BUDGET_MISMATCH", errors)
         self.assertIn("SEPARATE_EXACT_PACKET_APPROVAL_REQUIRED", errors)
+
+    def test_activation_requires_reviewed_retention_and_recovery_scope(self):
+        for changes in ({"mailbox": "other@example.test"}, {"mailbox_mode": "AUTOMATED"},
+                        {"mailbox_reconciliation_ref": ""}, {"restore_rehearsal_ref": ""},
+                        {"backup_max_days": 31}, {"reapply_deletions_before_reopen": False}):
+            with self.subTest(changes=changes):
+                packet = self.fixture("ADS_ACTIVATION")
+                evidence = next(e for e in packet["evidence"] if e["gate_id"] == "RETENTION_RECOVERY")
+                path = evidence["file"]["path"]
+                result = json.loads((self.root / path).read_text(encoding="utf-8"))
+                result["retention_recovery"].update(changes)
+                evidence["file"] = self.write(path, result)
+                self.assertIn("REVIEWED_RETENTION_AND_RECOVERY_SCOPE_REQUIRED", self.check(packet)["errors"])
 
     def test_activation_requires_owner_language_option_a(self):
         packet = self.fixture("ADS_ACTIVATION")

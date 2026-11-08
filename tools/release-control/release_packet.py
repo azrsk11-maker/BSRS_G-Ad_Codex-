@@ -357,6 +357,16 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                          exclusions.get("unresolved_effective_conflicts") == 0 and
                          type(exclusions.get("unresolved_effective_conflicts")) is int,
                          "EFFECTIVE_NEGATIVE_SCOPE_READBACK_REQUIRED")
+            if row["gate_id"] == "RETENTION_RECOVERY" and proposal["kind"] == "ADS_ACTIVATION":
+                retention = result.get("retention_recovery")
+                need(isinstance(retention, dict) and
+                     retention.get("mailbox") == "marketing@blackswanrealestate.ae" and
+                     retention.get("mailbox_mode") == "OWNER_CONTROLLED_EXACT_MANIFEST" and
+                     match(ID_REF, retention.get("mailbox_reconciliation_ref")) and
+                     match(ID_REF, retention.get("restore_rehearsal_ref")) and
+                     type(retention.get("backup_max_days")) is int and retention["backup_max_days"] == 30 and
+                     retention.get("reapply_deletions_before_reopen") is True,
+                     "REVIEWED_RETENTION_AND_RECOVERY_SCOPE_REQUIRED")
             if row["gate_id"] == "STAFF_CAPACITY" and proposal["kind"] == "ADS_ACTIVATION":
                 capacity = result.get("staff_capacity")
                 need(result.get("method") == "OWNER_REVIEWED_BUSINESS_EVIDENCE" and

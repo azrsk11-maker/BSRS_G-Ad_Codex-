@@ -16,6 +16,8 @@ This implements part of Master sections 18/21/24 and [the repository governance 
 
 - Rollback versions and page scope, preservation of accepted records/outbox, no old-campaign reactivation, retention reapplication and the adopted 30-day recovery window.
 
+For Ads activation, `RETENTION_RECOVERY` must reference the reviewed exact-copy reconciliation for the marketing mailbox and a completed restore rehearsal. Record the owner-controlled manifest mode from issue #10, a maximum 30-day recovery window, and evidence that deletions are reapplied before restored services reopen. The reviewer checks the underlying evidence. The packet does not grant mailbox access or authorize a production purge.
+
 The isolated workflow includes changes under `tools/release-control/` in its pull-request path filter. This allows a PR changing only the release checker to obtain the exact-head evidence the checker requires.
 
 Website/tracking preflight requires WT-001 through WT-030 and the seven additional gates. WT-031/032 require actual publication/readback evidence and remain **post-publication obligations**, not manufactured preflight passes. Ads actions require that publication evidence already exists. Production readback must still follow every authorized operation. A consistent packet is not evidence that a deployment happened.
