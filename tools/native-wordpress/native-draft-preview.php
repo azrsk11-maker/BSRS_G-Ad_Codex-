@@ -27,7 +27,7 @@ function preview(array $manifest, string $campaign_key, string $nonce, string $m
     if (!is_array($pages) || count($pages) !== 360 || ($manifest['page_count'] ?? null) !== 360) {
         throw new \RuntimeException('The 360-slot planning register is required.');
     }
-    $seen_campaigns = []; $seen_pages = []; $seen_paths = []; $selected = null;
+    $seen_campaigns = []; $seen_pages = []; $seen_paths = []; $identity_pairs = []; $selected = null;
     foreach ($pages as $page) {
         if (!is_array($page)) throw new \RuntimeException('Invalid planning record.');
         $key = $page['campaign_key'] ?? ''; $landing = $page['landing_page_id'] ?? '';
@@ -43,7 +43,13 @@ function preview(array $manifest, string $campaign_key, string $nonce, string $m
             throw new \RuntimeException('Invalid, duplicated or already deployed page mapping.');
         }
         $seen_campaigns[$key] = true; $seen_pages[$landing] = true; $seen_paths[$path] = true;
+        $identity_pairs[] = $key . '|' . $landing . "\n";
         if ($key === $campaign_key) $selected = $page;
+    }
+    // SHA-256 of sorted campaign|landing lines from the reviewed v1 registry.
+    sort($identity_pairs, SORT_STRING);
+    if (hash('sha256', implode('', $identity_pairs)) !== '495bb081af104d85f9016dc0b250b03a040bd0555922611589ffeeddd3fd6b61') {
+        throw new \RuntimeException('Campaign and landing-page identities differ from the reviewed registry.');
     }
     if ($selected === null) throw new \RuntimeException('Select one registered campaign key.');
     $lookup = ['post_type' => 'page', 'post_status' => ['publish', 'future', 'draft', 'pending',
