@@ -14,6 +14,7 @@ import warnings
 import zipfile
 
 import historical_negative_intake as h
+from keyword_audit import negative_matches
 
 
 STAGING = Path(__file__).with_name("staging")
@@ -42,6 +43,26 @@ def archive_bytes(entries):
 
 
 class HistoricalNegativeIntakeTests(unittest.TestCase):
+    def test_historical_negatives_against_proposed_protected_phrases(self):
+        audit = Path(__file__).resolve().parents[2] / "docs/audit/HISTORICAL_NEGATIVE_PROTECTED_PROBE.md"
+        rows = [line.split("|")[1:3] for line in audit.read_text(encoding="utf-8").splitlines()
+                if line.startswith(("| buyers/", "| owners/", "| tenants/", "| brand "))]
+        phrases = [phrase.strip() for _, phrase in rows]
+        self.assertEqual(len(phrases), 12)
+        self.assertEqual(len(set(phrases)), 12)
+        candidates = document()["candidates"]
+        modes = {"Negative phrase": "PHRASE", "Negative exact": "EXACT"}
+        negatives = [(row["original_text"], modes[mode]) for row in candidates
+                     for mode in row["historical_match_types_seen"]]
+        self.assertEqual(len(negatives), 9)
+        self.assertEqual(sum(mode == "EXACT" for _, mode in negatives), 3)
+        for text, mode in negatives:
+            with self.subTest(text=text, mode=mode):
+                self.assertTrue(negative_matches(text, mode, text))
+                if mode == "EXACT":
+                    self.assertFalse(negative_matches(text, mode, text + " dubai"))
+                self.assertEqual([phrase for phrase in phrases if negative_matches(text, mode, phrase)], [])
+
     def test_reconstruction_matches_exact_pinned_source_and_staging(self):
         raw = original_member_bytes()
         self.assertEqual(len(raw), h.MEMBER_BYTES)
