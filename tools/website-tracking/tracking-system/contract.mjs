@@ -25,7 +25,7 @@ function freeze(value){return JSON.parse(JSON.stringify(value));}
 export function queryFreeUrl(value){
   require(typeof value==='string','URL_REQUIRED');let url;
   try{url=new URL(value,ORIGIN);}catch{fail('URL_INVALID');}
-  require(url.origin===ORIGIN&&!url.username&&!url.password&&!url.search&&!url.hash,'URL_NOT_APPROVED');
+  require(url.origin===ORIGIN&&!url.username&&!url.password&&!/[?#]/.test(url.href),'URL_NOT_APPROVED');
   require(/^\/(?:lp\/bsre-c\d{4}\/|enquire\/(?:off-plan\/|resale\/|rent\/|sell\/|let\/)?)$/.test(url.pathname),'PAGE_ROUTE_NOT_REVIEWED');
   return url.href;
 }
