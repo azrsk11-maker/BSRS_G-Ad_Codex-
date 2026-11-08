@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/isolated-wordpress-lab.yml'
       - 'tools/staging-lab/**'
+      - 'tools/consent-retention/**'
       - 'tools/native-wordpress/**'
 permissions:
   contents: read
@@ -27,7 +28,7 @@ jobs:
           test "$REPOSITORY_VISIBILITY" = public
           python3 -B tools/staging-lab/verify_fixture.py
           sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json
-          find tools/staging-lab -name '*.php' -print0 | xargs -0 -n 1 php -l
+          find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l
       - name: Build official dependencies without executing WordPress
         run: docker build --pull --file tools/staging-lab/Dockerfile --tag bsre-isolated-lab .
       - name: Run non-root CLI lab with kernel network isolation
