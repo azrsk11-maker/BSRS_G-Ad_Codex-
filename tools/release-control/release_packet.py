@@ -17,6 +17,15 @@ POSTFLIGHT_GATES = {"WT-031", "WT-032"}
 BRAND_POLICY_GATE = "BRAND_POLICY"
 SERVING_CHILDREN_GATE = "SERVING_CHILDREN"
 ASSET_HOLDS_GATE = "ASSET_HOLDS"
+AUTOMATION_GATE = "AUTOMATION"
+AUTOMATION_SAFE_STATE = {
+    "auto_apply_enabled": 0,
+    "account_rules_with_launch_control": 0,
+    "account_scripts_with_launch_control": 0,
+    "account_solutions_with_launch_control": 0,
+    "manager_automation_with_launch_control": 0,
+    "external_writers_with_unreviewed_launch_control": 0,
+}
 BRAND_CAMPAIGN_ID = "24378494098"
 BRAND_AD_GROUP_ID = "204397706114"
 BRAND_AD_ID = "828621612889"
@@ -283,7 +292,7 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
         evidence = rows(packet["evidence"])
         required_gates = GATES | (POSTFLIGHT_GATES if proposal["kind"].startswith("ADS_") else set())
         if proposal["kind"] == "ADS_ACTIVATION":
-            required_gates.update({BRAND_POLICY_GATE, SERVING_CHILDREN_GATE, ASSET_HOLDS_GATE})
+            required_gates.update({BRAND_POLICY_GATE, SERVING_CHILDREN_GATE, ASSET_HOLDS_GATE, AUTOMATION_GATE})
         need(len(evidence) == len(required_gates) and {x.get("gate_id") for x in evidence} == required_gates, "ALL_REQUIRED_GATES_EXACTLY_ONCE")
         latest_evidence = created
         evidence_expiries = []
@@ -321,6 +330,11 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                      result.get("unreviewed_effective_asset_count") == 0 and
                      type(result["unreviewed_effective_asset_count"]) is int,
                      "KNOWN_ASSET_HOLDS_AND_EFFECTIVE_ASSOCIATIONS_REQUIRED")
+            if row["gate_id"] == AUTOMATION_GATE and proposal["kind"] == "ADS_ACTIVATION":
+                need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and
+                     result.get("account") == ACCOUNT and
+                     digest(result.get("automation")) == digest(AUTOMATION_SAFE_STATE),
+                     "ACCOUNT_MANAGER_AND_EXTERNAL_AUTOMATION_REVIEW_REQUIRED")
             observed = instant(result.get("observed_at_utc"))
             need(created <= observed <= now, "EVIDENCE_TIME_OUTSIDE_PROPOSAL")
             latest_evidence = max(latest_evidence, observed)
