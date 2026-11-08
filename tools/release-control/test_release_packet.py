@@ -320,6 +320,18 @@ class ReleasePacketTests(unittest.TestCase):
                 packet["proposal"]["change"]["before_state"] = self.write("scope/before.json", before)
                 self.assertIn("ACTIVATION_MAY_CHANGE_ONLY_CAMPAIGN_STATUS", self.check(packet)["errors"])
 
+    def test_activation_rejects_unapproved_strategy_even_if_unchanged(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        change = packet["proposal"]["change"]
+        for phase in ("before", "after"):
+            path = f"scope/{phase}.json"
+            state = json.loads((self.root / path).read_text(encoding="utf-8"))
+            state["campaigns"][-1]["settings"]["bid_strategy"] = "MAXIMIZE_CONVERSIONS"
+            change[f"{phase}_state"] = self.write(path, state)
+        errors = self.check(packet)["errors"]
+        self.assertIn("ADS_AFTER_STATE_CONTRADICTS_SCOPE", errors)
+        self.assertNotIn("ACTIVATION_MAY_CHANGE_ONLY_CAMPAIGN_STATUS", errors)
+
     def test_matching_before_and_after_cannot_substitute_for_frozen_legacy_campaign(self):
         for replacement in ({"id": "999999999"}, {"status": "PAUSED"}):
             with self.subTest(replacement=replacement):

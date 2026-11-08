@@ -45,7 +45,9 @@ FROZEN_BASELINE_PATH = Path(__file__).resolve().parents[2] / "docs/audit/CAMPAIG
 TRACKING_AFTER = {"enhanced_matching": False, "personalization": False, "audience_exports": False,
     "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "auto_form_collection": False,
     "page_view_producers": 1, "accepted_enquiry_route": "NATIVE_ADS_SECONDARY", "qualified_import": "GCLID_ONLY_DATA_MANAGER"}
-ADS_SAFE_SETTINGS = {"search_partners": False, "display_expansion": False, "ai_max": False,
+ADS_SAFE_SETTINGS = {"campaign_type": "SEARCH", "bid_strategy": "MAXIMIZE_CLICKS",
+    "search_partners": False, "display_expansion": False, "ai_max": False,
+    "search_term_matching": False, "text_customization": False, "broad_match_setting": False,
     "final_url_expansion": False, "positive_bid_adjustment": 0, "country": "AE", "language": "en",
     "location_mode": "PRESENCE", "schedule": "DAILY_10:00_19:00_Asia/Dubai",
     "accepted_enquiry_is_secondary": True, "accepted_enquiry_in_custom_goal": False}
