@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {createRegistry,queryFreeUrl,permissionAllowed,captureClickIds,normalizeEvent,PrototypeLedger,prepareDestinations} from './contract.mjs';
+import {createHash} from 'node:crypto';
+import {acceptedSubmissionUrl,createRegistry,queryFreeUrl,permissionAllowed,captureClickIds,normalizeEvent,PrototypeLedger,prepareDestinations} from './contract.mjs';
 const NOW=Date.parse('2026-11-07T05:30:00Z');
 const record={campaign_key:'BSRE-C0001',landing_page_id:'BSRE-LP0001',path:'/lp/bsre-c0001/',page_version:'0.0.1',page_family:'DEV',
   property_destination:'dubai',property_segment:'residential_offplan',transaction_intent:'buy',language:'en',ctas:[
@@ -23,7 +24,15 @@ test('accepted enquiry binds a reviewed service route without leaking it to dest
   const bound=createRegistry([{...record,ctas:[{...form,submission_path:'/enquire/off-plan/'},phone]}]);
   const event=raw();
   event.requested_url=record.path;
-  event.receipt.submission_url='/enquire/off-plan/';
+  const wire=JSON.stringify({request_id:'synthetic-request',landing_page:'https://blackswanrealestate.ae/enquire/off-plan/'});
+  const capture={request_id:'synthetic-request',state:'ACCEPTED',delivery_pending:0,uncertain:0,
+    lead_id:event.receipt.lead_id,event_id:event.receipt.event_id,
+    fingerprint:createHash('sha256').update(wire).digest('hex')};
+  event.receipt.submission_url=acceptedSubmissionUrl(wire,capture,event.receipt);
+  assert.throws(()=>acceptedSubmissionUrl(wire.replace('off-plan','resale'),capture,event.receipt),/FINGERPRINT_MISMATCH/);
+  assert.throws(()=>acceptedSubmissionUrl(wire,{...capture,request_id:'different'},event.receipt),/REQUEST_MISMATCH/);
+  assert.throws(()=>acceptedSubmissionUrl(wire,{...capture,delivery_pending:1},event.receipt),/WIRE_EVIDENCE_REQUIRED/);
+  assert.throws(()=>acceptedSubmissionUrl(wire,capture,{...event.receipt,lead_id:'different'}),/WIRE_EVIDENCE_REQUIRED/);
   const normalized=normalizeEvent(event,bound);
   assert.equal(normalized.parameters.page_location,queryFreeUrl(record.path));
   assert.equal(normalized.private_submission_url,queryFreeUrl('/enquire/off-plan/'));

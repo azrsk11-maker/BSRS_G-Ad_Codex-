@@ -30,6 +30,18 @@ export function queryFreeUrl(value){
   return url.href;
 }
 
+// Both inputs must come from the private intake store, never the browser.
+export function acceptedSubmissionUrl(wireBody, capture, receipt){
+  require(typeof wireBody==='string'&&Buffer.byteLength(wireBody)<=18000&&
+    capture?.state==='ACCEPTED'&&[0,'0'].includes(capture.delivery_pending)&&[0,'0'].includes(capture.uncertain)&&
+    id(capture.lead_id)&&id(capture.event_id)&&receipt?.lead_id===capture.lead_id&&receipt.event_id===capture.event_id,
+    'ACCEPTED_WIRE_EVIDENCE_REQUIRED');
+  require(createHash('sha256').update(wireBody).digest('hex')===capture.fingerprint,'ACCEPTED_WIRE_FINGERPRINT_MISMATCH');
+  const payload=JSON.parse(wireBody);
+  require(typeof payload?.request_id==='string'&&payload.request_id.toLowerCase()===capture.request_id,'ACCEPTED_WIRE_REQUEST_MISMATCH');
+  return queryFreeUrl(payload.landing_page);
+}
+
 export function createRegistry(records){
   require(Array.isArray(records)&&records.length>0,'REVIEWED_REGISTRY_REQUIRED');
   const byKey=new Map(), pages=new Set(), paths=new Set();
