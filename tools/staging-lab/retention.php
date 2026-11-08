@@ -8,7 +8,10 @@ require '/opt/lab/consent-retention/PreferenceRetirement.php';
 use BSRE\RetentionCandidate\WpConsentRepository;
 use BSRE\RetentionReview\PreferenceRetirement;
 use BSRE\RetentionReview\RetentionInventory;
-$db = clone $wpdb; $db->prefix = 'retention_synthetic_';
+// Never clone wpdb: that shares mysqli result handles with WordPress itself.
+$db = new wpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
+$db->set_prefix($wpdb->prefix); // Existing synthetic WP identity/options tables.
+$db->prefix = 'retention_synthetic_'; // Candidate tables only.
 $store = new WpConsentRepository($db);
 if (($argv[1] ?? '') === 'stage-worker') {
     $capture = json_decode(trim(fgets(STDIN)), true, 32, JSON_THROW_ON_ERROR);
