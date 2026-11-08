@@ -236,6 +236,19 @@ class KeywordAuditTests(unittest.TestCase):
         self.assertTrue(report["structural_pass"])
         self.assertEqual(report["protected_conflicts"], [])
 
+    def test_public_tool_fragment_conflicts_with_landlord_representation(self):
+        fragment = "rental index calculator"
+        queries = [{**PROTECTED[0], "text": "find a landlord agent after using the Dubai Land Department rental index calculator"}]
+        for match_type, expected_conflicts in (("EXACT", 0), ("PHRASE", 1), ("BROAD", 1)):
+            with self.subTest(match_type=match_type):
+                row = negative()
+                row.update(original_text=fragment, normalized_text=fragment,
+                           match_type=match_type, risk_level="HIGH")
+                report = audit("negative", [row], protected_queries=queries)
+                self.assertEqual(len(report["protected_conflicts"]), expected_conflicts)
+                if expected_conflicts:
+                    self.assertFalse(report["structural_pass"])
+
     def test_negative_exact_phrase_broad_semantics(self):
         self.assertFalse(ka.negative_matches("office rent", "EXACT", "office rent dubai"))
         self.assertTrue(ka.negative_matches("office rent", "PHRASE", "best office rent dubai"))
