@@ -15,3 +15,4 @@ mariadb --no-defaults --user=root --socket=/tmp/bsre.sock -e 'CREATE DATABASE bs
 php -d sendmail_path=/bin/false /opt/lab/native.php
 php -d sendmail_path=/bin/false /opt/lab/plugin.php
 php -d sendmail_path=/bin/false /opt/lab/transport.php
+php -d sendmail_path=/bin/false /opt/lab/receive.php
