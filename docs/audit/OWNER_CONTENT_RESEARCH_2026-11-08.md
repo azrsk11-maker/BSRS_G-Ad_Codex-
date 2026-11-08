@@ -58,3 +58,21 @@ On 8 November 2026, Real Estate account 573-038-4686 returned all eight submitte
 - All eight remain held for business and scope review. Zero approved, deployed or master keyword rows were added.
 
 Private source export is Keyword Stats 2026-11-08 at 22_48_18.csv with SHA256 e9ef5ce0d9da17f0be870171126d020a5aa95f94a5f3a8c95f4721237456797d. Local validation matched all eight keywords against the submitted seeds and confirmed exactly one populated average. The raw export and account-specific columns stay outside the repository.
+
+## Exclusion scope review
+
+The eight long phrases can describe public self-service tasks. A landlord or seller can also search for those tasks while seeking representation. Keep the eight phrases on hold. Do not promote their shorter fragments into shared or account-level exclusions. If an owner service review later confirms a specific self-service task is outside a specific campaign's remit, assess the full phrase as a campaign-scoped exact candidate against the complete reviewed protected corpus.
+
+The existing lexical matcher was run against these authored, mixed-intent controls. Every fragment matched its control under both phrase and broad simulation. No fragment matched its control under exact simulation.
+
+| Fragment | Protected-intent control |
+|---|---|
+| property valuation certificate | sell my apartment after getting a property valuation certificate |
+| rental valuation certificate | find an agent to let my villa after getting a rental valuation certificate |
+| rental index calculator | find a landlord agent after using the dubai land department rental index calculator |
+| renew ejari | find a letting agent who can help me renew ejari |
+| cancel ejari | need a landlord agent to relet after i cancel ejari |
+| register tenancy contract | need a letting agent to register tenancy contract and find tenants |
+| terminate tenancy contract | need a letting agent after i terminate tenancy contract |
+
+These controls demonstrate the risk of broadening exclusions. They are synthetic and do not establish Google matching behavior, deployed overlap, or sufficient corpus coverage.
