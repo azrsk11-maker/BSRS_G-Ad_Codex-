@@ -5,7 +5,7 @@ import {runInNewContext} from 'node:vm';
 export function createClientPage({client, origin, request, slug, role, timeline, csrf, store,
   blank = false, loseAcknowledgement = false, name = 'TEST synthetic client ' + slug,
   analytics = false, advertising = false, eligible = false, snapshot = null,
-  formPresent = true, locationPath = '/enquire/' + slug + '/', referrer = ''}) {
+  formPresent = true, locationPath = '/enquire/' + slug + '/', referrer = '', purposeAttributionEndpoint = ''}) {
   const handlers = new Map();
   const button = {dataset: {}, textContent: 'Submit'};
   const status = {dataset: {}};
@@ -32,7 +32,7 @@ export function createClientPage({client, origin, request, slug, role, timeline,
   };
   const window = {
     location: new URL(origin + locationPath), crypto: {randomUUID},
-    BSRELeadConfig: {endpoint: origin + '/wp-json/bsre/v1/lead', csrfToken: csrf, measurementEligible: eligible},
+    BSRELeadConfig: {endpoint: origin + '/wp-json/bsre/v1/lead', csrfToken: csrf, measurementEligible: eligible, purposeAttributionEndpoint},
     BSREConsentBridge: {
       permissions: () => ({analytics, advertising}),
       measurementEligible: () => eligible,
@@ -51,8 +51,8 @@ export function createClientPage({client, origin, request, slug, role, timeline,
       requests.push({url, request: options});
       const result = await request({url, method: options.method, credentials: options.credentials,
         headers: options.headers, body: options.body});
-      if (url.endsWith('/lead')) acceptedResponse = result;
-      if (url.endsWith('/lead') && loseAcknowledgement) {
+      if (url.endsWith('/lead') || url.endsWith('/purpose-lead')) acceptedResponse = result;
+      if ((url.endsWith('/lead') || url.endsWith('/purpose-lead')) && loseAcknowledgement) {
         loseAcknowledgement = false;
         throw new Error('synthetic_browser_acknowledgement_loss');
       }

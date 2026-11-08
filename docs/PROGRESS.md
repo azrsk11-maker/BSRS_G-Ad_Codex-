@@ -383,3 +383,13 @@ The validator processed a contact-free extract from the actual readback. It repo
 
 All25focused tests passed after the file-opening fix. Independent review also ran38adversarial privacy/type cases without exposing input canaries. Required local foundation passed in50.982568seconds with the new qualification-history checks included. Native PHP remains assigned to required CI; current-head remote checks are required after publication. Live CSV exports do not establish native cell types; the empty outcome snapshot required no Boolean conversion.
 
+## Independent-purpose attribution transport candidate
+
+Added an explicitly opt-in same-origin envelope through the actual source-derived client and WordPress intake/store. It preserves the exact legacy signed wire-v1 body and26receiver columns while binding separate analytics and advertising first/latest histories to the same capture transaction. Original server decision intervals, purpose, subject, notice, expiry and withdrawal are checked. Browser timestamps and attribution parameters remain observed hints, without a verified Google acquisition claim. Missing historical permission cannot be reconstructed from a later grant.
+
+The additive private fields retain the input-sidecar hash, permission-filtered record hash and receipt linkage. Changed-body/sidecar retries conflict; the legacy route cannot downgrade an existing purpose record. The legacy lookup is size-, origin-, CSRF- and rate-guarded. Extended metadata remains outside receiver/public measurement payloads. Defaults preserve the existing path, with no production registration or configuration change.
+
+Independent review and focused tests passed6newclient tests and30purePHP assertions. Author also passed24existingclient regressions. Required local foundation passed in55.531982seconds, including106tracking/commercialNode tests. Review corrected transaction result checks, a retention projection temporary-array bug, recovery flag/route handling and a lookup rate-limit gap. The mandatory network-isolated lab now includes20role/permission cases with actual WordPress/database/pinnedreceiver, lost-upstream-ack recovery and a source-derived retention/restore fixture. Native execution is pending current-head CI; no native or production acceptance is claimed yet.
+
+Mixed legacy-export/private-read lock-order concurrency stress remains open, along with actual browser cookie/bridge and payload acceptance, submission-closure/email retention, genuine account/resource mapping and separately authorized deployment. See `tools/website-tracking/tracking-system/purpose-attribution-candidate.md` for the exact candidate boundary.
+
