@@ -1,0 +1,19 @@
+{
+  "scope": "ONE_LOCAL_RUN_NOT_CONTROLLED_MULTI_RUN_BENCHMARK",
+  "baseline_compile_seconds": 2.914085,
+  "baseline_code_sha256": "581b501f3a2043d6d22f2b13afec07c79379d2e4a413ec494170585a4472f100",
+  "golden_line_endings": "CRLF",
+  "golden_workbench_sha256": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477",
+  "unique_phrases": 7705,
+  "exact_negative_proposals": 72,
+  "baseline_pair_match_calls": 554760,
+  "golden_bytes_equal": true,
+  "optimized_compile_seconds": 0.421965,
+  "observed_single_run_speedup": 6.906,
+  "optimized_code_sha256": "bbb97ce50b83e01576ffc4430c1b86ca9f638ee677b8bbd11deac529e46c033a",
+  "exact_index_entries": 7705,
+  "exact_index_lookups": 72,
+  "output_bytes_unchanged": true,
+  "classifications_authority_unchanged": true,
+  "timing_is_statistical_claim": false
+}
