@@ -429,3 +429,7 @@ Nativeexecution at3181639 passed Foundation42509423841 and isolatedWordPress4250
 ## Publication efficiency
 
 Verified inline UTF-8 tree creation against three existing reviewed files on ff546e6. The single connector request returned the exact original tree SHA in 0.916 seconds. This replaces three per-file blob calls plus tree creation for that sample. The procedure and pre-ref verification are documented in `tools/efficiency/README.md`. Browser execution remains a separate acceptance requirement.
+
+## Seller and landlord content research
+
+Added two source-linked owner content modules and eight official-service seed hypotheses for targeted Planner research. Existing seller and landlord enquiry routes returned HTTP 200. Exact lexical checks found zero collisions against 570 protected proposal rows plus five mixed-intent controls. Both admitted masters gain zero. See audit/OWNER_CONTENT_RESEARCH_2026-11-08.md. Factual review, company remit, final placement and keyword scope remain open under issues 1 and 2.
