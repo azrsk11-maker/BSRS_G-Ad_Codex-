@@ -32,4 +32,8 @@ Keep all nine candidates pending. The review still needs the current campaign or
 
 The proposed crosswalk uses the historical service labels and the [paused campaign readback](ADS_PAUSED_READBACK_2026-11-08.json) for account 573-038-4686. The [inspected export summary](../PROGRESS.md) separately records 19 existing V2 exclusions, with four employment phrases per campaign and three exact Brand exclusions. It also records a 29-negative shared list attached only to six older campaigns in that export.
 
-The 27 historical placements are a reconciliation input. Compare each archived placement with native account ID, campaign ID, match type and text, then record whether it already exists, is absent or is covered by a different scope. The aggregate difference of eight does not identify the missing placements. Keep candidates held until exact overlap and inherited account or manager controls are verified. Preserve the existing exclusions during review.
+## Exact comparison against the saved 7 November export
+
+The original private export matched the SHA-256 and 1,191-row count in the [targeting and negative readback](TARGETING_NEGATIVE_READBACK_2026-11-07.json). The report carries campaign names, which were joined to IDs using that readback. Comparing campaign, match type and unwrapped keyword text confirmed that all 19 exported V2 campaign exclusions are among the 27 archived placements.
+
+The eight placements absent at the direct campaign level in that export are the phrase negatives **real estate interview questions** and **real estate vacancies**, each across all four campaigns. This is dated evidence. Recheck these eight placements and any account or manager exclusions before considering a change. Preserve all 19 observed exclusions during review. No candidates were approved or applied.
