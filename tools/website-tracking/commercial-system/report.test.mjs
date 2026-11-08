@@ -115,7 +115,7 @@ test('other-source and unknown qualifications stay distinct from unmapped Ads',(
   f.spend[0].campaign_key=null;
   const r=commercialReport(f,policy);for(const key of ['OTHER_SOURCE','UNKNOWN_SOURCE','ADS_UNMAPPED'])assert.equal(r.campaigns.find(c=>c.campaign_key===key).first_ever_qualified_people,1);
   assert.equal(r.campaigns.find(c=>c.campaign_key==='ADS_UNMAPPED').media_spend_minor,10000);
-  assert.equal(r.campaigns.find(c=>c.campaign_key==='ADS_UNMAPPED').observed_period_spend_per_first_qualification_aed,100);
+  assert.equal(r.campaigns.find(c=>c.campaign_key==='ADS_UNMAPPED').observed_period_spend_per_first_qualification_aed,null);
   assert.deepEqual(r.totals.first_ever_qualified_people_by_source,{ads:1,other:1,unknown:1});
   assert.equal(r.totals.observed_period_ads_spend_per_first_qualification_aed,100);
   for(const key of ['OTHER_SOURCE','UNKNOWN_SOURCE'])assert.equal(r.campaigns.find(c=>c.campaign_key===key).observed_period_spend_per_first_qualification_aed,null);

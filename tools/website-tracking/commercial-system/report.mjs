@@ -112,7 +112,8 @@ export function commercialReport(input,policy){
   for(const row of campaigns){row.post_acquisition_contribution_minor=add(add(row.allocated_contribution_before_acquisition_minor,-row.allocated_nonmedia_acquisition_minor),-row.media_spend_minor);
     const source=row.campaign_key==='OTHER_SOURCE'?'other':row.campaign_key===UNKNOWN?'unknown':'ads';
     qualificationBySource[source]+=row.first_ever_qualified_people;
-    row.observed_period_spend_per_first_qualification_aed=source==='ads'&&row.first_ever_qualified_people?row.media_spend_minor/100/row.first_ever_qualified_people:null;}
+    const mappedAdsCampaign=source==='ads'&&row.campaign_key!=='ADS_UNMAPPED';
+    row.observed_period_spend_per_first_qualification_aed=mappedAdsCampaign&&row.first_ever_qualified_people?row.media_spend_minor/100/row.first_ever_qualified_people:null;}
   const totalMedia=campaigns.reduce((sum,row)=>add(sum,row.media_spend_minor),0);
   return {status:'CALCULATED_OFFLINE_NOT_RECONCILED_WITH_PROVIDER',source_ref:input.source_ref,policy_approval_ref:policy.approval_ref,
     window:{from:input.from,to:input.to,end_exclusive:true,timezone:'Asia/Dubai'},currency:'AED',money_unit:'minor_units',campaigns,
