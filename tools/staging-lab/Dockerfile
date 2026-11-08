@@ -1,6 +1,6 @@
 FROM php:8.2-cli-bookworm@sha256:ce09ca1d4b532edf9b0347b44a1968a80d9175addb581c450ba0c9a43fa0c5ea
 # Official dependencies only; no WordPress or custom PHP executes at build time.
-RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates \
+RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates nodejs \
     && docker-php-ext-install mysqli sockets \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
@@ -10,6 +10,7 @@ RUN curl --fail --location --proto '=https' --tlsv1.2 https://wordpress.org/word
 COPY tools/staging-lab/wp-config.php /opt/wordpress/wp-config.php
 COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json /opt/reviewed/
 COPY tools/staging-lab/fixtures/bsre-enquiries /opt/wordpress/wp-content/plugins/bsre-enquiries
-COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-lab/plugin.php tools/staging-lab/transport.php tools/staging-lab/receive.php tools/staging-lab/entrypoint.sh /opt/lab/
+COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-lab/plugin.php tools/staging-lab/transport.php tools/staging-lab/receive.php tools/staging-lab/interop.php tools/staging-lab/receiver-lab.mjs tools/staging-lab/receiver-bridge.mjs tools/staging-lab/entrypoint.sh /opt/lab/
+COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/fixtures/receiver-v2
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]
