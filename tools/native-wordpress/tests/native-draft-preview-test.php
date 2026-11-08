@@ -29,15 +29,7 @@ function rejects($callback, $text) {
     throw new RuntimeException('Expected rejection: ' . $text);
 }
 require dirname(__DIR__) . '/native-draft-preview.php';
-$manifest = ['schema' => 'bsre-native-page-plan-v1', 'mode' => 'PLAN_ONLY', 'page_count' => 360,
-    'site_origin_expected' => 'https://blackswanrealestate.ae',
-    'native_policy' => ['apply_supported' => false, 'publication_allowed' => false, 'post_status' => 'draft'], 'pages' => []];
-for ($i = 1; $i <= 360; $i++) {
-    $key = sprintf('BSRE-C%04d', $i);
-    $manifest['pages'][] = ['campaign_key' => $key, 'landing_page_id' => sprintf('BSRE-LP%04d', $i),
-        'proposed_path' => '/lp/' . strtolower($key) . '/', 'path_status' => 'PROPOSED_NOT_VERIFIED',
-        'content_state' => 'BLOCKED_SOURCE_REQUIRED', 'actual_url' => null, 'cms_page_id' => null];
-}
+$manifest = json_decode(file_get_contents(dirname(__DIR__) . '/native-page-manifest.json'), true, 512, JSON_THROW_ON_ERROR);
 $preview = function ($value = null, $nonce = 'valid-test-nonce', $mode = 'dry-run') use (&$manifest) {
     return \BSRE\NativePlanning\preview($value ?? $manifest, 'BSRE-C0001', $nonce, $mode);
 };
@@ -53,6 +45,9 @@ $posts = [10 => ['path' => 'lp', 'meta' => []]];
 $result = $preview();
 check($result['draft_request']['post_status'] === 'draft' && $result['draft_request']['post_content'] === '', 'Unexpected page content/status');
 check($result['draft_request']['post_parent'] === 10 && $result['actual_url'] === null, 'Parent/URL inference failed');
+$reordered = $manifest;
+$reordered['pages'] = array_reverse($manifest['pages']);
+check($preview($reordered) === $result, 'Registry ordering changed the planning preview');
 $bad = $manifest; $bad['pages'][1]['landing_page_id'] = $bad['pages'][0]['landing_page_id'];
 rejects(fn() => $preview($bad), 'duplicated');
 $bad = $manifest; $bad['pages'][0]['proposed_path'] = '/lp/../admin/';
