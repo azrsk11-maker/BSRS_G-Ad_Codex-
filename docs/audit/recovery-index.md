@@ -79,3 +79,16 @@ Review Search candidates against the fixed UAE launch cohort and the full keywor
 | C173 GCLID preservation | [Isolated WordPress evidence](PURPOSE_ATTRIBUTION_LAB_2026-11-08.json) covers the purpose-specific candidate. | Validate actual browser withdrawal, accepted lead linkage and the restricted scheduled import path before using it for reporting or bidding. |
 
 These statuses use dated readbacks and isolated results. No catalogue control is accepted for production solely on this review.
+
+### C157 exclusion replay
+
+The existing lexical simulator replayed the 19 campaign-scoped direct exclusions against the 82 dated V2 keyword literals. It evaluated 352 applicable pairs and found zero collisions. The dated shared-list evidence shows no V2 attachment. Hypothetically attaching the 29 broad legacy exclusions produced zero collisions on the same 82 literals, but each of four additional authored property-intent controls collided:
+
+| Legacy broad exclusion | Protected-intent control |
+|---|---|
+| sobha | buy an apartment in sobha hartland |
+| studio | rent a studio in dubai |
+| near me | find a real estate agent near me |
+| emaar | buy an emaar apartment in dubai |
+
+The current four direct phrase exclusions matched none of those controls. This replay covers the dated [scope](TARGETING_NEGATIVE_READBACK_2026-11-07.json) and [keyword literals](KEYWORD_URL_READBACK_2026-11-07.json), plus synthetic long-tail examples. Keep the legacy list separate from V2. Account-level and manager inheritance, current associations and the full reviewed protected corpus still require verification.
