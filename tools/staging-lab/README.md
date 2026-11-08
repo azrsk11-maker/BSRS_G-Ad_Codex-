@@ -90,3 +90,15 @@ Both cases also verify that a separate same-origin Chrome tab starts with the ac
 The probe exercises the rendered checkboxes and Save choices button, checks their labels and default states, and verifies focus when preferences open, save or close on a dispatched Escape event. It uses the rendered Reject button for the outage retry. Both scenarios passed with these assertions in 7.07 seconds combined. This checks DOM behavior without certifying physical keyboard navigation or mobile layout.
 
 Add `--narrow` to load the pinned consent stylesheet in a viewport at most 500 CSS pixels wide. The browser checks that the panel has no horizontal overflow and that all three action buttons fit the viewport horizontally, stack and have at least 44 CSS pixels of height. The narrow withdrawal-outage case passed in 3.81 seconds. This isolates the consent component from the site's theme and sticky CTAs.
+
+### Live layout evidence
+
+On 9 November 2026, all six enquiry destinations in the [ad inventory](../../docs/audit/ACCOUNT_AD_URL_READBACK_2026-11-07.json) referenced the 0.2.12 consent stylesheet and bridge. Both served assets matched the [pinned bytes](../../docs/audit/LIVE_WORDPRESS_READBACK_2026-11-08.json). This connects the isolated Chrome component tests to the currently served assets.
+
+In ordinary Chrome, the live rental page showed both optional choices unchecked. In a manually narrowed window with a 660-pixel-wide capture, scrolling inside the panel revealed Reject, Save and Close above the fixed Call and WhatsApp bar. No controls that would submit consent or an enquiry were clicked. A fresh headless browser received the site's verification screen, so the layout sample used the existing interactive profile. The window was maximized after the check.
+
+| Evidence | Verified scope | Open acceptance |
+|---|---|---|
+| Live rental layout | One page at one narrow desktop window size, consent actions visible above the sticky bar after scrolling | Physical phone, natural keyboard scrolling and other routes at that viewport |
+| Chrome loopback fixture | Actual browser consent UI, storage, cross-tab propagation and outage behavior | Browser and actual WordPress together, including real consent response and measurement network behavior |
+| Isolated WordPress lab | Synthetic intake, consent and receiver integration through the pinned source and service doubles | Real Google destinations, independent review and production release |
