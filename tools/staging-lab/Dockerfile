@@ -1,6 +1,6 @@
 FROM php:8.2-cli-bookworm@sha256:ce09ca1d4b532edf9b0347b44a1968a80d9175addb581c450ba0c9a43fa0c5ea
 # Official dependencies only; no WordPress or custom PHP executes at build time.
-RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates nodejs openssl \
+RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates nodejs openssl firefox-esr libnss3-tools \
     && docker-php-ext-install mysqli sockets \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
@@ -21,7 +21,7 @@ COPY tools/website-tracking/tracking-system/build-attribution-client-candidate.m
 COPY tools/staging-lab/client-interop.php tools/staging-lab/client-interop.mjs /opt/lab/
 COPY tools/staging-lab/client-page.mjs tools/staging-lab/consented-client-interop.php tools/staging-lab/consented-client-interop.mjs /opt/lab/
 COPY tools/staging-lab/browser-prerequisites.php /opt/lab/
-COPY tools/staging-lab/consent-http-router.php tools/staging-lab/consent-http.mjs /opt/lab/
+COPY tools/staging-lab/consent-http-router.php tools/staging-lab/consent-http.mjs tools/staging-lab/consent-browser.js /opt/lab/
 COPY tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/purpose-attribution.test.php tools/website-tracking/tracking-system/purpose-retention.php /opt/lab/purpose/
 COPY tools/website-tracking/tracking-system/build-purpose-retention-candidate.mjs /opt/lab/tracking-system/

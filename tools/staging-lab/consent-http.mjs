@@ -1,13 +1,15 @@
 import assert from 'node:assert/strict';
 import {execFileSync, spawn} from 'node:child_process';
-import {mkdtempSync, readFileSync, rmSync} from 'node:fs';
+import {mkdtempSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
 import {request} from 'node:https';
 import {connect} from 'node:net';
 import {join} from 'node:path';
 import {createServer} from 'node:tls';
+import {setTimeout as delay} from 'node:timers/promises';
 
 const host = '127.0.0.1';
 const port = 18763;
+const tlsPort = 18764;
 const origin = 'https://blackswanrealestate.ae';
 const temporary = mkdtempSync('/tmp/bsre-consent-tls-');
 let key, cert;
@@ -71,6 +73,53 @@ function cookie(response, name) {
   return pair;
 }
 
+async function browserConsent() {
+  const profile = mkdtempSync('/tmp/bsre-firefox-');
+  const db = 'sql:' + profile;
+  const certificate = join(profile, 'lab-cert.pem');
+  const resultPath = '/tmp/bsre-consent-browser-result.json';
+  let browser, closed, diagnostics = '';
+  try {
+    rmSync(resultPath, {force: true});
+    writeFileSync(certificate, cert);
+    execFileSync('certutil', ['-N', '-d', db, '--empty-password'], {timeout: 5000});
+    execFileSync('certutil', ['-A', '-d', db, '-n', 'BSRE lab only', '-t', 'C,,', '-i', certificate], {timeout: 5000});
+    browser = spawn('firefox-esr', ['-headless', '-no-remote', '-profile', profile,
+      'https://' + host + ':' + tlsPort + '/browser'], {
+      env: {...process.env, HOME: profile}, stdio: ['ignore', 'ignore', 'pipe'],
+    });
+    let stopped = false;
+    closed = new Promise(resolve => browser.once('close', () => { stopped = true; resolve(); }));
+    browser.once('error', error => { diagnostics = error.code; stopped = true; });
+    browser.stderr.on('data', chunk => { diagnostics = (diagnostics + chunk.toString()).slice(-1600); });
+    const deadline = Date.now() + 25000;
+    while (!stopped && Date.now() < deadline) {
+      let result;
+      try { result = JSON.parse(readFileSync(resultPath, 'utf8')); }
+      catch (error) { if (error.code !== 'ENOENT' && !(error instanceof SyntaxError)) throw error; }
+      if (result) {
+        assert.equal(result.status, 'PASS', 'Browser consent check failed: ' + result.check);
+        console.log(JSON.stringify({phase: 'consent_firefox', status: 'PASS',
+          checks: ['secure_context', 'native_dom', 'fresh_default_denied', 'advertising_only',
+            'cookie_across_navigation', 'httponly', 'synchronous_withdrawal',
+            'scoped_cookie_and_storage_cleanup', 'withdrawal_readback'],
+          real_wordpress: true, synthetic_origin_translation: true}));
+        return;
+      }
+      await delay(100);
+    }
+    throw new Error('Firefox consent fixture did not complete: ' + diagnostics);
+  } finally {
+    if (browser) {
+      browser.kill('SIGTERM');
+      await Promise.race([closed, delay(2000)]);
+      browser.kill('SIGKILL');
+    }
+    rmSync(resultPath, {force: true});
+    rmSync(profile, {recursive: true, force: true});
+  }
+}
+
 try {
   await new Promise((resolve, reject) => {
     const timer = setTimeout(() => reject(new Error('Loopback PHP startup timed out')), 5000);
@@ -85,7 +134,7 @@ try {
   });
   await new Promise((resolve, reject) => {
     tls.once('error', reject);
-    tls.listen(0, host, resolve);
+    tls.listen(tlsPort, host, resolve);
   });
   await assert.rejects(post('/context', {}, {}, null), {code: 'DEPTH_ZERO_SELF_SIGNED_CERT'});
   const first = await post('/context', {});
@@ -120,6 +169,7 @@ try {
     checks: ['untrusted_certificate_rejected', 'trusted_loopback_tls', 'cookie_attributes', 'foreign_origin_denied',
       'csrf_required', 'advertising_only_round_trip', 'withdrawal_round_trip'],
     client: 'Node HTTPS with explicit cookie replay', tls: 'loopback TLS termination', browser_verified: false}));
+  await browserConsent();
 } finally {
   for (const socket of sockets) socket.destroy();
   tls.close();
