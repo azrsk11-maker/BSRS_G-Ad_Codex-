@@ -147,3 +147,16 @@ A public read-only request to the rental entry returned HTTP 200 on 9 November. 
 | Official tenancy services have a different purpose from an immediate rental enquiry. | Keep registration and renewal guidance in separate editorial content. Point users to the official DLD service when relevant. Keep the Rental Index separate from live listings and any price or eligibility claim. [DLD tenancy contract service](https://dubailand.gov.ae/en/eservices/register-renew-ejari-contract/), [DLD Rental Index](https://dubailand.gov.ae/en/eservices/rental-index/?lang=en) |
 
 The proposed wording preserves the tenant role, existing form fields, consent choices and receipt contract. A factual reviewer must verify service scope and actual contact ownership. This review used the returned HTML and did not exercise rendered visibility, submit a form or change WordPress.
+
+### Exact Tenants copy candidate
+
+The fallback appears once in the public HTML and is enclosed in `noscript`. The same page contains three telephone and three WhatsApp links with matching destinations across placements. This proves the HTML structure and link consistency. Recipient ownership and rendered browser acceptance remain separate.
+
+Apply the following two UTF-8 replacements exactly once each to the [pinned rental template](../../tools/staging-lab/fixtures/bsre-enquiries/templates/source/rent.html) in a disposable copy:
+
+| Before | After |
+| --- | --- |
+| Immediate rental enquiries are the priority for this campaign. Choose your actual move-in timeline so the team can understand your situation. | Choose when you need to move so we can review your rental requirements against your timeline. |
+| This preview form cannot send without JavaScript and a connected service. Please call +971 56 828 5677 or use WhatsApp. | To send an online enquiry, JavaScript is required. You can also use the contact options on this page. |
+
+Source SHA-256 is `2ce5c621017bc46db8971554b890a8f3c29bacfd02b8d7d379d38c67f77d8fd6`. Candidate SHA-256 is `43632b26204bb898fffc36381726f895f76ee57df417aadffe0b7d07f89bd868`. Reversing both replacements reproduced the source bytes. The fallback stayed in `noscript` and form controls and script tags were byte-identical. The pinned fixture was preserved. Verify the authorized target source and JS-on/off rendering before release.
