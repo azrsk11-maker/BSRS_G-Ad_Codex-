@@ -13,6 +13,17 @@ function get_posts($args) {
 }
 function get_post_meta($id, $key, $single) { global $posts; return $posts[$id]['meta'][$key] ?? ''; }
 function get_page_uri($id) { global $posts; return $posts[$id]['path']; }
+function get_post_type($id) { global $posts; return $posts[$id]['type'] ?? null; }
+function add_filter($hook, $callback) { $GLOBALS['search_hooks'][$hook] = $callback; }
+function add_action($hook, $callback) { $GLOBALS['search_hooks'][$hook] = $callback; }
+function is_admin() { return $GLOBALS['admin_search'] ?? false; }
+class WP_Query {
+    public function __construct(public array $vars, private bool $main = true, private bool $search = true) {}
+    public function is_main_query() { return $this->main; }
+    public function is_search() { return $this->search; }
+    public function get($key) { return $this->vars[$key] ?? null; }
+    public function set($key, $value) { $this->vars[$key] = $value; }
+}
 function get_page_by_path($path, $format, $type) {
     global $posts;
     foreach ($posts as $id => $post) if ($post['path'] === $path) return (object) ['ID' => $id];
@@ -70,5 +81,25 @@ $posts[11]['path'] = 'another-route'; rejects(fn() => $preview(), 'ownership or 
 $posts[11]['path'] = 'lp/bsre-c0001';
 $posts[12] = $posts[11]; rejects(fn() => $preview(), 'Duplicate CMS identity'); unset($posts[12]);
 $posts[11]['meta']['_bsre_campaign_key'] = 'BSRE-C0002'; rejects(fn() => $preview(), 'ownership or route');
+define('BSRE_PAID_ENTRY_SEARCH_EXCLUSION_ENABLED', true);
+require dirname(__DIR__) . '/paid-entry-search.php';
+$posts[26750] = ['path' => 'enquire', 'type' => 'page'];
+$posts[26753] = ['path' => 'enquire/rent', 'type' => 'page'];
+$search_hooks['pre_get_posts']($search = new WP_Query(['post__not_in' => [91]]));
+check($search->vars['post__not_in'] === [91, 26750, 26753], 'Public search did not preserve existing exclusions');
+$search_hooks['pre_get_posts']($direct = new WP_Query([], true, false));
+check($direct->vars === [], 'Direct pages must remain untouched');
+$search_hooks['pre_get_posts']($secondary = new WP_Query([], false));
+check($secondary->vars === [], 'Secondary queries must remain untouched');
+$admin_search = true;
+$search_hooks['pre_get_posts']($private = new WP_Query([]));
+check($private->vars === [], 'Admin search must remain untouched');
+$admin_search = false;
+$rest = $search_hooks['rest_post_search_query'];
+check($rest(['post__in' => [26750, 26753]])['post__in'] === [0], 'REST include-only exclusions broadened the query');
+$posts[26753]['path'] = 'other';
+check($rest([])['post__not_in'] === [26750], 'Mismatched page identity was excluded');
+$origin = 'https://business-setup.invalid';
+check($rest([]) === [], 'An unrelated site was affected');
 check($writes === 0, 'A WordPress write was attempted');
 echo json_encode(['status' => 'PASS', 'checks' => $checks, 'wordpress_writes' => $writes]) . PHP_EOL;

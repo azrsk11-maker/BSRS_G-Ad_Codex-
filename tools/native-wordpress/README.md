@@ -15,6 +15,8 @@ The PHP acceptance harness is supplied under `tests/` with isolated WordPress re
 
 ## Relevant existing-source finding
 
+`paid-entry-search.php` is a staging candidate for Option A. It registers hooks only when `BSRE_PAID_ENTRY_SEARCH_EXCLUSION_ENABLED` is explicitly true. On the verified Real Estate origin, it checks the exact WordPress type, ID and path of the proposed Brand and Tenants entries, then excludes them from main public search and REST post search. Existing exclusion lists, direct page requests and admin search are preserved. The isolated PHP harness tests the hook behavior. Real theme and REST integration acceptance is still required before deployment. [WordPress query hook](https://developer.wordpress.org/reference/hooks/pre_get_posts/) and [REST search hook](https://developer.wordpress.org/reference/hooks/rest_post_search_query/).
+
 The saved 0.2.12 candidate associated with the current consent checkpoint uses a **fixed six-path map** and `owned_parent_scope()` with held/preview/live rendering. Its existing `ensure_drafts()` creates only the fixed `SERVICES` under `/enquire` and validates its owned-page registry. Its draft preview disables form submission and measurement. Neither mechanism establishes support for 360 `/lp` routes.
 
 The two current local files were read, without modification: `includes/drafts.php` SHA-256 `d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632`; `templates/page.php` SHA-256 `9e29a3a16179223eec4b8c241eb6bae2bc2ed19d036c46ae33c5b3e1a22eb3ce`. Live deployment status comes from the existing checkpoint and is not refreshed by this code review.
