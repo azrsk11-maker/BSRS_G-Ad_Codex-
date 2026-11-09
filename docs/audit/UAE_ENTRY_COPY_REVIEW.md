@@ -25,6 +25,15 @@ A read-only request to the public WordPress pages API returned six published rec
 
 The Brand hub HTML contains links to all five exact same-origin enquiry routes and has no HTML form. The Tenants page has one form marked `data-bsre-form`, `data-role="tenant"` and `data-landing-path="/enquire/rent/"`. This supports the proposed hub-to-service and direct-rental journeys. The request was read-only. No enquiry, permission choice or conversion was submitted. Verify rendered navigation, permission behavior and receipt binding in the isolated end-to-end test before release.
 
+### Candidate planning slots for the reuse review
+
+| Campaign | Proposed planning pair | Family | Existing WordPress candidate |
+| --- | --- | --- | --- |
+| Tenants | BSRE-C0301 / BSRE-LP0301 | RNT | `/enquire/rent/`, page 26753 |
+| Brand | BSRE-C0281 / BSRE-LP0281 | CMP, brand-demand subset | `/enquire/`, page 26750 |
+
+These are the first unbound placeholders in their respective families, chosen as a deterministic proposal. Each slot currently has a proposed `/lp/` path and no deployed identity. Reusing an existing enquiry page would bind its canonical route after review. It would not create or redirect an `/lp/` path. Before changing the registry, reconcile the existing native page against any reserved slot or historical brief, confirm the exact binding, and preserve the approved family totals. Buyers and Owners are pending their primary family choices.
+
 ## Buyers
 
 ### Find a Dubai property to buy
