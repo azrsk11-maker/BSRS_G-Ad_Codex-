@@ -82,3 +82,9 @@ A three-file no-change probe on ff546e6 included the project rules, this README 
 Create the candidate commit, fetch its exact SHA and run `verify_worktree.py --ref <candidate-sha>` before moving the branch when the checkout represents that candidate. Require byte equality, confirm only the reviewed paths and modes changed, then use the expected-head guard and a non-force update. Read back the branch and current-head checks.
 
 When using the command tool, a response with a session ID is an active process. Poll that same session until it returns a terminal result. An absent exit code does not authorize publication. Require `result.exit_code === 0`, parse the completed JSON receipt, and require `commit === candidateSha` and `byte_equal === local_files && byte_equal === remote_files`. A missing, malformed or contradictory receipt holds the ref update.
+
+## Avoid duplicate Discovery verification in Foundation
+
+The standalone Discovery CLI remains available, including its optional private-source checks. Foundation now relies on the original public-capture verification already required by the supply and triage checks. The two retained checks each rejected an altered Buyers batch in a disposable copy.
+
+Three alternating local trials per variant measured the affected group at a median of 1.7668 seconds with three commands and 1.5314 seconds with two, a reduction of 0.2354 seconds (13.3%) on this Windows checkout. This is a measurement of that group only. The isolated WordPress job on the preceding revision spent 35 seconds building dependencies and 9 seconds running the isolated lab. Those stages are unchanged. Token use was unavailable.

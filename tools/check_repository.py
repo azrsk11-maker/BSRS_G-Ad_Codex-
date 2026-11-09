@@ -43,7 +43,7 @@ def run_checks(require_php=False):
     record("native-page-manifest-build", compiled == saved, {"pages": compiled["page_count"], "apply_supported": False})
     run("keyword-research-capture-consistency", [sys.executable, "-B", str(
         ROOT / "docs/audit/keyword-research-2026-11-07/verify_capture.py")])
-    run("keyword-discovery-capture-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-discovery-2026-11-08/verify_capture.py")])
+    # Both following checks verify the original Discovery capture before using it.
     run("keyword-supply-discovery-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-discovery-supply-2026-11-08/verify_capture.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
