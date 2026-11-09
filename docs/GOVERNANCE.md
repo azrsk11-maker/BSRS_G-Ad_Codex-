@@ -35,3 +35,9 @@ The [local release-packet checker](../tools/release-control/README.md) checks ex
 Keep scoped before/after manifests. Do not restore a whole database over new accepted leads. Revert code/tag versions only; preserve accepted receipts, original decisions and outbox reconciliation. Roll page changes back using recorded IDs/revisions and campaign-specific metadata. Do not delete existing pages or reactivate old campaigns. Reapply retention deletions before reopening a restored system. New recovery copies use the approved 30-day encrypted owner-only window.
 
 GitHub reference: [protected deployment environments](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments). Actual configured controls must be verified in GitHub; documentation is not enforcement evidence.
+
+## 9 November branch-rule readback
+
+GitHub's public branch response marked `main` protected and listed two required checks: `offline-validation` and `native-wordpress-check`. The `isolated-native-wordpress` check passed on PR #8 and is required by the local release packet. It is absent from the live branch's required-check list. Check it explicitly before merging this PR. To enforce all three at merge time, add `isolated-native-wordpress` in the authenticated protection settings and verify the readback while retaining the two existing checks and independent approval rules. [Reviewer and access issue #6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6)
+
+The public branch response could not verify the detailed review or administrator settings. The full protection endpoint required authentication. This audit changed no settings.
