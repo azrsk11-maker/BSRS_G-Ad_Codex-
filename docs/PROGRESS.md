@@ -1,5 +1,14 @@
 # Implementation progress — 7 November 2026
 
+## 9 November release checkpoint
+
+- **Campaigns and pages.** Option A authorizes preparation of four paused campaigns at AED 2,000 aggregate average per day. Buyers and Owners still need primary-family choices. The rental copy candidate passed 11 native WordPress assertions on `f7d9fd3`. It is undeployed. The authenticated installed-template comparison and production approval remain open. [Campaign and page review](audit/UAE_ENTRY_COPY_REVIEW.md)
+- **Content.** The 360-slot registry contains 300 slots in the 11 families corresponding to historical briefs and 60 in four standalone families. There are no approved historical item-level assignments. The recovered brief and cited D1 have a section-level discrepancy. Three closing-support modules are drafted for factual review. [Recovery audit](audit/recovery-index.md), [closing drafts](audit/CLOSING_CONTENT_RESEARCH_2026-11-09.md)
+- **Keywords.** The six existing Discovery exports contain 7,735 distinct normalized identities. Both reviewed libraries remain at zero of 14,000. The prepared employment and education batches need an authenticated Real Estate Planner session or verified exports. The count-only preflight is available. [Research queue](audit/keyword-triage-2026-11-08/README.md)
+- **Live acceptance.** Staff rehearsal and measured capacity, Brand policy, privacy and recovery deployment, eligible scheduled imports, genuine conversion reconciliation and finance evidence remain open. The private intake workbook remains restricted. Issue #10 resolved the mailbox operating decision only. [Owner decision register](decisions/OWNER_DECISIONS.md)
+- **Owner actions.** Confirm the Buyers and Owners primary families in [#1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1), name the factual reviewer and update owner and identify the evidence location in [#2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2), nominate an eligible independent PR reviewer in [#6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6), and resolve the Search language interpretation in [#11](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/11). No PR reviews had been submitted at this checkpoint. Ads remain paused. Separate production authorization is required.
+
+
 ## 9 November continuation checkpoint
 
 - PR #8 remained open. All three required checks passed on reviewed feature head `77a91a2`. Independent human review remains outstanding under [issue #6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6). Separate production authorization is still required.
