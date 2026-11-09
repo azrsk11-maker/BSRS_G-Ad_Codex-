@@ -448,6 +448,25 @@ class ReleasePacketTests(unittest.TestCase):
         self.assertNotIn("AGGREGATE_BUDGET_MISMATCH", errors)
         self.assertNotIn("BUDGET_DIFF_MISMATCH", errors)
 
+    def test_configuration_rejects_noninteger_daily_budget_in_after_state(self):
+        packet = self.fixture("ADS_CONFIGURATION")
+        ref = packet["proposal"]["change"]["after_state"]
+        after = load_json(self.root / ref["path"])
+        row = after["campaigns"][-1]
+        row["average_daily_fils"] = float(row["average_daily_fils"])
+        packet["proposal"]["change"]["after_state"] = self.write(ref["path"], after)
+        self.assertIn("BUDGET_DIFF_MISMATCH", self.check(packet)["errors"])
+
+    def test_legacy_state_cannot_change_json_number_type(self):
+        packet = self.fixture("ADS_CONFIGURATION")
+        change = packet["proposal"]["change"]
+        for field, value in (("before_state", 100), ("after_state", 100.0)):
+            ref = change[field]
+            state = load_json(self.root / ref["path"])
+            state["campaigns"][0]["average_daily_fils"] = value
+            change[field] = self.write(ref["path"], state)
+        self.assertIn("OLD_CAMPAIGN_BASELINE_MUST_STAY_FROZEN", self.check(packet)["errors"])
+
     def test_activation_cannot_also_configure_launch_budget(self):
         packet = self.fixture("ADS_ACTIVATION")
         before = json.loads((self.root / "scope/before.json").read_text(encoding="utf-8"))

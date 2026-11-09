@@ -247,7 +247,7 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             frozen = frozen_legacy_statuses()
             need(all(before_map.get(i, {}).get("status") == status for i, status in frozen.items()),
                  "KNOWN_LEGACY_CAMPAIGN_IDS_AND_STATUSES_REQUIRED")
-            need(all(before_map[i].get("status") in {"PAUSED", "REMOVED"} and before_map[i] == after_map.get(i) for i in old_ids), "OLD_CAMPAIGN_BASELINE_MUST_STAY_FROZEN")
+            need(all(before_map[i].get("status") in {"PAUSED", "REMOVED"} and digest(before_map[i]) == digest(after_map[i]) for i in old_ids), "OLD_CAMPAIGN_BASELINE_MUST_STAY_FROZEN")
             for campaign_id in CURRENT_CAMPAIGNS:
                 before, after_row = before_map.get(campaign_id, {}), after_map.get(campaign_id, {})
                 need(before.get("status") == "PAUSED", "NEW_CAMPAIGNS_START_PAUSED")
@@ -262,7 +262,7 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                         need(digest({**before, "status": "ENABLED"}) == digest(after_row),
                              "ACTIVATION_MAY_CHANGE_ONLY_CAMPAIGN_STATUS")
                 else:
-                    need(before == after_row, "OUT_OF_SCOPE_CAMPAIGN_CHANGE")
+                    need(digest(before) == digest(after_row), "OUT_OF_SCOPE_CAMPAIGN_CHANGE")
         rollback = proposal["rollback"]
         need(isinstance(rollback, dict) and set(rollback) == {"before_manifest", "instructions", "preserve_accepted_records", "preserve_outbox", "reactivate_old_campaigns", "reapply_retention_before_reopen", "encrypted_owner_only_backup_days"}, "ROLLBACK_SHAPE")
         recovery = record_json(rollback["before_manifest"])
@@ -279,7 +279,9 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             budgets = rows(media.get("campaign_budgets"), 360)
             need(len(budgets) == len(resources) and {b.get("campaign_id") for b in budgets} == set(campaign_ids) and all(type(b.get("average_daily_fils")) is int and b["average_daily_fils"] > 0 for b in budgets), "EXACT_CAMPAIGN_BUDGET_POOLS_REQUIRED")
             need(sum(b["average_daily_fils"] for b in budgets) == media["aggregate_average_daily_fils"], "AGGREGATE_BUDGET_MISMATCH")
-            need(all(after_map.get(b["campaign_id"], {}).get("average_daily_fils") == b["average_daily_fils"] for b in budgets), "BUDGET_DIFF_MISMATCH")
+            need(all(type(after_map[b["campaign_id"]].get("average_daily_fils")) is int and
+                     after_map[b["campaign_id"]]["average_daily_fils"] == b["average_daily_fils"]
+                     for b in budgets), "BUDGET_DIFF_MISMATCH")
             if proposal["kind"] == "ADS_ACTIVATION":
                 need({b["campaign_id"]: b["average_daily_fils"] for b in budgets} == LAUNCH_BUDGET_FILS,
                      "APPROVED_LAUNCH_BUDGET_SPLIT_REQUIRED")
