@@ -33,6 +33,21 @@ try { \BSRE\NativePlanning\preview($manifest, 'BSRE-C0001', $nonce, 'apply'); th
 catch (RuntimeException $e) { check_lab('apply_denied', $e->getMessage() === 'Write mode is not implemented or authorized.'); }
 check_lab('post_count_unchanged', $before === (int) $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts}"));
 check_lab('preview_zero_sql_writes', $preview_writes === []);
+// Validate the unbound body fragments using core block parsing and rendering.
+foreach (['buyers' => ['/enquire/off-plan/', '/enquire/resale/'],
+    'owners' => ['/enquire/sell/', '/enquire/let/']] as $draft => $destinations) {
+    $content = file_get_contents('/opt/reviewed/entry-drafts/' . $draft . '.html');
+    if (!is_string($content)) throw new RuntimeException('Missing native entry draft: ' . $draft);
+    $blocks = array_values(array_filter(parse_blocks($content), static fn($block) => $block['blockName'] !== null));
+    check_lab('entry_draft_' . $draft . '_core_blocks', array_column($blocks, 'blockName') === ['core/paragraph', 'core/buttons']
+        && array_column($blocks[1]['innerBlocks'], 'blockName') === ['core/button', 'core/button']);
+    $rendered = do_blocks($content);
+    preg_match_all('~<a\b[^>]*\bhref="([^"]+)"~i', $rendered, $links);
+    check_lab('entry_draft_' . $draft . '_exact_rendered_links', $links[1] === $destinations
+        && !preg_match('~<(?:script|form|iframe|img|h1)\b~i', $rendered));
+}
+check_lab('entry_drafts_render_without_sql_writes', $preview_writes === []);
+
 $hub = wp_insert_post(['import_id' => 26750, 'post_type' => 'page', 'post_status' => 'publish',
     'post_name' => 'enquire', 'post_title' => 'Synthetic discovery fixture hub'], true);
 $rent = wp_insert_post(['import_id' => 26753, 'post_type' => 'page', 'post_status' => 'publish',

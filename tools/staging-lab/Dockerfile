@@ -9,6 +9,7 @@ RUN curl --fail --location --proto '=https' --tlsv1.2 https://wordpress.org/word
     && tar -xzf wordpress.tar.gz && rm wordpress.tar.gz
 COPY tools/staging-lab/wp-config.php /opt/wordpress/wp-config.php
 COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json tools/native-wordpress/paid-entry-search.php /opt/reviewed/
+COPY tools/native-wordpress/entry-drafts /opt/reviewed/entry-drafts
 COPY tools/staging-lab/fixtures/bsre-enquiries /opt/wordpress/wp-content/plugins/bsre-enquiries
 COPY tools/staging-lab/build-rental-copy-candidate.mjs /opt/lab/
 RUN node /opt/lab/build-rental-copy-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/templates/source/rent.html
