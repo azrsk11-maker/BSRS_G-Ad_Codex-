@@ -22,7 +22,7 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 
 | Decision | Status | Scope |
 |---|---|---|
-| DEC-01 | [PARTIALLY DECIDED #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | First release must wait for both full reviewed libraries. Initial cohort, dedicated-entry mapping and old300/new360 crosswalk remain open. |
+| DEC-01 | [OPTION A APPROVED FOR PREPARATION #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | Prepare the four paused campaigns and one native entry per campaign. First release waits for both full reviewed libraries. Exact page bindings and the historical crosswalk remain open. |
 | DEC-02 | [OPEN #2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2) | Content/inventory factual reviewer, update owner, approved evidence and rights locations |
 | DEC-03 | [OPEN #3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) | Finance evidence/definitions, contribution allocation, monthly/cash-risk authority |
 | DEC-04 | [OPEN #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) | Staff rehearsal completion/fresh readiness, capacity and real outcome evidence providers |
@@ -59,6 +59,6 @@ The retained historical outcome workflow applies the twelve-month-after-closure 
 
 The owner subsequently selected “Owner-controlled deletion, marketing@ only (recommended)” in the direct Codex reply. Use Option A from issue10, coordinated by the nominated privacy/retention owner under an exact reviewed manifest. Mailbox scope is marketing@blackswanrealestate.ae only. This decision does not establish deployed collectors, verified message bindings or completed deletion, and grants no new OAuth scope or unrelated production action.
 
-## First-release keyword prerequisite — 9 November 2026
+## First-release cohort and keyword prerequisite — 9 November 2026
 
-The owner answered “Wait for both full libraries” in Codex. Require 14,000 distinct reviewed positive and 14,000 distinct reviewed negative keywords before the first release. The owner requested an explanation of the cohort options before choosing. This decision does not authorize a production change.
+The owner answered “Wait for both full libraries” in Codex. Require 14,000 distinct reviewed positive and 14,000 distinct reviewed negative keywords before the first release. After reviewing the options, the owner answered “i accept option A.” Prepare Buyers, Owners, Tenants and Brand under the existing campaign IDs and AED 1,200 / 400 / 300 / 100 average daily allocations. Prepare one native WordPress entry per campaign and preserve the existing enquiry routes. Exact CMS routes and the historical 300/360 crosswalk still require evidence and review. This transcription records preparation approval only. Publication, live tracking, Ads changes, activation and spending require separate authorization.

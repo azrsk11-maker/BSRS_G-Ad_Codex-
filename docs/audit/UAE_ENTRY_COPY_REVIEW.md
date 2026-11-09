@@ -1,6 +1,15 @@
 # UAE Search entry copy for owner review
 
-These are offline copy drafts for option A in [owner decision #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1). Each campaign would have one native entry page. Existing enquiry routes would serve as subsequent steps. The draft specifies neither a new URL nor a planning slot. The owner must approve both the cohort and the mapping before either is assigned.
+The owner approved preparation of Option A on 9 November 2026. These offline copy drafts preserve one native entry page per campaign and the existing enquiry routes. The exact WordPress routes and planning slot bindings await authenticated checks and review. See the [decision register](../decisions/OWNER_DECISIONS.md).
+
+| Campaign | Existing Ads ID | Average AED/day | Existing enquiry routes to preserve |
+| --- | --- | ---: | --- |
+| Buyers | 24372566774 | 1,200 | Off-plan and resale |
+| Owners | 24367388382 | 400 | Sell and let |
+| Tenants | 24378494092 | 300 | Rent |
+| Brand | 24378494098 | 100 | Enquiry hub |
+
+The first release must wait for both 14,000-keyword reviewed libraries and the remaining acceptance gates.
 
 ## Buyers
 
