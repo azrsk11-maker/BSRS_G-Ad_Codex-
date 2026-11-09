@@ -160,3 +160,7 @@ Apply the following two UTF-8 replacements exactly once each to the [pinned rent
 | This preview form cannot send without JavaScript and a connected service. Please call +971 56 828 5677 or use WhatsApp. | To send an online enquiry, JavaScript is required. You can also use the contact options on this page. |
 
 Source SHA-256 is `2ce5c621017bc46db8971554b890a8f3c29bacfd02b8d7d379d38c67f77d8fd6`. Candidate SHA-256 is `43632b26204bb898fffc36381726f895f76ee57df417aadffe0b7d07f89bd868`. Reversing both replacements reproduced the source bytes. The fallback stayed in `noscript` and form controls and script tags were byte-identical. The pinned fixture was preserved. Verify the authorized target source and JS-on/off rendering before release.
+
+### Isolated browser result for the copy candidate
+
+Headless Chrome rendered the exact candidate from a loopback-only server with a disposable profile. With JavaScript enabled, the fallback was absent from visible text and no paragraph was parsed inside `noscript`. With JavaScript disabled, the paragraph was parsed and the fallback was visible. The internal campaign phrase was absent in both modes. The submit button remained disabled in this standalone fixture, where external scripts and submissions were blocked. This verifies copy and fallback behavior in the browser. Native WordPress integration, live receiver behavior and contact ownership remain separate checks.
