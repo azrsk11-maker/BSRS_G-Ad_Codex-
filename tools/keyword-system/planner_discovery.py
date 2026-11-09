@@ -6,11 +6,13 @@ campaign mapping or deployment authority, and never writes the source or output.
 """
 from __future__ import annotations
 
+import argparse
 import calendar
 import csv
 from datetime import date
 import hashlib
 import io
+import json
 from pathlib import Path
 import re
 import unicodedata
@@ -141,3 +143,27 @@ def parse_discovery(path) -> dict:
                              for text, lines in groups.items() if len(lines) > 1],
         "records": records,
     }
+
+def main():
+    parser = argparse.ArgumentParser(description="Validate Discovery exports and emit count-only receipts.")
+    parser.add_argument("exports", nargs="+", type=Path)
+    args = parser.parse_args()
+    receipts = []
+    for index, path in enumerate(args.exports, 1):
+        try:
+            capture = parse_discovery(path)
+        except ValueError:
+            receipts.append({"input": index, "passed": False, "error": "INVALID_DISCOVERY_EXPORT"})
+            continue
+        receipts.append({"input": index, "passed": True, "sha256": capture["source_sha256"],
+                         "bytes": capture["source_bytes"], "rows": capture["record_count"],
+                         "distinct": capture["distinct_normalized_count"],
+                         "duplicate_groups": len(capture["duplicate_groups"])})
+    passed = all(receipt["passed"] for receipt in receipts)
+    print(json.dumps({"passed": passed, "inputs": receipts,
+                      "account_context_verified": False, "deployment_authorized": False}))
+    return 0 if passed else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

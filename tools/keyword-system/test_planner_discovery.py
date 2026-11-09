@@ -1,4 +1,5 @@
 """Synthetic-only Discovery parsing, bounds and privacy regression checks."""
+from contextlib import redirect_stdout
 import csv
 import hashlib
 import io
@@ -36,6 +37,24 @@ def fixture(rows=None, labels=None, date=DATE):
 
 
 class PlannerDiscoveryTests(unittest.TestCase):
+    def test_count_only_cli_does_not_print_paths_or_source_cells(self):
+        with tempfile.TemporaryDirectory() as folder:
+            good = Path(folder) / "private-path-marker.csv"
+            bad = Path(folder) / "another-private-marker.csv"
+            good.write_bytes(fixture())
+            bad.write_bytes(b"bad encoding")
+            stdout = io.StringIO()
+            with patch("sys.argv", ["planner_discovery.py", str(good), str(bad)]), redirect_stdout(stdout):
+                self.assertEqual(pd.main(), 2)
+            output = stdout.getvalue()
+            result = json.loads(output)
+            self.assertFalse(result["passed"])
+            self.assertFalse(result["account_context_verified"])
+            self.assertEqual(result["inputs"][0]["rows"], 1)
+            self.assertEqual(result["inputs"][1]["error"], "INVALID_DISCOVERY_EXPORT")
+            for value in ("private-path-marker", "another-private-marker", PRIVATE_SENTINEL, "Synthetic property enquiry"):
+                self.assertNotIn(value, output)
+
     def parse(self, raw):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "synthetic-discovery.csv"
