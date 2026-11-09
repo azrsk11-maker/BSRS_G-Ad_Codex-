@@ -41,3 +41,9 @@ Refresh eligibility before each run, including withdrawals, unresolved history, 
 ### Offline qualified-action verification
 
 Feature commit `2769ef7` pins the offline preview to the reviewed `qualified_lead` action ID and exact name. All 26 targeted qualification tests passed, including rejection of the accepted-enquiry action and a mismatched action name. The feature commit's offline validation and native WordPress checks passed. The [isolated WordPress lab](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42531123392/job/128885321969) also passed. This evidence covers offline behavior. Provider credential scope, scheduled import and genuine conversion reconciliation remain open.
+
+## Public measurement hold readback, 9 November
+
+Fresh read-only requests to the enquiry hub and all five service pages returned HTTP 200 and projected the same public configuration revision, `gm1-a9408dc4457c1ec70020c2e0e428d9f1`. All three projected switches were false. The markup included one first-party consent bridge per page, with no direct Google script or iframe source or inline `gtag` config/event call.
+
+Two cookie-free GETs to the configured same-origin runtime, one per purpose, used the expected origin-only referrer and iframe request headers. Both returned HTTP 403 with private no-store caching and no runtime script. No Google provider requests, consent updates or enquiry submissions were made. This is current public denial evidence. It does not test an enabled or consented runtime, administrative switch state or Google destination acceptance.
