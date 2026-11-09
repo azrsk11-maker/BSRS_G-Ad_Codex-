@@ -196,3 +196,11 @@ All 72 current draft exact-negative proposals concern unrelated goods, shopping 
 | Education | [Dubai Land Department training](https://dubailand.gov.ae/en/eservices/training/) | `dubai real estate broker exam preparation course`, `dubai broker training course registration`, `oqood training course registration dubai` |
 
 None duplicates an identity in the 7,705-row original Planner corpus. A first-pass lexical check found zero exact matches against the 570 provisionally protected phrases (5,700 comparisons). Keep employment application and training intent separate from client searches for consultants, investor education, homes near schools, or premises near a new job. Keep original provider rows and preserve ambiguous ideas for review. This supplies zero reviewed negatives and no permission to change Ads.
+
+Run the count-only preflight from the repository root once both new files are available:
+
+```powershell
+python -B tools/keyword-system/planner_discovery.py '<employment-export>' '<education-export>'
+```
+
+The receipt gives per-file hashes and counts, plus the union and count of normalized identities found in more than one file. Invalid input suppresses the combined count. As a reference check, six existing exports yielded 8,809 rows, 7,735 distinct identities and 1,039 identities present in multiple files. Record the Real Estate account and Planner settings separately from the authenticated UI before treating a new export as project evidence.

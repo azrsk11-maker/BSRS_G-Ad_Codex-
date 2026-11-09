@@ -49,11 +49,25 @@ class PlannerDiscoveryTests(unittest.TestCase):
             output = stdout.getvalue()
             result = json.loads(output)
             self.assertFalse(result["passed"])
+            self.assertIsNone(result["combined"])
             self.assertFalse(result["account_context_verified"])
             self.assertEqual(result["inputs"][0]["rows"], 1)
             self.assertEqual(result["inputs"][1]["error"], "INVALID_DISCOVERY_EXPORT")
             for value in ("private-path-marker", "another-private-marker", PRIVATE_SENTINEL, "Synthetic property enquiry"):
                 self.assertNotIn(value, output)
+
+    def test_count_only_cli_combines_normalized_identities_across_exports(self):
+        with tempfile.TemporaryDirectory() as folder:
+            first = Path(folder) / "first.csv"
+            second = Path(folder) / "second.csv"
+            first.write_bytes(fixture([fixture_row("One phrase"), fixture_row("ONE PHRASE")]))
+            second.write_bytes(fixture([fixture_row("[one phrase]"), fixture_row("Another phrase")]))
+            stdout = io.StringIO()
+            with patch("sys.argv", ["planner_discovery.py", str(first), str(second)]), redirect_stdout(stdout):
+                self.assertEqual(pd.main(), 0)
+            result = json.loads(stdout.getvalue())
+            self.assertEqual(result["combined"], {"distinct": 2, "present_in_multiple_inputs": 1})
+            self.assertNotIn("one phrase", stdout.getvalue().lower())
 
     def parse(self, raw):
         with tempfile.TemporaryDirectory() as folder:

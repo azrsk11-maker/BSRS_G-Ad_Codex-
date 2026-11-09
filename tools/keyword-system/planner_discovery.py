@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import calendar
+from collections import Counter
 import csv
 from datetime import date
 import hashlib
@@ -149,18 +150,21 @@ def main():
     parser.add_argument("exports", nargs="+", type=Path)
     args = parser.parse_args()
     receipts = []
+    identities = Counter()
     for index, path in enumerate(args.exports, 1):
         try:
             capture = parse_discovery(path)
         except ValueError:
             receipts.append({"input": index, "passed": False, "error": "INVALID_DISCOVERY_EXPORT"})
             continue
+        identities.update({_normalized_keyword(row["values"]["Keyword"]) for row in capture["records"]})
         receipts.append({"input": index, "passed": True, "sha256": capture["source_sha256"],
                          "bytes": capture["source_bytes"], "rows": capture["record_count"],
                          "distinct": capture["distinct_normalized_count"],
                          "duplicate_groups": len(capture["duplicate_groups"])})
     passed = all(receipt["passed"] for receipt in receipts)
-    print(json.dumps({"passed": passed, "inputs": receipts,
+    overlap = {"distinct": len(identities), "present_in_multiple_inputs": sum(n > 1 for n in identities.values())}
+    print(json.dumps({"passed": passed, "inputs": receipts, "combined": overlap if passed else None,
                       "account_context_verified": False, "deployment_authorized": False}))
     return 0 if passed else 2
 
