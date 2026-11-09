@@ -167,3 +167,19 @@ python -B -m unittest discover -s tools/keyword-system -p test_triage_workbench.
 ```
 
 Next: independent semantic/factual admission reviews, genuine additional sources, supported service and language evidence, dedicated campaign/page ownership, scope/risk/protected-intent coverage and actual platform validation. Main review and separate production authorization remain required. The full 360-pair/14,000-positive/14,000-negative/lifecycle measurement objective is active and incomplete. First-pass classification and green checks do not close those requirements.
+
+## Research priorities from the service labels
+
+The 3,081 positive-review phrases break down as follows. Each phrase appears in exactly one row below. Possible service labels are triage evidence, so the comparison with the [15 family allocations](../../google-ads/page_family_allocation.json) guides research without assigning any family or reducing its target.
+
+| Possible service in current triage | Distinct phrases | Research implication |
+| --- | ---: | --- |
+| Residential rental only | 2,023 | Prioritize intent, duration, availability and destination review before another broad rental pull. The RNT allocation is 1,000. |
+| Residential ready and off-plan both possible | 809 | Separate the transaction stages before considering RDY or OFP. Do not count these phrases twice. |
+| Commercial leasing only | 195 | Review the supported asset/use segments for CML. |
+| Commercial ready and off-plan both possible | 27 | Separate purchase stages and verify the company remit. |
+| Residential ready only or residential off-plan only | 8 ready, 3 off-plan | Target explicit ready and off-plan signals after confirming the relevant business evidence. |
+| Seller or landlord supply only | 6 seller, 4 landlord | Review the separate [supply capture](../keyword-discovery-supply-2026-11-08/INTENT_REVIEW.md) and verify supported representation before expanding SEL/LND research. Their allocations are 350 and 250. |
+| Mixed residential/commercial acquisition | 6 | Hold family assignment until the property segment and stage are clear. |
+
+Named developer, project, community and other specialist families require their own evidence and intent review. Even if all 3,081 draft positives were eventually admitted, another 10,919 distinct eligible positives would still be needed. The negative queue contains only 72 preliminary proposals. Its [planned pools](../../google-ads/negative_research_plan.json) need targeted research, starting with complete employment or application phrases and separate education intent. Preserve property searches that happen to mention work, salaries, schools or training. Generic tokens and synthetic variants cannot fill the libraries. Both actual master deficits remain 14,000.
