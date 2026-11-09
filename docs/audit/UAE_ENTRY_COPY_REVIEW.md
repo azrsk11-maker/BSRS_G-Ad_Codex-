@@ -193,3 +193,9 @@ The legacy `data-campaign` attributes are service display labels. The existing i
 Current live form readback did not complete because this environment could not resolve the site at the time of the check. The mapping above comes from the saved source. The paid-entry slots and routes are still unassigned.
 
 A subsequent DNS lookup succeeded and the four public routes each returned HTTP 200. Each returned exactly one form whose role and landing path match the table. All four sent `Referrer-Policy: no-referrer`. This supersedes the earlier unresolved live readback and rules out relying on the browser referrer for service-page attribution. The optional first-party attribution candidate can retain consent-bound touch metadata, but the two new entry pages still lack verified campaign/page bindings and a real browser handoff test. No forms were submitted.
+
+### Browser navigation and storage check
+
+An isolated Chrome profile exercised four actual same-origin link navigations with `Referrer-Policy: no-referrer`, using the source-derived attribution client and synthetic entry routes. Eight scenarios passed. For each route, the destination had the expected role, no query string and no referrer. With simulated permission, browser session storage retained the original synthetic entry URL, analytics source and click identifier. With simulated refusal, the consent double mirrored the existing bridge's removal of the two owned attribution keys, and the client did not recreate either key.
+
+The consent bridge and form responses were outside this test. The loopback server served no production URL and blocked form writes. The results demonstrate browser navigation and client session-storage behavior only. The actual paid-entry mappings, consent server, accepted receipt and Google readback still need combined verification.
