@@ -52,3 +52,7 @@ The 29 broad exclusions from the saved readback produced zero matches against th
 | Brand | black swan real estate company dubai | company |
 
 These are constructed examples, with no inventory or volume claims. The list had no V2 attachment in the saved export. The lexical counterexamples support holding any V2 reuse of the legacy list pending review of individual terms and their scopes. Live Google matching and current attachments require separate verification.
+
+## Screening against observed Planner phrases
+
+The existing matcher found **zero lexical conflicts in 5,130 comparisons** between the nine archived exclusions and the 570 distinct observed Planner phrases with a nonempty protected-intent flag in the [triage corpus](keyword-triage-2026-11-08/proposals.json). All nine own-text controls matched. The remaining 7,135 proposal rows were outside this screen. Campaign and ad-group scope remain unassigned, and independent review and coverage against the full reviewed positive library are still required. No exclusion was approved or applied.
