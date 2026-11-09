@@ -83,3 +83,9 @@ These drafts must be posted to GitHub with `owner-decision-required` by the root
 - 180day consentvalidity; 12monthsafterchoice for never-submitted evidence;12monthsafteractualclosure for closed/unsuccessful enquiries/email; manualmonthlyreview;30dayencryptedowner-only recovery copies, retentionreappliedbefore reopening.
 - Personalization/enhancedcontactmatching/audienceexports off at launch; genuine eligible GCLID-only restrictedscheduledDataManager route, held if unsupported; no synthetic conversions or automatic manual fallback.
 - Native main-site pages and360planning architecture now explicitly required. No separate site/CMS migration, live tracking rewrite or mass page publication.
+
+## Option A registry reconciliation — 9 November 2026
+
+The owner selected four paused campaigns for preparation. The approved cohort resolves the choice in REC-02. The individual registry assignments remain open. The existing 360 records each have one `family_code`. Buyers spans OFP and RDY; Owners spans SEL and LND. Tenants aligns with RNT, and Brand fits the brand-demand subset of CMP. No individual slot is assigned by that family comparison.
+
+Assign each campaign at most one paid planning slot after the exact page and campaign scope are reviewed. Preserve any secondary family relationship as research or CTA context and do not count it as another campaign or page. A change to family allocation or a repurposed slot requires a reviewed registry decision. Preserve the 300 public-content briefs and their separate identifiers. The [entry review](UAE_ENTRY_COPY_REVIEW.md) records the current page candidates. The first release requires both full keyword libraries.
