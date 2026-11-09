@@ -21,6 +21,10 @@ The first release must wait for both 14,000-keyword reviewed libraries and the r
 
 A read-only request to the public WordPress pages API returned six published records with exact canonical links. The enquiry hub is page **26750**, with no parent. It is the recorded parent of off-plan **26751**, resale **26752**, rent **26753**, sell **26754**, and let **26755**. This establishes the public CMS identities of the Brand and Tenants reuse candidates and the existing service pages. Verify internal ownership, Ads crawler eligibility and end-to-end CTA behavior before accepting a binding. Buyers and Owners still need their own entry-page assignments.
 
+### Public CTA readback — 9 November 2026
+
+The Brand hub HTML contains links to all five exact same-origin enquiry routes and has no HTML form. The Tenants page has one form marked `data-bsre-form`, `data-role="tenant"` and `data-landing-path="/enquire/rent/"`. This supports the proposed hub-to-service and direct-rental journeys. The request was read-only. No enquiry, permission choice or conversion was submitted. Verify rendered navigation, permission behavior and receipt binding in the isolated end-to-end test before release.
+
 ## Buyers
 
 ### Find a Dubai property to buy
