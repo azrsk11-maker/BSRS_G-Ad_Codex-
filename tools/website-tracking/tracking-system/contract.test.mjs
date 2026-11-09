@@ -74,6 +74,23 @@ test('accepted enquiry binds a reviewed service route without leaking it to dest
   assert.doesNotMatch(JSON.stringify(resaleResult.output),/submission_|enquire\/resale/);
 });
 
+test('Brand hub navigation stays separate from a downstream accepted rental enquiry',()=>{
+  const [form]=record.ctas;
+  const link={cta_id:'bsre-hub-rent',cta_type:'link',cta_position:'body',form_id:null,destination_key:'rent'};
+  const tenantForm={...form,submission_path:'/enquire/rent/'};
+  const hub={...record,path:'/enquire/',ctas:[link,tenantForm]};
+  const opts=options({registry:createRegistry([hub])});
+  const {receipt,evidence,...context}=raw();
+  const click=prepareDestinations({...context,event:'cta_click',cta_id:link.cta_id,requested_url:hub.path},opts);
+  assert.deepEqual(click.output.map(({destination,payload})=>[destination,payload.event_name]),[['ga4','cta_click']]);
+  const accepted={...raw(),requested_url:hub.path,receipt:{...receipt,submission_url:'/enquire/rent/'}};
+  assert.throws(()=>prepareDestinations({...accepted,cta_id:link.cta_id},opts),/SUBMISSION_ROUTE_MISMATCH/);
+  const result=prepareDestinations(accepted,opts);
+  assert.equal(result.output.find(row=>row.destination==='ga4').payload.parameters.page_location,queryFreeUrl('/enquire/'));
+  assert.equal(result.output.find(row=>row.destination==='ads').payload.transaction_id,EVENT_ID);
+  assert.doesNotMatch(JSON.stringify(result.output),/enquire\/rent/);
+});
+
 test('legacy accepted names adapt to one canonical event and keep internal metadata out of GA4',()=>{
   const result=prepareDestinations(raw(),options());assert.equal(result.normalized_event,'form_accepted');assert.equal(result.output.length,2);
   const ga4=result.output.find(o=>o.destination==='ga4');assert.equal(ga4.payload.event_name,'generate_lead');
