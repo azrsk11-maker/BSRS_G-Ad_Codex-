@@ -132,3 +132,15 @@ test('other-source and unknown qualifications stay distinct from unmapped Ads',(
   f.qualifications.pop();assert.equal(commercialReport(f,policy).totals.observed_period_ads_spend_per_first_qualification_aed,null);
   f.qualifications[0].campaign_key='BSRE-C0001';assert.throws(()=>commercialReport(f,policy),/NON_ADS_CAMPAIGN_CONFLICT/);
 });
+
+test('sub-millisecond qualification history preserves order and equivalent precision',()=>{
+  const f=fixture(), first=f.qualifications[0];
+  first.qualified_at='2026-11-02T12:00:00.1234+04:00';
+  const equivalent={...first,record_id:'synthetic-qual-2',qualified_at:'2026-11-02T08:00:00.123400Z'};
+  f.qualifications.push(equivalent);
+  assert.equal(commercialReport(f,policy).totals.first_ever_qualified_people,1);
+  equivalent.qualified_at='2026-11-02T08:00:00.1233Z';
+  assert.throws(()=>commercialReport(f,policy),/FIRST_QUALIFICATION_CONFLICT/);
+  equivalent.first_ever_confirmed=false;
+  assert.throws(()=>commercialReport(f,policy),/EARLIER_QUALIFICATION_CONTRADICTS_FIRST/);
+});

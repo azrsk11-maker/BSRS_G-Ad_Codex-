@@ -13,6 +13,13 @@ const stamp=value=>{
   require(Math.abs(offset)<=14*60&&new Date(parsed+offset*60000).toISOString().slice(0,19)===value.slice(0,19),'INVALID_CALENDAR_DATE');
   return parsed;
 };
+const qualificationInstant=value=>{
+  const milliseconds=stamp(value);
+  const fraction=/\.(\d+)/.exec(value)?.[1]??'';
+  return {milliseconds,remainder:fraction.slice(3).replace(/0+$/,'')};
+};
+const compareQualificationInstants=(left,right)=>left.milliseconds-right.milliseconds||
+  (left.remainder===right.remainder?0:left.remainder<right.remainder?-1:1);
 const campaign=value=>{require(value===null||(typeof value==='string'&&/^BSRE-C\d{4}$/.test(value)),'CAMPAIGN_OR_EXPLICIT_UNKNOWN_REQUIRED');return value??UNKNOWN;};
 function attribution(value,sourceClass=value===null?'unknown':'ads'){
   campaign(value);require(['ads','other','unknown'].includes(sourceClass),'SOURCE_CLASS_REQUIRED');
@@ -92,15 +99,16 @@ export function commercialReport(input,policy){
   for(const row of unique(input.qualifications,row=>{require(isIdentifier(row.record_id),'QUALIFICATION_RECORD_ID_REQUIRED');return row.record_id;})){
     require(exact(row,['record_id','person_ref','qualified_at','campaign_key','source_class','first_ever_confirmed','history_verified','verified','source_ref']),'UNKNOWN_QUALIFICATION_FIELD');verified(row);
     require(isIdentifier(row.person_ref)&&typeof row.first_ever_confirmed==='boolean'&&typeof row.history_verified==='boolean','QUALIFICATION_HISTORY_REQUIRED');
-    const at=stamp(row.qualified_at),sourceKey=attribution(row.campaign_key,row.source_class);
+    const at=qualificationInstant(row.qualified_at),sourceKey=attribution(row.campaign_key,row.source_class);
     if(!row.history_verified){unresolved++;uncertainPeople.add(row.person_ref);continue;}
-    earliestVerified.set(row.person_ref,Math.min(earliestVerified.get(row.person_ref)??Infinity,at));
+    const earliest=earliestVerified.get(row.person_ref);
+    if(!earliest||compareQualificationInstants(at,earliest)<0)earliestVerified.set(row.person_ref,at);
     if(!row.first_ever_confirmed){notFirst++;continue;}
-    const previous=persons.get(row.person_ref);if(previous)require(stamp(previous.qualified_at)===at&&attribution(previous.campaign_key,previous.source_class)===sourceKey,'FIRST_QUALIFICATION_CONFLICT');
+    const previous=persons.get(row.person_ref);if(previous)require(compareQualificationInstants(qualificationInstant(previous.qualified_at),at)===0&&attribution(previous.campaign_key,previous.source_class)===sourceKey,'FIRST_QUALIFICATION_CONFLICT');
     else persons.set(row.person_ref,row);
   }
   for(const row of persons.values()){
-    require(stamp(row.qualified_at)===earliestVerified.get(row.person_ref),'EARLIER_QUALIFICATION_CONTRADICTS_FIRST');
+    require(compareQualificationInstants(qualificationInstant(row.qualified_at),earliestVerified.get(row.person_ref))===0,'EARLIER_QUALIFICATION_CONTRADICTS_FIRST');
     if(!uncertainPeople.has(row.person_ref)&&inWindow(row.qualified_at))get(attribution(row.campaign_key,row.source_class)).first_ever_qualified_people++;
   }
   for(const row of unique(input.opportunities,row=>{require(isIdentifier(row.opportunity_ref),'OPPORTUNITY_ID_REQUIRED');return row.opportunity_ref;})){
