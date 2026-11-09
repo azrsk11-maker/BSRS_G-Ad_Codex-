@@ -54,6 +54,10 @@ The public XML identifies All in One SEO 5.0.2.1 as the generator. Its [XML site
 
 Before any approved save, capture the page-sitemap URL set and exclusion list. After the save and any narrowly scoped cache refresh, confirm only the rental URL was removed from that baseline, the rental page still serves its canonical URL with noindex, and existing service and public-guide links continue to work. If the result differs, restore the prior exclusion list and recheck. RSS sitemap, search and navigation acceptance remain separate.
 
+### Native site-search check
+
+On 9 November, public WordPress search for each exact page title returned the corresponding page ID once: Brand 26750 and Tenants 26753. The public search HTML also contained links to the requested route, although the link markup alone did not establish which template component emitted them. Both reuse candidates fail the public WordPress search exclusion check. A sitemap-only exclusion will not address this separate surface. Any correction needs a narrowly scoped search filter and positive controls for ordinary pages. Direct campaign destinations, enquiry navigation, and the private admin search must remain functional. No search settings were changed.
+
 ## Buyers
 
 ### Find a Dubai property to buy
