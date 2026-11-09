@@ -134,3 +134,16 @@ The [proof-only recovery handler](../../tools/website-tracking/tracking-system/r
 | Acknowledgment is lost and the visitor retries | The same durable lead and event IDs reconcile to one intake result. CTA clicks and a replayed receipt do not produce an extra conversion. |
 
 The offline attribution and event tests cover separate portions of this flow. Final acceptance needs an isolated end-to-end test with the approved native entries, their real CTA bindings and the actual service routes.
+
+## Tenants copy review
+
+A public read-only request to the rental entry returned HTTP 200 on 9 November. The page requests preferred Dubai areas, an annual AED budget, property type and move-in timing. It says that submission creates no reservation and that availability and viewings require separate confirmation. Keep those boundaries.
+
+| Review point | Proposed public copy or action |
+| --- | --- |
+| The current timing paragraph refers to “this campaign.” | “Choose when you need to move so we can review your rental requirements against your timeline.” |
+| Some readers may treat a viewing enquiry as a confirmed booking. | “Tell us your preferred areas and annual budget. A viewing is confirmed separately after we check availability.” Keep the same confirmation boundary in the receipt. |
+| The fallback text calls the form a preview. | Inspect its visibility with JavaScript available and blocked in staging. If it is the no-JavaScript fallback for a released form, use “This form requires JavaScript. If you cannot submit it, use the contact options on this page.” Verify the live phone and WhatsApp destinations before release. |
+| Official tenancy services have a different purpose from an immediate rental enquiry. | Keep registration and renewal guidance in separate editorial content. Point users to the official DLD service when relevant. Keep the Rental Index separate from live listings and any price or eligibility claim. [DLD tenancy contract service](https://dubailand.gov.ae/en/eservices/register-renew-ejari-contract/), [DLD Rental Index](https://dubailand.gov.ae/en/eservices/rental-index/?lang=en) |
+
+The proposed wording preserves the tenant role, existing form fields, consent choices and receipt contract. A factual reviewer must verify service scope and actual contact ownership. This review used the returned HTML and did not exercise rendered visibility, submit a form or change WordPress.
