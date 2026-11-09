@@ -443,3 +443,16 @@ Verified inline UTF-8 tree creation against three existing reviewed files on ff5
 ## Seller and landlord content research
 
 Added two source-linked owner content modules and eight official-service seed hypotheses for targeted Planner research. Existing seller and landlord enquiry routes returned HTTP 200. Exact lexical checks found zero collisions against 570 protected proposal rows plus five mixed-intent controls. Both admitted masters gain zero. See audit/OWNER_CONTENT_RESEARCH_2026-11-08.md. Factual review, company remit, final placement and keyword scope remain open under issues 1 and 2.
+
+## Option A keyword evidence cross-check
+
+Cross-checked the four candidates missing from the [pinned historical Planner export](audit/keyword-research-2026-11-07/README.md) against 8,809 public rows in the six subsequent [discovery batches](audit/keyword-discovery-2026-11-08/README.md), including the [supply supplement](audit/keyword-discovery-supply-2026-11-08/README.md). The join uses normalized keyword text only and preserves the original campaign placement and source capture.
+
+| Historical candidate | Exact discovery observation |
+| --- | --- |
+| LEGACY-POS-0024, apartments for rent dubai | Residential rentals, source line 4 |
+| LEGACY-POS-0026, villas for rent dubai | Residential rentals, source line 5 |
+| LEGACY-POS-0028, dubai rental properties | Residential rentals, source line 10, and Buyers, source line 83. The Buyers observation supplies corroboration only. |
+| LEGACY-POS-0003, blackswan real estate | No exact row across the six batches. Hold for separate Brand review. |
+
+The historical result remains 37 of 41 exact rows in its original capture. Across the separately retained captures, 40 of 41 now have at least one exact observation. No close-variant grouping or zero volume is inferred, and duplicate observations are never summed. Review the three rental phrases with the Tenants batch, subject to service and native page approval. Neither reviewed master gains any entries. Both 14,000-keyword libraries remain required before release.
