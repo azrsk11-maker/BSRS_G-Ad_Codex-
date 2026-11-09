@@ -48,6 +48,12 @@ On 9 November, the public robots file contained one wildcard group and disallowe
 
 On 9 November the sitemap index listed 19 child sitemaps. The page sitemap returned HTTP 200 with 51 page locations. It omitted the Brand enquiry hub and all `/lp/` paths, but included all five existing service routes: off-plan, resale, rent, sell and let. Consequently the proposed Tenants reuse fails the sitemap-exclusion requirement in the current public snapshot despite its page-level noindex metadata. Prepare a scoped sitemap exclusion for designated paid pages and verify the cached sitemap after separately authorized deployment. Preserve the public guide sitemap entries and direct Ads crawler access. Other sitemap types and menus/search/feed exclusions were outside this check.
 
+### Scoped sitemap correction for review
+
+The public XML identifies All in One SEO 5.0.2.1 as the generator. Its [XML sitemap documentation](https://aioseo.com/docs/how-to-exclude-content-from-your-xml-sitemap/) supports individual page exclusions. If the Tenants reuse binding is approved, prepare a General Sitemap exclusion for WordPress page **26753** only. Confirm the page ID and existing exclusion list in the authenticated UI, preserve every existing entry, and save only after separate authorization. The Brand hub already meets this XML exclusion check, so the proposed change does not add it.
+
+Before any approved save, capture the page-sitemap URL set and exclusion list. After the save and any narrowly scoped cache refresh, confirm only the rental URL was removed from that baseline, the rental page still serves its canonical URL with noindex, and existing service and public-guide links continue to work. If the result differs, restore the prior exclusion list and recheck. RSS sitemap, search and navigation acceptance remain separate.
+
 ## Buyers
 
 ### Find a Dubai property to buy
