@@ -65,6 +65,45 @@ $direct = rest_do_request(new WP_REST_Request('GET', '/wp/v2/pages/26753'));
 check_lab('direct_rest_page_remains_public', $direct->get_status() === 200 && ($direct->get_data()['id'] ?? null) === $rent);
 wp_set_current_user($installation['user_id']);
 check_lab('editor_rest_search_preserved', count(array_intersect([$hub, $rent, $public], $rest_search())) === 3);
+// Render the packaged candidate through the actual plugin with native page ownership.
+$original_options = [];
+foreach (['permalink_structure' => '/%postname%/', 'bsre_parent_draft' => $hub,
+    'bsre_draft_pages' => ['rent' => $rent]] as $option => $value) {
+    $original_options[$option] = get_option($option, false);
+    update_option($option, $value);
+}
+remove_all_filters('home_url'); // Undo the earlier lab-only fixed-origin read stub.
+$lab_origin = static fn() => 'https://blackswanrealestate.ae';
+$lab_plugin_url = static fn($url) => 'https://blackswanrealestate.ae' . parse_url($url, PHP_URL_PATH);
+add_filter('pre_option_home', $lab_origin);
+add_filter('pre_option_siteurl', $lab_origin);
+add_filter('plugins_url', $lab_plugin_url);
+update_post_meta($hub, '_bsre_parent', '1');
+update_post_meta($rent, '_bsre_service', 'rent');
+require '/opt/wordpress/wp-content/plugins/bsre-enquiries/bsre-enquiries.php';
+$_SERVER['REQUEST_METHOD'] = 'GET';
+$_SERVER['REQUEST_URI'] = '/enquire/rent/';
+$_SERVER['HTTPS'] = 'on';
+wp_set_current_user(0);
+$GLOBALS['wp_query'] = new WP_Query(['page_id' => $rent]);
+$scope = \BSRE\Enquiries\owned_parent_scope();
+check_lab('rental_copy_native_live_binding', is_array($scope) && \BSRE\Enquiries\owned_parent_binding($scope)['mode'] === 'live');
+ob_start();
+require '/opt/wordpress/wp-content/plugins/bsre-enquiries/templates/page.php';
+$rental_html = ob_get_clean();
+check_lab('rental_copy_native_visible_wording', substr_count($rental_html, 'Choose when you need to move so we can review your rental requirements against your timeline.') === 1
+    && !str_contains($rental_html, 'priority for this campaign'));
+check_lab('rental_copy_native_noscript', substr_count($rental_html, '<noscript><p class="noscript">To send an online enquiry, JavaScript is required. You can also use the contact options on this page.</p></noscript>') === 1);
+check_lab('rental_copy_native_form_and_canonical', str_contains($rental_html, 'data-role="tenant"')
+    && str_contains($rental_html, 'rel="canonical" href="https://blackswanrealestate.ae/enquire/rent/"'));
+remove_filter('pre_option_home', $lab_origin);
+remove_filter('pre_option_siteurl', $lab_origin);
+remove_filter('plugins_url', $lab_plugin_url);
+foreach ($original_options as $option => $value) {
+    if ($value === false) delete_option($option);
+    else update_option($option, $value);
+}
+
 // The next isolated phase creates its own enquiry pages in this synthetic database.
 foreach ([$rent, $hub, $public] as $fixture_id) {
     check_lab('removed_search_fixture_' . $fixture_id, wp_delete_post($fixture_id, true) instanceof WP_Post);
