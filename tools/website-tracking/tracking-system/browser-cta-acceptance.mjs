@@ -16,6 +16,9 @@ const python=process.env.BSRE_PYTHON || 'python3';
 const fixture=filename=>fs.readFile(new URL('../../staging-lab/fixtures/bsre-enquiries/assets/'+filename,import.meta.url));
 const client=buildAttributionClientCandidate(await fixture('lead.js'));
 const routes={'off-plan':'off_plan',resale:'resale',sell:'seller',let:'landlord'};
+const entryGroups={'off-plan':'buyers',resale:'buyers',sell:'owners',let:'owners'};
+const draft=filename=>fs.readFile(new URL('../../native-wordpress/entry-drafts/'+filename+'.html',import.meta.url),'utf8');
+const entryDrafts={buyers:await draft('buyers'),owners:await draft('owners')};
 const generated=execFileSync(python,['-c',`
 import datetime,ipaddress,json
 from cryptography import x509
@@ -62,9 +65,9 @@ const server=https.createServer(tls,async(req,res)=>{
   if(url.pathname==='/bridge.js'){res.writeHead(200,{'Content-Type':'text/javascript'}).end(bridgeSource);return}
   const entry=url.pathname.startsWith('/synthetic-entry/');
   const slug=url.pathname.split('/').filter(Boolean).at(-1);
-  if(!entry&&!Object.hasOwn(routes,slug)){res.writeHead(404).end();return}
+  if(!Object.hasOwn(routes,slug)){res.writeHead(404).end();return}
   const bridge="window.BSRETrackingConfig={cmpProviderId:'bsre_first_party_v1',consentContextEndpoint:location.origin+'/consent-context',consentUpdateEndpoint:location.origin+'/consent-update'};window.BSRELeadConfig={measurementEligible:true,endpoint:location.origin+'/synthetic-receipt'};";
-  const body=entry?Object.keys(routes).map(key=>`<a id="${key}" href="/enquire/${key}/">${key}</a>`).join(''):`<form data-bsre-form data-role="${routes[slug]}" data-landing-path="/enquire/${slug}/"><input name="name" value="Isolated Fixture"><input name="phone" value="+971500000000"><input name="country" value="UAE"><input name="area" value="Synthetic area"><input name="budget" value="To discuss"><input name="timeline" value="Immediate"><input name="property_type" value="Apartment"><input name="contact_consent" type="checkbox" checked><button type="submit" disabled>Submit</button><p data-bsre-status hidden></p></form>`;
+  const body=entry?entryDrafts[entryGroups[slug]]:`<form data-bsre-form data-role="${routes[slug]}" data-landing-path="/enquire/${slug}/"><input name="name" value="Isolated Fixture"><input name="phone" value="+971500000000"><input name="country" value="UAE"><input name="area" value="Synthetic area"><input name="budget" value="To discuss"><input name="timeline" value="Immediate"><input name="property_type" value="Apartment"><input name="contact_consent" type="checkbox" checked><button type="submit" disabled>Submit</button><p data-bsre-status hidden></p></form>`;
   res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'none'"}).end(`<!doctype html><body>${body}<script>${bridge}</script><script src="/bridge.js"></script><script src="/lead.js"></script></body>`);
 });
 server.listen(0,'127.0.0.1'); await once(server,'listening');
@@ -106,7 +109,9 @@ try{
       if(choice==='refused'){
         assert.equal(await evaluate("window.BSREConsentBridge.save({analytics:false,ad_measurement:false,personalization:false})"),true);
       }
-      await go(()=>evaluate(`document.getElementById('${slug}').click()`));
+      const expectedLinks=Object.keys(entryGroups).filter(route=>entryGroups[route]===entryGroups[slug]).map(route=>'/enquire/'+route+'/');
+      assert.deepEqual(await evaluate("Array.from(document.querySelectorAll('a'), link => link.getAttribute('href'))"),expectedLinks);
+      await go(()=>evaluate(`document.querySelector('a[href="/enquire/${slug}/"]').click()`));
       assert.equal(await evaluate('window.BSREConsentBridge.refresh()'),true);
       const state=await evaluate(`({path:location.pathname,query:location.search,referrer:document.referrer,role:document.querySelector('form').dataset.role,analytics:JSON.parse(sessionStorage.getItem('BSRE_ATTRIBUTION_V1')),advertising:JSON.parse(sessionStorage.getItem('BSRE_AD_ATTRIBUTION_V1'))})`);
       assert.equal(state.path,'/enquire/'+slug+'/');assert.equal(state.query,'');assert.equal(state.referrer,'');assert.equal(state.role,role);
