@@ -38,6 +38,8 @@ These are the first unbound placeholders in their respective families, chosen as
 
 The private 300-brief worksheet has no reviewed assignment to either proposed landing-page ID. BSRE-LP0301 is outside the historical candidate pools, consistent with RNT being an expansion family. BSRE-LP0281 appears in the shared CMP candidate pool for 20 historical briefs. Treat that overlap as a planning dependency. A Brand assignment would consume one CMP slot and requires item-level review of any competing paid adaptation. Preserve the original public brief IDs and routes. No private worksheet rows were published.
 
+The next read-only review joined all 20 CMP candidate briefs to the hash-verified historical register. They have 20 distinct proposed routes and no exact overlap with the enquiry hub or rental page. One brief mentions Black Swan in its title or primary query. It is a webinar-planning brief with a separate event route, so keep it in the public-content register and preserve its identity. This clears the observed route overlap for the reuse proposal. It leaves the CMP slot allocation and independent content review open.
+
 ## Buyers
 
 ### Find a Dubai property to buy
