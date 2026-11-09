@@ -183,3 +183,16 @@ The 3,081 positive-review phrases break down as follows. Each phrase appears in 
 | Mixed residential/commercial acquisition | 6 | Hold family assignment until the property segment and stage are clear. |
 
 Named developer, project, community and other specialist families require their own evidence and intent review. Even if all 3,081 draft positives were eventually admitted, another 10,919 distinct eligible positives would still be needed. The negative queue contains only 72 preliminary proposals. Its [planned pools](../../google-ads/negative_research_plan.json) need targeted research, starting with complete employment or application phrases and separate education intent. Preserve property searches that happen to mention work, salaries, schools or training. Generic tokens and synthetic variants cannot fill the libraries. Both actual master deficits remain 14,000.
+
+## Source-backed inputs for the first employment and education research batches
+
+All 72 current draft exact-negative proposals concern unrelated goods, shopping or vehicles. They supply no employment or education candidates. Use separate discovery batches for the two gaps. These ten inputs are authored search hypotheses based on the cited organizations' terminology. Provider results, scope, independent review and protected-intent acceptance are still required.
+
+| Research pool | Source | Inputs |
+| --- | --- | --- |
+| Employment | [Star 5 Realty careers](https://www.star5realty.ae/careers) | `apply for dubai property consultant job`, `dubai leasing consultant job application`, `off plan sales specialist vacancy dubai` |
+| Employment | [ASICO careers](https://asico.ae/careers/) | `commercial brokerage administrator jobs dubai`, `real estate conveyancer job application dubai` |
+| Employment | [Banke careers](https://www.banke.ae/careers-banke/) | `apply for real estate internship dubai`, `commercial sales and leasing consultant job dubai` |
+| Education | [Dubai Land Department training](https://dubailand.gov.ae/en/eservices/training/) | `dubai real estate broker exam preparation course`, `dubai broker training course registration`, `oqood training course registration dubai` |
+
+None duplicates an identity in the 7,705-row original Planner corpus. A first-pass lexical check found zero exact matches against the 570 provisionally protected phrases (5,700 comparisons). Keep employment application and training intent separate from client searches for consultants, investor education, homes near schools, or premises near a new job. Keep original provider rows and preserve ambiguous ideas for review. This supplies zero reviewed negatives and no permission to change Ads.
