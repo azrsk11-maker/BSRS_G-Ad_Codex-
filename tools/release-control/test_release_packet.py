@@ -96,6 +96,12 @@ class ReleasePacketTests(unittest.TestCase):
                     "backup_max_days": 30,
                     "reapply_deletions_before_reopen": True,
                 }
+            if gate == "SOURCE_TRUTH" and kind == "WEBSITE_PUBLICATION":
+                result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", native_page_sources=[
+                    {"page_id": resource["page_id"], "service_or_inventory_ref": "TEST_ONLY:inventory",
+                     "claims_review_ref": "TEST_ONLY:claims", "asset_rights_review_ref": "TEST_ONLY:rights",
+                     "update_owner_ref": "TEST_ONLY:update-owner"} for resource in resources
+                ])
             if gate == "STAFF_CAPACITY" and kind == "ADS_ACTIVATION":
                 result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
@@ -574,6 +580,17 @@ class ReleasePacketTests(unittest.TestCase):
         data["campaigns"][-1]["settings"]["ai_max"] = True
         packet["proposal"]["change"]["after_state"] = self.write(ref["path"], data)
         self.assertIn("ADS_AFTER_STATE_CONTRADICTS_SCOPE", self.check(packet)["errors"])
+
+    def test_website_publication_requires_source_reviews_per_native_page(self):
+        sources = [{"page_id": "BSRE-LP0001", "service_or_inventory_ref": "TEST_ONLY:inventory",
+                    "claims_review_ref": "TEST_ONLY:claims", "asset_rights_review_ref": "TEST_ONLY:rights",
+                    "update_owner_ref": "TEST_ONLY:update-owner"}]
+        for invalid in ([], [{**sources[0], "page_id": "BSRE-LP0360"}],
+                        [{**sources[0], "asset_rights_review_ref": ""}]):
+            with self.subTest(invalid=invalid):
+                self.packet = self.fixture("WEBSITE_PUBLICATION")
+                self.change_evidence("SOURCE_TRUTH", "native_page_sources", invalid)
+                self.assertIn("EXACT_NATIVE_PAGE_SOURCE_REVIEW_REQUIRED", self.check()["errors"])
 
     def test_rollback_native_id_and_account_must_match(self):
         ref = self.packet["proposal"]["rollback"]["before_manifest"]

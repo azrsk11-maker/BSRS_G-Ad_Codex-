@@ -307,6 +307,14 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             need(result.get("gate_id") == row["gate_id"] and result.get("status") == "PASS", "GATE_NOT_PASS:" + str(row["gate_id"]))
             need(result.get("proposal_sha256") == proposal_hash and result.get("commit") == commit and result.get("resource_page_ids") == sorted(resource_ids), "EVIDENCE_SCOPE_MISMATCH:" + str(row["gate_id"]))
             need(result.get("method") in METHODS and match(LOGIN, result.get("reviewer")), "COMPLETE_ACCEPTANCE_METHOD_REQUIRED:" + str(row["gate_id"]))
+            if row["gate_id"] == "SOURCE_TRUTH" and proposal["kind"] == "WEBSITE_PUBLICATION":
+                sources = rows(result.get("native_page_sources", []), 360)
+                references = {"service_or_inventory_ref", "claims_review_ref", "asset_rights_review_ref", "update_owner_ref"}
+                need(result.get("method") == "OWNER_REVIEWED_BUSINESS_EVIDENCE" and
+                     len(sources) == len(resource_ids) and {source.get("page_id") for source in sources} == set(resource_ids) and
+                     all(set(source) == references | {"page_id"} and
+                         all(match(ID_REF, source[key]) for key in references) for source in sources),
+                     "EXACT_NATIVE_PAGE_SOURCE_REVIEW_REQUIRED")
             if row["gate_id"] == BRAND_POLICY_GATE and proposal["kind"] == "ADS_ACTIVATION":
                 brand_url = next((r["url"] for r in resources if r["campaign_id"] == BRAND_CAMPAIGN_ID), None)
                 need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and brand_url is not None and
