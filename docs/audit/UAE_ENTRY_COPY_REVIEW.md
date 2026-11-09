@@ -17,6 +17,10 @@ The first release must wait for both 14,000-keyword reviewed libraries and the r
 - **Tenants and Brand:** assess reuse of the current rental page and enquiry hub, respectively. Each is already the sole final URL for its campaign in the dated ad inventory. Public HTTPS responses on 9 November returned the exact canonical URLs and page-level noindex metadata, without exposing a WordPress page ID in the body class. Verify CMS ownership, navigation and crawler eligibility before accepting either as the dedicated entry.
 - **All four:** review the exact proposed entry-to-service paths against the [dated ad inventory](ACCOUNT_AD_URL_READBACK_2026-11-07.json). Reuse requires the same consent and receipt behavior as a new entry. Leave Ads destinations and the site untouched during this review.
 
+### Public WordPress identity readback — 9 November 2026
+
+A read-only request to the public WordPress pages API returned six published records with exact canonical links. The enquiry hub is page **26750**, with no parent. It is the recorded parent of off-plan **26751**, resale **26752**, rent **26753**, sell **26754**, and let **26755**. This establishes the public CMS identities of the Brand and Tenants reuse candidates and the existing service pages. Verify internal ownership, Ads crawler eligibility and end-to-end CTA behavior before accepting a binding. Buyers and Owners still need their own entry-page assignments.
+
 ## Buyers
 
 ### Find a Dubai property to buy
