@@ -11,6 +11,12 @@ The owner approved preparation of Option A on 9 November 2026. These offline cop
 
 The first release must wait for both 14,000-keyword reviewed libraries and the remaining acceptance gates.
 
+### Proposed page bindings for WordPress review
+
+- **Buyers and Owners:** prepare a distinct native entry for each campaign. The 7 November ad inventory shows two different service destinations in each campaign. Preserve both destinations as explicit choices from the new entry. Keep the entry path, WordPress page ID and planning-slot ID unassigned until native route and registry checks pass.
+- **Tenants and Brand:** assess reuse of the current rental page and enquiry hub, respectively. Each is already the sole final URL for its campaign in the dated ad inventory. Public HTTPS responses on 9 November returned the exact canonical URLs and page-level noindex metadata, without exposing a WordPress page ID in the body class. Verify CMS ownership, navigation and crawler eligibility before accepting either as the dedicated entry.
+- **All four:** review the exact proposed entry-to-service paths against the [dated ad inventory](ACCOUNT_AD_URL_READBACK_2026-11-07.json). Reuse requires the same consent and receipt behavior as a new entry. Leave Ads destinations and the site untouched during this review.
+
 ## Buyers
 
 ### Find a Dubai property to buy
