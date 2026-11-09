@@ -8,7 +8,7 @@ RUN curl --fail --location --proto '=https' --tlsv1.2 https://wordpress.org/word
     && echo '881e53a4681ff2cd911651b11cccdede5ae477ddf0765af5d6a1a8b219a1d835  wordpress.tar.gz' | sha256sum -c - \
     && tar -xzf wordpress.tar.gz && rm wordpress.tar.gz
 COPY tools/staging-lab/wp-config.php /opt/wordpress/wp-config.php
-COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json /opt/reviewed/
+COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json tools/native-wordpress/paid-entry-search.php /opt/reviewed/
 COPY tools/staging-lab/fixtures/bsre-enquiries /opt/wordpress/wp-content/plugins/bsre-enquiries
 COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-lab/plugin.php tools/staging-lab/transport.php tools/staging-lab/receive.php tools/staging-lab/interop.php tools/staging-lab/retention.php tools/staging-lab/restore.php tools/staging-lab/backup-bridge.mjs tools/staging-lab/receiver-lab.mjs tools/staging-lab/receiver-bridge.mjs tools/staging-lab/entrypoint.sh /opt/lab/
 COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/fixtures/receiver-v2
