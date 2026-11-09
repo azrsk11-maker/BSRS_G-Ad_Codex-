@@ -65,6 +65,7 @@ $direct = rest_do_request(new WP_REST_Request('GET', '/wp/v2/pages/26753'));
 check_lab('direct_rest_page_remains_public', $direct->get_status() === 200 && ($direct->get_data()['id'] ?? null) === $rent);
 wp_set_current_user($installation['user_id']);
 check_lab('editor_rest_search_preserved', count(array_intersect([$hub, $rent, $public], $rest_search())) === 3);
+try {
 // Render the packaged candidate through the actual plugin with native page ownership.
 $original_options = [];
 foreach (['permalink_structure' => '/%postname%/', 'bsre_parent_draft' => $hub,
@@ -104,6 +105,10 @@ foreach ($original_options as $option => $value) {
     else update_option($option, $value);
 }
 
+} catch (Throwable $error) {
+    fwrite(STDERR, 'Synthetic rental render failed: ' . $error->getMessage() . ' at line ' . $error->getLine() . "\n");
+    exit(1);
+}
 // The next isolated phase creates its own enquiry pages in this synthetic database.
 foreach ([$rent, $hub, $public] as $fixture_id) {
     check_lab('removed_search_fixture_' . $fixture_id, wp_delete_post($fixture_id, true) instanceof WP_Post);
