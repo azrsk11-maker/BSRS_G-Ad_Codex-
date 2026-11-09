@@ -105,6 +105,12 @@ class ReleasePacketTests(unittest.TestCase):
             if gate == "STAFF_CAPACITY" and kind == "ADS_ACTIVATION":
                 result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
+                    "workload_summary": self.write("workload-summary.json", {
+                        "staffed_days_supplied": 2, "sample_date_gaps": 0, "total_arrivals": 200,
+                        "total_completed": 200, "min_daily_completions_observed": 100,
+                        "days_with_backlog_growth": 0, "max_closing_backlog": 0,
+                        "sample_representativeness_verified": False,
+                    }),
                     "measured_daily_capacity": 100, "reviewed_launch_daily_load": 90,
                     "peak_first_contact_sample_count": 15, "peak_first_contact_max_seconds": 1800,
                     "missing_first_attempt_count": 0, "late_first_attempt_count": 0,
@@ -372,6 +378,20 @@ class ReleasePacketTests(unittest.TestCase):
                 result["staff_capacity"].update(changes)
                 evidence["file"] = self.write(path, result)
                 self.assertIn("REHEARSED_STAFF_CAPACITY_MUST_COVER_REVIEWED_LAUNCH_LOAD", self.check(packet)["errors"])
+
+    def test_activation_binds_capacity_to_workload_summary(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(row for row in packet["evidence"] if row["gate_id"] == "STAFF_CAPACITY")
+        path = evidence["file"]["path"]
+        result = json.loads((self.root / path).read_text(encoding="utf-8"))
+        result["staff_capacity"]["measured_daily_capacity"] = 101
+        evidence["file"] = self.write(path, result)
+        self.assertIn("REVIEWED_CAPACITY_MUST_MATCH_OBSERVED_WORKLOAD", self.check(packet)["errors"])
+        result["staff_capacity"]["measured_daily_capacity"] = 100
+        evidence["file"] = self.write(path, result)
+        summary = self.root / result["staff_capacity"]["workload_summary"]["path"]
+        summary.write_bytes(summary.read_bytes() + b" ")
+        self.assertIn("MALFORMED_OR_UNREADABLE_PACKET:ValueError:ARTIFACT_HASH_MISMATCH", self.check(packet)["errors"])
 
     def test_activation_requires_current_effective_negative_scope(self):
         for changes in ({"readback_ref": ""}, {"legacy_shared_list_attached": True},

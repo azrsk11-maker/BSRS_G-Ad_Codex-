@@ -399,6 +399,18 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                      capacity.get("coverage") == "DAILY_10:00_19:00_Asia/Dubai" and
                      capacity.get("pause_on_absence_or_unmanageable_backlog") is True,
                      "REHEARSED_STAFF_CAPACITY_MUST_COVER_REVIEWED_LAUNCH_LOAD")
+                workload = record_json(capacity.get("workload_summary"))
+                counts = {"staffed_days_supplied", "sample_date_gaps", "total_arrivals", "total_completed",
+                          "min_daily_completions_observed", "days_with_backlog_growth", "max_closing_backlog"}
+                need(isinstance(workload, dict) and set(workload) == counts | {"sample_representativeness_verified"}
+                     and all(type(workload[key]) is int and workload[key] >= 0 for key in counts)
+                     and workload["sample_representativeness_verified"] is False
+                     and 1 <= workload["staffed_days_supplied"] <= 31
+                     and workload["sample_date_gaps"] < workload["staffed_days_supplied"]
+                     and workload["days_with_backlog_growth"] <= workload["staffed_days_supplied"]
+                     and workload["total_completed"] >= workload["min_daily_completions_observed"] * workload["staffed_days_supplied"]
+                     and capacity["measured_daily_capacity"] <= workload["min_daily_completions_observed"],
+                     "REVIEWED_CAPACITY_MUST_MATCH_OBSERVED_WORKLOAD")
                 need(type(capacity.get("peak_first_contact_sample_count")) is int and
                      capacity["peak_first_contact_sample_count"] > 0 and
                      type(capacity.get("peak_first_contact_max_seconds")) is int and
