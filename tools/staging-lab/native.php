@@ -69,7 +69,7 @@ try {
     // Render the packaged candidate through the actual plugin with native page ownership.
     $original_options = [];
     foreach (['permalink_structure' => '/%postname%/', 'bsre_parent_draft' => $hub,
-        'bsre_draft_pages' => ['rent' => $rent]] as $option => $value) {
+        'bsre_draft_pages' => ['rent' => $rent], 'bsre_schema_version' => '1'] as $option => $value) {
         $original_options[$option] = get_option($option, false);
         update_option($option, $value);
     }
@@ -79,6 +79,8 @@ try {
     add_filter('pre_option_home', $lab_origin);
     add_filter('pre_option_siteurl', $lab_origin);
     add_filter('plugins_url', $lab_plugin_url);
+    $lab_rest_url = static fn($url, $route) => 'https://blackswanrealestate.ae/wp-json/' . ltrim($route, '/');
+    add_filter('rest_url', $lab_rest_url, 10, 2);
     update_post_meta($hub, '_bsre_parent', '1');
     update_post_meta($rent, '_bsre_service', 'rent');
     $wp_rewrite->init(); // Refresh the permalink structure cached at WordPress bootstrap.
@@ -94,6 +96,13 @@ try {
     check_lab('rental_copy_native_query', is_page() && get_queried_object_id() === $rent);
     check_lab('rental_copy_native_permalink', get_permalink($rent) === 'https://blackswanrealestate.ae/enquire/rent/');
     check_lab('rental_copy_native_live_binding', \BSRE\Enquiries\owned_parent_binding($scope)['mode'] === 'live');
+    check_lab('rental_copy_native_routing_defaults_held', \BSRE\Enquiries\owned_parent_document($scope)['binding']['mode'] === 'held');
+    define('BSRE_ROUTING_ENABLED', true);
+    define('BSRE_LEAD_RECEIVER_URL', 'https://script.google.com/macros/s/BSRE_SYNTHETIC_NOT_DEPLOYED/exec');
+    define('BSRE_LEAD_HMAC_SECRET', str_repeat('synthetic-rental-lab-', 2));
+    define('BSRE_PRIVACY_NOTICE_PAGE_ID', $public);
+    check_lab('rental_copy_native_synthetic_receiver_ready', \BSRE\Enquiries\ready());
+    check_lab('rental_copy_native_document_live', \BSRE\Enquiries\owned_parent_document($scope)['binding']['mode'] === 'live');
     ob_start();
     require '/opt/wordpress/wp-content/plugins/bsre-enquiries/templates/page.php';
     $rental_html = ob_get_clean();
@@ -105,6 +114,7 @@ try {
     remove_filter('pre_option_home', $lab_origin);
     remove_filter('pre_option_siteurl', $lab_origin);
     remove_filter('plugins_url', $lab_plugin_url);
+    remove_filter('rest_url', $lab_rest_url);
     foreach ($original_options as $option => $value) {
         if ($value === false) delete_option($option);
         else update_option($option, $value);
