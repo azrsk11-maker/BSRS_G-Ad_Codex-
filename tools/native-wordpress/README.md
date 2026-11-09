@@ -50,3 +50,9 @@ On 9 November, public HTTPS GETs without redirect following returned 404 for `/l
 This version performs zero writes, so recovery is removal of these local candidate files or disabling the preview constant; there are no created CMS IDs to roll back. Do not change existing intake settings, private data, theme or sitewide indexing.
 
 A future separately approved writer must journal the exact campaign/page IDs, CMS ID, prior revision ID, before/after hashes, changed metadata and approval reference. Recovery must address only those allowlisted IDs, verify ownership and that the current version still matches the recorded after-version, preserve intervening staff edits, and restore only the recorded revision/metadata after review. Newly created records stay held as drafts for reconciliation. Never delete posts, reactivate old campaigns, replace the database or alter unrelated records as rollback. This revision-aware writer/recovery operation is **not implemented or claimed tested** here.
+
+## Buyers and Owners block drafts
+
+The [Buyers block body](entry-drafts/buyers.html) and [Owners block body](entry-drafts/owners.html) use WordPress core paragraph and buttons blocks. Use the page title separately in the editor: “Find a Dubai property to buy” and “Plan the sale or letting of your Dubai property.” The fragment contains two clean relative links to the existing service forms. It has no form, script, assets or publication settings.
+
+Treat these as reviewable post-content fragments. Before import into an authorized native draft, resolve the family choice in issue #1, confirm the exact page/route binding, choose CTA prominence, verify the content and service evidence, and validate the blocks in the current WordPress editor and theme. These files carry no deployment authority.
