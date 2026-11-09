@@ -62,7 +62,7 @@ def load_intake():
     result = strict_json(content)
     if len(result["candidates"]) != 41 or any(row["review_state"] != "CANDIDATE" for row in result["candidates"]):
         raise ValueError("Expected 41 unapproved historical candidates")
-    return result["candidates"]
+    return result
 
 
 def public_projection(content):
@@ -191,14 +191,27 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--raw-export", type=Path, help="Private original download; never copied or modified")
     args = parser.parse_args()
-    candidates = load_intake()
+    intake = load_intake()
+    candidates = intake["candidates"]
     capture = strict_json((HERE / "capture.json").read_bytes())
     verify_public(capture, candidates)
     if args.raw_export and build_capture(args.raw_export.read_bytes(), candidates) != capture:
         raise ValueError("Public projection differs from the original private export")
+    placements = {row["placement_id"]: row["original_keyword_fields"]["Campaign"] for row in intake["placements"]}
+    exact_ids = {row["candidate_id"] for row in capture["reconciliation"]["matched"]}
+    campaigns = {f"BSRE_SEARCH_{name}_EN": {"candidates": 0, "exact": 0, "missing": 0}
+                 for name in ("BUYERS", "OWNERS", "TENANTS", "BRAND")}
+    for row in candidates:
+        owners = {placements[key] for key in row["placement_ids"]}
+        if len(owners) != 1 or not owners.issubset(campaigns):
+            raise ValueError("Historical candidate lacks a unique Option A campaign")
+        counts = campaigns[owners.pop()]
+        counts["candidates"] += 1
+        counts["exact" if row["candidate_id"] in exact_ids else "missing"] += 1
     print(json.dumps({"public_integrity_pass": True, "private_source_verified": bool(args.raw_export),
                       "verification_scope": "SOURCE_BYTES_AND_PUBLIC_PROJECTION" if args.raw_export else "PUBLIC_PROJECTION_CONSISTENCY_ONLY",
                       "inputs": 41, "returned": 37, "exact_matches": 37, "not_returned_exactly": 4,
+                      "historical_campaign_evidence": campaigns,
                       "master_rows_added": 0, "deployment_export_allowed": False}, indent=2))
 
 
