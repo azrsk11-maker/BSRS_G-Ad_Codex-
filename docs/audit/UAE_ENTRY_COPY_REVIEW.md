@@ -40,6 +40,10 @@ The private 300-brief worksheet has no reviewed assignment to either proposed la
 
 The next read-only review joined all 20 CMP candidate briefs to the hash-verified historical register. They have 20 distinct proposed routes and no exact overlap with the enquiry hub or rental page. One brief mentions Black Swan in its title or primary query. It is a webinar-planning brief with a separate event route, so keep it in the public-content register and preserve its identity. This clears the observed route overlap for the reuse proposal. It leaves the CMP slot allocation and independent content review open.
 
+### Public crawler preflight
+
+On 9 November, the public robots file contained one wildcard group and disallowed only `/wp-admin/`, with an exception for its AJAX endpoint. Neither reuse candidate was excluded. Four direct GET requests using the desktop and mobile AdsBot user-agent strings returned HTTP 200 without redirect for both `/enquire/` and `/enquire/rent/`. These requests were local simulations. Actual Google Ads crawler access, policy status and post-migration destination behavior require native readback before launch.
+
 ## Buyers
 
 ### Find a Dubai property to buy
