@@ -65,6 +65,12 @@ $direct = rest_do_request(new WP_REST_Request('GET', '/wp/v2/pages/26753'));
 check_lab('direct_rest_page_remains_public', $direct->get_status() === 200 && ($direct->get_data()['id'] ?? null) === $rent);
 wp_set_current_user($installation['user_id']);
 check_lab('editor_rest_search_preserved', count(array_intersect([$hub, $rent, $public], $rest_search())) === 3);
+// The next isolated phase creates its own enquiry pages in this synthetic database.
+foreach ([$rent, $hub, $public] as $fixture_id) {
+    check_lab('removed_search_fixture_' . $fixture_id, wp_delete_post($fixture_id, true) instanceof WP_Post);
+}
+check_lab('search_fixture_cleanup', get_page_by_path('enquire') === null &&
+    $before === (int) $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts}"));
 check_lab('cron_disabled', DISABLE_WP_CRON === true);
 check_lab('http_policy_blocks_external', is_wp_error(wp_remote_get('https://example.invalid', ['timeout' => 1])));
 echo json_encode(['phase' => 'native_wordpress', 'status' => 'PASS', 'wordpress' => $wp_version, 'php' => PHP_VERSION, 'database' => $wpdb->get_var('SELECT VERSION()'), 'checks' => $checks, 'synthetic_database_only' => true, 'production_acceptance' => false], JSON_UNESCAPED_SLASHES) . "\n";
