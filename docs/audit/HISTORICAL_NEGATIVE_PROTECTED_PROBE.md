@@ -56,3 +56,9 @@ These are constructed examples, with no inventory or volume claims. The list had
 ## Screening against observed Planner phrases
 
 The existing matcher found **zero lexical conflicts in 5,130 comparisons** between the nine archived exclusions and the 570 distinct observed Planner phrases with a nonempty protected-intent flag in the [triage corpus](keyword-triage-2026-11-08/proposals.json). All nine own-text controls matched. The remaining 7,135 proposal rows were outside this screen. Campaign and ad-group scope remain unassigned, and independent review and coverage against the full reviewed positive library are still required. No exclusion was approved or applied.
+
+## Full observed-corpus cross-check
+
+The nine archived exclusions returned zero lexical matches against all 7,705 distinct Planner proposal phrases (69,345 comparisons), including the 570 provisionally protected phrases above. A separate local screen of the pinned October Search terms source returned zero lexical matches across its 3,691 disclosed distinct identities (33,219 comparisons). Only aggregate results are recorded here. The corpora overlap and their counts describe separate screens.
+
+The narrow 570-phrase check is now reproduced by Foundation validation. On commit `a2052b3`, [Foundation validation](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42563114204) and the [isolated WordPress lab](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42563114213) passed. Neither expanded screen establishes effectiveness, current scope, or Google matching. The saved report omits undisclosed queries and covers one historical period. The nine candidates remain on hold pending scoped review.
