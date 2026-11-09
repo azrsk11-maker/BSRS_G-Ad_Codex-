@@ -34,6 +34,10 @@ The Brand hub HTML contains links to all five exact same-origin enquiry routes a
 
 These are the first unbound placeholders in their respective families, chosen as a deterministic proposal. Each slot currently has a proposed `/lp/` path and no deployed identity. Reusing an existing enquiry page would bind its canonical route after review. It would not create or redirect an `/lp/` path. Before changing the registry, reconcile the existing native page against any reserved slot or historical brief, confirm the exact binding, and preserve the approved family totals. Buyers and Owners are pending their primary family choices.
 
+### Historical brief crosswalk check
+
+The private 300-brief worksheet has no reviewed assignment to either proposed landing-page ID. BSRE-LP0301 is outside the historical candidate pools, consistent with RNT being an expansion family. BSRE-LP0281 appears in the shared CMP candidate pool for 20 historical briefs. Treat that overlap as a planning dependency. A Brand assignment would consume one CMP slot and requires item-level review of any competing paid adaptation. Preserve the original public brief IDs and routes. No private worksheet rows were published.
+
 ## Buyers
 
 ### Find a Dubai property to buy
