@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from staff_timing import main, summarize
+from staff_timing import main, summarize, summarize_capacity
 
 
 class StaffTimingTests(unittest.TestCase):
@@ -17,6 +17,29 @@ class StaffTimingTests(unittest.TestCase):
                 for i, (accepted, attempt) in enumerate(attempts)
             ],
         })
+
+    def test_capacity_reconciles_daily_and_adjacent_backlog(self):
+        days = [
+            {"dubai_date": "2026-11-09", "opening_backlog": 4, "arrivals": 7, "completed": 8, "closing_backlog": 3},
+            {"dubai_date": "2026-11-10", "opening_backlog": 3, "arrivals": 9, "completed": 6, "closing_backlog": 6},
+        ]
+        result = summarize_capacity({"days": list(reversed(days))})
+        self.assertEqual(result["total_completed"], 14)
+        self.assertEqual(result["min_daily_completions_observed"], 6)
+        self.assertEqual(result["days_with_backlog_growth"], 1)
+        self.assertFalse(result["sample_representativeness_verified"])
+        with self.assertRaisesRegex(ValueError, "overnight"):
+            summarize_capacity({"days": [days[0], dict(days[1], opening_backlog=4, closing_backlog=7)]})
+        with self.assertRaisesRegex(ValueError, "daily"):
+            summarize_capacity({"days": [dict(days[0], completed=9)]})
+        self.assertEqual(summarize_capacity({"days": [days[0], dict(days[1], dubai_date="2026-11-12")]})["sample_date_gaps"], 1)
+
+    def test_capacity_rejects_duplicate_dates_and_boolean_counts(self):
+        day = {"dubai_date": "2026-11-09", "opening_backlog": 0, "arrivals": 1, "completed": 1, "closing_backlog": 0}
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            summarize_capacity({"days": [day, day]})
+        with self.assertRaisesRegex(ValueError, "capacity count"):
+            summarize_capacity({"days": [dict(day, completed=True)]})
 
     def test_shift_boundary_ignores_overnight_hours(self):
         result = self.measure(("2026-11-09T14:50:00Z", "2026-11-10T06:20:00Z"))

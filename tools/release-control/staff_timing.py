@@ -1,6 +1,6 @@
 """Offline staffed response measurement. Emits aggregates only."""
 import argparse
-from datetime import timedelta, timezone
+from datetime import date, timedelta, timezone
 import json
 from pathlib import Path
 
@@ -56,14 +56,56 @@ def summarize(data):
     }
 
 
+def summarize_capacity(data):
+    if not isinstance(data, dict) or set(data) != {"days"}:
+        raise ValueError("Invalid capacity evidence envelope")
+    days = data["days"]
+    if not isinstance(days, list) or not 1 <= len(days) <= 31:
+        raise ValueError("Invalid staffed day count")
+    fields = {"opening_backlog", "arrivals", "completed", "closing_backlog"}
+    dates = set()
+    for row in days:
+        if not isinstance(row, dict) or set(row) != fields | {"dubai_date"}:
+            raise ValueError("Invalid staffed day")
+        day = date.fromisoformat(row["dubai_date"])
+        if day.isoformat() != row["dubai_date"] or day in dates:
+            raise ValueError("Invalid or duplicate Dubai date")
+        dates.add(day)
+        if any(type(row[key]) is not int or not 0 <= row[key] <= 10000 for key in fields):
+            raise ValueError("Invalid capacity count")
+        if row["opening_backlog"] + row["arrivals"] != row["completed"] + row["closing_backlog"]:
+            raise ValueError("Unreconciled daily backlog")
+    ordered = sorted(days, key=lambda row: row["dubai_date"])
+    gaps = 0
+    for earlier, later in zip(ordered, ordered[1:]):
+        elapsed = date.fromisoformat(later["dubai_date"]) - date.fromisoformat(earlier["dubai_date"])
+        if elapsed.days != 1:
+            gaps += 1
+        elif earlier["closing_backlog"] != later["opening_backlog"]:
+            raise ValueError("Unreconciled overnight backlog")
+    return {
+        "staffed_days_supplied": len(days),
+        "sample_date_gaps": gaps,
+        "total_arrivals": sum(row["arrivals"] for row in days),
+        "total_completed": sum(row["completed"] for row in days),
+        "min_daily_completions_observed": min(row["completed"] for row in days),
+        "days_with_backlog_growth": sum(row["closing_backlog"] > row["opening_backlog"] for row in days),
+        "max_closing_backlog": max(row["closing_backlog"] for row in days),
+        "sample_representativeness_verified": False,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("evidence", type=Path)
+    parser.add_argument("--capacity", action="store_true", help="Reconcile aggregate daily workload and backlog")
     args = parser.parse_args()
     try:
-        result = summarize(load_json(args.evidence))
+        calculator = summarize_capacity if args.capacity else summarize
+        result = calculator(load_json(args.evidence))
     except (OSError, ValueError, TypeError, OverflowError):
-        print(json.dumps({"error": "INVALID_PRIVATE_TIMING_EVIDENCE"}))
+        code = "INVALID_PRIVATE_CAPACITY_EVIDENCE" if args.capacity else "INVALID_PRIVATE_TIMING_EVIDENCE"
+        print(json.dumps({"error": code}))
         return 2
     print(json.dumps(result))
     return 0
