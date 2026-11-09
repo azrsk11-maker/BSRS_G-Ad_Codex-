@@ -22,7 +22,7 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 
 | Decision | Status | Scope |
 |---|---|---|
-| DEC-01 | [OPEN #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | Initial cohort, dedicated-entry migration, full research versus pilot acceptance, old300/new360 crosswalk |
+| DEC-01 | [PARTIALLY DECIDED #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | First release must wait for both full reviewed libraries. Initial cohort, dedicated-entry mapping and old300/new360 crosswalk remain open. |
 | DEC-02 | [OPEN #2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2) | Content/inventory factual reviewer, update owner, approved evidence and rights locations |
 | DEC-03 | [OPEN #3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) | Finance evidence/definitions, contribution allocation, monthly/cash-risk authority |
 | DEC-04 | [OPEN #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) | Staff rehearsal completion/fresh readiness, capacity and real outcome evidence providers |
@@ -58,3 +58,7 @@ Intake26 and Outcome40 contain no authoritative closure timestamp/revision. The 
 The retained historical outcome workflow applies the twelve-month-after-closure rule to associated outcomes. Actual deleted or missing history must set history_complete=false and hold first-ever qualification exports. Do not keep an indefinite hashed-person register or create a retention exception to preserve the metric. Candidate development must also prevent expired requests from recreating purged rows and preserve the thirty-day recovery boundary.
 
 The owner subsequently selected “Owner-controlled deletion, marketing@ only (recommended)” in the direct Codex reply. Use Option A from issue10, coordinated by the nominated privacy/retention owner under an exact reviewed manifest. Mailbox scope is marketing@blackswanrealestate.ae only. This decision does not establish deployed collectors, verified message bindings or completed deletion, and grants no new OAuth scope or unrelated production action.
+
+## First-release keyword prerequisite — 9 November 2026
+
+The owner answered “Wait for both full libraries” in Codex. Require 14,000 distinct reviewed positive and 14,000 distinct reviewed negative keywords before the first release. The owner requested an explanation of the cohort options before choosing. This decision does not authorize a production change.
