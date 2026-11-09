@@ -92,3 +92,9 @@ The existing lexical simulator replayed the 19 campaign-scoped direct exclusions
 | emaar | buy an emaar apartment in dubai |
 
 The current four direct phrase exclusions matched none of those controls. This replay covers the dated [scope](TARGETING_NEGATIVE_READBACK_2026-11-07.json) and [keyword literals](KEYWORD_URL_READBACK_2026-11-07.json), plus synthetic long-tail examples. Keep the legacy list separate from V2. Account-level and manager inheritance, current associations and the full reviewed protected corpus still require verification.
+
+## D1 identity check
+
+The loose redraft and the original-owner brief inside the implementation ZIP are byte-identical. Neither of the two owner-provided ZIPs lists a member with the exact D1 filename cited in the Master Plan. A bounded search also covered Downloads, Codex attachments and the historical source checkout.
+
+The recovered brief has the same 240/200/200 category totals and an Appendix C for precision advertising. However, the Master Plan specifically cites D1 section 17 for the no-CRM boundary. The numbered section 17 in the recovered brief is headed “Keyword and Negative-Keyword Standards”; its tracking subsection also has a separate numbered deduplication item. The shared totals establish correspondence between the materials. The section mismatch leaves exact D1 identity unresolved. Keep the recovered 300-page and 640-item registers as historical sources and hold any crosswalk that requires D1 identity pending the original file or an explicit owner decision. [Issue #7](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/7)
