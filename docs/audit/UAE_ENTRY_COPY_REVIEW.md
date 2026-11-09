@@ -164,3 +164,9 @@ Source SHA-256 is `2ce5c621017bc46db8971554b890a8f3c29bacfd02b8d7d379d38c67f77d8
 ### Isolated browser result for the copy candidate
 
 Headless Chrome rendered the exact candidate from a loopback-only server with a disposable profile. With JavaScript enabled, the fallback was absent from visible text and no paragraph was parsed inside `noscript`. With JavaScript disabled, the paragraph was parsed and the fallback was visible. The internal campaign phrase was absent in both modes. The submit button remained disabled in this standalone fixture, where external scripts and submissions were blocked. This verifies copy and fallback behavior in the browser. Native WordPress integration, live receiver behavior and contact ownership remain separate checks.
+
+### WordPress source and package boundary
+
+The rental template in the 2 November installed-source snapshot and the 3 November release candidate both match the pinned template SHA-256 above. The pinned WordPress renderer reads the fixed packaged `templates/source/rent.html` through `owned_parent_source`, then prepares canonical, consent and script markup. Its live and preview branches change the separate notice block and form fieldset. They do not replace either copy literal. Carry the two changes in the plugin template candidate, not in the editable WordPress page body. Recheck the exact installed source before any separately approved deployment.
+
+[Foundation validation](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42565200227) and the [isolated WordPress lab](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42565200317) passed on `e1f5400`. The lab used the unchanged pinned plugin template. Native execution of the modified template remains open.
