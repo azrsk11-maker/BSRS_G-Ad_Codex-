@@ -54,3 +54,16 @@ The first command checks committed projection structure, field exclusions, sourc
 The second reads the private export once, requires its exact pinned bytes, reprojects/reconciles it and compares the result with the committed capture. It reports **SOURCE_BYTES_AND_PUBLIC_PROJECTION**. The verifier is read-only: no API, master changes, source-file edits, forecast creation, deployment or upload is available. Internal digests establish consistency; they are not reviewer authentication or production permission.
 
 Both verification modes were exercised against this capture. Bounded checks also reject a changed source byte, a changed retained metric, a changed input mapping and a leaked excluded column; a synthetic sentinel in all four excluded columns never enters the public projection. The capture and pinned intake use strict JSON parsing: duplicate keys cannot conceal an excluded field behind a later replacement, and non-finite numeric constants are rejected. The duplicate-projection failure identified in peer review has a passing focused rejection check. These checks concern this actual capture only, not a new general import framework.
+
+## Option A evidence batches
+
+The historical placement IDs map every distinct candidate to one launch campaign. Joining the 41 candidate IDs to the pinned exact-row reconciliation gives:
+
+| Campaign | Historical candidates | Exact Planner rows | No separate exact row |
+| --- | ---: | ---: | ---: |
+| Buyers | 17 | 17 | 0 |
+| Owners | 12 | 12 | 0 |
+| Tenants | 8 | 5 | 3 |
+| Brand | 4 | 3 | 1 |
+
+Buyers and Owners are the first complete batches for a review of Planner provenance, subject to service scope and page mapping. Review the five matched Tenants and three matched Brand candidates separately from their unresolved variants. The four unmatched candidates have no grouping assignment or inferred zero volume. Exact Planner evidence does not admit a keyword to either master. Both full reviewed libraries remain a launch requirement.
