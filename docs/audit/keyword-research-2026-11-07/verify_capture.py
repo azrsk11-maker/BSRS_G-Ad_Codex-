@@ -187,6 +187,35 @@ def verify_public(capture, candidates):
         raise ValueError("Projection/reconciliation digest mismatch")
 
 
+def verify_discovery_matches(reconciliation):
+    missing = {normalize(row["submitted_text"]): row["candidate_id"]
+               for row in reconciliation["not_returned_as_exact_rows"]}
+    matches = {candidate_id: [] for candidate_id in missing.values()}
+    batches = {
+        "keyword-discovery-2026-11-08": ("buyers", "tenants", "owners", "commercial"),
+        "keyword-discovery-supply-2026-11-08": ("sellers", "landlords"),
+    }
+    rows_checked = 0
+    for directory, names in batches.items():
+        for name in names:
+            path = HERE.parent / directory / (name + ".json")
+            records = strict_json(path.read_bytes())["source_projection"]["records"]
+            rows_checked += len(records)
+            for record in records:
+                candidate_id = missing.get(normalize(record["values"]["Keyword"]))
+                if candidate_id is not None:
+                    matches[candidate_id].append([name, record["source_line"]])
+    expected = {
+        "LEGACY-POS-0003": [],
+        "LEGACY-POS-0024": [["tenants", 4]],
+        "LEGACY-POS-0026": [["tenants", 5]],
+        "LEGACY-POS-0028": [["buyers", 83], ["tenants", 10]],
+    }
+    if rows_checked != 8809 or matches != expected:
+        raise ValueError("Option A discovery cross-check differs from the recorded source rows")
+    return {"rows_checked": rows_checked, "candidate_matches": matches}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--raw-export", type=Path, help="Private original download; never copied or modified")
@@ -212,6 +241,7 @@ def main():
                       "verification_scope": "SOURCE_BYTES_AND_PUBLIC_PROJECTION" if args.raw_export else "PUBLIC_PROJECTION_CONSISTENCY_ONLY",
                       "inputs": 41, "returned": 37, "exact_matches": 37, "not_returned_exactly": 4,
                       "historical_campaign_evidence": campaigns,
+                      "separate_discovery_evidence": verify_discovery_matches(capture["reconciliation"]),
                       "master_rows_added": 0, "deployment_export_allowed": False}, indent=2))
 
 
