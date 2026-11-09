@@ -176,3 +176,18 @@ The rental template in the 2 November installed-source snapshot and the 3 Novemb
 The lab derived the exact copy candidate from the pinned fixture inside the disposable image. The [native run on f7d9fd3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42565976324) passed all 11 rental-copy assertions. It verified that the registered tenant page has the expected canonical URL, the document stays held before synthetic routing is ready, and the WordPress renderer preserves the tenant form and corrected fallback. [Foundation validation](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42565976363) passed on the same revision.
 
 The saved 0.2.13 transport candidate ZIP passed CRC verification and contained exactly one `bsre-enquiries/templates/source/rent.html` member. Its bytes matched the pinned source digest. The local one-file rollback copy matches that same digest, and the candidate matches the tested digest above. The historical ZIP establishes package layout only. Before release, compare the authenticated installed source and preserve the actual before-file in the approved recovery location. Abort on a mismatch. Neither this receipt nor the older ZIP is a deployable package or publication approval.
+
+## Buyers and Owners service CTA contract
+
+Checked the four form templates in the saved installed-source snapshot. Each contains one enquiry form with its exact service role and path. The mapping applies regardless of which service the owner selects as primary.
+
+| Campaign | CTA | Existing form path | Form role |
+| --- | --- | --- | --- |
+| Buyers | Discuss an off-plan purchase | `/enquire/off-plan/` | `off_plan` |
+| Buyers | Discuss a resale purchase | `/enquire/resale/` | `resale` |
+| Owners | Discuss selling a property | `/enquire/sell/` | `seller` |
+| Owners | Discuss letting a property | `/enquire/let/` | `landlord` |
+
+The legacy `data-campaign` attributes are service display labels. The existing intake client reads them as the enquiry campaign text. Keep those fields separate from the verified Google Ads campaign ID and paid-entry page identity. Preserve clean same-origin CTA URLs. Validate that the approved first-party attribution handoff carries permitted source context to the correct service receipt without depending on the browser referrer or adding click IDs to CTA URLs. A CTA interaction remains distinct from a successful enquiry.
+
+Current live form readback did not complete because this environment could not resolve the site at the time of the check. The mapping above comes from the saved source. The paid-entry slots and routes are still unassigned.
