@@ -58,6 +58,12 @@ Before any approved save, capture the page-sitemap URL set and exclusion list. A
 
 On 9 November, public WordPress search for each exact page title returned the corresponding page ID once: Brand 26750 and Tenants 26753. The public search HTML also contained links to the requested route, although the link markup alone did not establish which template component emitted them. Both reuse candidates fail the public WordPress search exclusion check. A sitemap-only exclusion will not address this separate surface. Any correction needs a narrowly scoped search filter and positive controls for ordinary pages. Direct campaign destinations, enquiry navigation, and the private admin search must remain functional. No search settings were changed.
 
+### Navigation sample and search correction status
+
+The public homepage HTML had two navigation elements and contained no links to either proposed reuse page. The hub still linked to the rental form outside any navigation element, as required for its enquiry journey. This sample does not cover every theme template, mobile or JavaScript-generated navigation.
+
+The opt-in search correction passed the [isolated WordPress lab](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42562068443/job/128980460332). The synthetic database showed that both paid pages were hidden from public core and REST search after activation of the candidate. An ordinary page stayed searchable, editor REST search still returned all three, and the rental page was directly accessible. The lab restored its pre-test fixture count before later phases. Live theme acceptance and the sitemap correction remain separate.
+
 ## Buyers
 
 ### Find a Dubai property to buy
