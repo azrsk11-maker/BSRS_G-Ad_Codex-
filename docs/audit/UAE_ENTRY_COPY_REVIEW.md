@@ -44,6 +44,10 @@ The next read-only review joined all 20 CMP candidate briefs to the hash-verifie
 
 On 9 November, the public robots file contained one wildcard group and disallowed only `/wp-admin/`, with an exception for its AJAX endpoint. Neither reuse candidate was excluded. Four direct GET requests using the desktop and mobile AdsBot user-agent strings returned HTTP 200 without redirect for both `/enquire/` and `/enquire/rent/`. These requests were local simulations. Actual Google Ads crawler access, policy status and post-migration destination behavior require native readback before launch.
 
+### Native page sitemap check
+
+On 9 November the sitemap index listed 19 child sitemaps. The page sitemap returned HTTP 200 with 51 page locations. It omitted the Brand enquiry hub and all `/lp/` paths, but included all five existing service routes: off-plan, resale, rent, sell and let. Consequently the proposed Tenants reuse fails the sitemap-exclusion requirement in the current public snapshot despite its page-level noindex metadata. Prepare a scoped sitemap exclusion for designated paid pages and verify the cached sitemap after separately authorized deployment. Preserve the public guide sitemap entries and direct Ads crawler access. Other sitemap types and menus/search/feed exclusions were outside this check.
+
 ## Buyers
 
 ### Find a Dubai property to buy
