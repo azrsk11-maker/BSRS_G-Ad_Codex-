@@ -32,12 +32,24 @@ print(json.dumps({'key':key.private_bytes(serialization.Encoding.PEM,serializati
 const {pin,...tls}=JSON.parse(generated);
 const bridgeSource=await fixture('consent-bridge.js');
 let mode="analytics";
+let withdrawals=0;
 const submissions=[];
 const token='cc1|1794200000|'+'a'.repeat(64);
 function snapshot(){return {known:true,acknowledged:true,measurement_eligible:true,preferences:{analytics:["analytics","both"].includes(mode),ad_measurement:["advertising","both"].includes(mode),personalization:false},decision_version:'synthetic-'+mode,notice_version:'synthetic-notice',preference_days:180,preference_expires_at:Math.floor(Date.now()/1000)+3600};}
 const server=https.createServer(tls,async(req,res)=>{
   const url=new URL(req.url,'https://127.0.0.1');
   if(req.method==='POST'&&url.pathname==='/consent-context'){res.writeHead(200,{'Content-Type':'application/json'}).end(JSON.stringify({...snapshot(),csrf_token:token,expires_in:7200}));return}
+  if(req.method==='POST'&&url.pathname==='/consent-update'){
+    const chunks=[];for await(const chunk of req)chunks.push(chunk);
+    const choice=JSON.parse(Buffer.concat(chunks));
+    if(req.headers['x-bsre-consent-csrf']!==token||choice.analytics!==false||
+        choice.ad_measurement!==false||choice.personalization!==false){
+      res.writeHead(400).end('{}');return;
+    }
+    mode='refused';withdrawals++;
+    res.writeHead(200,{'Content-Type':'application/json'}).end(JSON.stringify(snapshot()));
+    return;
+  }
   if(req.method==='POST'&&url.pathname==='/synthetic-receipt'){
     const chunks=[];for await(const c of req)chunks.push(c);
     const body=JSON.parse(Buffer.concat(chunks));
@@ -88,10 +100,12 @@ try{
     await go(()=>send('Page.navigate',{url:entry}));
     await evaluate('sessionStorage.clear()');
     for(const choice of ['analytics','advertising','both','refused']){
-      mode=choice;
+      mode=choice==='refused'?'both':choice;
       await go(()=>send('Page.navigate',{url:entry+'?utm_source=synthetic_source&gclid=synthetic_gclid_123'}));
       assert.equal(await evaluate('window.BSREConsentBridge.refresh()'),true);
-
+      if(choice==='refused'){
+        assert.equal(await evaluate("window.BSREConsentBridge.save({analytics:false,ad_measurement:false,personalization:false})"),true);
+      }
       await go(()=>evaluate(`document.getElementById('${slug}').click()`));
       assert.equal(await evaluate('window.BSREConsentBridge.refresh()'),true);
       const state=await evaluate(`({path:location.pathname,query:location.search,referrer:document.referrer,role:document.querySelector('form').dataset.role,analytics:JSON.parse(sessionStorage.getItem('BSRE_ATTRIBUTION_V1')),advertising:JSON.parse(sessionStorage.getItem('BSRE_AD_ATTRIBUTION_V1'))})`);
@@ -125,10 +139,9 @@ try{
       console.log(JSON.stringify({slug,consent:choice,clean_navigation:true,payload_assertion:true,synthetic_receipt:true,duplicate_submit_suppressed:true}));
     }
   }
-  assert.equal(submissions.length,16);
+  assert.equal(submissions.length,16);assert.equal(withdrawals,4);
 }finally{
   ws?.close();
   const exited=once(chrome,'exit');chrome.kill();await Promise.race([exited,new Promise(r=>setTimeout(r,1500))]);
   server.close();await fs.rm(profile,{recursive:true,force:true,maxRetries:3,retryDelay:150});
 }
-
