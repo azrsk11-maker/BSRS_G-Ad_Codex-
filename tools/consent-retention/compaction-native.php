@@ -251,7 +251,10 @@ try {
         }
         if (!is_scalar($count) || !preg_match('/^[0-9]+$/D',(string)$count)) { $observerError='INVALID_COUNT_RESULT'; break; }
         $lastWaitCount=(int)$count; $observed=$attempted && $lastWaitCount>0;
-        if(!$observed)usleep(20000);
+        // MariaDB's shared InnoDB metadata cache refreshes only after >100ms idle.
+        // Every read resets its idle timer: 20ms polling can pin the pre-worker snapshot.
+        // Keep the same five-second deadline and actual waiter/blocker proof.
+        if(!$observed)usleep(200000);
     } while(!$observed && microtime(true)<$deadline);
     if (!$observed) $diagnostic('CHECKPOINT_LOCK_NOT_OBSERVED');
     nc('concurrent_compactor_waits_on_real_checkpoint_lock',$observed);
