@@ -47,6 +47,7 @@ jobs:
           php tools/consent-retention/per-choice/test_per_choice.php
           find tools/consent-retention/per-choice -name '*.php' -print0 | xargs -0 -n 1 php -l
           php tools/consent-retention/per-choice/selective-choice.test.php
+          php tools/consent-retention/per-choice/purpose-choice.test.php
           php tools/website-tracking/tracking-system/receipt-recovery.test.php
       # Site Health on 7 November reports production PHP 8.2.35.
       # Keep the runner-runtime check above and explicitly cover its 8.2 minor.
@@ -65,3 +66,4 @@ jobs:
           php tools/consent-retention/per-choice/test_per_choice.php
           find tools/consent-retention/per-choice -name '*.php' -print0 | xargs -0 -n 1 php -l
           php tools/consent-retention/per-choice/selective-choice.test.php
+          php tools/consent-retention/per-choice/purpose-choice.test.php
