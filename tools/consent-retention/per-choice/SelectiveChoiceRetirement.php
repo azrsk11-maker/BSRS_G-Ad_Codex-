@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace BSRE\RetentionReview\PerChoice\ApplicationV1;
 if (!defined('ABSPATH')) exit;
 require_once __DIR__.'/PerChoicePlanner.php';
+require_once __DIR__.'/PurposeChoicePlanner.php';
 use BSRE\RetentionReview\PerChoice\PerChoicePlanner as Planner;
 use BSRE\RetentionReview\RetentionInventory;
 
@@ -10,17 +11,27 @@ final class SelectiveFailure extends \RuntimeException {}
 
 /** First selective application in an explicitly enabled disposable lab, never a production writer. */
 final class SelectiveChoiceRetirement {
-    private $db; private $clock; private bool $commitUncertain=false;
+    private $db; private $clock; private bool $commitUncertain=false; private bool $purposeMode=false;
     public const PREFIX='per_choice_synthetic_';
     public const SCOPE='SYNTHETIC_PER_CHOICE_APPLICATION_V1';
+    public const PURPOSE_PREFIX='per_choice_purpose_synthetic_';
+    public const PURPOSE_SCOPE='SYNTHETIC_PURPOSE_PER_CHOICE_APPLICATION_V1';
     private const ZERO='0000000000000000000000000000000000000000000000000000000000000000';
-    public function __construct($db,?callable $clock=null) { $this->db=$db;$this->clock=$clock??fn()=>time();$this->guard(); }
+    public function __construct($db,?callable $clock=null,string $mode='PLAIN') {
+        if(!in_array($mode,['PLAIN','PURPOSE_LAB'],true))self::fail('SELECTIVE_MODE_INVALID');
+        $this->purposeMode=$mode==='PURPOSE_LAB';$this->db=$db;$this->clock=$clock??fn()=>time();$this->guard();
+    }
+    public static function purposeLab($db,?callable $clock=null): self {return new self($db,$clock,'PURPOSE_LAB');}
+    private function prefix(): string {return $this->purposeMode?self::PURPOSE_PREFIX:self::PREFIX;}
+    private function scope(): string {return $this->purposeMode?self::PURPOSE_SCOPE:self::SCOPE;}
     private static function fail(string $code): never { throw new SelectiveFailure($code); }
     private function guard(bool $apply=false): void {
         if (!defined('BSRE_PER_CHOICE_LAB_ENABLED') || BSRE_PER_CHOICE_LAB_ENABLED!==true) self::fail('SELECTIVE_COMPONENT_DISABLED');
-        if (!defined('BSRE_RETENTION_LAB') || BSRE_RETENTION_LAB!==true || wp_get_environment_type()!=='local' || home_url()!=='http://bsre.invalid' || $this->db->prefix!==self::PREFIX) self::fail('SELECTIVE_ISOLATED_LAB_ONLY');
+        if($this->purposeMode&&(!defined('BSRE_PER_CHOICE_PURPOSE_LAB_ENABLED')||BSRE_PER_CHOICE_PURPOSE_LAB_ENABLED!==true))self::fail('SELECTIVE_PURPOSE_COMPONENT_DISABLED');
+        if (!defined('BSRE_RETENTION_LAB') || BSRE_RETENTION_LAB!==true || wp_get_environment_type()!=='local' || home_url()!=='http://bsre.invalid' || $this->db->prefix!==$this->prefix()) self::fail('SELECTIVE_ISOLATED_LAB_ONLY');
         if (!current_user_can('manage_options') || get_current_user_id()<1) self::fail('SELECTIVE_OWNER_REQUIRED');
         if ($apply && (!defined('BSRE_PER_CHOICE_APPLY_ENABLED') || BSRE_PER_CHOICE_APPLY_ENABLED!==true)) self::fail('SELECTIVE_APPLY_DISABLED');
+        if($apply&&$this->purposeMode&&(!defined('BSRE_PER_CHOICE_PURPOSE_APPLY_ENABLED')||BSRE_PER_CHOICE_PURPOSE_APPLY_ENABLED!==true))self::fail('SELECTIVE_PURPOSE_APPLY_DISABLED');
         if ($apply && $this->commitUncertain) self::fail('SELECTIVE_FRESH_READBACK_REQUIRED');
     }
     private function now(): int {
@@ -61,7 +72,7 @@ final class SelectiveChoiceRetirement {
         return(int)$value;
     }
     private function rawControl(): array {
-        $table=self::PREFIX.'bsre_choice_control';$this->engine($table);$this->db->last_error='';
+        $table=$this->prefix().'bsre_choice_control';$this->engine($table);$this->db->last_error='';
         $rows=$this->db->get_results("SELECT * FROM {$table} ORDER BY id LIMIT 2 FOR UPDATE",ARRAY_A);
         if($this->db->last_error!==''||!is_array($rows)||count($rows)!==1||self::uint($rows[0]['id']??null)!==1)self::fail('SELECTIVE_CONTROL_INVALID');
         $row=$rows[0];$keys=array_keys($row);sort($keys);$expected=['id','generation','chain_hash','history_gap','last_plan_hash','snapshot_hash'];sort($expected);
@@ -72,7 +83,7 @@ final class SelectiveChoiceRetirement {
         $this->engine($table);return $anchor;
     }
     private function auditRows(): array {
-        $table=self::PREFIX.'bsre_choice_audit';$this->engine($table);$this->db->last_error='';
+        $table=$this->prefix().'bsre_choice_audit';$this->engine($table);$this->db->last_error='';
         $rows=$this->db->get_results("SELECT * FROM {$table} ORDER BY generation LIMIT 1001 FOR UPDATE",ARRAY_A);
         if($this->db->last_error!==''||!is_array($rows)||count($rows)>1000)self::fail('SELECTIVE_AUDIT_UNAVAILABLE');
         $this->engine($table);return $rows;
@@ -98,7 +109,7 @@ final class SelectiveChoiceRetirement {
     private function snapshot(): array {
         $snapshot=['kind'=>RetentionInventory::KIND];$total=0;
         foreach(['state'=>'subject_key','history'=>'receipt','captures'=>'request_id']as$part=>$pk){
-            $table=self::PREFIX.'bsre_consent_'.$part;$this->engine($table);$this->db->last_error='';
+            $table=$this->prefix().'bsre_consent_'.$part;$this->engine($table);$this->db->last_error='';
             $snapshot[$part]=$this->db->get_results("SELECT * FROM {$table} ORDER BY {$pk} LIMIT 1001 FOR UPDATE",ARRAY_A);
             if($this->db->last_error!==''||!is_array($snapshot[$part]))self::fail('SELECTIVE_STORAGE_UNAVAILABLE');
             $total+=count($snapshot[$part]);if($total>RetentionInventory::MAX_ROWS)self::fail('SELECTIVE_SNAPSHOT_UNBOUNDED');
@@ -106,7 +117,7 @@ final class SelectiveChoiceRetirement {
         }return $snapshot;
     }
     public function installLabTables(): void {
-        $this->guard(true);$this->session();$p=self::PREFIX;$present=[];
+        $this->guard(true);$this->session();$p=$this->prefix();$present=[];
         foreach(['bsre_choice_control','bsre_choice_audit','bsre_consent_state','bsre_consent_history','bsre_consent_captures']as$table){
             $this->db->last_error='';$row=$this->db->get_row($this->db->prepare('SHOW TABLE STATUS WHERE Name=%s',$p.$table),ARRAY_A);
             if($this->db->last_error!=='')self::fail('SELECTIVE_STORAGE_UNAVAILABLE');$present[$table]=(bool)$row;
@@ -124,7 +135,10 @@ final class SelectiveChoiceRetirement {
     public function anchor(): array {$this->guard();return $this->transaction(fn()=>$this->readControl());}
     private function makePlan(array $snapshot,array $coverage,array $anchor,int $now): array {
         if($anchor['history_incomplete'])self::fail('SELECTIVE_HISTORY_RECONCILIATION_REQUIRED');
-        $review=Planner::plan($snapshot,$coverage,$now,true);
+        if($this->purposeMode){
+            try{$review=\BSRE\RetentionReview\PerChoice\PurposeV1\PurposeChoicePlanner::plan($snapshot,$coverage,$now,true);}
+            catch(\Throwable $error){self::fail('SELECTIVE_PURPOSE_LINEAGE_UNRESOLVED');}
+        }else $review=Planner::plan($snapshot,$coverage,$now,true);
         if($review['global_reasons'])self::fail('SELECTIVE_SOURCE_COVERAGE_UNRESOLVED');
         $unresolved=['HISTORY_GAP','CURRENT_HISTORY_LINEAGE_MISSING','HISTORY_TIME_REGRESSION','CURRENT_HISTORY_MISMATCH','CHOICE_CLOCK_UNRESOLVED','CHOICE_PERMISSION_UNRESOLVED','CAPTURE_LINEAGE_UNRESOLVED','CURRENT_PREFERENCE_WINDOW_UNRESOLVED','DUPLICATE_CURRENT_STATE','DUPLICATE_HISTORY_REVISION'];
         foreach($review['rows']as$row)if(array_intersect($row['reasons'],$unresolved))self::fail('SELECTIVE_SOURCE_COVERAGE_UNRESOLVED');
@@ -135,7 +149,7 @@ final class SelectiveChoiceRetirement {
                 if(in_array('bsre_consent_'.$part.':'.$row[$pk],$selected,true)){++$counts[$part];return false;}return true;
             }));
         }
-        return ['version'=>1,'scope'=>self::SCOPE,'created_at'=>$now,'expires_at'=>min($now+900,$coverage['valid_until']),
+        return ['version'=>1,'scope'=>$this->scope(),'created_at'=>$now,'expires_at'=>min($now+900,$coverage['valid_until']),
             'coverage'=>$coverage,'anchor'=>$anchor,'source_hash'=>Planner::digest($snapshot),'planner_hash'=>$review['plan_sha256'],
             'selected'=>$selected,'expected_after_hash'=>Planner::digest($after),'deleted_state'=>$counts['state'],'deleted_history'=>$counts['history']];
     }
@@ -157,22 +171,22 @@ final class SelectiveChoiceRetirement {
             $snapshot=$this->snapshot();if(Planner::digest($snapshot)!==($plan['source_hash']??null))self::fail('SELECTIVE_PLAN_STALE_OR_ALTERED');
             $expected=$this->makePlan($snapshot,$plan['coverage']??[],$before,$plan['created_at']);
             if(!hash_equals(Planner::digest($expected),Planner::digest($plan)))self::fail('SELECTIVE_PLAN_STALE_OR_ALTERED');
-            if(!$plan['selected'])return ['scope'=>self::SCOPE,'status'=>'NO_ROWS_SELECTED','deleted_rows'=>0,'anchor'=>$before,'history_incomplete'=>false,'production_acceptance'=>false,'reopen_authorized'=>false];
+            if(!$plan['selected'])return ['scope'=>$this->scope(),'status'=>'NO_ROWS_SELECTED','deleted_rows'=>0,'anchor'=>$before,'history_incomplete'=>false,'production_acceptance'=>false,'reopen_authorized'=>false];
             if($before['generation']===PHP_INT_MAX)self::fail('SELECTIVE_INTEGER_INVALID');
             $counts=['state'=>0,'history'=>0];
             foreach($plan['selected']as$ref){
                 if(!is_string($ref)||!preg_match('/^bsre_consent_(state|history):([a-f0-9]+)$/D',$ref,$match))self::fail('SELECTIVE_ROW_SCOPE_INVALID');
                 $part=$match[1];$pk=$part==='state'?'subject_key':'receipt';
-                $counts[$part]+=$this->query($this->db->prepare('DELETE FROM '.self::PREFIX.'bsre_consent_'.$part.' WHERE '.$pk.'=%s',$match[2]));
+                $counts[$part]+=$this->query($this->db->prepare('DELETE FROM '.$this->prefix().'bsre_consent_'.$part.' WHERE '.$pk.'=%s',$match[2]));
             }
             if($counts['state']!==$plan['deleted_state']||$counts['history']!==$plan['deleted_history'])self::fail('SELECTIVE_DELETE_COUNT_CONFLICT');
             $afterSnapshot=$this->snapshot();if(Planner::digest($afterSnapshot)!==$plan['expected_after_hash'])self::fail('SELECTIVE_RETAINED_STATE_CHANGED');
             $hash=Planner::digest($plan);$record=['plan_hash'=>$hash,'generation'=>$before['generation']+1,'before_hash'=>$plan['source_hash'],'after_hash'=>$plan['expected_after_hash'],
                 'deleted_state'=>$counts['state'],'deleted_history'=>$counts['history'],'applied_at'=>$now,'actor'=>get_current_user_id()];$next=self::nextAnchor($before,$record);
-            $this->query($this->db->prepare('INSERT INTO '.self::PREFIX.'bsre_choice_audit VALUES (%s,%d,%s,%s,%s,%s,%d,%d,%d,%d)',$hash,$next['generation'],$plan['source_hash'],$plan['expected_after_hash'],Planner::digest($before),Planner::digest($next),$counts['state'],$counts['history'],$now,get_current_user_id()));
-            $updated=$this->query($this->db->prepare('UPDATE '.self::PREFIX.'bsre_choice_control SET generation=%d,chain_hash=%s,history_gap=%d,last_plan_hash=%s,snapshot_hash=%s WHERE id=1 AND generation=%d',$next['generation'],$next['chain_hash'],(int)$next['history_incomplete'],$hash,$next['snapshot_hash'],$before['generation']));
+            $this->query($this->db->prepare('INSERT INTO '.$this->prefix().'bsre_choice_audit VALUES (%s,%d,%s,%s,%s,%s,%d,%d,%d,%d)',$hash,$next['generation'],$plan['source_hash'],$plan['expected_after_hash'],Planner::digest($before),Planner::digest($next),$counts['state'],$counts['history'],$now,get_current_user_id()));
+            $updated=$this->query($this->db->prepare('UPDATE '.$this->prefix().'bsre_choice_control SET generation=%d,chain_hash=%s,history_gap=%d,last_plan_hash=%s,snapshot_hash=%s WHERE id=1 AND generation=%d',$next['generation'],$next['chain_hash'],(int)$next['history_incomplete'],$hash,$next['snapshot_hash'],$before['generation']));
             if($updated!==1||$this->readControl()!==$next)self::fail('SELECTIVE_CONTROL_WRITE_CONFLICT');
-            return ['scope'=>self::SCOPE,'status'=>'SYNTHETIC_ROWS_APPLIED','deleted_rows'=>array_sum($counts),'anchor'=>$next,'history_incomplete'=>$next['history_incomplete'],'production_acceptance'=>false,'reopen_authorized'=>false];
+            return ['scope'=>$this->scope(),'status'=>'SYNTHETIC_ROWS_APPLIED','deleted_rows'=>array_sum($counts),'anchor'=>$next,'history_incomplete'=>$next['history_incomplete'],'production_acceptance'=>false,'reopen_authorized'=>false];
         });
     }
     /** Read-only exact last-operation readback. It never clears a gap or authorizes reopening. */
@@ -182,7 +196,7 @@ final class SelectiveChoiceRetirement {
             $hash=Planner::digest($plan);$audits=$this->auditRows();$row=end($audits);
             if(!$row||$anchor['last_plan_hash']!==$hash||$row['plan_hash']!==$hash||self::uint($row['generation'])!==$anchor['generation']||$row['after_anchor_hash']!==Planner::digest($anchor)||$row['before_anchor_hash']!==Planner::digest($plan['anchor']??[])||$row['before_hash']!==($plan['source_hash']??null)||$row['after_hash']!==($plan['expected_after_hash']??null)||self::uint($row['deleted_state'])!==($plan['deleted_state']??null)||self::uint($row['deleted_history'])!==($plan['deleted_history']??null))self::fail('SELECTIVE_RECONCILIATION_EVIDENCE_MISMATCH');
             if(Planner::digest($this->snapshot())!==$row['after_hash'])self::fail('SELECTIVE_RECONCILIATION_CURRENT_STATE_CHANGED');
-            return ['scope'=>self::SCOPE,'last_operation_reconciled'=>true,'history_incomplete'=>$anchor['history_incomplete'],'future_application_authorized'=>false,'production_acceptance'=>false,'reopen_authorized'=>false];
+            return ['scope'=>$this->scope(),'last_operation_reconciled'=>true,'history_incomplete'=>$anchor['history_incomplete'],'future_application_authorized'=>false,'production_acceptance'=>false,'reopen_authorized'=>false];
         });
     }
 }
