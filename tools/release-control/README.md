@@ -6,6 +6,7 @@ This implements part of Master sections 18/21/24 and [the repository governance 
 
 ## Checks
 
+- `WT-002` requires the [page-level tracking matrix](../website-tracking/TRACKING_MATRIX.md), bound to the exact reviewed page/CTA/configuration inventory. Global PASS receipts or page-ID lists cannot substitute for each page's results. Missing evidence holds the packet; consistency does not authenticate execution or authorize release.
 - Separate `WEBSITE_PUBLICATION`, `TRACKING_PUBLICATION`, `ADS_CONFIGURATION` and `ADS_ACTIVATION` actions. Website/tracking records cannot carry media authority; an Ads configuration request cannot silently enable campaigns.
 - Exact reviewed Git commit, clean checkout, bounded artifact hashes and membership in that commit. Ignored files cannot masquerade as reviewed source. Evidence is separate from source artifacts to avoid a commit/hash cycle.
 - Stable `BSRE-C0001`–`BSRE-C0360` / `BSRE-LP0001`–`BSRE-LP0360` pairs; unique native page IDs, campaign IDs and same-origin canonical URLs. These are validation rules, not fabricated live mappings.

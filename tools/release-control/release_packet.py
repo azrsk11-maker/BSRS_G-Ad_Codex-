@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import re
+import shutil
 import subprocess
 
 OWNER = "azrsk11-maker"
@@ -53,6 +54,8 @@ LAUNCH_BUDGET_FILS = {
 }
 CURRENT_CAMPAIGNS = set(LAUNCH_BUDGET_FILS)
 FROZEN_BASELINE_PATH = Path(__file__).resolve().parents[2] / "docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json"
+MATRIX_VALIDATOR_PATH = Path(__file__).resolve().parents[1] / "website-tracking/validate_tracking_matrix.mjs"
+TRACKING_IDENTIFIERS_PATH = Path(__file__).resolve().parents[2] / "config/tracking/verified-destinations.unpublished.json"
 TRACKING_AFTER = {"enhanced_matching": False, "personalization": False, "audience_exports": False,
     "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "auto_form_collection": False,
     "page_view_producers": 1, "accepted_enquiry_route": "NATIVE_ADS_SECONDARY", "qualified_import": "GCLID_ONLY_DATA_MANAGER"}
@@ -168,6 +171,37 @@ def verify_file(root, record):
     if hashed.hexdigest() != expected:
         raise ValueError("ARTIFACT_HASH_MISMATCH")
     return target
+
+
+def page_tracking_complete(matrix, inventory, proposal, receipt):
+    """One bounded shared-rule invocation; never trust a precomputed PASS summary."""
+    node = shutil.which("node")
+    if not node:
+        return False
+    try:
+        identifiers = load_json(TRACKING_IDENTIFIERS_PATH)["observations"]
+        context = {"proposal_sha256": digest(proposal), "commit": proposal["commit"],
+            "target_origin": proposal["target_origin"], "resources": proposal["resources"],
+            "inventory": inventory, "operator": proposal["operator"], "pusher": proposal["pusher"],
+            "expected_tracking_ids": {"gtm_container_id": identifiers["gtm"]["container_id"],
+                "ga4_web_stream_id": identifiers["ga4"]["web_stream_id"],
+                "ga4_measurement_id": identifiers["ga4"]["measurement_id"]},
+            "expected_gtm_version": proposal["change"].get("version_after") if proposal["kind"] == "TRACKING_PUBLICATION" else None,
+            "created_at_utc": proposal["created_at_utc"], "observed_at_utc": receipt["observed_at_utc"],
+            "valid_until_utc": receipt["valid_until_utc"]}
+        payload = json.dumps({"matrix": matrix, "context": context}, ensure_ascii=False, allow_nan=False)
+        if len(payload.encode("utf-8")) > 4_000_000:
+            return False
+        process = subprocess.run([node, str(MATRIX_VALIDATOR_PATH), "--stdin"], input=payload,
+            capture_output=True, text=True, encoding="utf-8", timeout=15, check=False)
+        if process.returncode or len(process.stdout) > MAX_BYTES:
+            return False
+        result = json.loads(process.stdout)
+        return (result.get("matrix_consistent") is True and result.get("acceptance_complete") is True
+                and result.get("evidence_authenticated") is False and result.get("execution_allowed") is False
+                and result.get("release_authorized") is False)
+    except (OSError, subprocess.TimeoutExpired, KeyError, TypeError, ValueError, AttributeError):
+        return False
 
 
 def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False, source_hashes=None):
@@ -307,6 +341,18 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
             need(result.get("gate_id") == row["gate_id"] and result.get("status") == "PASS", "GATE_NOT_PASS:" + str(row["gate_id"]))
             need(result.get("proposal_sha256") == proposal_hash and result.get("commit") == commit and result.get("resource_page_ids") == sorted(resource_ids), "EVIDENCE_SCOPE_MISMATCH:" + str(row["gate_id"]))
             need(result.get("method") in METHODS and match(LOGIN, result.get("reviewer")), "COMPLETE_ACCEPTANCE_METHOD_REQUIRED:" + str(row["gate_id"]))
+            if row["gate_id"] == "WT-002":
+                if "page_tracking_matrix" not in result or "page_tracking_inventory" not in result:
+                    need(False, "INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED")
+                else:
+                    inventory_ref = result["page_tracking_inventory"]
+                    inventory = record_json(inventory_ref)
+                    need(inventory_ref in artifacts and isinstance(source_hashes, dict) and
+                         source_hashes.get(inventory_ref["path"]) == inventory_ref["sha256"],
+                         "PAGE_TRACKING_INVENTORY_NOT_IN_REVIEWED_COMMIT")
+                    matrix = record_json(result["page_tracking_matrix"])
+                    need(page_tracking_complete(matrix, inventory, proposal, result),
+                         "INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED")
             if row["gate_id"] == "SOURCE_TRUTH" and proposal["kind"] == "WEBSITE_PUBLICATION":
                 sources = rows(result.get("native_page_sources", []), 360)
                 references = {"service_or_inventory_ref", "claims_review_ref", "asset_rights_review_ref", "update_owner_ref"}

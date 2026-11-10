@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, frozen_legacy_statuses, instant, load_json, validate, verify_file
 from release_packet import AUTOMATION_SAFE_STATE, held_account_asset_ids, reviewed_launch_children
@@ -32,6 +33,15 @@ class ReleasePacketTests(unittest.TestCase):
         resources = [{"page_id": "BSRE-LP0001", "campaign_key": "BSRE-C0001", "campaign_id": "999999999", "wordpress_page_id": 999999, "url": ORIGIN + "/synthetic-only/"}]
         if kind.startswith("ADS_"):
             resources = [{"page_id": f"BSRE-LP{n:04}", "campaign_key": f"BSRE-C{n:04}", "campaign_id": campaign_id, "wordpress_page_id": 999000+n, "url": ORIGIN + f"/synthetic-only-{n}/"} for n, campaign_id in enumerate(sorted(CURRENT_CAMPAIGNS), 1)]
+        inventory = {"schema_version": 1, "target_origin": ORIGIN, "pages": [{**resource,
+            "gtm_container_id": "GTM-NW8WXKRF", "gtm_version": 2, "ga4_web_stream_id": "16159906474",
+            "ga4_measurement_id": "G-W01P9W3NWE", "conversion_action_mapping": {
+                "operational_event": "form_accepted", "ga4_event": "generate_lead",
+                "ads_action_id": "99999999", "ads_route": "NATIVE_ADS_SECONDARY"},
+            "cta_inventory": [{"cta_id": "TEST_ONLY:cta:" + resource["page_id"], "placement": "TEST_ONLY:hero", "destination": resource["url"]}]
+            } for resource in resources]}
+        inventory_ref = self.write("artifacts/page-tracking-inventory.json", inventory)
+        self.source_hashes[inventory_ref["path"]] = inventory_ref["sha256"]
         page_ids = sorted(r["page_id"] for r in resources)
         rollback = self.write("recovery/synthetic.json", {"test_only": True, "commit": COMMIT, "resource_page_ids": page_ids, "target_origin": ORIGIN, "ads_account": ACCOUNT, "resources": resources, "previous_versions": {p: "synthetic-previous-version" for p in page_ids}})
         proposal = {"release_id": "BSRE-REL-SYNTHETIC-ONLY", "kind": kind,
@@ -39,7 +49,7 @@ class ReleasePacketTests(unittest.TestCase):
             "operator": "synthetic-operator", "pusher": "synthetic-pusher",
             "target_origin": ORIGIN, "ads_account": ACCOUNT,
             "resources": resources,
-            "artifacts": [artifact], "rollback": {"before_manifest": rollback, "instructions": self.write("recovery/instructions.md", {"test_only": True}),
+            "artifacts": [artifact, inventory_ref], "rollback": {"before_manifest": rollback, "instructions": self.write("recovery/instructions.md", {"test_only": True}),
                 "preserve_accepted_records": True, "preserve_outbox": True, "reactivate_old_campaigns": False,
                 "reapply_retention_before_reopen": True, "encrypted_owner_only_backup_days": 30},
             "post_release": {"readback_required": True, "pause_on_mismatch": True, "preserve_intake": True},
@@ -63,6 +73,23 @@ class ReleasePacketTests(unittest.TestCase):
         elif kind == "TRACKING_PUBLICATION":
             proposal["change"] = {"gtm_container_id": "GTM-NW8WXKRF", "ga4_measurement_id": "G-W01P9W3NWE", "version_before": 1, "version_after": 2, "enhanced_matching": False, "personalization": False, "audience_exports": False, "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "configuration_diff": self.write("scope/tracking.json", {"target_container": "GTM-NW8WXKRF", "measurement_id": "G-W01P9W3NWE", "before_version": 1, "after_version": 2, "before": TRACKING_AFTER, "after": TRACKING_AFTER})}
         proposal_hash = digest(proposal)
+        # Explicit migration of synthetic fixture data, never real page acceptance.
+        matrix = {"schema_version": 1, "proposal_sha256": proposal_hash, "commit": COMMIT,
+            "target_origin": ORIGIN, "production_synthetic_conversions": 0, "pages": []}
+        for resource in inventory["pages"]:
+            page = copy.deepcopy(resource)
+            page.update(reviewer="synthetic-reviewer", method="AUTHENTICATED_STAGING_ACCEPTANCE",
+                observed_at_utc="2026-11-07T02:00:00Z", valid_until_utc="2026-11-07T08:00:00Z",
+                evidence_ref="TEST_ONLY:" + page["page_id"], results=[
+                    {"test_id": f"WT-{n:03}", "status": "PASS", "evidence_ref": f"TEST_ONLY:{page['page_id']}:WT-{n:03}"}
+                    for n in range(1, 31) if n not in {1, 3, 4, 9, 27}],
+                journey_correlation={kind: {"lead_sha256": hashlib.sha256(("TEST_ONLY:lead:" + page["page_id"]).encode()).hexdigest(),
+                    "source_sha256": hashlib.sha256(("TEST_ONLY:source:" + page["page_id"]).encode()).hexdigest()}
+                    for kind in ("acceptance", "email", "sheet")})
+            for cta in page["cta_inventory"]:
+                cta.update(status="PASS", evidence_ref="TEST_ONLY:cta:" + page["page_id"])
+            matrix["pages"].append(page)
+        matrix_ref = self.write("evidence/page-tracking-matrix.json", matrix)
         evidence = []
         gates = GATES | (POSTFLIGHT_GATES if kind.startswith("ADS_") else set())
         if kind == "ADS_ACTIVATION":
@@ -71,6 +98,8 @@ class ReleasePacketTests(unittest.TestCase):
             result = {"test_only": True, "gate_id": gate, "status": "PASS", "proposal_sha256": proposal_hash,
                 "commit": COMMIT, "resource_page_ids": page_ids, "method": "AUTHENTICATED_STAGING_ACCEPTANCE",
                 "reviewer": "synthetic-reviewer", "observed_at_utc": "2026-11-07T02:00:00Z", "valid_until_utc": "2026-11-07T08:00:00Z", "production_synthetic_conversions": 0}
+            if gate == "WT-002":
+                result.update(page_tracking_inventory=inventory_ref, page_tracking_matrix=matrix_ref)
             if gate == "KEYWORD_SCOPE":
                 result["counts"] = {"unique_reviewed_positive": 14000, "unique_reviewed_negative": 14000, "planned_pairs": 360, "unresolved_protected_conflicts": 0}
                 if kind == "ADS_ACTIVATION":
@@ -619,6 +648,45 @@ class ReleasePacketTests(unittest.TestCase):
         data["ads_account"] = "123-456-7890"
         self.packet["proposal"]["rollback"]["before_manifest"] = self.write(ref["path"], data)
         self.assertIn("EXACT_SCOPED_ROLLBACK_VERSIONS_REQUIRED", self.check()["errors"])
+
+    def change_matrix(self, mutate):
+        reference = next(row for row in self.packet["evidence"] if row["gate_id"] == "WT-002")
+        receipt = load_json(self.root / reference["file"]["path"])
+        matrix_ref = receipt["page_tracking_matrix"]
+        matrix = load_json(self.root / matrix_ref["path"])
+        mutate(matrix)
+        self.change_evidence("WT-002", "page_tracking_matrix", self.write(matrix_ref["path"], matrix))
+
+    def test_page_ids_and_global_pass_do_not_replace_individual_acceptance(self):
+        self.change_matrix(lambda matrix: matrix["pages"][0].pop("results"))
+        self.assertIn("INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED", self.check()["errors"])
+
+    def test_missing_or_unexecuted_page_matrix_fails_closed(self):
+        reference = next(row for row in self.packet["evidence"] if row["gate_id"] == "WT-002")
+        receipt = load_json(self.root / reference["file"]["path"])
+        del receipt["page_tracking_matrix"]
+        reference["file"] = self.write(reference["file"]["path"], receipt)
+        self.assertIn("INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED", self.check()["errors"])
+        self.packet = self.fixture()
+        self.change_matrix(lambda matrix: matrix["pages"][0]["results"][0].update(status="NOT_EXECUTED", evidence_ref=None))
+        self.assertIn("INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED", self.check()["errors"])
+
+    def test_matrix_inventory_must_be_an_exact_reviewed_source_artifact(self):
+        self.source_hashes.pop("artifacts/page-tracking-inventory.json")
+        self.assertIn("PAGE_TRACKING_INVENTORY_NOT_IN_REVIEWED_COMMIT", self.check()["errors"])
+
+    def test_matrix_rejects_wrong_destination_and_mismatched_delivery_correlation(self):
+        for mutate in (lambda matrix: matrix["pages"][0]["cta_inventory"][0].update(destination=ORIGIN + "/wrong/"),
+                       lambda matrix: matrix["pages"][0]["journey_correlation"]["sheet"].update(lead_sha256="e" * 64)):
+            self.packet = self.fixture()
+            self.change_matrix(mutate)
+            self.assertIn("INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED", self.check()["errors"])
+
+    def test_matrix_engine_unavailable_or_timed_out_never_uses_global_pass(self):
+        with patch("release_packet.shutil.which", return_value=None):
+            self.assertIn("INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED", self.check()["errors"])
+        with patch("release_packet.subprocess.run", side_effect=__import__("subprocess").TimeoutExpired("node", 15)):
+            self.assertIn("INDIVIDUAL_PAGE_TRACKING_ACCEPTANCE_REQUIRED", self.check()["errors"])
 
 
 if __name__ == "__main__":
