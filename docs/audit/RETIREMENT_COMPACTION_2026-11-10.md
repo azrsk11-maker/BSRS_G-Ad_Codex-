@@ -40,6 +40,12 @@ Independent review also found a separate derived-prefix defect: the proposed lon
 
 At that point compaction publication had produced four workflow runs in total: two Foundation successes and two native failures, with no intermediate runs. Further required diagnostic runs must be added to that total. [Current investigation receipt](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6767529253).
 
+### Third result and source-backed observer correction
+
+Published `88d3ee1d261eb7a3ea5de57ff3a826393dec534d` matched all351reviewed files. Foundation42820081916 passed both jobs; isolated42820082009/job129843080991 failed the same lock witness. New diagnostics located the actual checkpoint SELECT in STATISTICS, with a valid active parent transaction but no worker or waits in the InnoDB metadata snapshot. This does not establish a core/server defect. The three compaction attempts total six workflow runs: three Foundation successes and three native failures, zero intermediate runs or cancellations.
+
+Investigation then found the observer's specific cache-starvation mechanism in [MariaDB10.11 source](https://github.com/MariaDB/server/blob/10.11/storage/innobase/trx/trx0i_s.cc): `can_cache_be_updated` requires over100ms idle, while `trx_i_s_cache_end_read` resets the shared cache's last-read timer after every read. Our20ms polling can indefinitely reuse the pre-worker snapshot; a new observer connection cannot refresh a shared cache. Independent review confirmed the source logic. Change only the unsuccessful-observation interval to200ms, preserving the same five-second deadline, actual joined waiter/blocker requirement, strict known-zero child exit, stale-authority assertion and safe cleanup. This is a targeted observational correction, not evidence that the candidate passed. PHP lint and the nineteen unchanged pure checks pass; fresh complete-head native CI remains required.
+
 ## Fresh access findings and full-goal holds
 
 A new WordPress tab successfully reached the real login page, resolving navigation independently of the stale target, but the admin session has expired. No credentials were entered or security settings changed. [Issue 6 records the authentication dependency](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6#issuecomment-6766144453). The fresh Real Estate Ads UI readback is blocked by its ad-blocker dialog; protections were left unchanged and no new live status/configuration acceptance is claimed.
