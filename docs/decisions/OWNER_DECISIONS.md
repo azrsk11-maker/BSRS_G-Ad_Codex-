@@ -18,6 +18,10 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 | OD-010 | GitHub feature branches/PRs, protected main, required review, decision issues and independent production authorization | Latest direct request; minimal empty-repo README bootstrap only before protection |
 | OD-011 | Four-campaign full-allocation launch only after all gates; no three-campaign AED1,900 exception | Prior explicit owner decision; latest instruction requires new exact release authorization |
 
+### Creative preparation clarification — 10 November 2026
+
+[Master Plan section 12](../google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md#12-creative-and-asset-factory) requires preparing a control RSA and distinct documented challenger, and explicitly avoids requiring simultaneous low-volume variants. A two-ad preparation library therefore does not change the previously frozen one-serving-ad-per-group inventory. The new offline validator checks preparation only; it neither creates ads nor changes serving counts, activation or the approved budget. This is a source interpretation, not a new owner approval or an exception to the Master Plan. Any experiment or live ad change still needs separate scoped authorization.
+
 ## Pending judgment (issue links will be recorded after creation)
 
 | Decision | Status | Scope |
