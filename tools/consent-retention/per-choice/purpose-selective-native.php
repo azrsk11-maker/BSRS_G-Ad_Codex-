@@ -11,7 +11,7 @@ require __DIR__.'/SelectiveChoiceRetirement.php';
 use BSRE\Enquiries as E;use BSRE\PurposeAttribution as A;
 use BSRE\RetentionReview\PerChoice\PerChoicePlanner as B;
 use BSRE\RetentionReview\PerChoice\ApplicationV1\SelectiveChoiceRetirement as C;
-$endpointHome=false;add_filter('home_url',fn($url,$path)=>$GLOBALS['endpointHome']?'https://blackswanrealestate.ae'.($path===''?'':'/'.ltrim($path,'/')):$url,10,2);
+$endpointHome=false;add_filter('home_url',fn($url,$path)=>($GLOBALS['endpointHome']?'https://blackswanrealestate.ae':'http://bsre.invalid').($path===''?'':'/'.ltrim($path,'/')),10,2);
 $owner=get_user_by('login','synthetic_owner');wp_set_current_user($owner->ID);$checks=[];$clock=time()+500*86400;
 function px(string $name,bool $ok):void{global$checks;if(!$ok)throw new RuntimeException('Synthetic purpose selective assertion failed: '.$name);$checks[$name]=true;}
 function pd(string $class='wpdb'){$db=new $class(DB_USER,DB_PASSWORD,DB_NAME,DB_HOST);$db->set_prefix('synthetic_');$db->prefix=C::PURPOSE_PREFIX;$db->suppress_errors(true);return$db;}
@@ -61,6 +61,7 @@ $lastReceipt=null;$lastBody='';add_filter('pre_http_request',function($pre,$args
 function pfixture():array{
     global$db,$wpdb,$clock,$endpointHome,$lastBody,$lastReceipt,$owner;
     wp_set_current_user($owner->ID);$endpointHome=false;
+    px('controller_home_remains_explicit_isolated_origin',home_url()==='http://bsre.invalid'&&wp_get_environment_type()==='local');
     foreach(['bsre_choice_audit','bsre_choice_control','bsre_consent_captures','bsre_consent_history','bsre_consent_state','bsre_rate_limits']as$table)pq('DROP TABLE IF EXISTS '.C::PURPOSE_PREFIX.$table);
     $control=pcntl();$control->installLabTables();$main=$wpdb;$wpdb=$db;
     try{E\install();px('purpose_schema_installed_in_controller_database',A\install_consent_storage());$store=new A\WpConsentRepository($db);A\Runtime::$store=$store;
