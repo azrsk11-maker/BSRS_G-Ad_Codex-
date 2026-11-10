@@ -15,7 +15,8 @@ from keyword_audit import negative_matches, normalize, parse_json_bytes, tokens
 
 CAPTURE = Path('docs/audit/keyword-employment-education-2026-11-10')
 EMPLOYMENT_CAPTURE = Path('docs/audit/keyword-employment-broad-2026-11-10')
-CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE))
+EXCLUSION_CAPTURE = Path('docs/audit/keyword-exclusions-2026-11-10')
+CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE, EXCLUSION_CAPTURE))
 DAY = '2026-11-10'
 SCOPE, NEGATIVE_SCOPE, need = legacy.SCOPE, legacy.NEGATIVE_SCOPE, legacy.need
 

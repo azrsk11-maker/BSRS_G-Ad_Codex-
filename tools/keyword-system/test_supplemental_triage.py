@@ -58,6 +58,18 @@ class SupplementalTriageTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             st.compile_workbench(data, document())
 
+    def test_four_pool_capture_retains_all_rows_and_never_inherits_intent(self):
+        data = st.load_corpus(Path(__file__).resolve().parents[2], capture=st.EXCLUSION_CAPTURE)
+        built = st.compile_workbench(data, dated())
+        self.assertEqual((len(data['sources']), len(data['entries'])), (1, 2343))
+        self.assertEqual(sum(len(e['source_refs']) for e in data['entries'].values()), 2343)
+        self.assertEqual(built['summary']['dispositions']['UNASSESSED'], 2343)
+        self.assertTrue(all(s['file'].startswith(st.EXCLUSION_CAPTURE.as_posix() + '/')
+                            for s in data['sources'].values()))
+        self.assertTrue(all(r['assessment'] is None for r in built['queue']))
+        self.assertIn('long term lease dubai', data['entries'])
+        self.assertFalse(built['controls']['deployment_authorized'])
+
     def test_token_alias_collision_and_internal_protection_are_retained(self):
         data = corpus()
         doc = dated(proposal('cheap-flat', 'NEGATIVE_EXACT_REVIEW'), proposal('hotel apartment', 'HOLD', ['hotel']))
