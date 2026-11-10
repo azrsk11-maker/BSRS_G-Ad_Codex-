@@ -106,6 +106,7 @@ def run_checks(require_php=False):
     run("keyword-employment-education-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-education-2026-11-10/verify_triage.py")])
     run("keyword-employment-broad-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-broad-2026-11-10/verify_capture.py")])
     run("keyword-employment-broad-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-broad-2026-11-10/verify_triage.py")])
+    run("keyword-four-pool-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-exclusions-2026-11-10/verify_capture.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
     run("private-query-triage-count-integrity", [sys.executable, "-B", str(ROOT / "docs/audit/private-query-triage-counts-2026-11-08/verify_counts.py")])
