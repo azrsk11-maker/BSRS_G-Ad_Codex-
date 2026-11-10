@@ -2,7 +2,9 @@
 import argparse
 import importlib.util
 import json
+import math
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -10,6 +12,65 @@ import tempfile
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
+TAP_CHECK = "synthetic-local-expiry-journal"
+TAP_COUNTS = ("tests", "suites", "pass", "fail", "cancelled", "skipped", "todo")
+
+
+def valid_tap_summary(summary):
+    if not isinstance(summary, dict) or set(summary) != {*TAP_COUNTS, "duration_ms"}:
+        return False
+    if any(type(summary[k]) is not int or not 0 <= summary[k] <= 1000000 for k in TAP_COUNTS):
+        return False
+    duration = summary["duration_ms"]
+    return (summary["tests"] > 0 and sum(summary[k] for k in
+            ("pass", "fail", "cancelled", "skipped", "todo")) == summary["tests"]
+            and type(duration) in (int, float) and math.isfinite(duration) and 0 <= duration <= 86400000)
+
+
+def node_tap_summary(output):
+    """Read only Node's complete numeric TAP trailer; never expose test text."""
+    if not isinstance(output, str):
+        return None
+    output = output.replace("\r\n", "\n")
+    if not output.startswith("TAP version 13\n"):
+        return None
+    pattern = "".join(r"^# " + field + r" ([0-9]{1,7})\n" for field in TAP_COUNTS)
+    pattern += r"^# duration_ms ([0-9]{1,8}(?:\.[0-9]{1,9})?)\n?\Z"
+    match = re.search(pattern, output[-2048:], re.MULTILINE)
+    if not match:
+        return None
+    counts = dict(zip(TAP_COUNTS, map(int, match.groups()[:-1])))
+    duration = float(match.group(8))
+    summary = {**counts, "duration_ms": duration}
+    return summary if valid_tap_summary(summary) else None
+
+
+def execute_check(name, args, cwd=ROOT):
+    require_tap = name == TAP_CHECK
+    tick = time.perf_counter()
+    proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=120)
+    details = {"exit": proc.returncode, "elapsed_seconds": round(time.perf_counter()-tick, 6),
+               "output_tail": (proc.stdout + proc.stderr)[-1800:]}
+    summary = node_tap_summary(proc.stdout) if require_tap else None
+    if require_tap:
+        details["tap_summary"] = summary
+        details["tap_evidence_status"] = "OBSERVED" if summary else "MISSING_OR_INVALID"
+    return {"check": name, "passed": proc.returncode == 0 and (not require_tap or summary is not None
+            and summary["pass"] > 0 and summary["fail"] == summary["cancelled"] == 0),
+            "details": details}
+
+
+def public_test_summary(check):
+    """Revalidate the fixed allowlist before printing an existing check receipt."""
+    if check.get("check") != TAP_CHECK or not isinstance(check.get("details"), dict):
+        return None
+    details = check["details"]
+    summary = details.get("tap_summary")
+    if (details.get("tap_evidence_status") != "OBSERVED" or not valid_tap_summary(summary)
+            or type(details.get("exit")) is not int or not -255 <= details["exit"] <= 255):
+        return {"check": TAP_CHECK, "status": "MISSING_OR_INVALID", "release_authorized": False}
+    return {"check": TAP_CHECK, "status": "OBSERVED", "runner_platform": sys.platform,
+            "process_exit": details["exit"], **summary, "release_authorized": False}
 
 
 def module(name, path):
@@ -25,11 +86,7 @@ def run_checks(require_php=False):
     def record(name, passed, details):
         results.append({"check": name, "passed": bool(passed), "details": details})
     def run(name, args, cwd=ROOT):
-        tick = time.perf_counter()
-        proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=120)
-        record(name, proc.returncode == 0, {"exit": proc.returncode,
-               "elapsed_seconds": round(time.perf_counter()-tick, 6),
-               "output_tail": (proc.stdout + proc.stderr)[-1800:]})
+        results.append(execute_check(name, args, cwd))
     specdir = ROOT / "docs/google-ads"
     audit = module("spec_audit", ROOT / "tools/audit_specification.py")
     with tempfile.TemporaryDirectory() as temp:
@@ -61,7 +118,7 @@ def run_checks(require_php=False):
     if node:
         run("encrypted-recovery-package", [node, "--test", str(ROOT / "tools/recovery-package/package.test.mjs")])
         run("synthetic-recovery-expiry-runner", [node, "--test", str(ROOT / "tools/recovery-package/expiry-runner/runner.test.mjs")])
-        run("synthetic-local-expiry-journal", [node, "--test", str(ROOT / "tools/recovery-package/expiry-runner/local-journal.test.mjs")])
+        run(TAP_CHECK, [node, "--test", "--test-reporter=tap", str(ROOT / "tools/recovery-package/expiry-runner/local-journal.test.mjs")])
         decision_tests = sorted((ROOT / "tools/property-decision-tools").glob("*.test.*js"))
         record("property-decision-tests-present", bool(decision_tests), len(decision_tests))
         if decision_tests:
@@ -121,4 +178,7 @@ if __name__ == "__main__":
     print(json.dumps({k:v for k,v in result.items() if k != "checks"}))
     for check in result.get("checks", []):
         print(("PASS" if check["passed"] is True else "NOT_EXECUTED" if check["passed"] is None else "FAIL") + " " + check["check"])
+        summary = public_test_summary(check)
+        if summary is not None:
+            print("TEST_SUMMARY " + json.dumps(summary, sort_keys=True))
     raise SystemExit(0 if result["passed"] else 1)
