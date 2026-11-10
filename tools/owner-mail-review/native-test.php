@@ -7,7 +7,7 @@ require '/opt/wordpress/wp-load.php';
 $hooksBefore = array_map(fn($hook) => $hook->callbacks, $GLOBALS['wp_filter']);
 require __DIR__ . '/WordPress.php';
 require __DIR__ . '/TestDoubles.php';
-require __DIR__ . '/Cleanup.php';
+require_once __DIR__ . '/Cleanup.php';
 $noHooksInstalled = $hooksBefore === array_map(fn($hook) => $hook->callbacks, $GLOBALS['wp_filter']);
 use BSRE\OwnerMailReview as O;
 $checks = [];
