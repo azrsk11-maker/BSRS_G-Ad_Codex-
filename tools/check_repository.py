@@ -61,6 +61,7 @@ def run_checks(require_php=False):
     if node:
         run("encrypted-recovery-package", [node, "--test", str(ROOT / "tools/recovery-package/package.test.mjs")])
         run("synthetic-recovery-expiry-runner", [node, "--test", str(ROOT / "tools/recovery-package/expiry-runner/runner.test.mjs")])
+        run("synthetic-local-expiry-journal", [node, "--test", str(ROOT / "tools/recovery-package/expiry-runner/local-journal.test.mjs")])
         decision_tests = sorted((ROOT / "tools/property-decision-tools").glob("*.test.*js"))
         record("property-decision-tests-present", bool(decision_tests), len(decision_tests))
         if decision_tests:
