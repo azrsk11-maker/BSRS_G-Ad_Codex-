@@ -83,9 +83,9 @@ def _batch(batch):
     expected_context = dict(CONTEXT, ui_idea_count=len(records))
     _need(_exact(batch["ui_context"], expected_context), "RESEARCH_CONTEXT")
     seeds = batch["input_seeds"]
-    _need(isinstance(seeds, list) and len(seeds) == 10
+    _need(isinstance(seeds, list) and 1 <= len(seeds) <= 10
           and all(isinstance(s, str) and bool(_normalized_keyword(s)) for s in seeds)
-          and len(set(seeds)) == len(set(map(normalize, seeds))) == 10, "SEED_IDENTITIES")
+          and len(set(seeds)) == len(set(map(normalize, seeds))) == len(seeds), "SEED_IDENTITIES")
     groups = {}
     previous = 3
     for record in records:
@@ -107,7 +107,7 @@ def _batch(batch):
           and _exact(data["distinct_normalized_count"], len(groups))
           and _exact(data["duplicate_groups"], duplicates), "COUNTS_OR_DUPLICATES")
     missing = [{"seed": seed, "grouped_under": None} for seed in seeds if normalize(seed) not in groups]
-    _need(_exact(batch["seed_reconciliation"], {"exact_returned": 10 - len(missing),
+    _need(_exact(batch["seed_reconciliation"], {"exact_returned": len(seeds) - len(missing),
                                               "without_separate_exact_row": missing}), "SEED_RECONCILIATION")
     return Counter({key: len(lines) for key, lines in groups.items()})
 

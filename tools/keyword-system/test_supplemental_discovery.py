@@ -84,6 +84,29 @@ class SupplementalDiscoveryTests(unittest.TestCase):
         self.assertEqual({p.name: p.read_bytes() for p in self.folder.iterdir()}, original)
         self.assertNotIn(str(self.folder), json.dumps(complete))
 
+    def test_short_real_batch_shapes_preserve_exact_seed_reconciliation(self):
+        for count in (1, 3, 4, 7, 10):
+            with self.subTest(count=count):
+                batch = copy.deepcopy(self.batches[0])
+                batch["input_seeds"] = batch["input_seeds"][:count]
+                missing = [{"seed": s, "grouped_under": None}
+                           for s in batch["input_seeds"] if s != "synthetic shared"]
+                batch["seed_reconciliation"] = {"exact_returned": 1,
+                                                "without_separate_exact_row": missing}
+                self.assertEqual(sum(sd._batch(batch).values()), 2)
+                batch["seed_reconciliation"]["exact_returned"] = True
+                with self.assertRaisesRegex(ValueError, "SEED_RECONCILIATION"):
+                    sd._batch(batch)
+
+    def test_empty_oversized_and_normalized_duplicate_seed_lists_are_refused(self):
+        for seeds in ([], ["synthetic seed " + str(i) for i in range(11)],
+                      ["synthetic shared", "SYNTHETIC shared"], [" "]):
+            with self.subTest(count=len(seeds)):
+                batch = copy.deepcopy(self.batches[0])
+                batch["input_seeds"] = seeds
+                with self.assertRaises(ValueError):
+                    sd._batch(batch)
+
     def test_tampered_pin_manifest_binding_or_extra_file_fails(self):
         path = self.folder / "sellers.json"
         path.write_bytes(path.read_bytes() + b" ")
