@@ -1,5 +1,13 @@
 # Implementation progress
 
+## 10 November complete preliminary review of the four-pool capture
+
+- Continued from accepted `a28f5022`: all407files/tree match local166; all three exact-head CI jobs pass, main unchanged and PR8 open/unmerged without human review. [Verified baseline](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6777388909).
+- Read all2,343actual phrases. The preliminary workbench contains1,998full-phrase EXACT negative proposals (1,562vehicle/373technical-tooling/43repair-or-transport-service/20media) and345holds, with zero unassessed. Eight dated primary-provider sources support16named-software interpretations; no vendor relationship, installed CRM, inventory, licence or performance is claimed. [Full category counts and evidence](audit/keyword-exclusions-2026-11-10/README.md).
+- Added20explicitly authored protected tests, separate from research/master counts: eight Master examples and twelve property-intent counterexamples. With prior protections and all current holds,4,016provisional cases yield0EXACTlexical collisions. Generic car/software/stock/photo/repair exclusions would collide with6/3/2/1/2cases. No broad negative or actual scope is approved. Eleven source exports remain10,473distinct/11,554occurrences; both reviewed masters0/14,000.
+- The fixed supplemental adapter now permits the third explicit capture only; arbitrary paths still fail closed. Seven focused adapter tests and actual review reproduction pass. All74required local Foundation checks pass in62.957563seconds with PHP required. Windows journal reports22tests/5pass/17POSIXskips; current-head Linux CI remains separately required. Historical compiler/benchmarks/captures/triages remain byte-identical. Final remote acceptance is recorded in the verified PR handover after publication.
+- Production, live tracking, permissions, financial records and Ads settings unchanged. No activation, old-campaign resumption, spend, merge or publication. Actual semantic/business admission, full reviewed libraries, source/content/staff/finance/recovery/live-integration acceptance and independent human review remain open. Helper credit state is unchanged; no blind relaunch.
+
 ## 10 November four-pool exclusion research
 
 - Continued from accepted `5976bebb`: all402files/tree match locald7; all three exact-head CI jobs pass, main unchanged and PR8 open/unmerged without independent human review. [Verified baseline](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6777015180).
