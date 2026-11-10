@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 10 November four-pool exclusion research
+
+- Continued from accepted `5976bebb`: all402files/tree match locald7; all three exact-head CI jobs pass, main unchanged and PR8 open/unmerged without independent human review. [Verified baseline](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6777015180).
+- A read-only authenticated UAE/English/Google Planner experiment across the Master's software, media, repair and unrelated-product pools returned2,343distinct rows: six supplied hypotheses and2,337additional ideas.2,341identities are new, two overlap the earlier tenant capture; the eleven-export union is10,473distinct/11,554occurrences. Every public cell and source-line start matches the original; all five account-specific columns are removed. The original file is453,036bytes/SHA256efb7bb416e1f9b0d4eb7c8ea9be1330a040b8b0ac6d890b3835742efe28a7cb6. [Capture, primary sources, overlaps and limits](audit/keyword-exclusions-2026-11-10/README.md).
+- All2,343rows remain unassessed here. Batch membership is not a negative classification; the overlap `long term lease dubai` can express property demand. No prior classification or preferred metrics are inherited. Historical captures/triages/compiler/pins remain unchanged; both reviewed masters stay0/14,000. A pinned verifier reproduces the full source and occurrence overlap and is now a required Foundation check. All73required local Foundation checks pass in62.946308seconds with PHP required, including exact private raw equivalence in the focused capture check. Windows journal reports22tests/5pass/17POSIXskips; current-head Linux CI must establish its actual results after publication.
+- Production, live tracking, permissions, financial records and Ads settings remain unchanged. No campaign activation, old-campaign resumption, expenditure, merge or production publication. The full keyword, source/factual, content, staff/capacity, authenticated integration, provider/recovery, finance and independent-human-review gates remain open. Helper agents remain unavailable after terminal credit errors; no repeated launch was attempted.
+
 ## 10 November broader employment evidence and full preliminary review
 
 - Continued from accepted `d49f6bda`: all393files/tree match local6f, all three required CI jobs pass, main unchanged and PR8 unmerged without human review. [Accepted baseline](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6776035060).
