@@ -49,7 +49,9 @@ On 9 November, public HTTPS GETs without redirect following returned 404 for `/l
 
 This version performs zero writes, so recovery is removal of these local candidate files or disabling the preview constant; there are no created CMS IDs to roll back. Do not change existing intake settings, private data, theme or sitewide indexing.
 
-A future separately approved writer must journal the exact campaign/page IDs, CMS ID, prior revision ID, before/after hashes, changed metadata and approval reference. Recovery must address only those allowlisted IDs, verify ownership and that the current version still matches the recorded after-version, preserve intervening staff edits, and restore only the recorded revision/metadata after review. Newly created records stay held as drafts for reconciliation. Never delete posts, reactivate old campaigns, replace the database or alter unrelated records as rollback. This revision-aware writer/recovery operation is **not implemented or claimed tested** here.
+A future separately approved production writer must journal the exact campaign/page IDs, CMS ID, prior revision ID, before/after hashes, changed metadata and approval reference. Recovery must address only those allowlisted IDs, verify ownership and that the current version still matches the recorded after-version, preserve intervening staff edits, and restore only the recorded revision/metadata after review. Newly created records stay held as drafts for reconciliation. Never delete posts, reactivate old campaigns, replace the database or alter unrelated records as rollback. The separate [disposable lab writer](WRITER.md) implements native draft operations for synthetic acceptance only; it cannot run on the production site or turn this preview into a deployment handler.
+
+The [ten property decision tools](../property-decision-tools/README.md) are a separate disabled integration candidate for Master Plan section 9. They calculate user-entered scenarios without invented rates, inventory or external transmission. Native page/template bindings, factual review and publication remain separate gates.
 
 ## Buyers and Owners block drafts
 
