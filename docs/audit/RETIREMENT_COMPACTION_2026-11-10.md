@@ -26,6 +26,14 @@ For the next complete-source upload, intermediate source commits use GitHub's do
 
 Measured scheduling baseline, collected in one complete GitHub run-list call: the preceding eight upload commits generated sixteen workflow runs (ten succeeded, six cancelled, none failed). Seven intermediate commits generated fourteen of those runs; the final head generated the two successful workflows containing its three required jobs. This is observed run-count evidence, not a runtime, billing or token-savings estimate.
 
+### First native result and bounded diagnostic revision
+
+Published head `010f65160996ab729b14a8c4e767fd83dccb7b74` exactly matched all 351 reviewed files. Both jobs in [Foundation 42812664484](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42812664484) passed. [Isolated run 42812664352](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42812664352/job/129817764919) failed at `concurrent_compactor_waits_on_real_checkpoint_lock`, before any aggregate compaction PASS receipt. This result is not native acceptance and does not by itself distinguish a core lock defect from an early worker failure or observation issue.
+
+The reviewed harness-only revision signals the worker's exact checkpoint-lock query, observes both waiter and blocker through a separate connection, validates the parent's active transaction/distinct connections, and captures bounded sanitized process/outcome/error-class diagnostics. It preserves the five-second **actual observed lock** requirement and strict zero process exit. Failure cleanup kills and reaps the owned disposable child before releasing the parent's lock. No controller, fixture, schema or producer pin changed. Updated PHP lint and existing nineteen-case checks pass; current-head full CI/native execution remains mandatory. No unchanged failed run was retried or acceptance assertion weakened.
+
+The first optimized eight-commit delivery created exactly two workflow runs, both on its final head, with zero intermediate runs or cancellations: Foundation passed and isolated native failed. This is fourteen fewer initial upload-triggered runs than the baseline. Required diagnostic/repair runs are additional and must be included in the final progress receipt; no runtime, billing or token saving is inferred.
+
 ## Fresh access findings and full-goal holds
 
 A new WordPress tab successfully reached the real login page, resolving navigation independently of the stale target, but the admin session has expired. No credentials were entered or security settings changed. [Issue 6 records the authentication dependency](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6#issuecomment-6766144453). The fresh Real Estate Ads UI readback is blocked by its ad-blocker dialog; protections were left unchanged and no new live status/configuration acceptance is claimed.
