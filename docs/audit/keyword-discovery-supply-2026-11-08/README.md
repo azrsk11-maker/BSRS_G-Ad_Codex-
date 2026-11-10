@@ -1,5 +1,9 @@
 # Focused seller/landlord discovery - 8 November 2026
 
+## 11 November executable transcription
+
+The existing [intent review](INTENT_REVIEW.md) already covers all 31 phrases. Its new pinned [workbench](workbench.json) and [proposals](proposals.json) preserve twelve conditional Dubai positive candidates and nineteen holds, with zero negatives or unassessed phrases. The two commercial-owner phrases remain held as explicitly required in that narrative; fourteen possible owner roles do not mean fourteen admitted positive records. All service/admission gates remain unverified. No source phrase, raw capture, existing placement or master entry changed. Run `python -B docs/audit/keyword-discovery-supply-2026-11-08/verify_triage.py`. [Cross-source reconciliation](../keyword-review-coverage-2026-11-11/README.md) retains the overlapping phrase independently.
+
 Two separate research submissions in verified Real Estate account **573-038-4686** returned **31 provider rows / 31 distinct phrases**. Twenty rows are the supplied seed hypotheses returned exactly; eleven are additional provider ideas. This is not a claim of 31 newly discovered owner-intent queries, actual search terms or approved keywords.
 
 | Batch | Supplied seeds returned exactly | Additional ideas | Export rows |

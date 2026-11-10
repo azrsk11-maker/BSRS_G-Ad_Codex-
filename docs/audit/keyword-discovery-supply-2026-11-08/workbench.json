@@ -1,0 +1,1336 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-11",
+  "sources": {
+    "KP-SUPPLY-20261108-SELLERS": {
+      "file": "docs/audit/keyword-discovery-supply-2026-11-08/sellers.json",
+      "sha256": "ad59fa643c50af4b2e03782428979a841e64ed17557f8e376280fe57f151781e"
+    },
+    "KP-SUPPLY-20261108-LANDLORDS": {
+      "file": "docs/audit/keyword-discovery-supply-2026-11-08/landlords.json",
+      "sha256": "a1c5ab276d12b76541508ad00587a9d2c3f0ddd01b75c7be63c842bfe3690c11"
+    }
+  },
+  "queue": [
+    {
+      "queue_id": "INTERNAL-a46fd37c2b4bf3f74e8f0af11077456009ba32a66ac5d85087d4bd55864844d5",
+      "normalized_text": "apartments for sale in sharjah",
+      "original_forms": [
+        "apartments for sale in sharjah"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 6
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "apartments for sale in sharjah",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "apartments for sale in sharjah"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-8e4eb6980627b04675719c39c827a60bb7e7fd6893901fd3a90f35df53f1a687",
+      "normalized_text": "dubai estate agent",
+      "original_forms": [
+        "dubai estate agent"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 4
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "dubai estate agent",
+        "disposition": "HOLD",
+        "intent": "AGENCY_HOLD",
+        "possible_services": [],
+        "reason": "Existing narrative retains buyer/tenant/owner agency ambiguity. Neither source batch nor an earlier overlapping classification establishes a party or intended service.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai estate agent"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-1ce2b4d31b02a828e820e8e7fb48b0abd1411493c26965dd6d1b9dc28ae7f257",
+      "normalized_text": "dubai letting agents",
+      "original_forms": [
+        "dubai letting agents"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 6
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "dubai letting agents",
+        "disposition": "HOLD",
+        "intent": "AGENCY_HOLD",
+        "possible_services": [],
+        "reason": "Existing narrative retains buyer/tenant/owner agency ambiguity. Neither source batch nor an earlier overlapping classification establishes a party or intended service.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai letting agents"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-992c47c452a6c72b638473f230187d7764e5ee2964ad3d4c4db0b77e3cacfc56",
+      "normalized_text": "find tenants for my property dubai",
+      "original_forms": [
+        "find tenants for my property dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 10
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "find tenants for my property dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "LANDLORD_CANDIDATE",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "find tenants for my property dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-ed94714d47f01326db4a2e531553f87c63fd32aacb85c42c0c9d7165bdd46f4b",
+      "normalized_text": "flat for sale in sharjah al nahda",
+      "original_forms": [
+        "flat for sale in sharjah al nahda"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 11
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "flat for sale in sharjah al nahda",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "flat for sale in sharjah al nahda"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-18a49bd1e3572be8a21867280a8cd0e7d2adac0c909a7c4dc2a0e86bb5bb2169",
+      "normalized_text": "flats for sale in sharjah",
+      "original_forms": [
+        "flats for sale in sharjah"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 7
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "flats for sale in sharjah",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "flats for sale in sharjah"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-0da540f015c673825a58c2414094b146b6e5e2fed645eed19b5772c73a0746ab",
+      "normalized_text": "freehold villa for sale in sharjah",
+      "original_forms": [
+        "freehold villa for sale in sharjah"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 8
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "freehold villa for sale in sharjah",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "freehold villa for sale in sharjah"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-1911a41db729209174fb0e60a512dedbdaf61079612f68e6ab82ae68c9eb7153",
+      "normalized_text": "landlord agent abu dhabi",
+      "original_forms": [
+        "landlord agent abu dhabi"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 15
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "landlord agent abu dhabi",
+        "disposition": "HOLD",
+        "intent": "LANDLORD_GEOGRAPHY_HOLD",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "landlord agent abu dhabi"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-264379da5fc6dc61b12c4aa1fac2fe90c1749224fae05533dc123979e02f55e8",
+      "normalized_text": "landlord letting agent dubai",
+      "original_forms": [
+        "landlord letting agent dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 11
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "landlord letting agent dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "LANDLORD_CANDIDATE",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "landlord letting agent dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-cf9fc2f521e3b82daeb6d3ede9d7cc81810f37385201a542f8c706ebd34c264a",
+      "normalized_text": "lease my commercial property dubai",
+      "original_forms": [
+        "lease my commercial property dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 13
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "lease my commercial property dubai",
+        "disposition": "HOLD",
+        "intent": "COMMERCIAL_LANDLORD_HOLD",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative explicitly holds commercial owner requests pending a commercial mandate and suitable intake/form. Its fourteen potential owner-role candidates do not mean fourteen currently admitted positive proposals.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "lease my commercial property dubai"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-5f3fffcd5591a158e46feaf6748a2049e99bc27ce791984edc451c4c409f2571",
+      "normalized_text": "list my property for sale dubai",
+      "original_forms": [
+        "list my property for sale dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 16
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "list my property for sale dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "SELLER_CANDIDATE",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "list my property for sale dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-8f441286213fbf16a92b69af7c8b54da98d9be993fbf849479a581a443399358",
+      "normalized_text": "list property for sale abu dhabi",
+      "original_forms": [
+        "list property for sale abu dhabi"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 21
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "list property for sale abu dhabi",
+        "disposition": "HOLD",
+        "intent": "SELLER_GEOGRAPHY_HOLD",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "list property for sale abu dhabi"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-6e798b20649b1a75081f6aceac2a2b2d2b42033da1eaa86529384fd6c7aad29b",
+      "normalized_text": "property letting agent sharjah",
+      "original_forms": [
+        "property letting agent sharjah"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 16
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "property letting agent sharjah",
+        "disposition": "HOLD",
+        "intent": "LANDLORD_GEOGRAPHY_HOLD",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "property letting agent sharjah"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-b4c299e693ce22d37949dce7894f2517463b264bc1a1a00a9d5d72814268c3eb",
+      "normalized_text": "property letting services dubai",
+      "original_forms": [
+        "property letting services dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 12
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "property letting services dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "LANDLORD_CANDIDATE",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "property letting services dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-3de98dbe1d86f6bae5dde360616db55d90436af21f1329d3f80b713723a4eaf7",
+      "normalized_text": "property selling agent dubai",
+      "original_forms": [
+        "property selling agent dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 17
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "property selling agent dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "SELLER_CANDIDATE",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "property selling agent dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-2d03947a578ee973a115380f1eb12c8bda98205dff87ad39301185b27b984582",
+      "normalized_text": "rent out my apartment dubai",
+      "original_forms": [
+        "rent out my apartment dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 8
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "rent out my apartment dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "LANDLORD_CANDIDATE",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "rent out my apartment dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-52d72b9078a64bd55c0372f68407bd1b45b9f2d9ae6491231974f0c40806b9ad",
+      "normalized_text": "rent out my property dubai",
+      "original_forms": [
+        "rent out my property dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 7
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "rent out my property dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "LANDLORD_CANDIDATE",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "rent out my property dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-6100308459ae6f16813c9dbac8103a756083081cf04dffd2db702f0d61f58b31",
+      "normalized_text": "rent out my villa dubai",
+      "original_forms": [
+        "rent out my villa dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 9
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "rent out my villa dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "LANDLORD_CANDIDATE",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "rent out my villa dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-d93b9bcd1260beffc48e42749170e6c7eae800eed31947369c2ae5e8a9669eaa",
+      "normalized_text": "rent out property abu dhabi",
+      "original_forms": [
+        "rent out property abu dhabi"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 14
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "rent out property abu dhabi",
+        "disposition": "HOLD",
+        "intent": "LANDLORD_GEOGRAPHY_HOLD",
+        "possible_services": [
+          "landlord_supply"
+        ],
+        "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "rent out property abu dhabi"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-deb48f9bca58ad334149f8761aa951b19420db6e626b080855ce2c2075428c35",
+      "normalized_text": "rental agents dubai",
+      "original_forms": [
+        "rental agents dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-LANDLORDS",
+          "source_line": 5
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "rental agents dubai",
+        "disposition": "HOLD",
+        "intent": "AGENCY_HOLD",
+        "possible_services": [],
+        "reason": "Existing narrative retains buyer/tenant/owner agency ambiguity. Neither source batch nor an earlier overlapping classification establishes a party or intended service.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "rental agents dubai"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-427254ea9e1e1d5ad9d079608b248ba2df32774c4c50c9c95e816b617fd01978",
+      "normalized_text": "sell my apartment dubai",
+      "original_forms": [
+        "sell my apartment dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 14
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "sell my apartment dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "SELLER_CANDIDATE",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell my apartment dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-c9d9bac7032ed118b370eb9a2773aa66c543a71a2559308ce56ff12ba0d214ab",
+      "normalized_text": "sell my commercial property dubai",
+      "original_forms": [
+        "sell my commercial property dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 19
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sell my commercial property dubai",
+        "disposition": "HOLD",
+        "intent": "COMMERCIAL_SELLER_HOLD",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative explicitly holds commercial owner requests pending a commercial mandate and suitable intake/form. Its fourteen potential owner-role candidates do not mean fourteen currently admitted positive proposals.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell my commercial property dubai"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-61a667534e7982e688af876235c86baab4e6cf2acc22e6219d096e9c33882af2",
+      "normalized_text": "sell my house in dubai",
+      "original_forms": [
+        "sell my house in dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 18
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "sell my house in dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "SELLER_CANDIDATE",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell my house in dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-bb778b0a9c82cc1605c60826731bef837e01811c4447148c0a67fd951e291ca7",
+      "normalized_text": "sell my property abu dhabi",
+      "original_forms": [
+        "sell my property abu dhabi"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 20
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sell my property abu dhabi",
+        "disposition": "HOLD",
+        "intent": "SELLER_GEOGRAPHY_HOLD",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell my property abu dhabi"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-702fb46175621314fe51b4f953107741bf39350269a7723e5df21c96b4536b90",
+      "normalized_text": "sell my property dubai",
+      "original_forms": [
+        "sell my property dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 12
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "sell my property dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "SELLER_CANDIDATE",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell my property dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-992aefe250fa387c5d42c11d48bfc49a2397d94f3c4105cc7c8cd12054e12046",
+      "normalized_text": "sell my villa dubai",
+      "original_forms": [
+        "sell my villa dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 15
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "sell my villa dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "SELLER_CANDIDATE",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell my villa dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-5240aabd4034f9bc269fbb7a621ee77b430a8cdd7b93c5498ccfa0782034e297",
+      "normalized_text": "sell property sharjah",
+      "original_forms": [
+        "sell property sharjah"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 13
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sell property sharjah",
+        "disposition": "HOLD",
+        "intent": "SELLER_GEOGRAPHY_HOLD",
+        "possible_services": [
+          "seller_supply"
+        ],
+        "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sell property sharjah"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-a4aa6b16457f9e1dfb30e3002a419b521be3d8b76e9831d316f85adab8d3fbac",
+      "normalized_text": "sharjah freehold property for sale",
+      "original_forms": [
+        "sharjah freehold property for sale"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 10
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sharjah freehold property for sale",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sharjah freehold property for sale"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-293f5e8b4ae92903b54a210496c7b2a507824fcf43ff5119b571c98831ebe4e0",
+      "normalized_text": "sharjah house for sale",
+      "original_forms": [
+        "sharjah house for sale"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 9
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sharjah house for sale",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sharjah house for sale"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-8bd68f280dfa64c0ceaf5aefcf98a51fe46d0a296398d936dc4b558bff7c4fa6",
+      "normalized_text": "sharjah property for sale",
+      "original_forms": [
+        "sharjah property for sale"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 5
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sharjah property for sale",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sharjah property for sale"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-ef5de6e7b319fd93e2fd05871eb1b813de654af0864d336c36fbafb70098748d",
+      "normalized_text": "sharjah villa for sale",
+      "original_forms": [
+        "sharjah villa for sale"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-SUPPLY-20261108-SELLERS",
+          "source_line": 4
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "sharjah villa for sale",
+        "disposition": "HOLD",
+        "intent": "BUYER_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "sharjah villa for sale"
+        ]
+      },
+      "admission_gates": null
+    }
+  ],
+  "summary": {
+    "unique_phrases": 31,
+    "source_occurrences": 31,
+    "dispositions": {
+      "HOLD": 19,
+      "NEGATIVE_EXACT_REVIEW": 0,
+      "POSITIVE_REVIEW": 12,
+      "UNASSESSED": 0
+    },
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0,
+    "master_additions": 0
+  },
+  "controls": {
+    "reviewed": false,
+    "approved": false,
+    "deployed": false,
+    "master_additions": 0,
+    "deployment_authorized": false,
+    "live_campaign_changes": false
+  },
+  "diagnostics": {
+    "basis": "CONSERVATIVE_LEXICAL_ONLY_NOT_PLATFORM_MATCHING",
+    "scope_verified": false,
+    "protected_phrases": [
+      "apartments for sale in sharjah",
+      "dubai estate agent",
+      "dubai letting agents",
+      "find tenants for my property dubai",
+      "flat for sale in sharjah al nahda",
+      "flats for sale in sharjah",
+      "freehold villa for sale in sharjah",
+      "landlord agent abu dhabi",
+      "landlord letting agent dubai",
+      "lease my commercial property dubai",
+      "list my property for sale dubai",
+      "list property for sale abu dhabi",
+      "property letting agent sharjah",
+      "property letting services dubai",
+      "property selling agent dubai",
+      "rent out my apartment dubai",
+      "rent out my property dubai",
+      "rent out my villa dubai",
+      "rent out property abu dhabi",
+      "rental agents dubai",
+      "sell my apartment dubai",
+      "sell my commercial property dubai",
+      "sell my house in dubai",
+      "sell my property abu dhabi",
+      "sell my property dubai",
+      "sell my villa dubai",
+      "sell property sharjah",
+      "sharjah freehold property for sale",
+      "sharjah house for sale",
+      "sharjah property for sale",
+      "sharjah villa for sale"
+    ],
+    "exact_negative_tests": [],
+    "unsafe_generic_tests": [
+      {
+        "attempted_generic": "apartments for sale in sharjah",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "apartments for sale in sharjah"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai estate agent",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "dubai estate agent"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai letting agents",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "dubai letting agents"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "find tenants for my property dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "find tenants for my property dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "flat for sale in sharjah al nahda",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "flat for sale in sharjah al nahda"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "flats for sale in sharjah",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "flats for sale in sharjah"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "freehold villa for sale in sharjah",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "freehold villa for sale in sharjah"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "landlord agent abu dhabi",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "landlord agent abu dhabi"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "landlord letting agent dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "landlord letting agent dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "lease my commercial property dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "lease my commercial property dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "list my property for sale dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "list my property for sale dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "list property for sale abu dhabi",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "list property for sale abu dhabi"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "property letting agent sharjah",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "property letting agent sharjah"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "property letting services dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "property letting services dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "property selling agent dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "property selling agent dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "rent out my apartment dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "rent out my apartment dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "rent out my property dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "rent out my property dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "rent out my villa dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "rent out my villa dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "rent out property abu dhabi",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "rent out property abu dhabi"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "rental agents dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "rental agents dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell my apartment dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell my apartment dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell my commercial property dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell my commercial property dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell my house in dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell my house in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell my property abu dhabi",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell my property abu dhabi"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell my property dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell my commercial property dubai",
+          "sell my property dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell my villa dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell my villa dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sell property sharjah",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sell property sharjah"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sharjah freehold property for sale",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sharjah freehold property for sale"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sharjah house for sale",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sharjah house for sale"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sharjah property for sale",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "sharjah freehold property for sale",
+          "sharjah property for sale"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "sharjah villa for sale",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 31,
+        "protected_lexical_collisions": [
+          "freehold villa for sale in sharjah",
+          "sharjah villa for sale"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      }
+    ]
+  }
+}

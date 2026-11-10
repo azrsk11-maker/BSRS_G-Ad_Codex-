@@ -1,0 +1,412 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-11",
+  "proposals": [
+    {
+      "text": "apartments for sale in sharjah",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "apartments for sale in sharjah"
+      ]
+    },
+    {
+      "text": "dubai estate agent",
+      "disposition": "HOLD",
+      "intent": "AGENCY_HOLD",
+      "possible_services": [],
+      "reason": "Existing narrative retains buyer/tenant/owner agency ambiguity. Neither source batch nor an earlier overlapping classification establishes a party or intended service.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai estate agent"
+      ]
+    },
+    {
+      "text": "dubai letting agents",
+      "disposition": "HOLD",
+      "intent": "AGENCY_HOLD",
+      "possible_services": [],
+      "reason": "Existing narrative retains buyer/tenant/owner agency ambiguity. Neither source batch nor an earlier overlapping classification establishes a party or intended service.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai letting agents"
+      ]
+    },
+    {
+      "text": "find tenants for my property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_CANDIDATE",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "find tenants for my property dubai"
+      ]
+    },
+    {
+      "text": "flat for sale in sharjah al nahda",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "flat for sale in sharjah al nahda"
+      ]
+    },
+    {
+      "text": "flats for sale in sharjah",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "flats for sale in sharjah"
+      ]
+    },
+    {
+      "text": "freehold villa for sale in sharjah",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "freehold villa for sale in sharjah"
+      ]
+    },
+    {
+      "text": "landlord agent abu dhabi",
+      "disposition": "HOLD",
+      "intent": "LANDLORD_GEOGRAPHY_HOLD",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "landlord agent abu dhabi"
+      ]
+    },
+    {
+      "text": "landlord letting agent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_CANDIDATE",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "landlord letting agent dubai"
+      ]
+    },
+    {
+      "text": "lease my commercial property dubai",
+      "disposition": "HOLD",
+      "intent": "COMMERCIAL_LANDLORD_HOLD",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative explicitly holds commercial owner requests pending a commercial mandate and suitable intake/form. Its fourteen potential owner-role candidates do not mean fourteen currently admitted positive proposals.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "lease my commercial property dubai"
+      ]
+    },
+    {
+      "text": "list my property for sale dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_CANDIDATE",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "list my property for sale dubai"
+      ]
+    },
+    {
+      "text": "list property for sale abu dhabi",
+      "disposition": "HOLD",
+      "intent": "SELLER_GEOGRAPHY_HOLD",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "list property for sale abu dhabi"
+      ]
+    },
+    {
+      "text": "property letting agent sharjah",
+      "disposition": "HOLD",
+      "intent": "LANDLORD_GEOGRAPHY_HOLD",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property letting agent sharjah"
+      ]
+    },
+    {
+      "text": "property letting services dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_CANDIDATE",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property letting services dubai"
+      ]
+    },
+    {
+      "text": "property selling agent dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_CANDIDATE",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property selling agent dubai"
+      ]
+    },
+    {
+      "text": "rent out my apartment dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_CANDIDATE",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "rent out my apartment dubai"
+      ]
+    },
+    {
+      "text": "rent out my property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_CANDIDATE",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "rent out my property dubai"
+      ]
+    },
+    {
+      "text": "rent out my villa dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "LANDLORD_CANDIDATE",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "rent out my villa dubai"
+      ]
+    },
+    {
+      "text": "rent out property abu dhabi",
+      "disposition": "HOLD",
+      "intent": "LANDLORD_GEOGRAPHY_HOLD",
+      "possible_services": [
+        "landlord_supply"
+      ],
+      "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "rent out property abu dhabi"
+      ]
+    },
+    {
+      "text": "rental agents dubai",
+      "disposition": "HOLD",
+      "intent": "AGENCY_HOLD",
+      "possible_services": [],
+      "reason": "Existing narrative retains buyer/tenant/owner agency ambiguity. Neither source batch nor an earlier overlapping classification establishes a party or intended service.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "rental agents dubai"
+      ]
+    },
+    {
+      "text": "sell my apartment dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_CANDIDATE",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell my apartment dubai"
+      ]
+    },
+    {
+      "text": "sell my commercial property dubai",
+      "disposition": "HOLD",
+      "intent": "COMMERCIAL_SELLER_HOLD",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative explicitly holds commercial owner requests pending a commercial mandate and suitable intake/form. Its fourteen potential owner-role candidates do not mean fourteen currently admitted positive proposals.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell my commercial property dubai"
+      ]
+    },
+    {
+      "text": "sell my house in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_CANDIDATE",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell my house in dubai"
+      ]
+    },
+    {
+      "text": "sell my property abu dhabi",
+      "disposition": "HOLD",
+      "intent": "SELLER_GEOGRAPHY_HOLD",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell my property abu dhabi"
+      ]
+    },
+    {
+      "text": "sell my property dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_CANDIDATE",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell my property dubai"
+      ]
+    },
+    {
+      "text": "sell my villa dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "SELLER_CANDIDATE",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative conditional Dubai owner-service candidate. Actual remit, tenant sourcing where relevant, authority, destination, claims and independent admission are unverified. Existing placements/close intent do not prove incremental demand or another placement.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell my villa dubai"
+      ]
+    },
+    {
+      "text": "sell property sharjah",
+      "disposition": "HOLD",
+      "intent": "SELLER_GEOGRAPHY_HOLD",
+      "possible_services": [
+        "seller_supply"
+      ],
+      "reason": "Existing narrative holds owner geography outside Dubai. Actual service coverage and jurisdiction-specific facts remain unverified; no geography exclusion or eligibility assertion.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sell property sharjah"
+      ]
+    },
+    {
+      "text": "sharjah freehold property for sale",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sharjah freehold property for sale"
+      ]
+    },
+    {
+      "text": "sharjah house for sale",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sharjah house for sale"
+      ]
+    },
+    {
+      "text": "sharjah property for sale",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sharjah property for sale"
+      ]
+    },
+    {
+      "text": "sharjah villa for sale",
+      "disposition": "HOLD",
+      "intent": "BUYER_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Existing narrative identifies possible Sharjah buyer demand, separately from owner acquisition. Service coverage, inventory, and any freehold/title/eligibility facts remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sharjah villa for sale"
+      ]
+    }
+  ]
+}
