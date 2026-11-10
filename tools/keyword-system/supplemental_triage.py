@@ -14,13 +14,16 @@ import triage_workbench as legacy
 from keyword_audit import negative_matches, normalize, parse_json_bytes, tokens
 
 CAPTURE = Path('docs/audit/keyword-employment-education-2026-11-10')
+EMPLOYMENT_CAPTURE = Path('docs/audit/keyword-employment-broad-2026-11-10')
+CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE))
 DAY = '2026-11-10'
 SCOPE, NEGATIVE_SCOPE, need = legacy.SCOPE, legacy.NEGATIVE_SCOPE, legacy.need
 
 
-def load_corpus(root):
-    """Only this reviewed capture is loadable; no caller-selected verifier path."""
-    folder = Path(root).resolve() / CAPTURE
+def load_corpus(root, *, capture=CAPTURE):
+    """Only the fixed reviewed captures are loadable; no arbitrary verifier path."""
+    need(isinstance(capture, Path) and capture in CAPTURES, 'Unreviewed capture path')
+    folder = Path(root).resolve() / capture
     spec = importlib.util.spec_from_file_location('supplemental_triage_capture', folder / 'verify_capture.py')
     verifier = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(verifier)
@@ -34,7 +37,7 @@ def load_corpus(root):
         need(batch not in sources, 'Duplicate batch')
         blob = (folder / item['file']).read_bytes()
         need(hashlib.sha256(blob).hexdigest() == item['sha256'], 'Capture changed after verification')
-        sources[batch] = {'file': (CAPTURE / item['file']).as_posix(), 'sha256': item['sha256']}
+        sources[batch] = {'file': (capture / item['file']).as_posix(), 'sha256': item['sha256']}
         for record in parse_json_bytes(blob)['source_projection']['records']:
             original = record['values']['Keyword']
             entry = entries.setdefault(normalize(original), {'original_forms': [], 'source_refs': []})

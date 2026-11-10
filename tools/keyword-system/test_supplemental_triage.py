@@ -25,9 +25,21 @@ class SupplementalTriageTests(unittest.TestCase):
         self.assertFalse(built['controls']['deployment_authorized'])
 
     def test_no_arbitrary_capture_path_can_select_code(self):
-        with patch.object(st.importlib.util, 'spec_from_file_location') as load, self.assertRaises(TypeError):
-            st.load_corpus(Path('.'), capture=Path('../outside'))
-        load.assert_not_called()
+        for capture in (Path('../outside'), Path('docs/audit/unknown'), str(st.CAPTURE), []):
+            with self.subTest(capture=repr(capture)), \
+                 patch.object(st.importlib.util, 'spec_from_file_location') as load, self.assertRaises(ValueError):
+                st.load_corpus(Path('.'), capture=capture)
+            load.assert_not_called()
+
+    def test_employment_capture_is_explicit_and_preserves_all_136_rows(self):
+        data = st.load_corpus(Path(__file__).resolve().parents[2], capture=st.EMPLOYMENT_CAPTURE)
+        built = st.compile_workbench(data, dated())
+        self.assertEqual((len(data['sources']), len(data['entries'])), (1, 136))
+        self.assertEqual(sum(len(e['source_refs']) for e in data['entries'].values()), 136)
+        self.assertEqual(built['summary']['dispositions']['UNASSESSED'], 136)
+        self.assertTrue(all(s['file'].startswith(st.EMPLOYMENT_CAPTURE.as_posix() + '/')
+                            for s in data['sources'].values()))
+        self.assertFalse(built['controls']['deployment_authorized'])
 
     def test_actual_date_and_inputs_survive_projection_without_global_mutation(self):
         data, doc = corpus(), dated(proposal('hotel apartment', 'HOLD', ['hotel']))
