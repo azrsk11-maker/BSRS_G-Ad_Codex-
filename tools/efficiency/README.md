@@ -1,5 +1,13 @@
 # Efficiency audit — 7 November 2026
 
+## Safe Foundation evidence summaries — 10 November 2026
+
+The existing Foundation checker now requests Node's [TAP reporter](https://nodejs.org/api/test.html#test-reporters) explicitly for the synthetic local-journal suite. It extracts the complete bounded numeric trailer from that already-executed command's stdout and prints one `TEST_SUMMARY` JSON line. No second test execution, raw test text, private path, stderr or arbitrary receipt field is exported. The fixed check name selects this evidence requirement internally; missing/malformed counters, nonzero exits, failures/cancellations or an entirely skipped suite cannot pass that check. Other command checks retain their existing exit semantics.
+
+Counters are observed test evidence, not source authentication or production acceptance. `runner_platform` is the Python runner's platform, not an independently queried Node-child identity. Pass, skipped and todo remain separate; `release_authorized` is always false. The full test output still remains only in the ignored local report tail. Nine focused regressions cover valid Windows/Linux counter examples, malformed/truncated/oversized trailers, status preservation and payload filtering. The mandatory efficiency test discovery includes them automatically.
+
+Run `python -B -m unittest discover -s tools/efficiency -p test_foundation_summary.py` for the focused reporter checks. A full Foundation run is still required for combined acceptance; current-head CI establishes actual Linux results. This removes the prior need to infer case totals from a suite exit while leaving test selection and production gates unchanged.
+
 This is a local, read-only audit utility. It does not execute recorded commands, contact APIs, change application settings or touch production. Only aggregate reports are retained. No raw logs, credentials or prospect data belong in this directory.
 
 ## Verified baseline
