@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {commercialReport} from './report.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import {commercialReport,commercialReportFromHistory} from './report.mjs';
 const policy={approved:true,approval_ref:'SYNTHETIC-DECISION',currency:'AED',timezone:'Asia/Dubai',commission_basis:'gross_cash_including_vat',
   refunds_basis:'net_of_vat',cost_basis:'separate_not_already_netted',media_basis:'actual_ads_cost_excluding_vat',allocation_model:'explicit_transaction_weights_ppm'};
 const provenance={verified:true,source_ref:'SYNTHETIC-FIXTURE'};
@@ -15,6 +15,37 @@ function fixture(){return {verified_export:true,source_ref:'SYNTHETIC-FIXTURE',c
 test('missing approved finance rules and incomplete sources block, never become zero revenue',()=>{
   assert.equal(commercialReport(fixture(),{}).metrics,null);const f=fixture();f.complete.collections=false;
   assert.equal(commercialReport(f,policy).status,'BLOCKED');
+});
+test('handwritten aggregate objects cannot impersonate an executed history audit',()=>{
+  const f=fixture();delete f.qualifications;
+  f.qualification_audit={schema:'bsre-commercial-qualification-aggregate-v1',holds:[],first_ever_confirmed:true};
+  assert.throws(()=>commercialReport(f,policy,{now_utc:'2026-11-08T12:00:00Z'}),/EXECUTED_QUALIFICATION_AUDIT_REQUIRED/);
+  f.qualifications=[];
+  assert.throws(()=>commercialReport(f,policy),/QUALIFICATION_INPUTS_MUTUALLY_EXCLUSIVE/);
+});
+test('legacy row mode explicitly describes caller assertions rather than authenticated audit',()=>{
+  const result=commercialReport(fixture(),policy);
+  assert.equal(result.qualification_evidence.method,'CALLER_ASSERTED_ROWS_NOT_AUTHENTICATED');
+  assert.equal(result.qualification_evidence.source_truth_independently_verified,false);
+  assert.equal(result.qualification_evidence.google_upload_supported,false);
+});
+test('base finance and source blockers return before touching private history or interpreter',async()=>{
+  const f=fixture();delete f.qualifications;
+  const untouched=new Proxy({}, {get(){throw new Error('PRIVATE_HISTORY_OPTIONS_MUST_NOT_BE_READ');}});
+  assert.equal((await commercialReportFromHistory(f,{},untouched)).status,'BLOCKED');
+  f.verified_export=false;
+  assert.equal((await commercialReportFromHistory(f,policy,untouched)).status,'BLOCKED');
+  f.verified_export=true;f.complete.collections=false;
+  assert.equal((await commercialReportFromHistory(f,policy,untouched)).status,'BLOCKED');
+});
+test('daily windows reject nonzero sub-millisecond boundaries and preserve all-zero fractions',async()=>{
+  const f=fixture();f.from='2026-11-01T00:00:00.0000001+04:00';
+  assert.throws(()=>commercialReport(f,policy),/DUBAI_DAY_BOUNDARIES_REQUIRED/);
+  delete f.qualifications;
+  const untouched=new Proxy({}, {get(){throw new Error('HISTORY_MUST_NOT_BE_READ');}});
+  await assert.rejects(commercialReportFromHistory(f,policy,untouched),/DUBAI_DAY_BOUNDARIES_REQUIRED/);
+  const valid=fixture();valid.from='2026-11-01T00:00:00.0000000+04:00';valid.to='2026-12-01T00:00:00.0000+04:00';
+  assert.equal(commercialReport(valid,policy).totals.first_ever_qualified_people,1);
 });
 test('array identifiers cannot bypass source verification, attribution or deduplication',()=>{
   const f=fixture();
