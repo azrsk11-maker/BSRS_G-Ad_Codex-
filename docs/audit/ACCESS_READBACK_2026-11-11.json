@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "observation_date_dubai": "2026-11-11",
+  "observation_window_utc": {
+    "from": "2026-11-10 20:15:25 UTC",
+    "through": "2026-11-10 20:40:20 UTC"
+  },
+  "method": "READ_ONLY_CONNECTED_CHROME_UI",
+  "site": "https://blackswanrealestate.ae",
+  "requested_path": "/wp-admin/",
+  "observed_path": "/wp-login.php",
+  "login_form_observed": true,
+  "authenticated_admin_available": false,
+  "enabled_surface_inventory_found_authenticated_admin": false,
+  "unconnected_browsers_or_profiles_assessed": false,
+  "cms_configuration_read": false,
+  "credentials_entered": false,
+  "forms_submitted": false,
+  "permission_changes": false,
+  "production_changes": false,
+  "live_tracking_changes": false,
+  "ads_changes": false,
+  "limitations": [
+    "Sign-in absence does not establish installed source or release-switch state.",
+    "Only enabled connected surfaces were inspected.",
+    "No credentials, cookies, tokens or private account/workbook identifiers retained."
+  ]
+}
