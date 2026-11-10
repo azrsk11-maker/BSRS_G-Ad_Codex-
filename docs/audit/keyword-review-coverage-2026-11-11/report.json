@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "scope": "PRELIMINARY_SOURCE_REVIEW_RECONCILIATION_ONLY",
+  "capture_batches": 11,
+  "review_documents": 5,
+  "source_occurrences": 11554,
+  "distinct_source_phrases": 10473,
+  "repeated_source_occurrences": 1081,
+  "review_assessment_instances": 10478,
+  "review_instances_by_disposition": {
+    "HOLD": 4980,
+    "NEGATIVE_EXACT_REVIEW": 2405,
+    "POSITIVE_REVIEW": 3093,
+    "UNASSESSED": 0
+  },
+  "canonical_disposition_counts": {
+    "DISAGREEMENT_HOLD": 0,
+    "HOLD": 4976,
+    "NEGATIVE_EXACT_REVIEW": 2404,
+    "NO_STRUCTURED_REVIEW": 0,
+    "POSITIVE_REVIEW": 3093,
+    "UNASSESSED": 0
+  },
+  "unreviewed_batches": [],
+  "all_phrases_have_preliminary_assessments": true,
+  "cross_review_overlap_phrases": [
+    {
+      "normalized_text": "annual car lease dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-exclusions-2026-11-10/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai letting agents",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "freelance real estate agent dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-broad-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "long term lease dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-exclusions-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "part time real estate agent dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-broad-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    }
+  ],
+  "provisional_exact_screen": {
+    "draft_negative_literals": 2404,
+    "protected_literals": 8089,
+    "authored_test_cases_excluded_from_source_counts": 20,
+    "conflicts": [],
+    "google_matching_verified": false,
+    "actual_scope_verified": false,
+    "full_approved_positive_library_coverage": false
+  },
+  "master_rows_added": 0,
+  "independent_review_verified": false,
+  "admission_authorized": false,
+  "deployment_authorized": false,
+  "source_bindings": {
+    "capture_manifests_sha256": {
+      "docs/audit/keyword-discovery-2026-11-08/capture.json": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+      "docs/audit/keyword-discovery-supply-2026-11-08/capture.json": "279b71e166ecbb3806af143549a99f559ac7846ffa9396497f266b871a2012a7",
+      "docs/audit/keyword-employment-education-2026-11-10/capture.json": "8129d8f27594257e58d35e112dd1f12ba6566e238f8b544ab66e82af08a00e3f",
+      "docs/audit/keyword-employment-broad-2026-11-10/capture.json": "bdc847f3c9759eb166d2bb89122ac365ce414127200463ce0b423a9628eef864",
+      "docs/audit/keyword-exclusions-2026-11-10/capture.json": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4"
+    },
+    "capture_files_sha256": {
+      "docs/audit/keyword-discovery-2026-11-08/buyers.json": "2c742c953164e44038032c828808769e4b4db3f5b713e689a7edee79df1dbf36",
+      "docs/audit/keyword-discovery-2026-11-08/tenants.json": "72f757844e324a6bc0c01e89e3bdb21559b1ad13b503210ca5f83f6c71a13b33",
+      "docs/audit/keyword-discovery-2026-11-08/owners.json": "d89d9ee30ab0b02d2525d6833af1d92a545b48157ce65e2dc6e4bffac376f681",
+      "docs/audit/keyword-discovery-2026-11-08/commercial.json": "0e0976a1dd40288917cdbac847ed4c2c553ab3a28bc7c9cf36c2f635fb63478f",
+      "docs/audit/keyword-discovery-supply-2026-11-08/sellers.json": "ad59fa643c50af4b2e03782428979a841e64ed17557f8e376280fe57f151781e",
+      "docs/audit/keyword-discovery-supply-2026-11-08/landlords.json": "a1c5ab276d12b76541508ad00587a9d2c3f0ddd01b75c7be63c842bfe3690c11",
+      "docs/audit/keyword-employment-education-2026-11-10/employment.json": "34848eca2c291995570ba381850fac8ddbeac5f7878ff09777d879f228efa532",
+      "docs/audit/keyword-employment-education-2026-11-10/education-specific.json": "fcc4f35fe10a04d9ab11da4d7d6674e6779881c81b3b16690c4d9f8740f3f969",
+      "docs/audit/keyword-employment-education-2026-11-10/education-broader.json": "231b7029722f786705a3eaa14c658f657b3b38179deca37e862d9afc259002de",
+      "docs/audit/keyword-employment-broad-2026-11-10/employment-broad.json": "489754ba9986842d61704c9cfb56a378b596d79ce2782972eac4dd53b0628b8b",
+      "docs/audit/keyword-exclusions-2026-11-10/software-services-products.json": "23c440857a175a0674332b037d8acfedd550c2d060300cbad5b14a48acd5edaa"
+    },
+    "review_workbenches_sha256": {
+      "docs/audit/keyword-triage-2026-11-08/workbench.json": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477",
+      "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json": "b7118852ef5592db4501f28ae14201dc7715bca5f1ca5bf8036d66e6b5fb9cc2",
+      "docs/audit/keyword-employment-education-2026-11-10/workbench.json": "b22f03d89237aa4467b2e7d9cc8a74c36882cdee104cabb85d55f8150e6f139a",
+      "docs/audit/keyword-employment-broad-2026-11-10/workbench.json": "c93745c44b95b530b8c4dbcd1ac6f7e4b7b04cdd8eabfacaaf9a6578b1fa2002",
+      "docs/audit/keyword-exclusions-2026-11-10/workbench.json": "585ea863a978e63537b440b5eb6feaedaf236d07f05878d19c7f7ce267ef4a58"
+    },
+    "authored_protection_cases": {
+      "file": "docs/audit/keyword-exclusions-2026-11-10/protected-cases.json",
+      "sha256": "ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43"
+    },
+    "master_source": {
+      "file": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+      "sha256": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4"
+    },
+    "original_capture_verifier_sha256": "d57fbe7f95d74270f0880a63d59e1776afd3e3c68a8cfd154ca399cd9ff63cee"
+  }
+}
