@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "property-readiness.json",
+      "batch_id": "KP-20261111-PROPERTY-READINESS",
+      "sha256": "979aa29d3836d84ea40306c78b4423acb28d45f3c9099a12c18f7215664eb198",
+      "bytes": 29919,
+      "records": 30,
+      "distinct_normalized": 30,
+      "source_bytes": 6822,
+      "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d"
+    }
+  ],
+  "totals": {
+    "export_rows": 30,
+    "distinct_normalized_phrases": 30,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Eight authored property-readiness hypotheses, all returned as separate exact rows.",
+    "Master finance/process allocation and dated DLD primary service pages support topic research only.",
+    "No government affiliation, lender/legal service, approval, inventory, zero-down-payment offer or service scope is asserted.",
+    "Capture controls are immutable unreviewed provenance; separate preliminary workbench is not master admission."
+  ]
+}
