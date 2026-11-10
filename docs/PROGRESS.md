@@ -1,5 +1,13 @@
 # Implementation progress
 
+## 10 November independent content and creative validation
+
+- Refreshed GitHub in six read-only calls: PR8 remains open/unmerged at `d864eaa`, all three exact-head jobs pass, with no reviews, new owner decisions or feedback. Created a feature worktree from that published baseline and verified all 341 files byte-for-byte.
+- Added dated content/claim/inventory/asset evidence validation with exact page/source/review digests and read-only suppression. Website `SOURCE_TRUTH` now validates committed individual content bytes and a private evidence ledger; opaque references or a supplied PASS summary cannot replace source validity. Receipt/approval windows cannot exceed underlying evidence expiry.
+- Added actual RSA/asset preparation validation, including exact independent mappings, reviewed commit/reviewer scope, conservative text limits, distinct challengers and claim/copy/combination/rights evidence. Dependency chronology is enforced. Master section 12 requires preparing challengers, not simultaneously serving them; the six existing serving-ad identities/counts are preserved.
+- Two independent reviews cleared the code after fixes. All 55 required local Foundation checks passed in 47.280271 seconds with PHP required, including 24 content, 35 creative and 68 release-control cases (one Windows capability skip). Both new suites are mandatory checks. Current-head remote results are recorded in PR8 after publication. [Implementation, focused evidence and remaining gates](audit/CONTENT_CREATIVE_2026-11-10.md)
+- No genuine business source or production acceptance is claimed. Production, permissions, financial records and Ads remain unchanged; all advertising remains paused. Independent human review, both full keyword libraries and the remaining content/operational/finance/live-acceptance gates are still required.
+
 ## 10 November resumed goal and source publication
 
 - Published all 53 reviewed `bc8c72b` source files through the existing feature branch and PR8 in 17 directory commits, ending at `38e815294e3c8247e77e58840afde11cb4665f99`. Independent read-only fetch confirmed exact whole-tree parity for all 337 files. Both Foundation jobs passed on that head. The isolated WordPress job passed native writer/property-tool phases but found a duplicate cleanup include in the owner-mail harness; corrected it to `require_once`, with lint, 49 synthetic assertions and two guard checks passing. Revised-head native CI remains required. The selected Git client remains Read-only; the owner's Chrome supplied normal browser delivery. Permissions, protected main and production are unchanged.
