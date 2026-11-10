@@ -13,7 +13,7 @@ export function buildPurposeRetention(bytes, name) {
   // Every derived class and its fixture must use the same isolated tables.
   // Keep all other guard conditions, including local mode and synthetic origin.
   source=source.replaceAll("'retention_synthetic_'", "'purpose_retention_synthetic_'");
-  source=source.replaceAll("'retention_compaction_synthetic_'", "'purpose_retention_compaction_synthetic_'");
+  source=source.replaceAll("'retention_compaction_synthetic_'", "'purpose_compact_synthetic_'");
   if(name==='restore'){
     source=source.replace("require '/opt/lab/consent-retention/candidate-store.php';", "require '/opt/lab/purpose/store.php';\nrequire '/opt/lab/purpose/purpose-attribution.php';");
     source=source.replace("require '/opt/lab/consent-retention/PreferenceRetirement.php';", "require '/opt/lab/purpose-retention/PreferenceRetirement.php';");

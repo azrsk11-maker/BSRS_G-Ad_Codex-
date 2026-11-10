@@ -47,7 +47,15 @@ test('retention and restore candidates preserve scoped existing logic and add hi
     const bytes=readFileSync(new URL('../../consent-retention/'+name+'.php',import.meta.url));
     const code=buildPurposeRetention(bytes,name);assert.match(code,/namespace BSRE\\PurposeRetention/);
     assert.match(code,/\$db->prefix\s*===\s*'purpose_retention_synthetic_'/);
-    assert.match(code,/\$db->prefix\s*===\s*'purpose_retention_compaction_synthetic_'/);
+    assert.match(code,/\$db->prefix\s*===\s*'purpose_compact_synthetic_'/);
+    for(const prefix of ['purpose_retention_synthetic_','purpose_compact_synthetic_']){
+      for(const suffix of ['bsre_consent_state','bsre_consent_history','bsre_consent_captures',
+        'bsre_retention_audit','bsre_restore_audit','bsre_retirement_checkpoint',
+        'bsre_retirement_floor','bsre_retirement_ledger','bsre_ledger_compaction_audit']){
+        assert.ok((prefix+suffix).length<=64,'Derived identifiers must fit the MariaDB64-character limit');
+      }
+    }
+    assert.ok(!code.includes("'purpose_retention_compaction_synthetic_'"));
     assert.match(code,/BSRE_RETENTION_LAB/);assert.match(code,/wp_get_environment_type\(\)\s*!==\s*'local'/);
     assert.match(code,/home_url\(\)\s*!==\s*'http:\/\/bsre\.invalid'/);
     assert.ok(!code.includes("'retention_synthetic_'"));
