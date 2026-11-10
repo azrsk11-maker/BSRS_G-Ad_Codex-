@@ -141,6 +141,9 @@ def run_checks(require_php=False):
         for name in ("SelectiveChoiceRetirement.php", "selective-choice.test.php", "selective-native.php"):
             run("php-lint-" + name, [php, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
         run("selective-choice-retirement-guards", [php, str(ROOT/"tools/consent-retention/per-choice/selective-choice.test.php")])
+        for name in ("PurposeChoicePlanner.php", "purpose-choice.test.php", "purpose-selective-native.php"):
+            run("php-lint-" + name, [php, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
+        run("purpose-choice-retirement-planning", [php, str(ROOT/"tools/consent-retention/per-choice/purpose-choice.test.php")])
         run("php-lint-retirement-compaction-native", [php, "-l", str(ROOT/"tools/consent-retention/compaction-native.php")])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
         run("property-decision-shortcode-behavior", [php, str(ROOT/"tools/property-decision-tools/php.test.php")])
