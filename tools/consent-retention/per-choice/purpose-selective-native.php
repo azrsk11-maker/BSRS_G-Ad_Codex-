@@ -65,7 +65,10 @@ function pfixture():array{
     foreach(['bsre_choice_audit','bsre_choice_control','bsre_consent_captures','bsre_consent_history','bsre_consent_state','bsre_rate_limits']as$table)pq('DROP TABLE IF EXISTS '.C::PURPOSE_PREFIX.$table);
     $control=pcntl();$control->installLabTables();$main=$wpdb;$wpdb=$db;
     try{E\install();px('purpose_schema_installed_in_controller_database',A\install_consent_storage());$store=new A\WpConsentRepository($db);A\Runtime::$store=$store;
-        $_COOKIE=[E\COOKIE=>bin2hex(random_bytes(32))];$subject=E\consent_subject_key($_COOKIE[E\COOKIE]);$now=time();$on=['analytics'=>true,'ad_measurement'=>true];
+        $now=time();$consentSubject=bin2hex(random_bytes(16));
+        $_COOKIE=[E\COOKIE=>bin2hex(random_bytes(32)),E\CONSENT_COOKIE=>E\consent_cookie_token($consentSubject,$now+E\CONSENT_PREFERENCE_SECONDS,wp_salt('auth'))];
+        $subject=E\consent_subject_key($consentSubject);$on=['analytics'=>true,'ad_measurement'=>true];
+        px('actual_signed_consent_subject_resolves',E\consent_cookie_subject($_COOKIE[E\CONSENT_COOKIE],wp_salt('auth'),time())===$consentSubject);
         $first=$store->choose($subject,$on,E\CONSENT_NOTICE_VERSION,$now-600);$second=$store->choose($subject,$on,E\CONSENT_NOTICE_VERSION,$now-300);$third=$store->choose($subject,$on,E\CONSENT_NOTICE_VERSION,$now-100);
         $endpointHome=true;wp_set_current_user(0);$_SERVER['REMOTE_ADDR']='198.51.100.180';
         $wire=['request_id'=>wp_generate_uuid4(),'role'=>'tenant','name'=>'SYNTHETIC purpose selective','phone'=>'+971500000000','email'=>'fixture@example.invalid','country'=>'UAE','area'=>'Synthetic fixture','budget'=>'To discuss','timeline'=>'Immediate / move now','funding'=>'To discuss','property_type'=>'Apartment','property_details'=>'SYNTHETIC NOT INVENTORY','authority'=>'','contact_consent'=>true,'marketing_consent'=>false,'campaign'=>'SYNTHETIC_LAB_ONLY','landing_page'=>'https://blackswanrealestate.ae/enquire/rent/','website'=>'','started_at'=>($now-5)*1000];$lastBody=wp_json_encode($wire);
@@ -75,6 +78,7 @@ function pfixture():array{
         $request->set_body(wp_json_encode(['version'=>1,'wire_body'=>$lastBody,'attribution'=>$sidecar]));$response=rest_do_request($request);
         px('actual_purpose_endpoint_accepts_and_links_receipt',$response->get_status()===200&&$response->get_data()['lead_id']===$lastReceipt['lead_id']);
         $capture=$db->get_row($db->prepare('SELECT * FROM '.C::PURPOSE_PREFIX.'bsre_consent_captures WHERE request_id=%s',$wire['request_id']),ARRAY_A);A\assert_record($capture);$record=json_decode($capture['purpose_json'],true,12,JSON_THROW_ON_ERROR);
+        px('actual_source_cookie_creates_known_eligible_original_capture',(int)$capture['known']===1&&(int)$capture['eligible']===1&&(int)$capture['original_revision']===3);
         px('older_both_purpose_refs_persist_exact_click',($record['advertising']['first']['original_revision']??null)===2&&($record['analytics']['last']['original_revision']??null)===2&&$record['advertising']['last']['parameters']['gclid']==='Exact_Click.A~9'&&(int)$capture['original_revision']===3);
         $when=(int)$capture['created_at'];$store->choose($subject,['analytics'=>false,'ad_measurement'=>false],E\CONSENT_NOTICE_VERSION,$when+1);$store->choose($subject,$on,E\CONSENT_NOTICE_VERSION,$when+2);
         wp_set_current_user($owner->ID);$private=A\private_history($db,$wire['request_id'],$when+3);px('withdrawal_regrant_denies_original_private_context',$private['analytics']['first']===null&&$private['advertising']['first']===null);
