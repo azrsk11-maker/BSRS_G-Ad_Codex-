@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 10 November explicit journal test evidence
+
+- The preceding364-file source at `82777fa6` is accepted with all three current-head CI jobs passing. Its detailed Linux TAP totals were not exported, so the prior shared receipt correctly qualified per-case inference. [Verified baseline and remaining gates](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6769722519).
+- The existing journal command now explicitly uses TAP. The checker extracts a complete bounded numeric trailer from that same process and emits one allowlisted `TEST_SUMMARY` line, without raw test names, paths, stderr, arbitrary fields, an extra journal run or a new artifact/dependency. Missing/inconsistent evidence, failed/cancelled tests, a nonzero process exit or an entirely skipped suite cannot pass the journal check. Other command semantics remain unchanged. These counters are observed test results, not production authority; `runner_platform` identifies Python's runner.
+- Independent review cleared the reporter. Nine focused cases pass, and actual local integration directly observes22tests/5passes/17skips onWindows with release authorityfalse. The combined required Foundation run passes all60checks in143.176171seconds with PHP required; the ignored receipt is `test-output/ci-evidence-summary-20261110.json`. Current-head Linux CI must directly report its actual counts after publication. [Reporter scope and focused command](../tools/efficiency/README.md).
+- Main remains unmerged. Production website/tracking, financial records, permissions and Ads settings are unchanged; no advertising activated or expenditure committed. Human review, genuine business/keyword/content/staff/finance evidence, authenticated integrations, provider/recovery acceptance and separately scoped production approvals remain required.
+
 ## 10 November local journal and negative-review chronology
 
 - Published baseline `b48aa659` is accepted: all358files match, all three exact-head jobs passed, and the shared receipt records remaining gates. Fresh GitHub readback found no new owner feedback, no human reviews, main unchanged and PR8 unmerged. [Verified baseline](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6768821977).
