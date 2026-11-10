@@ -1,5 +1,13 @@
 # Implementation progress
 
+## 10 November local journal and negative-review chronology
+
+- Published baseline `b48aa659` is accepted: all358files match, all three exact-head jobs passed, and the shared receipt records remaining gates. Fresh GitHub readback found no new owner feedback, no human reviews, main unchanged and PR8 unmerged. [Verified baseline](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6768821977).
+- Added actual POSIX synthetic storage behind the expiry runner: explicit initialization, bounded owner-private state, atomic sync/readback, cross-process lock ownership, queued-save draining and crash/ambiguity holds. Review corrected data-only serialization bounds and exact owner-file identity. No production/provider custody, automatic stale-lock recovery, scheduler or hardware power-loss acceptance is claimed.
+- Fixed negative research/approval dates that could predate evidence. Valid research survives an approval-only hold; source/query/used-metric chronology failures invalidate research. Applicable protected-review dates are indexed once per campaign. All177keyword tests pass, including17new regressions; actual sources, metrics and reviewed masters remain unchanged at0/14,000each.
+- Both independent source reviews cleared. All60required local Foundation checks passed in127.933307seconds with PHP required. The journal focused suite passed5Windows/data/default cases and explicitly skipped17POSIX cases; all17must pass on Linux in current-head CI. [Protocol, verification and full-goal limits](audit/LOCAL_JOURNAL_NEGATIVE_CHRONOLOGY_2026-11-10.md).
+- Production website/tracking, financial records, permissions and Ads settings remain unchanged; no advertising activated or expenditure committed. Real evidence, authenticated integration, provider/staff/conversion/finance acceptance, human review and separate production approvals remain open.
+
 ## 10 November per-choice planning and recovery-expiry orchestration
 
 - The preceding351-file compaction candidate is accepted at `ae8f307`: all three exact-head jobs passed, including32native compaction checks,54writer/27property/19owner-mail checks. MariaDB's shared metadata cache was starved by20ms polling; the independently reviewed200ms cadence preserves the five-second deadline and actual-lock/stale-authority proof. All four attempts remain reported: eight workflows, four Foundation successes, three native failures and one native success. [Verified GitHub receipt](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6768220644).
