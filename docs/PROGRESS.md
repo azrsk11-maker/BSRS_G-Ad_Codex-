@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 11 November bounded host-browser prerequisite experiment
+
+- Continued from accepted `ddad2a8e`:464files/tree equal local447, all three exact-head CI jobs pass, main unchanged and PR8 open/unmerged. Full goal/referenced brief read; fresh issue1 confirms no new primary-family choice and issue9 preserves the authorized synthetic Actions lab. The previous goal turn made verified research/source/performance progress.
+- Existing lab documentation distinguishes real consent-component Chrome evidence from simulated-DOM WordPress interop; earlier container namespace/browser failures do not prove every possible host runtime incompatible. Added a smaller informational host namespace probe before considering any browser dependency or new runtime. It runs only on an explicitly tagged PR-head commit, avoiding automatic blind retries on later changes.
+- The fixed non-root command uses preinstalled utilities, process no-new-privileges, current-UID mapping and new user/network/mount namespaces. Isolated Python inspects nine local invariants with a three-second timeout, no inherited CI credentials/environment, no outbound connection and bounded filtered output. No browser/application starts, install, host security setting, existing Docker control, permission or data changes. Eight focused synthetic tests pass; local Windows reports unsupported rather than Linux acceptance.
+- Current required combined tests and actual tagged-head host observations follow in the verified handover. A successful probe still has browser_runtime_accepted=false and cannot establish native browser/WordPress, real routing, measurement or production readiness. Existing isolated lab and all broader business/research/release gates remain unchanged; no publication, activation, spending, main merge or old campaign resumption.
+
 ## 11 November developer-employment research and protected property intent
 
 - Continued from accepted `0c2a0c42`:453files/tree match local726, all three exact-head CI jobs pass, main unchanged and PR8 open/unmerged. [Verified handover](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6781235756). Full objective/referenced brief and relevant Master section6 were read; issue2 still requires actual evidence/reviewer input. No owner decision, independent review or release approval is inferred.
