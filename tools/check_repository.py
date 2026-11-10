@@ -138,6 +138,9 @@ def run_checks(require_php=False):
         run("linkage-reconciliation-behavior", [php, str(ROOT/"tools/consent-retention/linkage.test.php")])
         run("retirement-ledger-compaction-behavior", [php, str(ROOT/"tools/consent-retention/compaction.test.php")])
         run("per-choice-retention-planning", [php, str(ROOT/"tools/consent-retention/per-choice/test_per_choice.php")])
+        for name in ("SelectiveChoiceRetirement.php", "selective-choice.test.php", "selective-native.php"):
+            run("php-lint-" + name, [php, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
+        run("selective-choice-retirement-guards", [php, str(ROOT/"tools/consent-retention/per-choice/selective-choice.test.php")])
         run("php-lint-retirement-compaction-native", [php, "-l", str(ROOT/"tools/consent-retention/compaction-native.php")])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
         run("property-decision-shortcode-behavior", [php, str(ROOT/"tools/property-decision-tools/php.test.php")])
