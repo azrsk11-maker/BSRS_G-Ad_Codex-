@@ -9,6 +9,7 @@ import argparse
 from collections import Counter, defaultdict
 import csv
 from datetime import date
+from functools import lru_cache
 import hashlib
 import io
 import json
@@ -66,8 +67,24 @@ def tokens(text):
     return re.findall(r"\w+", normalize(text), flags=re.UNICODE)
 
 
+@lru_cache(maxsize=4096)
+def _cached_lexical_form(text):
+    words = tuple(tokens(text))
+    return words, frozenset(words)
+
+
+def _lexical_form(text):
+    # Reuse only immutable preprocessing, never validation/approval results.
+    # Bound entry size as well as count; long or nonstandard inputs retain the
+    # uncached path and its existing validation/errors. Nothing is persisted.
+    if type(text) is str and len(text) <= 512:
+        return _cached_lexical_form(text)
+    words = tuple(tokens(text))
+    return words, frozenset(words)
+
+
 def negative_matches(text, match_type, query):
-    negative, actual = tokens(text), tokens(query)
+    (negative, negative_set), (actual, actual_set) = _lexical_form(text), _lexical_form(query)
     if not negative or not actual:
         return False
     if match_type == "EXACT":
@@ -75,7 +92,7 @@ def negative_matches(text, match_type, query):
     if match_type == "PHRASE":
         return any(actual[i:i + len(negative)] == negative for i in range(len(actual) - len(negative) + 1))
     if match_type == "BROAD":
-        return set(negative) <= set(actual)
+        return negative_set <= actual_set
     raise ValueError("Unsupported negative match type")
 
 
