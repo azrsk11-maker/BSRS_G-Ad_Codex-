@@ -13,6 +13,8 @@ Optional `--from-day` and `--to-day` accept inclusive Dubai dates in `YYYY-MM-DD
 
 Optional `--source-review C:/private/source-review.json` accepts the existing `bsre-qualified-source-review-v1` contract in `qualification_sources.py`. Its SHA-256 binding must match the exact ledger file bytes. Without reviewed source evidence, source counts remain `UNKNOWN_SOURCE`. Click IDs alone never establish Ads attribution.
 
+The output also includes selected-window Dubai-day/source aggregates and, where the existing native source classifier accepts the evidence, day/native-campaign counts. Native campaign IDs are aggregate evidence only; no `BSRE-Cxxxx` mapping is inferred. Every earliest qualification is selected over full supplied history before the reporting window. Earliest ties outside the selected window also withhold whole-history completeness.
+
 ## Input contract
 
 The ledger object allows only these keys.
@@ -40,6 +42,25 @@ The following deliberate restrictions apply around the historical validator.
 - Strict envelope types, file/row limits, generic failure handling and whitespace-evidence rejection are enforced before returning aggregates.
 
 Source-review holds affect source attribution. They do not change the separate business-qualification count or grant measurement permission.
+
+## Commercial report integration
+
+The existing [commercial report](../website-tracking/commercial-system/README.md#executed-whole-history-audit) now has an executable local integration rather than requiring hand-transcribed first-ever flags. It runs this exact audit through a reviewed, trusted Python interpreter and consumes a frozen aggregate receipt. It never consumes the advertising-eligible queue, permission preview or a Google source file. Advertising permission, withdrawal and export readiness do not define the business count.
+
+For that path, add `--business-review C:/private/business-review.json` and explicit inclusive `--from-day`/`--to-day`. The bounded private review object has exactly these fields:
+
+- `schema`: `bsre-business-history-review-v1`; `fixture_only`: the same actual boolean as the ledger.
+- `ledger_sha256` and `source_review_sha256`: SHA-256 of the original file bytes; the latter is null when no source review is supplied.
+- `all_available_history_reviewed`: an actual boolean attesting that the entire available history was reviewed. The maximum 10,000-row input bound does not authorize selecting the latest 10,000 rows. If genuine full history exceeds this bound, production reporting remains held until a separately reviewed bounded ingestion design is available.
+- `retention_history_incomplete`: the authoritative retention journal's actual boolean marker, or null if unknown; `retention_marker_verified`: actual boolean for its reviewed readback. Unknown/unverified or incomplete history holds the commercial path. Remaining workbook rows alone cannot establish this marker.
+- `observed_at_utc` and `valid_until_utc`: actual timezone-aware review times. The owner determines the evidence window; the module invents no source-freshness policy. Review must cover the supplied recorded history and be current at the explicitly supplied evaluation clock. Processing an old snapshot now does not refresh its review.
+- `reviewer_reference` and `evidence_reference`: opaque references beginning with a letter and using letters/digits/colon/underscore/hyphen, maximum 150 characters. Never use names, contact details or paths.
+
+The resulting `commercial_qualification_aggregate` is `PRIVATE_BUSINESS_AGGREGATE_REVIEW_ONLY` and always `UPLOAD_PROHIBITED`. It contains day/source/native-campaign counts, current holds, selected-window metadata, exact source/review byte hashes and hashes of the executed validator, unchanged core, classifier and Outcome40 schema. It contains no person, lead, outcome, contact, staff-note, evidence-reference or click records. Aggregate business counts and provenance can still be private business information; do not publish or send them to Google.
+
+Hashes bind bytes and the executed-code receipt binds this local call. Neither authenticates the interpreter, reviewer, completeness assertion, retention journal, native attribution or underlying business truth. Those production acceptance gates remain open. The caller must select a reviewed trusted Python executable and protect the source/input directory from concurrent untrusted modification. The Node bridge checks input bytes before/after the audit, checks pinned producer bytes and rejects handwritten/cloned JSON receipts. This does not turn an arbitrary caller-selected executable into a trusted runtime.
+
+Fixture aggregates remain labelled `fixture_only:true`; their raw staff-attested genuine total remains null. Synthetic offline arithmetic through this branch is illustrative and never a production result. Existing finance-policy approval and sanitized-export requirements still apply independently.
 
 ## Provenance and verification
 

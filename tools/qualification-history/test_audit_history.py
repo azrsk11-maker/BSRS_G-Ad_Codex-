@@ -184,6 +184,17 @@ class AuditHistoryTests(unittest.TestCase):
         self.assertEqual(result["history"]["staff_attested_first_qualification_total"], 0)
         self.assertEqual(result["provided_history_by_dubai_day"], {})
 
+    def test_tie_outside_selected_window_still_holds_complete_history(self):
+        ledger = ledger_fixture()
+        duplicate = copy.deepcopy(ledger["records"][0])
+        duplicate["outcome_id"] = "22222222-2222-4222-8222-222222222222"
+        ledger["records"].append(duplicate)
+        result = self.run_audit(ledger, from_day="2026-11-02", to_day="2026-11-02")
+        self.assertFalse(result["whole_history_business_holds_resolved"])
+        self.assertEqual(result["outcome_hold_counts"]["FIRST_QUALIFICATION_TIE_REVIEW_REQUIRED"], 1)
+        self.assertIsNone(result["history"]["staff_attested_first_qualification_total"])
+        self.assertEqual(result["provided_history_by_day_and_source"], {})
+
     def test_duplicate_unchanged_retry_is_one(self):
         ledger = ledger_fixture()
         ledger["records"].append(copy.deepcopy(ledger["records"][0]))
@@ -303,6 +314,9 @@ class AuditHistoryTests(unittest.TestCase):
         })
         result = self.run_audit(ledger, source_review=source, ledger_sha256="a" * 64)
         self.assertEqual(result["provided_history_by_source"]["ADS_ATTRIBUTED"], 1)
+        self.assertEqual(result["provided_history_ads_by_day_and_native_campaign"], {"2026-11-01": {"24372566774": 1}})
+        self.assertEqual(result["provided_history_by_day_and_source"]["2026-11-01"],
+                         {"ADS_ATTRIBUTED": 1, "OTHER_SOURCE": 0, "UNKNOWN_SOURCE": 0})
         source["records"][0]["customer_id"] = "UNAPPROVED-ACCOUNT"
         result = self.run_audit(ledger, source_review=source, ledger_sha256="a" * 64)
         self.assertEqual(result["provided_history_by_source"]["UNKNOWN_SOURCE"], 1)
