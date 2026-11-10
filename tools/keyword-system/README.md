@@ -1,5 +1,7 @@
 # Offline keyword research controls
 
+Negative research reviews must be dated on or after their source, claimed query observations and used metric evidence. Independent exclusion approval must also follow the research review and the eligible campaign context, applicable protected-query reviews and current scope verification. A later supporting review requires a new exclusion approval; an approval-only chronology hold preserves otherwise valid research while withholding approval. Invalid research chronology cannot count as reviewed or approved. The existing strict date-only format permits same-day equality; it does not prove ordering within that day. Protected-review dependency dates are indexed once per campaign, and invalid dates remain held. These checks do not authenticate reviewers, supply missing evidence or change actual master-library counts.
+
 This is implemented development, not a completed14,000/14,000library or an Ads uploader. It uses Python's standard library and never makes a network request. Reviewed `data/` remains empty. Separate historical staging preserves [82 positive placements / 41 candidates](staging/historical-intake.json) and [27 negative placements / nine candidates](staging/historical-negative-intake.json), all unapproved with exact source provenance and no inferred metrics or current mappings. See [the intake report](../../docs/audit/KEYWORD_SEED_INTAKE.md). Synthetic fixtures exist only in test modules.
 
 ## Run

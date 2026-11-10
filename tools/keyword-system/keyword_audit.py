@@ -178,6 +178,35 @@ def fresh(record, at, errors, label, start="observed_on", end="valid_until"):
         errors.append(label + ": missing/invalid evidence dates")
 
 
+def validate_negative_chronology(row, source, eligible, contexts, protected_review_dates, bindings, errors, deployment_holds):
+    """Dated consistency only; timestamps and references cannot authenticate approval."""
+    research_dates = [source.get("observed_on") if isinstance(source, dict) else None]
+    if ((isinstance(source, dict) and source.get("kind") in {"first_party_observed", "authorized_partner_observed"})
+            or row.get("observation_date") is not None or nonblank(row.get("observed_query"))):
+        research_dates.append(row.get("observation_date"))
+    metric_evidence = row.get("metric_evidence", {})
+    for metric in ("volume", "cpc"):
+        if row.get(metric) is not None:
+            evidence = metric_evidence.get(metric) if isinstance(metric_evidence, dict) else None
+            research_dates.append(evidence.get("observed_on") if isinstance(evidence, dict) else None)
+    try:
+        if iso_day(row.get("reviewed_on")) < max(iso_day(value) for value in research_dates):
+            errors.append("negative research review predates its source/query/metric evidence")
+    except (TypeError, ValueError):
+        errors.append("negative research dependency evidence dates invalid")
+
+    # Scope/corpus can be reviewed after initial research. Only exclusion
+    # readiness is held until its independent approver has seen those versions.
+    approval_dates = research_dates + [row.get("reviewed_on"), bindings.get("verified_on")]
+    approval_dates.extend(contexts.get(key, {}).get("reviewed_on") for key in eligible)
+    approval_dates.extend(protected_review_dates.get(key) for key in eligible)
+    try:
+        if iso_day(row.get("approved_on")) < max(iso_day(value) for value in approval_dates):
+            deployment_holds.append("exclusion approval: predates its research/context/source/scope evidence")
+    except (TypeError, ValueError):
+        deployment_holds.append("exclusion approval: dependency evidence dates invalid")
+
+
 def load_positive_contract(spec_root=None):
     """Read source-defined vocabularies/allocations; never infer business facts.
 
@@ -369,6 +398,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
     query_index = unique_index(protected_queries, "query_id", global_errors, "protected queries")
     postings = defaultdict(set)
     coverage_by_campaign = defaultdict(set)
+    protected_review_dates = {}
     lexical_comparisons = 0
     for key, query in query_index.items():
         if not nonblank(query.get("text")) or not tokens(query.get("text", "")) or query.get("must_serve") is not True:
@@ -376,6 +406,10 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
         if not nonblank(query.get("evidence_ref")):
             global_errors.append("protected queries: evidence reference required " + key)
         fresh(query, at, global_errors, "protected query " + key, "reviewed_on")
+        try:
+            reviewed_on = iso_day(query.get("reviewed_on")).isoformat()
+        except (TypeError, ValueError):
+            reviewed_on = None
         eligible = query.get("campaign_keys")
         if not isinstance(eligible, list) or not eligible or not set(eligible) <= set(campaign_index):
             global_errors.append("protected queries: known nonempty campaign coverage required " + key)
@@ -386,6 +420,12 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             postings[token].add(key)
         for campaign_key in query.get("campaign_keys", []):
             coverage_by_campaign[campaign_key].update(query.get("services", []))
+            # One latest-date lookup per campaign, not another corpus scan per negative.
+            if campaign_key not in protected_review_dates:
+                protected_review_dates[campaign_key] = reviewed_on
+            else:
+                previous = protected_review_dates[campaign_key]
+                protected_review_dates[campaign_key] = max(previous, reviewed_on) if previous and reviewed_on else None
 
     bindings = scope_bindings if isinstance(scope_bindings, dict) else {}
     binding_errors = []
@@ -531,6 +571,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             if not nonblank(row.get("approval_reviewer")) or str(row.get("approval_reviewer", "")).strip().casefold() == str(row.get("reviewer", "")).strip().casefold():
                 deployment_holds.append("independent exclusion approver required")
             fresh(row, at, deployment_holds, "exclusion approval", "approved_on")
+            validate_negative_chronology(row, source, eligible, context_index, protected_review_dates, bindings, errors, deployment_holds)
             deployment_holds.extend(binding_errors)
             bound_campaigns = bindings.get("campaigns", {})
             if not isinstance(bound_campaigns, dict):
