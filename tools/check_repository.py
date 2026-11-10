@@ -115,6 +115,8 @@ def run_checks(require_php=False):
     run("keyword-northern-emirates-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-northern-emirates-2026-11-11/verify_triage.py")])
     run("keyword-abu-sharjah-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/verify_capture.py")])
     run("keyword-abu-sharjah-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/verify_triage.py")])
+    run("keyword-developer-employment-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-developer-employment-2026-11-11/verify_capture.py")])
+    run("keyword-developer-employment-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-developer-employment-2026-11-11/verify_triage.py")])
     run("keyword-observed-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
