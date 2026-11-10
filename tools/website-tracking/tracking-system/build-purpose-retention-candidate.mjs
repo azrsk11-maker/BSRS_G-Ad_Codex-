@@ -3,8 +3,9 @@ import {createHash} from 'node:crypto';
 import {join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 
-const pins = {PreferenceRetirement:'54cfe60473167a6bf2f8009a59a191510ef5498fb2d2eb58450f72016afe31ea',
-  RetirementLedger:'3ff69def0fcc91d1894751a3188f87ae0c3f861b5879a19a76c5b9e46a0043ad',
+// Reviewed compaction candidate bytes; immutable store/restore fixtures stay pinned.
+const pins = {PreferenceRetirement:'fb90a91875b376f52d48a50a750a5f0bdde7ffc066d9648a61505ab3584f82f5',
+  RetirementLedger:'9675b7928ee0bae042c5f0305cdd1d73d13a343fda4dc8800d3e4d0568c1cba3',
   restore:'f043b7708e185e9a5329caffaf57a0b3eeb7414559b61d695dba8ba46dc2c2be'};
 export function buildPurposeRetention(bytes, name) {
   if(createHash('sha256').update(bytes).digest('hex')!==pins[name])throw new Error('PURPOSE_RETENTION_SOURCE_CHANGED');
@@ -12,6 +13,7 @@ export function buildPurposeRetention(bytes, name) {
   // Every derived class and its fixture must use the same isolated tables.
   // Keep all other guard conditions, including local mode and synthetic origin.
   source=source.replaceAll("'retention_synthetic_'", "'purpose_retention_synthetic_'");
+  source=source.replaceAll("'retention_compaction_synthetic_'", "'purpose_retention_compaction_synthetic_'");
   if(name==='restore'){
     source=source.replace("require '/opt/lab/consent-retention/candidate-store.php';", "require '/opt/lab/purpose/store.php';\nrequire '/opt/lab/purpose/purpose-attribution.php';");
     source=source.replace("require '/opt/lab/consent-retention/PreferenceRetirement.php';", "require '/opt/lab/purpose-retention/PreferenceRetirement.php';");

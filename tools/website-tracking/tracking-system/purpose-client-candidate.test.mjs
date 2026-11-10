@@ -46,11 +46,13 @@ test('retention and restore candidates preserve scoped existing logic and add hi
   for(const name of ['PreferenceRetirement','RetirementLedger']){
     const bytes=readFileSync(new URL('../../consent-retention/'+name+'.php',import.meta.url));
     const code=buildPurposeRetention(bytes,name);assert.match(code,/namespace BSRE\\PurposeRetention/);
-    const prefix=code.match(/\$db->prefix\s*!==\s*'([^']+)'/);
-    assert.equal(prefix?.[1],'purpose_retention_synthetic_');
+    assert.match(code,/\$db->prefix\s*===\s*'purpose_retention_synthetic_'/);
+    assert.match(code,/\$db->prefix\s*===\s*'purpose_retention_compaction_synthetic_'/);
     assert.match(code,/BSRE_RETENTION_LAB/);assert.match(code,/wp_get_environment_type\(\)\s*!==\s*'local'/);
     assert.match(code,/home_url\(\)\s*!==\s*'http:\/\/bsre\.invalid'/);
     assert.ok(!code.includes("'retention_synthetic_'"));
+    assert.ok(!code.includes("'retention_compaction_synthetic_'"));
+    assert.match(code,/BSRE_RETENTION_COMPACTION_ENABLED/);
     if(name==='RetirementLedger')assert.match(code,/assertRestoreReferences/);
     else assert.match(code,/purpose_retention_synthetic_/);
     assert.throws(()=>buildPurposeRetention(Buffer.concat([bytes,Buffer.from(' ')]),name),/SOURCE_CHANGED/);
