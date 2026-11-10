@@ -77,6 +77,8 @@ def run_checks(require_php=False):
         for path in sorted((ROOT/"tools/native-wordpress").rglob("*.php")):
             run("php-lint-" + path.name, [php, "-l", str(path)])
         run("linkage-reconciliation-behavior", [php, str(ROOT/"tools/consent-retention/linkage.test.php")])
+        run("retirement-ledger-compaction-behavior", [php, str(ROOT/"tools/consent-retention/compaction.test.php")])
+        run("php-lint-retirement-compaction-native", [php, "-l", str(ROOT/"tools/consent-retention/compaction-native.php")])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
         run("property-decision-shortcode-behavior", [php, str(ROOT/"tools/property-decision-tools/php.test.php")])
         for path in sorted((ROOT/"tools/owner-mail-review").glob("*.php")):
