@@ -44,6 +44,7 @@ jobs:
           php tools/consent-retention/linkage.test.php
           php -l tools/consent-retention/compaction-native.php
           php tools/consent-retention/compaction.test.php
+          php tools/consent-retention/per-choice/test_per_choice.php
           php tools/website-tracking/tracking-system/receipt-recovery.test.php
       # Site Health on 7 November reports production PHP 8.2.35.
       # Keep the runner-runtime check above and explicitly cover its 8.2 minor.
@@ -59,3 +60,4 @@ jobs:
           php -l tools/native-wordpress/native-draft-preview.php
           php -l tools/native-wordpress/tests/native-draft-preview-test.php
           php tools/native-wordpress/tests/native-draft-preview-test.php
+          php tools/consent-retention/per-choice/test_per_choice.php
