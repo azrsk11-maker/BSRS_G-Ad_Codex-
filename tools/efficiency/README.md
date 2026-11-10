@@ -118,3 +118,22 @@ When using the command tool, a response with a session ID is an active process. 
 The standalone Discovery CLI remains available, including its optional private-source checks. Foundation now relies on the original public-capture verification already required by the supply and triage checks. The two retained checks each rejected an altered Buyers batch in a disposable copy.
 
 Three alternating local trials per variant measured the affected group at a median of 1.7668 seconds with three commands and 1.5314 seconds with two, a reduction of 0.2354 seconds (13.3%) on this Windows checkout. This is a measurement of that group only. The isolated WordPress job on the preceding revision spent 35 seconds building dependencies and 9 seconds running the isolated lab. Those stages are unchanged. Token use was unavailable.
+
+## Dependency-build baseline, 10 November
+
+The [accepted dd52 lab job](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42845032296/job/129930114847) has these observed consecutive-log boundaries. They include small dispatch overheads; they are not API-reported step durations or a hardware benchmark.
+
+| Interval | Seconds |
+|---|---:|
+| Checkout | 1.460 |
+| Source verification | 1.505 |
+| Image build | 33.744 |
+| Native execution | 11.696 |
+| Cleanup | 0.152 |
+| Total measured span | 48.557 |
+
+Build is69.5% of that span. BuildKit directly reports16.3s for apt/PHP extensions,2.1s for the pinned WordPress archive,6.5s base pull and6.1s image export. The18.4s reusable dependency work is an upper-bound opportunity, not demonstrated cache savings: builder setup, cache transfers, source derivation and export still cost time.
+
+No cache or builder change is adopted. A later bounded trial could cache only a public dependency stage, force source derivation fresh and compare actual whole-job warm time including setup/post-cache, while rerunning every acceptance check. A cache hit alone is insufficient. Keep existing allowance/settings, source pins, `--pull`, kernel `--network none`, read-only runtime and absence of production credentials.
+
+Cached `RUN apt-get` layers do not refresh merely with age; a trial needs an explicit refresh epoch. GitHub's inactivity-based eviction is not dependency freshness. PR merge-ref caches are scoped and cannot be consumed by main or another PR. These constraints follow [Docker invalidation](https://docs.docker.com/build/cache/invalidation/#run-instructions), [Docker GHA cache behavior](https://docs.docker.com/build/cache/backends/gha/) and [GitHub access restrictions](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache). No extra run, paid setting, permission expansion or cache write was made for this measurement.
