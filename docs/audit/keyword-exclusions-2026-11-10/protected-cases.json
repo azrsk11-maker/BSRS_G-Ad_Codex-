@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "scope": "AUTHORED_PROTECTED_INTENT_TESTS_NOT_OBSERVED_QUERIES",
+  "authored_on": "2026-11-10",
+  "master_source": {
+    "file": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+    "sha256": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4"
+  },
+  "counts_toward_research_or_masters": false,
+  "asserts_inventory_or_service_availability": false,
+  "cases": [
+    {
+      "id": "PROTECT-01",
+      "basis": "MASTER_EXAMPLE",
+      "query": "apartment near my new job"
+    },
+    {
+      "id": "PROTECT-02",
+      "basis": "MASTER_EXAMPLE",
+      "query": "office for recruitment company"
+    },
+    {
+      "id": "PROTECT-03",
+      "basis": "MASTER_EXAMPLE",
+      "query": "mortgage affordability based on salary"
+    },
+    {
+      "id": "PROTECT-04",
+      "basis": "MASTER_EXAMPLE",
+      "query": "first time property buyer questions"
+    },
+    {
+      "id": "PROTECT-05",
+      "basis": "MASTER_EXAMPLE",
+      "query": "office for software company"
+    },
+    {
+      "id": "PROTECT-06",
+      "basis": "MASTER_EXAMPLE",
+      "query": "villa floor plan download"
+    },
+    {
+      "id": "PROTECT-07",
+      "basis": "MASTER_EXAMPLE",
+      "query": "rental apartment dubai"
+    },
+    {
+      "id": "PROTECT-08",
+      "basis": "MASTER_EXAMPLE",
+      "query": "alternative to property portal listings"
+    },
+    {
+      "id": "PROTECT-09",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "office for crm software company"
+    },
+    {
+      "id": "PROTECT-10",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "office for stock photography company"
+    },
+    {
+      "id": "PROTECT-11",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "villa with repair potential for sale dubai"
+    },
+    {
+      "id": "PROTECT-12",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "shop for car rental company dubai"
+    },
+    {
+      "id": "PROTECT-13",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "office for plumbing contractor dubai"
+    },
+    {
+      "id": "PROTECT-14",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "apartment with parking for my car dubai"
+    },
+    {
+      "id": "PROTECT-15",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "villa brochure and floor plan download"
+    },
+    {
+      "id": "PROTECT-16",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "commercial lease for software company dubai"
+    },
+    {
+      "id": "PROTECT-17",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "warehouse for vehicle parts dubai"
+    },
+    {
+      "id": "PROTECT-18",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "property stock for sale dubai"
+    },
+    {
+      "id": "PROTECT-19",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "repair charges for my rental apartment dubai"
+    },
+    {
+      "id": "PROTECT-20",
+      "basis": "AUTHORED_COUNTEREXAMPLE",
+      "query": "office rental for photo studio dubai"
+    }
+  ]
+}
