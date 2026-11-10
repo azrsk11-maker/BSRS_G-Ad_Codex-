@@ -29,6 +29,9 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
+          # Include the PR head parent so the explicit diagnostic marker can
+          # be read even when checkout selects GitHub's synthetic merge ref.
+          fetch-depth: 2
       - name: Confirm public repository and review exact source
         env:
           REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
@@ -37,6 +40,15 @@ jobs:
           python3 -B tools/staging-lab/verify_fixture.py
           sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json
           find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l
+      - name: Observe explicitly requested host namespace prerequisites
+        env:
+          REQUESTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          head_message="$(git show -s --format=%B "$REQUESTED_HEAD")"
+          case "$head_message" in
+            *'[bsre-host-browser-probe]'*) python3 -B tools/staging-lab/host_browser_prerequisites.py ;;
+            *) echo 'Host browser probe not requested; browser acceptance remains unverified.' ;;
+          esac
       - name: Build official dependencies without executing WordPress
         run: docker build --pull --file tools/staging-lab/Dockerfile --tag bsre-isolated-lab .
       - name: Run non-root CLI lab with kernel network isolation
