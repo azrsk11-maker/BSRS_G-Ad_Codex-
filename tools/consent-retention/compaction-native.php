@@ -23,9 +23,19 @@ $adapter=new RetirementLedger($db);
 if (($argv[1]??'')==='compact-worker') {
     $request=json_decode(trim(fgets(STDIN)),true,32,JSON_THROW_ON_ERROR);
     $clock=$request['clock'];
+    $db->suppress_errors(true);
+    $checkpointSql="SELECT * FROM {$db->prefix}bsre_retirement_checkpoint WHERE id=1 FOR UPDATE";
+    add_filter('query',static function($sql) use($checkpointSql) {
+        if ($sql===$checkpointSql) { echo "CHECKPOINT_LOCK_ATTEMPT\n"; fflush(STDOUT); }
+        return $sql;
+    });
     echo 'READY:'.$db->get_var('SELECT CONNECTION_ID()')."\n"; fflush(STDOUT);
     try { $control->applyLedgerCompaction($request['plan'],$request['approval'],$request['anchor']); echo "COMPACTED\n"; }
-    catch(Throwable $error) { echo 'HELD:'.$error->getMessage()."\n"; }
+    catch(Throwable $error) {
+        $code=preg_match('/^[A-Z][A-Z0-9_]{0,79}$/D',$error->getMessage()) ? $error->getMessage() : 'UNCLASSIFIED_WORKER_FAILURE';
+        echo 'HELD:'.$code."\n";
+    }
+    fflush(STDOUT);
     exit;
 }
 $checks=[];
@@ -134,23 +144,81 @@ nq("UPDATE {$db->prefix}bsre_retirement_checkpoint SET sequence_no=1001 WHERE id
 
 // A second process must actually wait for the checkpoint lock, then reject its stale authority.
 $clock+=2592000; $waitingAnchor=$control->ledgerAnchor(); $waitingPlan=$control->previewLedgerCompaction($waitingAnchor);
+$parentConnection=(int)$db->get_var('SELECT CONNECTION_ID()');
+// Metadata is observed on its own connection, never inside the blocking transaction.
+$observer=new wpdb(DB_USER,DB_PASSWORD,DB_NAME,DB_HOST); $observer->suppress_errors(true);
+$observerConnection=(int)$observer->get_var('SELECT CONNECTION_ID()');
 nq('START TRANSACTION'); $locked=$adapter->read(true);
-$process=proc_open([PHP_BINARY,__FILE__,'compact-worker'],[0=>['pipe','r'],1=>['pipe','w'],2=>STDERR],$pipes);
-if(!is_resource($process))throw new RuntimeException('Synthetic compaction worker unavailable');
+$parentTransaction=(string)$db->get_var('SELECT @@session.in_transaction');
+$process=proc_open([PHP_BINARY,'-d','sendmail_path=/bin/false',__FILE__,'compact-worker'],[0=>['pipe','r'],1=>['pipe','w'],2=>STDERR],$pipes);
+if(!is_resource($process)){ $db->query('ROLLBACK'); $observer->close(); throw new RuntimeException('Synthetic compaction worker unavailable'); }
+$workerConnection=null; $workerOutcome=null; $workerExit=null; $attempted=false; $lastWaitCount=null; $observerError='NONE';
+$diagnostic=static function(string $stage) use(&$process,&$workerConnection,&$workerOutcome,&$workerExit,&$attempted,&$lastWaitCount,&$observerError,$parentConnection,$observerConnection,$parentTransaction,$db) {
+    $status=is_resource($process) ? proc_get_status($process) : ['running'=>false,'exitcode'=>$workerExit];
+    $knownExit=is_int($status['exitcode']) && $status['exitcode']>=0;
+    $active=(string)$db->get_var('SELECT @@session.in_transaction');
+    fwrite(STDERR,wp_json_encode(['phase'=>'retirement_ledger_compaction_contention_diagnostic','status'=>'FAIL','stage'=>$stage,
+        'parent_connection'=>$parentConnection,'observer_connection'=>$observerConnection,'worker_connection'=>$workerConnection,
+        'parent_transaction_before_worker'=>$parentTransaction,'parent_transaction_at_failure'=>in_array($active,['0','1'],true)?$active:'UNKNOWN',
+        'worker_reached_checkpoint_query'=>$attempted,'worker_running'=>(bool)$status['running'],
+        'worker_exit_code'=>$status['running']||!$knownExit?null:$status['exitcode'],'worker_exit_code_known'=>!$status['running']&&$knownExit,'worker_outcome'=>$workerOutcome,
+        'observer_query'=>'INNODB_LOCK_WAITS_REQUESTER_AND_BLOCKER','observer_error'=>$observerError,'last_wait_count'=>$lastWaitCount])."\n");
+};
 try {
     fwrite($pipes[0],json_encode(['clock'=>$clock,'plan'=>$waitingPlan,'approval'=>PreferenceRetirement::compactionApproval($waitingPlan),'anchor'=>$waitingAnchor],JSON_THROW_ON_ERROR)."\n"); fclose($pipes[0]);
     stream_set_timeout($pipes[1],5); $ready=trim((string)fgets($pipes[1]));
-    if(!preg_match('/^READY:([0-9]+)$/D',$ready,$match))throw new RuntimeException('Synthetic worker did not become ready');
+    if(!preg_match('/^READY:([0-9]+)$/D',$ready,$match)){ $workerOutcome='READY_NOT_RECEIVED'; $diagnostic('WORKER_READY_PROTOCOL'); throw new RuntimeException('Synthetic worker did not become ready'); }
+    $workerConnection=(int)$match[1];
+    if ($parentTransaction!=='1' || min($parentConnection,$observerConnection,$workerConnection)<=0 || count(array_unique([$parentConnection,$observerConnection,$workerConnection]))!==3) {
+        $diagnostic('INVALID_CONNECTION_OR_TRANSACTION_SETUP');
+        throw new RuntimeException('Synthetic compaction contention setup invalid');
+    }
+    stream_set_blocking($pipes[1],false); $workerBuffer='';
     $observed=false; $deadline=microtime(true)+5;
     do {
-        $observed=(int)$db->get_var($db->prepare('SELECT COUNT(*) FROM information_schema.INNODB_LOCK_WAITS w JOIN information_schema.INNODB_TRX t ON w.requesting_trx_id=t.trx_id WHERE t.trx_mysql_thread_id=%d',(int)$match[1]))>0;
+        $workerBuffer.=(string)stream_get_contents($pipes[1]);
+        if (strlen($workerBuffer)>1024) { $workerOutcome='PROTOCOL_OUTPUT_TOO_LARGE'; break; }
+        while(($newline=strpos($workerBuffer,"\n"))!==false) {
+            $line=trim(substr($workerBuffer,0,$newline)); $workerBuffer=substr($workerBuffer,$newline+1);
+            if ($line==='CHECKPOINT_LOCK_ATTEMPT') $attempted=true;
+            elseif ($line==='COMPACTED' || preg_match('/^HELD:[A-Z][A-Z0-9_]{0,79}$/D',$line)) $workerOutcome=$line;
+            else $workerOutcome='UNCLASSIFIED_WORKER_OUTPUT';
+        }
+        if ($workerOutcome!==null) break;
+        $observer->last_error='';
+        $count=$observer->get_var($observer->prepare('SELECT COUNT(*) FROM information_schema.INNODB_LOCK_WAITS w JOIN information_schema.INNODB_TRX wt ON w.requesting_trx_id=wt.trx_id JOIN information_schema.INNODB_TRX bt ON w.blocking_trx_id=bt.trx_id WHERE wt.trx_mysql_thread_id=%d AND bt.trx_mysql_thread_id=%d',$workerConnection,$parentConnection));
+        if ($observer->last_error!=='') {
+            $error=strtolower($observer->last_error);
+            $observerError=str_contains($error,'denied')?'ACCESS_DENIED':(str_contains($error,'unknown column')?'METADATA_SCHEMA_MISMATCH':(str_contains($error,'exist')?'METADATA_TABLE_UNAVAILABLE':'QUERY_ERROR'));
+            break;
+        }
+        if (!is_scalar($count) || !preg_match('/^[0-9]+$/D',(string)$count)) { $observerError='INVALID_COUNT_RESULT'; break; }
+        $lastWaitCount=(int)$count; $observed=$attempted && $lastWaitCount>0;
         if(!$observed)usleep(20000);
     } while(!$observed && microtime(true)<$deadline);
+    if (!$observed) $diagnostic('CHECKPOINT_LOCK_NOT_OBSERVED');
     nc('concurrent_compactor_waits_on_real_checkpoint_lock',$observed);
     $history=['subject_key'=>str_repeat('e',64),'receipt'=>str_repeat('f',32),'revision'=>1,'analytics'=>0,'ad_measurement'=>0,'personalization'=>0,'notice_version'=>'SYNTHETIC_CONCURRENT','changed_at'=>$clock-400*86400,'uncertain'=>0];
     $adapter->record(['history'=>[$history]],['eligible'=>['bsre_consent_history:'.$history['receipt']]],$clock,$locked);
     nq('COMMIT');
-    $outcome=trim((string)fgets($pipes[1])); fclose($pipes[1]); $exit=proc_close($process); $process=null;
+    stream_set_blocking($pipes[1],true); stream_set_timeout($pipes[1],5);
+    // Only proc_close's known zero can pass; a consumed/unknown (-1) exit never becomes success.
+    $outcome=trim((string)fgets($pipes[1])); fclose($pipes[1]); $exit=proc_close($process); $process=null; $workerExit=$exit;
+    if ($exit!==0 || $outcome!=='HELD:CURRENT_LEDGER_ANCHOR_REQUIRED') {
+        $workerOutcome=preg_match('/^(?:COMPACTED|HELD:[A-Z][A-Z0-9_]{0,79})$/D',$outcome)?$outcome:'UNCLASSIFIED_WORKER_OUTPUT';
+        $diagnostic('POST_RELEASE_WORKER_OUTCOME');
+    }
     nc('concurrent_append_invalidates_waiting_compaction',$exit===0 && $outcome==='HELD:CURRENT_LEDGER_ANCHOR_REQUIRED' && count($adapter->read(false)['rows'])===2);
-} finally { if(is_resource($process)){ $db->query('ROLLBACK'); proc_terminate($process); proc_close($process); } }
+} finally {
+    try {
+        if(is_resource($process)) {
+            try {
+                // This disposable Linux worker is owned by this harness. Reap it before unlocking.
+                proc_terminate($process,9);
+                foreach($pipes as $pipe)if(is_resource($pipe))fclose($pipe);
+                proc_close($process); $process=null;
+            } finally { $db->query('ROLLBACK'); }
+        }
+    } finally { $observer->close(); }
+}
 echo wp_json_encode(['phase'=>'retirement_ledger_compaction','status'=>'PASS','checks'=>$checks,'synthetic_only'=>true,'prefix'=>'retention_compaction_synthetic_','nonempty_recovery_authorized'=>false,'production_reopen_authorized'=>false])."\n";
