@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 10 November per-choice planning and recovery-expiry orchestration
+
+- The preceding351-file compaction candidate is accepted at `ae8f307`: all three exact-head jobs passed, including32native compaction checks,54writer/27property/19owner-mail checks. MariaDB's shared metadata cache was starved by20ms polling; the independently reviewed200ms cadence preserves the five-second deadline and actual-lock/stale-authority proof. All four attempts remain reported: eight workflows, four Foundation successes, three native failures and one native success. [Verified GitHub receipt](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6768220644).
+- Added a pure, default-disabled per-choice retention planner and a separate default-plan-only synthetic recovery-expiry runner. They preserve the original helper/pins, submitted permission and withdrawal history, unknown-lineage holds, exact encrypted-file identity, durable-intent contracts, restart reconciliation and bounded alert receipts. Neither supplies production authority, a selective-deletion writer, accepted durable custody, real scheduling or genuine alert delivery.
+- Independent reviews cleared fixes for future completion timestamps and captures outside their claimed choice interval. Focused suites pass55PHP checks and20Node tests. All59required local Foundation checks pass in115.959173seconds with PHP required; existing Windows capability limits remain. Both new suites are mandatory, including PHP8.2 coverage. Fresh whole-tree/current-head CI and Linux POSIX expiry acceptance remain required after publication. [Evidence and full-goal boundaries](audit/INDEPENDENT_RETENTION_TOOLS_2026-11-10.md).
+- Production website/tracking, financial records, permissions and Ads settings remain unchanged; no advertising activated or expenditure committed. Main remains unmerged. Business evidence, reviewed keyword masters, staff/capacity, authenticated integration, actual lifecycle/import/conversion/finance acceptance, human review and separately scoped production approvals remain open.
+
 ## 10 November default-disabled retirement-journal compaction
 
 - The preceding content/creative batch is accepted at published `4a493be`: all 348 source files match, all three exact-head CI jobs passed, and PR8 plus issue12 were updated. Main remains unchanged and PR8 unmerged.
