@@ -8,6 +8,8 @@ on:
       - 'tools/consent-retention/**'
       - 'tools/recovery-package/**'
       - 'tools/native-wordpress/**'
+      - 'tools/property-decision-tools/**'
+      - 'tools/owner-mail-review/**'
       - 'tools/release-control/**'
       - 'tools/website-tracking/tracking-system/receipt-recovery*.php'
       - 'tools/website-tracking/tracking-system/receipt-status*.php'

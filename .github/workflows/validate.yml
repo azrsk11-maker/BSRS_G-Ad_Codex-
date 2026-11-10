@@ -31,6 +31,15 @@ jobs:
           php --version
           php -l tools/native-wordpress/native-draft-preview.php
           php -l tools/native-wordpress/tests/native-draft-preview-test.php
+          php -l tools/native-wordpress/native-draft-writer.php
+          php -l tools/native-wordpress/tests/native-draft-writer-test.php
+          php -l tools/property-decision-tools/property-decision-tools.php
+          php -l tools/property-decision-tools/native-wordpress-test.php
+          php -l tools/property-decision-tools/php.test.php
+          php tools/property-decision-tools/php.test.php
+          find tools/owner-mail-review -name '*.php' -print0 | xargs -0 -n 1 php -l
+          php tools/owner-mail-review/test_owner_mail_review.php
+          php tools/owner-mail-review/guard.test.php
           php tools/native-wordpress/tests/native-draft-preview-test.php
           php tools/consent-retention/linkage.test.php
           php tools/website-tracking/tracking-system/receipt-recovery.test.php
