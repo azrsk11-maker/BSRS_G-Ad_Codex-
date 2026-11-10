@@ -1,22 +1,22 @@
 {
   "version": 1,
   "scope": "PRELIMINARY_SOURCE_REVIEW_RECONCILIATION_ONLY",
-  "capture_batches": 14,
-  "review_documents": 8,
-  "source_occurrences": 14547,
-  "distinct_source_phrases": 13447,
+  "capture_batches": 15,
+  "review_documents": 9,
+  "source_occurrences": 15472,
+  "distinct_source_phrases": 14372,
   "repeated_source_occurrences": 1100,
-  "review_assessment_instances": 13471,
+  "review_assessment_instances": 14396,
   "review_instances_by_disposition": {
-    "HOLD": 6758,
-    "NEGATIVE_EXACT_REVIEW": 2405,
+    "HOLD": 6855,
+    "NEGATIVE_EXACT_REVIEW": 3233,
     "POSITIVE_REVIEW": 4308,
     "UNASSESSED": 0
   },
   "canonical_disposition_counts": {
     "DISAGREEMENT_HOLD": 16,
-    "HOLD": 6735,
-    "NEGATIVE_EXACT_REVIEW": 2404,
+    "HOLD": 6832,
+    "NEGATIVE_EXACT_REVIEW": 3232,
     "NO_STRUCTURED_REVIEW": 0,
     "POSITIVE_REVIEW": 4292,
     "UNASSESSED": 0
@@ -531,8 +531,8 @@
     }
   ],
   "provisional_exact_screen": {
-    "draft_negative_literals": 2404,
-    "protected_literals": 11063,
+    "draft_negative_literals": 3232,
+    "protected_literals": 11160,
     "authored_test_cases_excluded_from_source_counts": 20,
     "conflicts": [],
     "google_matching_verified": false,
@@ -552,7 +552,8 @@
       "docs/audit/keyword-exclusions-2026-11-10/capture.json": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4",
       "docs/audit/keyword-property-readiness-2026-11-11/capture.json": "81a1c496372d528668f42dc1056d67d29911a3951bee23ac0dc2ae878522539f",
       "docs/audit/keyword-northern-emirates-2026-11-11/capture.json": "55fb083ab6f73b57ed7ae18815b64eed22f6c8e2c4caec173bef6405b7b04a83",
-      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/capture.json": "719d1bcdce7620740266046ed24705b6c05fdf521cdb67e9be3b6a014023f62d"
+      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/capture.json": "719d1bcdce7620740266046ed24705b6c05fdf521cdb67e9be3b6a014023f62d",
+      "docs/audit/keyword-developer-employment-2026-11-11/capture.json": "a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f"
     },
     "capture_files_sha256": {
       "docs/audit/keyword-discovery-2026-11-08/buyers.json": "2c742c953164e44038032c828808769e4b4db3f5b713e689a7edee79df1dbf36",
@@ -568,7 +569,8 @@
       "docs/audit/keyword-exclusions-2026-11-10/software-services-products.json": "23c440857a175a0674332b037d8acfedd550c2d060300cbad5b14a48acd5edaa",
       "docs/audit/keyword-property-readiness-2026-11-11/property-readiness.json": "979aa29d3836d84ea40306c78b4423acb28d45f3c9099a12c18f7215664eb198",
       "docs/audit/keyword-northern-emirates-2026-11-11/northern-emirates.json": "c290895884a00f5da71b985afd53eb465ed0c21e7cf38d43dec950beca8cb53e",
-      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/abu-dhabi-sharjah.json": "eed2da3518d48a82fffb1ac3ab3b2706e6b32902bc313653c328685e13bcf095"
+      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/abu-dhabi-sharjah.json": "eed2da3518d48a82fffb1ac3ab3b2706e6b32902bc313653c328685e13bcf095",
+      "docs/audit/keyword-developer-employment-2026-11-11/developer-employment.json": "3779c708adbe0aae5cbe3f9ee51d1f3a11d334cb976041c05fe0af77e00af1cd"
     },
     "review_workbenches_sha256": {
       "docs/audit/keyword-triage-2026-11-08/workbench.json": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477",
@@ -578,7 +580,8 @@
       "docs/audit/keyword-exclusions-2026-11-10/workbench.json": "585ea863a978e63537b440b5eb6feaedaf236d07f05878d19c7f7ce267ef4a58",
       "docs/audit/keyword-property-readiness-2026-11-11/workbench.json": "835894b843b9c80e27468cf0ddfa1ab5104a227dca6841f7e18126523294ea4d",
       "docs/audit/keyword-northern-emirates-2026-11-11/workbench.json": "eb0035f901825002009107ff05f81e2ca1c9671b54f99eafeeed0af1a12d6ed3",
-      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json": "ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4"
+      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json": "ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4",
+      "docs/audit/keyword-developer-employment-2026-11-11/workbench.json": "a7cb70063367d08f4518e42aaf7f230ae8c872f111a1eaa0069e76dc088b3a99"
     },
     "authored_protection_cases": {
       "file": "docs/audit/keyword-exclusions-2026-11-10/protected-cases.json",

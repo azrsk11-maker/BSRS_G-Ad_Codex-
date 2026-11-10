@@ -24,10 +24,12 @@ REGISTRY=[
  ('keyword-northern-emirates-2026-11-11','55fb083ab6f73b57ed7ae18815b64eed22f6c8e2c4caec173bef6405b7b04a83',
   'keyword-northern-emirates-2026-11-11','eb0035f901825002009107ff05f81e2ca1c9671b54f99eafeeed0af1a12d6ed3'),
  ('keyword-abu-dhabi-sharjah-2026-11-11','719d1bcdce7620740266046ed24705b6c05fdf521cdb67e9be3b6a014023f62d',
-  'keyword-abu-dhabi-sharjah-2026-11-11','ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4')]
+  'keyword-abu-dhabi-sharjah-2026-11-11','ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4'),
+ ('keyword-developer-employment-2026-11-11','a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f',
+  'keyword-developer-employment-2026-11-11','a7cb70063367d08f4518e42aaf7f230ae8c872f111a1eaa0069e76dc088b3a99')]
 CASES='docs/audit/keyword-exclusions-2026-11-10/protected-cases.json'
 CASES_PIN='ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43'
-REPORT_PIN='4cddc2ecc0348a5955fffc040b881afd48a1cdf5edf00889e80432626828ed11'
+REPORT_PIN='104dae77af8f2e4758bb4a62916a65b34465b5aebfc32978031186520416b554'
 ORIGINAL_VERIFIER_PIN='d57fbe7f95d74270f0880a63d59e1776afd3e3c68a8cfd154ca399cd9ff63cee'
 
 
