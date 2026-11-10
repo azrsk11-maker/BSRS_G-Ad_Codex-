@@ -18,7 +18,8 @@ EMPLOYMENT_CAPTURE = Path('docs/audit/keyword-employment-broad-2026-11-10')
 EXCLUSION_CAPTURE = Path('docs/audit/keyword-exclusions-2026-11-10')
 SUPPLY_CAPTURE = Path('docs/audit/keyword-discovery-supply-2026-11-08')
 READINESS_CAPTURE = Path('docs/audit/keyword-property-readiness-2026-11-11')
-CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE, EXCLUSION_CAPTURE, SUPPLY_CAPTURE, READINESS_CAPTURE))
+NORTHERN_CAPTURE = Path('docs/audit/keyword-northern-emirates-2026-11-11')
+CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE, EXCLUSION_CAPTURE, SUPPLY_CAPTURE, READINESS_CAPTURE, NORTHERN_CAPTURE))
 DAY = '2026-11-10'
 SCOPE, NEGATIVE_SCOPE, need = legacy.SCOPE, legacy.NEGATIVE_SCOPE, legacy.need
 
