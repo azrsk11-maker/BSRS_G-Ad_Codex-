@@ -102,6 +102,7 @@ def run_checks(require_php=False):
         ROOT / "docs/audit/keyword-research-2026-11-07/verify_capture.py")])
     # Both following checks verify the original Discovery capture before using it.
     run("keyword-supply-discovery-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-discovery-supply-2026-11-08/verify_capture.py")])
+    run("keyword-employment-education-consistency", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-education-2026-11-10/verify_capture.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
     run("private-query-triage-count-integrity", [sys.executable, "-B", str(ROOT / "docs/audit/private-query-triage-counts-2026-11-08/verify_counts.py")])
