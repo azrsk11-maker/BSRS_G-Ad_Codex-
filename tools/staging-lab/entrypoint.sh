@@ -14,6 +14,8 @@ until mariadb-admin --no-defaults --user=root --socket=/tmp/bsre.sock ping --sil
 done
 mariadb --no-defaults --user=root --socket=/tmp/bsre.sock -e 'CREATE DATABASE bsre_synthetic;'
 php -d sendmail_path=/bin/false /opt/lab/native.php
+php -d sendmail_path=/bin/false /opt/reviewed/native-draft-writer-test.php
+php -d sendmail_path=/bin/false /opt/lab/property-decision-tools/native-wordpress-test.php
 php -d sendmail_path=/bin/false /opt/lab/plugin.php
 node /opt/lab/consent-http.mjs
 php -d sendmail_path=/bin/false /opt/lab/transport.php
@@ -32,3 +34,4 @@ php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission
 php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/test_workflow.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/native-test.php
+php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/native-test.php

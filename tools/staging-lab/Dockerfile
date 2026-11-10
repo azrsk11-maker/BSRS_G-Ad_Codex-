@@ -10,6 +10,10 @@ RUN curl --fail --location --proto '=https' --tlsv1.2 https://wordpress.org/word
 COPY tools/staging-lab/wp-config.php /opt/wordpress/wp-config.php
 COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json tools/native-wordpress/paid-entry-search.php /opt/reviewed/
 COPY tools/native-wordpress/entry-drafts /opt/reviewed/entry-drafts
+COPY tools/native-wordpress/native-draft-writer.php /opt/reviewed/native-draft-writer.php
+COPY tools/native-wordpress/tests/native-draft-writer-test.php /opt/reviewed/native-draft-writer-test.php
+COPY tools/property-decision-tools /opt/lab/property-decision-tools
+COPY tools/property-decision-tools /opt/wordpress/wp-content/plugins/bsre-property-decision-tools
 COPY tools/staging-lab/fixtures/bsre-enquiries /opt/wordpress/wp-content/plugins/bsre-enquiries
 COPY tools/staging-lab/build-rental-copy-candidate.mjs /opt/lab/
 RUN node /opt/lab/build-rental-copy-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/templates/source/rent.html
@@ -34,6 +38,7 @@ COPY tools/staging-lab/purpose-concurrency.php /opt/lab/
 COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs tools/website-tracking/tracking-system/retention-admission-bridge.mjs tools/website-tracking/tracking-system/retention-admission-client.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/retention-admission.test.php tools/website-tracking/tracking-system/retention-admission-native.php /opt/lab/retention-admission/
 COPY tools/closed-enquiry-retention /opt/lab/closed-enquiry-retention
+COPY tools/owner-mail-review /opt/lab/owner-mail-review
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
