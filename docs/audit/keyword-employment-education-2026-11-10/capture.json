@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-10",
+  "source_files": [
+    {
+      "file": "employment.json",
+      "batch_id": "KP-20261110-EMPLOYMENT",
+      "sha256": "34848eca2c291995570ba381850fac8ddbeac5f7878ff09777d879f228efa532",
+      "bytes": 9373,
+      "records": 7,
+      "distinct_normalized": 7,
+      "source_bytes": 2302,
+      "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796"
+    },
+    {
+      "file": "education-specific.json",
+      "batch_id": "KP-20261110-EDUCATION-SPECIFIC",
+      "sha256": "fcc4f35fe10a04d9ab11da4d7d6674e6779881c81b3b16690c4d9f8740f3f969",
+      "bytes": 5540,
+      "records": 3,
+      "distinct_normalized": 3,
+      "source_bytes": 1634,
+      "source_sha256": "901adec6b1b8d212a249b2b36945ff89c3fbc810c1646cdbde88e64a0c40cf84"
+    },
+    {
+      "file": "education-broader.json",
+      "batch_id": "KP-20261110-EDUCATION-BROADER",
+      "sha256": "231b7029722f786705a3eaa14c658f657b3b38179deca37e862d9afc259002de",
+      "bytes": 232050,
+      "records": 256,
+      "distinct_normalized": 256,
+      "source_bytes": 45156,
+      "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6"
+    }
+  ],
+  "totals": {
+    "export_rows": 266,
+    "distinct_normalized_phrases": 263,
+    "repeated_occurrences": 3,
+    "duplicate_phrase_groups": 3,
+    "cross_batch_overlap_groups": 3
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Seven employment and three specific education seeds returned no additional ideas or metric values.",
+    "Broader course term was suggested in the observed Google UI; hypotheses are not served search terms.",
+    "First broader export was interrupted before download; the recovered request returned the same256UIcount.",
+    "No classification, business admission, source metric aggregation or campaign changes."
+  ]
+}
