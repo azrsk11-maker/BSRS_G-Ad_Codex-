@@ -8,6 +8,8 @@ Prepare an immutable public-source snapshot from a full reviewed commit, with ex
 
 Read-only Git fetch can verify the entire resulting tree against the reviewed local tree even when web commits have different history. Verify ancestry and unchanged main, then inspect required CI at that exact final head. A file count or an uploader success message alone cannot detect stale content. Record tested head/tree and remaining role/review/release gates in the PR. No force update, self-approval, main merge or production authorization is implied.
 
+For a pretested multi-directory source batch, intermediate commits may use `[skip ci]`; the final complete-source commit must omit it and run every required check. GitHub leaves skipped required checks pending, so intermediate heads must never be treated as accepted or mergeable. This avoids testing incomplete upload states without changing workflows, protection or final acceptance. Verify final whole-tree parity and all three current-head jobs, and measure intermediate/final run counts where available. See [GitHub's documented skip behavior](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs).
+
 ## Read-only role diagnostic
 
 Run from this repository:
