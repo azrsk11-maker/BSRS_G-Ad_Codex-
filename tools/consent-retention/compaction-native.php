@@ -153,16 +153,73 @@ $parentTransaction=(string)$db->get_var('SELECT @@session.in_transaction');
 $process=proc_open([PHP_BINARY,'-d','sendmail_path=/bin/false',__FILE__,'compact-worker'],[0=>['pipe','r'],1=>['pipe','w'],2=>STDERR],$pipes);
 if(!is_resource($process)){ $db->query('ROLLBACK'); $observer->close(); throw new RuntimeException('Synthetic compaction worker unavailable'); }
 $workerConnection=null; $workerOutcome=null; $workerExit=null; $attempted=false; $lastWaitCount=null; $observerError='NONE';
-$diagnostic=static function(string $stage) use(&$process,&$workerConnection,&$workerOutcome,&$workerExit,&$attempted,&$lastWaitCount,&$observerError,$parentConnection,$observerConnection,$parentTransaction,$db) {
+$diagnostic=static function(string $stage) use(&$process,&$workerConnection,&$workerOutcome,&$workerExit,&$attempted,&$lastWaitCount,&$observerError,$parentConnection,$observerConnection,$parentTransaction,$db,$observer) {
     $status=is_resource($process) ? proc_get_status($process) : ['running'=>false,'exitcode'=>$workerExit];
     $knownExit=is_int($status['exitcode']) && $status['exitcode']>=0;
     $active=(string)$db->get_var('SELECT @@session.in_transaction');
+    $metadata=['collection_error'=>false];
+    try {
+        $countValue=static function($value) { return is_scalar($value) && preg_match('/^[0-9]{1,7}$/D',(string)$value) && (int)$value<=1000000 ? (int)$value : null; };
+        $errorClass=static function($error): string {
+            if ($error==='') return 'NONE';
+            $text=strtolower((string)$error);
+            return str_contains($text,'denied')?'ACCESS_DENIED':(str_contains($text,'unknown column')?'METADATA_SCHEMA_MISMATCH':(str_contains($text,'exist')?'METADATA_TABLE_UNAVAILABLE':'QUERY_ERROR'));
+        };
+        $parentNow=(int)$db->get_var('SELECT CONNECTION_ID()');
+        $observerNow=(int)$observer->get_var('SELECT CONNECTION_ID()');
+        $metadata['connection_identity']=['parent_current'=>$parentNow,'parent_matches_ready'=>$parentNow===$parentConnection,
+            'observer_current'=>$observerNow,'observer_matches_ready'=>$observerNow===$observerConnection,
+            'parent_schema_matches_expected'=>$db->get_var('SELECT DATABASE()')===DB_NAME,
+            'observer_schema_matches_expected'=>$observer->get_var('SELECT DATABASE()')===DB_NAME,
+            'parent_prefix_matches_expected'=>$db->prefix==='retention_compaction_synthetic_'];
+        $observer->last_error='';
+        // Only this synthetic schema's active statements, plus the exact known parent/worker IDs.
+        // Raw INFO, database, user and host fields are never copied into the receipt.
+        $processRows=$observer->get_results($observer->prepare('SELECT ID,COMMAND,STATE,DB,INFO FROM information_schema.PROCESSLIST WHERE ID IN (%d,%d) OR (DB=%s AND COMMAND=%s AND ID<>%d) ORDER BY ID LIMIT 8',$parentConnection,(int)$workerConnection,DB_NAME,'Query',$observerNow),ARRAY_A);
+        $metadata['processlist_error']=$errorClass($observer->last_error);
+        $metadata['processlist']=[]; $threads=[$parentConnection,(int)$workerConnection,$parentNow];
+        $tables=['retention_compaction_synthetic_bsre_retirement_checkpoint'=>'CHECKPOINT',
+            'retention_compaction_synthetic_bsre_retirement_floor'=>'FLOOR',
+            'retention_compaction_synthetic_bsre_retirement_ledger'=>'LEDGER'];
+        foreach(is_array($processRows)?$processRows:[] as $row) {
+            $id=(int)$row['ID']; $threads[]=$id; $statement=trim((string)($row['INFO']??''));
+            $statementClass=$statement===''?'IDLE':'OTHER'; $tableClass=null;
+            foreach($tables as $table=>$tableLabel) {
+                if (preg_match('/^SHOW\s+FULL\s+COLUMNS\s+FROM\s+`?'.preg_quote($table,'/').'`?(?:\s|$)/iD',$statement)) { $statementClass='SHOW_FULL_COLUMNS'; $tableClass=$tableLabel; }
+                elseif (preg_match('/^SHOW\s+TABLE\s+STATUS\s+WHERE\s+Name\s*=\s*[\'\"]'.preg_quote($table,'/').'[\'\"]/iD',$statement)) { $statementClass='SHOW_TABLE_STATUS'; $tableClass=$tableLabel; }
+                elseif ($statement==='SELECT * FROM '.$table.' WHERE id=1 FOR UPDATE') { $statementClass=$tableLabel.'_FOR_UPDATE'; $tableClass=$tableLabel; }
+                elseif ($tableLabel==='LEDGER' && $statement==='SELECT * FROM '.$table.' ORDER BY sequence_no LIMIT 1001 FOR UPDATE') { $statementClass='LEDGER_FOR_UPDATE'; $tableClass=$tableLabel; }
+            }
+            $state=strtolower(trim((string)($row['STATE']??'')));
+            $states=[''=>'EMPTY','waiting for table metadata lock'=>'METADATA_LOCK','waiting for table level lock'=>'TABLE_LEVEL_LOCK',
+                'waiting for table flush'=>'TABLE_FLUSH','waiting for global read lock'=>'GLOBAL_READ_LOCK','statistics'=>'STATISTICS',
+                'sending data'=>'SENDING_DATA','executing'=>'EXECUTING','updating'=>'UPDATING','opening tables'=>'OPENING_TABLES',
+                'closing tables'=>'CLOSING_TABLES','starting'=>'STARTING','waiting for handler commit'=>'HANDLER_COMMIT'];
+            $metadata['processlist'][]=['connection'=>$id,'role'=>$id===$parentNow?'PARENT':($id===$workerConnection?'WORKER_READY_ID':'OTHER_ACTIVE_IN_SYNTHETIC_SCHEMA'),
+                'schema_matches_expected'=>($row['DB']??null)===DB_NAME,
+                'command'=>in_array($row['COMMAND'],['Query','Sleep','Killed'],true)?strtoupper($row['COMMAND']):'OTHER',
+                'state'=>$states[$state]??'OTHER','statement_class'=>$statementClass,'table_class'=>$tableClass];
+        }
+        $metadata['processlist_limit_reached']=is_array($processRows) && count($processRows)===8;
+        $threads=array_values(array_unique(array_filter($threads,static fn($id)=>$id>0)));
+        $observer->last_error='';
+        $trxRows=$observer->get_results('SELECT trx_mysql_thread_id,trx_state,trx_rows_locked,trx_tables_locked,trx_requested_lock_id FROM information_schema.INNODB_TRX WHERE trx_mysql_thread_id IN ('.implode(',',$threads).') ORDER BY trx_mysql_thread_id LIMIT 10',ARRAY_A);
+        $metadata['transaction_error']=$errorClass($observer->last_error); $metadata['transactions']=[];
+        foreach(is_array($trxRows)?$trxRows:[] as $row) $metadata['transactions'][]=['connection'=>(int)$row['trx_mysql_thread_id'],
+            'state'=>in_array($row['trx_state'],['RUNNING','LOCK WAIT','ROLLING BACK','COMMITTING'],true)?$row['trx_state']:'OTHER',
+            'rows_locked'=>$countValue($row['trx_rows_locked']),'tables_locked'=>$countValue($row['trx_tables_locked']),
+            'requested_lock_present'=>$row['trx_requested_lock_id']!==null && $row['trx_requested_lock_id']!==''];
+        $observer->last_error='';
+        $waits=$observer->get_row($observer->prepare('SELECT (SELECT COUNT(*) FROM information_schema.INNODB_LOCK_WAITS) AS all_waits,(SELECT COUNT(*) FROM information_schema.INNODB_LOCK_WAITS w JOIN information_schema.INNODB_TRX t ON w.requesting_trx_id=t.trx_id WHERE t.trx_mysql_thread_id=%d) AS requester_waits,(SELECT COUNT(*) FROM information_schema.INNODB_LOCK_WAITS w JOIN information_schema.INNODB_TRX t ON w.blocking_trx_id=t.trx_id WHERE t.trx_mysql_thread_id=%d) AS blocker_waits',(int)$workerConnection,$parentNow),ARRAY_A);
+        $metadata['wait_metadata_error']=$errorClass($observer->last_error);
+        $metadata['wait_counts']=['all_unjoined'=>$countValue($waits['all_waits']??null),'worker_requester_only'=>$countValue($waits['requester_waits']??null),'parent_blocker_only'=>$countValue($waits['blocker_waits']??null)];
+    } catch(Throwable $error) { $metadata['collection_error']=true; }
     fwrite(STDERR,wp_json_encode(['phase'=>'retirement_ledger_compaction_contention_diagnostic','status'=>'FAIL','stage'=>$stage,
         'parent_connection'=>$parentConnection,'observer_connection'=>$observerConnection,'worker_connection'=>$workerConnection,
         'parent_transaction_before_worker'=>$parentTransaction,'parent_transaction_at_failure'=>in_array($active,['0','1'],true)?$active:'UNKNOWN',
         'worker_reached_checkpoint_query'=>$attempted,'worker_running'=>(bool)$status['running'],
         'worker_exit_code'=>$status['running']||!$knownExit?null:$status['exitcode'],'worker_exit_code_known'=>!$status['running']&&$knownExit,'worker_outcome'=>$workerOutcome,
-        'observer_query'=>'INNODB_LOCK_WAITS_REQUESTER_AND_BLOCKER','observer_error'=>$observerError,'last_wait_count'=>$lastWaitCount])."\n");
+        'observer_query'=>'INNODB_LOCK_WAITS_REQUESTER_AND_BLOCKER','observer_error'=>$observerError,'last_wait_count'=>$lastWaitCount,'metadata'=>$metadata])."\n");
 };
 try {
     fwrite($pipes[0],json_encode(['clock'=>$clock,'plan'=>$waitingPlan,'approval'=>PreferenceRetirement::compactionApproval($waitingPlan),'anchor'=>$waitingAnchor],JSON_THROW_ON_ERROR)."\n"); fclose($pipes[0]);
@@ -221,4 +278,22 @@ try {
         }
     } finally { $observer->close(); }
 }
+// Runs only after the base lock/stale-authority acceptance above; never masks that gate.
+require_once '/opt/lab/purpose-retention/PreferenceRetirement.php';
+$purposeDb=new wpdb(DB_USER,DB_PASSWORD,DB_NAME,DB_HOST);
+$purposeDb->set_prefix($wpdb->prefix); $purposeDb->prefix='purpose_compact_synthetic_';
+$purposeTables=['bsre_retention_audit','bsre_restore_audit','bsre_retirement_checkpoint','bsre_retirement_floor','bsre_retirement_ledger','bsre_ledger_compaction_audit'];
+nc('derived_compaction_names_fit_database_limit',count(array_filter($purposeTables,static fn($table)=>strlen('purpose_compact_synthetic_'.$table)>64))===0);
+$purposeControl=new BSRE\PurposeRetention\PreferenceRetirement($purposeDb,fn()=>$GLOBALS['clock']);
+$purposeControl->installLabAudit();
+foreach($purposeTables as $table) {
+    $status=$purposeDb->get_row($purposeDb->prepare('SHOW TABLE STATUS WHERE Name=%s',$purposeDb->prefix.$table),ARRAY_A);
+    if(!$status || strtolower($status['Engine'])!=='innodb')throw new RuntimeException('Synthetic derived compaction table missing');
+}
+nc('derived_compaction_tables_materialize',true);
+$purposeAnchor=$purposeControl->ledgerAnchor();
+$purposePlan=$purposeControl->previewLedgerCompaction($purposeAnchor);
+$purposeResult=$purposeControl->applyLedgerCompaction($purposePlan,BSRE\PurposeRetention\PreferenceRetirement::compactionApproval($purposePlan),$purposeAnchor);
+nc('derived_empty_compaction_preserves_legacy_anchor',array_keys($purposeAnchor)===['sequence','hash'] && $purposePlan['delete_sequences']===[] && $purposeResult['deleted_ledger_rows']===0 && $purposeResult['history_gap_after_compaction']===false && $purposeControl->ledgerAnchor()===$purposeAnchor);
+$purposeDb->close();
 echo wp_json_encode(['phase'=>'retirement_ledger_compaction','status'=>'PASS','checks'=>$checks,'synthetic_only'=>true,'prefix'=>'retention_compaction_synthetic_','nonempty_recovery_authorized'=>false,'production_reopen_authorized'=>false])."\n";
