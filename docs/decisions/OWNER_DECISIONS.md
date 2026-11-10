@@ -26,6 +26,7 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 | DEC-02 | [OPEN #2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2) | Content/inventory factual reviewer, update owner, approved evidence and rights locations |
 | DEC-03 | [OPEN #3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) | Finance evidence/definitions, contribution allocation, monthly/cash-risk authority |
 | DEC-04 | [OPEN #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) | Staff rehearsal completion/fresh readiness, capacity and real outcome evidence providers |
+| DEC-12 | [OPEN #12](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/12) | Restore authentication as an existing authorized repository writer; current GitHub identity has no push permission. No new collaborator or permission expansion authorized. Owner must also apply the issue label unavailable to the current account. |
 | DEC-05 | [OPEN #5](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/5) | Main-site/shared GA4 migration boundary while preserving legacy tracking |
 | DEC-06 | [OPEN #6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6) | Separate reviewer/execution identity and authorized access needed for remaining audit |
 | DEC-07 | [OPEN #7](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/7) | Identity/location of the cited D1 dossier; original300briefs/640catalogue recovered, but D1 equivalence unverified |
@@ -62,3 +63,13 @@ The owner subsequently selected “Owner-controlled deletion, marketing@ only (r
 ## First-release cohort and keyword prerequisite — 9 November 2026
 
 The owner answered “Wait for both full libraries” in Codex. Require 14,000 distinct reviewed positive and 14,000 distinct reviewed negative keywords before the first release. After reviewing the options, the owner answered “i accept option A.” Prepare Buyers, Owners, Tenants and Brand under the existing campaign IDs and AED 1,200 / 400 / 300 / 100 average daily allocations. Prepare one native WordPress entry per campaign and preserve the existing enquiry routes. Exact CMS routes and the historical 300/360 crosswalk still require evidence and review. This transcription records preparation approval only. Publication, live tracking, Ads changes, activation and spending require separate authorization.
+
+## Staff rehearsal completion reported — 9 November
+
+In direct Codex reply, the owner answered “Completed, evidence available” about Amit's 4 November 14:00–15:00 Dubai rehearsal. Record the session as owner-reported complete. Its private evidence location and exercise results remain unverified; this does not establish representative capacity, first-contact performance, successful imports or release acceptance. The [staff worksheet](../audit/STAFF_REHEARSAL_WORKSHEET.md) describes the remaining evidence. [Issue #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) remains open for evidence verification.
+
+## Repository scope and Git identity — 9 November
+
+The owner instructed: “For now, use only this repository and continue to complete the full goal,” naming `azrsk11-maker/BSRS_G-Ad_Codex-`. Keep work, proposed changes and progress in this repository; do not fork, transfer or substitute another repository. This continues the full objective without waiving its production, research, evidence or review gates.
+
+The owner separately selected GitHub sign-in only for the requested account; commit-author settings stay unchanged. The authenticated Git client identifies as `BlackSwanBss3701`. The owner reports collaborator access granted/active, but authenticated repository metadata still reports Read and a non-writing upload test returned403. Record the authorization claim separately from verified access. The Codex connector is a different read-only identity. [Issue #12](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/12) remains open; no permission escalation, protection change, new repository or production action is authorized by this scope instruction.
