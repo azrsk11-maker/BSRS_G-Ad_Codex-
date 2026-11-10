@@ -2,6 +2,12 @@
 
 The existing site is WordPress with Houzez and Elementor evidence. The six existing enquiry routes are healthy in the bounded HTTP checks, and publicly served BSRE assets identify version 0.2.12. This is an audit and an offline development package; it does not publish pages, change tracking, activate Ads or complete live acceptance.
 
+## 11 November Dubai-day read-only refresh
+
+[Fresh sanitized public inventory](public-audit-2026-11-11.json), observed10November20:18:02UTC, used ten allowlisted GETs in4.118seconds: nine routes all HTTP200, including the known same-origin sitemap redirect. The seven HTML summaries match9November exactly. The hub and five funnels retain noindex and referenced BSRE asset0.2.12. Initial HTML exposes no Google measurement IDs; this does not prove tags absent or establish runtime consent, payload privacy, installed source identity or delivery acceptance. No JavaScript was executed or form/consent endpoint posted to by this HTTP audit.
+
+The [connected Chrome readback](../../docs/audit/ACCESS_READBACK_2026-11-11.json) reaches the WordPress login form. No authenticated admin tab was found among enabled connected surfaces; unconnected profiles were not assessed. No credentials were entered or configuration read/changed. Historical readiness switches and private integrations remain unrefreshed; [issue6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6) continues to cover that access dependency. No tracking, website, permission, financial or Ads change occurred.
+
 ## Evidence and freshness
 
 | Evidence | Observation | Limit |
