@@ -60,6 +60,7 @@ def run_checks(require_php=False):
     record("node-runtime", bool(node), "required for tracking/privacy/HTTP safety checks")
     if node:
         run("encrypted-recovery-package", [node, "--test", str(ROOT / "tools/recovery-package/package.test.mjs")])
+        run("synthetic-recovery-expiry-runner", [node, "--test", str(ROOT / "tools/recovery-package/expiry-runner/runner.test.mjs")])
         decision_tests = sorted((ROOT / "tools/property-decision-tools").glob("*.test.*js"))
         record("property-decision-tests-present", bool(decision_tests), len(decision_tests))
         if decision_tests:
@@ -78,6 +79,7 @@ def run_checks(require_php=False):
             run("php-lint-" + path.name, [php, "-l", str(path)])
         run("linkage-reconciliation-behavior", [php, str(ROOT/"tools/consent-retention/linkage.test.php")])
         run("retirement-ledger-compaction-behavior", [php, str(ROOT/"tools/consent-retention/compaction.test.php")])
+        run("per-choice-retention-planning", [php, str(ROOT/"tools/consent-retention/per-choice/test_per_choice.php")])
         run("php-lint-retirement-compaction-native", [php, "-l", str(ROOT/"tools/consent-retention/compaction-native.php")])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
         run("property-decision-shortcode-behavior", [php, str(ROOT/"tools/property-decision-tools/php.test.php")])
