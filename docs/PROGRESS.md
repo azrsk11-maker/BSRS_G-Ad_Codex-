@@ -1,5 +1,11 @@
 # Implementation progress
 
+## 10 November resumed goal and source publication
+
+- Published all 53 reviewed `bc8c72b` source files through the existing feature branch and PR8 in 17 directory commits, ending at `38e815294e3c8247e77e58840afde11cb4665f99`. Independent read-only fetch confirmed exact whole-tree parity for all 337 files. Both Foundation jobs passed on that head. The isolated WordPress job passed native writer/property-tool phases but found a duplicate cleanup include in the owner-mail harness; corrected it to `require_once`, with lint, 49 synthetic assertions and two guard checks passing. Revised-head native CI remains required. The selected Git client remains Read-only; the owner's Chrome supplied normal browser delivery. Permissions, protected main and production are unchanged.
+- Added reproducible controlled efficiency evidence for the existing byte verifier: three alternating 337-file pairs produced identical reports/digests, with medians of 21.255469 seconds/341 Git processes for the constructed per-file baseline and 1.004085 seconds/5 processes for the existing batch reader. Six focused checks and independent review passed; the required combined offline Foundation run passed 51 checks in 57.263039 seconds. No acceptance cache or whole-project/token saving is claimed.
+- Verified read-only Real Estate mail/Drive access, without establishing the reported rehearsal. Planner displayed an ad-blocker modal and WordPress target initialization timed out; no browser protection, website, Ads or private-record change occurred. Source delivery and engineering evidence do not close the remaining operational, keyword, content, human-review or production gates. [Evidence, limits and continuation](audit/CONTINUATION_2026-11-10.md)
+
 ## 9 November independent implementation with access held
 
 - Refreshed the public site audit: all nine allowlisted routes returned HTTP 200 in ten GETs/3.975 seconds. The enquiry hub and five funnels retain noindex and BSRE asset 0.2.12; HTML semantic fields match 7 November. This is static HTTP evidence, not runtime or delivery acceptance.
