@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 10 November default-disabled retirement-journal compaction
+
+- The preceding content/creative batch is accepted at published `4a493be`: all 348 source files match, all three exact-head CI jobs passed, and PR8 plus issue12 were updated. Main remains unchanged and PR8 unmerged.
+- Added a separately disabled lab compaction candidate for expired private replay rows. Exact approvals, locked source reread, owned transaction/audit/rollback, versioned floor integrity, retained capacity and persistent recovery holds protect against stale plans and resurrection. Existing behavior before compaction and immutable consent/wire/receipt fixtures are preserved. Nonempty recovery after pruning still needs complete provenance and remains held.
+- Independent source/harness review cleared fixes for direct helper bypasses. All 57 required local Foundation checks passed in 114.097815 seconds with PHP required, including nineteen new pure guard/planning checks and native-harness lint. Actual MariaDB execution remains a separate required CI result. Purpose-candidate source pins were deliberately updated only for reviewed changed bytes, preserving tamper and namespace-isolation checks. [Implementation and acceptance boundaries](audit/RETIREMENT_COMPACTION_2026-11-10.md)
+- Fresh WordPress navigation succeeds but admin authentication is expired; issue6 records the dependency. The fresh Ads readback remains blocked by the ad-blocker dialog. No authentication, protection, production, live-tracking, financial-record or Ads-setting change occurred; activation remains held.
+
 ## 10 November independent content and creative validation
 
 - Refreshed GitHub in six read-only calls: PR8 remains open/unmerged at `d864eaa`, all three exact-head jobs pass, with no reviews, new owner decisions or feedback. Created a feature worktree from that published baseline and verified all 341 files byte-for-byte.
