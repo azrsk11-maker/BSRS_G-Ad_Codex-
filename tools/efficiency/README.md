@@ -152,3 +152,18 @@ Nine fewer explicit browser method calls reached the same checked postcondition.
 Retain only the observed URL in private session state. Do not publish its account/query values, reconstruct opaque parameters, reuse it across unverified accounts, store credentials or bypass verification. Before any research action require account573-038-4686, the intended marketing account, ready Planner and no actual access blocker. If that route or private context is unavailable, return to the official visible navigation. No browser/account setting or permission was changed.
 
 The same evidence file records a reversible **inspection-display** reduction over all2,262new source phrases. Exact recurring strings `abu dhabi`, `sharjah`, `for rent` and `for sale` were shown as collision-checked AD/SH/FR/FS aliases while reading the corpus. Every displayed string round-trips to its original. Keyword-text payload is76,269UTF8bytes before and58,296after, excluding row labels and the legend. Original capture strings, provenance, proposals, public data and counts remain unencoded and unchanged. This measures display bytes, **not tokens**; provider token use and billing are unavailable. No approval, business fact, geographic assignment or research phrase is created by display encoding.
+
+## Bounded lexical preprocessing, 11 November
+
+The existing required-check receipts identified `keyword-abu-sharjah-triage` and `keyword-observed-review-reconciliation` as the two slowest commands. Their repeated conservative matching normalized/tokenized the same short literals many times. `negative_matches` now reuses only immutable token tuples and frozensets in a process-local LRU, capped at 4,096 entries and 512 input characters per entry. Larger or nonstandard inputs retain the uncached path and its existing validation. Public `tokens()` still returns a fresh mutable list. Nothing is written to disk; no research verdict, source verification, approval, report or test result is cached.
+
+[The measured receipt](lexical-matching-2026-11-11.json) binds the before/after matcher hashes and the exact unchanged input/verifier/report bytes. Both complete required Foundation executions already supplied these subprocess timings; no extra baseline or probe execution was added.
+
+| Same-input command | Before | After | Observed reduction |
+| --- | ---: | ---: | ---: |
+| Abu Dhabi/Sharjah triage reproduction | 33.382833 s | 4.871281 s | 85.408% |
+| Complete source/review reconciliation | 38.562353 s | 6.921639 s | 82.051% |
+
+Every frozen workbench/protection screen and the combined reconciliation still reproduces exactly. Six focused regressions cover Unicode/wrappers/punctuation, close variants, repeated words, mutation isolation, nonstring/unhashable inputs, oversized strings, eviction and invalid/empty match cases. These are automatically included in the existing keyword suite; they do not replace any acceptance checks.
+
+The full local checklist remains 84 named checks, all passing with PHP required: 146.091538 seconds before and 81.457086 after. Its after run also contains six additional tests, so total timing is descriptive. The two same-input command timings are one sequential local pair, not a median; CPU scheduling and filesystem warmth are uncontrolled. No whole-task, token, API, billing, campaign-performance or production-readiness saving is inferred. Retain this reversible source change because it reduces observed repeated computation while preserving the exact evidence outputs. CI still reruns all required checks at the final uploaded revision.
