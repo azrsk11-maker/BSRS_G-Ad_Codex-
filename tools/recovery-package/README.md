@@ -1,5 +1,7 @@
 # Encrypted synthetic recovery-package candidate
 
+The separate [disabled synthetic expiry runner](expiry-runner/README.md) prepares bounded retry/restart/alert orchestration around this unchanged per-file helper. Real scheduling, durable custody and alert delivery remain unimplemented and require acceptance.
+
 This module implements an isolated part of [OD-007](../../docs/decisions/OWNER_DECISIONS.md): new encrypted owner-only recovery copies expire after30days. It does not contact a provider, read a real website/database, hold real records, persist keys, create a production backup, schedule expiry deletion or authorize a restore. Real key custody, provider settings, recovery publication and platform acceptance remain separate gates.
 
 Node built-ins only; compatible with Node18+. No installation is required. A supplied fresh, dedicated32-byte encryption key and random12-byte nonce are used with AES-256-GCM and a16-byte authentication tag. The caller must generate and protect the key independently; this module does not prove key freshness or ownership and must never store a key alongside its package. Secrets and package contents are never logged.
