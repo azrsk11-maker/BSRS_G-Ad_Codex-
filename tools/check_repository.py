@@ -50,7 +50,7 @@ def run_checks(require_php=False):
     run("private-query-triage-count-integrity", [sys.executable, "-B", str(ROOT / "docs/audit/private-query-triage-counts-2026-11-08/verify_counts.py")])
     run("primary-plugin-fixture-provenance", [sys.executable, "-B", str(
         ROOT / "tools/staging-lab/verify_fixture.py")])
-    for folder in ("native-wordpress", "keyword-system", "efficiency", "qualification-history", "release-control", "staging-lab"):
+    for folder in ("native-wordpress", "keyword-system", "efficiency", "qualification-history", "qualified-export-source", "github-governance", "release-control", "staging-lab"):
         target = ROOT / "tools" / folder
         tests = list(target.glob("test_*.py"))
         record(folder + "-tests-present", len(tests) > 0, len(tests))
@@ -60,6 +60,10 @@ def run_checks(require_php=False):
     record("node-runtime", bool(node), "required for tracking/privacy/HTTP safety checks")
     if node:
         run("encrypted-recovery-package", [node, "--test", str(ROOT / "tools/recovery-package/package.test.mjs")])
+        decision_tests = sorted((ROOT / "tools/property-decision-tools").glob("*.test.*js"))
+        record("property-decision-tests-present", bool(decision_tests), len(decision_tests))
+        if decision_tests:
+            run("property-decision-behavior", [node, "--test", *map(str, decision_tests)])
         run("retention-candidate-source-pin", [node, "--test", str(ROOT / "tools/consent-retention/candidate.test.mjs")])
         run("pinned-receiver-idempotency-outbox", [node, "--test", str(ROOT / "tools/staging-lab/receiver.test.mjs")])
         tests = sorted((ROOT/"tools/website-tracking").rglob("*.test.mjs"))
@@ -74,6 +78,11 @@ def run_checks(require_php=False):
             run("php-lint-" + path.name, [php, "-l", str(path)])
         run("linkage-reconciliation-behavior", [php, str(ROOT/"tools/consent-retention/linkage.test.php")])
         run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
+        run("property-decision-shortcode-behavior", [php, str(ROOT/"tools/property-decision-tools/php.test.php")])
+        for path in sorted((ROOT/"tools/owner-mail-review").glob("*.php")):
+            run("php-lint-owner-mail-" + path.name, [php, "-l", str(path)])
+        run("owner-mail-review-behavior", [php, str(ROOT/"tools/owner-mail-review/test_owner_mail_review.php")])
+        run("owner-mail-guard-behavior", [php, str(ROOT/"tools/owner-mail-review/guard.test.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
     else:
