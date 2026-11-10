@@ -1,5 +1,15 @@
 # Git-client access diagnostic
 
+## Source delivery when the Git client is Read-only
+
+A denied Git transport does not justify repeated sign-in flows, speculative permission changes or another repository. Use a separately verified, already-authorized owner browser session if ordinary feature-branch upload is available. Preserve protected main, the existing PR and the local commit history. A browser upload does not repair or establish the Git client's role.
+
+Prepare an immutable public-source snapshot from a full reviewed commit, with exact destination paths and raw Git blob/SHA256 checks. Exclude private evidence, credentials, surrounding workspace, `.git` and uncommitted files. Choose regular files within their intended directory. Bind each upload to its explicit snapshot path; do not redefine an old REPL wrapper that may retain a stale helper or hardcoded snapshot. Verify staged names/counts, submit once, then reconcile the resulting commit before another write. On an ambiguous result, inspect before retrying. After two similar failures investigate the actual cause rather than starting another authentication flow.
+
+Read-only Git fetch can verify the entire resulting tree against the reviewed local tree even when web commits have different history. Verify ancestry and unchanged main, then inspect required CI at that exact final head. A file count or an uploader success message alone cannot detect stale content. Record tested head/tree and remaining role/review/release gates in the PR. No force update, self-approval, main merge or production authorization is implied.
+
+## Read-only role diagnostic
+
 Run from this repository:
 
 ```sh
