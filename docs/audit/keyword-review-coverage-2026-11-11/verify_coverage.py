@@ -18,10 +18,12 @@ REGISTRY=[
  ('keyword-employment-broad-2026-11-10','bdc847f3c9759eb166d2bb89122ac365ce414127200463ce0b423a9628eef864',
   'keyword-employment-broad-2026-11-10','c93745c44b95b530b8c4dbcd1ac6f7e4b7b04cdd8eabfacaaf9a6578b1fa2002'),
  ('keyword-exclusions-2026-11-10','1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4',
-  'keyword-exclusions-2026-11-10','585ea863a978e63537b440b5eb6feaedaf236d07f05878d19c7f7ce267ef4a58')]
+  'keyword-exclusions-2026-11-10','585ea863a978e63537b440b5eb6feaedaf236d07f05878d19c7f7ce267ef4a58'),
+ ('keyword-property-readiness-2026-11-11','81a1c496372d528668f42dc1056d67d29911a3951bee23ac0dc2ae878522539f',
+  'keyword-property-readiness-2026-11-11','835894b843b9c80e27468cf0ddfa1ab5104a227dca6841f7e18126523294ea4d')]
 CASES='docs/audit/keyword-exclusions-2026-11-10/protected-cases.json'
 CASES_PIN='ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43'
-REPORT_PIN='61251134d6b248366ec2872819146cda98955a9929c5e7e4ce13d752127dceb9'
+REPORT_PIN='e59b5a2da4308e2e2fbce8ce1fff05f215a01e9daf6b41542f179285bccad912'
 ORIGINAL_VERIFIER_PIN='d57fbe7f95d74270f0880a63d59e1776afd3e3c68a8cfd154ca399cd9ff63cee'
 
 
