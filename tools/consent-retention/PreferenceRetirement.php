@@ -13,8 +13,9 @@ final class PreferenceRetirement {
     private $clock;
     private RetirementLedger $ledger;
     public function __construct($db, ?callable $clock = null) {
+        $prefix=$db->prefix==='retention_synthetic_' || (defined('BSRE_RETENTION_COMPACTION_ENABLED') && BSRE_RETENTION_COMPACTION_ENABLED===true && $db->prefix==='retention_compaction_synthetic_');
         if (!defined('BSRE_RETENTION_LAB') || BSRE_RETENTION_LAB !== true ||
-            wp_get_environment_type() !== 'local' || $db->prefix !== 'retention_synthetic_' ||
+            wp_get_environment_type() !== 'local' || !$prefix ||
             home_url() !== 'http://bsre.invalid') throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db; $this->clock = $clock ?? fn() => time();
         $this->ledger = new RetirementLedger($db);
@@ -102,6 +103,17 @@ final class PreferenceRetirement {
     public function ledgerAnchor(): array {
         $this->authorize();
         return $this->transaction(fn() => $this->ledger->read(false)['anchor']);
+    }
+    public function previewLedgerCompaction(array $trustedAnchor): array {
+        $this->authorize();
+        $this->ledger->compactionGuard();
+        return $this->transaction(fn() => $this->ledger->compactionPlan($this->ledger->read(false),($this->clock)(),$trustedAnchor));
+    }
+    public static function compactionApproval(array $plan): string { return 'COMPACT_SYNTHETIC_LEDGER:'.self::digest($plan); }
+    public function applyLedgerCompaction(array $plan,string $approval,array $trustedAnchor): array {
+        $this->authorize();
+        $result=$this->ledger->compact($plan,$approval,$trustedAnchor,($this->clock)());
+        return ['scope'=>'SYNTHETIC_ONLY','deleted_ledger_rows'=>$result['deleted_rows'],'ledger_anchor'=>$result['anchor'],'history_gap_after_compaction'=>$result['history_gap'],'nonempty_restore_authorized'=>false,'production_acceptance'=>false];
     }
     public function previewRestore(array $metadata,array $trustedAnchor): array {
         $this->authorize();
