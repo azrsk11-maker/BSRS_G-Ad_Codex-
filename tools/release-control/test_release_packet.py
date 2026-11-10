@@ -3,12 +3,19 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
 
+# Explicit synthetic-only fixture reuse; the production checker imports only the engine.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "content-evidence"))
+from test_content_evidence import service_fixture, stamp_review
+from content_evidence import canonical_sha256
+
 from release_packet import ACCOUNT, ADS_SAFE_SETTINGS, CHECKS, CURRENT_CAMPAIGNS, GATES, LAUNCH_BUDGET_FILS, ORIGIN, OWNER, POSTFLIGHT_GATES, REPO, TRACKING_AFTER, digest, frozen_legacy_statuses, instant, load_json, validate, verify_file
 from release_packet import AUTOMATION_SAFE_STATE, held_account_asset_ids, reviewed_launch_children
+from release_packet import page_content_complete
 
 COMMIT = "a" * 40
 NOW = instant("2026-11-07T06:00:00Z")
@@ -42,6 +49,38 @@ class ReleasePacketTests(unittest.TestCase):
             } for resource in resources]}
         inventory_ref = self.write("artifacts/page-tracking-inventory.json", inventory)
         self.source_hashes[inventory_ref["path"]] = inventory_ref["sha256"]
+        artifacts = [artifact, inventory_ref]
+        content_inventory_ref, content_ledger_ref = None, None
+        if kind == "WEBSITE_PUBLICATION":
+            content_rows, content_pages, content_records = [], [], []
+            for resource in resources:
+                name = "artifacts/" + resource["page_id"] + ".html"
+                content_path = self.root / name
+                content_path.write_text("<p>SYNTHETIC advisory content; not a real offer.</p>", encoding="utf-8")
+                content_ref = {"path": name, "sha256": hashlib.sha256(content_path.read_bytes()).hexdigest()}
+                artifacts.append(content_ref)
+                self.source_hashes[name] = content_ref["sha256"]
+                content_rows.append({"page_id": resource["page_id"], "campaign_key": resource["campaign_key"],
+                                     "content_file": content_ref})
+                ledger, _ = service_fixture()
+                page = ledger["pages"][0]
+                page.update(page_id=resource["page_id"], campaign_key=resource["campaign_key"],
+                            content_sha256=content_ref["sha256"])
+                evidence = ledger["records"][0]
+                identity = "synthetic-service-" + resource["page_id"]
+                evidence.update(evidence_id=identity, page_ids=[resource["page_id"]],
+                                source_as_of_utc="2026-11-06T00:00:00Z", valid_until_utc="2026-11-07T08:00:00Z")
+                stamp_review(evidence, reviewed_at="2026-11-07T02:00:00Z")
+                page.update(evidence_ids=[identity], evidence_sha256_by_id={identity: canonical_sha256(evidence)})
+                stamp_review(page, page=True, reviewed_at="2026-11-07T02:00:00Z")
+                content_pages.append(page)
+                content_records.append(evidence)
+            content_inventory_ref = self.write("artifacts/page-content-inventory.json", {
+                "schema_version": 1, "target_origin": ORIGIN, "pages": content_rows})
+            artifacts.append(content_inventory_ref)
+            self.source_hashes[content_inventory_ref["path"]] = content_inventory_ref["sha256"]
+            content_ledger_ref = self.write("evidence/content-evidence-ledger.json", {
+                "schema": "bsre-content-evidence-v1", "pages": content_pages, "records": content_records})
         page_ids = sorted(r["page_id"] for r in resources)
         rollback = self.write("recovery/synthetic.json", {"test_only": True, "commit": COMMIT, "resource_page_ids": page_ids, "target_origin": ORIGIN, "ads_account": ACCOUNT, "resources": resources, "previous_versions": {p: "synthetic-previous-version" for p in page_ids}})
         proposal = {"release_id": "BSRE-REL-SYNTHETIC-ONLY", "kind": kind,
@@ -49,7 +88,7 @@ class ReleasePacketTests(unittest.TestCase):
             "operator": "synthetic-operator", "pusher": "synthetic-pusher",
             "target_origin": ORIGIN, "ads_account": ACCOUNT,
             "resources": resources,
-            "artifacts": [artifact, inventory_ref], "rollback": {"before_manifest": rollback, "instructions": self.write("recovery/instructions.md", {"test_only": True}),
+            "artifacts": artifacts, "rollback": {"before_manifest": rollback, "instructions": self.write("recovery/instructions.md", {"test_only": True}),
                 "preserve_accepted_records": True, "preserve_outbox": True, "reactivate_old_campaigns": False,
                 "reapply_retention_before_reopen": True, "encrypted_owner_only_backup_days": 30},
             "post_release": {"readback_required": True, "pause_on_mismatch": True, "preserve_intake": True},
@@ -126,7 +165,9 @@ class ReleasePacketTests(unittest.TestCase):
                     "reapply_deletions_before_reopen": True,
                 }
             if gate == "SOURCE_TRUTH" and kind == "WEBSITE_PUBLICATION":
-                result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", native_page_sources=[
+                result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE",
+                    page_content_inventory=content_inventory_ref, content_evidence_ledger=content_ledger_ref,
+                    native_page_sources=[
                     {"page_id": resource["page_id"], "service_or_inventory_ref": "TEST_ONLY:inventory",
                      "claims_review_ref": "TEST_ONLY:claims", "asset_rights_review_ref": "TEST_ONLY:rights",
                      "update_owner_ref": "TEST_ONLY:update-owner"} for resource in resources
@@ -640,6 +681,88 @@ class ReleasePacketTests(unittest.TestCase):
                 self.packet = self.fixture("WEBSITE_PUBLICATION")
                 self.change_evidence("SOURCE_TRUTH", "native_page_sources", invalid)
                 self.assertIn("EXACT_NATIVE_PAGE_SOURCE_REVIEW_REQUIRED", self.check()["errors"])
+
+    def content_inputs(self):
+        reference = next(row for row in self.packet["evidence"] if row["gate_id"] == "SOURCE_TRUTH")
+        receipt = load_json(self.root / reference["file"]["path"])
+        ledger = load_json(self.root / receipt["content_evidence_ledger"]["path"])
+        inventory = load_json(self.root / receipt["page_content_inventory"]["path"])
+        return ledger, inventory, receipt
+
+    def content_check(self, ledger, inventory, receipt, *, sources=None):
+        return page_content_complete(ledger, inventory, self.packet["proposal"], receipt, self.root,
+                                     self.source_hashes if sources is None else sources, NOW)
+
+    def test_opaque_content_refs_and_forged_pass_summary_cannot_replace_ledger(self):
+        for replacement in (None, {"all_pages_eligible": True}):
+            with self.subTest(replacement=replacement):
+                self.packet = self.fixture()
+                if replacement is None:
+                    reference = next(row for row in self.packet["evidence"] if row["gate_id"] == "SOURCE_TRUTH")
+                    receipt = load_json(self.root / reference["file"]["path"])
+                    del receipt["content_evidence_ledger"]
+                    reference["file"] = self.write(reference["file"]["path"], receipt)
+                    self.reapprove(self.packet)
+                else:
+                    self.change_evidence("SOURCE_TRUTH", "content_evidence_ledger",
+                        self.write("evidence/forged-content-summary.json", replacement))
+                self.assertIn("DATED_CONTENT_AND_RIGHTS_EVIDENCE_REQUIRED", self.check()["errors"])
+
+    def test_actual_page_bytes_and_committed_content_binding_are_required(self):
+        ledger, inventory, receipt = self.content_inputs()
+        self.assertTrue(self.content_check(ledger, inventory, receipt))
+        reference = inventory["pages"][0]["content_file"]
+        sources = dict(self.source_hashes)
+        del sources[reference["path"]]
+        self.assertFalse(self.content_check(ledger, inventory, receipt, sources=sources))
+        (self.root / reference["path"]).write_text("<p>Changed SYNTHETIC copy.</p>", encoding="utf-8")
+        self.assertFalse(self.content_check(ledger, inventory, receipt))
+        reference["sha256"] = hashlib.sha256((self.root / reference["path"]).read_bytes()).hexdigest()
+        self.source_hashes[reference["path"]] = reference["sha256"]
+        # Even a newly committed text hash cannot reuse the old page/evidence review.
+        self.assertFalse(self.content_check(ledger, inventory, receipt))
+
+    def test_content_inventory_requires_exact_pages_and_reviewable_text_files(self):
+        ledger, inventory, receipt = self.content_inputs()
+        for rows in ([], inventory["pages"] * 2,
+                     [{**inventory["pages"][0], "page_id": "BSRE-LP0360"}],
+                     [{**inventory["pages"][0], "campaign_key": "BSRE-C0360"}],
+                     [{**inventory["pages"][0], "content_file": self.packet["proposal"]["artifacts"][0]}]):
+            with self.subTest(rows=len(rows)):
+                self.assertFalse(self.content_check(ledger, {**inventory, "pages": rows}, receipt))
+
+    def test_content_inventory_itself_must_be_in_reviewed_commit(self):
+        self.source_hashes.pop("artifacts/page-content-inventory.json")
+        self.assertIn("PAGE_CONTENT_INVENTORY_NOT_IN_REVIEWED_COMMIT", self.check()["errors"])
+
+    def test_source_expiry_and_receipt_lifetime_cannot_be_hidden_by_fresh_gate_receipt(self):
+        for expiry in ("2026-11-07T06:00:00Z", "2026-11-07T07:00:00Z"):
+            with self.subTest(expiry=expiry):
+                ledger, inventory, receipt = self.content_inputs()
+                record = ledger["records"][0]
+                record["valid_until_utc"] = expiry
+                stamp_review(record, reviewed_at="2026-11-07T02:00:00Z")
+                ledger["pages"][0]["evidence_sha256_by_id"][record["evidence_id"]] = canonical_sha256(record)
+                stamp_review(ledger["pages"][0], page=True, reviewed_at="2026-11-07T02:00:00Z")
+                self.assertFalse(self.content_check(ledger, inventory, receipt))
+
+    def test_content_reviews_recorded_after_receipt_cannot_be_backed_by_that_receipt(self):
+        ledger, inventory, receipt = self.content_inputs()
+        record = ledger["records"][0]
+        stamp_review(record, reviewed_at="2026-11-07T02:00:01Z")
+        ledger["pages"][0]["evidence_sha256_by_id"][record["evidence_id"]] = canonical_sha256(record)
+        stamp_review(ledger["pages"][0], page=True, reviewed_at="2026-11-07T02:00:01Z")
+        self.assertFalse(self.content_check(ledger, inventory, receipt))
+
+    def test_content_ledger_accepts_equivalent_explicit_utc_alias(self):
+        ledger, inventory, receipt = self.content_inputs()
+        record = ledger["records"][0]
+        for key in ("source_as_of_utc", "valid_until_utc"):
+            record[key] = record[key].replace("Z", "+00:00")
+        stamp_review(record, reviewed_at="2026-11-07T02:00:00+00:00")
+        ledger["pages"][0]["evidence_sha256_by_id"][record["evidence_id"]] = canonical_sha256(record)
+        stamp_review(ledger["pages"][0], page=True, reviewed_at="2026-11-07T02:00:00+00:00")
+        self.assertTrue(self.content_check(ledger, inventory, receipt))
 
     def test_rollback_native_id_and_account_must_match(self):
         ref = self.packet["proposal"]["rollback"]["before_manifest"]

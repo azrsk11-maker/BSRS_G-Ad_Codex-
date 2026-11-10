@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime, timezone
 import hashlib
+import importlib.util
 import json
 from pathlib import Path, PurePosixPath
 import re
@@ -55,6 +56,7 @@ LAUNCH_BUDGET_FILS = {
 CURRENT_CAMPAIGNS = set(LAUNCH_BUDGET_FILS)
 FROZEN_BASELINE_PATH = Path(__file__).resolve().parents[2] / "docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json"
 MATRIX_VALIDATOR_PATH = Path(__file__).resolve().parents[1] / "website-tracking/validate_tracking_matrix.mjs"
+CONTENT_VALIDATOR_PATH = Path(__file__).resolve().parents[1] / "content-evidence/content_evidence.py"
 TRACKING_IDENTIFIERS_PATH = Path(__file__).resolve().parents[2] / "config/tracking/verified-destinations.unpublished.json"
 TRACKING_AFTER = {"enhanced_matching": False, "personalization": False, "audience_exports": False,
     "accepted_enquiry_bidding": "SECONDARY_OUTSIDE_CUSTOM_GOALS", "auto_form_collection": False,
@@ -201,6 +203,61 @@ def page_tracking_complete(matrix, inventory, proposal, receipt):
                 and result.get("evidence_authenticated") is False and result.get("execution_allowed") is False
                 and result.get("release_authorized") is False)
     except (OSError, subprocess.TimeoutExpired, KeyError, TypeError, ValueError, AttributeError):
+        return False
+
+
+def page_content_complete(ledger, inventory, proposal, receipt, root, source_hashes, now):
+    """Recompute source validity against exact reviewed page bytes; no authority grant."""
+    try:
+        def ledger_instant(value):
+            return instant(value[:-6] + "Z" if isinstance(value, str) and value.endswith("+00:00") else value)
+        if (not isinstance(inventory, dict) or set(inventory) != {"schema_version", "target_origin", "pages"}
+                or type(inventory["schema_version"]) is not int or inventory["schema_version"] != 1
+                or inventory["target_origin"] != ORIGIN or not isinstance(inventory["pages"], list)
+                or not 1 <= len(inventory["pages"]) <= 360):
+            return False
+        resources = {row["page_id"]: row for row in proposal["resources"]}
+        expected, seen, content_paths = [], set(), set()
+        for row in inventory["pages"]:
+            if (not isinstance(row, dict) or set(row) != {"page_id", "campaign_key", "content_file"}
+                    or not isinstance(row["page_id"], str) or row["page_id"] not in resources
+                    or row["page_id"] in seen or row["campaign_key"] != resources[row["page_id"]]["campaign_key"]):
+                return False
+            reference = row["content_file"]
+            path = verify_file(root, reference)
+            if (path.suffix.lower() not in {".html", ".md"} or not 0 < path.stat().st_size <= MAX_BYTES
+                    or reference not in proposal["artifacts"] or not isinstance(source_hashes, dict)
+                    or source_hashes.get(reference["path"]) != reference["sha256"]
+                    or reference["path"] in content_paths):
+                return False
+            # Decoding only proves a reviewable text artifact, not factual completeness.
+            path.read_bytes().decode("utf-8")
+            seen.add(row["page_id"])
+            content_paths.add(reference["path"])
+            expected.append({"page_id": row["page_id"], "campaign_key": row["campaign_key"],
+                             "content_sha256": reference["sha256"]})
+        if seen != set(resources):
+            return False
+        observed = instant(receipt["observed_at_utc"])
+        receipt_expiry = instant(receipt["valid_until_utc"])
+        # A receipt cannot attest evidence that had not yet been recorded at observation.
+        if any(ledger_instant(subject["review"]["reviewed_at_utc"]) > observed
+               for subject in ledger["pages"] + ledger["records"]):
+            return False
+        if any(ledger_instant(record["source_as_of_utc"]) > observed
+               or ledger_instant(record["valid_until_utc"]) < receipt_expiry for record in ledger["records"]):
+            return False
+        spec = importlib.util.spec_from_file_location("bsre_content_evidence", CONTENT_VALIDATOR_PATH)
+        if spec is None or spec.loader is None:
+            return False
+        engine = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(engine)
+        report = engine.evaluate_content_evidence(ledger, expected_pages=expected,
+                    now_utc=now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+        return (report.get("all_pages_eligible") is True
+                and report.get("authenticated_business_approval") is False
+                and report.get("publication_authorized") is False)
+    except (OSError, KeyError, TypeError, ValueError, AttributeError, ImportError):
         return False
 
 
@@ -361,6 +418,17 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                      all(set(source) == references | {"page_id"} and
                          all(match(ID_REF, source[key]) for key in references) for source in sources),
                      "EXACT_NATIVE_PAGE_SOURCE_REVIEW_REQUIRED")
+                if "page_content_inventory" not in result or "content_evidence_ledger" not in result:
+                    need(False, "DATED_CONTENT_AND_RIGHTS_EVIDENCE_REQUIRED")
+                else:
+                    inventory_ref = result["page_content_inventory"]
+                    inventory = record_json(inventory_ref)
+                    need(inventory_ref in artifacts and isinstance(source_hashes, dict) and
+                         source_hashes.get(inventory_ref["path"]) == inventory_ref["sha256"],
+                         "PAGE_CONTENT_INVENTORY_NOT_IN_REVIEWED_COMMIT")
+                    ledger = record_json(result["content_evidence_ledger"])
+                    need(page_content_complete(ledger, inventory, proposal, result, root, source_hashes, now),
+                         "DATED_CONTENT_AND_RIGHTS_EVIDENCE_REQUIRED")
             if row["gate_id"] == BRAND_POLICY_GATE and proposal["kind"] == "ADS_ACTIVATION":
                 brand_url = next((r["url"] for r in resources if r["campaign_id"] == BRAND_CAMPAIGN_ID), None)
                 need(result.get("method") == "AUTHENTICATED_CONFIGURATION_READBACK" and brand_url is not None and
