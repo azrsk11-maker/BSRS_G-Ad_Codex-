@@ -73,6 +73,28 @@ The nonempty batch comparison uses five Git processes independent of shared-file
 
 The focused suite has16cases. Fourteen passed and two Windows capability cases were skipped. Junction detection and resolved-path escape checks ran through mocks because the attempted real junction fixture was blocked by tool policy. Linux CI must exercise newline filenames and supported symlink creation. Independent review verified the final containment fix.
 
+## Controlled remeasurement of existing Git batching
+
+[`benchmark_worktree.py`](benchmark_worktree.py) measures the existing verifier against an explicitly constructed baseline using the same discovery and raw-byte guards with one `git cat-file blob` process per shared path. It is not a recovered historical implementation or a newly implemented optimization. It changes no verifier, acceptance rule, Git ref or production setting, and has no network/API path.
+
+The [10 November result](benchmark-worktree-2026-11-10.json) pins `bc8c72b282454ebeff44f39b993ea7928b20523a`. One batch warmup and three alternating measured pairs each compared all337files and24,063,805raw bytes. Complete comparison reports and per-path local/Git byte digests matched across all seven runs, with337byte-equal files and no missing, unexpected or changed paths.
+
+| Reader | Median elapsed | Actual Git processes per comparison |
+|---|---:|---:|
+| Constructed per-file baseline | 21.255469s | 341 |
+| Existing batched verifier | 1.004085s | 5 |
+
+The measured median ratio is21.17x, with20.251384seconds less elapsed time for this task. The benchmark completed in67.272553seconds. These are local Git process counts, not provider API requests. Timings include Git subprocess startup, raw-byte guards and digest observation within one Python process; outer tool/Python startup is excluded. This is one Windows checkout with three pairs. Desktop/browser activity was not isolated, and six small synthetic fixture tests briefly overlapped the first baseline run; every trial is retained. No token, billing or whole-project improvement is established.
+
+The runner requires an explicit full commit and a complete byte-equal tree, checks all reports/digests across runs and stops on changes or its time budget. Reports cannot overwrite an existing file; inside the checked tree they must use an ignored `test-output` or `.cache` location. Six focused synthetic tests cover binary/duplicate-blob parity, exact process counts, line-ending changes, changed inputs between runs, elapsed-budget enforcement, output guards and bounds. Independent source review found a budget edge, which was fixed before measurement.
+
+To repeat, point the tool at a separate clean checkout of the pinned source with raw Git bytes preserved (`core.autocrlf=false`). Keep the runner and its output outside that checkout so adding them does not alter the337-file input. The tool does not create or mutate a checkout.
+
+```powershell
+& $auditPython -B tools/efficiency/benchmark_worktree.py --root '<clean-pinned-checkout>' --ref bc8c72b282454ebeff44f39b993ea7928b20523a --pairs 3 --max-seconds 180 --report '<outside-checkout>/paired-report.json'
+& $auditPython -B -m unittest discover -s tools/efficiency -p test_benchmark_worktree.py
+```
+
 ## Inline tree publication
 
 For an explicitly reviewed batch of UTF-8 regular files, pass each file as a GitHub tree entry with `path`, `mode`, `type: blob` and `content`. Read the raw bytes and decode UTF-8 without newline conversion. Preserve each file's mode and pin the base tree to the expected feature-branch head. For binary files, use the existing blob path. [GitHub tree API](https://docs.github.com/en/rest/git/trees#create-a-tree)
