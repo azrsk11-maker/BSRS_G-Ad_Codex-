@@ -1,5 +1,7 @@
 # Preference-retirement development candidate
 
+The separate [pure per-choice planner](per-choice/README.md) prepares individual twelve-month deadline and necessary-history review without changing this helper or its provenance pin. It supplies no selective-deletion writer or production acceptance.
+
 This is an **isolated synthetic SQL implementation**, not a deployable retention release. No plugin hooks, scheduler, HTTP routes, production reads, deletions or permission changes are introduced. `PreferenceRetirement` normally permits only `retention_synthetic_`, environment `local` and synthetic home URL `http://bsre.invalid`, with an explicit lab constant. The literal isolated prefix `retention_compaction_synthetic_` is additionally permitted only when the separate `BSRE_RETENTION_COMPACTION_ENABLED` flag is explicitly true. Apply still needs its existing test-only flag. Do not remove these guards to run against production.
 
 The adopted policy is recorded in [OD-007](../../docs/decisions/OWNER_DECISIONS.md): preferences valid for180days; never-submitted choices retained12calendar months; closed/unsuccessful enquiries and matching emails retained12months after actual closure; monthly review; new encrypted owner-only recovery copies30days. Policy approval does not authorize a production purge.
