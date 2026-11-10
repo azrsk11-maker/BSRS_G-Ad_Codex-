@@ -5,7 +5,7 @@ is a transport projection only; actual dates are validated before projection
 and retained in the returned workbench. All phrase/assessment bytes survive.
 """
 from copy import deepcopy
-from datetime import date
+from datetime import date,datetime,timedelta,timezone
 import hashlib
 import importlib.util
 from pathlib import Path
@@ -16,9 +16,18 @@ from keyword_audit import negative_matches, normalize, parse_json_bytes, tokens
 CAPTURE = Path('docs/audit/keyword-employment-education-2026-11-10')
 EMPLOYMENT_CAPTURE = Path('docs/audit/keyword-employment-broad-2026-11-10')
 EXCLUSION_CAPTURE = Path('docs/audit/keyword-exclusions-2026-11-10')
-CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE, EXCLUSION_CAPTURE))
+SUPPLY_CAPTURE = Path('docs/audit/keyword-discovery-supply-2026-11-08')
+CAPTURES = frozenset((CAPTURE, EMPLOYMENT_CAPTURE, EXCLUSION_CAPTURE, SUPPLY_CAPTURE))
 DAY = '2026-11-10'
 SCOPE, NEGATIVE_SCOPE, need = legacy.SCOPE, legacy.NEGATIVE_SCOPE, legacy.need
+
+
+def dubai_date(instant=None):
+    """The review/capture business day is Dubai UTC+04, independent of host TZ."""
+    instant=datetime.now(timezone.utc) if instant is None else instant
+    need(isinstance(instant,datetime) and instant.tzinfo is not None and
+         instant.utcoffset() is not None,'Timezone-aware review instant required')
+    return instant.astimezone(timezone(timedelta(hours=4))).date()
 
 
 def load_corpus(root, *, capture=CAPTURE):
@@ -55,7 +64,7 @@ def compile_workbench(corpus, proposals, *, proposed_on=DAY):
     legacy._validate_corpus(corpus)
     need(isinstance(proposed_on, str), 'Invalid proposal date')
     day = date.fromisoformat(proposed_on)
-    need(day.isoformat() == proposed_on and DAY <= proposed_on and day <= date.today(), 'Invalid proposal date')
+    need(day.isoformat() == proposed_on and DAY <= proposed_on and day <= dubai_date(), 'Invalid proposal date')
     need(isinstance(proposals, dict) and proposals.get('proposed_on') == proposed_on, 'Invalid proposal document')
     # The pinned legacy schema accepts only its original date. Project that one
     # field on a detached copy; never change globals, input evidence or rows.

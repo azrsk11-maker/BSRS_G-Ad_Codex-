@@ -1,6 +1,6 @@
 """Synthetic adapter/protection behavior and pinned public-capture coverage."""
 import copy
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -52,7 +52,7 @@ class SupplementalTriageTests(unittest.TestCase):
         baseline = legacy.compile_workbench(data, document(proposal('hotel apartment', 'HOLD', ['hotel'])))
         baseline['proposed_on'] = st.DAY
         self.assertEqual(built, baseline)
-        for day in ('2026-02-30', '2026-1-1', True, '2026-11-08', (date.today() + timedelta(days=1)).isoformat()):
+        for day in ('2026-02-30', '2026-1-1', True, '2026-11-08', (st.dubai_date() + timedelta(days=1)).isoformat()):
             with self.subTest(day=day), self.assertRaises((ValueError, TypeError)):
                 st.compile_workbench(data, doc, proposed_on=day)
         with self.assertRaises(ValueError):
@@ -69,6 +69,29 @@ class SupplementalTriageTests(unittest.TestCase):
         self.assertTrue(all(r['assessment'] is None for r in built['queue']))
         self.assertIn('long term lease dubai', data['entries'])
         self.assertFalse(built['controls']['deployment_authorized'])
+
+    def test_supply_capture_retains_all_31_rows_without_narrative_or_role_inheritance(self):
+        data = st.load_corpus(Path(__file__).resolve().parents[2], capture=st.SUPPLY_CAPTURE)
+        built = st.compile_workbench(data, dated())
+        self.assertEqual((len(data['sources']), len(data['entries'])), (2, 31))
+        self.assertEqual(sum(len(e['source_refs']) for e in data['entries'].values()), 31)
+        self.assertEqual(built['summary']['dispositions']['UNASSESSED'], 31)
+        self.assertTrue(all(r['assessment'] is None for r in built['queue']))
+        self.assertIn('dubai letting agents', data['entries'])
+        self.assertFalse(built['controls']['deployment_authorized'])
+
+    def test_dubai_review_day_crosses_midnight_at_20_utc(self):
+        self.assertEqual(st.dubai_date(datetime(2026,11,10,19,59,59,tzinfo=timezone.utc)),date(2026,11,10))
+        self.assertEqual(st.dubai_date(datetime(2026,11,10,20,0,tzinfo=timezone.utc)),date(2026,11,11))
+        self.assertEqual(st.dubai_date(datetime(2026,11,11,tzinfo=timezone(timedelta(hours=4)))),date(2026,11,11))
+        with self.assertRaises(ValueError):st.dubai_date(datetime(2026,11,11))
+
+    def test_valid_dubai_day_is_preserved_while_the_next_business_day_is_refused(self):
+        doc=dated();doc['proposed_on']='2026-11-11'
+        with patch.object(st,'dubai_date',return_value=date(2026,11,11)):
+            self.assertEqual(st.compile_workbench(corpus(),doc,proposed_on='2026-11-11')['proposed_on'],'2026-11-11')
+        with patch.object(st,'dubai_date',return_value=date(2026,11,10)),self.assertRaises(ValueError):
+            st.compile_workbench(corpus(),doc,proposed_on='2026-11-11')
 
     def test_token_alias_collision_and_internal_protection_are_retained(self):
         data = corpus()
