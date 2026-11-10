@@ -137,3 +137,18 @@ Build is69.5% of that span. BuildKit directly reports16.3s for apt/PHP extension
 No cache or builder change is adopted. A later bounded trial could cache only a public dependency stage, force source derivation fresh and compare actual whole-job warm time including setup/post-cache, while rerunning every acceptance check. A cache hit alone is insufficient. Keep existing allowance/settings, source pins, `--pull`, kernel `--network none`, read-only runtime and absence of production credentials.
 
 Cached `RUN apt-get` layers do not refresh merely with age; a trial needs an explicit refresh epoch. GitHub's inactivity-based eviction is not dependency freshness. PR merge-ref caches are scoped and cannot be consumed by main or another PR. These constraints follow [Docker invalidation](https://docs.docker.com/build/cache/invalidation/#run-instructions), [Docker GHA cache behavior](https://docs.docker.com/build/cache/backends/gha/) and [GitHub access restrictions](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache). No extra run, paid setting, permission expansion or cache write was made for this measurement.
+
+## Observed Planner access and inspection, 11 November
+
+[The paired observation](planner-navigation-2026-11-11.json) records two routes to the same verified Real Estate account and ready Keyword Planner home, in the existing authenticated Chrome session. The baseline uses the official Ads entry, existing sign-in link and visible Tools→Planning→Keyword Planner controls. The smaller route opens the **actual URL previously observed in that same browser**, then verifies the account, Planner readiness and absence of a visible blocker again.
+
+| Bounded navigation sample | Explicit browser API calls | Summed awaited-call time |
+| --- | ---: | ---: |
+| Official entry and menu path | 15 | 12.146 seconds |
+| Reused observed Planner route | 6 | 1.202 seconds |
+
+Nine fewer explicit browser method calls reached the same checked postcondition. This is **one sequential existing-session pair**, with different cache warmness. Times exclude model/reasoning gaps and unobserved network work; method counts are not HTTP request counts. No repeatable whole-task speedup, token saving, billing saving or campaign/conversion improvement is inferred.
+
+Retain only the observed URL in private session state. Do not publish its account/query values, reconstruct opaque parameters, reuse it across unverified accounts, store credentials or bypass verification. Before any research action require account573-038-4686, the intended marketing account, ready Planner and no actual access blocker. If that route or private context is unavailable, return to the official visible navigation. No browser/account setting or permission was changed.
+
+The same evidence file records a reversible **inspection-display** reduction over all2,262new source phrases. Exact recurring strings `abu dhabi`, `sharjah`, `for rent` and `for sale` were shown as collision-checked AD/SH/FR/FS aliases while reading the corpus. Every displayed string round-trips to its original. Keyword-text payload is76,269UTF8bytes before and58,296after, excluding row labels and the legend. Original capture strings, provenance, proposals, public data and counts remain unencoded and unchanged. This measures display bytes, **not tokens**; provider token use and billing are unavailable. No approval, business fact, geographic assignment or research phrase is created by display encoding.
