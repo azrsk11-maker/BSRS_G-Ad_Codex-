@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "context_kind": "PUBLIC_RENTAL_INTAKE_PURPOSE_NOT_INVENTORY_OR_DELIVERY",
+  "observed_date_dubai": "2026-11-11",
+  "source_url": "https://blackswanrealestate.ae/enquire/rent/",
+  "heading_seen": true,
+  "tenant_form_seen": true,
+  "annual_budget_field_seen": true,
+  "inventory_or_availability_verified": false,
+  "submission_or_consent_action_performed": false,
+  "live_campaign_mapping_assigned": false,
+  "observed_purpose": "DUBAI_RESIDENTIAL_RENTAL_ENQUIRY_REVIEW",
+  "limits": "Observed public tenant-brief intake purpose only. No stock, availability, capacity, delivery, conversion, current installed source or proposed-page publication accepted.",
+  "private_evidence_sha256": "2d7d9198593cf1fdf4ade4220b79e6c21a41dc99d1d68b1e422a7ca8b409cad4"
+}
