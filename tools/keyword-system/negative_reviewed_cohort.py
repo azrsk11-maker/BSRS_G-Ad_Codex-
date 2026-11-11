@@ -14,7 +14,8 @@ CATALOG = ({'key': 'academic-20261111',
     'report_sha256': '7813dd28b0fa8c3ec4996d1cbd1a62d59d5aea298b5c5e1876896b3203d535fb',
     'expected_rows': 903},
     {'key': 'nonproperty-20261111',
-     'folder': 'docs/audit/keyword-negative-nonproperty-admission-2026-11-11', 'review_sha256': '9ccc090b096ad6c27c0c163f4cf7dcffa1d19eb1fd6033edd2eb0d8a03144488', 'report_sha256': '74468db413b5dd2badcde2e736495c3c49b4c4aa49e6ba81255477a1a26cd3c7', 'expected_rows': 412},)
+     'folder': 'docs/audit/keyword-negative-nonproperty-admission-2026-11-11', 'review_sha256': '9ccc090b096ad6c27c0c163f4cf7dcffa1d19eb1fd6033edd2eb0d8a03144488', 'report_sha256': '74468db413b5dd2badcde2e736495c3c49b4c4aa49e6ba81255477a1a26cd3c7', 'expected_rows': 412},
+    {'key': 'vehicle-20261111', 'folder': 'docs/audit/keyword-negative-vehicle-admission-2026-11-11', 'review_sha256': 'cece889ed2775eecb0480157b6ab6e96aff93384e09f9fa19b1eb9db24a0cd0b', 'report_sha256': '3abc58e9dc0f8692dfdd333f389e2b574364089821672d99aacfceccc675a901', 'expected_rows': 1509},)
 LIMITS = ('human_review_verified', 'exclusion_approval_granted',
           'live_binding_verified', 'production_authorized')
 

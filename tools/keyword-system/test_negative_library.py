@@ -33,9 +33,9 @@ class NegativeLibraryTests(unittest.TestCase):
 
     def test_actual_library_is_partial_research_never_approval_or_release(self):
         result = library.verify(at=date(2026, 11, 11))
-        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (3428, 3428, 10572))
-        self.assertEqual(result['source_occurrences_retained'], 3432)
-        self.assertEqual(result['protected_queries_indexed'], 12163)
+        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (4937, 4937, 9063))
+        self.assertEqual(result['source_occurrences_retained'], 4942)
+        self.assertEqual(result['protected_queries_indexed'], 12216)
         self.assertEqual(result['source_capture_count'], 6)
         self.assertEqual(result['approved_exclusion_rows'], 0)
         for key in ('exact_target_pass', 'deployment_export_allowed', 'production_writes_available',
@@ -55,6 +55,28 @@ class NegativeLibraryTests(unittest.TestCase):
         raw = (json.dumps(self.inputs['records'][:3016], ensure_ascii=False, indent=2)+'\n').encode('utf-8')
         self.assertEqual(hashlib.sha256(raw).hexdigest(), '603d3f46d08b144a3f0922eea00abcb32c223b45ad749ba73f7edcd706fbc324')
 
+    def test_previous_3428_records_preserve_published_nonproperty_master_bytes(self):
+        raw = (json.dumps(self.inputs['records'][:3428], ensure_ascii=False, indent=2)+'\n').encode('utf-8')
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), '7a4f2d9bcea1fdda690d8f9ee1e23401db9511354cf754f76e430915440a9f88')
+
+    def test_evidence_based_pool_rebalance_preserves_total_and_approval_boundaries(self):
+        entry = registered.CATALOG[2]
+        allocation = json.loads((first.ROOT/entry['folder']/'research-pool-allocation.json').read_text())
+        self.assertEqual(allocation['scope'], 'RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL')
+        self.assertEqual(allocation['review_sha256'], entry['review_sha256'])
+        self.assertEqual(sum(allocation['before'].values()), 14000)
+        self.assertEqual(sum(allocation['after'].values()), 14000)
+        changes = {k: allocation['after'][k]-v for k,v in allocation['before'].items()}
+        self.assertEqual({k:v for k,v in changes.items() if v}, {'EMPLOYMENT':-509,'UNRELATED_PRODUCT':509})
+        selected = [r for r in self.inputs['records'] if r['evidence_ref'].startswith(entry['folder']+'/')]
+        self.assertEqual(allocation['admitted']['UNRELATED_PRODUCT'], len(selected))
+        self.assertEqual(allocation['after']['UNRELATED_PRODUCT'], len(selected))
+        self.assertEqual(sum(allocation['admitted'].values()), len(self.inputs['records']))
+        self.assertEqual(allocation['remaining'], {k:allocation['after'][k]-v for k,v in allocation['admitted'].items()})
+        self.assertEqual(sum(allocation['remaining'].values()), 9063)
+        for key in ('owner_approval_claimed','media_budget_changed','exclusion_approval_granted'):
+            self.assertIs(allocation[key], False)
+
     def test_one_fresh_reconstruction_per_registered_cohort_per_invocation(self):
         with patch.object(first, 'reconstruct', wraps=first.reconstruct) as a, \
              patch.object(employment, 'reconstruct', wraps=employment.reconstruct) as b, \
@@ -63,7 +85,7 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertEqual(a.call_count, 1)
         self.assertEqual(b.call_count, 1)
         self.assertEqual(c.call_count, len(registered.CATALOG))
-        self.assertEqual(result['reviewed_eligible_rows'], 3428)
+        self.assertEqual(result['reviewed_eligible_rows'], 4937)
 
     def test_previous_success_does_not_cache_source_inputs_across_invocations(self):
         library.verify(at=date(2026, 11, 11))
@@ -84,7 +106,7 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertFalse(current & set(employment.HELD))
         protected = {r['text'] for r in self.inputs['protected_queries']}
         self.assertTrue(set(employment.HELD) <= protected)
-        self.assertEqual(len({r['keyword_id'] for r in self.inputs['records']}), 3428)
+        self.assertEqual(len({r['keyword_id'] for r in self.inputs['records']}), 4937)
 
     def test_source_spelling_diacritics_and_unknown_metrics_preserved(self):
         texts = {r['original_text'] for r in self.second['records']}

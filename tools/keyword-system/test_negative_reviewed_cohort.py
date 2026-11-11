@@ -188,6 +188,30 @@ class RegisteredCohortTests(unittest.TestCase):
         self.assertEqual(result['approved_exclusion_rows'], 0)
         self.assertFalse(result['deployment_export_allowed'])
 
+    def test_actual_vehicle_review_preserves_ambiguity_and_both_source_occurrences(self):
+        prior = library.compose([self.prior, self.inputs])
+        nonproperty = registered.reconstruct(first.ROOT, registered.CATALOG[1], prior)
+        prior = library.compose([prior, nonproperty])
+        entry = registered.CATALOG[2]
+        inputs = registered.reconstruct(first.ROOT, entry, prior)
+        result = registered._verify_reconstructed(inputs, entry, at=date(2026, 11, 11))
+        self.assertEqual((result['reviewed_eligible_rows'],result['held_phrases'],
+                          result['source_occurrences_retained']), (1509,53,1510))
+        selected = {r['normalized_text']:r for r in inputs['records']}
+        held = set(inputs['review']['held_phrases'])
+        self.assertFalse(set(selected) & held)
+        self.assertTrue(held <= {r['text'] for r in inputs['protected_queries']})
+        for phrase in ('prado for rent in dubai','rent urus dubai','pick up rental dubai',
+                       'carrentals dubai','drivus car rental dubai dubai'):
+            self.assertIn(phrase,held)
+        self.assertTrue('car rental dubai' in selected, 'Captured car-rental literal missing')
+        self.assertTrue('rent bmw 7 series dubai' in selected, 'Captured make/model literal missing')
+        self.assertEqual({o['batch'] for o in selected['annual car lease dubai']['provenance_occurrences']},
+            {'KP-DISC-20261108-TENANTS','KP-20261110-SOFTWARE-SERVICES-PRODUCTS'})
+        self.assertEqual(result['protected_queries_indexed'],12216)
+        self.assertEqual(result['approved_exclusion_rows'],0)
+        self.assertFalse(result['deployment_export_allowed'])
+
 
 if __name__ == '__main__':
     unittest.main()
