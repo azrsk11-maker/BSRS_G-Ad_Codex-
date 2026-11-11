@@ -48,7 +48,10 @@ def node_tap_summary(output):
 def execute_check(name, args, cwd=ROOT):
     require_tap = name == TAP_CHECK
     tick = time.perf_counter()
-    proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=120)
+    # The growing actual-source keyword suite exceeded 120s on the local host.
+    # Keep other checks at their existing bound; never turn a timeout into PASS.
+    timeout = 300 if name == "keyword-system-behavior" else 120
+    proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=timeout)
     details = {"exit": proc.returncode, "elapsed_seconds": round(time.perf_counter()-tick, 6),
                "output_tail": (proc.stdout + proc.stderr)[-1800:]}
     summary = node_tap_summary(proc.stdout) if require_tap else None
@@ -122,6 +125,7 @@ def run_checks(require_php=False):
     run("keyword-employment-lifecycle-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_capture.py")])
     run("keyword-employment-lifecycle-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_triage.py")])
     run("keyword-gap-research-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-research-2026-11-11/verify_capture.py")])
+    run("keyword-role-exam-assets-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-role-exam-assets-2026-11-11/verify_capture.py")])
     run("keyword-gap-research-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-research-2026-11-11/verify_triage.py")])
     run("keyword-observed-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-gap-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-review-coverage-2026-11-11/verify_coverage.py")])
