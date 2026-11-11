@@ -37,6 +37,8 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertEqual(result['historical_reviewed_eligible_rows'], 7188)
         self.assertEqual((result['computed_conflicts'], result['excluded_rows']), (2, 2))
         self.assertTrue(result['admission_held'])
+        self.assertTrue(result['current_index_verified'])
+        self.assertEqual(result['held_archive_rows'], 2)
         self.assertEqual(result['source_occurrences_retained'], 7195)
         self.assertEqual(result['protected_queries_indexed'], 13881)
         self.assertEqual(result['source_capture_count'], 12)
@@ -49,6 +51,41 @@ class NegativeLibraryTests(unittest.TestCase):
         raw = (json.dumps(self.inputs['records'][:1178], ensure_ascii=False, indent=2)+'\n').encode('utf-8')
         self.assertEqual(hashlib.sha256(raw).hexdigest(), '57405055be2db88f3b982436348a7e01517af573f5d6cf77667554e81217401a')
         self.assertEqual(first.verify(at=date(2026, 11, 11))['reviewed_eligible_rows'], 1178)
+
+    def test_current_materialization_preserves_every_original_and_keeps_held_intent_protected(self):
+        before = (first.ROOT/'tools/keyword-system/data/negative.json').read_bytes()
+        current = library.reconstruct_current(at=date(2026, 11, 11))
+        eligible, held = current['records'], current['archived_records']
+        eligible_ids = {r['keyword_id'] for r in eligible}
+        held_ids = {r['keyword_id'] for r in held}
+        historical = {r['keyword_id']:r for r in self.inputs['records']}
+        self.assertEqual((len(eligible), len(held), len(current['protected_queries'])), (7186, 2, 13881))
+        self.assertFalse(eligible_ids & held_ids)
+        self.assertEqual(eligible_ids | held_ids, set(historical))
+        for row in eligible + held:
+            self.assertEqual(first.canonical(row), first.canonical(historical[row['keyword_id']]))
+        self.assertEqual({r['normalized_text'] for r in held},
+                         {'estate agent recruitment','property agent recruitment'})
+        result = audit('negative', held, current['sources'], current['campaigns'],
+                       current['campaign_context'], current['protected_queries'], date(2026, 11, 11))
+        self.assertEqual(result['reviewed_eligible_rows'], 0)
+        self.assertEqual(len(result['protected_conflicts']), 2)
+        self.assertFalse(current['deployment_authorized'])
+        self.assertFalse(current['production_writes_available'])
+        self.assertEqual((first.ROOT/'tools/keyword-system/data/negative.json').read_bytes(), before)
+
+    def test_changed_index_cannot_reactivate_a_held_id_after_pinned_read(self):
+        original = first.pinned
+        def changed_index(root, relative, pin):
+            value = original(root, relative, pin)
+            if relative == 'tools/keyword-system/'+library.CURRENT_INDEX:
+                value = copy.deepcopy(value)
+                value['eligible_keyword_ids'].append(value['held_keyword_ids'].pop())
+                value['counts'].update(eligible=7187, held=1)
+            return value
+        with patch.object(first, 'pinned', side_effect=changed_index):
+            with self.assertRaisesRegex(ValueError, 'CURRENT_RESEARCH_INDEX_CHANGED'):
+                library.verify(at=date(2026, 11, 11))
 
     def test_original_two_cohorts_reproduce_their_complete_published_master(self):
         raw = (json.dumps(self.inputs['records'][:2113], ensure_ascii=False, indent=2)+'\n').encode('utf-8')

@@ -1,5 +1,6 @@
 """Exact composition of registered reviewed cohorts; no promotion, export or live writes."""
 from collections import Counter
+from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
@@ -9,14 +10,17 @@ import negative_admission as first
 import negative_employment_admission as employment
 import negative_reviewed_cohort as registered
 from keyword_audit import audit, normalize
+from negative_partition import build_index
 
 OUTPUT_PINS = {'data/negative.json': 'b94b35103a62a7e78e8142797a6f146c23abbacfde080b5bfdde5530773ae29b', 'data/sources.json': '9060f4dba836bcdf043ccee05bd3c7067bfe09d49de24c1e516c26d76862b7b4', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'library-report.json': '384b36cc30fa89f6af5e2ec2c1240a43ecd75478d7b5b67548ce0bcd8a3a1b57'}  # Complete master and aggregate report bytes.
 LIBRARY_REPORT = 'docs/audit/keyword-negative-gap-admission-2026-11-11/library-report.json'
 LATEST_FOLDER = 'docs/audit/keyword-role-review-coverage-2026-11-11'
-LATEST_VERIFIER_PIN = 'eb6b159acd1fe1a2fb1a65ad0a8ab778c5da3fed4a99cdf6c41603430823ef84'
+LATEST_VERIFIER_PIN = '1d4f8acaed7acfc2ee0db7ce5224e2b3baab9e0cd656142633623ebb6d5cf892'
+CURRENT_INDEX = 'data/negative-current-index.json'
+CURRENT_INDEX_PIN = 'a33b9b8e4764121842d35417b79df4f5f9e618cd652eb15c914e4fdf0066dd33'
 
 
-def latest_protection(inputs, root, when):
+def latest_protection(inputs, root, when, *, with_protected=False):
     """Freshly screen verified inputs; reuse no result across invocations.
 
     Historical cohorts/bytes remain intact. A later held query can reduce the
@@ -33,8 +37,16 @@ def latest_protection(inputs, root, when):
     expected = module['pinned'](path.parent / 'admitted-master-impact.json', module['IMPACT_PIN'])
     # Inputs were reconstructed and checked in this invocation. Passing them
     # avoids a second complete reconstruction without caching any acceptance.
-    current = module['build_impact'](report, data=inputs, at=when)
+    if with_protected:
+        bundle = module['build_impact'](report, data=inputs, at=when, with_protected=True)
+        current = bundle['impact']
+    else:
+        current = module['build_impact'](report, data=inputs, at=when)
     first.need(first.canonical(current) == first.canonical(expected), 'LATEST_PROTECTION_IMPACT_CHANGED')
+    if with_protected:
+        first.need(len(bundle['protected_queries']) == current['protected_queries'], 'CURRENT_PROTECTION_COUNT')
+        return dict(bundle, latest_report={'file':LATEST_FOLDER+'/report.json','sha256':module['REPORT_PIN']},
+                    latest_impact={'file':LATEST_FOLDER+'/admitted-master-impact.json','sha256':module['IMPACT_PIN']})
     return current
 
 
@@ -98,9 +110,8 @@ def summarize(inputs, result):
         'live_campaign_mapping_verified': False, 'authored_cases_outside_research_counts': 20}
 
 
-def verify(root=first.ROOT, at=None):
+def verified_history(root, when):
     # Fresh provenance once per invocation; all cohort/report/expiry checks remain.
-    when = first.dubai_date() if at is None else at
     inputs = reconstruct(root, at=when)
     first.need(set(OUTPUT_PINS) == {'data/negative.json', 'data/sources.json',
         'data/campaign_context.json', 'library-report.json'}, 'LIBRARY_OUTPUT_BINDINGS')
@@ -120,7 +131,41 @@ def verify(root=first.ROOT, at=None):
     saved = first.pinned(root, LIBRARY_REPORT, OUTPUT_PINS['library-report.json'])
     historical = dict(summary, as_of='2026-11-11')
     first.need(first.canonical(saved) == first.canonical(historical), 'LIBRARY_REPORT_CHANGED')
-    current = latest_protection(inputs, root, when)
+    return inputs, summary
+
+
+def current_state(root, when):
+    """Verify history/current evidence/index once; never cache acceptance."""
+    inputs, summary = verified_history(root, when)
+    screen = latest_protection(inputs, root, when, with_protected=True)
+    index = build_index(inputs['records'], screen['impact'],
+        historical_master={'file':'tools/keyword-system/data/negative.json', 'sha256':OUTPUT_PINS['data/negative.json']},
+        latest_report=screen['latest_report'], latest_impact=screen['latest_impact'])
+    saved = first.pinned(root, 'tools/keyword-system/'+CURRENT_INDEX, CURRENT_INDEX_PIN)
+    first.need(first.canonical(saved) == first.canonical(index), 'CURRENT_RESEARCH_INDEX_CHANGED')
+    return inputs, summary, screen, index
+
+
+def reconstruct_current(root=first.ROOT, at=None):
+    """Materialize eligible research plus separate held originals, never Ads.
+
+    All source fields/IDs survive. Independent callers receive detached data;
+    held IDs never re-enter the eligible base and all current protections remain.
+    """
+    when = first.dubai_date() if at is None else at
+    inputs, _, screen, index = current_state(root, when)
+    held = set(index['held_keyword_ids'])
+    return deepcopy(dict(inputs,
+        records=[row for row in inputs['records'] if row['keyword_id'] not in held],
+        archived_records=[row for row in inputs['records'] if row['keyword_id'] in held],
+        protected_queries=screen['protected_queries'], research_index=index,
+        deployment_authorized=False, production_writes_available=False))
+
+
+def verify(root=first.ROOT, at=None):
+    when = first.dubai_date() if at is None else at
+    inputs, summary, screen, index = current_state(root, when)
+    current = screen['impact']
     return dict(summary, passed=True,
         scope='CURRENT_NEGATIVE_RESEARCH_AFTER_LATEST_PROTECTION_SCREEN',
         historical_reviewed_eligible_rows=summary['reviewed_eligible_rows'],
@@ -130,7 +175,8 @@ def verify(root=first.ROOT, at=None):
         protected_queries_indexed=current['protected_queries'],
         approval_hold_counts=current['latest_approval_hold_counts'],
         latest_protection_evidence=LATEST_FOLDER+'/admitted-master-impact.json',
-        admission_held=current['admission_held'])
+        admission_held=current['admission_held'], current_index_verified=True,
+        current_index_file=CURRENT_INDEX, held_archive_rows=index['counts']['held'])
 
 
 if __name__ == '__main__':
