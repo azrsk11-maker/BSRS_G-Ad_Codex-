@@ -1,5 +1,7 @@
 # Reviewed gap-research admission — 11 November 2026
 
+**Later review supersedes the eligibility count below:** all 7,188 historical rows and this admission's original reports remain intact, but two recruitment phrases are now protected. Current eligible research is **7,186; deficit 6,814**, with admission held, exclusion-approved/deployed zero. [Latest complete reconciliation and fresh master guard](../keyword-role-review-coverage-2026-11-11/README.md). This document retains its original admission history; it cannot clear the later holds.
+
 **1,992 additional actual provider phrases** enter AI-reviewed negative research for the existing unbound rental planning purpose. The composed master is **7,188/14,000; deficit 6,812**. Positive admission remains 0/14,000. Exclusion-approved/deployed remain zero; independent human review and live scope remain unverified. This is research, not a serving instruction or a completed library.
 
 ## Selection and evidence
