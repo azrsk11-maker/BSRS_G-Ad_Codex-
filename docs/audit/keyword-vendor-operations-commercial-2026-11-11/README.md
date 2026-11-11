@@ -1,5 +1,7 @@
 # Management software, property operations and commercial-property source capture
 
+**This document retains the capture/preliminary-review scope.** The [subsequent admission](../keyword-negative-vendor-admission-2026-11-11/README.md) reviews the remaining variants/scopes, adds1,989eligible research records and protects96additional holds. Source/preliminary files remain unchanged; the canonical driver reports current eligibility.
+
 **Three actual provider exports /3,772 source occurrences /3,383 new identities. Complete preliminary review; no new master admission.** The [full current screen](../keyword-vendor-review-coverage-2026-11-11/README.md) now holds ten previously counted records: current eligible negatives8,025/14,000; deficit5,975. Positive admission0; exclusion-approved/deployed0. A source row is not an approved keyword, inventory, demand or performance claim.
 
 ## Independently observed context
