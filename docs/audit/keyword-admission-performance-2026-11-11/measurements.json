@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "scope": "CONTROLLED_LOCAL_2113_RECORD_VALIDATOR_BEFORE_THIRD_COHORT",
+  "date_dubai": "2026-11-11",
+  "baseline_local_commit": "ae690126616214676774f5bcce8c7bf7283ad2ce",
+  "byte_equal_public_baseline": "1e865e15243b518e8cb3a915f11d116f6294d5cf",
+  "platform": "Windows",
+  "method": "Three sequential trials per implementation in the same Windows Python environment, same source/data/review/report inputs and wrapper counters; before adding the academic cohort. No cold-cache or whole-workflow speed claim.",
+  "baseline_trials": [
+    {
+      "seconds": 4.008933,
+      "first_reconstructions": 3,
+      "second_reconstructions": 2,
+      "pinned_reads": 121,
+      "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5"
+    },
+    {
+      "seconds": 3.937628,
+      "first_reconstructions": 3,
+      "second_reconstructions": 2,
+      "pinned_reads": 121,
+      "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5"
+    },
+    {
+      "seconds": 3.924729,
+      "first_reconstructions": 3,
+      "second_reconstructions": 2,
+      "pinned_reads": 121,
+      "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5"
+    }
+  ],
+  "optimized_trials": [
+    {
+      "seconds": 2.344616,
+      "first_reconstructions": 1,
+      "second_reconstructions": 1,
+      "pinned_reads": 52,
+      "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5"
+    },
+    {
+      "seconds": 2.38715,
+      "first_reconstructions": 1,
+      "second_reconstructions": 1,
+      "pinned_reads": 52,
+      "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5"
+    },
+    {
+      "seconds": 2.303203,
+      "first_reconstructions": 1,
+      "second_reconstructions": 1,
+      "pinned_reads": 52,
+      "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5"
+    }
+  ],
+  "baseline_median_seconds": 3.937628,
+  "optimized_median_seconds": 2.344616,
+  "median_reduction_percent": 40.46,
+  "result_sha256": "4e5cb62dc87d6137ca8beedc9bb6ca557f1a94a05c3e5dfd3589f30ff44ca8a5",
+  "every_result_identical": true,
+  "optimized_snapshot_sha256": {
+    "tools/keyword-system/negative_admission.py": "a5f9a952b76af73c01266ba9ec04f62786d77da856319ea1defb37de63fc5071",
+    "tools/keyword-system/negative_employment_admission.py": "5aba26143d00df413c64b5d5828cb8b00645245e0e77a04411b44df57e6ef16e",
+    "tools/keyword-system/negative_library.py": "6a44a5f446b137518078c59eb72072b0318d343ceef37c1f3750b124a88fc0a2"
+  },
+  "optimization_patch_sha256": "9bb863d5f5d923df448370203093c53be9ca05ea5a690146ca1eedeb511a6d40",
+  "pinned_reads_before": 121,
+  "pinned_reads_after": 52,
+  "reconstructions_before": 5,
+  "reconstructions_after": 2,
+  "no_cross_invocation_cache": true,
+  "source_checks_approval_guards_retained": true,
+  "provider_token_cost_or_api_savings_measured": false,
+  "production_changes": false,
+  "source_patch_reproduces_all_optimized_file_hashes": true
+}
