@@ -1,6 +1,6 @@
 # First scoped negative research admission
 
-This is the immutable **first-cohort observation**. The later [composed library](../keyword-negative-employment-admission-2026-11-11/README.md) contains2,113research rows/11,887deficit; its aggregate report and mandatory master-composition gate own the current totals. The original1,178records/review/report below remain reproducible.
+This is the immutable **first-cohort observation**. The current [composed library](../keyword-negative-academic-admission-2026-11-11/README.md) contains **3,016 research rows / 10,984 deficit**; its aggregate report and mandatory master-composition gate own current totals. The original 1,178 records/review/report below remain reproducible.
 
 **1,178 distinct actual phrases now have complete, AI-reviewed research records.** Negative research deficit: **12,822/14,000**. Positive admission remains0/14,000. **Exclusion-approved0, deployed0, independent human review unverified.** This is a partial research master, not a completed library or serving permission. [Machine-readable result](admission-report.json) and [dated review](review.json) preserve those distinctions.
 
