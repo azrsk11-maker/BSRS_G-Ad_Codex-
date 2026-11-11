@@ -10,7 +10,7 @@ This report now joins **seventeen Planner exports and eleven preliminary workben
 | Disagreement hold | 20 |
 | Unassessed / missing structured review | 0 / 0 |
 
-**Both reviewed/approved 14,000-keyword masters remain incomplete at zero admitted entries.** These numbers reconcile preliminary work only. The report adds no master rows, campaigns, placements, approved scope or serving authority. Business evidence, independent semantic review, exact page/campaign ownership and complete approved-library testing remain required. The **7,769 total held phrases**, including twenty disagreements, are unresolved rather than accepted positive or negative coverage. Crossing 14,000 distinct source identities does not complete either master.
+**Both14,000-keyword masters remain incomplete.** This report reconciles preliminary source work only and adds no master rows itself. The later [scoped admission](../keyword-negative-admission-2026-11-11/README.md) records1,178AI-reviewed negative research rows/12,822deficit, with positive admission0and exclusion-approved/deployed0. Its independent human review and live scope remain unverified. The frozen report's `master_rows_added:0` describes this reconciliation operation, not a claim that the separate current negative data file is empty. The report adds no master rows, campaigns, placements, approved scope or serving authority. Business evidence, independent semantic review, exact page/campaign ownership and complete approved-library testing remain required. The **7,769 total held phrases**, including twenty disagreements, are unresolved rather than accepted positive or negative coverage. Crossing 14,000 distinct source identities does not complete either master.
 
 ## Fidelity and protection
 
