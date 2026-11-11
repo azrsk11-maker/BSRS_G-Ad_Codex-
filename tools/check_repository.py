@@ -119,6 +119,8 @@ def run_checks(require_php=False):
     run("keyword-developer-employment-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-developer-employment-2026-11-11/verify_triage.py")])
     run("keyword-occupational-education-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-occupational-education-2026-11-11/verify_capture.py")])
     run("keyword-occupational-education-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-occupational-education-2026-11-11/verify_triage.py")])
+    run("keyword-employment-lifecycle-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_capture.py")])
+    run("keyword-employment-lifecycle-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_triage.py")])
     run("keyword-observed-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
