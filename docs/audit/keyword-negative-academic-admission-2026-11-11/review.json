@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "cohort_key": "academic-20261111",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selection": {
+    "docs/audit/keyword-occupational-education-2026-11-11/workbench.json": [
+      "EXPLICIT_PROFESSIONAL_EXAM_STUDY_RESEARCH",
+      "FORMAL_ACADEMIC_RESEARCH",
+      "OCCUPATIONAL_CREDENTIAL_OR_ROLE_STUDY_RESEARCH"
+    ]
+  },
+  "capture_pins": {
+    "docs/audit/keyword-occupational-education-2026-11-11/capture.json": "1e30f171310155e76229d35922e951aed2965def632af757f3c8d30386eb6217"
+  },
+  "pool_rows": 959,
+  "selected_rows": 903,
+  "existing_cohort_overlaps": 0,
+  "held_phrases": {
+    "apartment manager certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "arm property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "boma property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "building manager certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "cam property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "certified apartment manager certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "certified apartment manager certification online": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "certified property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "certified property manager certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "commercial property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "commercial property management qualifications": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "commercial real estate management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "condo management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "condominium management certificate": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "cpm property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "estate management qualifications": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "free property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "hoa property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "housing management qualifications": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "irem property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "management certificate for condominium": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "master facility and real estate management": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "master finance real estate": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "master online real estate": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "master real estate law": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "master real estate management": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "master real estate studies": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "master science real estate": "Unresolved spacing or incomplete-grammar variant; preserve source, do not add a research count.",
+    "master's real estate": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "masters for real estate": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "property administrator certificate": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "property bachelor": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "property management accounting certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "property management certification free": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "property management certification online": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "property management professional certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "reading masters real estate": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "real estate agent bachelor degree": "Unresolved preceding positive/held source assessment; retain protection, no automatic adjudication.",
+    "real estate agent degree online": "Unresolved preceding positive/held source assessment; retain protection, no automatic adjudication.",
+    "real estate asset management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "real estate broker degree": "Unresolved preceding positive/held source assessment; retain protection, no automatic adjudication.",
+    "real estate master usa": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "real estate paralegal certificate": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "real estate project management certificate": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "real estate project management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "real estate property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "real estate reading masters": "Bare master/bachelor wording does not establish academic-only intent; preserve possible property, provider or general decision research.",
+    "real property administrator certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "realestate exam": "Unresolved spacing or incomplete-grammar variant; preserve source, do not add a research count.",
+    "residential apartment management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "residential manager certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "residential property management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "residential property manager certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "strata management certificate": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established.",
+    "vacation rental management certification": "Generic qualification/certification wording could be provider due diligence; no explicit training, course, award-level or examination purpose established."
+  },
+  "intent_counts": {
+    "FORMAL_ACADEMIC_RESEARCH": 544,
+    "EXPLICIT_PROFESSIONAL_EXAM_STUDY_RESEARCH": 291,
+    "OCCUPATIONAL_CREDENTIAL_OR_ROLE_STUDY_RESEARCH": 68
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "FORMAL_ACADEMIC_RESEARCH": "Read every complete source literal. Selected phrases expressly request a formal degree, diploma, university field, postgraduate/doctoral programme or similarly explicit academic route. They do not request a residential tenant brief. Ambiguous bare master/bachelor wording, possible provider identity and previously protected assessments stay held. No institution identity, programme existence, accreditation, admission condition or credential availability is asserted.",
+    "EXPLICIT_PROFESSIONAL_EXAM_STUDY_RESEARCH": "Complete phrases request an occupational exam, practice test, exam fees/preparation, retake or post-exam study pathway. This is examination/study intent rather than a property enquiry. Historical years and publisher/regulator/place strings are preserved as provider text, not current exam or licensing facts. Generic buyer due diligence, ownership guidance, finance and regulatory questions are not excluded as tokens.",
+    "OCCUPATIONAL_CREDENTIAL_OR_ROLE_STUDY_RESEARCH": "68selected complete literals specify training, classes, a course/programme, award level, a professional examination, entry into the named role or explicit credential cost. Generic certification/qualification wording that could be provider due diligence remains held. The explicit appraiser-exam literal was restored during pre-admission review; the draft omission was never counted or published. No professional, provider, course, credential or regulatory approval is invented."
+  },
+  "variant_review": {
+    "token_bag_groups": 37,
+    "phrases_in_groups": 75,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "All959pool literals and37token-bag groups/75selected phrases were read.56source phrases stay held, including three existing protections and spacing/grammar/intent ambiguity. Source spelling, historical dates and provider strings are retained. Counts are distinct reviewed source texts, not certified distinct Google matching concepts. No preferred metric or served query is inherited. Proposed applicability is only the same unbound residential-rental planning purpose; no inventory, live mapping or full-positive coverage is claimed.",
+  "subject_sha256": "cf5a89daaa3f1691714db545d9d31bfb8f68f059ef675f5e95c6887dcf0764bb",
+  "coverage_reports": [
+    {
+      "file": "docs/audit/keyword-review-coverage-2026-11-11/report.json",
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    }
+  ]
+}
