@@ -28,10 +28,12 @@ REGISTRY=[
  ('keyword-developer-employment-2026-11-11','a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f',
   'keyword-developer-employment-2026-11-11','a7cb70063367d08f4518e42aaf7f230ae8c872f111a1eaa0069e76dc088b3a99'),
  ('keyword-occupational-education-2026-11-11','1e30f171310155e76229d35922e951aed2965def632af757f3c8d30386eb6217',
-  'keyword-occupational-education-2026-11-11','4487755de36391aa59f5bdb06d8bb72edb3c48a8f46ca2a89a6d733248daa1b0')]
+  'keyword-occupational-education-2026-11-11','4487755de36391aa59f5bdb06d8bb72edb3c48a8f46ca2a89a6d733248daa1b0'),
+ ('keyword-employment-lifecycle-2026-11-11','94dfa8a6fe28a0ed76b865a5a230c4404a5bc8c25ecfa0cd9fae6f6311fa78c1',
+  'keyword-employment-lifecycle-2026-11-11','d55c2ba4f03fe8f91cc49477f938cd0eae0ac638b1667709de422ab540404449')]
 CASES='docs/audit/keyword-exclusions-2026-11-10/protected-cases.json'
 CASES_PIN='ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43'
-REPORT_PIN='f7966d0d6cf7927de5c11739f8072b416c82130370f0ac940017e0c5f23c4d12'
+REPORT_PIN='a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99'
 ORIGINAL_VERIFIER_PIN='d57fbe7f95d74270f0880a63d59e1776afd3e3c68a8cfd154ca399cd9ff63cee'
 
 

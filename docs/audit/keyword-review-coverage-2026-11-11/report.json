@@ -1,22 +1,22 @@
 {
   "version": 1,
   "scope": "PRELIMINARY_SOURCE_REVIEW_RECONCILIATION_ONLY",
-  "capture_batches": 16,
-  "review_documents": 10,
-  "source_occurrences": 16844,
-  "distinct_source_phrases": 15740,
-  "repeated_source_occurrences": 1104,
-  "review_assessment_instances": 15768,
+  "capture_batches": 17,
+  "review_documents": 11,
+  "source_occurrences": 18530,
+  "distinct_source_phrases": 17422,
+  "repeated_source_occurrences": 1108,
+  "review_assessment_instances": 17454,
   "review_instances_by_disposition": {
-    "HOLD": 7268,
-    "NEGATIVE_EXACT_REVIEW": 4192,
+    "HOLD": 7776,
+    "NEGATIVE_EXACT_REVIEW": 5370,
     "POSITIVE_REVIEW": 4308,
     "UNASSESSED": 0
   },
   "canonical_disposition_counts": {
     "DISAGREEMENT_HOLD": 20,
-    "HOLD": 7241,
-    "NEGATIVE_EXACT_REVIEW": 4187,
+    "HOLD": 7749,
+    "NEGATIVE_EXACT_REVIEW": 5361,
     "NO_STRUCTURED_REVIEW": 0,
     "POSITIVE_REVIEW": 4292,
     "UNASSESSED": 0
@@ -390,6 +390,24 @@
       "classification_or_approval_inherited": false
     },
     {
+      "normalized_text": "high paying real estate jobs",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
       "normalized_text": "long term lease dubai",
       "source_occurrences": 2,
       "review_assessments": [
@@ -461,6 +479,24 @@
         {
           "review_file": "docs/audit/keyword-employment-broad-2026-11-10/workbench.json",
           "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "paying jobs in real estate",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
           "possible_services": []
         }
       ],
@@ -585,6 +621,42 @@
       "classification_or_approval_inherited": false
     },
     {
+      "normalized_text": "salaried real estate agent jobs",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "salaried real estate jobs",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
       "normalized_text": "sharjah freehold property for sale",
       "source_occurrences": 2,
       "review_assessments": [
@@ -610,8 +682,8 @@
     }
   ],
   "provisional_exact_screen": {
-    "draft_negative_literals": 4191,
-    "protected_literals": 11573,
+    "draft_negative_literals": 5365,
+    "protected_literals": 12081,
     "authored_test_cases_excluded_from_source_counts": 20,
     "conflicts": [
       {
@@ -658,7 +730,8 @@
       "docs/audit/keyword-northern-emirates-2026-11-11/capture.json": "55fb083ab6f73b57ed7ae18815b64eed22f6c8e2c4caec173bef6405b7b04a83",
       "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/capture.json": "719d1bcdce7620740266046ed24705b6c05fdf521cdb67e9be3b6a014023f62d",
       "docs/audit/keyword-developer-employment-2026-11-11/capture.json": "a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f",
-      "docs/audit/keyword-occupational-education-2026-11-11/capture.json": "1e30f171310155e76229d35922e951aed2965def632af757f3c8d30386eb6217"
+      "docs/audit/keyword-occupational-education-2026-11-11/capture.json": "1e30f171310155e76229d35922e951aed2965def632af757f3c8d30386eb6217",
+      "docs/audit/keyword-employment-lifecycle-2026-11-11/capture.json": "94dfa8a6fe28a0ed76b865a5a230c4404a5bc8c25ecfa0cd9fae6f6311fa78c1"
     },
     "capture_files_sha256": {
       "docs/audit/keyword-discovery-2026-11-08/buyers.json": "2c742c953164e44038032c828808769e4b4db3f5b713e689a7edee79df1dbf36",
@@ -676,7 +749,8 @@
       "docs/audit/keyword-northern-emirates-2026-11-11/northern-emirates.json": "c290895884a00f5da71b985afd53eb465ed0c21e7cf38d43dec950beca8cb53e",
       "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/abu-dhabi-sharjah.json": "eed2da3518d48a82fffb1ac3ab3b2706e6b32902bc313653c328685e13bcf095",
       "docs/audit/keyword-developer-employment-2026-11-11/developer-employment.json": "3779c708adbe0aae5cbe3f9ee51d1f3a11d334cb976041c05fe0af77e00af1cd",
-      "docs/audit/keyword-occupational-education-2026-11-11/occupational-education.json": "da46ec51edf53f71c5fe08521853b31ba716f8034bf6b312488ee6a59f6992b1"
+      "docs/audit/keyword-occupational-education-2026-11-11/occupational-education.json": "da46ec51edf53f71c5fe08521853b31ba716f8034bf6b312488ee6a59f6992b1",
+      "docs/audit/keyword-employment-lifecycle-2026-11-11/employment-lifecycle.json": "ff63d459628f60eb7bf3b64b7ee881d57e7f8abacb734c15d7f7e597b5a12b7e"
     },
     "review_workbenches_sha256": {
       "docs/audit/keyword-triage-2026-11-08/workbench.json": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477",
@@ -688,7 +762,8 @@
       "docs/audit/keyword-northern-emirates-2026-11-11/workbench.json": "eb0035f901825002009107ff05f81e2ca1c9671b54f99eafeeed0af1a12d6ed3",
       "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json": "ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4",
       "docs/audit/keyword-developer-employment-2026-11-11/workbench.json": "a7cb70063367d08f4518e42aaf7f230ae8c872f111a1eaa0069e76dc088b3a99",
-      "docs/audit/keyword-occupational-education-2026-11-11/workbench.json": "4487755de36391aa59f5bdb06d8bb72edb3c48a8f46ca2a89a6d733248daa1b0"
+      "docs/audit/keyword-occupational-education-2026-11-11/workbench.json": "4487755de36391aa59f5bdb06d8bb72edb3c48a8f46ca2a89a6d733248daa1b0",
+      "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json": "d55c2ba4f03fe8f91cc49477f938cd0eae0ac638b1667709de422ab540404449"
     },
     "authored_protection_cases": {
       "file": "docs/audit/keyword-exclusions-2026-11-10/protected-cases.json",
