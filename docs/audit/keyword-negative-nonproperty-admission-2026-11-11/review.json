@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "cohort_key": "nonproperty-20261111",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selection": {
+    "docs/audit/keyword-exclusions-2026-11-10/workbench.json": [
+      "SOFTWARE",
+      "SERVICE",
+      "MEDIA"
+    ]
+  },
+  "capture_pins": {
+    "docs/audit/keyword-exclusions-2026-11-10/capture.json": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4"
+  },
+  "pool_rows": 436,
+  "selected_rows": 412,
+  "existing_cohort_overlaps": 0,
+  "held_phrases": {
+    "best real estate softwares": "Unresolved spelling/grammar variant; retain the source without increasing the reviewed count.",
+    "bitrix24 for real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "bitrix24 free download": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "bitrix24 real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "easy property listings elementor": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "microsoft dynamics 365 for real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "microsoft dynamics 365 real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "microsoft dynamics for real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "mycrm propertyfinder": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "pipedrive for real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "plumber dubai emergency plumbing in dubai": "Concatenated trade/city repetition needs wording review; no additional distinct research count.",
+    "property base crm pricing": "Unresolved spacing variant of a named platform; no additional distinct research count.",
+    "propertybase salesforce": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "realestate plugin": "Unresolved unspaced spelling variant; retain the source without increasing the reviewed count.",
+    "realtyna wpl": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "sales force real estate crm": "Unresolved spacing variant of a named platform; no additional distinct research count.",
+    "salesforce propertybase": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "salesmate for realtors": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "vtiger real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "woocommerce for real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "wpl realtyna": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "zoho for real estate": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "zoho property management": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim.",
+    "zoho real estate management": "Named product/platform or abbreviated navigation wording lacks an explicit tooling request in this literal. Preserve dated preliminary category evidence but do not use it as sufficient admission evidence in this cohort; no affiliation or current feature claim."
+  },
+  "intent_counts": {
+    "SERVICE": 42,
+    "SOFTWARE": 350,
+    "MEDIA": 20
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "SOFTWARE": "Read all373complete software-pool literals. The350selected texts expressly seek CRM/contact or lead-management tooling, software, plugins, WordPress/MLS/IDX integration or technical procurement, rather than a residential tenant brief. Named/abbreviated navigation and spacing/grammar variants remain held. Historical dates, platform strings and comparison wording are source text, not current feature, licensing, vendor-affiliation, pricing or safety assertions. No software is installed, vendor contacted, CRM synchronized or property-premises intent excluded as a generic token.",
+    "SERVICE": "Read all43complete service-pool literals. The42selected texts request plumbing/drain/water-heater repair or installation, car servicing, a driver or chauffeur. They do not request brokerage or residential premises. The concatenated trade/city repetition remains held. Property maintenance/repair needs are not excluded as generic words; only these full exact unrelated service requests are proposed for the rental planning purpose. No contractor, price, appointment, service availability or supplier association is asserted.",
+    "MEDIA": "Read all20complete media-pool literals. They explicitly seek stock/royalty-free photographs, images or pictures, rather than a property brochure, floor plan, genuine property enquiry or premises for a media business. Source free/royalty-free/brand wording is preserved, not proof of asset rights, licence entitlement, availability or permission to download or publish any image."
+  },
+  "variant_review": {
+    "token_bag_groups": 12,
+    "phrases_in_groups": 24,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "All436complete SOFTWARE/SERVICE/MEDIA pool literals and12token-bag groups/24selected phrases were read;412selected and24explicit holds. The1562preliminary VEHICLE phrases and345other original held rows are outside this admission, not auto-promoted or resolved. Counts are distinct normalized provider texts, not certified distinct Google matching concepts. All previous protections/disagreements persist. No generated query, numeric metric, inventory, current vendor capability, served-query or professional-approval claim. Same unbound RNT planning purpose only; other359slots and full-positive/platform matching acceptance remain outside scope.",
+  "subject_sha256": "ebf59c9493737d1947a04cc5e314f2e95070795f09b025b97cf6228293fee075",
+  "coverage_reports": [
+    {
+      "file": "docs/audit/keyword-review-coverage-2026-11-11/report.json",
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    }
+  ]
+}
