@@ -1,5 +1,7 @@
 # Second employment review and composed negative research library
 
+This directory retains the **second-cohort / first-composed-library observation**. Current [three-cohort totals](../keyword-negative-academic-admission-2026-11-11/README.md) are **3,016 / 14,000; deficit 10,984**. The 2,113-record aggregate report below is preserved as a dated snapshot. No earlier cohort or report is rewritten to add new research.
+
 The complete persisted negative research master now contains **2,113 AI-reviewed phrases / 14,000; deficit 11,887**. Positive admission remains **0/14,000**. **Exclusion-approved0, deployed0, independent human review unverified.** These are partial research counts; neither complete-library nor release acceptance is claimed. [Canonical composed result](library-report.json).
 
 ## Actual phrases and scope
