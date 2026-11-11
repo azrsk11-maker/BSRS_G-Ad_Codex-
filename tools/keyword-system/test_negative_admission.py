@@ -140,17 +140,14 @@ class NegativeAdmissionTests(unittest.TestCase):
                 with self.subTest(relative=relative), self.assertRaisesRegex(ValueError, 'PUBLIC_PATH_LINKED'):
                     na.pinned(root, relative, pin)
 
-    def test_persisted_record_tampering_fails_before_counting(self):
+    def test_immutable_cohort_report_tampering_fails_before_counting(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
-            for relative in ('data/negative.json', 'data/sources.json', 'data/campaign_context.json'):
-                target = root/'tools/keyword-system'/relative
-                target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_bytes((na.ROOT/'tools/keyword-system'/relative).read_bytes())
-            path = root/'tools/keyword-system/data/negative.json'
-            rows = json.loads(path.read_text(encoding='utf-8'))
-            rows[0]['approval_state'] = 'APPROVED'
-            path.write_text(json.dumps(rows), encoding='utf-8')
+            path = root/na.FOLDER/'admission-report.json'
+            path.parent.mkdir(parents=True)
+            report = json.loads((na.ROOT/na.FOLDER/'admission-report.json').read_text(encoding='utf-8'))
+            report['approved_exclusion_rows'] = 1178
+            path.write_text(json.dumps(report), encoding='utf-8')
             with patch.object(na, 'reconstruct', return_value=copy.deepcopy(self.inputs)):
                 with self.assertRaisesRegex(ValueError, 'PINNED_INPUT_CHANGED'):
                     na.verify(root, at=date(2026, 11, 11))

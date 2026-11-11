@@ -37,7 +37,7 @@ PINS = {
 }
 REVIEW_PIN = '64be0f3cf6b4345f73a83af9f91eb56445b9bfa31b81b1990b009c39739e8e40'
 CONTEXT_PIN = '48915be7de329a10475ffcb8bc24dd8eb89f19f1b94d80f2f4bf1ccfe2341f17'
-OUTPUT_PINS = {'data/negative.json': '57405055be2db88f3b982436348a7e01517af573f5d6cf77667554e81217401a', 'data/sources.json': 'b7c79d8fc2faa549540c0aaaab940a6008dd0a57e474b8215c0c879c78515c15', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'admission-report.json': 'da48963260945b2e97a6ed3870ed044b24819c10360604073dfa8b87ae220c99'}  # Filled from the actual reviewed source artifacts, never fixtures.
+REPORT_PIN = 'da48963260945b2e97a6ed3870ed044b24819c10360604073dfa8b87ae220c99'
 
 
 def need(condition, code):
@@ -122,9 +122,10 @@ def validate_review(review, context, campaign):
     need(review['subject_sha256'] == subject(review, context, campaign), 'REVIEW_SUBJECT_CHANGED')
 
 
-def make_record(row, review, occurrences):
+def make_record(row, review, occurrences, *, source_id='KP-20261111-EMPLOYMENT-LIFECYCLE',
+                source_reference=None, review_folder=FOLDER, allowed_intents=INTENTS):
     key = row['normalized_text']
-    need(row['disposition'] == 'NEGATIVE_EXACT_REVIEW' and row['assessment']['intent'] in INTENTS and
+    need(row['disposition'] == 'NEGATIVE_EXACT_REVIEW' and row['assessment']['intent'] in allowed_intents and
          len(row['original_forms']) == 1 and normalize(row['original_forms'][0]) == key,
          'UNREVIEWED_OR_HELD_PHRASE')
     need(canonical(row['assessment']['negative_scope_proposal']) == canonical(
@@ -133,9 +134,9 @@ def make_record(row, review, occurrences):
     identity = 'BSRE-N-'+hashlib.sha256(key.encode()).hexdigest()[:24]
     return {'keyword_id': identity, 'negative_id': identity, 'original_text': row['original_forms'][0],
         'normalized_text': key, 'language': 'en', 'match_type': 'EXACT',
-        'source_id': 'KP-20261111-EMPLOYMENT-LIFECYCLE', 'source_type': 'official_reference',
-        'source_reference': COHORT+'/employment-lifecycle.json#'+str(row['source_refs'][0]['source_line']),
-        'evidence_ref': FOLDER+'/review.json#'+identity, 'review_state': 'REVIEWED',
+        'source_id': source_id, 'source_type': 'official_reference',
+        'source_reference': source_reference or COHORT+'/employment-lifecycle.json#'+str(row['source_refs'][0]['source_line']),
+        'evidence_ref': review_folder+'/review.json#'+identity, 'review_state': 'REVIEWED',
         'reviewer': review['reviewer'], 'reviewed_on': review['reviewed_on'], 'valid_until': review['valid_until'],
         'volume': None, 'cpc': None, 'observed_query': None, 'observation_date': None,
         'reason_code': row['assessment']['intent'], 'service_applicability': ['residential_rental'],
@@ -231,10 +232,6 @@ def summarize(inputs, report):
 
 def verify(root=ROOT, at=None):
     inputs = reconstruct(root)
-    for relative, expected in (('data/negative.json', inputs['records']),
-            ('data/sources.json', inputs['sources']), ('data/campaign_context.json', inputs['campaign_context'])):
-        actual = pinned(root, 'tools/keyword-system/'+relative, OUTPUT_PINS[relative])
-        need(canonical(actual) == canonical(expected), 'RESEARCH_RECORDS_DIFFER_FROM_REVIEW')
     when = dubai_date() if at is None else at
     report = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
                    inputs['campaign_context'], inputs['protected_queries'], when)
@@ -243,7 +240,9 @@ def verify(root=ROOT, at=None):
          summary['approved_exclusion_rows'] == 0 and not summary['exact_target_pass'] and
          not summary['computed_conflicts'] and not summary['deployment_export_allowed'] and
          not summary['positive_library_coverage_verified'], 'RESEARCH_NOT_ELIGIBLE_OR_AUTHORITY_CHANGED')
-    saved = pinned(root, FOLDER+'/admission-report.json', OUTPUT_PINS['admission-report.json'])
+    # This immutable cohort owns its review/report. The required negative_library
+    # gate owns the complete persisted masters, including every registered cohort.
+    saved = pinned(root, FOLDER+'/admission-report.json', REPORT_PIN)
     historical = dict(summary, as_of=inputs['review']['reviewed_on'])
     need(canonical(saved) == canonical(historical), 'ADMISSION_REPORT_CHANGED')
     return dict(summary, passed=True)
