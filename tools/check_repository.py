@@ -121,6 +121,7 @@ def run_checks(require_php=False):
     run("keyword-occupational-education-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-occupational-education-2026-11-11/verify_triage.py")])
     run("keyword-employment-lifecycle-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_capture.py")])
     run("keyword-employment-lifecycle-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_triage.py")])
+    run("keyword-gap-research-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-research-2026-11-11/verify_capture.py")])
     run("keyword-observed-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-negative-research-admission", [sys.executable, "-B", str(ROOT / "tools/keyword-system/negative_admission.py")])
     run("keyword-negative-research-composition", [sys.executable, "-B", str(ROOT / "tools/keyword-system/negative_library.py")])
