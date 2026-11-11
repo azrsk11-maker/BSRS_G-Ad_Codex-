@@ -24,6 +24,10 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 
 ## Pending judgment (issue links will be recorded after creation)
 
+### Composed negative research implementation — 11 November 2026
+
+The Master sections2/6 research-versus-exclusion distinction remains unchanged. The complete negative research master now composes1,178initial and935new actual AI-reviewed employment/application phrases: **2,113/14,000, deficit11,887; positive admission0; exclusion-approved/deployed0**. Four prior overlaps are not counted again and five unresolved spelling/spacing/punctuation variants remain held/protected. The first cohort reproduces its original published bytes; additional mandatory composition checks own the complete masters and reject duplicates/disagreements/unknown additions. This is authorized engineering/research progress, **not a new owner approval** or relaxation of independent review, actual scope binding, full-library or production gates. [Evidence and executable reproduction](../audit/keyword-negative-employment-admission-2026-11-11/README.md).
+
 ### Negative research-stage clarification — 11 November 2026
 
 Master sections2/6 explicitly separate researched negative records from approval to apply exclusions. The first1,178AI-reviewed records are proposed only for the unchanged residential-rental planning slot `BSRE-C0301`; actual URL/Google campaign mapping/release approval remain unset. Current public tenant-brief intake supports purpose review, without asserting stock, availability, delivery or commercial readiness. This neither resolves the four-campaign/D1 crosswalk nor makes a new business-service commitment.
