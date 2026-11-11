@@ -7,11 +7,61 @@ import tempfile
 import unittest
 
 from planner_discovery import parse_discovery
-from test_planner_discovery import fixture, fixture_row
+from test_planner_discovery import PRIVATE_SENTINEL, fixture, fixture_row
 import supplemental_discovery as sd
 
 
 class SupplementalDiscoveryTests(unittest.TestCase):
+    def test_proposal_assembly_roundtrip_preserves_private_projection_and_inputs(self):
+        before = copy.deepcopy(self.batches)
+        files = sd.assemble_capture(self.batches, capture_date_dubai="2026-11-11")
+        pins = {name: hashlib.sha256(blob).hexdigest() for name, blob in files.items()}
+        target = self.folder / "assembled"
+        target.mkdir()
+        for name, blob in files.items():
+            self.assertIsInstance(blob, bytes)
+            self.assertNotIn(PRIVATE_SENTINEL.encode(), blob)
+            (target / name).write_bytes(blob)
+        result = sd.verify_capture(target, pins, self.raw_sources)
+        self.assertEqual(result["scope"], "PRIVATE_RAW_EQUIVALENCE")
+        self.assertEqual((result["export_rows"], result["distinct_phrases"]), (4, 3))
+        self.assertEqual(self.batches, before)
+        self.assertEqual(json.loads(files["capture.json"])["master_contribution"], sd.MASTER)
+        self.assertFalse(result["deployment_authorized"])
+
+    def test_project_requires_independent_ui_count_account_and_exact_raw_hash(self):
+        path = self.folder / "synthetic-count-discrepancy.csv"
+        path.write_bytes(fixture([fixture_row("synthetic phrase " + str(i)) for i in range(166)]))
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        seeds = ["synthetic phrase 0"]
+        context = dict(sd.CONTEXT, ui_idea_count=166)
+        args = dict(topic="synthetic", batch_id="TEST_ONLY_COUNT", input_seeds=seeds,
+                    ui_context=context, expected_source_sha256=digest)
+        result = sd.project_discovery(path, **args)
+        self.assertEqual(result["seed_reconciliation"]["exact_returned"], 1)
+        for changed in ({"ui_context": dict(context, ui_idea_count=169)},
+                        {"ui_context": dict(context, account_id="000-000-0000")},
+                        {"expected_source_sha256": "0" * 64}):
+            with self.subTest(changed=list(changed)), self.assertRaises(ValueError):
+                sd.project_discovery(path, **dict(args, **changed))
+        seeds.append("changed input")
+        context["ui_idea_count"] = 169
+        self.assertEqual(result["input_seeds"], ["synthetic phrase 0"])
+        self.assertEqual(result["ui_context"]["ui_idea_count"], 166)
+        self.assertNotIn(PRIVATE_SENTINEL, json.dumps(result))
+
+    def test_assembly_rejects_collisions_authority_and_invalid_identity(self):
+        for mutate in (lambda b: b[1].update(batch_id=b[0]["batch_id"]),
+                       lambda b: b[1].update(topic=b[0]["topic"]),
+                       lambda b: b[0].update(topic="../outside"),
+                       lambda b: b[0]["controls"].update(approved=True)):
+            batch = copy.deepcopy(self.batches)
+            mutate(batch)
+            with self.assertRaises(ValueError):
+                sd.assemble_capture(batch, capture_date_dubai="2026-11-11")
+        with self.assertRaises(ValueError):
+            sd.assemble_capture(self.batches, capture_date_dubai="2026-02-30")
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

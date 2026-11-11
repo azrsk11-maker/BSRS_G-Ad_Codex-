@@ -8,6 +8,7 @@ from __future__ import annotations
 from collections import Counter
 from datetime import date
 import hashlib
+import json
 from pathlib import Path
 import re
 
@@ -110,6 +111,72 @@ def _batch(batch):
     _need(_exact(batch["seed_reconciliation"], {"exact_returned": len(seeds) - len(missing),
                                               "without_separate_exact_row": missing}), "SEED_RECONCILIATION")
     return Counter({key: len(lines) for key, lines in groups.items()})
+
+
+def project_discovery(raw_path: Path, *, topic: str, batch_id: str,
+                      input_seeds: list, ui_context: dict,
+                      expected_source_sha256: str) -> dict:
+    """Propose an unreviewed batch using separately observed UI context.
+
+    Never derive the UI count from the export to make a mismatch pass. This
+    reads one private export; it writes nothing and confers no review authority.
+    """
+    _need(_hash(expected_source_sha256), "EXPECTED_SOURCE_HASH")
+    _need(isinstance(input_seeds, list) and isinstance(ui_context, dict), "PROJECTION_INPUTS")
+    data = parse_discovery(raw_path)
+    _need(data["source_sha256"] == expected_source_sha256, "SOURCE_HASH_MISMATCH")
+    returned = {_normalized_keyword(r["values"]["Keyword"]) for r in data["records"]}
+    # Validate seed types before normalization; never print source cells/errors.
+    _need(all(isinstance(s, str) for s in input_seeds), "SEED_IDENTITIES")
+    missing = [{"seed": seed, "grouped_under": None}
+               for seed in input_seeds if normalize(seed) not in returned]
+    batch = {"version": 1, "scope": "AUTHENTIC_PLANNER_DISCOVERY_UNREVIEWED",
+             "batch_id": batch_id, "topic": topic, "input_seeds": list(input_seeds),
+             "ui_context": dict(ui_context), "source_projection": data,
+             "seed_reconciliation": {"exact_returned": len(input_seeds) - len(missing),
+                                     "without_separate_exact_row": missing},
+             "controls": dict(CONTROLS)}
+    _batch(batch)
+    return batch
+
+
+def assemble_capture(batches: list, *, capture_date_dubai: str) -> dict[str, bytes]:
+    """Return canonical public capture bytes, without a filesystem/network writer.
+
+    Callers must separately verify actual UI evidence, privacy and source pins.
+    The unchanged verifier remains the acceptance boundary after serialization.
+    """
+    _need(isinstance(batches, list) and 1 <= len(batches) <= 32, "SOURCE_FILES")
+    _need(isinstance(capture_date_dubai, str)
+          and date.fromisoformat(capture_date_dubai).isoformat() == capture_date_dubai, "CAPTURE_DATE")
+    def encode(value):
+        return (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    output, items, ids, topics = {}, [], set(), set()
+    keys, presence = Counter(), Counter()
+    for batch in batches:
+        local = _batch(batch)
+        topic, identity = batch["topic"], batch["batch_id"]
+        filename = topic + ".json"
+        _need(_name(filename, ".json") and filename != "capture.json", "SOURCE_FILE_IDENTITY")
+        _need(identity not in ids and topic not in topics, "DUPLICATE_BATCH_OR_TOPIC")
+        ids.add(identity); topics.add(topic)
+        blob = encode(batch)
+        output[filename] = blob
+        data = batch["source_projection"]
+        items.append({"file": filename, "batch_id": identity,
+                      "sha256": hashlib.sha256(blob).hexdigest(), "bytes": len(blob),
+                      "records": data["record_count"], "distinct_normalized": len(local),
+                      "source_bytes": data["source_bytes"], "source_sha256": data["source_sha256"]})
+        keys.update(local); presence.update(local.keys())
+    total = sum(keys.values())
+    output["capture.json"] = encode({"version": 1, "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+        "account_id": CONTEXT["account_id"], "capture_date_dubai": capture_date_dubai,
+        "source_files": items, "totals": {"export_rows": total,
+            "distinct_normalized_phrases": len(keys), "repeated_occurrences": total - len(keys),
+            "duplicate_phrase_groups": sum(v > 1 for v in keys.values()),
+            "cross_batch_overlap_groups": sum(v > 1 for v in presence.values())},
+        "master_contribution": dict(MASTER)})
+    return output
 
 
 def verify_capture(folder: Path, pins: dict, sources: dict | None = None) -> dict:

@@ -91,6 +91,8 @@ The importer hashes and parses the same bounded archive snapshot. Both output pa
 
 ## Deployment boundary
 
+For additional authentic Planner captures, `supplemental_discovery.project_discovery` accepts one private raw path, independently observed UI context/seeds and its expected SHA-256. `assemble_capture` returns canonical filename-to-UTF-8-bytes proposals for separately validated batches; it writes nothing. Run the unchanged `verify_capture` with pinned public files and optional private sources after serialization. UI counts must come from actual UI evidence: an export count must never be substituted to clear a mismatch. These helpers preserve account-column omission and zero review/master/deployment authority. [Current four-batch example and quarantine](../../docs/audit/keyword-role-exam-assets-2026-11-11/README.md). Their focused regression checks run with `python -B -m unittest -q test_supplemental_discovery` from this directory. No arbitrary source, capture path or platform-writer registration is added by using them.
+
 All reports and release diagnostics have `deployment_export_allowed:false`. There is no Ads API, write, push or upload-format exporter. The release diagnostic separately checks both exact14,000targets, reviewed structure, negative exclusion approvals and separate settings/budget/publication/tracking owner references; it still directs execution to a separately reviewed release manifest. Passing research checks or inserting an approval-shapedJSONrecord never grants production authority. Deployment availability is a future explicitly authorized integration, not a hidden switch.
 
 ## Acceptance and remaining dependencies
