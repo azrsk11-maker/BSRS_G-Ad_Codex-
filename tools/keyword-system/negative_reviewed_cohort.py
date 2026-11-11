@@ -16,7 +16,8 @@ CATALOG = ({'key': 'academic-20261111',
     {'key': 'nonproperty-20261111',
      'folder': 'docs/audit/keyword-negative-nonproperty-admission-2026-11-11', 'review_sha256': '9ccc090b096ad6c27c0c163f4cf7dcffa1d19eb1fd6033edd2eb0d8a03144488', 'report_sha256': '74468db413b5dd2badcde2e736495c3c49b4c4aa49e6ba81255477a1a26cd3c7', 'expected_rows': 412},
     {'key': 'vehicle-20261111', 'folder': 'docs/audit/keyword-negative-vehicle-admission-2026-11-11', 'review_sha256': 'cece889ed2775eecb0480157b6ab6e96aff93384e09f9fa19b1eb9db24a0cd0b', 'report_sha256': '3abc58e9dc0f8692dfdd333f389e2b574364089821672d99aacfceccc675a901', 'expected_rows': 1509},
-    {'key': 'study-goods-20261111', 'folder': 'docs/audit/keyword-negative-study-goods-admission-2026-11-11', 'review_sha256': 'ce32ec9287f9d88b71fea69fdba1f55cbbebd2bb4f9d22a5c9120b127ae2f268', 'report_sha256': '7860e1f32e5415abb57b8e7ccc6ded762d3bf1655f7d8063daf305c03e850968', 'expected_rows': 259},)
+    {'key': 'study-goods-20261111', 'folder': 'docs/audit/keyword-negative-study-goods-admission-2026-11-11', 'review_sha256': 'ce32ec9287f9d88b71fea69fdba1f55cbbebd2bb4f9d22a5c9120b127ae2f268', 'report_sha256': '7860e1f32e5415abb57b8e7ccc6ded762d3bf1655f7d8063daf305c03e850968', 'expected_rows': 259},
+    {'key': 'gap-20261111', 'folder': 'docs/audit/keyword-negative-gap-admission-2026-11-11', 'review_sha256': 'a3bb5d2980e195102b60a662216a8d38e9979b8178e307aa37601e3e3711a5b7', 'report_sha256': '0ee7db1b933058306a8c5465fdd3176d80d3279cb4f2e8846798937e09234eb0', 'expected_rows': 1992},)
 LIMITS = ('human_review_verified', 'exclusion_approval_granted',
           'live_binding_verified', 'production_authorized')
 

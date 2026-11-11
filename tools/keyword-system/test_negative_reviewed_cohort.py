@@ -220,10 +220,10 @@ class SeparatedCaptureTests(unittest.TestCase):
     def setUpClass(cls):
         initial=first.reconstruct()
         cls.prior=library.compose([initial,employment.reconstruct(prior=initial)])
-        for entry in registered.CATALOG[:-1]:
+        for entry in registered.CATALOG[:3]:
             part=registered.reconstruct(first.ROOT,entry,cls.prior)
             cls.prior=library.compose([cls.prior,part])
-        cls.entry=registered.CATALOG[-1]
+        cls.entry=registered.CATALOG[3]
         cls.inputs=registered.reconstruct(first.ROOT,cls.entry,cls.prior)
         cls.capture='docs/audit/keyword-discovery-2026-11-08/capture.json'
         cls.context=first.pinned(first.ROOT,first.FOLDER+'/service-context.json',first.CONTEXT_PIN)
@@ -300,6 +300,64 @@ class SeparatedCaptureTests(unittest.TestCase):
         with patch.object(registered,'CATALOG',(entry,)),patch.object(first,'pinned',side_effect=changed):
             with self.assertRaisesRegex(ValueError,'REGISTERED_UNRESOLVED_CONFLICT'):
                 registered.reconstruct(first.ROOT,entry,self.prior)
+
+
+class GapCohortTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        initial = first.reconstruct()
+        cls.prior = library.compose([initial, employment.reconstruct(prior=initial)])
+        for entry in registered.CATALOG[:4]:
+            cls.prior = library.compose([cls.prior, registered.reconstruct(first.ROOT, entry, cls.prior)])
+        cls.entry = registered.CATALOG[4]
+        cls.inputs = registered.reconstruct(first.ROOT, cls.entry, cls.prior)
+
+    def test_actual_gap_review_keeps_uncertain_platforms_and_wording_out(self):
+        result = registered._verify_reconstructed(self.inputs, self.entry, at=date(2026, 11, 11))
+        self.assertEqual((result['reviewed_eligible_rows'], result['held_phrases']), (1992, 5))
+        self.assertEqual(result['protected_queries_indexed'], 13261)
+        self.assertEqual(result['source_occurrences_retained'], 1992)
+        self.assertEqual(len(self.inputs['sources']), 3)
+        selected = {r['normalized_text'] for r in self.inputs['records']}
+        protected = {r['text'] for r in self.inputs['protected_queries']}
+        for phrase in set(self.inputs['review']['held_phrases']) | {
+            'woocommerce for real estate', 'themeforest wp residence',
+            'real estate website themeforest', 'property vacancies',
+            'hiring a property manager', 'pest control company for sale in dubai'}:
+            self.assertNotIn(phrase, selected)
+            self.assertIn(phrase, protected)
+        self.assertEqual(self.inputs['review']['variant_review']['token_bag_groups'], 84)
+        self.assertEqual(self.inputs['review']['variant_review']['phrases_in_groups'], 185)
+        self.assertFalse(result['human_review_verified'])
+        self.assertFalse(result['deployment_export_allowed'])
+
+    def test_new_coverage_preserves_old_disagreements_and_new_navigation_hold(self):
+        review = self.inputs['review']
+        self.assertEqual(len(review['coverage_reports']), 2)
+        reference = review['coverage_reports'][1]
+        coverage = first.pinned(first.ROOT, reference['file'], reference['sha256'])
+        self.assertEqual((coverage['capture_batches'], coverage['review_documents']), (20, 12))
+        self.assertEqual(coverage['canonical_disposition_counts']['DISAGREEMENT_HOLD'], 21)
+        conflicts = {r['negative'] for r in coverage['provisional_exact_screen']['conflicts']}
+        self.assertEqual(len(conflicts), 5)
+        self.assertIn('woocommerce for real estate', conflicts)
+        self.assertFalse(coverage['provisional_exact_screen']['google_matching_verified'])
+        self.assertFalse(coverage['deployment_authorized'])
+
+    def test_gap_research_allocation_extends_history_without_spend_or_approval(self):
+        allocation = json.loads((first.ROOT/self.entry['folder']/'research-pool-allocation.json').read_bytes())
+        previous = json.loads((first.ROOT/allocation['previous_allocation_ref']).read_bytes())
+        self.assertEqual(allocation['before'], previous['after'])
+        self.assertEqual(allocation['review_sha256'], self.entry['review_sha256'])
+        changes = {k: allocation['after'][k]-v for k,v in allocation['before'].items()}
+        self.assertEqual({k:v for k,v in changes.items() if v}, {'EMPLOYMENT':-10,'UNRELATED_PRODUCT':10})
+        self.assertEqual(sum(allocation['after'].values()), 14000)
+        self.assertEqual(sum(allocation['admitted'].values()), 7188)
+        self.assertEqual(sum(allocation['remaining'].values()), 6812)
+        self.assertEqual(allocation['admitted'], {'EMPLOYMENT':2946,'ACADEMIC':1104,'SOFTWARE':708,
+            'MEDIA':387,'SERVICE':466,'UNRELATED_PRODUCT':1577,'NAVIGATION':0})
+        for key in ('owner_approval_claimed','media_budget_changed','exclusion_approval_granted'):
+            self.assertIs(allocation[key], False)
 
 
 if __name__ == '__main__':

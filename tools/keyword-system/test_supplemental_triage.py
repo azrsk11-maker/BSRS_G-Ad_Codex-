@@ -31,6 +31,18 @@ class SupplementalTriageTests(unittest.TestCase):
                 st.load_corpus(Path('.'), capture=capture)
             load.assert_not_called()
 
+    def test_gap_capture_preserves_three_batches_without_topic_intent_inheritance(self):
+        data = st.load_corpus(Path(__file__).resolve().parents[2], capture=st.GAP_RESEARCH_CAPTURE)
+        built = st.compile_workbench(data, dated())
+        self.assertEqual((len(data['sources']), len(data['entries'])), (3, 3084))
+        self.assertEqual(sum(len(e['source_refs']) for e in data['entries'].values()), 3084)
+        self.assertEqual(built['summary']['dispositions']['UNASSESSED'], 3084)
+        self.assertTrue(all(row['assessment'] is None for row in built['queue']))
+        for phrase in ('property vacancies', 'hiring a property manager',
+                       'pest control company for sale in dubai', 'real estate game assets'):
+            self.assertIn(phrase, data['entries'])
+        self.assertFalse(built['controls']['deployment_authorized'])
+
     def test_employment_capture_is_explicit_and_preserves_all_136_rows(self):
         data = st.load_corpus(Path(__file__).resolve().parents[2], capture=st.EMPLOYMENT_CAPTURE)
         built = st.compile_workbench(data, dated())
