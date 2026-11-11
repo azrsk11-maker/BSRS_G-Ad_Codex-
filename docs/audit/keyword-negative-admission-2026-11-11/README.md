@@ -1,5 +1,7 @@
 # First scoped negative research admission
 
+This is the immutable **first-cohort observation**. The later [composed library](../keyword-negative-employment-admission-2026-11-11/README.md) contains2,113research rows/11,887deficit; its aggregate report and mandatory master-composition gate own the current totals. The original1,178records/review/report below remain reproducible.
+
 **1,178 distinct actual phrases now have complete, AI-reviewed research records.** Negative research deficit: **12,822/14,000**. Positive admission remains0/14,000. **Exclusion-approved0, deployed0, independent human review unverified.** This is a partial research master, not a completed library or serving permission. [Machine-readable result](admission-report.json) and [dated review](review.json) preserve those distinctions.
 
 ## Why admission is now possible
@@ -39,7 +41,7 @@ python -B tools/keyword-system/negative_admission.py
 python -B -m unittest discover -s tools/keyword-system -p test_negative_admission.py -v
 ```
 
-The read-only gate checks review/source/master/report byte pins and subject binding, reconstructs every record from actual capture occurrences, derives protection in memory and invokes the unchanged generic audit. It is a required Foundation check. It has no network, credential, live write, platform upload or approval operation. Output is aggregate status; it never overwrites a master or source. The public source files, preliminary annotations, original compiler, source requirements and historical results stay unchanged.
+The read-only first-cohort gate checks review/source/report byte pins and subject binding, reconstructs every original record from actual capture occurrences, derives protection in memory and invokes the unchanged generic audit. It remains a required Foundation check. The additional mandatory `negative_library.py` gate owns all persisted master bytes/content and checks every registered cohort together; this first-cohort result alone cannot certify an expanded master. Both have no network, credential, live write, platform upload or approval operation. Source captures, preliminary annotations, original compiler, requirements and historical report bytes stay unchanged.
 
 Thirteen focused tests cover actual counts/provenance, protection/service failures, review tampering, authority/ID/URL spoofing, holds, expiry/future dates, path traversal/drive escapes, file/parent links and persisted-record approval changes. Temporary mutations are test-only; no fixture is admitted or sent to Google. Local Windows skips the unavailable symlink-creation test; Linux CI must exercise that boundary. Current combined local/CI outcomes are recorded in the verified PR handover. This integrity gate cannot cryptographically authenticate reviewer/source truth; its actual evidence and independent review remain inspectable obligations.
 
