@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 11 November owner primary-family decisions
+
+- Direct owner answers resolve Buyers primaryOff-plan/OFP and Owners primarySell/SEL. Resale/RDY and landlord-letting/LND remain secondary services within the same campaigns. [Transcribed decision in issue1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1#issuecomment-6784254659); this is planning classification, not an independently authored GitHub approval or launch permission.
+- Added the draft classification record with historical campaign references, both existing enquiry links and unassigned individual slots/entry URLs/CMS IDs. Existing Buyers/Owners fragments already list the selected primary service first and stay unchanged. No360registry/native-manifest/300brief/640catalogue, budget, Tenants/Brand or live mapping changes.
+- Issue2's “explain more” response nominates nobody and approves no evidence. Explained factual sign-off, content upkeep and the private evidence location; one bundled follow-up remains pending. No automatic editorial role for Amit or public exposure of private links.
+- First1,178AI-reviewed negative research records/12,822deficit remain intact, with exclusion-approved/deployed0. Code/data tests at accepted633d1bf6 remain applicable; this metadata-only change receives focused classification/source-preservation checks and current-head CI. Production, tracking, permissions, workbook, finance and Ads unchanged; all advertising paused.
+
 ## 11 November first scoped negative research admission
 
 - Previous turn made verified research/CI progress; fresh PR readback remains56cc851d/mainf239/open/unmerged, source683dca4clean. Full objective/referenced brief reread; Master§§2/6 and actual negative auditor show reviewed research and exclusion approval are already distinct. Generic validation and original source contracts are unchanged.
