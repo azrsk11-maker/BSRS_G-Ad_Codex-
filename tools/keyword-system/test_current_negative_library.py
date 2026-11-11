@@ -134,11 +134,11 @@ class CurrentLibraryTests(unittest.TestCase):
         filtered['records'][0]['original_text'] = 'detached test value'
         self.assertEqual(first.canonical(self.inputs), before)
 
-    def test_public_current_entrypoints_cannot_report_the_registered_count_as_current(self):
+    def test_reviewed_baseline_cannot_report_the_registered_count_as_eligible(self):
         with patch.object(current, 'reconstruct_registered', return_value=self.inputs), \
              patch.object(current, 'latest_screen', return_value=self.latest):
-            filtered = current.reconstruct(at=self.when)
-            result = current.verify(at=self.when)
+            filtered = current.reconstruct_reviewed_baseline(at=self.when)
+            result = current.verify_reviewed_baseline(at=self.when)
         self.assertEqual(len(filtered['records']), 8025)
         self.assertEqual((result['registered_research_rows'], result['reviewed_eligible_rows'],
                           result['excluded_rows'], result['deficit'], result['held_historical_rows']),

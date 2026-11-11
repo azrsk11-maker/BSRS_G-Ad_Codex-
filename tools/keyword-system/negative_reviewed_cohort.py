@@ -28,6 +28,13 @@ CURRENT_CATALOG = ({'key': 'role-artifacts-20261111',
     'review_sha256': 'e4572216faf4f02ce9071c733c0552b370794a22d111f818a502c5fb7ff88136', 'report_sha256': '46925157361d2fdfdce041b3c4cd00bc91408a2dcb82bb7e94c1d59ce167d9ab',
     'expected_rows': 849},)
 
+# Compose only after the complete vendor review's current hold overlay.
+# Do not append these to either immutable earlier registration.
+AFTER_REVIEW_CATALOG = ({'key': 'vendor-operations-20261111',
+    'folder': 'docs/audit/keyword-negative-vendor-admission-2026-11-11',
+    'review_sha256': 'd3ce7a49aaa5bf872c1994e8b1d9c3c1ecfa933ce85ac3e924a2df012587ab2d',
+    'report_sha256': '7aeaec49840ef9ce13c8f7900cdd52536aa31772555b35faed5d2c0303ba2a22', 'expected_rows': 1989},)
+
 
 def load_bindings(root, review):
     reports = review['coverage_reports']
@@ -111,7 +118,7 @@ def validate_review(review, entry, context, campaign, bindings):
 
 
 def reconstruct(root, entry, prior):
-    first.need(any(entry == e for e in CATALOG + CURRENT_CATALOG), 'UNREGISTERED_COHORT')
+    first.need(any(entry == e for e in CATALOG + CURRENT_CATALOG + AFTER_REVIEW_CATALOG), 'UNREGISTERED_COHORT')
     review = first.pinned(root, entry['folder']+'/review.json', entry['review_sha256'])
     context = first.pinned(root, first.FOLDER+'/service-context.json', first.CONTEXT_PIN)
     bindings, conflicts = load_bindings(root, review)

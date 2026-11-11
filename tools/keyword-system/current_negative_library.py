@@ -30,6 +30,20 @@ LATEST_VERIFIER_PIN = '1a2687c268ac3f45948c3462bd782e7a3a86a0a70cef92f9c172da8ae
 LATEST_INDEX = 'tools/keyword-system/data/negative-latest-review-index.json'
 LATEST_INDEX_PIN = '4fe30cd2c768f5779982dc4d7cc41be3b8aa7055e67dda8008672624d9a58293'
 
+POST_FOLDER = 'docs/audit/keyword-negative-vendor-admission-2026-11-11'
+POST_INDEX = 'tools/keyword-system/data/negative-extension-index.json'
+POST_INDEX_PIN = 'dad9573128190e6a8fa9d039af6d9cc8a0ef2720d7796dc875cfc2b0ca625229'
+POST_REPORT_PIN = '0108165b9fedac03dde1aee5b89e6482dcf958521aa45c702fb77cf2252e76b6'
+POST_ALLOCATION_PIN = 'b39bc2500950b2a77367d137d05dc9666f1c4df8c80469f8a0f26ce4b7a42291'
+POST_INTENT_POOLS = {
+    'EXPLICIT_OPERATIONAL_SOFTWARE_PRODUCT_RESEARCH': 'SOFTWARE',
+    'EXPLICIT_CRM_ERP_PRODUCT_RESEARCH': 'SOFTWARE',
+    'EXPLICIT_TECHNICAL_SOURCE_RESEARCH': 'SOFTWARE',
+    'EXPLICIT_EMPLOYMENT_RESEARCH': 'EMPLOYMENT',
+    'EXPLICIT_OCCUPATIONAL_APPLICATION_ARTIFACT_RESEARCH': 'EMPLOYMENT',
+    'EXPLICIT_OCCUPATIONAL_ENTRY_RESEARCH': 'EMPLOYMENT',
+}
+
 INTENT_POOLS = {
     'EXPLICIT_OCCUPATIONAL_STUDY_OR_ASSESSMENT_RESEARCH': 'ACADEMIC',
     'EXPLICIT_APPLICATION_DOCUMENT_RESEARCH': 'EMPLOYMENT',
@@ -229,13 +243,14 @@ def apply_latest(inputs, screen):
         deployment_authorized=False, production_writes_available=False))
 
 
-def reconstruct(root=first.ROOT, at=None):
+def reconstruct_reviewed_baseline(root=first.ROOT, at=None):
+    """Immutable 8,025-row input after the complete source-review holds."""
     when = first.dubai_date() if at is None else at
     inputs = reconstruct_registered(root, at=when)
     return apply_latest(inputs, latest_screen(inputs, root, when))
 
 
-def verify(root=first.ROOT, at=None):
+def verify_reviewed_baseline(root=first.ROOT, at=None):
     when = first.dubai_date() if at is None else at
     inputs = reconstruct_registered(root, at=when)
     screen = latest_screen(inputs, root, when)
@@ -249,6 +264,146 @@ def verify(root=first.ROOT, at=None):
         held_historical_rows=screen['review_index']['counts']['total_archived'],
         latest_protection_evidence=LATEST_FOLDER+'/admitted-master-impact.json',
         current_index_file=LATEST_INDEX, index_verified=True, admission_held=impact['admission_held'], release_held=True)
+
+
+def compose_reviewed_parts(base, parts):
+    """Pure construction, never admission acceptance or source authentication."""
+    merged = history.compose([base]+parts)
+    return deepcopy(dict(merged, archived_records=base['archived_records'],
+        reviewed_base_eligible_rows=len(base['records']),
+        reviewed_base_records_sha256=hashlib.sha256(first.canonical(base['records'])).hexdigest(),
+        reviewed_base_archived_ids=[r['keyword_id'] for r in base['archived_records']],
+        reviewed_base_protected_count=len(base['protected_queries']),
+        post_review_cohorts=[part['review'] for part in parts],
+        deployment_authorized=False, production_writes_available=False))
+
+
+def extend_reviewed_base(base, root, when):
+    parts = []
+    for entry in registered.AFTER_REVIEW_CATALOG:
+        part = registered.reconstruct(root, entry, history.compose([base]+parts))
+        registered._verify_reconstructed(part, entry, root, when)
+        parts.append(part)
+    return compose_reviewed_parts(base, parts)
+
+
+def post_index(inputs):
+    records, archived = inputs['records'], inputs['archived_records']
+    n = inputs['reviewed_base_eligible_rows']
+    first.need(type(n) is int and n == 8025 and len(archived) == 12 and
+        len(records) == n+sum(e['expected_rows'] for e in registered.AFTER_REVIEW_CATALOG),
+        'POST_REVIEW_MEMBERSHIP_COUNT')
+    ids = [r['keyword_id'] for r in records]
+    held = [r['keyword_id'] for r in archived]
+    phrases = [normalize(r['original_text']) for r in records+archived]
+    first.need(all(phrases) and len(phrases) == len(set(phrases)) and
+        len(ids+held) == len(set(ids+held)), 'POST_REVIEW_IDENTITY_COLLISION')
+    first.need(held == inputs['reviewed_base_archived_ids'] and
+        hashlib.sha256(first.canonical(records[:n])).hexdigest() == inputs['reviewed_base_records_sha256'],
+        'POST_REVIEW_BASE_REPLACED')
+    return {'version': 1, 'scope': 'RESEARCH_EXTENSION_INDEX_NOT_EXCLUSION_APPROVAL',
+        'reviewed_base': {'registered_index': reference({'file':INDEX,'sha256':INDEX_PIN}),
+            'latest_hold_overlay': reference({'file':LATEST_INDEX,'sha256':LATEST_INDEX_PIN}),
+            'eligible_rows':n,'records_sha256':inputs['reviewed_base_records_sha256'],
+            'protected_queries':inputs['reviewed_base_protected_count']},
+        'cohorts':[{'review':reference({'file':e['folder']+'/review.json','sha256':e['review_sha256']}),
+                    'report':reference({'file':e['folder']+'/cohort-report.json','sha256':e['report_sha256']})}
+                   for e in registered.AFTER_REVIEW_CATALOG],
+        'counts':{'baseline_eligible':n,'new':len(records)-n,'eligible':len(records),
+            'archived_originals':len(held),'new_held':sum(len(r['held_phrases']) for r in inputs['post_review_cohorts']),
+            'protected_queries':len(inputs['protected_queries'])},
+        'additional_eligible_keyword_ids':ids[n:],
+        'additional_records_sha256':hashlib.sha256(first.canonical(records[n:])).hexdigest(),
+        'archived_original_keyword_ids':held,
+        'archived_records_sha256':hashlib.sha256(first.canonical(archived)).hexdigest(),
+        'research_only':True,'human_review_verified':False,'exclusion_approval_granted':False,
+        'deployment_authorized':False,'historical_records_rewritten':False}
+
+
+def post_allocation(inputs, previous, overlay):
+    first.need(previous['total_target'] == 14000 and previous['total_admitted'] == 8035 and
+        sum(previous['targets'].values()) == 14000 and sum(previous['admitted'].values()) == 8035,
+        'POST_ALLOCATION_BASE')
+    archive = {r['keyword_id']:r for r in inputs['archived_records']}
+    deduction = Counter()
+    for identity in overlay['additional_held_keyword_ids']:
+        row = archive[identity]
+        first.need(row['reason_code'] in {'SOFTWARE','EXPLICIT_EMPLOYMENT_RESEARCH'},
+                   'POST_ALLOCATION_UNKNOWN_ARCHIVE')
+        deduction['SOFTWARE' if row['reason_code']=='SOFTWARE' else 'EMPLOYMENT'] += 1
+    first.need(dict(deduction) == {'SOFTWARE':9,'EMPLOYMENT':1}, 'POST_ALLOCATION_HOLD_DEDUCTION')
+    added = Counter()
+    for row in inputs['records'][inputs['reviewed_base_eligible_rows']:]:
+        first.need(row['reason_code'] in POST_INTENT_POOLS,'POST_ALLOCATION_UNKNOWN_INTENT')
+        added[POST_INTENT_POOLS[row['reason_code']]] += 1
+    admitted = dict(previous['admitted'])
+    for pool, amount in deduction.items(): admitted[pool] -= amount
+    for pool, amount in added.items(): admitted[pool] += amount
+    targets = dict(previous['targets'])
+    transfer = max(admitted['SOFTWARE']-targets['SOFTWARE'],0)
+    targets['SOFTWARE'] += transfer
+    targets['EMPLOYMENT'] -= transfer
+    remaining = {pool:targets[pool]-amount for pool,amount in admitted.items()}
+    first.need(sum(targets.values()) == 14000 and sum(admitted.values()) == len(inputs['records']) and
+        all(type(v) is int and v >= 0 for v in remaining.values()), 'POST_ALLOCATION_COUNTS')
+    return {'version':1,'scope':'RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL',
+        'requirements_ref':first.MASTER,'previous_allocation_ref':FOLDER+'/research-pool-allocation.json',
+        'previous_allocation_sha256':ALLOCATION_PIN,'before':previous['targets'],'targets':targets,
+        'basis':'Master section6 permits evidence-based research rebalancing. Transfer only the observed software excess from still-unfilled employment capacity; preserve every other target and the14000total. No exclusion scope, approval or media budget changes.',
+        'target_transfer':{'from':'EMPLOYMENT','to':'SOFTWARE','rows':transfer},
+        'held_deduction':dict(deduction),'new_rows':dict(added),'admitted':admitted,'remaining':remaining,
+        'total_target':14000,'total_admitted':sum(admitted.values()),'total_remaining':sum(remaining.values()),
+        'owner_approval_claimed':False,'media_budget_changed':False,'exclusion_approval_granted':False}
+
+
+def post_summary(inputs, result):
+    return {'scope':'CURRENT_REVIEWED_RESEARCH_AFTER_COMPLETE_HOLDS_AND_EXPLICIT_EXTENSION',
+        **{k:result[k] for k in ('as_of','input_rows','distinct_nonblank_phrases','reviewed_eligible_rows',
+            'excluded_rows','approved_exclusion_rows','target','deficit','exact_target_pass','structural_pass',
+            'deployment_export_allowed','production_writes_available','positive_library_coverage_verified',
+            'protected_queries_indexed')},
+        'reviewed_base_eligible_rows':inputs['reviewed_base_eligible_rows'],
+        'new_rows':len(inputs['records'])-inputs['reviewed_base_eligible_rows'],
+        'archived_original_rows':len(inputs['archived_records']),
+        'new_proposal_holds':sum(len(r['held_phrases']) for r in inputs['post_review_cohorts']),
+        'computed_conflicts':len(result['protected_conflicts']),
+        'source_occurrences_retained_in_current_records':sum(len(r['provenance_occurrences']) for r in inputs['records']),
+        'human_review_verified':False,'live_campaign_mapping_verified':False,
+        'historical_records_rewritten':False,'release_authorized':False}
+
+
+def check_post_outputs(inputs, root, when):
+    result = audit('negative',inputs['records'],inputs['sources'],inputs['campaigns'],
+                   inputs['campaign_context'],inputs['protected_queries'],when)
+    summary = post_summary(inputs,result)
+    first.need(summary['structural_pass'] and summary['reviewed_eligible_rows'] == len(inputs['records']) and
+        summary['computed_conflicts'] == summary['excluded_rows'] == summary['approved_exclusion_rows'] == 0 and
+        not summary['deployment_export_allowed'] and not summary['positive_library_coverage_verified'],
+        'POST_REVIEW_RESEARCH_NOT_ELIGIBLE')
+    saved_index = first.pinned(root,POST_INDEX,POST_INDEX_PIN)
+    first.need(first.canonical(saved_index) == first.canonical(post_index(inputs)), 'POST_REVIEW_INDEX_CHANGED')
+    previous = first.pinned(root,FOLDER+'/research-pool-allocation.json',ALLOCATION_PIN)
+    overlay = first.pinned(root,LATEST_INDEX,LATEST_INDEX_PIN)
+    allocation = first.pinned(root,POST_FOLDER+'/research-pool-allocation.json',POST_ALLOCATION_PIN)
+    first.need(first.canonical(allocation) == first.canonical(post_allocation(inputs,previous,overlay)),
+               'POST_REVIEW_ALLOCATION_CHANGED')
+    report = first.pinned(root,POST_FOLDER+'/library-report.json',POST_REPORT_PIN)
+    first.need(first.canonical(report) == first.canonical(dict(summary,as_of='2026-11-11')),
+               'POST_REVIEW_LIBRARY_REPORT_CHANGED')
+    return dict(summary,passed=True,index_verified=True,current_index_file=POST_INDEX,release_held=True)
+
+
+def reconstruct(root=first.ROOT, at=None):
+    when = first.dubai_date() if at is None else at
+    inputs = extend_reviewed_base(reconstruct_reviewed_baseline(root,at=when),root,when)
+    check_post_outputs(inputs,root,when)
+    return inputs
+
+
+def verify(root=first.ROOT, at=None):
+    when = first.dubai_date() if at is None else at
+    inputs = extend_reviewed_base(reconstruct_reviewed_baseline(root,at=when),root,when)
+    return check_post_outputs(inputs,root,when)
 
 
 if __name__ == '__main__':
