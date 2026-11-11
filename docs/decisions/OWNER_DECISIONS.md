@@ -24,6 +24,12 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 
 ## Pending judgment (issue links will be recorded after creation)
 
+### Negative research-stage clarification — 11 November 2026
+
+Master sections2/6 explicitly separate researched negative records from approval to apply exclusions. The first1,178AI-reviewed records are proposed only for the unchanged residential-rental planning slot `BSRE-C0301`; actual URL/Google campaign mapping/release approval remain unset. Current public tenant-brief intake supports purpose review, without asserting stock, availability, delivery or commercial readiness. This neither resolves the four-campaign/D1 crosswalk nor makes a new business-service commitment.
+
+All exclusions remain PENDING/HIGH/EXACT, with zero independent exclusion approvals, live bindings or deployments. The30day internal re-review deadline is a technical validity boundary, not Google policy, publisher expiry or an owner retention decision. Reviewer identity is Codex AI; independent human review remains pending. This records the existing Master contract's implementation, **not a new owner approval**. Factual-reviewer, inventory/rights, actual campaign/page and all production release decisions stay open. [Evidence and executable reproduction](../audit/keyword-negative-admission-2026-11-11/README.md).
+
 | Decision | Status | Scope |
 |---|---|---|
 | DEC-01 | [OPTION A APPROVED FOR PREPARATION #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | Prepare the four paused campaigns and one native entry per campaign. First release waits for both full reviewed libraries. Exact page bindings and the historical crosswalk remain open. |
