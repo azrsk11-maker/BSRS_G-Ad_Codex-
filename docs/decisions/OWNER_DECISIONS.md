@@ -24,6 +24,10 @@ The latest direct owner request on 7 November 2026 authorizes audit, local devel
 
 ## Pending judgment (issue links will be recorded after creation)
 
+### Academic research and validator efficiency — 11 November 2026
+
+Authorized research/development now adds 903 actual AI-reviewed academic/exam/vocational phrases while holding 56 ambiguous/protected phrases. Current negative research is **3,016 / 14,000 (deficit 10,984)**; positive admission, exclusion approvals and deployments remain zero. Earlier 2,113-record bytes and all original source/review evidence are preserved. Registration and explicit coverage pins permit future source research without automatic admission or rewriting history. A measured local 2,113-record validator comparison improved median time by 40.46% while preserving identical results and fresh per-invocation source checks. This is engineering evidence, **not a new owner decision, human review, business-fact approval or release authorization**. [Current admission](../audit/keyword-negative-academic-admission-2026-11-11/README.md), [controlled benchmark](../audit/keyword-admission-performance-2026-11-11/README.md).
+
 ### Composed negative research implementation — 11 November 2026
 
 The Master sections2/6 research-versus-exclusion distinction remains unchanged. The complete negative research master now composes1,178initial and935new actual AI-reviewed employment/application phrases: **2,113/14,000, deficit11,887; positive admission0; exclusion-approved/deployed0**. Four prior overlaps are not counted again and five unresolved spelling/spacing/punctuation variants remain held/protected. The first cohort reproduces its original published bytes; additional mandatory composition checks own the complete masters and reject duplicates/disagreements/unknown additions. This is authorized engineering/research progress, **not a new owner approval** or relaxation of independent review, actual scope binding, full-library or production gates. [Evidence and executable reproduction](../audit/keyword-negative-employment-admission-2026-11-11/README.md).
