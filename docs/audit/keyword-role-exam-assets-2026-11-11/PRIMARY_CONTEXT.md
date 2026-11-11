@@ -1,0 +1,10 @@
+# Semantic category context — 11 November 2026
+
+Read every complete literal in the four pinned exports, not just their seed headings. Source projections are provider evidence, not current vacancies, inventory, course availability or approved exclusions. Master section6 controls the review and explicitly protects property brochures, buyer guides, floor plans, due diligence and valuable owner/tenant requests.
+
+- [California DRE examinee information](https://www.dre.ca.gov/Examinees/) describes salesperson/broker examinations and distinguishes examinee resources from consumer/licence-verification resources. It supports an occupational-exam category, not a claim that any captured provider's question bank is legitimate, current or applicable in the UAE. No exam answers, qualification advice, eligibility rule or pass guarantee is copied.
+- [Adobe motion-graphics description](https://www.adobe.com/products/premiere/motion-graphics-templates.html) describes customizable motion-graphics templates as design artifacts. It supports that category only: no version, compatibility, price, availability, asset licence, lawful download or vendor affiliation is asserted.
+
+Both official pages were read on11November2026. Classifications are Codex preliminary judgments about each complete query and remain subject to independent review, conservative protections, actual narrow scope and current business evidence. Generic professional support, brochure/listing information, application/finance questions, recruitment/client hiring and product/entity navigation stay held where purpose is unresolved. Earlier protected literals are not promoted by this newer capture. Broad words such as exam, licence, questions, template, brochure, free and application confer no exclusion authority.
+
+The trade export's169/166mismatch remains quarantined and supplies no semantic records. No synthetic queries, measured demand, current course/vacancy facts or property evidence were manufactured. Production, tracking, access, finances and paused Ads remain unchanged.
