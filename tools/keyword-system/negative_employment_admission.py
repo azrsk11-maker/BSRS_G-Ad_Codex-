@@ -163,8 +163,8 @@ def summarize(inputs, result):
         'subject_sha256': inputs['review']['subject_sha256']}
 
 
-def verify(root=first.ROOT, at=None):
-    inputs = reconstruct(root)
+def _verify_reconstructed(inputs, root=first.ROOT, at=None):
+    """Internal: retain every audit/report check while reusing verified inputs in-call."""
     result = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
         inputs['campaign_context'], inputs['protected_queries'], first.dubai_date() if at is None else at)
     summary = summarize(inputs, result)
@@ -176,6 +176,10 @@ def verify(root=first.ROOT, at=None):
     first.need(first.canonical(saved) == first.canonical(dict(summary, as_of=inputs['review']['reviewed_on'])),
                'EMPLOYMENT_REPORT_CHANGED')
     return dict(summary, passed=True)
+
+
+def verify(root=first.ROOT, at=None):
+    return _verify_reconstructed(reconstruct(root), root, at)
 
 
 if __name__ == '__main__':

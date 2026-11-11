@@ -230,8 +230,8 @@ def summarize(inputs, report):
         'token_bag_is_semantic_or_google_equivalence_oracle': False}
 
 
-def verify(root=ROOT, at=None):
-    inputs = reconstruct(root)
+def _verify_reconstructed(inputs, root=ROOT, at=None):
+    """Internal: audit this call's freshly pinned reconstruction, never cached inputs."""
     when = dubai_date() if at is None else at
     report = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
                    inputs['campaign_context'], inputs['protected_queries'], when)
@@ -246,6 +246,10 @@ def verify(root=ROOT, at=None):
     historical = dict(summary, as_of=inputs['review']['reviewed_on'])
     need(canonical(saved) == canonical(historical), 'ADMISSION_REPORT_CHANGED')
     return dict(summary, passed=True)
+
+
+def verify(root=ROOT, at=None):
+    return _verify_reconstructed(reconstruct(root), root, at)
 
 
 if __name__ == '__main__':

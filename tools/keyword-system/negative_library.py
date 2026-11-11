@@ -4,9 +4,11 @@ import json
 
 import negative_admission as first
 import negative_employment_admission as employment
+import negative_reviewed_cohort as registered
 from keyword_audit import audit, normalize
 
-OUTPUT_PINS = {'data/negative.json': 'ba70665227a02cfb92bafd94dd60db9d3565550cbdaac91c146ce9763087873e', 'data/sources.json': '8cfc8ae23be8c7110f5063df2ca277eb267a4677240ecdda8b0b5291ab620268', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'library-report.json': '34c8edd2bfb17b7839202697e0a4ac2dab46444c8e9cf6a686139e3c1b7e7a58'}  # Actual complete-master and aggregate-report bytes, finalized before admission.
+OUTPUT_PINS = {'data/negative.json': '603d3f46d08b144a3f0922eea00abcb32c223b45ad749ba73f7edcd706fbc324', 'data/sources.json': '75d7de179f2b0c27cdeffcea904f92a83513e2cdbff6c6e0a3f29740d0b208e2', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'library-report.json': '24fb7dd102bdbc0976ac6e5bb845a3949e2b3501390df885e3af971a9f7bb347'}  # Actual complete-master and aggregate-report bytes, finalized before admission.
+LIBRARY_REPORT = 'docs/audit/keyword-negative-academic-admission-2026-11-11/library-report.json'
 
 
 def merge_unique(groups, key, *, allow_identical):
@@ -37,9 +39,19 @@ def compose(cohorts):
         'campaigns': registry}
 
 
-def reconstruct(root=first.ROOT):
+def reconstruct(root=first.ROOT, at=None):
     initial = first.reconstruct(root)
-    return compose([initial, employment.reconstruct(root, prior=initial)])
+    second = employment.reconstruct(root, prior=initial)
+    if at is not None:
+        first._verify_reconstructed(initial, root, at)
+        employment._verify_reconstructed(second, root, at)
+    parts = [initial, second]
+    for entry in registered.CATALOG:
+        reviewed = registered.reconstruct(root, entry, compose(parts))
+        if at is not None:
+            registered._verify_reconstructed(reviewed, entry, root, at)
+        parts.append(reviewed)
+    return compose(parts)
 
 
 def summarize(inputs, result):
@@ -49,7 +61,9 @@ def summarize(inputs, result):
         'deployment_export_allowed', 'production_writes_available', 'positive_library_coverage_verified',
         'protected_queries_indexed')},
         'cohorts': [{'review': first.FOLDER+'/review.json', 'research_rows': 1178},
-                    {'review': employment.FOLDER+'/review.json', 'research_rows': 935}],
+                    {'review': employment.FOLDER+'/review.json', 'research_rows': 935}]+
+                   [{'review': e['folder']+'/review.json', 'research_rows': e['expected_rows']}
+                    for e in registered.CATALOG],
         'source_occurrences_retained': sum(len(r['provenance_occurrences']) for r in inputs['records']),
         'computed_conflicts': len(result['protected_conflicts']),
         'approval_hold_counts': dict(Counter(reason for r in result['records'] for reason in r['deployment_holds'])),
@@ -58,10 +72,9 @@ def summarize(inputs, result):
 
 
 def verify(root=first.ROOT, at=None):
-    # Cohort report/expiry/provenance checks cannot be bypassed by a merged count.
-    first.verify(root, at)
-    employment.verify(root, at)
-    inputs = reconstruct(root)
+    # Fresh provenance once per invocation; all cohort/report/expiry checks remain.
+    when = first.dubai_date() if at is None else at
+    inputs = reconstruct(root, at=when)
     first.need(set(OUTPUT_PINS) == {'data/negative.json', 'data/sources.json',
         'data/campaign_context.json', 'library-report.json'}, 'LIBRARY_OUTPUT_BINDINGS')
     for relative, expected in (('data/negative.json', inputs['records']),
@@ -69,13 +82,15 @@ def verify(root=first.ROOT, at=None):
         actual = first.pinned(root, 'tools/keyword-system/'+relative, OUTPUT_PINS[relative])
         first.need(first.canonical(actual) == first.canonical(expected), 'LIBRARY_MASTER_DIFFERS_FROM_COHORTS')
     result = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
-        inputs['campaign_context'], inputs['protected_queries'], first.dubai_date() if at is None else at)
+        inputs['campaign_context'], inputs['protected_queries'], when)
     summary = summarize(inputs, result)
-    first.need(summary['structural_pass'] and summary['reviewed_eligible_rows'] == 2113 and
+    expected_rows = 1178+935+sum(e['expected_rows'] for e in registered.CATALOG)
+    first.need(summary['structural_pass'] and summary['reviewed_eligible_rows'] == expected_rows and
         summary['approved_exclusion_rows'] == summary['computed_conflicts'] == 0 and
-        not summary['exact_target_pass'] and not summary['deployment_export_allowed'] and
+        summary['exact_target_pass'] is (expected_rows == summary['target']) and
+        not summary['deployment_export_allowed'] and
         not summary['positive_library_coverage_verified'], 'COMPOSED_LIBRARY_NOT_ELIGIBLE')
-    saved = first.pinned(root, employment.FOLDER+'/library-report.json', OUTPUT_PINS['library-report.json'])
+    saved = first.pinned(root, LIBRARY_REPORT, OUTPUT_PINS['library-report.json'])
     historical = dict(summary, as_of='2026-11-11')
     first.need(first.canonical(saved) == first.canonical(historical), 'LIBRARY_REPORT_CHANGED')
     return dict(summary, passed=True)

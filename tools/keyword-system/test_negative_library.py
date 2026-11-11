@@ -11,6 +11,7 @@ from unittest.mock import patch
 import negative_admission as first
 import negative_employment_admission as employment
 import negative_library as library
+import negative_reviewed_cohort as registered
 from keyword_audit import audit
 
 
@@ -19,7 +20,7 @@ class NegativeLibraryTests(unittest.TestCase):
     def setUpClass(cls):
         cls.initial = first.reconstruct()
         cls.second = employment.reconstruct(prior=cls.initial)
-        cls.inputs = library.compose([cls.initial, cls.second])
+        cls.inputs = library.reconstruct()
         cls.context = first.pinned(first.ROOT, first.FOLDER+'/service-context.json', first.CONTEXT_PIN)
         cls.campaign = next(r for r in cls.initial['campaigns'] if r['campaign_key'] == first.CAMPAIGN)
         cls.bindings = first.pinned(first.ROOT, first.REPORT, first.PINS[first.REPORT])['source_bindings']['review_workbenches_sha256']
@@ -32,10 +33,10 @@ class NegativeLibraryTests(unittest.TestCase):
 
     def test_actual_library_is_partial_research_never_approval_or_release(self):
         result = library.verify(at=date(2026, 11, 11))
-        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (2113, 2113, 11887))
-        self.assertEqual(result['source_occurrences_retained'], 2117)
-        self.assertEqual(result['protected_queries_indexed'], 12086)
-        self.assertEqual(result['source_capture_count'], 4)
+        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (3016, 3016, 10984))
+        self.assertEqual(result['source_occurrences_retained'], 3020)
+        self.assertEqual(result['protected_queries_indexed'], 12139)
+        self.assertEqual(result['source_capture_count'], 5)
         self.assertEqual(result['approved_exclusion_rows'], 0)
         for key in ('exact_target_pass', 'deployment_export_allowed', 'production_writes_available',
                     'positive_library_coverage_verified', 'human_review_verified', 'live_campaign_mapping_verified'):
@@ -46,6 +47,31 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(raw).hexdigest(), '57405055be2db88f3b982436348a7e01517af573f5d6cf77667554e81217401a')
         self.assertEqual(first.verify(at=date(2026, 11, 11))['reviewed_eligible_rows'], 1178)
 
+    def test_original_two_cohorts_reproduce_their_complete_published_master(self):
+        raw = (json.dumps(self.inputs['records'][:2113], ensure_ascii=False, indent=2)+'\n').encode('utf-8')
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), 'ba70665227a02cfb92bafd94dd60db9d3565550cbdaac91c146ce9763087873e')
+
+    def test_one_fresh_reconstruction_per_registered_cohort_per_invocation(self):
+        with patch.object(first, 'reconstruct', wraps=first.reconstruct) as a, \
+             patch.object(employment, 'reconstruct', wraps=employment.reconstruct) as b, \
+             patch.object(registered, 'reconstruct', wraps=registered.reconstruct) as c:
+            result = library.verify(at=date(2026, 11, 11))
+        self.assertEqual(a.call_count, 1)
+        self.assertEqual(b.call_count, 1)
+        self.assertEqual(c.call_count, 1)
+        self.assertEqual(result['reviewed_eligible_rows'], 3016)
+
+    def test_previous_success_does_not_cache_source_inputs_across_invocations(self):
+        library.verify(at=date(2026, 11, 11))
+        original = first.pinned
+        def changed_source(root, relative, digest):
+            if relative == first.COHORT+'/employment-lifecycle.json':
+                raise ValueError('TEST_ONLY_SOURCE_CHANGED_AFTER_SUCCESS')
+            return original(root, relative, digest)
+        with patch.object(first, 'pinned', side_effect=changed_source):
+            with self.assertRaisesRegex(ValueError, 'SOURCE_CHANGED_AFTER_SUCCESS'):
+                library.verify(at=date(2026, 11, 11))
+
     def test_overlap_and_spelling_holds_cannot_pad_counts(self):
         self.assertEqual(len(self.second['existing_overlap_phrases']), 4)
         self.assertEqual(len(self.second['records']), 935)
@@ -54,7 +80,7 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertFalse(current & set(employment.HELD))
         protected = {r['text'] for r in self.inputs['protected_queries']}
         self.assertTrue(set(employment.HELD) <= protected)
-        self.assertEqual(len({r['keyword_id'] for r in self.inputs['records']}), 2113)
+        self.assertEqual(len({r['keyword_id'] for r in self.inputs['records']}), 3016)
 
     def test_source_spelling_diacritics_and_unknown_metrics_preserved(self):
         texts = {r['original_text'] for r in self.second['records']}
@@ -149,8 +175,7 @@ class NegativeLibraryTests(unittest.TestCase):
             rows = json.loads(path.read_text(encoding='utf-8'))
             rows[-1]['approval_state'] = 'APPROVED'
             path.write_text(json.dumps(rows), encoding='utf-8')
-            with patch.object(first, 'verify'), patch.object(employment, 'verify'), \
-                 patch.object(library, 'reconstruct', return_value=self.inputs):
+            with patch.object(library, 'reconstruct', return_value=self.inputs):
                 with self.assertRaisesRegex(ValueError, 'PINNED_INPUT_CHANGED'):
                     library.verify(root, at=date(2026, 11, 11))
                 pins = dict(library.OUTPUT_PINS, **{'data/negative.json': hashlib.sha256(path.read_bytes()).hexdigest()})
@@ -161,8 +186,7 @@ class NegativeLibraryTests(unittest.TestCase):
     def test_unregistered_extra_or_missing_cohort_records_cannot_be_accepted(self):
         initial_only = library.compose([self.initial])
         self.assertEqual(len(initial_only['records']), 1178)
-        with patch.object(first, 'verify'), patch.object(employment, 'verify'), \
-             patch.object(library, 'reconstruct', return_value=initial_only):
+        with patch.object(library, 'reconstruct', return_value=initial_only):
             with self.assertRaisesRegex(ValueError, 'MASTER_DIFFERS_FROM_COHORTS'):
                 library.verify(at=date(2026, 11, 11))
 
