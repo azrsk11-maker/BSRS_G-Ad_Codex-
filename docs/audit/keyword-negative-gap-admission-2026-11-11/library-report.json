@@ -1,0 +1,62 @@
+{
+  "scope": "COMPOSED_AI_REVIEWED_NEGATIVE_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "as_of": "2026-11-11",
+  "input_rows": 7188,
+  "distinct_nonblank_phrases": 7188,
+  "reviewed_eligible_rows": 7188,
+  "excluded_rows": 0,
+  "approved_exclusion_rows": 0,
+  "target": 14000,
+  "deficit": 6812,
+  "exact_target_pass": false,
+  "structural_pass": true,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "positive_library_coverage_verified": false,
+  "protected_queries_indexed": 13261,
+  "cohorts": [
+    {
+      "review": "docs/audit/keyword-negative-admission-2026-11-11/review.json",
+      "research_rows": 1178
+    },
+    {
+      "review": "docs/audit/keyword-negative-employment-admission-2026-11-11/review.json",
+      "research_rows": 935
+    },
+    {
+      "review": "docs/audit/keyword-negative-academic-admission-2026-11-11/review.json",
+      "research_rows": 903
+    },
+    {
+      "review": "docs/audit/keyword-negative-nonproperty-admission-2026-11-11/review.json",
+      "research_rows": 412
+    },
+    {
+      "review": "docs/audit/keyword-negative-vehicle-admission-2026-11-11/review.json",
+      "research_rows": 1509
+    },
+    {
+      "review": "docs/audit/keyword-negative-study-goods-admission-2026-11-11/review.json",
+      "research_rows": 259
+    },
+    {
+      "review": "docs/audit/keyword-negative-gap-admission-2026-11-11/review.json",
+      "research_rows": 1992
+    }
+  ],
+  "source_occurrences_retained": 7195,
+  "computed_conflicts": 0,
+  "approval_hold_counts": {
+    "exclusion approval missing; fail closed": 7188,
+    "independent exclusion approver required": 7188,
+    "exclusion approval: missing/invalid evidence dates": 7188,
+    "exclusion approval: dependency evidence dates invalid": 7188,
+    "verified Real Estate account scope binding missing": 7188,
+    "scope bindings: missing/invalid evidence dates": 7188,
+    "verified platform campaign binding missing for BSRE-C0301": 7188
+  },
+  "source_capture_count": 12,
+  "human_review_verified": false,
+  "live_campaign_mapping_verified": false,
+  "authored_cases_outside_research_counts": 20
+}
