@@ -11,6 +11,7 @@ Read `docs/PROGRESS.md`, then only the task-relevant evidence. The complete requ
 - One browser writer. Parallelize independent work with separate ownership. After two identical logical-phase failures investigate; verify ambiguous writes before retrying.
 - Use small targeted checks, bounded output and existing results. Do not load archives or print private records. Record material changes, measurements and uncertainty in the progress report.
 - Windows Git can convert LF source bytes, including during `git archive`. Disable `core.autocrlf` for source-only checkout/archive commands and verify pinned fixture hashes before acceptance. Preserve original bytes; never change provenance pins to accommodate a converted checkout.
+- On Windows, Python's default text encoding can be a legacy code page. Pass `encoding='utf-8'` explicitly for project text reads/writes, or use verified bytes. Review small diffs for Unicode corruption; do not rewrite unchanged text through the default encoding.
 - PowerShell does not expand wildcard paths for `rg`: pass a real directory with `-g '*.php'` (or the relevant pattern), rather than a path such as `tools/example/*.php`.
 - Public repository: exclude secrets, prospect/transaction records, live private workbook IDs, raw logs and personal machine paths. Synthetic fixtures must be clearly marked and must never be sent to Google.
 
