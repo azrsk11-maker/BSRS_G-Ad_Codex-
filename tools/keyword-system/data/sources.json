@@ -58,5 +58,35 @@
     "valid_until": "2026-12-11",
     "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
     "served_query_or_current_performance_claimed": false
+  },
+  {
+    "source_id": "KP-20261110-EDUCATION-BROADER",
+    "kind": "official_reference",
+    "approved_for_research": true,
+    "evidence_ref": "docs/audit/keyword-employment-education-2026-11-10/capture.json",
+    "observed_on": "2026-11-10",
+    "valid_until": "2026-12-11",
+    "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
+    "served_query_or_current_performance_claimed": false
+  },
+  {
+    "source_id": "KP-20261110-EDUCATION-SPECIFIC",
+    "kind": "official_reference",
+    "approved_for_research": true,
+    "evidence_ref": "docs/audit/keyword-employment-education-2026-11-10/capture.json",
+    "observed_on": "2026-11-10",
+    "valid_until": "2026-12-11",
+    "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
+    "served_query_or_current_performance_claimed": false
+  },
+  {
+    "source_id": "KP-DISC-20261108-COMMERCIAL",
+    "kind": "official_reference",
+    "approved_for_research": true,
+    "evidence_ref": "docs/audit/keyword-discovery-2026-11-08/capture.json",
+    "observed_on": "2026-11-08",
+    "valid_until": "2026-12-11",
+    "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
+    "served_query_or_current_performance_claimed": false
   }
 ]
