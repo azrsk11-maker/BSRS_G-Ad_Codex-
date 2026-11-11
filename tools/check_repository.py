@@ -126,6 +126,8 @@ def run_checks(require_php=False):
     run("keyword-employment-lifecycle-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_triage.py")])
     run("keyword-gap-research-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-research-2026-11-11/verify_capture.py")])
     run("keyword-role-exam-assets-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-role-exam-assets-2026-11-11/verify_capture.py")])
+    run("keyword-role-exam-assets-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-role-exam-assets-2026-11-11/verify_triage.py")])
+    run("keyword-role-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-role-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-gap-research-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-research-2026-11-11/verify_triage.py")])
     run("keyword-observed-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-gap-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-review-coverage-2026-11-11/verify_coverage.py")])
