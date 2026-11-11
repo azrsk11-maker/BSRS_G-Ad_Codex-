@@ -1,16 +1,16 @@
 # Observed source and preliminary review reconciliation
 
-This report now joins **fifteen Planner exports and nine preliminary workbenches** without copying their complete phrase inventories or inheriting an assessment from another occurrence. [report.json](report.json) is 22,600 bytes and binds every input by raw SHA256. It reconciles **15,472 source occurrences / 14,372 distinct source phrases / 14,396 assessment instances**. Twenty-four phrases occur in two review documents: eight agree on disposition and sixteen retain a disagreement hold. Agreement is not independent approval; disagreement never resolves by selecting the newer review.
+This report now joins **sixteen Planner exports and ten preliminary workbenches** without copying their complete phrase inventories or inheriting an assessment from another occurrence. [report.json](report.json) is 26,368 bytes and binds every input by raw SHA256. It reconciles **16,844 source occurrences / 15,740 distinct source phrases / 15,768 assessment instances**. Twenty-eight phrases occur in two review documents: eight agree on disposition and twenty retain a disagreement hold. Agreement is not independent approval; disagreement never resolves by selecting the newer review.
 
 | Canonical preliminary disposition | Distinct source phrases |
 | --- | ---: |
 | Positive review candidate | 4,292 |
-| Draft exact-negative review | 3,232 |
-| Hold, agreeing or single assessment | 6,832 |
-| Disagreement hold | 16 |
+| Draft exact-negative review | 4,187 |
+| Hold, agreeing or single assessment | 7,241 |
+| Disagreement hold | 20 |
 | Unassessed / missing structured review | 0 / 0 |
 
-**Both reviewed/approved 14,000-keyword masters remain incomplete at zero admitted entries.** These numbers reconcile preliminary work only. The report adds no master rows, campaigns, placements, approved scope or serving authority. Business evidence, independent semantic review, exact page/campaign ownership and complete approved-library testing remain required. The **6,848 total held phrases**, including sixteen disagreements, are unresolved rather than accepted positive or negative coverage. Crossing 14,000 distinct source identities does not complete either master.
+**Both reviewed/approved 14,000-keyword masters remain incomplete at zero admitted entries.** These numbers reconcile preliminary work only. The report adds no master rows, campaigns, placements, approved scope or serving authority. Business evidence, independent semantic review, exact page/campaign ownership and complete approved-library testing remain required. The **7,261 total held phrases**, including twenty disagreements, are unresolved rather than accepted positive or negative coverage. Crossing 14,000 distinct source identities does not complete either master.
 
 ## Fidelity and protection
 
@@ -22,7 +22,9 @@ The Abu Dhabi/Sharjah capture adds three more cross-review overlaps with the ear
 
 The [developer-employment capture](../keyword-developer-employment-2026-11-11/README.md) adds 925 entirely new identities: 828 draft exact exclusions and 97 holds. It introduces no overlap or new disagreement. Vacancy/role-only, house-flipping investment, career definitions, recruitment-company premises and named-source ambiguity remain protected.
 
-The broader provisional screen protects every positive candidate, every hold or unassessed phrase, and twenty separately labeled authored tests. **3,232 draft exact-negative literals have zero token-exact collisions against 11,160 provisional protected literals.** Disagreements are protected too. The twenty test cases are excluded from source and research counts. This is conservative local token matching, not Google matching, a scoped exclusion certificate or coverage of an approved 14,000-positive library. All admission, independent-review and deployment authority flags remain false.
+The [occupational-education capture](../keyword-occupational-education-2026-11-11/README.md) adds1,372actual rows,1,368new identities and four cross-review overlaps. Three explicit academic readings conflict with earlier holds; the fourth owner-learning hold conflicts with an earlier negative reading. All four retain both assessments and become disagreement holds. Its959exact proposals/413holds are not master admission or serving scope. Broad owner learning, registration checks and unverified short-code/provider identities remain protected.
+
+The broader provisional screen protects every positive candidate, every hold or unassessed phrase, and twenty separately labeled authored tests. **4,191 distinct draft-negative literals retain four token-exact collisions against 11,573 provisional protected literals.** The four conflicted literals remain disagreement holds, leaving4,187canonical draft negatives. The screen retains all proposals, including disagreements, rather than hiding collisions. Disagreements are protected too. The twenty test cases are excluded from source and research counts. This is conservative local token matching, not Google matching, a scoped exclusion certificate or coverage of an approved 14,000-positive library. All admission, independent-review and deployment authority flags remain false.
 
 ## Versioned contracts and Dubai dates
 
@@ -34,10 +36,10 @@ Review/capture days use Dubai UTC+04 explicitly, including on a UTC-hosted runne
 
 ## Reproduction and remaining work
 
-Run `python -B docs/audit/keyword-discovery-supply-2026-11-08/verify_triage.py` and `python -B docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py`. The registry is fixed to nine versioned source folders; it accepts no arbitrary path arguments. Thirteen synthetic reconciliation tests and ten focused adapter/date tests exercise real failure boundaries. Required combined local and current-head CI results are recorded in the verified PR handover.
+Run `python -B docs/audit/keyword-discovery-supply-2026-11-08/verify_triage.py` and `python -B docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py`. The registry is fixed to ten versioned source folders; it accepts no arbitrary path arguments. Thirteen synthetic reconciliation tests and ten focused adapter/date tests exercise real failure boundaries. Required combined local and current-head CI results are recorded in the verified PR handover.
 
 The earlier eleven-export report remains available at accepted commit `433a06eeab6ea98403a9457cad2a9768de7f6d96` with SHA256 `61251134d6b248366ec2872819146cda98955a9929c5e7e4ce13d752127dceb9`:11,554occurrences/10,473identities/10,478assessments,3,093candidates/2,404draft negatives/4,976holds/0disagreements. The later readiness report is retained at accepted `b77c882dca84d1e14ded31bd5331663dc2d902e2`, SHA256 `e59b5a2da4308e2e2fbce8ce1fff05f215a01e9daf6b41542f179285bccad912`:11,584occurrences/10,487identities/10,508assessments,3,103candidates/2,404draft negatives/4,965other holds plus15disagreements. The thirteen-export report at accepted `22ae91e7daaedafb4b8ef8e2fde44bbbf91018a3`, SHA256 `164da20d89e82758b568d3b447cc9bee5c3a1fca036934b43935c140c3abfdd0`, has12,285occurrences/11,188identities/11,209assessments,3,397candidates/2,404draft negatives/5,372other holds plus15disagreements. The fourteen-export continuation is recorded below. All original source and earlier review bytes are unchanged.
 
-The fourteen-export report remains at accepted `0c2a0c42371154a8a319adc559500b6c9ab93664`, SHA256 `4cddc2ecc0348a5955fffc040b881afd48a1cdf5edf00889e80432626828ed11`: 14,547 occurrences / 13,447 identities / 13,471 assessments, 4,292 candidates / 2,404 draft negatives / 6,735 other holds plus 16 disagreements. The current report pin is `104dae77af8f2e4758bb4a62916a65b34465b5aebfc32978031186520416b554`; earlier source/review bytes remain unchanged.
+The fourteen-export report remains at accepted `0c2a0c42371154a8a319adc559500b6c9ab93664`, SHA256 `4cddc2ecc0348a5955fffc040b881afd48a1cdf5edf00889e80432626828ed11`: 14,547 occurrences / 13,447 identities / 13,471 assessments, 4,292 candidates / 2,404 draft negatives / 6,735 other holds plus 16 disagreements. The fifteen-export report remains at accepted `9a8b1ec09bff6017c62cc95358d95e980f716ee2`, SHA256 `104dae77af8f2e4758bb4a62916a65b34465b5aebfc32978031186520416b554`:15,472occurrences/14,372identities/14,396assessments,4,292candidates/3,232draft negatives/6,832other holds plus16disagreements. The current report pin is `f7966d0d6cf7927de5c11739f8072b416c82130370f0ac940017e0c5f23c4d12`; earlier source/review bytes remain unchanged.
 
 Next: resolve held intent and actual business evidence, independently admit appropriate records with real scope, and continue justified source research toward both full libraries. Do not pad either quota or treat source/reproduction checks as release permission. Production, live tracking, permissions, financial records and Ads settings remain unchanged; advertising stays paused.
