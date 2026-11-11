@@ -19,6 +19,16 @@ def tap(passed=5, failed=0, skipped=17, tests=22):
 
 
 class FoundationSummaryTests(unittest.TestCase):
+    def test_keyword_suite_time_budget_remains_bounded_and_failures_propagate(self):
+        failed = subprocess.CompletedProcess(["synthetic-python"], 7, "", "SYNTHETIC_FAILURE")
+        with patch.object(CHECKER.subprocess, "run", return_value=failed) as child:
+            result = CHECKER.execute_check("keyword-system-behavior", ["synthetic-python"])
+        self.assertEqual(child.call_args.kwargs["timeout"], 300)
+        self.assertFalse(result["passed"])
+        with patch.object(CHECKER.subprocess, "run", side_effect=subprocess.TimeoutExpired("synthetic-python", 300)):
+            with self.assertRaises(subprocess.TimeoutExpired):
+                CHECKER.execute_check("keyword-system-behavior", ["synthetic-python"])
+
     def execute(self, output, exit_code=0, stderr="", require=True):
         result = subprocess.CompletedProcess(["synthetic-node"], exit_code, output, stderr)
         with patch.object(CHECKER.subprocess, "run", return_value=result) as child:
