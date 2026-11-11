@@ -1,5 +1,7 @@
 # Reviewed role, examination and production-artifact research
 
+**Historical registration below is preserved.** The [latest all-current review](../keyword-vendor-review-coverage-2026-11-11/README.md) now holds ten additional records: current eligibility8,025/14,000, deficit5,975, twelve archived originals and15,213protections. Run the public `current_negative_library.py` entrypoint for present eligibility;8,035is the unchanged registered snapshot, not current admission. No source, record body or original report is rewritten.
+
 **849 additional AI-reviewed research records; current eligible negatives8,035/14,000, deficit5,965.** Positive admission0; exclusion-approved/deployed0. Research eligibility is not permission to apply exclusions. No production, Ads, tracking, access, workbook or financial change.
 
 ## Evidence and wording review
