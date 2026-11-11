@@ -88,5 +88,35 @@
     "valid_until": "2026-12-11",
     "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
     "served_query_or_current_performance_claimed": false
+  },
+  {
+    "source_id": "KP-20261111-DIGITAL-ASSETS-SOFTWARE",
+    "kind": "official_reference",
+    "approved_for_research": true,
+    "evidence_ref": "docs/audit/keyword-gap-research-2026-11-11/capture.json",
+    "observed_on": "2026-11-11",
+    "valid_until": "2026-12-11",
+    "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
+    "served_query_or_current_performance_claimed": false
+  },
+  {
+    "source_id": "KP-20261111-PROPERTY-SUPPORT-EMPLOYMENT",
+    "kind": "official_reference",
+    "approved_for_research": true,
+    "evidence_ref": "docs/audit/keyword-gap-research-2026-11-11/capture.json",
+    "observed_on": "2026-11-11",
+    "valid_until": "2026-12-11",
+    "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
+    "served_query_or_current_performance_claimed": false
+  },
+  {
+    "source_id": "KP-20261111-REPAIR-TRADE-SERVICES",
+    "kind": "official_reference",
+    "approved_for_research": true,
+    "evidence_ref": "docs/audit/keyword-gap-research-2026-11-11/capture.json",
+    "observed_on": "2026-11-11",
+    "valid_until": "2026-12-11",
+    "research_use_basis": "OWNER_AUTHORIZED_PLANNER_RESEARCH_AND_VERIFIED_PROVIDER_CAPTURE",
+    "served_query_or_current_performance_claimed": false
   }
 ]
