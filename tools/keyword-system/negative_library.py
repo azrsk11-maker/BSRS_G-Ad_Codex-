@@ -1,6 +1,9 @@
 """Exact composition of registered reviewed cohorts; no promotion, export or live writes."""
 from collections import Counter
+import hashlib
 import json
+from pathlib import Path
+import runpy
 
 import negative_admission as first
 import negative_employment_admission as employment
@@ -9,6 +12,30 @@ from keyword_audit import audit, normalize
 
 OUTPUT_PINS = {'data/negative.json': 'b94b35103a62a7e78e8142797a6f146c23abbacfde080b5bfdde5530773ae29b', 'data/sources.json': '9060f4dba836bcdf043ccee05bd3c7067bfe09d49de24c1e516c26d76862b7b4', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'library-report.json': '384b36cc30fa89f6af5e2ec2c1240a43ecd75478d7b5b67548ce0bcd8a3a1b57'}  # Complete master and aggregate report bytes.
 LIBRARY_REPORT = 'docs/audit/keyword-negative-gap-admission-2026-11-11/library-report.json'
+LATEST_FOLDER = 'docs/audit/keyword-role-review-coverage-2026-11-11'
+LATEST_VERIFIER_PIN = 'eb6b159acd1fe1a2fb1a65ad0a8ab778c5da3fed4a99cdf6c41603430823ef84'
+
+
+def latest_protection(inputs, root, when):
+    """Freshly screen verified inputs; reuse no result across invocations.
+
+    Historical cohorts/bytes remain intact. A later held query can reduce the
+    current eligible count; neither the older report nor newer review wins by
+    timestamp. The fixed latest source/report pins and live audit must agree.
+    """
+    path = Path(root) / LATEST_FOLDER / 'verify_coverage.py'
+    with path.open('rb') as stream:
+        raw = stream.read(1024 * 1024 + 1)
+    first.need(len(raw) <= 1024 * 1024 and hashlib.sha256(raw).hexdigest() == LATEST_VERIFIER_PIN,
+               'LATEST_PROTECTION_VERIFIER_CHANGED')
+    module = runpy.run_path(str(path))
+    report = module['pinned'](path.parent / 'report.json', module['REPORT_PIN'])
+    expected = module['pinned'](path.parent / 'admitted-master-impact.json', module['IMPACT_PIN'])
+    # Inputs were reconstructed and checked in this invocation. Passing them
+    # avoids a second complete reconstruction without caching any acceptance.
+    current = module['build_impact'](report, data=inputs, at=when)
+    first.need(first.canonical(current) == first.canonical(expected), 'LATEST_PROTECTION_IMPACT_CHANGED')
+    return current
 
 
 def merge_unique(groups, key, *, allow_identical):
@@ -93,7 +120,17 @@ def verify(root=first.ROOT, at=None):
     saved = first.pinned(root, LIBRARY_REPORT, OUTPUT_PINS['library-report.json'])
     historical = dict(summary, as_of='2026-11-11')
     first.need(first.canonical(saved) == first.canonical(historical), 'LIBRARY_REPORT_CHANGED')
-    return dict(summary, passed=True)
+    current = latest_protection(inputs, root, when)
+    return dict(summary, passed=True,
+        scope='CURRENT_NEGATIVE_RESEARCH_AFTER_LATEST_PROTECTION_SCREEN',
+        historical_reviewed_eligible_rows=summary['reviewed_eligible_rows'],
+        reviewed_eligible_rows=current['latest_review_eligible_rows'],
+        excluded_rows=current['latest_excluded_rows'], deficit=current['latest_deficit'],
+        computed_conflicts=len(current['protected_conflicts']),
+        protected_queries_indexed=current['protected_queries'],
+        approval_hold_counts=current['latest_approval_hold_counts'],
+        latest_protection_evidence=LATEST_FOLDER+'/admitted-master-impact.json',
+        admission_held=current['admission_held'])
 
 
 if __name__ == '__main__':

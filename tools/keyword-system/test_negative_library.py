@@ -33,9 +33,12 @@ class NegativeLibraryTests(unittest.TestCase):
 
     def test_actual_library_is_partial_research_never_approval_or_release(self):
         result = library.verify(at=date(2026, 11, 11))
-        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (7188, 7188, 6812))
+        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (7188, 7186, 6814))
+        self.assertEqual(result['historical_reviewed_eligible_rows'], 7188)
+        self.assertEqual((result['computed_conflicts'], result['excluded_rows']), (2, 2))
+        self.assertTrue(result['admission_held'])
         self.assertEqual(result['source_occurrences_retained'], 7195)
-        self.assertEqual(result['protected_queries_indexed'], 13261)
+        self.assertEqual(result['protected_queries_indexed'], 13881)
         self.assertEqual(result['source_capture_count'], 12)
         self.assertEqual(result['approved_exclusion_rows'], 0)
         for key in ('exact_target_pass', 'deployment_export_allowed', 'production_writes_available',
@@ -123,7 +126,25 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertEqual(a.call_count, 1)
         self.assertEqual(b.call_count, 1)
         self.assertEqual(c.call_count, len(registered.CATALOG))
-        self.assertEqual(result['reviewed_eligible_rows'], 7188)
+        self.assertEqual(result['reviewed_eligible_rows'], 7186)
+
+    def test_latest_screen_cannot_replace_held_outcomes_with_an_older_success(self):
+        before = first.canonical(self.inputs)
+        observed = library.latest_protection(self.inputs, first.ROOT, date(2026, 11, 11))
+        self.assertEqual(first.canonical(self.inputs), before)
+        self.assertEqual(observed['latest_review_eligible_rows'], 7186)
+        original = library.runpy.run_path
+        def stale_module(path):
+            module = original(path)
+            actual = module['build_impact']
+            def clear_holds(*args, **kwargs):
+                result = actual(*args, **kwargs)
+                return dict(result, latest_review_eligible_rows=7188, protected_conflicts=[], admission_held=False)
+            module['build_impact'] = clear_holds
+            return module
+        with patch.object(library.runpy, 'run_path', side_effect=stale_module):
+            with self.assertRaisesRegex(ValueError, 'LATEST_PROTECTION_IMPACT_CHANGED'):
+                library.latest_protection(self.inputs, first.ROOT, date(2026, 11, 11))
 
     def test_previous_success_does_not_cache_source_inputs_across_invocations(self):
         library.verify(at=date(2026, 11, 11))

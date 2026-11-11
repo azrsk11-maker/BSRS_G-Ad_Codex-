@@ -16,6 +16,17 @@ def dated(*rows):
 
 
 class SupplementalTriageTests(unittest.TestCase):
+    def test_role_exam_asset_capture_preserves_four_batches_without_quarantine(self):
+        data = st.load_corpus(Path(__file__).resolve().parents[2], capture=st.ROLE_EXAM_ASSET_CAPTURE)
+        built = st.compile_workbench(data, dated())
+        self.assertEqual((len(data['sources']), len(data['entries'])), (4, 1717))
+        self.assertEqual(sum(len(e['source_refs']) for e in data['entries'].values()), 1717)
+        self.assertEqual(built['summary']['dispositions']['UNASSESSED'], 1717)
+        self.assertIn('questions to ask brokerage', data['entries'])
+        self.assertIn('real estate quiz for clients', data['entries'])
+        self.assertNotIn('tiles fixing company in dubai', data['entries'])
+        self.assertFalse(built['controls']['deployment_authorized'])
+
     def test_actual_capture_preserves_every_occurrence(self):
         data = st.load_corpus(Path(__file__).resolve().parents[2])
         built = st.compile_workbench(data, dated())
