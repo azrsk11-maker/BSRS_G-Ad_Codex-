@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "basis": "Master section6 explicitly permits evidence-based rebalancing; actual reviewed wrong-product phrases exceed its proposed1000pool. Transfer509research slots from employment while preserving the full14000target.",
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false,
+  "review_ref": "docs/audit/keyword-negative-vehicle-admission-2026-11-11/review.json",
+  "review_sha256": "cece889ed2775eecb0480157b6ab6e96aff93384e09f9fa19b1eb9db24a0cd0b",
+  "before": {
+    "EMPLOYMENT": 7000,
+    "ACADEMIC": 2000,
+    "SOFTWARE": 1000,
+    "MEDIA": 1000,
+    "SERVICE": 1000,
+    "UNRELATED_PRODUCT": 1000,
+    "NAVIGATION": 1000
+  },
+  "after": {
+    "EMPLOYMENT": 6491,
+    "ACADEMIC": 2000,
+    "SOFTWARE": 1000,
+    "MEDIA": 1000,
+    "SERVICE": 1000,
+    "UNRELATED_PRODUCT": 1509,
+    "NAVIGATION": 1000
+  },
+  "admitted": {
+    "EMPLOYMENT": 2113,
+    "ACADEMIC": 903,
+    "SOFTWARE": 350,
+    "MEDIA": 20,
+    "SERVICE": 42,
+    "UNRELATED_PRODUCT": 1509,
+    "NAVIGATION": 0
+  },
+  "remaining": {
+    "EMPLOYMENT": 4378,
+    "ACADEMIC": 1097,
+    "SOFTWARE": 650,
+    "MEDIA": 980,
+    "SERVICE": 958,
+    "UNRELATED_PRODUCT": 0,
+    "NAVIGATION": 1000
+  },
+  "total_target": 14000,
+  "total_admitted": 4937,
+  "total_remaining": 9063
+}

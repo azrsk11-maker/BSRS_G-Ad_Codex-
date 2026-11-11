@@ -1,0 +1,53 @@
+{
+  "scope": "FORCED_TEST_FAILURE_FORMATTING_ONLY_NOT_PROVIDER_TOKEN_OR_BILLING",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "records": 1509,
+  "selected_records_sha256": "9d9d606e29e89515d56d6784a37bd5736249135346c12d5f62cf15443c07f7de",
+  "before_method": "assertIn(missing_literal, full_record_mapping)",
+  "after_method": "assertTrue(missing_literal in mapping, bounded_message)",
+  "before": [
+    {
+      "failed_as_expected": true,
+      "message_bytes": 2716663,
+      "message_sha256": "986dd93ec670594c3ccd86339cfae3c3cd1e5c30f7f360458eda3af3bb201649",
+      "elapsed_seconds": 0.023895700011053123
+    },
+    {
+      "failed_as_expected": true,
+      "message_bytes": 2716663,
+      "message_sha256": "986dd93ec670594c3ccd86339cfae3c3cd1e5c30f7f360458eda3af3bb201649",
+      "elapsed_seconds": 0.02303579999716021
+    },
+    {
+      "failed_as_expected": true,
+      "message_bytes": 2716663,
+      "message_sha256": "986dd93ec670594c3ccd86339cfae3c3cd1e5c30f7f360458eda3af3bb201649",
+      "elapsed_seconds": 0.019916200006264262
+    }
+  ],
+  "after": [
+    {
+      "failed_as_expected": true,
+      "message_bytes": 55,
+      "message_sha256": "a36aceb40f06fce66d087550c5a59e8bac656744c89e26f25c04caf3767ec44d",
+      "elapsed_seconds": 6.040000880602747e-05
+    },
+    {
+      "failed_as_expected": true,
+      "message_bytes": 55,
+      "message_sha256": "a36aceb40f06fce66d087550c5a59e8bac656744c89e26f25c04caf3767ec44d",
+      "elapsed_seconds": 1.4999997802078724e-05
+    },
+    {
+      "failed_as_expected": true,
+      "message_bytes": 55,
+      "message_sha256": "a36aceb40f06fce66d087550c5a59e8bac656744c89e26f25c04caf3767ec44d",
+      "elapsed_seconds": 8.59999272506684e-06
+    }
+  ],
+  "before_median_seconds": 0.02303579999716021,
+  "after_median_seconds": 1.4999997802078724e-05,
+  "all_failures_still_detected": true,
+  "network_or_production_actions": false
+}
