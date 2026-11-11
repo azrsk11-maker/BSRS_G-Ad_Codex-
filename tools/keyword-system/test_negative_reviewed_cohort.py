@@ -1,6 +1,8 @@
 """Actual reviewed cohorts and isolated adversarial cases; no Google requests."""
 import copy
 from datetime import date
+import hashlib
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -211,6 +213,93 @@ class RegisteredCohortTests(unittest.TestCase):
         self.assertEqual(result['protected_queries_indexed'],12216)
         self.assertEqual(result['approved_exclusion_rows'],0)
         self.assertFalse(result['deployment_export_allowed'])
+
+
+class SeparatedCaptureTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        initial=first.reconstruct()
+        cls.prior=library.compose([initial,employment.reconstruct(prior=initial)])
+        for entry in registered.CATALOG[:-1]:
+            part=registered.reconstruct(first.ROOT,entry,cls.prior)
+            cls.prior=library.compose([cls.prior,part])
+        cls.entry=registered.CATALOG[-1]
+        cls.inputs=registered.reconstruct(first.ROOT,cls.entry,cls.prior)
+        cls.capture='docs/audit/keyword-discovery-2026-11-08/capture.json'
+        cls.context=first.pinned(first.ROOT,first.FOLDER+'/service-context.json',first.CONTEXT_PIN)
+        cls.campaign=next(c for c in cls.prior['campaigns'] if c['campaign_key']==first.CAMPAIGN)
+        cls.bindings,_=registered.load_bindings(first.ROOT,cls.inputs['review'])
+
+    def test_actual_separate_review_uses_real_export_capture_and_preserves_holds(self):
+        result=registered._verify_reconstructed(self.inputs,self.entry,at=date(2026,11,11))
+        self.assertEqual((result['reviewed_eligible_rows'],result['held_phrases'],
+                          result['prior_protected_holds'],result['source_occurrences_retained']), (259,31,1,261))
+        pins=self.inputs['review']['capture_pins']
+        self.assertIn(self.capture,pins)
+        self.assertNotIn('docs/audit/keyword-triage-2026-11-08/capture.json',pins)
+        selected={r['normalized_text'] for r in self.inputs['records']}
+        held=set(self.inputs['review']['held_phrases'])
+        self.assertTrue('buy gold dubai' in selected,'Actual goods literal missing')
+        self.assertTrue('real estate broker course' in selected,'Actual occupational literal missing')
+        self.assertFalse(selected & held)
+        self.assertTrue(held <= {r['text'] for r in self.inputs['protected_queries']})
+        for phrase in ('estate agency and property management course','oqood training course registration dubai',
+                       'dubai shopping festival sale','real estate course in person'):
+            self.assertIn(phrase,held)
+        self.assertEqual(result['protected_queries_indexed'],12246)
+        self.assertFalse(result['deployment_export_allowed'])
+
+    def test_capture_wrong_account_is_rejected_after_pin_read(self):
+        original=first.pinned
+        def wrong(root,relative,digest):
+            value=original(root,relative,digest)
+            if relative==self.capture:value['account_id']='TEST_ONLY_WRONG_ACCOUNT'
+            return value
+        with patch.object(first,'pinned',side_effect=wrong):
+            with self.assertRaisesRegex(ValueError,'REGISTERED_SOURCE_ACCOUNT'):
+                registered.reconstruct(first.ROOT,self.entry,self.prior)
+
+    def test_capture_source_manifest_digest_mismatch_is_rejected(self):
+        original=first.pinned
+        def wrong(root,relative,digest):
+            value=original(root,relative,digest)
+            if relative==self.capture:
+                next(r for r in value['source_files'] if r['batch_id']=='KP-DISC-20261108-COMMERCIAL')['sha256']='0'*64
+            return value
+        with patch.object(first,'pinned',side_effect=wrong):
+            with self.assertRaisesRegex(ValueError,'REGISTERED_CAPTURE_SOURCE_MISMATCH'):
+                registered.reconstruct(first.ROOT,self.entry,self.prior)
+
+    def test_resealed_review_cannot_substitute_a_review_folder_capture(self):
+        review=copy.deepcopy(self.inputs['review'])
+        review['capture_pins'].pop(self.capture)
+        review['capture_pins']['docs/audit/keyword-triage-2026-11-08/capture.json']='0'*64
+        review['subject_sha256']=registered.subject(review,self.context,self.campaign,self.bindings)
+        original=first.pinned
+        def changed(root,relative,digest):
+            return review if relative==self.entry['folder']+'/review.json' else original(root,relative,digest)
+        with patch.object(first,'pinned',side_effect=changed):
+            with self.assertRaisesRegex(ValueError,'REGISTERED_CAPTURE_COVERAGE'):
+                registered.reconstruct(first.ROOT,self.entry,self.prior)
+
+    def test_category_context_document_bytes_are_bound_in_the_review(self):
+        for relative in (self.entry['folder']+'/PRIMARY_CONTEXT.md',
+                         'docs/audit/keyword-employment-education-2026-11-10/ENTITY_REVIEW.md'):
+            self.assertIn(hashlib.sha256((first.ROOT/relative).read_bytes()).hexdigest(),
+                          self.inputs['review']['source_identity_limits'])
+
+    def test_resealed_counts_cannot_promote_prior_property_learning_conflict(self):
+        review=copy.deepcopy(self.inputs['review'])
+        review['held_phrases'].pop('estate agency and property management course')
+        review['selected_rows']+=1;review['intent_counts']['PROFESSIONAL_LEARNING_OR_ENTRY']+=1
+        review['subject_sha256']=registered.subject(review,self.context,self.campaign,self.bindings)
+        entry=dict(self.entry,expected_rows=260)
+        original=first.pinned
+        def changed(root,relative,digest):
+            return review if relative==entry['folder']+'/review.json' else original(root,relative,digest)
+        with patch.object(registered,'CATALOG',(entry,)),patch.object(first,'pinned',side_effect=changed):
+            with self.assertRaisesRegex(ValueError,'REGISTERED_UNRESOLVED_CONFLICT'):
+                registered.reconstruct(first.ROOT,entry,self.prior)
 
 
 if __name__ == '__main__':

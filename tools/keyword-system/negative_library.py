@@ -7,8 +7,8 @@ import negative_employment_admission as employment
 import negative_reviewed_cohort as registered
 from keyword_audit import audit, normalize
 
-OUTPUT_PINS = {'data/negative.json': '1ee0d2342ec2c118b85b5e6825115399f0a87cabf492e7456587ced6302e2875', 'data/sources.json': 'b654b562062083645bd8a603e71082d05070849aa01551922c9e957abcf98b0e', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'library-report.json': 'dd987a8c43f93a17d91db93f5f17a8c7f6dbc7f642eae66085a7574b0fb5b9e1'}  # Complete master and aggregate report bytes.
-LIBRARY_REPORT = 'docs/audit/keyword-negative-vehicle-admission-2026-11-11/library-report.json'
+OUTPUT_PINS = {'data/negative.json': 'f7340c8e7f62e1c1ba0b66dd4eca65c39266af7b8d2989ca8087dc5f3d49b835', 'data/sources.json': '3d2263b60bded42d345fe0e6e7e65b9a1c7be80bc76cddf61c72ce5072eed1ca', 'data/campaign_context.json': 'b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97', 'library-report.json': 'a5b8201a593ae99c9561f4f802e503cc79d87948a511d3dbcb17375024abab01'}  # Complete master and aggregate report bytes.
+LIBRARY_REPORT = 'docs/audit/keyword-negative-study-goods-admission-2026-11-11/library-report.json'
 
 
 def merge_unique(groups, key, *, allow_identical):
