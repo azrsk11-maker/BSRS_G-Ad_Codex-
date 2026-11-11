@@ -1,0 +1,22 @@
+{
+  "scope": "SECOND_AI_EMPLOYMENT_RESEARCH_COHORT_NOT_APPROVAL",
+  "as_of": "2026-11-11",
+  "input_rows": 935,
+  "distinct_nonblank_phrases": 935,
+  "reviewed_eligible_rows": 935,
+  "excluded_rows": 0,
+  "approved_exclusion_rows": 0,
+  "deficit": 13065,
+  "structural_pass": true,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "positive_library_coverage_verified": false,
+  "protected_queries_indexed": 12086,
+  "source_occurrences_retained": 935,
+  "previous_cohort_overlaps_not_counted_again": 4,
+  "spelling_or_punctuation_holds_not_counted": 5,
+  "computed_conflicts": 0,
+  "human_review_verified": false,
+  "live_campaign_mapping_verified": false,
+  "subject_sha256": "0adee880ca7381352d6de09514de50b4c77d5f564abcbe6f6f4aec3accb8ee08"
+}
