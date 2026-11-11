@@ -6,7 +6,10 @@ No platform, export, approval or production writer is provided.
 """
 from collections import Counter
 from copy import deepcopy
+import hashlib
 import json
+from pathlib import Path
+import runpy
 
 import negative_admission as first
 import negative_library as history
@@ -21,6 +24,11 @@ REPORT_PIN = '61352575aa6f8c2ea08d9fbe5cc6eec8ecfc02fc06ddd486a09ddf9773c05c6f'
 ALLOCATION_PIN = '1e2b7b4262162f1a72d83b2afe11e88afaf3414d65748d540315c5dd090535a1'
 PREVIOUS_ALLOCATION = 'docs/audit/keyword-negative-gap-admission-2026-11-11/research-pool-allocation.json'
 PREVIOUS_ALLOCATION_PIN = '94d313beb04085fc2c734f11080da1562509a0332234bfc7264291a1b5f32173'
+
+LATEST_FOLDER = 'docs/audit/keyword-vendor-review-coverage-2026-11-11'
+LATEST_VERIFIER_PIN = '1a2687c268ac3f45948c3462bd782e7a3a86a0a70cef92f9c172da8ae846bf12'
+LATEST_INDEX = 'tools/keyword-system/data/negative-latest-review-index.json'
+LATEST_INDEX_PIN = '4fe30cd2c768f5779982dc4d7cc41be3b8aa7055e67dda8008672624d9a58293'
 
 INTENT_POOLS = {
     'EXPLICIT_OCCUPATIONAL_STUDY_OR_ASSESSMENT_RESEARCH': 'ACADEMIC',
@@ -145,17 +153,102 @@ def check_outputs(inputs, root, when):
         current_index_file=INDEX, release_held=True)
 
 
-def reconstruct(root=first.ROOT, at=None):
+def reconstruct_registered(root=first.ROOT, at=None):
+    """Verify the immutable registered baseline, before later protective holds.
+
+    This is historical input to the latest guard, not current admission output.
+    """
     when = first.dubai_date() if at is None else at
     inputs = extend(history.reconstruct_current(root, at=when), root, when)
     check_outputs(inputs, root, when)
     return inputs
 
 
+def build_latest_index(inputs, impact):
+    """Sparse held-ID overlay; preserve every registered body and its source."""
+    ids = [row['keyword_id'] for row in inputs['records']]
+    known, held, pairs = set(ids), set(), set()
+    first.need(len(ids) == len(known), 'LATEST_BASE_DUPLICATE_ID')
+    for key in ('registered_input_rows', 'latest_review_eligible_rows', 'latest_excluded_rows',
+                'latest_deficit', 'approved_exclusion_rows', 'master_additions'):
+        first.need(type(impact.get(key)) is int and impact[key] >= 0, 'LATEST_REVIEW_COUNT')
+    first.need(impact['approved_exclusion_rows'] == impact['master_additions'] == 0 and
+        impact.get('historical_rows_rewritten') is False and impact.get('deployment_authorized') is False,
+        'LATEST_REVIEW_AUTHORITY')
+    first.need(isinstance(impact.get('protected_conflicts'), list), 'LATEST_REVIEW_CONFLICTS')
+    for conflict in impact['protected_conflicts']:
+        first.need(isinstance(conflict, dict) and set(conflict) ==
+            {'negative_id', 'protected_query_id', 'affected_campaign_keys', 'result'}, 'LATEST_REVIEW_CONFLICT_FIELDS')
+        identity, query, campaigns = conflict['negative_id'], conflict['protected_query_id'], conflict['affected_campaign_keys']
+        first.need(identity in known and isinstance(query, str) and query and campaigns == [first.CAMPAIGN] and
+            conflict['result'] == 'CONFLICT_HOLD', 'LATEST_REVIEW_UNKNOWN_OR_BAD_CONFLICT')
+        pair = (identity, query)
+        first.need(pair not in pairs, 'LATEST_REVIEW_DUPLICATE_CONFLICT')
+        pairs.add(pair); held.add(identity)
+    first.need(impact['registered_input_rows'] == len(ids) and impact['latest_excluded_rows'] == len(held) and
+        impact['latest_review_eligible_rows'] == len(ids)-len(held) and
+        impact['latest_deficit'] == max(14000-len(ids)+len(held), 0) and
+        impact.get('admission_held') is bool(held), 'LATEST_REVIEW_MEMBERSHIP_COUNTS')
+    return {'version': 1, 'scope': 'LATEST_REVIEW_HOLD_OVERLAY_NOT_AD_SERVING_STATUS',
+        'registered_index': reference({'file': INDEX, 'sha256': INDEX_PIN}),
+        'latest_coverage': reference({'file': LATEST_FOLDER+'/report.json', 'sha256': impact['latest_coverage_sha256']}),
+        'counts': {'registered': len(ids), 'eligible': len(ids)-len(held),
+            'additional_held': len(held), 'total_archived': len(inputs['archived_records'])+len(held)},
+        'additional_held_keyword_ids': [identity for identity in ids if identity in held],
+        'prior_archived_keyword_ids': [r['keyword_id'] for r in inputs['archived_records']],
+        'research_only': True, 'independent_review_verified': False,
+        'deployment_authorized': False, 'historical_records_rewritten': False}
+
+
+def latest_screen(inputs, root, when):
+    """Fresh all-current screen; never recurse into the public current API."""
+    path = Path(root)/LATEST_FOLDER/'verify_coverage.py'
+    with path.open('rb') as stream:
+        raw = stream.read(1024*1024+1)
+    first.need(len(raw) <= 1024*1024 and hashlib.sha256(raw).hexdigest() == LATEST_VERIFIER_PIN,
+               'LATEST_REVIEW_VERIFIER_CHANGED')
+    module = runpy.run_path(str(path))
+    report = module['pinned'](path.parent/'report.json', module['REPORT_PIN'])
+    expected = module['pinned'](path.parent/'admitted-master-impact.json', module['IMPACT_PIN'])
+    bundle = module['build_impact'](report, data=inputs, at=when, with_protected=True)
+    first.need(first.canonical(bundle['impact']) == first.canonical(expected), 'LATEST_CURRENT_IMPACT_CHANGED')
+    first.need(len(bundle['protected_queries']) == expected['protected_queries'], 'LATEST_CURRENT_PROTECTION_COUNT')
+    index = build_latest_index(inputs, bundle['impact'])
+    saved = first.pinned(root, LATEST_INDEX, LATEST_INDEX_PIN)
+    first.need(first.canonical(saved) == first.canonical(index), 'LATEST_CURRENT_INDEX_CHANGED')
+    return dict(bundle, review_index=index)
+
+
+def apply_latest(inputs, screen):
+    held = set(screen['review_index']['additional_held_keyword_ids'])
+    return deepcopy(dict(inputs,
+        records=[r for r in inputs['records'] if r['keyword_id'] not in held],
+        archived_records=inputs['archived_records']+[r for r in inputs['records'] if r['keyword_id'] in held],
+        protected_queries=screen['protected_queries'], current_review_index=screen['review_index'],
+        current_protection_evidence=LATEST_FOLDER+'/admitted-master-impact.json',
+        deployment_authorized=False, production_writes_available=False))
+
+
+def reconstruct(root=first.ROOT, at=None):
+    when = first.dubai_date() if at is None else at
+    inputs = reconstruct_registered(root, at=when)
+    return apply_latest(inputs, latest_screen(inputs, root, when))
+
+
 def verify(root=first.ROOT, at=None):
     when = first.dubai_date() if at is None else at
-    inputs = extend(history.reconstruct_current(root, at=when), root, when)
-    return check_outputs(inputs, root, when)
+    inputs = reconstruct_registered(root, at=when)
+    screen = latest_screen(inputs, root, when)
+    impact = screen['impact']
+    registered = first.pinned(root, FOLDER+'/library-report.json', REPORT_PIN)
+    return dict(registered, passed=True, scope='CURRENT_NEGATIVE_RESEARCH_AFTER_LATEST_COMPLETE_REVIEW',
+        as_of=when.isoformat(), registered_research_rows=len(inputs['records']),
+        reviewed_eligible_rows=impact['latest_review_eligible_rows'], excluded_rows=impact['latest_excluded_rows'],
+        deficit=impact['latest_deficit'], computed_conflicts=len(impact['protected_conflicts']),
+        protected_queries_indexed=impact['protected_queries'],
+        held_historical_rows=screen['review_index']['counts']['total_archived'],
+        latest_protection_evidence=LATEST_FOLDER+'/admitted-master-impact.json',
+        current_index_file=LATEST_INDEX, index_verified=True, admission_held=impact['admission_held'], release_held=True)
 
 
 if __name__ == '__main__':
