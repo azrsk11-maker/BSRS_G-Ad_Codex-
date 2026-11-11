@@ -21,6 +21,13 @@ CATALOG = ({'key': 'academic-20261111',
 LIMITS = ('human_review_verified', 'exclusion_approval_granted',
           'live_binding_verified', 'production_authorized')
 
+# Current extensions compose after the verified eligible/held historical split.
+# They never join CATALOG or alter reconstruction of the original master.
+CURRENT_CATALOG = ({'key': 'role-artifacts-20261111',
+    'folder': 'docs/audit/keyword-negative-role-admission-2026-11-11',
+    'review_sha256': 'e4572216faf4f02ce9071c733c0552b370794a22d111f818a502c5fb7ff88136', 'report_sha256': '46925157361d2fdfdce041b3c4cd00bc91408a2dcb82bb7e94c1d59ce167d9ab',
+    'expected_rows': 849},)
+
 
 def load_bindings(root, review):
     reports = review['coverage_reports']
@@ -104,7 +111,7 @@ def validate_review(review, entry, context, campaign, bindings):
 
 
 def reconstruct(root, entry, prior):
-    first.need(any(entry == e for e in CATALOG), 'UNREGISTERED_COHORT')
+    first.need(any(entry == e for e in CATALOG + CURRENT_CATALOG), 'UNREGISTERED_COHORT')
     review = first.pinned(root, entry['folder']+'/review.json', entry['review_sha256'])
     context = first.pinned(root, first.FOLDER+'/service-context.json', first.CONTEXT_PIN)
     bindings, conflicts = load_bindings(root, review)
