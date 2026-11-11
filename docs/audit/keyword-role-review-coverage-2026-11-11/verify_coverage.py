@@ -64,7 +64,7 @@ def build():
 
 
 
-def build_impact(report, data=None, at=None):
+def build_impact(report, data=None, at=None, *, with_protected=False):
     from collections import Counter
     from datetime import date
     import negative_library as library
@@ -90,7 +90,7 @@ def build_impact(report, data=None, at=None):
                 'reviewed_on':'2026-11-11','valid_until':'2026-12-11'}
     result=audit('negative',data['records'],data['sources'],data['campaigns'],
         data['campaign_context'],list(protected.values()),date(2026,11,11) if at is None else at)
-    return {'scope':'LATEST_PROTECTION_SCREEN_OF_HISTORICAL_MASTER_NOT_NEW_ADMISSION',
+    impact={'scope':'LATEST_PROTECTION_SCREEN_OF_HISTORICAL_MASTER_NOT_NEW_ADMISSION',
         'historical_input_rows':result['input_rows'],'latest_review_eligible_rows':result['reviewed_eligible_rows'],
         'latest_deficit':result['deficit'],'protected_queries':len(protected),
         'latest_excluded_rows':result['excluded_rows'],
@@ -102,6 +102,9 @@ def build_impact(report, data=None, at=None):
         'admission_held':bool(result['protected_conflicts']),'master_additions':0,
         'independent_review_verified':False,'positive_library_coverage_verified':False,
         'deployment_authorized':False}
+    if with_protected:
+        return {'impact':impact,'protected_queries':list(protected.values())}
+    return impact
 
 
 def verify():
