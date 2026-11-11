@@ -33,7 +33,7 @@ All exclusions remain PENDING/HIGH/EXACT, with zero independent exclusion approv
 | Decision | Status | Scope |
 |---|---|---|
 | DEC-01 | [OPTION A AND PRIMARY FAMILIES APPROVED FOR PREPARATION #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | Buyers primaryOFP/secondaryRDY; Owners primarySEL/secondaryLND. Prepare the same four paused campaigns and one native entry per campaign. First release waits for both full reviewed libraries. Individual slot/page/CMS bindings and historical crosswalk remain open. |
-| DEC-02 | [OPEN #2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2) | Content/inventory factual reviewer, update owner, approved evidence and rights locations |
+| DEC-02 | [OWNERS/PRIVATE LOCATION RESOLVED; EVIDENCE OPEN #2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2) | Owner nominates Amit for factual sign-off and updates; owner-only Marketing evidence folder created and privacy verified. Genuine documents, dated sign-offs, freshness rules and supported coverage remain open. |
 | DEC-03 | [OPEN #3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) | Finance evidence/definitions, contribution allocation, monthly/cash-risk authority |
 | DEC-04 | [OPEN #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) | Staff rehearsal completion/fresh readiness, capacity and real outcome evidence providers |
 | DEC-12 | [OPEN #12](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/12) | Restore authentication as an existing authorized repository writer; current GitHub identity has no push permission. No new collaborator or permission expansion authorized. Owner must also apply the issue label unavailable to the current account. |
@@ -54,7 +54,15 @@ The owner answered the pending Codex planning questions: **Buyers “Off-plan”
 
 [Machine-readable draft classification](../../tools/native-wordpress/entry-drafts/primary-family-decisions.json) retains historically observed campaign IDs, both existing service links and the current block fragments. Individual planning slots, designated entry URLs and CMS IDs stay unassigned. The owner did not authorize publication, live Ads/tracking changes, activation, expenditure, allocation changes or removal of the secondary services. Tenants/Brand are not reclassified by this reply. The360-source register, native manifest, historical300/640identities and four-campaign AED2,000aggregate average/day plan remain unchanged.
 
-For issue2, the owner replied “explain more,” which is a clarification request, not a nomination or evidence approval. The distinction between factual reviewer, update owner and private evidence location was explained; one bundled follow-up remains pending. Do not automatically assign Amit's operational role as editorial approval, publish private links or treat that request as accepting inventory/rights.
+At this family decision's original recording, issue2's “explain more” was a clarification request and the nomination follow-up was pending. The subsequent direct decision below resolves nominations/location only; no inventory, rights or draft is automatically approved.
+
+## DEC-02 factual ownership and private evidence location — 11 November 2026 (Dubai)
+
+The owner answered **“Amit for both roles; create the private evidence folder”** to the recommendation explicitly conditioned on Amit being qualified and authorized for factual sign-off. Amit (amit@blackswanrealestate.ae) is therefore the owner-nominated factual reviewer and update owner. [Scoped issue transcription](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2#issuecomment-6784444312) is the execution agent's record of that direct reply, not an independently authored GitHub approval. No licence number or independent professional credential verification is asserted.
+
+The authorized **BSRE Real Estate — Evidence Review** folder was created in Marketing's My Drive root. Observed readback confirms marketing@blackswanrealestate.ae as the only listed Owner and General access Restricted. No Amit access or other sharing was added; the original lead workbook stays private and unchanged. The cloud identifier, private link and proof screenshot are retained privately, not committed here. [Sanitized receipt](../audit/CONTENT_EVIDENCE_STATUS_2026-11-11.json).
+
+The folder is empty at creation. Actual inventory/availability, applicable mandates/permits, asset rights, dated Amit sign-offs, freshness rules and supported service/emirate coverage remain required. India/Saudi jurisdiction reviewers and language coverage remain separate. Issue2 stays open for evidence acceptance. This decision authorizes neither publication nor live tracking/Ads changes, activation, spending, workbook sharing, PR approval or any individual property claim.
 
 ## DEC-08 conditional approval - 7 November 2026 (Dubai)
 
