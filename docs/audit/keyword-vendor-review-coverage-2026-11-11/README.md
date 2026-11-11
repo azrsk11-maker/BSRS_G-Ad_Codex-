@@ -1,5 +1,7 @@
 # Complete vendor and operations review; current eligibility safeguard
 
+**The dated8,025baseline below is preserved.** The [subsequent explicit admission](../keyword-negative-vendor-admission-2026-11-11/README.md) adds1,989reviewed records/96holds: current eligible10,014/14,000, deficit3,986, twelve archived originals and15,309protections. This coverage report's bytes and historical counters remain unchanged; use `current_negative_library.py` for the complete current result.
+
 **Current eligible negative research: 8,025/14,000; deficit 5,975.** The registered 8,035-row snapshot remains immutable, but ten newly unresolved phrases are excluded from current eligibility. Together with two earlier recruitment holds, twelve original records remain archived. Positive admission, exclusion approval and deployment remain zero.
 
 ## Complete observed-source reconciliation
