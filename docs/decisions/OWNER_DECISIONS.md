@@ -32,7 +32,7 @@ All exclusions remain PENDING/HIGH/EXACT, with zero independent exclusion approv
 
 | Decision | Status | Scope |
 |---|---|---|
-| DEC-01 | [OPTION A APPROVED FOR PREPARATION #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | Prepare the four paused campaigns and one native entry per campaign. First release waits for both full reviewed libraries. Exact page bindings and the historical crosswalk remain open. |
+| DEC-01 | [OPTION A AND PRIMARY FAMILIES APPROVED FOR PREPARATION #1](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1) | Buyers primaryOFP/secondaryRDY; Owners primarySEL/secondaryLND. Prepare the same four paused campaigns and one native entry per campaign. First release waits for both full reviewed libraries. Individual slot/page/CMS bindings and historical crosswalk remain open. |
 | DEC-02 | [OPEN #2](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2) | Content/inventory factual reviewer, update owner, approved evidence and rights locations |
 | DEC-03 | [OPEN #3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) | Finance evidence/definitions, contribution allocation, monthly/cash-risk authority |
 | DEC-04 | [OPEN #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) | Staff rehearsal completion/fresh readiness, capacity and real outcome evidence providers |
@@ -48,7 +48,16 @@ All exclusions remain PENDING/HIGH/EXACT, with zero independent exclusion approv
 
 No other pending option is approved. Record owner account, exact comment URL, date, chosen option, authorized actions and exclusions when resolved. An answer does not authorize unrelated deployment. See `../audit/INCONSISTENCIES.md` for detailed source reconciliation.
 
+## DEC-01 primary-family owner reply — 11 November 2026 (Dubai)
+
+The owner answered the pending Codex planning questions: **Buyers “Off-plan”; Owners “Sell.”** Record primary families OFP and SEL respectively. Resale (RDY) and landlord/letting (LND) remain in their existing campaigns as secondary service context. [Exact scoped transcription](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1#issuecomment-6784254659) identifies this as the execution agent's record of the direct reply, not an independently authored GitHub approval.
+
+[Machine-readable draft classification](../../tools/native-wordpress/entry-drafts/primary-family-decisions.json) retains historically observed campaign IDs, both existing service links and the current block fragments. Individual planning slots, designated entry URLs and CMS IDs stay unassigned. The owner did not authorize publication, live Ads/tracking changes, activation, expenditure, allocation changes or removal of the secondary services. Tenants/Brand are not reclassified by this reply. The360-source register, native manifest, historical300/640identities and four-campaign AED2,000aggregate average/day plan remain unchanged.
+
+For issue2, the owner replied “explain more,” which is a clarification request, not a nomination or evidence approval. The distinction between factual reviewer, update owner and private evidence location was explained; one bundled follow-up remains pending. Do not automatically assign Amit's operational role as editorial approval, publish private links or treat that request as accepting inventory/rights.
+
 ## DEC-08 conditional approval - 7 November 2026 (Dubai)
+
 
 The owner directly instructed in Codex: "I approve Option A in issue #9. Proceed with isolated staging only after verifying isolation. Keep production unchanged and Ads paused. Guide me on assigning an independent reviewer for issue #6." [Transcription in the shared issue](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/9#issuecomment-6710659394) records its origin; it is not an independently authored GitHub approval. Approval covers isolated staging only after isolation is verified. No production publication, live tracking/Ads change, spending, permission expansion, whole-database clone or destructive operation is authorized. Reviewer identity is pending.
 
