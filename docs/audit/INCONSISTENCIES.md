@@ -42,6 +42,8 @@ These drafts must be posted to GitHub with `owner-decision-required` by the root
 
 ### DEC-02 — Nominate content/inventory reviewers and approved evidence locations
 
+**11 November owner update:** Amit is now explicitly nominated for both factual sign-off and content updates, following the qualified-and-authorized recommendation. Marketing's owner-only evidence folder was created and Restricted access verified. This is owner nomination, not independent credential verification. The original workbook is untouched and no Amit folder grant was added. Actual source documents, dated sign-offs, freshness rules and supported coverage remain unresolved; no publication or Ads authority follows. See [decision register](../decisions/OWNER_DECISIONS.md#dec-02-factual-ownership-and-private-evidence-location--11-november-2026-dubai) and [sanitized receipt](CONTENT_EVIDENCE_STATUS_2026-11-11.json). The original options below remain as historical context.
+
 **Background:** REC-03/13/15. Thirty historical drafts and360planned paid slots lack approved inventory/rights evidence, appointed factual sign-off and update ownership.
 
 **Options:** A) nominate a licensed/qualified RealEstate reviewer plus update owner and supply company-approved evidence locations; B) restrict current work to source-labelled research and unpublished templates until appointments exist.

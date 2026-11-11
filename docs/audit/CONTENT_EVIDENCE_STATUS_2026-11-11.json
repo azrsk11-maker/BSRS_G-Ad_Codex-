@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "internal_location_reference": "BSRE-EVIDENCE-ROOT-20261111",
+  "owner_decision": {
+    "reply": "Amit for both roles; create the private evidence folder",
+    "recorded_by": "Codex execution agent transcribing direct owner reply",
+    "issue_record": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2#issuecomment-6784444312",
+    "factual_reviewer": "Amit",
+    "update_owner": "Amit",
+    "real_estate_google_account": "amit@blackswanrealestate.ae",
+    "qualification_and_authority_basis": "Owner nomination in response to the explicitly conditioned qualified-and-authorized recommendation",
+    "independent_professional_credential_verification": false
+  },
+  "private_location": {
+    "name": "BSRE Real Estate — Evidence Review",
+    "service": "Google Drive",
+    "parent": "Marketing My Drive root",
+    "owner": "marketing@blackswanrealestate.ae",
+    "observed_owner_access_entries": 1,
+    "general_access": "Restricted",
+    "created_and_read_back": true,
+    "verification": ["Marketing account badge", "Folder creation success notice", "Folder page", "Sharing dialog showing Marketing Owner and Restricted access"],
+    "cloud_id_and_url": "Withheld from public repository; retained in private execution receipt",
+    "new_collaborator_grants": 0,
+    "documents_present_at_creation": 0,
+    "approved_property_claims": 0
+  },
+  "evidence_still_required": [
+    "Genuine inventory and dated prices/availability with supported service and emirate coverage",
+    "Applicable company mandates, advertising permits and authority to market",
+    "Licensed images/floor plans and asset-rights records",
+    "Amit's dated factual sign-offs tied to individual drafts and evidence",
+    "Appropriate freshness/update rules per evidence class",
+    "Separately nominated jurisdiction reviewers and language coverage for India/Saudi guides"
+  ],
+  "unchanged_boundaries": {
+    "original_lead_workbook_private": true,
+    "original_lead_workbook_modified": false,
+    "folder_shared_with_amit": false,
+    "production_publication_authorized": false,
+    "live_tracking_changes_authorized": false,
+    "ads_changes_or_expenditure_authorized": false,
+    "advertising_release_held": true,
+    "independent_human_pr_review_verified": false
+  }
+}
