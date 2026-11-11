@@ -33,10 +33,10 @@ class NegativeLibraryTests(unittest.TestCase):
 
     def test_actual_library_is_partial_research_never_approval_or_release(self):
         result = library.verify(at=date(2026, 11, 11))
-        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (3016, 3016, 10984))
-        self.assertEqual(result['source_occurrences_retained'], 3020)
-        self.assertEqual(result['protected_queries_indexed'], 12139)
-        self.assertEqual(result['source_capture_count'], 5)
+        self.assertEqual((result['input_rows'], result['reviewed_eligible_rows'], result['deficit']), (3428, 3428, 10572))
+        self.assertEqual(result['source_occurrences_retained'], 3432)
+        self.assertEqual(result['protected_queries_indexed'], 12163)
+        self.assertEqual(result['source_capture_count'], 6)
         self.assertEqual(result['approved_exclusion_rows'], 0)
         for key in ('exact_target_pass', 'deployment_export_allowed', 'production_writes_available',
                     'positive_library_coverage_verified', 'human_review_verified', 'live_campaign_mapping_verified'):
@@ -51,6 +51,10 @@ class NegativeLibraryTests(unittest.TestCase):
         raw = (json.dumps(self.inputs['records'][:2113], ensure_ascii=False, indent=2)+'\n').encode('utf-8')
         self.assertEqual(hashlib.sha256(raw).hexdigest(), 'ba70665227a02cfb92bafd94dd60db9d3565550cbdaac91c146ce9763087873e')
 
+    def test_previous_3016_records_preserve_published_academic_master_bytes(self):
+        raw = (json.dumps(self.inputs['records'][:3016], ensure_ascii=False, indent=2)+'\n').encode('utf-8')
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), '603d3f46d08b144a3f0922eea00abcb32c223b45ad749ba73f7edcd706fbc324')
+
     def test_one_fresh_reconstruction_per_registered_cohort_per_invocation(self):
         with patch.object(first, 'reconstruct', wraps=first.reconstruct) as a, \
              patch.object(employment, 'reconstruct', wraps=employment.reconstruct) as b, \
@@ -58,8 +62,8 @@ class NegativeLibraryTests(unittest.TestCase):
             result = library.verify(at=date(2026, 11, 11))
         self.assertEqual(a.call_count, 1)
         self.assertEqual(b.call_count, 1)
-        self.assertEqual(c.call_count, 1)
-        self.assertEqual(result['reviewed_eligible_rows'], 3016)
+        self.assertEqual(c.call_count, len(registered.CATALOG))
+        self.assertEqual(result['reviewed_eligible_rows'], 3428)
 
     def test_previous_success_does_not_cache_source_inputs_across_invocations(self):
         library.verify(at=date(2026, 11, 11))
@@ -80,7 +84,7 @@ class NegativeLibraryTests(unittest.TestCase):
         self.assertFalse(current & set(employment.HELD))
         protected = {r['text'] for r in self.inputs['protected_queries']}
         self.assertTrue(set(employment.HELD) <= protected)
-        self.assertEqual(len({r['keyword_id'] for r in self.inputs['records']}), 3016)
+        self.assertEqual(len({r['keyword_id'] for r in self.inputs['records']}), 3428)
 
     def test_source_spelling_diacritics_and_unknown_metrics_preserved(self):
         texts = {r['original_text'] for r in self.second['records']}

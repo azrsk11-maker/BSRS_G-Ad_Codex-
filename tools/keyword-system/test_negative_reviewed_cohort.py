@@ -1,4 +1,4 @@
-"""Actual academic records and isolated adversarial cases; no Google requests."""
+"""Actual reviewed cohorts and isolated adversarial cases; no Google requests."""
 import copy
 from datetime import date
 from pathlib import Path
@@ -166,6 +166,27 @@ class RegisteredCohortTests(unittest.TestCase):
             path.parent.mkdir(parents=True);path.write_text('{}', encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'PINNED_INPUT_CHANGED'):
                 registered._verify_reconstructed(self.inputs, self.entry, Path(tmp), date(2026, 11, 11))
+
+    def test_actual_nonproperty_review_preserves_held_navigation_and_variants(self):
+        prior = library.compose([self.prior, self.inputs])
+        entry = registered.CATALOG[1]
+        inputs = registered.reconstruct(first.ROOT, entry, prior)
+        result = registered._verify_reconstructed(inputs, entry, at=date(2026, 11, 11))
+        self.assertEqual((result['reviewed_eligible_rows'], result['held_phrases'],
+                          result['source_occurrences_retained']), (412, 24, 412))
+        self.assertEqual(inputs['review']['intent_counts'], {'SOFTWARE': 350, 'SERVICE': 42, 'MEDIA': 20})
+        selected = {r['normalized_text'] for r in inputs['records']}
+        held = set(inputs['review']['held_phrases'])
+        self.assertFalse(selected & held)
+        self.assertTrue(held <= {r['text'] for r in inputs['protected_queries']})
+        for phrase in ('bitrix24 real estate', 'mycrm propertyfinder', 'sales force real estate crm',
+                       'realestate plugin', 'plumber dubai emergency plumbing in dubai'):
+            self.assertIn(phrase, held)
+        for phrase in ('real estate crm software', 'water heater repair dubai', 'property stock photos'):
+            self.assertIn(phrase, selected)
+        self.assertEqual(result['protected_queries_indexed'], 12163)
+        self.assertEqual(result['approved_exclusion_rows'], 0)
+        self.assertFalse(result['deployment_export_allowed'])
 
 
 if __name__ == '__main__':
