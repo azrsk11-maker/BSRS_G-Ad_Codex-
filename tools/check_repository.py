@@ -86,8 +86,11 @@ def execute_check(name, args, cwd=ROOT, *, owned_tree=False):
             details["tap_summary"] = None
             details["tap_evidence_status"] = "INCOMPLETE_TIMEOUT"
         if owned_tree and name == 'keyword-system-behavior':
-            progress = module('foundation_keyword_progress', ROOT / 'tools/efficiency/keyword_progress.py')
-            details['keyword_diagnostic'] = progress.read_diagnostic(ROOT, exc.stderr)
+            stderr = partial_text(exc.stderr)
+            details['keyword_diagnostic'] = None
+            if any(line.startswith('KEYWORD_PROGRESS ') for line in stderr.splitlines()):
+                progress = module('foundation_keyword_progress', ROOT / 'tools/efficiency/keyword_progress.py')
+                details['keyword_diagnostic'] = progress.read_diagnostic(ROOT, stderr)
         return {"check": name, "passed": False, "details": details}
     except OSError as exc:
         if not owned_tree:
