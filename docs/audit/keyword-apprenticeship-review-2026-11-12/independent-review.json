@@ -1,0 +1,777 @@
+{
+  "version": 1,
+  "scope": "INDEPENDENT_AI_SOURCE_ONLY_COMPLETE_LITERAL_REVIEW_NOT_ADMISSION_OR_EXCLUSION_APPROVAL",
+  "review_date_dubai": "2026-11-12",
+  "reviewer": "Independent Codex AI agent",
+  "review_source_head": "33c53b9d7a265ab30e16145a39244f773d187c3a",
+  "independent_human_review": false,
+  "method": "Read all nine complete feasibility rows and all six retained title-excerpt sets. Rechecked all six exact primary URLs with the read-only web tool, then followed the two relevant town-planner route links. No browser/UI or full library reconstruction.",
+  "input_bindings": [
+    {
+      "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+      "bytes": 7489,
+      "sha256": "b20eac063ead4bb4882d8535a396a320e2336673941a509a10fa570cf54bc1fb",
+      "actual_bytes_rehashed": true
+    },
+    {
+      "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/projection.json",
+      "bytes": 18292,
+      "sha256": "1f5d3a3d6baf3c0b2d1e82c18cf2552b6572687a9741311a3449916f6ea7122f",
+      "actual_bytes_rehashed": true
+    }
+  ],
+  "counts": {
+    "complete_source_literals_reviewed": 9,
+    "complete_literals_with_explicit_occupational_intent": 9,
+    "complete_literals_passing_local_text_screen": 9,
+    "provisional_distinct_candidate_proposals": 8,
+    "source_occurrence_aliases_not_separately_proposed": 1,
+    "unresolved_alias_candidates_promoted": 0,
+    "full_admission_audits_completed": 0,
+    "admitted": 0,
+    "approved": 0,
+    "deployed": 0,
+    "current_negative_research_total_unchanged_per_bound_feasibility": 10955
+  },
+  "decision_rules": [
+    "Explicit apprenticeship wording and the primary-page apprenticeship context establish occupational training intent for the complete literal.",
+    "Property-service, buyer/rental and general guide intent remains protected; profession words alone are not proposed exclusions.",
+    "Published wording alone does not establish distinct concepts. Ordinals 1 and 7 are treated as one route group with one actual candidate representative.",
+    "Shared subjects alone do not merge genuinely different published occupational specialisms or explicit level/role routes.",
+    "No title is shortened, permuted, suffixed or manufactured; no metrics, demand or observed-query claim is made.",
+    "All proposals remain subject to root evaluation, complete current-library/protection/scope checks and separate human exclusion/release authority."
+  ],
+  "sources": [
+    {
+      "source_page_id": "RTPI-PLANNER-APPRENTICESHIP",
+      "url": "https://www.rtpi.org.uk/become-a-planner/apprenticeships/chartered-town-planner-apprenticeship/",
+      "publisher": "The Royal Town Planning Institute",
+      "source_section": "Main page heading",
+      "ordinals": [
+        1
+      ],
+      "captured_on_dubai": "2026-11-12",
+      "rechecked_on_dubai": "2026-11-12",
+      "exact_complete_literals_confirmed": true,
+      "publication_date": null,
+      "update_date": null,
+      "source_date_status": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+      "bound_capture_excerpt": {
+        "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+        "utf8_lf_bytes": 38,
+        "sha256": "b0e2424402e6f3b988dbac25c10c76b2e5c2a606a88d681d45dca8596a75391a",
+        "hash_recomputed_matches": true,
+        "serialization": "Complete title excerpts in recorded order, each followed by LF."
+      },
+      "live_context_paraphrase": "The body describes combined paid planning work and study, an accredited qualification and chartered recognition; two entry points belong to the described apprenticeship.",
+      "complete_remote_page_archived": false,
+      "remote_page_body_sha256": null
+    },
+    {
+      "source_page_id": "NCS-BUILDING-TECHNICIAN",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/building-technician",
+      "publisher": "National Careers Service",
+      "source_section": "How to become / Apprenticeship",
+      "ordinals": [
+        2,
+        3
+      ],
+      "captured_on_dubai": "2026-11-12",
+      "rechecked_on_dubai": "2026-11-12",
+      "exact_complete_literals_confirmed": true,
+      "publication_date": null,
+      "update_date": null,
+      "source_date_status": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+      "bound_capture_excerpt": {
+        "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+        "utf8_lf_bytes": 149,
+        "sha256": "5386126ef1fb3de8f2faad698144e3d2911bd8db8e52c523c935fec1a4b57c0c",
+        "hash_recomputed_matches": true,
+        "serialization": "Complete title excerpts in recorded order, each followed by LF."
+      },
+      "live_context_paraphrase": "The two complete titles are separate items in the apprenticeship section, followed by workplace training and study context.",
+      "complete_remote_page_archived": false,
+      "remote_page_body_sha256": null
+    },
+    {
+      "source_page_id": "NCS-ESTATE-AGENT",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/estate-agent",
+      "publisher": "National Careers Service",
+      "source_section": "How to become / Apprenticeship",
+      "ordinals": [
+        4,
+        5
+      ],
+      "captured_on_dubai": "2026-11-12",
+      "rechecked_on_dubai": "2026-11-12",
+      "exact_complete_literals_confirmed": true,
+      "publication_date": null,
+      "update_date": null,
+      "source_date_status": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+      "bound_capture_excerpt": {
+        "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+        "utf8_lf_bytes": 142,
+        "sha256": "b03e63e387fce296181333181510d0c88602c6f41e3c057f3c57c895dc75dfda",
+        "hash_recomputed_matches": true,
+        "serialization": "Complete title excerpts in recorded order, each followed by LF."
+      },
+      "live_context_paraphrase": "The two complete titles are separate apprenticeship entry routes; the page distinguishes intermediate and advanced entry requirements.",
+      "complete_remote_page_archived": false,
+      "remote_page_body_sha256": null
+    },
+    {
+      "source_page_id": "NCS-BUILDING-SURVEYOR",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/building-surveyor",
+      "publisher": "National Careers Service",
+      "source_section": "How to become / Apprenticeship",
+      "ordinals": [
+        6
+      ],
+      "captured_on_dubai": "2026-11-12",
+      "rechecked_on_dubai": "2026-11-12",
+      "exact_complete_literals_confirmed": true,
+      "publication_date": null,
+      "update_date": null,
+      "source_date_status": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+      "bound_capture_excerpt": {
+        "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+        "utf8_lf_bytes": 49,
+        "sha256": "9c10e26f72b17cfb56e6c4acaee7348407c42be688892d69232992a7f8a5eaac",
+        "hash_recomputed_matches": true,
+        "serialization": "Complete title excerpts in recorded order, each followed by LF."
+      },
+      "live_context_paraphrase": "The complete title is explicitly an apprenticeship application route with a construction or surveying employer.",
+      "complete_remote_page_archived": false,
+      "remote_page_body_sha256": null
+    },
+    {
+      "source_page_id": "NCS-TOWN-PLANNER",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/town-planner",
+      "publisher": "National Careers Service",
+      "source_section": "How to become / Apprenticeship",
+      "ordinals": [
+        7
+      ],
+      "captured_on_dubai": "2026-11-12",
+      "rechecked_on_dubai": "2026-11-12",
+      "exact_complete_literals_confirmed": true,
+      "publication_date": null,
+      "update_date": null,
+      "source_date_status": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+      "bound_capture_excerpt": {
+        "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+        "utf8_lf_bytes": 53,
+        "sha256": "d025ed7cfd4fa1e445646f4062c2b7bf6000a5839194e1e5e334d9e08c573b7d",
+        "hash_recomputed_matches": true,
+        "serialization": "Complete title excerpts in recorded order, each followed by LF."
+      },
+      "live_context_paraphrase": "The complete title is an apprenticeship application route combining work and university study. Its provider link targets course 424.",
+      "complete_remote_page_archived": false,
+      "remote_page_body_sha256": null
+    },
+    {
+      "source_page_id": "NCS-FACILITIES-MANAGER",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/facilities-manager",
+      "publisher": "National Careers Service",
+      "source_section": "How to become / Apprenticeship",
+      "ordinals": [
+        8,
+        9
+      ],
+      "captured_on_dubai": "2026-11-12",
+      "rechecked_on_dubai": "2026-11-12",
+      "exact_complete_literals_confirmed": true,
+      "publication_date": null,
+      "update_date": null,
+      "source_date_status": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+      "bound_capture_excerpt": {
+        "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json",
+        "utf8_lf_bytes": 114,
+        "sha256": "2373e4f29a5caf77109bbefef40d31317a8b68043dc52f1523ebaa50d3214774",
+        "hash_recomputed_matches": true,
+        "serialization": "Complete title excerpts in recorded order, each followed by LF."
+      },
+      "live_context_paraphrase": "The complete titles appear as separate property-management-company apprenticeship routes, with workplace training and off-site study.",
+      "complete_remote_page_archived": false,
+      "remote_page_body_sha256": null
+    }
+  ],
+  "town_planner_route_resolution": {
+    "ordinals": [
+      1,
+      7
+    ],
+    "resolution": "ONE_ROUTE_GROUP_ONE_PROVISIONAL_CANDIDATE",
+    "representative_ordinal": 7,
+    "supporting_source_occurrence_ordinal": 1,
+    "confidence": "CORROBORATED_COMMON_STANDARD_NOT_INDEPENDENT_CONCEPTS",
+    "evidence": [
+      {
+        "source_url": "https://www.rtpi.org.uk/become-a-planner/apprenticeships/chartered-town-planner-apprenticeship/",
+        "location": "Body / approved standard and End-Point-Assessment documentation link",
+        "observed_fact_paraphrase": "RTPI describes a chartered planning apprenticeship with two entry points and links its approved standard to the chartered-town-planner degree standard.",
+        "linked_url": "https://www.instituteforapprenticeships.org/apprenticeship-standards/chartered-town-planner-degree/",
+        "resolved_url": "https://skillsengland.education.gov.uk/apprenticeships/st0536-v1-0"
+      },
+      {
+        "source_url": "https://skillsengland.education.gov.uk/apprenticeships/st0536-v1-0",
+        "publisher": "Skills England",
+        "location": "Reference number, Level, professional registration and LARS Code",
+        "observed_fact_paraphrase": "The standard reference is ST0536, Level 7, with LARS code 424 and chartered RTPI membership on completion.",
+        "standard_reference": "ST0536",
+        "standard_level": 7,
+        "lars_code": 424
+      },
+      {
+        "source_url": "https://nationalcareers.service.gov.uk/job-profiles/town-planner",
+        "location": "Apprenticeship / apprenticeship training providers link",
+        "observed_fact_paraphrase": "NCS supplies the complete Level 7 degree title and links its training-provider lookup to course 424.",
+        "linked_url": "https://findapprenticeshiptraining.apprenticeships.education.gov.uk/courses/424/providers",
+        "fetch_result": "403_FORBIDDEN",
+        "limitation": "The link destination was observed; provider-page content was not retrieved or relied upon."
+      }
+    ],
+    "inference": "Matching the NCS course number to the RTPI-linked official standard's LARS code supports one common route. No claim of a second provider, curriculum, award or independent concept is supported. Preserve both real title strings but propose only ordinal 7.",
+    "route_ids_are_evidence_not_new_campaign_or_keyword_ids": true,
+    "no_remote_full_body_hash_claimed": true
+  },
+  "within_capture_variant_review": {
+    "normalized_exact_duplicates": 0,
+    "town_planner_alias_group": [
+      1,
+      7
+    ],
+    "retained_distinct_pairs": [
+      {
+        "ordinals": [
+          2,
+          3
+        ],
+        "basis": "Different complete published occupational specialisms: building-services engineering and construction design/build. Same level alone does not make them aliases."
+      },
+      {
+        "ordinals": [
+          4,
+          5
+        ],
+        "basis": "Separate published intermediate Level 2 assistant and advanced Level 3 routes; genuine role/level differences."
+      },
+      {
+        "ordinals": [
+          8,
+          9
+        ],
+        "basis": "Separate published advanced Level 3 supervisor and higher Level 4 manager routes; genuine role/level differences."
+      }
+    ],
+    "cross_family_assessment": "Surveying, town planning, construction design/build, building-services engineering, housing/property management and facilities management are not treated as aliases solely because they concern property or the built environment.",
+    "external_library_token_peer_or_closed_alias_comparison": "NOT_PERFORMED",
+    "not_a_complete_current_master_variant_clearance": true
+  },
+  "inherited_membership_evidence_limits": {
+    "source_commit_recorded_in_feasibility": "8b4c113166b30aa4a3d96adc6583697e225073ff",
+    "recorded_saved_index_exact_nonmembers": 9,
+    "independently_repeated_this_review": false,
+    "exact_index_nonmembership_is_not_full_record_or_protection_clearance": true
+  },
+  "rows": [
+    {
+      "ordinal": 1,
+      "candidate_identity_from_feasibility": "BSRE-N-28f773e86aa9afd570fb5417",
+      "original_text": "Chartered Town Planner Apprenticeship",
+      "normalized_text": "chartered town planner apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "a9d41ec9d15ce72beea1faca1d6c582b6ed240e19b04b03f981640e2efe0adb4"
+      },
+      "source_page_id": "RTPI-PLANNER-APPRENTICESHIP",
+      "source_url": "https://www.rtpi.org.uk/become-a-planner/apprenticeships/chartered-town-planner-apprenticeship/",
+      "source_section": "Main page heading",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "Explicit occupational work-and-study apprenticeship; it is not merely a town-planning service title.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 37,
+        "word_count": 4,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Planning consultation, land-use advice, development enquiries and property guidance remain protected outside this complete apprenticeship literal.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "TOWN-PLANNER-ST0536",
+        "representative_ordinal": 7,
+        "assessment": "Same-route evidence links this shorter heading to the Level 7 ST0536 course described by ordinal 7. Retain the actual published heading as corroborating occurrence/alias; do not count an additional concept.",
+        "separately_proposed_candidate": false,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "SOURCE_OCCURRENCE_VARIANT_ONLY_NOT_SEPARATE_PROPOSAL",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 2,
+      "candidate_identity_from_feasibility": "BSRE-N-44d1d90abfbe8961d93f2748",
+      "original_text": "Building Services Engineering Senior Technician Level 4 Higher Apprenticeship",
+      "normalized_text": "building services engineering senior technician level 4 higher apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "79b8095662bac3be19c564ca51a3354740dbf9796e115405d90d760dd45ccb14"
+      },
+      "source_page_id": "NCS-BUILDING-TECHNICIAN",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/building-technician",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The complete literal expressly names higher apprenticeship training for a senior building-services engineering technician.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 77,
+        "word_count": 9,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Building engineering, maintenance, property operation and related service or buyer guidance remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "BUILDING-SERVICES-ENGINEERING-SENIOR-TECHNICIAN-L4",
+        "representative_ordinal": 2,
+        "assessment": "Ordinal 3 names construction design/build rather than building-services engineering. The publisher separately lists both; shared Level 4 and apprenticeship wording do not erase the different occupational specialisms.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 3,
+      "candidate_identity_from_feasibility": "BSRE-N-7e75721bdd2e8bbd260799a0",
+      "original_text": "Construction Design and Build Technician Level 4 Higher Apprenticeship",
+      "normalized_text": "construction design and build technician level 4 higher apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "426bed0b55b3db1e92859b8bd42768607ba60f42b54c93e0009425918929f6cd"
+      },
+      "source_page_id": "NCS-BUILDING-TECHNICIAN",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/building-technician",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The complete literal expressly names higher apprenticeship training for a construction design/build technician.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 70,
+        "word_count": 9,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Construction, design/build services, development enquiries and property acquisition guidance remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "CONSTRUCTION-DESIGN-AND-BUILD-TECHNICIAN-L4",
+        "representative_ordinal": 3,
+        "assessment": "A separate published occupational specialism from ordinal 2. This review neither creates a reordered wording variant nor treats their common level as an extra qualification distinction.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 4,
+      "candidate_identity_from_feasibility": "BSRE-N-c9550a2e56ea524ac7a07693",
+      "original_text": "Housing and Property Management Assistant Level 2 Intermediate Apprenticeship",
+      "normalized_text": "housing and property management assistant level 2 intermediate apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "d17e516bf31025fe88d88119254cf5102cf2d0a2882a2a6abe3e3c96d881d01c"
+      },
+      "source_page_id": "NCS-ESTATE-AGENT",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/estate-agent",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The full literal expressly names intermediate apprenticeship training for a housing/property-management assistant.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 77,
+        "word_count": 9,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Landlord instructions, rental services, tenancy help and property-management guides remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "HOUSING-PROPERTY-MANAGEMENT-ASSISTANT-L2",
+        "representative_ordinal": 4,
+        "assessment": "Ordinal 5 is a separately published Level 3 advanced route. This Level 2 intermediate assistant route has an explicit role and level distinction, rather than a spelling-only difference.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 5,
+      "candidate_identity_from_feasibility": "BSRE-N-11475e5229fff28a07ceee42",
+      "original_text": "Housing and Property Management Level 3 Advanced Apprenticeship",
+      "normalized_text": "housing and property management level 3 advanced apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "ce0dca7bac7ca1a2d0ac6f4ffc421f0cbaa86d33799e6331c97997f46c070a49"
+      },
+      "source_page_id": "NCS-ESTATE-AGENT",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/estate-agent",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The full literal expressly names advanced apprenticeship training in housing/property management.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 63,
+        "word_count": 8,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Property-management instructions, landlord/rental enquiries and property-service guides remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "HOUSING-PROPERTY-MANAGEMENT-L3",
+        "representative_ordinal": 5,
+        "assessment": "Separately published Level 3 advanced route versus the Level 2 intermediate assistant route at ordinal 4. No progression, curriculum equivalence or UAE recognition is inferred.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 6,
+      "candidate_identity_from_feasibility": "BSRE-N-51abaa40a11b771e3d0842b8",
+      "original_text": "Chartered Surveyor Level 6 Degree Apprenticeship",
+      "normalized_text": "chartered surveyor level 6 degree apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "a169ac34bcded885db533bcde9ee9493c58a9072ec74a751e4f52d992226b7d8"
+      },
+      "source_page_id": "NCS-BUILDING-SURVEYOR",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/building-surveyor",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The full literal expressly names a surveyor degree apprenticeship, rather than requesting a survey or valuation.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 48,
+        "word_count": 6,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Surveying, valuation, building-condition advice and buyer/property guides remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "CHARTERED-SURVEYOR-L6",
+        "representative_ordinal": 6,
+        "assessment": "The surveying profession is distinct from the town-planning route at ordinals 1/7. Their shared chartered/degree vocabulary does not establish a common route. Do not invent narrower surveying pathways.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 7,
+      "candidate_identity_from_feasibility": "BSRE-N-12152b0d0cb07d69f8011eb3",
+      "original_text": "Chartered Town Planner Level 7 Degree Apprenticeship",
+      "normalized_text": "chartered town planner level 7 degree apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "87f4ab3b0618fcae7d9e439005eddc977fc67ccf0ac80307c87fc5341780fd41"
+      },
+      "source_page_id": "NCS-TOWN-PLANNER",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/town-planner",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The full literal expressly names Level 7 degree apprenticeship training in town planning.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 52,
+        "word_count": 7,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Planning advice, development services, land-use enquiries and property guides remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "TOWN-PLANNER-ST0536",
+        "representative_ordinal": 7,
+        "assessment": "Use this already-published complete literal as the single town-planner representative. Ordinal 1 remains a supporting source occurrence, not a second candidate. Route association is corroborated through ST0536/LARS 424.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 8,
+      "candidate_identity_from_feasibility": "BSRE-N-cfbdb2efcc9c1251c82dd54b",
+      "original_text": "Facilities Management Supervisor Level 3 Advanced Apprenticeship",
+      "normalized_text": "facilities management supervisor level 3 advanced apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "d444357cef4905d0a0d7975de0ee8622e5f9797370ef4c040198433492493222"
+      },
+      "source_page_id": "NCS-FACILITIES-MANAGER",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/facilities-manager",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The full literal expressly names advanced apprenticeship training for a facilities-management supervisor.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 64,
+        "word_count": 7,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Facilities services, building operation, maintenance and property-management guidance remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "FACILITIES-MANAGEMENT-SUPERVISOR-L3",
+        "representative_ordinal": 8,
+        "assessment": "The publisher separately lists this Level 3 supervisor route and ordinal 9's Level 4 manager route. Both role and level differ; they are not merely spelling variants.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    },
+    {
+      "ordinal": 9,
+      "candidate_identity_from_feasibility": "BSRE-N-9f62a85f39722262cd46b695",
+      "original_text": "Facilities Manager Level 4 Higher Apprenticeship",
+      "normalized_text": "facilities manager level 4 higher apprenticeship",
+      "literal_sha256": {
+        "algorithm": "SHA256",
+        "encoding": "UTF-8",
+        "trailing_newline": false,
+        "value": "2ba3c3931c2f54cbfd23fa550a8153782a4b3fdafed0910f8357eac78b655a7a"
+      },
+      "source_page_id": "NCS-FACILITIES-MANAGER",
+      "source_url": "https://nationalcareers.service.gov.uk/job-profiles/facilities-manager",
+      "source_section": "How to become / Apprenticeship",
+      "complete_literal_read": true,
+      "source_title_confirmed_verbatim_on_primary_page": true,
+      "source_intent": {
+        "category": "EXPLICIT_OCCUPATIONAL_APPRENTICESHIP",
+        "assessment": "The full literal expressly names higher apprenticeship training for a facilities manager.",
+        "observed_search_query": false
+      },
+      "text_compatibility": {
+        "character_count": 48,
+        "word_count": 6,
+        "character_limit": 80,
+        "word_limit": 15,
+        "count_method": "Original complete string; Unicode characters and whitespace-separated words. All strings are ASCII.",
+        "within_both_local_limits": true,
+        "known_symbol_or_syntax_flags": [],
+        "result": "LOCAL_TEXT_SCREEN_PASS_NOT_PLATFORM_ACCEPTANCE",
+        "text_shortened_or_rewritten": false
+      },
+      "protected_intent_review": {
+        "assessment": "Commercial leasing, facilities/operational services, property management and building-use guidance remain protected outside the complete training title.",
+        "risk_for_complete_literal": "LOW_SEMANTIC_COLLISION_SUBJECT_TO_FULL_SCOPE_AUDIT",
+        "risk_if_abbreviated_or_broadened": "UNACCEPTABLE_WITHOUT_SEPARATE_REVIEW",
+        "full_protected_query_or_positive_coverage_audit": "NOT_PERFORMED"
+      },
+      "variant_review": {
+        "group_id": "FACILITIES-MANAGER-L4",
+        "representative_ordinal": 9,
+        "assessment": "The separately published Level 4 manager route differs from ordinal 8's Level 3 supervisor route in role and level. No generic manager/management alias is manufactured.",
+        "separately_proposed_candidate": true,
+        "wording_manufactured": false
+      },
+      "proposed_decision": "PROVISIONAL_COMPLETE_LITERAL_FOR_ROOT_EVALUATION",
+      "proposed_use_limit": "Root may evaluate only the complete original literal for later EXACT research. No phrase/broad use or shortened service terms are proposed.",
+      "admission_state": "NOT_ADMITTED",
+      "full_admission_audit_completed": false,
+      "human_review_completed": false,
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    }
+  ],
+  "remaining_root_checks": [
+    "Reconcile current complete source records, current master, all historical archives/protections and exact/token-peer/closed-alias membership.",
+    "Bind the intended service/purpose and check complete protected-query and positive coverage at the actual allowed scope.",
+    "Keep ordinal 1 as source-occurrence/alias support under ordinal 7; never count or admit it as another concept without distinct-route evidence.",
+    "Register exact unchanged source/review provenance and applicable freshness evidence if root chooses an append-only admission stage.",
+    "Make a root admission decision only after required source/scope/audit gates. Keep separate human exclusion approval and production release gates.",
+    "Retain every historical pin and record. This source-only review grants no access, publication, Ads, Business Setup, activation or expenditure authority."
+  ],
+  "boundaries": {
+    "source_and_projection_modified": false,
+    "registry_modified": false,
+    "library_modified": false,
+    "code_modified": false,
+    "progress_or_owner_decisions_modified": false,
+    "commits_created": false,
+    "production_changed": false,
+    "ads_changed": false,
+    "business_setup_touched": false,
+    "metrics_or_private_lead_data_accessed": false,
+    "full_tests_or_composition_run": false
+  }
+}
