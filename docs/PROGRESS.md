@@ -2,6 +2,8 @@
 
 ## 12 November actual producer/provider composition
 
+- Second native failureb8180b4/run43231649521/job131228216107 exposed a nonexistent WordPress unregister function in the new fault-injection harness. Before another run, an independent in-memory audit verified the exact pinned7.1.4 archive and every external harness API; no install or local WordPress execution occurred. Replaced the call with the supported transient rest_endpoints filter, retained the missing-route assertion and added original-registry restoration. Provider code/guards unchanged; no case removed and no unchanged job restarted. Corrected source still requires new-head native CI.
+
 - Preserved failed native head595a8e1/run43230741791/job131225066710. Actual SQLJournal/source-pipe10checks and original capture49checks passed; the new admission harness then correctly failed its strict local-origin guard. Root cause was globally enabled fixture SSL. Scoped HTTPS variables/home filter to actual route calls with exact finally restoration and an explicit local-origin assertion; no isolation check or provider behavior was relaxed. Corrected native acceptance remains PENDING a new source head.
 
 - Extended concrete capture SQL to the exact selected source-derived Purpose/Admission repository, dedicated connection and actual guarded routes/UUID issuer. Source dependencies and descriptor are pinned/rechecked. All27 columns, nullable history bytes and canonical acceptance chronology are bound; exact deletion preserves shared consent state/history. Original23-column recreation/HELD regression remains unchanged. The new actual-route/provider native harness labels fixture-only aging and synthetic receiver deletion explicitly.
