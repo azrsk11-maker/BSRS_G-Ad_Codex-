@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "employment-followup-batch2.json",
+      "batch_id": "BSRE-KP-EMP-20261111-02",
+      "sha256": "a39cb137570e71e64c50081d8019268d30ee96498cdb651f66bfc3a99f4a1189",
+      "bytes": 399991,
+      "records": 444,
+      "distinct_normalized": 444,
+      "source_bytes": 70960,
+      "source_sha256": "124f99b2f16fdc42759eeb134eb30b7eef1d43647dcd739d6b4149fef751762d"
+    }
+  ],
+  "totals": {
+    "export_rows": 444,
+    "distinct_normalized_phrases": 444,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}
