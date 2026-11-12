@@ -1,5 +1,10 @@
 # Efficiency audit — 7 November 2026
 
+## Current ARM result and follow-up — 13 November 2026
+
+Actual ARM execution completed all559keyword cases/44modules in169.343477s,zero skips,complete ordered coverage and no timeout under the original300s bound. Full acceptance was false because a filesystem-order-dependent tamper test targeted the preview. The follow-up selects the manifest-pinned source and requires an exact byte-hash rejection under both discovery orders; validator/data and case counts stay unchanged. The focused real reporting worker passes allthree cases. [Actual runtime, limits, root cause and current-CI requirement](../../docs/audit/ARM_RUNTIME_TRIAL_2026-11-13.json). Cloud hosts/images differ; no causal speedup percentage or passing combined CI is inferred from the first failed ARM run.
+
+
 ## Current runtime trial — 13 November 2026
 
 Foundation's existing300s keyword bound stopped the559-case/44-module source at535finished cases. The copier experiment was withdrawn after its benefit gate failed. A reversible trial now requests the standard public-repository Ubuntu24.04 ARM runner, retaining Python3.12, all cases, source/history checks, process/resource controls and both WordPress jobs. The startup observer validates actual Linux/aarch64/public-repository metadata and emits a bounded whitelist; it grants no acceptance. Complete local efficiency tests:115cases,112passed/threeexisting platform skips. [Baseline, pricing evidence, trial gates and rollback](../../docs/audit/ARM_RUNTIME_TRIAL_2026-11-13.json). Actual ARM completion and performance remain unproven until current-head CI finishes. Earlier measurements below keep their original scopes.
