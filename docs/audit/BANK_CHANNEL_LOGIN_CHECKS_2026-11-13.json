@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "tests_run": 28,
+  "failures": 0,
+  "errors": 0,
+  "preflight_seconds": 0.274889,
+  "fresh_base_seconds": 93.234742,
+  "focused_seconds": 31.429723,
+  "total_seconds": 135.763897,
+  "base_sha256": "ea897a269a001239ab9d2ef1a75f9640909c1a55f66c6c8e5e40ec98623c3765",
+  "review_pin": "cf6bd76fb5438976ce1984086ff49014819b2a9d68e22a325d24e98c5e6337bb",
+  "output_pins": {
+    "index.json": "364fa785057f2bf825d627d71ef944b977eab1c243aa530f5e3319587c2c7f88",
+    "cohort-report.json": "bf70563984b61b9c34483b762ada6bfc233a5cb471ac3d1934567bbca8a4c814",
+    "library-report.json": "9285460d607d99491fb340999a9c146b7f13e800ec2465de47500574c2702220",
+    "research-pool-allocation.json": "7b0225d3d59d22e62cbcb9c281171f4832650ddbe5273d785e6781fdfce04746"
+  },
+  "complete_inputs_sha256": "a93d5aa368975f79d3fd5bd92223ccfe93d8b48d725ac8c301013aba8d3868cb",
+  "initial_generation_fresh_base_seconds": 90.931828,
+  "independent_human_approval_claimed": false,
+  "production_or_ads_changed": false,
+  "scope": "LOCAL_DEVELOPMENT_CHECKS_NOT_HUMAN_OR_RELEASE_APPROVAL",
+  "summary": {
+    "input_rows": 12156,
+    "new_rows": 170,
+    "deficit": 1844,
+    "protected_queries_indexed": 17715,
+    "source_occurrences_retained_in_current_records": 12369,
+    "approved_exclusion_rows": 0,
+    "deployment_export_allowed": false
+  },
+  "efficiency_group": {
+    "tests": 106,
+    "passed": 103,
+    "existing_platform_skips": 3,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 16.797
+  },
+  "dynamic_discovery": {
+    "modules": 41,
+    "cases": 527,
+    "new_module_cases": 14,
+    "deadline_seconds": 300
+  },
+  "semantic_verifier": {
+    "passed": true,
+    "complete_literals": 251,
+    "proposals": 226,
+    "holds": 25,
+    "tamper_cases": 15,
+    "seconds": 0.157885
+  },
+  "ui_comparison": {
+    "passed": true,
+    "observed_labels": 176,
+    "raw_rows": 177,
+    "export_only_ordinal": 99,
+    "capture_accepted": false
+  },
+  "harness_root_cause": "Stale guessed test class/case names; declarations inspected, corrected and preflighted before the accepted fresh replay.",
+  "current_source_ci": "RECORDED_SEPARATELY_AFTER_IMMUTABLE_DELIVERY"
+}
