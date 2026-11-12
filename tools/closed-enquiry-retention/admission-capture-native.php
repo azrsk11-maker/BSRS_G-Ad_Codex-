@@ -3,7 +3,7 @@ declare(strict_types=1);
 /** Actual route/store/provider integration; synthetic aging and receiver deletion only. */
 define('BSRE_CLOSED_RETENTION_LAB', true);
 define('WP_ENVIRONMENT_TYPE', 'local');
-$_SERVER['HTTPS']='on';$_SERVER['SERVER_PORT']='443';$_SERVER['REQUEST_METHOD']='POST';
+$_SERVER['REQUEST_METHOD']='POST';
 require '/opt/wordpress/wp-load.php';
 require '/opt/lab/retention-admission/store.php';
 require '/opt/lab/purpose/purpose-attribution.php';
@@ -88,14 +88,23 @@ function acApi(string $route,string $body,array $headers=[]): WP_REST_Response
     foreach(array_merge(['origin'=>'https://blackswanrealestate.ae','sec-fetch-site'=>'same-origin','content-type'=>'application/json'],$headers)as$key=>$value)$request->set_header($key,$value);
     $request->set_body($body);
     // Existing route fixture requires its HTTPS site. No provider runs with this filter installed.
+    $previous = array_intersect_key($_SERVER, array_flip(['HTTPS','SERVER_PORT']));
+    $_SERVER['HTTPS']='on'; $_SERVER['SERVER_PORT']='443';
     add_filter('home_url','acHttpsHome',10,2);
-    try{return rest_do_request($request);}finally{remove_filter('home_url','acHttpsHome',10);}
+    try{return rest_do_request($request);}finally{
+        remove_filter('home_url','acHttpsHome',10);
+        foreach(['HTTPS','SERVER_PORT']as$key){
+            if(array_key_exists($key,$previous))$_SERVER[$key]=$previous[$key];
+            else unset($_SERVER[$key]);
+        }
+    }
 }
 $_COOKIE=[E\COOKIE=>bin2hex(random_bytes(32))];
 $headers=['x-bsre-csrf'=>E\csrf_token($_COOKIE[E\COOKIE],time()-3,wp_salt('auth'))];
 $prepared=acApi('receipt-recovery/proof','{}',$headers)->get_data();
 acCheck('guarded_route_issued_server_uuid',isset($prepared['admission'])&&$prepared['request_id']===$prepared['admission']['request_id']);
 acCheck('caller_cannot_prepare_old_uuid',acApi('receipt-recovery/proof',wp_json_encode(['request_id'=>$prepared['request_id']]),$headers)->get_status()===400);
+acCheck('route_ssl_context_restored_before_provider',!is_ssl()&&home_url()==='http://bsre.invalid');
 $provider=new C\WpCaptureResource($db,$journal,$store);
 acCheck('actual_selected_store_and_all_routes_enforced',A\readback()['routes_installed']&&A\readback()['store_installed']);
 $other=acConnection();
