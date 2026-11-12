@@ -271,6 +271,7 @@ def run_checks(require_php=False):
             run("php-lint-owner-mail-" + path.name, [*php_prefix, "-l", str(path)])
         run("owner-mail-review-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_mail_review.php")])
         run("owner-closure-amendment-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_closure.php")])
+        run("owner-sender-retirement-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_retirement.php")])
         run("owner-mail-guard-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/guard.test.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
