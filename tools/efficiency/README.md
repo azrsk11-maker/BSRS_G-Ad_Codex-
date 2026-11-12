@@ -1,5 +1,10 @@
 # Efficiency audit — 7 November 2026
 
+## Current runtime trial — 13 November 2026
+
+Foundation's existing300s keyword bound stopped the559-case/44-module source at535finished cases. The copier experiment was withdrawn after its benefit gate failed. A reversible trial now requests the standard public-repository Ubuntu24.04 ARM runner, retaining Python3.12, all cases, source/history checks, process/resource controls and both WordPress jobs. The startup observer validates actual Linux/aarch64/public-repository metadata and emits a bounded whitelist; it grants no acceptance. Complete local efficiency tests:115cases,112passed/threeexisting platform skips. [Baseline, pricing evidence, trial gates and rollback](../../docs/audit/ARM_RUNTIME_TRIAL_2026-11-13.json). Actual ARM completion and performance remain unproven until current-head CI finishes. Earlier measurements below keep their original scopes.
+
+
 ## Retain failures and partial progress on timeout — 11 November 2026
 
 An actual required Foundation attempt exceeded the existing300-second keyword-suite bound. The old top-level handler discarded the successful earlier checks and all partial output. `execute_check` now records an explicit failed timed-out check, bounded decoded partial output in the ignored local report, and elapsed time, allowing the remaining checks to run while overall acceptance stays false. Incomplete TAP evidence cannot become a successful numeric summary. Normal commands, serial order and the300/120-second budgets stay unchanged. Fifteen focused timeout/summary regressions pass; no full current-source PASS is claimed. [Attempt and bounded diagnostics](../../docs/audit/OFQUAL_CONCURRENCY_CHECKS_2026-11-11.json).
