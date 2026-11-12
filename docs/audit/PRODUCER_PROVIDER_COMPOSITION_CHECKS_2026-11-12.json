@@ -10,8 +10,8 @@
     },
     {
       "path": "tools/closed-enquiry-retention/admission-capture-native.php",
-      "bytes": 14424,
-      "sha256": "95101da245e9015a316f507587eef0e72b82ea38c3ea27144580154b6f0210b1"
+      "bytes": 14807,
+      "sha256": "9d593031dbe6c1af7451bf0cd10d7afff5af86ee6da8a07e2e03cab728a73f14"
     },
     {
       "path": "tools/closed-enquiry-retention/test_wp_capture_purpose.php",
@@ -196,7 +196,22 @@
     "closure_aging": "Explicit isolated fixture-only SQL aging",
     "real_provider_acceptance": false,
     "durable_absence": false,
-    "restore_custody": false
+    "restore_custody": false,
+    "preserved_failed_head": {
+      "head": "595a8e1dd4bd8edb85156eab446617600a99d6de",
+      "run_id": 43230741791,
+      "job_id": 131225066710,
+      "conclusion": "failure",
+      "cause": "Native fixture enabled global SSL before local-origin Journal construction; strict isolation guard correctly refused",
+      "prior_completed_phases": {
+        "intake_custody_native": 10,
+        "wp_capture_resource_native": 49
+      },
+      "correction": "Scope SSL variables and HTTPS home filter to route calls, restore exact original presence/values in finally, assert local HTTP before provider",
+      "isolation_guard_relaxed": false,
+      "unchanged_job_rerun": false,
+      "corrected_native_acceptance": "PENDING_NEW_HEAD_CI"
+    }
   },
   "efficiency": {
     "scope": "Default checkpoint read only; exact bytes, not token/billing or execution-speed savings",
