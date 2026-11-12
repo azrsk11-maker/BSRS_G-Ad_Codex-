@@ -11,6 +11,9 @@ from unittest.mock import patch
 SPEC = importlib.util.spec_from_file_location("foundation_php", Path(__file__).resolve().parents[1] / "check_repository.py")
 CHECKER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CHECKER)
+RESOURCE_SPEC = importlib.util.spec_from_file_location('php_keyword_resources', CHECKER.ROOT/'tools/efficiency/keyword_resources.py')
+RESOURCES = importlib.util.module_from_spec(RESOURCE_SPEC)
+RESOURCE_SPEC.loader.exec_module(RESOURCES)
 
 
 class FoundationPhpIsolationTests(unittest.TestCase):
@@ -34,6 +37,7 @@ class FoundationPhpIsolationTests(unittest.TestCase):
         def which(name):
             return {"node": "synthetic-node", "php": "synthetic-php" if available else None}.get(name)
         keyword = {"workers": 2, "aggregate_timeout_seconds": 300,
+            'worker_resources':RESOURCES.select('2',{'cpu_count':2,'memory_available_bytes':8*1024**3}),
             "expected_ids_sha256": "a" * 64, "evidence_sha256": "b" * 64,
             "evidence_file": "test-output/keyword-modules-synthetic.json",
             "summary": {"discovered_modules": 1, "completed_modules": 1, "discovered": 2,
@@ -41,7 +45,10 @@ class FoundationPhpIsolationTests(unittest.TestCase):
                 "timed_out": False, "passed": True}}
         owned = SimpleNamespace(run_owned=lambda args, **kwargs:
             subprocess.CompletedProcess(args, 0, json.dumps(keyword), ""))
-        with patch.object(CHECKER, "module", side_effect=[audit, native, owned]), \
+        expected_modules=iter((audit,native,owned))
+        def load_module(name,path):
+            return RESOURCES if name=='foundation_keyword_resources' else next(expected_modules)
+        with patch.object(CHECKER, "module", side_effect=load_module), \
                 patch.object(Path, "read_text", autospec=True,
                     side_effect=lambda p, *a, **k: json.dumps(manifest) if p.name == "native-page-manifest.json" else "{}"), \
                 patch.object(Path, "glob", autospec=True, side_effect=glob), \

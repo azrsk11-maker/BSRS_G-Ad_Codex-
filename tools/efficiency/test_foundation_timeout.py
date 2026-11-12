@@ -12,6 +12,9 @@ from unittest.mock import patch
 SPEC = importlib.util.spec_from_file_location("foundation_timeout", Path(__file__).resolve().parents[1] / "check_repository.py")
 CHECKER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CHECKER)
+RESOURCE_SPEC = importlib.util.spec_from_file_location('timeout_keyword_resources', CHECKER.ROOT/'tools/efficiency/keyword_resources.py')
+RESOURCES = importlib.util.module_from_spec(RESOURCE_SPEC)
+RESOURCE_SPEC.loader.exec_module(RESOURCES)
 
 
 def tap():
@@ -122,6 +125,7 @@ class FoundationTimeoutTests(unittest.TestCase):
 
     def test_owned_keyword_zero_exit_requires_complete_counted_evidence(self):
         valid = {"workers": 2, "aggregate_timeout_seconds": 300,
+            'worker_resources':RESOURCES.select('2',{'cpu_count':2,'memory_available_bytes':8*1024**3}),
             "expected_ids_sha256": "a" * 64, "evidence_sha256": "b" * 64,
             "evidence_file": "test-output/keyword-modules-synthetic.json",
             "summary": {"discovered_modules": 1, "completed_modules": 1, "discovered": 2,
@@ -129,10 +133,12 @@ class FoundationTimeoutTests(unittest.TestCase):
                 "timed_out": False, "passed": True}}
         incomplete = json.loads(json.dumps(valid))
         incomplete["summary"]["finished"] = 1
-        for body, expected in ((valid, True), (incomplete, False), ({}, False)):
+        unattested = json.loads(json.dumps(valid));del unattested['worker_resources']
+        for body, expected in ((valid, True), (incomplete, False), (unattested,False), ({}, False)):
             owned = SimpleNamespace(run_owned=unittest.mock.Mock(return_value=
                 subprocess.CompletedProcess([], 0, json.dumps(body), "")))
-            with self.subTest(body=body), patch.object(CHECKER, "module", return_value=owned):
+            with self.subTest(body=body), patch.object(CHECKER, "module", side_effect=lambda name,path:
+                    RESOURCES if name=='foundation_keyword_resources' else owned):
                 result = CHECKER.execute_check("keyword-system-behavior", ["synthetic-keyword"], owned_tree=True)
             self.assertEqual(result["passed"], expected)
             self.assertEqual(result["details"]["keyword_evidence_status"],
