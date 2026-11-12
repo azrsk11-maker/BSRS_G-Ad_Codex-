@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-13",
+  "source_files": [
+    {
+      "file": "service-installation.json",
+      "batch_id": "BSRE-KP-SERVICE-INSTALLATION-20261113-01",
+      "sha256": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392",
+      "bytes": 5448286,
+      "records": 6053,
+      "distinct_normalized": 6053,
+      "source_bytes": 845492,
+      "source_sha256": "4dda5a60cfbb680edff4d2b6c17319f55afb41055968052bb18e6b3d883f5078"
+    }
+  ],
+  "totals": {
+    "export_rows": 6053,
+    "distinct_normalized_phrases": 6053,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}
