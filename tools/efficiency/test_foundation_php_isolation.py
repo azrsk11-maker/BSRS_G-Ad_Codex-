@@ -20,11 +20,12 @@ class FoundationPhpIsolationTests(unittest.TestCase):
             "registry_rows_fully_checked": 360, "upstream_check_count": 38, "additional_check_count": 14})
         native = SimpleNamespace(compile_manifest=lambda *args: manifest)
         actual_glob, actual_rglob = Path.glob, Path.rglob
-        def glob(path, pattern):
-            return list(actual_glob(path, pattern)) if pattern == "*.php" else [Path("synthetic-one.py"), Path("synthetic-two.py")]
-        def rglob(path, pattern):
+        def glob(path, pattern, **kwargs):
+            # Python 3.14 rglob delegates **/*.php and keyword options to glob.
+            return list(actual_glob(path, pattern, **kwargs)) if pattern in ("*.php", "**/*.php") else [Path("synthetic-one.py"), Path("synthetic-two.py")]
+        def rglob(path, pattern, **kwargs):
             if pattern == "*.php":
-                return list(actual_rglob(path, pattern))
+                return list(actual_rglob(path, pattern, **kwargs))
             return [Path("synthetic.test.mjs")] * 3 if pattern == "*.test.mjs" else []
         def child(args, **kwargs):
             tap = ("TAP version 13\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n"
@@ -110,6 +111,21 @@ class FoundationPhpIsolationTests(unittest.TestCase):
         self.assertEqual(failure, [{"check": "php-runtime-required", "passed": False,
                                     "details": "PHP runtime unavailable"}])
         self.assertFalse(result["passed"])
+        self.assertFalse(result["release_authorized"])
+
+    def test_rglob_keyword_delegation_preserves_actual_php_walk_and_all_commands(self):
+        # Exercise the newer pathlib delegation while running on Python 3.12 too.
+        delegated_patterns = []
+        def recursive_via_glob(path, pattern, **kwargs):
+            delegated_patterns.append(pattern)
+            return path.glob("**/" + pattern, case_sensitive=kwargs.get("case_sensitive"))
+        with patch.object(Path, "rglob", new=recursive_via_glob):
+            result, delegated_calls = self.orchestrate(True)
+        self.assertEqual(delegated_patterns, ["*.php"])
+        baseline, baseline_calls = self.orchestrate(True)
+        self.assertEqual(delegated_calls, baseline_calls)
+        self.assertEqual(sum(call.args[0][0] == "synthetic-php" for call in delegated_calls), 28)
+        self.assertEqual(result["passed"], baseline["passed"])
         self.assertFalse(result["release_authorized"])
 
 
