@@ -1,0 +1,61 @@
+{
+  "scope": "ABBA_FRESH_FROZEN_VENDOR_CONSTRUCTION_NOT_RELEASE_ACCEPTANCE",
+  "all_outcomes_equal": true,
+  "runs": [
+    {
+      "source_commit": "691aec4bd400e983f6b4a6ae397eb439c86bdb66",
+      "elapsed_seconds": 33.128003,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 1,
+      "version": "before"
+    },
+    {
+      "source_commit": "3012e4585dfe0b5c3054f913719b234528c96f3f",
+      "elapsed_seconds": 26.731238,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 2,
+      "version": "after"
+    },
+    {
+      "source_commit": "3012e4585dfe0b5c3054f913719b234528c96f3f",
+      "elapsed_seconds": 28.230742,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 3,
+      "version": "after"
+    },
+    {
+      "source_commit": "691aec4bd400e983f6b4a6ae397eb439c86bdb66",
+      "elapsed_seconds": 29.346006,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 4,
+      "version": "before"
+    }
+  ],
+  "before_median_seconds": 31.237004499999998,
+  "after_median_seconds": 27.48099,
+  "observed_ratio": 1.1366768264170977,
+  "observed_difference_seconds": 3.756014499999999,
+  "python_hash_seed": "0",
+  "timeout_each_seconds": 120,
+  "source_reconstruction_calls": 4,
+  "no_accepted_result_or_source_read_cache": true,
+  "limitations": "Two runs per revision in separate source worktrees; fixed hash seed, ABBA order. OS caches, host load, thermal state and filesystem latency remain uncontrolled. Timings exclude imports and final diagnostic fingerprinting. No whole-Foundation, billing, token or API saving established.",
+  "production_changed": false,
+  "advertising_changed": false
+}
