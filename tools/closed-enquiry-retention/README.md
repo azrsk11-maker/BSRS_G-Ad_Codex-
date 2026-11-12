@@ -28,6 +28,8 @@ Completed private jobs and closure identifiers can be removed after the thirty-d
 
 ## Remaining deployment gates
 
+The [protected owner amendment screen](../owner-mail-review/README.md#protected-closure-amendments) now provides a candidate for exact, authenticated updates to an existing closure baseline. The canonical record/chronology validator is shared with retirement. `ClosureWriter` implementations require the existing closure lease, exact prior body/revision, no current purge Journal job, and confirmed compare-and-swap. This does not create an initial authoritative source collector or the no-mail retirement coordinator; real sender/fence safety remains unverified by default.
+
 - Genuine protected closure ledger and complete per-enquiry collectors, including exact mail-copy evidence.
 - Implement the approved manual exact-copy manifest, receipt collection and independent marketing-mailbox readback in the protected owner workflow. MailApp supplies neither inbox access nor message IDs. No automation scope is authorized.
 - Real producers honoring the same purge fence and closure lease. Current adapters cannot prove that an external manual edit, new mail copy or unrelated producer is quiesced.

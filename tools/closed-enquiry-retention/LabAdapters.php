@@ -45,7 +45,7 @@ final class LabAuthority implements Authority
     }
 }
 
-final class MemoryJournal implements Journal
+final class MemoryJournal implements Journal, ClosureWriter
 {
     public array $closures = [];
     public array $journals = [];
@@ -62,6 +62,20 @@ final class MemoryJournal implements Journal
         try { return $operation(); } finally { unset($this->locks[$closureId]); }
     }
     public function closure(string $closureId): ?array { return $this->closures[$closureId] ?? null; }
+    public function replaceClosure(array $before, array $after): void
+    {
+        $id = $before['closure_id'];
+        if (!isset($this->locks[$id])) throw new Failure('CLOSURE_LEASE_REQUIRED');
+        foreach ($this->journals as $job) {
+            $bound = is_array($job) && is_array($job['plan'] ?? null) ? ($job['plan']['closure_id'] ?? null) : null;
+            if (!is_string($bound) || !preg_match('/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/D', $bound)
+                || $bound === $id) throw new Failure('CLOSURE_JOB_RECONCILIATION_REQUIRED');
+        }
+        if ($this->closure($id) !== $before || ($after['closure_id'] ?? null) !== $id
+            || ($after['revision'] ?? null) !== $before['revision'] + 1) throw new Failure('CLOSURE_REVISION_CONFLICT');
+        $this->closures[$id] = $after;
+        if ($this->closure($id) !== $after) throw new Failure('CLOSURE_WRITE_UNCONFIRMED');
+    }
     public function journal(string $planId): ?array { return $this->journals[$planId] ?? null; }
     public function save(array &$record): void
     {
@@ -103,7 +117,7 @@ final class LabAdmission implements Admission
 }
 
 /** MariaDB journal with committed intents and a connection-owned closure lease. */
-final class LabSqlJournal implements Journal
+final class LabSqlJournal implements Journal, ClosureWriter
 {
     private $db;
     private string $prefix;
@@ -145,6 +159,22 @@ final class LabSqlJournal implements Journal
         });
     }
     public function closure(string $closureId): ?array { return $this->read('closures', $closureId); }
+    public function replaceClosure(array $before, array $after): void
+    {
+        $id = $before['closure_id'];
+        if (!isset($this->leases[$id])) throw new Failure('CLOSURE_LEASE_REQUIRED');
+        $this->db->last_error = '';
+        $binding = "JSON_EXTRACT(body,'$.plan.closure_id')";
+        $jobs = $this->db->get_var($this->db->prepare("SELECT COUNT(*) FROM {$this->prefix}jobs WHERE JSON_UNQUOTE($binding)=%s"
+            . " OR JSON_TYPE($binding) IS NULL OR JSON_TYPE($binding)<>'STRING'"
+            . " OR BINARY JSON_UNQUOTE($binding) NOT REGEXP '^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$'", $id));
+        if ($this->db->last_error !== '' || (string) $jobs !== '0') throw new Failure('CLOSURE_JOB_RECONCILIATION_REQUIRED');
+        if ($this->closure($id) !== $before || ($after['closure_id'] ?? null) !== $id
+            || ($after['revision'] ?? null) !== $before['revision'] + 1) throw new Failure('CLOSURE_REVISION_CONFLICT');
+        $result = $this->db->query($this->db->prepare("UPDATE {$this->prefix}closures SET body=%s WHERE id=%s AND BINARY body=BINARY %s",
+            json_encode($after, JSON_THROW_ON_ERROR), $id, json_encode($before, JSON_THROW_ON_ERROR)));
+        if ($result !== 1 || $this->closure($id) !== $after) throw new Failure('CLOSURE_WRITE_UNCONFIRMED');
+    }
     public function journal(string $planId): ?array { return $this->read('jobs', $planId); }
     public function save(array &$record): void
     {

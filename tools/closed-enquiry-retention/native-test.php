@@ -67,6 +67,54 @@ nativeCheck('private_identifiers_removed_after_recovery_window', $resumed->expir
 nativeCheck('nonidentifying_history_gap_marker_survives_cleanup', $restarted->historyIncomplete());
 nativeCheck('nonidentifying_admission_floor_survives_cleanup', $restarted->admissionFloor() === $plan['admission_hash']);
 
+// Protected amendments use the existing connection-owned lease and exact CAS.
+$amendment = C\fixture($journal);
+$before = $amendment['closure'];
+$after = $before;
+$after['revision']++;
+$after['status'] = 'CLOSED';
+$after['recorded_at_utc'] = gmdate('Y-m-d\TH:i:s\Z', $amendment['now']);
+$denied = false;
+try { $journal->replaceClosure($before, $after); }
+catch (RuntimeException $error) { $denied = $error->getMessage() === 'CLOSURE_LEASE_REQUIRED'; }
+nativeCheck('amendment_requires_existing_closure_lease', $denied && $journal->closure($before['closure_id']) === $before);
+$journal->locked($before['closure_id'], function () use ($journal, $restarted, $before, $after) {
+    $denied = false;
+    try { $restarted->replaceClosure($before, $after); }
+    catch (RuntimeException $error) { $denied = $error->getMessage() === 'CLOSURE_LEASE_REQUIRED'; }
+    nativeCheck('another_connection_cannot_borrow_closure_lease', $denied);
+    $journal->replaceClosure($before, $after);
+    nativeCheck('exact_amendment_is_visible_to_fresh_connection', $restarted->closure($before['closure_id']) === $after);
+    $denied = false;
+    try { $journal->replaceClosure($before, $after); }
+    catch (RuntimeException $error) { $denied = $error->getMessage() === 'CLOSURE_REVISION_CONFLICT'; }
+    nativeCheck('stale_amendment_cannot_bump_revision_twice', $denied && $journal->closure($before['closure_id']) === $after);
+});
+$amendment['closure'] = $after;
+$amendmentPlan = C\approved($amendment);
+$amendment['workflow']->execute($amendmentPlan, 'synthetic-owner', $amendment['now']);
+$next = $after; $next['revision']++;
+$journal->locked($after['closure_id'], function () use ($journal, $after, $next) {
+    $denied = false;
+    try { $journal->replaceClosure($after, $next); }
+    catch (RuntimeException $error) { $denied = $error->getMessage() === 'CLOSURE_JOB_RECONCILIATION_REQUIRED'; }
+    nativeCheck('existing_purge_journal_blocks_amendment', $denied && $journal->closure($after['closure_id']) === $after);
+});
+
+$unknownBefore = $after; $unknownBefore['closure_id'] = C\syntheticUuid(102); $unknownBefore['revision'] = 1;
+$journal->putClosure($unknownBefore);
+$unknownAfter = $unknownBefore; $unknownAfter['revision']++;
+$unknownId = str_repeat('f', 64);
+if ($db->query($db->prepare("INSERT INTO closed_retention_synthetic_jobs VALUES (%s,1,%s)",
+    $unknownId, json_encode(['revision' => 1, 'plan' => []], JSON_THROW_ON_ERROR))) !== 1) throw new RuntimeException('Synthetic unknown job fixture failed');
+$journal->locked($unknownBefore['closure_id'], function () use ($journal, $unknownBefore, $unknownAfter) {
+    $denied = false;
+    try { $journal->replaceClosure($unknownBefore, $unknownAfter); }
+    catch (RuntimeException $error) { $denied = $error->getMessage() === 'CLOSURE_JOB_RECONCILIATION_REQUIRED'; }
+    nativeCheck('unknown_job_binding_is_not_assumed_unrelated', $denied && $journal->closure($unknownBefore['closure_id']) === $unknownBefore);
+});
+if ($db->query($db->prepare("DELETE FROM closed_retention_synthetic_jobs WHERE id=%s", $unknownId)) !== 1) throw new RuntimeException('Synthetic unknown job cleanup failed');
+
 echo json_encode(['phase' => 'closed_retention_native', 'checks' => $checks,
     'journal' => 'Actual MariaDB', 'provider_resources' => 'Synthetic memory adapters',
     'production_authorized' => false], JSON_THROW_ON_ERROR) . "\n";

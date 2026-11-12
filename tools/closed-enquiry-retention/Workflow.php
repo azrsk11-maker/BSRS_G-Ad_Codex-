@@ -19,6 +19,12 @@ interface Journal
     public function forget(string $closureId, string $planId, bool $keepClosure = false): void;
 }
 
+/** Internal protected writer; the same Journal closure lease must already be held. */
+interface ClosureWriter
+{
+    public function replaceClosure(array $before, array $after): void;
+}
+
 /** Stable keys only. removeExact must compare the full binding and never delete by row number. */
 interface ResourceAdapter
 {
@@ -282,13 +288,8 @@ final class Workflow
         if ($now <= 0) self::fail('CLOCK_INVALID');
         $closure = $this->journal->closure($closureId);
         if ($closure === null) self::fail('CLOSURE_NOT_FOUND');
-        self::closureRecord($closure);
+        self::validateClosureRecord($closure, $now, true);
         if ($closure['closure_id'] !== $closureId) self::fail('CLOSURE_IDENTITY_CONFLICT');
-        if (!in_array($closure['status'], ['CLOSED', 'UNSUCCESSFUL'], true)) self::fail('ENQUIRY_OPEN');
-        $closed = self::stamp($closure['closed_at_utc']);
-        if ($closed < self::stamp($closure['accepted_at_utc']) || $closed > self::stamp($closure['recorded_at_utc'])
-            || self::stamp($closure['recorded_at_utc']) > $now) self::fail('CLOSURE_TIME_INVALID');
-        if (\BSRE\RetentionReview\RetentionInventory::anniversary($closed) > $now) self::fail('RETENTION_NOT_DUE');
         $noCopy = $closure['email_status'] === 'RETIRED_NO_COPY';
         if ($closure['email_status'] !== 'SENT' && !$noCopy) self::fail('OUTBOX_NOT_RECONCILED');
         $gate = $this->verifiedAdmission($now);
@@ -430,6 +431,22 @@ final class Workflow
         // Fresh authenticated readback may rotate; the approved configuration cannot.
         return self::digest(['wp' => $readback['wp'], 'receiver' => $readback['receiver'],
             'source_hashes' => $readback['source_hashes'], 'restore_policy_hash' => $readback['restore_policy_hash']]);
+    }
+
+    /** Canonical record/chronology checks shared by protected amendments and due retirement. */
+    public static function validateClosureRecord(array $value, int $now, bool $requireDue = false): void
+    {
+        self::closureRecord($value);
+        if ($now <= 0) self::fail('CLOCK_INVALID');
+        if ($requireDue && $value['status'] === 'OPEN') self::fail('ENQUIRY_OPEN');
+        $accepted = self::stamp($value['accepted_at_utc']);
+        $recorded = self::stamp($value['recorded_at_utc']);
+        if ($accepted > $recorded || $recorded > $now) self::fail('CLOSURE_TIME_INVALID');
+        if ($value['status'] !== 'OPEN') {
+            $closed = self::stamp($value['closed_at_utc']);
+            if ($closed < $accepted || $closed > $recorded) self::fail('CLOSURE_TIME_INVALID');
+            if ($requireDue && \BSRE\RetentionReview\RetentionInventory::anniversary($closed) > $now) self::fail('RETENTION_NOT_DUE');
+        }
     }
 
     private static function closureRecord(array $value): void
