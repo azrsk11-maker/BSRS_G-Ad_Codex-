@@ -54,8 +54,8 @@ class FoundationPhpIsolationTests(unittest.TestCase):
     def test_required_php_isolates_all_existing_lints_and_behavior_checks(self):
         result, calls = self.orchestrate(True)
         php_calls = [call for call in calls if call.args[0][0] == "synthetic-php"]
-        self.assertEqual(len(php_calls), 43)
-        self.assertEqual(sum("-l" in call.args[0] for call in php_calls), 30)
+        self.assertEqual(len(php_calls), 47)
+        self.assertEqual(sum("-l" in call.args[0] for call in php_calls), 33)
         lint_paths = [Path(call.args[0][-1]).relative_to(CHECKER.ROOT).as_posix()
                       for call in php_calls if "-l" in call.args[0]]
         self.assertEqual(lint_paths, [
@@ -69,7 +69,8 @@ class FoundationPhpIsolationTests(unittest.TestCase):
             "tools/owner-mail-review/" + name for name in sorted(["Cleanup.php", "OwnerClosure.php", "OwnerCollection.php", "OwnerMailReview.php", "OwnerRetirement.php",
                 "TestDoubles.php", "WordPress.php", "guard.test.php", "native-test.php",
                 "collection-native.php", "retirement-native.php", "test_owner_collection.php", "test_owner_closure.php", "test_owner_mail_review.php", "test_owner_retirement.php"], key=Path)] + [
-            "tools/closed-enquiry-retention/" + name for name in ["WpCaptureResource.php", "capture-native.php", "test_wp_capture_guard.php"]])
+            "tools/closed-enquiry-retention/" + name for name in ["WpCaptureResource.php", "capture-native.php", "test_wp_capture_guard.php",
+                "admission-capture-native.php", "test_wp_capture_purpose.php", "intake-custody-native.php"]])
         behavior = [Path(call.args[0][-1]).relative_to(CHECKER.ROOT).as_posix()
                     for call in php_calls if "-l" not in call.args[0]]
         self.assertEqual(behavior, [
@@ -83,7 +84,8 @@ class FoundationPhpIsolationTests(unittest.TestCase):
             "tools/owner-mail-review/test_owner_retirement.php",
             "tools/owner-mail-review/test_owner_collection.php",
             "tools/owner-mail-review/guard.test.php",
-            "tools/closed-enquiry-retention/test_wp_capture_guard.php"])
+            "tools/closed-enquiry-retention/test_wp_capture_guard.php",
+            "tools/closed-enquiry-retention/test_wp_capture_purpose.php"])
         for call in php_calls:
             args = call.args[0]
             self.assertEqual(args[1], "-n")
@@ -129,7 +131,7 @@ class FoundationPhpIsolationTests(unittest.TestCase):
         self.assertEqual(delegated_patterns, ["*.php"])
         baseline, baseline_calls = self.orchestrate(True)
         self.assertEqual(delegated_calls, baseline_calls)
-        self.assertEqual(sum(call.args[0][0] == "synthetic-php" for call in delegated_calls), 43)
+        self.assertEqual(sum(call.args[0][0] == "synthetic-php" for call in delegated_calls), 47)
         self.assertEqual(result["passed"], baseline["passed"])
         self.assertFalse(result["release_authorized"])
 
