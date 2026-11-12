@@ -121,7 +121,7 @@ class AnimalCareAdmissionTests(unittest.TestCase):
 
     def test_new_default_and_support_snapshot_have_separate_fresh_chains(self):
         with patch.object(current,'_fresh_ofqual_animal_care_state',return_value=('animal','animal-report')) as a:
-            self.assertEqual(current.reconstruct(at=self.when),'animal');self.assertEqual(current.verify(at=self.when),'animal-report')
+            self.assertEqual(current.reconstruct_ofqual_animal_care_snapshot(at=self.when),'animal');self.assertEqual(current.verify_ofqual_animal_care_snapshot(at=self.when),'animal-report')
             self.assertEqual(a.call_count,2)
         with patch.object(current,'_fresh_bank_support_state',return_value=('old','old-report')) as old:
             self.assertEqual(current.reconstruct_bank_support_snapshot(at=self.when),'old')

@@ -417,11 +417,20 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and appended official animal-study research."""
-    return _fresh_ofqual_animal_care_state(root, at)[0]
+    """Freshly verify all history and appended banking-channel login research."""
+    return _fresh_bank_channel_login_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
+    return _fresh_bank_channel_login_state(root, at)[1]
+
+
+def reconstruct_ofqual_animal_care_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 11,986-row animal-study snapshot and reports."""
+    return _fresh_ofqual_animal_care_state(root, at)[0]
+
+
+def verify_ofqual_animal_care_snapshot(root=first.ROOT, at=None):
     return _fresh_ofqual_animal_care_state(root, at)[1]
 
 
@@ -584,6 +593,15 @@ def _fresh_ofqual_animal_care_state(root, at):
     base = _fresh_bank_support_state(root, when)[0]
     inputs = ofqual_animal_care_admission.extend(base, root, when)
     result = ofqual_animal_care_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_bank_channel_login_state(root, at):
+    import bank_channel_login_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_ofqual_animal_care_state(root, when)[0]
+    inputs = bank_channel_login_admission.extend(base, root, when)
+    result = bank_channel_login_admission.check_saved(inputs, root, when)
     return inputs, result
 
 
