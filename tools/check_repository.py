@@ -190,6 +190,7 @@ def run_checks(require_php=False):
     run("keyword-vendor-operations-commercial-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-vendor-operations-commercial-2026-11-11/verify_capture.py")])
     run("keyword-veterinary-source-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py"), "--self-check"])
     run("keyword-bank-access-navigation-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-bank-access-navigation-2026-11-12/verify_capture.py"), "--self-check"])
+    run("keyword-bank-support-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-bank-support-review-2026-11-12/verify_review.py"), "--self-check"])
     run("keyword-entertainment-clipboard-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py")])
     run("keyword-entertainment-clipboard-guards", [sys.executable, "-B", "-m", "unittest", "discover", "-s",
                                                str(ROOT / "docs/audit/keyword-entertainment-clipboard-2026-11-11"), "-p", "test_*.py"])
