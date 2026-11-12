@@ -237,7 +237,7 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
             || wp_get_environment_type() !== 'local' || home_url() !== 'http://bsre.invalid'
             || !($db instanceof LeaseBoundWpdb)
-            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_', 'closed_capture_synthetic_', 'closed_intake_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
+            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_', 'closed_capture_synthetic_', 'closed_intake_synthetic_', 'closed_combined_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db;
         $this->db->suppress_errors(true);
         $this->prefix = $db->prefix;

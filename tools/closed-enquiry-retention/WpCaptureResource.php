@@ -7,6 +7,7 @@ require_once __DIR__ . '/LabAdapters.php';
 final class WpCaptureResource implements ResourceAdapter
 {
     public const PREFIX = 'closed_capture_synthetic_';
+    public const COMBINED_PREFIX = 'closed_combined_synthetic_';
     private const SOURCE = '7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262';
     private const ADMISSION_STORE = '5390f2733e7e76c6c2a0e514add39c15ae94327adafd4d23f33e393ef6b4daa8';
     private const ADMISSION_RUNTIME = 'c4ad3ed68da65ee33445274cd995fb658923a5f22aef663a2352dcd699780988';
@@ -36,6 +37,7 @@ final class WpCaptureResource implements ResourceAdapter
     private const PURPOSE_SCHEMA = ['purpose_version'=>'tinyint unsigned', 'purpose_hash'=>'char(64)',
         'purpose_record_hash'=>'char(64)', 'purpose_json'=>'mediumtext'];
     private string $table;
+    private string $namespace;
     private ?string $activeRequest = null;
     private bool $mutating = false;
     private bool $purpose = false;
@@ -44,10 +46,11 @@ final class WpCaptureResource implements ResourceAdapter
     public function __construct(private LeaseBoundWpdb $db, private LabSqlJournal $journal,
         private ?\BSRE\Enquiries\ConsentRepository $repository = null)
     {
+        $this->namespace = $this->db->prefix;
         $this->purpose = $repository !== null && get_class($repository) === 'BSRE\\PurposeAttribution\\WpConsentRepository';
         $this->guard();
         $this->db->suppress_errors(true);
-        $this->table = self::PREFIX . 'bsre_consent_captures';
+        $this->table = $this->db->prefix . 'bsre_consent_captures';
     }
 
     private function guard(): void
@@ -55,7 +58,9 @@ final class WpCaptureResource implements ResourceAdapter
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
             || !function_exists('wp_get_environment_type') || wp_get_environment_type() !== 'local'
             || !function_exists('home_url') || home_url() !== 'http://bsre.invalid'
-            || $this->db->prefix !== self::PREFIX) throw new Failure('CAPTURE_ISOLATED_LAB_ONLY');
+            || $this->db->prefix !== $this->namespace
+            || !($this->db->prefix === self::PREFIX
+                || ($this->purpose && $this->db->prefix === self::COMBINED_PREFIX))) throw new Failure('CAPTURE_ISOLATED_LAB_ONLY');
         if ((defined('SAVEQUERIES') && SAVEQUERIES) || ($this->db->save_queries ?? false)) throw new Failure('CAPTURE_QUERY_LOGGING_UNVERIFIED');
         if (!class_exists('BSRE\\Enquiries\\WpConsentRepository', false)) throw new Failure('CAPTURE_SOURCE_UNVERIFIED');
         $path = (new \ReflectionClass('BSRE\\Enquiries\\WpConsentRepository'))->getFileName();
