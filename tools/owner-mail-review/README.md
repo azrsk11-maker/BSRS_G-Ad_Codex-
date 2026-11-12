@@ -1,5 +1,15 @@
 # Private owner mailbox review candidate
 
+## Protected closure amendments
+
+`OwnerClosure.php` supplies a separate callable review screen for **amending an existing authoritative closure baseline**. It reuses the nominated WordPress owner session, private opaque review store and privacy headers in `serve()`. It installs no route or hook. Only status, actual closure time and evidence reference/hash are editable. The server derives revision, reviewer and recording time, while preserving all enquiry identities, original acceptance time, outcomes and mailbox bindings. Missing baselines cannot be created through this screen; genuine source collection remains required.
+
+The owner reviews the exact before/after bodies and approves their stored digest with a purpose-specific nonce. A committed intent precedes the authoritative closure compare-and-swap. Both use the existing review-job then closure-lease ordering. Exact already-applied targets can resolve lost acknowledgements without another revision increment; stale baselines and expired unapplied plans hold. Recording a recent closure does not make it eligible for deletion: retirement retains its separate twelve-month Dubai calendar gate. Closure approval never grants PURGE authority.
+
+The default `ClosureEditReadback` returns unverified and blocks amendments. A trusted adapter must freshly bind the exact current closure and establish no sender fence or unresolved retirement intent. A caller's fields cannot supply this clearance. Any RETIRED_NO_COPY baseline or existing purge Journal job also holds. Current safety implementations are explicitly synthetic; authenticated real sender/retirement custody readback, initial ledger collection and the later owner retirement coordinator remain deployment prerequisites. Evidence hashes establish byte identity, not the truth of a closure or a property's facts.
+
+Private duplicate review records use the existing fifteen-minute initial review and thirty-day approved-cache limits. Explicit `Store::pruneExpired()` maintenance is required to remove expired copies; no scheduler is installed. Expiry grants no provider deletion, removes no authoritative closure, and cannot certify completion of retirement work. Run `php -n tools/owner-mail-review/test_owner_closure.php` for focused synthetic checks. The existing native test now also exercises actual WordPress identities/nonces and MariaDB custody; it still substitutes source safety and does not prove production acceptance.
+
 This implements the manual owner workflow approved in issue 10, under [DEC-09](../../docs/decisions/OWNER_DECISIONS.md). It is a callable native WordPress screen and controller for an exact private retention plan, the existing durable mail intent/manifest, owner evidence handoff, independent server readback and safe resume. It registers **no hooks, routes, cron jobs, public shortcodes or production providers**. Both lab flags, local WordPress and `http://bsre.invalid` are mandatory. It adds no Gmail permission, mailbox automation or deletion method.
 
 ## What an owner can do in the synthetic lab

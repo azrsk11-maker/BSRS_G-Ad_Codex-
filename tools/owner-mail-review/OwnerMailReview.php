@@ -88,7 +88,8 @@ final class ReviewAuthority implements Authority
     {
         if (!$this->canReview($actor) || $this->jobId === null) return null;
         $job = $this->store->load($this->jobId);
-        return $job !== null && $job['actor'] === $actor && $job['plan']['digest'] === $digest
+        return $job !== null && !array_key_exists('contract', $job['plan'])
+            && $job['actor'] === $actor && $job['plan']['digest'] === $digest
             && is_int($job['approved_at']) ? $job : null;
     }
     public function canApply(string $actor, string $planDigest, int $now, string $action): bool
