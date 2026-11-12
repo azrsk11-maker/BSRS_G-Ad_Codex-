@@ -145,15 +145,17 @@ class EntertainmentAdmissionTests(unittest.TestCase):
                     e.check_saved(changed,e.first.ROOT,self.when)
                 outputs.assert_not_called()
 
-    def test_all_ten_public_entrypoints_start_from_fresh_history(self):
+    def test_all_twelve_public_entrypoints_start_from_fresh_history(self):
         calls = (current.reconstruct_vendor_snapshot,current.verify_vendor_snapshot,
             current.reconstruct_followup_snapshot,current.verify_followup_snapshot,
             current.reconstruct_valuation_snapshot,current.verify_valuation_snapshot,
-            current.reconstruct_ofqual_snapshot,current.verify_ofqual_snapshot,current.reconstruct,current.verify)
+            current.reconstruct_ofqual_snapshot,current.verify_ofqual_snapshot,
+            current.reconstruct_entertainment_snapshot,current.verify_entertainment_snapshot,
+            current.reconstruct,current.verify)
         with patch.object(history,'reconstruct_current',side_effect=ValueError('fresh source unavailable')) as fresh:
             for call in calls:
                 with self.assertRaisesRegex(ValueError,'fresh source unavailable'):call(at=self.when)
-            self.assertEqual(fresh.call_count,10)
+            self.assertEqual(fresh.call_count,12)
 
 
 if __name__ == '__main__':

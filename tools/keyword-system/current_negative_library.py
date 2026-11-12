@@ -417,11 +417,20 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and the appended game-clipboard research."""
-    return _fresh_entertainment_state(root, at)[0]
+    """Freshly verify all history and the appended apprenticeship research."""
+    return _fresh_apprenticeship_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
+    return _fresh_apprenticeship_state(root, at)[1]
+
+
+def reconstruct_entertainment_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 10,955-row entertainment snapshot and frozen reports."""
+    return _fresh_entertainment_state(root, at)[0]
+
+
+def verify_entertainment_snapshot(root=first.ROOT, at=None):
     return _fresh_entertainment_state(root, at)[1]
 
 
@@ -476,6 +485,15 @@ def _fresh_entertainment_state(root, at):
     base = _fresh_ofqual_state(root, when)[0]
     inputs = entertainment_admission.extend(base, root, when)
     result = entertainment_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_apprenticeship_state(root, at):
+    import apprenticeship_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_entertainment_state(root, when)[0]
+    inputs = apprenticeship_admission.extend(base, root, when)
+    result = apprenticeship_admission.check_saved(inputs, root, when)
     return inputs, result
 
 
