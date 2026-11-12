@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "account_id": "573-038-4686",
+  "currency": "AED",
+  "aggregate_average_daily_budget": 2000,
+  "budget_excludes_vat": true,
+  "overdelivery_accepted": true,
+  "old_campaign_policy": "PAUSED_OR_REMOVED_NEVER_REACTIVATE",
+  "release_authorized": false,
+  "ads_activation_authorized": false,
+  "targeting": {
+    "locations": ["United Arab Emirates"],
+    "location_presence": "PEOPLE_IN_OR_REGULARLY_IN",
+    "language": "English",
+    "network": "Google Search",
+    "search_partners": false,
+    "display_expansion": false,
+    "ai_max": false,
+    "ai_max_search_term_matching": false,
+    "ai_max_text_customization": false,
+    "ai_max_final_url_expansion": false
+  },
+  "bidding": {
+    "strategy": "MAXIMIZE_CLICKS",
+    "service_campaign_cpc_limit_aed": 20,
+    "brand_campaign_cpc_limit_aed": 5,
+    "positive_bid_adjustments_percent": 0
+  },
+  "campaigns": [
+    {"name": "BSRE_V2_SEARCH_BUYERS_UAE_EN", "average_daily_budget": 1200, "status": "PAUSED_CONSTRUCTION", "google_campaign_id": null},
+    {"name": "BSRE_V2_SEARCH_OWNERS_UAE_EN", "average_daily_budget": 400, "status": "PAUSED_CONSTRUCTION", "google_campaign_id": null},
+    {"name": "BSRE_V2_SEARCH_TENANTS_UAE_EN", "average_daily_budget": 300, "status": "PAUSED_CONSTRUCTION", "google_campaign_id": null},
+    {"name": "BSRE_V2_SEARCH_BRAND_UAE_EN", "average_daily_budget": 100, "status": "PAUSED_CONSTRUCTION", "google_campaign_id": null}
+  ]
+}
