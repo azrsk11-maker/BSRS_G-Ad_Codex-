@@ -1,5 +1,19 @@
 # Private owner mailbox review candidate
 
+## Owner sender retirement
+
+`OwnerRetirement.php` supplies a separate isolated owner review for sender retirement of an existing, due CLOSED/UNSUCCESSFUL enquiry with a genuinely never-attempted outbox. Its technical target changes only the closure revision and email status; business dates, reviewer, evidence and identities survive unchanged. Preparation binds the complete current inventory, normalized receiver fingerprint, admission configuration and exact proposed target. Approval is purpose-nonce bound and must first commit a typed authoritative Journal intent. The expiring UI cache is not recovery authority.
+
+The coordinator requires a positive source inspection before a fence write. Missing rows/fences, errors, uncertain mailbox coverage or attempted sends are not clearance. The authorized source capability checks independent intent readback inside ScriptLock, enforces the original creation deadline and signs the exact owner-intent digest into its fence. Legacy setup fences and another intent cannot be adopted. Recovery may confirm an existing exact fence without creating or refreshing one; only a strict RETIRED proof permits closure CAS. Sender retirement grants no PURGE permission and invokes no deletion workflow.
+
+Authoritative-digest recovery survives pruned UI copies. After thirty days, a separate exact owner action can scrub only the duplicate typed intent while preserving the closure or its existing absence and the receiver fence. It increments persistent nonidentifying unresolved custody, so missing scrubbed records cannot establish new clearance. That hold blocks amendments, new retirement and CAS until independent reconciliation; no automatic reset exists. The downstream purge workflow remains the sole receiver-fence cleanup custodian. Explicit UI-cache expiry maintenance remains necessary.
+
+The Journal uses a namespace custody lease before its closure lease, including source calls and counter changes. A dedicated lease-bound database connection verifies the original connection and actual lock owners, disables transparent reconnect during custody, and holds on uncertain release. It does not replace the website's ordinary database connection. This is required because [WordPress query processing can reconnect and retry](https://developer.wordpress.org/reference/classes/wpdb/query/); [connection checks also attempt reconnection](https://developer.wordpress.org/reference/classes/wpdb/check_connection/).
+
+Current-source native/combined CI is **PENDING**; focused checks pass as recorded in the [dated receipt](../../docs/audit/OWNER_SENDER_RETIREMENT_CHECKS_2026-11-12.json). The default real retirement provider remains unverified and held.
+
+Pure checks use synthetic safety/receiver services. The native harness combines actual WordPress identities/nonces, MariaDB and source-derived receiver code through local pipes, with separate-process custody and connection-loss probes. Initial closure collection, mailbox/owner-intent/runtime/custody adapters remain synthetic or unimplemented. No real provider acceptance, distributed cross-store transaction, production route, deployment, permissions or advertising action is claimed. All existing publication/live release gates remain required.
+
 ## Protected closure amendments
 
 `OwnerClosure.php` supplies a separate callable review screen for **amending an existing authoritative closure baseline**. It reuses the nominated WordPress owner session, private opaque review store and privacy headers in `serve()`. It installs no route or hook. Only status, actual closure time and evidence reference/hash are editable. The server derives revision, reviewer and recording time, while preserving all enquiry identities, original acceptance time, outcomes and mailbox bindings. Missing baselines cannot be created through this screen; genuine source collection remains required.

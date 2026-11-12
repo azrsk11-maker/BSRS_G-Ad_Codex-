@@ -95,7 +95,7 @@ final class NativeSyntheticClosureSafety implements O\ClosureEditReadback
             'evidence_reference' => 'synthetic-native-edit-safety', 'evidence_hash' => str_repeat('7', 64)];
     }
 }
-$db3 = new wpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST); $db3->prefix = 'closed_retention_synthetic_';
+$db3 = new \BSRE\ClosedRetention\LeaseBoundWpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST); $db3->prefix = 'closed_retention_synthetic_';
 $closureJournal = new \BSRE\ClosedRetention\LabSqlJournal($db3); $closureJournal->install();
 $cf = \BSRE\ClosedRetention\fixture();
 $baseline = $cf['closure']; $baseline['closure_id'] = \BSRE\ClosedRetention\syntheticUuid(101);

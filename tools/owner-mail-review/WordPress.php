@@ -4,6 +4,7 @@ namespace BSRE\OwnerMailReview;
 require_once __DIR__ . '/OwnerMailReview.php';
 require_once __DIR__ . '/Cleanup.php';
 require_once __DIR__ . '/OwnerClosure.php';
+require_once __DIR__ . '/OwnerRetirement.php';
 
 /** Re-evaluated on every read, mutation, nonce issuance and Authority call. */
 final class WordPressSession implements Session
@@ -118,7 +119,7 @@ final class WordPressStore implements Store
 }
 
 /** Explicit callable only. Lab harness may supply this as its protected screen callback. */
-function serve(Controller|CleanupController|OwnerClosureController $controller): void
+function serve(Controller|CleanupController|OwnerClosureController|OwnerRetirementController $controller): void
 {
     Guard::lab();
     try {
