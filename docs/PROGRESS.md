@@ -1,5 +1,11 @@
 # Implementation progress
 
+## 12 November CI runtime drift and focused repair candidate
+
+- Preserved diagnostic head **6ec2fe7** failures: research composition HELD (14.133229seconds); keyword34modules/437discovered but425started/finished (40.603485seconds), with12Ofqual cases unstarted after review-binding setup failure; efficiency90cases/two errors/two skips (3.910suite/4.116034subprocess seconds). Two native jobs passed at that head; required offline acceptance still failed. [Sanitized causes, unchanged pins and candidate checks](audit/CI_PYTHON_RUNTIME_COMPATIBILITY_2026-11-12.json).
+- Root cause is runtime-sensitive default AST serialization: localPython3.12.14 exactly reproduces all three immutable review hashes, while Python3.13+ omits optional empty fields by default. CI now requests reviewedPython3.12 through a full-SHA-pinned official setup action and checks the original pinned review binding before expensive tests. It records the resolved patch; other patches/runtimes are not presumed accepted. Existing review/source pins, check selections and timeouts remain unchanged.
+- Repaired the isolation-test mock to forward newer pathlib keyword options and preserve actual recursive PHP traversal. Four focused checks PASS0.140seconds; the added regression raises expected efficiency coverage90to91cases. Local binding preflight PASS0.222007seconds and both embedded Python blocks compile. **Full combined candidate CI remains PENDING**, with no new Foundation/native/browser/HTTP/live acceptance claimed. Historical failures remain preserved; production and Ads unchanged.
+
 ## 12 November owner-browser source delivery and held CI
 
 - Uploaded the frozen reviewed source to existing PR8 feature head **e319bc9**. Independent read-only proof matches review20de/treeebe993 across **766 files/118,176,114 bytes**, all six original source pins and the exact30-commit single-parent chain; protected mainf239701 is unchanged. The selected Git client remains Read-only; owner-browser delivery does not repair it. [Sanitized delivery proof](audit/OWNER_BROWSER_SOURCE_DELIVERY_2026-11-12.json).
