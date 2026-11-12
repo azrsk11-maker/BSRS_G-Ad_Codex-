@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-13",
+  "scope": "REVERSIBLE_STANDARD_RUNNER_TRIAL_NOT_RELEASE_ACCEPTANCE",
+  "status": "ARM_EXECUTION_PENDING",
+  "repository": {
+    "name": "azrsk11-maker/BSRS_G-Ad_Codex-",
+    "visibility_live_verified": "public",
+    "private": false,
+    "verification": "read-only GitHub repository API"
+  },
+  "official_runner_reference": "https://docs.github.com/en/actions/reference/runners/github-hosted-runners",
+  "documented_public_runner": {
+    "label": "ubuntu-24.04-arm",
+    "cpu_count": 4,
+    "architecture": "arm64",
+    "billing_basis": "Standard hosted runners are free and unlimited for public repositories; no larger runner, hosting purchase or billing-setting change",
+    "documented_memory": "16 GB"
+  },
+  "baseline": {
+    "local_source": "577980d574a7bda751085141173c2345a758752c",
+    "feature": "21088a37f89b8988f2ff55e91c9aa1f80213c0b0",
+    "foundation_job": 131520862109,
+    "requested_runner_label": "ubuntu-latest",
+    "whole_job_seconds": 496,
+    "keyword_seconds_before_timeout": 300.048184,
+    "keyword_required_cases": 559,
+    "keyword_finished_cases": 535,
+    "keyword_modules": 44,
+    "combined_acceptance": false
+  },
+  "profile": {
+    "source_head": "577980d574a7bda751085141173c2345a758752c",
+    "seconds": 181.327031,
+    "includes_profiler_overhead": true,
+    "deepcopy_cumulative_seconds": 38.560235,
+    "shared_append_copy_cumulative_seconds": 19.3849342,
+    "other_large_costs": [
+      "canonical encoding",
+      "full audit"
+    ]
+  },
+  "change": {
+    "job": "offline-validation",
+    "requested_runner_label": "ubuntu-24.04-arm",
+    "python_major_minor": "3.12",
+    "actual_host_bootstrap": "tools/efficiency/runner_observation.py",
+    "new_actions_or_dependencies": [],
+    "token_permissions_unchanged": true,
+    "native_and_isolated_wordpress_jobs_unchanged": true,
+    "keyword_source_algorithms_unchanged": true,
+    "original_300s_keyword_bound_unchanged": true,
+    "process_and_resource_controls_unchanged": true,
+    "cross_invocation_body_hash_or_verdict_cache": false,
+    "withdrawn_copy_prototype_integrated": false
+  },
+  "local_checks": {
+    "phase": "COMPLETED",
+    "expected_cases": 115,
+    "keyword_cases_unchanged": 559,
+    "keyword_modules_unchanged": 44,
+    "keyword_deadline_unchanged": 300,
+    "production_or_ads_changed": false,
+    "passed": true,
+    "tests_run": 115,
+    "failures": 0,
+    "errors": 0,
+    "skips": 3,
+    "elapsed_seconds": 18.05341,
+    "failed_names": [],
+    "error_names": []
+  },
+  "trial_success_requires": [
+    "actual Linux/aarch64 Python3.12 public-repository startup observation",
+    "all559keyword cases/44modules,zero skips,complete ordered coverage within300s",
+    "allthree exact-head required CI checks pass",
+    "original source pins and complete current body SHA unchanged"
+  ],
+  "expected_speedup": "UNPROVEN; measure actual completion and headroom; do not assume ARM is faster",
+  "comparison_limits": "The runtime label, architecture and image differ. Cloud-host load is uncontrolled; a completed trial is operational evidence, not a causal speedup estimate.",
+  "rollback": "Revert the Foundation runner/bootstrap changes through an ordinary feature PR commit. Preserve the failing baseline and every acceptance gate.",
+  "production_or_ads_changed": false,
+  "independent_human_review_claimed": false,
+  "release_authorized": false
+}
