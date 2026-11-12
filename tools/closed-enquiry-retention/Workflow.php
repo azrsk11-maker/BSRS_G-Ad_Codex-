@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace BSRE\ClosedRetention;
 
 require_once __DIR__ . '/../consent-retention/RetentionInventory.php';
+require_once __DIR__ . '/NoMailCopy.php';
 
 /** The adapter serializes closure edits with this lock; journal writes commit immediately. */
 interface Journal
@@ -54,8 +55,10 @@ final class Workflow
     private array $adapters;
     private Authority $authority;
     private Admission $admission;
+    private NoMailCopy $noMailCopy;
 
-    public function __construct(Journal $journal, array $adapters, Authority $authority, ?Admission $admission = null)
+    public function __construct(Journal $journal, array $adapters, Authority $authority, ?Admission $admission = null,
+        ?NoMailCopy $noMailCopy = null)
     {
         $keys = array_keys($adapters);
         sort($keys);
@@ -67,6 +70,7 @@ final class Workflow
         $this->adapters = $adapters;
         $this->authority = $authority;
         $this->admission = $admission ?? new UnverifiedAdmission();
+        $this->noMailCopy = $noMailCopy ?? new UnverifiedNoMailCopy();
     }
 
     /** Public result contains counts and codes only. */
@@ -110,10 +114,12 @@ final class Workflow
                 if ($now < $plan['created_at'] || $now >= $plan['expires_at']) self::fail('PLAN_EXPIRED');
                 $fresh = $this->proposal($plan['closure_id'], $now);
                 if ($fresh['closure_hash'] !== $plan['closure_hash'] || $fresh['resources'] !== $plan['resources']
-                    || $fresh['admission_hash'] !== $plan['admission_hash']) self::fail('PLAN_STALE');
+                    || $fresh['admission_hash'] !== $plan['admission_hash']
+                    || ($fresh['no_mail_copy'] ?? null) !== ($plan['no_mail_copy'] ?? null)) self::fail('PLAN_STALE');
                 $record = ['plan' => $plan, 'revision' => 0, 'state' => 'PENDING', 'started_at' => $now,
                     'completed_at' => null, 'steps' => array_fill(0, count($plan['resources']), 'PENDING'),
                     'intent_at' => array_fill(0, count($plan['resources']), null), 'code' => ''];
+                if (isset($plan['no_mail_copy'])) $record['no_copy_cleanup'] = null;
                 $this->journal->save($record);
             } elseif ($record['plan'] !== $plan) {
                 self::fail('JOURNAL_PLAN_CONFLICT');
@@ -121,6 +127,10 @@ final class Workflow
             self::validateJournal($record, $now);
             if ($record['state'] === 'COMPLETE') {
                 if (!$this->journal->historyIncomplete()) return $this->hold($record, 'HISTORY_MARKER_UNVERIFIED');
+                if (isset($plan['no_mail_copy'])) {
+                    try { $this->recheck($plan, $now, false, null, true); }
+                    catch (\Throwable $error) { return $this->hold($record, self::safeCode($error)); }
+                }
                 try { $this->assertRemaining($plan, $record['steps']); }
                 catch (\Throwable $error) { return $this->hold($record, self::safeCode($error)); }
                 foreach ($plan['resources'] as $resource) {
@@ -172,7 +182,7 @@ final class Workflow
                     $record['steps'][$index] = 'CONFIRMED_ABSENT';
                     $this->journal->save($record);
                 }
-                $this->recheck($plan, $now);
+                $this->recheck($plan, $now, false, null, true);
                 $this->assertAbsent($plan, $record['steps']);
                 $record['state'] = 'COMPLETE';
                 $record['completed_at'] = $now;
@@ -237,12 +247,19 @@ final class Workflow
                 if ($now < $record['started_at'] + 30 * 86400) return self::summary('HELD', ['RECOVERY_WINDOW_ACTIVE']);
                 $this->journal->markHistoryIncomplete();
                 if (!$this->journal->historyIncomplete()) return self::summary('HELD', ['HISTORY_MARKER_UNVERIFIED']);
+                if (isset($plan['no_mail_copy'])) {
+                    try { $this->forgetNoMailCopy($plan, $record, $now); }
+                    catch (\Throwable $error) { return self::summary('HELD', [self::safeCode($error)]); }
+                }
                 $this->journal->forget($plan['closure_id'], $plan['digest'], true);
                 return self::summary('PRIVATE_JOURNAL_EXPIRED', ['MANUAL_RECONCILIATION_REQUIRED']);
             }
             if ($now < $record['completed_at'] + 30 * 86400) return self::summary('HELD', ['RECOVERY_WINDOW_ACTIVE']);
             if (!$this->journal->historyIncomplete()) return self::summary('HELD', ['HISTORY_MARKER_UNVERIFIED']);
-            try { $this->recheck($plan, $now); $this->assertAbsent($plan, $record['steps']); }
+            try {
+                $this->recheck($plan, $now, true, $record['no_copy_cleanup'] ?? null, true); $this->assertAbsent($plan, $record['steps']);
+                if (isset($plan['no_mail_copy'])) $this->forgetNoMailCopy($plan, $record, $now);
+            }
             catch (\Throwable $error) { return self::summary('HELD', [self::safeCode($error)]); }
             $this->journal->forget($plan['closure_id'], $plan['digest']);
             return self::summary('PRIVATE_JOURNAL_EXPIRED', []);
@@ -272,7 +289,8 @@ final class Workflow
         if ($closed < self::stamp($closure['accepted_at_utc']) || $closed > self::stamp($closure['recorded_at_utc'])
             || self::stamp($closure['recorded_at_utc']) > $now) self::fail('CLOSURE_TIME_INVALID');
         if (\BSRE\RetentionReview\RetentionInventory::anniversary($closed) > $now) self::fail('RETENTION_NOT_DUE');
-        if ($closure['email_status'] !== 'SENT') self::fail('OUTBOX_NOT_RECONCILED');
+        $noCopy = $closure['email_status'] === 'RETIRED_NO_COPY';
+        if ($closure['email_status'] !== 'SENT' && !$noCopy) self::fail('OUTBOX_NOT_RECONCILED');
         $gate = $this->verifiedAdmission($now);
         $resources = [];
         foreach (self::STORES as $store) {
@@ -298,20 +316,50 @@ final class Workflow
             if ($resource['store'] === 'email') $mail[] = $resource['binding']['key'];
         }
         sort($outcomes); sort($mail);
-        if ($counts['intake'] !== 1 || $counts['capture'] !== 1 || $counts['email'] < 1
+        if ($counts['intake'] !== 1 || $counts['capture'] !== 1 || ($noCopy ? $counts['email'] !== 0 : $counts['email'] < 1)
             || $outcomes !== $closure['outcome_ids'] || $mail !== $closure['mail_message_ids']) self::fail('LINKAGE_INCOMPLETE');
-        return ['schema_version' => 1, 'closure_id' => $closureId, 'closure_hash' => self::digest($closure),
+        $plan = ['schema_version' => 1, 'closure_id' => $closureId, 'closure_hash' => self::digest($closure),
             'admission_hash' => self::admissionHash($gate), 'created_at' => $now, 'expires_at' => $now + self::PLAN_SECONDS,
             'resources' => $resources];
+        if ($noCopy) {
+            $intake = array_values(array_filter($resources, fn($resource) => $resource['store'] === 'intake'))[0];
+            $scope = NoMailCopyProof::scope($closure, $plan['admission_hash'], $intake['binding']['fingerprint']);
+            $proofHash = NoMailCopyProof::verify($this->noMailCopy->readback($scope, $now), $scope, $now);
+            $plan['no_mail_copy'] = ['scope' => $scope, 'proof_hash' => $proofHash];
+        }
+        return $plan;
     }
 
-    private function recheck(array $plan, int $now): void
+    private function recheck(array $plan, int $now, bool $cleanup = false, ?array $ticket = null, bool $requireIntakeAbsent = false): void
     {
         $closure = $this->journal->closure($plan['closure_id']);
         if ($closure === null || self::digest($closure) !== $plan['closure_hash']) self::fail('CLOSURE_CHANGED_OR_REOPENED');
         if (self::admissionHash($this->verifiedAdmission($now)) !== $plan['admission_hash']) self::fail('ADMISSION_CHANGED');
         $floor = $this->journal->admissionFloor();
         if ($floor !== null && $floor !== $plan['admission_hash']) self::fail('ADMISSION_FLOOR_CONFLICT');
+        if (isset($plan['no_mail_copy'])) {
+            $scope = $plan['no_mail_copy']['scope'];
+            if ($scope !== NoMailCopyProof::scope($closure, $plan['admission_hash'], $scope['fingerprint'])) self::fail('NO_COPY_SCOPE_CONFLICT');
+            $readback = $this->noMailCopy->readback($scope, $now, $cleanup, $ticket);
+            $hash = NoMailCopyProof::verify($readback, $scope, $now, $cleanup);
+            if ($hash !== $plan['no_mail_copy']['proof_hash']) self::fail('NO_COPY_FENCE_CHANGED');
+            if ($requireIntakeAbsent && $readback['row_state'] !== 'ABSENT') self::fail('NO_COPY_INTAKE_NOT_ABSENT');
+        }
+    }
+
+    private function forgetNoMailCopy(array $plan, array &$record, int $now): void
+    {
+        $scope = $plan['no_mail_copy']['scope'];
+        if (($record['no_copy_cleanup'] ?? null) === null) {
+            $ticket = $this->noMailCopy->prepareCleanup($scope, $now);
+            if ($ticket === null || strlen(json_encode($ticket, JSON_THROW_ON_ERROR)) > 16384) self::fail('NO_COPY_CUSTODY_UNVERIFIED');
+            $record['no_copy_cleanup'] = $ticket;
+            $this->journal->save($record); // Durable signed cleanup intent BEFORE deleting its receiver fence.
+        }
+        $ticket = $record['no_copy_cleanup'];
+        $hash = NoMailCopyProof::verify($this->noMailCopy->readback($scope, $now, true, $ticket), $scope, $now, true);
+        if ($hash !== $plan['no_mail_copy']['proof_hash']) self::fail('NO_COPY_FENCE_CHANGED');
+        if (!$this->noMailCopy->forget($scope, $now, $ticket)) self::fail('NO_COPY_CUSTODY_UNCONFIRMED');
     }
 
     private function assertRemaining(array $plan, array $steps): void
@@ -425,7 +473,9 @@ final class Workflow
 
     private static function validatePlan(array $plan): void
     {
-        self::keys($plan, ['schema_version', 'closure_id', 'closure_hash', 'admission_hash', 'created_at', 'expires_at', 'resources', 'digest']);
+        $keys = ['schema_version', 'closure_id', 'closure_hash', 'admission_hash', 'created_at', 'expires_at', 'resources', 'digest'];
+        if (array_key_exists('no_mail_copy', $plan)) $keys[] = 'no_mail_copy';
+        self::keys($plan, $keys);
         self::uuid($plan['closure_id']); self::hash($plan['digest']);
         $copy = $plan; unset($copy['digest']);
         if ($plan['schema_version'] !== 1 || !hash_equals(self::digest($copy), $plan['digest'])
@@ -434,6 +484,18 @@ final class Workflow
             || !is_array($plan['resources']) || !array_is_list($plan['resources'])
             || count($plan['resources']) > self::MAX_RESOURCES) self::fail('PLAN_INVALID');
         self::hash($plan['closure_hash']); self::hash($plan['admission_hash']);
+        if (isset($plan['no_mail_copy'])) {
+            self::keys($plan['no_mail_copy'], ['scope', 'proof_hash']);
+            self::hash($plan['no_mail_copy']['proof_hash']);
+            $scope = $plan['no_mail_copy']['scope'];
+            self::keys($scope, ['contract', 'closure_id', 'closure_revision', 'closure_hash', 'request_id',
+                'lead_id', 'event_id', 'fingerprint', 'admission_hash']);
+            if ($scope['contract'] !== NoMailCopyProof::CONTRACT || $scope['closure_id'] !== $plan['closure_id']
+                || $scope['closure_hash'] !== $plan['closure_hash'] || $scope['admission_hash'] !== $plan['admission_hash']
+                || !is_int($scope['closure_revision']) || $scope['closure_revision'] < 1) self::fail('PLAN_INVALID');
+            self::uuid($scope['request_id']); self::receipt($scope['lead_id'], 'BSRE-'); self::receipt($scope['event_id'], 'evt_');
+            self::hash($scope['fingerprint']);
+        }
         foreach ($plan['resources'] as $resource) {
             self::keys($resource, ['store', 'binding']);
             if (!in_array($resource['store'], self::STORES, true) || !is_array($resource['binding'])) self::fail('PLAN_INVALID');
@@ -443,7 +505,11 @@ final class Workflow
 
     private static function validateJournal(array $record, int $now): void
     {
-        self::keys($record, ['plan', 'revision', 'state', 'started_at', 'completed_at', 'steps', 'intent_at', 'code']);
+        $keys = ['plan', 'revision', 'state', 'started_at', 'completed_at', 'steps', 'intent_at', 'code'];
+        if (array_key_exists('no_copy_cleanup', $record)) $keys[] = 'no_copy_cleanup';
+        self::keys($record, $keys);
+        if (isset($record['no_copy_cleanup']) && (!is_array($record['no_copy_cleanup'])
+            || strlen(json_encode($record['no_copy_cleanup'], JSON_THROW_ON_ERROR)) > 16384)) self::fail('JOURNAL_INVALID');
         if (!is_int($record['revision']) || $record['revision'] < 1 || !is_int($record['started_at'])
             || $record['started_at'] > $now || $record['started_at'] < 1 || !is_array($record['steps'])
             || !array_is_list($record['steps']) || count($record['steps']) !== count($record['plan']['resources'])

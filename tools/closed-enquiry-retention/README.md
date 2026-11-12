@@ -35,7 +35,7 @@ Completed private jobs and closure identifiers can be removed after the thirty-d
 - Actual provider deletion/readback and interruption acceptance. Current provider resources are mocked even when the journal uses real MariaDB.
 - Current retirement-ledger custody, backup expiry and restore fencing, with bounded identifiers and no permanent person registry.
 
-The current candidate requires SENT plus exact message bindings. Confirmed-never-sent handling remains held until a reviewed no-copy evidence contract and outbox fence exist. No missing copy is invented to unblock a purge.
+The existing SENT path still requires exact message bindings and manual owner action. The optional [no-mail-copy candidate](receiver-fence/README.md) supports only zero-attempt, positively evidenced, sender-fenced enquiries. Its provider adapter defaults to unverified. Other outbox states remain held; a status, missing row or empty search never proves absence. No live provider or custody acceptance is supplied.
 
 ## Verification
 
