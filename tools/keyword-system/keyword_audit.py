@@ -128,10 +128,23 @@ def read_records(path: Path, *, content=None):
     return result
 
 
-def iso_day(value):
+def _parse_iso_day(value):
     if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
         raise ValueError("Expected YYYY-MM-DD")
     return date.fromisoformat(value)
+
+
+@lru_cache(maxsize=256)
+def _cached_iso_day(value):
+    # Only immutable parsing is reused, never freshness or admission decisions.
+    # Failed parses are not cached by lru_cache.
+    return _parse_iso_day(value)
+
+
+def iso_day(value):
+    if type(value) is str and len(value) <= 10:
+        return _cached_iso_day(value)
+    return _parse_iso_day(value)
 
 
 def nonblank(value):
@@ -404,6 +417,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             global_errors.append("positive admission source contract unavailable: " + str(error))
     source_index = unique_index(sources, "source_id", global_errors, "sources")
     campaign_index = unique_index(campaigns, "campaign_key", global_errors, "campaigns")
+    campaign_keys = set(campaign_index)
     context_index = unique_index(campaign_context, "campaign_key", global_errors, "campaign context")
     for key, row in campaign_index.items():
         if not nonblank(row.get("landing_page_id")):
@@ -418,7 +432,8 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
     protected_review_dates = {}
     lexical_comparisons = 0
     for key, query in query_index.items():
-        if not nonblank(query.get("text")) or not tokens(query.get("text", "")) or query.get("must_serve") is not True:
+        query_words = None
+        if not nonblank(query.get("text")) or not (query_words := tuple(tokens(query.get("text", "")))) or query.get("must_serve") is not True:
             global_errors.append("protected queries: text and must_serve=true required " + key)
         if not nonblank(query.get("evidence_ref")):
             global_errors.append("protected queries: evidence reference required " + key)
@@ -428,12 +443,14 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
         except (TypeError, ValueError):
             reviewed_on = None
         eligible = query.get("campaign_keys")
-        if not isinstance(eligible, list) or not eligible or not set(eligible) <= set(campaign_index):
+        if not isinstance(eligible, list) or not eligible or not set(eligible) <= campaign_keys:
             global_errors.append("protected queries: known nonempty campaign coverage required " + key)
         services = query.get("services")
         if not isinstance(services, list) or not services or not set(services) <= SERVICES:
             global_errors.append("protected queries: known services required " + key)
-        for token in tokens(query.get("text", "")):
+        if query_words is None:
+            query_words = tuple(tokens(query.get("text", "")))
+        for token in query_words:
             postings[token].add(key)
         for campaign_key in query.get("campaign_keys", []):
             coverage_by_campaign[campaign_key].update(query.get("services", []))
@@ -477,7 +494,8 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             errors.append("missing fields: " + ",".join(sorted(missing)))
         if not nonblank(row.get("keyword_id")) or ids[row.get("keyword_id")] != 1:
             errors.append("missing/duplicate keyword_id")
-        if not norm or not tokens(norm) or re.search(r"[\[\]\"]", norm) or norm in {"source_required", "tbd", "todo", "placeholder", "unknown"} or any(unicodedata.category(ch) in {"Cc", "Cf"} for ch in norm):
+        row_words = tuple(tokens(norm)) if norm else ()
+        if not norm or not row_words or re.search(r"[\[\]\"]", norm) or norm in {"source_required", "tbd", "todo", "placeholder", "unknown"} or any(unicodedata.category(ch) in {"Cc", "Cf"} for ch in norm):
             errors.append("blank, placeholder or invalid match wrapper")
         if len(duplicates.get(norm, [])) > 1:
             errors.append("duplicate normalized phrase; wrappers and language do not create uniqueness")
@@ -550,9 +568,10 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             if not isinstance(ineligible, list) or any(not isinstance(x, str) for x in ineligible):
                 errors.append("ineligible_campaigns must be string list")
                 ineligible = []
-            if len(set(eligible)) != len(eligible) or len(set(ineligible)) != len(ineligible):
+            eligible_keys, ineligible_keys = set(eligible), set(ineligible)
+            if len(eligible_keys) != len(eligible) or len(ineligible_keys) != len(ineligible):
                 errors.append("scope lists contain duplicates")
-            if (set(eligible) | set(ineligible)) - set(campaign_index) or set(eligible) & set(ineligible):
+            if (eligible_keys | ineligible_keys) - campaign_keys or eligible_keys & ineligible_keys:
                 errors.append("unknown or overlapping eligible/ineligible campaign scope")
             services = row.get("service_applicability")
             if not isinstance(services, list) or not services or any(not isinstance(x, str) for x in services) or not set(services) <= SERVICES:
@@ -562,7 +581,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
             if scope not in {"ACCOUNT", "SHARED_LIST", "CAMPAIGN", "AD_GROUP"} or not isinstance(target, dict):
                 errors.append("explicit supported scope/target required")
                 target = {}
-            if scope == "ACCOUNT" and (set(eligible) != set(campaign_index) or ineligible or not nonblank(target.get("account_id"))):
+            if scope == "ACCOUNT" and (eligible_keys != campaign_keys or ineligible or not nonblank(target.get("account_id"))):
                 errors.append("account scope must explicitly cover every registered campaign without exceptions")
             if scope in {"CAMPAIGN", "AD_GROUP"} and (eligible != [target.get("campaign_key")]):
                 errors.append("campaign/adgroup target must match single eligible campaign")
@@ -578,7 +597,7 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
                 coverage = coverage_by_campaign[key]
                 if not context.get("services") or not set(context.get("services", [])) <= coverage:
                     errors.append("protected-intent coverage missing for " + key)
-            high_risk = bool(set(tokens(norm)) & PROTECTED_TOKENS) or any(phrase in norm for phrase in PROTECTED_PHRASES)
+            high_risk = bool(set(row_words) & PROTECTED_TOKENS) or any(phrase in norm for phrase in PROTECTED_PHRASES)
             if row.get("risk_level") not in {"LOW", "MEDIUM", "HIGH"} or high_risk and row.get("risk_level") != "HIGH":
                 errors.append("risk level invalid or protected token requires HIGH review")
             if row.get("approval_state") not in {"PENDING", "APPROVED", "REJECTED"}:
@@ -609,15 +628,15 @@ def audit(kind, records, sources, campaigns, campaign_context, protected_queries
                 lists = bindings.get("shared_lists", {})
                 shared = lists.get(target.get("list_key"), {}) if isinstance(lists, dict) else {}
                 associated = shared.get("campaign_keys", []) if isinstance(shared, dict) else []
-                if not isinstance(shared, dict) or not re.fullmatch(r"\d+", str(shared.get("google_shared_list_id", ""))) or not nonblank(shared.get("evidence_ref")) or not isinstance(associated, list) or any(not isinstance(x, str) for x in associated) or set(associated) != set(eligible):
+                if not isinstance(shared, dict) or not re.fullmatch(r"\d+", str(shared.get("google_shared_list_id", ""))) or not nonblank(shared.get("evidence_ref")) or not isinstance(associated, list) or any(not isinstance(x, str) for x in associated) or set(associated) != eligible_keys:
                     deployment_holds.append("shared-list ownership/complete association binding unverified")
             conflicts = []
             if match in MATCH_TYPES and norm:
-                candidate_sets = [postings.get(token, set()) for token in set(tokens(norm))]
+                candidate_sets = [postings.get(token, set()) for token in set(row_words)]
                 possible = set.intersection(*candidate_sets) if candidate_sets else set()
                 for key in sorted(possible):
                     query = query_index[key]
-                    affected = sorted(set(eligible) & set(query.get("campaign_keys", [])))
+                    affected = sorted(eligible_keys & set(query.get("campaign_keys", [])))
                     if affected:
                         lexical_comparisons += 1
                     if affected and negative_matches(norm, match, query["text"]):

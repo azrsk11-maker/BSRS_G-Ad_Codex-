@@ -45,9 +45,14 @@ def need(condition, code):
         raise ValueError(code)
 
 
+_CANONICAL_ENCODER = json.JSONEncoder(ensure_ascii=False, sort_keys=True,
+                                    separators=(',', ':'), allow_nan=False)
+
+
 def canonical(value):
-    return json.dumps(value, ensure_ascii=False, sort_keys=True,
-                      separators=(',', ':'), allow_nan=False).encode('utf-8')
+    # Reuse configuration only. encode() traverses the current input and creates
+    # fresh circular-reference markers; no body, digest or acceptance is cached.
+    return _CANONICAL_ENCODER.encode(value).encode('utf-8')
 
 
 def pinned(root, relative, digest):

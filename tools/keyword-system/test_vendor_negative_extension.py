@@ -17,7 +17,7 @@ class VendorExtensionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.when = date(2026,11,11)
         with patch.object(current,'reconstruct_registered',wraps=current.reconstruct_registered) as calls:
-            cls.inputs = current.reconstruct(at=cls.when)
+            cls.inputs = current.reconstruct_vendor_snapshot(at=cls.when)
             cls.base_constructions = calls.call_count
         cls.entry = registered.AFTER_REVIEW_CATALOG[0]
         cls.review = cls.inputs['post_review_cohorts'][0]
@@ -133,9 +133,13 @@ class VendorExtensionTests(unittest.TestCase):
 
     def test_each_public_entrypoint_requires_a_fresh_baseline(self):
         with patch.object(history,'reconstruct_current',side_effect=ValueError('fresh source unavailable')) as fresh:
-            for call in (current.reconstruct,current.verify):
+            for call in (current.reconstruct_vendor_snapshot,current.verify_vendor_snapshot,
+                         current.reconstruct_followup_snapshot,current.verify_followup_snapshot,
+                         current.reconstruct_valuation_snapshot,current.verify_valuation_snapshot,
+                         current.reconstruct_ofqual_snapshot,current.verify_ofqual_snapshot,
+                         current.reconstruct,current.verify):
                 with self.assertRaisesRegex(ValueError,'fresh source unavailable'): call(at=self.when)
-            self.assertEqual(fresh.call_count,2)
+            self.assertEqual(fresh.call_count,10)
 
 
 if __name__ == '__main__': unittest.main()

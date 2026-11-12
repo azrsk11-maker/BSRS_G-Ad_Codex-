@@ -393,17 +393,90 @@ def check_post_outputs(inputs, root, when):
     return dict(summary,passed=True,index_verified=True,current_index_file=POST_INDEX,release_held=True)
 
 
-def reconstruct(root=first.ROOT, at=None):
+def reconstruct_vendor_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 10,014-row vendor snapshot and its frozen reports."""
     when = first.dubai_date() if at is None else at
     inputs = extend_reviewed_base(reconstruct_reviewed_baseline(root,at=when),root,when)
     check_post_outputs(inputs,root,when)
     return inputs
 
 
-def verify(root=first.ROOT, at=None):
+def verify_vendor_snapshot(root=first.ROOT, at=None):
     when = first.dubai_date() if at is None else at
     inputs = extend_reviewed_base(reconstruct_reviewed_baseline(root,at=when),root,when)
     return check_post_outputs(inputs,root,when)
+
+
+def reconstruct_followup_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 10,199-row follow-up snapshot and frozen reports."""
+    return _fresh_followup_state(root, at)[0]
+
+
+def verify_followup_snapshot(root=first.ROOT, at=None):
+    return _fresh_followup_state(root, at)[1]
+
+
+def reconstruct(root=first.ROOT, at=None):
+    """Freshly verify all history and the appended game-clipboard research."""
+    return _fresh_entertainment_state(root, at)[0]
+
+
+def verify(root=first.ROOT, at=None):
+    return _fresh_entertainment_state(root, at)[1]
+
+
+def reconstruct_ofqual_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 10,652-row Ofqual snapshot and frozen reports."""
+    return _fresh_ofqual_state(root, at)[0]
+
+
+def verify_ofqual_snapshot(root=first.ROOT, at=None):
+    return _fresh_ofqual_state(root, at)[1]
+
+
+def reconstruct_valuation_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 10,610-row valuation snapshot and frozen reports."""
+    return _fresh_valuation_state(root, at)[0]
+
+
+def verify_valuation_snapshot(root=first.ROOT, at=None):
+    return _fresh_valuation_state(root, at)[1]
+
+
+def _fresh_followup_state(root, at):
+    import followup_admission
+    when = first.dubai_date() if at is None else at
+    base = reconstruct_vendor_snapshot(root, at=when)
+    inputs = followup_admission.extend(base, root, when)
+    result = followup_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_valuation_state(root, at):
+    import valuation_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_followup_state(root, when)[0]
+    inputs = valuation_admission.extend(base, root, when)
+    result = valuation_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_ofqual_state(root, at):
+    import ofqual_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_valuation_state(root, when)[0]
+    inputs = ofqual_admission.extend(base, root, when)
+    result = ofqual_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_entertainment_state(root, at):
+    import entertainment_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_ofqual_state(root, when)[0]
+    inputs = entertainment_admission.extend(base, root, when)
+    result = entertainment_admission.check_saved(inputs, root, when)
+    return inputs, result
 
 
 if __name__ == '__main__':

@@ -56,8 +56,15 @@ def merge_unique(groups, key, *, allow_identical):
         for row in group:
             identity = row[key]
             if identity in merged:
-                first.need(allow_identical and first.canonical(merged[identity]) == first.canonical(row),
-                           'COHORT_DUPLICATE_OR_DISAGREEMENT')
+                first.need(allow_identical, 'COHORT_DUPLICATE_OR_DISAGREEMENT')
+                if merged[identity] is row and type(row) is dict:
+                    # Pinned JSON cohorts share ordinary dictionaries. Traverse
+                    # the current body once, retaining invalid-value failures;
+                    # no bytes or acceptance survive this duplicate encounter.
+                    first.canonical(row)
+                else:
+                    first.need(first.canonical(merged[identity]) == first.canonical(row),
+                               'COHORT_DUPLICATE_OR_DISAGREEMENT')
             else:
                 merged[identity] = row
     return list(merged.values())
