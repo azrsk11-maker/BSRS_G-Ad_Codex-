@@ -112,9 +112,12 @@ acCheck('provider_cannot_borrow_other_store_connection',acDenied(fn()=>new C\WpC
 P\Runtime::$store=new P\WpConsentRepository($other);
 acCheck('runtime_store_replacement_rejected',acDenied(fn()=>$provider->read($prepared['request_id']),'CAPTURE_CONNECTION_CONFLICT'));
 P\Runtime::$store=$store;
-unregister_rest_route('bsre/v1','/lead');
-acCheck('missing_actual_route_rejected_before_provider_sql',acDenied(fn()=>$provider->read($prepared['request_id']),'CAPTURE_ADMISSION_UNVERIFIED'));
-A\register_routes();
+$hideLead=static function(array $routes): array { unset($routes['/bsre/v1/lead']); return $routes; };
+add_filter('rest_endpoints',$hideLead,PHP_INT_MAX);
+try{
+    acCheck('missing_actual_route_rejected_before_provider_sql',acDenied(fn()=>$provider->read($prepared['request_id']),'CAPTURE_ADMISSION_UNVERIFIED'));
+}finally{remove_filter('rest_endpoints',$hideLead,PHP_INT_MAX);}
+acCheck('original_route_registry_restored_after_fault',A\readback()['routes_installed']===true);
 add_filter('home_url','acHttpsHome',10,2);
 try{acCheck('https_route_fixture_cannot_open_provider',acDenied(fn()=>$provider->read($prepared['request_id']),'CAPTURE_ISOLATED_LAB_ONLY'));}
 finally{remove_filter('home_url','acHttpsHome',10);}
