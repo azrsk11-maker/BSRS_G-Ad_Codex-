@@ -5,6 +5,7 @@ namespace BSRE\ClosedRetention;
 require_once __DIR__ . '/../consent-retention/RetentionInventory.php';
 require_once __DIR__ . '/NoMailCopy.php';
 require_once __DIR__ . '/RetirementIntent.php';
+require_once __DIR__ . '/ClosureCollection.php';
 
 /** The adapter serializes closure edits with this lock; journal writes commit immediately. */
 interface Journal
@@ -339,6 +340,19 @@ final class Workflow
         $admissionHash = self::admissionHash($gate);
         return ['scope' => NoMailCopyProof::scope($after, $admissionHash, $intake['binding']['fingerprint']),
             'admission_hash' => $admissionHash, 'inventory_hash' => self::digest($resources)];
+    }
+
+    /** Initial source collection is not retirement: no twelve-month gate or purge authority is supplied. */
+    public function collectionContext(array $target, string $actor, int $now): array
+    {
+        self::lab();
+        if (!$this->authority->canReview($actor)) self::fail('OWNER_REVIEW_REQUIRED');
+        if (!$this->journal instanceof ClosureCollectorWriter) self::fail('COLLECTION_WRITER_REQUIRED');
+        self::validateClosureRecord($target, $now);
+        $this->journal->assertCollectionTarget($target);
+        $gate = $this->verifiedAdmission($now);
+        $resources = $this->collectClosureResources($target, $target['mail_message_ids'] === []);
+        return ['admission_hash' => self::admissionHash($gate), 'inventory_hash' => self::digest($resources)];
     }
 
     private function collectClosureResources(array $closure, bool $noCopy): array

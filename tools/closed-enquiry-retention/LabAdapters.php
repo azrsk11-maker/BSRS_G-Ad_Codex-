@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace BSRE\ClosedRetention;
 require_once __DIR__ . '/Workflow.php';
 require_once __DIR__ . '/RetirementJournal.php';
+require_once __DIR__ . '/ClosureCollectionJournal.php';
 require_once __DIR__ . '/LeaseBoundWpdb.php';
 
 /** All provider mutations below affect only explicitly supplied synthetic arrays. */
@@ -47,9 +48,10 @@ final class LabAuthority implements Authority
     }
 }
 
-final class MemoryJournal implements Journal, ClosureWriter, RetirementWriter
+final class MemoryJournal implements Journal, ClosureWriter, RetirementWriter, ClosureCollectorWriter
 {
     use RetirementJournal;
+    use ClosureCollectionJournal;
     public array $closures = [];
     public array $journals = [];
     public bool $incomplete = false;
@@ -65,6 +67,13 @@ final class MemoryJournal implements Journal, ClosureWriter, RetirementWriter
         try { return $operation(); } finally { unset($this->locks[$closureId]); }
     }
     public function closure(string $closureId): ?array { return $this->closures[$closureId] ?? null; }
+    private function collectionRows(): array { return $this->closures; }
+    private function createCollectedClosure(array $target): void
+    {
+        // assertCollectionTarget and the namespace custody lease precede this insert-only primitive.
+        if (isset($this->closures[$target['closure_id']])) throw new Failure('COLLECTION_IDENTITY_ALREADY_BOUND');
+        $this->closures[$target['closure_id']] = $target;
+    }
     public function replaceClosure(array $before, array $after): void
     {
         $id = $before['closure_id'];
@@ -146,9 +155,10 @@ final class LabAdmission implements Admission
 }
 
 /** MariaDB journal with committed intents and a connection-owned closure lease. */
-final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter
+final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, ClosureCollectorWriter
 {
     use RetirementJournal;
+    use ClosureCollectionJournal;
     private $db;
     private string $prefix;
     private array $leases = [];
@@ -158,7 +168,7 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
             || wp_get_environment_type() !== 'local' || home_url() !== 'http://bsre.invalid'
             || !($db instanceof LeaseBoundWpdb)
-            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
+            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db;
         $this->db->suppress_errors(true);
         $this->prefix = $db->prefix;
@@ -205,6 +215,26 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter
         });
     }
     public function closure(string $closureId): ?array { return $this->read('closures', $closureId); }
+    private function collectionRows(): array
+    {
+        $this->db->last_error = '';
+        $rows = $this->db->get_results("SELECT id,body FROM {$this->prefix}closures", ARRAY_A);
+        if ($this->db->last_error !== '' || !is_array($rows)) throw new Failure('COLLECTION_REGISTRY_UNVERIFIED');
+        $result = [];
+        foreach ($rows as $row) {
+            try { $body = json_decode($row['body'], true, 24, JSON_THROW_ON_ERROR); }
+            catch (\Throwable $error) { throw new Failure('COLLECTION_REGISTRY_UNVERIFIED'); }
+            if (!is_string($row['id']) || isset($result[$row['id']])) throw new Failure('COLLECTION_REGISTRY_UNVERIFIED');
+            $result[$row['id']] = $body;
+        }
+        return $result;
+    }
+    private function createCollectedClosure(array $target): void
+    {
+        $result = $this->db->query($this->db->prepare("INSERT INTO {$this->prefix}closures (id,body) VALUES (%s,%s)",
+            $target['closure_id'], json_encode($target, JSON_THROW_ON_ERROR)));
+        if ($result !== 1) throw new Failure('COLLECTION_WRITE_UNCONFIRMED');
+    }
     public function replaceClosure(array $before, array $after): void
     {
         $id = $before['closure_id'];
