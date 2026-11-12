@@ -276,9 +276,11 @@ def run_checks(require_php=False):
         run("owner-sender-retirement-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_retirement.php")])
         run("owner-initial-closure-collection-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_collection.php")])
         run("owner-mail-guard-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/guard.test.php")])
-        for name in ("WpCaptureResource.php", "capture-native.php", "test_wp_capture_guard.php"):
+        for name in ("WpCaptureResource.php", "capture-native.php", "test_wp_capture_guard.php",
+                     "admission-capture-native.php", "test_wp_capture_purpose.php", "intake-custody-native.php"):
             run("php-lint-capture-provider-" + name, [*php_prefix, "-l", str(ROOT/"tools/closed-enquiry-retention"/name)])
         run("wp-capture-provider-guards", [*php_prefix, str(ROOT/"tools/closed-enquiry-retention/test_wp_capture_guard.php")])
+        run("wp-capture-purpose-bindings", [*php_prefix, str(ROOT/"tools/closed-enquiry-retention/test_wp_capture_purpose.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
     else:
