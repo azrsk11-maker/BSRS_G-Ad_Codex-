@@ -417,11 +417,29 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and the appended occupational research."""
-    return _fresh_ofqual_occupational_state(root, at)[0]
+    """Freshly verify all history and the appended bank credential-recovery research."""
+    return _fresh_bank_credential_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
+    return _fresh_bank_credential_state(root, at)[1]
+
+
+def reconstruct_ofqual_veterinary_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 11,176-row veterinary snapshot and frozen reports."""
+    return _fresh_ofqual_veterinary_state(root, at)[0]
+
+
+def verify_ofqual_veterinary_snapshot(root=first.ROOT, at=None):
+    return _fresh_ofqual_veterinary_state(root, at)[1]
+
+
+def reconstruct_ofqual_occupational_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 11,170-row occupational snapshot and frozen reports."""
+    return _fresh_ofqual_occupational_state(root, at)[0]
+
+
+def verify_ofqual_occupational_snapshot(root=first.ROOT, at=None):
     return _fresh_ofqual_occupational_state(root, at)[1]
 
 
@@ -512,6 +530,24 @@ def _fresh_ofqual_occupational_state(root, at):
     base = _fresh_apprenticeship_state(root, when)[0]
     inputs = ofqual_occupational_admission.extend(base, root, when)
     result = ofqual_occupational_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_ofqual_veterinary_state(root, at):
+    import ofqual_veterinary_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_ofqual_occupational_state(root, when)[0]
+    inputs = ofqual_veterinary_admission.extend(base, root, when)
+    result = ofqual_veterinary_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_bank_credential_state(root, at):
+    import bank_credential_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_ofqual_veterinary_state(root, when)[0]
+    inputs = bank_credential_admission.extend(base, root, when)
+    result = bank_credential_admission.check_saved(inputs, root, when)
     return inputs, result
 
 
