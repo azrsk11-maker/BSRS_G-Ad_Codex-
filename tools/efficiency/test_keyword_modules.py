@@ -28,7 +28,7 @@ class KeywordModuleTests(unittest.TestCase):
 
     def run_suite(self, timeout=10):
         completed = owned.run_owned([sys.executable, "-B", str(Path(runner.__file__)),
-                         "--supervised", "--suite", str(self.folder)], cwd=runner.ROOT, timeout=timeout)
+                         "--supervised", "--suite", str(self.folder),'--workers','2'], cwd=runner.ROOT, timeout=timeout)
         return completed, json.loads(completed.stdout)
 
     def test_two_real_workers_overlap_preserve_class_fixture_order_and_skip(self):

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import subprocess
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 
@@ -19,6 +20,27 @@ def tap(passed=5, failed=0, skipped=17, tests=22):
 
 
 class FoundationSummaryTests(unittest.TestCase):
+    def test_complete_keyword_receipt_requires_valid_bounded_resource_selection(self):
+        summary={key:1 for key in ('discovered_modules','completed_modules','discovered','started','finished')}
+        summary.update(skipped=0,coverage_verified=True,passed=True,timed_out=False)
+        policy={'mode':'auto','selected_workers':4,'maximum_workers':4,
+            'memory_per_worker_bytes':2*1024**3,'cpu_count':4,'memory_available_bytes':8*1024**3}
+        report={'summary':summary,'workers':4,'worker_resources':policy,'aggregate_timeout_seconds':300,
+            'evidence_file':'test-output/keyword-modules-SYNTHETIC.json',
+            'evidence_sha256':'0'*64,'expected_ids_sha256':'1'*64}
+        resource_spec=importlib.util.spec_from_file_location('synthetic_resource_guard',
+            CHECKER.ROOT/'tools/efficiency/keyword_resources.py')
+        resources=importlib.util.module_from_spec(resource_spec);resource_spec.loader.exec_module(resources)
+        for change,wanted in (({},True),({'maximum_workers':1000},False),
+                              ({'memory_available_bytes':1},False),({'cpu_count':1},False)):
+            candidate={**report,'worker_resources':{**policy,**change}}
+            supervisor=SimpleNamespace(run_owned=lambda *a,**k: subprocess.CompletedProcess(a,0,json.dumps(candidate),''))
+            def module(name,path):
+                return supervisor if name=='foundation_owned_process' else resources
+            with self.subTest(change=change),patch.object(CHECKER,'module',side_effect=module):
+                result=CHECKER.execute_check('keyword-system-behavior',['synthetic'],owned_tree=True)
+            self.assertEqual(result['passed'],wanted)
+
     def test_keyword_suite_time_budget_remains_bounded_and_failures_propagate(self):
         failed = subprocess.CompletedProcess(["synthetic-python"], 7, "", "SYNTHETIC_FAILURE")
         with patch.object(CHECKER.subprocess, "run", return_value=failed) as child:

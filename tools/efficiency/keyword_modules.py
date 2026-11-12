@@ -16,6 +16,8 @@ import time
 import unittest
 
 from owned_process import GATE, ContainmentError, run_owned
+from keyword_progress import Progress, read_diagnostic
+from keyword_resources import select as select_workers
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,6 +25,12 @@ TIMEOUT = 300
 MAX_OUTPUT = 4_000_000
 STATUSES = {"passed", "skipped", "subtest_skips", "failure", "error", "expected_failure", "unexpected_success"}
 COUNTS = ("failures", "errors", "skipped", "expected_failures", "unexpected_successes")
+# Only scheduling hints from actual timing diagnostics; no verdict or source
+# acceptance is reused. Every discovered module remains in the queue.
+SLOW_MODULES = ('test_ofqual_veterinary_admission','test_bank_support_admission',
+    'test_ofqual_animal_care_admission','test_bank_credential_admission',
+    'test_ofqual_occupational_admission','test_negative_library',
+    'test_apprenticeship_admission','test_current_negative_library')
 
 
 def encoded(value):
@@ -214,13 +222,64 @@ def collect(module, expected, process, paths):
             "output_tail": (stdout + stderr)[-1800:].decode("utf-8", errors="replace")}
 
 
-def run_modules(folder, deadline, workers=2):
-    if workers not in (1, 2):
-        raise ValueError("Only one or two module workers are allowed")
+def checkpoint(progress, expected, active, results, starts, *, force=False, status='RUNNING'):
+    if progress is None or progress.disabled or (not force and not progress.due()):
+        return
+    now = time.perf_counter()
+    rows = []
+    for module in sorted(expected):
+        events = []
+        state = 'PENDING'
+        elapsed = 0
+        if module in results:
+            result = results[module]
+            events = result['events']
+            state = 'COMPLETE' if result['complete'] else 'INCOMPLETE'
+            elapsed = result['elapsed_seconds']
+        elif module in active:
+            state = 'ACTIVE'
+            elapsed = round(now - starts[module], 6)
+            path = active[module][1]['events']
+            try:
+                # Ignore a partially written final JSONL record; no verdict is read.
+                body = read_bounded(path) if path.is_file() else b''
+            except (OSError, ValueError):
+                body = b''
+            if body:
+                for line in body.split(b'\n')[:-1]:
+                    try:
+                        event = json.loads(line)
+                        if event.get('event') in ('start', 'finish'):
+                            events.append(event)
+                    except (ValueError, AttributeError):
+                        pass
+        rows.append({'module': module, 'state': state, 'expected': len(expected[module]),
+                     'started': sum(e.get('event') == 'start' for e in events),
+                     'finished': sum(e.get('event') == 'finish' for e in events),
+                     'elapsed_seconds': elapsed})
+    try:
+        progress.write(rows, status)
+    except (OSError, ValueError):
+        # Diagnostics cannot change test selection, verdicts or process cleanup.
+        # Do not repeatedly retry an inaccessible/oversized diagnostic file.
+        progress.disabled = True
+
+
+def run_modules(folder, deadline, workers='auto'):
+    resources=select_workers(str(workers))
+    workers=resources['selected_workers']
     folder = Path(folder).resolve(strict=True)
     expected = discover(folder)
-    pending = deque(sorted(expected))
+    pending = deque(sorted(expected,key=lambda n:(SLOW_MODULES.index(n) if n in SLOW_MODULES else len(SLOW_MODULES),n)))
     active, results = {}, {}
+    starts = {}
+    try:
+        progress = Progress(ROOT)
+    except (OSError, ValueError):
+        progress = None
+    checkpoint(progress, expected, active, results, starts, force=True)
+    if progress is not None:
+        print(progress.reference(), file=sys.stderr, flush=True)
     timed_out = False
     with tempfile.TemporaryDirectory(prefix="keyword-modules-") as temporary:
         try:
@@ -238,10 +297,15 @@ def run_modules(folder, deadline, workers=2):
                             "--receipt", str(paths["receipt"])], cwd=ROOT, stdin=subprocess.DEVNULL,
                             stdout=stdout, stderr=stderr, close_fds=True)
                     active[module] = (process, paths)
+                    starts[module] = time.perf_counter()
+                    checkpoint(progress, expected, active, results, starts, force=True)
                 for module, (process, paths) in list(active.items()):
                     if process.poll() is not None:
                         results[module] = collect(module, expected[module], process, paths)
+                        results[module]['elapsed_seconds'] = round(time.perf_counter() - starts[module], 6)
                         del active[module]
+                        checkpoint(progress, expected, active, results, starts, force=True)
+                checkpoint(progress, expected, active, results, starts)
                 if pending or active:
                     time.sleep(min(0.02, max(0, deadline - time.monotonic())))
         finally:
@@ -252,11 +316,14 @@ def run_modules(folder, deadline, workers=2):
                 process.wait(timeout=5)
             for module, (process, paths) in active.items():
                 results[module] = collect(module, expected[module], process, paths)
+                results[module]['elapsed_seconds'] = round(time.perf_counter() - starts[module], 6)
+            checkpoint(progress, expected, {}, results, starts, force=True,
+                       status='TIMED_OUT' if timed_out else 'FINISHED')
     ids = [identity for values in expected.values() for identity in values]
     finished = [event for result in results.values() for event in result["events"] if event.get("event") == "finish"]
     started = [event for result in results.values() for event in result["events"] if event.get("event") == "start"]
     complete = len(results) == len(expected) and all(r["complete"] for r in results.values())
-    return {"version": 1, "workers": workers, "aggregate_timeout_seconds": TIMEOUT,
+    return {"version": 1, "workers": workers, "worker_resources": resources, "aggregate_timeout_seconds": TIMEOUT,
             "expected_ids_sha256": hashlib.sha256(encoded(ids)).hexdigest(),
             "modules": [results[name] for name in sorted(results)],
             "summary": {"discovered_modules": len(expected), "completed_modules": len(results),
@@ -274,6 +341,7 @@ def public_report(report):
         finishes = [event for event in events if event.get("event") == "finish"]
         metadata = {key: item[key] for key in
                     ("module", "exit", "coverage_verified", "complete", "passed", "stdout_sha256", "stderr_sha256")}
+        metadata['elapsed_seconds'] = item.get('elapsed_seconds')
         metadata.update(expected=len(item["expected"]), started=sum(e.get("event") == "start" for e in events),
                         finished=len(finishes), outcomes=dict(Counter(e["status"] for e in finishes)),
                         skipped=sum(e.get("skipped", 0) for e in finishes),
@@ -310,6 +378,7 @@ def main(argv=None):
     parser.add_argument("--suite", type=Path, default=ROOT / "tools/keyword-system")
     parser.add_argument("--supervised", action="store_true")
     parser.add_argument("--worker")
+    parser.add_argument('--workers',choices=('auto','1','2','3','4'),default='auto')
     parser.add_argument("--events", type=Path)
     parser.add_argument("--receipt", type=Path)
     args = parser.parse_args(argv)
@@ -318,11 +387,16 @@ def main(argv=None):
     if not args.supervised:
         try:
             completed = run_owned([sys.executable, "-B", str(Path(__file__).resolve()), "--supervised",
-                                   "--suite", str(args.suite)], cwd=ROOT, timeout=TIMEOUT)
+                                   "--suite", str(args.suite),'--workers',args.workers], cwd=ROOT, timeout=TIMEOUT)
             sys.stdout.write(completed.stdout)
             sys.stderr.write(completed.stderr)
             return completed.returncode
-        except (ContainmentError, subprocess.TimeoutExpired):
+        except subprocess.TimeoutExpired as exc:
+            diagnostic = read_diagnostic(ROOT, exc.stderr)
+            print(json.dumps({'keyword_diagnostic': diagnostic}), file=sys.stderr)
+            print(json.dumps({"summary": {"passed": False, "error": "CONTAINMENT_OR_TIMEOUT"}}))
+            return 1
+        except ContainmentError:
             print(json.dumps({"summary": {"passed": False, "error": "CONTAINMENT_OR_TIMEOUT"}}))
             return 1
     try:
@@ -332,7 +406,7 @@ def main(argv=None):
         if (gate.get("gate") != GATE or type(deadline) not in (int, float)
                 or not math.isfinite(deadline) or deadline <= time.monotonic()):
             raise ValueError("Missing owned-tree startup gate")
-        report = run_modules(args.suite, deadline)
+        report = run_modules(args.suite, deadline, workers=args.workers)
         print(json.dumps(retain_report(report), ensure_ascii=True, separators=(",", ":")))
         return 0 if report["summary"]["passed"] else 1
     except (OSError, ValueError, KeyError, TypeError):
