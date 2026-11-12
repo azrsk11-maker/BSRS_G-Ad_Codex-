@@ -1,5 +1,6 @@
 /** Offline report calculation only. No imports from live systems, writes or inferred finance policy. */
 import {isExecutedHistoryAudit,readQualificationHistory} from './history-bridge.mjs';
+import {SegmentUnits,buildSegmentReport,heldSegmentReport} from './segments.mjs';
 const UNKNOWN='UNKNOWN_SOURCE', SCALE=1000000;
 const ID=/^[a-zA-Z][a-zA-Z0-9:_-]{0,100}$/;
 const isIdentifier=value=>typeof value==='string'&&ID.test(value);
@@ -44,8 +45,8 @@ function unique(rows,key){
   return [...map.values()];
 }
 function allocate(value,weights){
-  const rows=weights.map(({campaign_key,source_class,weight_ppm})=>{const product=BigInt(value)*BigInt(weight_ppm);
-    return {key:attribution(campaign_key,source_class),amount:Number(product/BigInt(SCALE)),remainder:product%BigInt(SCALE)};});
+  const rows=weights.map(({campaign_key,source_class,weight_ppm},index)=>{const product=BigInt(value)*BigInt(weight_ppm);
+    return {key:attribution(campaign_key,source_class),index,amount:Number(product/BigInt(SCALE)),remainder:product%BigInt(SCALE)};});
   let rest=value-rows.reduce((s,r)=>s+r.amount,0);
   const order=[...rows].sort((a,b)=>{const aa=a.remainder<0n?-a.remainder:a.remainder,bb=b.remainder<0n?-b.remainder:b.remainder;
     return aa===bb?a.key.localeCompare(b.key):aa>bb?-1:1;});
@@ -63,7 +64,13 @@ function prerequisiteBlockers(input,policy){
 }
 const blocked=blockers=>({status:'BLOCKED',blockers,metrics:null,network_calls:0,production_writes:0});
 
-export function commercialReport(input,policy,{now_utc}={}){
+const resolvedSource=row=>row.source_class===undefined?(row.campaign_key===null?'unknown':'ads'):row.source_class;
+const allocationEntity=(transaction,weight)=>({kind:'transaction_allocation',transaction_ref:transaction.transaction_ref,
+  campaign_key:weight.campaign_key,source_class:resolvedSource(weight)});
+
+export function commercialReport(input,policy,options={}){return calculateReport(input,policy,options);}
+
+function calculateReport(input,policy,{now_utc}={},segmentUnits){
   const blockers=prerequisiteBlockers(input,policy);
   if(blockers.length)return blocked(blockers);
   require(exact(input,['verified_export','source_ref','complete','from','to','spend','transactions','collections','qualifications','qualification_audit','opportunities']),'UNKNOWN_INPUT_FIELD');
@@ -95,13 +102,17 @@ export function commercialReport(input,policy,{now_utc}={}){
     for(const weight of row.allocations){require(exact(weight,['campaign_key','source_class','weight_ppm']),'UNKNOWN_ALLOCATION_FIELD');const key=attribution(weight.campaign_key,weight.source_class);
       require(!seen.has(key)&&Number.isInteger(weight.weight_ppm)&&weight.weight_ppm>0&&weight.weight_ppm<=SCALE,'ALLOCATION_WEIGHT_INVALID');seen.add(key);sum+=weight.weight_ppm;}
     require(sum===SCALE,'ALLOCATION_MUST_SUM_TO_ONE');transactionMap.set(row.transaction_ref,row);
-    if(inWindow(row.closed_at))for(const w of row.allocations)get(attribution(w.campaign_key,w.source_class)).allocated_transaction_weight_in_window_ppm+=w.weight_ppm;
+    if(inWindow(row.closed_at))for(const w of row.allocations){
+      const key=attribution(w.campaign_key,w.source_class);get(key).allocated_transaction_weight_in_window_ppm+=w.weight_ppm;
+      segmentUnits?.add(allocationEntity(row,w),key,{allocated_transaction_weight_in_window_ppm:w.weight_ppm});
+    }
   }
   for(const row of unique(input.spend,row=>`${attribution(row.campaign_key,'ads')}:${row.date}`)){
     require(exact(row,['campaign_key','date','amount_minor','verified','source_ref']),'UNKNOWN_SPEND_FIELD');verified(row);
     require(typeof row.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(row.date),'DUBAI_SPEND_DATE_REQUIRED');
     const at=`${row.date}T00:00:00+04:00`;require(new Date(stamp(at)+4*3600000).toISOString().slice(0,10)===row.date,'INVALID_CALENDAR_DATE');
-    const minor=amount(row.amount_minor);if(inWindow(at)){const target=get(attribution(row.campaign_key,'ads'));target.media_spend_minor=add(target.media_spend_minor,minor);}
+    const minor=amount(row.amount_minor);if(inWindow(at)){const key=attribution(row.campaign_key,'ads'),target=get(key);target.media_spend_minor=add(target.media_spend_minor,minor);
+      segmentUnits?.add({kind:'spend',campaign_key:row.campaign_key,date:row.date},key,{media_spend_minor:minor});}
   }
   const collectedTransactions=new Set();let collectedNet=0,contribution=0,nonmedia=0;
   for(const row of unique(input.collections,row=>{require(isIdentifier(row.record_id),'COLLECTION_RECORD_ID_REQUIRED');return row.record_id;})){
@@ -117,10 +128,14 @@ export function commercialReport(input,policy,{now_utc}={}){
     for(const [value,field] of [[net,'allocated_collected_net_revenue_minor'],[before,'allocated_contribution_before_acquisition_minor'],
       [row.nonmedia_acquisition_minor,'allocated_nonmedia_acquisition_minor']])for(const allocation of allocate(value,t.allocations)){
         const target=get(allocation.key);target[field]=add(target[field],allocation.amount);
+        segmentUnits?.add(allocationEntity(t,t.allocations[allocation.index]),allocation.key,{[field]:allocation.amount});
       }
     if(row.gross_commission_minor>0)collectedTransactions.add(row.transaction_ref);
   }
-  for(const ref of collectedTransactions)for(const w of transactionMap.get(ref).allocations)get(attribution(w.campaign_key,w.source_class)).allocated_cash_receipt_transaction_weight_ppm+=w.weight_ppm;
+  for(const ref of collectedTransactions)for(const w of transactionMap.get(ref).allocations){
+    const key=attribution(w.campaign_key,w.source_class);get(key).allocated_cash_receipt_transaction_weight_ppm+=w.weight_ppm;
+    segmentUnits?.add(allocationEntity(transactionMap.get(ref),w),key,{allocated_cash_receipt_transaction_weight_ppm:w.weight_ppm});
+  }
   const persons=new Map(),uncertainPeople=new Set(),earliestVerified=new Map();let unresolved=0,notFirst=0;
   for(const row of unique(audited?[]:input.qualifications,row=>{require(isIdentifier(row.record_id),'QUALIFICATION_RECORD_ID_REQUIRED');return row.record_id;})){
     require(exact(row,['record_id','person_ref','qualified_at','campaign_key','source_class','first_ever_confirmed','history_verified','verified','source_ref']),'UNKNOWN_QUALIFICATION_FIELD');verified(row);
@@ -135,15 +150,31 @@ export function commercialReport(input,policy,{now_utc}={}){
   }
   for(const row of persons.values()){
     require(compareQualificationInstants(qualificationInstant(row.qualified_at),earliestVerified.get(row.person_ref))===0,'EARLIER_QUALIFICATION_CONTRADICTS_FIRST');
-    if(!uncertainPeople.has(row.person_ref)&&inWindow(row.qualified_at))get(attribution(row.campaign_key,row.source_class)).first_ever_qualified_people++;
+    if(!uncertainPeople.has(row.person_ref)&&inWindow(row.qualified_at)){
+      const key=attribution(row.campaign_key,row.source_class);get(key).first_ever_qualified_people++;
+      segmentUnits?.add({kind:'qualification',person_ref:row.person_ref,campaign_key:row.campaign_key,
+        source_class:resolvedSource(row)},key,{first_ever_qualified_people:1});
+    }
   }
-  if(audited)for(const counts of Object.values(audit.by_day_and_source)){
+  if(audited)for(const [day,counts] of Object.entries(audit.by_day_and_source)){
     for(const [source,key] of [['ADS_ATTRIBUTED','ADS_UNMAPPED'],['OTHER_SOURCE','OTHER_SOURCE'],['UNKNOWN_SOURCE',UNKNOWN]])
-      if(counts[source])get(key).first_ever_qualified_people+=counts[source];
+      if(counts[source]){
+        get(key).first_ever_qualified_people+=counts[source];
+        if(segmentUnits&&source==='ADS_ATTRIBUTED'){
+          for(const [nativeCampaign,count] of Object.entries(audit.ads_by_day_and_native_campaign[day]))if(count)
+            segmentUnits?.add({kind:'audited_qualification_bucket',day,source_class:'ads',native_campaign_id:nativeCampaign},
+              key,{first_ever_qualified_people:count});
+        }else if(segmentUnits)segmentUnits.add({kind:'audited_qualification_bucket',day,
+          source_class:source==='OTHER_SOURCE'?'other':'unknown',native_campaign_id:null},key,{first_ever_qualified_people:counts[source]});
+      }
   }
   for(const row of unique(input.opportunities,row=>{require(isIdentifier(row.opportunity_ref),'OPPORTUNITY_ID_REQUIRED');return row.opportunity_ref;})){
     require(exact(row,['opportunity_ref','person_ref','created_at','campaign_key','source_class','verified','source_ref']),'UNKNOWN_OPPORTUNITY_FIELD');verified(row);
-    require(isIdentifier(row.person_ref),'PERSON_REFERENCE_REQUIRED');const key=attribution(row.campaign_key,row.source_class);if(inWindow(row.created_at))get(key).opportunities++;
+    require(isIdentifier(row.person_ref),'PERSON_REFERENCE_REQUIRED');const key=attribution(row.campaign_key,row.source_class);if(inWindow(row.created_at)){
+      get(key).opportunities++;
+      segmentUnits?.add({kind:'opportunity',opportunity_ref:row.opportunity_ref,campaign_key:row.campaign_key,
+        source_class:resolvedSource(row)},key,{opportunities:1});
+    }
   }
   const campaigns=[...rows.values()].sort((a,b)=>a.campaign_key.localeCompare(b.campaign_key));
   const qualificationBySource={ads:0,other:0,unknown:0};
@@ -180,13 +211,29 @@ export function commercialReport(input,policy,{now_utc}={}){
 
 /** Read only explicit private extracts through the real pinned Python validator. */
 export async function commercialReportFromHistory(input,policy,historyOptions){
+  return reportFromHistory(input,policy,historyOptions);
+}
+
+/** Base results are unchanged; unknown/unapproved classification holds only segmented results. */
+export function commercialReportBySegment(input,policy,classification,options={}){
+  const units=new SegmentUnits(),base=calculateReport(input,policy,options,units);
+  return {...base,segment_report:base.status==='BLOCKED'?heldSegmentReport('SEGMENT_BASE_REPORT_BLOCKED'):
+    buildSegmentReport(input,policy,classification,options.now_utc,base,units)};
+}
+
+export async function commercialReportFromHistoryBySegment(input,policy,historyOptions,classification){
+  return reportFromHistory(input,policy,historyOptions,classification,true);
+}
+
+async function reportFromHistory(input,policy,historyOptions,classification,segmented=false){
   const blockers=prerequisiteBlockers(input,policy);
-  if(blockers.length)return blocked(blockers);
+  if(blockers.length)return segmented?{...blocked(blockers),segment_report:heldSegmentReport('SEGMENT_BASE_REPORT_BLOCKED')}:blocked(blockers);
   require(input&&typeof input==='object'&&!Object.hasOwn(input,'qualifications')&&!Object.hasOwn(input,'qualification_audit'),
     'QUALIFICATION_INPUTS_MUST_COME_FROM_AUDIT');
   const {from,to}=reportWindow(input);
   const aggregate=await readQualificationHistory(historyOptions,{
     fromDay:new Date(from+4*3600000).toISOString().slice(0,10),
     toDay:new Date(to-1+4*3600000).toISOString().slice(0,10)});
-  return commercialReport({...input,qualification_audit:aggregate},policy,{now_utc:historyOptions.now_utc});
+  const audited={...input,qualification_audit:aggregate},options={now_utc:historyOptions.now_utc};
+  return segmented?commercialReportBySegment(audited,policy,classification,options):commercialReport(audited,policy,options);
 }
