@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "account_id": "573-038-4686",
+  "account_name": "Black Swan Real Estate",
+  "account_login": "marketing@blackswanrealestate.ae",
+  "surface": "Google Ads Campaigns",
+  "read_only": true,
+  "banner": "None of your ads are running - Your campaigns and ad groups are paused or removed. Enable them to begin showing your ads.",
+  "visible_campaign_rows": "1-10 of 20",
+  "account_total_budget_readback": "AED0.00/day",
+  "new_release_campaigns_observed": 0,
+  "changes_made": false,
+  "production_or_ads_authorized": false,
+  "evidence_limit": "Banner is authoritative for no serving; this readback does not claim every historical row status or verify the future four-campaign configuration."
+}

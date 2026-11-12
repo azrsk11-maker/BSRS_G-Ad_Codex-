@@ -1,0 +1,77 @@
+{
+  "audit": "PRIVATE_STAFF_REHEARSAL_EVIDENCE_READ_ONLY",
+  "audited_at_utc": "2026-11-11T19:06:19.104753+00:00",
+  "source": "Authorized temporary XLSX export of the existing private lead workbook; raw source remains outside the project.",
+  "requested_session": {
+    "date_dubai": "2026-11-04",
+    "scheduled_time_dubai": "14:00-15:00",
+    "timezone": "Asia/Dubai"
+  },
+  "method": "stdlib ZIP/XML, selected staff-operating worksheets only; values, formula presence and related-comment metadata checked",
+  "excluded_from_inspection": [
+    "Intake records",
+    "Outcome records",
+    "prospect payloads"
+  ],
+  "staff_guide": [
+    {
+      "cell": "B2",
+      "finding": "A nominated reviewer and daily 10:00-19:00 Dubai coverage are documented. Existing consultant access, cover, measured capacity and escalation thresholds explicitly remain unverified."
+    },
+    {
+      "cell": "B11",
+      "finding": "150 people/day is described as an objective, not observed capacity."
+    },
+    {
+      "cell": "B14",
+      "finding": "Closing instructions require observed totals, evidence and the actual next owner. Unavailable counts must stay blank."
+    },
+    {
+      "cell": "B20",
+      "finding": "Actual access, mappings, protections, whole-history evidence and a labelled internal rehearsal are required before private bridge use. The files create no capacity or launch approval."
+    }
+  ],
+  "operating_tables": [
+    {
+      "sheet": "History review",
+      "header_range": "A1:H1",
+      "checked_data_range": "A2:H1000",
+      "data_value_or_formula_cells": 0,
+      "related_comments": 0
+    },
+    {
+      "sheet": "Source review",
+      "header_range": "A1:K1",
+      "checked_data_range": "A2:K1000",
+      "data_value_or_formula_cells": 0,
+      "related_comments": 0
+    },
+    {
+      "sheet": "Queue and retention",
+      "header_range": "A1:O1",
+      "checked_data_range": "A2:O1000",
+      "data_value_or_formula_cells": 0,
+      "related_comments": 0
+    },
+    {
+      "sheet": "Daily handover",
+      "header_range": "A1:O1",
+      "checked_data_range": "A2:O1000",
+      "data_value_or_formula_cells": 0,
+      "related_comments": 0
+    }
+  ],
+  "conclusion": "The inspected workbook snapshot supplies operating instructions and blank staff tables, with no recorded completion, actual attendance/sign-off, rehearsal timings or measured-capacity evidence for the requested session.",
+  "limits": "Absence is scoped to these five worksheets in this export. It does not prove the event never occurred or exclude evidence in other authorized sources. File-modification metadata was not used as absence proof.",
+  "workbook_modified": false,
+  "sharing_changed": false,
+  "raw_workbook_copied_to_project": false,
+  "release_authorized": false,
+  "source_export_sha256": "f3cdc8b8f22d9a1fcea79339740db2c1ecd7de851cdee35d4dd1038370b9b0d7",
+  "independent_parent_verification": {
+    "guide_B2_explicit_unverified": true,
+    "guide_B20_requires_rehearsal": true,
+    "all_four_operating_tables_have_no_stored_values_or_formulas_below_headers": true,
+    "intake_or_outcome_rows_examined": false
+  }
+}

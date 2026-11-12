@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "owner_report": {
+    "attendance_and_completion_claimed": true,
+    "session_dubai": "2026-11-04 14:00-15:00",
+    "evidence_available_claimed": true,
+    "source": "GitHub issue #4 owner-update transcription"
+  },
+  "verified_evidence": {
+    "marketing_evidence_folder_items_visible": 0,
+    "rehearsal_record_found": false,
+    "timing_summary_found": false,
+    "capacity_summary_found": false,
+    "private_workbook_modified": false,
+    "read_only": true
+  },
+  "gate": {
+    "status": "OPEN",
+    "reason": "Owner-reported completion is not supported by a retrievable rehearsal record, timing sample or representative workload/backlog summary.",
+    "required_next_evidence": ["exercise results", "first-contact timing aggregates", "full-AED2000 workload/backlog summary", "owner review reference"]
+  },
+  "production_and_ads": {
+    "production_changed": false,
+    "ads_paused": true,
+    "release_authorized": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "scope": "OFFLINE_NATIVE_WORKFLOW_TRIGGER_COVERAGE_NOT_NATIVE_RUNTIME_ACCEPTANCE",
+  "base_commit": "faceb3c782f8fe7313c6c3f2675288d28413eefa",
+  "workflow": ".github/workflows/isolated-wordpress-lab.yml",
+  "dependency_source": "tools/staging-lab/Dockerfile",
+  "regression_test": "tools/staging-lab/test_native_workflow_paths.py",
+  "baseline": {
+    "distinct_repository_local_copy_files": 138,
+    "uncovered_files": 14,
+    "actual_original_workflow_reproduced_by_parent": true,
+    "affected_components": ["closed-enquiry-retention", "purpose-attribution", "purpose-retention", "retention-admission"]
+  },
+  "corrected": {
+    "distinct_repository_local_copy_files": 138,
+    "uncovered_files": 0,
+    "path_patterns_added_or_consolidated": ["tools/closed-enquiry-retention/**", "tools/website-tracking/tracking-system/**"],
+    "jobs_permissions_concurrency_isolation_and_runtime_logic_changed": false
+  },
+  "verification": {
+    "command": "python -B -m unittest discover -s tools/staging-lab -p test_*.py",
+    "cases": 18,
+    "passed": 17,
+    "existing_windows_symlink_capability_skips": 1,
+    "failed": 0,
+    "agent_suite_seconds": 0.817,
+    "independent_parent_suite_seconds": 0.710,
+    "actual_docker_sources_derived_not_duplicated_allowlist": true,
+    "guards": ["Missing runtime input", "File/directory/wildcard/continued COPY", "Segment-bounded star", "Recursive globstar", "Ordered negative filters", "Unknown COPY/filter syntax fails closed"],
+    "earlier_full_foundation_receipt": "OFQUAL_ADMISSION_CHECKS_2026-11-11.json",
+    "full_foundation_rerun_for_this_change": false
+  },
+  "limits": [
+    "Coverage is of repository-local Docker COPY inputs, not a proof of every possible runtime dependency",
+    "Does not run GitHub Actions or prove actual WordPress/database/HTTP integration",
+    "Current-source upload, native CI and independent human review remain pending repository Write access",
+    "No production, tracking, Ads, permission or financial changes"
+  ]
+}

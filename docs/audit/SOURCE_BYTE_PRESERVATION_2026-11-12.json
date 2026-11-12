@@ -1,0 +1,67 @@
+{
+  "observed_on_dubai": "2026-11-12",
+  "scope": "GIT_SOURCE_BYTE_PRESERVATION_AND_ACTUAL_RECONCILIATION_NOT_LIVE_ACCEPTANCE",
+  "corrected_commit": "d9821651ec5988b5449de0caa0d3b254cbc6bdd5",
+  "corrected_tree": "6713ff03e0f527ccf0278d1e1722a622298ca900",
+  "problem": "Two original CRLF source preview files were correctly pinned/on disk but LF-normalized in historical Git blobs; immutable-tree equality alone did not establish provenance.",
+  "unchanged_original_preview_sha256": {
+    "followup-1": "e983b3eaacf26f076b819db65bed552cca05b3b2fc0fe6e0957551ffc7d54c34",
+    "followup-2": "d9694957f42bd4ef115bd300383f3016ed11b2556d8d681a99bceabf00fb09e5"
+  },
+  "fix": "Commit original pinned CRLF bytes and use repository-local * -text; keep default whitespace checks plus cr-at-eol only for the two original CRLF files. No global Git configuration change.",
+  "negative_controls": {
+    "old_efd_checkout_autocrlf_false": "SOURCE_BYTES_CHANGED",
+    "initial_two_path_only_6705704_checkout_autocrlf_true": "SOURCE_BYTES_CHANGED on four other converted LF source files",
+    "initial_two_path_only_6705704_checkout_autocrlf_false": "PASS"
+  },
+  "cases": [
+    {
+      "scoped_core_autocrlf": "true",
+      "all_760_tracked_files_byte_equal": true,
+      "all_six_original_pins_match": true,
+      "both_preview_crlf_count": 4020,
+      "text_attribute_unset": true,
+      "actual_reconciliation_passed": true,
+      "report_sha256": "36f2522d27e6e81a25e0c41d8346a5d73c3750dc6fdf5faa3680def12c71a535",
+      "report_bytes": 787522,
+      "counts": {
+        "agreement_hold": 321,
+        "agreement_negative_review": 44,
+        "assessment_content_differences": 444,
+        "canonical_phrases": 444,
+        "disagreement_hold": 79,
+        "source_occurrences": 888
+      },
+      "elapsed_seconds": 13.496718
+    },
+    {
+      "scoped_core_autocrlf": "false",
+      "all_760_tracked_files_byte_equal": true,
+      "all_six_original_pins_match": true,
+      "both_preview_crlf_count": 4020,
+      "text_attribute_unset": true,
+      "actual_reconciliation_passed": true,
+      "report_sha256": "36f2522d27e6e81a25e0c41d8346a5d73c3750dc6fdf5faa3680def12c71a535",
+      "report_bytes": 787522,
+      "counts": {
+        "agreement_hold": 321,
+        "agreement_negative_review": 44,
+        "assessment_content_differences": 444,
+        "canonical_phrases": 444,
+        "disagreement_hold": 79,
+        "source_occurrences": 888
+      },
+      "elapsed_seconds": 12.83502
+    }
+  ],
+  "proof_elapsed_seconds": 27.690313,
+  "proof_subprocess_calls": 23,
+  "private_full_proof_sha256": "80ec188a3f492308182f139bce94f2d56ab77df6bc684b1063e31badef3b5727",
+  "source_clean_before_and_after": true,
+  "provenance_pins_changed": false,
+  "candidate_or_test_tampering_demonstrated": false,
+  "correction_to_initial_incident_interpretation": "Initial delivery gate failed on active source disk versus normalized Git blobs, not a demonstrated transient candidate or test mutation.",
+  "production_changed": false,
+  "ads_changed": false,
+  "release_authorized": false
+}

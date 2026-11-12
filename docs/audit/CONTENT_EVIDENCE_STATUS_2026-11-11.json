@@ -24,7 +24,13 @@
     "cloud_id_and_url": "Withheld from public repository; retained in private execution receipt",
     "new_collaborator_grants": 0,
     "documents_present_at_creation": 0,
-    "approved_property_claims": 0
+    "approved_property_claims": 0,
+    "latest_readback": {
+      "observed_on_dubai": "2026-11-11",
+      "items_visible": 0,
+      "staff_rehearsal_evidence_found": false,
+      "read_only": true
+    }
   },
   "evidence_still_required": [
     "Genuine inventory and dated prices/availability with supported service and emirate coverage",

@@ -1,0 +1,238 @@
+{
+  "scope": "OFFLINE_PHP_LINT_AND_SYNTHETIC_ONLY",
+  "source_head_tested": "c0d6d93412572aae5b9e4cebb036152d609b0f26",
+  "source_worktree_clean_after": true,
+  "release_authorized": false,
+  "native_wordpress_acceptance": false,
+  "github_ci_executed": false,
+  "full_foundation_executed": false,
+  "archive": {
+    "url": "https://downloads.php.net/~windows/releases/archives/php-8.2.35-1-nts-Win32-vs16-x64.zip",
+    "sha256": "ebe75134c03869826cb1714d31fd5eb96afefa6d9fd35d786971c03020e7bce2",
+    "sha256_verified_before_extraction": true,
+    "member_paths_checked_before_extraction": true,
+    "member_count": 88,
+    "bytes": 33780725
+  },
+  "runtime": {
+    "version": "8.2.35",
+    "sapi": "cli",
+    "ini": false,
+    "scanned_ini": false,
+    "zend_assertions": "1",
+    "assert_active": "1",
+    "assert_exception": "1",
+    "allow_url_fopen": "0",
+    "allow_url_include": "0",
+    "disable_functions": "mail,exec,shell_exec,system,passthru,popen,proc_open,fsockopen,pfsockopen,stream_socket_client,stream_socket_server,socket_create,socket_connect"
+  },
+  "runtime_probe_commands": 3,
+  "lint_commands": 19,
+  "synthetic_behavior_commands": 9,
+  "all_31_php_command_exits_zero": true,
+  "heterogeneous_reported_cases_and_checks": 248,
+  "timing_seconds": {
+    "acquisition_through_validation": 15.442917,
+    "all_php_subprocesses": 7.455511,
+    "validation_subprocesses": 2.55554
+  },
+  "commands": [
+    {
+      "kind": "lint",
+      "target": "tools/native-wordpress/native-draft-preview.php",
+      "exit": 0,
+      "elapsed_seconds": 0.100669
+    },
+    {
+      "kind": "lint",
+      "target": "tools/native-wordpress/native-draft-writer.php",
+      "exit": 0,
+      "elapsed_seconds": 0.079759
+    },
+    {
+      "kind": "lint",
+      "target": "tools/native-wordpress/paid-entry-search.php",
+      "exit": 0,
+      "elapsed_seconds": 0.086685
+    },
+    {
+      "kind": "lint",
+      "target": "tools/native-wordpress/tests/native-draft-preview-test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.075955
+    },
+    {
+      "kind": "lint",
+      "target": "tools/native-wordpress/tests/native-draft-writer-test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.076079
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/per-choice/SelectiveChoiceRetirement.php",
+      "exit": 0,
+      "elapsed_seconds": 0.091064
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/per-choice/selective-choice.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.093259
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/per-choice/selective-native.php",
+      "exit": 0,
+      "elapsed_seconds": 0.090892
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/per-choice/PurposeChoicePlanner.php",
+      "exit": 0,
+      "elapsed_seconds": 0.093935
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/per-choice/purpose-choice.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.108159
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/per-choice/purpose-selective-native.php",
+      "exit": 0,
+      "elapsed_seconds": 0.081565
+    },
+    {
+      "kind": "lint",
+      "target": "tools/consent-retention/compaction-native.php",
+      "exit": 0,
+      "elapsed_seconds": 0.085424
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/Cleanup.php",
+      "exit": 0,
+      "elapsed_seconds": 0.088619
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/guard.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.080231
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/native-test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.094577
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/OwnerMailReview.php",
+      "exit": 0,
+      "elapsed_seconds": 0.102859
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/test_owner_mail_review.php",
+      "exit": 0,
+      "elapsed_seconds": 0.100942
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/TestDoubles.php",
+      "exit": 0,
+      "elapsed_seconds": 0.084069
+    },
+    {
+      "kind": "lint",
+      "target": "tools/owner-mail-review/WordPress.php",
+      "exit": 0,
+      "elapsed_seconds": 0.085828
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/consent-retention/linkage.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.087043,
+      "reported_count": 15,
+      "reported_count_field": "cases"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/consent-retention/compaction.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.084938,
+      "reported_count": 19,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/consent-retention/per-choice/test_per_choice.php",
+      "exit": 0,
+      "elapsed_seconds": 0.099822,
+      "reported_count": 55,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/consent-retention/per-choice/selective-choice.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.087696,
+      "reported_count": 23,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/consent-retention/per-choice/purpose-choice.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.124949,
+      "reported_count": 41,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/native-wordpress/tests/native-draft-preview-test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.095693,
+      "reported_count": 28,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/property-decision-tools/php.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.088398,
+      "reported_count": 16,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/owner-mail-review/test_owner_mail_review.php",
+      "exit": 0,
+      "elapsed_seconds": 0.099914,
+      "reported_count": 49,
+      "reported_count_field": "checks"
+    },
+    {
+      "kind": "behavior",
+      "target": "tools/owner-mail-review/guard.test.php",
+      "exit": 0,
+      "elapsed_seconds": 0.086517,
+      "reported_count": 2,
+      "reported_count_field": "text checks"
+    }
+  ],
+  "runner_change_validation": {
+    "focused_mock_tests_passed": 18,
+    "elapsed_seconds": 0.039,
+    "note": "Original PHP subset used the same isolated CLI arguments. Added runner prefix is checked with synthetic orchestration; no second PHP subset or full Foundation run claimed."
+  },
+  "limitations": [
+    "Not a full Foundation run",
+    "Not native WordPress or CI acceptance",
+    "Reported check counts are heterogeneous script-reported cases/checks",
+    "Download/extraction timing not separately recorded"
+  ]
+}

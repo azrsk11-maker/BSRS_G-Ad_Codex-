@@ -1,0 +1,135 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "source_commit": "001c75b57d45fb10780b04c01a96ca168ac370f2",
+  "source_tree": "bef4b948cab16a7caa8f1ef4f6cfcc46b0a5a599",
+  "scope": "OFFLINE_FOUNDATION_NOT_PRODUCTION_ACCEPTANCE",
+  "passed": true,
+  "checks_passed": 79,
+  "checks_failed": 0,
+  "checks_not_executed": [
+    "native-php-runtime"
+  ],
+  "elapsed_seconds": 432.994437,
+  "suites": {
+    "keyword-system-behavior": {
+      "total": 364,
+      "skipped": 2,
+      "suite_seconds": 229.831,
+      "subprocess_seconds": 231.092588
+    },
+    "efficiency-behavior": {
+      "total": 54,
+      "skipped": 2,
+      "suite_seconds": 13.006,
+      "subprocess_seconds": 13.280032
+    }
+  },
+  "fresh_complete_composition_seconds": 40.302454,
+  "focused_tests": {
+    "cases": 13,
+    "parent_seconds": 1.135,
+    "independent_seconds": 1.145
+  },
+  "fresh_generation_baseline_seconds": 36.73352770000929,
+  "generation_and_actual_generic_audit_seconds": 5.409441600000719,
+  "actual_complete_input_diagnostics": {
+    "scope": "ACTUAL_COMPLETE_INPUT_AND_HYPOTHETICAL_REINSERTION_DIAGNOSTICS",
+    "archive_hypotheses": 18,
+    "held_hypotheses": 408,
+    "all_hypotheses_protected": true,
+    "generic_conflict_rows": 428,
+    "reinserted_eligible": 0,
+    "actual_mutations_rejected": [
+      {
+        "case": "old_record_provenance",
+        "code": "VALUATION_PRIOR_BASE_CHANGED"
+      },
+      {
+        "case": "archive_body",
+        "code": "VALUATION_PRIOR_BASE_CHANGED"
+      },
+      {
+        "case": "old_protection",
+        "code": "VALUATION_PRIOR_BASE_CHANGED"
+      },
+      {
+        "case": "old_source",
+        "code": "VALUATION_PRIOR_BASE_CHANGED"
+      },
+      {
+        "case": "old_context",
+        "code": "VALUATION_PRIOR_BASE_CHANGED"
+      },
+      {
+        "case": "registry",
+        "code": "VALUATION_PRIOR_BASE_CHANGED"
+      },
+      {
+        "case": "new_record_tail",
+        "code": "VALUATION_DERIVED_BODIES_CHANGED"
+      },
+      {
+        "case": "new_protection_tail",
+        "code": "VALUATION_DERIVED_BODIES_CHANGED"
+      },
+      {
+        "case": "resealed_index.json",
+        "code": "VALUATION_SAVED_OUTPUT_CHANGED"
+      },
+      {
+        "case": "resealed_cohort-report.json",
+        "code": "VALUATION_SAVED_OUTPUT_CHANGED"
+      },
+      {
+        "case": "resealed_library-report.json",
+        "code": "VALUATION_SAVED_OUTPUT_CHANGED"
+      },
+      {
+        "case": "resealed_research-pool-allocation.json",
+        "code": "VALUATION_SAVED_OUTPUT_CHANGED"
+      }
+    ],
+    "generic_auditor_unchanged": true,
+    "source_storage_mock_only_for_resealed_output_cases": true,
+    "elapsed_seconds": 29.745736399985617,
+    "production_authorized": false
+  },
+  "researched_negative_rows": 10610,
+  "negative_deficit": 3390,
+  "archived_originals": 18,
+  "protected_queries": 15899,
+  "retained_current_source_occurrences": 10808,
+  "new_records": 411,
+  "new_protections": 400,
+  "final_held_source_rows": 408,
+  "existing_occurrence_only_rows": 46,
+  "new_semantic_holds_source_lines": [
+    385,
+    517,
+    520
+  ],
+  "approved_exclusion_rows": 0,
+  "deployed_rows": 0,
+  "research_provider_requests": 0,
+  "token_usage_and_underlying_http_counts": "unavailable per change",
+  "previous_uncontrolled_foundation_seconds": 542.50605,
+  "timing_limit": "Different source workload and uncontrolled host/cache state; no causal speedup claim",
+  "source_integrity_and_all_prior_layers_pass": true,
+  "current_source_ci_verified": false,
+  "independent_human_review_verified": false,
+  "live_acceptance_verified": false,
+  "production_changed": false,
+  "advertising_changed": false,
+  "last_verified_advertising_state": "PAUSED",
+  "staff_evidence_lookup": {
+    "actual_session_results_verified": false,
+    "new_filename_metadata_scope": "Authorized local workspace and known source roots plus top-level Downloads/Documents; one old uncompleted checklist, no actual session result",
+    "prior_synthetic_and_generic_records_not_reused_as_actual_evidence": true,
+    "global_absence_claimed": false,
+    "arbitrary_nested_and_cloud_originals_not_exhausted": true,
+    "real_estate_cloud_search_performed": false,
+    "cloud_blocker": "Connected Drive profile is excluded Business Setup; Chrome browser inventory is empty. No Business Setup files searched."
+  },
+  "release_authorized": false,
+  "full_goal_complete": false
+}
