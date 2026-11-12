@@ -41,3 +41,4 @@ php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/test_no_mail_c
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/native-test.php
 php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/native-test.php
 php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/retirement-native.php
+php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/collection-native.php
