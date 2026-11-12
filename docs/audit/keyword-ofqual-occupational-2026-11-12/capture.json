@@ -1,0 +1,151 @@
+{
+  "controls": {
+    "approved_exclusions": 0,
+    "competition": null,
+    "cpc": null,
+    "current_library_membership_verified": false,
+    "deployment_authorized": false,
+    "deployments": 0,
+    "duplicate_and_variant_clearance": false,
+    "existing_evidence_changed": false,
+    "independent_review_complete": false,
+    "live_campaign_changes": false,
+    "metrics_status": "NOT_OBSERVED_UNKNOWN",
+    "production_changed": false,
+    "protected_query_and_scope_clearance": false,
+    "published_titles_are_observed_queries": false,
+    "raw_source_committed": false,
+    "registry_changed": false,
+    "research_master_rows_added": 0,
+    "semantic_review_complete": false,
+    "source_status_is_local_delivery_or_recognition": false,
+    "source_supply_only": true,
+    "volume": null
+  },
+  "dependencies": [
+    {
+      "file": "tools/keyword-system/keyword_audit.py",
+      "sha256": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6"
+    },
+    {
+      "file": "tools/keyword-system/ofqual_discovery.py",
+      "sha256": "0c6e1ca3c8109237d98ea173c0b460d4e5b95d5f78f16a25c72836ed2041ebd2"
+    }
+  ],
+  "extractor": {
+    "file": "extract.py",
+    "sha256": "c37a98859e1865d543e82c43886608b63f265b0ac3d44725fd52bdc30ab199ed"
+  },
+  "licence": {
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+    "name": "Open Government Licence v3.0, except where otherwise stated",
+    "notice_url": "https://find-a-qualification.services.ofqual.gov.uk/find-regulated-qualifications",
+    "third_party_exceptions_preserved": true,
+    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "original_capture": {
+    "file": "docs/audit/keyword-ofqual-discovery-2026-11-11/capture.json",
+    "sha256": "40563540ed29d76e03e2bea8be1a46aca960d888c138fcc2f9ac2f54dec2e9f7"
+  },
+  "original_source": {
+    "bytes": 23984795,
+    "capture_date_utc": "2026-11-11",
+    "http_date": "2026-11-11T15:26:50Z",
+    "http_last_modified": "2026-11-11T02:16:08Z",
+    "records": 53175,
+    "sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+    "url": "https://downloads.find-a-qualification.services.ofqual.gov.uk/extracts/Qualifications.csv"
+  },
+  "private_source_path_published": false,
+  "projection": {
+    "bytes": 646710,
+    "file": "qualifications.json",
+    "records": 524,
+    "sha256": "8cdd1a1e0475857b1fc7473734756da9bb20b2229890c61d639ee41ed6dac91c",
+    "summary": {
+      "admissible_candidate_count": null,
+      "all_source_topic_occurrences": 1744,
+      "all_source_topic_status_counts": {
+        "Available to learners": 524,
+        "No longer available to new learners": 72,
+        "No longer awarded": 1146,
+        "Not yet available to learners": 2
+      },
+      "already_projected_occurrences_omitted": 0,
+      "candidate_topic_occurrences": {
+        "barber": 36,
+        "beauty": 71,
+        "catering": 30,
+        "culinary": 12,
+        "food_safety": 46,
+        "hair": 93,
+        "makeup": 23,
+        "nail": 32
+      },
+      "current_library_novel_candidate_count": null,
+      "distinctness_limit": "Normalized-title grouping only; route, provider-prefix, alias, concept and Google matching equivalence remain unreviewed.",
+      "duplicate_normalized_groups": [
+        {
+          "normalized_title": "vtct skills level 3 nvq diploma in barbering",
+          "source_record_ordinals": [
+            20434,
+            21354
+          ]
+        },
+        {
+          "normalized_title": "vtct skills level 2 nvq diploma in barbering",
+          "source_record_ordinals": [
+            20435,
+            21371
+          ]
+        },
+        {
+          "normalized_title": "vtct skills level 3 nvq diploma in hairdressing",
+          "source_record_ordinals": [
+            20436,
+            21357
+          ]
+        },
+        {
+          "normalized_title": "vtct skills level 1 nvq certificate in hairdressing and barbering",
+          "source_record_ordinals": [
+            20437,
+            21351
+          ]
+        },
+        {
+          "normalized_title": "vtct skills level 2 nvq diploma in hairdressing",
+          "source_record_ordinals": [
+            20438,
+            21372
+          ]
+        },
+        {
+          "normalized_title": "vtct skills level 2 diploma in barbering",
+          "source_record_ordinals": [
+            21590,
+            21623
+          ]
+        },
+        {
+          "normalized_title": "vtct skills level 3 diploma for advanced beauty therapists",
+          "source_record_ordinals": [
+            21724,
+            21886
+          ]
+        }
+      ],
+      "length_or_word_count_held_distinct_normalized_titles": 221,
+      "length_or_word_count_held_occurrences": 221,
+      "outside_selected_source_status_occurrences": 1220,
+      "over_10_whitespace_words_occurrences": 220,
+      "over_80_characters_occurrences": 98,
+      "precheck_candidate_distinct_normalized_titles": 296,
+      "precheck_candidate_occurrences": 303,
+      "retained_distinct_normalized_titles": 517,
+      "retained_source_occurrences": 524
+    }
+  },
+  "scope": "PINNED_PUBLIC_OCCUPATIONAL_SOURCE_EXTRACTION_NOT_RESEARCH_ADMISSION",
+  "version": 1
+}
