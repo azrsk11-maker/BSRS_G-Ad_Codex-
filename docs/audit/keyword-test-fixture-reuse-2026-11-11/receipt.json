@@ -1,0 +1,78 @@
+{
+  "scope": "TEST_FIXTURE_SETUP_ONLY_NOT_PUBLIC_ACCEPTANCE",
+  "source_base_commit": "983cbbea56a42ae066cacbb099e148ed3ee2c930",
+  "measurements": [
+    {
+      "variant": "before",
+      "elapsed_seconds": 11.836664,
+      "first_constructor_calls": 2,
+      "second_constructor_calls": 2,
+      "complete_output_sha256": {
+        "inputs": "fbe1635ccff1bf3a75c08c5a5b0d356ca3a8d596fe619415c82a6301fd8f3133",
+        "initial": "d678b5d14849ec0291ccb5f01103349511c301caef181a7033e2e1ff5ef5a0be",
+        "second": "508435ac976035d80cb209b51b671c153eadedba68f19f33fb05d2672e5620e2"
+      },
+      "upstream_unchanged_after_downstream_mutations": true
+    },
+    {
+      "variant": "after",
+      "elapsed_seconds": 13.350796,
+      "first_constructor_calls": 1,
+      "second_constructor_calls": 1,
+      "complete_output_sha256": {
+        "inputs": "fbe1635ccff1bf3a75c08c5a5b0d356ca3a8d596fe619415c82a6301fd8f3133",
+        "initial": "d678b5d14849ec0291ccb5f01103349511c301caef181a7033e2e1ff5ef5a0be",
+        "second": "508435ac976035d80cb209b51b671c153eadedba68f19f33fb05d2672e5620e2"
+      },
+      "upstream_unchanged_after_downstream_mutations": true
+    },
+    {
+      "variant": "after",
+      "elapsed_seconds": 13.496559,
+      "first_constructor_calls": 1,
+      "second_constructor_calls": 1,
+      "complete_output_sha256": {
+        "inputs": "fbe1635ccff1bf3a75c08c5a5b0d356ca3a8d596fe619415c82a6301fd8f3133",
+        "initial": "d678b5d14849ec0291ccb5f01103349511c301caef181a7033e2e1ff5ef5a0be",
+        "second": "508435ac976035d80cb209b51b671c153eadedba68f19f33fb05d2672e5620e2"
+      },
+      "upstream_unchanged_after_downstream_mutations": true
+    },
+    {
+      "variant": "before",
+      "elapsed_seconds": 15.062964,
+      "first_constructor_calls": 2,
+      "second_constructor_calls": 2,
+      "complete_output_sha256": {
+        "inputs": "fbe1635ccff1bf3a75c08c5a5b0d356ca3a8d596fe619415c82a6301fd8f3133",
+        "initial": "d678b5d14849ec0291ccb5f01103349511c301caef181a7033e2e1ff5ef5a0be",
+        "second": "508435ac976035d80cb209b51b671c153eadedba68f19f33fb05d2672e5620e2"
+      },
+      "upstream_unchanged_after_downstream_mutations": true
+    }
+  ],
+  "measurement_elapsed_seconds": 53.746983,
+  "all_complete_inputs_initial_and_second_equal": true,
+  "upstream_originals_unchanged_after_all_class_tests": true,
+  "class_tests_run": 29,
+  "class_failures": 0,
+  "class_errors": 0,
+  "class_skips": 0,
+  "class_elapsed_seconds": 153.979329,
+  "full_foundation_executed": false,
+  "public_acceptance_cache_added": false,
+  "limitations": [
+    "Single local process with uncontrolled host/cache effects and overlapping ranges",
+    "Temporary class setup patch was reverted; original tests and all public validators unchanged",
+    "Class result exercises the temporary loaded candidate; no second unchanged class run claimed",
+    "No whole-suite, Foundation, token, API or billing improvement claimed"
+  ],
+  "adopted": false,
+  "fixture_patch_reverted": true,
+  "original_test_source_restored": true,
+  "decision": "REJECT_INSUFFICIENT_USEFUL_TIMING_GAIN",
+  "before_median_seconds": 13.449814,
+  "after_median_seconds": 13.4236775,
+  "observed_median_difference_seconds": 0.0261365,
+  "observed_median_reduction_percent": 0.194326
+}
