@@ -1,0 +1,62 @@
+{
+  "schema": "bsre-bounded-json-inspection-benchmark-v1",
+  "as_of_dubai": "2026-11-11",
+  "source": {
+    "path": "docs/audit/keyword-employment-followup-2026-11-11/employment-followup.json",
+    "raw_sha256": "860733d2098bef9447b2ffd36fb2246a7380873a22e2ef0dbe9c6028960d84fe",
+    "raw_bytes": 399992
+  },
+  "implementation": {
+    "path": "tools/efficiency/inspect_json.py",
+    "raw_sha256": "a757dcfcf847784ce04607f6aa2d93f60480f4a1bbd4a2ecc2564fc9ae1149e9"
+  },
+  "same_requested_fields_verified": true,
+  "selectors": [
+    "input_seeds",
+    "ui_context",
+    "source_projection.record_count"
+  ],
+  "full_output_bytes": 399992,
+  "selected_output_bytes": 525,
+  "output_reduction_percent": 99.8687473749475,
+  "timing_scope": "Serialization of same already-parsed immutable input; excludes parsing, disk reads, tool overhead, network and model reasoning",
+  "alternating_pairs_seconds": [
+    {
+      "full": 0.00877859999309294,
+      "selected": 0.00007670000195503235
+    },
+    {
+      "selected": 0.000018799997633323073,
+      "full": 0.010071500000776723
+    },
+    {
+      "full": 0.008095599972875789,
+      "selected": 0.000083099992480129
+    },
+    {
+      "selected": 0.000017400016076862812,
+      "full": 0.010108399990713224
+    },
+    {
+      "full": 0.008259399997768924,
+      "selected": 0.000059699988923966885
+    },
+    {
+      "selected": 0.000013899989426136017,
+      "full": 0.007649899984244257
+    },
+    {
+      "full": 0.007600400014780462,
+      "selected": 0.00006919997395016253
+    }
+  ],
+  "median_seconds": {
+    "full": 0.008259399997768924,
+    "selected": 0.000059699988923966885
+  },
+  "exact_token_savings": null,
+  "provider_api_latency_savings": null,
+  "billing_savings": null,
+  "whole_project_speedup_claimed": false,
+  "production_change": false
+}

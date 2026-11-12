@@ -25,9 +25,12 @@ class FoundationSummaryTests(unittest.TestCase):
             result = CHECKER.execute_check("keyword-system-behavior", ["synthetic-python"])
         self.assertEqual(child.call_args.kwargs["timeout"], 300)
         self.assertFalse(result["passed"])
-        with patch.object(CHECKER.subprocess, "run", side_effect=subprocess.TimeoutExpired("synthetic-python", 300)):
-            with self.assertRaises(subprocess.TimeoutExpired):
-                CHECKER.execute_check("keyword-system-behavior", ["synthetic-python"])
+        with patch.object(CHECKER.subprocess, "run", side_effect=subprocess.TimeoutExpired("synthetic-python", 300)) as child:
+            timed_out = CHECKER.execute_check("keyword-system-behavior", ["synthetic-python"])
+        self.assertFalse(timed_out["passed"])
+        self.assertTrue(timed_out["details"]["timed_out"])
+        self.assertIsNone(timed_out["details"]["exit"])
+        self.assertEqual(child.call_args.kwargs["timeout"], 300)
 
     def execute(self, output, exit_code=0, stderr="", require=True):
         result = subprocess.CompletedProcess(["synthetic-node"], exit_code, output, stderr)

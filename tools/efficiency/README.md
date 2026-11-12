@@ -1,5 +1,29 @@
 # Efficiency audit — 7 November 2026
 
+## Retain failures and partial progress on timeout — 11 November 2026
+
+An actual required Foundation attempt exceeded the existing300-second keyword-suite bound. The old top-level handler discarded the successful earlier checks and all partial output. `execute_check` now records an explicit failed timed-out check, bounded decoded partial output in the ignored local report, and elapsed time, allowing the remaining checks to run while overall acceptance stays false. Incomplete TAP evidence cannot become a successful numeric summary. Normal commands, serial order and the300/120-second budgets stay unchanged. Fifteen focused timeout/summary regressions pass; no full current-source PASS is claimed. [Attempt and bounded diagnostics](../../docs/audit/OFQUAL_CONCURRENCY_CHECKS_2026-11-11.json).
+
+## Opt-in two-check concurrency experiment — 11 November 2026
+
+`benchmark_check_groups.py --run` compares the existing historical vendor-coverage verifier and release-control test suite serially, then with two workers. It preserves their commands, 120-second timeouts, ordered results and complete output comparisons. Only the unittest elapsed-time field is normalized; source bytes, observer code and Python identity are pinned. It neither changes Foundation defaults nor caches acceptance results. [Measured receipt](check-group-concurrency-2026-11-11.json).
+
+One actual pair took **81.060296 seconds serial and 52.338413 seconds concurrent**, a 28.721883-second observed reduction (1.548773 ratio). Complete outcomes matched on the same 682-file source snapshot. The first check validates a historical 8,035-record snapshot, not the current 10,610-record library. Seven focused regressions cover output drift, failures, timeouts, source drift and two-worker ordering. This is one serial-first comparison with uncontrolled warming and contention; it establishes no whole-Foundation, token, API or billing gain. Individual-check timings were not retained. Forced timeout terminates the direct Python process; nested Node cleanup and temporary-fixture removal are not guaranteed. The helper remains opt-in pending further adoption review.
+
+## Bounded evidence inspection — 11 November 2026
+
+`inspect_json.py` prevents an observed inspection error: omitting top-level `records` did not prevent PowerShell from serializing `source_projection.records`. It is read-only, shows root structure by default, and emits explicitly selected dotted fields only within a complete UTF-8 output limit (default 4,000 bytes, maximum 16,000). Input is bounded to 4 MiB by default, with a 32 MiB maximum. Duplicate keys, malformed/nonfinite JSON, missing selectors and oversized output fail with sanitized error codes; there is no partial-content success, network request or file writer. Keys containing dots are not addressable by its deliberately small selector syntax.
+
+Example from repository root:
+
+```powershell
+python -B tools/efficiency/inspect_json.py docs/audit/keyword-valuation-employment-2026-11-11/membership-snapshot.json --select counts --select equal_token_baseline_peers
+```
+
+The [measured comparison](json-inspection-2026-11-11.json) used one unchanged, already-parsed public follow-up export. Selecting the same three requested metadata fields produced identical values in **525 bytes versus 399,992 bytes** for the full formatted document (99.87% less output). Seven alternating serialization pairs measured medians of 0.0082594 seconds full and 0.0000597 seconds selected. This excludes parsing, disk reads, tool/network latency and model reasoning. Exact token, provider-call, billing and whole-project savings are unavailable; no broader speedup is claimed. Twelve focused regressions cover the bounds, strict parsing, selectors and absence of unsolicited nested values. This inspection utility is not a provenance, admission or production-acceptance validator.
+
+The [earlier Foundation receipt](../../docs/audit/VALUATION_INSPECTION_CHECKS_2026-11-11.json) took542.506050s, versus the earlier uncontrolled474.687330s run. Its largest subprocess was the keyword suite at275.250875s; the five largest checks account for most elapsed time. The runner is serial, but repeated historical validation protects freshness and independent entrypoints; no redundant check was justified for removal. Reuse completed implementation receipts for documentation-only changes. The later opt-in experiment above preserves every selected check/timeout/ordered result; Foundation concurrency has not been adopted.
+
 ## Safe Foundation evidence summaries — 10 November 2026
 
 The existing Foundation checker now requests Node's [TAP reporter](https://nodejs.org/api/test.html#test-reporters) explicitly for the synthetic local-journal suite. It extracts the complete bounded numeric trailer from that already-executed command's stdout and prints one `TEST_SUMMARY` JSON line. No second test execution, raw test text, private path, stderr or arbitrary receipt field is exported. The fixed check name selects this evidence requirement internally; missing/malformed counters, nonzero exits, failures/cancellations or an entirely skipped suite cannot pass that check. Other command checks retain their existing exit semantics.
@@ -167,3 +191,19 @@ The existing required-check receipts identified `keyword-abu-sharjah-triage` and
 Every frozen workbench/protection screen and the combined reconciliation still reproduces exactly. Six focused regressions cover Unicode/wrappers/punctuation, close variants, repeated words, mutation isolation, nonstring/unhashable inputs, oversized strings, eviction and invalid/empty match cases. These are automatically included in the existing keyword suite; they do not replace any acceptance checks.
 
 The full local checklist remains 84 named checks, all passing with PHP required: 146.091538 seconds before and 81.457086 after. Its after run also contains six additional tests, so total timing is descriptive. The two same-input command timings are one sequential local pair, not a median; CPU scheduling and filesystem warmth are uncontrolled. No whole-task, token, API, billing, campaign-performance or production-readiness saving is inferred. Retain this reversible source change because it reduces observed repeated computation while preserving the exact evidence outputs. CI still reruns all required checks at the final uploaded revision.
+
+## Bounded keyword-module execution
+
+Foundation executes the discovered keyword test modules in at most two separate Python processes. Module isolation preserves process-local mocks and class fixtures; an audit found all filesystem writes use unique temporary directories. In-process module threads are unsafe. Discovery is dynamic; no test-module allowlist or acceptance cache is used.
+
+The same aggregate300-second deadline begins before supervisor loading/job setup and covers discovery, all workers and evidence completion. Each discovered test must have exactly one ordered start/finish outcome. Missing/duplicate/unknown IDs, crashes, fixture/import errors, inconsistent counts and late completion fail. Existing capability skips remain visible. Every run writes a unique ignored `test-output/keyword-modules-*.json` receipt; it is never read to reuse acceptance.
+
+Foundation uses the opt-in `owned_process.run_owned` supervisor only for this check. Windows assigns the gated runner to a noninheritable KillOnJobClose job before test imports or descendant creation; assignment errors fail closed. POSIX uses a dedicated process group killed on timeout/final cleanup. Only the Windows job guarantees descendant termination after abrupt supervisor death. Linux-native cleanup requires Linux execution; a Windows skip is not Linux evidence. No host process settings, dependencies, network access or production state are changed.
+
+The CLI entry point owns the supervised invocation:
+
+```text
+python -B tools/efficiency/keyword_modules.py
+```
+
+Nineteen focused runner/containment guards pass in7.314seconds with one Linux-native skip. Native Windows timeout-grandchild and abrupt-supervisor-death cleanup passed using retained process handles. Twenty Foundation orchestration guards pass in0.134seconds. Independent source review found no blocker. Parent combined Foundation at1ac1758 subsequently passes109checks in653.412605seconds. All437cases/34modules complete in218.221639seconds under the unchanged300-second aggregate bound, with exact independently reconciled identities and two capability skips. The prior serial attempt timed out after429case markers. Full Foundation time increased versus that incomplete run; no whole-workflow or causal billing/token/API gain is claimed. [Complete measurement and limits](../../docs/audit/PARALLEL_KEYWORD_FOUNDATION_CHECKS_2026-11-12.json). No timeout is increased or test omitted; native/live gates remain separate.
