@@ -1,4 +1,4 @@
-"""Complete unittest modules in two contained processes, under one 300s bound.
+"""Complete unittest modules in contained processes, under one 300s bound.
 
 No test verdict, source check, fixture or acceptance result is reused. Whole
 modules retain ordinary unittest class fixtures/order. Discovery remains dynamic.
@@ -27,7 +27,8 @@ STATUSES = {"passed", "skipped", "subtest_skips", "failure", "error", "expected_
 COUNTS = ("failures", "errors", "skipped", "expected_failures", "unexpected_successes")
 # Only scheduling hints from actual timing diagnostics; no verdict or source
 # acceptance is reused. Every discovered module remains in the queue.
-SLOW_MODULES = ('test_ofqual_veterinary_admission','test_bank_support_admission',
+SLOW_MODULES = ('test_bank_channel_login_admission',
+    'test_ofqual_veterinary_admission','test_bank_support_admission',
     'test_ofqual_animal_care_admission','test_bank_credential_admission',
     'test_ofqual_occupational_admission','test_negative_library',
     'test_apprenticeship_admission','test_current_negative_library')
