@@ -55,9 +55,13 @@ The activation staffing gate requires owner-reviewed references to a completed r
 ```text
 python -B -m unittest discover -s tools/release-control -p "test_*.py"
 python -B tools/release-control/release_packet.py <private-packet.json> --root <clean-checkout>
+node --test tools/release-control/*.test.mjs
+node tools/release-control/validate_gate_matrix.mjs docs/audit/CURRENT_GATE_MATRIX_2026-11-11.json
 ```
 
 The CLI prints a compact JSON result to stdout. Exit 0 means only `packet_consistent:true`; it never means "deploy". A release mechanism must independently verify the exact owner comment, author and current permissions, PR/check states, revocations, evidence and protected environment approval immediately before the exact separately authorized action. **No such release mechanism is provided here.**
+
+The Node validators are offline safeguards: they validate the current status matrix and staff-evidence contract, but always return `release_authorized:false`. They do not replace owner-reviewed evidence, native browser acceptance, GitHub review, or separate production/Ads authorization.
 
 The envelope has `schema_version`, `proposal`, `evidence`, `review`, `decisions` and `approval`. First hash the proposal with `digest()`. Evidence and decisions reference that digest. Then hash the envelope excluding `approval`; the owner's exact action statement names that packet digest. Code artifacts belong to the reviewed commit. Post-commit evidence can be kept in an ignored/private location within the evidence checkout; hashes are pinned in the packet. Publish only a sanitized review record to GitHub; never upload private source evidence or client data.
 
