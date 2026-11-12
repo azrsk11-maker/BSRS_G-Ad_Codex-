@@ -70,6 +70,8 @@ The owner answered **“Amit for both roles; create the private evidence folder�
 
 The authorized **BSRE Real Estate — Evidence Review** folder was created in Marketing's My Drive root. Observed readback confirms marketing@blackswanrealestate.ae as the only listed Owner and General access Restricted. No Amit access or other sharing was added; the original lead workbook stays private and unchanged. The cloud identifier, private link and proof screenshot are retained privately, not committed here. [Sanitized receipt](../audit/CONTENT_EVIDENCE_STATUS_2026-11-11.json).
 
+Fresh readback on **12 November 2026 (Dubai)** verified the existing Marketing account/folder, one Marketing Owner, Restricted general access and zero visible items. No folder, access or lead records were changed; the original decision is unchanged. [Dated sanitized readback](../audit/CONTENT_EVIDENCE_STATUS_2026-11-11.json). This observation concerns this folder only.
+
 The folder is empty at creation. Actual inventory/availability, applicable mandates/permits, asset rights, dated Amit sign-offs, freshness rules and supported service/emirate coverage remain required. India/Saudi jurisdiction reviewers and language coverage remain separate. Issue2 stays open for evidence acceptance. This decision authorizes neither publication nor live tracking/Ads changes, activation, spending, workbook sharing, PR approval or any individual property claim.
 
 ## DEC-08 conditional approval - 7 November 2026 (Dubai)
