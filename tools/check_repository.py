@@ -85,6 +85,9 @@ def execute_check(name, args, cwd=ROOT, *, owned_tree=False):
         if require_tap:
             details["tap_summary"] = None
             details["tap_evidence_status"] = "INCOMPLETE_TIMEOUT"
+        if owned_tree and name == 'keyword-system-behavior':
+            progress = module('foundation_keyword_progress', ROOT / 'tools/efficiency/keyword_progress.py')
+            details['keyword_diagnostic'] = progress.read_diagnostic(ROOT, exc.stderr)
         return {"check": name, "passed": False, "details": details}
     except OSError as exc:
         if not owned_tree:
@@ -100,12 +103,14 @@ def execute_check(name, args, cwd=ROOT, *, owned_tree=False):
             report = json.loads(proc.stdout)
             summary = report["summary"]
             counts = ("discovered_modules", "completed_modules", "discovered", "started", "finished", "skipped")
+            resources = module('foundation_keyword_resources', ROOT / 'tools/efficiency/keyword_resources.py')
             keyword_complete = (all(type(summary[key]) is int and summary[key] >= 0 for key in counts)
                 and summary["discovered_modules"] == summary["completed_modules"] > 0
                 and summary["discovered"] == summary["started"] == summary["finished"] > 0
                 and summary["coverage_verified"] is True and summary["passed"] is True
                 and summary["timed_out"] is False and type(report["workers"]) is int
-                and 1 <= report["workers"] <= 2 and report["aggregate_timeout_seconds"] == timeout
+                and resources.valid_selection(report.get('worker_resources'),report['workers'])
+                and report["aggregate_timeout_seconds"] == timeout
                 and re.fullmatch(r"test-output/keyword-modules-[A-Za-z0-9_-]+\.json", report["evidence_file"]) is not None
                 and all(re.fullmatch(r"[0-9a-f]{64}", report[key]) is not None
                         for key in ("evidence_sha256", "expected_ids_sha256")))
