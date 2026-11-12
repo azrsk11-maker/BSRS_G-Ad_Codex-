@@ -8,6 +8,8 @@ Reviewed 7 November 2026. This is a requirements audit, not live approval or a l
 
 The later [producer/provider composition receipt](PRODUCER_PROVIDER_COMPOSITION_CHECKS_2026-11-12.json) records current-source development acceptance for the actual admission capture schema and source-derived Intake26 SDK path. It does not promote live, restore, business-evidence or release gates.
 
+The [combined native workflow candidate](COMBINED_NATIVE_WORKFLOW_CHECKS_2026-11-12.json) now selects one actual guarded enquiry across Purpose27 capture, source-derived Intake26 SDK and one MariaDB Journal Workflow. Focused and independent static checks pass; current-source native CI remains pending. The [Outcome source audit](OUTCOME_SOURCE_BOUNDARY_2026-11-12.json) found read-only historical QA producers, not an authenticated production mutation/fencing binding. These facts do not promote live, business, history or release gates.
+
 ## Authority and preserved decisions
 
 The latest direct request authorizes discovery, development, research, feature branches, PRs and decision issues. It expressly withholds live Ads changes, advertising expenditure, production publication and live tracking changes without separate explicit approval. A reviewed PR, merge, passing test or an open admin panel is not that approval. The Master defines requirements; the implementation pack supplies designs and held records. Earlier explicit decisions persist where not superseded. Conflicts are registered in `INCONSISTENCIES.md` rather than silently resolved.
