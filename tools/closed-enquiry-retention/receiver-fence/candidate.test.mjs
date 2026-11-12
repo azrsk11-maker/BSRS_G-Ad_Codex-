@@ -234,3 +234,62 @@ test('signed cleanup intent supports lost-ack retry without treating missing fen
   const changed = structuredClone(ticket); changed.body.issued_at--;
   assert.throws(() => r.context.closedNoCopyForget(scope, changed), /TICKET_INVALID/);
 });
+
+function ownerGrant(r, scope, digestValue = '6'.repeat(64)) {
+  const now = r.state.clock;
+  const claim = {contract: 'bsre-owner-no-mail-authorization-v1', intent_digest: digestValue,
+    actor: 'synthetic-owner', scope_hash: digest(scope), approved_at: now, create_before: now + 900, recovery_until: now + 2592000};
+  r.state.ownerIntents[digestValue] = claim;
+  return claim;
+}
+
+test('positive inspection uses exact eligible row, complete mailbox and actual ScriptLock', () => {
+  const r = receiverLab(); r.admit(); const scope = r.scope();
+  const value = r.context.closedNoCopyInspectRetirement(scope);
+  assert.equal(value.state, 'UNRETIRED'); assert.equal(value.scope_hash, digest(scope));
+  assert.equal(value.attempt_count, 0); assert.equal(value.mailbox.complete, true);
+  assert.equal(value.mailbox.includes_trash, true); assert.equal(r.mail.length, 0);
+  assert.ok(r.state.operations.includes('mailbox-readback'));
+  r.rows[1][7] = 1;
+  assert.throws(() => r.context.closedNoCopyInspectRetirement(scope), /NO_COPY_OUTBOX_AMBIGUOUS/);
+  r.rows.splice(1, 1);
+  assert.throws(() => r.context.closedNoCopyInspectRetirement(scope), /NO_COPY_ROW_MISSING/);
+});
+
+test('owner source capability denies absent or wrong-purpose authority before fencing', () => {
+  const r = receiverLab(); r.admit(); const scope = r.scope(), intent = '6'.repeat(64);
+  assert.throws(() => r.context.closedNoCopyRetireAuthorized(scope, intent), /RETIREMENT_AUTHORITY_UNVERIFIED/);
+  const claim = ownerGrant(r, scope); claim.contract = 'wrong-purpose';
+  assert.throws(() => r.context.closedNoCopyRetireAuthorized(scope, intent), /RETIREMENT_AUTHORITY_UNVERIFIED/);
+  assert.equal(r.rows[1][6], 'QUEUED'); assert.equal(r.state.revision, 1);
+});
+
+test('source checks creation deadline after owner callback inside actual ScriptLock', () => {
+  const r = receiverLab(); r.admit(); const scope = r.scope(), claim = ownerGrant(r, scope);
+  r.state.authorizationDelay = 901;
+  assert.throws(() => r.context.closedNoCopyRetireAuthorized(scope, claim.intent_digest), /RETIREMENT_AUTHORIZATION_EXPIRED/);
+  assert.equal(r.rows[1][6], 'QUEUED'); assert.equal(r.state.revision, 1);
+  assert.ok(r.state.operations.includes('owner-intent-readback'));
+});
+
+test('exact authorized fence reconciles after deadline without creating or refreshing a fence', () => {
+  const r = receiverLab(); r.admit(); const scope = r.scope(), claim = ownerGrant(r, scope);
+  const first = r.context.closedNoCopyRetireAuthorized(scope, claim.intent_digest), revision = r.state.revision;
+  assert.equal(first.owner_intent_digest, claim.intent_digest);
+  r.state.clock += 901;
+  const existing = r.context.closedNoCopyInspectRetirement(scope);
+  assert.equal(existing.state, 'RETIRED'); assert.equal(existing.proof.fence_hash, first.fence_hash);
+  const replay = r.context.closedNoCopyRetireAuthorized(scope, claim.intent_digest);
+  assert.equal(replay.fence_hash, first.fence_hash); assert.equal(replay.fence_created_at, first.fence_created_at);
+  assert.equal(r.state.revision, revision); assert.equal(r.mail.length, 0);
+});
+
+test('authorized owner path cannot adopt a legacy setup or another owner intent fence', () => {
+  const r = receiverLab(); r.admit(); const scope = r.scope();
+  r.context.closedNoCopyRetire(scope); const claim = ownerGrant(r, scope);
+  assert.throws(() => r.context.closedNoCopyRetireAuthorized(scope, claim.intent_digest), /RETIREMENT_OWNER_INTENT_CONFLICT/);
+  const other = receiverLab(); other.admit(); const nextScope = other.scope(), first = ownerGrant(other, nextScope);
+  other.context.closedNoCopyRetireAuthorized(nextScope, first.intent_digest);
+  const second = ownerGrant(other, nextScope, '7'.repeat(64));
+  assert.throws(() => other.context.closedNoCopyRetireAuthorized(nextScope, second.intent_digest), /RETIREMENT_OWNER_INTENT_CONFLICT/);
+});

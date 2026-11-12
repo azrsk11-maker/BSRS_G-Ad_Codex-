@@ -20,7 +20,7 @@ export function receiverLab(options = {}) {
   const state = {clock: options.now ?? Math.floor(Date.now() / 1000), held: false, busy: false,
     storageFault: false, mailbox: 'ABSENT', complete: true, trash: true, staleMailbox: false,
     restoreFenced: true, backupsExpiredThrough: 0, runtimeStale: false, operations: [], onFenceWrite: null,
-    epoch: 'e'.repeat(64), revision: 1, prunedThrough: 0};
+    epoch: 'e'.repeat(64), revision: 1, prunedThrough: 0, ownerIntents: {}, authorizationDelay: 0};
   const stored = options.properties ?? r.properties;
   const cfg = {generation: 'a'.repeat(64), audience: 'b'.repeat(64)};
   Object.assign(stored, {RETENTION_ADMISSION_REQUIRED: 'true', RETENTION_ADMISSION_GENERATION: cfg.generation,
@@ -91,6 +91,11 @@ export function receiverLab(options = {}) {
     return {contract: 'bsre-no-copy-cleanup-v1', scope_hash: scopeHash, fence_hash: fenceHash,
       external_floor_hash: floorHash, store_hash: storeHash, backups_expired_through: state.backupsExpiredThrough,
       observed_at: now, expires_at: now + 300, evidence_reference: 'SYNTHETIC_EXPIRED_BACKUPS_AND_CURRENT_REAPPLICATION', evidence_hash: '8'.repeat(64)};
+  }};
+  r.context.BSREClosedNoCopyOwnerIntent = {readback(intentDigest) {
+    requireLock('owner-intent-readback');
+    state.clock += state.authorizationDelay;
+    return state.ownerIntents[intentDigest] ?? null;
   }};
   r.context.BSREClosedNoCopyMailbox = {readback(scope, now) {
     requireLock('mailbox-readback');

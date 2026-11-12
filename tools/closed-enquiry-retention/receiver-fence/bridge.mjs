@@ -21,6 +21,12 @@ for await (const line of createInterface({input: process.stdin, crlfDelay: Infin
       if (!r) throw Error('SYNTHETIC_BRIDGE_NOT_INITIALIZED');
       if (message.now !== undefined) r.state.clock = message.now;
       if (message.action === 'retire') value = r.context.closedNoCopyRetire(message.scope);
+      else if (message.action === 'inspect_retirement') value = r.context.closedNoCopyInspectRetirement(message.scope);
+      else if (message.action === 'authorize_retirement') {
+        // Explicit trusted local test substitution, not a live authority or an HTTP endpoint.
+        r.state.ownerIntents[message.claim.intent_digest] = message.claim; value = true;
+      }
+      else if (message.action === 'retire_authorized') value = r.context.closedNoCopyRetireAuthorized(message.scope, message.intent_digest);
       else if (message.action === 'readback') value = r.context.closedNoCopyReadback(message.scope, message.cleanup, message.ticket);
       else if (message.action === 'prepare_cleanup') value = r.context.closedNoCopyPrepareCleanup(message.scope);
       else if (message.action === 'forget') value = r.context.closedNoCopyForget(message.scope, message.ticket);

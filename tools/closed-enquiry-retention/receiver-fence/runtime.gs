@@ -113,7 +113,12 @@ function closedNoCopyFence_(requestId, gate) {
   var value; try { value=JSON.parse(raw); } catch (_) { closedNoCopyFail_('NO_COPY_FENCE_CORRUPT'); }
   closedNoCopyKeys_(value,['body','signature']);
   var body=value.body;
-  closedNoCopyKeys_(body,['scope','scope_hash','created_at','expires_at','floor']);
+  var bodyKeys=['scope','scope_hash','created_at','expires_at','floor'];
+  if (Object.prototype.hasOwnProperty.call(body,'owner_intent_digest')) {
+    bodyKeys.push('owner_intent_digest');
+    if (!closedNoCopyHashShape_(body.owner_intent_digest)) closedNoCopyFail_('NO_COPY_FENCE_CORRUPT');
+  }
+  closedNoCopyKeys_(body,bodyKeys);
   closedNoCopyScope_(body.scope,gate);
   var current=closedNoCopyFloor_(gate), prior=body.floor;
   closedNoCopyKeys_(prior,Object.keys(current));
@@ -169,23 +174,59 @@ function closedNoCopyMaySend_(row) {
 /** Callable local capability only. Fence commits before changing the existing outbox status cell. */
 function closedNoCopyRetire(scope) {
   var lock=LockService.getScriptLock(); lock.waitLock(10000);
+  try { return closedNoCopyRetireLocked_(scope,null); }
+  finally { lock.releaseLock(); }
+}
+/** Separate owner capability; a real independently authenticated intent adapter is not supplied. */
+function closedNoCopyRetireAuthorized(scope, intentDigest) {
+  var lock=LockService.getScriptLock(); lock.waitLock(10000);
   try {
+    var gate=closedNoCopyGate_(); closedNoCopyScope_(scope,gate);
+    if (!closedNoCopyHashShape_(intentDigest) || typeof BSREClosedNoCopyOwnerIntent !== 'object'
+        || !BSREClosedNoCopyOwnerIntent || typeof BSREClosedNoCopyOwnerIntent.readback !== 'function')
+      closedNoCopyFail_('RETIREMENT_AUTHORITY_UNVERIFIED');
+    var now=closedNoCopyNow_(), authorization=BSREClosedNoCopyOwnerIntent.readback(intentDigest,now);
+    if (!authorization) closedNoCopyFail_('RETIREMENT_AUTHORITY_UNVERIFIED');
+    closedNoCopyKeys_(authorization,['contract','intent_digest','actor','scope_hash','approved_at','create_before','recovery_until']);
+    if (authorization.contract !== 'bsre-owner-no-mail-authorization-v1' || authorization.intent_digest !== intentDigest
+        || authorization.scope_hash !== closedNoCopyHash_(scope) || typeof authorization.actor !== 'string'
+        || authorization.actor.length < 1 || authorization.actor.length > 256 || authorization.actor.trim() !== authorization.actor
+        || /[\x00-\x1f\x7f]/.test(authorization.actor)
+        || !Number.isSafeInteger(authorization.approved_at) || authorization.approved_at <= 0 || authorization.approved_at > now
+        || !Number.isSafeInteger(authorization.create_before) || authorization.create_before <= authorization.approved_at
+        || authorization.create_before > authorization.approved_at + 900
+        || authorization.recovery_until !== authorization.approved_at + CLOSED_NO_COPY_WINDOW)
+      closedNoCopyFail_('RETIREMENT_AUTHORITY_UNVERIFIED');
+    return closedNoCopyRetireLocked_(scope,authorization);
+  } finally { lock.releaseLock(); }
+}
+function closedNoCopyRetireLocked_(scope, authorization) {
     var gate=closedNoCopyGate_(); closedNoCopyScope_(scope,gate);
     var s=leadSheet_(routingConfig_()), found=existingLead_(s,scope.request_id,0);
     if (!found) closedNoCopyFail_('NO_COPY_ROW_MISSING');
     closedNoCopyRow_(found.values,scope);
     var fence=closedNoCopyFence_(scope.request_id,gate), row=found.values;
     if (fence && fence.body.scope_hash !== closedNoCopyHash_(scope)) closedNoCopyFail_('NO_COPY_SCOPE_CONFLICT');
+    if (authorization && fence && fence.body.owner_intent_digest !== authorization.intent_digest) closedNoCopyFail_('RETIREMENT_OWNER_INTENT_CONFLICT');
     if (row[7] !== 0 || row[10] !== '' || row[25] !== ''
         || ['QUEUED','RETRY_WAIT','NEEDS_REVIEW','RETIRED_NO_COPY'].indexOf(row[6]) < 0)
       closedNoCopyFail_('NO_COPY_OUTBOX_AMBIGUOUS');
     if (row[6] === 'RETIRED_NO_COPY' && !fence) closedNoCopyFail_('NO_COPY_FENCE_MISSING');
     closedNoCopyMailbox_(scope,closedNoCopyNow_());
+    if (authorization) {
+      var instant=closedNoCopyNow_();
+      if ((!fence && instant >= authorization.create_before) || instant >= authorization.recovery_until
+          || (fence && (fence.body.created_at < authorization.approved_at || fence.body.created_at >= authorization.create_before)))
+        closedNoCopyFail_('RETIREMENT_AUTHORIZATION_EXPIRED');
+    }
     var priorGate=gate;
     if (!fence) {
       gate=closedNoCopyAdvance_(gate);
-      var now=closedNoCopyNow_(), body={scope:scope,scope_hash:closedNoCopyHash_(scope),created_at:now,
+      var now=closedNoCopyNow_();
+      if (authorization && (now >= authorization.create_before || now >= authorization.recovery_until)) closedNoCopyFail_('RETIREMENT_AUTHORIZATION_EXPIRED');
+      var body={scope:scope,scope_hash:closedNoCopyHash_(scope),created_at:now,
         expires_at:now+CLOSED_NO_COPY_WINDOW,floor:closedNoCopyFloor_(gate)};
+      if (authorization) body.owner_intent_digest=authorization.intent_digest;
       fence={body:body,signature:closedNoCopyMac_(body)};
       var raw=JSON.stringify(fence), props=PropertiesService.getScriptProperties();
       props.setProperty(closedNoCopyKey_(scope.request_id),raw);
@@ -198,6 +239,25 @@ function closedNoCopyRetire(scope) {
       closedNoCopyStamp_(priorGate,gate);
     }
     return closedNoCopyReadbackLocked_(scope,false);
+}
+/** Missing row/fence or errors never establish a positively eligible UNRETIRED state. */
+function closedNoCopyInspectRetirement(scope) {
+  var lock=LockService.getScriptLock(); lock.waitLock(10000);
+  try {
+    var gate=closedNoCopyGate_(); closedNoCopyScope_(scope,gate);
+    var found=existingLead_(leadSheet_(routingConfig_()),scope.request_id,0);
+    if (!found) closedNoCopyFail_('NO_COPY_ROW_MISSING');
+    closedNoCopyRow_(found.values,scope);
+    var fence=closedNoCopyFence_(scope.request_id,gate), row=found.values;
+    if (fence) return {contract:'bsre-no-mail-retirement-inspection-v1',scope_hash:closedNoCopyHash_(scope),state:'RETIRED',
+      proof:closedNoCopyReadbackLocked_(scope,false)};
+    if (row[7] !== 0 || row[10] !== '' || row[25] !== '' || ['QUEUED','RETRY_WAIT','NEEDS_REVIEW'].indexOf(row[6]) < 0)
+      closedNoCopyFail_('NO_COPY_OUTBOX_AMBIGUOUS');
+    var now=closedNoCopyNow_(), store=closedNoCopyStore_(gate).body;
+    return {contract:'bsre-no-mail-retirement-inspection-v1',scope_hash:closedNoCopyHash_(scope),state:'UNRETIRED',
+      current_store:store,external_floor_hash:closedNoCopyHash_(store),source_hash:gate.source_hash,restore_policy_hash:gate.restore_policy_hash,
+      mailbox:closedNoCopyMailbox_(scope,now),row_status:row[6],attempt_count:row[7],send_started_at:row[25],sent_at:row[10],
+      observed_at:now,expires_at:now+300};
   } finally { lock.releaseLock(); }
 }
 function closedNoCopyReadbackLocked_(scope, cleanup, ticket) {
@@ -215,11 +275,13 @@ function closedNoCopyReadbackLocked_(scope, cleanup, ticket) {
   }
   var currentStore=closedNoCopyStore_(gate).body, fenceHash=closedNoCopyHash_(fence), receipt=null;
   if (cleanup) receipt=closedNoCopyCleanupReceipt_(scope,fenceHash,currentStore,gate,now);
-  return {schema_version:1,scope:scope,scope_hash:fence.body.scope_hash,fence_hash:fenceHash,
+  var proof={schema_version:1,scope:scope,scope_hash:fence.body.scope_hash,fence_hash:fenceHash,
     epoch:fence.body.floor.epoch,fence_revision:fence.body.floor.revision,source_hash:gate.source_hash,restore_policy_hash:gate.restore_policy_hash,
     fence_created_at:fence.body.created_at,fence_expires_at:fence.body.expires_at,row_state:found?'RETIRED':'ABSENT',
     mailbox:closedNoCopyMailbox_(scope,now),observed_at:now,expires_at:now+300,recovery:gate.recovery,
     current_store:currentStore,external_floor_hash:closedNoCopyHash_(closedNoCopyFloor_(gate)),cleanup_receipt:receipt};
+  if (fence.body.owner_intent_digest) proof.owner_intent_digest=fence.body.owner_intent_digest;
+  return proof;
 }
 function closedNoCopyCleanupReceipt_(scope,fenceHash,store,gate,now) {
   if (typeof BSREClosedNoCopyRuntime.cleanupReceipt !== 'function') closedNoCopyFail_('NO_COPY_CUSTODY_UNVERIFIED');
