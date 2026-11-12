@@ -417,12 +417,12 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and appended front-office document research."""
-    return _fresh_front_office_document_state(root, at)[0]
+    """Freshly verify all history and appended septic/grease service research."""
+    return _fresh_septic_grease_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
-    return _fresh_front_office_document_state(root, at)[1]
+    return _fresh_septic_grease_state(root, at)[1]
 
 
 def reconstruct_bank_channel_login_snapshot(root=first.ROOT, at=None):
@@ -432,6 +432,15 @@ def reconstruct_bank_channel_login_snapshot(root=first.ROOT, at=None):
 
 def verify_bank_channel_login_snapshot(root=first.ROOT, at=None):
     return _fresh_bank_channel_login_state(root, at)[1]
+
+
+def reconstruct_front_office_document_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 13,025-row front-office document snapshot."""
+    return _fresh_front_office_document_state(root, at)[0]
+
+
+def verify_front_office_document_snapshot(root=first.ROOT, at=None):
+    return _fresh_front_office_document_state(root, at)[1]
 
 
 def reconstruct_ofqual_animal_care_snapshot(root=first.ROOT, at=None):
@@ -620,6 +629,15 @@ def _fresh_front_office_document_state(root, at):
     base = _fresh_bank_channel_login_state(root, when)[0]
     inputs = front_office_document_admission.extend(base, root, when)
     result = front_office_document_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_septic_grease_state(root, at):
+    import septic_grease_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_front_office_document_state(root, when)[0]
+    inputs = septic_grease_admission.extend(base, root, when)
+    result = septic_grease_admission.check_saved(inputs, root, when)
     return inputs, result
 
 

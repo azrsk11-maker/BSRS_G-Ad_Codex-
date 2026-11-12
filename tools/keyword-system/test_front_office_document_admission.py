@@ -121,10 +121,10 @@ class FrontOfficeDocumentAdmissionTests(unittest.TestCase):
         self.assertEqual(allocation['new_rows'],{'EMPLOYMENT':len(self.inputs['records'])-12156})
         self.assertTrue(all(n>=0 for n in allocation['remaining'].values()))
 
-    def test_default_entrypoints_use_the_new_fresh_stage_and_bank_snapshot_stays_frozen(self):
+    def test_front_office_and_bank_snapshots_keep_their_original_fresh_stages(self):
         with patch.object(current,'_fresh_front_office_document_state',return_value=('new','new-report')) as fresh:
-            self.assertEqual(current.reconstruct(at=self.when),'new')
-            self.assertEqual(current.verify(at=self.when),'new-report')
+            self.assertEqual(current.reconstruct_front_office_document_snapshot(at=self.when),'new')
+            self.assertEqual(current.verify_front_office_document_snapshot(at=self.when),'new-report')
             self.assertEqual(fresh.call_count,2)
         with patch.object(current,'_fresh_bank_channel_login_state',return_value=('old','old-report')) as fresh:
             self.assertEqual(current.reconstruct_bank_channel_login_snapshot(at=self.when),'old')
