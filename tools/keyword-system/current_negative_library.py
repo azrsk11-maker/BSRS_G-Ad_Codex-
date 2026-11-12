@@ -417,11 +417,20 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and appended banking-channel login research."""
-    return _fresh_bank_channel_login_state(root, at)[0]
+    """Freshly verify all history and appended front-office document research."""
+    return _fresh_front_office_document_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
+    return _fresh_front_office_document_state(root, at)[1]
+
+
+def reconstruct_bank_channel_login_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 12,156-row banking-channel research snapshot."""
+    return _fresh_bank_channel_login_state(root, at)[0]
+
+
+def verify_bank_channel_login_snapshot(root=first.ROOT, at=None):
     return _fresh_bank_channel_login_state(root, at)[1]
 
 
@@ -602,6 +611,15 @@ def _fresh_bank_channel_login_state(root, at):
     base = _fresh_ofqual_animal_care_state(root, when)[0]
     inputs = bank_channel_login_admission.extend(base, root, when)
     result = bank_channel_login_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_front_office_document_state(root, at):
+    import front_office_document_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_bank_channel_login_state(root, when)[0]
+    inputs = front_office_document_admission.extend(base, root, when)
+    result = front_office_document_admission.check_saved(inputs, root, when)
     return inputs, result
 
 

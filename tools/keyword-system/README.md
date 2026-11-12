@@ -2,7 +2,7 @@
 
 ## Current research checkpoint - 13 November 2026
 
-**Negative research12,156/14,000; deficit1,844.** The [banking-channel login admission](../../docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/README.md) appends170original full phrases after complete fresh history/source-peer checks;81remain held. Preserve18archives/17,715protections/30sources/12,369occurrences. Targets and budgets unchanged; positive admissions/exclusion approvals/deployments0. All24public entrypoints freshly reconstruct history; the animal-care snapshot preserves11,986rows. Genuine business/provider/staff/browser/human-review and separate release gates remain.
+**Negative research13,025/14,000; deficit975.** The [front-office document admission](../../docs/audit/keyword-negative-front-office-document-admission-2026-11-13/README.md) appends869original full phrases after complete fresh history/all4,356source-peer comparisons and narrow observed role-form holds. Preserve231held groups,18archives/17,943protections/31sources/13,238occurrences. Targets/budgets unchanged; positive admissions/exclusion approvals/deployments0. All26public entrypoints freshly reconstruct history; the bank-channel snapshot preserves12,156rows. [Local checks](../../docs/audit/FRONT_OFFICE_DOCUMENT_CHECKS_2026-11-13.json) pass; exact current-head CI remains required. Genuine business/provider/staff/browser/human-review and separate release gates remain.
 
 ## Historical checkpoints
 

@@ -157,11 +157,12 @@ class EntertainmentAdmissionTests(unittest.TestCase):
             current.reconstruct_bank_credential_snapshot,current.verify_bank_credential_snapshot,
             current.reconstruct_bank_support_snapshot,current.verify_bank_support_snapshot,
             current.reconstruct_ofqual_animal_care_snapshot,current.verify_ofqual_animal_care_snapshot,
+            current.reconstruct_bank_channel_login_snapshot,current.verify_bank_channel_login_snapshot,
             current.reconstruct,current.verify)
         with patch.object(history,'reconstruct_current',side_effect=ValueError('fresh source unavailable')) as fresh:
             for call in calls:
                 with self.assertRaisesRegex(ValueError,'fresh source unavailable'):call(at=self.when)
-            self.assertEqual(fresh.call_count,24)
+            self.assertEqual(fresh.call_count,26)
 
 
 if __name__ == '__main__':
