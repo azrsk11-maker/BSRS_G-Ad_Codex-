@@ -417,11 +417,20 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and the appended bank credential-recovery research."""
-    return _fresh_bank_credential_state(root, at)[0]
+    """Freshly verify all history and appended bank-support research."""
+    return _fresh_bank_support_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
+    return _fresh_bank_support_state(root, at)[1]
+
+
+def reconstruct_bank_credential_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 11,524-row credential snapshot and frozen reports."""
+    return _fresh_bank_credential_state(root, at)[0]
+
+
+def verify_bank_credential_snapshot(root=first.ROOT, at=None):
     return _fresh_bank_credential_state(root, at)[1]
 
 
@@ -548,6 +557,15 @@ def _fresh_bank_credential_state(root, at):
     base = _fresh_ofqual_veterinary_state(root, when)[0]
     inputs = bank_credential_admission.extend(base, root, when)
     result = bank_credential_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_bank_support_state(root, at):
+    import bank_support_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_bank_credential_state(root, when)[0]
+    inputs = bank_support_admission.extend(base, root, when)
+    result = bank_support_admission.check_saved(inputs, root, when)
     return inputs, result
 
 

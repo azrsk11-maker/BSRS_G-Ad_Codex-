@@ -170,8 +170,8 @@ class BankCredentialAdmissionTests(unittest.TestCase):
             self.assertEqual(current.verify_ofqual_veterinary_snapshot(at=self.when), 'old-report')
             self.assertEqual(old.call_count, 2)
         with patch.object(current, '_fresh_bank_credential_state', return_value=('new', 'new-report')) as new:
-            self.assertEqual(current.reconstruct(at=self.when), 'new')
-            self.assertEqual(current.verify(at=self.when), 'new-report')
+            self.assertEqual(current.reconstruct_bank_credential_snapshot(at=self.when), 'new')
+            self.assertEqual(current.verify_bank_credential_snapshot(at=self.when), 'new-report')
             self.assertEqual(new.call_count, 2)
 
 
