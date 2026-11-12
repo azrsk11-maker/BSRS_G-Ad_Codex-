@@ -56,7 +56,7 @@ The activation staffing gate requires owner-reviewed references to a completed r
 python -B -m unittest discover -s tools/release-control -p "test_*.py"
 python -B tools/release-control/release_packet.py <private-packet.json> --root <clean-checkout>
 node --test tools/release-control/*.test.mjs
-node tools/release-control/validate_gate_matrix.mjs docs/audit/CURRENT_GATE_MATRIX_2026-11-11.json
+node tools/release-control/validate_gate_matrix.mjs docs/audit/CURRENT_GATE_MATRIX_2026-11-12.json
 ```
 
 The CLI prints a compact JSON result to stdout. Exit 0 means only `packet_consistent:true`; it never means "deploy". A release mechanism must independently verify the exact owner comment, author and current permissions, PR/check states, revocations, evidence and protected environment approval immediately before the exact separately authorized action. **No such release mechanism is provided here.**
