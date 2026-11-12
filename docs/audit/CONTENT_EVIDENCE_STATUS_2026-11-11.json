@@ -20,17 +20,44 @@
     "observed_owner_access_entries": 1,
     "general_access": "Restricted",
     "created_and_read_back": true,
-    "verification": ["Marketing account badge", "Folder creation success notice", "Folder page", "Sharing dialog showing Marketing Owner and Restricted access"],
+    "verification": [
+      "Marketing account badge",
+      "Folder creation success notice",
+      "Folder page",
+      "Sharing dialog showing Marketing Owner and Restricted access"
+    ],
     "cloud_id_and_url": "Withheld from public repository; retained in private execution receipt",
     "new_collaborator_grants": 0,
     "documents_present_at_creation": 0,
     "approved_property_claims": 0,
     "latest_readback": {
-      "observed_on_dubai": "2026-11-11",
+      "observed_on_dubai": "2026-11-12",
+      "verified_account": "marketing@blackswanrealestate.ae",
+      "observed_owner_access_entries": 1,
+      "only_listed_owner": "marketing@blackswanrealestate.ae",
+      "general_access": "Restricted",
       "items_visible": 0,
       "staff_rehearsal_evidence_found": false,
-      "read_only": true
-    }
+      "read_only": true,
+      "actual_lead_records_opened": false,
+      "new_collaborator_grants": 0,
+      "verification": [
+        "Marketing account identity",
+        "Existing exact evidence folder",
+        "Empty folder view",
+        "Sharing dialog with one Marketing Owner and Restricted general access"
+      ],
+      "proof_screenshot": "Retained privately; cloud identifier, private URL and local path excluded from this public receipt.",
+      "scope_limit": "Observation of this folder only; not evidence that documents or rehearsal results do not exist elsewhere."
+    },
+    "readback_history": [
+      {
+        "observed_on_dubai": "2026-11-11",
+        "items_visible": 0,
+        "staff_rehearsal_evidence_found": false,
+        "read_only": true
+      }
+    ]
   },
   "evidence_still_required": [
     "Genuine inventory and dated prices/availability with supported service and emirate coverage",
