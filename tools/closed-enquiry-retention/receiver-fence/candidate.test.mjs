@@ -1,9 +1,82 @@
 import assert from 'node:assert/strict';
-import {createHmac} from 'node:crypto';
+import {createHmac, randomUUID} from 'node:crypto';
 import {readFileSync} from 'node:fs';
+import {spawn} from 'node:child_process';
+import {createInterface} from 'node:readline';
+import {fileURLToPath} from 'node:url';
 import test from 'node:test';
 import {buildNoMailCopyReceiver} from './build-candidate.mjs';
 import {receiverLab, digest} from './lab.mjs';
+
+async function coldBridge(operation) {
+  const child = spawn(process.execPath, [fileURLToPath(new URL('./bridge.mjs', import.meta.url))], {stdio: ['pipe','pipe','inherit']});
+  const lines = createInterface({input: child.stdout})[Symbol.asyncIterator]();
+  const exit = new Promise((resolve, reject) => {child.once('exit', resolve); child.once('error', reject);});
+  const call = async (action, values = {}) => {
+    child.stdin.write(JSON.stringify({action, ...values}) + '\n');
+    let timer;
+    const line = await Promise.race([lines.next(), new Promise((_, reject) => {timer = setTimeout(() => reject(Error('Bridge timeout')), 5000);})])
+      .finally(() => clearTimeout(timer));
+    assert.equal(line.done, false); return JSON.parse(line.value);
+  };
+  try { await operation(call); }
+  finally { child.stdin.end(); const code = await exit; assert.equal(code, 0); }
+}
+function externalEnvelope(now, descriptor) {
+  const key = 'synthetic-key-'.repeat(4), payload = receiverLab({now}).payload();
+  payload.started_at = now * 1000 - 5000;
+  const body = JSON.stringify(payload), timestamp = String(now * 1000);
+  const proof = {version: 1, request_id: payload.request_id, issued_at: now, expires_at: now + 900,
+    session_hash: 'c'.repeat(64), generation: descriptor.generation, audience: descriptor.audience};
+  proof.signature = createHmac('sha256', key).update(['bsre-retention-admission-v1', proof.request_id, proof.issued_at,
+    proof.expires_at, proof.session_hash, proof.generation, proof.audience].join('\n')).digest('hex');
+  return {payload, raw: JSON.stringify({version: 1, body, timestamp, admission: proof,
+    signature: createHmac('sha256', key).update(`v1\n${timestamp}\n${body}`).digest('hex')})};
+}
+
+test('cold bridge accepts external exact signed wire only after one matching configuration', async () => {
+  await coldBridge(async call => {
+    const now = Math.floor(Date.now() / 1000), descriptor = {contract:'bsre-retention-admission-v1',mode:'ENFORCED',
+      generation:'a'.repeat(64),audience:'7'.repeat(64),activated_at:now-2000,max_age_seconds:900};
+    const wire = externalEnvelope(now, descriptor);
+    assert.equal((await call('cold_init', {now, admission_hash:'d'.repeat(64), descriptor})).value.rows, 0);
+    assert.equal((await call('post_wire', {raw:wire.raw})).error, 'SYNTHETIC_POST_WIRE_INVALID');
+    assert.equal((await call('configure', {descriptor:{...descriptor,audience:'b'.repeat(64)},synthetic_hmac:'synthetic-key-'.repeat(4)})).error,
+      'SYNTHETIC_CONFIGURE_INVALID');
+    assert.deepEqual((await call('configure', {descriptor,synthetic_hmac:'synthetic-key-'.repeat(4)})).value, descriptor);
+    assert.equal((await call('post_wire', {raw:wire.raw})).value.accepted, true);
+    assert.equal((await call('admitted_identity', {request_id:wire.payload.request_id})).value.columns, 26);
+    assert.equal((await call('configure', {descriptor,synthetic_hmac:'synthetic-key-'.repeat(4)})).error, 'SYNTHETIC_CONFIGURE_INVALID');
+    assert.equal((await call('init', {now})).error, 'SYNTHETIC_BRIDGE_ALREADY_INITIALIZED');
+    assert.equal((await call('stats')).value.rows, 1);
+  });
+});
+
+test('cold bridge aging is exact fixture setup and cannot mutate a fenced acceptance', async () => {
+  await coldBridge(async call => {
+    const now = Math.floor(Date.now() / 1000), descriptor = {contract:'bsre-retention-admission-v1',mode:'ENFORCED',
+      generation:'a'.repeat(64),audience:'7'.repeat(64),activated_at:now-2000,max_age_seconds:900};
+    await call('cold_init', {now, admission_hash:'d'.repeat(64), descriptor});
+    await call('configure', {descriptor,synthetic_hmac:'synthetic-key-'.repeat(4)});
+    const wire = externalEnvelope(now, descriptor), broken = JSON.parse(wire.raw); broken.signature = '0'.repeat(64);
+    assert.equal((await call('post_wire', {raw:JSON.stringify(broken)})).value.accepted, false);
+    assert.equal((await call('stats')).value.rows, 0);
+    await call('post_wire', {raw:wire.raw});
+    const row = (await call('admitted_identity', {request_id:wire.payload.request_id})).value;
+    const aging = {...row, previous_accepted_at_utc:row.accepted_at_utc, accepted_at_utc:'2025-01-01T12:00:00.000Z'};
+    assert.equal((await call('fixture_age_acceptance', {...aging,lead_id:'BSRE-'+randomUUID()})).error, 'SYNTHETIC_AGING_INVALID');
+    assert.equal((await call('fixture_age_acceptance', aging)).value, true);
+    const after = (await call('admitted_identity', {request_id:row.request_id})).value;
+    assert.equal(after.accepted_at_utc, aging.accepted_at_utc); assert.equal(after.fingerprint, row.fingerprint);
+    const scope = {contract:'bsre-closed-no-mail-copy-v1',closure_id:row.request_id,closure_revision:2,closure_hash:'1'.repeat(64),
+      request_id:row.request_id,lead_id:row.lead_id,event_id:row.event_id,fingerprint:row.fingerprint,admission_hash:'d'.repeat(64)};
+    assert.equal((await call('retire', {scope,now})).ok, true);
+    assert.equal((await call('fixture_age_acceptance', {...aging,previous_accepted_at_utc:after.accepted_at_utc,
+      accepted_at_utc:'2024-01-01T12:00:00.000Z'})).error, 'SYNTHETIC_AGING_INVALID');
+    assert.equal((await call('post_wire', {raw:wire.raw})).value.code, 'NO_COPY_REQUEST_RETIRED');
+    assert.equal((await call('stats')).value.mail, 0);
+  });
+});
 
 function retired() {
   const r = receiverLab(); const {payload, accepted} = r.admit(); const scope = r.scope();

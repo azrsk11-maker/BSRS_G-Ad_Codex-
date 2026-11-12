@@ -24,9 +24,17 @@ export function receiverLab(options = {}) {
     purgeIntents: {}, onPurgeRead: null, onMailboxRead: null, intakeDeletes: 0, deleteFault: '', formulas: {},
     notes: {}, validations: {}, links: {}, merged: false, protections: [], valueReadCells: 0, finders: [], finderFault: false};
   const stored = options.properties ?? r.properties;
-  const cfg = {generation: 'a'.repeat(64), audience: 'b'.repeat(64)};
+  const descriptor = options.descriptor;
+  if (descriptor !== undefined) {
+    assert.deepEqual(Object.keys(descriptor).sort(), ['activated_at','audience','contract','generation','max_age_seconds','mode']);
+    assert.equal(descriptor.contract, 'bsre-retention-admission-v1'); assert.equal(descriptor.mode, 'ENFORCED');
+    assert.equal(descriptor.max_age_seconds, 900);
+    for (const key of ['generation','audience']) assert.match(descriptor[key], /^[a-f0-9]{64}$/);
+    assert.ok(Number.isSafeInteger(descriptor.activated_at) && descriptor.activated_at > 0 && descriptor.activated_at <= state.clock);
+  }
+  const cfg = {generation: descriptor?.generation ?? 'a'.repeat(64), audience: descriptor?.audience ?? 'b'.repeat(64)};
   Object.assign(stored, {RETENTION_ADMISSION_REQUIRED: 'true', RETENTION_ADMISSION_GENERATION: cfg.generation,
-    RETENTION_ADMISSION_AUDIENCE: cfg.audience, RETENTION_ADMISSION_ACTIVATED_AT: String(state.clock - 2000)});
+    RETENTION_ADMISSION_AUDIENCE: cfg.audience, RETENTION_ADMISSION_ACTIVATED_AT: String(descriptor?.activated_at ?? state.clock - 2000)});
   if (options.properties && stored['bsre.closed-no-copy.floor']) {
     const prior = JSON.parse(stored['bsre.closed-no-copy.floor']); state.epoch = prior.epoch; state.revision = prior.revision; state.prunedThrough = prior.pruned_through;
     stored.RETENTION_ADMISSION_ACTIVATED_AT = String(prior.activated_at);
