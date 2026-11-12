@@ -2,6 +2,8 @@
 
 ## 12 November keyword runtime diagnosis and bounded scheduling
 
+- Head39501ac7 again passed all513keyword cases/40modules/zeroskips in233.021495s withfourworkers, but the full efficiency group exposed one Linux fixture race: existence of a PID marker preceded its write, so `int('')` failed before cleanup assertions. Both PID/JSON fixture producers now close a complete temporary marker and atomically rename it to the observed path. Cleanup assertions, startup waits and process deadlines are unchanged. Complete local efficiency group again passes106cases:103passed/threeexisting platform skips/zero failures/errors,17.917s. Final Linux/native acceptance remains pending; no skip or timeout increase substitutes for it.
+
 - Actual head486b7d67 CI keyword acceptance: **513/513cases,40/40modules,zeroskips,PASS212.956875s**, fourworkers/foureffectiveCPUs/15,674,585,088availableRAMbytes, under the original300s deadline. Its whole Foundation stillfailed on seven existing PHP/timeout fixture errors caused by newly required resource-loader/receipt fields; no combined acceptance is claimed for that head. [Actual job](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/43289452900/job/131431642090).
 - Integration repair loads the optional diagnostic helper only for an actual progress reference. PHP/timeout fixtures now dispatch the real resource validator and supply the required resource observation; all existing assertions remain, and missing resource evidence is explicitly rejected. **Complete local efficiency group:106cases,103passed,threeexisting platform skips,zero failures/errors,17.771s.** Final exact-head fullCI remains pending. Shared-orchestration edits now require this complete cheap group before remoteCI.
 
