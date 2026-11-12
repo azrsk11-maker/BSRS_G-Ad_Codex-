@@ -45,3 +45,4 @@ php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/retirement-native.php
 php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/collection-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/capture-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/admission-capture-native.php
+php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/combined-native.php
