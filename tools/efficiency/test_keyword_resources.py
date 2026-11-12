@@ -58,7 +58,7 @@ class KeywordResourceTests(unittest.TestCase):
         names=['test_unknown_new_module',*runner.SLOW_MODULES,'test_alpha']
         ordered=sorted(names,key=lambda n:(runner.SLOW_MODULES.index(n) if n in runner.SLOW_MODULES else len(runner.SLOW_MODULES),n))
         self.assertEqual(sorted(ordered),sorted(names))
-        self.assertEqual(ordered[0],'test_bank_channel_login_admission')
+        self.assertEqual(ordered[0],'test_front_office_document_admission')
         self.assertLess(ordered.index('test_ofqual_veterinary_admission'),ordered.index('test_unknown_new_module'))
         self.assertIn('test_unknown_new_module',ordered)
         self.assertEqual(runner.TIMEOUT,300)
