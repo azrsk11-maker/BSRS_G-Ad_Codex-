@@ -236,6 +236,7 @@ def run_checks(require_php=False):
             run("property-decision-behavior", [node, "--test", *map(str, decision_tests)])
         run("retention-candidate-source-pin", [node, "--test", str(ROOT / "tools/consent-retention/candidate.test.mjs")])
         run("pinned-receiver-idempotency-outbox", [node, "--test", str(ROOT / "tools/staging-lab/receiver.test.mjs")])
+        run("closed-enquiry-no-mail-source-receiver", [node, "--test", str(ROOT / "tools/closed-enquiry-retention/receiver-fence/candidate.test.mjs")])
         tests = sorted((ROOT/"tools/website-tracking").rglob("*.test.mjs"))
         record("tracking-tests-present", len(tests) >= 3, len(tests))
         run("tracking-and-commercial-behavior", [node, "--test", *map(str, tests)])
