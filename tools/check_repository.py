@@ -233,6 +233,8 @@ def run_checks(require_php=False):
     run("keyword-employment-ui-comparison", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-employment-applications-held-2026-11-13/verify_ui_comparison.py")])
     run("keyword-bank-support-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-bank-support-review-2026-11-12/verify_review.py"), "--self-check"])
     run("keyword-bank-channel-login-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-bank-channel-login-review-2026-11-13/verify_review.py"), "--self-check"])
+    run("keyword-application-documents-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-application-documents-2026-11-13/verify_capture.py"), "--self-check"])
+    run("keyword-front-office-document-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-front-office-documents-review-2026-11-13/verify_review.py"), "--self-check"])
     run("keyword-ofqual-animal-care-source", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-ofqual-animal-care-2026-11-12/extract.py"), "--self-check"])
     run("keyword-entertainment-clipboard-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py")])
     run("keyword-entertainment-clipboard-guards", [sys.executable, "-B", "-m", "unittest", "discover", "-s",
