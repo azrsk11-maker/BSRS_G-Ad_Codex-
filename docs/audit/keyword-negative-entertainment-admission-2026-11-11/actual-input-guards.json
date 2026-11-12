@@ -1,0 +1,102 @@
+{
+  "scope": "ACTUAL_COMPLETE_INPUT_DIAGNOSTICS_NOT_PRODUCTION_CONVERSIONS",
+  "base_sha256": "9c4404b7997646efb9f5d9a4f8f794186425f5b7377614475d1af2536534437a",
+  "whole_current_records": 10955,
+  "archive_hypotheses": 18,
+  "held_hypotheses": 215,
+  "hypotheses": 233,
+  "all_hypotheses_have_protected_conflicts": true,
+  "hypothesis_eligible_rows": 0,
+  "protected_conflict_matrix_rows": 233,
+  "complete_input_and_resealed_output_mutations_rejected": 16,
+  "rejections": [
+    {
+      "case": "new_volume",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "served_query",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "capture_kind",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "current_old_body",
+      "rejected": true,
+      "reason": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "archive_body",
+      "rejected": true,
+      "reason": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "historical_marker",
+      "rejected": true,
+      "reason": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "drop_new_protection",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "insert_held_record",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "reverse_new_order",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "shift_clipboard_ordinal",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "boolean_prefix",
+      "rejected": true,
+      "reason": "APPEND_ONLY_PREFIX_LENGTH_CHANGED"
+    },
+    {
+      "case": "new_source_kind",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "new_approval",
+      "rejected": true,
+      "reason": "ENTERTAINMENT_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "campaign_mapping",
+      "rejected": true,
+      "reason": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "resealed_index.json",
+      "rejected": true,
+      "reason": "APPEND_ONLY_SAVED_OUTPUT_CHANGED"
+    },
+    {
+      "case": "resealed_library-report.json",
+      "rejected": true,
+      "reason": "APPEND_ONLY_SAVED_OUTPUT_CHANGED"
+    }
+  ],
+  "elapsed_seconds": 79.96376340001007,
+  "generic_auditor_mocked_or_changed": false,
+  "source_reads_simulated_only_for_resealed_derived_outputs": true,
+  "source_or_output_files_mutated": false,
+  "hypotheses_persisted_or_uploaded": false,
+  "base_unchanged": true,
+  "human_review_verified": false,
+  "deployment_authorized": false
+}
