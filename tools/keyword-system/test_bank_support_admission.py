@@ -131,8 +131,8 @@ class BankSupportAdmissionTests(unittest.TestCase):
 
     def test_latest_and_credential_snapshot_use_separate_fresh_chains(self):
         with patch.object(current,'_fresh_bank_support_state',return_value=('support','support-report')) as fresh:
-            self.assertEqual(current.reconstruct(at=self.when),'support')
-            self.assertEqual(current.verify(at=self.when),'support-report')
+            self.assertEqual(current.reconstruct_bank_support_snapshot(at=self.when),'support')
+            self.assertEqual(current.verify_bank_support_snapshot(at=self.when),'support-report')
             self.assertEqual(fresh.call_count,2)
         with patch.object(current,'_fresh_bank_credential_state',return_value=('old','old-report')) as old:
             self.assertEqual(current.reconstruct_bank_credential_snapshot(at=self.when),'old')
