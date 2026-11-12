@@ -1,0 +1,3079 @@
+{
+  "schema": "ofqual-independent-source-only-proposal-review-v1",
+  "reviewed_on": "2026-11-11",
+  "reviewer_kind": "INDEPENDENT_CODEX_AI_NOT_HUMAN",
+  "review_source_commit": "8081e0a5dac3d73c895719f14ad8824867061830",
+  "source_bindings": [
+    {
+      "path": "docs/audit/keyword-ofqual-discovery-2026-11-11/qualifications.json",
+      "sha256": "2869cab8a06a76fa113ef430b28d09c53a324b72555cd0b3b36d3bdf82de4ccc",
+      "bytes": 199481
+    },
+    {
+      "path": "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.json",
+      "sha256": "d187bb0f469a97924bcb98bc8d64949bbba6f305d23a45c0ce9edc09abf50d24",
+      "bytes": 434630
+    },
+    {
+      "path": "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.md",
+      "sha256": "96fcffd5e22b8c731f04d957e8c3bb41ceba851b4c4d4d5f4a205b82aa3285bb",
+      "bytes": 6232
+    }
+  ],
+  "official_source_sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+  "context_review": {
+    "source_records": 338,
+    "normalized_groups": 311,
+    "literal_titles": 322,
+    "existing_held_wording_families": 44,
+    "original_held_groups": 249,
+    "existing_holds_unchanged": true,
+    "method": "Read all complete source title strings, owner/level/type context and 44 original wording families. Independently review all 62 original proposals; cross-check all 71 source IDs/ordinals/exact titles. Use metadata to distinguish substantive level, credential, owner and specialty changes; hold only specific unresolved possible wording succession. Dates/status are source facts, not current offerings."
+  },
+  "hypothetical_scope_only": {
+    "planning_purpose": "RNT_RESIDENTIAL_RENTAL_ENQUIRY",
+    "campaign_key": "BSRE-C0301",
+    "page_id": "BSRE-LP0301",
+    "actual_google_campaign_id": null,
+    "actual_destination_url": null,
+    "scope_bound_for_admission": false,
+    "hypothetical_match_type": "EXACT",
+    "hypothetical_risk": "HIGH",
+    "hypothetical_review_status": "PENDING"
+  },
+  "summary": {
+    "reviewed_groups": 62,
+    "reviewed_source_occurrences": 71,
+    "academic_intent_groups": 62,
+    "proposed_groups": 58,
+    "proposed_source_occurrences": 67,
+    "additional_held_groups": 4,
+    "additional_held_source_occurrences": 4,
+    "combined_source_only_proposed_groups": 58,
+    "combined_source_only_held_groups": 253,
+    "current_research_master": 10610,
+    "master_additions": 0,
+    "positive_admissions": 0,
+    "approved": 0,
+    "deployed": 0
+  },
+  "authority": {
+    "source_only": true,
+    "human_review": false,
+    "admission_authorized": false,
+    "actual_google_id_url_or_mapping_approved": false,
+    "current_master_membership_checked": false,
+    "archive_membership_checked": false,
+    "protections_checked": false,
+    "full_positive_coverage_checked": false,
+    "external_variant_clearance": false,
+    "course_availability_claimed": false,
+    "uae_recognition_claimed": false,
+    "search_queries_or_metrics_claimed": false,
+    "production_changed": false,
+    "ads_changed": false
+  },
+  "resolved_peer_reviews": [
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-028",
+        "OFQUAL-TITLE-029",
+        "OFQUAL-TITLE-030",
+        "OFQUAL-TITLE-099",
+        "OFQUAL-TITLE-130",
+        "OFQUAL-TITLE-018",
+        "OFQUAL-TITLE-019",
+        "OFQUAL-TITLE-020",
+        "OFQUAL-TITLE-021"
+      ],
+      "reason": "SEG Levels 3/4/5 are explicit different levels. Pearson Higher National certificate/diploma, ABBE NVQ practice and CIOB construction diploma have distinct recorded owners and/or credential types and full wording. Shared quantity surveying alone is insufficient for a hold.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-038",
+        "OFQUAL-TITLE-039",
+        "OFQUAL-TITLE-042",
+        "OFQUAL-TITLE-040",
+        "OFQUAL-TITLE-041"
+      ],
+      "reason": "Level 3 versus Level 4 land-charges NVQs, and Level 4 housing NVQ versus held Level 2/3 housing NVQs, explicitly request different levels. No same-level wording-only peer was identified.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-050",
+        "OFQUAL-TITLE-051",
+        "OFQUAL-TITLE-140",
+        "OFQUAL-TITLE-303",
+        "OFQUAL-TITLE-304",
+        "OFQUAL-TITLE-052",
+        "OFQUAL-TITLE-053",
+        "OFQUAL-TITLE-054",
+        "OFQUAL-TITLE-136",
+        "OFQUAL-TITLE-138",
+        "OFQUAL-TITLE-139"
+      ],
+      "reason": "IAO executive diploma Level 5/senior certificate Level 4, CIH housing management and service delivery, City & Guilds professional/senior certificates at Levels 4/5 and held end-point assessments retain owner, level, type and specialty differences. Related housing management is not equivalence.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-056",
+        "OFQUAL-TITLE-057",
+        "OFQUAL-TITLE-131",
+        "OFQUAL-TITLE-132",
+        "OFQUAL-TITLE-161",
+        "OFQUAL-TITLE-215",
+        "OFQUAL-TITLE-299",
+        "OFQUAL-TITLE-205",
+        "OFQUAL-TITLE-207",
+        "OFQUAL-TITLE-259"
+      ],
+      "reason": "Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-058",
+        "OFQUAL-TITLE-059",
+        "OFQUAL-TITLE-065",
+        "OFQUAL-TITLE-063",
+        "OFQUAL-TITLE-098",
+        "OFQUAL-TITLE-064",
+        "OFQUAL-TITLE-086"
+      ],
+      "reason": "ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-060",
+        "OFQUAL-TITLE-062",
+        "OFQUAL-TITLE-061",
+        "OFQUAL-TITLE-075",
+        "OFQUAL-TITLE-087",
+        "OFQUAL-TITLE-088",
+        "OFQUAL-TITLE-089"
+      ],
+      "reason": "Leasehold/Estate Level 3 versus leasehold Level 4 certificates explicitly differ by level/scope. Property Advice and Practice certificate versus Residential Property Advice and Practice diploma differs by credential and residential qualifier; held specialist certificates explicitly specify sales progression, listing/market appraisal or property management.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-067",
+        "OFQUAL-TITLE-068",
+        "OFQUAL-TITLE-250",
+        "OFQUAL-TITLE-085",
+        "OFQUAL-TITLE-090",
+        "OFQUAL-TITLE-091",
+        "OFQUAL-TITLE-078"
+      ],
+      "reason": "Understanding Sale is a certificate distinct from sale diplomas. ABBE Level 2 Property certificate differs in owner and level from CILEx Level 3. ABBE Lettings Agents versus Estate and Lettings Agents explicitly differs by combined role; Lettings Advice and Practice has SSA 07.3 while Agents certificates have SSA 05.2, different title focus and overlapping source availability. Scotland is preserved as a jurisdiction qualifier; no wording-only replacement is established.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-100",
+        "OFQUAL-TITLE-266",
+        "OFQUAL-TITLE-007",
+        "OFQUAL-TITLE-097",
+        "OFQUAL-TITLE-104",
+        "OFQUAL-TITLE-115",
+        "OFQUAL-TITLE-116",
+        "OFQUAL-TITLE-117"
+      ],
+      "reason": "ABBE Level 4 NVQ versus held Level 3 NVQs/diplomas differ by level/credential. ProQual Level 6 Management diploma differs by owner, level and management scope. Surveying Support and Property Management NVQs specify distinct focus; shared surveying/property is insufficient.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-123",
+        "OFQUAL-TITLE-124",
+        "OFQUAL-TITLE-196"
+      ],
+      "reason": "Conveyancing Law and Practice diplomas Level 4 versus Level 6 explicitly differ by level. NALP conveyancing for paralegals is a different owner, level/credential and role focus from SQA/Qualifications Scotland end-point assessments.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-156",
+        "OFQUAL-TITLE-151",
+        "OFQUAL-TITLE-172",
+        "OFQUAL-TITLE-173",
+        "OFQUAL-TITLE-174",
+        "OFQUAL-TITLE-249",
+        "OFQUAL-TITLE-248",
+        "OFQUAL-TITLE-297"
+      ],
+      "reason": "CIH governance award Level 3 differs from Level 4 held forms. CII Advanced Mortgage Advice certificate Level 4 differs from Level 3 basic certificate. LIBF Level 4 diploma differs from held Level 3 certificates despite shared owner The London Institute of Banking & Finance. These level/credential and Advanced distinctions are retained.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-200",
+        "OFQUAL-TITLE-201",
+        "OFQUAL-TITLE-211",
+        "OFQUAL-TITLE-212",
+        "OFQUAL-TITLE-214",
+        "OFQUAL-TITLE-215",
+        "OFQUAL-TITLE-216",
+        "OFQUAL-TITLE-217",
+        "OFQUAL-TITLE-203",
+        "OFQUAL-TITLE-208",
+        "OFQUAL-TITLE-204",
+        "OFQUAL-TITLE-206",
+        "OFQUAL-TITLE-205",
+        "OFQUAL-TITLE-207"
+      ],
+      "reason": "NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "equivalence_certified": false
+    },
+    {
+      "group_ids": [
+        "OFQUAL-TITLE-258",
+        "OFQUAL-TITLE-014",
+        "OFQUAL-TITLE-031",
+        "OFQUAL-TITLE-159",
+        "OFQUAL-TITLE-165",
+        "OFQUAL-TITLE-145",
+        "OFQUAL-TITLE-154",
+        "OFQUAL-TITLE-255",
+        "OFQUAL-TITLE-153",
+        "OFQUAL-TITLE-298",
+        "OFQUAL-TITLE-006",
+        "OFQUAL-TITLE-033",
+        "OFQUAL-TITLE-175"
+      ],
+      "reason": "OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "equivalence_certified": false
+    }
+  ],
+  "groups": [
+    {
+      "group_id": "OFQUAL-TITLE-006",
+      "normalized_title_key": "edexcel level 5 btec higher national certificate in housing",
+      "original_proposed_literal_title": "EDEXCEL Level 5 BTEC Higher National Certificate in Housing",
+      "literal_titles": [
+        "EDEXCEL Level 5 BTEC Higher National Certificate in Housing"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "500/3068/1",
+          "source_record_ordinal": 2056,
+          "source_line_start": 2057,
+          "source_line_end": 2057,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 2056,
+          "values": {
+            "Qualification Number": "500/3068/1",
+            "Qualification Title": "EDEXCEL Level 5 BTEC Higher National Certificate in Housing",
+            "Owner Organisation Name": "Pearson Education Ltd",
+            "Qualification Level": "Level 5",
+            "Qualification Type": "Higher Level",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2007-10-01 00:00:00",
+            "Operational End Date": "2009-08-31 00:00:00",
+            "Certification End Date": "2012-08-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-028",
+      "normalized_title_key": "seg awards level 4 diploma in quantity surveying",
+      "original_proposed_literal_title": "SEG Awards Level 4 Diploma in Quantity Surveying",
+      "literal_titles": [
+        "SEG Awards Level 4 Diploma in Quantity Surveying"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/2941/5",
+          "source_record_ordinal": 10755,
+          "source_line_start": 10756,
+          "source_line_end": 10756,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 10755,
+          "values": {
+            "Qualification Number": "610/2941/5",
+            "Qualification Title": "SEG Awards Level 4 Diploma in Quantity Surveying",
+            "Owner Organisation Name": "Skills and Education Group Awards",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-09-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. SEG Levels 3/4/5 are explicit different levels. Pearson Higher National certificate/diploma, ABBE NVQ practice and CIOB construction diploma have distinct recorded owners and/or credential types and full wording. Shared quantity surveying alone is insufficient for a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-029",
+      "normalized_title_key": "seg awards level 5 diploma in quantity surveying",
+      "original_proposed_literal_title": "SEG Awards Level 5 Diploma in Quantity Surveying",
+      "literal_titles": [
+        "SEG Awards Level 5 Diploma in Quantity Surveying"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/2942/7",
+          "source_record_ordinal": 10756,
+          "source_line_start": 10757,
+          "source_line_end": 10757,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 10756,
+          "values": {
+            "Qualification Number": "610/2942/7",
+            "Qualification Title": "SEG Awards Level 5 Diploma in Quantity Surveying",
+            "Owner Organisation Name": "Skills and Education Group Awards",
+            "Qualification Level": "Level 5",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-09-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. SEG Levels 3/4/5 are explicit different levels. Pearson Higher National certificate/diploma, ABBE NVQ practice and CIOB construction diploma have distinct recorded owners and/or credential types and full wording. Shared quantity surveying alone is insufficient for a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-030",
+      "normalized_title_key": "seg awards level 3 diploma in quantity surveying",
+      "original_proposed_literal_title": "SEG Awards Level 3 Diploma in Quantity Surveying",
+      "literal_titles": [
+        "SEG Awards Level 3 Diploma in Quantity Surveying"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/3279/7",
+          "source_record_ordinal": 10779,
+          "source_line_start": 10780,
+          "source_line_end": 10780,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 10779,
+          "values": {
+            "Qualification Number": "610/3279/7",
+            "Qualification Title": "SEG Awards Level 3 Diploma in Quantity Surveying",
+            "Owner Organisation Name": "Skills and Education Group Awards",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2023-11-01 23:59:59",
+            "Operational End Date": "2025-10-01 22:59:59",
+            "Certification End Date": "2025-10-02 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. SEG Levels 3/4/5 are explicit different levels. Pearson Higher National certificate/diploma, ABBE NVQ practice and CIOB construction diploma have distinct recorded owners and/or credential types and full wording. Shared quantity surveying alone is insufficient for a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-033",
+      "normalized_title_key": "city & guilds level 3 award in principles of social housing law (qcf)",
+      "original_proposed_literal_title": "City & Guilds Level 3 Award in Principles of Social Housing Law (QCF)",
+      "literal_titles": [
+        "City & Guilds Level 3 Award in Principles of Social Housing Law (QCF)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "600/2984/5",
+          "source_record_ordinal": 15911,
+          "source_line_start": 15912,
+          "source_line_end": 15912,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 15911,
+          "values": {
+            "Qualification Number": "600/2984/5",
+            "Qualification Title": "City & Guilds Level 3 Award in Principles of Social Housing Law (QCF)",
+            "Owner Organisation Name": "City and Guilds of London Institute",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "QCF",
+            "Qualification SSA": "15.5 Law and legal services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2011-09-01 00:00:00",
+            "Operational End Date": "2017-04-28 00:00:00",
+            "Certification End Date": "2017-04-29 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-038",
+      "normalized_title_key": "city & guilds level 3 nvq in local land charges and property information",
+      "original_proposed_literal_title": "City & Guilds Level 3 NVQ in Local Land Charges and Property Information",
+      "literal_titles": [
+        "City & Guilds Level 3 NVQ in Local Land Charges and Property Information"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "500/3262/8",
+          "source_record_ordinal": 16845,
+          "source_line_start": 16846,
+          "source_line_end": 16846,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 16845,
+          "values": {
+            "Qualification Number": "500/3262/8",
+            "Qualification Title": "City & Guilds Level 3 NVQ in Local Land Charges and Property Information",
+            "Owner Organisation Name": "City and Guilds of London Institute",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2007-11-01 00:00:00",
+            "Operational End Date": "2011-12-31 00:00:00",
+            "Certification End Date": "2014-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Level 3 versus Level 4 land-charges NVQs, and Level 4 housing NVQ versus held Level 2/3 housing NVQs, explicitly request different levels. No same-level wording-only peer was identified.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-039",
+      "normalized_title_key": "city & guilds level 4 nvq in local land charges and property information",
+      "original_proposed_literal_title": "City & Guilds Level 4 NVQ in Local Land Charges and Property Information",
+      "literal_titles": [
+        "City & Guilds Level 4 NVQ in Local Land Charges and Property Information"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "500/3263/X",
+          "source_record_ordinal": 16846,
+          "source_line_start": 16847,
+          "source_line_end": 16847,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 16846,
+          "values": {
+            "Qualification Number": "500/3263/X",
+            "Qualification Title": "City & Guilds Level 4 NVQ in Local Land Charges and Property Information",
+            "Owner Organisation Name": "City and Guilds of London Institute",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2007-11-01 00:00:00",
+            "Operational End Date": "2011-12-31 00:00:00",
+            "Certification End Date": "2015-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Level 3 versus Level 4 land-charges NVQs, and Level 4 housing NVQ versus held Level 2/3 housing NVQs, explicitly request different levels. No same-level wording-only peer was identified.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-042",
+      "normalized_title_key": "city & guilds level 4 nvq in housing",
+      "original_proposed_literal_title": "City & Guilds Level 4 NVQ in Housing",
+      "literal_titles": [
+        "City & Guilds Level 4 NVQ in Housing"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "100/1461/5",
+          "source_record_ordinal": 17573,
+          "source_line_start": 17574,
+          "source_line_end": 17574,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 17573,
+          "values": {
+            "Qualification Number": "100/1461/5",
+            "Qualification Title": "City & Guilds Level 4 NVQ in Housing",
+            "Owner Organisation Name": "City and Guilds of London Institute",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "01.3 Health and social care",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2001-09-01 00:00:00",
+            "Operational End Date": "2010-09-30 00:00:00",
+            "Certification End Date": "2013-09-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Level 3 versus Level 4 land-charges NVQs, and Level 4 housing NVQ versus held Level 2/3 housing NVQs, explicitly request different levels. No same-level wording-only peer was identified.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-050",
+      "normalized_title_key": "iao level 5 diploma in executive housing and property management",
+      "original_proposed_literal_title": "IAO Level 5 Diploma in Executive Housing and Property Management",
+      "literal_titles": [
+        "IAO Level 5 Diploma in Executive Housing and Property Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/4878/1",
+          "source_record_ordinal": 23005,
+          "source_line_start": 23006,
+          "source_line_end": 23006,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 23005,
+          "values": {
+            "Qualification Number": "610/4878/1",
+            "Qualification Title": "IAO Level 5 Diploma in Executive Housing and Property Management",
+            "Owner Organisation Name": "Innovate Awarding",
+            "Qualification Level": "Level 5",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-12-01 23:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. IAO executive diploma Level 5/senior certificate Level 4, CIH housing management and service delivery, City & Guilds professional/senior certificates at Levels 4/5 and held end-point assessments retain owner, level, type and specialty differences. Related housing management is not equivalence.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-051",
+      "normalized_title_key": "iao level 4 certificate in senior housing and property management",
+      "original_proposed_literal_title": "IAO Level 4 Certificate in Senior Housing and Property Management",
+      "literal_titles": [
+        "IAO Level 4 Certificate in Senior Housing and Property Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/4555/X",
+          "source_record_ordinal": 23007,
+          "source_line_start": 23008,
+          "source_line_end": 23008,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 23007,
+          "values": {
+            "Qualification Number": "610/4555/X",
+            "Qualification Title": "IAO Level 4 Certificate in Senior Housing and Property Management",
+            "Owner Organisation Name": "Innovate Awarding",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-09-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. IAO executive diploma Level 5/senior certificate Level 4, CIH housing management and service delivery, City & Guilds professional/senior certificates at Levels 4/5 and held end-point assessments retain owner, level, type and specialty differences. Related housing management is not equivalence.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-056",
+      "normalized_title_key": "ascentis level 3 award in managing property and residential lettings",
+      "original_proposed_literal_title": "Ascentis Level 3 Award in Managing Property and Residential Lettings",
+      "literal_titles": [
+        "Ascentis Level 3 Award in Managing Property and Residential Lettings"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/5156/1",
+          "source_record_ordinal": 24615,
+          "source_line_start": 24616,
+          "source_line_end": 24616,
+          "literal_title_index": 0,
+          "published_status": "No longer available to new learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 24615,
+          "values": {
+            "Qualification Number": "603/5156/1",
+            "Qualification Title": "Ascentis Level 3 Award in Managing Property and Residential Lettings",
+            "Owner Organisation Name": "Ascentis",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Other Life Skills Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "No longer available to new learners",
+            "Operational Start Date": "2019-10-01 00:00:00",
+            "Operational End Date": "2026-03-31 22:59:59",
+            "Certification End Date": "2027-03-31 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-057",
+      "normalized_title_key": "ascentis level 3 certificate in managing property and residential lettings",
+      "original_proposed_literal_title": "Ascentis Level 3 Certificate in Managing Property and Residential Lettings",
+      "literal_titles": [
+        "Ascentis Level 3 Certificate in Managing Property and Residential Lettings",
+        "Ascentis Level 3 Certificate in Managing Property and Residential Lettings "
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/5157/3",
+          "source_record_ordinal": 24616,
+          "source_line_start": 24617,
+          "source_line_end": 24617,
+          "literal_title_index": 0,
+          "published_status": "No longer available to new learners"
+        },
+        {
+          "qualification_number": "610/6828/7",
+          "source_record_ordinal": 24723,
+          "source_line_start": 24724,
+          "source_line_end": 24724,
+          "literal_title_index": 1,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 24616,
+          "values": {
+            "Qualification Number": "603/5157/3",
+            "Qualification Title": "Ascentis Level 3 Certificate in Managing Property and Residential Lettings",
+            "Owner Organisation Name": "Ascentis",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Other Life Skills Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "No longer available to new learners",
+            "Operational Start Date": "2019-10-01 00:00:00",
+            "Operational End Date": "2026-03-31 22:59:59",
+            "Certification End Date": "2027-03-31 22:59:59"
+          }
+        },
+        {
+          "source_record_ordinal": 24723,
+          "values": {
+            "Qualification Number": "610/6828/7",
+            "Qualification Title": "Ascentis Level 3 Certificate in Managing Property and Residential Lettings ",
+            "Owner Organisation Name": "Ascentis",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Other Life Skills Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2026-04-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-058",
+      "normalized_title_key": "abbe level 6 certificate in residential surveying",
+      "original_proposed_literal_title": "ABBE Level 6 Certificate in Residential Surveying",
+      "literal_titles": [
+        "ABBE Level 6 Certificate in Residential Surveying"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/4909/8",
+          "source_record_ordinal": 26292,
+          "source_line_start": 26293,
+          "source_line_end": 26293,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26292,
+          "values": {
+            "Qualification Number": "603/4909/8",
+            "Qualification Title": "ABBE Level 6 Certificate in Residential Surveying",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2019-08-01 14:16:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-059",
+      "normalized_title_key": "abbe level 6 diploma in residential surveying",
+      "original_proposed_literal_title": "ABBE Level 6 Diploma in Residential Surveying ",
+      "literal_titles": [
+        "ABBE Level 6 Diploma in Residential Surveying "
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/4948/7",
+          "source_record_ordinal": 26294,
+          "source_line_start": 26295,
+          "source_line_end": 26295,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26294,
+          "values": {
+            "Qualification Number": "603/4948/7",
+            "Qualification Title": "ABBE Level 6 Diploma in Residential Surveying ",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2019-08-01 13:22:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-060",
+      "normalized_title_key": "abbe level 3 certificate in residential property management (leasehold/estate)",
+      "original_proposed_literal_title": "ABBE level 3 Certificate in Residential Property Management (Leasehold/Estate)",
+      "literal_titles": [
+        "ABBE level 3 Certificate in Residential Property Management (Leasehold/Estate)",
+        "ABBE Level 3 Certificate in Residential Property Management (Leasehold/Estate)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/4672/3",
+          "source_record_ordinal": 26295,
+          "source_line_start": 26296,
+          "source_line_end": 26296,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        },
+        {
+          "qualification_number": "610/0913/1",
+          "source_record_ordinal": 26400,
+          "source_line_start": 26401,
+          "source_line_end": 26401,
+          "literal_title_index": 1,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26295,
+          "values": {
+            "Qualification Number": "603/4672/3",
+            "Qualification Title": "ABBE level 3 Certificate in Residential Property Management (Leasehold/Estate)",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2019-05-24 12:49:00",
+            "Operational End Date": "2022-10-01 22:59:59",
+            "Certification End Date": "2023-10-01 22:59:59"
+          }
+        },
+        {
+          "source_record_ordinal": 26400,
+          "values": {
+            "Qualification Number": "610/0913/1",
+            "Qualification Title": "ABBE Level 3 Certificate in Residential Property Management (Leasehold/Estate)",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2022-05-23 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Leasehold/Estate Level 3 versus leasehold Level 4 certificates explicitly differ by level/scope. Property Advice and Practice certificate versus Residential Property Advice and Practice diploma differs by credential and residential qualifier; held specialist certificates explicitly specify sales progression, listing/market appraisal or property management.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-061",
+      "normalized_title_key": "abbe level 3 certificate in property advice and practice",
+      "original_proposed_literal_title": "ABBE Level 3 Certificate in Property Advice and Practice",
+      "literal_titles": [
+        "ABBE Level 3 Certificate in Property Advice and Practice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/4463/5",
+          "source_record_ordinal": 26299,
+          "source_line_start": 26300,
+          "source_line_end": 26300,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        },
+        {
+          "qualification_number": "610/7533/4",
+          "source_record_ordinal": 26429,
+          "source_line_start": 26430,
+          "source_line_end": 26430,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26299,
+          "values": {
+            "Qualification Number": "603/4463/5",
+            "Qualification Title": "ABBE Level 3 Certificate in Property Advice and Practice",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2019-05-01 11:38:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        },
+        {
+          "source_record_ordinal": 26429,
+          "values": {
+            "Qualification Number": "610/7533/4",
+            "Qualification Title": "ABBE Level 3 Certificate in Property Advice and Practice",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2026-06-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Leasehold/Estate Level 3 versus leasehold Level 4 certificates explicitly differ by level/scope. Property Advice and Practice certificate versus Residential Property Advice and Practice diploma differs by credential and residential qualifier; held specialist certificates explicitly specify sales progression, listing/market appraisal or property management.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-062",
+      "normalized_title_key": "abbe level 4 certificate in leasehold property management",
+      "original_proposed_literal_title": "ABBE Level 4 Certificate in Leasehold Property Management",
+      "literal_titles": [
+        "ABBE Level 4 Certificate in Leasehold Property Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/5257/7",
+          "source_record_ordinal": 26300,
+          "source_line_start": 26301,
+          "source_line_end": 26301,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        },
+        {
+          "qualification_number": "610/2063/1",
+          "source_record_ordinal": 26407,
+          "source_line_start": 26408,
+          "source_line_end": 26408,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26300,
+          "values": {
+            "Qualification Number": "603/5257/7",
+            "Qualification Title": "ABBE Level 4 Certificate in Leasehold Property Management",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2019-11-10 00:00:00",
+            "Operational End Date": "2023-07-31 22:59:59",
+            "Certification End Date": "2026-01-24 23:59:59"
+          }
+        },
+        {
+          "source_record_ordinal": 26407,
+          "values": {
+            "Qualification Number": "610/2063/1",
+            "Qualification Title": "ABBE Level 4 Certificate in Leasehold Property Management",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Other Vocational Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-01-24 23:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Leasehold/Estate Level 3 versus leasehold Level 4 certificates explicitly differ by level/scope. Property Advice and Practice certificate versus Residential Property Advice and Practice diploma differs by credential and residential qualifier; held specialist certificates explicitly specify sales progression, listing/market appraisal or property management.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-063",
+      "normalized_title_key": "abbe level 6 certificate in residential valuation",
+      "original_proposed_literal_title": "ABBE Level 6 Certificate in Residential Valuation",
+      "literal_titles": [
+        "ABBE Level 6 Certificate in Residential Valuation"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/4256/0",
+          "source_record_ordinal": 26304,
+          "source_line_start": 26305,
+          "source_line_end": 26305,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26304,
+          "values": {
+            "Qualification Number": "603/4256/0",
+            "Qualification Title": "ABBE Level 6 Certificate in Residential Valuation",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2019-03-19 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-064",
+      "normalized_title_key": "abbe level 6 diploma in building surveying and housing management",
+      "original_proposed_literal_title": "ABBE Level 6 Diploma in Building Surveying and Housing Management ",
+      "literal_titles": [
+        "ABBE Level 6 Diploma in Building Surveying and Housing Management "
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/3690/0",
+          "source_record_ordinal": 26305,
+          "source_line_start": 26306,
+          "source_line_end": 26306,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26305,
+          "values": {
+            "Qualification Number": "603/3690/0",
+            "Qualification Title": "ABBE Level 6 Diploma in Building Surveying and Housing Management ",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2018-10-08 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-065",
+      "normalized_title_key": "abbe level 6 diploma in residential surveying and valuation",
+      "original_proposed_literal_title": "ABBE Level 6 Diploma in Residential Surveying and Valuation",
+      "literal_titles": [
+        "ABBE Level 6 Diploma in Residential Surveying and Valuation",
+        "ABBE level 6 Diploma in Residential Surveying and Valuation"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/3516/6",
+          "source_record_ordinal": 26306,
+          "source_line_start": 26307,
+          "source_line_end": 26307,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        },
+        {
+          "qualification_number": "610/6384/8",
+          "source_record_ordinal": 26422,
+          "source_line_start": 26423,
+          "source_line_end": 26423,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        },
+        {
+          "qualification_number": "601/8312/3",
+          "source_record_ordinal": 26459,
+          "source_line_start": 26460,
+          "source_line_end": 26460,
+          "literal_title_index": 1,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26306,
+          "values": {
+            "Qualification Number": "603/3516/6",
+            "Qualification Title": "ABBE Level 6 Diploma in Residential Surveying and Valuation",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2018-09-01 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        },
+        {
+          "source_record_ordinal": 26422,
+          "values": {
+            "Qualification Number": "610/6384/8",
+            "Qualification Title": "ABBE Level 6 Diploma in Residential Surveying and Valuation",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2025-09-15 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        },
+        {
+          "source_record_ordinal": 26459,
+          "values": {
+            "Qualification Number": "601/8312/3",
+            "Qualification Title": "ABBE level 6 Diploma in Residential Surveying and Valuation",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2016-02-01 00:00:00",
+            "Operational End Date": "2018-12-31 00:00:00",
+            "Certification End Date": "2021-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-067",
+      "normalized_title_key": "abbe level 3 certificate in understanding sale of residential property",
+      "original_proposed_literal_title": "ABBE Level 3 Certificate in Understanding Sale of Residential Property",
+      "literal_titles": [
+        "ABBE Level 3 Certificate in Understanding Sale of Residential Property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/7064/6",
+          "source_record_ordinal": 26318,
+          "source_line_start": 26319,
+          "source_line_end": 26319,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26318,
+          "values": {
+            "Qualification Number": "603/7064/6",
+            "Qualification Title": "ABBE Level 3 Certificate in Understanding Sale of Residential Property",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2021-01-24 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Understanding Sale is a certificate distinct from sale diplomas. ABBE Level 2 Property certificate differs in owner and level from CILEx Level 3. ABBE Lettings Agents versus Estate and Lettings Agents explicitly differs by combined role; Lettings Advice and Practice has SSA 07.3 while Agents certificates have SSA 05.2, different title focus and overlapping source availability. Scotland is preserved as a jurisdiction qualifier; no wording-only replacement is established.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-068",
+      "normalized_title_key": "abbe level 2 certificate in property",
+      "original_proposed_literal_title": "ABBE Level 2 Certificate in Property",
+      "literal_titles": [
+        "ABBE Level 2 Certificate in Property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/7052/X",
+          "source_record_ordinal": 26319,
+          "source_line_start": 26320,
+          "source_line_end": 26320,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26319,
+          "values": {
+            "Qualification Number": "603/7052/X",
+            "Qualification Title": "ABBE Level 2 Certificate in Property",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 2",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2021-01-24 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Understanding Sale is a certificate distinct from sale diplomas. ABBE Level 2 Property certificate differs in owner and level from CILEx Level 3. ABBE Lettings Agents versus Estate and Lettings Agents explicitly differs by combined role; Lettings Advice and Practice has SSA 07.3 while Agents certificates have SSA 05.2, different title focus and overlapping source availability. Scotland is preserved as a jurisdiction qualifier; no wording-only replacement is established.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-069",
+      "normalized_title_key": "abbe level 3 diploma in professional residential property letting and management",
+      "original_proposed_literal_title": "ABBE Level 3 Diploma in Professional Residential Property Letting and Management",
+      "literal_titles": [
+        "ABBE Level 3 Diploma in Professional Residential Property Letting and Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/7089/0",
+          "source_record_ordinal": 26332,
+          "source_line_start": 26333,
+          "source_line_end": 26333,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26332,
+          "values": {
+            "Qualification Number": "603/7089/0",
+            "Qualification Title": "ABBE Level 3 Diploma in Professional Residential Property Letting and Management",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2021-01-25 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "HOLD",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "ABBE same-owner Level 3 residential letting/management diplomas: proposed Professional title 603/7089/0 (Occupational Qualification; start 2021-01-25) overlaps the retirement of 600/0988/3 (same type; end 2021-03-31). The older QCF/colon form 500/9472/5 remains in the original family. Professional, parenthesis/colon removal and property word placement may be wording evolution rather than distinct demand.",
+      "missing_resolution": "A source-bound qualification specification or explicit replacement/learning-outcome comparison is needed to determine whether Professional adds substantive scope or is title modernization. Different qualification numbers and dates alone do not resolve that linguistic question.",
+      "held_peer_group_ids": [
+        "OFQUAL-TITLE-108",
+        "OFQUAL-TITLE-114"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-070",
+      "normalized_title_key": "abbe level 3 diploma in professional sale of residential property",
+      "original_proposed_literal_title": "ABBE Level 3 Diploma in Professional Sale of Residential Property",
+      "literal_titles": [
+        "ABBE Level 3 Diploma in Professional Sale of Residential Property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/7092/0",
+          "source_record_ordinal": 26333,
+          "source_line_start": 26334,
+          "source_line_end": 26334,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26333,
+          "values": {
+            "Qualification Number": "603/7092/0",
+            "Qualification Title": "ABBE Level 3 Diploma in Professional Sale of Residential Property",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2021-01-26 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "HOLD",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "ABBE same-owner Level 3 sale-of-residential-property diplomas: proposed Professional title 603/7092/0 (Occupational Qualification; start 2021-01-26) overlaps retirement of 600/1002/2 (same type; end 2021-03-31). The older QCF/colon form 500/9471/3 remains held. The added Professional and altered property wrapper may be title modernization.",
+      "missing_resolution": "A source-bound specification or explicit replacement/learning-outcome comparison must resolve substantive scope versus wording-only succession. IDs and the observed transition dates are insufficient.",
+      "held_peer_group_ids": [
+        "OFQUAL-TITLE-107",
+        "OFQUAL-TITLE-113"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-075",
+      "normalized_title_key": "abbe level 3 diploma in residential property advice and practice",
+      "original_proposed_literal_title": "ABBE Level 3 Diploma in Residential Property Advice and Practice",
+      "literal_titles": [
+        "ABBE Level 3 Diploma in Residential Property Advice and Practice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/4418/0",
+          "source_record_ordinal": 26372,
+          "source_line_start": 26373,
+          "source_line_end": 26373,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26372,
+          "values": {
+            "Qualification Number": "610/4418/0",
+            "Qualification Title": "ABBE Level 3 Diploma in Residential Property Advice and Practice",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-07-08 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Leasehold/Estate Level 3 versus leasehold Level 4 certificates explicitly differ by level/scope. Property Advice and Practice certificate versus Residential Property Advice and Practice diploma differs by credential and residential qualifier; held specialist certificates explicitly specify sales progression, listing/market appraisal or property management.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-085",
+      "normalized_title_key": "abbe level 3 certificate for lettings agents",
+      "original_proposed_literal_title": "ABBE Level 3 Certificate for Lettings Agents",
+      "literal_titles": [
+        "ABBE Level 3 Certificate for Lettings Agents"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/4047/2",
+          "source_record_ordinal": 26389,
+          "source_line_start": 26390,
+          "source_line_end": 26390,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26389,
+          "values": {
+            "Qualification Number": "610/4047/2",
+            "Qualification Title": "ABBE Level 3 Certificate for Lettings Agents",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-04-15 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Understanding Sale is a certificate distinct from sale diplomas. ABBE Level 2 Property certificate differs in owner and level from CILEx Level 3. ABBE Lettings Agents versus Estate and Lettings Agents explicitly differs by combined role; Lettings Advice and Practice has SSA 07.3 while Agents certificates have SSA 05.2, different title focus and overlapping source availability. Scotland is preserved as a jurisdiction qualifier; no wording-only replacement is established.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-086",
+      "normalized_title_key": "abbe level 6 diploma in building surveying",
+      "original_proposed_literal_title": "ABBE Level 6 Diploma in  Building Surveying",
+      "literal_titles": [
+        "ABBE Level 6 Diploma in  Building Surveying"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/0398/0",
+          "source_record_ordinal": 26393,
+          "source_line_start": 26394,
+          "source_line_end": 26394,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26393,
+          "values": {
+            "Qualification Number": "610/0398/0",
+            "Qualification Title": "ABBE Level 6 Diploma in  Building Surveying",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2022-01-24 23:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE residential surveying certificate/diploma differ by credential; surveying and valuation, residential valuation, secured-lending valuation, building surveying and building surveying with housing management explicitly specify different subject combinations or levels. Combined scope is preserved.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-091",
+      "normalized_title_key": "abbe level 3 certificate for estate and lettings agents",
+      "original_proposed_literal_title": "ABBE Level 3 Certificate for Estate and Lettings Agents",
+      "literal_titles": [
+        "ABBE Level 3 Certificate for Estate and Lettings Agents"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/1616/0",
+          "source_record_ordinal": 26404,
+          "source_line_start": 26405,
+          "source_line_end": 26405,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26404,
+          "values": {
+            "Qualification Number": "610/1616/0",
+            "Qualification Title": "ABBE Level 3 Certificate for Estate and Lettings Agents",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2022-10-26 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Understanding Sale is a certificate distinct from sale diplomas. ABBE Level 2 Property certificate differs in owner and level from CILEx Level 3. ABBE Lettings Agents versus Estate and Lettings Agents explicitly differs by combined role; Lettings Advice and Practice has SSA 07.3 while Agents certificates have SSA 05.2, different title focus and overlapping source availability. Scotland is preserved as a jurisdiction qualifier; no wording-only replacement is established.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-099",
+      "normalized_title_key": "abbe level 4 nvq in quantity surveying practice",
+      "original_proposed_literal_title": "ABBE Level 4 NVQ in Quantity Surveying Practice",
+      "literal_titles": [
+        "ABBE Level 4 NVQ in Quantity Surveying Practice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "500/1340/3",
+          "source_record_ordinal": 26500,
+          "source_line_start": 26501,
+          "source_line_end": 26501,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        },
+        {
+          "qualification_number": "Q1054190",
+          "source_record_ordinal": 26548,
+          "source_line_start": 26549,
+          "source_line_end": 26549,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26500,
+          "values": {
+            "Qualification Number": "500/1340/3",
+            "Qualification Title": "ABBE Level 4 NVQ in Quantity Surveying Practice",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2006-11-01 00:00:00",
+            "Operational End Date": "2010-10-31 00:00:00",
+            "Certification End Date": "2013-10-31 00:00:00"
+          }
+        },
+        {
+          "source_record_ordinal": 26548,
+          "values": {
+            "Qualification Number": "Q1054190",
+            "Qualification Title": "ABBE Level 4 NVQ in Quantity Surveying Practice",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2001-04-01 00:00:00",
+            "Operational End Date": "2006-10-31 00:00:00",
+            "Certification End Date": "2009-10-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. SEG Levels 3/4/5 are explicit different levels. Pearson Higher National certificate/diploma, ABBE NVQ practice and CIOB construction diploma have distinct recorded owners and/or credential types and full wording. Shared quantity surveying alone is insufficient for a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-100",
+      "normalized_title_key": "abbe level 4 nvq in surveying, property and maintenance",
+      "original_proposed_literal_title": "ABBE Level 4 NVQ in Surveying, Property and Maintenance",
+      "literal_titles": [
+        "ABBE Level 4 NVQ in Surveying, Property and Maintenance"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "500/3822/9",
+          "source_record_ordinal": 26503,
+          "source_line_start": 26504,
+          "source_line_end": 26504,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26503,
+          "values": {
+            "Qualification Number": "500/3822/9",
+            "Qualification Title": "ABBE Level 4 NVQ in Surveying, Property and Maintenance",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2008-04-01 00:00:00",
+            "Operational End Date": "2010-12-31 00:00:00",
+            "Certification End Date": "2013-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE Level 4 NVQ versus held Level 3 NVQs/diplomas differ by level/credential. ProQual Level 6 Management diploma differs by owner, level and management scope. Surveying Support and Property Management NVQs specify distinct focus; shared surveying/property is insufficient.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-116",
+      "normalized_title_key": "abbe level 3 nvq in surveying support",
+      "original_proposed_literal_title": "ABBE Level 3 NVQ in Surveying Support",
+      "literal_titles": [
+        "ABBE Level 3 NVQ in Surveying Support"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "Q1050771",
+          "source_record_ordinal": 26555,
+          "source_line_start": 26556,
+          "source_line_end": 26556,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26555,
+          "values": {
+            "Qualification Number": "Q1050771",
+            "Qualification Title": "ABBE Level 3 NVQ in Surveying Support",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "1998-10-01 00:00:00",
+            "Operational End Date": "2007-10-31 00:00:00",
+            "Certification End Date": "2010-10-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE Level 4 NVQ versus held Level 3 NVQs/diplomas differ by level/credential. ProQual Level 6 Management diploma differs by owner, level and management scope. Surveying Support and Property Management NVQs specify distinct focus; shared surveying/property is insufficient.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-117",
+      "normalized_title_key": "abbe level 4 nvq in property management",
+      "original_proposed_literal_title": "ABBE Level 4 NVQ in Property Management",
+      "literal_titles": [
+        "ABBE Level 4 NVQ in Property Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "Q1050069",
+          "source_record_ordinal": 26564,
+          "source_line_start": 26565,
+          "source_line_end": 26565,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 26564,
+          "values": {
+            "Qualification Number": "Q1050069",
+            "Qualification Title": "ABBE Level 4 NVQ in Property Management",
+            "Owner Organisation Name": "Awarding Body for the Built Environment",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "National Vocational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "1998-01-01 00:00:00",
+            "Operational End Date": "2007-10-31 00:00:00",
+            "Certification End Date": "2010-10-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE Level 4 NVQ versus held Level 3 NVQs/diplomas differ by level/credential. ProQual Level 6 Management diploma differs by owner, level and management scope. Surveying Support and Property Management NVQs specify distinct focus; shared surveying/property is insufficient.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-122",
+      "normalized_title_key": "sqa level 4 end point assessment for conveyancing technician",
+      "original_proposed_literal_title": "SQA Level 4 End Point Assessment for Conveyancing Technician",
+      "literal_titles": [
+        "SQA Level 4 End Point Assessment for Conveyancing Technician"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/3689/4",
+          "source_record_ordinal": 27326,
+          "source_line_start": 27327,
+          "source_line_end": 27327,
+          "literal_title_index": 0,
+          "published_status": "No longer available to new learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 27326,
+          "values": {
+            "Qualification Number": "603/3689/4",
+            "Qualification Title": "SQA Level 4 End Point Assessment for Conveyancing Technician",
+            "Owner Organisation Name": "Qualifications Scotland",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "End-Point Assessment",
+            "Qualification SSA": "15.5 Law and legal services",
+            "Qualification Status": "No longer available to new learners",
+            "Operational Start Date": "2018-11-01 00:00:00",
+            "Operational End Date": "2025-10-31 23:59:59",
+            "Certification End Date": "2027-10-31 23:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "HOLD",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Proposed SQA 603/3689/4 and held Qualifications Scotland 610/5147/0 have the same recorded owner Qualifications Scotland, Level 4 and End-Point Assessment type. The latter names ST1312 legal technician with conveyancing technician or probate technician routes, while the former names Conveyancing Technician. Issuer wording is therefore not evidence of different owners; the new title may include the old route.",
+      "missing_resolution": "The source does not give the old assessment apprenticeship standard, route mapping or content. Verify whether its conveyancing route is continued/replaced under ST1312 versus a genuinely separate assessment. Do not infer equivalence or collapse the probate alternative.",
+      "held_peer_group_ids": "OFQUAL-TITLE-121"
+    },
+    {
+      "group_id": "OFQUAL-TITLE-123",
+      "normalized_title_key": "qualifications scotland level 4 diploma in conveyancing law and practice",
+      "original_proposed_literal_title": "Qualifications Scotland Level 4 Diploma in Conveyancing Law and Practice",
+      "literal_titles": [
+        "Qualifications Scotland Level 4 Diploma in Conveyancing Law and Practice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/0173/9",
+          "source_record_ordinal": 27343,
+          "source_line_start": 27344,
+          "source_line_end": 27344,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 27343,
+          "values": {
+            "Qualification Number": "603/0173/9",
+            "Qualification Title": "Qualifications Scotland Level 4 Diploma in Conveyancing Law and Practice",
+            "Owner Organisation Name": "Qualifications Scotland",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "15.5 Law and legal services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2016-09-01 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Conveyancing Law and Practice diplomas Level 4 versus Level 6 explicitly differ by level. NALP conveyancing for paralegals is a different owner, level/credential and role focus from SQA/Qualifications Scotland end-point assessments.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-124",
+      "normalized_title_key": "qualifications scotland level 6 diploma in conveyancing law and practice",
+      "original_proposed_literal_title": "Qualifications Scotland Level 6 Diploma in Conveyancing Law and Practice",
+      "literal_titles": [
+        "Qualifications Scotland Level 6 Diploma in Conveyancing Law and Practice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/0174/0",
+          "source_record_ordinal": 27344,
+          "source_line_start": 27345,
+          "source_line_end": 27345,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 27344,
+          "values": {
+            "Qualification Number": "603/0174/0",
+            "Qualification Title": "Qualifications Scotland Level 6 Diploma in Conveyancing Law and Practice",
+            "Owner Organisation Name": "Qualifications Scotland",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "15.5 Law and legal services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2016-09-01 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Conveyancing Law and Practice diplomas Level 4 versus Level 6 explicitly differ by level. NALP conveyancing for paralegals is a different owner, level/credential and role focus from SQA/Qualifications Scotland end-point assessments.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-130",
+      "normalized_title_key": "ciob level 6 diploma in construction quantity surveying",
+      "original_proposed_literal_title": "CIOB Level 6 Diploma in Construction Quantity Surveying",
+      "literal_titles": [
+        "CIOB Level 6 Diploma in Construction Quantity Surveying"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/7817/7",
+          "source_record_ordinal": 28522,
+          "source_line_start": 28523,
+          "source_line_end": 28523,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 28522,
+          "values": {
+            "Qualification Number": "610/7817/7",
+            "Qualification Title": "CIOB Level 6 Diploma in Construction Quantity Surveying",
+            "Owner Organisation Name": "Chartered Institute of Building",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2026-08-03 22:59:59",
+            "Operational End Date": "2031-07-31 22:59:59",
+            "Certification End Date": "2032-07-31 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. SEG Levels 3/4/5 are explicit different levels. Pearson Higher National certificate/diploma, ABBE NVQ practice and CIOB construction diploma have distinct recorded owners and/or credential types and full wording. Shared quantity surveying alone is insufficient for a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-131",
+      "normalized_title_key": "cih level 3 certificate in letting and managing residential property",
+      "original_proposed_literal_title": "CIH Level 3 Certificate in Letting and Managing Residential Property",
+      "literal_titles": [
+        "CIH Level 3 Certificate in Letting and Managing Residential Property",
+        "CIH Level 3 Certificate in letting and managing residential property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/3706/0",
+          "source_record_ordinal": 28971,
+          "source_line_start": 28972,
+          "source_line_end": 28972,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        },
+        {
+          "qualification_number": "601/8893/5",
+          "source_record_ordinal": 29019,
+          "source_line_start": 29020,
+          "source_line_end": 29020,
+          "literal_title_index": 1,
+          "published_status": "No longer available to new learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 28971,
+          "values": {
+            "Qualification Number": "610/3706/0",
+            "Qualification Title": "CIH Level 3 Certificate in Letting and Managing Residential Property",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-04-01 22:59:59",
+            "Operational End Date": "2036-06-01 22:59:59",
+            "Certification End Date": "2036-06-01 22:59:59"
+          }
+        },
+        {
+          "source_record_ordinal": 29019,
+          "values": {
+            "Qualification Number": "601/8893/5",
+            "Qualification Title": "CIH Level 3 Certificate in letting and managing residential property",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer available to new learners",
+            "Operational Start Date": "2016-06-01 00:00:00",
+            "Operational End Date": "2025-03-31 22:59:59",
+            "Certification End Date": "2027-03-31 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-132",
+      "normalized_title_key": "cih level 2 award in letting and managing residential property",
+      "original_proposed_literal_title": "CIH Level 2 Award in Letting and Managing Residential Property",
+      "literal_titles": [
+        "CIH Level 2 Award in Letting and Managing Residential Property",
+        "CIH Level 2 Award In Letting and Managing Residential Property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/3698/5",
+          "source_record_ordinal": 28972,
+          "source_line_start": 28973,
+          "source_line_end": 28973,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        },
+        {
+          "qualification_number": "601/4884/6",
+          "source_record_ordinal": 29028,
+          "source_line_start": 29029,
+          "source_line_end": 29029,
+          "literal_title_index": 1,
+          "published_status": "No longer available to new learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 28972,
+          "values": {
+            "Qualification Number": "610/3698/5",
+            "Qualification Title": "CIH Level 2 Award in Letting and Managing Residential Property",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 2",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-04-01 22:59:59",
+            "Operational End Date": "2036-06-01 22:59:59",
+            "Certification End Date": "2036-06-01 22:59:59"
+          }
+        },
+        {
+          "source_record_ordinal": 29028,
+          "values": {
+            "Qualification Number": "601/4884/6",
+            "Qualification Title": "CIH Level 2 Award In Letting and Managing Residential Property",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 2",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "No longer available to new learners",
+            "Operational Start Date": "2014-11-01 00:00:00",
+            "Operational End Date": "2025-03-31 22:59:59",
+            "Certification End Date": "2027-03-31 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-140",
+      "normalized_title_key": "cih level 4 certificate in housing management and service delivery",
+      "original_proposed_literal_title": "CIH Level 4 Certificate in Housing Management and Service Delivery",
+      "literal_titles": [
+        "CIH Level 4 Certificate in Housing Management and Service Delivery"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/5604/2",
+          "source_record_ordinal": 28983,
+          "source_line_start": 28984,
+          "source_line_end": 28984,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 28983,
+          "values": {
+            "Qualification Number": "610/5604/2",
+            "Qualification Title": "CIH Level 4 Certificate in Housing Management and Service Delivery",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2025-08-01 22:59:59",
+            "Operational End Date": "2036-06-01 22:59:59",
+            "Certification End Date": "2036-06-01 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. IAO executive diploma Level 5/senior certificate Level 4, CIH housing management and service delivery, City & Guilds professional/senior certificates at Levels 4/5 and held end-point assessments retain owner, level, type and specialty differences. Related housing management is not equivalence.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-153",
+      "normalized_title_key": "cih level 4 diploma in housing development",
+      "original_proposed_literal_title": "CIH  Level 4 Diploma in Housing Development",
+      "literal_titles": [
+        "CIH  Level 4 Diploma in Housing Development"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "500/6424/1",
+          "source_record_ordinal": 29000,
+          "source_line_start": 29001,
+          "source_line_end": 29001,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 29000,
+          "values": {
+            "Qualification Number": "500/6424/1",
+            "Qualification Title": "CIH  Level 4 Diploma in Housing Development",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Higher Level",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2009-06-01 00:00:00",
+            "Operational End Date": "2013-12-31 00:00:00",
+            "Certification End Date": "2015-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-156",
+      "normalized_title_key": "cih level 3 award in governance in housing (qcf)",
+      "original_proposed_literal_title": "CIH Level 3 Award in Governance in Housing (QCF)",
+      "literal_titles": [
+        "CIH Level 3 Award in Governance in Housing (QCF)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "501/1181/4",
+          "source_record_ordinal": 29012,
+          "source_line_start": 29013,
+          "source_line_end": 29013,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 29012,
+          "values": {
+            "Qualification Number": "501/1181/4",
+            "Qualification Title": "CIH Level 3 Award in Governance in Housing (QCF)",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "QCF",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2010-09-01 00:00:00",
+            "Operational End Date": "2015-09-30 00:00:00",
+            "Certification End Date": "2017-09-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. CIH governance award Level 3 differs from Level 4 held forms. CII Advanced Mortgage Advice certificate Level 4 differs from Level 3 basic certificate. LIBF Level 4 diploma differs from held Level 3 certificates despite shared owner The London Institute of Banking & Finance. These level/credential and Advanced distinctions are retained.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-161",
+      "normalized_title_key": "cih level 3 award in letting and managing residential property",
+      "original_proposed_literal_title": "CIH Level 3 Award in letting and managing residential property",
+      "literal_titles": [
+        "CIH Level 3 Award in letting and managing residential property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "601/8892/3",
+          "source_record_ordinal": 29018,
+          "source_line_start": 29019,
+          "source_line_end": 29019,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 29018,
+          "values": {
+            "Qualification Number": "601/8892/3",
+            "Qualification Title": "CIH Level 3 Award in letting and managing residential property",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2016-06-01 00:00:00",
+            "Operational End Date": "2019-12-31 00:00:00",
+            "Certification End Date": "2020-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-170",
+      "normalized_title_key": "cih level 4 certificate for the housing profession (qcf)",
+      "original_proposed_literal_title": "CIH Level 4 Certificate For the Housing Profession (QCF)",
+      "literal_titles": [
+        "CIH Level 4 Certificate For the Housing Profession (QCF)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "600/3806/8",
+          "source_record_ordinal": 29038,
+          "source_line_start": 29039,
+          "source_line_end": 29039,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 29038,
+          "values": {
+            "Qualification Number": "600/3806/8",
+            "Qualification Title": "CIH Level 4 Certificate For the Housing Profession (QCF)",
+            "Owner Organisation Name": "Chartered Institute of Housing",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "QCF",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2011-11-01 00:00:00",
+            "Operational End Date": "2016-12-31 00:00:00",
+            "Certification End Date": "2017-12-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "HOLD",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "CIH 600/3806/8 Certificate For the Housing Profession and held 600/2138/X Certificate In Housing Practice share owner Chartered Institute of Housing, Level 4, QCF and SSA 01.4 Public services. Both end operationally on 2016-12-31; starts differ (2011-11-01/2011-06-01), certification ends differ, so co-existence does not itself establish synonyms. Broader held Certificate in Housing occurrences span several types and dates.",
+      "missing_resolution": "A source-bound curriculum/title-history comparison is required to resolve profession versus practice versus housing wording. Metadata does not state how their learning outcomes differ; no synonym or course-equivalence claim is made.",
+      "held_peer_group_ids": [
+        "OFQUAL-TITLE-135",
+        "OFQUAL-TITLE-147"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-173",
+      "normalized_title_key": "cii level 4 certificate in advanced mortgage advice",
+      "original_proposed_literal_title": "CII Level 4 Certificate In Advanced Mortgage Advice",
+      "literal_titles": [
+        "CII Level 4 Certificate In Advanced Mortgage Advice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "601/3057/X",
+          "source_record_ordinal": 29318,
+          "source_line_start": 29319,
+          "source_line_end": 29319,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 29318,
+          "values": {
+            "Qualification Number": "601/3057/X",
+            "Qualification Title": "CII Level 4 Certificate In Advanced Mortgage Advice",
+            "Owner Organisation Name": "Chartered Insurance Institute",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "15.1 Accounting and finance",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2014-04-01 00:00:00",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. CIH governance award Level 3 differs from Level 4 held forms. CII Advanced Mortgage Advice certificate Level 4 differs from Level 3 basic certificate. LIBF Level 4 diploma differs from held Level 3 certificates despite shared owner The London Institute of Banking & Finance. These level/credential and Advanced distinctions are retained.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-175",
+      "normalized_title_key": "cii level 3 certificate in financial planning and lifetime mortgage activities",
+      "original_proposed_literal_title": "CII Level 3 Certificate in Financial Planning and Lifetime Mortgage Activities",
+      "literal_titles": [
+        "CII Level 3 Certificate in Financial Planning and Lifetime Mortgage Activities"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "100/4504/1",
+          "source_record_ordinal": 29322,
+          "source_line_start": 29323,
+          "source_line_end": 29323,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 29322,
+          "values": {
+            "Qualification Number": "100/4504/1",
+            "Qualification Title": "CII Level 3 Certificate in Financial Planning and Lifetime Mortgage Activities",
+            "Owner Organisation Name": "Chartered Insurance Institute",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "15.1 Accounting and finance",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2004-10-01 00:00:00",
+            "Operational End Date": "2007-08-31 00:00:00",
+            "Certification End Date": "2010-08-31 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-196",
+      "normalized_title_key": "nalp level 3 award in conveyancing for paralegals",
+      "original_proposed_literal_title": "NALP Level 3 Award in Conveyancing for Paralegals",
+      "literal_titles": [
+        "NALP Level 3 Award in Conveyancing for Paralegals"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/2781/9",
+          "source_record_ordinal": 32695,
+          "source_line_start": 32696,
+          "source_line_end": 32696,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32695,
+          "values": {
+            "Qualification Number": "610/2781/9",
+            "Qualification Title": "NALP Level 3 Award in Conveyancing for Paralegals",
+            "Owner Organisation Name": "NALP",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "15.5 Law and legal services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-06-05 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Conveyancing Law and Practice diplomas Level 4 versus Level 6 explicitly differ by level. NALP conveyancing for paralegals is a different owner, level/credential and role focus from SQA/Qualifications Scotland end-point assessments.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-200",
+      "normalized_title_key": "nfopp level 5 diploma in commercial property agency",
+      "original_proposed_literal_title": "NFOPP Level 5 Diploma in Commercial Property Agency",
+      "literal_titles": [
+        "NFOPP Level 5 Diploma in Commercial Property Agency"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "100/3717/2",
+          "source_record_ordinal": 32729,
+          "source_line_start": 32730,
+          "source_line_end": 32730,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32729,
+          "values": {
+            "Qualification Number": "100/3717/2",
+            "Qualification Title": "NFOPP Level 5 Diploma in Commercial Property Agency",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 5",
+            "Qualification Type": "Higher Level",
+            "Qualification SSA": "05.3 Urban, rural and regional planning",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2004-05-01 00:00:00",
+            "Operational End Date": "2010-09-30 00:00:00",
+            "Certification End Date": "2013-09-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-201",
+      "normalized_title_key": "nfopp level 5 diploma in residential letting & management",
+      "original_proposed_literal_title": "NFOPP Level 5 Diploma in Residential Letting & Management",
+      "literal_titles": [
+        "NFOPP Level 5 Diploma in Residential Letting & Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "100/3692/1",
+          "source_record_ordinal": 32731,
+          "source_line_start": 32732,
+          "source_line_end": 32732,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32731,
+          "values": {
+            "Qualification Number": "100/3692/1",
+            "Qualification Title": "NFOPP Level 5 Diploma in Residential Letting & Management",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 5",
+            "Qualification Type": "Higher Level",
+            "Qualification SSA": "05.3 Urban, rural and regional planning",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2004-05-01 00:00:00",
+            "Operational End Date": "2010-09-30 00:00:00",
+            "Certification End Date": "2013-09-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-211",
+      "normalized_title_key": "propertymark qualifications level 4 certificate in sale of residential property",
+      "original_proposed_literal_title": "Propertymark Qualifications Level 4 Certificate in Sale of Residential Property",
+      "literal_titles": [
+        "Propertymark Qualifications Level 4 Certificate in Sale of Residential Property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "601/2164/6",
+          "source_record_ordinal": 32744,
+          "source_line_start": 32745,
+          "source_line_end": 32745,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32744,
+          "values": {
+            "Qualification Number": "601/2164/6",
+            "Qualification Title": "Propertymark Qualifications Level 4 Certificate in Sale of Residential Property",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2014-01-01 00:00:00",
+            "Operational End Date": "2023-03-31 22:59:59",
+            "Certification End Date": "2026-05-31 22:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-212",
+      "normalized_title_key": "nfopp level 4 certificate in commercial property agency (qcf)",
+      "original_proposed_literal_title": "NFOPP  Level 4 Certificate In Commercial Property Agency (QCF)",
+      "literal_titles": [
+        "NFOPP  Level 4 Certificate In Commercial Property Agency (QCF)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "601/2330/8",
+          "source_record_ordinal": 32745,
+          "source_line_start": 32746,
+          "source_line_end": 32746,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32745,
+          "values": {
+            "Qualification Number": "601/2330/8",
+            "Qualification Title": "NFOPP  Level 4 Certificate In Commercial Property Agency (QCF)",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "QCF",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2014-01-01 00:00:00",
+            "Operational End Date": "2016-05-31 00:00:00",
+            "Certification End Date": "2017-11-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-214",
+      "normalized_title_key": "propertymark qualifications level 4 certificate in property agency management",
+      "original_proposed_literal_title": "Propertymark Qualifications Level 4 Certificate in Property Agency Management",
+      "literal_titles": [
+        "Propertymark Qualifications Level 4 Certificate in Property Agency Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/1854/5",
+          "source_record_ordinal": 32749,
+          "source_line_start": 32750,
+          "source_line_end": 32750,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32749,
+          "values": {
+            "Qualification Number": "610/1854/5",
+            "Qualification Title": "Propertymark Qualifications Level 4 Certificate in Property Agency Management",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-01-09 23:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-215",
+      "normalized_title_key": "propertymark qualifications level 3 certificate in property agency (lettings)",
+      "original_proposed_literal_title": "Propertymark Qualifications Level 3 Certificate in Property Agency (Lettings)",
+      "literal_titles": [
+        "Propertymark Qualifications Level 3 Certificate in Property Agency (Lettings)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/4199/3",
+          "source_record_ordinal": 32750,
+          "source_line_start": 32751,
+          "source_line_end": 32751,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32750,
+          "values": {
+            "Qualification Number": "610/4199/3",
+            "Qualification Title": "Propertymark Qualifications Level 3 Certificate in Property Agency (Lettings)",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-06-14 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-216",
+      "normalized_title_key": "propertymark qualifications level 3 certificate in property agency (commercial)",
+      "original_proposed_literal_title": "Propertymark Qualifications Level 3 Certificate in Property Agency (Commercial)",
+      "literal_titles": [
+        "Propertymark Qualifications Level 3 Certificate in Property Agency (Commercial)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/4200/6",
+          "source_record_ordinal": 32751,
+          "source_line_start": 32752,
+          "source_line_end": 32752,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32751,
+          "values": {
+            "Qualification Number": "610/4200/6",
+            "Qualification Title": "Propertymark Qualifications Level 3 Certificate in Property Agency (Commercial)",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-06-14 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-217",
+      "normalized_title_key": "propertymark qualifications level 3 certificate in property agency (sales)",
+      "original_proposed_literal_title": "Propertymark Qualifications Level 3 Certificate in Property Agency (Sales) ",
+      "literal_titles": [
+        "Propertymark Qualifications Level 3 Certificate in Property Agency (Sales) "
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/3261/X",
+          "source_record_ordinal": 32752,
+          "source_line_start": 32753,
+          "source_line_end": 32753,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 32752,
+          "values": {
+            "Qualification Number": "610/3261/X",
+            "Qualification Title": "Propertymark Qualifications Level 3 Certificate in Property Agency (Sales) ",
+            "Owner Organisation Name": "Propertymark Qualifications",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2024-01-01 23:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. NFOPP and Propertymark titles share recorded owner Propertymark Qualifications, so issuer spellings alone do not distinguish them. Retained diplomas Level 5, certificates Level 4 and certificates Level 3 (Property Agency subject routes) explicitly differ from held Level 3 awards and from each other by level/credential/specialism. QCF remains literal; no same-level same-credential wording-only peer is established among these proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-249",
+      "normalized_title_key": "libf level 4 diploma in mortgage advice and practice",
+      "original_proposed_literal_title": "LIBF Level 4 Diploma in Mortgage Advice and Practice",
+      "literal_titles": [
+        "LIBF Level 4 Diploma in Mortgage Advice and Practice"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "600/0149/5",
+          "source_record_ordinal": 37607,
+          "source_line_start": 37608,
+          "source_line_end": 37608,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 37607,
+          "values": {
+            "Qualification Number": "600/0149/5",
+            "Qualification Title": "LIBF Level 4 Diploma in Mortgage Advice and Practice",
+            "Owner Organisation Name": "The London Institute of Banking & Finance",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "QCF",
+            "Qualification SSA": "15.1 Accounting and finance",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2011-01-01 00:00:00",
+            "Operational End Date": "2017-07-01 00:00:00",
+            "Certification End Date": "2018-01-01 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. CIH governance award Level 3 differs from Level 4 held forms. CII Advanced Mortgage Advice certificate Level 4 differs from Level 3 basic certificate. LIBF Level 4 diploma differs from held Level 3 certificates despite shared owner The London Institute of Banking & Finance. These level/credential and Advanced distinctions are retained.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-255",
+      "normalized_title_key": "aim qualifications level 3 certificate in property development",
+      "original_proposed_literal_title": "AIM Qualifications Level 3 Certificate in Property Development",
+      "literal_titles": [
+        "AIM Qualifications Level 3 Certificate in Property Development"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/0832/1",
+          "source_record_ordinal": 40897,
+          "source_line_start": 40898,
+          "source_line_end": 40898,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 40897,
+          "values": {
+            "Qualification Number": "603/0832/1",
+            "Qualification Title": "AIM Qualifications Level 3 Certificate in Property Development",
+            "Owner Organisation Name": "AIM Qualifications",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Occupational Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2017-01-01 00:00:00",
+            "Operational End Date": "2022-01-31 23:59:59",
+            "Certification End Date": "2023-01-31 23:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-258",
+      "normalized_title_key": "ocn ni level 3 certificate in housing practice (northern ireland)",
+      "original_proposed_literal_title": "OCN NI Level 3 Certificate in Housing Practice (Northern Ireland)",
+      "literal_titles": [
+        "OCN NI Level 3 Certificate in Housing Practice (Northern Ireland)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/1939/2",
+          "source_record_ordinal": 42475,
+          "source_line_start": 42476,
+          "source_line_end": 42476,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 42475,
+          "values": {
+            "Qualification Number": "610/1939/2",
+            "Qualification Title": "OCN NI Level 3 Certificate in Housing Practice (Northern Ireland)",
+            "Owner Organisation Name": "Open College Network Northern Ireland",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "01.4 Public services",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-01-15 23:59:59",
+            "Operational End Date": "2028-01-14 23:59:59",
+            "Certification End Date": "2031-01-14 23:59:59"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-266",
+      "normalized_title_key": "proqual level 6 diploma in surveying, property and maintenance management (qcf)",
+      "original_proposed_literal_title": "ProQual Level 6 Diploma in Surveying, Property and Maintenance Management (QCF)",
+      "literal_titles": [
+        "ProQual Level 6 Diploma in Surveying, Property and Maintenance Management (QCF)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "600/5594/7",
+          "source_record_ordinal": 43816,
+          "source_line_start": 43817,
+          "source_line_end": 43817,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 43816,
+          "values": {
+            "Qualification Number": "600/5594/7",
+            "Qualification Title": "ProQual Level 6 Diploma in Surveying, Property and Maintenance Management (QCF)",
+            "Owner Organisation Name": "ProQual Awarding Body",
+            "Qualification Level": "Level 6",
+            "Qualification Type": "QCF",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "No longer awarded",
+            "Operational Start Date": "2012-06-01 00:00:00",
+            "Operational End Date": "2016-09-09 00:00:00",
+            "Certification End Date": "2016-09-30 00:00:00"
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. ABBE Level 4 NVQ versus held Level 3 NVQs/diplomas differ by level/credential. ProQual Level 6 Management diploma differs by owner, level and management scope. Surveying Support and Property Management NVQs specify distinct focus; shared surveying/property is insufficient.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-298",
+      "normalized_title_key": "safeagent level 2 foundation lettings course [england]",
+      "original_proposed_literal_title": "safeagent Level 2 Foundation Lettings Course [England]",
+      "literal_titles": [
+        "safeagent Level 2 Foundation Lettings Course [England]"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/2293/7",
+          "source_record_ordinal": 50927,
+          "source_line_start": 50928,
+          "source_line_end": 50928,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 50927,
+          "values": {
+            "Qualification Number": "610/2293/7",
+            "Qualification Title": "safeagent Level 2 Foundation Lettings Course [England]",
+            "Owner Organisation Name": "safeagent",
+            "Qualification Level": "Level 2",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-05-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. OCN NI Housing Practice certificate has distinct owner Open College Network Northern Ireland and explicit Northern Ireland qualifier versus held Pearson/City and Guilds/CIH titles. Property versus housing development are different owner/level/credential/subject combinations. Named safeagent foundation course, Pearson housing Higher National certificate, City and Guilds social housing law award and CII financial planning/lifetime mortgage certificate have distinctive complete wording; shared domain alone is not a hold.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-299",
+      "normalized_title_key": "safeagent level 3 award in letting & property management [england]",
+      "original_proposed_literal_title": "safeagent Level 3 Award in Letting & Property Management [England]",
+      "literal_titles": [
+        "safeagent Level 3 Award in Letting & Property Management [England]"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/2294/9",
+          "source_record_ordinal": 50928,
+          "source_line_start": 50929,
+          "source_line_end": 50929,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 50928,
+          "values": {
+            "Qualification Number": "610/2294/9",
+            "Qualification Title": "safeagent Level 3 Award in Letting & Property Management [England]",
+            "Owner Organisation Name": "safeagent",
+            "Qualification Level": "Level 3",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "07.3 Service enterprises",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2023-05-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. Ascentis, CIH, Propertymark, safeagent and Gateway are distinct source owners. Award/certificate and level differences are explicit, including CIH Level 3 certificate versus award. England and other jurisdiction qualifiers are retained, not removed. No common-owner same-credential wording-only peer was established for these retained proposals.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-303",
+      "normalized_title_key": "city & guilds level 4 certificate in professional housing management",
+      "original_proposed_literal_title": "City & Guilds Level 4 Certificate in Professional Housing Management  ",
+      "literal_titles": [
+        "City & Guilds Level 4 Certificate in Professional Housing Management  "
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/7676/4",
+          "source_record_ordinal": 51357,
+          "source_line_start": 51358,
+          "source_line_end": 51358,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 51357,
+          "values": {
+            "Qualification Number": "610/7676/4",
+            "Qualification Title": "City & Guilds Level 4 Certificate in Professional Housing Management  ",
+            "Owner Organisation Name": "City & Guilds Limited",
+            "Qualification Level": "Level 4",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2026-09-01 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. IAO executive diploma Level 5/senior certificate Level 4, CIH housing management and service delivery, City & Guilds professional/senior certificates at Levels 4/5 and held end-point assessments retain owner, level, type and specialty differences. Related housing management is not equivalence.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    },
+    {
+      "group_id": "OFQUAL-TITLE-304",
+      "normalized_title_key": "city & guilds level 5 certificate in professional senior housing management",
+      "original_proposed_literal_title": "City & Guilds Level 5 Certificate in Professional Senior Housing Management  ",
+      "literal_titles": [
+        "City & Guilds Level 5 Certificate in Professional Senior Housing Management  "
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "610/7774/4",
+          "source_record_ordinal": 51358,
+          "source_line_start": 51359,
+          "source_line_end": 51359,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_record_ordinal": 51358,
+          "values": {
+            "Qualification Number": "610/7774/4",
+            "Qualification Title": "City & Guilds Level 5 Certificate in Professional Senior Housing Management  ",
+            "Owner Organisation Name": "City & Guilds Limited",
+            "Qualification Level": "Level 5",
+            "Qualification Type": "Vocationally-Related Qualification",
+            "Qualification SSA": "05.2 Building and construction",
+            "Qualification Status": "Available to learners",
+            "Operational Start Date": "2026-09-25 22:59:59",
+            "Operational End Date": "",
+            "Certification End Date": ""
+          }
+        }
+      ],
+      "original_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "reviewed_disposition": "PROPOSE_LATER_EXACT_HIGH_PENDING_RESEARCH",
+      "complete_literal_academic_intent": true,
+      "residential_rental_enquiry_intent_identified": false,
+      "reason": "Complete literal explicitly requests a levelled academic qualification, assessment or named course. IAO executive diploma Level 5/senior certificate Level 4, CIH housing management and service delivery, City & Guilds professional/senior certificates at Levels 4/5 and held end-point assessments retain owner, level, type and specialty differences. Related housing management is not equivalence.",
+      "missing_resolution": null,
+      "held_peer_group_ids": null
+    }
+  ]
+}
