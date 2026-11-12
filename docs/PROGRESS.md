@@ -1,5 +1,17 @@
 # Implementation progress
 
+## 12 November owner-browser source delivery and held CI
+
+- Uploaded the frozen reviewed source to existing PR8 feature head **e319bc9**. Independent read-only proof matches review20de/treeebe993 across **766 files/118,176,114 bytes**, all six original source pins and the exact30-commit single-parent chain; protected mainf239701 is unchanged. The selected Git client remains Read-only; owner-browser delivery does not repair it. [Sanitized delivery proof](audit/OWNER_BROWSER_SOURCE_DELIVERY_2026-11-12.json).
+- At that exact head, **isolated-native-wordpress PASS and native-wordpress-check PASS; required offline-validation FAIL** (reported2m0s; composition, keyword and efficiency areas). Acceptance remains **HELD**. Preserve the failure and investigate with diagnostic visibility while retaining check selections/timeouts. These native results do not prove general native/browser/HTTP/live acceptance, independent human review or production readiness. Later local changes are outside this source proof.
+- Fresh12November Marketing readback confirms the existing evidence folder is owner-only/Restricted with zero visible items; no duplicate folder, sharing or lead-record access occurred. [Dated evidence receipt](audit/CONTENT_EVIDENCE_STATUS_2026-11-11.json). Production, live tracking and Ads remain unchanged; full goal remains incomplete.
+
+## 12 November optional offline segment reporting
+
+- Added explicit economics for the six Master section16 acquisition segments through optional APIs; existing base row contracts, totals, deduplication and rounding remain unchanged. Classification must bind the exact finance input, separate approval, evidence, report window and freshness. Missing, conflicting, stale or mixed-grain classification holds segmented results. No campaign mapping or business policy is invented; `ADS_UNMAPPED` original-attribution ratios remain null. [Scoped receipt and evidence limits](audit/COMMERCIAL_SEGMENT_REPORTING_2026-11-12.json).
+- Execution-lead-reported focused results: **36 Node PASS/zero failures or skips**,2.0160908seconds TAP/2.9861083seconds wall; existing pinned Python history integration **15 PASS**,10.143seconds. Tests use synthetic records. Independent static review found no blocker after the unmapped-ratio correction. This documentation pass records current source hashes but did not reread raw test receipts or rerun unchanged tests; no new full-Foundation/current-head CI/native/live acceptance is claimed.
+- [Finance issue3](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3) stays **OPEN** for genuine records, accounting/allocations, classifications, approved segment economics and cash-risk authority. Allowable CAC/CPQL, future probabilities and automatic budget policy remain unimplemented. Actual financial records, production, access and Ads were not changed. Full goal remains incomplete; this record does not claim source upload or PR acceptance.
+
 ## 12 November verified complete bounded execution
 
 - **Required combined Foundation at1ac1758 passes109checks/zero failures/no unexecuted checks in653.412605seconds**, including28isolated PHP checks. All437keyword cases across34modules were discovered, started and finished with exact independently reconciled IDs; two capability skips remain. Keyword execution completes in218.221639seconds with81.778361seconds margin under the unchanged aggregate300-second bound. [Sanitized receipt and scope](audit/PARALLEL_KEYWORD_FOUNDATION_CHECKS_2026-11-12.json).
