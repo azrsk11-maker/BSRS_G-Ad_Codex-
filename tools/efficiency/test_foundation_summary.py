@@ -40,6 +40,44 @@ class FoundationSummaryTests(unittest.TestCase):
             with self.subTest(change=change),patch.object(CHECKER,'module',side_effect=module):
                 result=CHECKER.execute_check('keyword-system-behavior',['synthetic'],owned_tree=True)
             self.assertEqual(result['passed'],wanted)
+            observed=CHECKER.public_keyword_summary(result)
+            self.assertEqual(observed['status'],'OBSERVED' if wanted else 'INCOMPLETE_OR_INVALID')
+            if wanted:
+                self.assertEqual((observed['workers'],observed['tests']),(4,1))
+
+    def test_keyword_success_summary_omits_private_fields_and_revalidates_counts(self):
+        policy={'mode':'auto','selected_workers':4,'maximum_workers':4,
+            'memory_per_worker_bytes':2*1024**3,'cpu_count':4,'memory_available_bytes':8*1024**3}
+        counts={k:1 for k in ('discovered_modules','completed_modules','discovered','started','finished')}
+        counts.update(skipped=0,coverage_verified=True,passed=True,timed_out=False)
+        check={'check':'keyword-system-behavior','passed':True,'details':{'exit':0,'elapsed_seconds':10,
+            'keyword_evidence_status':'COMPLETE','keyword_summary':counts,'keyword_resources':policy,
+            'private_field':'SYNTHETIC_PRIVATE_MUST_NOT_ESCAPE'}}
+        good=CHECKER.public_keyword_summary(check)
+        self.assertEqual(good['status'],'OBSERVED')
+        self.assertNotIn('SYNTHETIC_PRIVATE',json.dumps(good))
+        for change in ({'finished':0},{'timed_out':True},{'coverage_verified':False},{'started':True},{'skipped':2}):
+            altered={**check,'details':{**check['details'],'keyword_summary':{**counts,**change}}}
+            self.assertEqual(CHECKER.public_keyword_summary(altered)['status'],'INCOMPLETE_OR_INVALID')
+        self.assertIsNone(CHECKER.public_keyword_summary({'check':'unrelated'}))
+
+    def test_keyword_success_summary_rejects_bad_elapsed_and_resource_metadata(self):
+        policy={'mode':'auto','selected_workers':4,'maximum_workers':4,
+            'memory_per_worker_bytes':2*1024**3,'cpu_count':4,'memory_available_bytes':8*1024**3}
+        counts={k:1 for k in ('discovered_modules','completed_modules','discovered','started','finished')}
+        counts.update(skipped=0,coverage_verified=True,passed=True,timed_out=False)
+        details={'exit':0,'elapsed_seconds':10,'keyword_evidence_status':'COMPLETE',
+                 'keyword_summary':counts,'keyword_resources':policy}
+        check={'check':'keyword-system-behavior','passed':True,'details':details}
+        self.assertEqual(CHECKER.public_keyword_summary(check)['status'],'OBSERVED')
+        for change in ({'elapsed_seconds':float('nan')},{'elapsed_seconds':301},{'elapsed_seconds':-1},{'exit':False},
+                       {'keyword_resources':{**policy,'maximum_workers':1000}},
+                       {'keyword_resources':{**policy,'private':'SYNTHETIC_MUST_NOT_ESCAPE'}}):
+            altered={**check,'details':{**details,**change}}
+            with self.subTest(change=list(change)):
+                output=CHECKER.public_keyword_summary(altered)
+                self.assertEqual(output['status'],'INCOMPLETE_OR_INVALID')
+                self.assertNotIn('SYNTHETIC_MUST_NOT_ESCAPE',json.dumps(output))
 
     def test_keyword_suite_time_budget_remains_bounded_and_failures_propagate(self):
         failed = subprocess.CompletedProcess(["synthetic-python"], 7, "", "SYNTHETIC_FAILURE")
