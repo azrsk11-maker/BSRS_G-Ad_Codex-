@@ -157,5 +157,38 @@
     "causal_speedup_or_billed_cost_savings_claimed": false,
     "genuine_browser_provider_or_release_acceptance": false,
     "production_ads_permissions_finance_or_workbook_changes": false
+  },
+  "observed_ci_keyword_result": {
+    "head": "486b7d67b0e4956cb173a4002c96790af4892c04",
+    "job": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/43289452900/job/131431642090",
+    "validated_stdout_summary": {
+      "check": "keyword-system-behavior",
+      "cpu_count": 4,
+      "elapsed_seconds": 212.956875,
+      "memory_available_bytes": 15674585088,
+      "modules": 40,
+      "release_authorized": false,
+      "skipped": 0,
+      "status": "OBSERVED",
+      "tests": 513,
+      "workers": 4
+    },
+    "whole_workflow_passed": false,
+    "remaining_failure": "Seven existing orchestration-fixture errors from newly required resource-validator module/receipt fields"
+  },
+  "integration_repair": {
+    "optional_diagnostic_module_loaded_only_for_matching_progress_reference": true,
+    "php_and_timeout_valid_receipts_include_real_resource_validator_and_required_resource_evidence": true,
+    "missing_resource_evidence_remains_rejected": true,
+    "existing_php_and_timeout_assertions_removed": false,
+    "full_efficiency_group_local": {
+      "tests": 106,
+      "passed": 103,
+      "skipped": 3,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 17.771
+    },
+    "final_head_full_ci_pending": true
   }
 }
