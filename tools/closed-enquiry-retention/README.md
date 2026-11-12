@@ -2,6 +2,18 @@
 
 This is an isolated workflow candidate for the adopted monthly review and deletion of closed or unsuccessful enquiries twelve Dubai calendar months after actual closure. It preserves Intake26 and Outcome40. It introduces no live collector, Gmail permission, production deletion route, scheduler or production provider adapter.
 
+## Concrete WordPress capture SQL provider
+
+`WpCaptureResource.php` implements the existing resource interface against the actual reviewed `WpConsentRepository` capture table, replacing the capture-only array provider in its native test. It preserves the raw WordPress submission fingerprint; receiver-normalized fingerprints remain a different domain. Each binding uses the exact request/accepted lead/event, sole request ownership and a canonical hash of the entire stored row. No subject or click identifiers are returned in that binding. Accepted linked rows with refused, expired or unknown measurement choices remain eligible for the applicable retention workflow; the adapter never upgrades permission evidence.
+
+Every operation requires the same dedicated lease-bound connection and actual namespace/closure custody. The Journal binds the leased row ID, canonical request and current uncertainty counter. Reads before initial collection require request=held closure; mutation requires an existing due closed baseline and SENT or RETIRED_NO_COPY. Workflow remains the sole owner-approval and cross-store recovery engine. The provider does not grant deletion authority itself.
+
+A transaction holds table metadata and the target row while checking the pinned producer source, exact columns/indexes/InnoDB, receipt aliases/sharing, complete-row evidence and exact single-row deletion. Missing rows, changed content, database errors, uncertain commits or lost connections hold instead of retrying. Schema checks reject triggers and incoming/outgoing foreign keys so deletion cannot silently mutate shared tables. Complete metadata visibility must be proven using the existing account; the code makes no grants and does not suggest expanding production privileges. Constant and dynamic WordPress query logging both cause refusal; separate production host/filter/logging audits remain required. Consent state/history are never deleted by this adapter.
+
+Construction and apply remain restricted to local `http://bsre.invalid` and `closed_capture_synthetic_`. This is concrete provider code authored offline with synthetic native acceptance selected, not a deployed production adapter. Native execution is **PENDING current-source CI**. The native harness selects actual repository stage/link, MariaDB, exact reads/deletes, schema/FK/trigger drift, shared-row preservation, interruption, lost connection and lost acknowledgement recovery. Other resource adapters remain synthetic.
+
+The original producer can stage/link the same request after deletion. The native replay case explicitly requires the recreated row to be observed and the workflow to hold. A successful transaction therefore proves only point-in-time physical absence. Real producer/admission fencing, current external custody, restore enforcement, genuine source evidence and separate production authorization remain open. Do not toggle a lab flag or interpret a SQL/CI pass as permanent absence. [Current live interface audit](../../docs/audit/LIVE_PROVIDER_INTERFACE_AUDIT_2026-11-12.json).
+
 ## Data and authority
 
 The separate version1 closure record contains an immutable closure ID, revision, explicit OPEN/CLOSED/UNSUCCESSFUL status, original request/lead/event IDs, actual acceptance/closure/recording times, reviewer and evidence reference/hash, associated outcome IDs, exact marketing mailbox message IDs and observed outbox status. `DISQUALIFIED` alone cannot establish closure. A changed revision, reopened enquiry, missing evidence, unresolved outbox or incomplete resource inventory holds the plan.
@@ -12,7 +24,7 @@ Each resource binding uses a stable key, exact request/lead/event identities, a 
 
 Issue10 Option A is approved. The owner handles exact copies in the marketing mailbox. The workflow commits an intent and returns `AWAITING_OWNER_MAIL_ACTION`. `ownerMailAction()` returns the private exact-copy manifest only while the reviewed binding remains current. A later `execute()` advances only after an authenticated receipt binds that owner, plan digest, mailbox, message ID, binding hash and time to a positively confirmed absence. Mail readback must cover the complete authorized surface, including Trash. A missing search result or provider error cannot supply absence evidence. The workflow never invokes mail deletion. No OAuth scope is added.
 
-All operations require `BSRE_CLOSED_RETENTION_LAB=true`, WordPress local environment and synthetic `http://bsre.invalid` home. The supplied provider implementations use synthetic arrays only. Authority and runtime-readback classes named `Lab*` are test fixtures, with no live trust claim.
+All operations require `BSRE_CLOSED_RETENTION_LAB=true`, WordPress local environment and synthetic `http://bsre.invalid` home. The general providers use synthetic arrays; the capture provider above additionally exercises actual reviewed repository SQL in its isolated namespace. All data are synthetic and production providers remain held. Authority and runtime-readback classes named `Lab*` are test fixtures, with no live trust claim.
 
 ## Admission and cross-store execution
 
@@ -34,7 +46,7 @@ The [protected owner amendment screen](../owner-mail-review/README.md#protected-
 - Implement the approved manual exact-copy manifest, receipt collection and independent marketing-mailbox readback in the protected owner workflow. MailApp supplies neither inbox access nor message IDs. No automation scope is authorized.
 - Real producers honoring the same purge fence and closure lease. Current adapters cannot prove that an external manual edit, new mail copy or unrelated producer is quiesced.
 - Authenticated admission-enforcement readback and integration with the production receiver, retries and restore path.
-- Actual provider deletion/readback and interruption acceptance. Current provider resources are mocked even when the journal uses real MariaDB.
+- Actual provider deletion/readback and interruption acceptance. Capture-only provider SQL is now selected for native acceptance; all other resources remain synthetic, and genuine production providers are unverified.
 - Current retirement-ledger custody, backup expiry and restore fencing, with bounded identifiers and no permanent person registry.
 
 The existing SENT path still requires exact message bindings and manual owner action. The optional [no-mail-copy candidate](receiver-fence/README.md) supports only zero-attempt, positively evidenced, sender-fenced enquiries. Its provider adapter defaults to unverified. Other outbox states remain held; a status, missing row or empty search never proves absence. No live provider or custody acceptance is supplied.

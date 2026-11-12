@@ -168,7 +168,7 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
             || wp_get_environment_type() !== 'local' || home_url() !== 'http://bsre.invalid'
             || !($db instanceof LeaseBoundWpdb)
-            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
+            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_', 'closed_capture_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db;
         $this->db->suppress_errors(true);
         $this->prefix = $db->prefix;
@@ -304,6 +304,26 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
     public function admissionFloor(): ?string
     {
         return $this->db->get_var("SELECT admission_floor FROM {$this->prefix}meta WHERE id=1");
+    }
+    /** Concrete providers share this exact guarded connection and the current namespace/closure lease. */
+    public function assertProviderCustody(LeaseBoundWpdb $connection, string $requestId, bool $mutation = false): void
+    {
+        if ($this->db !== $connection) throw new Failure('CAPTURE_CONNECTION_CONFLICT');
+        $this->assertCurrentLease();
+        $this->assertRetirementOpen();
+        $id = (string) array_key_first($this->leases);
+        $this->db->last_error = '';
+        $closure = $this->closure($id);
+        if ($this->db->last_error !== '') throw new Failure('CAPTURE_CLOSURE_SOURCE_UNVERIFIED');
+        if ($closure === null) {
+            if ($mutation || $id !== $requestId) throw new Failure('CAPTURE_CLOSURE_SCOPE_CONFLICT');
+            return; // Read-only initial collection uses the stable request=closure identity.
+        }
+        Workflow::validateClosureRecord($closure, time(), $mutation);
+        if ($closure['closure_id'] !== $id || $closure['request_id'] !== $requestId
+            || ($mutation && !in_array($closure['email_status'], ['SENT', 'RETIRED_NO_COPY'], true))) {
+            throw new Failure('CAPTURE_CLOSURE_SCOPE_CONFLICT');
+        }
     }
     private function assertCurrentLease(): void
     {
