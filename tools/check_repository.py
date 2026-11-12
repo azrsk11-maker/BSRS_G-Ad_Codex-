@@ -247,6 +247,8 @@ def run_checks(require_php=False):
             str(ROOT/"docs/audit/NATIVE_ENQUIRY_FORM_CONTRACT_READBACK_2026-11-11.json")])
         run("current-gate-matrix", [node, str(ROOT/"tools/release-control/validate_gate_matrix.mjs"),
             str(ROOT/"docs/audit/CURRENT_GATE_MATRIX_2026-11-11.json")])
+        run("current-gate-matrix-20261112", [node, str(ROOT/"tools/release-control/validate_gate_matrix.mjs"),
+            str(ROOT/"docs/audit/CURRENT_GATE_MATRIX_2026-11-12.json")])
         release_node_tests = sorted((ROOT/"tools/release-control").glob("*.test.mjs"))
         record("release-control-node-tests-present", len(release_node_tests) >= 2, len(release_node_tests))
         run("release-control-node-behavior", [node, "--test", *map(str, release_node_tests)])
@@ -274,6 +276,9 @@ def run_checks(require_php=False):
         run("owner-sender-retirement-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_retirement.php")])
         run("owner-initial-closure-collection-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_collection.php")])
         run("owner-mail-guard-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/guard.test.php")])
+        for name in ("WpCaptureResource.php", "capture-native.php", "test_wp_capture_guard.php"):
+            run("php-lint-capture-provider-" + name, [*php_prefix, "-l", str(ROOT/"tools/closed-enquiry-retention"/name)])
+        run("wp-capture-provider-guards", [*php_prefix, str(ROOT/"tools/closed-enquiry-retention/test_wp_capture_guard.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
     else:
