@@ -3,6 +3,7 @@ set -eu
 # Must pass BEFORE DB initialization and the first WordPress bootstrap.
 php -d sendmail_path=/bin/false /opt/lab/isolation.php
 php -d sendmail_path=/bin/false /opt/lab/browser-prerequisites.php
+node --test /opt/lab/closed-enquiry-retention/receiver-fence/candidate.test.mjs
 mkdir /tmp/database
 mariadb-install-db --no-defaults --datadir=/tmp/database --auth-root-authentication-method=normal > /tmp/db-init.log 2>&1
 mariadbd --no-defaults --datadir=/tmp/database --socket=/tmp/bsre.sock --pid-file=/tmp/bsre.pid --skip-networking --log-error=/tmp/db.log &
@@ -36,5 +37,6 @@ php -d sendmail_path=/bin/false /opt/lab/purpose-retention/restore.php
 php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission.test.php
 php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/test_workflow.php
+php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/test_no_mail_copy.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/native-test.php
 php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/native-test.php

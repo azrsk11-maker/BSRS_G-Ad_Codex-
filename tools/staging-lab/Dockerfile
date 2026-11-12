@@ -19,6 +19,16 @@ COPY tools/staging-lab/build-rental-copy-candidate.mjs /opt/lab/
 RUN node /opt/lab/build-rental-copy-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/templates/source/rent.html
 COPY tools/staging-lab/isolation.php tools/staging-lab/native.php tools/staging-lab/plugin.php tools/staging-lab/transport.php tools/staging-lab/receive.php tools/staging-lab/interop.php tools/staging-lab/retention.php tools/staging-lab/restore.php tools/staging-lab/backup-bridge.mjs tools/staging-lab/receiver-lab.mjs tools/staging-lab/receiver-bridge.mjs tools/staging-lab/entrypoint.sh /opt/lab/
 COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/fixtures/receiver-v2
+# Preserve repository-relative imports for the actual-source no-mail receiver tests.
+COPY tools/staging-lab/receiver-lab.mjs /opt/lab/staging-lab/receiver-lab.mjs
+COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/staging-lab/fixtures/receiver-v2
+COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs \
+    tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs \
+    tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs \
+    tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs \
+    tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs \
+    tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs \
+    tools/website-tracking/tracking-system/contract.mjs /opt/lab/website-tracking/tracking-system/
 COPY tools/consent-retention /opt/lab/consent-retention
 COPY tools/recovery-package /opt/lab/recovery-package
 COPY tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/receipt-status.test.php /opt/lab/receipt-recovery/
