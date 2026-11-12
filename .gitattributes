@@ -1,0 +1,4 @@
+# Preserve committed source/code bytes on every platform; provenance pins are immutable.
+* -text
+/docs/audit/keyword-employment-followup-2026-11-11/semantic-review-preview.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/docs/audit/keyword-employment-followup-2026-11-11-batch2/semantic-review-preview.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
