@@ -301,6 +301,105 @@ function closedNoCopyReadback(scope, cleanup, ticket) {
   var lock=LockService.getScriptLock(); lock.waitLock(10000);
   try { return closedNoCopyReadbackLocked_(scope,cleanup === true,ticket); } finally { lock.releaseLock(); }
 }
+/** Source-derived Intake26 provider. No HTTP handler or production capability. */
+function closedIntakeLocate_(scope, gate) {
+  closedNoCopyScope_(scope,gate);
+  var sheet=leadSheet_(routingConfig_()), count=sheet.getLastRow();
+  // deleteRow affects the whole physical row, so every occupied column must be bound.
+  if (sheet.getLastColumn() !== LEAD_HEADERS.length || !Number.isSafeInteger(count) || count < 1)
+    closedNoCopyFail_('INTAKE_SURFACE_UNVERIFIED');
+  if (count === 1) return null;
+  // Provider-complete identity search; no row cap, paging subset or full-history payload export.
+  var identityRange=sheet.getRange(2,1,count-1,3), hits=[], number=null;
+  [scope.request_id,scope.lead_id,scope.event_id].forEach(function(id,column) {
+    var matches=identityRange.createTextFinder(id).matchEntireCell(true).matchCase(false)
+      .matchFormulaText(false).useRegularExpression(false).findAll();
+    if (!Array.isArray(matches)) closedNoCopyFail_('INTAKE_SURFACE_UNVERIFIED');
+    hits.push(matches);
+    matches.forEach(function(match) {
+      var at=match.getRow();
+      if (!Number.isSafeInteger(at) || at < 2 || at > count || match.getColumn() !== column+1
+          || (number !== null && number !== at) || matches.length !== 1) closedNoCopyFail_('INTAKE_IDENTITY_SHARED');
+      number=at;
+    });
+  });
+  if (number === null) return null;
+  if (hits.some(function(matches) { return matches.length !== 1; })) closedNoCopyFail_('INTAKE_IDENTITY_SHARED');
+  var range=sheet.getRange(number,1,1,LEAD_HEADERS.length), row=range.getValues()[0];
+  if (row[0] !== scope.request_id || row[1] !== scope.lead_id || row[2] !== scope.event_id) closedNoCopyFail_('INTAKE_IDENTITY_SHARED');
+  closedNoCopyRow_(row,scope);
+  if (typeof range.getNotes !== 'function' || typeof range.getDataValidations !== 'function'
+      || typeof range.isPartOfMerge !== 'function' || typeof range.getRichTextValues !== 'function'
+      || typeof sheet.getProtections !== 'function' || !SpreadsheetApp.ProtectionType)
+    closedNoCopyFail_('INTAKE_METADATA_UNVERIFIED');
+  if (range.isPartOfMerge() || range.getNotes()[0].some(function(cell) { return cell !== ''; })
+      || range.getDataValidations()[0].some(function(cell) { return cell !== null; })
+      || sheet.getProtections(SpreadsheetApp.ProtectionType.RANGE).length !== 0
+      || sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET).length !== 0
+      || range.getRichTextValues()[0].some(function(cell) { return cell !== null
+        && (typeof cell.getLinkUrl !== 'function' || typeof cell.getRuns !== 'function'
+          || cell.getLinkUrl() !== null || cell.getRuns().some(function(run) { return run.getLinkUrl() !== null; })); }))
+    closedNoCopyFail_('INTAKE_METADATA_UNVERIFIED');
+  if (row.some(function(cell) { return !['string','boolean','number'].includes(typeof cell)
+      || (typeof cell === 'number' && !Number.isFinite(cell)); })
+      || range.getFormulas()[0].some(function(cell) { return cell !== ''; }))
+    closedNoCopyFail_('INTAKE_ROW_UNVERIFIED');
+  return {sheet:sheet,number:number,values:row,binding:{key:scope.request_id,request_id:scope.request_id,
+    request_ids:[scope.request_id],lead_id:scope.lead_id,event_id:scope.event_id,fingerprint:scope.fingerprint,
+    evidence_reference:'bsre-intake26-complete-row-v1',
+    evidence_hash:closedNoCopyHash_({headers:LEAD_HEADERS,row:row,source_hash:gate.source_hash})}};
+}
+function closedIntakeInventory(scope) {
+  var lock=LockService.getScriptLock(); lock.waitLock(10000);
+  try { var found=closedIntakeLocate_(scope,closedNoCopyGate_()); return found?[found.binding]:[]; }
+  finally { lock.releaseLock(); }
+}
+function closedIntakeRemoveExact(scope, binding, intentDigest) {
+  var lock=LockService.getScriptLock(); lock.waitLock(10000);
+  try {
+    var gate=closedNoCopyGate_(), found=closedIntakeLocate_(scope,gate), now=closedNoCopyNow_();
+    if (!found || closedNoCopyHash_(found.binding) !== closedNoCopyHash_(binding)) closedNoCopyFail_('INTAKE_BINDING_CHANGED');
+    if (!closedNoCopyHashShape_(intentDigest) || typeof BSREClosedIntakePurgeIntent !== 'object'
+        || !BSREClosedIntakePurgeIntent || typeof BSREClosedIntakePurgeIntent.readback !== 'function')
+      closedNoCopyFail_('INTAKE_PURGE_INTENT_UNVERIFIED');
+    var claim=BSREClosedIntakePurgeIntent.readback(intentDigest,now);
+    closedNoCopyKeys_(claim,['contract','intent_digest','scope_hash','binding_hash','plan_digest','journal_revision',
+      'accepted_at_utc','uncertainty_count','source_hash','observed_at','expires_at']);
+    if (claim.contract !== 'bsre-intake26-purge-intent-v1' || claim.intent_digest !== intentDigest
+        || claim.scope_hash !== closedNoCopyHash_(scope) || claim.binding_hash !== closedNoCopyHash_(binding)
+        || claim.source_hash !== gate.source_hash || !closedNoCopyHashShape_(claim.plan_digest)
+        || !Number.isSafeInteger(claim.journal_revision) || claim.journal_revision < 1 || claim.uncertainty_count !== 0)
+      closedNoCopyFail_('INTAKE_PURGE_INTENT_UNVERIFIED');
+    var intentBody=closedNoCopyCanonical_(claim); delete intentBody.intent_digest;
+    if (closedNoCopyHash_(intentBody) !== intentDigest) closedNoCopyFail_('INTAKE_PURGE_INTENT_UNVERIFIED');
+    var canonicalAccepted=Date.parse(claim.accepted_at_utc), sourceAccepted=Date.parse(found.values[3]);
+    if (typeof claim.accepted_at_utc !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(claim.accepted_at_utc)
+        || !Number.isFinite(canonicalAccepted) || new Date(canonicalAccepted).toISOString() !== claim.accepted_at_utc.replace(/Z$/,'.000Z')
+        || typeof found.values[3] !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(found.values[3])
+        || !Number.isFinite(sourceAccepted) || new Date(sourceAccepted).toISOString() !== found.values[3]
+        || Math.floor(sourceAccepted/1000) !== canonicalAccepted/1000)
+      closedNoCopyFail_('INTAKE_ACCEPTANCE_CONFLICT');
+    closedNoCopyFresh_(claim,closedNoCopyNow_());
+    var fence=closedNoCopyFence_(scope.request_id,gate);
+    if (!fence || fence.body.scope_hash !== closedNoCopyHash_(scope)) closedNoCopyFail_('NO_COPY_FENCE_MISSING');
+    if (closedNoCopyNow_() >= fence.body.expires_at) closedNoCopyFail_('NO_COPY_RECOVERY_UNVERIFIED');
+    if (found.values[6] !== 'RETIRED_NO_COPY' || found.values[7] !== 0 || found.values[10] !== '' || found.values[25] !== '')
+      closedNoCopyFail_('NO_COPY_ROW_CONFLICT');
+    closedNoCopyMailbox_(scope,closedNoCopyNow_());
+    // Re-read after all external observations. A changed row/runtime never reuses the old row number.
+    gate=closedNoCopyGate_(); found=closedIntakeLocate_(scope,gate);
+    if (!found || claim.source_hash !== gate.source_hash || closedNoCopyHash_(found.binding) !== closedNoCopyHash_(binding))
+      closedNoCopyFail_('INTAKE_BINDING_CHANGED');
+    closedNoCopyFresh_(claim,closedNoCopyNow_());
+    fence=closedNoCopyFence_(scope.request_id,gate);
+    if (!fence || fence.body.scope_hash !== closedNoCopyHash_(scope)) closedNoCopyFail_('NO_COPY_FENCE_MISSING');
+    if (closedNoCopyNow_() >= fence.body.expires_at) closedNoCopyFail_('NO_COPY_RECOVERY_UNVERIFIED');
+    try { found.sheet.deleteRow(found.number); SpreadsheetApp.flush(); }
+    catch (_) { closedNoCopyFail_('INTAKE_DELETE_UNCERTAIN'); }
+    if (closedIntakeLocate_(scope,closedNoCopyGate_())) closedNoCopyFail_('INTAKE_DELETE_UNCONFIRMED');
+    return true;
+  } finally { lock.releaseLock(); }
+}
 function closedNoCopyTicketMac_(body) {
   return hex_(Utilities.computeHmacSha256Signature('bsre-no-copy-cleanup-ticket-v1\n'+JSON.stringify(closedNoCopyCanonical_(body)),routingConfig_().secret,Utilities.Charset.UTF_8));
 }

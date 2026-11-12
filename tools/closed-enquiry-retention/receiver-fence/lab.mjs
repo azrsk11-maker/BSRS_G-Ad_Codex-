@@ -20,7 +20,9 @@ export function receiverLab(options = {}) {
   const state = {clock: options.now ?? Math.floor(Date.now() / 1000), held: false, busy: false,
     storageFault: false, mailbox: 'ABSENT', complete: true, trash: true, staleMailbox: false,
     restoreFenced: true, backupsExpiredThrough: 0, runtimeStale: false, operations: [], onFenceWrite: null,
-    epoch: 'e'.repeat(64), revision: 1, prunedThrough: 0, ownerIntents: {}, authorizationDelay: 0};
+    epoch: 'e'.repeat(64), revision: 1, prunedThrough: 0, ownerIntents: {}, authorizationDelay: 0,
+    purgeIntents: {}, onPurgeRead: null, onMailboxRead: null, intakeDeletes: 0, deleteFault: '', formulas: {},
+    notes: {}, validations: {}, links: {}, merged: false, protections: [], valueReadCells: 0, finders: [], finderFault: false};
   const stored = options.properties ?? r.properties;
   const cfg = {generation: 'a'.repeat(64), audience: 'b'.repeat(64)};
   Object.assign(stored, {RETENTION_ADMISSION_REQUIRED: 'true', RETENTION_ADMISSION_GENERATION: cfg.generation,
@@ -60,9 +62,52 @@ export function receiverLab(options = {}) {
       setValues(values) { requireLock('store-metadata-write'); values.forEach((line, i) => { metadata[row - 1 + i] ??= []; line.forEach((value, j) => { metadata[row - 1 + i][column - 1 + j] = value; }); }); },
     }; }};
   const originalSheets = r.context.SpreadsheetApp;
-  r.context.SpreadsheetApp = {flush: () => originalSheets.flush(), openById(id) {
+  r.context.SpreadsheetApp = {ProtectionType: {RANGE: 'RANGE', SHEET: 'SHEET'}, flush: () => originalSheets.flush(), openById(id) {
     const book = originalSheets.openById(id);
-    return {...book, getSheetByName: name => name === 'BSRE Synthetic Retention Runtime' ? metaSheet : book.getSheetByName(name)};
+    return {...book, getSheetByName: name => {
+      if (name === 'BSRE Synthetic Retention Runtime') return metaSheet;
+      if (name !== r.context.LEAD_TAB) return null;
+      const sheet = book.getSheetByName(name);
+      return {...sheet, getLastColumn() { requireLock('intake-columns-read'); return Math.max(0, ...r.rows.map(row => row.length)); },
+        getProtections(type) { requireLock('intake-protections-read'); return state.protections.filter(item => item.type === type); },
+        getRange(row, column, height = 1, width = 1) {
+          const range = sheet.getRange(row, column, height, width);
+          const cells = (values, fallback) => Array.from({length: height}, (_, i) => Array.from({length: width}, (_, j) => values[`${row+i}:${column+j}`] ?? fallback));
+          return {...range, getValues() { state.valueReadCells += height * width; return range.getValues(); },
+            createTextFinder(text) {
+              const config = {text, row, column, height, width};
+              const finder = {matchEntireCell(value) { config.entire = value; return this; },
+                matchCase(value) { config.case = value; return this; },
+                matchFormulaText(value) { config.formula = value; return this; },
+                useRegularExpression(value) { config.regex = value; return this; },
+                findAll() {
+                  requireLock('intake-complete-identity-find');
+                  if (state.finderFault) throw Error('synthetic identity search unavailable');
+                  assert.equal(config.entire, true); assert.equal(config.case, false);
+                  assert.equal(config.formula, false); assert.equal(config.regex, false);
+                  state.finders.push({...config});
+                  const hits = [];
+                  for (let i = row; i < row + height; i++) for (let j = column; j < column + width; j++) {
+                    if (String(r.rows[i-1]?.[j-1] ?? '').toLowerCase() === text.toLowerCase()) hits.push({getRow: () => i, getColumn: () => j});
+                  }
+                  return hits;
+                }};
+              return finder;
+            }, getFormulas() { requireLock('intake-formulas-read');
+            return cells(state.formulas, ''); },
+            getNotes() { requireLock('intake-notes-read'); return cells(state.notes, ''); },
+            getDataValidations() { requireLock('intake-validations-read'); return cells(state.validations, null); },
+            isPartOfMerge() { requireLock('intake-merges-read'); return state.merged; },
+            getRichTextValues() { requireLock('intake-rich-text-read'); return cells(state.links, null).map(line => line.map(link =>
+              link === null ? null : {getLinkUrl: () => link, getRuns: () => [{getLinkUrl: () => link}]})); }};
+        }, deleteRow(number) {
+          requireLock('intake-delete-row');
+          if (state.deleteFault === 'before') throw Error('synthetic provider failed before delete');
+          if (!Number.isSafeInteger(number) || number < 2 || number > r.rows.length) throw Error('synthetic row invalid');
+          if (state.deleteFault !== 'noop') { r.rows.splice(number - 1, 1); state.intakeDeletes++; }
+          if (state.deleteFault === 'after') throw Error('synthetic provider acknowledgement lost');
+        }};
+    }};
   }};
   r.context.BSRE_SYNTHETIC_NO_COPY_LAB = true;
   r.context.BSREClosedNoCopyRuntime = {readback(now) {
@@ -97,8 +142,14 @@ export function receiverLab(options = {}) {
     state.clock += state.authorizationDelay;
     return state.ownerIntents[intentDigest] ?? null;
   }};
+  r.context.BSREClosedIntakePurgeIntent = {readback(intentDigest) {
+    requireLock('purge-intent-readback');
+    if (state.onPurgeRead) state.onPurgeRead();
+    return state.purgeIntents[intentDigest] ?? null;
+  }};
   r.context.BSREClosedNoCopyMailbox = {readback(scope, now) {
     requireLock('mailbox-readback');
+    if (state.onMailboxRead) state.onMailboxRead();
     return {scope_hash: digest(scope), mailbox: 'marketing@blackswanrealestate.ae', result: state.mailbox,
       complete: state.complete, includes_trash: state.trash, observed_at: state.staleMailbox ? now - 301 : now,
       expires_at: state.staleMailbox ? now : now + 300, evidence_reference: 'SYNTHETIC_COMPLETE_MAILBOX_READBACK', evidence_hash: '9'.repeat(64)};

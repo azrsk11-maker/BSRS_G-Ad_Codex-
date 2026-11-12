@@ -15,6 +15,143 @@ function status(r, id) {
   const signature = createHmac('sha256', r.stored.HMAC_SECRET).update(`${purpose}\n${timestamp}\n${id}`).digest('hex');
   return r.postWire(JSON.stringify({version: 1, purpose, timestamp, request_id: id, signature}));
 }
+function intakePurgeFixture() {
+  const value = retired(), {r, scope} = value;
+  const binding = r.context.closedIntakeInventory(scope)[0];
+  const claim = {contract: 'bsre-intake26-purge-intent-v1', scope_hash: digest(scope), binding_hash: digest(binding),
+    plan_digest: '2'.repeat(64), journal_revision: 3, uncertainty_count: 0, source_hash: r.sourceHash,
+    accepted_at_utc: r.rows[1][3].replace(/\.\d{3}Z$/, 'Z'),
+    observed_at: r.state.clock, expires_at: r.state.clock + 300};
+  claim.intent_digest = digest(claim); r.state.purgeIntents[claim.intent_digest] = claim;
+  return {...value, binding, claim, remove: () => r.context.closedIntakeRemoveExact(scope, binding, claim.intent_digest)};
+}
+
+test('Intake26 exact SDK deletion freshly resolves identities, preserves healthy rows and keeps retired outbox quiescent', () => {
+  const f = intakePurgeFixture(), {r, scope, binding} = f;
+  r.admit(); const healthy = JSON.stringify(r.rows[2]);
+  r.state.onPurgeRead = () => { [r.rows[1], r.rows[2]] = [r.rows[2], r.rows[1]]; };
+  assert.equal(f.remove(), true);
+  assert.equal(r.context.closedIntakeInventory(scope).length, 0);
+  assert.equal(r.state.intakeDeletes, 1); assert.equal(JSON.stringify(r.rows[1]), healthy);
+  assert.equal(binding.key, scope.request_id); assert.equal(binding.request_ids.length, 1);
+  assert.equal(r.context.processLeadOutbox().sent, 1); assert.equal(r.mail.length, 1);
+  assert.equal(r.post(f.payload).code, 'NO_COPY_REQUEST_RETIRED');
+  assert.equal(status(r, scope.request_id).status, 'UNCONFIRMED');
+  assert.ok(r.state.operations.includes('intake-delete-row'));
+  assert.ok(r.state.operations.includes('purge-intent-readback'));
+});
+
+test('Intake binding hashes all26 cells without confusing the normalized payload fingerprint', () => {
+  const f = intakePurgeFixture(), {r, scope, binding} = f;
+  r.rows[1][24] = 'Changed synthetic staff note';
+  const changed = r.context.closedIntakeInventory(scope)[0];
+  assert.equal(changed.fingerprint, binding.fingerprint); assert.notEqual(changed.evidence_hash, binding.evidence_hash);
+  assert.throws(f.remove, /INTAKE_BINDING_CHANGED/); assert.equal(r.state.intakeDeletes, 0);
+});
+
+test('Intake SDK finds complete identity history beyond10000 rows without transferring all26-cell payloads', () => {
+  const f = intakePurgeFixture(), {r, scope} = f, target = r.rows.pop();
+  for (let i = 0; i < 10050; i++) {
+    const row = Array(26).fill(''); row[0] = `unrelated-request-${i}`; row[1] = `unrelated-lead-${i}`; row[2] = `unrelated-event-${i}`;
+    r.rows.push(row);
+  }
+  r.rows.push(target); const before = r.state.valueReadCells;
+  assert.equal(r.context.closedIntakeInventory(scope)[0].key, scope.request_id);
+  assert.ok(r.state.valueReadCells - before < 100);
+  assert.ok(r.state.finders.slice(-3).every(config => config.row === 2 && config.width === 3 && config.height === 10051));
+  assert.equal(f.remove(), true); assert.equal(r.context.closedIntakeInventory(scope).length, 0);
+  const alias = Array(26).fill(''); alias[2] = scope.request_id.toUpperCase(); r.rows.push(alias);
+  assert.throws(() => r.context.closedIntakeInventory(scope), /INTAKE_IDENTITY_SHARED/);
+});
+
+test('Intake SDK complete-search provider errors never establish absence', () => {
+  const f = intakePurgeFixture(); f.r.state.finderFault = true;
+  assert.throws(() => f.r.context.closedIntakeInventory(f.scope)); assert.throws(f.remove);
+  assert.equal(f.r.state.intakeDeletes, 0); assert.equal(f.r.rows.length, 2);
+});
+
+test('Intake source acceptance cannot borrow an older due closure even with a freshly reviewed full binding', () => {
+  const f = intakePurgeFixture(), {r, scope, claim} = f;
+  const canonical = claim.accepted_at_utc;
+  r.rows[1][3] = new Date(Date.parse(canonical) + 365 * 86400000).toISOString();
+  const binding = r.context.closedIntakeInventory(scope)[0];
+  const bad = {...claim, binding_hash: digest(binding)}; delete bad.intent_digest; bad.intent_digest = digest(bad);
+  r.state.purgeIntents[bad.intent_digest] = bad;
+  assert.throws(() => r.context.closedIntakeRemoveExact(scope, binding, bad.intent_digest), /INTAKE_ACCEPTANCE_CONFLICT/);
+  assert.equal(r.state.intakeDeletes, 0);
+});
+
+test('Intake deletion rechecks fence recovery deadline after a slow external mailbox read', () => {
+  const f = intakePurgeFixture(), {r, claim, scope, binding} = f;
+  r.state.clock = f.proof.fence_expires_at - 1;
+  const fresh = {...claim, observed_at: r.state.clock, expires_at: r.state.clock + 300};
+  delete fresh.intent_digest; fresh.intent_digest = digest(fresh); r.state.purgeIntents[fresh.intent_digest] = fresh;
+  r.state.onMailboxRead = () => {r.state.clock += 2;};
+  assert.throws(() => r.context.closedIntakeRemoveExact(scope, binding, fresh.intent_digest), /NO_COPY_RECOVERY_UNVERIFIED/);
+  assert.equal(r.state.intakeDeletes, 0);
+});
+
+test('Intake complete surface rejects duplicate identities, aliases, formulas, extra columns and changed headers', () => {
+  for (const mutate of [r => r.rows.push([...r.rows[1]]),
+    r => { const row = [...r.rows[1]]; row[0] = r.payload().request_id; r.rows.push(row); },
+    r => { const row = Array(26).fill(''); row[2] = r.rows[1][0]; r.rows.push(row); },
+    r => { const row = [...r.rows[1]]; row[1] = row[1].toUpperCase(); r.rows.push(row); },
+    r => {r.state.formulas['2:25'] = '=SYNTHETIC';}, r => r.rows[1].push('unbound column'),
+    r => {r.admit(); r.rows[2].push('foreign row unbound column');},
+    r => {r.rows[0][24] = 'unknown_header';}]) {
+    const f = intakePurgeFixture(); mutate(f.r);
+    assert.throws(() => f.r.context.closedIntakeInventory(f.scope), /INTAKE_|SHEET_NOT_INITIALIZED|NO_COPY_ROW/);
+    assert.throws(f.remove); assert.equal(f.r.state.intakeDeletes, 0);
+  }
+});
+
+test('Intake exact row refuses unbound notes, validation, merged/protected cells and rich links', () => {
+  for (const mutate of [r => {r.state.notes['2:25'] = 'synthetic private note';},
+    r => {r.state.validations['2:20'] = {synthetic: true};}, r => {r.state.merged = true;},
+    r => {r.state.protections = [{type: 'RANGE'}];}, r => {r.state.protections = [{type: 'SHEET'}];},
+    r => {r.state.links['2:25'] = 'https://example.invalid/extra-metadata';}]) {
+    const f = intakePurgeFixture(); mutate(f.r);
+    assert.throws(f.remove, /INTAKE_METADATA_UNVERIFIED/); assert.equal(f.r.state.intakeDeletes, 0);
+  }
+});
+
+test('Intake deletion requires exact fresh independently supplied Journal intent under actual ScriptLock', () => {
+  for (const mutate of [(f) => {delete f.r.context.BSREClosedIntakePurgeIntent;},
+    f => {f.claim.scope_hash = '0'.repeat(64);}, f => {f.claim.binding_hash = '0'.repeat(64);},
+    f => {f.claim.source_hash = '0'.repeat(64);}, f => {f.claim.uncertainty_count = 1;},
+    f => {f.claim.journal_revision = 0;}, f => {f.claim.expires_at = f.r.state.clock;},
+    f => {f.claim.contract = 'wrong-purpose';}]) {
+    const f = intakePurgeFixture(); mutate(f); assert.throws(f.remove, /INTAKE_|NO_COPY_/);
+    assert.equal(f.r.state.intakeDeletes, 0); assert.equal(f.r.rows.length, 2);
+  }
+});
+
+test('Intake sender fence, external floor, mailbox and lock uncertainty prevent exact deletion', () => {
+  for (const mutate of [f => {delete f.r.stored[f.key];}, f => {f.r.state.runtimeStale = true;},
+    f => {f.r.state.mailbox = 'UNKNOWN';}, f => {f.r.state.busy = true;},
+    f => {f.r.metadata[1][0] = 'changed';}, f => {f.r.context.ScriptApp = {}; }]) {
+    const f = intakePurgeFixture(); mutate(f); assert.throws(f.remove);
+    assert.equal(f.r.state.intakeDeletes, 0); assert.equal(f.r.rows.length, 2);
+  }
+});
+
+test('Intake rechecks complete row and intent freshness after authority callbacks', () => {
+  for (const mutate of [r => {r.rows[1][24] = 'changed during authority read';},
+    r => {r.state.clock += 301;}, r => {r.rows[1][6] = 'QUEUED';}]) {
+    const f = intakePurgeFixture(); f.r.state.onPurgeRead = () => mutate(f.r);
+    assert.throws(f.remove); assert.equal(f.r.state.intakeDeletes, 0);
+  }
+});
+
+test('Intake SDK interruption and lost acknowledgement leave authoritative row readback without repeated deletes', () => {
+  for (const fault of ['before', 'after', 'noop']) {
+    const f = intakePurgeFixture(); f.r.state.deleteFault = fault;
+    assert.throws(f.remove, /INTAKE_DELETE_UNCERTAIN|INTAKE_DELETE_UNCONFIRMED/);
+    assert.equal(f.r.context.closedIntakeInventory(f.scope).length, fault === 'after' ? 0 : 1);
+    assert.equal(f.r.state.intakeDeletes, fault === 'after' ? 1 : 0);
+    if (fault === 'after') { assert.throws(f.remove, /INTAKE_BINDING_CHANGED/); assert.equal(f.r.state.intakeDeletes, 1); }
+  }
+});
 
 test('exact immutable input pin and unique source hooks remain mandatory', () => {
   const original = readFileSync(new URL('../../staging-lab/fixtures/receiver-v2/Code.gs', import.meta.url));

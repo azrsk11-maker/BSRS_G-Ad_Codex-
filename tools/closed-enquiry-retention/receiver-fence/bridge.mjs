@@ -30,20 +30,18 @@ for await (const line of createInterface({input: process.stdin, crlfDelay: Infin
       else if (message.action === 'readback') value = r.context.closedNoCopyReadback(message.scope, message.cleanup, message.ticket);
       else if (message.action === 'prepare_cleanup') value = r.context.closedNoCopyPrepareCleanup(message.scope);
       else if (message.action === 'forget') value = r.context.closedNoCopyForget(message.scope, message.ticket);
+      else if (message.action === 'intake_inventory') value = r.context.closedIntakeInventory(message.scope);
+      else if (message.action === 'authorize_intake_purge') {
+        // Only the local PHP adapter's held Journal supplies this synthetic authority substitution.
+        r.state.purgeIntents[message.claim.intent_digest] = message.claim; value = true;
+      }
+      else if (message.action === 'intake_remove_exact') value = r.context.closedIntakeRemoveExact(message.scope, message.binding, message.intent_digest);
       else if (message.action === 'state') {
         const allowed = ['mailbox', 'complete', 'trash', 'staleMailbox', 'restoreFenced', 'backupsExpiredThrough', 'runtimeStale', 'storageFault'];
         if (!allowed.includes(message.key)) throw Error('SYNTHETIC_BRIDGE_STATE_INVALID');
         r.state[message.key] = message.value; value = true;
-      } else if (message.action === 'purge') {
-        const lock = r.context.LockService.getScriptLock(); lock.waitLock();
-        try {
-          const index = r.rows.findIndex(row => row[0] === message.scope.request_id);
-          if (index < 1) throw Error('SYNTHETIC_PURGE_ROW_MISSING');
-          r.context.closedNoCopyRow_(r.rows[index], message.scope);
-          if (r.rows[index][6] !== 'RETIRED_NO_COPY') throw Error('SYNTHETIC_PURGE_NOT_RETIRED');
-          r.rows.splice(index, 1); value = true;
-        } finally { lock.releaseLock(); }
       } else if (message.action === 'stats') value = {rows: r.rows.length - 1, mail: r.mail.length,
+        intake_deletes: r.state.intakeDeletes,
         private_fences: Object.keys(r.stored).filter(key => /^bsre\.closed-no-copy\.[a-f0-9]{8}-/.test(key)).length,
         floor_present: Object.hasOwn(r.stored, 'bsre.closed-no-copy.floor')};
       else throw Error('SYNTHETIC_BRIDGE_ACTION_INVALID');
