@@ -59,7 +59,7 @@ jobs:
                       continue
                   details = check.get('details', {})
                   fields = ('exit', 'elapsed_seconds', 'timed_out', 'error_type',
-                            'keyword_summary', 'keyword_evidence_status')
+                            'keyword_summary', 'keyword_evidence_status', 'keyword_diagnostic')
                   safe = {key: details[key] for key in fields if key in details} if isinstance(details, dict) else {}
                   if isinstance(details, dict) and isinstance(details.get('output_tail'), str):
                       safe['output_tail'] = details['output_tail'][-1800:]
