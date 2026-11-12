@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "scope": "CURRENT_CORPUS_OVERLAP_DIAGNOSTIC_NOT_ADMISSION",
+  "as_of": "2026-11-11",
+  "source_batch": "KP-20261111-EMPLOYMENT-FOLLOWUP",
+  "current_negative_records": 7186,
+  "current_protected_queries": 13881,
+  "counts": {
+    "exact_negative_overlaps": 20,
+    "exact_protected_overlaps": 39,
+    "token_subset_protected_diagnostic": 43,
+    "admitted": 0,
+    "deployed": 0
+  },
+  "examples": {
+    "exact_negative": [
+      "property caretaker jobs",
+      "facilities supervisor jobs",
+      "assistant property manager jobs near me",
+      "administrative assistant property management jobs",
+      "apartment assistant manager jobs"
+    ],
+    "exact_protected": [
+      "assistant property manager",
+      "property management assistant",
+      "facilities supervisor",
+      "property management administrative assistant",
+      "remote assistant property manager"
+    ]
+  },
+  "controls": {
+    "serving_scope_verified": false,
+    "conflict_resolution_complete": false,
+    "human_review_verified": false,
+    "production_authorized": false
+  },
+  "method": "Fresh current-library reconstruction followed by exact normalization and conservative token-subset diagnostics. Token-subset matches are diagnostic only and are not Google matching or scope proof."
+}
