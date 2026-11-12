@@ -1,0 +1,54 @@
+{
+  "schema": "bsre-ofqual-animal-care-source-checks-v1",
+  "observed_on_dubai": "2026-11-12",
+  "scope": "OFFLINE_SOURCE_AND_LITERAL_REVIEW_NOT_ADMISSION_OR_RELEASE",
+  "passed": true,
+  "full_private_source_reparsed": true,
+  "private_source_cell_equivalence": true,
+  "raw_source_bytes": 23984795,
+  "raw_source_records": 53175,
+  "complete_topic_occurrences": 444,
+  "new_available_occurrences": 214,
+  "distinct_new_normalized_titles": 213,
+  "prior_available_occurrences_preserved_and_excluded": 52,
+  "unavailable_topic_occurrences_preserved": 178,
+  "text_compatibility": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 103,
+    "DOCUMENTED_INCOMPATIBILITY_DETECTED": 84,
+    "REQUIRES_REVIEW": 27
+  },
+  "semantic_review_kind": "CODEX_AI_LEAD_NOT_INDEPENDENT_OR_HUMAN_APPROVAL",
+  "tamper_rejections": 16,
+  "preparation_seconds": 5.785442,
+  "final_source_and_tamper_seconds": 5.849799,
+  "files": {
+    "extract.py": {
+      "sha256": "c4866ea958a8d4714d09c3b42cb1afebc0b9ac092198c97a0baf3efc4785689d",
+      "bytes": 15723
+    },
+    "qualifications.json": {
+      "sha256": "e265c3aa15e185b3457321df54365386330a0e75548cc251a8d114ac1043a903",
+      "bytes": 377387
+    },
+    "semantic-review.json": {
+      "sha256": "ae971dfa91438e9ae00927b6b3bfe1493096ca7e3cb56ca9528dea307d83126e",
+      "bytes": 255949
+    },
+    "capture.json": {
+      "sha256": "6ae964664aa6dec7f6f79f8c06c89bf3c05bb2fc0e1b05446e515be4e1bf4387",
+      "bytes": 1784
+    },
+    "README.md": {
+      "sha256": "b7eadf9b582f515b523b29bdd72929162594ad31eb800254588b09a93d541642",
+      "bytes": 6014
+    }
+  },
+  "negative_library_rows_added": 0,
+  "positive_admissions": 0,
+  "exclusion_approvals": 0,
+  "deployed": 0,
+  "new_provider_downloads": 0,
+  "current_source_ci": "PENDING",
+  "production_or_ads_changed": false,
+  "release_authorized": false
+}
