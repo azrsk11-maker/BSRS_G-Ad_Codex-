@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "previous_allocation_ref": "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/research-pool-allocation.json",
+  "previous_allocation_sha256": "9a05d86b547cff58350e68c130aff002a7b7f068bda0cd7cb842ef75e76c5ae3",
+  "targets": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "before": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "target_transfer": null,
+  "held_deduction": {},
+  "new_rows": {
+    "ACADEMIC": 6
+  },
+  "admitted": {
+    "ACADEMIC": 1889,
+    "EMPLOYMENT": 4078,
+    "MEDIA": 804,
+    "NAVIGATION": 0,
+    "SERVICE": 466,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "remaining": {
+    "ACADEMIC": 111,
+    "EMPLOYMENT": 983,
+    "MEDIA": 196,
+    "NAVIGATION": 1000,
+    "SERVICE": 534,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "total_target": 14000,
+  "total_admitted": 11176,
+  "total_remaining": 2824,
+  "basis": "Preserve all prior bodies, archives, protection prefix and category targets; append only reviewed complete veterinary qualification literals after fresh full-body checks.",
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false
+}
