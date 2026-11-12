@@ -29,7 +29,11 @@ def extend(base, cohort, protections, *, expected_base_sha256, stage_key):
     first.need(len({r['keyword_id'] for r in all_records}) == len(all_records) and
                len({normalize(r['original_text']) for r in all_records}) == len(all_records),
                "APPEND_ONLY_ARCHIVE_COLLISION")
-    result = deepcopy(base)
+    # compose already supplies the replacement core fields. Copy only retained
+    # history/extra fields, in one operation so their shared references survive.
+    # The discarded core copy conveyed no ownership: update replaced it with
+    # compose's original row/registry references in the previous implementation.
+    result = deepcopy({key: value for key, value in base.items() if key not in merged})
     result.update(merged)
     result[stage_key] = {'base_sha256': expected_base_sha256,
         'retained_records': len(base['records']), 'retained_sources': len(base['sources']),
