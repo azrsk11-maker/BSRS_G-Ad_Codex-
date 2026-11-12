@@ -1,0 +1,45 @@
+{
+  "schema": "bsre-ofqual-animal-care-capture-v1",
+  "source_url": "https://downloads.find-a-qualification.services.ofqual.gov.uk/extracts/Qualifications.csv",
+  "original_capture_date_utc": "2026-11-11",
+  "extracted_on_dubai": "2026-11-12",
+  "raw_source_sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+  "raw_source_bytes": 23984795,
+  "existing_private_source_reused": true,
+  "new_provider_downloads": 0,
+  "raw_source_committed": false,
+  "source_records": 53175,
+  "complete_topic_records": 444,
+  "topic_status_counts": {
+    "Available to learners": 266,
+    "No longer available to new learners": 19,
+    "No longer awarded": 159,
+    "Not yet available to learners": 0
+  },
+  "new_available_source_occurrences": 214,
+  "new_distinct_normalized_titles": 213,
+  "previously_reviewed_available_occurrences": 52,
+  "unavailable_topic_occurrences": 178,
+  "files": {
+    "qualifications.json": {
+      "sha256": "e265c3aa15e185b3457321df54365386330a0e75548cc251a8d114ac1043a903",
+      "bytes": 377387
+    },
+    "semantic-review.json": {
+      "sha256": "ae971dfa91438e9ae00927b6b3bfe1493096ca7e3cb56ca9528dea307d83126e",
+      "bytes": 255949
+    },
+    "extract.py": {
+      "sha256": "c4866ea958a8d4714d09c3b42cb1afebc0b9ac092198c97a0baf3efc4785689d",
+      "bytes": 15723
+    }
+  },
+  "dependencies": {
+    "tools/keyword-system/ofqual_discovery.py": "0c6e1ca3c8109237d98ea173c0b460d4e5b95d5f78f16a25c72836ed2041ebd2",
+    "tools/keyword-system/keyword_audit.py": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+    "tools/keyword-system/keyword_text_compatibility.py": "723988151adfeae8f2a6efeb073a399451eefcbfe1d3f8c311e0e168fd56763f"
+  },
+  "master_rows_added": 0,
+  "exclusion_approval": false,
+  "deployment": false
+}
