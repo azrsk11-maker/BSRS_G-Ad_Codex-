@@ -10,11 +10,9 @@ on:
       - 'tools/native-wordpress/**'
       - 'tools/property-decision-tools/**'
       - 'tools/owner-mail-review/**'
+      - 'tools/closed-enquiry-retention/**'
       - 'tools/release-control/**'
-      - 'tools/website-tracking/tracking-system/receipt-recovery*.php'
-      - 'tools/website-tracking/tracking-system/receipt-status*.php'
-      - 'tools/website-tracking/tracking-system/build-*-candidate.mjs'
-      - 'tools/website-tracking/tracking-system/contract.mjs'
+      - 'tools/website-tracking/tracking-system/**'
 permissions:
   contents: read
 concurrency:
