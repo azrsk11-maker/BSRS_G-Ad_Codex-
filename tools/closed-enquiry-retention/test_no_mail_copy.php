@@ -47,7 +47,7 @@ function noCopyFixture(): array
     unset($row);
     $scope = C\NoMailCopyProof::scope($f['closure'], $admissionHash, $identity['fingerprint']);
     $pipe->call('retire', compact('scope'));
-    $f['adapters']['intake']->beforeDelete = fn() => $pipe->call('purge', ['scope' => $scope]);
+    $f['adapters']['intake'] = new SyntheticReceiverIntakeResource($pipe, $f['journal'], $scope);
     $f['workflow'] = new C\Workflow($f['journal'], $f['adapters'], $f['authority'], $f['admission'], $pipe);
     return $f + compact('pipe', 'scope');
 }
@@ -67,9 +67,9 @@ function noCopyHeld(array $result, string $code): bool
 $f = noCopyFixture();
 $unverified = new C\Workflow($f['journal'], $f['adapters'], $f['authority'], $f['admission']);
 checkNoCopy('default_adapter_never_allows_zero_email_resources', noCopyHeld($unverified->preview($f['closure']['closure_id'], $f['now']), 'NO_COPY_UNVERIFIED'));
-$f['journal']->closures[$f['closure']['closure_id']]['email_status'] = 'SENT';
-checkNoCopy('sent_status_still_requires_an_exact_email_copy', noCopyHeld($f['workflow']->preview($f['closure']['closure_id'], $f['now']), 'LINKAGE_INCOMPLETE'));
-$f['journal']->closures[$f['closure']['closure_id']] = $f['closure'];
+$sent = C\fixture(); $sent['adapters']['email']->rows = [];
+checkNoCopy('sent_status_still_requires_an_exact_email_copy', noCopyHeld($sent['workflow']->preview($sent['closure']['closure_id'], $sent['now']), 'LINKAGE_INCOMPLETE'));
+unset($sent);
 $preview = $f['workflow']->preview($f['closure']['closure_id'], $f['now']);
 checkNoCopy('actual_receiver_proof_allows_aggregate_preview', $preview['status'] === 'READY_FOR_OWNER_REVIEW'
     && !str_contains(json_encode($preview), $f['scope']['request_id']));
@@ -189,6 +189,47 @@ $f['pipe']->call('state', ['key' => 'backupsExpiredThrough', 'value' => $cleanup
 checkNoCopy('completed_cleanup_rejects_contradictory_sender_row_retention',
     noCopyHeld($f['workflow']->expire($plan, 'synthetic-owner', $cleanupAt), 'NO_COPY_INTAKE_NOT_ABSENT')
     && $f['pipe']->call('stats')['private_fences'] === 1 && $f['journal']->journal($plan['digest']) !== null);
+unset($f);
+
+$f = noCopyFixture(); $intake = $f['adapters']['intake']; $leaseHeld = false;
+try { $intake->inventory($f['scope']['request_id']); } catch (C\Failure $error) { $leaseHeld = $error->getMessage() === 'CLOSURE_LEASE_REQUIRED'; }
+checkNoCopy('intake_sdk_read_requires_actual_authoritative_closure_lease', $leaseHeld);
+$binding = $f['journal']->locked($f['scope']['closure_id'], fn() => $intake->read($f['scope']['request_id']));
+$intentHeld = false;
+try { $f['journal']->locked($f['scope']['closure_id'], fn() => $intake->removeExact($binding)); }
+catch (C\Failure $error) { $intentHeld = $error->getMessage() === 'INTAKE_PURGE_INTENT_UNVERIFIED'; }
+checkNoCopy('intake_sdk_delete_cannot_precede_actual_saved_workflow_intent', $intentHeld && $f['pipe']->call('stats')['intake_deletes'] === 0);
+$other = $f['closure']; $other['closure_id'] = C\syntheticUuid(99); $f['journal']->closures[$other['closure_id']] = $other;
+checkNoCopy('intake_sdk_custody_rejects_another_closure_sharing_receipts', noCopyHeld($f['workflow']->preview($f['closure']['closure_id'], $f['now']), 'INTAKE_CLOSURE_IDENTITY_SHARED'));
+unset($f, $intake);
+
+$f = noCopyFixture(); $base = $f['journal']->closures;
+foreach (['missing_fields' => [], 'wrong_registry_key' => $f['closure'],
+    'uppercase_alias' => array_replace($f['closure'], ['closure_id' => C\syntheticUuid(99), 'event_id' => strtoupper($f['closure']['event_id'])]),
+    'future_chronology' => array_replace($f['closure'], ['closure_id' => C\syntheticUuid(99), 'recorded_at_utc' => '2028-01-01T00:00:00Z'])] as $name => $other) {
+    $f['journal']->closures = $base + [C\syntheticUuid(99) => $other];
+    checkNoCopy('intake_sdk_' . $name . '_registry_is_unverified', noCopyHeld($f['workflow']->preview($f['closure']['closure_id'], $f['now']), 'INTAKE_CLOSURE_REGISTRY_UNVERIFIED'));
+}
+unset($f);
+
+$f = noCopyFixture(); $plan = C\approved($f); $f['adapters']['intake']->loseDeleteAcknowledgement = true;
+checkNoCopy('intake_sdk_lost_delete_ack_keeps_durable_intent_for_readback',
+    noCopyHeld($f['workflow']->execute($plan, 'synthetic-owner', $f['now']), 'INTAKE_DELETE_ACK_UNCERTAIN')
+    && $f['pipe']->call('stats')['intake_deletes'] === 1 && $f['pipe']->call('stats')['rows'] === 0);
+checkNoCopy('intake_sdk_lost_ack_resumes_from_actual_absence_without_second_delete',
+    $f['workflow']->execute($plan, 'synthetic-owner', $f['now'])['status'] === 'COMPLETE'
+    && $f['pipe']->call('stats')['intake_deletes'] === 1);
+unset($f);
+
+$f = noCopyFixture(); $plan = C\approved($f);
+$f['adapters']['intake']->beforeDelete = function () use ($f) { $f['journal']->expiredUnresolved = 1; };
+checkNoCopy('intake_sdk_rechecks_current_uncertainty_after_saved_intent',
+    noCopyHeld($f['workflow']->execute($plan, 'synthetic-owner', $f['now']), 'RETIREMENT_CUSTODY_RECONCILIATION_REQUIRED')
+    && $f['pipe']->call('stats')['intake_deletes'] === 0 && $f['pipe']->call('stats')['rows'] === 1);
+$f['journal']->expiredUnresolved = 0; $f['adapters']['intake']->beforeDelete = null;
+checkNoCopy('intake_sdk_verified_custody_reconciliation_resumes_exact_saved_intent',
+    $f['workflow']->execute($plan, 'synthetic-owner', $f['now'])['status'] === 'COMPLETE'
+    && $f['pipe']->call('stats')['intake_deletes'] === 1);
 unset($f);
 
 echo json_encode(['phase' => 'closed_retention_no_mail_copy', 'checks' => $checks,

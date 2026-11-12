@@ -11,6 +11,7 @@ final class SyntheticReceiverPipe implements C\NoMailRetirement
     public $alterProof = null;
     public bool $loseForgetAcknowledgement = false;
     public bool $loseRetirementAcknowledgement = false;
+    public int $now = 0;
     public function __construct()
     {
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
@@ -23,6 +24,7 @@ final class SyntheticReceiverPipe implements C\NoMailRetirement
     }
     public function call(string $action, array $arguments = [])
     {
+        if (isset($arguments['now'])) $this->now = $arguments['now'];
         $wire = json_encode(['action' => $action] + $arguments, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES) . "\n";
         if (fwrite($this->pipes[0], $wire) !== strlen($wire)) throw new RuntimeException('Synthetic bridge write failed');
         fflush($this->pipes[0]);
@@ -70,5 +72,54 @@ final class SyntheticReceiverPipe implements C\NoMailRetirement
     {
         foreach ($this->pipes as $pipe) if (is_resource($pipe)) fclose($pipe);
         if (is_resource($this->process)) proc_close($this->process);
+    }
+}
+
+/** Concrete source-derived Intake26 SDK operations over an isolated local pipe. */
+final class SyntheticReceiverIntakeResource implements C\ResourceAdapter
+{
+    public int $deletes = 0;
+    public $beforeDelete = null;
+    public $afterDelete = null;
+    public bool $loseDeleteAcknowledgement = false;
+    private string $sourceHash;
+    public function __construct(private SyntheticReceiverPipe $pipe, private C\Journal $journal, private array $scope)
+    {
+        if (!method_exists($journal, 'assertReceiverIntakeCustody')) throw new C\Failure('INTAKE_CUSTODY_UNVERIFIED');
+        $this->sourceHash = $pipe->call('metadata')['source_hash'];
+    }
+    private function custody(?array $binding = null): ?array
+    {
+        return $this->journal->assertReceiverIntakeCustody($this->scope, $this->pipe->now, $binding, $this->sourceHash);
+    }
+    public function inventory(string $requestId): array
+    {
+        if ($requestId !== $this->scope['request_id']) throw new C\Failure('INTAKE_SCOPE_CONFLICT');
+        $this->custody();
+        $rows = $this->pipe->call('intake_inventory', ['scope' => $this->scope]);
+        $this->custody();
+        foreach ($rows as &$row) ksort($row, SORT_STRING);
+        unset($row);
+        return $rows;
+    }
+    public function read(string $key): ?array
+    {
+        if ($key !== $this->scope['request_id']) throw new C\Failure('INTAKE_SCOPE_CONFLICT');
+        return $this->inventory($key)[0] ?? null;
+    }
+    public function removeExact(array $binding): void
+    {
+        if ($this->beforeDelete) ($this->beforeDelete)();
+        $claim = $this->custody($binding);
+        $this->pipe->call('authorize_intake_purge', compact('claim'));
+        // Recheck actual Journal custody immediately before dispatch; a callback cannot replace it.
+        if ($this->custody($binding) !== $claim) throw new C\Failure('INTAKE_CUSTODY_CHANGED');
+        $this->pipe->call('intake_remove_exact', ['scope' => $this->scope, 'binding' => $binding, 'intent_digest' => $claim['intent_digest']]);
+        $this->deletes++;
+        if ($this->afterDelete) ($this->afterDelete)();
+        if ($this->loseDeleteAcknowledgement) {
+            $this->loseDeleteAcknowledgement = false;
+            throw new C\Failure('INTAKE_DELETE_ACK_UNCERTAIN');
+        }
     }
 }

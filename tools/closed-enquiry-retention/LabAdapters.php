@@ -6,6 +6,72 @@ require_once __DIR__ . '/RetirementJournal.php';
 require_once __DIR__ . '/ClosureCollectionJournal.php';
 require_once __DIR__ . '/LeaseBoundWpdb.php';
 
+/** Exact source-pipe custody, using the authoritative Journal's real held lease and saved write intent. */
+trait ReceiverIntakeCustody
+{
+    public function assertReceiverIntakeCustody(array $scope, int $now, ?array $binding, string $sourceHash): ?array
+    {
+        $this->assertCurrentLease();
+        $this->assertClosureLease($scope['closure_id']);
+        $this->assertRetirementOpen();
+        $closure = $this->closure($scope['closure_id']);
+        if ($closure === null) throw new Failure('INTAKE_CLOSURE_UNVERIFIED');
+        Workflow::validateClosureRecord($closure, $now, true);
+        if ($closure['email_status'] !== 'RETIRED_NO_COPY'
+            || Workflow::digest(NoMailCopyProof::scope($closure, $scope['admission_hash'], $scope['fingerprint'])) !== Workflow::digest($scope)) {
+            throw new Failure('INTAKE_CLOSURE_SCOPE_CONFLICT');
+        }
+        foreach ($this->collectionRows() as $id => $other) {
+            if (!is_array($other) || ($other['closure_id'] ?? null) !== $id) throw new Failure('INTAKE_CLOSURE_REGISTRY_UNVERIFIED');
+            try { Workflow::validateClosureRecord($other, $now); }
+            catch (\Throwable $error) { throw new Failure('INTAKE_CLOSURE_REGISTRY_UNVERIFIED'); }
+            if ($id === $closure['closure_id']) {
+                if ($other !== $closure) throw new Failure('INTAKE_CLOSURE_REGISTRY_UNVERIFIED');
+                continue;
+            }
+            if (($other['request_id'] ?? null) === $closure['request_id']
+                || ($other['lead_id'] ?? null) === $closure['lead_id'] || ($other['event_id'] ?? null) === $closure['event_id']) {
+                throw new Failure('INTAKE_CLOSURE_IDENTITY_SHARED');
+            }
+        }
+        if ($binding === null) return null;
+        if (!$this->historyIncomplete() || $this->admissionFloor() !== $scope['admission_hash']) throw new Failure('INTAKE_PURGE_INTENT_UNVERIFIED');
+        $matches = [];
+        foreach ($this->receiverIntakeJobs() as $job) {
+            $plan = $job['plan'] ?? null;
+            if (!is_array($plan) || !is_string($plan['closure_id'] ?? null)) throw new Failure('INTAKE_JOURNAL_UNVERIFIED');
+            if ($plan['closure_id'] !== $closure['closure_id']) continue;
+            $digest = $plan['digest'] ?? null; $body = $plan; unset($body['digest']);
+            if (!is_string($digest) || Workflow::digest($body) !== $digest || $this->journal($digest) !== $job
+                || ($plan['closure_hash'] ?? null) !== Workflow::digest($closure)
+                || Workflow::digest($plan['no_mail_copy']['scope'] ?? []) !== Workflow::digest($scope)
+                || ($plan['admission_hash'] ?? null) !== $scope['admission_hash']
+                || !in_array($job['state'] ?? null, ['APPLYING', 'HELD'], true)
+                || !is_int($job['revision'] ?? null) || $job['revision'] < 1
+                || !is_int($job['started_at'] ?? null) || $now < $job['started_at'] || $now >= $job['started_at'] + 2592000) {
+                throw new Failure('INTAKE_PURGE_INTENT_UNVERIFIED');
+            }
+            foreach ($plan['resources'] ?? [] as $index => $resource) {
+                if (($resource['store'] ?? null) !== 'intake' || Workflow::digest($resource['binding'] ?? []) !== Workflow::digest($binding)) continue;
+                $at = $job['intent_at'][$index] ?? null;
+                if (($job['steps'][$index] ?? null) !== 'INTENT_RECORDED' || !is_int($at) || $at < $job['started_at'] || $at > $now) {
+                    throw new Failure('INTAKE_PURGE_INTENT_UNVERIFIED');
+                }
+                $matches[] = $job;
+            }
+        }
+        if (count($matches) !== 1) throw new Failure('INTAKE_PURGE_INTENT_UNVERIFIED');
+        $job = $matches[0];
+        $claim = ['contract' => 'bsre-intake26-purge-intent-v1', 'scope_hash' => Workflow::digest($scope),
+            'binding_hash' => Workflow::digest($binding), 'plan_digest' => $job['plan']['digest'], 'journal_revision' => $job['revision'],
+            'accepted_at_utc' => $closure['accepted_at_utc'],
+            'uncertainty_count' => 0, 'source_hash' => $sourceHash, 'observed_at' => $now,
+            'expires_at' => min($now + 300, $job['started_at'] + 2592000)];
+        $claim['intent_digest'] = Workflow::digest($claim);
+        return $claim;
+    }
+}
+
 /** All provider mutations below affect only explicitly supplied synthetic arrays. */
 final class MemoryResource implements ResourceAdapter
 {
@@ -50,6 +116,7 @@ final class LabAuthority implements Authority
 
 final class MemoryJournal implements Journal, ClosureWriter, RetirementWriter, ClosureCollectorWriter
 {
+    use ReceiverIntakeCustody;
     use RetirementJournal;
     use ClosureCollectionJournal;
     public array $closures = [];
@@ -109,6 +176,7 @@ final class MemoryJournal implements Journal, ClosureWriter, RetirementWriter, C
         if ($this->closure($id) !== $after) throw new Failure('CLOSURE_WRITE_UNCONFIRMED');
     }
     public function journal(string $planId): ?array { return $this->journals[$planId] ?? null; }
+    private function receiverIntakeJobs(): array { return $this->journals; }
     public function save(array &$record): void
     {
         if ($this->beforeSave) ($this->beforeSave)($this, $record);
@@ -157,6 +225,7 @@ final class LabAdmission implements Admission
 /** MariaDB journal with committed intents and a connection-owned closure lease. */
 final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, ClosureCollectorWriter
 {
+    use ReceiverIntakeCustody;
     use RetirementJournal;
     use ClosureCollectionJournal;
     private $db;
@@ -168,7 +237,7 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
             || wp_get_environment_type() !== 'local' || home_url() !== 'http://bsre.invalid'
             || !($db instanceof LeaseBoundWpdb)
-            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_', 'closed_capture_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
+            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_', 'owner_collection_synthetic_', 'closed_capture_synthetic_', 'closed_intake_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db;
         $this->db->suppress_errors(true);
         $this->prefix = $db->prefix;
@@ -279,6 +348,20 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
         if ($result !== 1 || $this->closure($id) !== $after) throw new Failure('CLOSURE_WRITE_UNCONFIRMED');
     }
     public function journal(string $planId): ?array { return $this->read('jobs', $planId); }
+    private function receiverIntakeJobs(): array
+    {
+        $this->db->last_error = '';
+        $rows = $this->db->get_results("SELECT id,body FROM {$this->prefix}jobs", ARRAY_A);
+        if ($this->db->last_error !== '' || !is_array($rows)) throw new Failure('INTAKE_JOURNAL_UNVERIFIED');
+        $result = [];
+        foreach ($rows as $row) {
+            try { $body = json_decode($row['body'], true, 32, JSON_THROW_ON_ERROR); }
+            catch (\Throwable $error) { throw new Failure('INTAKE_JOURNAL_UNVERIFIED'); }
+            if (!is_string($row['id']) || isset($result[$row['id']]) || ($body['plan']['digest'] ?? null) !== $row['id']) throw new Failure('INTAKE_JOURNAL_UNVERIFIED');
+            $result[$row['id']] = $body;
+        }
+        return $result;
+    }
     public function save(array &$record): void
     {
         $this->assertClosureLease($record['plan']['closure_id']);
@@ -306,7 +389,7 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
         return $this->db->get_var("SELECT admission_floor FROM {$this->prefix}meta WHERE id=1");
     }
     /** Concrete providers share this exact guarded connection and the current namespace/closure lease. */
-    public function assertProviderCustody(LeaseBoundWpdb $connection, string $requestId, bool $mutation = false): void
+    public function assertProviderCustody(LeaseBoundWpdb $connection, string $requestId, bool $mutation = false): ?array
     {
         if ($this->db !== $connection) throw new Failure('CAPTURE_CONNECTION_CONFLICT');
         $this->assertCurrentLease();
@@ -317,13 +400,14 @@ final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter, C
         if ($this->db->last_error !== '') throw new Failure('CAPTURE_CLOSURE_SOURCE_UNVERIFIED');
         if ($closure === null) {
             if ($mutation || $id !== $requestId) throw new Failure('CAPTURE_CLOSURE_SCOPE_CONFLICT');
-            return; // Read-only initial collection uses the stable request=closure identity.
+            return null; // Read-only initial collection uses the stable request=closure identity.
         }
         Workflow::validateClosureRecord($closure, time(), $mutation);
         if ($closure['closure_id'] !== $id || $closure['request_id'] !== $requestId
             || ($mutation && !in_array($closure['email_status'], ['SENT', 'RETIRED_NO_COPY'], true))) {
             throw new Failure('CAPTURE_CLOSURE_SCOPE_CONFLICT');
         }
+        return $closure;
     }
     private function assertCurrentLease(): void
     {

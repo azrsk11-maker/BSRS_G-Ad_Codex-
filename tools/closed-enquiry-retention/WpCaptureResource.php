@@ -8,6 +8,19 @@ final class WpCaptureResource implements ResourceAdapter
 {
     public const PREFIX = 'closed_capture_synthetic_';
     private const SOURCE = '7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262';
+    private const ADMISSION_STORE = '5390f2733e7e76c6c2a0e514add39c15ae94327adafd4d23f33e393ef6b4daa8';
+    private const ADMISSION_RUNTIME = 'c4ad3ed68da65ee33445274cd995fb658923a5f22aef663a2352dcd699780988';
+    private const PURPOSE_RUNTIME = 'de6eec40c0123ca4239f30b1d99f5547179c166bd19d47d254ea61db118bfa08';
+    private const PRODUCER_SOURCES = [
+        'BSRE\\RetentionAdmission\\configuration'=>self::ADMISSION_RUNTIME,
+        'BSRE\\PurposeAttribution\\prepare_capture'=>self::PURPOSE_RUNTIME,
+        'BSRE\\PurposeAttribution\\receive_wire'=>'0d34dcb19dfa7e905e98d5d9d5baaf2d18f1d52e5ee6e333a9ade7f7b8300607',
+        'BSRE\\ReceiptRecovery\\handle'=>'de72e87d9dce89e9511607cb3447fbc9216ceafe33b011f7b2ffd58ab02518f4',
+        'BSRE\\ReceiptRecovery\\issue'=>'b6ef6dacbb35823b4a2c52040b190d5ce8e57fbab355ba4a48d3c411fbd07ddd',
+        'BSRE\\Enquiries\\ready'=>'9a0bd37545bd0da326d592bae7ac78eff0a8b79085bd4b1542d65289d627855b',
+        'BSRE\\Enquiries\\consent_repository'=>'68c36328e2b660b6209320033cc7bc4b2857e4ecbf0261fdc5822d0e0708bead',
+        'BSRE\\Enquiries\\validate_payload'=>'347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54',
+    ];
     private const CONTRACT = 'bsre-wp-capture-resource-v1';
     private const SCHEMA = [
         'request_id'=>'char(36)', 'fingerprint'=>'char(64)', 'subject_key'=>'char(64)',
@@ -20,12 +33,18 @@ final class WpCaptureResource implements ResourceAdapter
         'gclid_first_captured_ms'=>'bigint unsigned', 'gclid_last_captured_ms'=>'bigint unsigned',
         'lead_id'=>'varchar(64)', 'event_id'=>'varchar(64)',
     ];
+    private const PURPOSE_SCHEMA = ['purpose_version'=>'tinyint unsigned', 'purpose_hash'=>'char(64)',
+        'purpose_record_hash'=>'char(64)', 'purpose_json'=>'mediumtext'];
     private string $table;
     private ?string $activeRequest = null;
     private bool $mutating = false;
+    private bool $purpose = false;
+    private ?array $admission = null;
 
-    public function __construct(private LeaseBoundWpdb $db, private LabSqlJournal $journal)
+    public function __construct(private LeaseBoundWpdb $db, private LabSqlJournal $journal,
+        private ?\BSRE\Enquiries\ConsentRepository $repository = null)
     {
+        $this->purpose = $repository !== null && get_class($repository) === 'BSRE\\PurposeAttribution\\WpConsentRepository';
         $this->guard();
         $this->db->suppress_errors(true);
         $this->table = self::PREFIX . 'bsre_consent_captures';
@@ -43,7 +62,37 @@ final class WpCaptureResource implements ResourceAdapter
         if (!is_string($path) || !is_file($path) || !hash_equals(self::SOURCE, (string) @hash_file('sha256', $path))) {
             throw new Failure('CAPTURE_SOURCE_UNVERIFIED');
         }
+        if ($this->repository === null) return;
+        if (!$this->purpose) {
+            if (get_class($this->repository) !== 'BSRE\\Enquiries\\WpConsentRepository'
+                || (new \ReflectionProperty($this->repository, 'db'))->getValue($this->repository) !== $this->db) {
+                throw new Failure('CAPTURE_SOURCE_UNVERIFIED');
+            }
+            return;
+        }
+        $source = (new \ReflectionClass($this->repository))->getFileName();
+        if (!is_string($source) || !hash_equals(self::ADMISSION_STORE, (string) @hash_file('sha256', $source))) {
+            throw new Failure('CAPTURE_SOURCE_UNVERIFIED');
+        }
+        foreach (self::PRODUCER_SOURCES as $function=>$pin) {
+            if (!function_exists($function)) throw new Failure('CAPTURE_SOURCE_UNVERIFIED');
+            $source = (new \ReflectionFunction($function))->getFileName();
+            if (!is_string($source) || !hash_equals($pin, (string) @hash_file('sha256', $source))) {
+                throw new Failure('CAPTURE_SOURCE_UNVERIFIED');
+            }
+        }
+        if ($this->repository->database() !== $this->db
+            || \BSRE\PurposeAttribution\Runtime::$store !== $this->repository
+            || \BSRE\PurposeAttribution\repository() !== $this->repository) throw new Failure('CAPTURE_CONNECTION_CONFLICT');
+        try { $admission = \BSRE\RetentionAdmission\readback(); }
+        catch (\Throwable $error) { throw new Failure('CAPTURE_ADMISSION_UNVERIFIED'); }
+        if (($admission['mode'] ?? null) !== 'ENFORCED' || ($admission['routes_installed'] ?? null) !== true
+            || ($admission['store_installed'] ?? null) !== true) throw new Failure('CAPTURE_ADMISSION_UNVERIFIED');
+        if ($this->admission !== null && $admission !== $this->admission) throw new Failure('CAPTURE_ADMISSION_CHANGED');
+        $this->admission ??= $admission;
     }
+
+    private function columns(): array { return self::SCHEMA + ($this->purpose ? self::PURPOSE_SCHEMA : []); }
 
     private function custody(): void
     {
@@ -92,13 +141,14 @@ final class WpCaptureResource implements ResourceAdapter
             throw new Failure('CAPTURE_SCHEMA_UNVERIFIED');
         }
         $columns = $this->rows("SHOW FULL COLUMNS FROM {$this->table}");
-        if (count($columns) !== count(self::SCHEMA)) throw new Failure('CAPTURE_SCHEMA_UNVERIFIED');
-        foreach (array_keys(self::SCHEMA) as $index => $field) {
+        $schema = $this->columns();
+        if (count($columns) !== count($schema)) throw new Failure('CAPTURE_SCHEMA_UNVERIFIED');
+        foreach (array_keys($schema) as $index => $field) {
             $column = $columns[$index];
             $type = strtolower((string) ($column['Type'] ?? ''));
             $type = preg_replace('/^(bigint|tinyint)\([0-9]+\)/', '$1', $type);
-            if (($column['Field'] ?? null) !== $field || $type !== self::SCHEMA[$field]
-                || ($column['Null'] ?? null) !== 'NO' || ($column['Extra'] ?? null) !== '') {
+            if (($column['Field'] ?? null) !== $field || $type !== $schema[$field]
+                || ($column['Null'] ?? null) !== ($field === 'purpose_json' ? 'YES' : 'NO') || ($column['Extra'] ?? null) !== '') {
                 throw new Failure('CAPTURE_SCHEMA_UNVERIFIED');
             }
         }
@@ -186,16 +236,19 @@ final class WpCaptureResource implements ResourceAdapter
     }
 
     /** Canonical SQL types preserve every reviewed column without returning its private values. */
-    private static function normalize(array $row): array
+    private static function normalize(array $row, bool $purpose = false): array
     {
-        if (array_keys($row) !== array_keys(self::SCHEMA)) throw new Failure('CAPTURE_ROW_INVALID');
-        foreach (self::SCHEMA as $field => $type) {
+        $schema = self::SCHEMA + ($purpose ? self::PURPOSE_SCHEMA : []);
+        if (array_keys($row) !== array_keys($schema)) throw new Failure('CAPTURE_ROW_INVALID');
+        foreach ($schema as $field => $type) {
             $value = $row[$field];
             if (str_ends_with($type, ' unsigned')) {
                 if (is_string($value) && preg_match('/^(0|[1-9][0-9]*)$/D', $value)
                     && (strlen($value) < strlen((string) PHP_INT_MAX)
                         || (strlen($value) === strlen((string) PHP_INT_MAX) && strcmp($value, (string) PHP_INT_MAX) <= 0))) $value = (int) $value;
                 if (!is_int($value) || $value < 0 || ($type === 'tinyint unsigned' && $value > 1)) throw new Failure('CAPTURE_ROW_INVALID');
+            } elseif ($type === 'mediumtext') {
+                if ($value !== null && (!is_string($value) || strlen($value) > 48000)) throw new Failure('CAPTURE_ROW_INVALID');
             } else {
                 preg_match('/\(([0-9]+)\)/', $type, $width);
                 if (!is_string($value) || strlen($value) > (int) $width[1] || preg_match('/[\x00-\x1f\x7f]/', $value)) throw new Failure('CAPTURE_ROW_INVALID');
@@ -230,6 +283,15 @@ final class WpCaptureResource implements ResourceAdapter
             if ($click !== '' && $row['click_capture_state'] !== 'CAPTURED') throw new Failure('CAPTURE_ROW_INVALID');
         }
         if ($row['click_capture_state'] === 'CAPTURED' && $row['gclid_first'] === '' && $row['gclid_last'] === '') throw new Failure('CAPTURE_ROW_INVALID');
+        if ($purpose) {
+            if ($row['purpose_version'] === 0) {
+                if ($row['purpose_hash'] !== '' || $row['purpose_record_hash'] !== ''
+                    || !in_array($row['purpose_json'], [null, ''], true)) throw new Failure('CAPTURE_PURPOSE_INVALID');
+            } else {
+                try { \BSRE\PurposeAttribution\assert_record($row); }
+                catch (\Throwable $error) { throw new Failure('CAPTURE_PURPOSE_INVALID'); }
+            }
+        }
         // Consent refusal, expiry, QA ineligibility and uncertainty are retained facts, never approval or delivery failure.
         return $row;
     }
@@ -240,8 +302,12 @@ final class WpCaptureResource implements ResourceAdapter
         $rows = $this->rows($this->db->prepare("SELECT * FROM {$this->table} WHERE request_id=%s LIMIT 2 FOR UPDATE", $request));
         if ($rows === []) return null;
         if (count($rows) !== 1) throw new Failure('CAPTURE_DUPLICATE_IDENTITY');
-        $row = self::normalize($rows[0]);
+        $row = self::normalize($rows[0], $this->purpose);
         if ($row['request_id'] !== $request) throw new Failure('CAPTURE_IDENTITY_INVALID');
+        $closure = $this->journal->assertProviderCustody($this->db, $request, $this->mutating);
+        if ($closure !== null && $row['created_at'] > strtotime($closure['accepted_at_utc'])) {
+            throw new Failure('CAPTURE_CLOSURE_TIME_CONFLICT');
+        }
         // Lock all matching ownership/alias candidates. This is complete SQL, never a sliced client inventory.
         $owners = $this->rows($this->db->prepare("SELECT request_id FROM {$this->table} WHERE BINARY request_id<>BINARY %s"
             . ' AND (LOWER(lead_id)=%s OR LOWER(event_id)=%s) LIMIT 1 FOR UPDATE', $request, strtolower($row['lead_id']), strtolower($row['event_id'])));
@@ -254,6 +320,17 @@ final class WpCaptureResource implements ResourceAdapter
         return ['key'=>$row['request_id'], 'request_id'=>$row['request_id'], 'request_ids'=>[$row['request_id']],
             'lead_id'=>$row['lead_id'], 'event_id'=>$row['event_id'], 'fingerprint'=>$row['fingerprint'],
             'evidence_reference'=>self::CONTRACT, 'evidence_hash'=>Workflow::digest(['contract'=>self::CONTRACT,'row'=>$row])];
+    }
+
+    private static function exactPredicate(array $row, bool $purpose): array
+    {
+        $where = []; $values = [];
+        foreach (self::SCHEMA + ($purpose ? self::PURPOSE_SCHEMA : []) as $field => $type) {
+            if ($row[$field] === null) { $where[] = "{$field} IS NULL"; continue; }
+            $where[] = str_ends_with($type, ' unsigned') ? "{$field}=%d" : "BINARY {$field}=BINARY %s";
+            $values[] = $row[$field];
+        }
+        return [implode(' AND ', $where), $values];
     }
 
     public function inventory(string $requestId): array
@@ -280,12 +357,8 @@ final class WpCaptureResource implements ResourceAdapter
             $row = $this->current($key);
             if ($row === null) throw new Failure('CAPTURE_RESOURCE_MISSING');
             if (Workflow::digest(self::binding($row)) !== Workflow::digest($binding)) throw new Failure('CAPTURE_BINDING_CHANGED');
-            $where = []; $values = [];
-            foreach (self::SCHEMA as $field => $type) {
-                $where[] = str_ends_with($type, ' unsigned') ? "{$field}=%d" : "BINARY {$field}=BINARY %s";
-                $values[] = $row[$field];
-            }
-            if ($this->query($this->db->prepare("DELETE FROM {$this->table} WHERE " . implode(' AND ', $where), ...$values)) !== 1) {
+            [$predicate, $values] = self::exactPredicate($row, $this->purpose);
+            if ($this->query($this->db->prepare("DELETE FROM {$this->table} WHERE {$predicate}", ...$values)) !== 1) {
                 throw new Failure('CAPTURE_DELETE_UNCONFIRMED');
             }
             if ($this->current($key) !== null) throw new Failure('CAPTURE_DELETE_UNCONFIRMED');
