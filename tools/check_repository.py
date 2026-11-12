@@ -16,6 +16,20 @@ TAP_CHECK = "synthetic-local-expiry-journal"
 TAP_COUNTS = ("tests", "suites", "pass", "fail", "cancelled", "skipped", "todo")
 
 
+# Offline PHP scripts must not inherit host INI, disabled assertions or network/mail helpers.
+PHP_ISOLATED_OPTIONS = (
+    "-n", "-d", "zend.assertions=1", "-d", "assert.active=1", "-d", "assert.exception=1",
+    "-d", "allow_url_fopen=0", "-d", "allow_url_include=0",
+    "-d", "disable_functions=mail,exec,shell_exec,system,passthru,popen,proc_open,"
+    "fsockopen,pfsockopen,stream_socket_client,stream_socket_server,socket_create,socket_connect",
+)
+
+
+def php_command_prefix(executable):
+    """Process-local CLI isolation; no host settings, services or PATH changes."""
+    return [executable, *PHP_ISOLATED_OPTIONS]
+
+
 def valid_tap_summary(summary):
     if not isinstance(summary, dict) or set(summary) != {*TAP_COUNTS, "duration_ms"}:
         return False
@@ -45,20 +59,67 @@ def node_tap_summary(output):
     return summary if valid_tap_summary(summary) else None
 
 
-def execute_check(name, args, cwd=ROOT):
+def execute_check(name, args, cwd=ROOT, *, owned_tree=False):
     require_tap = name == TAP_CHECK
     tick = time.perf_counter()
     # The growing actual-source keyword suite exceeded 120s on the local host.
     # Keep other checks at their existing bound; never turn a timeout into PASS.
     timeout = 300 if name == "keyword-system-behavior" else 120
-    proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=timeout)
+    try:
+        if owned_tree:
+            deadline = time.monotonic() + timeout - (time.perf_counter() - tick)
+            supervisor = module("foundation_owned_process", ROOT / "tools/efficiency/owned_process.py")
+            proc = supervisor.run_owned(args, cwd=cwd, timeout=timeout, deadline=deadline)
+        else:
+            proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired as exc:
+        # TimeoutExpired can retain bytes even when text=True. Keep partial
+        # output only in the ignored report, never as complete test evidence.
+        def partial_text(value):
+            if isinstance(value, bytes):
+                return value.decode("utf-8", errors="replace")
+            return value if isinstance(value, str) else ""
+        details = {"exit": None, "elapsed_seconds": round(time.perf_counter()-tick, 6),
+                   "timed_out": True, "error_type": "TimeoutExpired",
+                   "output_tail": (partial_text(exc.stdout) + partial_text(exc.stderr))[-1800:]}
+        if require_tap:
+            details["tap_summary"] = None
+            details["tap_evidence_status"] = "INCOMPLETE_TIMEOUT"
+        return {"check": name, "passed": False, "details": details}
+    except OSError as exc:
+        if not owned_tree:
+            raise
+        return {"check": name, "passed": False, "details": {
+            "exit": None, "elapsed_seconds": round(time.perf_counter()-tick, 6),
+            "error_type": type(exc).__name__, "output_tail": "Owned process containment/start failed"}}
     details = {"exit": proc.returncode, "elapsed_seconds": round(time.perf_counter()-tick, 6),
                "output_tail": (proc.stdout + proc.stderr)[-1800:]}
+    keyword_complete = True
+    if owned_tree:
+        try:
+            report = json.loads(proc.stdout)
+            summary = report["summary"]
+            counts = ("discovered_modules", "completed_modules", "discovered", "started", "finished", "skipped")
+            keyword_complete = (all(type(summary[key]) is int and summary[key] >= 0 for key in counts)
+                and summary["discovered_modules"] == summary["completed_modules"] > 0
+                and summary["discovered"] == summary["started"] == summary["finished"] > 0
+                and summary["coverage_verified"] is True and summary["passed"] is True
+                and summary["timed_out"] is False and type(report["workers"]) is int
+                and 1 <= report["workers"] <= 2 and report["aggregate_timeout_seconds"] == timeout
+                and re.fullmatch(r"test-output/keyword-modules-[A-Za-z0-9_-]+\.json", report["evidence_file"]) is not None
+                and all(re.fullmatch(r"[0-9a-f]{64}", report[key]) is not None
+                        for key in ("evidence_sha256", "expected_ids_sha256")))
+            details["keyword_summary"] = {key: summary[key] for key in (*counts, "coverage_verified", "timed_out", "passed")}
+            details["keyword_evidence"] = {key: report[key] for key in
+                ("evidence_file", "evidence_sha256", "expected_ids_sha256")}
+        except (ValueError, KeyError, TypeError):
+            keyword_complete = False
+        details["keyword_evidence_status"] = "COMPLETE" if keyword_complete else "INCOMPLETE_OR_INVALID"
     summary = node_tap_summary(proc.stdout) if require_tap else None
     if require_tap:
         details["tap_summary"] = summary
         details["tap_evidence_status"] = "OBSERVED" if summary else "MISSING_OR_INVALID"
-    return {"check": name, "passed": proc.returncode == 0 and (not require_tap or summary is not None
+    return {"check": name, "passed": proc.returncode == 0 and keyword_complete and (not require_tap or summary is not None
             and summary["pass"] > 0 and summary["fail"] == summary["cancelled"] == 0),
             "details": details}
 
@@ -88,8 +149,8 @@ def run_checks(require_php=False):
     results = []
     def record(name, passed, details):
         results.append({"check": name, "passed": bool(passed), "details": details})
-    def run(name, args, cwd=ROOT):
-        results.append(execute_check(name, args, cwd))
+    def run(name, args, cwd=ROOT, *, owned_tree=False):
+        results.append(execute_check(name, args, cwd, owned_tree=owned_tree))
     specdir = ROOT / "docs/google-ads"
     audit = module("spec_audit", ROOT / "tools/audit_specification.py")
     with tempfile.TemporaryDirectory() as temp:
@@ -127,6 +188,9 @@ def run_checks(require_php=False):
     run("keyword-gap-research-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-research-2026-11-11/verify_capture.py")])
     run("keyword-role-exam-assets-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-role-exam-assets-2026-11-11/verify_capture.py")])
     run("keyword-vendor-operations-commercial-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-vendor-operations-commercial-2026-11-11/verify_capture.py")])
+    run("keyword-entertainment-clipboard-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py")])
+    run("keyword-entertainment-clipboard-guards", [sys.executable, "-B", "-m", "unittest", "discover", "-s",
+                                               str(ROOT / "docs/audit/keyword-entertainment-clipboard-2026-11-11"), "-p", "test_*.py"])
     run("keyword-vendor-operations-commercial-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-vendor-operations-commercial-2026-11-11/verify_triage.py")])
     run("keyword-vendor-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-vendor-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-role-exam-assets-triage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-role-exam-assets-2026-11-11/verify_triage.py")])
@@ -135,6 +199,14 @@ def run_checks(require_php=False):
     run("keyword-observed-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-gap-review-reconciliation", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-gap-review-coverage-2026-11-11/verify_coverage.py")])
     run("keyword-negative-research-admission", [sys.executable, "-B", str(ROOT / "tools/keyword-system/negative_admission.py")])
+    run("keyword-employment-followup-artifacts", [sys.executable, "-B", str(ROOT / "tools/keyword-system/employment_followup_validator.py"),
+                                                   str(ROOT / "docs/audit/keyword-employment-followup-2026-11-11")])
+    run("keyword-employment-followup-batch2", [sys.executable, "-B", str(ROOT / "tools/keyword-system/supplemental_batch_validator.py"),
+                                                str(ROOT / "docs/audit/keyword-employment-followup-2026-11-11-batch2")])
+    run("planning-registry-360-safety", [sys.executable, "-B", str(ROOT / "tools/website-tracking/validate_planning_registry.py"),
+                                          str(ROOT / "docs/google-ads/planned_campaign_page_registry.json")])
+    run("release-controls-budget-safety", [sys.executable, "-B", str(ROOT / "tools/release-control/validate_release_controls.py"),
+                                            str(ROOT / "config/release_controls.json")])
     # The current driver verifies the entire historical base before extensions.
     run("keyword-negative-research-composition", [sys.executable, "-B", str(ROOT / "tools/keyword-system/current_negative_library.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
@@ -147,7 +219,11 @@ def run_checks(require_php=False):
         tests = list(target.glob("test_*.py"))
         record(folder + "-tests-present", len(tests) > 0, len(tests))
         if tests:
-            run(folder + "-behavior", [sys.executable, "-B", "-m", "unittest", "discover", "-s", str(target), "-p", "test_*.py"])
+            if folder == "keyword-system":
+                run(folder + "-behavior", [sys.executable, "-B", str(ROOT / "tools/efficiency/keyword_modules.py"),
+                    "--supervised", "--suite", str(target)], owned_tree=True)
+            else:
+                run(folder + "-behavior", [sys.executable, "-B", "-m", "unittest", "discover", "-s", str(target), "-p", "test_*.py"])
     node = shutil.which("node")
     record("node-runtime", bool(node), "required for tracking/privacy/HTTP safety checks")
     if node:
@@ -166,26 +242,34 @@ def run_checks(require_php=False):
         run("runtime-evidence-honesty", [node, str(ROOT/"tools/website-tracking/validate_tracking_evidence.mjs"),
             str(specdir/"website_tracking_contract.json"), str(specdir/"website_tracking_acceptance_tests.json"),
             str(ROOT/"tools/website-tracking/tracking-evidence-2026-11-07.json")])
+        run("native-form-contract-readback", [node, str(ROOT/"tools/website-tracking/validate_form_contract.mjs"),
+            str(ROOT/"docs/audit/NATIVE_ENQUIRY_FORM_CONTRACT_READBACK_2026-11-11.json")])
+        run("current-gate-matrix", [node, str(ROOT/"tools/release-control/validate_gate_matrix.mjs"),
+            str(ROOT/"docs/audit/CURRENT_GATE_MATRIX_2026-11-11.json")])
+        release_node_tests = sorted((ROOT/"tools/release-control").glob("*.test.mjs"))
+        record("release-control-node-tests-present", len(release_node_tests) >= 2, len(release_node_tests))
+        run("release-control-node-behavior", [node, "--test", *map(str, release_node_tests)])
     php = shutil.which("php")
     if require_php and php:
+        php_prefix = php_command_prefix(php)
         for path in sorted((ROOT/"tools/native-wordpress").rglob("*.php")):
-            run("php-lint-" + path.name, [php, "-l", str(path)])
-        run("linkage-reconciliation-behavior", [php, str(ROOT/"tools/consent-retention/linkage.test.php")])
-        run("retirement-ledger-compaction-behavior", [php, str(ROOT/"tools/consent-retention/compaction.test.php")])
-        run("per-choice-retention-planning", [php, str(ROOT/"tools/consent-retention/per-choice/test_per_choice.php")])
+            run("php-lint-" + path.name, [*php_prefix, "-l", str(path)])
+        run("linkage-reconciliation-behavior", [*php_prefix, str(ROOT/"tools/consent-retention/linkage.test.php")])
+        run("retirement-ledger-compaction-behavior", [*php_prefix, str(ROOT/"tools/consent-retention/compaction.test.php")])
+        run("per-choice-retention-planning", [*php_prefix, str(ROOT/"tools/consent-retention/per-choice/test_per_choice.php")])
         for name in ("SelectiveChoiceRetirement.php", "selective-choice.test.php", "selective-native.php"):
-            run("php-lint-" + name, [php, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
-        run("selective-choice-retirement-guards", [php, str(ROOT/"tools/consent-retention/per-choice/selective-choice.test.php")])
+            run("php-lint-" + name, [*php_prefix, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
+        run("selective-choice-retirement-guards", [*php_prefix, str(ROOT/"tools/consent-retention/per-choice/selective-choice.test.php")])
         for name in ("PurposeChoicePlanner.php", "purpose-choice.test.php", "purpose-selective-native.php"):
-            run("php-lint-" + name, [php, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
-        run("purpose-choice-retirement-planning", [php, str(ROOT/"tools/consent-retention/per-choice/purpose-choice.test.php")])
-        run("php-lint-retirement-compaction-native", [php, "-l", str(ROOT/"tools/consent-retention/compaction-native.php")])
-        run("native-wordpress-isolated-behavior", [php, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
-        run("property-decision-shortcode-behavior", [php, str(ROOT/"tools/property-decision-tools/php.test.php")])
+            run("php-lint-" + name, [*php_prefix, "-l", str(ROOT/"tools/consent-retention/per-choice"/name)])
+        run("purpose-choice-retirement-planning", [*php_prefix, str(ROOT/"tools/consent-retention/per-choice/purpose-choice.test.php")])
+        run("php-lint-retirement-compaction-native", [*php_prefix, "-l", str(ROOT/"tools/consent-retention/compaction-native.php")])
+        run("native-wordpress-isolated-behavior", [*php_prefix, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
+        run("property-decision-shortcode-behavior", [*php_prefix, str(ROOT/"tools/property-decision-tools/php.test.php")])
         for path in sorted((ROOT/"tools/owner-mail-review").glob("*.php")):
-            run("php-lint-owner-mail-" + path.name, [php, "-l", str(path)])
-        run("owner-mail-review-behavior", [php, str(ROOT/"tools/owner-mail-review/test_owner_mail_review.php")])
-        run("owner-mail-guard-behavior", [php, str(ROOT/"tools/owner-mail-review/guard.test.php")])
+            run("php-lint-owner-mail-" + path.name, [*php_prefix, "-l", str(path)])
+        run("owner-mail-review-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_mail_review.php")])
+        run("owner-mail-guard-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/guard.test.php")])
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
     else:
