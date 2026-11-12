@@ -244,7 +244,9 @@ class OwnedProcessTests(unittest.TestCase):
 class Cases(unittest.TestCase):
     def test_nested(self):
         child=subprocess.Popen([sys.executable,'-B','-c','import time;time.sleep(60)'])
-        pathlib.Path({str(marker)!r}).write_text(str(child.pid),encoding='ascii')
+        ready=pathlib.Path({str(marker)!r}).with_suffix('.ready')
+        ready.write_text(str(child.pid),encoding='ascii')
+        ready.replace(pathlib.Path({str(marker)!r}))
         child.wait()
 '''.encode("utf-8"))
             outcomes = []
@@ -311,7 +313,9 @@ class Cases(unittest.TestCase):
 class Cases(unittest.TestCase):
     def test_descendants(self):
         child=subprocess.Popen([sys.executable,'-B','-c','import time;time.sleep(60)'])
-        pathlib.Path({str(marker)!r}).write_text(json.dumps([os.getpid(),child.pid]),encoding='ascii')
+        ready=pathlib.Path({str(marker)!r}).with_suffix('.ready')
+        ready.write_text(json.dumps([os.getpid(),child.pid]),encoding='ascii')
+        ready.replace(pathlib.Path({str(marker)!r}))
         child.wait()
 '''.encode("utf-8"))
             script = ("import sys;sys.path.insert(0," + repr(str(Path(owned.__file__).parent)) + ");"
