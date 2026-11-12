@@ -417,11 +417,20 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and the appended apprenticeship research."""
-    return _fresh_apprenticeship_state(root, at)[0]
+    """Freshly verify all history and the appended occupational research."""
+    return _fresh_ofqual_occupational_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
+    return _fresh_ofqual_occupational_state(root, at)[1]
+
+
+def reconstruct_apprenticeship_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 10,963-row apprenticeship snapshot and reports."""
+    return _fresh_apprenticeship_state(root, at)[0]
+
+
+def verify_apprenticeship_snapshot(root=first.ROOT, at=None):
     return _fresh_apprenticeship_state(root, at)[1]
 
 
@@ -494,6 +503,15 @@ def _fresh_apprenticeship_state(root, at):
     base = _fresh_entertainment_state(root, when)[0]
     inputs = apprenticeship_admission.extend(base, root, when)
     result = apprenticeship_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_ofqual_occupational_state(root, at):
+    import ofqual_occupational_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_apprenticeship_state(root, when)[0]
+    inputs = ofqual_occupational_admission.extend(base, root, when)
+    result = ofqual_occupational_admission.check_saved(inputs, root, when)
     return inputs, result
 
 
