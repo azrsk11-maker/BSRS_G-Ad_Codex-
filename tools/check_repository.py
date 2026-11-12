@@ -117,6 +117,7 @@ def execute_check(name, args, cwd=ROOT, *, owned_tree=False):
             details["keyword_summary"] = {key: summary[key] for key in (*counts, "coverage_verified", "timed_out", "passed")}
             details["keyword_evidence"] = {key: report[key] for key in
                 ("evidence_file", "evidence_sha256", "expected_ids_sha256")}
+            details['keyword_resources'] = report.get('worker_resources')
         except (ValueError, KeyError, TypeError):
             keyword_complete = False
         details["keyword_evidence_status"] = "COMPLETE" if keyword_complete else "INCOMPLETE_OR_INVALID"
@@ -140,6 +141,36 @@ def public_test_summary(check):
         return {"check": TAP_CHECK, "status": "MISSING_OR_INVALID", "release_authorized": False}
     return {"check": TAP_CHECK, "status": "OBSERVED", "runner_platform": sys.platform,
             "process_exit": details["exit"], **summary, "release_authorized": False}
+
+
+def public_keyword_summary(check):
+    """Expose this already-executed check's validated counters/resources only."""
+    if check.get('check') != 'keyword-system-behavior':
+        return None
+    withheld={'check':'keyword-system-behavior','status':'INCOMPLETE_OR_INVALID','release_authorized':False}
+    try:
+        details=check['details'];summary=details['keyword_summary'];resources=details['keyword_resources']
+        guard=module('keyword_summary_resources',ROOT/'tools/efficiency/keyword_resources.py')
+        counts=('discovered_modules','completed_modules','discovered','started','finished','skipped')
+        elapsed=details['elapsed_seconds']
+        if (check.get('passed') is not True or type(details['exit']) is not int or details['exit'] != 0
+                or details['keyword_evidence_status'] != 'COMPLETE'
+                or any(type(summary[k]) is not int or summary[k]<0 for k in counts)
+                or not summary['discovered_modules']==summary['completed_modules']>0
+                or not summary['discovered']==summary['started']==summary['finished']>0
+                or summary['skipped']>summary['finished']
+                or summary['coverage_verified'] is not True or summary['passed'] is not True
+                or summary['timed_out'] is not False
+                or not guard.valid_selection(resources,resources['selected_workers'])
+                or type(elapsed) not in (int,float) or not math.isfinite(elapsed) or not 0<=elapsed<=300):
+            return withheld
+        return {'check':'keyword-system-behavior','status':'OBSERVED',
+                'modules':summary['completed_modules'],'tests':summary['finished'],'skipped':summary['skipped'],
+                'elapsed_seconds':elapsed,'workers':resources['selected_workers'],
+                'cpu_count':resources['cpu_count'],'memory_available_bytes':resources['memory_available_bytes'],
+                'release_authorized':False}
+    except (ValueError,KeyError,TypeError):
+        return withheld
 
 
 def module(name, path):
@@ -327,4 +358,7 @@ if __name__ == "__main__":
         summary = public_test_summary(check)
         if summary is not None:
             print("TEST_SUMMARY " + json.dumps(summary, sort_keys=True))
+        keyword_summary = public_keyword_summary(check)
+        if keyword_summary is not None:
+            print('KEYWORD_SUMMARY '+json.dumps(keyword_summary,sort_keys=True))
     raise SystemExit(0 if result["passed"] else 1)
