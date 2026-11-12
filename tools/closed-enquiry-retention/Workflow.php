@@ -4,6 +4,7 @@ namespace BSRE\ClosedRetention;
 
 require_once __DIR__ . '/../consent-retention/RetentionInventory.php';
 require_once __DIR__ . '/NoMailCopy.php';
+require_once __DIR__ . '/RetirementIntent.php';
 
 /** The adapter serializes closure edits with this lock; journal writes commit immediately. */
 interface Journal
@@ -23,6 +24,16 @@ interface Journal
 interface ClosureWriter
 {
     public function replaceClosure(array $before, array $after): void;
+}
+
+/** Same closure lease and authoritative Journal, never the expiring owner UI cache. */
+interface RetirementWriter
+{
+    public function assertRetirementOpen(): void;
+    public function stageRetirement(array &$record, int $now): void;
+    public function assertRetirementSource(array $record, int $now): void;
+    public function commitRetirement(array $record, array $proof, int $now): void;
+    public function scrubRetirement(array $record, int $now): bool;
 }
 
 /** Stable keys only. removeExact must compare the full binding and never delete by row number. */
@@ -293,6 +304,45 @@ final class Workflow
         $noCopy = $closure['email_status'] === 'RETIRED_NO_COPY';
         if ($closure['email_status'] !== 'SENT' && !$noCopy) self::fail('OUTBOX_NOT_RECONCILED');
         $gate = $this->verifiedAdmission($now);
+        $resources = $this->collectClosureResources($closure, $noCopy);
+        $plan = ['schema_version' => 1, 'closure_id' => $closureId, 'closure_hash' => self::digest($closure),
+            'admission_hash' => self::admissionHash($gate), 'created_at' => $now, 'expires_at' => $now + self::PLAN_SECONDS,
+            'resources' => $resources];
+        if ($noCopy) {
+            $intake = array_values(array_filter($resources, fn($resource) => $resource['store'] === 'intake'))[0];
+            $scope = NoMailCopyProof::scope($closure, $plan['admission_hash'], $intake['binding']['fingerprint']);
+            $proofHash = NoMailCopyProof::verify($this->noMailCopy->readback($scope, $now), $scope, $now);
+            $plan['no_mail_copy'] = ['scope' => $scope, 'proof_hash' => $proofHash];
+        }
+        return $plan;
+    }
+
+    /** Caller holds this Workflow's authoritative Journal closure lease. No mutation or grant. */
+    public function usesJournal(Journal $journal): bool { return $this->journal === $journal; }
+
+    public function retirementContext(array $before, array $after, string $actor, int $now): array
+    {
+        self::lab();
+        if (!$this->authority->canReview($actor)) self::fail('OWNER_REVIEW_REQUIRED');
+        if (!$this->journal instanceof RetirementWriter) self::fail('RETIREMENT_WRITER_REQUIRED');
+        $this->journal->assertRetirementOpen();
+        self::validateClosureRecord($before, $now, true);
+        self::validateClosureRecord($after, $now, true);
+        if ($after !== RetirementIntent::target($before)
+            || !in_array($before['email_status'], ['QUEUED', 'RETRY_WAIT', 'NEEDS_REVIEW'], true)
+            || $before['mail_message_ids'] !== []) self::fail('RETIREMENT_TARGET_INVALID');
+        $current = $this->journal->closure($before['closure_id']);
+        if ($current !== $before && $current !== $after) self::fail('CLOSURE_BASELINE_CHANGED');
+        $gate = $this->verifiedAdmission($now);
+        $resources = $this->collectClosureResources($before, true);
+        $intake = array_values(array_filter($resources, fn($row) => $row['store'] === 'intake'))[0];
+        $admissionHash = self::admissionHash($gate);
+        return ['scope' => NoMailCopyProof::scope($after, $admissionHash, $intake['binding']['fingerprint']),
+            'admission_hash' => $admissionHash, 'inventory_hash' => self::digest($resources)];
+    }
+
+    private function collectClosureResources(array $closure, bool $noCopy): array
+    {
         $resources = [];
         foreach (self::STORES as $store) {
             $inventory = $this->adapters[$store]->inventory($closure['request_id']);
@@ -319,16 +369,7 @@ final class Workflow
         sort($outcomes); sort($mail);
         if ($counts['intake'] !== 1 || $counts['capture'] !== 1 || ($noCopy ? $counts['email'] !== 0 : $counts['email'] < 1)
             || $outcomes !== $closure['outcome_ids'] || $mail !== $closure['mail_message_ids']) self::fail('LINKAGE_INCOMPLETE');
-        $plan = ['schema_version' => 1, 'closure_id' => $closureId, 'closure_hash' => self::digest($closure),
-            'admission_hash' => self::admissionHash($gate), 'created_at' => $now, 'expires_at' => $now + self::PLAN_SECONDS,
-            'resources' => $resources];
-        if ($noCopy) {
-            $intake = array_values(array_filter($resources, fn($resource) => $resource['store'] === 'intake'))[0];
-            $scope = NoMailCopyProof::scope($closure, $plan['admission_hash'], $intake['binding']['fingerprint']);
-            $proofHash = NoMailCopyProof::verify($this->noMailCopy->readback($scope, $now), $scope, $now);
-            $plan['no_mail_copy'] = ['scope' => $scope, 'proof_hash' => $proofHash];
-        }
-        return $plan;
+        return $resources;
     }
 
     private function recheck(array $plan, int $now, bool $cleanup = false, ?array $ticket = null, bool $requireIntakeAbsent = false): void

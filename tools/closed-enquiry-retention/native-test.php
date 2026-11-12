@@ -6,7 +6,7 @@ require '/opt/wordpress/wp-load.php';
 require __DIR__ . '/fixtures.php';
 use BSRE\ClosedRetention as C;
 
-$db = new wpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
+$db = new C\LeaseBoundWpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
 $db->prefix = 'closed_retention_synthetic_';
 $journal = new C\LabSqlJournal($db);
 $journal->install();
@@ -20,7 +20,7 @@ function nativeCheck(string $name, bool $condition): void
 
 $f = C\fixture($journal);
 $plan = C\approved($f);
-$db2 = new wpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
+$db2 = new C\LeaseBoundWpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
 $db2->prefix = 'closed_retention_synthetic_';
 $restarted = new C\LabSqlJournal($db2);
 $seenBeforeAction = false;

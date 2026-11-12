@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace BSRE\ClosedRetention;
 require_once __DIR__ . '/Workflow.php';
+require_once __DIR__ . '/RetirementJournal.php';
+require_once __DIR__ . '/LeaseBoundWpdb.php';
 
 /** All provider mutations below affect only explicitly supplied synthetic arrays. */
 final class MemoryResource implements ResourceAdapter
@@ -45,8 +47,9 @@ final class LabAuthority implements Authority
     }
 }
 
-final class MemoryJournal implements Journal, ClosureWriter
+final class MemoryJournal implements Journal, ClosureWriter, RetirementWriter
 {
+    use RetirementJournal;
     public array $closures = [];
     public array $journals = [];
     public bool $incomplete = false;
@@ -57,7 +60,7 @@ final class MemoryJournal implements Journal, ClosureWriter
     private array $locks = [];
     public function locked(string $closureId, callable $operation)
     {
-        if (isset($this->locks[$closureId])) throw new \RuntimeException('Synthetic lock busy');
+        if ($this->locks !== []) throw new Failure('CLOSURE_LEASE_BUSY');
         $this->locks[$closureId] = true;
         try { return $operation(); } finally { unset($this->locks[$closureId]); }
     }
@@ -65,12 +68,32 @@ final class MemoryJournal implements Journal, ClosureWriter
     public function replaceClosure(array $before, array $after): void
     {
         $id = $before['closure_id'];
+        $this->assertClosureLease($id);
+        $this->assertRetirementOpen();
+        $this->assertNoClosureJobs($id);
+        $this->writeClosure($before, $after);
+    }
+    private function assertClosureLease(string $id): void
+    {
         if (!isset($this->locks[$id])) throw new Failure('CLOSURE_LEASE_REQUIRED');
-        foreach ($this->journals as $job) {
+    }
+    private function unresolvedRetirementCount(): int
+    {
+        if ($this->expiredUnresolved < 0) throw new Failure('RETIREMENT_CUSTODY_RECONCILIATION_REQUIRED');
+        return $this->expiredUnresolved;
+    }
+    private function assertNoClosureJobs(string $id, ?string $except = null): void
+    {
+        foreach ($this->journals as $key => $job) {
+            if ($key === $except) continue;
             $bound = is_array($job) && is_array($job['plan'] ?? null) ? ($job['plan']['closure_id'] ?? null) : null;
             if (!is_string($bound) || !preg_match('/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/D', $bound)
                 || $bound === $id) throw new Failure('CLOSURE_JOB_RECONCILIATION_REQUIRED');
         }
+    }
+    private function writeClosure(array $before, array $after): void
+    {
+        $id = $before['closure_id'];
         if ($this->closure($id) !== $before || ($after['closure_id'] ?? null) !== $id
             || ($after['revision'] ?? null) !== $before['revision'] + 1) throw new Failure('CLOSURE_REVISION_CONFLICT');
         $this->closures[$id] = $after;
@@ -85,12 +108,18 @@ final class MemoryJournal implements Journal, ClosureWriter
         $record['revision']++;
         $this->journals[$record['plan']['digest']] = $record;
     }
-    public function markHistoryIncomplete(): void { if (!$this->markerFails) $this->incomplete = true; }
+    public function markHistoryIncomplete(): void { $this->assertCurrentLease(); if (!$this->markerFails) $this->incomplete = true; }
     public function historyIncomplete(): bool { return $this->incomplete; }
-    public function pinAdmissionFloor(string $policyHash): void { $this->floor ??= $policyHash; }
+    public function pinAdmissionFloor(string $policyHash): void { $this->assertCurrentLease(); $this->floor ??= $policyHash; }
     public function admissionFloor(): ?string { return $this->floor; }
+    private function assertCurrentLease(): void
+    {
+        if (count($this->locks) !== 1) throw new Failure('CLOSURE_LEASE_REQUIRED');
+        $this->assertClosureLease((string) array_key_first($this->locks));
+    }
     public function forget(string $closureId, string $planId, bool $keepClosure = false): void
     {
+        $this->assertClosureLease($closureId);
         unset($this->journals[$planId]);
         if ($keepClosure) $this->expiredUnresolved++;
         else unset($this->closures[$closureId]);
@@ -117,17 +146,21 @@ final class LabAdmission implements Admission
 }
 
 /** MariaDB journal with committed intents and a connection-owned closure lease. */
-final class LabSqlJournal implements Journal, ClosureWriter
+final class LabSqlJournal implements Journal, ClosureWriter, RetirementWriter
 {
+    use RetirementJournal;
     private $db;
     private string $prefix;
     private array $leases = [];
+    private static array $custodyLeases = [];
     public function __construct($db)
     {
         if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
             || wp_get_environment_type() !== 'local' || home_url() !== 'http://bsre.invalid'
-            || $db->prefix !== 'closed_retention_synthetic_') throw new \RuntimeException('ISOLATED_LAB_ONLY');
+            || !($db instanceof LeaseBoundWpdb)
+            || !in_array($db->prefix, ['closed_retention_synthetic_', 'owner_retirement_synthetic_'], true)) throw new \RuntimeException('ISOLATED_LAB_ONLY');
         $this->db = $db;
+        $this->db->suppress_errors(true);
         $this->prefix = $db->prefix;
     }
     public function install(): void
@@ -142,16 +175,29 @@ final class LabSqlJournal implements Journal, ClosureWriter
     public function locked(string $closureId, callable $operation)
     {
         $name = 'bsre-closed-' . substr(hash('sha256', $closureId), 0, 40);
-        if (isset($this->leases[$closureId])) throw new \RuntimeException('CLOSURE_LEASE_BUSY');
-        $result = $this->db->get_var($this->db->prepare('SELECT GET_LOCK(%s,0)', $name));
-        if ((string) $result !== '1') throw new \RuntimeException('CLOSURE_LEASE_BUSY');
-        $this->leases[$closureId] = true;
-        try { return $operation(); }
-        finally { unset($this->leases[$closureId]); $this->db->get_var($this->db->prepare('SELECT RELEASE_LOCK(%s)', $name)); }
+        $custody = 'bsre-custody-' . substr(hash('sha256', $this->prefix), 0, 40);
+        // Static process guard also prevents GET_LOCK reentrancy through another adapter on the same connection.
+        if ($this->leases !== [] || isset(self::$custodyLeases[$custody]) || $this->db->custodyIsActive()) throw new Failure('CLOSURE_LEASE_BUSY');
+        if ((string) $this->db->get_var($this->db->prepare('SELECT GET_LOCK(%s,0)', $custody)) !== '1') throw new Failure('CLOSURE_LEASE_BUSY');
+        self::$custodyLeases[$custody] = true; $closureHeld = false;
+        try {
+            $this->db->beginCustody();
+            if ((string) $this->db->get_var($this->db->prepare('SELECT IS_USED_LOCK(%s)', $custody)) !== $this->db->custodyConnectionId()) throw new Failure('RETIREMENT_CONNECTION_LEASE_LOST');
+            if ((string) $this->db->get_var($this->db->prepare('SELECT GET_LOCK(%s,0)', $name)) !== '1') throw new Failure('CLOSURE_LEASE_BUSY');
+            $closureHeld = true; $this->leases[$closureId] = true;
+            return $operation();
+        } finally {
+            $closureReleased = !$closureHeld || (string) $this->db->get_var($this->db->prepare('SELECT RELEASE_LOCK(%s)', $name)) === '1';
+            $custodyReleased = (string) $this->db->get_var($this->db->prepare('SELECT RELEASE_LOCK(%s)', $custody)) === '1';
+            if (!$closureReleased || !$custodyReleased) throw new Failure('RETIREMENT_CUSTODY_RELEASE_UNCONFIRMED');
+            $this->db->endCustody();
+            unset($this->leases[$closureId], self::$custodyLeases[$custody]);
+        }
     }
     public function putClosure(array $closure): void
     {
         $this->locked($closure['closure_id'], function () use ($closure) {
+            $this->assertRetirementOpen();
             $old = $this->closure($closure['closure_id']);
             if ($old !== null && $closure['revision'] !== $old['revision'] + 1) throw new \RuntimeException('CLOSURE_REVISION_CONFLICT');
             $this->query($this->db->prepare("INSERT INTO {$this->prefix}closures VALUES (%s,%s) ON DUPLICATE KEY UPDATE body=VALUES(body)",
@@ -162,13 +208,40 @@ final class LabSqlJournal implements Journal, ClosureWriter
     public function replaceClosure(array $before, array $after): void
     {
         $id = $before['closure_id'];
+        $this->assertClosureLease($id);
+        $this->assertRetirementOpen();
+        $this->assertNoClosureJobs($id);
+        $this->writeClosure($before, $after);
+    }
+    private function assertClosureLease(string $id): void
+    {
         if (!isset($this->leases[$id])) throw new Failure('CLOSURE_LEASE_REQUIRED');
+        $custody = 'bsre-custody-' . substr(hash('sha256', $this->prefix), 0, 40);
+        $closure = 'bsre-closed-' . substr(hash('sha256', $id), 0, 40);
+        $state = $this->db->get_row($this->db->prepare('SELECT CONNECTION_ID() AS connection_id, IS_USED_LOCK(%s) AS custody_owner, IS_USED_LOCK(%s) AS closure_owner', $custody, $closure), ARRAY_A);
+        $expected = $this->db->custodyConnectionId();
+        if ($expected === null || !is_array($state) || (string) $state['connection_id'] !== $expected
+            || (string) $state['custody_owner'] !== $expected || (string) $state['closure_owner'] !== $expected) throw new Failure('RETIREMENT_CONNECTION_LEASE_LOST');
+    }
+    private function unresolvedRetirementCount(): int
+    {
+        $this->db->last_error = '';
+        $value = $this->db->get_var("SELECT expired_unresolved FROM {$this->prefix}meta WHERE id=1");
+        if ($this->db->last_error !== '' || !is_scalar($value) || !preg_match('/^[0-9]{1,18}$/D', (string) $value)) throw new Failure('RETIREMENT_CUSTODY_RECONCILIATION_REQUIRED');
+        return (int) $value;
+    }
+    private function assertNoClosureJobs(string $id, ?string $except = null): void
+    {
         $this->db->last_error = '';
         $binding = "JSON_EXTRACT(body,'$.plan.closure_id')";
-        $jobs = $this->db->get_var($this->db->prepare("SELECT COUNT(*) FROM {$this->prefix}jobs WHERE JSON_UNQUOTE($binding)=%s"
+        $jobs = $this->db->get_var($this->db->prepare("SELECT COUNT(*) FROM {$this->prefix}jobs WHERE id<>%s AND (JSON_UNQUOTE($binding)=%s"
             . " OR JSON_TYPE($binding) IS NULL OR JSON_TYPE($binding)<>'STRING'"
-            . " OR BINARY JSON_UNQUOTE($binding) NOT REGEXP '^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$'", $id));
+            . " OR BINARY JSON_UNQUOTE($binding) NOT REGEXP '^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$')", $except ?? '', $id));
         if ($this->db->last_error !== '' || (string) $jobs !== '0') throw new Failure('CLOSURE_JOB_RECONCILIATION_REQUIRED');
+    }
+    private function writeClosure(array $before, array $after): void
+    {
+        $id = $before['closure_id'];
         if ($this->closure($id) !== $before || ($after['closure_id'] ?? null) !== $id
             || ($after['revision'] ?? null) !== $before['revision'] + 1) throw new Failure('CLOSURE_REVISION_CONFLICT');
         $result = $this->db->query($this->db->prepare("UPDATE {$this->prefix}closures SET body=%s WHERE id=%s AND BINARY body=BINARY %s",
@@ -178,7 +251,7 @@ final class LabSqlJournal implements Journal, ClosureWriter
     public function journal(string $planId): ?array { return $this->read('jobs', $planId); }
     public function save(array &$record): void
     {
-        if (!isset($this->leases[$record['plan']['closure_id']])) throw new \RuntimeException('CLOSURE_LEASE_REQUIRED');
+        $this->assertClosureLease($record['plan']['closure_id']);
         $next = $record;
         $next['revision']++;
         $json = json_encode($next, JSON_THROW_ON_ERROR);
@@ -191,18 +264,25 @@ final class LabSqlJournal implements Journal, ClosureWriter
         if ($this->db->query($query) !== 1 || $this->journal($record['plan']['digest']) !== $next) throw new \RuntimeException('JOURNAL_REVISION_OR_STORAGE_CONFLICT');
         $record = $next;
     }
-    public function markHistoryIncomplete(): void { $this->query("UPDATE {$this->prefix}meta SET incomplete=1 WHERE id=1"); }
+    public function markHistoryIncomplete(): void { $this->assertCurrentLease(); $this->query("UPDATE {$this->prefix}meta SET incomplete=1 WHERE id=1"); }
     public function historyIncomplete(): bool { return (string) $this->db->get_var("SELECT incomplete FROM {$this->prefix}meta WHERE id=1") === '1'; }
     public function pinAdmissionFloor(string $policyHash): void
     {
+        $this->assertCurrentLease();
         $this->query($this->db->prepare("UPDATE {$this->prefix}meta SET admission_floor=%s WHERE id=1 AND admission_floor IS NULL", $policyHash));
     }
     public function admissionFloor(): ?string
     {
         return $this->db->get_var("SELECT admission_floor FROM {$this->prefix}meta WHERE id=1");
     }
+    private function assertCurrentLease(): void
+    {
+        if (count($this->leases) !== 1) throw new Failure('CLOSURE_LEASE_REQUIRED');
+        $this->assertClosureLease((string) array_key_first($this->leases));
+    }
     public function forget(string $closureId, string $planId, bool $keepClosure = false): void
     {
+        $this->assertClosureLease($closureId);
         $this->query('START TRANSACTION');
         try {
             $this->query($this->db->prepare("DELETE FROM {$this->prefix}jobs WHERE id=%s", $planId));

@@ -6,51 +6,7 @@ function home_url(): string { return 'http://bsre.invalid'; }
 require __DIR__ . '/fixtures.php';
 use BSRE\ClosedRetention as C;
 
-final class SyntheticReceiverPipe implements C\NoMailCopy
-{
-    private $process;
-    private array $pipes = [];
-    public $alterProof = null;
-    public bool $loseForgetAcknowledgement = false;
-    public function __construct()
-    {
-        $this->process = proc_open(['node', __DIR__ . '/receiver-fence/bridge.mjs'],
-            [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $this->pipes, __DIR__);
-        if (!is_resource($this->process)) throw new RuntimeException('Synthetic source bridge unavailable');
-        stream_set_timeout($this->pipes[1], 5);
-    }
-    public function call(string $action, array $arguments = [])
-    {
-        $wire = json_encode(['action' => $action] + $arguments, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES) . "\n";
-        if (fwrite($this->pipes[0], $wire) !== strlen($wire)) throw new RuntimeException('Synthetic bridge write failed');
-        fflush($this->pipes[0]);
-        $line = fgets($this->pipes[1], 32769);
-        if ($line === false || !str_ends_with($line, "\n")) throw new RuntimeException('Synthetic bridge response unavailable');
-        $result = json_decode($line, true, 32, JSON_THROW_ON_ERROR);
-        if ($result['ok'] !== true) throw new C\Failure($result['error']);
-        return $result['value'];
-    }
-    public function readback(array $scope, int $now, bool $cleanup = false, ?array $ticket = null): ?array
-    {
-        $value = $this->call('readback', compact('scope', 'now', 'cleanup', 'ticket'));
-        return $this->alterProof ? ($this->alterProof)($value) : $value;
-    }
-    public function prepareCleanup(array $scope, int $now): ?array { return $this->call('prepare_cleanup', compact('scope', 'now')); }
-    public function forget(array $scope, int $now, array $ticket): bool
-    {
-        $value = $this->call('forget', compact('scope', 'now', 'ticket'));
-        if ($this->loseForgetAcknowledgement) {
-            $this->loseForgetAcknowledgement = false;
-            throw new C\Failure('NO_COPY_CUSTODY_UNCONFIRMED');
-        }
-        return $value;
-    }
-    public function __destruct()
-    {
-        foreach ($this->pipes as $pipe) if (is_resource($pipe)) fclose($pipe);
-        if (is_resource($this->process)) proc_close($this->process);
-    }
-}
+require_once __DIR__ . '/ReceiverPipe.php';
 
 final class CleanupFaultJournal implements C\Journal
 {
