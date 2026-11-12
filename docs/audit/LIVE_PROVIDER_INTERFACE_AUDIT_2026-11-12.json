@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-12",
+  "scope": "READ_ONLY_REAL_ESTATE_PROVIDER_INTERFACE_AUDIT",
+  "account": "573-038-4686",
+  "wordpress": {
+    "fresh_tab_responds": true,
+    "authenticated_admin": false,
+    "status": "SIGN_IN_REQUIRED",
+    "installed_source_freshly_verified": false,
+    "previous_editor_text_evidence": "docs/audit/INSTALLED_SOURCE_COMPARISON_2026-11-07.json",
+    "writes": 0
+  },
+  "google_access": {
+    "connected_gmail_is_marketing": false,
+    "connected_drive_is_marketing": false,
+    "personal_account_data_not_searched": true,
+    "browser_marketing_identity_verified": true,
+    "new_oauth_scopes": 0,
+    "evidence_folder_visible_items": 0,
+    "evidence_folder_created_or_shared": false
+  },
+  "marketing_mailbox": {
+    "scope": "PREVIOUSLY_APPROVED_TEST_ONLY_MESSAGE",
+    "exact_test_search_found_one_conversation": true,
+    "original_header_view_opened": true,
+    "rfc822_message_id_observed": true,
+    "gmail_api_message_id_verified": false,
+    "thread_or_ui_id_used_as_api_message_id": false,
+    "complete_surface_including_trash_verified": false,
+    "prospect_data_read": false,
+    "send_delete_or_label_actions": 0,
+    "private_identifiers_committed": false
+  },
+  "ads": {
+    "readback_at_utc": "2026-11-12T12:51:12.168Z",
+    "all_campaign_records": 20,
+    "paused": 17,
+    "removed": 3,
+    "enabled": 0,
+    "account_not_running_banner": true,
+    "new_campaigns": [
+      {
+        "id": "24367388382",
+        "status": "Paused",
+        "name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "average_daily_aed": 400
+      },
+      {
+        "id": "24372566774",
+        "status": "Paused",
+        "name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "average_daily_aed": 1200
+      },
+      {
+        "id": "24378494092",
+        "status": "Paused",
+        "name": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "average_daily_aed": 300
+      },
+      {
+        "id": "24378494098",
+        "status": "Paused",
+        "name": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "average_daily_aed": 100
+      }
+    ],
+    "new_aggregate_average_daily_aed": 2000,
+    "hard_daily_ceiling_claimed": false,
+    "old_campaigns_reenabled": false,
+    "settings_status_or_budget_mutations": 0
+  },
+  "actual_source_limits": [
+    "Intake26/Outcome40 do not supply an authoritative actual closure timestamp",
+    "MailApp sends without returning a provider message identifier and cannot inspect inbox copies",
+    "Gmail API message ID is distinct from threadId and RFC822 header identity",
+    "Complete mailbox observation requires a supported authenticated path, full pagination and explicit Spam/Trash coverage",
+    "Original WordPress stage/link can recreate a deleted capture without integrated producer/restore fencing"
+  ],
+  "primary_references": [
+    "https://developers.google.com/apps-script/reference/mail/mail-app",
+    "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages",
+    "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/list"
+  ],
+  "production_changes": false,
+  "release_authorized": false
+}

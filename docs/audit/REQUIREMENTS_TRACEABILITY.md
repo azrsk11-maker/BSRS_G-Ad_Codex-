@@ -4,7 +4,7 @@ Reviewed 7 November 2026. This is a requirements audit, not live approval or a l
 
 **Subsequent recovery:** the original300briefs and640catalogue records were found in the earlier user ZIP and matching-ID derived local registers. See [recovery index](recovery-index.md) for hashes, all11category totals and180implementable/116research/339conditional/5excluded classifications. Any statement below that they are absent refers to the new15-file pack, not the local project. ExactD1dossier identity remains unresolved; the recovered original-owner brief has a verified different filename/title provenance.
 
-**Current-state pointer (11 November 2026):** use the [current fail-closed gate matrix](CURRENT_GATE_MATRIX_2026-11-11.json) for the latest PASS/PARTIAL/OPEN/HOLD status and evidence links. It is a status map only; `release_authorized` remains false.
+**Current-state pointer (12 November 2026):** use the [current fail-closed gate matrix](CURRENT_GATE_MATRIX_2026-11-12.json) for the latest PASS/PARTIAL/OPEN/HOLD status and evidence links. It is a status map only; `release_authorized` remains false.
 
 ## Authority and preserved decisions
 
