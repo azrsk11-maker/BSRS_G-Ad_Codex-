@@ -103,6 +103,12 @@ The owner answered “Wait for both full libraries” in Codex. Require 14,000 d
 
 In direct Codex reply, the owner answered “Completed, evidence available” about Amit's 4 November 14:00–15:00 Dubai rehearsal. Record the session as owner-reported complete. Its private evidence location and exercise results remain unverified; this does not establish representative capacity, first-contact performance, successful imports or release acceptance. The [staff worksheet](../audit/STAFF_REHEARSAL_WORKSHEET.md) describes the remaining evidence. [Issue #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) remains open for evidence verification.
 
+### Scoped cloud evidence readback — 11 November
+
+Read-only Marketing workbook inspection and independent parent verification found that Staff guide B2 still leaves access, cover, measured capacity and escalation thresholds unverified; B20 requires a labelled internal rehearsal. History review, Source review, Queue and retention, and Daily handover contain only their header rows. The [sanitized audit](../audit/STAFF_REHEARSAL_CLOUD_AUDIT_2026-11-11.json) specifies inspected ranges and source-export hash. No Intake/Outcome payload was examined; no workbook or sharing change occurred.
+
+This preserves the owner's report while leaving completion/capacity unverified in the inspected snapshot; it does not establish that the event never occurred elsewhere. [Issue #4 evidence update](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4#issuecomment-6804857906) requests the actual private record, or fresh attendance after technical readiness if that record cannot be recovered. No immediate rescheduling, sharing, provider purchase, capacity sign-off or launch is authorized.
+
 ## Repository scope and Git identity — 9 November
 
 The owner instructed: “For now, use only this repository and continue to complete the full goal,” naming `azrsk11-maker/BSRS_G-Ad_Codex-`. Keep work, proposed changes and progress in this repository; do not fork, transfer or substitute another repository. This continues the full objective without waiving its production, research, evidence or review gates.
