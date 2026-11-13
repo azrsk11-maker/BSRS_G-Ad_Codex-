@@ -1,5 +1,24 @@
 # Native WordPress planning adapter
 
+## Four-entry proposal — 13 November 2026
+
+`compile_entry_cohort.py --verify` reconstructs the [four-entry review packet](entry-drafts/four-campaign-proposal.json) from the unchanged360-slot source/manifest, held release controls, dated Ads IDs, owner primary-family choices and fresh public WordPress identities. It proposes BuyersC0121/OFP and OwnersC0336/SEL, preserving resale/letting choices, plus the previously documented TenantsC0301/RNT and BrandC0281/CMP reuse candidates. It selects four review candidates; it assigns no actual slot or CMS ownership metadata.
+
+New Buyers/Owners paths are the existing opaque registry proposals, not observed public URLs. Tenants and Brand retain the existing rental page26753 and hub26750 as dated public-native candidates. Their `/enquire/` routes differ from the registry's proposed `/lp/` paths; that reconciliation remains explicit and unapproved. CMP branded-role/competing-brief review remains open. The original360records/15families, all proposed source routes and the separate300brief/640catalogue scope remain unchanged.
+
+The compiler has a verification-only CLI, no CMS/network/Ads writer, and no apply mode. It enforces the four known campaign IDs, full AED2000 aggregate **average** allocation beforeVAT, primary/secondary decisions, one candidate per campaign, public identity/parent checks, strict authority types and preserved service routes. Tenant reuse is a direct-form journey; Brand keeps five child service choices. Neither needs a circular self-link CTA. Current configuration, internal ownership, factual/rights, unlisted surfaces, combined consent/measurement and release acceptance stay held. [Current evidence and detailed gate list](../../docs/audit/UAE_ENTRY_COPY_REVIEW.md).
+
+The older primary-family record now distinguishes its superseded nomination task from current evidence requirements: Amit and the owner-only evidence location are resolved; genuine service/inventory/rights facts and per-draft sign-offs remain pending. Its original primary choices, scope and null actual bindings are preserved.
+
+All **27 native Python cases pass**, zero failures/errors/skips,0.331245s:19new cohort cases and8existing manifest regressions. See [the local check receipt](../../docs/audit/ENTRY_COHORT_CHECKS_2026-11-13.json). Current exact-head CI remains a separate requirement. The new work changes no keyword cases, Foundation orchestration, runner limits, source evidence or production settings.
+
+```powershell
+python -B tools/native-wordpress/compile_entry_cohort.py --verify
+python -B -m unittest discover -s tools/native-wordpress -p test_*.py
+```
+
+The historical adapter and acceptance notes below retain their original dates and scope.
+
 Implemented locally from the supplied version-3 register and Master Plan sections 8 and 24. This is a planning compiler and disabled preview adapter, not a deployed plugin or finished landing-page system. No WordPress request or write was made.
 
 ## Artifacts and verified scope
