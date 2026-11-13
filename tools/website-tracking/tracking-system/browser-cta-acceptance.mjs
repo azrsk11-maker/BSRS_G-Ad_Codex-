@@ -1,8 +1,10 @@
 // Opt-in Chromium check using actual client code and synthetic HTTPS endpoints only.
-// Set BSRE_BROWSER_PATH to a Chromium executable. Set BSRE_PYTHON if python3 is unavailable.
-// Requires Node 24 and Python cryptography. Run: node tools/website-tracking/tracking-system/browser-cta-acceptance.mjs
-import {execFileSync,spawn} from 'node:child_process';
+// Supply BSRE_BROWSER_PATH, BSRE_TLS_CERT and BSRE_TLS_KEY.
+// Certificate must be normally trusted by Node and Chrome; no trust store changes.
+// Requires Node 24. Run: node tools/website-tracking/tracking-system/browser-cta-acceptance.mjs
+import {spawn} from 'node:child_process';
 import {once} from 'node:events';
+import {loadTestTLS, verifyLoopbackTLS} from './trusted-loopback-tls.mjs';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -12,27 +14,13 @@ import {buildAttributionClientCandidate} from './build-attribution-client-candid
 
 const browser=process.env.BSRE_BROWSER_PATH;
 if(!browser)throw new Error('Set BSRE_BROWSER_PATH to a Chromium browser executable');
-const python=process.env.BSRE_PYTHON || 'python3';
+const tls=await loadTestTLS(process.env.BSRE_TLS_CERT,process.env.BSRE_TLS_KEY);
 const fixture=filename=>fs.readFile(new URL('../../staging-lab/fixtures/bsre-enquiries/assets/'+filename,import.meta.url));
 const client=buildAttributionClientCandidate(await fixture('lead.js'));
 const routes={'off-plan':'off_plan',resale:'resale',sell:'seller',let:'landlord'};
 const entryGroups={'off-plan':'buyers',resale:'buyers',sell:'owners',let:'owners'};
 const draft=filename=>fs.readFile(new URL('../../native-wordpress/entry-drafts/'+filename+'.html',import.meta.url),'utf8');
 const entryDrafts={buyers:await draft('buyers'),owners:await draft('owners')};
-const generated=execFileSync(python,['-c',`
-import datetime,ipaddress,json
-from cryptography import x509
-from cryptography.hazmat.primitives import hashes,serialization
-from cryptography.hazmat.primitives.asymmetric import ec
-key=ec.generate_private_key(ec.SECP256R1())
-name=x509.Name([x509.NameAttribute(x509.NameOID.COMMON_NAME,'Loopback synthetic fixture')])
-now=datetime.datetime.now(datetime.timezone.utc)
-cert=x509.CertificateBuilder().subject_name(name).issuer_name(name).public_key(key.public_key()).serial_number(x509.random_serial_number()).not_valid_before(now-datetime.timedelta(minutes=1)).not_valid_after(now+datetime.timedelta(hours=1)).add_extension(x509.SubjectAlternativeName([x509.IPAddress(ipaddress.ip_address('127.0.0.1'))]),critical=False).sign(key,hashes.SHA256())
-import hashlib,base64
-spki=key.public_key().public_bytes(serialization.Encoding.DER,serialization.PublicFormat.SubjectPublicKeyInfo)
-print(json.dumps({'key':key.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()).decode(),'cert':cert.public_bytes(serialization.Encoding.PEM).decode(),'pin':base64.b64encode(hashlib.sha256(spki).digest()).decode()}))
-`],{encoding:'utf8'});
-const {pin,...tls}=JSON.parse(generated);
 const bridgeSource=await fixture('consent-bridge.js');
 let mode="analytics";
 let withdrawals=0;
@@ -72,8 +60,10 @@ const server=https.createServer(tls,async(req,res)=>{
 });
 server.listen(0,'127.0.0.1'); await once(server,'listening');
 const origin='https://127.0.0.1:'+server.address().port;
+try { await verifyLoopbackTLS(server.address().port); }
+catch(error) { server.close(); throw error; }
 const profile=await fs.mkdtemp(path.join(os.tmpdir(),'bsre-handoff-'));
-const chrome=spawn(browser,['--headless','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--ignore-certificate-errors-spki-list='+pin,'--user-data-dir='+profile,'about:blank'],{windowsHide:true,stdio:'ignore'});
+const chrome=spawn(browser,['--headless','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--user-data-dir='+profile,'about:blank'],{windowsHide:true,stdio:'ignore'});
 let ws;
 try{
   let port;
