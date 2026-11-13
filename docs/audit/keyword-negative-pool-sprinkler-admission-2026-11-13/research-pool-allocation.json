@@ -1,0 +1,72 @@
+{
+  "admitted": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4947,
+    "MEDIA": 804,
+    "NAVIGATION": 879,
+    "SERVICE": 1441,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "before": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4954,
+    "MEDIA": 815,
+    "NAVIGATION": 886,
+    "SERVICE": 1416,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "exclusion_approval_granted": false,
+  "media_budget_changed": false,
+  "new_rows": {
+    "SERVICE": 25
+  },
+  "owner_approval_claimed": false,
+  "previous_allocation_ref": "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/research-pool-allocation.json",
+  "previous_allocation_sha256": "81c298b8b7f40469ba0f69cf2b92738b474a054490bc49c1e4f482a1016d3647",
+  "remaining": {
+    "ACADEMIC": 0,
+    "EMPLOYMENT": 0,
+    "MEDIA": 0,
+    "NAVIGATION": 0,
+    "SERVICE": 0,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "target_transfer": {
+    "complete_current_base_sha256": "974a1439d4383d84e40b245d4218f909650cb2ecf3c176d87d547212a4ea5e89",
+    "evidence_ref": "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/review.json",
+    "evidence_sha256": "b5f8a690ff8046e0dddd485254c954f6eae9506c3363c72b856f4d33c1805e5e",
+    "from": {
+      "EMPLOYMENT": 7,
+      "MEDIA": 11,
+      "NAVIGATION": 7
+    },
+    "implementation_decision_not_owner_approval": true,
+    "rule": "PROPORTIONAL_UNFILLED_RESEARCH_CAPACITY_LARGEST_REMAINDER_SORTED_POOL_TIEBREAK",
+    "source_pins": {
+      "docs/audit/keyword-pool-sprinkler-review-2026-11-13/review.json": "9f9245969fa2cca6eb50ac959f38567642d921622a57e5478aafe5dc3558de92",
+      "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+      "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+    },
+    "to": {
+      "SERVICE": 25
+    }
+  },
+  "targets": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4947,
+    "MEDIA": 804,
+    "NAVIGATION": 879,
+    "SERVICE": 1441,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "total_admitted": 14000,
+  "total_remaining": 0,
+  "total_target": 14000,
+  "version": 1
+}
