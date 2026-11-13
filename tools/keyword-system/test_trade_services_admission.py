@@ -185,8 +185,8 @@ class TradeServicesAdmissionTests(unittest.TestCase):
 
     def test_default_entrypoints_use_new_stage_and_septic_snapshot_stays_frozen(self):
         with patch.object(current,'_fresh_trade_services_state',return_value=('new','new-report')) as fresh:
-            self.assertEqual(current.reconstruct(at=self.when),'new')
-            self.assertEqual(current.verify(at=self.when),'new-report')
+            self.assertEqual(current.reconstruct_trade_services_snapshot(at=self.when),'new')
+            self.assertEqual(current.verify_trade_services_snapshot(at=self.when),'new-report')
             self.assertEqual(fresh.call_count,2)
         with patch.object(current,'_fresh_septic_grease_state',return_value=('old','old-report')) as fresh:
             self.assertEqual(current.reconstruct_septic_grease_snapshot(at=self.when),'old')

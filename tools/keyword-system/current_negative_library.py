@@ -417,12 +417,12 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and appended trade-service research."""
-    return _fresh_trade_services_state(root, at)[0]
+    """Freshly verify all history and appended pest/commercial service research."""
+    return _fresh_pest_commercial_services_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
-    return _fresh_trade_services_state(root, at)[1]
+    return _fresh_pest_commercial_services_state(root, at)[1]
 
 
 def reconstruct_bank_channel_login_snapshot(root=first.ROOT, at=None):
@@ -657,6 +657,24 @@ def _fresh_trade_services_state(root, at):
     inputs = trade_services_admission.extend(base, root, when)
     result = trade_services_admission.check_saved(inputs, root, when)
     return inputs, result
+
+
+def reconstruct_trade_services_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 13,896-row trade-service snapshot and frozen reports."""
+    return _fresh_trade_services_state(root, at)[0]
+
+
+def verify_trade_services_snapshot(root=first.ROOT, at=None):
+    return _fresh_trade_services_state(root, at)[1]
+
+
+def _fresh_pest_commercial_services_state(root, at):
+    import pest_commercial_services_admission
+    when=first.dubai_date() if at is None else at
+    base=_fresh_trade_services_state(root,when)[0]
+    inputs=pest_commercial_services_admission.extend(base,root,when)
+    result=pest_commercial_services_admission.check_saved(inputs,root,when)
+    return inputs,result
 
 
 if __name__ == '__main__':
