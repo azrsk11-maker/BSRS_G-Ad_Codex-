@@ -11,6 +11,7 @@ from unittest.mock import patch
 SPEC = importlib.util.spec_from_file_location("foundation_summary", Path(__file__).resolve().parents[1] / "check_repository.py")
 CHECKER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CHECKER)
+TIMINGS = CHECKER.module('summary_keyword_timing_fixture', Path(__file__).with_name('keyword_timings.py'))
 
 
 def tap(passed=5, failed=0, skipped=17, tests=22):
@@ -36,6 +37,7 @@ class FoundationSummaryTests(unittest.TestCase):
             candidate={**report,'worker_resources':{**policy,**change}}
             supervisor=SimpleNamespace(run_owned=lambda *a,**k: subprocess.CompletedProcess(a,0,json.dumps(candidate),''))
             def module(name,path):
+                if name=='foundation_keyword_timings':return TIMINGS
                 return supervisor if name=='foundation_owned_process' else resources
             with self.subTest(change=change),patch.object(CHECKER,'module',side_effect=module):
                 result=CHECKER.execute_check('keyword-system-behavior',['synthetic'],owned_tree=True)
@@ -44,6 +46,8 @@ class FoundationSummaryTests(unittest.TestCase):
             self.assertEqual(observed['status'],'OBSERVED' if wanted else 'INCOMPLETE_OR_INVALID')
             if wanted:
                 self.assertEqual((observed['workers'],observed['tests']),(4,1))
+                # Missing optional timings do not change counted execution acceptance.
+                self.assertEqual(result['details']['keyword_module_timings']['status'],'INCOMPLETE_OR_INVALID')
 
     def test_keyword_success_summary_omits_private_fields_and_revalidates_counts(self):
         policy={'mode':'auto','selected_workers':4,'maximum_workers':4,

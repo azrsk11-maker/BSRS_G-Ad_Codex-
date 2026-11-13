@@ -12,6 +12,7 @@ from unittest.mock import patch
 SPEC = importlib.util.spec_from_file_location("foundation_timeout", Path(__file__).resolve().parents[1] / "check_repository.py")
 CHECKER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CHECKER)
+TIMINGS = CHECKER.module('timeout_keyword_timing_fixture', Path(__file__).with_name('keyword_timings.py'))
 RESOURCE_SPEC = importlib.util.spec_from_file_location('timeout_keyword_resources', CHECKER.ROOT/'tools/efficiency/keyword_resources.py')
 RESOURCES = importlib.util.module_from_spec(RESOURCE_SPEC)
 RESOURCE_SPEC.loader.exec_module(RESOURCES)
@@ -138,6 +139,7 @@ class FoundationTimeoutTests(unittest.TestCase):
             owned = SimpleNamespace(run_owned=unittest.mock.Mock(return_value=
                 subprocess.CompletedProcess([], 0, json.dumps(body), "")))
             with self.subTest(body=body), patch.object(CHECKER, "module", side_effect=lambda name,path:
+                    TIMINGS if name=='foundation_keyword_timings' else
                     RESOURCES if name=='foundation_keyword_resources' else owned):
                 result = CHECKER.execute_check("keyword-system-behavior", ["synthetic-keyword"], owned_tree=True)
             self.assertEqual(result["passed"], expected)

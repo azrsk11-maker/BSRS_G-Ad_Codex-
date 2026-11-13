@@ -11,6 +11,7 @@ from unittest.mock import patch
 SPEC = importlib.util.spec_from_file_location("foundation_php", Path(__file__).resolve().parents[1] / "check_repository.py")
 CHECKER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CHECKER)
+TIMINGS = CHECKER.module('php_keyword_timing_fixture', Path(__file__).with_name('keyword_timings.py'))
 RESOURCE_SPEC = importlib.util.spec_from_file_location('php_keyword_resources', CHECKER.ROOT/'tools/efficiency/keyword_resources.py')
 RESOURCES = importlib.util.module_from_spec(RESOURCE_SPEC)
 RESOURCE_SPEC.loader.exec_module(RESOURCES)
@@ -47,6 +48,7 @@ class FoundationPhpIsolationTests(unittest.TestCase):
             subprocess.CompletedProcess(args, 0, json.dumps(keyword), ""))
         expected_modules=iter((audit,native,owned))
         def load_module(name,path):
+            if name=='foundation_keyword_timings':return TIMINGS
             return RESOURCES if name=='foundation_keyword_resources' else next(expected_modules)
         with patch.object(CHECKER, "module", side_effect=load_module), \
                 patch.object(Path, "read_text", autospec=True,
