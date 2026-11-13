@@ -1,0 +1,9 @@
+# Complete pool and sprinkler service assessment
+
+The lead AI read every original literal in the complete 45-row source-order cohort: pool-company/professional/vacuuming/drain services and sprinkler timer/controller/backflow/frozen/burst repair. Three pinned prior assessments exclude their 2,102 reviewed ordinals, preserving those decisions. Lexical routing is not intent proof. This reuses the unchanged authentic 6,053-row Planner capture, all 21 public cells and all monthly historical estimates; no new export or invented phrase.
+
+There are **31 full-exact research proposals and 14 conservative holds**. Preserve equipment/DIY/replacement, condition-only and uncertain-equipment/language terms. No provider identity, chemical safety, inventory, credential, demand, actual price or regulatory approval is inferred. Every occurrence binds its exact original text, physical line, ordinal, normalization and all-public-cell hash. The fixed lead decisions are AI assessment, not a classifier, independent human review or exclusion approval.
+
+Run `python -B docs/audit/keyword-pool-sprinkler-review-2026-11-13/verify_review.py --self-check`. All 17 tamper cases remain required, including prior-exclusion binding. Source-only planning is not admission: reconstruct the full current 13,975-record history and compare all 6,053 source peers, including every hold and noncohort row, against current, archived and protected populations using all four existing keys. Keep every qualified original in the complete cohort; no count cutoff, spelling repair or Google-equivalence inference.
+
+This semantic assessment alone adds zero master records, independent approvals or deployments. Both full libraries and all business, operational, privacy, recovery, independent-review and separately authorized production gates remain required. Production, original workbook, live tracking, Ads, budgets, finance and permissions are unchanged; advertising remains paused.
