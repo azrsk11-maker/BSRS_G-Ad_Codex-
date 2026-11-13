@@ -2,6 +2,12 @@
 
 The latest direct owner request on 7 November 2026 authorizes audit, local development, GitHub upload, issues, PRs and protective repository governance. It explicitly withholds live Ads changes/spend, live tracking changes and production page publication. This register is the shared decision history; GitHub issue approvals must be linked and scope-specific.
 
+## Four-block execution authorization — 13 November 2026 (Dubai)
+
+The owner authorized execution of four separate blocks and safe reversible implementation, with Block 1 the initial shared-source/Git/browser writer and handover coordinator. Block 2 may prepare private independent work until a verified writer transfer; later blocks wait for their assigned prerequisites. The original monolithic execution remains paused. This is the execution agent's transcription of the direct Codex instruction, not independent GitHub approval.
+
+The [Block 1 review packet](BLOCK1_REVIEW_PACKET.md) prepares exact decisions for existing issues #1/#6 and records the approved-folder evidence audit for #2. Preparing a reviewed-pilot option is authorized; selecting its first-release exception is **not** inferred. The full-library prelaunch policy and both 14,000 delivery targets remain in force. No independent reviewer exists, and the required human gate remains unmet. No invitation, access expansion, merge, protection bypass, production publication, live tracking/Ads change, activation or spending is authorized by the block instruction. Existing services, footprint, Amit roles and private location are resolved and are not requested again.
+
 ## Recorded instructions already in force
 
 | ID | Decision | Evidence / scope |
