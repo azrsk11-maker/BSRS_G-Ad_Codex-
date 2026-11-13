@@ -417,12 +417,12 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and appended pest/commercial service research."""
-    return _fresh_pest_commercial_services_state(root, at)[0]
+    """Freshly verify all history and appended pool/sprinkler service research."""
+    return _fresh_pool_sprinkler_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
-    return _fresh_pest_commercial_services_state(root, at)[1]
+    return _fresh_pool_sprinkler_state(root, at)[1]
 
 
 def reconstruct_bank_channel_login_snapshot(root=first.ROOT, at=None):
@@ -674,6 +674,24 @@ def _fresh_pest_commercial_services_state(root, at):
     base=_fresh_trade_services_state(root,when)[0]
     inputs=pest_commercial_services_admission.extend(base,root,when)
     result=pest_commercial_services_admission.check_saved(inputs,root,when)
+    return inputs,result
+
+
+def reconstruct_pest_commercial_services_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 13,975-row pest/commercial snapshot and frozen reports."""
+    return _fresh_pest_commercial_services_state(root, at)[0]
+
+
+def verify_pest_commercial_services_snapshot(root=first.ROOT, at=None):
+    return _fresh_pest_commercial_services_state(root, at)[1]
+
+
+def _fresh_pool_sprinkler_state(root, at):
+    import pool_sprinkler_admission
+    when=first.dubai_date() if at is None else at
+    base=_fresh_pest_commercial_services_state(root,when)[0]
+    inputs=pool_sprinkler_admission.extend(base,root,when)
+    result=pool_sprinkler_admission.check_saved(inputs,root,when)
     return inputs,result
 
 
