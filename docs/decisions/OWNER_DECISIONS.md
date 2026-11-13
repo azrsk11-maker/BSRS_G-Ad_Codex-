@@ -130,3 +130,8 @@ The later [gap review](../audit/keyword-negative-gap-admission-2026-11-11/README
 ## Evidence-based trade-service research allocation — 13 November
 
 Under Master section 6's existing permission to rebalance proposed research pools, the complete 1,019-literal assessment and fresh current-history comparison admit 453 original service phrases before any allocation calculation. Transfer 337 unfilled research slots proportionally (Academic 8, Employment 87, Media 150, Navigation 92) to Service, using exact integer largest remainders. The total stays 14,000; previous records are preserved and no category drops below its admitted count. This is an implementation decision, not a new owner approval or media/financial allocation. All exclusions remain unapproved and unapplied. [Evidence, exact before/after targets and limits](../audit/keyword-negative-trade-services-admission-2026-11-13/README.md).
+
+
+## Evidence-based pest/commercial service research allocation — 13 November
+
+Under unchanged Master section6 flexibility, the complete169-literal assessment and fresh13,896-record history identify79 compatible originals before allocation. Transfer79 unfilled research slots to Service using integer largest remainders: Academic2, Employment20, Media35, Navigation22. Total14,000 and all previous records stay intact; remaining Employment7/Media11/Navigation7. This is implementation evidence, not a new owner decision, exclusion authority or media/financial allocation. All records remain unapproved/unapplied. [Exact evidence and rollback](../audit/keyword-negative-pest-commercial-services-admission-2026-11-13/README.md).
