@@ -1,5 +1,22 @@
 # UAE Search entry copy for owner review
 
+## Current executable proposal — 13 November 2026
+
+The owner selected Off-plan as Buyers' primary family and Sell as Owners' primary family on11November, retaining resale and landlord/letting context. [The review-only compiler and packet](../../tools/native-wordpress/README.md) now make the four candidates reproducible without changing actual registry or CMS bindings.
+
+| Campaign | Candidate planning pair | Candidate path | Native identity evidence |
+|---|---|---|---|
+| Buyers | BSRE-C0121 / BSRE-LP0121, OFP | `/lp/bsre-c0121/` | Proposed source path; no created page or observed URL |
+| Owners | BSRE-C0336 / BSRE-LP0336, SEL | `/lp/bsre-c0336/` | Proposed source path; no created page or observed URL |
+| Tenants | BSRE-C0301 / BSRE-LP0301, RNT | `/enquire/rent/` | Published native page26753, candidate for reuse |
+| Brand | BSRE-C0281 / BSRE-LP0281, CMP | `/enquire/` | Published native page26750, candidate for reuse |
+
+A fresh read-only public WordPress request confirmed all six published native identities, exact canonical links and hub/child parent relationships. [Dated readback](NATIVE_ENTRY_CANDIDATES_2026-11-13.json) records the response hash and limits. This verifies public CMS records, not internal campaign metadata ownership, actual route availability for new entries, factual approval or consent/conversion acceptance. No form was submitted and no production state changed.
+
+The two reuse candidates preserve their existing routes rather than silently replacing the source register's `/lp/` proposals. Exact route/ownership and historical-brief reconciliation require review before any binding. Brand's CMP role and competing paid adaptations remain explicit open items. No360allocation, original brief identity or campaign family was rewritten. All four candidates remain review-only, with the full AED2000 aggregate average/day beforeVAT and every publication/tracking/Ads/spending authority false.
+
+The primary-family checklist now records Amit and the private evidence location as resolved, preserving the superseded original question for history. Genuine dated business/rights evidence, supported coverage, freshness and per-draft sign-offs remain required.19new cohort cases plus8existing manifest cases pass locally; exact-head remote checks are separate. The historical observations and copy candidates below retain their dated scope; references to pending primary-family choices describe the earlier9November stage.
+
 The owner approved preparation of Option A on 9 November 2026. These offline copy drafts preserve one native entry page per campaign and the existing enquiry routes. The exact WordPress routes and planning slot bindings await authenticated checks and review. See the [decision register](../decisions/OWNER_DECISIONS.md).
 
 | Campaign | Existing Ads ID | Average AED/day | Existing enquiry routes to preserve |

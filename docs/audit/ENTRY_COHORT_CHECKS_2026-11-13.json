@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "tests_run": 27,
+  "new_entry_cohort_cases": 19,
+  "prior_native_manifest_cases": 8,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "elapsed_seconds": 0.331245,
+  "current_keyword_cases_unchanged": 744,
+  "current_keyword_modules_unchanged": 54,
+  "shared_foundation_or_runner_changed": false,
+  "exact_head_ci_required": true,
+  "production_writes": 0,
+  "ads_changes": 0
+}
