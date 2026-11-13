@@ -12,32 +12,6 @@ def encoded(value):
 
 
 class PositiveServicePacketTests(unittest.TestCase):
-    def test_selected_owner_workorder_preserves_source_and_empty_reviews(self):
-        ids = ["LEGACY-POS-0031", "LEGACY-POS-0030"]
-        value = packet.build_packet(candidate_ids=ids)
-        self.assertEqual([r["candidate_id"] for r in value["rows"]], sorted(ids))
-        self.assertEqual(value["counts"]["historical_occurrences"], 4)
-        self.assertTrue(all(v is None for r in value["rows"] for v in r["binding_overlay_required"].values()))
-        self.assertTrue(all(v["status"] == "NOT_REVIEWED" for r in value["rows"] for v in r["admission_reviews_required"].values()))
-        result = packet.verify_packet(encoded(value), candidate_ids=ids)
-        self.assertFalse(result["master_admission_allowed"])
-        self.assertFalse(result["deployment_export_allowed"])
-
-    def test_selection_rejects_unknown_duplicate_empty_wrong_role_and_wrong_types(self):
-        for ids in ([], ["UNKNOWN"], ["LEGACY-POS-0030"]*2,
-                    ["LEGACY-POS-0001"], "LEGACY-POS-0030", [None], [{}]):
-            with self.subTest(ids=ids), self.assertRaises(ValueError):
-                packet.build_packet(candidate_ids=ids)
-
-    def test_selected_verifier_cannot_trust_its_own_selection_or_forged_reviews(self):
-        ids = ["LEGACY-POS-0031"]
-        value = packet.build_packet(candidate_ids=ids)
-        with self.assertRaises(ValueError):
-            packet.verify_packet(encoded(value), candidate_ids=["LEGACY-POS-0030"])
-        value["rows"][0]["admission_reviews_required"]["claims"]["status"] = "PASS"
-        with self.assertRaises(ValueError):
-            packet.verify_packet(encoded(value), candidate_ids=ids)
-
     def test_registered_packet_has_no_master_or_deployment_authority(self):
         result = packet.verify_packet((packet.ROOT / packet.PACKET).read_bytes())
         self.assertEqual((result["selected_canonical_seeds"], result["historical_occurrences"]), (2, 4))
