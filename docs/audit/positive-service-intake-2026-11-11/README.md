@@ -12,6 +12,31 @@ For each seed, obtain actual dated evidence of the relevant seller/landlord serv
 
 The approved family choices do not settle the planning campaign/ad-group/page binding, service segment, signals, audience origin, destination, actual URL or Google campaign ID. Record a reviewed implementation overlay separately; do not modify the supplied planning registry to make an incomplete review pass. The packet's null values make these outstanding facts explicit. Search volume and CPC remain null without actual evidence.
 
+## Selected historical owner workorders
+
+The default two-seed packet and its verification remain unchanged. To prepare
+other actual historical owner candidates, repeat `--candidate-id` with existing
+IDs and use `--emit-workorder`. This prints JSON to stdout; the tool never writes
+an admission/master, changes an account or exports platform criteria. Save the
+output only to an appropriate private review location, then verify that exact
+file with the same explicit selection:
+
+```powershell
+python -B tools/keyword-system/positive_service_packet.py --candidate-id LEGACY-POS-0030 --candidate-id LEGACY-POS-0031 --emit-workorder
+python -B tools/keyword-system/positive_service_packet.py --candidate-id LEGACY-POS-0030 --candidate-id LEGACY-POS-0031 --verify PATH_TO_PRIVATE_WORKORDER
+```
+
+IDs select from the pinned historical source, never from the submitted packet.
+Unknown, duplicate, empty and non-owner selections fail closed. Source order,
+candidate hashes, every placement/locator and five empty evidence-review slots
+are reconstructed on every invocation. Historical owner placement is only a
+selection boundary; it is not current role/service authority or live ownership.
+All runtime bindings remain null, including campaign/page/URL and review subject
+hashes. Editing the generated workorder to assert approval, mapping or admission
+fails verification. Actual completed reviews still use the existing admission
+contract below. No phrase is added to satisfy a quota; no count here contributes
+to the required reviewed libraries. F/full-library policy remains effective.
+
 ## Use the existing acceptance path
 
 Once the actual record, reviewed campaign, service context and supporting sources exist, create the five reviews required by `keyword_audit.validate_positive_admission`: inventory/service, language, landing page, claims and intent/geography. Each needs a named reviewer, dated non-hypothesis source evidence, a valid freshness window and the exact hash from `keyword_audit.positive_admission_subject`. Language additionally requires confirmed ad/page/sales support; inventory/service identifies the actual lawful offer basis. Nomination alone is not factual sign-off. The existing content-evidence validator separately enforces page presentation, claims, evidence, dates and rights. Hash consistency does not prove authenticity or regulatory compliance.
