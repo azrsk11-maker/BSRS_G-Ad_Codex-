@@ -1,0 +1,3472 @@
+{
+  "schema_version": 1,
+  "reviewer": "Lead AI — wording context only, not independent human approval",
+  "reviewed_on_dubai": "2026-11-13",
+  "complete_preliminary_review_sha256": "e0f89ea7c1d63bddcc12365b3bf434ec73f668ecd780a451934e05f7ad51df6d",
+  "all_component_literals_and_peers_read": true,
+  "method": "All233 complete comparison contexts read in source order, including both previously held peers and every external reference. Explicit AI wording decisions; no classifier, inventory conclusion, canonical merge, independent approval or deployment.",
+  "decisions": [
+    {
+      "component_id": "BUYER-COMP-001",
+      "buyer_ordinals": [
+        1,
+        25,
+        1064,
+        1870
+      ],
+      "source_ordinals": [
+        1,
+        25,
+        1064,
+        1870
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-002",
+      "buyer_ordinals": [
+        2,
+        482,
+        549
+      ],
+      "source_ordinals": [
+        2,
+        482,
+        549
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-003",
+      "buyer_ordinals": [
+        3
+      ],
+      "source_ordinals": [
+        3
+      ],
+      "external_references": [
+        "LEGACY-POS-0005:variant:1"
+      ],
+      "decision": "EXACT_SOURCE_WORDING_REUSE_ONLY",
+      "review_note": "Complete source wording also occurs in the retained external research reference. No new literal or inherited mapping, approval or business evidence."
+    },
+    {
+      "component_id": "BUYER-COMP-004",
+      "buyer_ordinals": [
+        4,
+        22,
+        518
+      ],
+      "source_ordinals": [
+        4,
+        22,
+        518
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-005",
+      "buyer_ordinals": [
+        7,
+        121,
+        129,
+        755
+      ],
+      "source_ordinals": [
+        7,
+        121,
+        129,
+        755
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-006",
+      "buyer_ordinals": [
+        8,
+        434,
+        659
+      ],
+      "source_ordinals": [
+        8,
+        434,
+        659
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-007",
+      "buyer_ordinals": [
+        10,
+        1877
+      ],
+      "source_ordinals": [
+        10,
+        1877
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-008",
+      "buyer_ordinals": [
+        12,
+        17
+      ],
+      "source_ordinals": [
+        12,
+        17
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-009",
+      "buyer_ordinals": [
+        13,
+        437,
+        1525
+      ],
+      "source_ordinals": [
+        13,
+        437,
+        1525
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-010",
+      "buyer_ordinals": [
+        15,
+        625,
+        674
+      ],
+      "source_ordinals": [
+        15,
+        625,
+        674
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-011",
+      "buyer_ordinals": [
+        20,
+        226,
+        696
+      ],
+      "source_ordinals": [
+        20,
+        226,
+        696
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-012",
+      "buyer_ordinals": [
+        23,
+        278
+      ],
+      "source_ordinals": [
+        23,
+        278
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-013",
+      "buyer_ordinals": [
+        24,
+        695
+      ],
+      "source_ordinals": [
+        24,
+        695
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-014",
+      "buyer_ordinals": [
+        27,
+        985
+      ],
+      "source_ordinals": [
+        27,
+        985
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-015",
+      "buyer_ordinals": [
+        33,
+        330,
+        337,
+        440,
+        522,
+        717,
+        852,
+        968,
+        1963,
+        2464
+      ],
+      "source_ordinals": [
+        33,
+        330,
+        337,
+        440,
+        522,
+        717,
+        852,
+        968,
+        1963,
+        2464
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-016",
+      "buyer_ordinals": [
+        34,
+        553
+      ],
+      "source_ordinals": [
+        34,
+        553
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-017",
+      "buyer_ordinals": [
+        36,
+        982
+      ],
+      "source_ordinals": [
+        36,
+        982
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-018",
+      "buyer_ordinals": [
+        37,
+        273,
+        304,
+        563
+      ],
+      "source_ordinals": [
+        37,
+        273,
+        304,
+        563
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-019",
+      "buyer_ordinals": [
+        39,
+        295
+      ],
+      "source_ordinals": [
+        39,
+        295
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-020",
+      "buyer_ordinals": [
+        42,
+        187,
+        410,
+        615
+      ],
+      "source_ordinals": [
+        42,
+        187,
+        410,
+        615
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-021",
+      "buyer_ordinals": [
+        44,
+        458,
+        477
+      ],
+      "source_ordinals": [
+        44,
+        458,
+        477
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-022",
+      "buyer_ordinals": [
+        46,
+        128,
+        276,
+        405,
+        441,
+        971,
+        1111,
+        1476
+      ],
+      "source_ordinals": [
+        46,
+        128,
+        276,
+        405,
+        441,
+        971,
+        1111,
+        1476
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-023",
+      "buyer_ordinals": [
+        52,
+        1255
+      ],
+      "source_ordinals": [
+        52,
+        1255
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-024",
+      "buyer_ordinals": [
+        56
+      ],
+      "source_ordinals": [
+        56,
+        1801
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROLE_OR_CONSTRAINT_MEANING",
+      "review_note": "Freehold tenure wording does not establish a purchase request; preserve the existing held peer1801 and do not promote it from a shared key."
+    },
+    {
+      "component_id": "BUYER-COMP-025",
+      "buyer_ordinals": [
+        59,
+        139,
+        223,
+        635
+      ],
+      "source_ordinals": [
+        59,
+        139,
+        223,
+        635
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-026",
+      "buyer_ordinals": [
+        63,
+        591
+      ],
+      "source_ordinals": [
+        63,
+        591
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-027",
+      "buyer_ordinals": [
+        64,
+        933,
+        1167,
+        2524,
+        2711
+      ],
+      "source_ordinals": [
+        64,
+        933,
+        1167,
+        2524,
+        2711
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Downtown Dubai, Dubai downtown and generic downtown attachment require named-location confirmation; flat/apartment vocabulary also remains subject-bound."
+    },
+    {
+      "component_id": "BUYER-COMP-028",
+      "buyer_ordinals": [
+        66,
+        320,
+        1345
+      ],
+      "source_ordinals": [
+        66,
+        320,
+        1345
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-029",
+      "buyer_ordinals": [
+        68,
+        1180
+      ],
+      "source_ordinals": [
+        68,
+        1180
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-030",
+      "buyer_ordinals": [
+        71,
+        593
+      ],
+      "source_ordinals": [
+        71,
+        593
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-031",
+      "buyer_ordinals": [
+        72,
+        274
+      ],
+      "source_ordinals": [
+        72,
+        274
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-032",
+      "buyer_ordinals": [
+        74,
+        797
+      ],
+      "source_ordinals": [
+        74,
+        797
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-033",
+      "buyer_ordinals": [
+        80,
+        1131
+      ],
+      "source_ordinals": [
+        80,
+        1131
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Dubai Marina property versus Dubai property with separate marina attachment is not factual proof of the same location."
+    },
+    {
+      "component_id": "BUYER-COMP-034",
+      "buyer_ordinals": [
+        83,
+        1438
+      ],
+      "source_ordinals": [
+        83,
+        1438
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-035",
+      "buyer_ordinals": [
+        86,
+        584
+      ],
+      "source_ordinals": [
+        86,
+        584
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-036",
+      "buyer_ordinals": [
+        98,
+        599,
+        741,
+        763
+      ],
+      "source_ordinals": [
+        98,
+        599,
+        741,
+        763
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-037",
+      "buyer_ordinals": [
+        101,
+        378
+      ],
+      "source_ordinals": [
+        101,
+        378
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-038",
+      "buyer_ordinals": [
+        103,
+        1296
+      ],
+      "source_ordinals": [
+        103,
+        1296
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-039",
+      "buyer_ordinals": [
+        105,
+        707,
+        1085
+      ],
+      "source_ordinals": [
+        105,
+        707,
+        1085
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-040",
+      "buyer_ordinals": [
+        109,
+        211,
+        978
+      ],
+      "source_ordinals": [
+        109,
+        211,
+        978
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-041",
+      "buyer_ordinals": [
+        113,
+        388,
+        1235
+      ],
+      "source_ordinals": [
+        113,
+        388,
+        1235
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-042",
+      "buyer_ordinals": [
+        114,
+        756
+      ],
+      "source_ordinals": [
+        114,
+        756
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-043",
+      "buyer_ordinals": [
+        115,
+        1510
+      ],
+      "source_ordinals": [
+        115,
+        1510
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-044",
+      "buyer_ordinals": [
+        120,
+        1613
+      ],
+      "source_ordinals": [
+        120,
+        1613
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-045",
+      "buyer_ordinals": [
+        127,
+        715
+      ],
+      "source_ordinals": [
+        127,
+        715
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-046",
+      "buyer_ordinals": [
+        130,
+        1581,
+        1990
+      ],
+      "source_ordinals": [
+        130,
+        1581,
+        1990
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-047",
+      "buyer_ordinals": [
+        134,
+        1405
+      ],
+      "source_ordinals": [
+        134,
+        1405
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Palm Jumeirah versus Jumeirah Palm reordering needs named-place disambiguation; do not normalize a proper name into authority."
+    },
+    {
+      "component_id": "BUYER-COMP-048",
+      "buyer_ordinals": [
+        135
+      ],
+      "source_ordinals": [
+        135
+      ],
+      "external_references": [
+        "LEGACY-POS-0010:variant:1"
+      ],
+      "decision": "EXACT_SOURCE_WORDING_REUSE_ONLY",
+      "review_note": "Complete source wording also occurs in the retained external research reference. No new literal or inherited mapping, approval or business evidence."
+    },
+    {
+      "component_id": "BUYER-COMP-049",
+      "buyer_ordinals": [
+        144,
+        643,
+        1263,
+        2000
+      ],
+      "source_ordinals": [
+        144,
+        643,
+        1263,
+        2000
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-050",
+      "buyer_ordinals": [
+        155,
+        391,
+        438
+      ],
+      "source_ordinals": [
+        155,
+        391,
+        438
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-051",
+      "buyer_ordinals": [
+        163,
+        279,
+        339,
+        377,
+        785
+      ],
+      "source_ordinals": [
+        163,
+        279,
+        339,
+        377,
+        785
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-052",
+      "buyer_ordinals": [
+        165,
+        555,
+        1029
+      ],
+      "source_ordinals": [
+        165,
+        555,
+        1029
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-053",
+      "buyer_ordinals": [
+        167,
+        1053
+      ],
+      "source_ordinals": [
+        167,
+        1053
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-054",
+      "buyer_ordinals": [
+        170,
+        1673
+      ],
+      "source_ordinals": [
+        170,
+        1673
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-055",
+      "buyer_ordinals": [
+        172,
+        352,
+        419
+      ],
+      "source_ordinals": [
+        172,
+        352,
+        419
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-056",
+      "buyer_ordinals": [
+        173,
+        1058
+      ],
+      "source_ordinals": [
+        173,
+        1058
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-057",
+      "buyer_ordinals": [
+        176,
+        738
+      ],
+      "source_ordinals": [
+        176,
+        738
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-058",
+      "buyer_ordinals": [
+        177,
+        270,
+        349,
+        406,
+        789,
+        926,
+        1493,
+        2128,
+        2144,
+        2474,
+        3099,
+        3100
+      ],
+      "source_ordinals": [
+        177,
+        270,
+        349,
+        406,
+        789,
+        926,
+        1493,
+        2128,
+        2144,
+        2474,
+        3099,
+        3100
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-059",
+      "buyer_ordinals": [
+        178,
+        404
+      ],
+      "source_ordinals": [
+        178,
+        404
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-060",
+      "buyer_ordinals": [
+        183,
+        287
+      ],
+      "source_ordinals": [
+        183,
+        287
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-061",
+      "buyer_ordinals": [
+        193
+      ],
+      "source_ordinals": [
+        193
+      ],
+      "external_references": [
+        "prior-buyer:ordinal:2"
+      ],
+      "decision": "EXACT_SOURCE_WORDING_REUSE_ONLY",
+      "review_note": "Complete source wording also occurs in the retained external research reference. No new literal or inherited mapping, approval or business evidence."
+    },
+    {
+      "component_id": "BUYER-COMP-062",
+      "buyer_ordinals": [
+        195,
+        550,
+        824
+      ],
+      "source_ordinals": [
+        195,
+        550,
+        824
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-063",
+      "buyer_ordinals": [
+        196,
+        686
+      ],
+      "source_ordinals": [
+        196,
+        686
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-064",
+      "buyer_ordinals": [
+        197,
+        1239
+      ],
+      "source_ordinals": [
+        197,
+        1239
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-065",
+      "buyer_ordinals": [
+        200,
+        376,
+        432,
+        538
+      ],
+      "source_ordinals": [
+        200,
+        376,
+        432,
+        538
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-066",
+      "buyer_ordinals": [
+        206,
+        338,
+        521
+      ],
+      "source_ordinals": [
+        206,
+        338,
+        521
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-067",
+      "buyer_ordinals": [
+        208,
+        1221
+      ],
+      "source_ordinals": [
+        208,
+        1221
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-068",
+      "buyer_ordinals": [
+        209,
+        2112
+      ],
+      "source_ordinals": [
+        209,
+        2112
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-069",
+      "buyer_ordinals": [
+        212,
+        1607
+      ],
+      "source_ordinals": [
+        212,
+        1607
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-070",
+      "buyer_ordinals": [
+        216,
+        792,
+        1473
+      ],
+      "source_ordinals": [
+        216,
+        792,
+        1473
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-071",
+      "buyer_ordinals": [
+        218,
+        1099,
+        1591
+      ],
+      "source_ordinals": [
+        218,
+        1099,
+        1591
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-072",
+      "buyer_ordinals": [
+        221,
+        302,
+        2769
+      ],
+      "source_ordinals": [
+        221,
+        302,
+        2769
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-073",
+      "buyer_ordinals": [
+        228
+      ],
+      "source_ordinals": [
+        228
+      ],
+      "external_references": [
+        "prior-buyer:ordinal:3"
+      ],
+      "decision": "EXACT_SOURCE_WORDING_REUSE_ONLY",
+      "review_note": "Complete source wording also occurs in the retained external research reference. No new literal or inherited mapping, approval or business evidence."
+    },
+    {
+      "component_id": "BUYER-COMP-074",
+      "buyer_ordinals": [
+        232,
+        372,
+        497
+      ],
+      "source_ordinals": [
+        232,
+        372,
+        497
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-075",
+      "buyer_ordinals": [
+        241,
+        2021
+      ],
+      "source_ordinals": [
+        241,
+        2021
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-076",
+      "buyer_ordinals": [
+        243,
+        412,
+        773
+      ],
+      "source_ordinals": [
+        243,
+        412,
+        773
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-077",
+      "buyer_ordinals": [
+        246,
+        925
+      ],
+      "source_ordinals": [
+        246,
+        925
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-078",
+      "buyer_ordinals": [
+        251,
+        1267
+      ],
+      "source_ordinals": [
+        251,
+        1267
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-079",
+      "buyer_ordinals": [
+        256,
+        1403
+      ],
+      "source_ordinals": [
+        256,
+        1403
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-080",
+      "buyer_ordinals": [
+        263,
+        1888
+      ],
+      "source_ordinals": [
+        263,
+        1888
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-081",
+      "buyer_ordinals": [
+        275,
+        2132
+      ],
+      "source_ordinals": [
+        275,
+        2132
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-082",
+      "buyer_ordinals": [
+        281,
+        592,
+        850,
+        1061,
+        1625
+      ],
+      "source_ordinals": [
+        281,
+        592,
+        850,
+        1061,
+        1625
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-083",
+      "buyer_ordinals": [
+        283,
+        690
+      ],
+      "source_ordinals": [
+        283,
+        690
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-084",
+      "buyer_ordinals": [
+        284,
+        1926,
+        2669
+      ],
+      "source_ordinals": [
+        284,
+        1926,
+        2669
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-085",
+      "buyer_ordinals": [
+        299,
+        579,
+        831
+      ],
+      "source_ordinals": [
+        299,
+        579,
+        831
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-086",
+      "buyer_ordinals": [
+        300,
+        435,
+        525
+      ],
+      "source_ordinals": [
+        300,
+        435,
+        525
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-087",
+      "buyer_ordinals": [
+        306,
+        932
+      ],
+      "source_ordinals": [
+        306,
+        932
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-088",
+      "buyer_ordinals": [
+        310,
+        703,
+        2100,
+        3143
+      ],
+      "source_ordinals": [
+        310,
+        703,
+        2100,
+        3143
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-089",
+      "buyer_ordinals": [
+        314,
+        1751
+      ],
+      "source_ordinals": [
+        314,
+        1751
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-090",
+      "buyer_ordinals": [
+        316,
+        2935
+      ],
+      "source_ordinals": [
+        316,
+        2935
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-091",
+      "buyer_ordinals": [
+        319,
+        2307
+      ],
+      "source_ordinals": [
+        319,
+        2307
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-092",
+      "buyer_ordinals": [
+        321,
+        999
+      ],
+      "source_ordinals": [
+        321,
+        999
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-093",
+      "buyer_ordinals": [
+        324
+      ],
+      "source_ordinals": [
+        324
+      ],
+      "external_references": [
+        "LEGACY-POS-0008:variant:1",
+        "prior-buyer:ordinal:1"
+      ],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-094",
+      "buyer_ordinals": [
+        327,
+        1411
+      ],
+      "source_ordinals": [
+        327,
+        1411
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-095",
+      "buyer_ordinals": [
+        328,
+        936
+      ],
+      "source_ordinals": [
+        328,
+        936
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-096",
+      "buyer_ordinals": [
+        329,
+        827,
+        1453,
+        1785
+      ],
+      "source_ordinals": [
+        329,
+        827,
+        1453,
+        1785
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-097",
+      "buyer_ordinals": [
+        331,
+        684,
+        1975
+      ],
+      "source_ordinals": [
+        331,
+        684,
+        1975
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-098",
+      "buyer_ordinals": [
+        334,
+        365
+      ],
+      "source_ordinals": [
+        334,
+        365
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-099",
+      "buyer_ordinals": [
+        335,
+        595,
+        873
+      ],
+      "source_ordinals": [
+        335,
+        595,
+        873
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-100",
+      "buyer_ordinals": [
+        336,
+        357
+      ],
+      "source_ordinals": [
+        336,
+        357
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-101",
+      "buyer_ordinals": [
+        342,
+        2518
+      ],
+      "source_ordinals": [
+        342,
+        2518
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-102",
+      "buyer_ordinals": [
+        353,
+        743,
+        805
+      ],
+      "source_ordinals": [
+        353,
+        743,
+        805
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-103",
+      "buyer_ordinals": [
+        354,
+        1488,
+        1974,
+        2849
+      ],
+      "source_ordinals": [
+        354,
+        1488,
+        1974,
+        2849
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-104",
+      "buyer_ordinals": [
+        359,
+        1810
+      ],
+      "source_ordinals": [
+        359,
+        1810
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-105",
+      "buyer_ordinals": [
+        360,
+        515
+      ],
+      "source_ordinals": [
+        360,
+        515
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-106",
+      "buyer_ordinals": [
+        384,
+        754,
+        812
+      ],
+      "source_ordinals": [
+        384,
+        754,
+        812
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Blue Waters versus Bluewaters segmentation and location attachment require factual entity verification."
+    },
+    {
+      "component_id": "BUYER-COMP-107",
+      "buyer_ordinals": [
+        386,
+        1206,
+        1236
+      ],
+      "source_ordinals": [
+        386,
+        1206,
+        1236
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-108",
+      "buyer_ordinals": [
+        390,
+        1101
+      ],
+      "source_ordinals": [
+        390,
+        1101
+      ],
+      "external_references": [
+        "prior-buyer:ordinal:4",
+        "prior-buyer:ordinal:6"
+      ],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-109",
+      "buyer_ordinals": [
+        395,
+        2186
+      ],
+      "source_ordinals": [
+        395,
+        2186
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-110",
+      "buyer_ordinals": [
+        396,
+        705,
+        720
+      ],
+      "source_ordinals": [
+        396,
+        705,
+        720
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-111",
+      "buyer_ordinals": [
+        407,
+        649
+      ],
+      "source_ordinals": [
+        407,
+        649
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-112",
+      "buyer_ordinals": [
+        416,
+        1146
+      ],
+      "source_ordinals": [
+        416,
+        1146
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-113",
+      "buyer_ordinals": [
+        418,
+        930
+      ],
+      "source_ordinals": [
+        418,
+        930
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-114",
+      "buyer_ordinals": [
+        439,
+        1293
+      ],
+      "source_ordinals": [
+        439,
+        1293
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Dubai Palm is not a verified identity or an automatic Palm Jumeirah mapping."
+    },
+    {
+      "component_id": "BUYER-COMP-115",
+      "buyer_ordinals": [
+        462,
+        809,
+        2853
+      ],
+      "source_ordinals": [
+        462,
+        809,
+        2853
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-116",
+      "buyer_ordinals": [
+        467,
+        1210
+      ],
+      "source_ordinals": [
+        467,
+        1210
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-117",
+      "buyer_ordinals": [
+        469,
+        528,
+        568
+      ],
+      "source_ordinals": [
+        469,
+        528,
+        568
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-118",
+      "buyer_ordinals": [
+        472,
+        706
+      ],
+      "source_ordinals": [
+        472,
+        706
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-119",
+      "buyer_ordinals": [
+        479,
+        596
+      ],
+      "source_ordinals": [
+        479,
+        596
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-120",
+      "buyer_ordinals": [
+        484,
+        807
+      ],
+      "source_ordinals": [
+        484,
+        807
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-121",
+      "buyer_ordinals": [
+        489,
+        875,
+        911
+      ],
+      "source_ordinals": [
+        489,
+        875,
+        911
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Blue Waters versus Bluewaters segmentation remains unresolved; common purchase wording does not verify the named entity."
+    },
+    {
+      "component_id": "BUYER-COMP-122",
+      "buyer_ordinals": [
+        490,
+        651
+      ],
+      "source_ordinals": [
+        490,
+        651
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-123",
+      "buyer_ordinals": [
+        491,
+        1582
+      ],
+      "source_ordinals": [
+        491,
+        1582
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-124",
+      "buyer_ordinals": [
+        495
+      ],
+      "source_ordinals": [
+        495
+      ],
+      "external_references": [
+        "LEGACY-POS-0011:variant:1"
+      ],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-125",
+      "buyer_ordinals": [
+        498,
+        590
+      ],
+      "source_ordinals": [
+        498,
+        590
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-126",
+      "buyer_ordinals": [
+        507,
+        1215
+      ],
+      "source_ordinals": [
+        507,
+        1215
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-127",
+      "buyer_ordinals": [
+        509,
+        1183
+      ],
+      "source_ordinals": [
+        509,
+        1183
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-128",
+      "buyer_ordinals": [
+        516
+      ],
+      "source_ordinals": [
+        516
+      ],
+      "external_references": [
+        "prior-buyer:ordinal:5"
+      ],
+      "decision": "EXACT_SOURCE_WORDING_REUSE_ONLY",
+      "review_note": "Complete source wording also occurs in the retained external research reference. No new literal or inherited mapping, approval or business evidence."
+    },
+    {
+      "component_id": "BUYER-COMP-129",
+      "buyer_ordinals": [
+        523,
+        559
+      ],
+      "source_ordinals": [
+        523,
+        559
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-130",
+      "buyer_ordinals": [
+        533,
+        1033
+      ],
+      "source_ordinals": [
+        533,
+        1033
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-131",
+      "buyer_ordinals": [
+        536,
+        1683
+      ],
+      "source_ordinals": [
+        536,
+        1683
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "Palm Dubai and Dubai Palm remain an unresolved location relation, not an inferred Palm Jumeirah subject."
+    },
+    {
+      "component_id": "BUYER-COMP-132",
+      "buyer_ordinals": [
+        544,
+        1240
+      ],
+      "source_ordinals": [
+        544,
+        1240
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-133",
+      "buyer_ordinals": [
+        546,
+        832
+      ],
+      "source_ordinals": [
+        546,
+        832
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-134",
+      "buyer_ordinals": [
+        558,
+        1069,
+        1561
+      ],
+      "source_ordinals": [
+        558,
+        1069,
+        1561
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-135",
+      "buyer_ordinals": [
+        566,
+        1572
+      ],
+      "source_ordinals": [
+        566,
+        1572
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-136",
+      "buyer_ordinals": [
+        571
+      ],
+      "source_ordinals": [
+        571,
+        2171
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROLE_OR_CONSTRAINT_MEANING",
+      "review_note": "Own property and own properties may describe ownership or a purchase aspiration; preserve held peer2171 without changing its role."
+    },
+    {
+      "component_id": "BUYER-COMP-137",
+      "buyer_ordinals": [
+        574,
+        882,
+        1023
+      ],
+      "source_ordinals": [
+        574,
+        882,
+        1023
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-138",
+      "buyer_ordinals": [
+        582,
+        813
+      ],
+      "source_ordinals": [
+        582,
+        813
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-139",
+      "buyer_ordinals": [
+        603,
+        1936
+      ],
+      "source_ordinals": [
+        603,
+        1936
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-140",
+      "buyer_ordinals": [
+        624,
+        1468
+      ],
+      "source_ordinals": [
+        624,
+        1468
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-141",
+      "buyer_ordinals": [
+        626,
+        1009
+      ],
+      "source_ordinals": [
+        626,
+        1009
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-142",
+      "buyer_ordinals": [
+        629,
+        915
+      ],
+      "source_ordinals": [
+        629,
+        915
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-143",
+      "buyer_ordinals": [
+        633,
+        1809,
+        2480
+      ],
+      "source_ordinals": [
+        633,
+        1809,
+        2480
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-144",
+      "buyer_ordinals": [
+        641,
+        1778
+      ],
+      "source_ordinals": [
+        641,
+        1778
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-145",
+      "buyer_ordinals": [
+        673,
+        958
+      ],
+      "source_ordinals": [
+        673,
+        958
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-146",
+      "buyer_ordinals": [
+        689,
+        823,
+        879
+      ],
+      "source_ordinals": [
+        689,
+        823,
+        879
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-147",
+      "buyer_ordinals": [
+        691,
+        1852
+      ],
+      "source_ordinals": [
+        691,
+        1852
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-148",
+      "buyer_ordinals": [
+        692,
+        1459
+      ],
+      "source_ordinals": [
+        692,
+        1459
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-149",
+      "buyer_ordinals": [
+        724,
+        2586
+      ],
+      "source_ordinals": [
+        724,
+        2586
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-150",
+      "buyer_ordinals": [
+        739,
+        2972,
+        2977
+      ],
+      "source_ordinals": [
+        739,
+        2972,
+        2977
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-151",
+      "buyer_ordinals": [
+        748,
+        3173
+      ],
+      "source_ordinals": [
+        748,
+        3173
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-152",
+      "buyer_ordinals": [
+        753,
+        1425
+      ],
+      "source_ordinals": [
+        753,
+        1425
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-153",
+      "buyer_ordinals": [
+        760,
+        2765
+      ],
+      "source_ordinals": [
+        760,
+        2765
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-154",
+      "buyer_ordinals": [
+        771
+      ],
+      "source_ordinals": [
+        771
+      ],
+      "external_references": [
+        "LEGACY-POS-0013:variant:1"
+      ],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-155",
+      "buyer_ordinals": [
+        776,
+        1602
+      ],
+      "source_ordinals": [
+        776,
+        1602
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-156",
+      "buyer_ordinals": [
+        782,
+        820
+      ],
+      "source_ordinals": [
+        782,
+        820
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-157",
+      "buyer_ordinals": [
+        786,
+        1000
+      ],
+      "source_ordinals": [
+        786,
+        1000
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-158",
+      "buyer_ordinals": [
+        790,
+        2088
+      ],
+      "source_ordinals": [
+        790,
+        2088
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-159",
+      "buyer_ordinals": [
+        804,
+        2755
+      ],
+      "source_ordinals": [
+        804,
+        2755
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-160",
+      "buyer_ordinals": [
+        808,
+        1490
+      ],
+      "source_ordinals": [
+        808,
+        1490
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-161",
+      "buyer_ordinals": [
+        841
+      ],
+      "source_ordinals": [
+        841
+      ],
+      "external_references": [
+        "LEGACY-POS-0006:variant:1"
+      ],
+      "decision": "EXACT_SOURCE_WORDING_REUSE_ONLY",
+      "review_note": "Complete source wording also occurs in the retained external research reference. No new literal or inherited mapping, approval or business evidence."
+    },
+    {
+      "component_id": "BUYER-COMP-162",
+      "buyer_ordinals": [
+        842,
+        966
+      ],
+      "source_ordinals": [
+        842,
+        966
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-163",
+      "buyer_ordinals": [
+        843,
+        1714
+      ],
+      "source_ordinals": [
+        843,
+        1714
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-164",
+      "buyer_ordinals": [
+        844,
+        1571
+      ],
+      "source_ordinals": [
+        844,
+        1571
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-165",
+      "buyer_ordinals": [
+        846,
+        1729
+      ],
+      "source_ordinals": [
+        846,
+        1729
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-166",
+      "buyer_ordinals": [
+        854,
+        1216
+      ],
+      "source_ordinals": [
+        854,
+        1216
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-167",
+      "buyer_ordinals": [
+        856,
+        1948
+      ],
+      "source_ordinals": [
+        856,
+        1948
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-168",
+      "buyer_ordinals": [
+        860,
+        976
+      ],
+      "source_ordinals": [
+        860,
+        976
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-169",
+      "buyer_ordinals": [
+        872,
+        1689
+      ],
+      "source_ordinals": [
+        872,
+        1689
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-170",
+      "buyer_ordinals": [
+        880,
+        1466
+      ],
+      "source_ordinals": [
+        880,
+        1466
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-171",
+      "buyer_ordinals": [
+        905,
+        2587
+      ],
+      "source_ordinals": [
+        905,
+        2587
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-172",
+      "buyer_ordinals": [
+        934,
+        1244
+      ],
+      "source_ordinals": [
+        934,
+        1244
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-173",
+      "buyer_ordinals": [
+        969,
+        1764
+      ],
+      "source_ordinals": [
+        969,
+        1764
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-174",
+      "buyer_ordinals": [
+        984,
+        1585
+      ],
+      "source_ordinals": [
+        984,
+        1585
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-175",
+      "buyer_ordinals": [
+        1021,
+        1518
+      ],
+      "source_ordinals": [
+        1021,
+        1518
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-176",
+      "buyer_ordinals": [
+        1041,
+        1455
+      ],
+      "source_ordinals": [
+        1041,
+        1455
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-177",
+      "buyer_ordinals": [
+        1049,
+        3140
+      ],
+      "source_ordinals": [
+        1049,
+        3140
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-178",
+      "buyer_ordinals": [
+        1055,
+        1065
+      ],
+      "source_ordinals": [
+        1055,
+        1065
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-179",
+      "buyer_ordinals": [
+        1059
+      ],
+      "source_ordinals": [
+        1059
+      ],
+      "external_references": [
+        "LEGACY-POS-0016:variant:1"
+      ],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-180",
+      "buyer_ordinals": [
+        1072,
+        1465,
+        3148
+      ],
+      "source_ordinals": [
+        1072,
+        1465,
+        3148
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-181",
+      "buyer_ordinals": [
+        1073,
+        1853
+      ],
+      "source_ordinals": [
+        1073,
+        1853
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-182",
+      "buyer_ordinals": [
+        1076,
+        2309
+      ],
+      "source_ordinals": [
+        1076,
+        2309
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-183",
+      "buyer_ordinals": [
+        1136,
+        1198
+      ],
+      "source_ordinals": [
+        1136,
+        1198
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-184",
+      "buyer_ordinals": [
+        1138,
+        1285
+      ],
+      "source_ordinals": [
+        1138,
+        1285
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-185",
+      "buyer_ordinals": [
+        1144,
+        2356
+      ],
+      "source_ordinals": [
+        1144,
+        2356
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-186",
+      "buyer_ordinals": [
+        1151,
+        1524
+      ],
+      "source_ordinals": [
+        1151,
+        1524
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-187",
+      "buyer_ordinals": [
+        1152,
+        1669
+      ],
+      "source_ordinals": [
+        1152,
+        1669
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-188",
+      "buyer_ordinals": [
+        1154,
+        3142
+      ],
+      "source_ordinals": [
+        1154,
+        3142
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-189",
+      "buyer_ordinals": [
+        1173,
+        1520
+      ],
+      "source_ordinals": [
+        1173,
+        1520
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-190",
+      "buyer_ordinals": [
+        1179,
+        2583
+      ],
+      "source_ordinals": [
+        1179,
+        2583
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-191",
+      "buyer_ordinals": [
+        1205,
+        2354
+      ],
+      "source_ordinals": [
+        1205,
+        2354
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-192",
+      "buyer_ordinals": [
+        1228,
+        2638
+      ],
+      "source_ordinals": [
+        1228,
+        2638
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-193",
+      "buyer_ordinals": [
+        1232,
+        2599
+      ],
+      "source_ordinals": [
+        1232,
+        2599
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-194",
+      "buyer_ordinals": [
+        1246,
+        2974
+      ],
+      "source_ordinals": [
+        1246,
+        2974
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-195",
+      "buyer_ordinals": [
+        1251,
+        1519
+      ],
+      "source_ordinals": [
+        1251,
+        1519
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-196",
+      "buyer_ordinals": [
+        1253,
+        2229
+      ],
+      "source_ordinals": [
+        1253,
+        2229
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-197",
+      "buyer_ordinals": [
+        1298,
+        1954
+      ],
+      "source_ordinals": [
+        1298,
+        1954
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-198",
+      "buyer_ordinals": [
+        1299,
+        1529
+      ],
+      "source_ordinals": [
+        1299,
+        1529
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-199",
+      "buyer_ordinals": [
+        1314,
+        3144
+      ],
+      "source_ordinals": [
+        1314,
+        3144
+      ],
+      "external_references": [],
+      "decision": "HOLD_ENTITY_OR_LOCATION_RELATION",
+      "review_note": "The Villa may be a named community or generic asset wording; the complete location and asset attachment needs verification."
+    },
+    {
+      "component_id": "BUYER-COMP-200",
+      "buyer_ordinals": [
+        1321,
+        2581
+      ],
+      "source_ordinals": [
+        1321,
+        2581
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-201",
+      "buyer_ordinals": [
+        1328,
+        2291
+      ],
+      "source_ordinals": [
+        1328,
+        2291
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-202",
+      "buyer_ordinals": [
+        1374,
+        2592,
+        2854
+      ],
+      "source_ordinals": [
+        1374,
+        2592,
+        2854
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-203",
+      "buyer_ordinals": [
+        1390,
+        1704
+      ],
+      "source_ordinals": [
+        1390,
+        1704
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-204",
+      "buyer_ordinals": [
+        1391,
+        1803,
+        2251
+      ],
+      "source_ordinals": [
+        1391,
+        1803,
+        2251
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-205",
+      "buyer_ordinals": [
+        1408,
+        1715
+      ],
+      "source_ordinals": [
+        1408,
+        1715
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-206",
+      "buyer_ordinals": [
+        1418,
+        1622
+      ],
+      "source_ordinals": [
+        1418,
+        1622
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-207",
+      "buyer_ordinals": [
+        1434,
+        1448
+      ],
+      "source_ordinals": [
+        1434,
+        1448
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-208",
+      "buyer_ordinals": [
+        1458,
+        1856
+      ],
+      "source_ordinals": [
+        1458,
+        1856
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-209",
+      "buyer_ordinals": [
+        1508,
+        3176
+      ],
+      "source_ordinals": [
+        1508,
+        3176
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-210",
+      "buyer_ordinals": [
+        1514,
+        2575
+      ],
+      "source_ordinals": [
+        1514,
+        2575
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-211",
+      "buyer_ordinals": [
+        1528,
+        2520
+      ],
+      "source_ordinals": [
+        1528,
+        2520
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-212",
+      "buyer_ordinals": [
+        1587,
+        2344
+      ],
+      "source_ordinals": [
+        1587,
+        2344
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-213",
+      "buyer_ordinals": [
+        1609,
+        2143
+      ],
+      "source_ordinals": [
+        1609,
+        2143
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-214",
+      "buyer_ordinals": [
+        1616,
+        2580
+      ],
+      "source_ordinals": [
+        1616,
+        2580
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-215",
+      "buyer_ordinals": [
+        1629,
+        3175
+      ],
+      "source_ordinals": [
+        1629,
+        3175
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-216",
+      "buyer_ordinals": [
+        1648,
+        1792
+      ],
+      "source_ordinals": [
+        1648,
+        1792
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-217",
+      "buyer_ordinals": [
+        1661,
+        1978
+      ],
+      "source_ordinals": [
+        1661,
+        1978
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-218",
+      "buyer_ordinals": [
+        1697,
+        2953
+      ],
+      "source_ordinals": [
+        1697,
+        2953
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-219",
+      "buyer_ordinals": [
+        1726,
+        2271
+      ],
+      "source_ordinals": [
+        1726,
+        2271
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-220",
+      "buyer_ordinals": [
+        1746,
+        2189
+      ],
+      "source_ordinals": [
+        1746,
+        2189
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-221",
+      "buyer_ordinals": [
+        1805,
+        2023
+      ],
+      "source_ordinals": [
+        1805,
+        2023
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-222",
+      "buyer_ordinals": [
+        1824,
+        3181
+      ],
+      "source_ordinals": [
+        1824,
+        3181
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-223",
+      "buyer_ordinals": [
+        1896,
+        2591
+      ],
+      "source_ordinals": [
+        1896,
+        2591
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-224",
+      "buyer_ordinals": [
+        1940,
+        2582
+      ],
+      "source_ordinals": [
+        1940,
+        2582
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-225",
+      "buyer_ordinals": [
+        1955,
+        2033,
+        2831
+      ],
+      "source_ordinals": [
+        1955,
+        2033,
+        2831
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-226",
+      "buyer_ordinals": [
+        1983,
+        2428
+      ],
+      "source_ordinals": [
+        1983,
+        2428
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-227",
+      "buyer_ordinals": [
+        2048,
+        2444,
+        2447
+      ],
+      "source_ordinals": [
+        2048,
+        2444,
+        2447
+      ],
+      "external_references": [],
+      "decision": "HOLD_ROOM_OR_PROPERTY_DEFINITION",
+      "review_note": "BHK and bedroom/bed/BR descriptions share preliminary purchase context but do not establish identical hall/kitchen, layout, property or room definitions. Keep every variant and require actual subject/family review before any canonical decision."
+    },
+    {
+      "component_id": "BUYER-COMP-228",
+      "buyer_ordinals": [
+        2411,
+        2907
+      ],
+      "source_ordinals": [
+        2411,
+        2907
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-229",
+      "buyer_ordinals": [
+        2574,
+        2613
+      ],
+      "source_ordinals": [
+        2574,
+        2613
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-230",
+      "buyer_ordinals": [
+        2576,
+        2693
+      ],
+      "source_ordinals": [
+        2576,
+        2693
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-231",
+      "buyer_ordinals": [
+        2655,
+        3172
+      ],
+      "source_ordinals": [
+        2655,
+        3172
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-232",
+      "buyer_ordinals": [
+        2975,
+        2987
+      ],
+      "source_ordinals": [
+        2975,
+        2987
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    },
+    {
+      "component_id": "BUYER-COMP-233",
+      "buyer_ordinals": [
+        3139,
+        3174
+      ],
+      "source_ordinals": [
+        3139,
+        3174
+      ],
+      "external_references": [],
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "review_note": "Read complete wording and every retained source/external peer. Purchase/development research context is compatible at the surface wording level; word order, in-preposition, singular/plural or explicitly disclosed format/vocabulary changes do not verify actual subject, property quantity, stock, claims or a canonical merge."
+    }
+  ]
+}
