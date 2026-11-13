@@ -47,7 +47,18 @@
   "remaining": [
     "Review exact individual planning-slot, page and CMS route assignments without changing the 360 allocation",
     "Complete D1 and historical 300-to-360 crosswalk evidence",
-    "Receive qualified factual-reviewer, content-update-owner and private evidence-location details for issue 2",
+    "Receive genuine dated service/inventory/rights evidence, supported coverage and Amit's per-draft factual sign-offs for issue 2",
     "Pass all full-library, operational, tracking, consent and independent-review gates before separate release authorization"
-  ]
+  ],
+  "readiness_update": {
+    "reviewed_on_dubai": "2026-11-13",
+    "scope": "EXISTING_DECISION_RECONCILIATION_NOT_NEW_APPROVAL",
+    "decision_reference": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2#issuecomment-6784444312",
+    "resolved_since_family_decision": [
+      "Amit nominated for factual sign-off and content updates",
+      "Owner-only Marketing evidence folder created; no new sharing"
+    ],
+    "superseded_historical_remaining_item": "Receive qualified factual-reviewer, content-update-owner and private evidence-location details for issue 2",
+    "business_evidence_or_publication_approval_inferred": false
+  }
 }
