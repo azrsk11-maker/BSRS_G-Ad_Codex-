@@ -82,14 +82,16 @@ The HTTPS endpoint was loopback-only. It used an ephemeral key with a Chrome pro
 
 The same disposable Chrome probe passed an injected HTTP 503 on the first withdrawal attempt (2.33 seconds command wall time). The old server cookie still represented advertising consent. The browser denied measurement immediately, stayed denied and ineligible after navigating to a fresh page, and cleared its pending marker only after an acknowledged retry. The fixture verifies the browser's response to an outage and recovery. It does not simulate a WordPress storage failure or establish live Google acceptance.
 
-To reproduce on Windows with an existing Chrome installation and a Python environment with `cryptography`, run from this directory:
+The historical runs above used a certificate exception and are not trusted-TLS native acceptance. The revised probe generates no key or certificate and supplies no browser certificate exception. Supply a test certificate chain and matching private key for 127.0.0.1, normally trusted by both the Python runtime and Chrome. Do not install a global CA or bypass a security warning. If a compliant test environment is unavailable, browser acceptance remains held. Never commit certificates/private keys or place them in evidence.
+
+To reproduce in an authorized isolated environment with an existing Chrome installation, run from this directory:
 
 ```powershell
-python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>'
-python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>' --withdrawal-outage
+python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>' --tls-cert '<test chain.pem>' --tls-key '<test key.pem>'
+python -B consent-browser-probe.py --chrome '<path to installed chrome.exe>' --tls-cert '<test chain.pem>' --tls-key '<test key.pem>' --withdrawal-outage
 ```
 
-Both commands must return PASS. The fixture is optional and uses no account profile. The isolated WordPress job remains separate.
+The normally validating loopback TLS preflight must succeed before Chrome starts. Chrome must independently accept the certificate in its disposable profile. Both commands must return PASS. The fixture is optional and uses no account profile. The isolated WordPress job remains separate.
 
 Both cases also verify that a separate same-origin Chrome tab starts with the acknowledged advertising grant and stops measurement when the first tab withdraws. The second tab clears its own advertising session storage and preserves unrelated storage. Under HTTP 503 it stays pending and denied. Both scenarios passed in 6.47 seconds combined in the disposable profile. Live backend behavior remains outside this check.
 
@@ -108,3 +110,7 @@ In ordinary Chrome, the live rental page showed both optional choices unchecked.
 | Live rental layout | One page at one narrow desktop window size, consent actions visible above the sticky bar after scrolling | Physical phone, natural keyboard scrolling and other routes at that viewport |
 | Chrome loopback fixture | Actual browser consent UI, storage, cross-tab propagation and outage behavior | Browser and actual WordPress together, including real consent response and measurement network behavior |
 | Isolated WordPress lab | Synthetic intake, consent and receiver integration through the pinned source and service doubles | Real Google destinations, independent review and production release |
+
+### TLS regression checks
+
+Run `python -B tools/staging-lab/browser_tls_checks.py` from the repository root (Node 24 and Python cryptography required). This explicit opt-in suite belongs to the optional browser harnesses and is required before publishing changes to them. It is outside normal Foundation test discovery, which installs no cryptography dependency; no existing check is skipped or replaced. Tests use temporary synthetic certificates and process-local test roots only; they install no CA, launch no browser and establish no native acceptance. Missing, untrusted, expired, wrong-host, malformed and mismatched certificate material must fail closed. The CTA harness requires `BSRE_BROWSER_PATH`, `BSRE_TLS_CERT` and `BSRE_TLS_KEY`; its Node TLS preflight and Chrome both use normal validation.

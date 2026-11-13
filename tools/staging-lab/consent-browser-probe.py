@@ -1,28 +1,26 @@
 """Local synthetic Chrome check. No production origins, credentials or writes."""
 import argparse
-import base64
-from datetime import datetime, timedelta, timezone
-import hashlib
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-import ipaddress
 import json
 from pathlib import Path
 import ssl
 import subprocess
 from tempfile import TemporaryDirectory
 import time
+import threading
+from trusted_loopback_tls import server_context, verify_loopback_tls
 
-from cryptography import x509
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--chrome", type=Path, required=True, help="Path to an installed Chrome executable")
+parser.add_argument("--tls-cert", type=Path, required=True, help="Supplied certificate chain normally trusted by Chrome and the OS")
+parser.add_argument("--tls-key", type=Path, required=True, help="Private key for the supplied test certificate; never commit")
 parser.add_argument("--withdrawal-outage", action="store_true")
 parser.add_argument("--narrow", action="store_true")
 args = parser.parse_args()
 if not args.chrome.is_file():
     parser.error("--chrome must point to an existing executable")
+tls = server_context(args.tls_cert, args.tls_key)
 root = Path(__file__).resolve().parent
 bridge = (root / "fixtures/bsre-enquiries/assets/consent-bridge.js").read_bytes()
 stylesheet = (root / "fixtures/bsre-enquiries/assets/consent.css").read_bytes()
@@ -94,40 +92,36 @@ class Fixture(BaseHTTPRequestHandler):
 
 with TemporaryDirectory(prefix="bsre-browser-fixture-") as temp:
     directory = Path(temp)
-    key = ec.generate_private_key(ec.SECP256R1())
-    name = x509.Name([x509.NameAttribute(x509.NameOID.COMMON_NAME, "BSRE disposable loopback")])
-    now = datetime.now(timezone.utc)
-    cert = (x509.CertificateBuilder().subject_name(name).issuer_name(name).public_key(key.public_key())
-            .serial_number(x509.random_serial_number()).not_valid_before(now - timedelta(minutes=1))
-            .not_valid_after(now + timedelta(hours=1))
-            .add_extension(x509.SubjectAlternativeName([x509.IPAddress(ipaddress.ip_address("127.0.0.1"))]), False)
-            .sign(key, hashes.SHA256()))
-    (directory / "cert.pem").write_bytes(cert.public_bytes(serialization.Encoding.PEM))
-    (directory / "key.pem").write_bytes(key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()))
-    spki = key.public_key().public_bytes(serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo)
-    pin = base64.b64encode(hashlib.sha256(spki).digest()).decode()
     with ThreadingHTTPServer(("127.0.0.1", 0), Fixture) as server:
         origin = f"https://127.0.0.1:{server.server_port}"
-        tls = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-        tls.load_cert_chain(directory / "cert.pem", directory / "key.pem")
         server.socket = tls.wrap_socket(server.socket, server_side=True)
-        server.timeout = 0.5
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            verify_loopback_tls(server.server_port)
+        except Exception:
+            server.shutdown()
+            worker.join(timeout=3)
+            raise
         command = [str(args.chrome.resolve()), "--headless", "--disable-popup-blocking",
                 f"--user-data-dir={directory / 'profile'}", "--disable-background-networking",
-                "--disable-quic", "--proxy-server=http://127.0.0.1:1", "--no-first-run",
-                f"--ignore-certificate-errors-spki-list={pin}"]
+                "--disable-quic", "--proxy-server=http://127.0.0.1:1", "--no-first-run"]
         if args.narrow:
             command.extend(["--window-size=500,700", "--force-device-scale-factor=1.5"])
         command.append(origin + "/browser")
-        with subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) as browser:
-            try:
-                deadline = time.monotonic() + 20
-                while not result and browser.poll() is None and time.monotonic() < deadline:
-                    server.handle_request()
-            finally:
-                if browser.poll() is None:
-                    browser.terminate()
-                browser.wait(timeout=5)
+        try:
+            with subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) as browser:
+                try:
+                    deadline = time.monotonic() + 20
+                    while not result and browser.poll() is None and time.monotonic() < deadline:
+                        time.sleep(0.05)
+                finally:
+                    if browser.poll() is None:
+                        browser.terminate()
+                    browser.wait(timeout=5)
+        finally:
+            server.shutdown()
+            worker.join(timeout=3)
     print(json.dumps(result or {"status": "NO_RESULT"}))
     if result.get("status") != "PASS" or (fail_withdrawal and not withdrawal_failure_sent):
         raise SystemExit(1)

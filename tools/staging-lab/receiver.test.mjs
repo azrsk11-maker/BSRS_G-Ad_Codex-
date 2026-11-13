@@ -34,3 +34,59 @@ test('provider exception after potential delivery stays AMBIGUOUS until reconcil
 test('stale SENDING is quarantined and confirmed-not-sent can be retried',()=>{const l=lab(),a=l.post(l.payload());l.rows[1][6]='SENDING';l.rows[1][25]=new Date(Date.now()-901000).toISOString();l.context.processLeadOutbox();assert.equal(l.rows[1][6],'AMBIGUOUS');assert.equal(l.mail.length,0);l.context.reconcileLeadEmail(a.lead_id,'confirmed_not_sent');l.context.processLeadOutbox();assert.equal(l.rows[1][6],'SENT');assert.equal(l.mail.length,1);});
 test('duplicate stored identities require reconciliation rather than overwrite',()=>{const l=lab(),p=l.payload();l.post(p);l.rows.push([...l.rows[1]]);assert.equal(l.post(p).code,'DUPLICATE_ROWS_RECONCILE');assert.equal(l.rows.length,3);});
 test('post-send commit failure is ambiguous and never blindly retried',()=>{const l=lab();l.post(l.payload());const flush=l.context.SpreadsheetApp.flush;let calls=0;l.context.SpreadsheetApp.flush=()=>{if(++calls===2)throw Error('synthetic post-send commit failure');return flush();};l.context.processLeadOutbox();assert.equal(l.rows[1][6],'AMBIGUOUS');assert.equal(l.mail.length,1);l.context.processLeadOutbox();assert.equal(l.mail.length,1);});
+
+
+// Synthetic source-derived receiver coverage, not real Sheet/email durability.
+const fiveRoleCases=[
+  ['off_plan','off-plan','Within 1 month'],
+  ['resale','resale','Within 1 month'],
+  ['tenant','rent','Immediate / move now'],
+  ['seller','sell','As soon as practical'],
+  ['landlord','let','Vacant / available to discuss now'],
+];
+function rolePayload(l,role,slug,timeline){
+  return {...l.payload(),role,timeline,
+    landing_page:'https://blackswanrealestate.ae/enquire/'+slug+'/',
+    ...(['seller','landlord'].includes(role)?{authority:'owner',property_details:'SYNTHETIC PROPERTY ONLY'}:{})};
+}
+test('all five wire-v1 role receipts bind exact Intake26 and simulated email identities',()=>{
+  for(const [role,slug,timeline] of fiveRoleCases){
+    const l=lab(), p=rolePayload(l,role,slug,timeline), receipt=l.post(p);
+    assert.equal(receipt.accepted,true,role);
+    const headers=Array.from(l.context.LEAD_HEADERS);
+    assert.equal(headers.length,26);
+    const row=Object.fromEntries(headers.map((name,index)=>[name,l.rows[1][index]]));
+    assert.equal(row.request_id,p.request_id);
+    assert.equal(row.lead_id,receipt.lead_id);assert.equal(row.event_id,receipt.event_id);
+    assert.equal(row.role,role);assert.equal(row.landing_page,p.landing_page);
+    assert.equal(row.email_status,'QUEUED');assert.equal(l.mail.length,0);
+    const normalized=JSON.parse(row.payload_json);
+    assert.equal(normalized.request_id,p.request_id);assert.equal(normalized.role,role);
+    assert.equal(row.payload_sha256,l.context.hex_(l.context.Utilities.computeDigest('sha256',row.payload_json)));
+    assert.deepEqual(l.post(p),receipt);assert.equal(l.rows.length,2);
+    l.context.processLeadOutbox();assert.equal(l.mail.length,1);
+    assert.equal(l.rows[1][headers.indexOf('email_status')],'SENT');
+    const mail=l.mail[0];assert.ok(mail.subject.endsWith(receipt.lead_id));
+    assert.ok(mail.body.startsWith('Lead ID: '+receipt.lead_id+'\nEvent ID: '+receipt.event_id+'\n'));
+    const mailPayload=JSON.parse(mail.body.slice(mail.body.indexOf('\n\n')+2));
+    assert.deepEqual(mailPayload,normalized);
+    assert.ok(mail.body.includes('not yet sales qualified'));
+    assert.deepEqual(l.post(p),receipt);l.context.processLeadOutbox();
+    assert.equal(l.mail.length,1);assert.equal(l.rows.length,2);
+    assert.equal(l.post({...p,area:'SYNTHETIC CONFLICT'}).code,'REQUEST_ID_CONFLICT');
+    assert.equal(l.mail.length,1);assert.equal(l.rows.length,2);
+  }
+});
+test('five-role outbox batch keeps a sixth receipt queued without losing identity',()=>{
+  const l=lab(),receipts=[];
+  for(const item of [...fiveRoleCases,fiveRoleCases[0]]){
+    const receipt=l.post(rolePayload(l,...item));assert.equal(receipt.accepted,true);receipts.push(receipt);
+  }
+  assert.equal(new Set(receipts.map(x=>x.lead_id)).size,6);
+  assert.equal(new Set(receipts.map(x=>x.event_id)).size,6);
+  l.context.processLeadOutbox();assert.equal(l.mail.length,5);
+  assert.deepEqual(l.rows.slice(1).map(row=>row[6]),['SENT','SENT','SENT','SENT','SENT','QUEUED']);
+  l.context.processLeadOutbox();assert.equal(l.mail.length,6);
+  for(const receipt of receipts)assert.equal(l.mail.filter(mail=>mail.subject.endsWith(receipt.lead_id)&&mail.body.includes('Event ID: '+receipt.event_id+'\n')).length,1);
+  l.context.processLeadOutbox();assert.equal(l.mail.length,6);
+});
