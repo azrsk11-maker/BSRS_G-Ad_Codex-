@@ -22,8 +22,8 @@ output only to an appropriate private review location, then verify that exact
 file with the same explicit selection:
 
 ```powershell
-python -B tools/keyword-system/positive_service_packet.py --candidate-id LEGACY-POS-0030 --candidate-id LEGACY-POS-0031 --emit-workorder
-python -B tools/keyword-system/positive_service_packet.py --candidate-id LEGACY-POS-0030 --candidate-id LEGACY-POS-0031 --verify PATH_TO_PRIVATE_WORKORDER
+python -B tools/keyword-system/selected_owner_packet.py --candidate-id LEGACY-POS-0030 --candidate-id LEGACY-POS-0031 --emit-workorder
+python -B tools/keyword-system/selected_owner_packet.py --candidate-id LEGACY-POS-0030 --candidate-id LEGACY-POS-0031 --verify PATH_TO_PRIVATE_WORKORDER
 ```
 
 IDs select from the pinned historical source, never from the submitted packet.
