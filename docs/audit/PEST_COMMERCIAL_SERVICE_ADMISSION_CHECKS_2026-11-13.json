@@ -1,0 +1,102 @@
+{
+  "scope": "LOCAL_RESEARCH_AND_DEVELOPMENT_ACCEPTANCE_NOT_RELEASE",
+  "as_of": "2026-11-13",
+  "semantic_review": {
+    "literal_count": 169,
+    "proposals": 87,
+    "holds": 82,
+    "tamper_cases": 17,
+    "source_capture_rows": 6053,
+    "raw_capture_unchanged": true
+  },
+  "admission": {
+    "scope": "CURRENT_RESEARCH_AFTER_PEST_COMMERCIAL_SERVICES_APPEND_ONLY_REVIEW",
+    "as_of": "2026-11-13",
+    "input_rows": 13975,
+    "distinct_nonblank_phrases": 13975,
+    "reviewed_eligible_rows": 13975,
+    "excluded_rows": 0,
+    "approved_exclusion_rows": 0,
+    "target": 14000,
+    "deficit": 25,
+    "exact_target_pass": false,
+    "structural_pass": true,
+    "deployment_export_allowed": false,
+    "production_writes_available": false,
+    "positive_library_coverage_verified": false,
+    "protected_queries_indexed": 19095,
+    "computed_conflicts": 0,
+    "prior_rows": 13896,
+    "new_rows": 79,
+    "archived_original_rows": 18,
+    "source_occurrences_retained_in_current_records": 14188,
+    "new_exact_provenance_occurrences": 79,
+    "new_proposal_holds": 90,
+    "historical_records_rewritten": false,
+    "human_review_verified": false,
+    "live_campaign_mapping_verified": false,
+    "release_authorized": false
+  },
+  "complete_inputs_sha256": "974a1439d4383d84e40b245d4218f909650cb2ecf3c176d87d547212a4ea5e89",
+  "base_sha256": "d1371eaafdaf505b2767ddacff6e1561028963fef345314e7198138cb2a87253",
+  "review_pin": "aecc1a6450f91c6ace5f1405248ad5f6119b9c41394e4720f8f29ad9f43f4b64",
+  "output_pins": {
+    "index.json": "32104397dc9dbb12f3bc391ee1fc742751dec100b6d6004efa075854f0cbe123",
+    "cohort-report.json": "25b2ba59afabcb142f6cdf086122e6436289e8651f6ca536898d719cd9dfada7",
+    "library-report.json": "a195fb756d261a52692174924fbc0cfd4a96063d85e037e9e11b49c15ee80e19",
+    "research-pool-allocation.json": "81c298b8b7f40469ba0f69cf2b92738b474a054490bc49c1e4f482a1016d3647"
+  },
+  "local_checks": {
+    "unique_cases_verified": 38,
+    "initial_tests": 38,
+    "initial_passed": 37,
+    "initial_errors": 1,
+    "initial_failures": 0,
+    "targeted_entrypoint_recheck": {
+      "passed": true,
+      "elapsed_seconds": 0.000409
+    },
+    "coverage_basis": "All nineteen new and seventeen preceding cases plus freshness guard passed in the initial run; the sole preceding entrypoint case passed on a fresh import. No source assertions were weakened. These are 38 unique cases across two local checks, not a single passing 38-case invocation.",
+    "times": {
+      "semantic_seconds": 0.324635,
+      "fresh_base_seconds": 116.758237,
+      "fresh_review_seconds": 1.571094,
+      "generation_and_saved_check_seconds": 12.414253,
+      "focused_seconds": 22.555628,
+      "total_seconds": 155.305422
+    },
+    "first_allocation_attempt": {
+      "held": true,
+      "reason": "A prior-stage helper contained fixed baseline counts. New helper now strictly validates the new 13,896/104 baseline; prior source unchanged.",
+      "fresh_base_seconds": 119.010793
+    },
+    "harness_reload_fixed": true
+  },
+  "research_rebalance": {
+    "complete_current_base_sha256": "d1371eaafdaf505b2767ddacff6e1561028963fef345314e7198138cb2a87253",
+    "evidence_ref": "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/review.json",
+    "evidence_sha256": "aecc1a6450f91c6ace5f1405248ad5f6119b9c41394e4720f8f29ad9f43f4b64",
+    "from": {
+      "ACADEMIC": 2,
+      "EMPLOYMENT": 20,
+      "MEDIA": 35,
+      "NAVIGATION": 22
+    },
+    "implementation_decision_not_owner_approval": true,
+    "rule": "PROPORTIONAL_UNFILLED_RESEARCH_CAPACITY_LARGEST_REMAINDER_SORTED_POOL_TIEBREAK",
+    "source_pins": {
+      "docs/audit/keyword-pest-commercial-services-review-2026-11-13/review.json": "704457d2646095a1c46aee54faac8becb4d99bc353fa27129ba174b54e82ca90",
+      "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+      "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+    },
+    "to": {
+      "SERVICE": 79
+    }
+  },
+  "current_ci": "PENDING_NEW_HEAD",
+  "expected_keyword_cases": 610,
+  "expected_keyword_modules": 47,
+  "keyword_deadline_seconds": 300,
+  "release_authorized": false,
+  "production_or_ads_changed": false
+}
