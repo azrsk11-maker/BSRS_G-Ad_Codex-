@@ -121,6 +121,13 @@ def execute_check(name, args, cwd=ROOT, *, owned_tree=False):
             details["keyword_evidence"] = {key: report[key] for key in
                 ("evidence_file", "evidence_sha256", "expected_ids_sha256")}
             details['keyword_resources'] = report.get('worker_resources')
+            # Optional whitelisted diagnostics; never alter execution acceptance.
+            try:
+                timings=module('foundation_keyword_timings',ROOT/'tools/efficiency/keyword_timings.py')
+                details['keyword_module_timings']=timings.project(report)
+            except (OSError,ValueError,TypeError,KeyError):
+                details['keyword_module_timings']={'schema':'bsre-keyword-module-timings-v1',
+                    'status':'INCOMPLETE_OR_INVALID','release_authorized':False}
         except (ValueError, KeyError, TypeError):
             keyword_complete = False
         details["keyword_evidence_status"] = "COMPLETE" if keyword_complete else "INCOMPLETE_OR_INVALID"
@@ -237,6 +244,7 @@ def run_checks(require_php=False):
     run("keyword-front-office-document-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-front-office-documents-review-2026-11-13/verify_review.py"), "--self-check"])
     run("keyword-service-installation-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py"), "--self-check"])
     run("keyword-septic-grease-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-septic-grease-review-2026-11-13/verify_review.py"), "--self-check"])
+    run("keyword-trade-services-semantic-review", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-trade-services-review-2026-11-13/verify_review.py"), "--self-check"])
     run("keyword-ofqual-animal-care-source", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-ofqual-animal-care-2026-11-12/extract.py"), "--self-check"])
     run("keyword-entertainment-clipboard-capture", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py")])
     run("keyword-entertainment-clipboard-guards", [sys.executable, "-B", "-m", "unittest", "discover", "-s",
@@ -371,4 +379,7 @@ if __name__ == "__main__":
         keyword_summary = public_keyword_summary(check)
         if keyword_summary is not None:
             print('KEYWORD_SUMMARY '+json.dumps(keyword_summary,sort_keys=True))
+            timings=check['details'].get('keyword_module_timings')
+            if keyword_summary.get('status')=='OBSERVED' and timings is not None:
+                print('KEYWORD_MODULE_TIMINGS '+json.dumps(timings,sort_keys=True))
     raise SystemExit(0 if result["passed"] else 1)
