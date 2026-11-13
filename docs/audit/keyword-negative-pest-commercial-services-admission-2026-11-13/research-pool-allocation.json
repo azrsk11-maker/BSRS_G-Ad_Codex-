@@ -1,0 +1,73 @@
+{
+  "admitted": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4947,
+    "MEDIA": 804,
+    "NAVIGATION": 879,
+    "SERVICE": 1416,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "before": {
+    "ACADEMIC": 1992,
+    "EMPLOYMENT": 4974,
+    "MEDIA": 850,
+    "NAVIGATION": 908,
+    "SERVICE": 1337,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "exclusion_approval_granted": false,
+  "media_budget_changed": false,
+  "new_rows": {
+    "SERVICE": 79
+  },
+  "owner_approval_claimed": false,
+  "previous_allocation_ref": "docs/audit/keyword-negative-trade-services-admission-2026-11-13/research-pool-allocation.json",
+  "previous_allocation_sha256": "2069dba9f78c7b4fd17f75053d2ba7fe9d6a88fadb20bb0261bf09b4f12cfbcd",
+  "remaining": {
+    "ACADEMIC": 0,
+    "EMPLOYMENT": 7,
+    "MEDIA": 11,
+    "NAVIGATION": 7,
+    "SERVICE": 0,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "target_transfer": {
+    "complete_current_base_sha256": "d1371eaafdaf505b2767ddacff6e1561028963fef345314e7198138cb2a87253",
+    "evidence_ref": "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/review.json",
+    "evidence_sha256": "aecc1a6450f91c6ace5f1405248ad5f6119b9c41394e4720f8f29ad9f43f4b64",
+    "from": {
+      "ACADEMIC": 2,
+      "EMPLOYMENT": 20,
+      "MEDIA": 35,
+      "NAVIGATION": 22
+    },
+    "implementation_decision_not_owner_approval": true,
+    "rule": "PROPORTIONAL_UNFILLED_RESEARCH_CAPACITY_LARGEST_REMAINDER_SORTED_POOL_TIEBREAK",
+    "source_pins": {
+      "docs/audit/keyword-pest-commercial-services-review-2026-11-13/review.json": "704457d2646095a1c46aee54faac8becb4d99bc353fa27129ba174b54e82ca90",
+      "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+      "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+    },
+    "to": {
+      "SERVICE": 79
+    }
+  },
+  "targets": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4954,
+    "MEDIA": 815,
+    "NAVIGATION": 886,
+    "SERVICE": 1416,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "total_admitted": 13975,
+  "total_remaining": 25,
+  "total_target": 14000,
+  "version": 1
+}

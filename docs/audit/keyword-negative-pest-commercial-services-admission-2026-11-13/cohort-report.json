@@ -1,0 +1,33 @@
+{
+  "additional_protected_queries": 90,
+  "additional_variant_holds": 8,
+  "all_source_groups_compared": 6053,
+  "cohort_external_key_comparisons": 676,
+  "cohort_groups": 169,
+  "cohort_within_source_key_comparisons": 676,
+  "exclusion_approval_granted": false,
+  "existing_held_protection_occurrences": 0,
+  "external_key_comparisons": 24212,
+  "full_source_groups": 6053,
+  "google_platform_validation_performed": false,
+  "held_groups": 90,
+  "human_review_verified": false,
+  "independent_review_claimed": false,
+  "live_binding_verified": false,
+  "outside_semantic_cohort": 5884,
+  "production_authorized": false,
+  "record_bodies_sha256": "dfd995f14f456a3b820e9336e22a462eeb12cde9c6b347d8371fe1f1452b4c0b",
+  "scope": "AI_REVIEWED_PEST_COMMERCIAL_SERVICES_RESEARCH_NOT_SEARCH_DEMAND",
+  "selected_groups": 79,
+  "semantic_hold_groups": 82,
+  "semantic_proposed_groups": 87,
+  "source_pins": {
+    "docs/audit/keyword-pest-commercial-services-review-2026-11-13/review.json": "704457d2646095a1c46aee54faac8becb4d99bc353fa27129ba174b54e82ca90",
+    "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+    "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+  },
+  "text_compatibility_classifications": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 169
+  },
+  "within_source_key_comparisons": 24212
+}

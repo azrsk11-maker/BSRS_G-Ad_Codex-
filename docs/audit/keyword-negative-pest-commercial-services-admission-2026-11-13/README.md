@@ -1,0 +1,21 @@
+# Append-only pest, commercial and urgent service research
+
+The complete source-bound 169-literal assessment proposes 87 originals and holds 82. Fresh reconstruction of the entire **13,896-record** history and comparison against every one of the 6,053 source rows, all current records, all 18 archives and all 19,005 protections yields **79 unmatched compatible originals**. Eight proposals remain held by source-peer/history key checks; all **90 holds** receive protected records. No original wording, prior body, order, metadata or archive is rewritten. All four lexical methods are evaluated; none is a Google close-variant certification.
+
+Current AI-reviewed negative research is **13,975 / 14,000, deficit 25**: 18 unchanged archives, 19,095 protections, 34 source registrations and 14,188 exact provenance occurrences. Registration does not mean a new raw capture: this reuses the existing authentic service-installation export and preserves all 21 public cells, including historical monthly estimates. Metrics are not copied into the keyword records, and no actual demand, price, provider identity, inventory or approval is inferred.
+
+The new records are full-query EXACT/HIGH/PENDING research under the unbound planned rental context BSRE-C0301 / BSRE-LP0301. Actual campaign IDs and page URLs remain unknown in that context; no real campaign or destination is assigned. Source and complete-body pins, original occurrence details and eligibility scopes are in the index/review. Positive admissions, independent exclusion approvals and deployments remain zero.
+
+## Allocation
+
+Master section 6 permits evidence-based research-pool rebalancing. Semantic selection and the complete membership check precede allocation; every qualified original is retained, with no cutoff or manufactured phrase. Transfer 79 unfilled research slots to Service: Academic 2, Employment 20, Media 35, Navigation 22. The exact integer largest-remainder calculation preserves the 14,000 total, each prior record and every fully admitted pool. Remaining: Employment 7, Media 11, Navigation 7. This is an implementation research decision, not owner approval or a media/financial-budget change.
+
+## Verification and rollback
+
+Nineteen new admission/semantic/allocation cases, eighteen preceding trade-service regressions and the 32-entrypoint freshness guard cover 38 unique cases. The initial local combined run passed 37 and had one stale-import error in the preceding entrypoint test; the unchanged assertions passed on a fresh import in 0.000409 seconds. This is 38 unique cases across two checks, not one passing 38-case invocation. The private harness now reloads edited modules before execution. Earlier, a fixed-base prior allocation helper correctly rejected reuse for this new baseline; the new helper retains strict checks against the verified 13,896/104 counts. Initial diagnostics remain retained privately. [Sanitized acceptance](../PEST_COMMERCIAL_SERVICE_ADMISSION_CHECKS_2026-11-13.json).
+
+Fresh base 116.758237 seconds, fresh review 1.571094, generation/saved checks 12.414253 and initial focused tests 22.555628; total 155.305422. This is not a comparison of equivalent workloads and no billing/runtime speedup is claimed. Exact-head combined CI is pending; expected keyword scope is 610 cases / 47 modules with the original 300-second deadline, existing resource/process guards and no cached body/hash/verdict or unsafe shared fixtures.
+
+`current_negative_library.reconstruct_trade_services_snapshot` and its verifier preserve the preceding 13,896 snapshot; default APIs freshly verify and extend it. The new stage's scoped recovery returns that complete preceding base, pinned d1371eaafdaf505b2767ddacff6e1561028963fef345314e7198138cb2a87253. Current complete input SHA 974a1439d4383d84e40b245d4218f909650cb2ecf3c176d87d547212a4ea5e89. No platform writer exists.
+
+Both full reviewed 14,000 libraries and the entire Master/spec remain required. Business/rights evidence, staff capacity and rehearsal evidence, provider/history/consent/retention/recovery/browser/import acceptance, independent human review and separate release authorizations remain open. The original private workbook, main website, live tracking, Ads, finance and permissions are unchanged. All advertising stays paused; full goal ACTIVE/incomplete.
