@@ -1,5 +1,10 @@
 # Implementation progress
 
+## 13 November Block3 selected historical owner review workorders
+
+- Extended the existing pinned-source workorder tool to accept explicit historical owner candidate IDs and print a held workorder. It reconstructs every source placement/hash and all five empty review slots, rejects unknown/duplicate/empty/non-owner selections, and verifies against the caller's explicit selection rather than trusting submitted packet IDs. Default two-seed packet bytes/semantics remain unchanged; no master/admission/Ads writer added. Historical role selection grants no current service or ownership authority.
+- Focused packet suite passes11tests/0failures/0skips in0.120s, including genuine selected source rows, wrong selection, fabricated PASS and invalid selections. No unchanged full suite rerun; required exact-head remote checks remain pending delivery. All source/library targets and F/full-library prerequisite remain. No production/live tracking/Ads/import/spend or access change. Block3 remains incomplete pending live readbacks, genuine evidence/reviews and full release acceptance.
+
 ## 13 November Block2 TLS and qualified-source privacy candidates
 
 - After verified Block1 idle/clean handover, integrated nine scoped files. Both optional browser harnesses now require supplied test TLS material and normally validating pre-browser HTTPS, with no certificate exception, CA installation or sandbox weakening. The explicit optional TLS suite passes5groups/0skips/7.39s from the source checkout; it requires Python cryptography and remains outside the dependency-free normal Foundation discovery. It is required before publishing changes to these optional harnesses. Actual browser/native acceptance remains unproven.
