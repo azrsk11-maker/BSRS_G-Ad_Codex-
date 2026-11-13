@@ -26,7 +26,9 @@ if str(HISTORY) not in sys.path:
     sys.path.insert(0, str(HISTORY))
 from audit_history import (KNOWN_EXCLUSIONS, MAX_ROWS, AuditInputError,
                            audit_history, read_bounded, validate_envelope)
-from qualification_core import _inspect, strict_json_bytes, when
+from qualification_core import _inspect, strict_json, strict_json_bytes, when
+
+OUTCOME_FIELDS = frozenset(strict_json(HISTORY / "schema/outcome-register-schema.json")["properties"])
 
 SCHEMA = "bsre-private-qualified-queue-v1"
 ARTIFACT = "PRIVATE_QUALIFIED_OWNER_REVIEW_QUEUE_NOT_GOOGLE_SOURCE"
@@ -121,6 +123,10 @@ class Snapshot:
     def _evaluate(self, now):
         data, purposes, binding, retention, review = (self.values[key] for key in INPUT_NAMES)
         validate_envelope(data, None)
+        # Reject contact-bearing/unknown fields before business validation can
+        # downgrade an invalid extract to an ordinary eligibility hold.
+        require(all(isinstance(row, dict) and not set(row) - OUTCOME_FIELDS
+                    for row in data["records"]), "OUTCOME_EXTRACT_FIELDS_INVALID")
         require(isinstance(purposes, list) and len(purposes) <= MAX_ROWS, "PURPOSE_ROWS_INVALID")
         require(isinstance(binding, dict) and set(binding) == BINDING_FIELDS, "BINDING_FIELDS_INVALID")
         require(isinstance(review, dict) and set(review) == REVIEW_FIELDS, "REVIEW_FIELDS_INVALID")
