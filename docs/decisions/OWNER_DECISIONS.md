@@ -135,3 +135,8 @@ Under Master section 6's existing permission to rebalance proposed research pool
 ## Evidence-based pest/commercial service research allocation — 13 November
 
 Under unchanged Master section6 flexibility, the complete169-literal assessment and fresh13,896-record history identify79 compatible originals before allocation. Transfer79 unfilled research slots to Service using integer largest remainders: Academic2, Employment20, Media35, Navigation22. Total14,000 and all previous records stay intact; remaining Employment7/Media11/Navigation7. This is implementation evidence, not a new owner decision, exclusion authority or media/financial allocation. All records remain unapproved/unapplied. [Exact evidence and rollback](../audit/keyword-negative-pest-commercial-services-admission-2026-11-13/README.md).
+
+
+## Final negative research allocation — 13 November
+
+Under unchanged Master section6 flexibility, the complete45-literal review and fresh13,975-record history admit25 compatible originals before allocation. Transfer the final unfilled slots to Service: Employment7, Media11, Navigation7. All previous records and the14,000total are preserved; every pool residual is zero. This completes the AI-reviewed research count only. No new owner approval, exclusion authority or media/financial allocation is claimed; all exclusions remain unapproved/unapplied. [Evidence, limits and rollback](../audit/keyword-negative-pool-sprinkler-admission-2026-11-13/README.md).
