@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-13",
+  "source_files": [
+    {
+      "file": "commercial-property.json",
+      "batch_id": "BSRE-KP-COMMERCIAL-PROPERTY-20261113-01",
+      "sha256": "083d3df74e8b75f2443f9acc096fe98a70faac08cf652d92ba1e1afeaa7863a0",
+      "bytes": 638022,
+      "records": 705,
+      "distinct_normalized": 705,
+      "source_bytes": 107474,
+      "source_sha256": "c2d1347523ae8ed8765d3409333e11c256b8251937329b13d522c65e6ff52726"
+    }
+  ],
+  "totals": {
+    "export_rows": 705,
+    "distinct_normalized_phrases": 705,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}
