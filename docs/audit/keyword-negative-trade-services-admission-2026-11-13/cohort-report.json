@@ -1,0 +1,33 @@
+{
+  "scope": "AI_REVIEWED_TRADE_SERVICES_RESEARCH_NOT_SEARCH_DEMAND",
+  "full_source_groups": 6053,
+  "cohort_groups": 1019,
+  "semantic_proposed_groups": 481,
+  "semantic_hold_groups": 538,
+  "selected_groups": 453,
+  "held_groups": 566,
+  "outside_semantic_cohort": 5034,
+  "all_source_groups_compared": 6053,
+  "external_key_comparisons": 24212,
+  "within_source_key_comparisons": 24212,
+  "cohort_external_key_comparisons": 4076,
+  "cohort_within_source_key_comparisons": 4076,
+  "additional_variant_holds": 28,
+  "additional_protected_queries": 566,
+  "existing_held_protection_occurrences": 0,
+  "text_compatibility_classifications": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 1019
+  },
+  "independent_review_claimed": false,
+  "source_pins": {
+    "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392",
+    "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+    "docs/audit/keyword-trade-services-review-2026-11-13/review.json": "597a03ccdbc92ae5a58b429981b0dafbc7749676730e2db5d697926076ebdd60"
+  },
+  "record_bodies_sha256": "21f6118e5dd67cf3d62e3575c490bff4598c7246983d7428b1eaeb0c00866108",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}
