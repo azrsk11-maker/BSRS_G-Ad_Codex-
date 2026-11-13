@@ -1,5 +1,12 @@
 # Implementation progress
 
+## 13 November Block 1 decisions and approved-location evidence
+
+- Recorded the owner's separate-block execution authorization and prepared the [concrete scope/review/evidence packet](decisions/BLOCK1_REVIEW_PACKET.md). Existing issue #1 receives F/full-library versus P/bounded-reviewed-pilot options; P remains a proposal, preserving both full14k targets,360/15families and separate300/640deliverables. No keyword admission or release inferred.
+- Authenticated Marketing readback of the existing evidence folder confirms zero visible documents, one Marketing Owner and Restricted general access. Mandates/permits, inventory/availability, licensed assets and exact draft-bound factual sign-offs remain unverified. This scoped absence is not global absence. Private proof remains outside public source; no sharing or business-record change.
+- No independent reviewer exists. Prepared a bounded human-review arrangement and exact missing named-person/account/access decision for issue #6, with hold as the current fallback. No self-approval, invitation, new access, protection change or merge. Block 1 remains incomplete pending actual evidence/review; shared-writer handover follows clean scoped delivery and applicable checks. Production/live tracking unchanged; Ads paused.
+- This delta changes decision/progress documentation only. Reuse existing unchanged-code acceptance; required final-head PR checks remain mandatory. No expensive benchmark, dependency installation, new agent or full local suite is justified by this documentation change. No measured token/cost/speedup claim.
+
 ## 13 November owner coverage confirmed and reviewer absence recorded
 
 - The owner directly confirms off-plan/resale/rentals/seller and landlord representation/commercial sales and leasing, all seven UAE emirates, Oman and KSA. [Decision and exact issue transcription](decisions/OWNER_DECISIONS.md#dec-02-owner-confirmed-services-and-footprint--13-november-2026-dubai). The supported-service/emirate question is resolved; genuine property/mandate/permit/rights documents, per-draft sign-off, freshness and jurisdiction/language acceptance remain open. No actual stock, licence, office, price, provider or advertising permission inferred. UAE-first English targeting,360planning/15families, both14k libraries and four-campaign AED2000aggregate average/day remain unchanged; Oman/KSA coverage does not activate expansion or publication.
