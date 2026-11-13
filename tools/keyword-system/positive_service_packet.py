@@ -1,7 +1,8 @@
-"""Reproduce a held work order for two genuine historical owner-service seeds.
+"""Reproduce held workorders for genuine historical owner-service candidates.
 
 This is an intake aid, not a second admission engine. Actual completed reviews
 must use keyword_audit's five subject-bound reviews and content-evidence checks.
+The default two-seed packet stays unchanged. Explicit selections remain held.
 No file writer, network call, master update or platform export is provided.
 """
 from __future__ import annotations
@@ -46,7 +47,7 @@ def load_history(content):
     return history
 
 
-def build_packet(root=ROOT):
+def build_packet(root=ROOT, candidate_ids=None):
     """Freshly bind source and immutable specification; never claim eligibility."""
     root = Path(root)
     history = load_history((root / HISTORY).read_bytes())
@@ -55,10 +56,26 @@ def build_packet(root=ROOT):
         raise ValueError("Intake purposes differ from the real admission contract")
     candidates = {row["candidate_id"]: row for row in history["candidates"]}
     placements = {row["placement_id"]: row for row in history["placements"]}
+    selected = list(SEEDS) if candidate_ids is None else candidate_ids
+    if (not isinstance(selected, list) or not selected
+            or any(not isinstance(identity, str) for identity in selected)
+            or len(set(selected)) != len(selected)):
+        raise ValueError("Select unique nonempty historical candidate IDs")
+    if any(identity not in candidates for identity in selected):
+        raise ValueError("Unknown historical candidate ID")
+    # These evidence requirements are owner-service specific. Historical role
+    # is a selection boundary, never a current campaign or service approval.
+    for identity in selected:
+        if any(placements[p]["original_keyword_fields"]["Campaign"] != "BSRE_SEARCH_OWNERS_EN"
+               for p in candidates[identity]["placement_ids"]):
+            raise ValueError("Owner-service workorders require historical owner placements")
+    # Stable source order prevents caller ordering from changing the workorder.
+    selected = [identity for identity in candidates if identity in selected]
     rows = []
-    for identity, literal in SEEDS.items():
+    for identity in selected:
         candidate = candidates[identity]
-        if candidate["original_text"] != literal or candidate["normalized_text"] != literal:
+        literal = candidate["original_text"]
+        if identity in SEEDS and (literal != SEEDS[identity] or candidate["normalized_text"] != SEEDS[identity]):
             raise ValueError("Selected seed no longer matches its observed literal")
         occurrences = []
         for placement_id in candidate["placement_ids"]:
@@ -84,7 +101,8 @@ def build_packet(root=ROOT):
                          "subject_sha256": None, "required_evidence": REQUIREMENTS[purpose]}
                          for purpose in sorted(keyword_audit.ADMISSION_PURPOSES)}})
     return {"schema": "bsre-positive-service-intake-workorder-v1", "evidence_intake_only": True,
-            "scope": "TWO_EXISTING_CANONICAL_SEEDS_NOT_MASTER_OR_LAUNCH_COHORT",
+            "scope": ("TWO_EXISTING_CANONICAL_SEEDS_NOT_MASTER_OR_LAUNCH_COHORT" if candidate_ids is None
+                      else "SELECTED_HISTORICAL_OWNER_CANDIDATES_NOT_MASTER_OR_LAUNCH_COHORT"),
             "source": {"path": HISTORY, "raw_sha256": HISTORY_SHA256,
                        "archive_sha256": history["source"]["archive_sha256"],
                        "canonical_candidates": 41, "historical_placements": 82,
@@ -101,7 +119,8 @@ def build_packet(root=ROOT):
                                  "service_offer_basis_options": ["advisory_offer", "owner_mandate_service", "verified_inventory"],
                                  "specific_inventory_required_for_generic_service": False},
             "rows": rows,
-            "counts": {"selected_canonical_seeds": 2, "historical_occurrences": 4,
+            "counts": {"selected_canonical_seeds": len(rows),
+                       "historical_occurrences": sum(len(row["historical_occurrences"]) for row in rows),
                        "reviewed_positive_contribution": 0, "approved_contribution": 0, "deployed_contribution": 0},
             "deployment_export_allowed": False, "production_authorization": False,
             "limits": ["Source consistency does not authenticate business evidence, reviewer credentials or regulatory compliance",
@@ -110,8 +129,8 @@ def build_packet(root=ROOT):
                        "Complete real reviews through the existing admission contract; this generated workorder is not an editable approval document"]}
 
 
-def verify_packet(content, root=ROOT):
-    expected = build_packet(root)
+def verify_packet(content, root=ROOT, candidate_ids=None):
+    expected = build_packet(root, candidate_ids)
     actual = keyword_audit.parse_json_bytes(content)
     if actual != expected:
         raise ValueError("Intake packet differs from freshly reconstructed source-bound held workorder")
@@ -123,8 +142,13 @@ def verify_packet(content, root=ROOT):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verify", type=Path, default=ROOT / PACKET)
+    parser.add_argument("--candidate-id", action="append", help="Existing historical owner candidate ID; repeat for a selected workorder")
+    parser.add_argument("--emit-workorder", action="store_true", help="Print held source-bound workorder instead of a verification receipt")
     args = parser.parse_args()
-    result = verify_packet(args.verify.read_bytes())
+    if args.emit_workorder:
+        result = build_packet(candidate_ids=args.candidate_id)
+    else:
+        result = verify_packet(args.verify.read_bytes(), candidate_ids=args.candidate_id)
     print(json.dumps(result, sort_keys=True))
 
 
