@@ -127,10 +127,10 @@ class SepticGreaseAdmissionTests(unittest.TestCase):
         self.assertEqual(allocation['new_rows'],{'SERVICE':len(self.inputs['records'])-13025})
         self.assertTrue(all(n>=0 for n in allocation['remaining'].values()))
 
-    def test_default_entrypoints_use_new_fresh_stage_and_front_office_snapshot_stays_frozen(self):
+    def test_septic_and_front_office_snapshots_keep_their_original_fresh_stages(self):
         with patch.object(current,'_fresh_septic_grease_state',return_value=('new','new-report')) as fresh:
-            self.assertEqual(current.reconstruct(at=self.when),'new')
-            self.assertEqual(current.verify(at=self.when),'new-report')
+            self.assertEqual(current.reconstruct_septic_grease_snapshot(at=self.when),'new')
+            self.assertEqual(current.verify_septic_grease_snapshot(at=self.when),'new-report')
             self.assertEqual(fresh.call_count,2)
         with patch.object(current,'_fresh_front_office_document_state',return_value=('old','old-report')) as fresh:
             self.assertEqual(current.reconstruct_front_office_document_snapshot(at=self.when),'old')

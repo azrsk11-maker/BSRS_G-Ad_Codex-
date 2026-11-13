@@ -417,12 +417,12 @@ def verify_followup_snapshot(root=first.ROOT, at=None):
 
 
 def reconstruct(root=first.ROOT, at=None):
-    """Freshly verify all history and appended septic/grease service research."""
-    return _fresh_septic_grease_state(root, at)[0]
+    """Freshly verify all history and appended trade-service research."""
+    return _fresh_trade_services_state(root, at)[0]
 
 
 def verify(root=first.ROOT, at=None):
-    return _fresh_septic_grease_state(root, at)[1]
+    return _fresh_trade_services_state(root, at)[1]
 
 
 def reconstruct_bank_channel_login_snapshot(root=first.ROOT, at=None):
@@ -441,6 +441,15 @@ def reconstruct_front_office_document_snapshot(root=first.ROOT, at=None):
 
 def verify_front_office_document_snapshot(root=first.ROOT, at=None):
     return _fresh_front_office_document_state(root, at)[1]
+
+
+def reconstruct_septic_grease_snapshot(root=first.ROOT, at=None):
+    """Preserve the verified 13,443-row septic/grease snapshot."""
+    return _fresh_septic_grease_state(root, at)[0]
+
+
+def verify_septic_grease_snapshot(root=first.ROOT, at=None):
+    return _fresh_septic_grease_state(root, at)[1]
 
 
 def reconstruct_ofqual_animal_care_snapshot(root=first.ROOT, at=None):
@@ -638,6 +647,15 @@ def _fresh_septic_grease_state(root, at):
     base = _fresh_front_office_document_state(root, when)[0]
     inputs = septic_grease_admission.extend(base, root, when)
     result = septic_grease_admission.check_saved(inputs, root, when)
+    return inputs, result
+
+
+def _fresh_trade_services_state(root, at):
+    import trade_services_admission
+    when = first.dubai_date() if at is None else at
+    base = _fresh_septic_grease_state(root, when)[0]
+    inputs = trade_services_admission.extend(base, root, when)
+    result = trade_services_admission.check_saved(inputs, root, when)
     return inputs, result
 
 
