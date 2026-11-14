@@ -1,0 +1,1213 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_VETERINARY_TITLES_NOT_EXCLUSION_APPROVAL",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-12",
+  "valid_until": "2026-12-12",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "selected_normalized_titles": [
+    "cq level 3 award in veterinary leadership and clinical coaching",
+    "cq level 4 certificate in veterinary anaesthesia - small animal",
+    "ipet network level 6 diploma in veterinary physiotherapy",
+    "ocnlr level 4 certificate in canine hydrotherapy for veterinary physiotherapists",
+    "vetskill level 2 certificate for veterinary receptionists",
+    "vetskill level 2 certificate in veterinary care support"
+  ],
+  "held_groups": {
+    "city & guilds level 2 certificate of competence in the safe and responsible use of veterinary medicines": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "city & guilds level 2 diploma for veterinary care assistants": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 2 diploma for veterinary nursing assistants": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 2 diploma for veterinary nursing assistants - equine": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 2 diploma for veterinary nursing assistants in feline centred practice": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "cq level 3 diploma in veterinary nursing - eq": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 3 diploma in veterinary nursing - sa": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 3 diploma in veterinary nursing - small animal practice": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "cq level 3 diploma in veterinary nursing – equine practice": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 3 veterinary nurse end point assessment": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "cq level 4 certificate in veterinary dental nursing - small animal": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "cq level 4 certificate in veterinary emergency and critical care nursing - small animal": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "cq level 4 certificate in veterinary medical nursing - small animal": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "cq level 4 certificate in veterinary nursing consultation - small animal": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "cq level2 diploma for veterinary nursing assistants - small animal": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "ga level 2 award in an introduction to the principles of veterinary care assistance (small animals)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ga level 2 certificate in the principles of veterinary care assistance (small animals)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ga level 2 diploma for veterinary care assistants (small animals)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ga level 3 certificate in veterinary reception skills": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "ga level 4 certificate in canine myofascial rehabilitation for veterinary surgeons (galen myotherapy)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ipet network level 3 award for veterinary receptionists": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "ipet network level 3 award in communication and client relations in the animal care and veterinary science sector": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ipet network level 3 award in education and training for animal and veterinary professionals": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ipet network level 3 award in euthanasia and bereavement support in the animal care and veterinary science sector": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ipet network level 3 award in mental health and wellbeing in the animal care and veterinary science sector": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ipet network level 3 award in understanding veterinary triage and first aid": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "ipet network level 3 certificate for veterinary receptionists": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "ipet network level 3 certificate for veterinary receptionists (bvra)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "lantra awards level 2 award in safe use of veterinary medicines": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "lantra awards level 2 diploma in veterinary care and animal welfare": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "lantra awards level 3 end point assessment for st0343 veterinary nurse": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "lantra awards level 3 work based diploma in veterinary nursing – equine": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "lantra awards level 3 work based diploma in veterinary nursing – small animal": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "seg awards level 2 diploma for veterinary nursing assistants": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "seg awards level 3 certificate for veterinary receptionists": "Fresh complete current/archive/protected, within-source lexical or explicitly reviewed provider/route relationship remains HOLD; retain full literal.",
+    "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill level 5 advanced diploma in veterinary nursing (medical)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill level 5 advanced diploma in veterinary nursing (practice nurse)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill level 5 advanced diploma in veterinary nursing (surgical)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill vtec level 2 certificate in assisting veterinary surgeons in monitoring anaesthetised and sedated companion animals": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill vtec level 3 diploma in veterinary nursing (companion animal)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill vtec level 3 diploma in veterinary nursing (equine)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill vtec level 5 diploma in advanced veterinary nursing (anaesthesia and analgesia)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill vtec level 5 diploma in advanced veterinary nursing (emergency and critical care)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal.",
+    "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)": "Original complete-title text compatibility or length/word HOLD; no shortened, repaired or rewritten literal."
+  },
+  "fresh_variant_review": {
+    "selected_normalized_titles": [
+      "cq level 3 award in veterinary leadership and clinical coaching",
+      "cq level 4 certificate in veterinary anaesthesia - small animal",
+      "ipet network level 6 diploma in veterinary physiotherapy",
+      "ocnlr level 4 certificate in canine hydrotherapy for veterinary physiotherapists",
+      "vetskill level 2 certificate for veterinary receptionists",
+      "vetskill level 2 certificate in veterinary care support"
+    ],
+    "additional_variant_holds": {
+      "city & guilds level 2 diploma for veterinary care assistants": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_VETERINARY_CARE_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "ga level 2 diploma for veterinary care assistants (small animals)"
+          ],
+          "source_record_ordinals": [
+            45219,
+            53002
+          ],
+          "reason": "Generic and Small Animals provider-prefixed Level 2 Veterinary Care Assistant diplomas require route distinctness review."
+        }
+      ],
+      "cq level 2 diploma for veterinary nursing assistants": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "cq level2 diploma for veterinary nursing assistants - small animal",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "cq level 2 diploma for veterinary nursing assistants - equine": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "cq level2 diploma for veterinary nursing assistants - small animal",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing - eq": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing – equine practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – equine",
+            "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing - sa": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - small animal practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+            "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing – equine practice": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - eq",
+            "lantra awards level 3 work based diploma in veterinary nursing – equine",
+            "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "cq level 3 veterinary nurse end point assessment": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+          "other_normalized_titles": [
+            "lantra awards level 3 end point assessment for st0343 veterinary nurse",
+            "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse"
+          ],
+          "source_record_ordinals": [
+            39123,
+            44492,
+            48098
+          ],
+          "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved."
+        }
+      ],
+      "cq level2 diploma for veterinary nursing assistants - small animal": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "ga level 3 certificate in veterinary reception skills": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "ipet network level 3 award for veterinary receptionists": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "ipet network level 3 certificate for veterinary receptionists": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "seg awards level 2 diploma for veterinary nursing assistants": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "cq level2 diploma for veterinary nursing assistants - small animal"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "seg awards level 3 certificate for veterinary receptionists": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ]
+    },
+    "all_held_normalized_titles": [
+      "city & guilds level 2 certificate of competence in the safe and responsible use of veterinary medicines",
+      "city & guilds level 2 diploma for veterinary care assistants",
+      "cq level 2 diploma for veterinary nursing assistants",
+      "cq level 2 diploma for veterinary nursing assistants - equine",
+      "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+      "cq level 3 diploma in veterinary nursing - eq",
+      "cq level 3 diploma in veterinary nursing - sa",
+      "cq level 3 diploma in veterinary nursing - small animal practice",
+      "cq level 3 diploma in veterinary nursing – equine practice",
+      "cq level 3 veterinary nurse end point assessment",
+      "cq level 4 certificate in veterinary dental nursing - small animal",
+      "cq level 4 certificate in veterinary emergency and critical care nursing - small animal",
+      "cq level 4 certificate in veterinary medical nursing - small animal",
+      "cq level 4 certificate in veterinary nursing consultation - small animal",
+      "cq level2 diploma for veterinary nursing assistants - small animal",
+      "ga level 2 award in an introduction to the principles of veterinary care assistance (small animals)",
+      "ga level 2 certificate in the principles of veterinary care assistance (small animals)",
+      "ga level 2 diploma for veterinary care assistants (small animals)",
+      "ga level 3 certificate in veterinary reception skills",
+      "ga level 4 certificate in canine myofascial rehabilitation for veterinary surgeons (galen myotherapy)",
+      "ipet network level 3 award for veterinary receptionists",
+      "ipet network level 3 award in communication and client relations in the animal care and veterinary science sector",
+      "ipet network level 3 award in education and training for animal and veterinary professionals",
+      "ipet network level 3 award in euthanasia and bereavement support in the animal care and veterinary science sector",
+      "ipet network level 3 award in mental health and wellbeing in the animal care and veterinary science sector",
+      "ipet network level 3 award in understanding veterinary triage and first aid",
+      "ipet network level 3 certificate for veterinary receptionists",
+      "ipet network level 3 certificate for veterinary receptionists (bvra)",
+      "lantra awards level 2 award in safe use of veterinary medicines",
+      "lantra awards level 2 diploma in veterinary care and animal welfare",
+      "lantra awards level 3 end point assessment for st0343 veterinary nurse",
+      "lantra awards level 3 work based diploma in veterinary nursing – equine",
+      "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+      "seg awards level 2 diploma for veterinary nursing assistants",
+      "seg awards level 3 certificate for veterinary receptionists",
+      "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse",
+      "vetskill level 5 advanced diploma in veterinary nursing (medical)",
+      "vetskill level 5 advanced diploma in veterinary nursing (practice nurse)",
+      "vetskill level 5 advanced diploma in veterinary nursing (surgical)",
+      "vetskill vtec level 2 certificate in assisting veterinary surgeons in monitoring anaesthetised and sedated companion animals",
+      "vetskill vtec level 3 diploma in veterinary nursing (companion animal)",
+      "vetskill vtec level 3 diploma in veterinary nursing (equine)",
+      "vetskill vtec level 5 diploma in advanced veterinary nursing (anaesthesia and analgesia)",
+      "vetskill vtec level 5 diploma in advanced veterinary nursing (emergency and critical care)",
+      "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)"
+    ],
+    "existing_held_protection_keys": [],
+    "all_source_group_conflicts": {
+      "ga level 3 certificate in veterinary reception skills": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "ipet network level 3 award for veterinary receptionists": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "ipet network level 3 certificate for veterinary receptionists": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "ipet network level 3 certificate for veterinary receptionists (bvra)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "seg awards level 3 certificate for veterinary receptionists": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists (bvra)"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "cq level 2 diploma for veterinary nursing assistants": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "cq level2 diploma for veterinary nursing assistants - small animal",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "cq level 2 diploma for veterinary nursing assistants - equine": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "cq level2 diploma for veterinary nursing assistants - small animal",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "cq level 2 diploma for veterinary nursing assistants in feline centred practice": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level2 diploma for veterinary nursing assistants - small animal",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "cq level2 diploma for veterinary nursing assistants - small animal": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "seg awards level 2 diploma for veterinary nursing assistants": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+            "cq level2 diploma for veterinary nursing assistants - small animal"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing - eq": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing – equine practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – equine",
+            "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing – equine practice": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - eq",
+            "lantra awards level 3 work based diploma in veterinary nursing – equine",
+            "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "lantra awards level 3 work based diploma in veterinary nursing – equine": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - eq",
+            "cq level 3 diploma in veterinary nursing – equine practice",
+            "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "vetskill vtec level 3 diploma in veterinary nursing (equine)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - eq",
+            "cq level 3 diploma in veterinary nursing – equine practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – equine"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing - sa": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - small animal practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+            "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing - small animal practice": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - sa",
+            "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+            "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "lantra awards level 3 work based diploma in veterinary nursing – small animal": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - sa",
+            "cq level 3 diploma in veterinary nursing - small animal practice",
+            "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "vetskill vtec level 3 diploma in veterinary nursing (companion animal)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - sa",
+            "cq level 3 diploma in veterinary nursing - small animal practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – small animal"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "cq level 3 veterinary nurse end point assessment": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+          "other_normalized_titles": [
+            "lantra awards level 3 end point assessment for st0343 veterinary nurse",
+            "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse"
+          ],
+          "source_record_ordinals": [
+            39123,
+            44492,
+            48098
+          ],
+          "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved."
+        }
+      ],
+      "lantra awards level 3 end point assessment for st0343 veterinary nurse": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 veterinary nurse end point assessment",
+            "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse"
+          ],
+          "source_record_ordinals": [
+            39123,
+            44492,
+            48098
+          ],
+          "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved."
+        }
+      ],
+      "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 veterinary nurse end point assessment",
+            "lantra awards level 3 end point assessment for st0343 veterinary nurse"
+          ],
+          "source_record_ordinals": [
+            39123,
+            44492,
+            48098
+          ],
+          "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved."
+        }
+      ],
+      "city & guilds level 2 diploma for veterinary care assistants": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_VETERINARY_CARE_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "ga level 2 diploma for veterinary care assistants (small animals)"
+          ],
+          "source_record_ordinals": [
+            45219,
+            53002
+          ],
+          "reason": "Generic and Small Animals provider-prefixed Level 2 Veterinary Care Assistant diplomas require route distinctness review."
+        }
+      ],
+      "ga level 2 diploma for veterinary care assistants (small animals)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_VETERINARY_CARE_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "city & guilds level 2 diploma for veterinary care assistants"
+          ],
+          "source_record_ordinals": [
+            45219,
+            53002
+          ],
+          "reason": "Generic and Small Animals provider-prefixed Level 2 Veterinary Care Assistant diplomas require route distinctness review."
+        }
+      ],
+      "vetskill level 5 advanced diploma in veterinary nursing (medical)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL5_MEDICAL_NURSING_VTEC_ROUTES",
+          "other_normalized_titles": [
+            "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)"
+          ],
+          "source_record_ordinals": [
+            48087,
+            48094
+          ],
+          "reason": "VTEC and non-VTEC advanced Medical nursing diplomas remain unresolved; both original text holds stay in evidence."
+        }
+      ],
+      "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL5_MEDICAL_NURSING_VTEC_ROUTES",
+          "other_normalized_titles": [
+            "vetskill level 5 advanced diploma in veterinary nursing (medical)"
+          ],
+          "source_record_ordinals": [
+            48087,
+            48094
+          ],
+          "reason": "VTEC and non-VTEC advanced Medical nursing diplomas remain unresolved; both original text holds stay in evidence."
+        }
+      ]
+    },
+    "preheld_source_group_conflicts": {
+      "ipet network level 3 certificate for veterinary receptionists (bvra)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+          "other_normalized_titles": [
+            "ga level 3 certificate in veterinary reception skills",
+            "ipet network level 3 award for veterinary receptionists",
+            "ipet network level 3 certificate for veterinary receptionists",
+            "seg awards level 3 certificate for veterinary receptionists"
+          ],
+          "source_record_ordinals": [
+            10746,
+            45228,
+            49191,
+            49213,
+            49214
+          ],
+          "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved."
+        }
+      ],
+      "cq level 2 diploma for veterinary nursing assistants in feline centred practice": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 2 diploma for veterinary nursing assistants",
+            "cq level 2 diploma for veterinary nursing assistants - equine",
+            "cq level2 diploma for veterinary nursing assistants - small animal",
+            "seg awards level 2 diploma for veterinary nursing assistants"
+          ],
+          "source_record_ordinals": [
+            10764,
+            44484,
+            44498,
+            44499,
+            44509
+          ],
+          "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review."
+        }
+      ],
+      "lantra awards level 3 work based diploma in veterinary nursing – equine": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - eq",
+            "cq level 3 diploma in veterinary nursing – equine practice",
+            "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "vetskill vtec level 3 diploma in veterinary nursing (equine)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - eq",
+            "cq level 3 diploma in veterinary nursing – equine practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – equine"
+          ],
+          "source_record_ordinals": [
+            39023,
+            44489,
+            44510,
+            48081
+          ],
+          "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded."
+        }
+      ],
+      "cq level 3 diploma in veterinary nursing - small animal practice": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - sa",
+            "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+            "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "lantra awards level 3 work based diploma in veterinary nursing – small animal": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - sa",
+            "cq level 3 diploma in veterinary nursing - small animal practice",
+            "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "vetskill vtec level 3 diploma in veterinary nursing (companion animal)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 diploma in veterinary nursing - sa",
+            "cq level 3 diploma in veterinary nursing - small animal practice",
+            "lantra awards level 3 work based diploma in veterinary nursing – small animal"
+          ],
+          "source_record_ordinals": [
+            39024,
+            44490,
+            44508,
+            48080
+          ],
+          "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred."
+        }
+      ],
+      "lantra awards level 3 end point assessment for st0343 veterinary nurse": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 veterinary nurse end point assessment",
+            "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse"
+          ],
+          "source_record_ordinals": [
+            39123,
+            44492,
+            48098
+          ],
+          "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved."
+        }
+      ],
+      "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+          "other_normalized_titles": [
+            "cq level 3 veterinary nurse end point assessment",
+            "lantra awards level 3 end point assessment for st0343 veterinary nurse"
+          ],
+          "source_record_ordinals": [
+            39123,
+            44492,
+            48098
+          ],
+          "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved."
+        }
+      ],
+      "ga level 2 diploma for veterinary care assistants (small animals)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL2_VETERINARY_CARE_ASSISTANT_DIPLOMA_ROUTES",
+          "other_normalized_titles": [
+            "city & guilds level 2 diploma for veterinary care assistants"
+          ],
+          "source_record_ordinals": [
+            45219,
+            53002
+          ],
+          "reason": "Generic and Small Animals provider-prefixed Level 2 Veterinary Care Assistant diplomas require route distinctness review."
+        }
+      ],
+      "vetskill level 5 advanced diploma in veterinary nursing (medical)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL5_MEDICAL_NURSING_VTEC_ROUTES",
+          "other_normalized_titles": [
+            "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)"
+          ],
+          "source_record_ordinals": [
+            48087,
+            48094
+          ],
+          "reason": "VTEC and non-VTEC advanced Medical nursing diplomas remain unresolved; both original text holds stay in evidence."
+        }
+      ],
+      "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)": [
+        {
+          "kind": "explicit_source_route_or_provider_hold",
+          "family_key": "LEVEL5_MEDICAL_NURSING_VTEC_ROUTES",
+          "other_normalized_titles": [
+            "vetskill level 5 advanced diploma in veterinary nursing (medical)"
+          ],
+          "source_record_ordinals": [
+            48087,
+            48094
+          ],
+          "reason": "VTEC and non-VTEC advanced Medical nursing diplomas remain unresolved; both original text holds stay in evidence."
+        }
+      ]
+    },
+    "source_groups_compared": 51,
+    "external_key_comparisons": 204,
+    "within_source_key_comparisons": 204,
+    "explicit_alias_family_review": [
+      {
+        "key": "LEVEL3_RECEPTION_CREDENTIAL_ROUTES",
+        "ordinals": [
+          10746,
+          45228,
+          49191,
+          49213,
+          49214
+        ],
+        "reason": "Same level and veterinary reception role; provider Certificate/Reception Skills and iPET Award/Certificate or BVRA routes remain unresolved.",
+        "normalized_titles": [
+          "ga level 3 certificate in veterinary reception skills",
+          "ipet network level 3 award for veterinary receptionists",
+          "ipet network level 3 certificate for veterinary receptionists",
+          "ipet network level 3 certificate for veterinary receptionists (bvra)",
+          "seg awards level 3 certificate for veterinary receptionists"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      },
+      {
+        "key": "LEVEL2_NURSING_ASSISTANT_DIPLOMA_ROUTES",
+        "ordinals": [
+          10764,
+          44484,
+          44498,
+          44499,
+          44509
+        ],
+        "reason": "Provider-prefixed generic and animal-specific Level 2 Veterinary Nursing Assistant diploma routes require distinctness review.",
+        "normalized_titles": [
+          "cq level 2 diploma for veterinary nursing assistants",
+          "cq level 2 diploma for veterinary nursing assistants - equine",
+          "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+          "cq level2 diploma for veterinary nursing assistants - small animal",
+          "seg awards level 2 diploma for veterinary nursing assistants"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      },
+      {
+        "key": "LEVEL3_EQUINE_NURSING_DIPLOMA_ROUTES",
+        "ordinals": [
+          39023,
+          44489,
+          44510,
+          48081
+        ],
+        "reason": "CQ EQ/Equine Practice and provider work-based or VTEC diploma routes remain unresolved; no abbreviation is expanded.",
+        "normalized_titles": [
+          "cq level 3 diploma in veterinary nursing - eq",
+          "cq level 3 diploma in veterinary nursing – equine practice",
+          "lantra awards level 3 work based diploma in veterinary nursing – equine",
+          "vetskill vtec level 3 diploma in veterinary nursing (equine)"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      },
+      {
+        "key": "LEVEL3_SMALL_ANIMAL_NURSING_DIPLOMA_ROUTES",
+        "ordinals": [
+          39024,
+          44490,
+          44508,
+          48080
+        ],
+        "reason": "CQ SA/Small Animal Practice and provider Small Animal/Companion Animal routes require review; equivalence is not inferred.",
+        "normalized_titles": [
+          "cq level 3 diploma in veterinary nursing - sa",
+          "cq level 3 diploma in veterinary nursing - small animal practice",
+          "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+          "vetskill vtec level 3 diploma in veterinary nursing (companion animal)"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      },
+      {
+        "key": "LEVEL3_VETERINARY_NURSE_END_POINT_ROUTES",
+        "ordinals": [
+          39123,
+          44492,
+          48098
+        ],
+        "reason": "Same occupational assessment and level across providers, with ST0343 present only in some full titles; route distinctness is unresolved.",
+        "normalized_titles": [
+          "cq level 3 veterinary nurse end point assessment",
+          "lantra awards level 3 end point assessment for st0343 veterinary nurse",
+          "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      },
+      {
+        "key": "LEVEL2_VETERINARY_CARE_ASSISTANT_DIPLOMA_ROUTES",
+        "ordinals": [
+          45219,
+          53002
+        ],
+        "reason": "Generic and Small Animals provider-prefixed Level 2 Veterinary Care Assistant diplomas require route distinctness review.",
+        "normalized_titles": [
+          "city & guilds level 2 diploma for veterinary care assistants",
+          "ga level 2 diploma for veterinary care assistants (small animals)"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      },
+      {
+        "key": "LEVEL5_MEDICAL_NURSING_VTEC_ROUTES",
+        "ordinals": [
+          48087,
+          48094
+        ],
+        "reason": "VTEC and non-VTEC advanced Medical nursing diplomas remain unresolved; both original text holds stay in evidence.",
+        "normalized_titles": [
+          "vetskill level 5 advanced diploma in veterinary nursing (medical)",
+          "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)"
+        ],
+        "decision": "HOLD_PLAUSIBLE_ROUTE_OR_PROVIDER_RELATIONSHIP_NOT_PROVEN_EQUIVALENCE"
+      }
+    ],
+    "alias_review_authority": "INDEPENDENT_AI_PLAUSIBLE_RELATIONSHIP_HOLD_ONLY_NOT_GOOGLE_EQUIVALENCE",
+    "complete_base_counts": {
+      "records": 11170,
+      "archived_records": 18,
+      "protected_queries": 16693,
+      "sources": 25,
+      "campaigns": 360,
+      "campaign_context": 1
+    },
+    "lexical_methods": [
+      "normalized_exact",
+      "ordered_tokens",
+      "equal_token_bag",
+      "closed_alphanumeric"
+    ],
+    "all_51_source_groups_compared": true,
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_pins": {
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/qualifications.json": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/capture.json": "ecf76b2123ff80f7f4518c0a1c3f157cab3ab499768e6d2cea7d8be4ad258afd",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-decisions.json": "7c280316bab94d4ad892b58f2f738d3295913cb0dbc90e608c404a238113b68b"
+  },
+  "text_pins": {
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+  },
+  "implementation": {
+    "audit_and_compatibility": {
+      "audit_and_compatibility": {
+        "audit_and_compatibility": {
+          "current_code_sha256": {
+            "tools/keyword-system/keyword_audit.py": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+            "tools/keyword-system/keyword_text_compatibility.py": "723988151adfeae8f2a6efeb073a399451eefcbfe1d3f8c311e0e168fd56763f"
+          },
+          "function_ast_sha256": {
+            "normalize": "5c71e58fb1d9c11f92db2b1d90a95bfeaa65575dbbb10790ee8cdd2d35eb971b",
+            "tokens": "0ab49db2be49c7cef3bed9ccc84fa12e03d6fd2506a690734f50c7803b3aa1e1",
+            "negative_matches": "0bbe5bb9241ce358946fc727a217106e1733bf0259d69ca40cd4766fb4d9f664"
+          },
+          "historical_normalizer_sha256": "0cbbc8965ed891208066887eeaca0b011092efa6668af161bab3a2feb76454d9",
+          "historical_file_hash_is_dated_evidence_not_current_code_pin": true
+        },
+        "capture_code_sha256": {
+          "docs/audit/keyword-entertainment-clipboard-2026-11-11/capture_tools.py": "135956c53c683d72c7357747d1c7f92bc44e313b5d1922b69f672caa44ab0140",
+          "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py": "2f4ba4f9e2d132ee972e2d776efa4aa59690e2632c1b8350f0d15d76150b6b55"
+        }
+      },
+      "source_extractor_and_peer_narrative_sha256": {
+        "docs/audit/keyword-ofqual-occupational-2026-11-12/extract.py": "c37a98859e1865d543e82c43886608b63f265b0ac3d44725fd52bdc30ab199ed",
+        "docs/audit/keyword-ofqual-occupational-2026-11-12/semantic-review.md": "9a6e977f2dfe914ce05906e86e1cb408f16d5f0743e9a43b46a9d66f5309234c"
+      }
+    },
+    "source_extractor_and_peer_narrative_sha256": {
+      "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712",
+      "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78",
+      "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+    }
+  },
+  "base_sha256": "4b3106190c37a47deaefdd391e9dfded0554c9a91b381c6d3a62424b54c80587",
+  "semantic_rationale": "Independent complete-literal AI review supports explicit veterinary learning or assessment for later exact residential-rental-intake research; preserve every original symbol, provider, title and occurrence. Text compatibility and plausible provider/route relationships remain separate holds. Newly discovered conflicts hold rather than force a preliminary count.",
+  "source_identity_limits": "Official qualification titles are not observed queries, demand, current course delivery, UAE recognition, local inventory or platform matching certification. Published source status is retained without interpretation.",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false,
+  "subject_sha256": "40fa35b1cdc4ef413c5978d7408f23ce0ec144f9f8eef0f695ca7d602e3fa2e3"
+}

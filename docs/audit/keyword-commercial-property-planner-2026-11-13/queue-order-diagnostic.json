@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "scope": "QUEUE_MODEL_NOT_ACTUAL_SPEEDUP_OR_ACCEPTANCE",
+  "source_head": "1ea16f87d53ebfe6fd8fa257e2cf8b33aab987b6",
+  "source_receipt_sha256": "18e96af8860f921ed4c64bccfe9618f4e4e1916f4cb169abefb70a7be4e9e5cf",
+  "source_job": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/43357490893/job/131662894090",
+  "measured_keyword_elapsed_seconds": 257.901905,
+  "workers": 4,
+  "original_keyword_deadline_seconds": 300,
+  "module_elapsed_weights": [
+    {
+      "elapsed_seconds": 115.377198,
+      "module": "test_pool_sprinkler_admission",
+      "skipped": 0,
+      "tests": 20
+    },
+    {
+      "elapsed_seconds": 99.247789,
+      "module": "test_pest_commercial_services_admission",
+      "skipped": 0,
+      "tests": 19
+    },
+    {
+      "elapsed_seconds": 91.304469,
+      "module": "test_trade_services_admission",
+      "skipped": 0,
+      "tests": 18
+    },
+    {
+      "elapsed_seconds": 84.335822,
+      "module": "test_septic_grease_admission",
+      "skipped": 0,
+      "tests": 14
+    },
+    {
+      "elapsed_seconds": 74.70647,
+      "module": "test_bank_channel_login_admission",
+      "skipped": 0,
+      "tests": 14
+    },
+    {
+      "elapsed_seconds": 73.392707,
+      "module": "test_front_office_document_admission",
+      "skipped": 0,
+      "tests": 14
+    },
+    {
+      "elapsed_seconds": 64.615561,
+      "module": "test_ofqual_animal_care_admission",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 62.117376,
+      "module": "test_bank_support_admission",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 58.778761,
+      "module": "test_ofqual_veterinary_admission",
+      "skipped": 0,
+      "tests": 14
+    },
+    {
+      "elapsed_seconds": 54.175832,
+      "module": "test_bank_credential_admission",
+      "skipped": 0,
+      "tests": 14
+    },
+    {
+      "elapsed_seconds": 53.660564,
+      "module": "test_ofqual_occupational_admission",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 46.140432,
+      "module": "test_apprenticeship_admission",
+      "skipped": 0,
+      "tests": 10
+    },
+    {
+      "elapsed_seconds": 44.966612,
+      "module": "test_negative_library",
+      "skipped": 0,
+      "tests": 29
+    },
+    {
+      "elapsed_seconds": 16.079317,
+      "module": "test_negative_reviewed_cohort",
+      "skipped": 0,
+      "tests": 23
+    },
+    {
+      "elapsed_seconds": 14.282149,
+      "module": "test_vendor_negative_extension",
+      "skipped": 0,
+      "tests": 8
+    },
+    {
+      "elapsed_seconds": 13.012942,
+      "module": "test_current_negative_library",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 8.120061,
+      "module": "test_buyer_full_intent_review",
+      "skipped": 0,
+      "tests": 20
+    },
+    {
+      "elapsed_seconds": 8.050463,
+      "module": "test_buyer_canonical_review",
+      "skipped": 0,
+      "tests": 24
+    },
+    {
+      "elapsed_seconds": 6.163924,
+      "module": "test_buyer_source_reconciliation",
+      "skipped": 0,
+      "tests": 19
+    },
+    {
+      "elapsed_seconds": 5.868579,
+      "module": "test_buyer_intent_review",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 2.344437,
+      "module": "test_supplemental_triage",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 2.080826,
+      "module": "test_negative_admission",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 1.2907,
+      "module": "test_buyer_negative_conflicts",
+      "skipped": 0,
+      "tests": 17
+    },
+    {
+      "elapsed_seconds": 1.11827,
+      "module": "test_valuation_admission",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 0.930736,
+      "module": "test_entertainment_admission",
+      "skipped": 0,
+      "tests": 11
+    },
+    {
+      "elapsed_seconds": 0.921617,
+      "module": "test_followup_admission",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 0.71348,
+      "module": "test_ofqual_admission",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 0.505329,
+      "module": "test_coverage_audit",
+      "skipped": 0,
+      "tests": 27
+    },
+    {
+      "elapsed_seconds": 0.48968,
+      "module": "test_triage_workbench",
+      "skipped": 0,
+      "tests": 9
+    },
+    {
+      "elapsed_seconds": 0.383702,
+      "module": "test_positive_admission",
+      "skipped": 0,
+      "tests": 20
+    },
+    {
+      "elapsed_seconds": 0.383451,
+      "module": "test_planner_discovery",
+      "skipped": 0,
+      "tests": 16
+    },
+    {
+      "elapsed_seconds": 0.303338,
+      "module": "test_supplemental_discovery",
+      "skipped": 0,
+      "tests": 14
+    },
+    {
+      "elapsed_seconds": 0.302633,
+      "module": "test_followup_reconciliation",
+      "skipped": 0,
+      "tests": 16
+    },
+    {
+      "elapsed_seconds": 0.287722,
+      "module": "test_historical_negative_intake",
+      "skipped": 0,
+      "tests": 17
+    },
+    {
+      "elapsed_seconds": 0.266186,
+      "module": "test_keyword_audit",
+      "skipped": 0,
+      "tests": 34
+    },
+    {
+      "elapsed_seconds": 0.266035,
+      "module": "test_negative_chronology",
+      "skipped": 0,
+      "tests": 17
+    },
+    {
+      "elapsed_seconds": 0.265588,
+      "module": "test_supplemental_batch_validator",
+      "skipped": 0,
+      "tests": 3
+    },
+    {
+      "elapsed_seconds": 0.265189,
+      "module": "test_ofqual_discovery",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 0.246114,
+      "module": "test_private_query_triage",
+      "skipped": 0,
+      "tests": 6
+    },
+    {
+      "elapsed_seconds": 0.244769,
+      "module": "test_positive_service_packet",
+      "skipped": 0,
+      "tests": 8
+    },
+    {
+      "elapsed_seconds": 0.242141,
+      "module": "test_discovery_review_coverage",
+      "skipped": 0,
+      "tests": 13
+    },
+    {
+      "elapsed_seconds": 0.242009,
+      "module": "test_audit_preprocessing",
+      "skipped": 0,
+      "tests": 11
+    },
+    {
+      "elapsed_seconds": 0.226809,
+      "module": "test_merge_unique",
+      "skipped": 0,
+      "tests": 8
+    },
+    {
+      "elapsed_seconds": 0.224606,
+      "module": "test_search_terms_intake",
+      "skipped": 0,
+      "tests": 7
+    },
+    {
+      "elapsed_seconds": 0.223371,
+      "module": "test_source_membership_diagnostic",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 0.222619,
+      "module": "test_negative_partition",
+      "skipped": 0,
+      "tests": 6
+    },
+    {
+      "elapsed_seconds": 0.208266,
+      "module": "test_keyword_text_compatibility",
+      "skipped": 0,
+      "tests": 12
+    },
+    {
+      "elapsed_seconds": 0.14151,
+      "module": "test_canonical_encoding",
+      "skipped": 0,
+      "tests": 6
+    },
+    {
+      "elapsed_seconds": 0.124261,
+      "module": "test_historical_intake",
+      "skipped": 0,
+      "tests": 15
+    },
+    {
+      "elapsed_seconds": 0.12238,
+      "module": "test_lexical_preprocessing",
+      "skipped": 0,
+      "tests": 6
+    },
+    {
+      "elapsed_seconds": 0.121702,
+      "module": "test_triage_protection",
+      "skipped": 0,
+      "tests": 5
+    },
+    {
+      "elapsed_seconds": 0.121435,
+      "module": "test_append_only_ownership",
+      "skipped": 0,
+      "tests": 6
+    },
+    {
+      "elapsed_seconds": 0.121369,
+      "module": "test_employment_followup_validator",
+      "skipped": 0,
+      "tests": 2
+    }
+  ],
+  "current_hint_order": [
+    "test_front_office_document_admission",
+    "test_bank_channel_login_admission",
+    "test_ofqual_veterinary_admission",
+    "test_bank_support_admission",
+    "test_ofqual_animal_care_admission",
+    "test_bank_credential_admission",
+    "test_ofqual_occupational_admission",
+    "test_negative_library",
+    "test_apprenticeship_admission",
+    "test_current_negative_library"
+  ],
+  "simulated_current_queue_seconds": 256.874843,
+  "simulated_longest_first_seconds": 262.787665,
+  "model": "Greedy dispatch to the first available of four simulated workers using already-observed concurrent module durations. Ignores changed contention, host load and supervisor overhead; not a runtime measurement.",
+  "decision": "REJECT_UNPROVEN_QUEUE_CHANGE_KEEP_CURRENT_RUNNER",
+  "expensive_trials_started": 0,
+  "runner_source_changed": false,
+  "test_or_source_acceptance_cached": false,
+  "production_or_ads_changes": false,
+  "release_authorized": false
+}

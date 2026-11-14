@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "scope": "COMPLETE_PRELIMINARY_LITERAL_REVIEW_NOT_CANONICAL_OR_BUSINESS_ADMISSION",
+  "generation": {
+    "passed": true,
+    "generation_and_fresh_verification_seconds": 2.027887,
+    "output_pins": {
+      "review.json": "e0f89ea7c1d63bddcc12365b3bf434ec73f668ecd780a451934e05f7ad51df6d",
+      "canonical-queue.json": "adebcb2173c3c423844589bddaf37caa757d833c379feffb02f0b08248f47833"
+    },
+    "bytes": {
+      "review.json": 3368459,
+      "canonical-queue.json": 1372348
+    },
+    "counts": {
+      "source_occurrences": 3195,
+      "complete_literals_preliminarily_reviewed": 3195,
+      "prior_complete_literals_retained": 400,
+      "additional_complete_literals_read": 2795,
+      "outside_cohort_occurrences_unassessed": 0,
+      "conditional_buyer_research": 1331,
+      "other_review_holds": 1864,
+      "categories": {
+        "AMBIGUOUS_PROPERTY_ENTITY_OR_PRICE_HOLD": 666,
+        "CONDITIONAL_PROPERTY_BUYER_RESEARCH": 1331,
+        "DIRECT_OWNER_COMMERCIAL_FIT_HOLD": 6,
+        "EVENT_PURPOSE_OR_SHORT_STAY_SERVICE_HOLD": 4,
+        "FINANCE_INTERNATIONAL_OR_STALE_CONTEXT_HOLD": 91,
+        "NON_PROPERTY_TRANSACTION_SCOPE_HOLD": 2,
+        "OTHER_ASSET_OR_COMMERCIAL_SCOPE_HOLD": 72,
+        "OWNER_SELLER_RESEARCH_HOLD": 13,
+        "PORTAL_OR_PROVIDER_NAVIGATION_REVIEW_HOLD": 132,
+        "PROPERTY_SERVICE_SELECTION_ROLE_UNRESOLVED_HOLD": 9,
+        "TENANT_RENTAL_RESEARCH_HOLD": 869
+      },
+      "confirmed_novel_canonicals": null,
+      "positive_admissions_added": 0,
+      "independent_approvals_added": 0,
+      "deployed_added": 0
+    },
+    "canonical_queue": {
+      "conditional_candidate_occurrences": 1331,
+      "prior_literal_context_rows": 9,
+      "variant_context_rows": 181,
+      "unassessed_canonical_context_rows": 1141,
+      "confirmed_novel_canonicals": null
+    },
+    "old_source_changed": false,
+    "production_or_ads_changed": false
+  },
+  "focused_tests": {
+    "passed": true,
+    "tests": 20,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "elapsed_seconds": 11.483769,
+    "earlier_partial_review_and_source_unchanged": true,
+    "full_negative_replay_repeated": false,
+    "production_or_ads_changed": false
+  },
+  "manual_diagnostic": {
+    "scope": "CUE_DIAGNOSTIC_FOR_MANUAL_RECHECK_NOT_AUTOMATED_INTENT_CLASSIFIER",
+    "complete_literals_read": 3195,
+    "conditional_risk_cues_manually_rechecked": 26,
+    "no_basic_purchase_or_development_cue_rows_manually_rechecked": 5,
+    "held_before_publication": [
+      1433,
+      1952
+    ],
+    "retained_conditional_development_queries": [
+      1732,
+      2320,
+      2724
+    ],
+    "retained_purchase_with_tenancy_examples": [
+      779,
+      856,
+      1887,
+      1948,
+      1986,
+      2370,
+      2672
+    ],
+    "admissions": 0,
+    "source_or_negative_master_changed": false,
+    "notes": [
+      "Cues only exposed items for complete-literal human-style AI reconsideration, not automatic reassignment.",
+      "For-sell phrasing450,726,1385 is retained as a potential sale-listing query rather than automatically an owner instruction.",
+      "Named Palm/Bluewaters Island and Dubailand references do not establish a whole-island/land asset; actual destination and asset evidence remain required."
+    ]
+  },
+  "full_goal_complete": false,
+  "release_authorized": false,
+  "production_or_ads_changed": false
+}

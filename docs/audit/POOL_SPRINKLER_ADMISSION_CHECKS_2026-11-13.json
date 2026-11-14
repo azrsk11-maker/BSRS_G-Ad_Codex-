@@ -1,0 +1,116 @@
+{
+  "scope": "LOCAL_COMPLETE_NEGATIVE_RESEARCH_COUNT_NOT_RELEASE",
+  "as_of": "2026-11-13",
+  "semantic_review": {
+    "complete_literals": 45,
+    "proposals": 31,
+    "holds": 14,
+    "tamper_cases": 17,
+    "source_rows": 6053,
+    "raw_capture_sha256_reverified": true
+  },
+  "summary": {
+    "scope": "CURRENT_RESEARCH_AFTER_POOL_SPRINKLER_APPEND_ONLY_REVIEW",
+    "as_of": "2026-11-13",
+    "input_rows": 14000,
+    "distinct_nonblank_phrases": 14000,
+    "reviewed_eligible_rows": 14000,
+    "excluded_rows": 0,
+    "approved_exclusion_rows": 0,
+    "target": 14000,
+    "deficit": 0,
+    "exact_target_pass": true,
+    "structural_pass": true,
+    "deployment_export_allowed": false,
+    "production_writes_available": false,
+    "positive_library_coverage_verified": false,
+    "protected_queries_indexed": 19115,
+    "computed_conflicts": 0,
+    "prior_rows": 13975,
+    "new_rows": 25,
+    "archived_original_rows": 18,
+    "source_occurrences_retained_in_current_records": 14213,
+    "new_exact_provenance_occurrences": 25,
+    "new_proposal_holds": 20,
+    "historical_records_rewritten": false,
+    "human_review_verified": false,
+    "live_campaign_mapping_verified": false,
+    "release_authorized": false
+  },
+  "complete_inputs_sha256": "1dd9cd9a93f5cb78695846be7cf0767864c8d5bb20e94ab4a731a71f07ba27ae",
+  "base_sha256": "974a1439d4383d84e40b245d4218f909650cb2ecf3c176d87d547212a4ea5e89",
+  "review_pin": "b5f8a690ff8046e0dddd485254c954f6eae9506c3363c72b856f4d33c1805e5e",
+  "output_pins": {
+    "index.json": "81a6a7b9e01c482a1a424cd99eaef7ba99b69afcbe0de901288117fc47a0b702",
+    "cohort-report.json": "2df02a833703417b3910e396ddf4d5f6c397df95bfa5942980de5af6829fb599",
+    "library-report.json": "34357935d517c25ff87632e05759fd28b8777fdd1fdd2fef7af8f6ad8cdca701",
+    "research-pool-allocation.json": "8d8a3fa60f69b35b4ac2fa5e56a3e2321280118cb06cc90a3085dab5b851b695"
+  },
+  "local_checks": {
+    "passed": true,
+    "cases": 40,
+    "new": 20,
+    "preceding": 19,
+    "public_entrypoints_guarded": 34,
+    "failures": 0,
+    "errors": 0,
+    "times": {
+      "semantic_seconds": 0.340587,
+      "fresh_base_seconds": 128.896216,
+      "fresh_review_seconds": 1.553311,
+      "generation_and_saved_check_seconds": 12.260382,
+      "focused_seconds": 29.279338,
+      "total_seconds": 174.053167
+    },
+    "cheap_preflight_caught_wrong_expected_arithmetic_before_baseline": true,
+    "initial_diagnostics_retained": true
+  },
+  "research_allocation": {
+    "target_transfer": {
+      "complete_current_base_sha256": "974a1439d4383d84e40b245d4218f909650cb2ecf3c176d87d547212a4ea5e89",
+      "evidence_ref": "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/review.json",
+      "evidence_sha256": "b5f8a690ff8046e0dddd485254c954f6eae9506c3363c72b856f4d33c1805e5e",
+      "from": {
+        "EMPLOYMENT": 7,
+        "MEDIA": 11,
+        "NAVIGATION": 7
+      },
+      "implementation_decision_not_owner_approval": true,
+      "rule": "PROPORTIONAL_UNFILLED_RESEARCH_CAPACITY_LARGEST_REMAINDER_SORTED_POOL_TIEBREAK",
+      "source_pins": {
+        "docs/audit/keyword-pool-sprinkler-review-2026-11-13/review.json": "9f9245969fa2cca6eb50ac959f38567642d921622a57e5478aafe5dc3558de92",
+        "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+        "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+      },
+      "to": {
+        "SERVICE": 25
+      }
+    },
+    "targets": {
+      "ACADEMIC": 1990,
+      "EMPLOYMENT": 4947,
+      "MEDIA": 804,
+      "NAVIGATION": 879,
+      "SERVICE": 1441,
+      "SOFTWARE": 2362,
+      "UNRELATED_PRODUCT": 1577
+    },
+    "remaining": {
+      "ACADEMIC": 0,
+      "EMPLOYMENT": 0,
+      "MEDIA": 0,
+      "NAVIGATION": 0,
+      "SERVICE": 0,
+      "SOFTWARE": 0,
+      "UNRELATED_PRODUCT": 0
+    },
+    "owner_approval_claimed": false,
+    "media_budget_changed": false
+  },
+  "current_ci": "PENDING_NEW_HEAD",
+  "expected_keyword_cases": 630,
+  "expected_keyword_modules": 48,
+  "keyword_deadline_seconds": 300,
+  "production_or_ads_changed": false,
+  "release_authorized": false
+}

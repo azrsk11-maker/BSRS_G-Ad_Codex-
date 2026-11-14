@@ -1,0 +1,3327 @@
+{
+  "schema": "bsre-bank-channel-login-semantic-review-v1",
+  "reviewed_on": "2026-11-13",
+  "reviewer": {
+    "name": "Codex AI lead",
+    "kind": "AI_SEMANTIC_REVIEW",
+    "all_complete_literals_read": true,
+    "independent_second_review": false,
+    "human_approval": false
+  },
+  "source_directory": "docs/audit/keyword-bank-access-navigation-2026-11-12",
+  "source_pins": {
+    "bank-access-navigation.json": "822129ae18676ee62700c0726dcc11179c1bb7293636f031d7f3908e6fc879ea",
+    "capture.json": "a3d6fe2f1c2caa5c905651d4f8955a338118a6380d5a7e6251b17c82767f3c99",
+    "credential-review-a.json": "89df3708b481a29d8c0d94ba068e99046e7f388ce2780cbc8e49af7d66dbbe6a",
+    "credential-review-b.json": "4f8489d14c2b0233ce8db8c920a886eabc57baead6161d99864547bfab45fecb",
+    "support-review.json": "cc3a3d36d564bb577cc1b8b2015e3600e5d8daaecd2fa3b30a80246f7ffca89d"
+  },
+  "raw_source_sha256": "2893a10b0bc281451e62049540b1227a0b82a7f4de69ac365bd4ed489d298c2e",
+  "limits": {
+    "research_proposal_only": true,
+    "lexical_selection_is_not_intent_proof": true,
+    "provider_identity_verified": false,
+    "metrics_used_for_intent": false,
+    "current_library_membership_checked": false,
+    "compatibility_checked": false,
+    "within_source_aliases_checked": false,
+    "protected_intent_checked": false,
+    "independent_exclusion_approval": false,
+    "library_rows_added": 0,
+    "live_bindings_added": 0,
+    "deployed": 0,
+    "source_metrics_modified": false
+  },
+  "selection": {
+    "include_pattern": "\\b(?:(?:online|internet|mobile|net) banking login|netbanking login)\\b",
+    "exclude_pattern": "\\b(passwords?|reset|customer (care|service|support)|helpline|contact (number|no)|phone (number|banking)|support)\\b",
+    "flags": "IGNORECASE",
+    "source_records": 3481,
+    "previous_reviewed_records": 1493,
+    "selected_records": 251,
+    "remaining_outside_all_cohorts": 1737,
+    "source_order_preserved": true,
+    "quota_cutoff": false
+  },
+  "reason_definitions": {
+    "EXPLICIT_BANKING_CHANNEL_LOGIN": "The complete literal requests access to a banking channel; proposal is full exact research only, not a generic banking/finance exclusion or verified provider identity.",
+    "POTENTIAL_DOMAIN_OR_ROUTE_FORM": "Preserve the original route/domain-like wording for investigation; do not repair or infer a valid destination.",
+    "FINANCIAL_SCOPE_UNRESOLVED": "Retain explicit credit-card product context unresolved, without excluding general property-finance demand.",
+    "REPEATED_ACTION_WORDING_UNRESOLVED": "Preserve the repeated login wording without inventing a canonical repair or counting it as a clear linguistic variant."
+  },
+  "decisions": [
+    {
+      "selected_ordinal": 1,
+      "source_ordinal": 2,
+      "source_line": 5,
+      "original_literal": "online banking login",
+      "normalized_literal": "online banking login",
+      "literal_utf8_sha256": "4373667b7e96539f22070dac334d78c707418956a7d285750903aaffec05cdae",
+      "complete_public_values_sha256": "08ba59f5b402a9b50d7445ac6bce54ff74e59b507235801f7180b22b75b1f210",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 2,
+      "source_ordinal": 22,
+      "source_line": 25,
+      "original_literal": "kotak net banking login",
+      "normalized_literal": "kotak net banking login",
+      "literal_utf8_sha256": "4b48433acbaddf14ec3272a61b068915a016c6a90a7300857e3a03b2ae401ff8",
+      "complete_public_values_sha256": "5efe252d6a3c975e6c50392ca09736ddf8056e25c5fc823c369dbde8e0a84726",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 3,
+      "source_ordinal": 30,
+      "source_line": 33,
+      "original_literal": "internet banking login",
+      "normalized_literal": "internet banking login",
+      "literal_utf8_sha256": "b0c53fd894a7d6d299baadf21b96062e45f64562390ed55f826ae681a562293c",
+      "complete_public_values_sha256": "aa7982f42725ad3842571cd0bd28f0e60daa08d6cea273975b9f2a946c1e1d63",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 4,
+      "source_ordinal": 108,
+      "source_line": 111,
+      "original_literal": "absa online banking login",
+      "normalized_literal": "absa online banking login",
+      "literal_utf8_sha256": "2c489fb958b003ef2e97e7a624c90ac90c3060ba5edb6d00da2f7eb2d63658d2",
+      "complete_public_values_sha256": "7e8eec5eb86440d66a0d55e790a58501a8ad2efc1287245457de14160d7c14bc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 5,
+      "source_ordinal": 126,
+      "source_line": 129,
+      "original_literal": "bdo online banking login",
+      "normalized_literal": "bdo online banking login",
+      "literal_utf8_sha256": "c3a33e02a2caee3cd2bc43efa19cd35c70b6c9a473e97af793e5ae328f865965",
+      "complete_public_values_sha256": "69669291e63a0e2350253732c8436aea6b6b5c0de0e2b551518429572d4ec013",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 6,
+      "source_ordinal": 138,
+      "source_line": 141,
+      "original_literal": "credit union online banking login",
+      "normalized_literal": "credit union online banking login",
+      "literal_utf8_sha256": "48b616e481f96d9339ac55d8174cf54646ef06b779f13167e4db51c193df885e",
+      "complete_public_values_sha256": "acfd7d1fa5d3376819c5505302246fb6152e452d50fe1a101c8af4bc93b7b14b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 7,
+      "source_ordinal": 151,
+      "source_line": 154,
+      "original_literal": "absa internet banking login",
+      "normalized_literal": "absa internet banking login",
+      "literal_utf8_sha256": "04b83a567d145f4cf6fb1d48719b4d9505d24e626363532dbe60dad17e96d9cb",
+      "complete_public_values_sha256": "c574d48dbf5ae66d6e07ba80cda5512e689361f9fadc7df43f567e85a101b837",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 8,
+      "source_ordinal": 158,
+      "source_line": 161,
+      "original_literal": "capitec online banking login",
+      "normalized_literal": "capitec online banking login",
+      "literal_utf8_sha256": "4415c1e09edd825262713d8a8f951a4155331e93b44d1ab10e9702a0c5cbaac3",
+      "complete_public_values_sha256": "36e9cbc8fb3b6689ebaee8aa350cdfadbc67d3deca05a4a5a645e179a25230db",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 9,
+      "source_ordinal": 162,
+      "source_line": 165,
+      "original_literal": "bdo mobile banking login",
+      "normalized_literal": "bdo mobile banking login",
+      "literal_utf8_sha256": "4990e39ad322b69f988ac12f2f74761431d7fcc28f0fbf5cbd2d7a76de6fef92",
+      "complete_public_values_sha256": "e202e5971c7c51077cb0fba591da124aa4dea6a480d2f038f0f1d76b4816c9db",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 10,
+      "source_ordinal": 165,
+      "source_line": 168,
+      "original_literal": "standard bank internet banking login",
+      "normalized_literal": "standard bank internet banking login",
+      "literal_utf8_sha256": "350d88c47dcc7a0239f6112a572b92671d6908b983488d6a330b1ae5fa2993a3",
+      "complete_public_values_sha256": "7b52b686b9cd7c63a72818edb0a9d5f16aed1abc35dfd1646fc98bb0ffa89d5a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 11,
+      "source_ordinal": 167,
+      "source_line": 170,
+      "original_literal": "icici net banking login",
+      "normalized_literal": "icici net banking login",
+      "literal_utf8_sha256": "06688937ceb528cf74d700c6fa3eed3129ad53de8c90a2b5a8c1d4a72358488f",
+      "complete_public_values_sha256": "78ae708d9d4cac6dbd623565d1ac4c382fb5e756ac009bdbea562689dfb03744",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 12,
+      "source_ordinal": 173,
+      "source_line": 176,
+      "original_literal": "kotak mobile banking login",
+      "normalized_literal": "kotak mobile banking login",
+      "literal_utf8_sha256": "1711d32d3525a79005ab4e5d3225e4e27513ebcf468d2d458b4a2327e39b30eb",
+      "complete_public_values_sha256": "27ba57e13a3140c74eced24d6f08c682fecf3f4f03869bcae4489930a70b7b67",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 13,
+      "source_ordinal": 178,
+      "source_line": 181,
+      "original_literal": "mobile banking login",
+      "normalized_literal": "mobile banking login",
+      "literal_utf8_sha256": "bdb128a9a204e53c8fce18236300de910a4569269b263a98f8ef68e4b0b877c8",
+      "complete_public_values_sha256": "d3ab8722ab255b411cf52b9929b92fcd132224c3f0aac1e49d68a1f7f7697e51",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 14,
+      "source_ordinal": 180,
+      "source_line": 183,
+      "original_literal": "kotak mahindra bank net banking login",
+      "normalized_literal": "kotak mahindra bank net banking login",
+      "literal_utf8_sha256": "13bcbc2d813a27ca30c738c07bdfbd3c46da3de8c4d856cbf02bf3a15df3e79e",
+      "complete_public_values_sha256": "90314c7a194305ede8ab4e89441505b071fd90c6dd7f1ad3d2c824b4c633dcc9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 15,
+      "source_ordinal": 200,
+      "source_line": 203,
+      "original_literal": "standard bank online banking login",
+      "normalized_literal": "standard bank online banking login",
+      "literal_utf8_sha256": "640f24645f30abfe019e6b06615c37fbe6f99faa8218ed676d0825646c7d7d81",
+      "complete_public_values_sha256": "11e10d4474c631eaed42ccbb2be13f2c9c427c627f56a0e833e95020610b49a8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 16,
+      "source_ordinal": 216,
+      "source_line": 219,
+      "original_literal": "kotak mahindra net banking login",
+      "normalized_literal": "kotak mahindra net banking login",
+      "literal_utf8_sha256": "7e0e216716aeabe2e6aa25d1e302e1763c501da78ab3c44dcd9934ca0b6ca326",
+      "complete_public_values_sha256": "464384bd85e1a4b8d06ae9ee524b0bb913988c78c10f19233bdb1db46acdabae",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 17,
+      "source_ordinal": 218,
+      "source_line": 221,
+      "original_literal": "sbi net banking login",
+      "normalized_literal": "sbi net banking login",
+      "literal_utf8_sha256": "df38ccfb6e73fc176d30a56ccc46c745f08cbe9917fec09190376ebfb7e4ac28",
+      "complete_public_values_sha256": "85579e545c672205ec61c0641b3d612b0ced993384121897296ad6830f479245",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 18,
+      "source_ordinal": 223,
+      "source_line": 226,
+      "original_literal": "capitec online banking login without app",
+      "normalized_literal": "capitec online banking login without app",
+      "literal_utf8_sha256": "f08be47cbaf6a88acc8032739aadd201197fe3e20c7f08b3ad7773bb79426ad4",
+      "complete_public_values_sha256": "651e26f62cd228ba93dac0ea055341c142681838abb72b180bf2578b35580c61",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 19,
+      "source_ordinal": 240,
+      "source_line": 243,
+      "original_literal": "hsbc online banking login",
+      "normalized_literal": "hsbc online banking login",
+      "literal_utf8_sha256": "35287159da0fcf4760bc98157d6313bd668f3ae909fb6513743853cce8417f73",
+      "complete_public_values_sha256": "a61f893a8dcae3ff536e739d22a030e8443bfffd198520b1a25ba62c585d5743",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 20,
+      "source_ordinal": 267,
+      "source_line": 270,
+      "original_literal": "kotak online banking login",
+      "normalized_literal": "kotak online banking login",
+      "literal_utf8_sha256": "8a80e2cc6ccf182b01d92c4a5ad3fe249a7903143813b7eb46b0800053157932",
+      "complete_public_values_sha256": "89f4ad296c96b8a971cab2c6468584ada4a7ac9732442a0c50b582db07861cde",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 21,
+      "source_ordinal": 304,
+      "source_line": 307,
+      "original_literal": "kotak bank net banking login",
+      "normalized_literal": "kotak bank net banking login",
+      "literal_utf8_sha256": "c0661c414299c40262c95e962161b96839fa79e3056fe60b6a83ae7a6f2d078c",
+      "complete_public_values_sha256": "92bf2d22c963cd77848b65a1e069b606eb55952bbe9556931addcc0bbc432048",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 22,
+      "source_ordinal": 307,
+      "source_line": 310,
+      "original_literal": "adcb online banking login",
+      "normalized_literal": "adcb online banking login",
+      "literal_utf8_sha256": "c64f46b2ecc5da1fd802da18bd993ddb595391a532c5de858cc36ffce10243fa",
+      "complete_public_values_sha256": "ea5b40a728dc944baa5f60af875612fc55292a572b8bb8e59d7f0bfc5a4c8733",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 23,
+      "source_ordinal": 310,
+      "source_line": 313,
+      "original_literal": "capitec internet banking login",
+      "normalized_literal": "capitec internet banking login",
+      "literal_utf8_sha256": "5b446db3857095266ff19b746bf689ab4347fe8e86407c916592ccbe6787b5b4",
+      "complete_public_values_sha256": "9febc1b1fbde25c9f4a16dbceeec215c13413e21d654b9ba291640b1703333e8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 24,
+      "source_ordinal": 322,
+      "source_line": 325,
+      "original_literal": "first federal online banking login",
+      "normalized_literal": "first federal online banking login",
+      "literal_utf8_sha256": "ee42a07e1a9753dc014b6d07625e3336b9f9a88a81758985d062fdc93c288de9",
+      "complete_public_values_sha256": "2ab2047f3a8d5c52ed94d5f7bbecede84d75001fd93e932a7092a2953fdb6253",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 25,
+      "source_ordinal": 357,
+      "source_line": 360,
+      "original_literal": "bdo com ph online banking login",
+      "normalized_literal": "bdo com ph online banking login",
+      "literal_utf8_sha256": "19379c3e88860c108b6b5687d576586ae371aa0c4578a0f1bfba05f74bab110c",
+      "complete_public_values_sha256": "36552b6027839dab9641c9adc5970523a3a12c6e900f23b88df78fa000f045c5",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 26,
+      "source_ordinal": 363,
+      "source_line": 366,
+      "original_literal": "fidelity online banking login",
+      "normalized_literal": "fidelity online banking login",
+      "literal_utf8_sha256": "0c1b99e13c8c9db3b3e467a2982bc7927daea97ac20df7bd280326717b23049f",
+      "complete_public_values_sha256": "c3b805b8bfcd04355c9415b8dce3952695b70d10b2b73a4822ee445cb2f84db5",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 27,
+      "source_ordinal": 376,
+      "source_line": 379,
+      "original_literal": "kcb mobile banking login",
+      "normalized_literal": "kcb mobile banking login",
+      "literal_utf8_sha256": "30f7c7f590e4fcb79e429b939a3eecab84756ba633eb5f1328da4f24484b182a",
+      "complete_public_values_sha256": "368665f6e28681f3bc03f17f7d94ca2ba3bdb9a5c87b7805144a4a427e14221e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 28,
+      "source_ordinal": 418,
+      "source_line": 421,
+      "original_literal": "union bank online banking login",
+      "normalized_literal": "union bank online banking login",
+      "literal_utf8_sha256": "23208ef5710505bb101d6bc00ea595b0a043d48110daa404056bc27407ee97ba",
+      "complete_public_values_sha256": "7e010741d4fdf1c32c1a84b1c0c792bd73730e7008ef57143a3f62f9fdccb0a2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 29,
+      "source_ordinal": 430,
+      "source_line": 433,
+      "original_literal": "hsbc net banking login",
+      "normalized_literal": "hsbc net banking login",
+      "literal_utf8_sha256": "e545d2699f6b11cd7ea6cd555cd117930cb52152c0820cc7f43abc5dc16daa2a",
+      "complete_public_values_sha256": "213e4e6ed06d9e6a6f2d311f1e466e5e060e48609f4b263a396a9e17090dc7cb",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 30,
+      "source_ordinal": 441,
+      "source_line": 444,
+      "original_literal": "kcb online banking login",
+      "normalized_literal": "kcb online banking login",
+      "literal_utf8_sha256": "cc3bace21197b546500e89be2fc21825f863b599fde718ccf5bb63889ede6f4b",
+      "complete_public_values_sha256": "9fd3e059ec447508bcb70497392d9cbf61051f87d7166ba2ed231824a82983b1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 31,
+      "source_ordinal": 443,
+      "source_line": 446,
+      "original_literal": "kmbl net banking login",
+      "normalized_literal": "kmbl net banking login",
+      "literal_utf8_sha256": "b665a68bd241878dce4050372a49eabd6d14bc4ac06b5c41a088f6aa54189b7d",
+      "complete_public_values_sha256": "78ce29976825e946a766bbd6fc4f440666efb58b96c51630e42af14390bd1569",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 32,
+      "source_ordinal": 451,
+      "source_line": 454,
+      "original_literal": "central bank online banking login",
+      "normalized_literal": "central bank online banking login",
+      "literal_utf8_sha256": "601dadb50636508d0db661461df04d04a91e5dbfa060ed41d744bf5692612c4a",
+      "complete_public_values_sha256": "b5d74d15896f3e67bfcfc3bd06fe850dd566cbae49ca327155c188693aac07c9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 33,
+      "source_ordinal": 461,
+      "source_line": 464,
+      "original_literal": "axis bank net banking login",
+      "normalized_literal": "axis bank net banking login",
+      "literal_utf8_sha256": "830b66292a6c3b5feaeefa26ae39bc37eccfed5bcfcde0a32e3a1ae84e1e16c0",
+      "complete_public_values_sha256": "0d0a780f70fc105ba8141f031338a958efb3354915accb6c501c1a64420c04af",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 34,
+      "source_ordinal": 465,
+      "source_line": 468,
+      "original_literal": "net banking login",
+      "normalized_literal": "net banking login",
+      "literal_utf8_sha256": "dc927fc6bbe32571e34af8cd7bdcfcd36b8e840b49ee6cab77e567e754aef785",
+      "complete_public_values_sha256": "f36ea6ab6290104aeabf067e95c95cceb45a7d2787b215f2ecf0f5ab590a20c8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 35,
+      "source_ordinal": 489,
+      "source_line": 492,
+      "original_literal": "hsbc internet banking login",
+      "normalized_literal": "hsbc internet banking login",
+      "literal_utf8_sha256": "50411d4d5effb355fc0a99474f90fa9ad066f02dc86c452a0cee3accc162bc91",
+      "complete_public_values_sha256": "905bce74639938cb65e9e0ee20b6f8e876b8fdbe375c6dbb39c4bd47664408ea",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 36,
+      "source_ordinal": 496,
+      "source_line": 499,
+      "original_literal": "public bank online banking login",
+      "normalized_literal": "public bank online banking login",
+      "literal_utf8_sha256": "7f92b14c042513f36b0731be23724fb339d45b31e4c7b171cdae1cef5368fe68",
+      "complete_public_values_sha256": "79f8a1c06079896ab83967287f11fa9097731f69779f7ae6f17410a31226dac4",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 37,
+      "source_ordinal": 536,
+      "source_line": 539,
+      "original_literal": "hdfc netbanking login",
+      "normalized_literal": "hdfc netbanking login",
+      "literal_utf8_sha256": "2557da74d7558fce2d403ea4c4b1d69cbb8cbf51242f6937d6c425663672b081",
+      "complete_public_values_sha256": "925ff9e5eb850ff581535f60cfe524fe3282fe953dbd641a3b04e79224233d2d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 38,
+      "source_ordinal": 543,
+      "source_line": 546,
+      "original_literal": "jn online banking login",
+      "normalized_literal": "jn online banking login",
+      "literal_utf8_sha256": "9706aa54f076833afd584eec931b1df3c8241ed653ba297024b840d41429d580",
+      "complete_public_values_sha256": "5659632fcad2da438a9a9a1bc6a5bc598fce4460c5ad8cb047284853b7b193e6",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 39,
+      "source_ordinal": 550,
+      "source_line": 553,
+      "original_literal": "federal bank net banking login",
+      "normalized_literal": "federal bank net banking login",
+      "literal_utf8_sha256": "5527c9060f01b8c588d201706f381ee073f1eeeec152f6801f12e709366b4824",
+      "complete_public_values_sha256": "25e43e6fc7767b525f29e5741b1c2542c89cd5cf1c8d40c5c6985626adbe1d65",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 40,
+      "source_ordinal": 557,
+      "source_line": 560,
+      "original_literal": "www firstcitizenstt com online banking login",
+      "normalized_literal": "www firstcitizenstt com online banking login",
+      "literal_utf8_sha256": "a7aa6fb42657ee6c7c706a638d76df4072e5fd6bc157a0e921367a1559d8cd6b",
+      "complete_public_values_sha256": "02ccb6e4556ba4f3347ace9e9121f760d4f7b1f8c351fd349e7024f852626a3d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 41,
+      "source_ordinal": 567,
+      "source_line": 570,
+      "original_literal": "kcb internet banking login",
+      "normalized_literal": "kcb internet banking login",
+      "literal_utf8_sha256": "bf53946028c9b4cb4d66688d0c5d19456be1edd2f6c46bc2212a4ba1d2e8b056",
+      "complete_public_values_sha256": "d4dcdca1ce2f5c9abde8bb8be534b365f8e49ad273238154c70650dac5e7b675",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 42,
+      "source_ordinal": 568,
+      "source_line": 571,
+      "original_literal": "kotak internet banking login",
+      "normalized_literal": "kotak internet banking login",
+      "literal_utf8_sha256": "c7707fdc302b6b2aef86675422df65bd0a97b8de4832b059d668150aae1300ec",
+      "complete_public_values_sha256": "a9fc2b000d17983fecdf72a322e439e1433f49a9042967d3fcf2c15d9a7a2726",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 43,
+      "source_ordinal": 586,
+      "source_line": 589,
+      "original_literal": "icici netbanking login",
+      "normalized_literal": "icici netbanking login",
+      "literal_utf8_sha256": "1eece7d5f9d0f064340a794d0fbe661e87e20e8ec983c56bc7de4ab50ec04d3d",
+      "complete_public_values_sha256": "70773a02c18470af92905442e765ecdd446709cffecb62834609c07e8123f8b1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 44,
+      "source_ordinal": 600,
+      "source_line": 603,
+      "original_literal": "global ime internet banking login",
+      "normalized_literal": "global ime internet banking login",
+      "literal_utf8_sha256": "716337f4c1906e3ea0bb26bf7865e043834fe9c3d4bcca0731e7a2d4deddebf1",
+      "complete_public_values_sha256": "144ebab256baa8ce4febb3d66ef4dc12d0457c6067b205b56b8473a4ec1819fd",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 45,
+      "source_ordinal": 604,
+      "source_line": 607,
+      "original_literal": "gtbank mobile banking login",
+      "normalized_literal": "gtbank mobile banking login",
+      "literal_utf8_sha256": "27a6ee2d788b953a278a25608d007eef14da18d03694fe523c8e2ddd567af409",
+      "complete_public_values_sha256": "5a866fa542168c3b54c267e8f5f4033daba4a55f48a73aa659fbfa4787901d4a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 46,
+      "source_ordinal": 620,
+      "source_line": 623,
+      "original_literal": "sbi netbanking login",
+      "normalized_literal": "sbi netbanking login",
+      "literal_utf8_sha256": "d66882c9baed35840679fdcfdab2982d462aa1de56039c66c821972ec128cde8",
+      "complete_public_values_sha256": "cd7bd27524954b0e1b59dfc4031cf490c665e54a9abc93fbd7253c3e69c0f46e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 47,
+      "source_ordinal": 630,
+      "source_line": 633,
+      "original_literal": "equitas net banking login",
+      "normalized_literal": "equitas net banking login",
+      "literal_utf8_sha256": "7b97b06819131f64ac72c54f437cd0889a25b4a1a30740c28c5a220e48c979da",
+      "complete_public_values_sha256": "16d1f13a6d7ac1f467191594b11d97f2866610ed04f4c7ef657e98125fce3270",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 48,
+      "source_ordinal": 647,
+      "source_line": 650,
+      "original_literal": "pnb mobile banking login",
+      "normalized_literal": "pnb mobile banking login",
+      "literal_utf8_sha256": "5a9c2ca0478b14af93f7fdd9373d4ce41c314caa8ef10a1ae2b80171d30dcf52",
+      "complete_public_values_sha256": "17501ee007bcca05c03b0ca7138c6ffcf8da4fe4d4df5ab3e63b1bf1648ec50d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 49,
+      "source_ordinal": 664,
+      "source_line": 667,
+      "original_literal": "icici internet banking login",
+      "normalized_literal": "icici internet banking login",
+      "literal_utf8_sha256": "f29c5bbfcbb11fb98a68fac5de072c8c579b5cd809097e1bba25f7a67bdb70ed",
+      "complete_public_values_sha256": "9d08652fe672dd83e5980fcf8806fb67adbeed2960a05dca3633dc3a93407f6e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 50,
+      "source_ordinal": 676,
+      "source_line": 679,
+      "original_literal": "citibank net banking login",
+      "normalized_literal": "citibank net banking login",
+      "literal_utf8_sha256": "c03a9f083f8edb2a5b8fe036d006703f0945723333f73523460eeaba1dfddd5f",
+      "complete_public_values_sha256": "57697acecf485286813a4a8598391a42c6c78e21f3a364deeb1f94ab1da36d1a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 51,
+      "source_ordinal": 711,
+      "source_line": 714,
+      "original_literal": "cbe internet banking login",
+      "normalized_literal": "cbe internet banking login",
+      "literal_utf8_sha256": "c0fcd55ab8e4bf2c34d9754ea1a07451077eea407f41b4b0080fd85bca2465f5",
+      "complete_public_values_sha256": "f19fc78f11bda1af627c62982342d52fc827a3cc7b6e4b14370283192ddddafd",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 52,
+      "source_ordinal": 731,
+      "source_line": 734,
+      "original_literal": "equity online banking login",
+      "normalized_literal": "equity online banking login",
+      "literal_utf8_sha256": "fd1ae55f665964248c7745b3723377d4f5a12b4055f07c2377f3efc5256c30cf",
+      "complete_public_values_sha256": "6779811a548df2f1a0942e7822d975788309521a58e11b99144abdcd0b3f9945",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 53,
+      "source_ordinal": 733,
+      "source_line": 736,
+      "original_literal": "hbl internet banking login",
+      "normalized_literal": "hbl internet banking login",
+      "literal_utf8_sha256": "0b37b58e6475ee2861def6b7cbd4e0a623653e619c78c76c61d422a7212e0ae1",
+      "complete_public_values_sha256": "65c36c2bc387798b5ed18ad63da26769ef9db1db3f511f75203bf6e2c004a790",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 54,
+      "source_ordinal": 759,
+      "source_line": 762,
+      "original_literal": "hsbc business internet banking login",
+      "normalized_literal": "hsbc business internet banking login",
+      "literal_utf8_sha256": "ea7355d02cbe587615abfcf6c5fd8c1fdbc71cd768b1dfc1199f00fa3d619472",
+      "complete_public_values_sha256": "98283b26e0371bd146f16027a3adcfabdaac9e1cfd772abbca5f1397bf509ded",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 55,
+      "source_ordinal": 782,
+      "source_line": 785,
+      "original_literal": "boc online banking login",
+      "normalized_literal": "boc online banking login",
+      "literal_utf8_sha256": "d170b7c728f000f2260da47cdcdf1c874d6c45560c0578a4c75127c0e5ce195b",
+      "complete_public_values_sha256": "0e9d64ef3d41b83468cb5e0ed25a63a226afc11c1a44b50e3cf2d4ca0067f88c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 56,
+      "source_ordinal": 795,
+      "source_line": 798,
+      "original_literal": "axis bank internet banking login",
+      "normalized_literal": "axis bank internet banking login",
+      "literal_utf8_sha256": "323ef094df924523def10cf199cbab92d7d38551e1281299754a68e2349085c2",
+      "complete_public_values_sha256": "c40a39f787e25eca16102829e71472d66bf4e397889131b0fd9e1ed606463109",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 57,
+      "source_ordinal": 800,
+      "source_line": 803,
+      "original_literal": "cbz internet banking login",
+      "normalized_literal": "cbz internet banking login",
+      "literal_utf8_sha256": "a037a39cb70d7905c4f9ddcba031912a64db16117b4483566110dccbf432da1c",
+      "complete_public_values_sha256": "839673965f1736fdbfb2b8db2ed262fa80861f714ad82efd68b47a4124c041b0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 58,
+      "source_ordinal": 804,
+      "source_line": 807,
+      "original_literal": "vacu online banking login",
+      "normalized_literal": "vacu online banking login",
+      "literal_utf8_sha256": "abab4c5518bc1525e7dd7b6b688edde6a909243680cf41fb117c0109bcbd093a",
+      "complete_public_values_sha256": "9ac23695a3121f886a453d6d32b9a554a1e8cbbc846ab9a188955f3f4df97868",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 59,
+      "source_ordinal": 805,
+      "source_line": 808,
+      "original_literal": "kotak netbanking login",
+      "normalized_literal": "kotak netbanking login",
+      "literal_utf8_sha256": "1941626eb892908869b62badfba8ddfc8eb1eccd20acff9795e7f5822dfaf870",
+      "complete_public_values_sha256": "c77cdbdaf179b9d4da3c4308242d48c1a86860cde8091f0766b952f153808aa1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 60,
+      "source_ordinal": 806,
+      "source_line": 809,
+      "original_literal": "www bdo com ph online banking login",
+      "normalized_literal": "www bdo com ph online banking login",
+      "literal_utf8_sha256": "735109d4777b3c0706a4f9dfce2f98c6d8b39e510b9a11ae817c7803626a1c5b",
+      "complete_public_values_sha256": "f0cd9f81d4349140f830ce9c0367ecdb53cb26ef29f39d4489311bd8e0de3119",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 61,
+      "source_ordinal": 822,
+      "source_line": 825,
+      "original_literal": "au net banking login",
+      "normalized_literal": "au net banking login",
+      "literal_utf8_sha256": "c2d1c443b6f9e5db2d042168d70598049d0b65028acbf4d3a4b3a5d31a257130",
+      "complete_public_values_sha256": "f561d6938ad24b0b9532fcbac485021b0c0d464a1133153cacf6f55bb7e1892b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 62,
+      "source_ordinal": 840,
+      "source_line": 843,
+      "original_literal": "gtbank online banking login",
+      "normalized_literal": "gtbank online banking login",
+      "literal_utf8_sha256": "2ac23a69eb0bab90c85bf2d69517945a0ecfed217f6b48a537860d804d54188d",
+      "complete_public_values_sha256": "bf167b651e880cef63d3827e7e3f23890c814ac08c67abb7a43da8798c4c8341",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 63,
+      "source_ordinal": 843,
+      "source_line": 846,
+      "original_literal": "citibank netbanking login",
+      "normalized_literal": "citibank netbanking login",
+      "literal_utf8_sha256": "1729c0f0c748d935e98486214a5ac656828d97239fd15af996eb91d75fceb6c6",
+      "complete_public_values_sha256": "9e8a89a88b881cc4f2ac76c0ca1afb8b2080f0f33a46bff4d944307fc090478e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 64,
+      "source_ordinal": 844,
+      "source_line": 847,
+      "original_literal": "citibank online banking login",
+      "normalized_literal": "citibank online banking login",
+      "literal_utf8_sha256": "2517df8bd405fa735a967b1b74b9cff20c815572f6967beae6193460aef9bb39",
+      "complete_public_values_sha256": "055fd43f9000195a4eff7f73f45995b599254bac74b51c09a83d1368ba6c977d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 65,
+      "source_ordinal": 857,
+      "source_line": 860,
+      "original_literal": "fcmb business version online banking login",
+      "normalized_literal": "fcmb business version online banking login",
+      "literal_utf8_sha256": "d4d3c3b28c6e2a55bc544e5d2fbe9d9c2297dd6ab907c20b062eea9e062021ea",
+      "complete_public_values_sha256": "26168d83d466cd06b69aff0d520835debd46f706b434aad95056c2852cb6541b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 66,
+      "source_ordinal": 861,
+      "source_line": 864,
+      "original_literal": "zenith internet banking login",
+      "normalized_literal": "zenith internet banking login",
+      "literal_utf8_sha256": "87a900247cf1ab4d67531adf26c4e6005d98e32676d269f6266246ace86eff65",
+      "complete_public_values_sha256": "d2a152103e254554b96f49e11c94ce8abe5d833e8ec5403061e975b4279254ec",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 67,
+      "source_ordinal": 863,
+      "source_line": 866,
+      "original_literal": "indusind net banking login",
+      "normalized_literal": "indusind net banking login",
+      "literal_utf8_sha256": "7bf31dd5e03c1067ab8864c00fd80a34f3514eba156ce9d09c6e8db879511484",
+      "complete_public_values_sha256": "2e2551998b46a3bdc903fb0170d971c059a969c7c03412207570d08fa0004af2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 68,
+      "source_ordinal": 871,
+      "source_line": 874,
+      "original_literal": "bpi online banking login",
+      "normalized_literal": "bpi online banking login",
+      "literal_utf8_sha256": "5a11a5e6da23331f6d6c16bc328e4401654734177827810bd8da752d59bca90f",
+      "complete_public_values_sha256": "91f173ad1c7e7f762b4b1c1f05a7e5a47f6a21d7e3ba6e75c0a6cb8bd697fc2f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 69,
+      "source_ordinal": 880,
+      "source_line": 883,
+      "original_literal": "standard chartered bank online banking login",
+      "normalized_literal": "standard chartered bank online banking login",
+      "literal_utf8_sha256": "12a58988bcba0866acad39803f97f2603a5ddeb7a31246efbc31d8e57a77180c",
+      "complete_public_values_sha256": "1bdb29e99f858fc03c3284f5f69124b6793f9d6dcb45d3c2c84bf330d1f70811",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 70,
+      "source_ordinal": 883,
+      "source_line": 886,
+      "original_literal": "fcmb mobile banking login",
+      "normalized_literal": "fcmb mobile banking login",
+      "literal_utf8_sha256": "8bb28962cd0e356f3eadaeb75b725f33483aa05dfb3f5fd237bf2b0b9d664d96",
+      "complete_public_values_sha256": "36a030b7b027fa06ffbe478353d6b7ac3d99840f8684303051e1708ac056a76c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 71,
+      "source_ordinal": 890,
+      "source_line": 893,
+      "original_literal": "bank of baroda net banking login",
+      "normalized_literal": "bank of baroda net banking login",
+      "literal_utf8_sha256": "91719c5de3412a2342e94dfc51adab2e11bfe0520a808ec47de68c39d1202299",
+      "complete_public_values_sha256": "c1bd05badcdc4bc75aa4670afa1a09874124798327aa51e12529cc8d1df8c5f9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 72,
+      "source_ordinal": 915,
+      "source_line": 918,
+      "original_literal": "scb online banking login",
+      "normalized_literal": "scb online banking login",
+      "literal_utf8_sha256": "239c9aba405480871a0f91fe21cab4a9ad9a3f23866f23958e39d03a695ec468",
+      "complete_public_values_sha256": "bdaa76039d792e9a317b2c0bfcd740dc9acb84523927414c375751327edff1b2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 73,
+      "source_ordinal": 916,
+      "source_line": 919,
+      "original_literal": "uba mobile banking login",
+      "normalized_literal": "uba mobile banking login",
+      "literal_utf8_sha256": "088a231211076c4fec6040e69806e97e1281fdc42ff92c5c4d1d257a71199545",
+      "complete_public_values_sha256": "b7b71bb866c2389528f8b0228f74d3f4ac30ccaf0d715789c87341456e730397",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 74,
+      "source_ordinal": 920,
+      "source_line": 923,
+      "original_literal": "union bank net banking login",
+      "normalized_literal": "union bank net banking login",
+      "literal_utf8_sha256": "b365dff28aebc0d22e797a262dbe5af88c3d2e2e03338279b8aca7e0e9948aae",
+      "complete_public_values_sha256": "93f0b75f9604b804757c23ddeeabfda0822091d222327ab431e3dcce5dd496f9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 75,
+      "source_ordinal": 950,
+      "source_line": 953,
+      "original_literal": "gtbank internet banking login",
+      "normalized_literal": "gtbank internet banking login",
+      "literal_utf8_sha256": "d8d5ec590bf5384b72ee85c5c5366216ba9ccf17a8d9ebcfb54ac1ac5f19d414",
+      "complete_public_values_sha256": "c4858340d962d4e6823f37e8fa9b2e14a57d883f96a40bd54ee54f28b212a495",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 76,
+      "source_ordinal": 951,
+      "source_line": 954,
+      "original_literal": "meezan internet banking login",
+      "normalized_literal": "meezan internet banking login",
+      "literal_utf8_sha256": "a17eb0bc70ff775a95e3d8b03199a496424bcae94ef19730d25c387e8f2cc06d",
+      "complete_public_values_sha256": "9e64d684d4fff6a9d81a2b10474769f7fffb0c4768ed865080a12af3d5588d24",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 77,
+      "source_ordinal": 1017,
+      "source_line": 1020,
+      "original_literal": "agribank internet banking login",
+      "normalized_literal": "agribank internet banking login",
+      "literal_utf8_sha256": "c3ea69d95d6b90b3428c10be14c47bb35c6cd8886f0eef4f0e08b0d68d97d332",
+      "complete_public_values_sha256": "96a01c5738fc39a84d2b91d025b0f4c8d9fbeef7c35ea1f343619f07b3b7cdeb",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 78,
+      "source_ordinal": 1063,
+      "source_line": 1066,
+      "original_literal": "andhra bank net banking login",
+      "normalized_literal": "andhra bank net banking login",
+      "literal_utf8_sha256": "7f9af86d392a3d530c203b6ded58550d918d33bbc9c02e4e466006f956013acf",
+      "complete_public_values_sha256": "ad98089425c645d946a26f110a662faf49f51cb107ef784628f9e4a02cb545ae",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 79,
+      "source_ordinal": 1089,
+      "source_line": 1092,
+      "original_literal": "au bank net banking login",
+      "normalized_literal": "au bank net banking login",
+      "literal_utf8_sha256": "f9e0f7fc0fd45cebaad45313bf6cb84f4306128ce529e28a5e55636124ad7082",
+      "complete_public_values_sha256": "42662779a715313f47a353607ea1c156313734ceaf692a5057f45963f8528425",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 80,
+      "source_ordinal": 1115,
+      "source_line": 1118,
+      "original_literal": "axis bank corporate net banking login",
+      "normalized_literal": "axis bank corporate net banking login",
+      "literal_utf8_sha256": "002615cc40a193cdb640e7dfd245f9a255a7f1241825a9f15568fe7d0857514f",
+      "complete_public_values_sha256": "951e67f79cd1b815f94d3292e4a9acac35603c1ad07d4f6dab8242a9384999a3",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 81,
+      "source_ordinal": 1215,
+      "source_line": 1218,
+      "original_literal": "axis bank netbanking login",
+      "normalized_literal": "axis bank netbanking login",
+      "literal_utf8_sha256": "de77af8d0edb786b568983601208e7fac341f712c0393ec89a7bdc28a19b4628",
+      "complete_public_values_sha256": "99bcc33c8c0d35cfafd64dc804e55488bdc6a413161cc3e8d86f4f134dcc4a07",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 82,
+      "source_ordinal": 1244,
+      "source_line": 1247,
+      "original_literal": "axis corporate net banking login",
+      "normalized_literal": "axis corporate net banking login",
+      "literal_utf8_sha256": "42eb5a41d4afa5c4822e2983a3bf72186b9cad73d051f2ec68907cfe1bad9c53",
+      "complete_public_values_sha256": "f589282e4fd3cbd0992eb87155004d94e9775a7101c6bfc2e18c3b416d225f04",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 83,
+      "source_ordinal": 1274,
+      "source_line": 1277,
+      "original_literal": "axis netbanking login",
+      "normalized_literal": "axis netbanking login",
+      "literal_utf8_sha256": "8d9fb63a25a902b366f5d0df469267fe647ea8a2aa6ec023636b8d0a952b3c66",
+      "complete_public_values_sha256": "9a0518ffdc1c0a1dbad56976d5be4c4c23fe01f8ad4a82230c233f3040f6a950",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 84,
+      "source_ordinal": 1290,
+      "source_line": 1293,
+      "original_literal": "bandhan bank corporate net banking login",
+      "normalized_literal": "bandhan bank corporate net banking login",
+      "literal_utf8_sha256": "a0d3df5623dc61848575fb257ff57e48bec3a28e4d01883fdf5d2dffa2bfba22",
+      "complete_public_values_sha256": "ac32201fc1b75575c5d6e77742191f25cc5a30d1675ec89fd10a8f8f5fd16456",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 85,
+      "source_ordinal": 1291,
+      "source_line": 1294,
+      "original_literal": "bandhan bank internet banking login",
+      "normalized_literal": "bandhan bank internet banking login",
+      "literal_utf8_sha256": "9e7913b376535c87443eb8dd7599ab6be462b0adf5889bcc09506675ef800ace",
+      "complete_public_values_sha256": "8fb92a10a2879ed0658ad22e941b1cf3319f7da56701d243f0d3431525a0e270",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 86,
+      "source_ordinal": 1293,
+      "source_line": 1296,
+      "original_literal": "bandhan bank net banking login",
+      "normalized_literal": "bandhan bank net banking login",
+      "literal_utf8_sha256": "244464faaa43344d2715920eed202d7eeab88fdf3114a85068ab56f31f820bd0",
+      "complete_public_values_sha256": "67a931e2f6995859520f7fd61db322d5fb4f8a5ff8318411d34770f2ba8984d0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 87,
+      "source_ordinal": 1296,
+      "source_line": 1299,
+      "original_literal": "bandhan net banking login",
+      "normalized_literal": "bandhan net banking login",
+      "literal_utf8_sha256": "6214f0dc35a83719c76d42c62292786ffd9933e24c34e35e343a0604aacd6293",
+      "complete_public_values_sha256": "85bcbf7711355409d329d5087101b843b2ac086f3a87b8bcabb23cf32279fc04",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 88,
+      "source_ordinal": 1317,
+      "source_line": 1320,
+      "original_literal": "bank islam online banking login",
+      "normalized_literal": "bank islam online banking login",
+      "literal_utf8_sha256": "8c020777b8ede75a948dc77629893a75db2467ea0566f4386e6456c639633acc",
+      "complete_public_values_sha256": "cf563b8d40379c41239b730ba68c8efc30ccd1de4fed41fb2b4872823838b1a0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 89,
+      "source_ordinal": 1329,
+      "source_line": 1332,
+      "original_literal": "bank of baroda internet banking login",
+      "normalized_literal": "bank of baroda internet banking login",
+      "literal_utf8_sha256": "8b70d7520859c404c652efdaa0bdc94cee47c9bcce5e27500344a4fb5cdd3d73",
+      "complete_public_values_sha256": "7fa182d2dfc33c610572f4c668b1b69f74694fec6288f612dc63fbc7be70f16f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 90,
+      "source_ordinal": 1346,
+      "source_line": 1349,
+      "original_literal": "bank of india internet banking login",
+      "normalized_literal": "bank of india internet banking login",
+      "literal_utf8_sha256": "e05c6551d4c005581e6b7f5338bae2d04e196ed28d8811f87a08b2f19b398a96",
+      "complete_public_values_sha256": "8a720817dbe1dd4ce392f520f9329481618ea10e6c8b2cd513b03d2d3d1eb52d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 91,
+      "source_ordinal": 1351,
+      "source_line": 1354,
+      "original_literal": "bank of india net banking login",
+      "normalized_literal": "bank of india net banking login",
+      "literal_utf8_sha256": "a478b4d298edeadd5dcbb1f965f82fc111aa8d78f9b6d7208e2c9924c32308ba",
+      "complete_public_values_sha256": "c586d05777e89570ad0d132a0653bd8ae6973276b9af418f934f596574d10dd2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 92,
+      "source_ordinal": 1352,
+      "source_line": 1355,
+      "original_literal": "bank of india net banking login first time",
+      "normalized_literal": "bank of india net banking login first time",
+      "literal_utf8_sha256": "b59b8b83f7b762ab08a2b55aeb829869a94bb54ccda97dda3e0d483581029734",
+      "complete_public_values_sha256": "2ee5e8d50e6376cb22eeb015cdea4bc5cd9aa6f6f55f3a90699fd6f63a26ab3a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 93,
+      "source_ordinal": 1375,
+      "source_line": 1378,
+      "original_literal": "bccb net banking login",
+      "normalized_literal": "bccb net banking login",
+      "literal_utf8_sha256": "7f38fe14a01d9f85164f402ec506173b84cc816544920bc71d7fa18148052ebd",
+      "complete_public_values_sha256": "4e9ec40c8ca30f7d699e1937f9d71dc8163ccf58654f5f8c2320f5c3fb562a2f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 94,
+      "source_ordinal": 1414,
+      "source_line": 1417,
+      "original_literal": "bml internet banking login",
+      "normalized_literal": "bml internet banking login",
+      "literal_utf8_sha256": "b2b87beb0ca7197eb73217e91eaeabf4f07752b42ee3904ffd4cef0da3736936",
+      "complete_public_values_sha256": "bf12ae99f9e21fd2b9548dfc5da692d306e3e1e4f82a1fee306d4a8ad14ba616",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 95,
+      "source_ordinal": 1437,
+      "source_line": 1440,
+      "original_literal": "bob internet banking login",
+      "normalized_literal": "bob internet banking login",
+      "literal_utf8_sha256": "907176c16f5cd031f477c40991934b247c9dc22dc366cb9dd6b1b7ae2a41c6c0",
+      "complete_public_values_sha256": "965c3789fc7bf68f18f5cea08c7cbbaa253c6c073e0036ebab5445fe822d9511",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 96,
+      "source_ordinal": 1440,
+      "source_line": 1443,
+      "original_literal": "bob mobile banking login",
+      "normalized_literal": "bob mobile banking login",
+      "literal_utf8_sha256": "64625d244ec9115f8823333dd2a2f9b45b9132038913e17006873d05ab4fb727",
+      "complete_public_values_sha256": "0e2a38d6fc46879808c30c62cb7c698816b85cc2ddebd68a9a35b6cc03b0f37b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 97,
+      "source_ordinal": 1443,
+      "source_line": 1446,
+      "original_literal": "bob net banking login",
+      "normalized_literal": "bob net banking login",
+      "literal_utf8_sha256": "f34769d9af1e75c9ee4c9c12c0516649c39a6e83797a5a248cce5cc13ff662c9",
+      "complete_public_values_sha256": "192702645151485fb2bb9c5ea36fd0a0944c434e2eb3c9337ac0659cc6a5eb68",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 98,
+      "source_ordinal": 1462,
+      "source_line": 1465,
+      "original_literal": "boi corporate net banking login",
+      "normalized_literal": "boi corporate net banking login",
+      "literal_utf8_sha256": "df54a8c43e4e8bfd5b79ce051de2da13e2af92f03b2ca53dcb66a90ac862b42e",
+      "complete_public_values_sha256": "05c582a5c1a9940077902875246ffa397cd2c52abb0840bd09804f88b69f5946",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 99,
+      "source_ordinal": 1463,
+      "source_line": 1466,
+      "original_literal": "boi internet banking login",
+      "normalized_literal": "boi internet banking login",
+      "literal_utf8_sha256": "b6dae9e0fc36ea04b078266e0148fcc4dcc1374fdbb685fe8b6a8911915a2795",
+      "complete_public_values_sha256": "2356f66b5b57ac60ebec9d6f765fdd06ebdce1116ffee059b176e8a28974b713",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 100,
+      "source_ordinal": 1465,
+      "source_line": 1468,
+      "original_literal": "boi mobile banking login",
+      "normalized_literal": "boi mobile banking login",
+      "literal_utf8_sha256": "42ec4faa6538f6221ba85153e60164896c1d9034dafed9bfe98f7f74237d0dce",
+      "complete_public_values_sha256": "d9bbc810eb22dd2f748612177e84197f869ff83aab8e86c266867d7bb7111c52",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 101,
+      "source_ordinal": 1466,
+      "source_line": 1469,
+      "original_literal": "boi net banking login",
+      "normalized_literal": "boi net banking login",
+      "literal_utf8_sha256": "9a039ec91ca24f90366818dc6816ded564444b89f7db0c32da264fa880fea2ab",
+      "complete_public_values_sha256": "e27d8309f1e7d2cd9acf0804baa6e94a85cd94eac44f8e45b9c24122c972292f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 102,
+      "source_ordinal": 1467,
+      "source_line": 1470,
+      "original_literal": "boi net banking login first time",
+      "normalized_literal": "boi net banking login first time",
+      "literal_utf8_sha256": "2793a2ac9f05e6aa8c406d76ad0c13f2d03e154f14e1274df54894ab15020d34",
+      "complete_public_values_sha256": "8aac2eedc65d25a70de091a4db4d0f35351a3c488a1cee1d769b70403cc8be0d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 103,
+      "source_ordinal": 1478,
+      "source_line": 1481,
+      "original_literal": "bov internet banking login",
+      "normalized_literal": "bov internet banking login",
+      "literal_utf8_sha256": "a9a3749b61842b83e37d28374210114eac10db7a6983fce1991f51968eb1aa4e",
+      "complete_public_values_sha256": "15622e502a99389dc14fe97e82d46ddb3372bc6ec8df218eca2373f1114a31da",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 104,
+      "source_ordinal": 1530,
+      "source_line": 1533,
+      "original_literal": "cabs internet banking login",
+      "normalized_literal": "cabs internet banking login",
+      "literal_utf8_sha256": "eb7cd15b1161b88064aa29787f7a1220ce685635864f62730269c5e896082f30",
+      "complete_public_values_sha256": "d51e85efcc8b21dc34ad59df7ce1d63ca52fb77420b351bb8bc40d233f3eedeb",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 105,
+      "source_ordinal": 1549,
+      "source_line": 1552,
+      "original_literal": "canara bank internet banking login",
+      "normalized_literal": "canara bank internet banking login",
+      "literal_utf8_sha256": "4550a6227339c36c8884a038d173441bb97a4f0c1cfbb7eb3ccacdb1bf2310d0",
+      "complete_public_values_sha256": "cea682e58b01d53e3bf77611b20ba53b89d90cf65378e0c917bb98dc7df1c48e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 106,
+      "source_ordinal": 1554,
+      "source_line": 1557,
+      "original_literal": "canara bank net banking login",
+      "normalized_literal": "canara bank net banking login",
+      "literal_utf8_sha256": "9efeccd4356bc3e5b9c259b132e57bde3a95b725159143e879917a47088077a5",
+      "complete_public_values_sha256": "222f7364c724aab4e885e4e2abb91805d0c9e4ea75b80f9b846fdfe7884637c1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 107,
+      "source_ordinal": 1555,
+      "source_line": 1558,
+      "original_literal": "canara bank net banking login personal",
+      "normalized_literal": "canara bank net banking login personal",
+      "literal_utf8_sha256": "83e6152cb8047899e1bd00ec0536b4b353a2ab9c08a042f69e3914ee98ffe116",
+      "complete_public_values_sha256": "2a7b1802f8bef299d83df4d6362fdac3e9b5b8ab1cb98e61093bee0d49806c08",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 108,
+      "source_ordinal": 1556,
+      "source_line": 1559,
+      "original_literal": "canara bank net banking login register online",
+      "normalized_literal": "canara bank net banking login register online",
+      "literal_utf8_sha256": "d8b14ab2ba0ea8038be34e8a57fe93402efef0ba17739529437c3e03abf1cec4",
+      "complete_public_values_sha256": "83a4870aa14af04c7a45915aadb9987905850774cb5fad0132eca66ca8752bf2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 109,
+      "source_ordinal": 1560,
+      "source_line": 1563,
+      "original_literal": "canara bank netbanking login",
+      "normalized_literal": "canara bank netbanking login",
+      "literal_utf8_sha256": "c476a4df13416eab817a88eac096e3ae8f18d46c67ca5fd13bd46b3835f5f6bf",
+      "complete_public_values_sha256": "3f8c2560859238aa3c063625886dccd0480975c6540c76954c3f41ec0dec9fce",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 110,
+      "source_ordinal": 1561,
+      "source_line": 1564,
+      "original_literal": "canara bank online banking login",
+      "normalized_literal": "canara bank online banking login",
+      "literal_utf8_sha256": "e2ad21e8dc79e6454c9fd5ab8e1912cd3e39494a5986cc1ddd050a1bda1604dc",
+      "complete_public_values_sha256": "90ec2f9396415a4f5209662b1b58fb17de031da78531bd89c3a1145dd65fe948",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 111,
+      "source_ordinal": 1570,
+      "source_line": 1573,
+      "original_literal": "canara netbanking login",
+      "normalized_literal": "canara netbanking login",
+      "literal_utf8_sha256": "c0eb5264f57bae9d915d23081fa54941f3901b74c3e4ceefe5af310f3a5e75d6",
+      "complete_public_values_sha256": "1b81f768e92e622df229ec11257c8902c13bb75393809e4b2a2201f926314a90",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 112,
+      "source_ordinal": 1572,
+      "source_line": 1575,
+      "original_literal": "canarabank netbanking login",
+      "normalized_literal": "canarabank netbanking login",
+      "literal_utf8_sha256": "487dff92ae0fadd4c2dcbd210c5f0b8af5487d22f4822684e7d54a77730a86ca",
+      "complete_public_values_sha256": "f2555dfd04e9a58608b55712b08d43868c5a4d92b2c16e2f65dbed32cd3cc4a3",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 113,
+      "source_ordinal": 1596,
+      "source_line": 1599,
+      "original_literal": "central bank net banking login",
+      "normalized_literal": "central bank net banking login",
+      "literal_utf8_sha256": "e59555fa7189f98bd8300482fee5b926623fbf3b20e13c1d9f1aa450238724f9",
+      "complete_public_values_sha256": "9fab057e644fe53fd1ca43e0016761ac9131861526da4133deb748e68c105277",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 114,
+      "source_ordinal": 1602,
+      "source_line": 1605,
+      "original_literal": "central bank of india net banking login",
+      "normalized_literal": "central bank of india net banking login",
+      "literal_utf8_sha256": "5188218f1c8ee6b085da812bc9c58c5eb47a8318a19b4241b843cb87f7a68c3f",
+      "complete_public_values_sha256": "25b8496d95f908414139b75f6e40d761d0141d626c357a1cf394c69550aef664",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 115,
+      "source_ordinal": 1609,
+      "source_line": 1612,
+      "original_literal": "cib internet banking login",
+      "normalized_literal": "cib internet banking login",
+      "literal_utf8_sha256": "0fb60237f1f20750c755d316ac7ee544a9e67d775bac5f0a5a24167223bd9295",
+      "complete_public_values_sha256": "7952639e0ddc880437967df0d0e6b1ffa4255c3935307c0598688b001c7b5874",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 116,
+      "source_ordinal": 1667,
+      "source_line": 1670,
+      "original_literal": "citi net banking login",
+      "normalized_literal": "citi net banking login",
+      "literal_utf8_sha256": "e9886b2514373f05e00937b81250a23144d72544e1523cfd6c3240c7d70d33fe",
+      "complete_public_values_sha256": "b890295a053800b7fad495965384ae5ce4976326d2c67a0328e68eec770fc78f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 117,
+      "source_ordinal": 1721,
+      "source_line": 1724,
+      "original_literal": "citibank internet banking login",
+      "normalized_literal": "citibank internet banking login",
+      "literal_utf8_sha256": "eeda43cf2b4a3f8ea8bc930bd8acaaa12906e88f996fb9ba0bbe7cfa37b7bb34",
+      "complete_public_values_sha256": "bf26e071a4e33233d284d89108b4e9088bc121f9e78b212f50487b793e469029",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 118,
+      "source_ordinal": 1749,
+      "source_line": 1752,
+      "original_literal": "city net banking login",
+      "normalized_literal": "city net banking login",
+      "literal_utf8_sha256": "75a6d2d24020fd72ac28729f7d3a59fa90d9752edcfdd3828e35a603d1121a41",
+      "complete_public_values_sha256": "0761d3ea9982c9f96913fad35fc4a98c6347da8ec4dc0f22818c805bcd553dea",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 119,
+      "source_ordinal": 1752,
+      "source_line": 1755,
+      "original_literal": "city union bank net banking login",
+      "normalized_literal": "city union bank net banking login",
+      "literal_utf8_sha256": "93a4e6ac428f7ba21e3cfa87f6158b3eeb796e07ca3e35119bd30b02dcaebdf9",
+      "complete_public_values_sha256": "42a7e12e2ef38c36e3ba046e8a0eb5a9fb59687bdbaab79daafbb48de821d867",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 120,
+      "source_ordinal": 1790,
+      "source_line": 1793,
+      "original_literal": "crdb internet banking login",
+      "normalized_literal": "crdb internet banking login",
+      "literal_utf8_sha256": "f4d11c387f7f2394e07602ab7f12b6e9f0e74b9f1ddd595c4f952302355246b1",
+      "complete_public_values_sha256": "12133c361bacfe6655d5041c838a28741bab3301386cb5e48438c02f89e4202b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 121,
+      "source_ordinal": 1797,
+      "source_line": 1800,
+      "original_literal": "csb net banking login",
+      "normalized_literal": "csb net banking login",
+      "literal_utf8_sha256": "c6374f7ea9368345f1e1ce3574cae2e491a275500b91b353b720e104e06efcb2",
+      "complete_public_values_sha256": "c802b3b9394c2ecf065f03a106ad3aefa8b5bafe11544ded5c20d9aae137d38b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 122,
+      "source_ordinal": 1799,
+      "source_line": 1802,
+      "original_literal": "cub net banking login",
+      "normalized_literal": "cub net banking login",
+      "literal_utf8_sha256": "611408ac52548192d27982b428a81ab8df9d1da1ff785c7c890b7b5e32193081",
+      "complete_public_values_sha256": "7e84aa7a769f2e07d1423917c79dff73b7b828e413136948030ee21ef5fc5f59",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 123,
+      "source_ordinal": 1828,
+      "source_line": 1831,
+      "original_literal": "dbbl internet banking login",
+      "normalized_literal": "dbbl internet banking login",
+      "literal_utf8_sha256": "9a54b72e761776c457f82efe6d1279c53f4f864e02611fe1475078d1bed34d5d",
+      "complete_public_values_sha256": "375fcd96e1f1aed45525b22a52fe67b508afb88a9950ca0fe34a1d6537d00198",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 124,
+      "source_ordinal": 1835,
+      "source_line": 1838,
+      "original_literal": "dcb net banking login",
+      "normalized_literal": "dcb net banking login",
+      "literal_utf8_sha256": "c2515bd3f255498b27190fc97be1dfb5018d9da3f373766fed6e726808465e8e",
+      "complete_public_values_sha256": "e18870c49faf6ce853baaf49c05b951d5755947378e24e735128124b608afce0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 125,
+      "source_ordinal": 1839,
+      "source_line": 1842,
+      "original_literal": "dfcu online banking login",
+      "normalized_literal": "dfcu online banking login",
+      "literal_utf8_sha256": "b2c7a3ed21f8f404900546553a5ba5aefbfcc98814e3d0e162ae4a7cd77090b4",
+      "complete_public_values_sha256": "82a1331387282eff8b638a8e56e3d2d02e59958963001f056035cd610d9f66d6",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 126,
+      "source_ordinal": 1893,
+      "source_line": 1896,
+      "original_literal": "equitas bank net banking login",
+      "normalized_literal": "equitas bank net banking login",
+      "literal_utf8_sha256": "ce77fc52c62c5bc58ff422ea7ea783f51cb8edf637d283d0f78f87933163ec06",
+      "complete_public_values_sha256": "7f45b0a6508395129064d6eaf3e42e57f40668bbb03ad493e0f56f0815590fce",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 127,
+      "source_ordinal": 1909,
+      "source_line": 1912,
+      "original_literal": "fcmb internet banking login",
+      "normalized_literal": "fcmb internet banking login",
+      "literal_utf8_sha256": "571b661c010a46e619e3c4e81e0b136b452b1008cd66df5e3f1af92f7d5b6a03",
+      "complete_public_values_sha256": "a62d1ab39fb3917dd5e0d2ab152d898578cf10bda976682af4bfcccc2e4a4449",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 128,
+      "source_ordinal": 1925,
+      "source_line": 1928,
+      "original_literal": "fincare net banking login",
+      "normalized_literal": "fincare net banking login",
+      "literal_utf8_sha256": "d6876c741ad1c20bba4919fe312372e65ff533b0b8905d962f68af98a828bc9b",
+      "complete_public_values_sha256": "d0f3161e43e6322c9b44f0244b329d1f64f331bf3642ab4971f259b5b00e9b57",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 129,
+      "source_ordinal": 1930,
+      "source_line": 1933,
+      "original_literal": "first credit union internet banking login",
+      "normalized_literal": "first credit union internet banking login",
+      "literal_utf8_sha256": "d5afa4d9dc4071381888c0a3852d48ebf36aa2a3c734e391e6824bc77a357fbb",
+      "complete_public_values_sha256": "a901d1f12dc20938f4b597490c6a88ded61139a51f4514ba22d3344a7470cb75",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 130,
+      "source_ordinal": 1934,
+      "source_line": 1937,
+      "original_literal": "first direct online banking login",
+      "normalized_literal": "first direct online banking login",
+      "literal_utf8_sha256": "ae75da227a5319cfcb5234bc0fffb40cb4ea790fe0f9087453cf195327285ce0",
+      "complete_public_values_sha256": "3d4578c0f97038262ecec9a9b7bec6dfd2f39a7b032e82f0f2e5a8862e8a6052",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 131,
+      "source_ordinal": 2122,
+      "source_line": 2125,
+      "original_literal": "hdfc credit card net banking login",
+      "normalized_literal": "hdfc credit card net banking login",
+      "literal_utf8_sha256": "7795eb3e7c31bced31ef4da153f5356f321a70d45d35043719095fb08f109985",
+      "complete_public_values_sha256": "ebb03766983574416f24017389c38c63bab3d78b0e1ff79a49c7f35c41b027a4",
+      "decision": "HOLD",
+      "reason_codes": [
+        "FINANCIAL_SCOPE_UNRESOLVED"
+      ]
+    },
+    {
+      "selected_ordinal": 132,
+      "source_ordinal": 2123,
+      "source_line": 2126,
+      "original_literal": "hdfc credit card netbanking login",
+      "normalized_literal": "hdfc credit card netbanking login",
+      "literal_utf8_sha256": "f5331130e1430bb2079a0fefad265e02437c7d235f0980c54276ebdf976f421c",
+      "complete_public_values_sha256": "288c26157df0d5571d7407155b1aaf963e339b63fee3fe0f5e4191c74a4e0dc8",
+      "decision": "HOLD",
+      "reason_codes": [
+        "FINANCIAL_SCOPE_UNRESOLVED"
+      ]
+    },
+    {
+      "selected_ordinal": 133,
+      "source_ordinal": 2134,
+      "source_line": 2137,
+      "original_literal": "hdfc internet banking login",
+      "normalized_literal": "hdfc internet banking login",
+      "literal_utf8_sha256": "56f48b7507acc005a611611cbea959ca3b94c3e85b72de9410b6c0b2e3b426dc",
+      "complete_public_values_sha256": "851cd75ef32df1da3d705749425a1b17fcf6ee6b76271c222cf6a651393a885c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 134,
+      "source_ordinal": 2139,
+      "source_line": 2142,
+      "original_literal": "hdfc mobile banking login",
+      "normalized_literal": "hdfc mobile banking login",
+      "literal_utf8_sha256": "6524aaaa6ce5ec20955abe4e9aa2875967e3cb346926170b86d83ad6266e0ac8",
+      "complete_public_values_sha256": "eb88bfa1bc5c80664ac512da349a03985e23d3466f49ee6bbfb4b4d89802bea7",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 135,
+      "source_ordinal": 2142,
+      "source_line": 2145,
+      "original_literal": "hdfc netbanking login in mobile",
+      "normalized_literal": "hdfc netbanking login in mobile",
+      "literal_utf8_sha256": "3ad13519b1f7725934aed23cc58842c9a72244892122cb66a333bfaea42ad960",
+      "complete_public_values_sha256": "53b95e6d3d4b7f889a8673a947d36017e58234a6b5b4a43a07ba8be5f6150bcf",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 136,
+      "source_ordinal": 2143,
+      "source_line": 2146,
+      "original_literal": "hdfc netbanking login mobile",
+      "normalized_literal": "hdfc netbanking login mobile",
+      "literal_utf8_sha256": "64d515c0c03f50a953ef7c1f3283002ec61cd3c7cc76a449d1d11ccd40354a33",
+      "complete_public_values_sha256": "f2588d6d79955aee6548f172739dd496a4c961a4c6ad1732f70d7c5932340de2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 137,
+      "source_ordinal": 2144,
+      "source_line": 2147,
+      "original_literal": "hdfc netbanking login online",
+      "normalized_literal": "hdfc netbanking login online",
+      "literal_utf8_sha256": "f54abc77b17e2044259eefc165f49fd45596a62c83d0174a7ebbaced56f22048",
+      "complete_public_values_sha256": "286e4a3efce8ea94cdd432471a1c4f385a56e9f2d6c9952669d9aaff3946e142",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 138,
+      "source_ordinal": 2145,
+      "source_line": 2148,
+      "original_literal": "hdfc netbanking login page",
+      "normalized_literal": "hdfc netbanking login page",
+      "literal_utf8_sha256": "27ebe49ab9ff51456af7df39548477f60d911d93a839d48079bbc147d9c30dd3",
+      "complete_public_values_sha256": "426456ba468b6476dae62edb30a9ffb83c91c21a3d9593c657d56c9b1a156f15",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 139,
+      "source_ordinal": 2170,
+      "source_line": 2173,
+      "original_literal": "hnb internet banking login",
+      "normalized_literal": "hnb internet banking login",
+      "literal_utf8_sha256": "52637f6e4f37ad152b6de006f5432b700e88178dcd7104aca9b9c810196c2e38",
+      "complete_public_values_sha256": "dc34dd795c74c2a8e3221921aa8ff06d9d294038dc9d68762dae0058deba91d9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 140,
+      "source_ordinal": 2172,
+      "source_line": 2175,
+      "original_literal": "hnb online banking login",
+      "normalized_literal": "hnb online banking login",
+      "literal_utf8_sha256": "bd77ee02044c84fde6e3d0ab5dfa17754170d4b01d43ec68af00f6998549118d",
+      "complete_public_values_sha256": "13c048da12e56deb92980a33622f5bd7dce9328277afdd55c17da0a77275a893",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 141,
+      "source_ordinal": 2212,
+      "source_line": 2215,
+      "original_literal": "hsbc netbanking login",
+      "normalized_literal": "hsbc netbanking login",
+      "literal_utf8_sha256": "6067c0e398b42496deb66765b0c691cc9d185f06a64fabd69979832180dbfb1d",
+      "complete_public_values_sha256": "5df6cdc91c4315288031238bf4f8cefd34f8f9a2c4262c07a53b7ade68be49c7",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 142,
+      "source_ordinal": 2285,
+      "source_line": 2288,
+      "original_literal": "icici bank internet banking login",
+      "normalized_literal": "icici bank internet banking login",
+      "literal_utf8_sha256": "9571ad62d3cf042308f002c98924eaa1d03b1f8101d6cc639558e10fd053bc5d",
+      "complete_public_values_sha256": "e10a666283859e606da2fbdbe62c2108e0cf484b01e8ee322431e2e4e21eb33e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 143,
+      "source_ordinal": 2302,
+      "source_line": 2305,
+      "original_literal": "icici corporate internet banking login",
+      "normalized_literal": "icici corporate internet banking login",
+      "literal_utf8_sha256": "616def317f4d7f02d969c3eda3e1e42f7df285bbd5e987aea42209301c2fb57d",
+      "complete_public_values_sha256": "1c677f03512b132c5389c00b844c9582e22ae25d3abce2768273bf53fc0c703d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 144,
+      "source_ordinal": 2303,
+      "source_line": 2306,
+      "original_literal": "icici corporate net banking login",
+      "normalized_literal": "icici corporate net banking login",
+      "literal_utf8_sha256": "0b7a1eb36192b5e571f7e935e4f89efe7da8e083a3e6b1f7a03e43cd1e9976f0",
+      "complete_public_values_sha256": "937333a704c856ab47a9047a56194c36a50bbcd35419fa6f5057ef8393dd75de",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 145,
+      "source_ordinal": 2322,
+      "source_line": 2325,
+      "original_literal": "icici mobile banking login",
+      "normalized_literal": "icici mobile banking login",
+      "literal_utf8_sha256": "e26c5f148bbfeba97fb946340ccd4142459a3afe7c274652273d408252d9715c",
+      "complete_public_values_sha256": "40ca66b383b6d780f71b99229c59da23aee1334fc5c11cb51fe85f60e5b19175",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 146,
+      "source_ordinal": 2323,
+      "source_line": 2326,
+      "original_literal": "icici net banking login corporate",
+      "normalized_literal": "icici net banking login corporate",
+      "literal_utf8_sha256": "b5a760b5a5107fbf16548fc00d2f0f52e7480b5718c5847928babefb990da7b8",
+      "complete_public_values_sha256": "9bf2b0a0f0014bd0314fbdf687944f006c8ca084d230b986ee94fb769da3dab6",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 147,
+      "source_ordinal": 2324,
+      "source_line": 2327,
+      "original_literal": "icici net banking login page",
+      "normalized_literal": "icici net banking login page",
+      "literal_utf8_sha256": "7071252fd19a41e3012a6875999b39989ed07e1740aca3600683038ffa55186f",
+      "complete_public_values_sha256": "cb7a4d07cc20de1fadcb52a68d8e751f5b21e7fdf6c353f6a823004d94a3c26c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 148,
+      "source_ordinal": 2348,
+      "source_line": 2351,
+      "original_literal": "idbi bank net banking login",
+      "normalized_literal": "idbi bank net banking login",
+      "literal_utf8_sha256": "36637f14bf8656bda7e8f7f96300da5d03d382abdba455a931c21265e1987cd4",
+      "complete_public_values_sha256": "44eb7be3d3250b58b6cddf184191a5b715afd9e74f08fd61667577071b6f1acd",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 149,
+      "source_ordinal": 2351,
+      "source_line": 2354,
+      "original_literal": "idbi corporate net banking login",
+      "normalized_literal": "idbi corporate net banking login",
+      "literal_utf8_sha256": "116bd5c411da6ee3bc5bf298f04af71928f90d9b367cc60f7374fd828060f79e",
+      "complete_public_values_sha256": "36765c89da0e6446745037a8c4b904901bc372c79ddc76232643241c7962c3c8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 150,
+      "source_ordinal": 2352,
+      "source_line": 2355,
+      "original_literal": "idbi internet banking login",
+      "normalized_literal": "idbi internet banking login",
+      "literal_utf8_sha256": "eb45ab404d95a6fd835c9626ed32ad09123e21c3d2cbb8266b931f00f64ebe4b",
+      "complete_public_values_sha256": "f8530563841b61f73f86e42029d1f82c7d9d853910504b55c41934d6213963e4",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 151,
+      "source_ordinal": 2354,
+      "source_line": 2357,
+      "original_literal": "idbi mobile banking login",
+      "normalized_literal": "idbi mobile banking login",
+      "literal_utf8_sha256": "3514e2c36c6dc45411acbe3821d9868001d22e9b5a56c4313901db5b7ba40266",
+      "complete_public_values_sha256": "e383349c7d480becfeb453055d33857a52f193022c0d4e7663518c9789962119",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 152,
+      "source_ordinal": 2355,
+      "source_line": 2358,
+      "original_literal": "idbi net banking login id",
+      "normalized_literal": "idbi net banking login id",
+      "literal_utf8_sha256": "4f5903113d8e37caab04418ed74c3536d24055ea587ca708870bc1bf01843333",
+      "complete_public_values_sha256": "10fdb0dc46e2d6cbdbf287979ff17d798332f7cf5ea0409a76e0027f6c02016a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 153,
+      "source_ordinal": 2356,
+      "source_line": 2359,
+      "original_literal": "idbi net banking login page",
+      "normalized_literal": "idbi net banking login page",
+      "literal_utf8_sha256": "d66f6cb2e518f886a7f7ba272a55ff3b06bb638a189430aa19d5c89c563ad2aa",
+      "complete_public_values_sha256": "675ca7cef78b53ce3538473f0d914306ede7d971cc680ab40b87d148fb486983",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 154,
+      "source_ordinal": 2357,
+      "source_line": 2360,
+      "original_literal": "idbi net banking login retail",
+      "normalized_literal": "idbi net banking login retail",
+      "literal_utf8_sha256": "9da6e730880bb21131aece08b378a253d1417901b411bb26c31623a503f6c96f",
+      "complete_public_values_sha256": "70dc7bbdaff8a2ae369881cd211c3736903949ffc1e533c8241a22387b16c485",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 155,
+      "source_ordinal": 2361,
+      "source_line": 2364,
+      "original_literal": "idbi netbanking login",
+      "normalized_literal": "idbi netbanking login",
+      "literal_utf8_sha256": "14ac95411dd8aad94db5ee26152938911d4c92357dde76c16646163c69a0d5c7",
+      "complete_public_values_sha256": "0317beb7ff0c1ae95b4c77ae2ac34bfbf6de38ddf84b877b236d3f2921b55986",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 156,
+      "source_ordinal": 2372,
+      "source_line": 2375,
+      "original_literal": "idfc first bank net banking login",
+      "normalized_literal": "idfc first bank net banking login",
+      "literal_utf8_sha256": "450759f6b130c18931b4c46dc7aa5164025c2b15ba74208c98bd40c6243bdf26",
+      "complete_public_values_sha256": "63bece95ecfd29d958363146baab131323b0e7a7f3f2e6a0574bc7fdb9110829",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 157,
+      "source_ordinal": 2378,
+      "source_line": 2381,
+      "original_literal": "idfc mobile banking login",
+      "normalized_literal": "idfc mobile banking login",
+      "literal_utf8_sha256": "c1ebcd90365d50fe24f5475c80657b01624dcfdd4c4396ecff664be777181d6e",
+      "complete_public_values_sha256": "f6566fce29c32685d7e7fdcb71a983d4555b4c9760d7caa05a0d655c0b6bf10d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 158,
+      "source_ordinal": 2379,
+      "source_line": 2382,
+      "original_literal": "idfc net banking login",
+      "normalized_literal": "idfc net banking login",
+      "literal_utf8_sha256": "c2d4e9c800d4a47ba41cd57cea5d6f36f46ed031f6af7a06b204391e852f316a",
+      "complete_public_values_sha256": "b20d8488e4a5ef655c9e8b185b8dee86c8537b8eac598822f63d9618abe05003",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 159,
+      "source_ordinal": 2395,
+      "source_line": 2398,
+      "original_literal": "indian bank internet banking login",
+      "normalized_literal": "indian bank internet banking login",
+      "literal_utf8_sha256": "d1debfd203c621b0ee2e838aa0c40622aa48ce9a3679cc66368a2327a0e12bef",
+      "complete_public_values_sha256": "e60c6f61ab2a73cdec38861603fb86346c016511f59c5850109b53a7ac1b1020",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 160,
+      "source_ordinal": 2397,
+      "source_line": 2400,
+      "original_literal": "indian bank net banking login first time",
+      "normalized_literal": "indian bank net banking login first time",
+      "literal_utf8_sha256": "d632b47bac67ea1ce96ca6412a4b7af10294dbab22c2a8d861f13cc2735c8a1f",
+      "complete_public_values_sha256": "bc3cfdfb9e6b7eb87b9b057fbaa8a37aedc6dff42229043c4f3e6ce9fa9bef9d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 161,
+      "source_ordinal": 2398,
+      "source_line": 2401,
+      "original_literal": "indian bank net banking login page",
+      "normalized_literal": "indian bank net banking login page",
+      "literal_utf8_sha256": "365ce9bcfc94d645b8b9273858c8243001e9f4582295a5cbb17074600cdb2b13",
+      "complete_public_values_sha256": "b44a38056328402524d98e92d67e765e4685c9248ff86547fb645e0fd0ce2fa3",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 162,
+      "source_ordinal": 2404,
+      "source_line": 2407,
+      "original_literal": "indian overseas bank net banking login",
+      "normalized_literal": "indian overseas bank net banking login",
+      "literal_utf8_sha256": "e0cba4891ff9c3e27d1139f500eba224b61bda660fc4e972d5021b7785a413c4",
+      "complete_public_values_sha256": "ec18bba02d67b6b080ffc44f379082b7241ae8f7b5d5bdbefe9c0374cfe54d11",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 163,
+      "source_ordinal": 2418,
+      "source_line": 2421,
+      "original_literal": "indusind bank net banking login",
+      "normalized_literal": "indusind bank net banking login",
+      "literal_utf8_sha256": "87635913bd15b46bd87446d9952846fc48097d76ab6eb469dcdc74012e34d2b4",
+      "complete_public_values_sha256": "def82e8feea3d21e3a07761f8ecdbe0942f72661799b8567a6b11b7b3ff1b612",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 164,
+      "source_ordinal": 2444,
+      "source_line": 2447,
+      "original_literal": "iob internet banking login",
+      "normalized_literal": "iob internet banking login",
+      "literal_utf8_sha256": "be260d9507079fa5b523601c141a138b07a0f25b4c844d16a0a1e10c23e2441d",
+      "complete_public_values_sha256": "481befd1a40be1df9996a012fe42295a385e5011960676263a73adc72bc869bf",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 165,
+      "source_ordinal": 2449,
+      "source_line": 2452,
+      "original_literal": "iob net banking login",
+      "normalized_literal": "iob net banking login",
+      "literal_utf8_sha256": "fbf28b42c6b3f3883c83d1b5d2eb18369305b98997b4d350db5c64942aa20e80",
+      "complete_public_values_sha256": "cdc476a9851727e4059ca917359739c4798f4bff385cf4e179d85b474f4ab364",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 166,
+      "source_ordinal": 2457,
+      "source_line": 2460,
+      "original_literal": "ippb mobile banking login",
+      "normalized_literal": "ippb mobile banking login",
+      "literal_utf8_sha256": "59f51278228a068d104e4525b6e69b5306675339f4f3d3039c7a1671cb52636e",
+      "complete_public_values_sha256": "eef8754b19d2e88eda777d174c4857637cbf1419755dc1d54a1360b1ce20a864",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 167,
+      "source_ordinal": 2462,
+      "source_line": 2465,
+      "original_literal": "j&k bank net banking login",
+      "normalized_literal": "j&k bank net banking login",
+      "literal_utf8_sha256": "1735230616e58c3f7569b023cd0ad7e3b20471ab53c576bba1215518e241cf6c",
+      "complete_public_values_sha256": "d5e029b11dab27e35ffe0a7784effa1a61821161166dd353588f58e48a6c2cac",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 168,
+      "source_ordinal": 2470,
+      "source_line": 2473,
+      "original_literal": "jk net banking login",
+      "normalized_literal": "jk net banking login",
+      "literal_utf8_sha256": "56c60b98de7846b637d74cd4d3764a2271beace48d313220a4dbcf9b8f02d8e1",
+      "complete_public_values_sha256": "80c35fa7004d5492f8f4f7ee261740c696a9db4181d2a94e8e3f1b5191c66c83",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 169,
+      "source_ordinal": 2479,
+      "source_line": 2482,
+      "original_literal": "karnataka bank internet banking login",
+      "normalized_literal": "karnataka bank internet banking login",
+      "literal_utf8_sha256": "a78836da94d03582d776fb1ba54549f943aa124ef594c3cd4e1fd09599071a06",
+      "complete_public_values_sha256": "536bbf8afc28183540b134b22e8de342a3a91445bfdb347f700c182c6aa028aa",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 170,
+      "source_ordinal": 2480,
+      "source_line": 2483,
+      "original_literal": "karnataka bank net banking login",
+      "normalized_literal": "karnataka bank net banking login",
+      "literal_utf8_sha256": "dddbb021ada029fc68cdb1c994fd195c51845245edf8f0db2ed0a6d387a290e5",
+      "complete_public_values_sha256": "d1d8725cbf4e0a4e23ab064be447fe01796eaddd2b0140829a44ce71a96fb103",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 171,
+      "source_ordinal": 2482,
+      "source_line": 2485,
+      "original_literal": "karnataka net banking login",
+      "normalized_literal": "karnataka net banking login",
+      "literal_utf8_sha256": "ca557d14dfbd4adc8327d3724cd5fdba1545f9e30e42249b3869c8e9d8f163b9",
+      "complete_public_values_sha256": "802c934c603755ecef167fbc3a53e2aa74b36b1c0d0f464f378118d248d458d5",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 172,
+      "source_ordinal": 2490,
+      "source_line": 2493,
+      "original_literal": "kbl net banking login",
+      "normalized_literal": "kbl net banking login",
+      "literal_utf8_sha256": "ec9b617861c4d7d2c29884a9d4387130de7e775419975b05102fb255195351fb",
+      "complete_public_values_sha256": "53d31496b1916f1cd39d1ac68fb7d48a14efa74783db9b0bae8ad4d42479937a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 173,
+      "source_ordinal": 2531,
+      "source_line": 2534,
+      "original_literal": "kvb internet banking login",
+      "normalized_literal": "kvb internet banking login",
+      "literal_utf8_sha256": "84cfda816afc233e21ddeb090a1e2497f51515926e3c8938bb46b33b6a8e14c8",
+      "complete_public_values_sha256": "988249226d5496020b9d6cbd9075dedd16513baca31310beae014dea8b34366d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 174,
+      "source_ordinal": 2534,
+      "source_line": 2537,
+      "original_literal": "kvb net banking login",
+      "normalized_literal": "kvb net banking login",
+      "literal_utf8_sha256": "f3a1abed0b9e1e135a271fbce94f065964609a5cba5e081bfd9717e98d187216",
+      "complete_public_values_sha256": "835250acc3593be7a4f845750d931ca8f00ff9b6f7d544cca60e47b6168fadcd",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 175,
+      "source_ordinal": 2536,
+      "source_line": 2539,
+      "original_literal": "kvb netbanking login",
+      "normalized_literal": "kvb netbanking login",
+      "literal_utf8_sha256": "0c990c72222a87283b1db64efc3f8e5a19b934e7d752215144708202b597d4f1",
+      "complete_public_values_sha256": "7b403697d01228209a3b047fd1e575f79315ba41dd5a9d2ee0d167ded9c35bad",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 176,
+      "source_ordinal": 2556,
+      "source_line": 2559,
+      "original_literal": "lvb net banking login",
+      "normalized_literal": "lvb net banking login",
+      "literal_utf8_sha256": "76586d6a9829b973847ae595dbc233a882d86a4a255ed2d2e59be13110630b7b",
+      "complete_public_values_sha256": "57f8c843489683214d39c4d45cfdb15bef5f76a2a7c8e7fed029efb1ddcf9050",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 177,
+      "source_ordinal": 2558,
+      "source_line": 2561,
+      "original_literal": "machhapuchhre bank internet banking login",
+      "normalized_literal": "machhapuchhre bank internet banking login",
+      "literal_utf8_sha256": "120a5dba5aed139f281940b94cd525686c576a502680c5da582a6efaf1bee080",
+      "complete_public_values_sha256": "f66cc915e878393f068d58532241b26129bfa7dc6071ae98e750e8505f5af5d7",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 178,
+      "source_ordinal": 2578,
+      "source_line": 2581,
+      "original_literal": "mcb internet banking login",
+      "normalized_literal": "mcb internet banking login",
+      "literal_utf8_sha256": "6fde434ddb7c5fd4b5c66928e87686cd1677f1d1da3e13cfd8a99a70d1133c64",
+      "complete_public_values_sha256": "e103f85c321995d781695950e9407bb9b0e7a939589ccd70c13456085ddf1c7b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 179,
+      "source_ordinal": 2621,
+      "source_line": 2624,
+      "original_literal": "mtb internet banking login",
+      "normalized_literal": "mtb internet banking login",
+      "literal_utf8_sha256": "7242e6a5eac4861916d1d75789083d3ac4c45829471aef4f344c22d9c9d94537",
+      "complete_public_values_sha256": "2ffbaac281a15bed9f05c329bb8030e4a811e2b1ecdf43f7312b770f35198cfc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 180,
+      "source_ordinal": 2634,
+      "source_line": 2637,
+      "original_literal": "nabil bank internet banking login",
+      "normalized_literal": "nabil bank internet banking login",
+      "literal_utf8_sha256": "3d8c595d85ce22a52809d99feb07f384e0ef9c106a300e803e3f676b3e87aebb",
+      "complete_public_values_sha256": "b3dbfa712aad2c4c1df615a895bb2d229b87ab7b2b912294e28b94685b9fe973",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 181,
+      "source_ordinal": 2674,
+      "source_line": 2677,
+      "original_literal": "netbank internet banking login",
+      "normalized_literal": "netbank internet banking login",
+      "literal_utf8_sha256": "eae0c81e5e8f2d05f520b797d35f204ff1d8be4229e8b31c1a36195dcec89044",
+      "complete_public_values_sha256": "f573775c350832a0024a2e98779ad4c6800593b42909ae7285b8f0caacb432e4",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 182,
+      "source_ordinal": 2692,
+      "source_line": 2695,
+      "original_literal": "nmb internet banking login",
+      "normalized_literal": "nmb internet banking login",
+      "literal_utf8_sha256": "935059724963e20dc62110f443b05e5b943dae9754d3413f1b01900a23652684",
+      "complete_public_values_sha256": "265610b4cc73328292c48105c41aa8cebb1cd418f7be4698078e20d950c76a65",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 183,
+      "source_ordinal": 2695,
+      "source_line": 2698,
+      "original_literal": "nsb internet banking login",
+      "normalized_literal": "nsb internet banking login",
+      "literal_utf8_sha256": "acb601f7cef7244bae28a7beb6cc4beff7e0b69f084e4d41f947291d5692c59d",
+      "complete_public_values_sha256": "73a081798dc3201a390a9b450f6515fab8c75507525e7963f1ffe19087d95542",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 184,
+      "source_ordinal": 2721,
+      "source_line": 2724,
+      "original_literal": "online sbi net banking login",
+      "normalized_literal": "online sbi net banking login",
+      "literal_utf8_sha256": "a3fbc56e286f498d285fee3d06c677fb892a04e95784ffc967cdb0136bf8d2a1",
+      "complete_public_values_sha256": "8e4b93b9b00ab7f5cefa0408a215f4038f3a9a738c090538e216c0c891425ade",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 185,
+      "source_ordinal": 2745,
+      "source_line": 2748,
+      "original_literal": "paytm net banking login",
+      "normalized_literal": "paytm net banking login",
+      "literal_utf8_sha256": "ba6ad4e1c1c557ea1006f8cdb0fc625ee738d2fab08ca17e99533b5ac4727384",
+      "complete_public_values_sha256": "5a614cdbc58d026193efa7bb17f160fef89cfbbc312099d482d79070a7cda70f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 186,
+      "source_ordinal": 2762,
+      "source_line": 2765,
+      "original_literal": "pnb corporate net banking login",
+      "normalized_literal": "pnb corporate net banking login",
+      "literal_utf8_sha256": "c4bf62ce491bd305a45dca9cd16d5bf974a18992886fcfbadd5e5c20016680a5",
+      "complete_public_values_sha256": "b1a4fb6dd01ba9d9237cf53c23a1295e970911bf9e6bfc2f0fdceaa3ccdcae99",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 187,
+      "source_ordinal": 2768,
+      "source_line": 2771,
+      "original_literal": "pnb internet banking login",
+      "normalized_literal": "pnb internet banking login",
+      "literal_utf8_sha256": "47b941dec3ef3821572d11eaef3eed70c1f344701b2d88262cca3c6e3f03bbe2",
+      "complete_public_values_sha256": "27dfc1b362008b77190c3ba9bb9e9e0d4b913c9755afb1b39a4fc698094f318f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 188,
+      "source_ordinal": 2772,
+      "source_line": 2775,
+      "original_literal": "pnb net banking login retail",
+      "normalized_literal": "pnb net banking login retail",
+      "literal_utf8_sha256": "d4da4dc27f5a63bb3616a0d0a4c2b1ccbbabed41389b5d0f6a057b9bbbd7357f",
+      "complete_public_values_sha256": "5cad1fbffec0b72f9de22e1a8ecddb956047b01c8eb16b261d58e48ab2d6b585",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 189,
+      "source_ordinal": 2773,
+      "source_line": 2776,
+      "original_literal": "pnb netbanking login",
+      "normalized_literal": "pnb netbanking login",
+      "literal_utf8_sha256": "25232deb86c669953b76199f272ddca062d68223214e012934d98d9ef8b66315",
+      "complete_public_values_sha256": "9589f1cc0f896a2d2c3d3668ccfeb3a871a4705621029fe8d96d33d8f65f53fa",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 190,
+      "source_ordinal": 2775,
+      "source_line": 2778,
+      "original_literal": "pnb online banking login",
+      "normalized_literal": "pnb online banking login",
+      "literal_utf8_sha256": "31315e0a1cd06fd60bc8739a08c24e1cc740dfaa1704a52be55da5fab4806042",
+      "complete_public_values_sha256": "29f3782970e1b8047e32cf038358ed6cdb67d1a7fea98f5a1fb0d31068134c19",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 191,
+      "source_ordinal": 2791,
+      "source_line": 2794,
+      "original_literal": "post office internet banking login",
+      "normalized_literal": "post office internet banking login",
+      "literal_utf8_sha256": "b9b986ad4e00e2b49c786ae58cc1d76ebf410b3d299c2f716fea8c5900f43282",
+      "complete_public_values_sha256": "078c44b10a60170a3b46b50ebeda3d668799cc9e6109d1c862289027d36e6890",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 192,
+      "source_ordinal": 2792,
+      "source_line": 2795,
+      "original_literal": "post office net banking login",
+      "normalized_literal": "post office net banking login",
+      "literal_utf8_sha256": "950a9298db0d4dfd9865647ee226d99878b15f5e44ebf309f39e3f09b2653bd7",
+      "complete_public_values_sha256": "bcb92dd80b2cf1966242f1b8bae3e040b5b6079538cb98f4833a4deef11f1052",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 193,
+      "source_ordinal": 2795,
+      "source_line": 2798,
+      "original_literal": "prabhu bank internet banking login",
+      "normalized_literal": "prabhu bank internet banking login",
+      "literal_utf8_sha256": "397a1e0f43dd52f10f1847a39a992716405596633b2e77b77ffe3b18941fdadd",
+      "complete_public_values_sha256": "23206355045d508e206d5a8810f9e21821e563da34040e25e3848d257664159b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 194,
+      "source_ordinal": 2800,
+      "source_line": 2803,
+      "original_literal": "psb net banking login",
+      "normalized_literal": "psb net banking login",
+      "literal_utf8_sha256": "33cbdb1b6e90b37ed4a0d90d2f6a186b7056e3aead3a421f33c194ca6219f8ee",
+      "complete_public_values_sha256": "56e6e93e01910171654bbb89df8f08915fdcdc56272052b5da9d31efd88c05fe",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 195,
+      "source_ordinal": 2809,
+      "source_line": 2812,
+      "original_literal": "punjab and sind bank net banking login",
+      "normalized_literal": "punjab and sind bank net banking login",
+      "literal_utf8_sha256": "19c3ae682bc2d28b32cd8b58cc689e1c3198dc14e79ae31112859dfce8bb4e6f",
+      "complete_public_values_sha256": "91136b34f2971c1a7a69880250f72b0c451075042fc9d5f1fe908d4d2b92d44d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 196,
+      "source_ordinal": 2813,
+      "source_line": 2816,
+      "original_literal": "punjab national bank net banking login",
+      "normalized_literal": "punjab national bank net banking login",
+      "literal_utf8_sha256": "22dcc17ae6c1629ce405f989e2a5a87469f82211b5806854d18f089850891742",
+      "complete_public_values_sha256": "b6c3c4db04bb7ea712d74d450412789f9b71708c806fcbf0de9d84fac5c8e668",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 197,
+      "source_ordinal": 2819,
+      "source_line": 2822,
+      "original_literal": "rbb internet banking login",
+      "normalized_literal": "rbb internet banking login",
+      "literal_utf8_sha256": "8a96bae08c9e32f649e034138ae6213947eb341eeae52e2a3f5e9aeb3ca59391",
+      "complete_public_values_sha256": "5ebf70cea54652f4d1024b450f543b7d936d676f014d9608e9dec3bef26fad49",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 198,
+      "source_ordinal": 2830,
+      "source_line": 2833,
+      "original_literal": "rbl bank net banking login",
+      "normalized_literal": "rbl bank net banking login",
+      "literal_utf8_sha256": "41c1ff741b8c0abeb93b7cd77a678e663dda20cbdbf8b52417a8029b120f3c13",
+      "complete_public_values_sha256": "366b252f1711a813e925776f6b88a6936b36ad5393502573e2c7b407071297db",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 199,
+      "source_ordinal": 2834,
+      "source_line": 2837,
+      "original_literal": "rbl corporate net banking login",
+      "normalized_literal": "rbl corporate net banking login",
+      "literal_utf8_sha256": "0be4ac965e782579c391ead84cf682a16db6e1f51e3184f0be48a6aba2f8b768",
+      "complete_public_values_sha256": "43a03567cf92b8a56203e236d5823d0698bb273e09735d9c294c028ef05089ce",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 200,
+      "source_ordinal": 2839,
+      "source_line": 2842,
+      "original_literal": "rbl net banking login",
+      "normalized_literal": "rbl net banking login",
+      "literal_utf8_sha256": "ce3aa01abd128e0860cf3e1a083ea50b10681e75f390d0b33a9c1dad7836902a",
+      "complete_public_values_sha256": "f9a760bd199fb17e2b54ce2b5ef0abdbee19b7b2d6e84be20332bb4ae2ea06c2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 201,
+      "source_ordinal": 2970,
+      "source_line": 2973,
+      "original_literal": "saraswat bank net banking login",
+      "normalized_literal": "saraswat bank net banking login",
+      "literal_utf8_sha256": "235ce1a5e4ca5f7f69f30d287b9549e27db42449ae960f6c2b27c62f5ea9a2db",
+      "complete_public_values_sha256": "4443b8254501d3e3b8e9aad94cf39516445e99e4f0bc8f0f24f908669245809e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 202,
+      "source_ordinal": 2972,
+      "source_line": 2975,
+      "original_literal": "saraswat net banking login",
+      "normalized_literal": "saraswat net banking login",
+      "literal_utf8_sha256": "417051a15aaa8d2073581265923ba4521e845cf94274810d5e438cbd7e59b4b7",
+      "complete_public_values_sha256": "b288c8960fed1d12113c3d7a02e546c7046b2b4d5941d45eecb40f094a5233e6",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 203,
+      "source_ordinal": 2994,
+      "source_line": 2997,
+      "original_literal": "sbi corporate net banking login",
+      "normalized_literal": "sbi corporate net banking login",
+      "literal_utf8_sha256": "c90cff9e1cb1be42c831799d9d23af31e73900cc3bce07f5366fa54e20f22bea",
+      "complete_public_values_sha256": "6c0cd5486d3d8f180427e2bedd6cdead0e9ac142697aa72f2cd66e0f5208a4e0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 204,
+      "source_ordinal": 3023,
+      "source_line": 3026,
+      "original_literal": "sbi mobile banking login",
+      "normalized_literal": "sbi mobile banking login",
+      "literal_utf8_sha256": "ecd334539eaeb73484446fc30091db5e2dfff30e50201e2efdc186a16949c126",
+      "complete_public_values_sha256": "c5f26664f1b19a1786c2e87992f78866ab7140c08a603816c0bfe7fc7e77650c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 205,
+      "source_ordinal": 3031,
+      "source_line": 3034,
+      "original_literal": "sbi netbanking login personal",
+      "normalized_literal": "sbi netbanking login personal",
+      "literal_utf8_sha256": "035c6b907946ab395e7fdea8939f63f27d65df2deb6654f93704bd9110604135",
+      "complete_public_values_sha256": "86c0b640848eec2c9f5a02e577d24e2bf56733cc8b14767d9c7c0a815b44c1c2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 206,
+      "source_ordinal": 3034,
+      "source_line": 3037,
+      "original_literal": "sbi online banking login personal banking",
+      "normalized_literal": "sbi online banking login personal banking",
+      "literal_utf8_sha256": "c264656c971131d7cf9dd99d3560317492ff6b317b4898956d1d51a85a3bc785",
+      "complete_public_values_sha256": "63548d4752f98b54afff2efc8a1612d88a6fbdf0fdacb08c1de38630a47d156b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 207,
+      "source_ordinal": 3035,
+      "source_line": 3038,
+      "original_literal": "sbi online banking login personal banking login",
+      "normalized_literal": "sbi online banking login personal banking login",
+      "literal_utf8_sha256": "c01c90732b40f2d17aafdec97eca0a2df8afa0b4711aa21f811a33ed045c43d8",
+      "complete_public_values_sha256": "08484a4615e3ce2b7f070890b5c33921fb5722e0b6bf0d2c00bd2550239c5412",
+      "decision": "HOLD",
+      "reason_codes": [
+        "REPEATED_ACTION_WORDING_UNRESOLVED"
+      ]
+    },
+    {
+      "selected_ordinal": 208,
+      "source_ordinal": 3082,
+      "source_line": 3085,
+      "original_literal": "sbm internet banking login",
+      "normalized_literal": "sbm internet banking login",
+      "literal_utf8_sha256": "d37499ea3171425450a263809120b32a55144036af80fb6e877602a9d662ab52",
+      "complete_public_values_sha256": "f392bc70667005dede81d0b4ffaf5db9e15c7c5e6302bd90d9ae609cba6c914c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 209,
+      "source_ordinal": 3090,
+      "source_line": 3093,
+      "original_literal": "scb net banking login",
+      "normalized_literal": "scb net banking login",
+      "literal_utf8_sha256": "6935c49517d74937f910b6118346ce0e19f02b6a7fc14dad2bc35d32b4ad3a0a",
+      "complete_public_values_sha256": "c2f5ada8aeab70022e18f15e9b1abfcb7a369d1aca94d1cf3fe37dc716cf5971",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 210,
+      "source_ordinal": 3105,
+      "source_line": 3108,
+      "original_literal": "seylan internet banking login",
+      "normalized_literal": "seylan internet banking login",
+      "literal_utf8_sha256": "e58c5fabef70c3a5934fda3b5a5de5f0beb4dbe832f5ec1458a40651f22ed060",
+      "complete_public_values_sha256": "d95259735681f05cd196f3fc525f9f97f37497ff2d48160eb749c488208b6e12",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 211,
+      "source_ordinal": 3108,
+      "source_line": 3111,
+      "original_literal": "sib net banking login",
+      "normalized_literal": "sib net banking login",
+      "literal_utf8_sha256": "67045b1bc77daf350071e2f301eacd37eecd8b7f740037dbbdbd4e2e00f43598",
+      "complete_public_values_sha256": "6d4148c56952cd0a8db25e1b7cff07a286855c790ce77ef881e7cf475dceccb8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 212,
+      "source_ordinal": 3128,
+      "source_line": 3131,
+      "original_literal": "stanbic internet banking login",
+      "normalized_literal": "stanbic internet banking login",
+      "literal_utf8_sha256": "7a55b6c33b20e037e540eef6199b0e23a0f4527114b07d3fcafbf8d53f5313bb",
+      "complete_public_values_sha256": "43326091f569e6c39de045e3dec271699673045b540fb2d50f5d839f9623a1b0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 213,
+      "source_ordinal": 3130,
+      "source_line": 3133,
+      "original_literal": "stanbic online banking login",
+      "normalized_literal": "stanbic online banking login",
+      "literal_utf8_sha256": "9e0d6ae31415fcc6773adce250b203e732a0f05b6d53277f2d68e888fb064630",
+      "complete_public_values_sha256": "4e6ee59223329def6bc19df3856599c00550e176070bb113f6413c0d620c8131",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 214,
+      "source_ordinal": 3155,
+      "source_line": 3158,
+      "original_literal": "standard chartered net banking login",
+      "normalized_literal": "standard chartered net banking login",
+      "literal_utf8_sha256": "2874b5c3e429d1e03f454d973c47da21c2fe583c8c823ea9b516e2d883cf5d8d",
+      "complete_public_values_sha256": "1a6b3cd42b89e4589c428fd50e049bafece8d9e2dce883fbc0ee02df94eb8828",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 215,
+      "source_ordinal": 3166,
+      "source_line": 3169,
+      "original_literal": "state bank of india net banking login",
+      "normalized_literal": "state bank of india net banking login",
+      "literal_utf8_sha256": "c590b12c365ff268d4fd5dfecc8f0f12df80c62c65920fa459b63ca474bd3fa6",
+      "complete_public_values_sha256": "c1e1df599d634abe791a0cd065fb946f03b5b92a6f83ef270dfb970b09a5e773",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 216,
+      "source_ordinal": 3179,
+      "source_line": 3182,
+      "original_literal": "svc net banking login",
+      "normalized_literal": "svc net banking login",
+      "literal_utf8_sha256": "a0b6d0de29ffd9b55fa39425134b1f0d6a9209b27a875a25916f40779944a230",
+      "complete_public_values_sha256": "155179779ea578ab17aec660d226e566ebc244130d265de6d4d1fc26b96f9a3a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 217,
+      "source_ordinal": 3184,
+      "source_line": 3187,
+      "original_literal": "syndicate bank net banking login",
+      "normalized_literal": "syndicate bank net banking login",
+      "literal_utf8_sha256": "9315ae0f690c297253348cb0f5eeafd016866bffa67196e32466017ba6a4a790",
+      "complete_public_values_sha256": "0936b666bab0c4fe360c7aabc4f3215907a266511102558d407a62ed94127a42",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 218,
+      "source_ordinal": 3197,
+      "source_line": 3200,
+      "original_literal": "tmb internet banking login",
+      "normalized_literal": "tmb internet banking login",
+      "literal_utf8_sha256": "ff528479c0eacb51761684772860c946768456c39b6e22587513d89bde88a7f1",
+      "complete_public_values_sha256": "86493bc0d220b5afff10943779729a391736fe5e794e7d541018a26e4f5d0bfc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 219,
+      "source_ordinal": 3198,
+      "source_line": 3201,
+      "original_literal": "tmb net banking login",
+      "normalized_literal": "tmb net banking login",
+      "literal_utf8_sha256": "a38b1b1e7ce0b7e82514eb26a9a8fc85895c629dbe0fda4a7680714c9493f5dc",
+      "complete_public_values_sha256": "6af2d76cc2e68804b5823b3d78f31dda4bb625cdd4241b7f87474236f4e4d278",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 220,
+      "source_ordinal": 3211,
+      "source_line": 3214,
+      "original_literal": "uba internet banking login",
+      "normalized_literal": "uba internet banking login",
+      "literal_utf8_sha256": "f68da022966484c99eb12e230534152860b6e5369c66dc2b05d80ea4e7607463",
+      "complete_public_values_sha256": "a83261e36b5cf7d199f39a1e8f594441d1556cd8f0d45b42c780fcbc1f1d5093",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 221,
+      "source_ordinal": 3213,
+      "source_line": 3216,
+      "original_literal": "uba online banking login",
+      "normalized_literal": "uba online banking login",
+      "literal_utf8_sha256": "b13fbf755b555d70d0cb26bd7562701846d3d1771a597c4afbd1b07b555b2741",
+      "complete_public_values_sha256": "de15e6c99b5f168bd2e57ffe48d69e6dc4cc64d56e9709c63e3a4211b5cf7079",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 222,
+      "source_ordinal": 3216,
+      "source_line": 3219,
+      "original_literal": "ubi net banking login",
+      "normalized_literal": "ubi net banking login",
+      "literal_utf8_sha256": "8d427ddc292363870ce81e2d11ec30801547c29657ba8c07a5f3ad5f73d91383",
+      "complete_public_values_sha256": "a07564609e1ec2a77ab6ba26af3d2828108077cfc01791b123be4885e4ba7515",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 223,
+      "source_ordinal": 3223,
+      "source_line": 3226,
+      "original_literal": "ubl netbanking login",
+      "normalized_literal": "ubl netbanking login",
+      "literal_utf8_sha256": "d32ece56fcb596bd5f57918eb3678ba4544e3a3cf79dd40624a7a227b980f265",
+      "complete_public_values_sha256": "d29e2d15783341f97269ed147093dd8758f55a184bca418e977a5c5fb0a67a7d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 224,
+      "source_ordinal": 3231,
+      "source_line": 3234,
+      "original_literal": "uco bank net banking login",
+      "normalized_literal": "uco bank net banking login",
+      "literal_utf8_sha256": "fb9c154e73738aa55af23406d0d045adaf0de058d2ec6bbc3474557c57529573",
+      "complete_public_values_sha256": "d944f46d4b85aec21fc7196eb52b2e25b7ccb5ae963ad2853429681583936407",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 225,
+      "source_ordinal": 3238,
+      "source_line": 3241,
+      "original_literal": "uco net banking login",
+      "normalized_literal": "uco net banking login",
+      "literal_utf8_sha256": "a0e1247277e91cdc3be82382f57fd9e91ee8d20d49a28de86c233e5d53fecbf5",
+      "complete_public_values_sha256": "df66a83c92d13c874f4fc6fdd2fbd8971b3f6938a1ba75d580dbe888b195e861",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 226,
+      "source_ordinal": 3251,
+      "source_line": 3254,
+      "original_literal": "union bank internet banking login",
+      "normalized_literal": "union bank internet banking login",
+      "literal_utf8_sha256": "19cfdb5eac2982fdc1ff5623b33c5b3a883bedbab0db9c089f9a168a1d23c208",
+      "complete_public_values_sha256": "0790784d01a8ee3372e3d864ff74680d3df9f208fdd1ca18c4565d81d02ef3f0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 227,
+      "source_ordinal": 3253,
+      "source_line": 3256,
+      "original_literal": "union bank netbanking login",
+      "normalized_literal": "union bank netbanking login",
+      "literal_utf8_sha256": "6d73988a2e461bb4db1ac8624ef63b0068611be6a3fb9d635913ce5b573e7a0d",
+      "complete_public_values_sha256": "8d67da2dd03c743bec162f3c4000537bd2eb02aed97887ef18116eb41d12cf90",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 228,
+      "source_ordinal": 3255,
+      "source_line": 3258,
+      "original_literal": "union bank of india internet banking login",
+      "normalized_literal": "union bank of india internet banking login",
+      "literal_utf8_sha256": "35985ef99e3cf87cebf02ff673eca0f0880d5c8fa104ba39ab1426ae7a4c367d",
+      "complete_public_values_sha256": "d609543b6c5a6d8b3a650e1935914a2e15c7c602bbc98cb8460b36c6c516027f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 229,
+      "source_ordinal": 3257,
+      "source_line": 3260,
+      "original_literal": "union bank of india net banking login",
+      "normalized_literal": "union bank of india net banking login",
+      "literal_utf8_sha256": "cdc70a91e16ec98a25c71d3b31beb2bb67b45e2768049e0af0d8b39c0c22fe9c",
+      "complete_public_values_sha256": "878d522d4ab6ded2033ccfb2053f54aa40b851b94580769a454830d75cfd960d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 230,
+      "source_ordinal": 3266,
+      "source_line": 3269,
+      "original_literal": "union net banking login",
+      "normalized_literal": "union net banking login",
+      "literal_utf8_sha256": "392b21ec937dec4bc342f74f39b539a9c7b93afce89cb5b1ff89faaefbc81972",
+      "complete_public_values_sha256": "868b0d07ac04164e2812ac233926d192182f7b9618ba5d17541fefee279f1942",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 231,
+      "source_ordinal": 3334,
+      "source_line": 3337,
+      "original_literal": "www bandhanbank com net banking login",
+      "normalized_literal": "www bandhanbank com net banking login",
+      "literal_utf8_sha256": "ae49e1dd1e9aaaa18e38107c0c73c5fd0a595ede5f0b9f94f1da7463ee118575",
+      "complete_public_values_sha256": "e8c51e7041b0fd15405c84e743ba5070acd3f8e51af6b1ee68e9137325c494cb",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 232,
+      "source_ordinal": 3337,
+      "source_line": 3340,
+      "original_literal": "www canarabank com net banking login",
+      "normalized_literal": "www canarabank com net banking login",
+      "literal_utf8_sha256": "3ba6717ed3a9ec8b6a2e2d8fce23c53f8f8f37088bfa14edb897c41bf7751834",
+      "complete_public_values_sha256": "c9515ac298deed1ffa632fc2fbe7ce60bb3eea05b39d5b554b72b75449430aa2",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 233,
+      "source_ordinal": 3338,
+      "source_line": 3341,
+      "original_literal": "www canarabank in internet banking login",
+      "normalized_literal": "www canarabank in internet banking login",
+      "literal_utf8_sha256": "22556e614365283bb94148d9ea672bf9a21bf0fde6a34b8899124e71e3bc978f",
+      "complete_public_values_sha256": "2e02d092c3518761ebeae5d07fafb94dfb25bee279c4e00b9f21e26e8f43cca5",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 234,
+      "source_ordinal": 3339,
+      "source_line": 3342,
+      "original_literal": "www canarabank in net banking login page",
+      "normalized_literal": "www canarabank in net banking login page",
+      "literal_utf8_sha256": "8c626a54e26516c7f24da07841ad745efea9e420e2ff5b1f0adbc5a12544aac6",
+      "complete_public_values_sha256": "dd471b1bece7cac5ed2367e4a6d3e6d336454bedd3198d5c0c23a8730f3029b9",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 235,
+      "source_ordinal": 3347,
+      "source_line": 3350,
+      "original_literal": "www gtbank com internet banking login",
+      "normalized_literal": "www gtbank com internet banking login",
+      "literal_utf8_sha256": "af8cbda2805d8506005a29ca056c0c248b924e97a3ffa1420218806774cc857f",
+      "complete_public_values_sha256": "d57b657cb741affc48fb80b6891fb5c4bb6291fb1b39ad329eb3a0f7e1b2257f",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 236,
+      "source_ordinal": 3351,
+      "source_line": 3354,
+      "original_literal": "www hdfc bank netbanking login",
+      "normalized_literal": "www hdfc bank netbanking login",
+      "literal_utf8_sha256": "275f1556e3db6ec9782a8b1a357bf9dd50285f5614936d2da543db6d9326ec66",
+      "complete_public_values_sha256": "089bd575067547d96b9358053932e1d0326811046c62eb04f45d142babe9d2bd",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 237,
+      "source_ordinal": 3357,
+      "source_line": 3360,
+      "original_literal": "www hdfc netbanking login",
+      "normalized_literal": "www hdfc netbanking login",
+      "literal_utf8_sha256": "6625939534fe71f07badb9c8c2557ba4eee5c1e9ef79240af106f94cd0200334",
+      "complete_public_values_sha256": "d0db7527db88e66bb31694dc7af676a29653cbeade58f3e64adc3930cabda386",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 238,
+      "source_ordinal": 3359,
+      "source_line": 3362,
+      "original_literal": "www hdfcbank com netbanking login",
+      "normalized_literal": "www hdfcbank com netbanking login",
+      "literal_utf8_sha256": "651fe567f6ed30cd022ac28d2ae8fe4027a0890cdfd3e7b908c2477c7f0352de",
+      "complete_public_values_sha256": "21d722263f360ed67b0cd0ec474ecdf77eb7dbcaa57204f9bfed842073068928",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 239,
+      "source_ordinal": 3360,
+      "source_line": 3363,
+      "original_literal": "www hdfcbank com netbanking login page",
+      "normalized_literal": "www hdfcbank com netbanking login page",
+      "literal_utf8_sha256": "94c0f04b9133265d4d7c4dda43b1e0533db37d217443b1c5526830013815ac72",
+      "complete_public_values_sha256": "63e511f1f3feb2ca9ce47fe29f220a321b2adc134b2194d0f5f2b509ab01fb0d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 240,
+      "source_ordinal": 3369,
+      "source_line": 3372,
+      "original_literal": "www icici net banking login",
+      "normalized_literal": "www icici net banking login",
+      "literal_utf8_sha256": "60a0142167c52747541a648917d374f8c7d4455d809ffe62e1ee1bb246b2f65f",
+      "complete_public_values_sha256": "08718c8bdeaf12e675f7d9380ecc2852a4e0efb92b1996170ef37177bfa9b080",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 241,
+      "source_ordinal": 3371,
+      "source_line": 3374,
+      "original_literal": "www idbi net banking login",
+      "normalized_literal": "www idbi net banking login",
+      "literal_utf8_sha256": "81dc901702b39eef31422479f81ed9b61f62b6941072dd077e34bac2a3f9cce2",
+      "complete_public_values_sha256": "0b5b7e068f40207984b500ecf9f739539a6fadcee15e459610bd932464d11f43",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 242,
+      "source_ordinal": 3372,
+      "source_line": 3375,
+      "original_literal": "www indian bank net banking login",
+      "normalized_literal": "www indian bank net banking login",
+      "literal_utf8_sha256": "3339a566a668a73448346ed9d86e7a5bbbe0fef4ac0226c7298dfe92c4728d9b",
+      "complete_public_values_sha256": "7a870cc185ad5ec92ac897462d65da380e667d65ffef677a0d883df67bf18b91",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 243,
+      "source_ordinal": 3377,
+      "source_line": 3380,
+      "original_literal": "www iob net banking login",
+      "normalized_literal": "www iob net banking login",
+      "literal_utf8_sha256": "5b2d4242d6a69fc1b4136b87b6a92fc72f4257a8d28e12044298b61d7076417e",
+      "complete_public_values_sha256": "1744c16bd3b818af703cd24c5df86468981e4159cc0b77cbe54459e2b95e8cac",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 244,
+      "source_ordinal": 3378,
+      "source_line": 3381,
+      "original_literal": "www karnatakabank com internet banking login",
+      "normalized_literal": "www karnatakabank com internet banking login",
+      "literal_utf8_sha256": "62cb30a3bc60a0346962683018de3b4f37f3b01cfec5390a686ca60562ba846c",
+      "complete_public_values_sha256": "9ebf3ff5fe9de896525128d6578a2de84be3b72dc4ff103575bde2ad529e9ba5",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 245,
+      "source_ordinal": 3383,
+      "source_line": 3386,
+      "original_literal": "www onlinesbi com login internet banking login",
+      "normalized_literal": "www onlinesbi com login internet banking login",
+      "literal_utf8_sha256": "76bfcc2eec9bfb324b95bbd7746b1447a0bd7bde690d1b5b6f6c321677479d2b",
+      "complete_public_values_sha256": "bb702e65ad154a00c63e53729d0617eb88cd2453454ed5551c3b05bf4c618d8a",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 246,
+      "source_ordinal": 3397,
+      "source_line": 3400,
+      "original_literal": "www sbi net banking login",
+      "normalized_literal": "www sbi net banking login",
+      "literal_utf8_sha256": "00534d46ab7daab8db7827b7bfc5c477aa337ac50ffd386c0f50a389911edbb1",
+      "complete_public_values_sha256": "6ece4f5167230cf480d596aef6455cc998ba7e047a9fc0ef43e91bad5092d01b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 247,
+      "source_ordinal": 3401,
+      "source_line": 3404,
+      "original_literal": "www sbionline com net banking login",
+      "normalized_literal": "www sbionline com net banking login",
+      "literal_utf8_sha256": "4fef1cb7f7d1ea902cc7247b09a985d299d67838c7db8e738988d424de667340",
+      "complete_public_values_sha256": "7dc01ea5577001d86aa0eb497680b1a3f840c5c41b78a7dc50286d825e3ebbb1",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 248,
+      "source_ordinal": 3407,
+      "source_line": 3410,
+      "original_literal": "www standardlesothobank co ls internet banking login",
+      "normalized_literal": "www standardlesothobank co ls internet banking login",
+      "literal_utf8_sha256": "27cfb9ca2b116ae993d096fcd5d5f14269bef9a68b399f1a752debd60dcd8408",
+      "complete_public_values_sha256": "5c69223aa52fd4aeb6033b0f3163919c2a5b808551e8d50b8dbd688ede9399cd",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 249,
+      "source_ordinal": 3417,
+      "source_line": 3420,
+      "original_literal": "www zenithbank com internet banking login",
+      "normalized_literal": "www zenithbank com internet banking login",
+      "literal_utf8_sha256": "1405cc5f335f9a55f5802fff2bf4702e3b0aba4f082f4efbe30cfefb686ef623",
+      "complete_public_values_sha256": "ac8f85572d338695184f424a43c308718fdc1aa56382587693d04291605af8a3",
+      "decision": "HOLD",
+      "reason_codes": [
+        "POTENTIAL_DOMAIN_OR_ROUTE_FORM"
+      ]
+    },
+    {
+      "selected_ordinal": 250,
+      "source_ordinal": 3426,
+      "source_line": 3429,
+      "original_literal": "yes bank net banking login",
+      "normalized_literal": "yes bank net banking login",
+      "literal_utf8_sha256": "04452cdf485c79ba67a7454d5be89a7d6251c12acf574325c5eab23481295103",
+      "complete_public_values_sha256": "e09e4c06772c6ac5c997442ab065d5cbba41ce3bdda660ef604aae54769d35d8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    },
+    {
+      "selected_ordinal": 251,
+      "source_ordinal": 3476,
+      "source_line": 3479,
+      "original_literal": "zenith bank internet banking login",
+      "normalized_literal": "zenith bank internet banking login",
+      "literal_utf8_sha256": "da23c5d5078a18a8eac2a59ff4c8719f3369610ad03768cb07f8f990c1ded563",
+      "complete_public_values_sha256": "ffbceb403cd403f28379b36171a0806cbe441ae6019748ca30196af29a97f90e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_BANKING_CHANNEL_LOGIN"
+      ]
+    }
+  ],
+  "decision_counts": {
+    "PROPOSE_FULL_EXACT_RESEARCH": 226,
+    "HOLD": 25
+  },
+  "reason_counts": {
+    "EXPLICIT_BANKING_CHANNEL_LOGIN": 226,
+    "POTENTIAL_DOMAIN_OR_ROUTE_FORM": 22,
+    "FINANCIAL_SCOPE_UNRESOLVED": 2,
+    "REPEATED_ACTION_WORDING_UNRESOLVED": 1
+  }
+}

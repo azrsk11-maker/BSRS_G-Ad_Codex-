@@ -1,0 +1,125 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/Workflow.php';
+use BSRE\ClosedRetention as C;
+
+/** Synthetic local-pipe receiver adapter only. No network, OAuth or production credentials. */
+final class SyntheticReceiverPipe implements C\NoMailRetirement
+{
+    private $process;
+    private array $pipes = [];
+    public $alterProof = null;
+    public bool $loseForgetAcknowledgement = false;
+    public bool $loseRetirementAcknowledgement = false;
+    public int $now = 0;
+    public function __construct()
+    {
+        if (!defined('BSRE_CLOSED_RETENTION_LAB') || BSRE_CLOSED_RETENTION_LAB !== true
+            || !function_exists('wp_get_environment_type') || wp_get_environment_type() !== 'local'
+            || !function_exists('home_url') || home_url() !== 'http://bsre.invalid') throw new C\Failure('ISOLATED_LAB_ONLY');
+        $this->process = proc_open(['node', __DIR__ . '/receiver-fence/bridge.mjs'],
+            [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $this->pipes, __DIR__);
+        if (!is_resource($this->process)) throw new RuntimeException('Synthetic source bridge unavailable');
+        stream_set_timeout($this->pipes[1], 5);
+    }
+    public function call(string $action, array $arguments = [])
+    {
+        if (isset($arguments['now'])) $this->now = $arguments['now'];
+        $wire = json_encode(['action' => $action] + $arguments, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES) . "\n";
+        if (fwrite($this->pipes[0], $wire) !== strlen($wire)) throw new RuntimeException('Synthetic bridge write failed');
+        fflush($this->pipes[0]);
+        $line = fgets($this->pipes[1], 32769);
+        if ($line === false || !str_ends_with($line, "\n")) throw new RuntimeException('Synthetic bridge response unavailable');
+        $result = json_decode($line, true, 32, JSON_THROW_ON_ERROR);
+        if ($result['ok'] !== true) throw new C\Failure($result['error']);
+        return $result['value'];
+    }
+    public function readback(array $scope, int $now, bool $cleanup = false, ?array $ticket = null): ?array
+    {
+        $value = $this->call('readback', compact('scope', 'now', 'cleanup', 'ticket'));
+        return $this->alterProof ? ($this->alterProof)($value) : $value;
+    }
+    public $beforeOwnerSource = null;
+    public function inspect(array $scope, int $now): ?array
+    {
+        if ($this->beforeOwnerSource) ($this->beforeOwnerSource)('inspect', $scope);
+        return $this->call('inspect_retirement', compact('scope', 'now'));
+    }
+    public function retire(array $scope, array $record, int $now): ?array
+    {
+        C\RetirementIntent::validateRecord($record, $now);
+        if (C\Workflow::digest($scope) !== C\Workflow::digest($record['plan']['scope'])) throw new C\Failure('RETIREMENT_SCOPE_INVALID');
+        if ($this->beforeOwnerSource) ($this->beforeOwnerSource)('retire', $scope);
+        $this->call('authorize_retirement', ['claim' => C\RetirementIntent::authorization($record)]);
+        $proof = $this->call('retire_authorized', ['scope' => $scope, 'intent_digest' => $record['plan']['digest'], 'now' => $now]);
+        if ($this->loseRetirementAcknowledgement) {
+            $this->loseRetirementAcknowledgement = false;
+            throw new C\Failure('RETIREMENT_SOURCE_ACK_UNCERTAIN');
+        }
+        return $proof;
+    }
+    public function prepareCleanup(array $scope, int $now): ?array { return $this->call('prepare_cleanup', compact('scope', 'now')); }
+    public function forget(array $scope, int $now, array $ticket): bool
+    {
+        $value = $this->call('forget', compact('scope', 'now', 'ticket'));
+        if ($this->loseForgetAcknowledgement) {
+            $this->loseForgetAcknowledgement = false;
+            throw new C\Failure('NO_COPY_CUSTODY_UNCONFIRMED');
+        }
+        return $value;
+    }
+    public function __destruct()
+    {
+        foreach ($this->pipes as $pipe) if (is_resource($pipe)) fclose($pipe);
+        if (is_resource($this->process)) proc_close($this->process);
+    }
+}
+
+/** Concrete source-derived Intake26 SDK operations over an isolated local pipe. */
+final class SyntheticReceiverIntakeResource implements C\ResourceAdapter
+{
+    public int $deletes = 0;
+    public $beforeDelete = null;
+    public $afterDelete = null;
+    public bool $loseDeleteAcknowledgement = false;
+    private string $sourceHash;
+    public function __construct(private SyntheticReceiverPipe $pipe, private C\Journal $journal, private array $scope)
+    {
+        if (!method_exists($journal, 'assertReceiverIntakeCustody')) throw new C\Failure('INTAKE_CUSTODY_UNVERIFIED');
+        $this->sourceHash = $pipe->call('metadata')['source_hash'];
+    }
+    private function custody(?array $binding = null): ?array
+    {
+        return $this->journal->assertReceiverIntakeCustody($this->scope, $this->pipe->now, $binding, $this->sourceHash);
+    }
+    public function inventory(string $requestId): array
+    {
+        if ($requestId !== $this->scope['request_id']) throw new C\Failure('INTAKE_SCOPE_CONFLICT');
+        $this->custody();
+        $rows = $this->pipe->call('intake_inventory', ['scope' => $this->scope]);
+        $this->custody();
+        foreach ($rows as &$row) ksort($row, SORT_STRING);
+        unset($row);
+        return $rows;
+    }
+    public function read(string $key): ?array
+    {
+        if ($key !== $this->scope['request_id']) throw new C\Failure('INTAKE_SCOPE_CONFLICT');
+        return $this->inventory($key)[0] ?? null;
+    }
+    public function removeExact(array $binding): void
+    {
+        if ($this->beforeDelete) ($this->beforeDelete)();
+        $claim = $this->custody($binding);
+        $this->pipe->call('authorize_intake_purge', compact('claim'));
+        // Recheck actual Journal custody immediately before dispatch; a callback cannot replace it.
+        if ($this->custody($binding) !== $claim) throw new C\Failure('INTAKE_CUSTODY_CHANGED');
+        $this->pipe->call('intake_remove_exact', ['scope' => $this->scope, 'binding' => $binding, 'intent_digest' => $claim['intent_digest']]);
+        $this->deletes++;
+        if ($this->afterDelete) ($this->afterDelete)();
+        if ($this->loseDeleteAcknowledgement) {
+            $this->loseDeleteAcknowledgement = false;
+            throw new C\Failure('INTAKE_DELETE_ACK_UNCERTAIN');
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "runtime": "jcodemunch Python 3.12 venv",
+  "suites": {
+    "qualification-history": {"tests": 42, "passed": 42, "elapsed_seconds": 5.733},
+    "qualified-export-source": {"tests": 26, "passed": 26, "elapsed_seconds": 1.433},
+    "content-evidence": {"tests": 24, "passed": 24, "elapsed_seconds": 0.307}
+  },
+  "total_tests": 92,
+  "total_passed": 92,
+  "production_changed": false,
+  "ads_serving": false,
+  "token_usage": "unavailable",
+  "api_calls": "unavailable"
+}

@@ -1,0 +1,78 @@
+# Release packet review
+
+This read-only tool checks the internal consistency of a proposed production release. It **always returns `execution_allowed:false` and `release_authorized:false`**, including for a completely consistent packet. JSON assertions cannot authenticate the owner, a reviewer, business evidence, provider state or deployment permissions. There is no network client, deployment job, credentials store or production writer.
+
+This implements part of Master sections 18/21/24 and [the repository governance contract](../../docs/GOVERNANCE.md). It does not close the open [owner decisions](../../docs/decisions/OWNER_DECISIONS.md) or the live acceptance gates. The seven additional named gates summarize source truth, keyword scope, durable routing/retry, retention/recovery, staffing, qualification history and scoped rollback. They supplement the supplied WT tests; the supplied specification files are unchanged.
+
+## Checks
+
+- `WT-002` requires the [page-level tracking matrix](../website-tracking/TRACKING_MATRIX.md), bound to the exact reviewed page/CTA/configuration inventory. Global PASS receipts or page-ID lists cannot substitute for each page's results. Missing evidence holds the packet; consistency does not authenticate execution or authorize release.
+- Separate `WEBSITE_PUBLICATION`, `TRACKING_PUBLICATION`, `ADS_CONFIGURATION` and `ADS_ACTIVATION` actions. Website/tracking records cannot carry media authority; an Ads configuration request cannot silently enable campaigns.
+- Exact reviewed Git commit, clean checkout, bounded artifact hashes and membership in that commit. Ignored files cannot masquerade as reviewed source. Evidence is separate from source artifacts to avoid a commit/hash cycle.
+- Stable `BSRE-C0001`–`BSRE-C0360` / `BSRE-LP0001`–`BSRE-LP0360` pairs; unique native page IDs, campaign IDs and same-origin canonical URLs. These are validation rules, not fabricated live mappings.
+- Exact known GA4/GTM destinations, version transition, normalized configuration diff and launch privacy/bidding constraints. Unknown change operations are held; the diff cannot contradict safe-mode summaries. Actual conversion-action semantics/labels and raw tag payloads still require authenticated evidence and review.
+- Current four new campaign IDs only, all four for activation, exact account/budget pools and before/after state. At least the 16 frozen legacy campaigns remain paused/removed and unchanged. Broader cohorts or a replacement baseline require a reviewed policy revision after owner decisions; do not silently expand this allowlist.
+- Evidence bound to proposal digest, commit, full page scope, reviewer, method, observation time and expiry. Missing, partial, expired or unit-test-only results cannot close runtime gates. The approval window cannot outlive the evidence.
+- Independent approval of the exact PR head and successful results for `offline-validation`, `native-wordpress-check` and `isolated-native-wordpress` on that commit. The isolated lab is a release-packet requirement in addition to the two documented branch protection checks. Owner decisions and the separate release statement bind the exact proposal and packet. Local identity strings remain unauthenticated.
+
+- Rollback versions and page scope, preservation of accepted records/outbox, no old-campaign reactivation, retention reapplication and the adopted 30-day recovery window.
+
+For Ads activation, `RETENTION_RECOVERY` must reference the reviewed exact-copy reconciliation for the marketing mailbox and a completed restore rehearsal. Record the owner-controlled manifest mode from issue #10, a maximum 30-day recovery window, and evidence that deletions are reapplied before restored services reopen. The reviewer checks the underlying evidence. The packet does not grant mailbox access or authorize a production purge.
+
+For Ads activation, `QUALIFICATION_HISTORY` must reference reviewed qualification history and authenticated readbacks of the restricted source access and Data Manager schedule. Bind the route to Real Estate account 573-038-4686 and action 7878013428 using GCLID only. Verify that the connection identity can access only the dedicated export and cannot reach the private intake workbook. Keep the gate open if that restriction is unverified. Reconcile genuine eligible conversions separately when available. See the [tracking readback](../../docs/audit/TRACKING_CONFIGURATION_READBACK_2026-11-08.md).
+
+The isolated workflow includes changes under `tools/release-control/` in its pull-request path filter. This allows a PR changing only the release checker to obtain the exact-head evidence the checker requires.
+
+Website/tracking preflight requires WT-001 through WT-030 and the seven additional gates. WT-031/032 require actual publication/readback evidence and remain **post-publication obligations**, not manufactured preflight passes. Ads actions require that publication evidence already exists. Production readback must still follow every authorized operation. A consistent packet is not evidence that a deployment happened.
+
+The current policy retains the Master's full 14,000/14,000 reviewed-count gate. Owner issue #1 must resolve the pilot-versus-full-library question before any relaxation is designed and reviewed. Historical draft candidates do not satisfy it. All seven currently open owner decisions are held by this initial packet policy; future applicability changes require review.
+
+## Ads activation evidence
+
+Collect fresh evidence in account 573-038-4686. Bind each result to the proposal and reviewed commit, and capture the source and observation time before reducing it to the packet fields.
+
+Activation requires [owner decision #11](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/11) option A, with the exact issue comment and proposal digest recorded in the packet. Option B holds this launch. The packet's `language: en` records the required language of the reviewed creative, keywords and destinations. Google documents automatic language matching for Search and says legacy language criteria do not govern serving. A dash in the UI or a legacy API criterion cannot certify English-only targeting. A bounded scan of the dated launch inventory found no non-Latin letters in 114 ad copy components and 82 keyword rows, and identified six distinct native destinations. This is a script check for review. It does not establish English language quality, the language of the current landing pages, or audience eligibility. [Google Ads language criteria](https://developers.google.com/google-ads/api/docs/targeting/criteria?hl=en#language_targeting_criteria)
+
+| Check | What the operator verifies | Packet result |
+|---|---|---|
+| Campaign inventory | Match all four launch IDs and the [frozen legacy inventory](../../docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json). Read the existing Search settings, CPC caps and AED 1,200 / 400 / 300 / 100 average daily split. | Campaign before/after records differ only by the four status changes. Legacy campaign rows retain their recorded Paused or Removed status. |
+| Brand | Read the exact Brand ad and its landing URL from the Ads table. Use the policy approval status. Ad strength is a separate field. | `BRAND_POLICY` binds account, campaign, ad group, ad, URL and Approved status. |
+| Ad groups, ads and keywords | Export the reviewed children by campaign. Compare the exact IDs and parent assignments to the [ad](../../docs/audit/ACCOUNT_AD_URL_READBACK_2026-11-07.json) and [keyword](../../docs/audit/KEYWORD_URL_READBACK_2026-11-07.json) inventories. Use entity status. A paused parent can prevent serving even when a child is enabled. | `SERVING_CHILDREN` records exact enabled IDs and the per-campaign split for six groups, six ads and 82 keywords. |
+| Effective negatives | Read the four campaign exclusion tables and all applicable shared, account and manager controls. Compare exact text, match type and scope with the reviewed positive library and protected searches. Confirm the legacy list is unattached. See the [historical reconciliation and counterexamples](../../docs/audit/HISTORICAL_NEGATIVE_PROTECTED_PROBE.md). | Activation `KEYWORD_SCOPE` requires `AUTHENTICATED_CONFIGURATION_READBACK` and `effective_exclusions` with account ID, a readback reference, all four sorted campaign IDs, account and manager review, legacy list unattached, and zero unresolved effective conflicts. |
+| Account and effective assets | Compare the [17 account holds](../../docs/audit/asset-audit-2026-11-07/README.md) by Item ID. Inspect inherited associations that can apply to the four campaigns. | `ASSET_HOLDS` records paused statuses and the count of unreviewed effective assets. |
+| Automation | Inspect rules, scripts, solutions and auto-apply. Identify relevant manager-level automation and external writers with the account owner. | `AUTOMATION` covers all those surfaces. A missing readback leaves the gate open. |
+
+On 8 November 2026, direct HTTPS requests to all six destinations in the dated ad inventory returned HTTP 200 at the original URL, with `html lang="en"` and English page titles. This verifies the observed page language signals and availability. Full rendered copy, editorial approval and automatic Search audience behavior remain outside that check.
+
+The dated campaign and keyword readbacks showed paused children. If a fresh readback confirms that state, prepare a separate configuration proposal while the parent campaigns are paused. Keep the preflight evidence open until the relevant operation has explicit authorization and a verified readback.
+
+The dated negative export can guide comparison. Collect a fresh effective-exclusion readback within the activation proposal's evidence window. If manager visibility is missing, leave `KEYWORD_SCOPE` open and record the missing scope. The validator checks packet consistency. The reviewer verifies the underlying readback and protected-query reconciliation.
+
+The activation staffing gate requires owner-reviewed references to a completed rehearsal and measured daily capacity. Compare capacity with the reviewed enquiry load at the full launch allocation. Record daily 10:00–19:00 Dubai coverage and the instruction to pause during uncovered absences or unmanageable backlog. The stated 300 enquiries per day remains an estimate until measured. Use the [staff rehearsal worksheet](../../docs/audit/STAFF_REHEARSAL_WORKSHEET.md) to collect the evidence.
+
+## Use
+
+```text
+python -B -m unittest discover -s tools/release-control -p "test_*.py"
+python -B tools/release-control/release_packet.py <private-packet.json> --root <clean-checkout>
+node --test tools/release-control/*.test.mjs
+node tools/release-control/validate_gate_matrix.mjs docs/audit/CURRENT_GATE_MATRIX_2026-11-12.json
+```
+
+The CLI prints a compact JSON result to stdout. Exit 0 means only `packet_consistent:true`; it never means "deploy". A release mechanism must independently verify the exact owner comment, author and current permissions, PR/check states, revocations, evidence and protected environment approval immediately before the exact separately authorized action. **No such release mechanism is provided here.**
+
+The Node validators are offline safeguards: they validate the current status matrix and staff-evidence contract, but always return `release_authorized:false`. They do not replace owner-reviewed evidence, native browser acceptance, GitHub review, or separate production/Ads authorization.
+
+The envelope has `schema_version`, `proposal`, `evidence`, `review`, `decisions` and `approval`. First hash the proposal with `digest()`. Evidence and decisions reference that digest. Then hash the envelope excluding `approval`; the owner's exact action statement names that packet digest. Code artifacts belong to the reviewed commit. Post-commit evidence can be kept in an ignored/private location within the evidence checkout; hashes are pinned in the packet. Publish only a sanitized review record to GitHub; never upload private source evidence or client data.
+
+Tests build clearly synthetic fixtures in temporary directories and exercise the complete shape. These are test inputs, **not approved releases or usable production records**. No synthetic fixture is submitted to Google. Metadata JSON is limited to 2 MB; artifact hashing streams files up to 64 MB so full provenance-bearing keyword files can be reviewed without loading them into context. Unsafe paths, symlinks, duplicate JSON keys, nonfinite numbers and unsupported file types are rejected. Artifact/evidence provenance is structural only; source truth remains an independent acceptance obligation.
+
+Production approval, actual WordPress builds, provider/runtime acceptance, Ads configuration semantics, staff capacity and the complete keyword masters remain blocked. A local consistency check and a green CI run must never be represented as production readiness.
+
+For a website publication packet, the owner-reviewed `SOURCE_TRUTH` receipt must still include `native_page_sources` with exactly one entry per proposed `page_id`. Each entry carries `service_or_inventory_ref`, `claims_review_ref`, `asset_rights_review_ref` and `update_owner_ref`; use an explicit rights reference for text-only pages. These opaque references alone no longer satisfy the gate.
+
+Also supply `page_content_inventory` and `content_evidence_ledger` as exact `{path, sha256}` file references. The inventory is a committed proposal artifact with exactly `{schema_version: 1, target_origin, pages}`; each page has exactly `{page_id, campaign_key, content_file}`. `content_file` is a unique, nonempty UTF-8 `.html` or `.md` artifact (at most 2 MB), also present in the reviewed commit and proposal artifacts. Its raw SHA256 binds the content ledger to the exact proposed copy. A shared container file cannot stand in for individual page bytes. Existing packet limits still apply, so prepare bounded publication batches.
+
+The private ledger follows [the content evidence contract](../content-evidence/README.md). The checker recomputes eligibility using the current evaluation clock; it never trusts a supplied PASS summary. Source/review observations cannot postdate the gate receipt, and the receipt cannot outlive any underlying source. Changed copy, evidence or review bytes require corresponding renewed review. Known stale, missing, unavailable or uncertain evidence holds the affected copy; service/advisory offers do not require buyer-side stock. UTC aliases are normalized for clock comparisons only; original ledger bytes remain bound by their hashes.
+
+Do not commit underlying private business evidence or the private ledger. Keep the review packet and evidence in an approved protected location compatible with the existing safe-reference rules. No private document is fetched automatically. Structural consistency does not authenticate a consultant, complete asset discovery, facts, property-marketing rights, jurisdiction-specific permits or an owner approval. Actual rendered-page, provider and production acceptance remain mandatory, and this checker still cannot publish or authorize anything.

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "date_dubai": "2026-11-12",
+  "scope": "ISOLATED_INITIAL_CLOSURE_COLLECTION_CANDIDATE",
+  "preceding_reviewed_commit": "2751afa752a5184685b546f8a734d88bba12b840",
+  "preceding_remote_green_head": "a7603dad17fbc77e9745aba657f9faf69b487035",
+  "code_sha256": {
+    "tools/check_repository.py": "e1b59b2bceab4d9cd6ef4800049c47558b58ffcbc96a4cb720508e33827185aa",
+    "tools/closed-enquiry-retention/LabAdapters.php": "2e2b09df5eb13d360405945e69f6d654423008d2aeffd0557c651f6bd804cdf8",
+    "tools/closed-enquiry-retention/Workflow.php": "5e9c7d4b0816f83b6349d08051a8dac552faa5af44a877966d2e042a635cb8f7",
+    "tools/efficiency/test_foundation_php_isolation.py": "594e25950bf250298a4d59a2fb045cfc673eca5fb51fe2bfc2124cb2f12cd988",
+    "tools/owner-mail-review/WordPress.php": "8d54366fc4a6a5ade0cf6a175e25cb84a3c0995488e0b6950c879e33e28c559c",
+    "tools/staging-lab/entrypoint.sh": "e625d1fcbd3ad909576b5f111d1d5fe04ca5600ec678568909b9ab7dd4206bc1",
+    "tools/closed-enquiry-retention/ClosureCollection.php": "793ac11a2de66e26e4caee0ea357c2bd43200b3c7695fea534c819b9a8fdf6d7",
+    "tools/closed-enquiry-retention/ClosureCollectionJournal.php": "6801f8868ea09fa108f0eba6591c4014f3cf2bc69e2010018476163fc5054fce",
+    "tools/owner-mail-review/OwnerCollection.php": "b2be4d428e6328b9255471b04a04fe16d0cc9c5329ffa3223297824413d7fe19",
+    "tools/owner-mail-review/collection-native.php": "6e8bc16728bdafd5cc393869711591a43637ae10fb1933868803932d94a38b65",
+    "tools/owner-mail-review/test_owner_collection.php": "672baff06f20fc453ea10f78ccb13e15eb3f50dac2dadd14e3e0aeea74004cad"
+  },
+  "agent_reported_collection_suite": {
+    "checks": 84,
+    "passed": true,
+    "seconds": 0.1066554,
+    "restricted_flags": "Exact existing PHP_ISOLATED_OPTIONS",
+    "controller_sha256": "b2be4d428e6328b9255471b04a04fe16d0cc9c5329ffa3223297824413d7fe19",
+    "test_sha256": "672baff06f20fc453ea10f78ccb13e15eb3f50dac2dadd14e3e0aeea74004cad"
+  },
+  "root_focused_regression": {
+    "results": [
+      {
+        "name": "isolation",
+        "passed": true,
+        "seconds": 0.248611
+      },
+      {
+        "name": "legacy_retirement",
+        "passed": true,
+        "seconds": 0.138905
+      },
+      {
+        "name": "legacy_closure",
+        "passed": true,
+        "seconds": 0.091586
+      },
+      {
+        "name": "legacy_owner_mail",
+        "passed": true,
+        "seconds": 0.122037
+      }
+    ],
+    "lints": 6,
+    "native_execution": false,
+    "native_selected_only": true,
+    "unchanged_broader_suites_not_repeated": true
+  },
+  "native_acceptance": {
+    "status": "PENDING_CURRENT_SOURCE_CI",
+    "actual_wordpress_session_nonces_store_and_mariadb_selected": true,
+    "independent_process_custody_and_duplicate_checks_selected": true,
+    "source_and_mailbox_services": "SYNTHETIC_DOUBLES_ONLY",
+    "actual_provider_mutations": 0
+  },
+  "independent_static_review": {
+    "core": "No remaining P1/P2 in inspected source after cross-registry outcome/mail overlap fix",
+    "controller": "Root reviewed frozen controller; distinct contract prevents purge approval reuse",
+    "native": "No remaining P1/P2 in selected native flow and CI wiring",
+    "human_pr_review": "STILL_REQUIRED"
+  },
+  "invariants": [
+    "all business/source facts require trusted source corroboration",
+    "only request ID supplied by browser",
+    "source object-key order normalized and freshness separated from stable facts",
+    "same authoritative Journal and complete source resource inventory",
+    "durable exact private owner intent/readback before insertion",
+    "namespace then closure custody, global unresolved and unknown-job holds",
+    "insert only with exact readback, never upsert",
+    "no duplicate request/lead/event/outcome/mail identities",
+    "fixed fifteen-minute creation deadline and thirty-day exact acknowledgement recovery",
+    "canonical record survives UI pruning",
+    "no initial RETIRED_NO_COPY and no PURGE or sender authority"
+  ],
+  "php_selection": {
+    "complete_checks": 39,
+    "lints": 27,
+    "previous_checks": 35,
+    "removed_checks": 0,
+    "timeout_changes": false,
+    "isolation_relaxed": false
+  },
+  "remaining": [
+    "genuine protected source collection and factual evidence",
+    "authenticated complete mailbox/source/provider/restore custody adapters",
+    "current-source native and combined CI",
+    "reviewed production identity-index and migration/custody design",
+    "independent human review and all business/keyword/staff/finance/browser/live release gates"
+  ],
+  "production_authorized": false,
+  "ads_changed": false,
+  "permissions_changed": false,
+  "live_google_or_provider_calls": 0
+}

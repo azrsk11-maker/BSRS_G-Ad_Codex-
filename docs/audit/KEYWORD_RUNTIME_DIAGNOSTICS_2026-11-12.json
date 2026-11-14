@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-12",
+  "before_ci": {
+    "head": "2931baf902eac45a32066e72d88da43d626c43bf",
+    "job": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/43281755390/job/131404550092",
+    "job_seconds": 499,
+    "keyword_seconds": 300.055734,
+    "discovered_cases": 513,
+    "finished_cases": 499,
+    "passed": false
+  },
+  "instrumented_windows_profile": {
+    "check_seconds": 300.017051,
+    "passed": false,
+    "diagnostic_snapshot_seconds": 299.461263,
+    "snapshot_sha256": "81ca7714ab7488b3fdf8f99bccd3dd436a8339330c9261f3f6ba708b2ac6a1c7",
+    "expected_cases": 513,
+    "started_as_of_snapshot": 464,
+    "finished_as_of_snapshot": 464,
+    "module_states": {
+      "PENDING": 3,
+      "ACTIVE": 2,
+      "COMPLETE": 35,
+      "INCOMPLETE": 0
+    },
+    "slowest_modules": [
+      {
+        "module": "test_bank_support_admission",
+        "state": "COMPLETE",
+        "expected": 13,
+        "started": 13,
+        "finished": 13,
+        "elapsed_seconds": 96.245093
+      },
+      {
+        "module": "test_ofqual_animal_care_admission",
+        "state": "COMPLETE",
+        "expected": 13,
+        "started": 13,
+        "finished": 13,
+        "elapsed_seconds": 94.941542
+      },
+      {
+        "module": "test_bank_credential_admission",
+        "state": "COMPLETE",
+        "expected": 14,
+        "started": 14,
+        "finished": 14,
+        "elapsed_seconds": 83.45346
+      },
+      {
+        "module": "test_negative_library",
+        "state": "COMPLETE",
+        "expected": 29,
+        "started": 29,
+        "finished": 29,
+        "elapsed_seconds": 78.278433
+      },
+      {
+        "module": "test_ofqual_occupational_admission",
+        "state": "COMPLETE",
+        "expected": 12,
+        "started": 12,
+        "finished": 12,
+        "elapsed_seconds": 78.270211
+      },
+      {
+        "module": "test_apprenticeship_admission",
+        "state": "COMPLETE",
+        "expected": 10,
+        "started": 10,
+        "finished": 10,
+        "elapsed_seconds": 68.672987
+      },
+      {
+        "module": "test_negative_reviewed_cohort",
+        "state": "COMPLETE",
+        "expected": 23,
+        "started": 23,
+        "finished": 23,
+        "elapsed_seconds": 28.027032
+      },
+      {
+        "module": "test_ofqual_veterinary_admission",
+        "state": "ACTIVE",
+        "expected": 14,
+        "started": 0,
+        "finished": 0,
+        "elapsed_seconds": 25.050422
+      }
+    ],
+    "snapshot_is_not_final_acceptance": true
+  },
+  "change": {
+    "whole_module_process_isolation": true,
+    "maximum_workers": 4,
+    "automatic_selection": "Minimum of observed effective CPUs, four and floor(available RAM / 2 GiB), with conservative one-worker fallback",
+    "effective_cpu_constraints": [
+      "OS logical CPU count",
+      "available processor affinity",
+      "cgroup v2 CPU quota where present"
+    ],
+    "available_memory_constraints": [
+      "Windows GlobalMemoryStatusEx or Linux MemAvailable",
+      "cgroup v2 remaining memory where present"
+    ],
+    "explicit_one_two_worker_compatibility": true,
+    "extra_workers_require_observed_headroom": true,
+    "expensive_module_priority_is_not_selection_or_acceptance_reuse": true,
+    "aggregate_timeout_seconds": 300,
+    "source_freshness_or_verdict_cache_added": false,
+    "keyword_test_files_changed": false,
+    "keyword_test_source_set_sha256": "dba5a461b2c81932df3426edc0245e23ccfa5a8ed947a55c86b23ab70b941829",
+    "keyword_test_modules": 40,
+    "keyword_cases": 513,
+    "process_containment_changed": false
+  },
+  "diagnostic_policy": {
+    "only_metadata": true,
+    "acceptance": false,
+    "maximum_bytes_per_run": 1048576,
+    "storage": "Unique ignored append-only JSONL; interrupted final append retains preceding complete snapshot",
+    "updates": "At module start/finish and five-second heartbeats",
+    "write_failure": "Disable diagnostics without changing tests or their verdict; no repeated failed write",
+    "reader": "Bounded, run-bound, checked metadata allowlist; never promotes progress to acceptance"
+  },
+  "focused_checks": {
+    "keyword_runtime_tests": 31,
+    "keyword_runtime_passed": 30,
+    "existing_platform_skips": 1,
+    "keyword_runtime_seconds": 6.462,
+    "foundation_tests": 11,
+    "foundation_passed": 11,
+    "foundation_seconds": 0.01,
+    "resource_guard_recheck_cases": 6,
+    "resource_guard_recheck_seconds": 0.002
+  },
+  "local_resource_observation": {
+    "logical_cpus": 12,
+    "total_visible_memory_kib": 12199052,
+    "free_memory_kib_at_audit": 1002168,
+    "automatic_workers_observed": 1
+  },
+  "ci_runner_reference": {
+    "url": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+    "observed_on": "2026-11-12",
+    "standard_public_ubuntu_specification": {
+      "cpus": 4,
+      "ram_gb": 16
+    },
+    "is_specification_not_actual_current_job_observation": true
+  },
+  "limits": {
+    "new_head_full_ci_pending": true,
+    "before_after_hosts_differ": true,
+    "causal_speedup_or_billed_cost_savings_claimed": false,
+    "genuine_browser_provider_or_release_acceptance": false,
+    "production_ads_permissions_finance_or_workbook_changes": false
+  },
+  "observed_ci_keyword_result": {
+    "head": "486b7d67b0e4956cb173a4002c96790af4892c04",
+    "job": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/43289452900/job/131431642090",
+    "validated_stdout_summary": {
+      "check": "keyword-system-behavior",
+      "cpu_count": 4,
+      "elapsed_seconds": 212.956875,
+      "memory_available_bytes": 15674585088,
+      "modules": 40,
+      "release_authorized": false,
+      "skipped": 0,
+      "status": "OBSERVED",
+      "tests": 513,
+      "workers": 4
+    },
+    "whole_workflow_passed": false,
+    "remaining_failure": "Seven existing orchestration-fixture errors from newly required resource-validator module/receipt fields"
+  },
+  "integration_repair": {
+    "optional_diagnostic_module_loaded_only_for_matching_progress_reference": true,
+    "php_and_timeout_valid_receipts_include_real_resource_validator_and_required_resource_evidence": true,
+    "missing_resource_evidence_remains_rejected": true,
+    "existing_php_and_timeout_assertions_removed": false,
+    "full_efficiency_group_local": {
+      "tests": 106,
+      "passed": 103,
+      "skipped": 3,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 17.771
+    },
+    "final_head_full_ci_pending": true
+  }
+}

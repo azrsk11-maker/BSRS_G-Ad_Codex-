@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "previous_allocation_ref": "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/research-pool-allocation.json",
+  "previous_allocation_sha256": "93e64ac6e61ed8320c8eb715d80c6dfc08f40f01ea7c2f65cab7fbc6c9e8edc1",
+  "before": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "targets": {
+    "ACADEMIC": 1992,
+    "EMPLOYMENT": 4974,
+    "MEDIA": 850,
+    "NAVIGATION": 908,
+    "SERVICE": 1337,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "target_transfer": {
+    "from": {
+      "ACADEMIC": 8,
+      "EMPLOYMENT": 87,
+      "MEDIA": 150,
+      "NAVIGATION": 92
+    },
+    "to": {
+      "SERVICE": 337
+    },
+    "rule": "PROPORTIONAL_UNFILLED_RESEARCH_CAPACITY_LARGEST_REMAINDER_SORTED_POOL_TIEBREAK",
+    "evidence_ref": "docs/audit/keyword-negative-trade-services-admission-2026-11-13/review.json",
+    "evidence_sha256": "4c615695eb908d53e96134ff5efc01cf678b7714daba1ddeee18d066dff0f553",
+    "complete_current_base_sha256": "3f1620c83c4d2d158a2696f39e52f93a2aa3901b33d6f3a42308ee3a2c282e5d",
+    "source_pins": {
+      "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392",
+      "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+      "docs/audit/keyword-trade-services-review-2026-11-13/review.json": "597a03ccdbc92ae5a58b429981b0dafbc7749676730e2db5d697926076ebdd60"
+    },
+    "implementation_decision_not_owner_approval": true
+  },
+  "new_rows": {
+    "SERVICE": 453
+  },
+  "admitted": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4947,
+    "MEDIA": 804,
+    "NAVIGATION": 879,
+    "SERVICE": 1337,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "remaining": {
+    "ACADEMIC": 2,
+    "EMPLOYMENT": 27,
+    "MEDIA": 46,
+    "NAVIGATION": 29,
+    "SERVICE": 0,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "total_target": 14000,
+  "total_admitted": 13896,
+  "total_remaining": 104,
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false
+}

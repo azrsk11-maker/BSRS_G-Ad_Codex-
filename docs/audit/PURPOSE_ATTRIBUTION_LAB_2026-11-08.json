@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "scope": "ISOLATED_NATIVE_CANDIDATE_ACCEPTANCE",
+  "tested_code_commit": "c0a75f8ca8e3065f80f132ab2a2921471a5e764b",
+  "branch": "codex/phase0-audit-foundation",
+  "foundation_run": 42507258043,
+  "native_run": 42507258178,
+  "native_job": 128812461428,
+  "result": "PASS",
+  "runtime": {
+    "wordpress": "7.1.4",
+    "php": "8.2.35",
+    "database": "10.11.19-MariaDB-0+deb12u1"
+  },
+  "phases": [
+    {
+      "phase": "pre_wordpress_isolation",
+      "status": "PASS",
+      "assertions": 19,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "native_wordpress",
+      "status": "PASS",
+      "assertions": 8,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "primary_plugin_backend",
+      "status": "PASS",
+      "assertions": 50,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "signed_relay_transport",
+      "status": "PASS",
+      "assertions": 11,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "five_role_receive",
+      "status": "PASS",
+      "assertions": 41,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "wordpress_receiver_interop",
+      "status": "PASS",
+      "assertions": 57,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "wordpress_client_receiver_interop",
+      "status": "PASS",
+      "assertions": 63,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "wordpress_upstream_receipt_recovery",
+      "status": "PASS",
+      "assertions": 84,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "preference_retirement_candidate",
+      "status": "PASS",
+      "assertions": 30,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "retention_restore_rehearsal",
+      "status": "PASS",
+      "assertions": 23,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "consented_client_wordpress_receiver",
+      "status": "PASS",
+      "assertions": 871,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "purpose_client_wordpress_receiver",
+      "status": "PASS",
+      "assertions": 552,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "purpose_retention_restore_rehearsal",
+      "status": "PASS",
+      "assertions": 30,
+      "failed_assertions": 0
+    },
+    {
+      "phase": "purpose_attribution_pure",
+      "status": "PASS",
+      "assertions": 30,
+      "failed_assertions": 0
+    }
+  ],
+  "guarantees": {
+    "signed_wire_v1_preserved": true,
+    "receiver_columns": 26,
+    "independent_purpose_histories": true,
+    "original_server_decision_evidence": true,
+    "receipt_linkage": true,
+    "immutable_retry_binding": true,
+    "observed_database_timeout_code": 1205,
+    "timeout_rollback_and_lock_release": true,
+    "timeout_retry_no_duplicate_row_or_mail": true,
+    "restored_nonempty_purpose_history_preserved": true,
+    "nested_retired_reference_blocks_restore": true
+  },
+  "limits": {
+    "data": "Synthetic only",
+    "dom_storage_and_google": "Doubles",
+    "live_browser_acceptance": false,
+    "all_deadlock_schedules_verified": false,
+    "production_deployed": false,
+    "production_google_conversions_sent": 0,
+    "production_release_authorized": false,
+    "submitted_enquiry_and_email_retention_complete": false
+  },
+  "corrected_test_defects": [
+    "Respect preserved five-message outbox batches; four batches plus no-duplicate recheck",
+    "Bind both derived retirement class guards to the exact purpose_retention_synthetic_ prefix"
+  ],
+  "evidence_comment": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6724998855"
+}

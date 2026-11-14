@@ -1,0 +1,195 @@
+{
+  "additional_eligible_keyword_ids": [
+    "BSRE-N-6a34854269feec6b6d02341b",
+    "BSRE-N-007c20273e44e5fd3d3aa988",
+    "BSRE-N-d5eddf703784934e2b92bc3f",
+    "BSRE-N-370f17838ad8c71125730c5b",
+    "BSRE-N-33010e50799ffa8dc57a7c03",
+    "BSRE-N-fde305f082b06f10e61b3433",
+    "BSRE-N-d3471cc40924ca750093c646",
+    "BSRE-N-0528d357d8410acc9664f196",
+    "BSRE-N-106cdb442226d4575903e5b2",
+    "BSRE-N-45895a1904f3eb9b6b2bc47c",
+    "BSRE-N-b03051142b140b40204adc66",
+    "BSRE-N-4c6090a441ee9a3e87b091b9",
+    "BSRE-N-36869902573078a1d2665a5d",
+    "BSRE-N-12993961205c6a6460fd2773",
+    "BSRE-N-1e91fc955e83db5830e9f1ff",
+    "BSRE-N-2b0e590f4b68291d8d8c7387",
+    "BSRE-N-d2d7cdf8f8dde11fe3284f7c",
+    "BSRE-N-07290c2796f192b49198c291",
+    "BSRE-N-e43126ee3e43cc064ef6d186",
+    "BSRE-N-91e93b6282f7df87a5062406",
+    "BSRE-N-11dab07065f1aa61c1961008",
+    "BSRE-N-cf37014043f02c0d2c51cf74",
+    "BSRE-N-5382baa4896784b8f314b7ea",
+    "BSRE-N-cc254433da4544cf1a30dadf",
+    "BSRE-N-b5f7b304ee55695846a2ff4f"
+  ],
+  "additional_protected_query_ids": [
+    "BSRE-Q-51f2560c40676c0b7289e227",
+    "BSRE-Q-fa1f5e7b57c572c38559fbd0",
+    "BSRE-Q-a301fc88c7f7f1b6d1b8e8f0",
+    "BSRE-Q-facc50857d60ff487637308a",
+    "BSRE-Q-55996dc0a70f0b1216364d10",
+    "BSRE-Q-b55afd423cea9f00e3aabe4e",
+    "BSRE-Q-50fcd3cd50e5c24dc18c168c",
+    "BSRE-Q-769721f5d53ab3448579e179",
+    "BSRE-Q-56be2c9612f84ea331a51c95",
+    "BSRE-Q-7a2d9f277f61e106d2c782d8",
+    "BSRE-Q-ed3465e92498d670a9f29185",
+    "BSRE-Q-950710f4bfd87cbcf3237a02",
+    "BSRE-Q-be7b90ae9ab9e6bb3b16863f",
+    "BSRE-Q-41c501941279ca573e2f1bed",
+    "BSRE-Q-90bd492855f4c8734ccad420",
+    "BSRE-Q-9e33774202a121fb77738b0b",
+    "BSRE-Q-713ec9046245b8ad1713c043",
+    "BSRE-Q-9898b08a33c4ef0080c76542",
+    "BSRE-Q-e9d148963238aafe17e24efa",
+    "BSRE-Q-b124fbcc481045f5391b757c"
+  ],
+  "additional_records_sha256": "b81c8ff4c0993bf116dae67e05425f8b8b08de884888fc3f374cc01cc2170af4",
+  "archived_sha256": "c4cd30d084e43f23da6e30e8dbdc2a471cd65a3155f529b6acf46124fecb4b4b",
+  "base_state": {
+    "base_sha256": "974a1439d4383d84e40b245d4218f909650cb2ecf3c176d87d547212a4ea5e89",
+    "retained_protections": 19095,
+    "retained_records": 13975,
+    "retained_sources": 34
+  },
+  "complete_inputs_sha256": "1dd9cd9a93f5cb78695846be7cf0767864c8d5bb20e94ab4a731a71f07ba27ae",
+  "deployment_authorized": false,
+  "exclusion_approval_granted": false,
+  "historical_records_rewritten": false,
+  "implementation": {
+    "prior_pest_commercial_services_implementation": {
+      "prior_trade_services_implementation": {
+        "prior_septic_grease_implementation": {
+          "prior_front_office_implementation": {
+            "prior_bank_implementation": {
+              "prior_bank_implementation": {
+                "animal_review_and_dependency_sha256": {
+                  "docs/audit/keyword-ofqual-animal-care-2026-11-12/README.md": "b7eadf9b582f515b523b29bdd72929162594ad31eb800254588b09a93d541642",
+                  "docs/audit/keyword-ofqual-animal-care-2026-11-12/extract.py": "c4866ea958a8d4714d09c3b42cb1afebc0b9ac092198c97a0baf3efc4785689d",
+                  "tools/keyword-system/bank_support_admission.py": "7751b56078497921dae4e812c1299e30a699b7acd661f200ef034216d703565f"
+                },
+                "prior_bank_implementation": {
+                  "prior_bank_implementation": {
+                    "audit_and_compatibility": {
+                      "audit_and_compatibility": {
+                        "audit_and_compatibility": {
+                          "audit_and_compatibility": {
+                            "current_code_sha256": {
+                              "tools/keyword-system/keyword_audit.py": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+                              "tools/keyword-system/keyword_text_compatibility.py": "723988151adfeae8f2a6efeb073a399451eefcbfe1d3f8c311e0e168fd56763f"
+                            },
+                            "function_ast_sha256": {
+                              "negative_matches": "0bbe5bb9241ce358946fc727a217106e1733bf0259d69ca40cd4766fb4d9f664",
+                              "normalize": "5c71e58fb1d9c11f92db2b1d90a95bfeaa65575dbbb10790ee8cdd2d35eb971b",
+                              "tokens": "0ab49db2be49c7cef3bed9ccc84fa12e03d6fd2506a690734f50c7803b3aa1e1"
+                            },
+                            "historical_file_hash_is_dated_evidence_not_current_code_pin": true,
+                            "historical_normalizer_sha256": "0cbbc8965ed891208066887eeaca0b011092efa6668af161bab3a2feb76454d9"
+                          },
+                          "capture_code_sha256": {
+                            "docs/audit/keyword-entertainment-clipboard-2026-11-11/capture_tools.py": "135956c53c683d72c7357747d1c7f92bc44e313b5d1922b69f672caa44ab0140",
+                            "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py": "2f4ba4f9e2d132ee972e2d776efa4aa59690e2632c1b8350f0d15d76150b6b55"
+                          }
+                        },
+                        "source_extractor_and_peer_narrative_sha256": {
+                          "docs/audit/keyword-ofqual-occupational-2026-11-12/extract.py": "c37a98859e1865d543e82c43886608b63f265b0ac3d44725fd52bdc30ab199ed",
+                          "docs/audit/keyword-ofqual-occupational-2026-11-12/semantic-review.md": "9a6e977f2dfe914ce05906e86e1cb408f16d5f0743e9a43b46a9d66f5309234c"
+                        }
+                      },
+                      "source_extractor_and_peer_narrative_sha256": {
+                        "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b",
+                        "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712",
+                        "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78"
+                      }
+                    },
+                    "source_extractor_and_peer_narrative_sha256": {
+                      "docs/audit/keyword-bank-access-navigation-2026-11-12/README.md": "4b1d61ac2f1afe5e613a59ad050e03e97a2ddca5b99e702f87c26cf44be73677",
+                      "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-a.md": "57086f255179de855c3abcc97d2f5799a3e4f1bf9da28a9534d620d5304ad520",
+                      "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-b.md": "8242e0b5e2d34272c3ddc1b6c260b09468aff9e0598910aba5b80717a3e2fed7",
+                      "docs/audit/keyword-bank-access-navigation-2026-11-12/verify_capture.py": "890ae388335ecef0088ccc8f21ef57bf5b49253e0e27c3f122e3f5228952cc7e"
+                    }
+                  },
+                  "support_review_and_dependency_sha256": {
+                    "docs/audit/keyword-bank-support-review-2026-11-12/README.md": "12cd086148de805fbf01e1e22a307e52c96b451a13132264e40a78c7dc133e61",
+                    "docs/audit/keyword-bank-support-review-2026-11-12/verify_review.py": "5320c25a9834977db941af35035aef7d4025df752664e018e6c8535164ea55e3",
+                    "tools/keyword-system/bank_credential_admission.py": "60d9dd2c8be19a7bca7049175ff2fbcf84ee39a5ca7d2c482b022f6c7a31f576"
+                  }
+                }
+              },
+              "support_review_and_dependency_sha256": {
+                "docs/audit/keyword-bank-channel-login-review-2026-11-13/README.md": "f12d74f826b3eba4442f39a25a41b87616474b1a433c6d68cab581ad1eec9b38",
+                "docs/audit/keyword-bank-channel-login-review-2026-11-13/verify_review.py": "5a9c8e11f929dd5c3a158044795ec7ca76101a9e6f08b5a8cb2b721288edff3a",
+                "tools/keyword-system/bank_support_admission.py": "7751b56078497921dae4e812c1299e30a699b7acd661f200ef034216d703565f",
+                "tools/keyword-system/ofqual_animal_care_admission.py": "41e08b991106a6ca3a7b89b9223f8187549c835ba347cb38ce368d36568e6208"
+              }
+            },
+            "semantic_and_comparison_implementation_sha256": {
+              "docs/audit/keyword-application-documents-2026-11-13/verify_capture.py": "599ad56a91f4c5f5e005ddb925903b78f33461f9c28337b3628ea2c151feaae8",
+              "docs/audit/keyword-front-office-documents-review-2026-11-13/README.md": "7113c9edc900f2011c74f1fb9c67fd83b0a263af687551ba653378431e8784ad",
+              "docs/audit/keyword-front-office-documents-review-2026-11-13/verify_review.py": "5da8a1f58002b76333243c7b4612e829e21cc2409ea10949767e19c41e80e62b",
+              "tools/keyword-system/bank_channel_login_admission.py": "713f71f452eacbba3a07d515b932cfd914eea97d3953aaa610d0cc9071c31fbd",
+              "tools/keyword-system/source_membership_diagnostic.py": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c"
+            }
+          },
+          "semantic_and_comparison_implementation_sha256": {
+            "docs/audit/keyword-septic-grease-review-2026-11-13/README.md": "c7bf90519fa8af738deb8e8324a5e74b959e97133d1f4492e0c0ed2b5c4474f1",
+            "docs/audit/keyword-septic-grease-review-2026-11-13/verify_review.py": "7d913497d8333686d5113abc3d971fa5576b49ad32dbf13387fe87269d161f62",
+            "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py": "7814cc6fafc96b736233a5c5834c3c7fddfc3a8abbd2b634263f9be804af2ebe",
+            "tools/keyword-system/front_office_document_admission.py": "9331de366ef52d2246ac30c413386bd45fe4a02697c0f3933864f99d1c3d035f",
+            "tools/keyword-system/source_membership_diagnostic.py": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c"
+          }
+        },
+        "semantic_and_comparison_implementation_sha256": {
+          "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py": "7814cc6fafc96b736233a5c5834c3c7fddfc3a8abbd2b634263f9be804af2ebe",
+          "docs/audit/keyword-trade-services-review-2026-11-13/README.md": "5bc96fadf24a85811eef73d80a02fac9d15acee182a7605d25c6ea59a0f0f95b",
+          "docs/audit/keyword-trade-services-review-2026-11-13/verify_review.py": "ac06de91afa2f60e18a16abba6a87fefd1f29409f39989c050ec001f05252e4d",
+          "tools/keyword-system/septic_grease_admission.py": "1d303a9f75e68c86c57c360632a5b64f0981574c11fe875bf7e5893a8f6a35a3",
+          "tools/keyword-system/source_membership_diagnostic.py": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c"
+        }
+      },
+      "semantic_and_comparison_implementation_sha256": {
+        "docs/audit/keyword-pest-commercial-services-review-2026-11-13/README.md": "02cd7cba9a1cc07f9c02e5ebe04c922aeeb83c9fd95dca3e9996c4283b285119",
+        "docs/audit/keyword-pest-commercial-services-review-2026-11-13/verify_review.py": "59e335a5ae01122b5c4e2f338575a63fd5f9ed094ceaf84ec03815745b80fb87",
+        "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py": "7814cc6fafc96b736233a5c5834c3c7fddfc3a8abbd2b634263f9be804af2ebe",
+        "tools/keyword-system/source_membership_diagnostic.py": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c",
+        "tools/keyword-system/trade_services_admission.py": "a6226777575f828237efbb31330fbf5cba57487a892d4f0221e86592f1581f3b"
+      }
+    },
+    "semantic_and_comparison_implementation_sha256": {
+      "docs/audit/keyword-pool-sprinkler-review-2026-11-13/README.md": "f26a3e2e48f80437fa77ee1f49938db22c5991b98a5005d150fb83be9d64167f",
+      "docs/audit/keyword-pool-sprinkler-review-2026-11-13/verify_review.py": "7fc5d2d58d723d49a42c6c9b40ee5b357b6c8239b3715870af80757329366c31",
+      "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py": "7814cc6fafc96b736233a5c5834c3c7fddfc3a8abbd2b634263f9be804af2ebe",
+      "tools/keyword-system/pest_commercial_services_admission.py": "53bae39595b5d15be8d61630be29b3519ec9c78b52ba80d4a6f4a1b755f76c48",
+      "tools/keyword-system/source_membership_diagnostic.py": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c"
+    }
+  },
+  "previous_index": {
+    "file": "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/index.json",
+    "sha256": "32104397dc9dbb12f3bc391ee1fc742751dec100b6d6004efa075854f0cbe123"
+  },
+  "protected_sha256": "d0e73eec0a6b66958610d25e69bb9ace02a73f6fb827c8ef1f0e3f86845a0099",
+  "records_sha256": "279a0f32fad3e95671d654431111fda2047918ee5c127dae690650b7d4ad3089",
+  "review": {
+    "file": "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/review.json",
+    "sha256": "b5f8a690ff8046e0dddd485254c954f6eae9506c3363c72b856f4d33c1805e5e"
+  },
+  "scope": "APPEND_ONLY_POOL_SPRINKLER_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "source_pins": {
+    "docs/audit/keyword-pool-sprinkler-review-2026-11-13/review.json": "9f9245969fa2cca6eb50ac959f38567642d921622a57e5478aafe5dc3558de92",
+    "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+    "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+  },
+  "sources_sha256": "fdf3c9e87c964106e422225f589db1f74c1e21e2198a6d82fbe57423ba3a8d43",
+  "text_pins": {
+    "docs/audit/keyword-pool-sprinkler-review-2026-11-13/README.md": "f26a3e2e48f80437fa77ee1f49938db22c5991b98a5005d150fb83be9d64167f",
+    "docs/audit/keyword-pool-sprinkler-review-2026-11-13/verify_review.py": "7fc5d2d58d723d49a42c6c9b40ee5b357b6c8239b3715870af80757329366c31",
+    "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py": "7814cc6fafc96b736233a5c5834c3c7fddfc3a8abbd2b634263f9be804af2ebe",
+    "tools/keyword-system/pest_commercial_services_admission.py": "53bae39595b5d15be8d61630be29b3519ec9c78b52ba80d4a6f4a1b755f76c48",
+    "tools/keyword-system/source_membership_diagnostic.py": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c"
+  },
+  "version": 1
+}

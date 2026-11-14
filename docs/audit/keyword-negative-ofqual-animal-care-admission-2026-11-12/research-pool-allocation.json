@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "previous_allocation_ref": "docs/audit/keyword-negative-bank-support-admission-2026-11-12/research-pool-allocation.json",
+  "previous_allocation_sha256": "797054af6be1a298447b6f77030f4e7d6716b7343ca0de977b3f6359aee46a69",
+  "targets": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "before": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "target_transfer": null,
+  "new_rows": {
+    "ACADEMIC": 101
+  },
+  "admitted": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4078,
+    "MEDIA": 804,
+    "NAVIGATION": 709,
+    "SERVICE": 466,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "remaining": {
+    "ACADEMIC": 10,
+    "EMPLOYMENT": 983,
+    "MEDIA": 196,
+    "NAVIGATION": 291,
+    "SERVICE": 534,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "total_target": 14000,
+  "total_admitted": 11986,
+  "total_remaining": 2014,
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false
+}

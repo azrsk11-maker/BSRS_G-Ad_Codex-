@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "abu-dhabi-sharjah.json",
+      "batch_id": "KP-20261111-ABU-DHABI-SHARJAH",
+      "sha256": "eed2da3518d48a82fffb1ac3ab3b2706e6b32902bc313653c328685e13bcf095",
+      "bytes": 2057677,
+      "records": 2262,
+      "distinct_normalized": 2262,
+      "source_bytes": 484470,
+      "source_sha256": "a352bbe48c5fe6065c721b8f055f7c6d22a16adf2fa19d8840a839bfc41fd748"
+    }
+  ],
+  "totals": {
+    "export_rows": 2262,
+    "distinct_normalized_phrases": 2262,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Four authored hypotheses address underrepresented Abu Dhabi and Sharjah property research in the seven-emirate Master scope.",
+    "All four seeds have separate exact rows. Provider ideas are not served queries, inventory, service coverage or demand forecasts.",
+    "Capture controls preserve unreviewed provenance; separate preliminary assessment is not master admission."
+  ]
+}

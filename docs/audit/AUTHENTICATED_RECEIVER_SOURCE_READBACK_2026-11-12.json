@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-12",
+  "scope": "Authenticated read-only Apps Script receiver source and deployment metadata; not execution/provider acceptance",
+  "account_identity_verified": true,
+  "account": "marketing@blackswanrealestate.ae",
+  "editor_source": {
+    "bytes": 12969,
+    "sha256": "6669cb28e5267a49e061427b736cdbdbad87bee6cbb946e99483d9439f61fa38",
+    "matches_retained_version2_source": true,
+    "capture_method": "Read-only editor select/copy; clipboard restored; CRLF bytes retained",
+    "lf_normalized_is_not_raw_pin": true
+  },
+  "deployment": {
+    "version": 2,
+    "execute_as_marketing": true,
+    "who_has_access": "Anyone",
+    "existing_access_not_changed": true,
+    "deployment_id_hash": "79fb764db7944e5005d1329cf0c7cc9822d30bab66afc380173d14a430a9c518",
+    "deployment_id_found_in_historical_canonical_state": false,
+    "project_identifier_withheld": true,
+    "webhook_url_withheld": true
+  },
+  "source_boundaries": {
+    "outcome_named_functions": [],
+    "head_source_matches_retained_version2": true,
+    "live_execution_not_performed": true,
+    "current_google_service_durability_not_accepted": true,
+    "authenticated_outcome_mutation_binding_not_established": true
+  },
+  "wordpress": {
+    "fresh_tab_requires_sign_in": true,
+    "installed_source_readback_completed": false,
+    "old_tab_unresponsive_replaced_with_fresh_audit": true
+  },
+  "changes": {
+    "source": false,
+    "deployments": false,
+    "script_properties": false,
+    "permissions": false,
+    "workbook": false,
+    "live_tracking": false,
+    "ads": false
+  },
+  "notes": [
+    "The Google account notice was dismissed by its observed accessibility button after a DOM locator could not see it",
+    "No Run, new deployment, edit deployment, save or property modification was invoked",
+    "Current editor equality plus deployment metadata is not a runtime behavior or business acceptance test"
+  ],
+  "full_goal_complete": false,
+  "release_authorized": false
+}

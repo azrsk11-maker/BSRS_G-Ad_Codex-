@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "scope": "One actual guarded WordPress enquiry through Purpose27 capture, source-derived Intake26 SDK and one MariaDB Journal Workflow; isolated synthetic lab only",
+  "source_files": [
+    {
+      "path": "tools/closed-enquiry-retention/WpCaptureResource.php",
+      "bytes": 22250,
+      "sha256": "50008a488db9c52393355d47665ff4af30d7a2af7ecdfa65a73574eab1347992"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/LabAdapters.php",
+      "bytes": 25322,
+      "sha256": "80a3d2819ca813f93fae426115e5350b1362c41c90b645680494da7ef8b3189b"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/combined-native.php",
+      "bytes": 16805,
+      "sha256": "7ab69323d9ce5587fd4478d5ebb2c287b4d11e0b15b4e5bb102def64c32e265c"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/test_wp_capture_guard.php",
+      "bytes": 4914,
+      "sha256": "689ca71bd79acec28bb557c32a4333c8dea0ada4dcd161e7a074808ecfb555be"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/bridge.mjs",
+      "bytes": 7339,
+      "sha256": "e0a1d9ce9944169f902e43ac5e91d75010a06d839f89faffc06d7eccb28d837d"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/lab.mjs",
+      "bytes": 15037,
+      "sha256": "c0ce12aaae22eabf80e9a1959a94c15a9499d67a46f17160ef76d37eba5b240a"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/candidate.test.mjs",
+      "bytes": 31001,
+      "sha256": "1054ab947dfd8153da544204bd179c0ea9e8a7a0ce967914fdeee76f75418e3f"
+    },
+    {
+      "path": "tools/check_repository.py",
+      "bytes": 24819,
+      "sha256": "7e9e0ea61eef15a16cf877bc2e8a3cd53f80ac32ea5095b08b4b9aeb8d4fc6cd"
+    },
+    {
+      "path": "tools/efficiency/test_foundation_php_isolation.py",
+      "bytes": 9197,
+      "sha256": "789980773724d534102b1ab00d26fb57a041e4b418863fc8764317783ee9b6a5"
+    },
+    {
+      "path": "tools/staging-lab/entrypoint.sh",
+      "bytes": 3443,
+      "sha256": "1bb23f9f9dbf1824221528f96a39287bab0dfd39423037c94fd663446bcbda51"
+    }
+  ],
+  "root_focused_checks": {
+    "all_passed": true,
+    "groups": [
+      {
+        "name": "capture-guards",
+        "passed": true,
+        "cases": 16,
+        "seconds": 0.07766
+      },
+      {
+        "name": "purpose",
+        "passed": true,
+        "cases": 24,
+        "seconds": 0.07178
+      },
+      {
+        "name": "workflow",
+        "passed": true,
+        "cases": 45,
+        "seconds": 0.08202
+      },
+      {
+        "name": "source-pipe",
+        "passed": true,
+        "cases": 50,
+        "seconds": 3.634887
+      },
+      {
+        "name": "node",
+        "passed": true,
+        "cases": null,
+        "seconds": 0.715383
+      },
+      {
+        "name": "lint-native",
+        "passed": true,
+        "cases": null,
+        "seconds": 0.058641
+      }
+    ],
+    "seconds": 4.64044,
+    "native_executed": false
+  },
+  "root_node_cases": 36,
+  "foundation_orchestration": {
+    "cases": 21,
+    "passed": true,
+    "elapsed_seconds": 0.056,
+    "selected_php_commands": 48,
+    "selected_php_lints": 34,
+    "prior_commands_retained": 47
+  },
+  "independent_static_review": {
+    "clear": true,
+    "critical_paths": [
+      "Exact actual issuer, wire envelope and receiver receipt identity",
+      "One SQL Journal with persisted lost-ack intent and fresh-connection reconciliation",
+      "Immutable combined namespace only with exact selected Purpose store",
+      "Named fixture aging before closure/fence/inventory/plan; no reset of existing history/floor"
+    ],
+    "native_acceptance": false
+  },
+  "native_ci": {
+    "selected": true,
+    "current_source_result": "PENDING",
+    "expected_phase": "combined_closed_enquiry_native",
+    "unchanged_previous_head": "30582405c458e30fd3fffda1489cc195b555146c",
+    "previous_three_jobs_pass": true,
+    "previous_result_accepts_this_revision": false
+  },
+  "simulations": [
+    "Google services",
+    "Closure, business, owner and mailbox authority",
+    "Receiver runtime and external backup custody",
+    "Outcome and empty email resources",
+    "Exact pre-binding fixture aging and source-signed backdated proof; no elapsed-time wait"
+  ],
+  "limitations": [
+    "No genuine business or Google provider acceptance",
+    "No proof of durable absence or current production restore fencing",
+    "No production data, permissions, live tracking or Ads changes",
+    "No synthetic production conversions"
+  ],
+  "release_authorized": false,
+  "full_goal_complete": false
+}

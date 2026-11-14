@@ -1,0 +1,41 @@
+{
+  "scope": "PAIRED_SAME_PROCESS_LATEST_SCREEN_NOT_END_TO_END_OR_BILLING",
+  "samples": [
+    {
+      "mode": "reconstruct-again",
+      "elapsed_seconds": 23.759494500001892,
+      "additional_reconstructions": 1,
+      "output_sha256": "1600f8e1ef3144c07534e599f89b6261e0ceefdc6fde194464d4ba082713f398"
+    },
+    {
+      "mode": "reuse-verified-inputs",
+      "elapsed_seconds": 6.011476799991215,
+      "additional_reconstructions": 0,
+      "output_sha256": "1600f8e1ef3144c07534e599f89b6261e0ceefdc6fde194464d4ba082713f398"
+    },
+    {
+      "mode": "reuse-verified-inputs",
+      "elapsed_seconds": 5.298790499989991,
+      "additional_reconstructions": 0,
+      "output_sha256": "1600f8e1ef3144c07534e599f89b6261e0ceefdc6fde194464d4ba082713f398"
+    },
+    {
+      "mode": "reconstruct-again",
+      "elapsed_seconds": 23.440110299998196,
+      "additional_reconstructions": 1,
+      "output_sha256": "1600f8e1ef3144c07534e599f89b6261e0ceefdc6fde194464d4ba082713f398"
+    }
+  ],
+  "mean_seconds": {
+    "reconstruct-again": 23.599802400000044,
+    "reuse-verified-inputs": 5.655133649990603
+  },
+  "same_result": true,
+  "inputs_unchanged": true,
+  "setup_reconstructions": 1,
+  "saved_additional_reconstructions_per_screen": 1,
+  "elapsed_reduction_percent": 76.03736864343156,
+  "limitations": "Two samples per path in one process; warm storage/CPU state may affect timing. Not a whole-workflow, token, API or billing benchmark.",
+  "production_changes": false,
+  "source_verifier_sha256": "eb6b159acd1fe1a2fb1a65ad0a8ab778c5da3fed4a99cdf6c41603430823ef84"
+}

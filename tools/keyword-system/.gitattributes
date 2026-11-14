@@ -1,0 +1,2 @@
+# Preserve the byte-exact staging digest across Windows and CI checkouts.
+staging/*.json text eol=lf

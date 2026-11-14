@@ -1,0 +1,648 @@
+{
+  "scope": "OBSERVED_CAPTURE_OVERLAP_ONLY",
+  "counts": {
+    "original_unique": 10473,
+    "supplemental_unique": 30,
+    "overlap_unique": 16,
+    "original_only_unique": 10457,
+    "supplemental_only_unique": 14,
+    "combined_unique": 10487,
+    "original_occurrences": 11554,
+    "supplemental_occurrences": 30,
+    "combined_occurrences": 11584,
+    "repeated_occurrences": 1097
+  },
+  "classification_inherited": false,
+  "deployment_authorized": false,
+  "prior_manifest_sha256": {
+    "keyword-discovery-2026-11-08/capture.json": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+    "keyword-discovery-supply-2026-11-08/capture.json": "279b71e166ecbb3806af143549a99f559ac7846ffa9396497f266b871a2012a7",
+    "keyword-employment-education-2026-11-10/capture.json": "8129d8f27594257e58d35e112dd1f12ba6566e238f8b544ab66e82af08a00e3f",
+    "keyword-employment-broad-2026-11-10/capture.json": "bdc847f3c9759eb166d2bb89122ac365ce414127200463ce0b423a9628eef864",
+    "keyword-exclusions-2026-11-10/capture.json": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4"
+  },
+  "supplemental_phrases": [
+    {
+      "normalized_text": "2 bhk flat price in dubai",
+      "original_forms": [
+        "2 bhk flat price in dubai"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 281
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 11
+        }
+      ]
+    },
+    {
+      "normalized_text": "average house price dubai",
+      "original_forms": [
+        "average house price dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 21
+        }
+      ]
+    },
+    {
+      "normalized_text": "buy a house in dubai price",
+      "original_forms": [
+        "buy a house in dubai price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 537
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 13
+        }
+      ]
+    },
+    {
+      "normalized_text": "buy apartment in dubai without down payment",
+      "original_forms": [
+        "buy apartment in dubai without down payment"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 103
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 7
+        }
+      ]
+    },
+    {
+      "normalized_text": "buy property dubai with mortgage",
+      "original_forms": [
+        "buy property dubai with mortgage"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 33
+        }
+      ]
+    },
+    {
+      "normalized_text": "buying a property in dubai process",
+      "original_forms": [
+        "buying a property in dubai process"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 981
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 16
+        }
+      ]
+    },
+    {
+      "normalized_text": "buying off plan property in dubai process",
+      "original_forms": [
+        "buying off plan property in dubai process"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 1097
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 19
+        }
+      ]
+    },
+    {
+      "normalized_text": "buying property in dubai process",
+      "original_forms": [
+        "buying property in dubai process"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 5
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai home price",
+      "original_forms": [
+        "dubai home price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 157
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 9
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai house for sale low price",
+      "original_forms": [
+        "dubai house for sale low price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 340
+        },
+        {
+          "batch_id": "KP-DISC-20261108-OWNERS",
+          "topic": "owners",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_38_19.csv",
+          "source_sha256": "eb1c27f886df489ebe1da05aa13f9463bee3ed9bfa7d1be5acf6ec74f309dbe7",
+          "source_line": 54
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 12
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai house sale price",
+      "original_forms": [
+        "dubai house sale price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 908
+        },
+        {
+          "batch_id": "KP-DISC-20261108-OWNERS",
+          "topic": "owners",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_38_19.csv",
+          "source_sha256": "eb1c27f886df489ebe1da05aa13f9463bee3ed9bfa7d1be5acf6ec74f309dbe7",
+          "source_line": 111
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 15
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai houses for sale price",
+      "original_forms": [
+        "dubai houses for sale price"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 27
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai mansion price",
+      "original_forms": [
+        "dubai mansion price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 1066
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 18
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai palm house price",
+      "original_forms": [
+        "dubai palm house price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 1421
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 23
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai property buying costs",
+      "original_forms": [
+        "dubai property buying costs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 30
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai property buying guide",
+      "original_forms": [
+        "dubai property buying guide"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 25
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai property title deed",
+      "original_forms": [
+        "dubai property title deed"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 32
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai villa price in indian rupees",
+      "original_forms": [
+        "dubai villa price in indian rupees"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 647
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 14
+        }
+      ]
+    },
+    {
+      "normalized_text": "house prices dubai",
+      "original_forms": [
+        "house prices dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 10
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage pre approval dubai",
+      "original_forms": [
+        "mortgage pre approval dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 6
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage registration dubai",
+      "original_forms": [
+        "mortgage registration dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 31
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage registration in dubai",
+      "original_forms": [
+        "mortgage registration in dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 28
+        }
+      ]
+    },
+    {
+      "normalized_text": "palm jumeirah house price",
+      "original_forms": [
+        "palm jumeirah house price"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 139
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 8
+        }
+      ]
+    },
+    {
+      "normalized_text": "palm jumeirah house price in inr",
+      "original_forms": [
+        "palm jumeirah house price in inr"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 2224
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 26
+        }
+      ]
+    },
+    {
+      "normalized_text": "price of a house in dubai",
+      "original_forms": [
+        "price of a house in dubai"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 1252
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 20
+        }
+      ]
+    },
+    {
+      "normalized_text": "price of home in dubai",
+      "original_forms": [
+        "price of home in dubai"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 1431
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 24
+        }
+      ]
+    },
+    {
+      "normalized_text": "property buying process in dubai",
+      "original_forms": [
+        "property buying process in dubai"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-BUYERS",
+          "topic": "buyers",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_32_51.csv",
+          "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86",
+          "source_line": 1379
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 22
+        }
+      ]
+    },
+    {
+      "normalized_text": "property registration fees dubai",
+      "original_forms": [
+        "property registration fees dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 29
+        }
+      ]
+    },
+    {
+      "normalized_text": "property transfer fees dubai",
+      "original_forms": [
+        "property transfer fees dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 4
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate prices dubai",
+      "original_forms": [
+        "real estate prices dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261111-PROPERTY-READINESS",
+          "topic": "property-readiness",
+          "source_basename": "Keyword Stats 2026-11-11 at 01_05_13.csv",
+          "source_sha256": "e74b2f81283a519dd4e18c27c6686598c527f425d98cf4937055574dd31d017d",
+          "source_line": 17
+        }
+      ]
+    }
+  ]
+}

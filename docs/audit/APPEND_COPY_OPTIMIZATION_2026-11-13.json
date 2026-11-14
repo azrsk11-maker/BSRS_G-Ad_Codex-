@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "tests_run": 34,
+  "failures": 0,
+  "errors": 0,
+  "source_candidate_sha256": "077053f8098ed75776fc06a533655910caac77df50fd5017700be7ab3ed0904f",
+  "complete_inputs_sha256": "a93d5aa368975f79d3fd5bd92223ccfe93d8b48d725ac8c301013aba8d3868cb",
+  "fresh_reconstruction_seconds": 88.781379,
+  "benchmark_scope": "APPEND_OPERATION_ON_IDENTICAL_CALLER_FRESH_REAL_RESEARCH_DATA_NOT_WHOLE_CI",
+  "benchmark_samples_seconds": {
+    "legacy": [
+      1.877140500000678,
+      1.8535754999902565,
+      1.8670275999902515
+    ],
+    "candidate": [
+      1.0981449000100838,
+      1.11307529998885,
+      0.9666685000120196
+    ]
+  },
+  "benchmark_median_seconds": {
+    "legacy": 1.8670275999902515,
+    "candidate": 1.0981449000100838
+  },
+  "benchmark_reduction_percent": 41.182,
+  "alternating_sample_order": true,
+  "baseline_algorithm_sha256": "83cae98d6c5075a3003e88b5e8682372df26f1ffbe9bbe9f5fef1fd6b518f244",
+  "focused_seconds": 29.12958,
+  "total_seconds": 130.510936,
+  "source_reads_and_digest_and_conflict_guards_unchanged": true,
+  "cross_invocation_cache_used": false,
+  "billed_tokens_and_cost": null,
+  "production_or_ads_changed": false,
+  "scope": "LOCAL_COPY_OPTIMIZATION_NOT_RELEASE_ACCEPTANCE",
+  "baseline_ci": {
+    "head": "6048d74e8dbf7125c60086dff9e2fa449ae88994",
+    "foundation_job_seconds": 491,
+    "keyword_cases": 527,
+    "keyword_modules": 41,
+    "keyword_seconds": 299.70005,
+    "workers": 4,
+    "deadline_seconds": 300
+  },
+  "profile_observation": {
+    "source_head": "a00640c5bdc67d6c696a07a36c2eb15c4995e959",
+    "profiled_seconds": 216.004685,
+    "profiler_overhead_included": true,
+    "deepcopy_cumulative_seconds": 85.636393,
+    "append_extend_copy_cumulative_seconds": 66.4988963,
+    "total_function_calls": 399968770
+  },
+  "limitations": [
+    "The paired percentage applies to the append operation, not whole CI or end-to-end business delivery.",
+    "Three alternating samples per implementation on identical caller-fresh research data; host timing remains uncontrolled.",
+    "No source, body, hash or verdict cache. Historical source reads, digests, conflict checks and acceptance remain.",
+    "Current exact-head full CI is recorded separately after immutable delivery."
+  ]
+}

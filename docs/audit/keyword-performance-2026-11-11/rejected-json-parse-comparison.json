@@ -1,0 +1,62 @@
+{
+  "scope": "STRICT_JSON_PARSE_MICROBENCHMARK_NOT_ACCEPTANCE",
+  "fixture": "tools/keyword-system/data/negative.json",
+  "fixture_sha256": "b94b35103a62a7e78e8142797a6f146c23abbacfde080b5bfdde5530773ae29b",
+  "fixture_bytes": 14740533,
+  "pairs": 3,
+  "runs": [
+    {
+      "pair": 0,
+      "version": "before",
+      "seconds": 0.105946,
+      "rows": 7188,
+      "digest": "4f5a4f5ccef38fe1d2543d348ccd803dd51a78c506e09abd8134940535214018",
+      "bytes": 12310469
+    },
+    {
+      "pair": 0,
+      "version": "after",
+      "seconds": 0.093274,
+      "rows": 7188,
+      "digest": "4f5a4f5ccef38fe1d2543d348ccd803dd51a78c506e09abd8134940535214018",
+      "bytes": 12310469
+    },
+    {
+      "pair": 1,
+      "version": "after",
+      "seconds": 0.101852,
+      "rows": 7188,
+      "digest": "4f5a4f5ccef38fe1d2543d348ccd803dd51a78c506e09abd8134940535214018",
+      "bytes": 12310469
+    },
+    {
+      "pair": 1,
+      "version": "before",
+      "seconds": 0.096983,
+      "rows": 7188,
+      "digest": "4f5a4f5ccef38fe1d2543d348ccd803dd51a78c506e09abd8134940535214018",
+      "bytes": 12310469
+    },
+    {
+      "pair": 2,
+      "version": "before",
+      "seconds": 0.101178,
+      "rows": 7188,
+      "digest": "4f5a4f5ccef38fe1d2543d348ccd803dd51a78c506e09abd8134940535214018",
+      "bytes": 12310469
+    },
+    {
+      "pair": 2,
+      "version": "after",
+      "seconds": 0.096889,
+      "rows": 7188,
+      "digest": "4f5a4f5ccef38fe1d2543d348ccd803dd51a78c506e09abd8134940535214018",
+      "bytes": 12310469
+    }
+  ],
+  "before_median_seconds": 0.101178,
+  "after_median_seconds": 0.096889,
+  "observed_ratio": 1.044267151069781,
+  "complete_outputs_equal": true,
+  "limitations": "Parsing excludes final diagnostic fingerprinting; three alternating pairs on one warmed source with uncontrolled host and allocator state. No whole-suite speedup established."
+}

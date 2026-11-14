@@ -1,0 +1,652 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-07T05:23:51.510Z",
+  "site": "https://blackswanrealestate.ae",
+  "method": "UNAUTHENTICATED_HTTP_GET_ONLY_NO_JS_NO_FORM_SUBMISSION",
+  "limits": {
+    "allowed_paths": 9,
+    "redirects_per_path": 3,
+    "max_bytes_per_response": 2097152,
+    "socket_timeout_ms": 15000,
+    "concurrency": 2
+  },
+  "elapsed_ms": 4664,
+  "total_http_calls": 9,
+  "privacy": "No response bodies, cookies, nonces, contact details, query strings or raw CSP retained.",
+  "routes": [
+    {
+      "requested_path": "/",
+      "final_url": "https://blackswanrealestate.ae/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 284849,
+      "final_request_elapsed_ms": 3211,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [],
+        "csp_present": true,
+        "csp_directive_names": [
+          "upgrade-insecure-requests"
+        ],
+        "cache_control_directives": [],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [
+          {
+            "name": "WordPress",
+            "version": "7.1.4"
+          },
+          {
+            "name": "Elementor",
+            "version": "4.3.3"
+          }
+        ],
+        "themes": [
+          "houzez"
+        ],
+        "plugins": [
+          "all-in-one-seo-pack",
+          "elementor",
+          "houzez-studio",
+          "houzez-theme-functionality",
+          "mailchimp",
+          "revslider"
+        ],
+        "bsre_public_asset_versions": [],
+        "meta_robots": [],
+        "canonical": [
+          "https://blackswanrealestate.ae/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [
+          "https://elfsightcdn.com"
+        ],
+        "form_count": 4,
+        "bsre_form_count": 0,
+        "h1_count": 0,
+        "stable_context_attribute_names": [],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/enquire/",
+      "final_url": "https://blackswanrealestate.ae/enquire/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 6746,
+      "final_request_elapsed_ms": 2405,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [
+          "nofollow",
+          "noindex"
+        ],
+        "csp_present": true,
+        "csp_directive_names": [
+          "base-uri",
+          "connect-src",
+          "default-src",
+          "font-src",
+          "form-action",
+          "frame-ancestors",
+          "frame-src",
+          "img-src",
+          "object-src",
+          "script-src",
+          "script-src-attr",
+          "style-src",
+          "style-src-attr",
+          "worker-src"
+        ],
+        "cache_control_directives": [
+          "no-store",
+          "private"
+        ],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [],
+        "themes": [],
+        "plugins": [
+          "bsre-enquiries"
+        ],
+        "bsre_public_asset_versions": [
+          "0.2.12"
+        ],
+        "meta_robots": [
+          "nofollow",
+          "noindex"
+        ],
+        "canonical": [
+          "https://blackswanrealestate.ae/enquire/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [],
+        "form_count": 0,
+        "bsre_form_count": 0,
+        "h1_count": 1,
+        "stable_context_attribute_names": [],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/enquire/off-plan/",
+      "final_url": "https://blackswanrealestate.ae/enquire/off-plan/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 13113,
+      "final_request_elapsed_ms": 338,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [
+          "nofollow",
+          "noindex"
+        ],
+        "csp_present": true,
+        "csp_directive_names": [
+          "base-uri",
+          "connect-src",
+          "default-src",
+          "font-src",
+          "form-action",
+          "frame-ancestors",
+          "frame-src",
+          "img-src",
+          "object-src",
+          "script-src",
+          "script-src-attr",
+          "style-src",
+          "style-src-attr",
+          "worker-src"
+        ],
+        "cache_control_directives": [
+          "no-store",
+          "private"
+        ],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [],
+        "themes": [],
+        "plugins": [
+          "bsre-enquiries"
+        ],
+        "bsre_public_asset_versions": [
+          "0.2.12"
+        ],
+        "meta_robots": [
+          "nofollow",
+          "noindex"
+        ],
+        "canonical": [
+          "https://blackswanrealestate.ae/enquire/off-plan/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [],
+        "form_count": 1,
+        "bsre_form_count": 1,
+        "h1_count": 1,
+        "stable_context_attribute_names": [
+          "data-campaign",
+          "data-cta-location"
+        ],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/enquire/resale/",
+      "final_url": "https://blackswanrealestate.ae/enquire/resale/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 13043,
+      "final_request_elapsed_ms": 374,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [
+          "nofollow",
+          "noindex"
+        ],
+        "csp_present": true,
+        "csp_directive_names": [
+          "base-uri",
+          "connect-src",
+          "default-src",
+          "font-src",
+          "form-action",
+          "frame-ancestors",
+          "frame-src",
+          "img-src",
+          "object-src",
+          "script-src",
+          "script-src-attr",
+          "style-src",
+          "style-src-attr",
+          "worker-src"
+        ],
+        "cache_control_directives": [
+          "no-store",
+          "private"
+        ],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [],
+        "themes": [],
+        "plugins": [
+          "bsre-enquiries"
+        ],
+        "bsre_public_asset_versions": [
+          "0.2.12"
+        ],
+        "meta_robots": [
+          "nofollow",
+          "noindex"
+        ],
+        "canonical": [
+          "https://blackswanrealestate.ae/enquire/resale/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [],
+        "form_count": 1,
+        "bsre_form_count": 1,
+        "h1_count": 1,
+        "stable_context_attribute_names": [
+          "data-campaign",
+          "data-cta-location"
+        ],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/enquire/rent/",
+      "final_url": "https://blackswanrealestate.ae/enquire/rent/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 12563,
+      "final_request_elapsed_ms": 366,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [
+          "nofollow",
+          "noindex"
+        ],
+        "csp_present": true,
+        "csp_directive_names": [
+          "base-uri",
+          "connect-src",
+          "default-src",
+          "font-src",
+          "form-action",
+          "frame-ancestors",
+          "frame-src",
+          "img-src",
+          "object-src",
+          "script-src",
+          "script-src-attr",
+          "style-src",
+          "style-src-attr",
+          "worker-src"
+        ],
+        "cache_control_directives": [
+          "no-store",
+          "private"
+        ],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [],
+        "themes": [],
+        "plugins": [
+          "bsre-enquiries"
+        ],
+        "bsre_public_asset_versions": [
+          "0.2.12"
+        ],
+        "meta_robots": [
+          "nofollow",
+          "noindex"
+        ],
+        "canonical": [
+          "https://blackswanrealestate.ae/enquire/rent/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [],
+        "form_count": 1,
+        "bsre_form_count": 1,
+        "h1_count": 1,
+        "stable_context_attribute_names": [
+          "data-campaign",
+          "data-cta-location"
+        ],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/enquire/sell/",
+      "final_url": "https://blackswanrealestate.ae/enquire/sell/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 12558,
+      "final_request_elapsed_ms": 321,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [
+          "nofollow",
+          "noindex"
+        ],
+        "csp_present": true,
+        "csp_directive_names": [
+          "base-uri",
+          "connect-src",
+          "default-src",
+          "font-src",
+          "form-action",
+          "frame-ancestors",
+          "frame-src",
+          "img-src",
+          "object-src",
+          "script-src",
+          "script-src-attr",
+          "style-src",
+          "style-src-attr",
+          "worker-src"
+        ],
+        "cache_control_directives": [
+          "no-store",
+          "private"
+        ],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [],
+        "themes": [],
+        "plugins": [
+          "bsre-enquiries"
+        ],
+        "bsre_public_asset_versions": [
+          "0.2.12"
+        ],
+        "meta_robots": [
+          "nofollow",
+          "noindex"
+        ],
+        "canonical": [
+          "https://blackswanrealestate.ae/enquire/sell/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [],
+        "form_count": 1,
+        "bsre_form_count": 1,
+        "h1_count": 1,
+        "stable_context_attribute_names": [
+          "data-campaign",
+          "data-cta-location"
+        ],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/enquire/let/",
+      "final_url": "https://blackswanrealestate.ae/enquire/let/",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 12685,
+      "final_request_elapsed_ms": 387,
+      "headers": {
+        "content_type": "text/html",
+        "server": "hcdn",
+        "x_robots_tag": [
+          "nofollow",
+          "noindex"
+        ],
+        "csp_present": true,
+        "csp_directive_names": [
+          "base-uri",
+          "connect-src",
+          "default-src",
+          "font-src",
+          "form-action",
+          "frame-ancestors",
+          "frame-src",
+          "img-src",
+          "object-src",
+          "script-src",
+          "script-src-attr",
+          "style-src",
+          "style-src-attr",
+          "worker-src"
+        ],
+        "cache_control_directives": [
+          "no-store",
+          "private"
+        ],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "html": {
+        "wordpress_asset_evidence": true,
+        "generators": [],
+        "themes": [],
+        "plugins": [
+          "bsre-enquiries"
+        ],
+        "bsre_public_asset_versions": [
+          "0.2.12"
+        ],
+        "meta_robots": [
+          "nofollow",
+          "noindex"
+        ],
+        "canonical": [
+          "https://blackswanrealestate.ae/enquire/let/"
+        ],
+        "public_google_ids": [],
+        "external_script_origins": [],
+        "form_count": 1,
+        "bsre_form_count": 1,
+        "h1_count": 1,
+        "stable_context_attribute_names": [
+          "data-campaign",
+          "data-cta-location"
+        ],
+        "inline_google_tag_markers": {
+          "gtag": false,
+          "googletagmanager": false,
+          "google_analytics": false,
+          "data_layer": false
+        },
+        "claims_not_established": [
+          "tag_execution",
+          "consent_behavior",
+          "event_payload_privacy",
+          "conversion_deduplication",
+          "account_ownership",
+          "cms_permissions",
+          "deployment_version",
+          "form_delivery",
+          "mobile_or_keyboard_acceptance"
+        ]
+      }
+    },
+    {
+      "requested_path": "/robots.txt",
+      "final_url": "https://blackswanrealestate.ae/robots.txt",
+      "status": 200,
+      "redirects": [],
+      "http_calls": 1,
+      "response_bytes": 177,
+      "final_request_elapsed_ms": 325,
+      "headers": {
+        "content_type": "text/plain",
+        "server": "hcdn",
+        "x_robots_tag": [],
+        "csp_present": true,
+        "csp_directive_names": [
+          "upgrade-insecure-requests"
+        ],
+        "cache_control_directives": [],
+        "hostinger_header_evidence": [
+          "x-hcdn-cache-status",
+          "x-hcdn-request-id",
+          "x-hcdn-upstream-rt"
+        ]
+      },
+      "robots": {
+        "adsbot_named": false,
+        "disallow_all_present": false,
+        "enquire_disallow_present": false,
+        "wp_admin_rule_present": true,
+        "sitemap_declared": true
+      }
+    },
+    {
+      "requested_path": "/sitemap_index.xml",
+      "http_calls": 1,
+      "redirects": [],
+      "error": "OUTSIDE_EXPLICIT_AUDIT_SCOPE"
+    }
+  ]
+}

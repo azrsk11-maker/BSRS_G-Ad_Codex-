@@ -1,0 +1,31 @@
+{
+  "observed_on_dubai": "2026-11-12",
+  "scope": "OFFLINE_FOUNDATION_FAILURE_RETAINED_NOT_ACCEPTANCE",
+  "implementation_code_commit": "efd63de69f003c7ec5aa7d40c6b94277152baab0",
+  "working_source_bytes_note": "Runtime used the correctly pinned original CRLF preview files; later6705704/d982165 repairs preserve those bytes in Git.",
+  "checks_passed": 108,
+  "failed_checks": [
+    "keyword-system-behavior"
+  ],
+  "checks_not_executed": [],
+  "elapsed_seconds": 563.217085,
+  "keyword_subprocess": {
+    "exit": null,
+    "elapsed_seconds": 300.032659,
+    "timed_out": true,
+    "error_type": "TimeoutExpired"
+  },
+  "completed_test_progress_markers": 429,
+  "discovered_cases": 437,
+  "cases_not_confirmed_complete": 8,
+  "not_confirmed_group": "VendorExtensionTests; timeout may have occurred in its class setup",
+  "keyword_aggregate_bound_seconds": 300,
+  "full_acceptance_passed": false,
+  "source_composition_passed": true,
+  "isolated_php_28_checks_passed": true,
+  "private_raw_report_sha256": "4a6c5842feb13981f7bc6e0cb5a91d8fa72802c9d62d79b78b8f4312dc2f2823",
+  "unchanged_retry_performed": false,
+  "timeout_raised": false,
+  "tests_skipped_to_pass": false,
+  "release_authorized": false
+}

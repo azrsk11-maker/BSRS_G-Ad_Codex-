@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "previous_allocation_ref": "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/research-pool-allocation.json",
+  "previous_allocation_sha256": "7081460c15662dd875602992c5d2fc2ec991bf63a9e1e5ed283a7e81e289bb37",
+  "targets": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "before": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "target_transfer": null,
+  "held_deduction": {},
+  "new_rows": {
+    "ACADEMIC": 207
+  },
+  "admitted": {
+    "ACADEMIC": 1883,
+    "EMPLOYMENT": 4078,
+    "MEDIA": 804,
+    "NAVIGATION": 0,
+    "SERVICE": 466,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "remaining": {
+    "ACADEMIC": 117,
+    "EMPLOYMENT": 983,
+    "MEDIA": 196,
+    "NAVIGATION": 1000,
+    "SERVICE": 534,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "total_target": 14000,
+  "total_admitted": 11170,
+  "total_remaining": 2830,
+  "basis": "Preserve all prior bodies, archives, protection prefix and category targets; append only reviewed complete occupational qualification literals after fresh full-body checks.",
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false
+}

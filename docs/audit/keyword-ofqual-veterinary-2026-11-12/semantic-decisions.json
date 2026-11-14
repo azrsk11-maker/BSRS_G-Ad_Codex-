@@ -1,0 +1,1337 @@
+{
+  "version": 1,
+  "review_type": "INDEPENDENT_COMPLETE_LITERAL_SEMANTIC_REVIEW_SOURCE_SUPPLY_ONLY",
+  "reviewed_at_utc": "2026-11-12T15:09:46Z",
+  "timing": {
+    "first_recorded_clock_utc": "2026-11-12T15:07:17Z",
+    "elapsed_wall_seconds_to_artifact_write": 149.24,
+    "measurement_limit": "Starts at first recorded clock reading, not task dispatch; excludes later validation."
+  },
+  "frozen_source_files": [
+    {
+      "file": "extract.py",
+      "bytes": 19091,
+      "sha256": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712"
+    },
+    {
+      "file": "qualifications.json",
+      "bytes": 107831,
+      "sha256": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa"
+    },
+    {
+      "file": "capture.json",
+      "bytes": 4287,
+      "sha256": "ecf76b2123ff80f7f4518c0a1c3f157cab3ab499768e6d2cea7d8be4ad258afd"
+    },
+    {
+      "file": "README.md",
+      "bytes": 7515,
+      "sha256": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+    }
+  ],
+  "underlying_raw_source": {
+    "sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+    "bytes": 23984795,
+    "fresh_raw_verification_performed_by_this_semantic_review": false,
+    "basis": "Frozen projection and source README; no raw source or network access in this review."
+  },
+  "semantic_boundary": "The complete original title must explicitly identify nonproperty veterinary qualification, occupational training or qualification assessment intent. Veterinary clinic premises, business-property demand, actual care services, and licensing or recognition guidance remain protected. No shortened forms, token peers or inferred abbreviation expansions are proposed.",
+  "method": {
+    "all_51_complete_literals_individually_read": true,
+    "bounded_read_sets": [
+      "source records 1-17",
+      "source records 18-34",
+      "source records 35-51"
+    ],
+    "individual_reasons_authored_by_source_ordinal": true,
+    "compatibility_used_to_select_semantic_review": false,
+    "pattern_batch_approval": false,
+    "source_literals_copied_without_rewriting": true,
+    "normalization_copied_from_frozen_source_not_proposed_as_replacement": true,
+    "raw_source_authenticity_or_extractor_code_review": false
+  },
+  "summary": {
+    "source_occurrences": 51,
+    "complete_literals_reviewed": 51,
+    "distinct_source_normalized_titles": 51,
+    "propose_full_exact_research": 51,
+    "semantic_hold": 0,
+    "local_length_word_precheck_pass": 27,
+    "local_length_word_precheck_hold": 24,
+    "text_compatibility_no_known_incompatibility": 19,
+    "text_compatibility_requires_review": 11,
+    "text_compatibility_documented_incompatibility": 21,
+    "text_compatibility_admission_holds": 32,
+    "current_library_admissions": 0,
+    "new_negative_admissions": 0,
+    "approved_exclusions": 0,
+    "deployments": 0
+  },
+  "limits": [
+    "Semantic proposal only; no admission, approval, deployability or platform-acceptance finding.",
+    "Published Ofqual qualification titles are not observed searches, volume, CPC, competition or demand.",
+    "Frozen Available to learners status is not fresh course availability, UAE recognition, licensing, eligibility or provider affiliation.",
+    "No current-library, archive, protected-query wording or broader-concept membership check was performed.",
+    "Provider prefixes, old/new routes, SA/EQ, BVRA, VTEC and non-VTEC peers remain subject to alias, variant, matching-equivalence and distinctness checks.",
+    "No campaign, page URL, live identifier or exclusion scope is selected; advertising remains paused.",
+    "Text compatibility and length/word holds are preserved separately; no original title is erased, repaired, stripped or shortened.",
+    "No new network request, raw-source reconstruction, current-library rebuild, UI work or production mutation was performed."
+  ],
+  "controls": {
+    "semantic_review_complete_for_frozen_51_only": true,
+    "source_files_changed": false,
+    "current_library_membership_verified": false,
+    "duplicate_and_variant_clearance": false,
+    "protected_query_and_scope_clearance": false,
+    "admission_authorized": false,
+    "deployment_authorized": false,
+    "production_changed": false,
+    "live_campaign_changes": false,
+    "metrics_status": "NOT_OBSERVED_UNKNOWN"
+  },
+  "decisions": [
+    {
+      "source_record_ordinal": 10746,
+      "qualification_number": "610/3461/7",
+      "original_literal": "SEG Awards Level 3 Certificate for Veterinary Receptionists ",
+      "normalized_title": "seg awards level 3 certificate for veterinary receptionists",
+      "source_line_start": 10747,
+      "source_line_end": 10747,
+      "original_literal_utf8_sha256": "ab42b2b5646512e5c9864dff00652cc26678fb97af0a94f22ba8cc964c821bac",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Certificate for Veterinary Receptionists explicitly identifies a receptionist qualification. The complete provider-prefixed credential supports occupational training intent; it does not request clinic premises or reception services.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 60,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 10764,
+      "qualification_number": "610/3348/0",
+      "original_literal": "SEG Awards Level 2 Diploma for Veterinary Nursing Assistants",
+      "normalized_title": "seg awards level 2 diploma for veterinary nursing assistants",
+      "source_line_start": 10765,
+      "source_line_end": 10765,
+      "original_literal_utf8_sha256": "987dc203edefe1acb533603b6b155067231a2d827c2705a46003d9109ca13985",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Diploma for Veterinary Nursing Assistants explicitly identifies a nursing-assistant qualification. The full title concerns learning for that occupation rather than supplying veterinary care or property.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 60,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 39023,
+      "qualification_number": "603/6676/X",
+      "original_literal": "Lantra Awards Level 3 Work Based Diploma in Veterinary Nursing – Equine",
+      "normalized_title": "lantra awards level 3 work based diploma in veterinary nursing – equine",
+      "source_line_start": 39024,
+      "source_line_end": 39024,
+      "original_literal_utf8_sha256": "a2877b1c17f7a689018d30ad35481ab2e7ee3dbe066e7262b869e8829ea6c765",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Work Based Diploma in Veterinary Nursing explicitly identifies an occupational qualification, with Equine retained as the literal route. Work Based does not make the complete title a workplace or premises search.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 71,
+        "whitespace_word_count": 12,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 39024,
+      "qualification_number": "603/6677/1",
+      "original_literal": "Lantra Awards Level 3 Work Based Diploma in Veterinary Nursing – Small Animal",
+      "normalized_title": "lantra awards level 3 work based diploma in veterinary nursing – small animal",
+      "source_line_start": 39025,
+      "source_line_end": 39025,
+      "original_literal_utf8_sha256": "f3453c1ffd61cc617751b4cc082441a0076b261be39b01d8645da7bae1198b50",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Work Based Diploma in Veterinary Nursing explicitly identifies an occupational qualification, with Small Animal retained as the literal route. The full credential is training intent; generic animal care and clinic-property searches remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 77,
+        "whitespace_word_count": 13,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 39089,
+      "qualification_number": "610/4388/6",
+      "original_literal": "Lantra Awards Level 2 Diploma in Veterinary Care and Animal Welfare",
+      "normalized_title": "lantra awards level 2 diploma in veterinary care and animal welfare",
+      "source_line_start": 39090,
+      "source_line_end": 39090,
+      "original_literal_utf8_sha256": "2da2c4c5a73d4aeb6eaf4ca3e2ec2f61f68fa2a2d4bd63e41ca064004b389347",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Diploma frames Veterinary Care and Animal Welfare as qualification subject matter. The complete credential supports training research without treating those service phrases alone as exclusion candidates.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 67,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 39117,
+      "qualification_number": "610/3154/9",
+      "original_literal": "Lantra Awards Level 2 Award in Safe Use of Veterinary Medicines",
+      "normalized_title": "lantra awards level 2 award in safe use of veterinary medicines",
+      "source_line_start": 39118,
+      "source_line_end": 39118,
+      "original_literal_utf8_sha256": "3fa42c0fcc9fb8d179e899e77a9dc093ae4aefc8dacaba06b83c64a53711ee51",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Award in Safe Use of Veterinary Medicines explicitly concerns a learned occupational competency. The complete award title is distinguishable from a request for medicines, clinical treatment or clinic premises.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 63,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 39123,
+      "qualification_number": "610/1695/0",
+      "original_literal": "Lantra Awards Level 3 End Point Assessment for ST0343 Veterinary Nurse",
+      "normalized_title": "lantra awards level 3 end point assessment for st0343 veterinary nurse",
+      "source_line_start": 39124,
+      "source_line_end": 39124,
+      "original_literal_utf8_sha256": "aba00c3bc0fbfdb32a1563f93025f70573fc959013e7b816916e6df179e674df",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 End Point Assessment for ST0343 Veterinary Nurse explicitly identifies occupational assessment. ST0343 remains untouched; no licensing, recognition, enrolment or query-demand claim follows.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 70,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44484,
+      "qualification_number": "600/9504/0",
+      "original_literal": "CQ Level 2 Diploma for Veterinary Nursing Assistants",
+      "normalized_title": "cq level 2 diploma for veterinary nursing assistants",
+      "source_line_start": 44485,
+      "source_line_end": 44485,
+      "original_literal_utf8_sha256": "e292f402b2b9871fc3e765af0e15a5138330780992578e085c46e70d48f2220e",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Diploma for Veterinary Nursing Assistants explicitly identifies an occupational qualification. CQ remains in the complete title, with provider and route equivalence left to later review.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 52,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44489,
+      "qualification_number": "603/2317/6",
+      "original_literal": "CQ Level 3 Diploma in Veterinary Nursing – Equine Practice",
+      "normalized_title": "cq level 3 diploma in veterinary nursing – equine practice",
+      "source_line_start": 44490,
+      "source_line_end": 44490,
+      "original_literal_utf8_sha256": "9acedf787420fefa5a7759d78742579352cf4ee41ef6825c9f8806abf2950008",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Diploma in Veterinary Nursing is an explicit qualification and Equine Practice specifies its stated route. Practice is interpreted only inside the complete credential, without excluding equine clinics or their premises.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 58,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44490,
+      "qualification_number": "603/2318/8",
+      "original_literal": "CQ Level 3 Diploma in Veterinary Nursing - Small Animal Practice",
+      "normalized_title": "cq level 3 diploma in veterinary nursing - small animal practice",
+      "source_line_start": 44491,
+      "source_line_end": 44491,
+      "original_literal_utf8_sha256": "7b26c5010748d6abf386068f275ba970d874cecb03ee78015f41c4513b26efed",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Diploma in Veterinary Nursing is an explicit qualification and Small Animal Practice specifies its stated route. The entire title supports training intent while generic small-animal practice and property demand remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 64,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44492,
+      "qualification_number": "603/7284/9",
+      "original_literal": "CQ Level 3 Veterinary Nurse End Point Assessment",
+      "normalized_title": "cq level 3 veterinary nurse end point assessment",
+      "source_line_start": 44493,
+      "source_line_end": 44493,
+      "original_literal_utf8_sha256": "32ef1f292bedea7aed96118023fb38d3527aafe61b75fa61e9abc6587832c12a",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Veterinary Nurse End Point Assessment explicitly identifies qualification assessment rather than clinical care. Its complete provider-prefixed literal can be proposed for later EXACT research without asserting apprenticeship or provider equivalence.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 48,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44498,
+      "qualification_number": "610/2502/1",
+      "original_literal": "CQ Level 2 Diploma for Veterinary Nursing Assistants - Equine",
+      "normalized_title": "cq level 2 diploma for veterinary nursing assistants - equine",
+      "source_line_start": 44499,
+      "source_line_end": 44499,
+      "original_literal_utf8_sha256": "1f13e6357789b25d679b7a504781c505dc3ade05c0cc2c38395953fa078da00f",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Diploma for Veterinary Nursing Assistants explicitly identifies a qualification and Equine narrows the stated route. The complete route title remains intact; no wider equine-care or premises exclusion is inferred.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 61,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44499,
+      "qualification_number": "610/1243/9",
+      "original_literal": "CQ Level2 Diploma for Veterinary Nursing Assistants - Small Animal",
+      "normalized_title": "cq level2 diploma for veterinary nursing assistants - small animal",
+      "source_line_start": 44500,
+      "source_line_end": 44500,
+      "original_literal_utf8_sha256": "cd5b0749f9ecbb5863d8d0550bb77883584ebabf2b8e2afcc28686105bc79f84",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "The literal Level2 Diploma for Veterinary Nursing Assistants clearly states a credential despite the source's unspaced Level2. Small Animal remains the stated route; the spelling is neither repaired nor shortened.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 66,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44502,
+      "qualification_number": "610/5960/2",
+      "original_literal": "CQ Level 3 Award in Veterinary Leadership and Clinical Coaching",
+      "normalized_title": "cq level 3 award in veterinary leadership and clinical coaching",
+      "source_line_start": 44503,
+      "source_line_end": 44503,
+      "original_literal_utf8_sha256": "c8ebc53f45ee401612445ee5cdb35b4d10705f0decee6745f54003b27b073ded",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award in Veterinary Leadership and Clinical Coaching explicitly frames leadership and coaching as qualification content. The complete award title supports occupational learning rather than clinic management services or business-property demand.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 63,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44503,
+      "qualification_number": "610/5961/4",
+      "original_literal": "CQ Level 4 Certificate in Veterinary Emergency and Critical Care Nursing - Small Animal  ",
+      "normalized_title": "cq level 4 certificate in veterinary emergency and critical care nursing - small animal",
+      "source_line_start": 44504,
+      "source_line_end": 44504,
+      "original_literal_utf8_sha256": "408f58a81990bbf2cd6883aa1496c621c94b526abaa8a234a6e4fa6598536ca0",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Veterinary Emergency and Critical Care Nursing explicitly frames emergency nursing as qualification content. Small Animal and both trailing spaces are retained; emergency care services themselves remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 89,
+        "whitespace_word_count": 14,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44504,
+      "qualification_number": "610/5962/6",
+      "original_literal": "CQ Level 4 Certificate in Veterinary Anaesthesia - Small Animal",
+      "normalized_title": "cq level 4 certificate in veterinary anaesthesia - small animal",
+      "source_line_start": 44505,
+      "source_line_end": 44505,
+      "original_literal_utf8_sha256": "fde3b4427b1c3b7566e1c9bc0714f70125b6ffcec93e94c9969cd53568e9bbc3",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Veterinary Anaesthesia explicitly frames anaesthesia as qualification content, with Small Animal retained. The full credential can support training research without excluding anaesthesia treatment requests.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 63,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44505,
+      "qualification_number": "610/5963/8",
+      "original_literal": "CQ Level 4 Certificate in Veterinary Dental Nursing - Small Animal",
+      "normalized_title": "cq level 4 certificate in veterinary dental nursing - small animal",
+      "source_line_start": 44506,
+      "source_line_end": 44506,
+      "original_literal_utf8_sha256": "3ff3cc1faa772ee57f3858d1606884cc01d70411feeca52c5f0c6be02cd639b0",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Veterinary Dental Nursing explicitly identifies a specialist nursing qualification, with Small Animal retained. Dental services and related premises are protected outside the full qualification literal.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 66,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44506,
+      "qualification_number": "610/5964/X",
+      "original_literal": "CQ Level 4 Certificate in Veterinary Medical Nursing - Small Animal",
+      "normalized_title": "cq level 4 certificate in veterinary medical nursing - small animal",
+      "source_line_start": 44507,
+      "source_line_end": 44507,
+      "original_literal_utf8_sha256": "0bfd62c22340cef60526d3111154c11362de9010c7ce1c6e5dedb30dba40b46f",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Veterinary Medical Nursing explicitly identifies specialist occupational learning, with Small Animal retained. The complete credential does not establish demand for, or authorize exclusions of, medical care services.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 67,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44507,
+      "qualification_number": "610/5965/1",
+      "original_literal": "CQ Level 4 Certificate in Veterinary Nursing Consultation - Small Animal",
+      "normalized_title": "cq level 4 certificate in veterinary nursing consultation - small animal",
+      "source_line_start": 44508,
+      "source_line_end": 44508,
+      "original_literal_utf8_sha256": "1a477a4ba6156352566b665d6dc8f46411cc4487c543ec99fcfd2585204f479e",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Veterinary Nursing Consultation explicitly frames consultation as qualification subject matter. Small Animal remains in the full title; actual nursing consultations are a protected separate intent.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 72,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44508,
+      "qualification_number": "610/5873/7",
+      "original_literal": "CQ Level 3 Diploma in Veterinary Nursing - SA",
+      "normalized_title": "cq level 3 diploma in veterinary nursing - sa",
+      "source_line_start": 44509,
+      "source_line_end": 44509,
+      "original_literal_utf8_sha256": "0cbd5412afa1ed15b9d0580d6e40f683f391508ced51a1cbe44cdbfa854fd49d",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Diploma in Veterinary Nursing explicitly establishes a qualification-training context. SA is retained literally without expansion or an asserted equivalence to Small Animal or any other route.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 45,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44509,
+      "qualification_number": "610/5870/1",
+      "original_literal": "CQ Level 2 Diploma for Veterinary Nursing Assistants in Feline Centred Practice",
+      "normalized_title": "cq level 2 diploma for veterinary nursing assistants in feline centred practice",
+      "source_line_start": 44510,
+      "source_line_end": 44510,
+      "original_literal_utf8_sha256": "dea7b3af3eed7d6127c4a94f6bfd6e57c1d62fb5e8d3347a14de4b0b4bc1707a",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Diploma for Veterinary Nursing Assistants explicitly identifies qualification training, with Feline Centred Practice retained. The complete credential is distinct from a request for feline care or clinic premises.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 79,
+        "whitespace_word_count": 12,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44510,
+      "qualification_number": "610/5867/1",
+      "original_literal": "CQ Level 3 Diploma in Veterinary Nursing - EQ",
+      "normalized_title": "cq level 3 diploma in veterinary nursing - eq",
+      "source_line_start": 44511,
+      "source_line_end": 44511,
+      "original_literal_utf8_sha256": "0233e5c79f6c5fcef4378303a727f76068c457db1d65ebf6e87c7f53225ac23e",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Diploma in Veterinary Nursing explicitly establishes a qualification-training context. EQ is retained literally without expansion or an asserted equivalence to Equine or any other route.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 45,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 44691,
+      "qualification_number": "603/7547/4",
+      "original_literal": "OCNLR Level 4 Certificate in Canine Hydrotherapy for Veterinary Physiotherapists",
+      "normalized_title": "ocnlr level 4 certificate in canine hydrotherapy for veterinary physiotherapists",
+      "source_line_start": 44692,
+      "source_line_end": 44692,
+      "original_literal_utf8_sha256": "cba2bb58d8c1f0f82a93e1d00b97748be4689c3f6a2c16100ff3ad096085c97d",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Canine Hydrotherapy for Veterinary Physiotherapists explicitly identifies occupational qualification learning. Hydrotherapy is read inside that complete credential; actual rehabilitation services and property demand remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 80,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 45219,
+      "qualification_number": "610/5352/1",
+      "original_literal": "GA Level 2 Diploma for Veterinary Care Assistants  (Small Animals)",
+      "normalized_title": "ga level 2 diploma for veterinary care assistants (small animals)",
+      "source_line_start": 45220,
+      "source_line_end": 45220,
+      "original_literal_utf8_sha256": "ad05584707d7a1ae8c654edb1b593dbe09714a676f19058c07172773ce7614d4",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Diploma for Veterinary Care Assistants explicitly identifies an occupational qualification. The complete Small Animals parenthetical and double space are preserved; neither symbols nor care wording alter the training meaning.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 66,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 45220,
+      "qualification_number": "610/5357/0",
+      "original_literal": "GA Level 2 Certificate in the Principles of Veterinary Care Assistance (Small Animals) ",
+      "normalized_title": "ga level 2 certificate in the principles of veterinary care assistance (small animals)",
+      "source_line_start": 45221,
+      "source_line_end": 45221,
+      "original_literal_utf8_sha256": "aee9bb27747ce91cb1acb3e604bde767ec3836e61d321644ddbc9edc3db394cd",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Certificate in the Principles of Veterinary Care Assistance explicitly identifies knowledge-based qualification learning. Small Animals and the trailing space are preserved, while actual care-assistance services remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "DOCUMENTED_INVALID_SYMBOLS",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 87,
+        "whitespace_word_count": 13,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 45221,
+      "qualification_number": "610/5358/2",
+      "original_literal": "GA Level 2 Award in an Introduction to the Principles of Veterinary Care Assistance (Small Animals) ",
+      "normalized_title": "ga level 2 award in an introduction to the principles of veterinary care assistance (small animals)",
+      "source_line_start": 45222,
+      "source_line_end": 45222,
+      "original_literal_utf8_sha256": "dd4456406d7f7f31e89afea85c850375b254940a11769923250bf233680205c6",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Award in an Introduction to the Principles of Veterinary Care Assistance explicitly identifies introductory qualification learning. The complete Small Animals qualifier remains; no short care-service exclusion is proposed.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "DOCUMENTED_INVALID_SYMBOLS",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 100,
+        "whitespace_word_count": 16,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 45228,
+      "qualification_number": "610/5173/1",
+      "original_literal": "GA Level 3 Certificate in Veterinary Reception Skills",
+      "normalized_title": "ga level 3 certificate in veterinary reception skills",
+      "source_line_start": 45229,
+      "source_line_end": 45229,
+      "original_literal_utf8_sha256": "e3c912c24d4b4a27ba980e8a324fa582575cc6ec018c7a3fc26d04db77bd05d8",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Certificate in Veterinary Reception Skills explicitly identifies an occupational skills qualification. It concerns learning reception skills rather than seeking reception services, a veterinary practice or premises.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 53,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 45323,
+      "qualification_number": "610/7298/9",
+      "original_literal": "GA Level 4 Certificate in Canine Myofascial Rehabilitation for Veterinary Surgeons (Galen Myotherapy) ",
+      "normalized_title": "ga level 4 certificate in canine myofascial rehabilitation for veterinary surgeons (galen myotherapy)",
+      "source_line_start": 45324,
+      "source_line_end": 45324,
+      "original_literal_utf8_sha256": "cb0817730633cffe786825692d29695cfac14e2cf647ef8731254ba45fb93aa8",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 4 Certificate in Canine Myofascial Rehabilitation for Veterinary Surgeons explicitly identifies professional qualification learning. The full Galen Myotherapy qualifier remains, without inferring affiliation or excluding rehabilitation services.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "DOCUMENTED_INVALID_SYMBOLS",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 102,
+        "whitespace_word_count": 13,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48069,
+      "qualification_number": "610/7693/4",
+      "original_literal": "VetSkill VTEC Level 5 Diploma in Advanced Veterinary Nursing (Anaesthesia and Analgesia)",
+      "normalized_title": "vetskill vtec level 5 diploma in advanced veterinary nursing (anaesthesia and analgesia)",
+      "source_line_start": 48070,
+      "source_line_end": 48070,
+      "original_literal_utf8_sha256": "32877f358c90d2e930ba69fddda0b0b6c77bb3be3852d0b7df96b93e1902f444",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "VTEC Level 5 Diploma in Advanced Veterinary Nursing explicitly identifies advanced occupational qualification learning. Anaesthesia and Analgesia remain inside the complete title; the corresponding actual care services remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "DOCUMENTED_INVALID_SYMBOLS",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 88,
+        "whitespace_word_count": 12,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48080,
+      "qualification_number": "610/6071/9",
+      "original_literal": "VetSkill VTEC Level 3 Diploma in Veterinary Nursing (Companion Animal) ",
+      "normalized_title": "vetskill vtec level 3 diploma in veterinary nursing (companion animal)",
+      "source_line_start": 48081,
+      "source_line_end": 48081,
+      "original_literal_utf8_sha256": "9b47f56ef8f3be9d15312b846067fcaa197b677ad29176bbc81acdd611519b3e",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "VTEC Level 3 Diploma in Veterinary Nursing explicitly identifies an occupational qualification, with Companion Animal retained. Its complete parenthetical and trailing space remain literal; no care-service or property intent is inferred.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 71,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48081,
+      "qualification_number": "610/6072/0",
+      "original_literal": "VetSkill VTEC Level 3 Diploma  in Veterinary Nursing (Equine)",
+      "normalized_title": "vetskill vtec level 3 diploma in veterinary nursing (equine)",
+      "source_line_start": 48082,
+      "source_line_end": 48082,
+      "original_literal_utf8_sha256": "32ef306f4cbd558f089833b5873355a1d357eb151ccaac959968377fbc4820f0",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "VTEC Level 3 Diploma in Veterinary Nursing explicitly identifies an occupational qualification, with Equine retained. The double space and parenthetical remain intact; equivalence to other equine routes is not decided.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 61,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48086,
+      "qualification_number": "610/5558/X",
+      "original_literal": "VetSkill VTEC Level 2 Certificate in Assisting Veterinary Surgeons in Monitoring Anaesthetised and Sedated Companion Animals ",
+      "normalized_title": "vetskill vtec level 2 certificate in assisting veterinary surgeons in monitoring anaesthetised and sedated companion animals",
+      "source_line_start": 48087,
+      "source_line_end": 48087,
+      "original_literal_utf8_sha256": "17d0a0bcef61e2b032e17efb13f8769c0d0170aa9efb04f9a89f64f115482e5e",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "VTEC Level 2 Certificate in Assisting Veterinary Surgeons in Monitoring Anaesthetised and Sedated Companion Animals explicitly identifies occupational competency learning. Monitoring and sedation services are protected outside this entire credential title.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 125,
+        "whitespace_word_count": 16,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48087,
+      "qualification_number": "610/7947/9",
+      "original_literal": "VetSkill VTEC Level 5 Diploma in Advanced Veterinary Nursing (Medical)",
+      "normalized_title": "vetskill vtec level 5 diploma in advanced veterinary nursing (medical)",
+      "source_line_start": 48088,
+      "source_line_end": 48088,
+      "original_literal_utf8_sha256": "5ba29090d78d4c73a41aa4ddddaeb9a69de2dcbe23f80654ea6962a6f0f75f1d",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "VTEC Level 5 Diploma in Advanced Veterinary Nursing explicitly identifies advanced qualification learning, with Medical retained. The complete title is distinguishable from medical veterinary services and does not settle equivalence with a non-VTEC route.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 70,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48092,
+      "qualification_number": "603/3568/3",
+      "original_literal": "VetSkill Level 2 Certificate in Veterinary Care Support",
+      "normalized_title": "vetskill level 2 certificate in veterinary care support",
+      "source_line_start": 48093,
+      "source_line_end": 48093,
+      "original_literal_utf8_sha256": "986373818db8adc2817eb7bc631ec624308c926252425f6daa205e89f88177fb",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Certificate in Veterinary Care Support explicitly identifies an occupational qualification. Care Support is read as the certificate subject rather than a standalone request for veterinary services or business premises.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 55,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48093,
+      "qualification_number": "603/4761/2",
+      "original_literal": "VetSkill Level 5 Advanced Diploma in Veterinary Nursing (Practice Nurse)",
+      "normalized_title": "vetskill level 5 advanced diploma in veterinary nursing (practice nurse)",
+      "source_line_start": 48094,
+      "source_line_end": 48094,
+      "original_literal_utf8_sha256": "419b5edf7c477e817bd5ca133e77804aabc5bda725adefd2b3dee2afd107d309",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 5 Advanced Diploma in Veterinary Nursing explicitly identifies qualification learning, with Practice Nurse retained as a literal qualifier. Practice Nurse is neither removed nor treated as premises or actual care-service intent.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 72,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48094,
+      "qualification_number": "603/4614/0",
+      "original_literal": "VetSkill Level 5 Advanced Diploma in Veterinary Nursing (Medical)",
+      "normalized_title": "vetskill level 5 advanced diploma in veterinary nursing (medical)",
+      "source_line_start": 48095,
+      "source_line_end": 48095,
+      "original_literal_utf8_sha256": "f88a94dfba5d5ff74a92a38d634bcde75c6d703746aa5e9fabdbdd1d01e3c1a2",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 5 Advanced Diploma in Veterinary Nursing explicitly identifies qualification learning, with Medical retained as a literal qualifier. Its relationship to the separate VTEC Medical title remains unresolved rather than counted as proven distinctness.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 65,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48095,
+      "qualification_number": "603/4607/3",
+      "original_literal": "VetSkill Level 5 Advanced Diploma in Veterinary Nursing (Surgical)",
+      "normalized_title": "vetskill level 5 advanced diploma in veterinary nursing (surgical)",
+      "source_line_start": 48096,
+      "source_line_end": 48096,
+      "original_literal_utf8_sha256": "b12b98c6d118f5cd4ea35fe8a16be87d099f853451df6d40ebedfdaa496a537a",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 5 Advanced Diploma in Veterinary Nursing explicitly identifies qualification learning, with Surgical retained. Surgical treatment itself remains protected; the proposal concerns only the complete credential literal.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 66,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48098,
+      "qualification_number": "603/6827/5",
+      "original_literal": "VetSkill Level 3 End Point Apprenticeship Assessment for ST0343 Veterinary Nurse ",
+      "normalized_title": "vetskill level 3 end point apprenticeship assessment for st0343 veterinary nurse",
+      "source_line_start": 48099,
+      "source_line_end": 48099,
+      "original_literal_utf8_sha256": "6b277808630ce178b2b9764d8a6c63a9db9c66c0bb82ef31307f25fb2fa47475",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 End Point Apprenticeship Assessment for ST0343 Veterinary Nurse explicitly identifies occupational apprenticeship assessment. The source's complete code and trailing space remain untouched, without claiming licensing or recognition advice intent.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 81,
+        "whitespace_word_count": 11,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48113,
+      "qualification_number": "610/3838/6",
+      "original_literal": "VetSkill VTEC Level 5 Diploma in Advanced Veterinary Nursing (Emergency and Critical Care)",
+      "normalized_title": "vetskill vtec level 5 diploma in advanced veterinary nursing (emergency and critical care)",
+      "source_line_start": 48114,
+      "source_line_end": 48114,
+      "original_literal_utf8_sha256": "e854cead73dd9586c9786a43910b0a5fad48a20de9d23a085111f733266ce68f",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "VTEC Level 5 Diploma in Advanced Veterinary Nursing explicitly identifies advanced qualification learning. Emergency and Critical Care remain within the complete diploma, while actual emergency treatment remains protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "DOCUMENTED_INVALID_SYMBOLS",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 90,
+        "whitespace_word_count": 13,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 48120,
+      "qualification_number": "601/8672/0",
+      "original_literal": "VetSkill Level 2 Certificate for  Veterinary Receptionists",
+      "normalized_title": "vetskill level 2 certificate for veterinary receptionists",
+      "source_line_start": 48121,
+      "source_line_end": 48121,
+      "original_literal_utf8_sha256": "032f7eace0162458b9b145f1ed1a5c485763b68d9167e6b8609c0b7f5db79645",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Certificate for Veterinary Receptionists explicitly identifies receptionist qualification learning. The source's double space remains intact; no reception-service, clinic-property or provider-equivalence conclusion is made.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 58,
+        "whitespace_word_count": 7,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49191,
+      "qualification_number": "610/3286/4",
+      "original_literal": "iPET Network Level 3 Certificate for Veterinary Receptionists (BVRA)",
+      "normalized_title": "ipet network level 3 certificate for veterinary receptionists (bvra)",
+      "source_line_start": 49192,
+      "source_line_end": 49192,
+      "original_literal_utf8_sha256": "5bac1b362becb0a8a5fa3aa405d7e3eba3d4f7934af3328afb188039be6e9ac9",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Certificate for Veterinary Receptionists explicitly identifies occupational qualification learning, with BVRA retained literally. No expansion, affiliation claim or equivalence with the later non-parenthetical certificate is inferred.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_INVALID_SYMBOLS"
+        ],
+        "invalid_symbols": [
+          "(",
+          ")"
+        ],
+        "character_count": 68,
+        "whitespace_word_count": 9,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49199,
+      "qualification_number": "610/4038/1",
+      "original_literal": "iPET Network Level 6 Diploma in Veterinary Physiotherapy ",
+      "normalized_title": "ipet network level 6 diploma in veterinary physiotherapy",
+      "source_line_start": 49200,
+      "source_line_end": 49200,
+      "original_literal_utf8_sha256": "ec0c0bfa7ab1871789be55636ad41cd22a37c44c6781dfd17611474f43ea71fe",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 6 Diploma in Veterinary Physiotherapy explicitly identifies qualification learning rather than a physiotherapy appointment. The complete title and trailing space remain; actual physiotherapy services and premises demand are protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 57,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49206,
+      "qualification_number": "610/3610/9",
+      "original_literal": "iPET Network Level 3 Award in Education and Training for Animal and Veterinary Professionals",
+      "normalized_title": "ipet network level 3 award in education and training for animal and veterinary professionals",
+      "source_line_start": 49207,
+      "source_line_end": 49207,
+      "original_literal_utf8_sha256": "a9abe29458b40760b8ac0d74fe077ec94c339cf5060913eaf99e5c885e78a50e",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award in Education and Training for Animal and Veterinary Professionals explicitly identifies educator-training qualification intent. The mixed animal/veterinary audience does not make the complete credential a clinical or property request.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 92,
+        "whitespace_word_count": 14,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49213,
+      "qualification_number": "610/5982/1",
+      "original_literal": "iPET Network Level 3 Certificate for Veterinary Receptionists",
+      "normalized_title": "ipet network level 3 certificate for veterinary receptionists",
+      "source_line_start": 49214,
+      "source_line_end": 49214,
+      "original_literal_utf8_sha256": "4726b8b7143738897d6b56954005454892aae1044a01e905a92686087048bf54",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Certificate for Veterinary Receptionists explicitly identifies receptionist qualification learning. The full title is retained independently of the BVRA-labelled source title, without claiming they are distinct Google matches or separate demand.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 61,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49214,
+      "qualification_number": "610/5983/3",
+      "original_literal": "iPET Network Level 3 Award for Veterinary Receptionists",
+      "normalized_title": "ipet network level 3 award for veterinary receptionists",
+      "source_line_start": 49215,
+      "source_line_end": 49215,
+      "original_literal_utf8_sha256": "8c323048c96ae676f42293393e78128988265dd1426cea74f537c66b0331c545",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award for Veterinary Receptionists explicitly identifies receptionist qualification learning. Award is retained rather than conflated with Certificate, while any route or matching equivalence remains a later gate.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 55,
+        "whitespace_word_count": 8,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49215,
+      "qualification_number": "610/5984/5",
+      "original_literal": "iPET Network Level 3 Award in Communication and Client Relations in the Animal Care and Veterinary Science Sector",
+      "normalized_title": "ipet network level 3 award in communication and client relations in the animal care and veterinary science sector",
+      "source_line_start": 49216,
+      "source_line_end": 49216,
+      "original_literal_utf8_sha256": "7dbb40d53107ca5b64f1d8cf92f5794ec2c0c48645a02cffcba201f7d751d2ae",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award in Communication and Client Relations in the Animal Care and Veterinary Science Sector explicitly frames communication as qualification learning. Actual client relations, animal care services and premises intent are protected outside this full award title.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 113,
+        "whitespace_word_count": 18,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49216,
+      "qualification_number": "610/5985/7",
+      "original_literal": "iPET Network Level 3 Award in Mental Health and Wellbeing in the Animal Care and Veterinary Science Sector",
+      "normalized_title": "ipet network level 3 award in mental health and wellbeing in the animal care and veterinary science sector",
+      "source_line_start": 49217,
+      "source_line_end": 49217,
+      "original_literal_utf8_sha256": "a7e760aeab1fcdc06060e1dae9f822c6be01124e2758d013cca57436234e055b",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award in Mental Health and Wellbeing in the Animal Care and Veterinary Science Sector explicitly frames wellbeing as qualification content. It does not justify excluding requests for actual mental-health support, animal care or property.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 106,
+        "whitespace_word_count": 18,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49217,
+      "qualification_number": "610/5986/9",
+      "original_literal": "iPET Network Level 3 Award in Euthanasia and Bereavement Support in the Animal Care and Veterinary Science Sector",
+      "normalized_title": "ipet network level 3 award in euthanasia and bereavement support in the animal care and veterinary science sector",
+      "source_line_start": 49218,
+      "source_line_end": 49218,
+      "original_literal_utf8_sha256": "86165d4a3d904821c30d93fb0e95322fb3d60358d288e502e0f78ca5b20fdc43",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award in Euthanasia and Bereavement Support in the Animal Care and Veterinary Science Sector explicitly frames a sensitive care topic as qualification learning. Actual euthanasia care and bereavement-support services remain protected outside the full credential.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 113,
+        "whitespace_word_count": 18,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 49218,
+      "qualification_number": "610/5987/0",
+      "original_literal": "iPET Network Level 3 Award in Understanding Veterinary Triage and First Aid",
+      "normalized_title": "ipet network level 3 award in understanding veterinary triage and first aid",
+      "source_line_start": 49219,
+      "source_line_end": 49219,
+      "original_literal_utf8_sha256": "01b9b69fcf7d02d13d2fad767858beeeb005af1046cf8d2c3087c1ccd60dd085",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 3 Award in Understanding Veterinary Triage and First Aid explicitly identifies qualification learning. The full Understanding and Award context distinguishes this proposal from actual urgent triage or first-aid service requests.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "REQUIRES_REVIEW",
+        "reason_codes": [
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 75,
+        "whitespace_word_count": 12,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_TEXT_COMPATIBILITY_REVIEW"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 51813,
+      "qualification_number": "601/8781/5",
+      "original_literal": "City & Guilds Level 2 Certificate of Competence in the Safe and Responsible Use of Veterinary Medicines ",
+      "normalized_title": "city & guilds level 2 certificate of competence in the safe and responsible use of veterinary medicines",
+      "source_line_start": 51814,
+      "source_line_end": 51814,
+      "original_literal_utf8_sha256": "97a4e2e9edd9b96abdf682f72d11fc09c4ef89ec73fef34fb2b92fb375dc70b4",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Certificate of Competence in the Safe and Responsible Use of Veterinary Medicines explicitly identifies occupational competency learning. The complete City & Guilds title remains intact; medicine supply and treatment requests remain protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "DOCUMENTED_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [
+          "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED",
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+        ],
+        "invalid_symbols": [],
+        "character_count": 104,
+        "whitespace_word_count": 17,
+        "local_length_word_precheck_pass": false,
+        "admission_gate": "HOLD_DOCUMENTED_TEXT_INCOMPATIBILITY"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    },
+    {
+      "source_record_ordinal": 53002,
+      "qualification_number": "600/0106/9",
+      "original_literal": "City & Guilds Level 2 Diploma For Veterinary Care Assistants",
+      "normalized_title": "city & guilds level 2 diploma for veterinary care assistants",
+      "source_line_start": 53003,
+      "source_line_end": 53003,
+      "original_literal_utf8_sha256": "055db9f14d756028e2f5c99314cc169f40c1699882f130176197faafd3f5ded3",
+      "semantic_decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "semantic_reason": "Level 2 Diploma For Veterinary Care Assistants explicitly identifies occupational qualification learning. The full City & Guilds literal and capitalized For remain unchanged; generic care-assistant services and premises are protected.",
+      "proposed_matching_limit": "COMPLETE_ORIGINAL_LITERAL_ONLY_FOR_LATER_EXACT_REVIEW",
+      "text_compatibility": {
+        "classification": "NO_KNOWN_INCOMPATIBILITY_DETECTED",
+        "reason_codes": [],
+        "invalid_symbols": [],
+        "character_count": 60,
+        "whitespace_word_count": 10,
+        "local_length_word_precheck_pass": true,
+        "admission_gate": "NO_KNOWN_INCOMPATIBILITY_DETECTED_NOT_PLATFORM_ACCEPTANCE"
+      },
+      "admission_state": "HOLD_PENDING_INDEPENDENT_MEMBERSHIP_VARIANT_PROTECTION_AND_SCOPE_GATES"
+    }
+  ]
+}

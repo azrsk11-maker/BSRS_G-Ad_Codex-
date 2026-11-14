@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "cohort_key": "vehicle-20261111",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selection": {
+    "docs/audit/keyword-exclusions-2026-11-10/workbench.json": [
+      "VEHICLE"
+    ]
+  },
+  "capture_pins": {
+    "docs/audit/keyword-exclusions-2026-11-10/capture.json": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4"
+  },
+  "pool_rows": 1562,
+  "selected_rows": 1509,
+  "existing_cohort_overlaps": 0,
+  "held_phrases": {
+    "aventador rental dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "be vip rent a car luxury car rental in dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "carrentals dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "corvette c8 rental dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "corvette rental dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "di marca rental car luxury car rental in dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "drivus car rental dubai dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "dubai aventador rent": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "dubai urus rental": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "escalade rental dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "europ car dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "europe car rentals dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "europe cars dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "faster rent a car dubai luxury & sports car rental": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "fastrack car rental dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "ferrari spyder rent in dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "fortuner for rent in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "g63 amg rental dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "land cruiser rent in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "land cruiser rent per day dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "land cruiser rent per day in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "lux rent a car dubai luxury car rental dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "paddock rent a car luxury car rental in dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "pajero for rent in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "pick up rental dubai": "Incomplete grammar or generic pickup wording leaves the intended product or distinct wording unresolved; no extra count.",
+    "prado for rent in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent a car burdubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "rent a car for one monthly in dubai": "Incomplete grammar or generic pickup wording leaves the intended product or distinct wording unresolved; no extra count.",
+    "rent a car in burdubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "rent corvette in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent escalade dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent escalade in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent for car in dubai": "Incomplete grammar or generic pickup wording leaves the intended product or distinct wording unresolved; no extra count.",
+    "rent huracan dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent pajero dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent urus dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rent urus in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "rentalcars dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "rentalcars dubai airport": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "selfdrive ae daily weekly monthly car rental dubai marina": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "selfdrive ae daily weekly monthly car rental jlt": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "superior car rental luxury car rental dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "urus dubai rent": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "urus hire dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "urus mansory rent dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "urus rent dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "urus rent in dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "viano rental dubai": "Bare model or abbreviated name lacks an explicit manufacturer/category in the full phrase; preserve possible property/entity ambiguity pending sufficient evidence.",
+    "vip rent a car luxury car rental dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "vipcarrental dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified.",
+    "white white car rental dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "x car rental sports and luxury car rental dubai": "Repeated wording or a composite promotional service string has no separately established research value; retain it for wording review rather than pad counts. No supplier absence or identity claim.",
+    "xcarrental dubai": "Unresolved spelling or spacing-only variant; preserve the source without adding a reviewed research count. Google handles casing/misspellings; no platform equivalence is independently certified."
+  },
+  "intent_counts": {
+    "VEHICLE": 1509
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "VEHICLE": "Read all1,562complete source literals and104token-bag groups/227selected phrases. The1,509selected full texts specify cars/automotive vehicles, recognizable vehicle make-plus-model requests, explicit vehicle body types or associated car-rental procurement rather than a residential tenant brief. Preserve53bare-model/entity, spelling/spacing, composite/repeated-wording and incomplete/pickup holds. No generic rent/lease, place, duration, nationality, age, price or commercial token becomes an exclusion. Full-source vehicle/vendor/model strings and indicative amounts are retained only as provider text, not proof of real supplier identity, current fleet, pricing, legal eligibility, cross-border permission, inventory, demand or Black Swan affiliation. Exact word-order variants were read separately; the same token bag is diagnostic, not a platform-equivalence certificate. No vehicle supplier is contacted and no real exclusion is applied."
+  },
+  "variant_review": {
+    "token_bag_groups": 104,
+    "phrases_in_groups": 227,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "All1562complete preliminaryVEHICLEliterals and104token-bag groups/227selected phrases read;1509selected/53held. Existing436software-service-media review and345original source holds remain unchanged. Original source spelling/amounts/place/age/brand strings and all occurrences survive without metric or current supplier/vehicle/property facts. Distinct normalized provider texts are not certified distinct Google matching concepts. Proposed applicability is the same unbound RNTplanning purpose only; other359slots, full-positive/platform matching acceptance and deployment remain outside scope.",
+  "subject_sha256": "f1c55d832d2affacdccc2b25d2a2a5d1654f18259929bc90b383f49e176ca21c",
+  "coverage_reports": [
+    {
+      "file": "docs/audit/keyword-review-coverage-2026-11-11/report.json",
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    }
+  ]
+}

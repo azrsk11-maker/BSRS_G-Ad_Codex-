@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "VERIFIED_IDENTIFIER_OBSERVATIONS",
+  "status": "UNPUBLISHED_NOT_APPLIED",
+  "production_authorized": false,
+  "runtime_mapping": null,
+  "scope": {
+    "company": "Black Swan Real Estate",
+    "owned_site_origin": "https://blackswanrealestate.ae",
+    "google_ads_customer_id": "573-038-4686",
+    "google_ads_conversion_account_id": null,
+    "legacy_tracking_migration_decision": "DEC-05",
+    "legacy_tags_changed_by_this_artifact": false
+  },
+  "observations": {
+    "ga4": {
+      "identity_status": "VERIFIED_NATIVE_UI_READBACK",
+      "observed_at_utc": "2026-11-07T05:25:00Z",
+      "evidence": {
+        "path": "docs/audit/LIVE_READBACK_2026-11-07.json",
+        "json_pointer": "/ga4",
+        "local_receipt_verification": "READ_AND_MATCHED"
+      },
+      "property_id": "559502861",
+      "web_stream_id": "16159906474",
+      "measurement_id": "G-W01P9W3NWE",
+      "stream_url": "https://blackswanrealestate.ae",
+      "enhanced_measurement": false,
+      "google_signals": false,
+      "user_provided_data_collection": false,
+      "granular_location_device_collection": false,
+      "connected_site_tags": 0,
+      "email_redaction": true,
+      "url_query_parameter_redaction": false,
+      "runtime_acceptance": "NOT_EXECUTED"
+    },
+    "gtm": {
+      "identity_status": "VERIFIED_NATIVE_UI_READBACK",
+      "observed_at_utc": "2026-11-07T05:25:00Z",
+      "evidence": {
+        "path": "docs/audit/LIVE_READBACK_2026-11-07.json",
+        "json_pointer": "/gtm",
+        "local_receipt_verification": "READ_AND_MATCHED"
+      },
+      "container_id": "GTM-NW8WXKRF",
+      "container_numeric_id": "267608465",
+      "published_version": 1,
+      "published_name": "Empty Container",
+      "published_date": "2026-10-19",
+      "published_tags": 0,
+      "published_triggers": 0,
+      "published_variables": 0,
+      "workspace_audit_status": "INCOMPLETE",
+      "publication_authorization": "NONE"
+    },
+    "accepted_enquiry": {
+      "identity_status": "VERIFIED_NATIVE_UI_READBACK",
+      "observed_interval_utc": {
+        "from": "2026-11-07T06:32:21Z",
+        "through": "2026-11-07T06:43:43Z"
+      },
+      "evidence": {
+        "path": "docs/audit/ADS_MEASUREMENT_READBACK_2026-11-07.json",
+        "json_pointer": "/conversions/accepted_enquiry",
+        "local_receipt_verification": "READ_AND_MATCHED"
+      },
+      "action_id": "7859602954",
+      "conversion_id": "18394393537",
+      "conversion_label": "4aaqCIqM4KMdEMHXkMNE",
+      "optimization": "SECONDARY",
+      "count": "ONE",
+      "value": "NO_VALUE",
+      "click_through_window_days": 90,
+      "engaged_view_window_days": 3,
+      "view_through_window_days": 1,
+      "attribution_model": "DATA_DRIVEN",
+      "enhanced_conversions": "NOT_CONFIGURED",
+      "data_source_domain_observed": "lplife.blackswanrealestate.ae",
+      "event_setup_observed": "Manual event",
+      "owned_site_binding_status": "UNRESOLVED_LEGACY_SOURCE_BINDING",
+      "runtime_acceptance": "NOT_EXECUTED",
+      "semantic_role_status": "PREVIOUSLY_OBSERVED_DISTINCT_ACTION_NOT_AUTOMATIC_WORDPRESS_TARGET"
+    },
+    "qualified_lead": {
+      "identity_status": "VERIFIED_NATIVE_UI_READBACK",
+      "observed_interval_utc": {
+        "from": "2026-11-07T06:32:21Z",
+        "through": "2026-11-07T06:43:43Z"
+      },
+      "evidence": {
+        "path": "docs/audit/ADS_MEASUREMENT_READBACK_2026-11-07.json",
+        "json_pointer": "/conversions/qualified_lead",
+        "local_receipt_verification": "READ_AND_MATCHED"
+      },
+      "action_id": "7878013428",
+      "conversion_id": null,
+      "conversion_label": null,
+      "optimization": "PRIMARY",
+      "count": "ONE",
+      "value": "NO_VALUE",
+      "click_through_window_days": 90,
+      "engaged_view_window_days": 3,
+      "attribution_model": "DATA_DRIVEN",
+      "source_detail_observed": "Import from clicks",
+      "source_summary_observed": "Website (Import from clicks)",
+      "source_type_normalization": "API_TYPE_NOT_INFERRED_FROM_UI_LABEL",
+      "status_observed": "INACTIVE",
+      "campaign_associations_observed": {
+        "associated": 0,
+        "displayed_total": 17
+      },
+      "associated_connections_observed": 0,
+      "scheduled_import_acceptance": "NOT_EXECUTED",
+      "runtime_acceptance": "NOT_EXECUTED"
+    },
+    "stored_wordpress_accepted_candidate": {
+      "action_id": "7873290954",
+      "name": "BSRE Accepted Enquiry (Secondary)",
+      "conversion_id": "18394393537",
+      "conversion_label": "jLZgCMrFo6odEMHXkMNE",
+      "created_date_display": "10/26/2026",
+      "optimization": "SECONDARY",
+      "count": "ONE",
+      "value_policy_display": "Use different values. If there is no value, use AED0.",
+      "click_through_window_days": 90,
+      "engaged_view_window_days": 3,
+      "view_through_window_days": 1,
+      "attribution_model": "DATA_DRIVEN",
+      "enhanced_conversions": "NOT_CONFIGURED",
+      "data_source_domain_observed": "lplife.blackswanrealestate.ae",
+      "event_setup_observed": "Manual event",
+      "label_matches_wordpress": true,
+      "source_binding_acceptance": "NOT_EXECUTED",
+      "runtime_acceptance": "NOT_EXECUTED",
+      "identity_status": "VERIFIED_NATIVE_UI_READBACK",
+      "observed_date_utc": "2026-11-07",
+      "evidence": {
+        "path": "docs/audit/ACCEPTED_ACTION_BINDING_READBACK_2026-11-07.json",
+        "json_pointer": "/stored_destination_action"
+      },
+      "selection_status": "UNAPPROVED_CANDIDATE_KEEP_RUNTIME_UNASSIGNED"
+    }
+  },
+  "unresolved_gates": [
+    "Verify conversion-account ownership separately from the Ads customer ID; do not infer cross-account ownership.",
+    "Select exactly one reviewed accepted-enquiry destination: the WordPress-stored dedicated action and previously observed accepted_enquiry are distinct. Reconcile value policy and source binding; never enable both by inference.",
+    "Resolve DEC-05 and the accepted-enquiry legacy lplife source binding without replacing or modifying legacy tags.",
+    "Verify real receipt, original/current purpose permission and event-ID compatibility; do not invent or rewrite identifiers to satisfy a prototype.",
+    "Complete supported destination deduplication, consent, QA/admin exclusion, CSP and full outgoing-payload acceptance; One counting is not that evidence.",
+    "Verify qualified-lead source semantics, goal associations and restricted scheduled Data Manager eligibility; do not reuse the accepted-enquiry tag label.",
+    "Obtain separate exact-scope production tracking authorization and all applicable full-goal release gates."
+  ],
+  "limitations": [
+    "This is an observation register, not executable tag configuration or a GTM import.",
+    "The runtime prototype's mappings and its approval assertions are not populated by this record.",
+    "Verified identifiers do not establish consent, ownership migration, delivery, deduplication, bidding readiness or release authorization.",
+    "No production secrets, private workbook identifiers or receiver endpoints are included."
+  ]
+}

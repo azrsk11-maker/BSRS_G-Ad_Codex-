@@ -1,0 +1,136 @@
+name: Foundation validation
+on:
+  pull_request:
+    branches: [main]
+# Every implementation branch must have a PR (draft is sufficient).
+# PR-only validation avoids running the same jobs for both push and PR events.
+permissions:
+  contents: read
+concurrency:
+  group: foundation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  offline-validation:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Select reviewed Python AST representation
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.12'
+      - name: Observe scoped standard public ARM runtime
+        run: python3 -B tools/efficiency/runner_observation.py
+      - name: Verify unchanged review bindings before expensive checks
+        run: |
+          python3 -B - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          if sys.version_info[:2] != (3, 12):
+              raise RuntimeError('Reviewed AST binding requires Python 3.12')
+          sys.path.insert(0, str(Path('tools/keyword-system').resolve()))
+          import ofqual_admission as source
+          review = source.first.pinned(Path.cwd(), source.FOLDER + '/review.json', source.REVIEW_PIN)
+          binding = source.implementation_binding(Path.cwd())
+          if binding != review['implementation']:
+              raise RuntimeError('Original reviewed implementation binding changed')
+          print(json.dumps({'python_version': sys.version.split()[0],
+                            'original_review_binding': 'PASS',
+                            'function_ast_sha256': binding['function_ast_sha256']}))
+          PY
+      - name: Validate planning, keyword conflicts, tracking and local builds
+        run: python3 -B tools/check_repository.py
+      - name: Report bounded offline failure details
+        if: failure()
+        run: |
+          python3 -B - <<'PY'
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+          report = Path('test-output/foundation-checks.json')
+          if not report.is_file():
+              print('Offline report unavailable; inspect the failed setup step.')
+          else:
+              result = json.loads(report.read_text(encoding='utf-8'))
+              for check in result.get('checks', []):
+                  if check.get('passed') is not False:
+                      continue
+                  details = check.get('details', {})
+                  fields = ('exit', 'elapsed_seconds', 'timed_out', 'error_type',
+                            'keyword_summary', 'keyword_evidence_status', 'keyword_diagnostic')
+                  safe = {key: details[key] for key in fields if key in details} if isinstance(details, dict) else {}
+                  if isinstance(details, dict) and isinstance(details.get('output_tail'), str):
+                      safe['output_tail'] = details['output_tail'][-1800:]
+                  print('CHECK_FAILURE ' + json.dumps({'check': check['check'], 'details': safe}, ensure_ascii=True))
+                  evidence = details.get('keyword_evidence', {}) if isinstance(details, dict) else {}
+                  name = evidence.get('evidence_file', '')
+                  if not isinstance(name, str) or not re.fullmatch(r'test-output/keyword-modules-[A-Za-z0-9_-]+\.json', name):
+                      continue
+                  path = Path(name)
+                  if path.is_symlink() or not path.is_file() or path.stat().st_size > 4 * 1024 * 1024:
+                      continue
+                  body = path.read_bytes()
+                  if hashlib.sha256(body).hexdigest() != evidence.get('evidence_sha256'):
+                      print('Keyword failure receipt checksum mismatch; details withheld.')
+                      continue
+                  modules = json.loads(body.decode('utf-8')).get('modules', [])
+                  failed = [row for row in modules if row.get('passed') is not True]
+                  for row in failed[:12]:
+                      safe = {key: row[key] for key in ('module', 'exit', 'coverage_verified', 'complete') if key in row}
+                      safe['output_tail'] = str(row.get('output_tail', ''))[-1800:]
+                      print('KEYWORD_MODULE_FAILURE ' + json.dumps(safe, ensure_ascii=True))
+                  if len(failed) > 12:
+                      print('Additional failing keyword modules omitted from bounded diagnostics.')
+          PY
+  native-wordpress-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Lint native adapter and run isolated WordPress behavior tests
+        run: |
+          php --version
+          php -l tools/native-wordpress/native-draft-preview.php
+          php -l tools/native-wordpress/tests/native-draft-preview-test.php
+          php -l tools/native-wordpress/native-draft-writer.php
+          php -l tools/native-wordpress/tests/native-draft-writer-test.php
+          php -l tools/property-decision-tools/property-decision-tools.php
+          php -l tools/property-decision-tools/native-wordpress-test.php
+          php -l tools/property-decision-tools/php.test.php
+          php tools/property-decision-tools/php.test.php
+          find tools/owner-mail-review -name '*.php' -print0 | xargs -0 -n 1 php -l
+          php tools/owner-mail-review/test_owner_mail_review.php
+          php tools/owner-mail-review/guard.test.php
+          php tools/native-wordpress/tests/native-draft-preview-test.php
+          php tools/consent-retention/linkage.test.php
+          php -l tools/consent-retention/compaction-native.php
+          php tools/consent-retention/compaction.test.php
+          php tools/consent-retention/per-choice/test_per_choice.php
+          find tools/consent-retention/per-choice -name '*.php' -print0 | xargs -0 -n 1 php -l
+          php tools/consent-retention/per-choice/selective-choice.test.php
+          php tools/consent-retention/per-choice/purpose-choice.test.php
+          php tools/website-tracking/tracking-system/receipt-recovery.test.php
+      # Site Health on 7 November reports production PHP 8.2.35.
+      # Keep the runner-runtime check above and explicitly cover its 8.2 minor.
+      - name: Select production PHP minor
+        uses: shivammathur/setup-php@ec406be512d7077f68eed36e63f4d91bc006edc4 # 2.35.4
+        with:
+          php-version: '8.2'
+          coverage: none
+      - name: Validate native adapter on production PHP minor
+        run: |
+          php --version
+          php -r 'exit(PHP_MAJOR_VERSION === 8 && PHP_MINOR_VERSION === 2 ? 0 : 1);'
+          php -l tools/native-wordpress/native-draft-preview.php
+          php -l tools/native-wordpress/tests/native-draft-preview-test.php
+          php tools/native-wordpress/tests/native-draft-preview-test.php
+          php tools/consent-retention/per-choice/test_per_choice.php
+          find tools/consent-retention/per-choice -name '*.php' -print0 | xargs -0 -n 1 php -l
+          php tools/consent-retention/per-choice/selective-choice.test.php
+          php tools/consent-retention/per-choice/purpose-choice.test.php

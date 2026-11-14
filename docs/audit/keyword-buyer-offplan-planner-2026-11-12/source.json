@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "scope": "RAW_BUYER_KEYWORD_RESEARCH_NOT_ADMISSION_OR_ADS_CONFIGURATION",
+  "source_kind": "google_ads_keyword_planner_rendered_ui_table",
+  "captured_at_utc": "2026-11-12T08:27:36.809Z",
+  "source_url": "https://ads.google.com/aw/keywordplanner/ideas/new",
+  "account_id": "573-038-4686",
+  "query_seed": "off plan apartments in dubai",
+  "targeting": {
+    "location": "United Arab Emirates",
+    "language": "English",
+    "network": "Google",
+    "date_range_display": "Nov 2025 – Oct 2026",
+    "filters": [
+      "Exclude adult ideas"
+    ]
+  },
+  "reported_keyword_rows": 6,
+  "provided_seed_rows": 1,
+  "generated_idea_rows": 5,
+  "rendered_pagination": "1 - 6 of 6",
+  "capture_complete": true,
+  "columns": [
+    "",
+    "Keyword (by relevance)",
+    "Avg. monthly searches\nhelp_outline",
+    "Three month change\nhelp_outline",
+    "YoY change\nhelp_outline",
+    "Competition\nhelp_outline",
+    "Ad impression share\nhelp_outline",
+    "Top of page bid (low range)\nhelp_outline",
+    "Top of page bid (high range)\nhelp_outline",
+    "Account status\nhelp_outline"
+  ],
+  "rows": [
+    {
+      "source_ordinal": 1,
+      "row_kind": "provided_seed",
+      "cells": [
+        "",
+        "off plan apartments in dubai",
+        "100 – 1K",
+        "0%",
+        "-90%",
+        "Medium",
+        "—",
+        "AED21.42",
+        "AED49.88",
+        ""
+      ]
+    },
+    {
+      "source_ordinal": 2,
+      "row_kind": "generated_idea",
+      "cells": [
+        "",
+        "new off plan projects in dubai",
+        "10 – 100",
+        "0%",
+        "-90%",
+        "Medium",
+        "—",
+        "AED14.39",
+        "AED58.95",
+        ""
+      ]
+    },
+    {
+      "source_ordinal": 3,
+      "row_kind": "generated_idea",
+      "cells": [
+        "",
+        "off plan townhouses dubai",
+        "10 – 100",
+        "0%",
+        "-90%",
+        "High",
+        "—",
+        "AED11.15",
+        "AED35.58",
+        ""
+      ]
+    },
+    {
+      "source_ordinal": 4,
+      "row_kind": "generated_idea",
+      "cells": [
+        "",
+        "off plan apartments for sale in dubai",
+        "10 – 100",
+        "0%",
+        "0%",
+        "Medium",
+        "—",
+        "—",
+        "—",
+        ""
+      ]
+    },
+    {
+      "source_ordinal": 5,
+      "row_kind": "generated_idea",
+      "cells": [
+        "",
+        "dubai creek harbour off plan",
+        "10 – 100",
+        "0%",
+        "0%",
+        "High",
+        "—",
+        "AED21.52",
+        "AED45.24",
+        ""
+      ]
+    },
+    {
+      "source_ordinal": 6,
+      "row_kind": "generated_idea",
+      "cells": [
+        "",
+        "off plan apartments for sale dubai",
+        "10 – 100",
+        "0%",
+        "0%",
+        "High",
+        "—",
+        "AED20.50",
+        "AED35.04",
+        ""
+      ]
+    }
+  ],
+  "metrics_semantics": "Displayed historical estimate ranges and bids; not exact volume, actual CPC, observed search queries, company performance, forecasts or available inventory.",
+  "reviewed_for_admission": 0,
+  "admitted": 0,
+  "approved": 0,
+  "deployed": 0,
+  "live_campaign_or_settings_changes": false
+}

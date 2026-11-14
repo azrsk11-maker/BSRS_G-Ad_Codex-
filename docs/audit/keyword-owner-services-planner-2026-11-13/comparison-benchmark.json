@@ -1,0 +1,34 @@
+{
+  "scope": "LOCAL_COMPARISON_ORACLE_MICROBENCHMARK_NOT_WHOLE_SUITE",
+  "external_forms_per_sample": 3947,
+  "methods": 5,
+  "exact_billed_tokens_cost_unavailable": true,
+  "samples": [
+    {
+      "source_ordinal": 1,
+      "state": "COMPLETE",
+      "before_seconds": 0.174818,
+      "after_seconds": 0.042135,
+      "same_results": true
+    },
+    {
+      "source_ordinal": 142,
+      "state": "COMPLETE",
+      "before_seconds": 0.15984,
+      "after_seconds": 0.037661,
+      "same_results": true
+    },
+    {
+      "source_ordinal": 145,
+      "state": "COMPLETE",
+      "before_seconds": 0.168386,
+      "after_seconds": 0.041613,
+      "same_results": true
+    }
+  ],
+  "passed": true,
+  "before_seconds": 0.503044,
+  "after_seconds": 0.121409,
+  "elapsed_reduction_percent": 75.87,
+  "limits": "Three selected genuine-source phrases and all named comparison forms/methods. Sequential local timing is not randomized or a whole-run, token or cost result. No baseline acceptance, body, hash or verdict is cached."
+}

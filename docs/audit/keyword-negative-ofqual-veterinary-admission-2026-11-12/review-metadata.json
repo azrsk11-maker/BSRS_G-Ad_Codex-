@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "scope": "FRESH_COMPLETE_OFFLINE_RESEARCH_ADMISSION_CANDIDATE_NOT_RELEASE_ACCEPTANCE",
+  "date_dubai": "2026-11-12",
+  "python_version": "3.12.14",
+  "fresh_base": {
+    "public_entrypoint": "current_negative_library.reconstruct_ofqual_occupational_snapshot",
+    "complete_inputs_sha256": "4b3106190c37a47deaefdd391e9dfded0554c9a91b381c6d3a62424b54c80587",
+    "measured_seconds": 64.647178,
+    "records": 11170,
+    "archives": 18,
+    "protections": 16693,
+    "sources": 25,
+    "serialized_baseline_or_acceptance_cache_used": false
+  },
+  "frozen_source_pins": {
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/qualifications.json": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/capture.json": "ecf76b2123ff80f7f4518c0a1c3f157cab3ab499768e6d2cea7d8be4ad258afd",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-decisions.json": "7c280316bab94d4ad892b58f2f738d3295913cb0dbc90e608c404a238113b68b",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+  },
+  "frozen_source_bytes_unchanged": true,
+  "review_generation": {
+    "measured_seconds": 0.888873,
+    "all_complete_literals_independently_semantically_proposed": 51,
+    "text_compatible_proposals": 19,
+    "original_text_compatibility_holds": 32,
+    "selected_after_complete_current_archive_protected_and_source_checks": 6,
+    "all_source_groups_compared": 51,
+    "external_key_comparisons": 204,
+    "within_source_key_comparisons": 204,
+    "explicit_alias_family_count": 7,
+    "additional_variant_hold_groups": 13,
+    "preheld_source_conflict_groups": 12,
+    "already_protected_hold_groups": 0,
+    "alias_review_authority": "Independent complete-literal AI reviewer identified plausible provider/route relationships for conservative HOLD; no equivalence or abbreviation expansion inferred."
+  },
+  "actual_complete_generic_audited_generation": {
+    "measured_seconds": 4.457145,
+    "base_unchanged": true,
+    "new_rows": 6,
+    "new_exact_occurrences": 6,
+    "new_protections": 45,
+    "records": 11176,
+    "archives": 18,
+    "protections": 16738,
+    "sources": 26,
+    "retained_exact_source_occurrences": 11389,
+    "complete_inputs_sha256": "0be4c040baa13d97f105f0f5cd514fd5717a29647b24d2b542b959b5ab4d295c",
+    "computed_conflicts": 0,
+    "excluded_rows": 0,
+    "approved_exclusion_rows": 0
+  },
+  "focused_tests": {
+    "cases": 15,
+    "failures": 0,
+    "errors": 0,
+    "measured_seconds": 32.807363,
+    "public_entrypoints_freshness_checked": 16,
+    "scope": "Same-process caller-fresh complete base; held-peer four-method joins, explicit conservative source alias families, resealed alias unhold, actual source/body/order/scope/expiry controls and real generic-auditor malformed protection checks. No persisted baseline."
+  },
+  "academic_allocation": {
+    "target": 2000,
+    "admitted": 1889,
+    "remaining": 111,
+    "target_transfer": null,
+    "total_target": 14000,
+    "total_admitted": 11176,
+    "total_deficit": 2824,
+    "media_budget_changed": false
+  },
+  "code_bindings": [
+    {
+      "file": "tools/keyword-system/ofqual_veterinary_admission.py",
+      "sha256": "ef26d534f47e9c278a40ba613efbbae424e0d965a70bbd61c87482399e13c7e4",
+      "bytes": 33582
+    },
+    {
+      "file": "tools/keyword-system/test_ofqual_veterinary_admission.py",
+      "sha256": "a61ccbfe601a977a67f33dc92ef319337f5aeea2a506465737d45b9c28adc122",
+      "bytes": 16262
+    },
+    {
+      "file": "tools/keyword-system/current_negative_library.py",
+      "sha256": "b744588573340b09bd12d0d49f7ca85a5b10d045af4dc614728338273f95f61a",
+      "bytes": 30569
+    },
+    {
+      "file": "tools/keyword-system/test_entertainment_admission.py",
+      "sha256": "c53b779285af1afa59a6ba80974f5fc1b8aa7dda156106d0ba2851d8a52c8994",
+      "bytes": 9813
+    }
+  ],
+  "review_sha256": "5fd9d98b9b2ad620cd0b0ddd9bdc6b4fa1ac7d54d3cf71d3e14b5b6ed62bdc87",
+  "output_pins": {
+    "index.json": "403e3058d0403cfa24ceb53cef180af05ddc615f90fdbbcffc6ea333e42a78e7",
+    "cohort-report.json": "6127a8be50ecbc4d908478233d6a97ff70c416cd987358699ee9131b125268b3",
+    "library-report.json": "63d0cd7c848d4e846bb92fce3dacca970161e336a8127e4eff05d0cac12ee3cc",
+    "research-pool-allocation.json": "38cf12a92abbc06f89f256666f41fe17c4df6172d4c515ba41786c1a9a0139ae"
+  },
+  "total_measured_process_seconds": 104.613628,
+  "current_source_combined_foundation": "PENDING_ROOT_INTEGRATION",
+  "current_source_ci_native": "PENDING",
+  "independent_human_approval": false,
+  "positive_admissions": 0,
+  "exclusion_approvals": 0,
+  "deployments": 0,
+  "production_changed": false,
+  "ads_changed": false,
+  "all_advertising_remains_paused": true,
+  "full_goal_complete": false
+}

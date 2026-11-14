@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "scope": "INSTALLED_PLUGIN_EDITOR_TEXT_NOT_HOST_FILESYSTEM_OR_RUNTIME_ACCEPTANCE",
+  "target_zip_sha256": "f64910af55a72d5551d24ceb2cc7d2ffa666b7bd8579126d719463897bdf2443",
+  "expected_members": 30,
+  "captured_members": 30,
+  "results": [
+    {
+      "path": "assets/assets.css",
+      "status": "EDITOR_OMITS_LEADING_LF",
+      "captured_bytes": 11953,
+      "target_bytes": 11954,
+      "captured_sha256": "bf02bce9981352b164a70961a9719f9cc67959a7f3c144325a92b29a9348a2dd",
+      "target_sha256": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59"
+    },
+    {
+      "path": "assets/consent-bridge.js",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 18242,
+      "target_bytes": 18242,
+      "captured_sha256": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+      "target_sha256": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993"
+    },
+    {
+      "path": "assets/consent.css",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 2093,
+      "target_bytes": 2093,
+      "captured_sha256": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+      "target_sha256": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d"
+    },
+    {
+      "path": "assets/google-measurement.js",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 6239,
+      "target_bytes": 6239,
+      "captured_sha256": "2e87c3c715d74e09b459d02d706f72008b2edcfd73d0401bd6bfcbee64e9b837",
+      "target_sha256": "2e87c3c715d74e09b459d02d706f72008b2edcfd73d0401bd6bfcbee64e9b837"
+    },
+    {
+      "path": "assets/google-runtime.js",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 10071,
+      "target_bytes": 10071,
+      "captured_sha256": "459ab031d0bb3e0f079fdce5d2de36d266748f0c57f361c262e8ed5c03bfed4d",
+      "target_sha256": "459ab031d0bb3e0f079fdce5d2de36d266748f0c57f361c262e8ed5c03bfed4d"
+    },
+    {
+      "path": "assets/hub.css",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 1390,
+      "target_bytes": 1390,
+      "captured_sha256": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+      "target_sha256": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093"
+    },
+    {
+      "path": "assets/lead.js",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 26591,
+      "target_bytes": 26591,
+      "captured_sha256": "3d469cccef9891702ba1462e29f17ba3135261fff23ea2a40c052aa6afb99154",
+      "target_sha256": "3d469cccef9891702ba1462e29f17ba3135261fff23ea2a40c052aa6afb99154"
+    },
+    {
+      "path": "assets/wordpress.js",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 2303,
+      "target_bytes": 2303,
+      "captured_sha256": "dd85e87e930e449136887af826e91aefffa9af429b39fe30c610621b101cef18",
+      "target_sha256": "dd85e87e930e449136887af826e91aefffa9af429b39fe30c610621b101cef18"
+    },
+    {
+      "path": "bsre-enquiries.php",
+      "status": "NEWLINE_NORMALIZED_EXACT",
+      "captured_bytes": 13198,
+      "target_bytes": 13199,
+      "captured_sha256": "1c349529207e9e4ae15bf7b168aaea2d43f7119f6cad4b2dbc5ac4817d641d13",
+      "target_sha256": "9a0bd37545bd0da326d592bae7ac78eff0a8b79085bd4b1542d65289d627855b"
+    },
+    {
+      "path": "includes/admin.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 4565,
+      "target_bytes": 4565,
+      "captured_sha256": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+      "target_sha256": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3"
+    },
+    {
+      "path": "includes/cli.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 1080,
+      "target_bytes": 1080,
+      "captured_sha256": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+      "target_sha256": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0"
+    },
+    {
+      "path": "includes/consent-export.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 9086,
+      "target_bytes": 9086,
+      "captured_sha256": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+      "target_sha256": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215"
+    },
+    {
+      "path": "includes/consent-store.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 13023,
+      "target_bytes": 13023,
+      "captured_sha256": "7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262",
+      "target_sha256": "7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262"
+    },
+    {
+      "path": "includes/consent.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 17908,
+      "target_bytes": 17908,
+      "captured_sha256": "68c36328e2b660b6209320033cc7bc4b2857e4ecbf0261fdc5822d0e0708bead",
+      "target_sha256": "68c36328e2b660b6209320033cc7bc4b2857e4ecbf0261fdc5822d0e0708bead"
+    },
+    {
+      "path": "includes/drafts.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 3502,
+      "target_bytes": 3502,
+      "captured_sha256": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+      "target_sha256": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632"
+    },
+    {
+      "path": "includes/enquiry-seo.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 1652,
+      "target_bytes": 1652,
+      "captured_sha256": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+      "target_sha256": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b"
+    },
+    {
+      "path": "includes/measurement-runtime.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 10209,
+      "target_bytes": 10209,
+      "captured_sha256": "547ab366515214f0f15359e986e659d5c69ae05580903a2c023cc08277121a37",
+      "target_sha256": "547ab366515214f0f15359e986e659d5c69ae05580903a2c023cc08277121a37"
+    },
+    {
+      "path": "includes/measurement-settings.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 5170,
+      "target_bytes": 5170,
+      "captured_sha256": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+      "target_sha256": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132"
+    },
+    {
+      "path": "includes/measurement.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 6700,
+      "target_bytes": 6700,
+      "captured_sha256": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+      "target_sha256": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5"
+    },
+    {
+      "path": "includes/parent-isolation.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 11573,
+      "target_bytes": 11573,
+      "captured_sha256": "3ba85b2417056b7dd2352c59ecc4f7347865ef33f3178f73459f03abb7268df9",
+      "target_sha256": "3ba85b2417056b7dd2352c59ecc4f7347865ef33f3178f73459f03abb7268df9"
+    },
+    {
+      "path": "includes/presentation.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 2362,
+      "target_bytes": 2362,
+      "captured_sha256": "3d899989bebb8771ba7047f17c9d77760558078f3bf83f7f4b1c14d4408deecb",
+      "target_sha256": "3d899989bebb8771ba7047f17c9d77760558078f3bf83f7f4b1c14d4408deecb"
+    },
+    {
+      "path": "includes/protocol.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 8176,
+      "target_bytes": 8176,
+      "captured_sha256": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+      "target_sha256": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54"
+    },
+    {
+      "path": "templates/hub.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 1788,
+      "target_bytes": 1788,
+      "captured_sha256": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+      "target_sha256": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82"
+    },
+    {
+      "path": "templates/page.php",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 2400,
+      "target_bytes": 2400,
+      "captured_sha256": "9e29a3a16179223eec4b8c241eb6bae2bc2ed19d036c46ae33c5b3e1a22eb3ce",
+      "target_sha256": "9e29a3a16179223eec4b8c241eb6bae2bc2ed19d036c46ae33c5b3e1a22eb3ce"
+    },
+    {
+      "path": "templates/source/hub.html",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 6308,
+      "target_bytes": 6308,
+      "captured_sha256": "cee16c9bc1a3f711ec440a0f46533e5b05d8a68aa474629fd740852d71c44df5",
+      "target_sha256": "cee16c9bc1a3f711ec440a0f46533e5b05d8a68aa474629fd740852d71c44df5"
+    },
+    {
+      "path": "templates/source/let.html",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 10745,
+      "target_bytes": 10745,
+      "captured_sha256": "964152c93bf728529f71ec5b49793053170095fb807f5c36422ebcde111bcfe5",
+      "target_sha256": "964152c93bf728529f71ec5b49793053170095fb807f5c36422ebcde111bcfe5"
+    },
+    {
+      "path": "templates/source/off-plan.html",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 11168,
+      "target_bytes": 11168,
+      "captured_sha256": "1781dc87c8c54e8a08bcd1563156e5bcc076d497cd3ee22574f15440d8116d27",
+      "target_sha256": "1781dc87c8c54e8a08bcd1563156e5bcc076d497cd3ee22574f15440d8116d27"
+    },
+    {
+      "path": "templates/source/rent.html",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 10622,
+      "target_bytes": 10622,
+      "captured_sha256": "2ce5c621017bc46db8971554b890a8f3c29bacfd02b8d7d379d38c67f77d8fd6",
+      "target_sha256": "2ce5c621017bc46db8971554b890a8f3c29bacfd02b8d7d379d38c67f77d8fd6"
+    },
+    {
+      "path": "templates/source/resale.html",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 11100,
+      "target_bytes": 11100,
+      "captured_sha256": "66f88702e289424ac9c34dea367f8cc0e7d8cdc72aa6fd6dd50c673b20a994f4",
+      "target_sha256": "66f88702e289424ac9c34dea367f8cc0e7d8cdc72aa6fd6dd50c673b20a994f4"
+    },
+    {
+      "path": "templates/source/sell.html",
+      "status": "BYTE_EXACT",
+      "captured_bytes": 10617,
+      "target_bytes": 10617,
+      "captured_sha256": "e88b9b2af5b013b15ab3e8ae09025af728a1293f46fb79d7cf83dec299a171ad",
+      "target_sha256": "e88b9b2af5b013b15ab3e8ae09025af728a1293f46fb79d7cf83dec299a171ad"
+    }
+  ],
+  "production_writes": 0,
+  "limits": [
+    "UI copy gives editable text, not host-file bytes.",
+    "The editor omits the CSS leading LF; one direct public asset GET independently matches target bytes exactly.",
+    "No private server configuration, lead register, mail or conversion data inspected."
+  ],
+  "public_css_readback": {
+    "url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/assets.css?ver=0.2.12",
+    "final_url": "https://blackswanrealestate.ae/wp-content/plugins/bsre-enquiries/assets/assets.css?ver=0.2.12",
+    "http_status": 200,
+    "bytes": 11954,
+    "sha256": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+    "matches_target_bytes": true
+  },
+  "observed_date_utc": "2026-11-07",
+  "method": "Authenticated WordPress Plugin File Editor, selected filename checked before each editor-only Select All/Copy. Original package remains private. No Update File action performed.",
+  "independent_review": "NOT_PERFORMED_THIS_CAPTURE"
+}

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selections": {
+    "docs/audit/keyword-employment-broad-2026-11-10/workbench.json": "EXPLICIT_EMPLOYMENT_RESEARCH",
+    "docs/audit/keyword-developer-employment-2026-11-11/workbench.json": "EXPLICIT_EMPLOYMENT_RESEARCH",
+    "docs/audit/keyword-employment-education-2026-11-10/workbench.json": "EXPLICIT_EMPLOYMENT_APPLICATION"
+  },
+  "pool_rows": 944,
+  "selected_rows": 935,
+  "existing_cohort_overlaps": 4,
+  "held_phrases": {
+    "deyar real estate careers": "Possible spelling variant of a separately captured phrase; unresolved, not a new research count.",
+    "realestate job": "Unspaced spelling variant; retain source, do not add a research row.",
+    "realestate photography jobs": "Unspaced spelling variant; retain source, do not add a research row.",
+    "sothebys realty careers": "Unresolved punctuation/spelling variant of a separately captured phrase; not a new count.",
+    "sothebys realty jobs": "Unresolved punctuation/spelling variant of a separately captured phrase; not a new count."
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "EXPLICIT_EMPLOYMENT_RESEARCH": "Read all940new complete source literals and the25equal-token-bag groups/50phrases. Each selected literal requests employment, a career, recruitment, role/job information or an employment navigation path. Propose HIGH-risk exact research only for the same residential tenant-brief planning purpose. Geographic, nationality or age qualifiers are not the reason for selection; no housing eligibility or audience treatment is inferred. Generic entity/client advice, premises for employers, salary-based affordability and held source disagreements stay protected. No employer identity, genuine vacancy, affiliation, salary, credential or current job availability is asserted.",
+    "EXPLICIT_EMPLOYMENT_APPLICATION": "Seven complete source-returned literals expressly request job/internship applications, trainee hiring or a role vacancy in Dubai. This is application intent, not an enquiry for residential property. The four previously admitted overlapping phrases are retained in their original cohort and never counted twice."
+  },
+  "variant_review": {
+    "token_bag_groups": 25,
+    "phrases_in_groups": 50,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "Provider strings preserve source spellings, diacritics, punctuation and historical years. Five unresolved spelling/spacing/punctuation variants remain held and outside research counts. These are distinct phrase counts, not certified distinct Google matching concepts or observed demand. No new entity or professional credential is invented. Actual source estimates remain in source projections; no preferred estimate, served query, current-performance or availability value is inherited.",
+  "subject_sha256": "0adee880ca7381352d6de09514de50b4c77d5f564abcbe6f6f4aec3accb8ee08"
+}

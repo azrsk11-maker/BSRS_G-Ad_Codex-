@@ -1,0 +1,124 @@
+{
+  "status": "VERIFIED_EXACT_REVIEWED_SOURCE_DELIVERY",
+  "repository": "azrsk11-maker/BSRS_G-Ad_Codex-",
+  "feature_ref": "refs/heads/codex/phase0-audit-foundation",
+  "remote_feature_head": "e319bc9aa6601e7966911b94cf75d8212fbf7822",
+  "reviewed_commit": "20de08d1f92f7d01ac8912f77e854c5a8f19d568",
+  "reviewed_tree": "ebe993c34ee3e9c1574cfd0f4bd58a0c9b180641",
+  "remote_tree": "ebe993c34ee3e9c1574cfd0f4bd58a0c9b180641",
+  "unchanged_main_head": "f239701e47873f6dea7e6336d59cbe0dd6c15053",
+  "initial_remote_base": "ab5e9416044d474c3baea45f90bc1354c69d69f8",
+  "verified_single_parent_commits": 30,
+  "files_raw_byte_verified": 766,
+  "bytes_verified": 118176114,
+  "raw_byte_differences": 0,
+  "all_six_original_pins_match": true,
+  "original_source_pins": [
+    {
+      "source_id": "followup-1",
+      "relative_path": "docs/audit/keyword-employment-followup-2026-11-11/capture.json",
+      "sha256": "3f9b864bf9db426696f4af2d901f8f767280ec596325fe8417720cd0ca646249",
+      "bytes": 899,
+      "matches_original_pin": true
+    },
+    {
+      "source_id": "followup-1",
+      "relative_path": "docs/audit/keyword-employment-followup-2026-11-11/employment-followup.json",
+      "sha256": "860733d2098bef9447b2ffd36fb2246a7380873a22e2ef0dbe9c6028960d84fe",
+      "bytes": 399992,
+      "matches_original_pin": true
+    },
+    {
+      "source_id": "followup-1",
+      "relative_path": "docs/audit/keyword-employment-followup-2026-11-11/semantic-review-preview.json",
+      "sha256": "e983b3eaacf26f076b819db65bed552cca05b3b2fc0fe6e0957551ffc7d54c34",
+      "bytes": 162680,
+      "matches_original_pin": true,
+      "crlf_count": 4020,
+      "bare_lf_count": 0
+    },
+    {
+      "source_id": "followup-2",
+      "relative_path": "docs/audit/keyword-employment-followup-2026-11-11-batch2/capture.json",
+      "sha256": "47127cdbae1656ee8904a5486d8a500206ade837892d56b9be8b9143e628798e",
+      "bytes": 898,
+      "matches_original_pin": true
+    },
+    {
+      "source_id": "followup-2",
+      "relative_path": "docs/audit/keyword-employment-followup-2026-11-11-batch2/employment-followup-batch2.json",
+      "sha256": "a39cb137570e71e64c50081d8019268d30ee96498cdb651f66bfc3a99f4a1189",
+      "bytes": 399991,
+      "matches_original_pin": true
+    },
+    {
+      "source_id": "followup-2",
+      "relative_path": "docs/audit/keyword-employment-followup-2026-11-11-batch2/semantic-review-preview.json",
+      "sha256": "d9694957f42bd4ef115bd300383f3016ed11b2556d8d681a99bceabf00fb09e5",
+      "bytes": 158771,
+      "matches_original_pin": true,
+      "crlf_count": 4020,
+      "bare_lf_count": 0
+    }
+  ],
+  "snapshot_manifest_sha256": "30a3363348420a06bd9fc8f53bf24835370f124fb0a354efbd2dd208898cb213",
+  "batch_plan_sha256": "ffac6ccbfb0eca317666b96adb93a22bba424c26c985f3245bf845653eeef5f9",
+  "upload_journal_sha256": "79f7df42214bf92cea31b886422015d63a97adeb5cfc84fe7e96e24ffff14124",
+  "local_refs_unchanged": true,
+  "fetch_head_written": false,
+  "journal_or_source_modified": false,
+  "production_or_ads_changes": false,
+  "release_authorization": false,
+  "verified_at_utc": "2026-11-12T07:17:19.255117+00:00",
+  "elapsed_seconds": 7.22278,
+  "git_subprocesses": 17,
+  "remote_read_operations": 3,
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-12",
+  "scope": "VERIFIED_REVIEWED_SOURCE_DELIVERY_WITH_FAILED_REQUIRED_CI_NOT_RELEASE_ACCEPTANCE",
+  "private_proof_sha256": "cb7df68f6db735ed1c67143ea95e3dbcf8b6af050c72489a18c4b5f1298fc43d",
+  "delivery_method": "Previously authorized existing owner browser; ordinary commits to the existing PR feature branch. Protected main not modified.",
+  "git_client_access": "BlackSwanBss3701 remains Read-only; successful owner-browser upload does not repair or prove Git-client Write access.",
+  "ci_at_verified_head": {
+    "head_sha": "e319bc9aa6601e7966911b94cf75d8212fbf7822",
+    "observations_basis": "Execution lead current-head GitHub job readbacks; no CI rerun or log examination performed in this documentation pass.",
+    "jobs": [
+      {
+        "name": "isolated-native-wordpress",
+        "conclusion": "success",
+        "run_id": 43174104930,
+        "job_id": 131034074992
+      },
+      {
+        "name": "native-wordpress-check",
+        "conclusion": "success",
+        "run_id": 43174105008,
+        "job_id": 131034074696
+      },
+      {
+        "name": "offline-validation",
+        "conclusion": "failure",
+        "run_id": 43174105008,
+        "job_id": 131034075113,
+        "reported_elapsed": "2m0s",
+        "reported_failing_check_areas": [
+          "composition",
+          "keyword",
+          "efficiency"
+        ]
+      }
+    ],
+    "passed": 2,
+    "failed": 1,
+    "all_required_checks_passed": false,
+    "acceptance": "HELD_FAILED_REQUIRED_OFFLINE_VALIDATION",
+    "investigation": "Preserve failed results. Add diagnostic visibility without changing check selections or timeouts, investigate composition/keyword/efficiency failure before another acceptance claim."
+  },
+  "limits": [
+    "Proof applies to immutable e319bc9 and reviewed 20de tree, not subsequently edited or uncommitted work.",
+    "Two successful native jobs do not establish general native, browser/HTTP, production or human acceptance.",
+    "Local Foundation results are separate from this failed current-head CI result.",
+    "No merge, independent human review, production publication, live tracking change, Ads change or expenditure is authorized or performed by this delivery."
+  ],
+  "full_goal_complete": false
+}

@@ -1,0 +1,94 @@
+{
+  "scope": "ACTUAL_COMPLETE_INPUT_DIAGNOSTICS_NOT_LIVE_ACCEPTANCE",
+  "base_sha256": "954f8143a49d050d2f86f15a9dda52fb460eae0de75a25b1ebef1eb9e5d7c5d0",
+  "generation_seconds": 5.540329300012672,
+  "saved_output_verification_passed": true,
+  "researched_rows": 10652,
+  "deficit": 3348,
+  "challenge_attempts": 287,
+  "old_archives_challenged": 18,
+  "new_held_groups_challenged": 269,
+  "every_attempt_has_protected_conflict": true,
+  "conflict_matrix_rows": 287,
+  "challenge_eligible_rows": 0,
+  "mutation_cases": [
+    {
+      "case": "changed_new_literal",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "changed_occurrence_physical_row",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "invented_click_metrics",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "forged_exclusion_approval",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "changed_new_source_kind",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "changed_protection_tail",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "changed_prior_record",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "changed_prior_archive",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "changed_prior_marker",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "forged_production_authority",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "missing_new_source",
+      "rejected": true,
+      "error_code": "OFQUAL_DERIVED_BODIES_CHANGED"
+    },
+    {
+      "case": "reordered_prior_prefix",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_PREFIX_CHANGED"
+    },
+    {
+      "case": "resealed_index.json",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_SAVED_OUTPUT_CHANGED"
+    },
+    {
+      "case": "resealed_library-report.json",
+      "rejected": true,
+      "error_code": "APPEND_ONLY_SAVED_OUTPUT_CHANGED"
+    }
+  ],
+  "mutation_count": 14,
+  "diagnostic_seconds": 80.325741,
+  "actual_generic_auditor_unchanged": true,
+  "source_reads_only_simulated_for_resealed_output_cases": true,
+  "hypotheses_persisted_or_uploaded": false,
+  "base_unchanged": true,
+  "production_changed": false,
+  "ads_changed": false
+}

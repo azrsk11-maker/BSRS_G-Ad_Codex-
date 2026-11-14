@@ -1,0 +1,59 @@
+{
+  "scope": "PURE_JSON_SERIALIZATION_MICROBENCHMARK_NOT_ACCEPTANCE",
+  "fixture": "docs/audit/keyword-exclusions-2026-11-10/protected-cases.json",
+  "selector": "cases",
+  "fixture_sha256": "ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43",
+  "rows": 20,
+  "repeats_per_phase": 5000,
+  "pairs": 3,
+  "runs": [
+    {
+      "pair": 0,
+      "method": "old",
+      "seconds": 0.308108,
+      "bytes": 9445000,
+      "digest": "91a54645de86c879ddd838347ff5330407feeea3194afd1b6c4e3c9eea44a0fa"
+    },
+    {
+      "pair": 0,
+      "method": "reuse",
+      "seconds": 0.235176,
+      "bytes": 9445000,
+      "digest": "91a54645de86c879ddd838347ff5330407feeea3194afd1b6c4e3c9eea44a0fa"
+    },
+    {
+      "pair": 1,
+      "method": "reuse",
+      "seconds": 0.232735,
+      "bytes": 9445000,
+      "digest": "91a54645de86c879ddd838347ff5330407feeea3194afd1b6c4e3c9eea44a0fa"
+    },
+    {
+      "pair": 1,
+      "method": "old",
+      "seconds": 0.310277,
+      "bytes": 9445000,
+      "digest": "91a54645de86c879ddd838347ff5330407feeea3194afd1b6c4e3c9eea44a0fa"
+    },
+    {
+      "pair": 2,
+      "method": "old",
+      "seconds": 0.302846,
+      "bytes": 9445000,
+      "digest": "91a54645de86c879ddd838347ff5330407feeea3194afd1b6c4e3c9eea44a0fa"
+    },
+    {
+      "pair": 2,
+      "method": "reuse",
+      "seconds": 0.227471,
+      "bytes": 9445000,
+      "digest": "91a54645de86c879ddd838347ff5330407feeea3194afd1b6c4e3c9eea44a0fa"
+    }
+  ],
+  "median_old_seconds": 0.308108,
+  "median_reuse_seconds": 0.232735,
+  "observed_ratio": 1.3238576062904162,
+  "all_output_bytes_equal": true,
+  "valid_benchmark": true,
+  "whole_pipeline_gain_established": false
+}

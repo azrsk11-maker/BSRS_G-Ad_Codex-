@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "scope": "Actual existing kernel-isolated prerequisites receipt plus read-only browser feasibility; not Chromium execution",
+  "source_pins": [
+    {
+      "path": "tools/staging-lab/browser-prerequisites.php",
+      "sha256": "865b94bbe76fda3c2f10238325f2eb7f210e942131c8983cb100805e879dac57",
+      "matches_executed_head": true
+    },
+    {
+      "path": "tools/staging-lab/entrypoint.sh",
+      "sha256": "1bb23f9f9dbf1824221528f96a39287bab0dfd39423037c94fd663446bcbda51",
+      "matches_executed_head": true
+    },
+    {
+      "path": "tools/staging-lab/Dockerfile",
+      "sha256": "fbfa645b104196f13fc1fc67315d03556a31b77136c68630bca02e4d711f8d81",
+      "matches_executed_head": true
+    },
+    {
+      "path": ".github/workflows/isolated-wordpress-lab.yml",
+      "sha256": "37def3ed0ec23335028f8cef67709c7b6dda878b1971e447e5bd7ee871635b06",
+      "matches_executed_head": true
+    }
+  ],
+  "executed_evidence": {
+    "head": "1651f844f35200c2bf182707616106e20e63cfd1",
+    "run_id": 43241557901,
+    "job_id": 131263036824,
+    "log_sha256": "22b526650b382896d61535d0773c956d7cebdd9ebfcd0c1889ef91d7dc2dd610",
+    "receipt": {
+      "phase": "browser_sandbox_prerequisites",
+      "scope": "INFORMATIONAL_CURRENT_CONTAINER_ONLY",
+      "no_new_privileges": true,
+      "user_namespace_probe": {
+        "status": "DENIED_OR_FAILED",
+        "exit_code": 1,
+        "operation_not_permitted_reported": true
+      },
+      "user_mount_namespace_probe": {
+        "status": "NOT_ATTEMPTED"
+      },
+      "chromium_installed_or_started": false,
+      "browser_sandbox_accepted": false,
+      "isolation_settings_changed": false,
+      "wordpress_started": false
+    }
+  },
+  "assessment": {
+    "user_namespace_creation_denied_at_observed_execution": true,
+    "exact_daemon_seccomp_profile_readback": false,
+    "seccomp_is_proven_sole_cause": false,
+    "chromium_installed_or_started": false,
+    "actual_browser_sandbox_accepted": false,
+    "normal_setuid_elevation_not_available_under_no_new_privileges": true,
+    "current_host_namespace_observations_are_not_launch_acceptance": true
+  },
+  "preserved_controls": [
+    "network none before WordPress",
+    "read-only root filesystem",
+    "nonroot mysql",
+    "all capabilities dropped",
+    "no-new-privileges",
+    "no host mounts",
+    "pids128/memory1g/cpus2/tmpfs512m noexec"
+  ],
+  "conditional_origin_design": [
+    "Keep the genuine HTTPS domain as browser origin; map its connection narrowly to a synthetic loopback TLS port",
+    "Use an ephemeral DNS-SAN certificate and trust its CA only in the disposable browser NSS profile; never ignore certificate errors",
+    "Explicit Chromium sandbox enabled; verify startup under an authorized reviewed boundary before any browser acceptance claim"
+  ],
+  "primary_references": [
+    "https://docs.docker.com/engine/security/seccomp/",
+    "https://chromium.googlesource.com/chromium/src/+/refs/heads/main/sandbox/linux/README.md",
+    "https://www.kernel.org/doc/html/latest/userspace-api/no_new_privs.html",
+    "https://chromium.googlesource.com/chromium/src/+/refs/heads/main/net/dns/mapped_host_resolver_unittest.cc",
+    "https://chromium.googlesource.com/chromium/src/+/main/docs/linux/cert_management.md",
+    "https://playwright.dev/docs/api/class-browsertype"
+  ],
+  "remaining_gate": "A verified compliant actual-browser execution environment and genuine browser/provider acceptance",
+  "no_security_or_environment_or_production_change": true,
+  "release_authorized": false,
+  "full_goal_complete": false
+}

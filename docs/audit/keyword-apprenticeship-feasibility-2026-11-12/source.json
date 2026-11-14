@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "scope": "PRIMARY_PUBLISHED_TITLE_FEASIBILITY_CAPTURE_NOT_KEYWORD_ADMISSION",
+  "evidence_record_created_utc": "2026-11-12T07:30:25.971981+00:00",
+  "capture_date_dubai": "2026-11-12",
+  "observed_search_queries": false,
+  "keyword_planner_source": false,
+  "metrics_status": "NOT_OBSERVED_UNKNOWN",
+  "source_pages": [
+    {
+      "source_page_id": "RTPI-PLANNER-APPRENTICESHIP",
+      "url": "https://www.rtpi.org.uk/become-a-planner/apprenticeships/chartered-town-planner-apprenticeship/",
+      "publisher": "The Royal Town Planning Institute",
+      "visible_page_heading_verbatim": "Chartered Town Planner Apprenticeship",
+      "capture_section": "Main page heading",
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "source_publication_date": null,
+      "source_update_date": null,
+      "publication_update_date_status": "NOT_DISPLAYED_IN_RETAINED_PAGE_TEXT",
+      "capture_method": "Read-only web tool opened the exact primary URL; literal excerpt transcribed verbatim from visible page text.",
+      "ordinals": [
+        1
+      ],
+      "verbatim_title_excerpts": [
+        "Chartered Town Planner Apprenticeship"
+      ],
+      "retained_title_excerpt_utf8_lf_bytes": 38,
+      "retained_title_excerpt_sha256": "b0e2424402e6f3b988dbac25c10c76b2e5c2a606a88d681d45dca8596a75391a",
+      "complete_html_or_http_headers_archived": false
+    },
+    {
+      "source_page_id": "NCS-BUILDING-TECHNICIAN",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/building-technician",
+      "publisher": "National Careers Service",
+      "visible_page_heading_verbatim": "Building technician",
+      "capture_section": "How to become / Apprenticeship",
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "source_publication_date": null,
+      "source_update_date": null,
+      "publication_update_date_status": "NOT_DISPLAYED_IN_RETAINED_PAGE_TEXT",
+      "capture_method": "Read-only web tool opened the exact primary URL; literal excerpt transcribed verbatim from visible page text.",
+      "ordinals": [
+        2,
+        3
+      ],
+      "verbatim_title_excerpts": [
+        "Building Services Engineering Senior Technician Level 4 Higher Apprenticeship",
+        "Construction Design and Build Technician Level 4 Higher Apprenticeship"
+      ],
+      "retained_title_excerpt_utf8_lf_bytes": 149,
+      "retained_title_excerpt_sha256": "5386126ef1fb3de8f2faad698144e3d2911bd8db8e52c523c935fec1a4b57c0c",
+      "complete_html_or_http_headers_archived": false
+    },
+    {
+      "source_page_id": "NCS-ESTATE-AGENT",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/estate-agent",
+      "publisher": "National Careers Service",
+      "visible_page_heading_verbatim": "Estate agent",
+      "capture_section": "How to become / Apprenticeship",
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "source_publication_date": null,
+      "source_update_date": null,
+      "publication_update_date_status": "NOT_DISPLAYED_IN_RETAINED_PAGE_TEXT",
+      "capture_method": "Read-only web tool opened the exact primary URL; literal excerpt transcribed verbatim from visible page text.",
+      "ordinals": [
+        4,
+        5
+      ],
+      "verbatim_title_excerpts": [
+        "Housing and Property Management Assistant Level 2 Intermediate Apprenticeship",
+        "Housing and Property Management Level 3 Advanced Apprenticeship"
+      ],
+      "retained_title_excerpt_utf8_lf_bytes": 142,
+      "retained_title_excerpt_sha256": "b03e63e387fce296181333181510d0c88602c6f41e3c057f3c57c895dc75dfda",
+      "complete_html_or_http_headers_archived": false
+    },
+    {
+      "source_page_id": "NCS-BUILDING-SURVEYOR",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/building-surveyor",
+      "publisher": "National Careers Service",
+      "visible_page_heading_verbatim": "Building surveyor",
+      "capture_section": "How to become / Apprenticeship",
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "source_publication_date": null,
+      "source_update_date": null,
+      "publication_update_date_status": "NOT_DISPLAYED_IN_RETAINED_PAGE_TEXT",
+      "capture_method": "Read-only web tool opened the exact primary URL; literal excerpt transcribed verbatim from visible page text.",
+      "ordinals": [
+        6
+      ],
+      "verbatim_title_excerpts": [
+        "Chartered Surveyor Level 6 Degree Apprenticeship"
+      ],
+      "retained_title_excerpt_utf8_lf_bytes": 49,
+      "retained_title_excerpt_sha256": "9c10e26f72b17cfb56e6c4acaee7348407c42be688892d69232992a7f8a5eaac",
+      "complete_html_or_http_headers_archived": false
+    },
+    {
+      "source_page_id": "NCS-TOWN-PLANNER",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/town-planner",
+      "publisher": "National Careers Service",
+      "visible_page_heading_verbatim": "Town planner",
+      "capture_section": "How to become / Apprenticeship",
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "source_publication_date": null,
+      "source_update_date": null,
+      "publication_update_date_status": "NOT_DISPLAYED_IN_RETAINED_PAGE_TEXT",
+      "capture_method": "Read-only web tool opened the exact primary URL; literal excerpt transcribed verbatim from visible page text.",
+      "ordinals": [
+        7
+      ],
+      "verbatim_title_excerpts": [
+        "Chartered Town Planner Level 7 Degree Apprenticeship"
+      ],
+      "retained_title_excerpt_utf8_lf_bytes": 53,
+      "retained_title_excerpt_sha256": "d025ed7cfd4fa1e445646f4062c2b7bf6000a5839194e1e5e334d9e08c573b7d",
+      "complete_html_or_http_headers_archived": false
+    },
+    {
+      "source_page_id": "NCS-FACILITIES-MANAGER",
+      "url": "https://nationalcareers.service.gov.uk/job-profiles/facilities-manager",
+      "publisher": "National Careers Service",
+      "visible_page_heading_verbatim": "Facilities manager",
+      "capture_section": "How to become / Apprenticeship",
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "source_publication_date": null,
+      "source_update_date": null,
+      "publication_update_date_status": "NOT_DISPLAYED_IN_RETAINED_PAGE_TEXT",
+      "capture_method": "Read-only web tool opened the exact primary URL; literal excerpt transcribed verbatim from visible page text.",
+      "ordinals": [
+        8,
+        9
+      ],
+      "verbatim_title_excerpts": [
+        "Facilities Management Supervisor Level 3 Advanced Apprenticeship",
+        "Facilities Manager Level 4 Higher Apprenticeship"
+      ],
+      "retained_title_excerpt_utf8_lf_bytes": 114,
+      "retained_title_excerpt_sha256": "2373e4f29a5caf77109bbefef40d31317a8b68043dc52f1523ebaa50d3214774",
+      "complete_html_or_http_headers_archived": false
+    }
+  ],
+  "counts": {
+    "primary_pages_rechecked": 6,
+    "title_literals_captured": 9,
+    "normalization_unique_title_literals": 9,
+    "semantic_concepts_counted": false,
+    "reviewed_for_admission": 0,
+    "admitted": 0,
+    "approved": 0,
+    "deployed": 0
+  },
+  "source_limits": [
+    "The retained source bytes are bounded title excerpts, not raw HTML or a complete archived web page.",
+    "Page dates not displayed in retained text stay null. Capture date is not a publication date.",
+    "The title itself is published; no query, traffic, search-volume, CPC, competition, availability or UAE-recognition evidence was captured.",
+    "No employment or training phrase was authored by adding, swapping or removing words."
+  ]
+}

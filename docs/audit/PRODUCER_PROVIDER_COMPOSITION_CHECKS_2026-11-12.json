@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "scope": "Isolated current-source producer/provider composition; no production or live provider acceptance",
+  "source_files": [
+    {
+      "path": "tools/closed-enquiry-retention/WpCaptureResource.php",
+      "bytes": 21963,
+      "sha256": "2aa374cc33be342337c47985dea283e73cc16b818993a4391b9e1c7b12bce445"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/admission-capture-native.php",
+      "bytes": 15069,
+      "sha256": "9e2b0fc82a35184127572bc64e836340b7c83313b984ffc0c553e7f15da38007"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/test_wp_capture_purpose.php",
+      "bytes": 8574,
+      "sha256": "3fa39f7f87f8c5c6e0bedbe0195e8b02f4c569e24ef350f73b7a8274bed53a89"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/intake-custody-native.php",
+      "bytes": 6165,
+      "sha256": "dd7f5e21fc477aa48d925b99cfc7477668b97f54515dc795fc69cd0a25a9dbda"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/LabAdapters.php",
+      "bytes": 25292,
+      "sha256": "e2a371ca254ccfb09de772b607e96e9eacd5f634ec71d65103d33e8380738841"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/ReceiverPipe.php",
+      "bytes": 6304,
+      "sha256": "447cc0c9f4b13295a4c6d5ec06cd34db676d6716b131afe7567c5192a0325b2c"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/test_no_mail_copy.php",
+      "bytes": 16919,
+      "sha256": "873f531b43a8ae8a182e94bc73fad390affc15cea921788a056304b75e55338f"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/runtime.gs",
+      "bytes": 32357,
+      "sha256": "d6eb11594e1c78b61788ae43e6d987c69acaacad089253940bbea9215b6983ee"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/lab.mjs",
+      "bytes": 14351,
+      "sha256": "e06083ba32eea6a6196404568ff2dae81656809aae02a4a9db1faa98f603cd26"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/bridge.mjs",
+      "bytes": 3795,
+      "sha256": "ef56bb9a2ad385a903823f7a096b5fe5458aa7e890d07f200e7c7cd9c095a204"
+    },
+    {
+      "path": "tools/closed-enquiry-retention/receiver-fence/candidate.test.mjs",
+      "bytes": 25572,
+      "sha256": "c4c05b52fff996a295a79c697d5ad086faacbef2f4b5f3f1e69f78c06132f1e4"
+    },
+    {
+      "path": "tools/check_repository.py",
+      "bytes": 24775,
+      "sha256": "fa89d50a0b461fbc92f5fd1d0ebfcb3e2817b3d7b4b909d67915135be651ae53"
+    },
+    {
+      "path": "tools/efficiency/test_foundation_php_isolation.py",
+      "bytes": 9158,
+      "sha256": "5002c8f79d01f57022a07e98c8441e0386dfb0b11ec6bfedea4cf540df25c0a2"
+    },
+    {
+      "path": "tools/staging-lab/entrypoint.sh",
+      "bytes": 3357,
+      "sha256": "ce2e6c708cd9510af5b95f3c90c6b58abf22549c13edd11c3c510eb8cc60d5da"
+    }
+  ],
+  "root_focused_checks": {
+    "all_passed": true,
+    "elapsed_seconds": 5.359079,
+    "groups": [
+      {
+        "name": "capture-original",
+        "passed": true,
+        "checks": 13,
+        "elapsed_seconds": 0.068949
+      },
+      {
+        "name": "capture-purpose",
+        "passed": true,
+        "checks": 24,
+        "elapsed_seconds": 0.07631
+      },
+      {
+        "name": "workflow",
+        "passed": true,
+        "checks": 45,
+        "elapsed_seconds": 0.083144
+      },
+      {
+        "name": "owner-mail",
+        "passed": true,
+        "checks": 49,
+        "elapsed_seconds": 0.094152
+      },
+      {
+        "name": "owner-closure",
+        "passed": true,
+        "checks": 54,
+        "elapsed_seconds": 0.085066
+      },
+      {
+        "name": "owner-retirement",
+        "passed": true,
+        "checks": 60,
+        "elapsed_seconds": 0.182713
+      },
+      {
+        "name": "owner-collection",
+        "passed": true,
+        "checks": 84,
+        "elapsed_seconds": 0.119715
+      },
+      {
+        "name": "owner-isolation",
+        "passed": true,
+        "checks": null,
+        "elapsed_seconds": 0.079147
+      },
+      {
+        "name": "intake-php-pipe",
+        "passed": true,
+        "checks": 50,
+        "elapsed_seconds": 3.681328
+      },
+      {
+        "name": "orchestration",
+        "passed": true,
+        "checks": null,
+        "elapsed_seconds": 0.463742
+      },
+      {
+        "name": "lint-WpCaptureResource.php",
+        "passed": true
+      },
+      {
+        "name": "lint-admission-capture-native.php",
+        "passed": true
+      },
+      {
+        "name": "lint-test_wp_capture_purpose.php",
+        "passed": true
+      },
+      {
+        "name": "lint-intake-custody-native.php",
+        "passed": true
+      },
+      {
+        "name": "lint-LabAdapters.php",
+        "passed": true
+      },
+      {
+        "name": "lint-ReceiverPipe.php",
+        "passed": true
+      }
+    ],
+    "node": {
+      "passed": true,
+      "elapsed_seconds": 0.538161,
+      "summary": {
+        "tests": 34,
+        "pass": 34,
+        "fail": 0,
+        "skipped": 0,
+        "duration_ms": 466.2773
+      }
+    },
+    "orchestration_cases": 21,
+    "php_command_selection": 47,
+    "php_lint_selection": 33,
+    "previous_43_php_commands_retained": true
+  },
+  "independent_static_review": {
+    "capture": "No remaining P1/P2 after source dependency pins",
+    "intake": "Three P2 findings fixed: canonical registry validation, trusted acceptance chronology, destructive-boundary fence expiry",
+    "root_native_fixture": "Revision conflict corrected before native execution",
+    "human_pr_approval": false
+  },
+  "native_acceptance": {
+    "status": "PENDING_CURRENT_SOURCE_CI",
+    "selected": [
+      "original_capture_recreation_and_HELD",
+      "actual_admission_routes_and_27_column_capture_SQL",
+      "actual_SQLJournal_and_source_Intake_SDK_lost_ack_reconciliation"
+    ],
+    "google_services": "Synthetic doubles",
+    "closure_aging": "Explicit isolated fixture-only SQL aging",
+    "real_provider_acceptance": false,
+    "durable_absence": false,
+    "restore_custody": false,
+    "preserved_failed_head": {
+      "head": "595a8e1dd4bd8edb85156eab446617600a99d6de",
+      "run_id": 43230741791,
+      "job_id": 131225066710,
+      "conclusion": "failure",
+      "cause": "Native fixture enabled global SSL before local-origin Journal construction; strict isolation guard correctly refused",
+      "prior_completed_phases": {
+        "intake_custody_native": 10,
+        "wp_capture_resource_native": 49
+      },
+      "correction": "Scope SSL variables and HTTPS home filter to route calls, restore exact original presence/values in finally, assert local HTTP before provider",
+      "isolation_guard_relaxed": false,
+      "unchanged_job_rerun": false,
+      "corrected_native_acceptance": "PENDING_NEW_HEAD_CI"
+    },
+    "second_preserved_failed_head": {
+      "head": "b8180b4d3c081da440d56f65a8373cf8d14e6e63",
+      "run_id": 43231649521,
+      "job_id": 131228216107,
+      "conclusion": "failure",
+      "cause": "New native fault-injection called nonexistent unregister_rest_route function",
+      "correction": "Supported rest_endpoints filter removes one visible route only during the test and is removed in finally; original registry restoration is asserted",
+      "guards_or_cases_removed": false,
+      "unchanged_job_rerun": false
+    },
+    "pinned_wordpress_api_audit": {
+      "version": "7.1.4",
+      "archive_sha256": "881e53a4681ff2cd911651b11cccdede5ae477ddf0765af5d6a1a8b219a1d835",
+      "bytes": 35378819,
+      "memory_only": true,
+      "wordpress_executed_locally": false,
+      "external_functions_and_methods_checked": true,
+      "nonexistent_unregister_function_or_method_confirmed": true,
+      "rest_endpoints_hook_confirmed": true,
+      "primary_reference": "https://developer.wordpress.org/reference/classes/wp_rest_server/get_routes/",
+      "independent_elapsed_seconds": 19.125144,
+      "other_undefined_api_found": false,
+      "native_acceptance": "PENDING_NEW_HEAD_CI"
+    }
+  },
+  "efficiency": {
+    "scope": "Default checkpoint read only; exact bytes, not token/billing or execution-speed savings",
+    "before_bytes": 15222,
+    "after_bytes": 7269,
+    "read_byte_reduction_percent": 52.25,
+    "archive_sha256": "9e5c0933863921552c3041bef4241b6c935c7bef10b8e26b89711db8e55ead3f",
+    "archive_byte_equal": true,
+    "source_or_production_changes": false,
+    "elapsed_seconds": 0.003657
+  },
+  "primary_sdk_reference": "https://developers.google.com/apps-script/reference/spreadsheet/text-finder",
+  "unchanged_controls": {
+    "original_source_fixtures_and_pins": true,
+    "wire_v1": true,
+    "intake_columns": 26,
+    "outcome_columns": 40,
+    "main_website": true,
+    "production_or_tracking_changes": false,
+    "ads_changes": false,
+    "all_advertising_held": true,
+    "new_permissions": false,
+    "synthetic_production_conversions": 0,
+    "both_full_14000_libraries_required": true,
+    "full_goal_complete": false,
+    "release_authorized": false
+  }
+}

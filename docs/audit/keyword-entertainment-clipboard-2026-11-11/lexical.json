@@ -1,0 +1,786 @@
+{
+  "scope": "WITHIN_SOURCE_DIAGNOSTIC_NOT_GOOGLE_EQUIVALENCE",
+  "normalization": "NFKC, one matching wrapper, casefold, whitespace collapse; token bags use Unicode word tokens",
+  "normalized_identity_count": 518,
+  "normalized_duplicate_groups": [],
+  "equal_token_bag_groups": [
+    {
+      "group": 1,
+      "ordinals": [
+        1,
+        86
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 2,
+      "ordinals": [
+        2,
+        10
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 3,
+      "ordinals": [
+        3,
+        486
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 4,
+      "ordinals": [
+        5,
+        69
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 5,
+      "ordinals": [
+        8,
+        72,
+        484
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 6,
+      "ordinals": [
+        9,
+        13
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 7,
+      "ordinals": [
+        12,
+        38,
+        44,
+        70
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 8,
+      "ordinals": [
+        14,
+        300,
+        332
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 9,
+      "ordinals": [
+        17,
+        178
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 10,
+      "ordinals": [
+        18,
+        179
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 11,
+      "ordinals": [
+        19,
+        180
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 12,
+      "ordinals": [
+        23,
+        183
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 13,
+      "ordinals": [
+        28,
+        29,
+        184
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 14,
+      "ordinals": [
+        34,
+        189
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 15,
+      "ordinals": [
+        37,
+        205
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 16,
+      "ordinals": [
+        39,
+        52,
+        84,
+        221,
+        250
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 17,
+      "ordinals": [
+        40,
+        53,
+        225,
+        272
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 18,
+      "ordinals": [
+        41,
+        273
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 19,
+      "ordinals": [
+        42,
+        275,
+        292,
+        376
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 20,
+      "ordinals": [
+        43,
+        105
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 21,
+      "ordinals": [
+        45,
+        138
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 22,
+      "ordinals": [
+        46,
+        166
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 23,
+      "ordinals": [
+        48,
+        215
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 24,
+      "ordinals": [
+        49,
+        218,
+        245
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 25,
+      "ordinals": [
+        50,
+        252
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 26,
+      "ordinals": [
+        51,
+        220
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 27,
+      "ordinals": [
+        55,
+        227
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 28,
+      "ordinals": [
+        56,
+        230
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 29,
+      "ordinals": [
+        57,
+        231
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 30,
+      "ordinals": [
+        58,
+        224,
+        370,
+        375
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 31,
+      "ordinals": [
+        59,
+        385
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 32,
+      "ordinals": [
+        60,
+        415
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 33,
+      "ordinals": [
+        63,
+        232
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 34,
+      "ordinals": [
+        68,
+        74
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 35,
+      "ordinals": [
+        76,
+        501
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 36,
+      "ordinals": [
+        85,
+        265
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 37,
+      "ordinals": [
+        88,
+        482
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 38,
+      "ordinals": [
+        100,
+        483
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 39,
+      "ordinals": [
+        101,
+        492
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 40,
+      "ordinals": [
+        102,
+        508
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 41,
+      "ordinals": [
+        103,
+        518
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 42,
+      "ordinals": [
+        110,
+        301
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 43,
+      "ordinals": [
+        111,
+        305
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 44,
+      "ordinals": [
+        115,
+        503
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 45,
+      "ordinals": [
+        121,
+        123
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 46,
+      "ordinals": [
+        139,
+        142
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 47,
+      "ordinals": [
+        143,
+        269
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 48,
+      "ordinals": [
+        155,
+        161
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 49,
+      "ordinals": [
+        156,
+        504
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 50,
+      "ordinals": [
+        168,
+        270
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 51,
+      "ordinals": [
+        223,
+        251
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 52,
+      "ordinals": [
+        228,
+        339
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 53,
+      "ordinals": [
+        233,
+        451
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 54,
+      "ordinals": [
+        240,
+        258
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 55,
+      "ordinals": [
+        256,
+        341
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 56,
+      "ordinals": [
+        259,
+        373
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 57,
+      "ordinals": [
+        261,
+        340
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 58,
+      "ordinals": [
+        263,
+        374
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 59,
+      "ordinals": [
+        264,
+        424
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 60,
+      "ordinals": [
+        280,
+        377
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 61,
+      "ordinals": [
+        293,
+        390
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 62,
+      "ordinals": [
+        297,
+        416
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 63,
+      "ordinals": [
+        298,
+        425,
+        505
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 64,
+      "ordinals": [
+        299,
+        515
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 65,
+      "ordinals": [
+        318,
+        457
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 66,
+      "ordinals": [
+        325,
+        466
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 67,
+      "ordinals": [
+        328,
+        468
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 68,
+      "ordinals": [
+        333,
+        471
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 69,
+      "ordinals": [
+        345,
+        472
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 70,
+      "ordinals": [
+        351,
+        478
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 71,
+      "ordinals": [
+        352,
+        479
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 72,
+      "ordinals": [
+        358,
+        480
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 73,
+      "ordinals": [
+        369,
+        481
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 74,
+      "ordinals": [
+        380,
+        401
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 75,
+      "ordinals": [
+        386,
+        388
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 76,
+      "ordinals": [
+        394,
+        506
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 77,
+      "ordinals": [
+        396,
+        487
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 78,
+      "ordinals": [
+        398,
+        489
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 79,
+      "ordinals": [
+        402,
+        426
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 80,
+      "ordinals": [
+        405,
+        494
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 81,
+      "ordinals": [
+        420,
+        499
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 82,
+      "ordinals": [
+        432,
+        513
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 83,
+      "ordinals": [
+        433,
+        514
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 84,
+      "ordinals": [
+        446,
+        516
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 85,
+      "ordinals": [
+        453,
+        517
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 86,
+      "ordinals": [
+        464,
+        507
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    },
+    {
+      "group": 87,
+      "ordinals": [
+        495,
+        509
+      ],
+      "status": "UNRESOLVED_DISTINCT_CONCEPT_AND_GOOGLE_EQUIVALENCE"
+    }
+  ],
+  "equal_token_bag_occurrences": 190,
+  "semantic_proposal_occurrences_in_equal_token_bag_groups": 130,
+  "closed_string_alias_groups": [
+    {
+      "group": 1,
+      "ordinals": [
+        1,
+        455,
+        465
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    },
+    {
+      "group": 2,
+      "ordinals": [
+        3,
+        463
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    },
+    {
+      "group": 3,
+      "ordinals": [
+        5,
+        462
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    },
+    {
+      "group": 4,
+      "ordinals": [
+        6,
+        124
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    },
+    {
+      "group": 5,
+      "ordinals": [
+        9,
+        464
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    },
+    {
+      "group": 6,
+      "ordinals": [
+        13,
+        507
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    },
+    {
+      "group": 7,
+      "ordinals": [
+        472,
+        473
+      ],
+      "status": "UNRESOLVED_SPACING_OR_ALIAS"
+    }
+  ],
+  "closed_string_alias_occurrences": 15,
+  "maximum_original_characters": 42,
+  "maximum_whitespace_words": 8,
+  "platform_compatibility_verified": false,
+  "full_current_membership_verified": false
+}

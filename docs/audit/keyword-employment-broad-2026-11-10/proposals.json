@@ -1,0 +1,1839 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-10",
+  "proposals": [
+    {
+      "text": "al ayan real estate broker dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "al ayan real estate broker dubai"
+      ]
+    },
+    {
+      "text": "arenco real estate dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "aviva real estate dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "aviva real estate dubai"
+      ]
+    },
+    {
+      "text": "azizi developments jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "bayt dubai property",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "bayt dubai property"
+      ]
+    },
+    {
+      "text": "best real estate companies to work for in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "better homes dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "binayah real estate real estate agency in dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "binayah real estate real estate agency in dubai"
+      ]
+    },
+    {
+      "text": "binghatti careers dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "binghatti dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "bluechip real estate broker llc dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "bluechip real estate broker llc dubai"
+      ]
+    },
+    {
+      "text": "bso real estate management dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "bso real estate management dubai"
+      ]
+    },
+    {
+      "text": "capri realty real estate broker llc dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "capri realty real estate broker llc dubai"
+      ]
+    },
+    {
+      "text": "commercial property jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "drehomes real estate dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai holding real estate careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai investment properties careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai land department careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai land department jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai properties careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai properties group careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai properties job opportunities",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai properties vacancies",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai property job vacancies",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai property manager jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai property sales jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai real estate jobs for indian",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai real estate jobs salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "emaaf real estate dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "emaaf real estate dubai"
+      ]
+    },
+    {
+      "text": "entry level real estate jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent dubai salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent jobs dubai salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent salary dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate manager dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_HOLD",
+      "possible_services": [],
+      "reason": "Broker/consultant/manager or freelance/part-time wording can concern a customer seeking a professional. The employment experiment does not establish a job-only purpose.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "estate manager dubai"
+      ]
+    },
+    {
+      "text": "fam properties dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "fazal real estate broker dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "fazal real estate broker dubai"
+      ]
+    },
+    {
+      "text": "freelance real estate agent dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_HOLD",
+      "possible_services": [],
+      "reason": "Broker/consultant/manager or freelance/part-time wording can concern a customer seeking a professional. The employment experiment does not establish a job-only purpose.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "freelance real estate agent dubai"
+      ]
+    },
+    {
+      "text": "gulf mark dubai real estate",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "gulf mark dubai real estate"
+      ]
+    },
+    {
+      "text": "jll jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs in danube properties dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs in dubai in real estate sector",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs in dubai properties",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs in dubai real estate development",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs in sobha developers dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs in sobha realty dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "jobs real estate agent dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "part time real estate agent dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_HOLD",
+      "possible_services": [],
+      "reason": "Broker/consultant/manager or freelance/part-time wording can concern a customer seeking a professional. The employment experiment does not establish a job-only purpose.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "part time real estate agent dubai"
+      ]
+    },
+    {
+      "text": "part time real estate jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "prestige luxury real estate dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "properties company in dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "properties company in dubai"
+      ]
+    },
+    {
+      "text": "property administrator jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property administrator jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property consultant dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_HOLD",
+      "possible_services": [],
+      "reason": "Broker/consultant/manager or freelance/part-time wording can concern a customer seeking a professional. The employment experiment does not establish a job-only purpose.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property consultant dubai"
+      ]
+    },
+    {
+      "text": "property consultant job description dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property consultant jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property development jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property development jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property jobs in dubai for british",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property management jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property manager dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_HOLD",
+      "possible_services": [],
+      "reason": "Broker/consultant/manager or freelance/part-time wording can concern a customer seeking a professional. The employment experiment does not establish a job-only purpose.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property manager dubai"
+      ]
+    },
+    {
+      "text": "property sales consultant jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property sales jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property valuation jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate accountant jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate admin job description dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate admin jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent dubai salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent in dubai jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent in dubai salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent job description dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent jobs in dubai for freshers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate asset management jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate building watchman job in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate careers dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate companies in dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate companies in dubai jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate consultant jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate developer jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate developer jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate development jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate dubai job opportunities",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate dubai work",
+      "disposition": "HOLD",
+      "intent": "WORK_HOLD",
+      "possible_services": [],
+      "reason": "Generic work-in-real-estate wording leaves occupational versus property/service context unresolved. Preserve pending explicit role and service review.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "real estate dubai work"
+      ]
+    },
+    {
+      "text": "real estate finance jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate graduate jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate investment jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate job opportunities in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate job vacancies in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs dubai with basic salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai for british",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai for foreigners",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai for freshers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai for indian",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai with basic salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate jobs in dubai with salary",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate lawyer dubai jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate lawyer jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate leasing agent jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate manager dubai",
+      "disposition": "HOLD",
+      "intent": "SERVICE_HOLD",
+      "possible_services": [],
+      "reason": "Broker/consultant/manager or freelance/part-time wording can concern a customer seeking a professional. The employment experiment does not establish a job-only purpose.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "real estate manager dubai"
+      ]
+    },
+    {
+      "text": "real estate manager jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate marketing jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate photographer jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate recruitment agencies in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate recruitment dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate sales jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate sales manager jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate vacancies in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate valuation jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate work dubai",
+      "disposition": "HOLD",
+      "intent": "WORK_HOLD",
+      "possible_services": [],
+      "reason": "Generic work-in-real-estate wording leaves occupational versus property/service context unresolved. Preserve pending explicit role and service review.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "real estate work dubai"
+      ]
+    },
+    {
+      "text": "real estate work in dubai",
+      "disposition": "HOLD",
+      "intent": "WORK_HOLD",
+      "possible_services": [],
+      "reason": "Generic work-in-real-estate wording leaves occupational versus property/service context unresolved. Preserve pending explicit role and service review.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "real estate work in dubai"
+      ]
+    },
+    {
+      "text": "realtor jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "realtor salary dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "rocky real estate dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sap refx jobs in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sbk real estate dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha developers careers in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha developers dubai salary",
+      "disposition": "HOLD",
+      "intent": "COMPENSATION_HOLD",
+      "possible_services": [],
+      "reason": "Named-developer plus salary wording leaves the compensation purpose and entity context unresolved. Do not infer actual pay or exclude salary/brand tokens generically.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "sobha developers dubai salary"
+      ]
+    },
+    {
+      "text": "sobha developers dubai walk in interview",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha developers dubai walk in interview 2022",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha group dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha group dubai jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha hartland dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha real estate dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha realty dubai careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sobha realty dubai jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "trainee real estate jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "white sand real estate management llc dubai",
+      "disposition": "HOLD",
+      "intent": "ENTITY_HOLD",
+      "possible_services": [],
+      "reason": "Generic/named property-company wording leaves identity, role and customer purpose unresolved. Preserve possible brokerage or property-management intent; no identity or affiliation is invented.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "white sand real estate management llc dubai"
+      ]
+    },
+    {
+      "text": "work in real estate dubai",
+      "disposition": "HOLD",
+      "intent": "WORK_HOLD",
+      "possible_services": [],
+      "reason": "Generic work-in-real-estate wording leaves occupational versus property/service context unresolved. Preserve pending explicit role and service review.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "work in real estate dubai"
+      ]
+    },
+    {
+      "text": "working as a real estate agent in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "working as an estate agent in dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "possible_services": [],
+      "reason": "Full phrase explicitly requests employment, careers, recruitment, occupational pay, job descriptions or working as an agent. EXACT-only draft; no vacancy, compensation fact, demographic filter or campaign approval is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "working in dubai real estate",
+      "disposition": "HOLD",
+      "intent": "WORK_HOLD",
+      "possible_services": [],
+      "reason": "Generic work-in-real-estate wording leaves occupational versus property/service context unresolved. Preserve pending explicit role and service review.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "working in dubai real estate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+name: Isolated WordPress lab
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/isolated-wordpress-lab.yml'
+      - 'tools/staging-lab/**'
+      - 'tools/consent-retention/**'
+      - 'tools/recovery-package/**'
+      - 'tools/native-wordpress/**'
+      - 'tools/property-decision-tools/**'
+      - 'tools/owner-mail-review/**'
+      - 'tools/closed-enquiry-retention/**'
+      - 'tools/release-control/**'
+      - 'tools/website-tracking/tracking-system/**'
+permissions:
+  contents: read
+concurrency:
+  group: isolated-lab-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  isolated-native-wordpress:
+    # Standard public-repository hosted runner; no paid/self-hosted runner.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          # Include the PR head parent so the explicit diagnostic marker can
+          # be read even when checkout selects GitHub's synthetic merge ref.
+          fetch-depth: 2
+      - name: Confirm public repository and review exact source
+        env:
+          REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+        run: |
+          test "$REPOSITORY_VISIBILITY" = public
+          python3 -B tools/staging-lab/verify_fixture.py
+          node --test tools/staging-lab/database-profile.test.mjs
+          sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/staging-lab/*profile*.mjs tools/staging-lab/database-11.8.9.lock.json tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json
+          find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l
+      - name: Observe explicitly requested host namespace prerequisites
+        env:
+          REQUESTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          head_message="$(git show -s --format=%B "$REQUESTED_HEAD")"
+          case "$head_message" in
+            *'[bsre-host-browser-probe]'*) python3 -B tools/staging-lab/host_browser_prerequisites.py ;;
+            *) echo 'Host browser probe not requested; browser acceptance remains unverified.' ;;
+          esac
+      - name: Build official dependencies without executing WordPress
+        run: docker build --pull --file tools/staging-lab/Dockerfile --tag bsre-isolated-lab .
+      - name: Run non-root CLI lab with kernel network isolation
+        run: |
+          docker image inspect bsre-isolated-lab --format 'Image={{.Id}}'
+          docker create --name bsre-isolated-lab --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 1g --cpus 2 --pids-limit 128 --tmpfs /tmp:rw,noexec,nosuid,size=512m,mode=1777 bsre-isolated-lab
+          docker inspect bsre-isolated-lab --format 'Network={{.HostConfig.NetworkMode}} ReadOnly={{.HostConfig.ReadonlyRootfs}} User={{.Config.User}} CapDrop={{json .HostConfig.CapDrop}} Security={{json .HostConfig.SecurityOpt}} Binds={{json .HostConfig.Binds}} Mounts={{json .Mounts}}'
+          docker start --attach bsre-isolated-lab
+          test "$(docker inspect bsre-isolated-lab --format '{{.State.ExitCode}}')" = 0
+      - name: Build pinned optional MariaDB 11.8.9 profile
+        run: docker build --pull --build-arg BSRE_DB_PROFILE=mariadb-11.8.9 --file tools/staging-lab/Dockerfile --tag bsre-isolated-lab-11-8 .
+      - name: Run MariaDB 11.8.9 parity with the same isolation and complete lab
+        run: |
+          docker image inspect bsre-isolated-lab-11-8 --format 'Image={{.Id}}'
+          docker create --name bsre-isolated-lab-11-8 --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 1g --cpus 2 --pids-limit 128 --tmpfs /tmp:rw,noexec,nosuid,size=512m,mode=1777 bsre-isolated-lab-11-8
+          docker inspect bsre-isolated-lab-11-8 --format 'Network={{.HostConfig.NetworkMode}} ReadOnly={{.HostConfig.ReadonlyRootfs}} User={{.Config.User}} CapDrop={{json .HostConfig.CapDrop}} Security={{json .HostConfig.SecurityOpt}} Binds={{json .HostConfig.Binds}} Mounts={{json .Mounts}}'
+          docker start --attach bsre-isolated-lab-11-8
+          test "$(docker inspect bsre-isolated-lab-11-8 --format '{{.State.ExitCode}}')" = 0
+      - name: Remove disposable container and synthetic tmpfs
+        if: always()
+        run: docker rm --force bsre-isolated-lab bsre-isolated-lab-11-8 >/dev/null 2>&1 || true

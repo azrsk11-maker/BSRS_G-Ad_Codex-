@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "scope": "Bounded source/provenance audit, not a current Google-service or business-record acceptance",
+  "historical_sources": [
+    {
+      "kind": "baseline_read_only_QA",
+      "file": "NativeOutcomeProducer.gs",
+      "bytes": 16790,
+      "sha256": "50f340add139bed3c757481b8a886fddb02c4ab2ac09aea648301726eae19013",
+      "private_location_withheld": true,
+      "private_workbook_binding_not_copied": true
+    },
+    {
+      "kind": "reviewed_local_cross_role_candidate",
+      "file": "NativeOutcomeProducer.gs",
+      "bytes": 16761,
+      "sha256": "2dfbf5177c7be38d0cdd46a1f80f093bc2d2dd3a409808b9ef6560dfcba8ec0b",
+      "private_location_withheld": true,
+      "private_workbook_binding_not_copied": true
+    }
+  ],
+  "current_outcome_schema": {
+    "file": "tools/qualification-history/schema/outcome-register-schema.json",
+    "properties": 40,
+    "sha256": "bf477cc0cc4a161775abd702777898c6046d5dfcf0f2ae0e86fe078a3a63d9df"
+  },
+  "verified_source_boundary": {
+    "native_entrypoint": "bsreBuildNativeOutcomeArtifacts",
+    "SDK": "SpreadsheetApp.openById/getDataRange/getValues on fixed QA tabs",
+    "writes_or_delete_or_producer_fence_in_reviewed_source": false,
+    "caller_history_complete_is_independent_retention_custody": false,
+    "cross_role_candidate_native_acceptance": false
+  },
+  "dated_register_evidence": {
+    "file": "docs/audit/QUALIFICATION_REGISTER_READBACK_2026-11-08.json",
+    "observed_on": "2026-11-08",
+    "headers_matched": 40,
+    "outcome_rows_at_that_snapshot": 0,
+    "current_row_count_reverified": false,
+    "complete_history_verified": false
+  },
+  "remaining_dependencies": [
+    "Authoritative authenticated production source/entry binding; targeted canonical-state lookup supplied no exact project URL",
+    "Actual acceptance and QA classification, protected person linkage and full available history",
+    "Authoritative retention/history-incomplete custody overriding any caller completeness declaration",
+    "Actual producer/manual-write and restore fencing before real deletion or first-ever qualification claims"
+  ],
+  "scope_limits": {
+    "remote_producer_absence_proven": false,
+    "production_mutation_adapter_found_in_targeted_local_sources": false,
+    "original_source_files_uploaded": false,
+    "live_or_prospect_records_read": false,
+    "browser_actions": 0,
+    "permissions_or_production_or_ads_changes": false,
+    "full_goal_complete": false
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "measured_at_utc": "2026-11-11T15:26:14Z",
+  "scope": "OPT_IN_TWO_CHECK_EXPERIMENT_NOT_FOUNDATION_ADOPTION_OR_ACCEPTANCE",
+  "receipt_format": "Compact projection of successful benchmark output; full outcome equality was checked before projection. Complete streams are represented by SHA-256, not copied conflict arrays.",
+  "environment": {
+    "platform": "Windows",
+    "python_version": "3.12.14",
+    "logical_cpu_count": 12
+  },
+  "commands": [
+    {
+      "check": "keyword-vendor-review-reconciliation",
+      "argv": ["$PYTHON", "-B", "docs/audit/keyword-vendor-review-coverage-2026-11-11/verify_coverage.py"],
+      "timeout_seconds": 120,
+      "fingerprint_sha256": "e9de8fd5a685e9b6fcef07bf18d99046d37d6c546a948bd4e40412febeeb4762"
+    },
+    {
+      "check": "release-control-behavior",
+      "argv": ["$PYTHON", "-B", "-m", "unittest", "discover", "-s", "tools/release-control", "-p", "test_*.py"],
+      "timeout_seconds": 120,
+      "fingerprint_sha256": "bdde35c6fc74b7b051abe55c676a0b6acedf86de6d535e8d03b3ae240a05d33e"
+    }
+  ],
+  "stable_inputs": {
+    "files": 682,
+    "bytes": 116437652,
+    "source_manifest_sha256_before": "353bb7b32ee731c81f3705739bcb7beea67b40f33737e4ba9bd1acc1912447e8",
+    "source_manifest_sha256_after_serial": "353bb7b32ee731c81f3705739bcb7beea67b40f33737e4ba9bd1acc1912447e8",
+    "source_manifest_sha256_after_two_workers": "353bb7b32ee731c81f3705739bcb7beea67b40f33737e4ba9bd1acc1912447e8",
+    "observer_sha256_before_and_after": {
+      "tools/efficiency/benchmark_check_groups.py": "c6ef2e341660c1efd4a4a047741bf2702b2862259dc9d2e56ee0d53ea2d56d02",
+      "tools/efficiency/test_benchmark_check_groups.py": "8e7338fab33765f04162520f67c7d3b188520db2a79b21ed9fdcf50e2e610958"
+    },
+    "python_executable_sha256_before_and_after": "f300ab436cde3f9ab69ade17bfb3e2adcb8f0fac085d3762064bb1d527a87c75"
+  },
+  "ordered_phases": [
+    {"workers": 1, "elapsed_seconds": 81.060296},
+    {"workers": 2, "elapsed_seconds": 52.338413}
+  ],
+  "observed_difference_seconds": 28.721883,
+  "observed_serial_over_two_worker_ratio": 1.548773,
+  "benchmark_elapsed_seconds": 135.667909,
+  "all_complete_outcomes_equal": true,
+  "normalization": "Only the numeric elapsed value in the anchored unittest Ran N tests in Ts summary is replaced. Complete stdout/stderr bytes otherwise match, with exit, cases, skips, failures and all JSON values retained.",
+  "outcomes_in_both_phases": [
+    {
+      "check": "keyword-vendor-review-reconciliation",
+      "exit": 0,
+      "passed": true,
+      "stdout_bytes": 6743,
+      "stderr_bytes": 0,
+      "complete_stdout_normalized_sha256": "2b94ba2b7045f88fe0fa85f47597f8309a729b93a7e05a7afffa5aa8202bdc09",
+      "complete_stderr_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "historical_snapshot_input_rows": 8035,
+      "historical_snapshot_review_eligible_rows": 8025,
+      "source_occurrences": 27103,
+      "distinct_source_phrases": 25303,
+      "master_rows_added": 0,
+      "admission_authorized": false,
+      "deployment_authorized": false
+    },
+    {
+      "check": "release-control-behavior",
+      "exit": 0,
+      "tests": 77,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "status": "OK (skipped=1)",
+      "stdout_bytes": 0,
+      "stderr_bytes": 194,
+      "complete_stdout_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete_stderr_normalized_sha256": "2ce9fd01c64b192a9e97312dd1b8a4784b39e86db24fbf2593cbb1e4645615bf"
+    }
+  ],
+  "focused_tests": {"cases": 7, "passed": 7, "skipped": 0, "suite_seconds": 0.004},
+  "foundation_default_changed": false,
+  "production_changed": false,
+  "advertising_changed": false,
+  "assessment": "Worth a later bounded adoption review for this pair after more repetitions. No automatic adoption or whole-Foundation speedup is established. Per-check phase timings were not retained in this compact receipt, so individual-check slowdown is not asserted.",
+  "limitations": [
+    "One ordered pair only: serial first, two workers second. Source hashing and serial execution warm filesystem/OS caches; no cold-start or causal estimate.",
+    "Same unchanged complete nonignored source in one Windows checkout. Observer files are separately pinned; this receipt is excluded from the source manifest.",
+    "Only two existing checks were rerun, each at its existing 120s timeout. No selected check was omitted, no new skip was introduced, and no acceptance cache or timeout increase was used. The release suite retains one existing capability skip.",
+    "Vendor reconciliation reads public pinned inputs and retains its historical 8,035-row snapshot; it is not the current 10,610-row composition acceptance check. Release tests write unique OS temporary synthetic fixtures and invoke the stdin-only local Node validator.",
+    "Times include selected Python startup and Node child work. CPU load, scheduling, contention, filesystem temperature and Node binary stability are not measured or controlled.",
+    "Four top-level check invocations; descendant Node process count is unavailable. Snapshot overhead is excluded from phase times but included in total benchmark time.",
+    "No full Foundation, largest keyword-suite, token, API, billing, production, network or general concurrency benefit is established. Defaults remain serial.",
+    "A forced outer timeout terminates the direct Python process. Nested Node process cleanup and synthetic temporary-fixture removal are not guaranteed when that happens. Successful-run fixture cleanup does not prove timeout cleanup."
+  ]
+}

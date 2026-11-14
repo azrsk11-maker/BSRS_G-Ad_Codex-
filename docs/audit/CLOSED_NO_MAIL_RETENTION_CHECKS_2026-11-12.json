@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "scope": "SYNTHETIC_NO_MAIL_COPY_RETENTION_LOCAL_CHECKS_NOT_OWNER_RETIREMENT_OR_PRODUCTION_ACCEPTANCE",
+  "date_dubai": "2026-11-12",
+  "status": "LOCAL_FOCUSED_CHECKS_REPORTED_PASS_CURRENT_COMPLETE_CI_PENDING",
+  "evidence_refs": [
+    "../../tools/closed-enquiry-retention/receiver-fence/README.md",
+    "../../tools/closed-enquiry-retention/README.md"
+  ],
+  "reviewed_source_sha256": {
+    "../../tools/closed-enquiry-retention/Workflow.php": "4187e6c9ada1ae6b4defd848fcab91ec784c0f1beab114344da2244faa41ceed",
+    "../../tools/closed-enquiry-retention/NoMailCopy.php": "e87fb7e07de9c9e814a5861d279729dfe22a29d8c967ef0bb93d8994a57283e0",
+    "../../tools/closed-enquiry-retention/receiver-fence/runtime.gs": "fe9be9b5defd30814a01a44f35b0f6f608bab2965a4daa2d6426206be733566e",
+    "../../tools/closed-enquiry-retention/receiver-fence/build-candidate.mjs": "5a620c8ad00a5c8a0c9b98228aa8d4fd7d5005cec948981372c09cb673028bec",
+    "../../tools/closed-enquiry-retention/receiver-fence/lab.mjs": "d2715601055616cc981989026010947042b231c31d2bdc419e008da4e5a02743",
+    "../../tools/closed-enquiry-retention/receiver-fence/candidate.test.mjs": "e0d28fe5369a4f5681d222ae82724f8f3b12b304ee1dcbc9baa6d3d58bc53596",
+    "../../tools/closed-enquiry-retention/receiver-fence/bridge.mjs": "37006da537d677f472f09dbad61b2a3125008d401d4afb9e3aba7d7f4d15eec3",
+    "../../tools/closed-enquiry-retention/test_no_mail_copy.php": "26e5566109737f1396ccb822a3de7fc3f1b19283013e86258e590033b19b8297"
+  },
+  "focused_results": {
+    "origin": "Execution-agent/root reports in this task; raw timing logs were not inspected or published by this documentation pass.",
+    "node_complete_suite": {
+      "passed": 17,
+      "seconds": null
+    },
+    "node_targeted_final_helper_delta": {
+      "passed": 2,
+      "seconds": null,
+      "subset_of_existing_suite": true,
+      "not_two_additional_unique_cases": true
+    },
+    "php_actual_receiver_pipe": {
+      "assertions_passed": 39,
+      "reported_seconds": 3.994,
+      "timing_origin": "Implementer-reported measured final PHP execution; no persisted timing receipt inspected."
+    },
+    "existing_sent_workflow": {
+      "assertions_passed": 45,
+      "seconds": null
+    },
+    "documentation_pass_reran_tests": false,
+    "scope": "Actual source-derived receiver and PHP workflow executed with synthetic Sheet, mailbox, runtime, lock and mail services; no real provider acceptance."
+  },
+  "independent_static_review": {
+    "reviewer": "Independent Codex AI agent",
+    "human_review": false,
+    "final_result": "NO_FURTHER_P1_OR_P2_FOUND_WITHIN_DOCUMENTED_SUPPORTED_SYNTHETIC_CONTRACT",
+    "source_hashes_rechecked_at_documentation": true,
+    "resolved": [
+      "Normalized payload request ID must match exact closure/row request identity",
+      "Signed cleanup intent reconciles committed fence deletion and lost acknowledgement or later journal-cleanup failure",
+      "Pruned-history boundary prevents nonempty obsolete-store reapplication after identifying fences are removed",
+      "Actual receiver ABSENT is mandatory at final completion, completed retry and completed-job cleanup"
+    ]
+  },
+  "implemented_lab_contract": {
+    "original_receiver_fixture_unchanged": true,
+    "original_30_member_wordpress_fixture_unchanged": true,
+    "wire_v1_unchanged": true,
+    "intake_columns": 26,
+    "outcome_columns": 40,
+    "intake_and_outbox_are_same_row": true,
+    "never_sent_requirements": [
+      "Numeric zero attempts",
+      "Blank sent and send-start timestamps",
+      "Non-sending status",
+      "Fresh positive complete marketing-mailbox absence including Trash"
+    ],
+    "status_alone_is_absence_evidence": false,
+    "exact_binding": [
+      "Request, lead and event IDs",
+      "Normalized payload fingerprint and payload request ID",
+      "Closure ID, revision and content hash",
+      "Admitted configuration hash"
+    ],
+    "guarded_actual_paths_under_script_lock": [
+      "doPost",
+      "receipt-status recovery",
+      "reconcileLeadEmail",
+      "processLeadOutbox per-row sender"
+    ],
+    "global_accepted_time_cutoff": false,
+    "healthy_old_queued_rows_preserved": true,
+    "actual_restorable_store_metadata_compared_to_independently_current_external_floor": true,
+    "floor_fields": "Namespace, epoch, revision, pruned-through boundary, admission generation/activation/audience and source/policy hashes",
+    "retirement_order": "Advance external epoch; commit/read back HMAC per-request fence; persist RETIRED_NO_COPY; stamp current store metadata. Partial transitions hold.",
+    "identifying_fence_window_seconds": 2592000,
+    "cleanup_requirements": "Fresh scope/fence/current-store/external-floor/mailbox/custody proof; approved backup expiry through fence creation; rotate epochs and advance monotonic pruned boundary before identifier removal.",
+    "stale_nonempty_store_reapplication_after_pruning": "HELD",
+    "durable_cleanup_intent": "Source-HMAC signed intent saved in the existing private Workflow journal before fence deletion; exact intent plus fresh proofs permits idempotent lost-ack/journal-failure completion.",
+    "missing_fence_alone_proves_cleanup": false,
+    "permanent_request_or_person_registry": false,
+    "completion_phase_receiver_row_state": "ABSENT",
+    "partial_or_unresolved_recovery_may_observe_retired_row": true,
+    "sent_path_requires_original_exact_mail_bindings_and_owner_receipts": true
+  },
+  "unimplemented_or_unverified": [
+    "Protected authoritative closure producer and authenticated owner review/authority",
+    "Coordinator holding the closure Journal lease, proving actual CLOSED/UNSUCCESSFUL revision and twelve-month due status, then issuing the receiver fence",
+    "Real mailbox/runtime/resource adapters and complete authenticated collectors",
+    "Independent production floor custody, supported backup/rollback expiry and current-store restore authentication",
+    "Production producer quiescence, deployment, browser/provider acceptance and separate owner release authorization"
+  ],
+  "fence_issuance_scope": "TRUSTED_SYNTHETIC_SETUP_CAPABILITY_ONLY",
+  "scope_hash_does_not_prove_closure_truth_due_status_or_authority": true,
+  "default_real_no_mail_copy_adapter": "UNVERIFIED_HELD",
+  "raw_manual_row_copy_or_unsupported_restore_certified": false,
+  "ci_wiring": {
+    "changed_files": 3,
+    "source_sha256": {
+      "../../tools/check_repository.py": "20a10393acd88f9137404addaf9234ac0aed126b80b88ce211648747804909d3",
+      "../../tools/staging-lab/Dockerfile": "fbfa645b104196f13fc1fc67315d03556a31b77136c68630bca02e4d711f8d81",
+      "../../tools/staging-lab/entrypoint.sh": "df6c057f18fef44907798604e64fbc4811c36f27bb0575b0b3bd2de7c4da6fed"
+    },
+    "origin": "Root/CI-integration agent reported focused checks; this documentation pass inspected the three-file diff only.",
+    "path_filter_checks_passed": 5,
+    "orchestration_checks_passed": 21,
+    "local_dependency_files": 13,
+    "local_dependency_edges": 15,
+    "explicit_node_suite_in_core_and_isolated_lab": true,
+    "proc_open_php_bridge_runs_only_in_isolated_lab": true,
+    "current_complete_ci": "PENDING_AFTER_CHANGED_SOURCE",
+    "historical_green_ci_reused": false
+  },
+  "acceptance": {
+    "full_owner_retirement_workflow_complete": false,
+    "production_acceptance": false,
+    "production_changed": false,
+    "ads_changed": false,
+    "business_setup_touched": false,
+    "private_lead_records_accessed": false,
+    "full_goal_complete": false
+  }
+}

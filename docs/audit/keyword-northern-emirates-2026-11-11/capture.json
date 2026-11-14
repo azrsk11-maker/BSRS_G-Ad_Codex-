@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "northern-emirates.json",
+      "batch_id": "KP-20261111-NORTHERN-EMIRATES",
+      "sha256": "c290895884a00f5da71b985afd53eb465ed0c21e7cf38d43dec950beca8cb53e",
+      "bytes": 637965,
+      "records": 701,
+      "distinct_normalized": 701,
+      "source_bytes": 148774,
+      "source_sha256": "0e02d3f78b0d1929c357cbb5dfe57aa7e65b9c32de571c5b12e08e5226ab88c2"
+    }
+  ],
+  "totals": {
+    "export_rows": 701,
+    "distinct_normalized_phrases": 701,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Eight authored hypotheses address four literal-place research gaps in the seven-emirate Master scope.",
+    "All eight seeds have separate exact rows. Provider ideas are not served queries, inventory, service coverage or demand forecasts.",
+    "Capture controls preserve unreviewed provenance; separate preliminary assessment is not master admission."
+  ]
+}
