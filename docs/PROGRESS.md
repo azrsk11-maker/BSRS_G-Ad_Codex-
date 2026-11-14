@@ -1,5 +1,11 @@
 # Implementation progress
 
+## 14 November optional MariaDB 11.8.9 synthetic lab profile
+
+- Added an allowlisted build-only Debian12/amd64 profile in the existing single PHP container/Unix-socket lab. Default Debian coverage remains first; the existing required isolated-native-wordpress job then repeats the full lab under11.8.9 with identical isolation/resource controls and15minute timeout. Actual socket-server SELECT VERSION() must match the baked profile before database creation/WordPress. PHP base/WordPress/fixture/golden/provenance pins and application code are unchanged.
+- Verified official archive/key provenance, independently verified RSA/SHA256 Release signature, signed-index mapping and all seven downloaded artifact hashes. Exact vendor builds/hashes and acquisition policy are in the [profile lock](../tools/staging-lab/database-11.8.9.lock.json); official citations and limits are in the [lab README](../tools/staging-lab/README.md). Debian shared-library dependencies remain signed-repository build-time resolutions; no fully reproducible closure claimed.
+- Focused local checks:15Node profile/acquisition/version/isolation tests pass;5native workflow-input tests pass; all30pinned plugin members/251836bytes verify. Actual archived signed-index lock validation passes. No Docker/PHP/Linux runtime is available locally: package installation, server startup, exact-head required CI and both complete isolated runs remain PENDING. No full Foundation rerun, publication, remote workflow, production/data/permission change or live acceptance. Diagnostic-only compatibility; full Block2/program and release gates remain open; Ads remain paused.
+
 ## 13 November Block3 selected historical owner review workorders
 
 - Added a separate selected_owner_packet.py wrapper around the original pinned-source workorder tool. Explicit historical owner candidate selections reconstruct every source placement/hash and all five empty review slots, reject unknown/duplicate/empty/non-owner selections, and verify against the caller's explicit selection. No master/admission/Ads writer added. Historical role selection grants no current service or ownership authority.
