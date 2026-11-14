@@ -13,6 +13,7 @@ i=0
 until mariadb-admin --no-defaults --user=root --socket=/tmp/bsre.sock ping --silent >/dev/null 2>&1; do
     i=$((i + 1)); [ "$i" -lt 40 ] || { echo 'Synthetic database startup failed' >&2; exit 1; }; sleep 1
 done
+node /opt/lab/database-profile.mjs
 mariadb --no-defaults --user=root --socket=/tmp/bsre.sock -e 'CREATE DATABASE bsre_synthetic;'
 php -d sendmail_path=/bin/false /opt/lab/native.php
 php -d sendmail_path=/bin/false /opt/reviewed/native-draft-writer-test.php

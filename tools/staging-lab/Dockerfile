@@ -1,6 +1,9 @@
 FROM php:8.2-cli-bookworm@sha256:ce09ca1d4b532edf9b0347b44a1968a80d9175addb581c450ba0c9a43fa0c5ea
+ARG BSRE_DB_PROFILE=debian-bookworm
+COPY tools/staging-lab/install-db-profile.mjs tools/staging-lab/database-11.8.9.lock.json /opt/lab-build/
 # Official dependencies only; no WordPress or custom PHP executes at build time.
-RUN apt-get update && apt-get install -y --no-install-recommends mariadb-server curl ca-certificates nodejs openssl \
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates nodejs openssl \
+    && node /opt/lab-build/install-db-profile.mjs "$BSRE_DB_PROFILE" \
     && docker-php-ext-install mysqli sockets \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
@@ -8,6 +11,7 @@ RUN curl --fail --location --proto '=https' --tlsv1.2 https://wordpress.org/word
     && echo '881e53a4681ff2cd911651b11cccdede5ae477ddf0765af5d6a1a8b219a1d835  wordpress.tar.gz' | sha256sum -c - \
     && tar -xzf wordpress.tar.gz && rm wordpress.tar.gz
 COPY tools/staging-lab/wp-config.php /opt/wordpress/wp-config.php
+COPY tools/staging-lab/database-profile.mjs /opt/lab/
 COPY tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json tools/native-wordpress/paid-entry-search.php /opt/reviewed/
 COPY tools/native-wordpress/entry-drafts /opt/reviewed/entry-drafts
 COPY tools/native-wordpress/native-draft-writer.php /opt/reviewed/native-draft-writer.php
