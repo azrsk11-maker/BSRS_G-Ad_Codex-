@@ -56,6 +56,9 @@ COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.
 COPY tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/retention-admission.test.php tools/website-tracking/tracking-system/retention-admission-native.php /opt/lab/retention-admission/
 COPY tools/closed-enquiry-retention /opt/lab/closed-enquiry-retention
 COPY tools/owner-mail-review /opt/lab/owner-mail-review
+COPY tools/website-tracking/tracking-system/build-g1-retention-store-candidate.mjs /opt/lab/website-tracking/tracking-system/
+COPY tools/staging-lab/build-g1-retention-lab-store.mjs /opt/lab/staging-lab/
+COPY tools/staging-lab/g1-retention-native.php /opt/lab/g1-retention/native.php
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
@@ -63,5 +66,6 @@ RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store 
 RUN node /opt/lab/tracking-system/build-purpose-retention-candidate.mjs /opt/lab/consent-retention /opt/lab/restore.php /opt/lab/purpose-retention
 RUN node /opt/lab/tracking-system/build-retention-admission-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/retention-admission/store.php \
     && node /opt/lab/tracking-system/build-retention-admission-candidate.mjs intake /opt/wordpress/wp-content/plugins/bsre-enquiries/bsre-enquiries.php /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent.php /opt/lab/retention-admission/intake.php
+RUN node /opt/lab/staging-lab/build-g1-retention-lab-store.mjs
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

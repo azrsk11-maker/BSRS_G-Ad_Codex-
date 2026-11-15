@@ -1,5 +1,11 @@
 # Disposable native WordPress lab
 
+## G1 known-evidence fence lane
+
+The separate fixed `--g1-retention` lane selects only the generated G1 store and a finite synthetic runner; default and composed lanes remain unchanged. It proposes eleven actual SQL/REST cases plus a same-request v0-to-v1 upgrade probe. Unknown captures must persist zero eligibility/optional permission/click evidence; acknowledged refusal can retain eligibility while optional grants stay zero. Known retired evidence must reject before forwarding. Inspect the exact-revision job receipts from both existing database profiles for execution results.
+
+The runner commits synthetic deletion at a deterministic staging seam. It does not prove two-connection concurrency, the complete retirement apply/audit workflow, the complete plugin profile or production/provider compatibility. Original isolation, resource/time limits, pins, schemas and prior entrypoint commands are preserved. No production credentials, deployment or real events are used.
+
 ## Native REST composition extension — execution pending
 
 The next revision adds a fixed25-case native role/purpose matrix after the original tenant/both guard lane. PHP derives expected roles/paths from the pinned service map and validates actual raw payloads. For each role it executes both, analytics-only, advertising-only, explicit denial and genuine no-choice context; no choice is manufactured for unknown. Cases use separate synthetic table prefixes, nonpersistent core object-cache resets, cookies and receiver processes. Real rate limits remain active in each isolated case. Only the finite case keys are accepted, and exact completed-key/unique-session/request/receipt ledgers are required.
