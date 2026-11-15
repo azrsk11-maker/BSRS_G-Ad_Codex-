@@ -5,11 +5,12 @@ use BSRE\PurposeAttribution as P;
 use BSRE\RetentionAdmission as A;
 
 $composedDeliveryMode = ($argv[1] ?? '') === '--composed-delivery';
-if (count($argv) > 2 || (isset($argv[1]) && !$composedDeliveryMode)) throw new RuntimeException('Unsupported admission lab mode');
+$g1RetentionMode = ($argv[1] ?? '') === '--g1-retention';
+if (count($argv) > 2 || (isset($argv[1]) && !$composedDeliveryMode && !$g1RetentionMode)) throw new RuntimeException('Unsupported admission lab mode');
 define('WP_ENVIRONMENT_TYPE', 'local');
 $_SERVER['HTTPS'] = 'on'; $_SERVER['SERVER_PORT'] = '443'; $_SERVER['REQUEST_METHOD'] = 'POST';
 require '/opt/wordpress/wp-load.php';
-require '/opt/lab/retention-admission/store.php';
+require ($g1RetentionMode ? '/opt/lab/g1-retention/store.php' : '/opt/lab/retention-admission/store.php');
 require '/opt/lab/purpose/purpose-attribution.php';
 require '/opt/lab/retention-admission/intake.php';
 require '/opt/lab/receipt-recovery/receipt-recovery-wordpress.php';
@@ -34,7 +35,7 @@ function admission_check(string $name, bool $ok): void {
 $owner = get_user_by('login', 'synthetic_owner'); wp_set_current_user($owner->ID);
 $privacy = wp_insert_post(['post_type' => 'page', 'post_status' => 'publish', 'post_name' => 'admission-synthetic-privacy', 'post_title' => 'SYNTHETIC NOTICE']);
 define('BSRE_PRIVACY_NOTICE_PAGE_ID', $privacy);
-$wpdb->prefix = $composedDeliveryMode ? 'admission_composed_' : 'admission_synthetic_';
+$wpdb->prefix = $g1RetentionMode ? 'admission_g1_synthetic_' : ($composedDeliveryMode ? 'admission_composed_' : 'admission_synthetic_');
 E\install(); // Installs the original guarded rate table for this isolated prefix.
 admission_check('additive_store_installed', P\install_consent_storage());
 P\Runtime::$store = new P\WpConsentRepository($wpdb);
@@ -69,6 +70,11 @@ function admission_api(string $route, string $body, array $headers = []): WP_RES
     foreach (array_merge(['origin' => 'https://blackswanrealestate.ae', 'sec-fetch-site' => 'same-origin', 'content-type' => 'application/json'], $headers) as $key => $value) $request->set_header($key, $value);
     $request->set_body($body);
     return rest_do_request($request);
+}
+if ($g1RetentionMode) {
+    require '/opt/lab/g1-retention/native.php';
+    \BSRE\G1RetentionLab\runG1RetentionNative();
+    return;
 }
 if ($composedDeliveryMode) {
     require '/opt/lab/composed-delivery-interop.php';
