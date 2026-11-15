@@ -1,5 +1,11 @@
 # Implementation progress
 
+## 15 November first native run failure and negative-fixture shape correction
+
+- Published47d75ea8 matched local215cbada/tree9d4be952, but the composed native phase failed in the Debian10.11baseline at the missing-admission assertion. Its actual response status/code was not emitted;400/VALIDATION_FAILED is a source prediction, not an observed CI response. MariaDB11.8parity was skipped, and no native composed pass is accepted.
+- Source tracing found associative JSON decode/re-encode in the lab negative fixture converts valid empty attribution parameter objects into arrays, which the unchanged payload validator rejects before admission staging. The PHP-only fixture correction preserves objects, changes only the synthetic request ID and requires the real payload validator before admission cases. Exact admission status/code, signature/expiry freshness, no-forward/no-capture and strict SDK privacy assertions remain intact. Fail-only diagnostics expose numeric status, validated public symbolic code and integer forwarding/capture deltas; no body, identity, contact or token values.
+- Correction prepared for review; local PHP grammar/static/pin checks do not establish native execution. Existing failed receipts are retained; no unchanged Node/full-suite replay or blind CI rerun. A reviewed changed revision and exact-head CI must establish both profiles. Production unchanged, all Ads paused, browser/provider/human/full-package/release gates retained.
+
 ## 15 November composed command-attempt regression and admission contact profile
 
 - Added a separately named RETENTION_ADMISSION_CLIENT_ONLY contact profile from the unchanged full admission builder, preserving its proof/header/recovery/receipt/purpose chain through exact reverse-verified matcher overlay. Original purpose-only adapter output/default composition and all original pins/builders/runtime/fixtures remain unchanged. This does not select or certify a coupled eight-member plugin package. [Profile and composition limits](../tools/website-tracking/tracking-system/README.md).
