@@ -1,5 +1,12 @@
 # Implementation progress
 
+## G1 known-evidence retirement-store candidate — 15 November 2026
+
+- Added a separate, immutable-base-bound derivation that checks known consent evidence under state/history locks before the unchanged admission/purpose staging. Unknown or stale-subject enquiries retain denied measurement and can proceed; the earlier unconditional private prototype was superseded. Original builders, fixture/receiver pins, wire-v1 and schemas remain unchanged.
+- The fixed `--g1-retention` synthetic lab lane implements 11 cases plus a same-request sidecar-upgrade probe. It checks accepted unknown/denied paths, exact retirement rejection before forwarding, persisted eligibility/permissions/click evidence and preservation of accepted rows. Existing default/composed commands remain intact. Deterministic committed deletion is not proof of concurrent locking or the complete operational retirement workflow.
+- Local checks passed: four focused Node construction/provenance tests (312.2051ms TAP duration), five native workflow-input tests, grammar parsing of the two PHP files and generated store, original 30-member fixture and receiver pin checks. Grammar is not PHP execution. At preparation, actual PHP/SQL cases remained unexecuted; exact-revision CI must provide their results under both existing database profiles. No unchanged full local suite or new benchmark was run.
+- The preceding role/purpose matrix is published at [39e7a65a](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6899175859): all three required checks passed and both profiles executed the exact 25-case matrix. That evidence does not accept this new G1 lane. G1 concurrency/retirement acceptance, G2–G5 full-profile integration, browser/provider, business, human and release gates remain open. Production unchanged; all Ads paused.
+
 ## Native composed role/purpose matrix — 15 November 2026
 
 - The preceding published JSON-shape fix is accepted: PR8/all3required checks passed, including66native composed checks in each database profile. That accepted joined lane is tenant/both-purpose only; earlier failure receipts remain diagnostic history. The new matrix is a separate uncommitted revision awaiting review and exact-revision CI.
