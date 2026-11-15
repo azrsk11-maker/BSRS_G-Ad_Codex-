@@ -1,5 +1,15 @@
 # Offline tracking contract prototype
 
+## Diagnostic contact compatibility and action-binding review
+
+`build-contact-compatible-client-candidate.mjs` requires immutable baseline bytes, separately supplied target bytes and both full SHA256 bindings. It verifies that only the exact WhatsApp recognition literal changes, runs the original pinned purpose-client chain on the original baseline, and overlays that one literal on the generated text. It returns diagnostic text/digests and permanent deployment holds; it writes no file and is absent from default lab/runtime composition. Tests generate a synthetic contact variant rather than importing current host contacts. This adapter cannot establish contact authority; the15November direct owner authorization for calls/WhatsApp to CURRENT_CONTACT is recorded separately in the owner-decision register.
+
+`validate-accepted-action-binding.mjs` accepts strict bounded object records for WordPress/Ads observations, a separately reported canonical policy and runtime evidence classifications. It reports identifier/route/policy conflicts separately from missing authority, owned-source and provider-dedup evidence. All results remain `HELD_DIAGNOSTIC_ONLY`, with `deployment_prohibited:true` and `release_ready:false`, even when supplied decisions/references/observations agree. CountONE is never treated as event dedup. It returns no destination identifiers, labels, evidence paths or event bodies and makes no network calls. This is an object API with unknown/accessor/inherited-field rejection; it has no JSON parser and makes no duplicate-JSON-key detection claim.
+
+The exact matcher changes neither hrefs nor navigation. Existing generic telephone-prefix recognition, unmarked-anchor exclusion and five-role context remain unchanged; future guide/entry attribution is not added. Measurement exclusion does not prevent a real anchor from navigating to a provider, so previews/tests must not click real destinations. Same-version served-script divergence and complete rendered href/script pairing remain release holds. Existing tests simulate the same-origin REST-loaded iframe/handshake and transaction-ID dispatch; they cannot establish native browser/provider dedup or resolve the iframe compatibility concern. No tags are moved, legacy producers changed, current fixtures repinned, GA4 import route added or runtime isolation weakened.
+
+Run the two new `*contact-compatible*` / `accepted-action-binding.test.mjs` Node test files for these diagnostic behaviors. Existing attribution, contract, runtime and frame suites retain their separate scope. Required exact-revision CI and all human/live release gates remain mandatory.
+
 This dependency-free Node module is development evidence. It is **not deployed, a Google tag installer, a browser SDK, a production permission authority, or an offline import client**. It makes no network calls, reads no cookie/local storage, changes no website/account, and writes no lead or financial record.
 
 `contract.mjs` supplies:
