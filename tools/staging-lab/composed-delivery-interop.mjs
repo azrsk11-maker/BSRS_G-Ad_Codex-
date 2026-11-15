@@ -1,14 +1,17 @@
 // Local stdio driver only; actual PHP replies feed trusted-source VM contexts, never a provider.
 import assert from 'node:assert/strict';
 import {createInterface} from 'node:readline';
-import {composedPage} from './website-tracking/tracking-system/composed-delivery-fixture.mjs';
+import {composedPage, COMPOSED_SERVICES} from './website-tracking/tracking-system/composed-delivery-fixture.mjs';
 
 // Examine every raw entry before filtering/dedup. Never mutate the command sink or print its values.
 function assertNativeCommandPrivacy(f, receipt, setup, observed) {
   const need = (ok, code) => { if (!ok) throw new Error(code); };
   const exact = (object, keys) => object && typeof object === 'object' && !Array.isArray(object)
     && Object.keys(object).sort().join(',') === [...keys].sort().join(',');
-  const origin = 'https://blackswanrealestate.ae', page = origin + '/enquire/rent/';
+  const service = setup.service ?? 'rent';
+  need(Object.hasOwn(COMPOSED_SERVICES, service), 'RAW_UNKNOWN_SERVICE');
+  const role = COMPOSED_SERVICES[service].role, path = '/enquire/' + service + '/';
+  const origin = 'https://blackswanrealestate.ae', page = origin + path;
   const secrets = new Set([f.state.id, receipt.lead_id, f.state.proof, ...observed.decisions, ...observed.leases]);
   for (const key of ['signature', 'session_hash', 'generation', 'audience']) secrets.add(f.admission?.[key]);
   for (const request of f.state.requests) {
@@ -40,7 +43,7 @@ function assertNativeCommandPrivacy(f, receipt, setup, observed) {
         } else {
           need(frame.config.purpose === 'analytics' && ['page_view', 'generate_lead'].includes(args[1]), 'RAW_ANALYTICS_EVENT');
           expected.send_to = frame.config.measurement_id;
-          if (args[1] === 'generate_lead') Object.assign(expected, {schema_version: '1.0.0', site_scope: 'BSRE_REAL_ESTATE', page_path: '/enquire/rent/', role: 'tenant'});
+          if (args[1] === 'generate_lead') Object.assign(expected, {schema_version: '1.0.0', site_scope: 'BSRE_REAL_ESTATE', page_path: path, role});
         }
         need(exact(p, Object.keys(expected)) && Object.entries(expected).every(([key, value]) => p[key] === value), 'RAW_PARAMETER_ALLOWLIST');
         // The actual Ads correlation ID is required, even if related to the request ID.
@@ -80,7 +83,7 @@ function command(value) {
     process.stdout.write(JSON.stringify(value) + '\n');
   });
 }
-let phase = 'session';
+let phase = 'session', caseKey = 'original';
 try {
   const setup = await command({op: 'session'});
   const observed = {decisions: new Set([setup.snapshot.decision_version]), leases: new Set()};
@@ -117,6 +120,46 @@ try {
   assert.equal(f.conversions().length, 1);
   assertNativeCommandPrivacy(f, receipt, setup, observed);
   const guards = await command({op: 'guards'}); assert.equal(guards.ok, true);
+  await f.retire();
+  phase = 'role-purpose-matrix';
+  for (const service of Object.keys(COMPOSED_SERVICES)) {
+    for (const permission of ['both', 'analytics', 'advertising', 'denied', 'default']) {
+      caseKey = service + ':' + permission;
+      const setup = await command({op: 'matrix_session', service, permission});
+      const observed = {decisions: new Set([setup.snapshot.decision_version]), leases: new Set()};
+      const scenario = composedPage({service, loseAcknowledgement: true, native: {...setup,
+        request: data => command({op: 'request', ...data}),
+        runtimeGet: url => command({op: 'runtime_get', url}),
+        leasePost: async data => {
+          observed.leases.add(JSON.parse(data.body).lease_token);
+          const reply = await command({op: 'lease_post', ...data}); observed.leases.add(reply.body.lease_token); return reply;
+        },
+      }});
+      await scenario.pump(false); await scenario.submit(); await scenario.pump(false);
+      assert.equal(scenario.conversions().length, 0);
+      await scenario.submit(); await scenario.pump(true); await scenario.submit(); await scenario.pump(true);
+      const inspected = await command({op: 'inspect', request_id: scenario.state.id});
+      const expectedAds = Number(setup.snapshot.known && setup.snapshot.preferences.ad_measurement);
+      const expectedAnalytics = Number(setup.snapshot.known && setup.snapshot.preferences.analytics);
+      assert.equal(scenario.state.requests.length, 2);
+      assert.equal(scenario.state.requests[0].body, scenario.state.requests[1].body);
+      assert.equal(scenario.state.requests[0].admission, scenario.state.requests[1].admission);
+      assert.equal(scenario.conversions().length, expectedAds);
+      const analyticsCommands = scenario.commands().filter(e => e.args[1] === 'generate_lead').length;
+      assert.equal(analyticsCommands, expectedAnalytics);
+      assert.equal(inspected.event_id, scenario.state.accepted.event_id);
+      if (expectedAds) assert.equal(scenario.conversions()[0].args[2].transaction_id, inspected.event_id);
+      assertNativeCommandPrivacy(scenario, inspected, setup, observed);
+      const rawEntries = scenario.frames.reduce((n, frame) => n + (frame.contentWindow.dataLayer?.length ?? 0), 0);
+      if (!expectedAds && !expectedAnalytics) assert.equal(rawEntries, 0);
+      const finished = await command({op: 'matrix_finish', case_key: setup.case_key,
+        ads_commands: scenario.conversions().length, analytics_commands: analyticsCommands, raw_entries: rawEntries,
+        privacy_checked: true, request_attempts: scenario.state.requests.length, no_vendor_fetch: true});
+      assert.equal(finished.ok, true);
+      // Destroy optional contexts before replacing server-side session/store/receiver state.
+      await scenario.retire();
+    }
+  }
   const checks = {actual_rest_configs: true, one_native_command: true, exact_transaction: true, exact_retry: true,
     analytics_once: true, withdraw_no_replay: true, no_vendor_fetch: true, raw_command_privacy: true};
   const done = await command({op: 'complete', checks}); assert.equal(done.ok, true);
@@ -124,7 +167,7 @@ try {
 } catch (error) {
   const code = /^[A-Z][A-Z0-9_]{1,80}$/.test(error.message) ? error.message
     : error.code === 'ERR_ASSERTION' ? 'NATIVE_ASSERTION_FAILED' : 'NATIVE_DRIVER_FAILED';
-  process.stderr.write(JSON.stringify({phase, status: 'DIAGNOSTIC_FAILURE', elapsed_seconds: (performance.now() - started) / 1000,
+  process.stderr.write(JSON.stringify({phase, case: caseKey, status: 'DIAGNOSTIC_FAILURE', elapsed_seconds: (performance.now() - started) / 1000,
     error_code: code}) + '\n');
   input.close(); process.exitCode = 1;
 }
