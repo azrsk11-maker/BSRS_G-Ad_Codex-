@@ -26,6 +26,9 @@ COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/fixtures/receiver-v2
 # Preserve repository-relative imports for the actual-source no-mail receiver tests.
 COPY tools/staging-lab/receiver-lab.mjs /opt/lab/staging-lab/receiver-lab.mjs
 COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/staging-lab/fixtures/receiver-v2
+COPY tools/staging-lab/fixtures/bsre-enquiries /opt/lab/staging-lab/fixtures/bsre-enquiries
+COPY tools/staging-lab/composed-delivery-interop.php tools/staging-lab/composed-delivery-interop.mjs /opt/lab/
+COPY tools/website-tracking/tracking-system/composed-delivery-fixture.mjs tools/website-tracking/tracking-system/build-contact-compatible-client-candidate.mjs tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs /opt/lab/website-tracking/tracking-system/
 COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs \
     tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs \
     tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs \

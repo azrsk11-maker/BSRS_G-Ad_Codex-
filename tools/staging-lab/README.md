@@ -1,5 +1,13 @@
 # Disposable native WordPress lab
 
+## Native REST composition extension — execution pending
+
+`retention-admission-native.php --composed-delivery` reuses the actual admission bootstrap/receiver bridge under a separate fixed synthetic prefix, then dispatches the fixed `composed-delivery-interop.php/.mjs` pair before the original scenarios. The old default run remains intact. The new entrypoint invocation runs in both existing database profiles with unchanged network-none/non-root/read-only/capability/tmpfs/resource controls. New copies preserve repository-relative module/fixture paths; no current-contact host package or production data is imported.
+
+The finite stdio protocol invokes actual consent, admission proof/intake, REST iframe HTML and lease handlers. A reversible filter maps only the owned plugin base for its runtime asset; the unmapped origin must still deny. The intended minimum native journey is tenant/both purposes with lost-ack same-body/header retry and exact SQL/receiver/native transaction identity. Actual master/purpose-off, QA/login, HTTPS/referrer/destination/query, config/lease expiry/withdrawal and admission-negative guards are asserted by PHP, not client-provided booleans alone. The pinned PHP Ads validator requires its existing public prefix; only the fictional `SYNTHETIC_COMPOSED_NOT_REAL` label is used. There is no real approved action label, vendor fetch or SDK execution.
+
+Local Node/interface, workflow-input and static Docker-layout checks pass; the bundled PHP grammar parser reports no errors. PHP/Docker are unavailable locally, so php-lint and actual native REST/database acceptance await one exact-revision CI delivery. Only executed native cases may be counted; the larger VM matrix remains VM evidence. Headers/HTTPS/cookies are fabricated in process and GTM activation is manually simulated from the source child export. Browser/TLS/CSP, actual published container activation, Google delivery/dedup, full coupled package and all human/release gates remain unproved. No Chrome/security/install probe or production change is included.
+
 ## Optional MariaDB 11.8.9 diagnostic profile
 
 The default `BSRE_DB_PROFILE=debian-bookworm` retains the ordinary Debian server package. The allowlisted `mariadb-11.8.9` build argument selects seven exact Debian12/amd64 vendor artifacts from the official versioned archive, recorded in [database-11.8.9.lock.json](database-11.8.9.lock.json). Unknown profiles and other OS/architectures fail. The PHP base digest, WordPress archive checksum and all reviewed fixtures/provenance remain unchanged.
