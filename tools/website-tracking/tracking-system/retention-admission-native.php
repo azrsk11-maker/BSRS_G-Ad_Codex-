@@ -4,6 +4,8 @@ use BSRE\Enquiries as E;
 use BSRE\PurposeAttribution as P;
 use BSRE\RetentionAdmission as A;
 
+$composedDeliveryMode = ($argv[1] ?? '') === '--composed-delivery';
+if (count($argv) > 2 || (isset($argv[1]) && !$composedDeliveryMode)) throw new RuntimeException('Unsupported admission lab mode');
 define('WP_ENVIRONMENT_TYPE', 'local');
 $_SERVER['HTTPS'] = 'on'; $_SERVER['SERVER_PORT'] = '443'; $_SERVER['REQUEST_METHOD'] = 'POST';
 require '/opt/wordpress/wp-load.php';
@@ -32,7 +34,7 @@ function admission_check(string $name, bool $ok): void {
 $owner = get_user_by('login', 'synthetic_owner'); wp_set_current_user($owner->ID);
 $privacy = wp_insert_post(['post_type' => 'page', 'post_status' => 'publish', 'post_name' => 'admission-synthetic-privacy', 'post_title' => 'SYNTHETIC NOTICE']);
 define('BSRE_PRIVACY_NOTICE_PAGE_ID', $privacy);
-$wpdb->prefix = 'admission_synthetic_';
+$wpdb->prefix = $composedDeliveryMode ? 'admission_composed_' : 'admission_synthetic_';
 E\install(); // Installs the original guarded rate table for this isolated prefix.
 admission_check('additive_store_installed', P\install_consent_storage());
 P\Runtime::$store = new P\WpConsentRepository($wpdb);
@@ -67,6 +69,11 @@ function admission_api(string $route, string $body, array $headers = []): WP_RES
     foreach (array_merge(['origin' => 'https://blackswanrealestate.ae', 'sec-fetch-site' => 'same-origin', 'content-type' => 'application/json'], $headers) as $key => $value) $request->set_header($key, $value);
     $request->set_body($body);
     return rest_do_request($request);
+}
+if ($composedDeliveryMode) {
+    require '/opt/lab/composed-delivery-interop.php';
+    \BSRE\ComposedDeliveryLab\runComposedDeliveryInterop();
+    return;
 }
 $_COOKIE = [E\COOKIE => bin2hex(random_bytes(32))];
 $csrf = E\csrf_token($_COOKIE[E\COOKIE], time() - 3, wp_salt('auth'));

@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto';
 import {buildPurposeClientCandidate} from './build-purpose-attribution-candidate.mjs';
+import {buildRetentionAdmissionClient} from './build-retention-admission-candidate.mjs';
 
 const BASELINE = '3d469cccef9891702ba1462e29f17ba3135261fff23ea2a40c052aa6afb99154';
 const PREFIX = Buffer.from(String.raw`/^https:\/\/wa\.me\/`);
@@ -31,7 +32,7 @@ function literal(bytes) {
 }
 
 // Diagnostic text only. Never writes a fixture, chooses a business contact or activates a candidate.
-export function buildContactCompatibleClientCandidate(baselineBytes, targetBytes, binding) {
+function buildBoundCandidate(baselineBytes, targetBytes, binding, profile) {
   bindingRecord(binding);
   for (const bytes of [baselineBytes, targetBytes]) {
     need(Buffer.isBuffer(bytes) && bytes.length > 0 && bytes.length <= 262144, 'CONTACT_RAW_BYTES_REQUIRED');
@@ -45,7 +46,9 @@ export function buildContactCompatibleClientCandidate(baselineBytes, targetBytes
     baselineBytes.subarray(old.end).equals(targetBytes.subarray(current.end)), 'CONTACT_UNRELATED_SOURCE_CHANGE');
 
   // The original pinned chain receives only its immutable original bytes.
-  const original = Buffer.from(buildPurposeClientCandidate(baselineBytes), 'utf8');
+  need(['purpose', 'retention-admission'].includes(profile), 'CONTACT_PROFILE_INVALID');
+  const original = Buffer.from(profile === 'retention-admission'
+    ? buildRetentionAdmissionClient(baselineBytes) : buildPurposeClientCandidate(baselineBytes), 'utf8');
   const anchor = literal(original);
   need(anchor.digits.equals(old.digits), 'CONTACT_COMPOSED_MATCHER_CHANGED');
   const candidate = Buffer.concat([original.subarray(0, anchor.from), current.digits, original.subarray(anchor.end)]);
@@ -61,4 +64,14 @@ export function buildContactCompatibleClientCandidate(baselineBytes, targetBytes
       'COUPLED_PACKAGE_REVIEW_REQUIRED', 'RUNTIME_AND_RELEASE_ACCEPTANCE_REQUIRED']),
     candidate: candidate.toString('utf8'),
   });
+}
+
+// Preserve the original purpose-only adapter's text and result contract.
+export function buildContactCompatibleClientCandidate(baselineBytes, targetBytes, binding) {
+  return buildBoundCandidate(baselineBytes, targetBytes, binding, 'purpose');
+}
+
+export function buildContactCompatibleRetentionAdmissionClientCandidate(baselineBytes, targetBytes, binding) {
+  return Object.freeze({...buildBoundCandidate(baselineBytes, targetBytes, binding, 'retention-admission'),
+    profile: 'RETENTION_ADMISSION_CLIENT_ONLY'});
 }

@@ -5,6 +5,8 @@ import {createHash} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
 import {buildContactCompatibleClientCandidate as build} from './build-contact-compatible-client-candidate.mjs';
 import {buildPurposeClientCandidate} from './build-purpose-attribution-candidate.mjs';
+import {buildRetentionAdmissionClient} from './build-retention-admission-candidate.mjs';
+import {buildContactCompatibleRetentionAdmissionClientCandidate as buildAdmission} from './build-contact-compatible-client-candidate.mjs';
 
 const baseline = readFileSync(new URL('../../staging-lab/fixtures/bsre-enquiries/assets/lead.js', import.meta.url));
 const prefix = String.raw`/^https:\/\/wa\.me\/`;
@@ -16,6 +18,23 @@ const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const targetFor = digits => Buffer.from(raw.slice(0, start) + digits + raw.slice(start + oldDigits.length));
 const target = targetFor(syntheticDigits);
 const bindingFor = bytes => ({baseline_sha256: sha(baseline), target_sha256: sha(bytes)});
+
+test('separately named admission profile overlays the full original chain without changing purpose output', () => {
+  const purpose = build(baseline, target, bindingFor(target));
+  const admission = buildAdmission(baseline, target, bindingFor(target));
+  const original = buildRetentionAdmissionClient(baseline);
+  assert.equal(admission.candidate, original.replace(prefix + oldDigits + suffix, prefix + syntheticDigits + suffix));
+  assert.equal(admission.original_candidate_sha256, sha(Buffer.from(original)));
+  assert.equal(admission.profile, 'RETENTION_ADMISSION_CLIENT_ONLY');
+  assert.equal(admission.deployment_prohibited, true);
+  assert.ok(admission.candidate.includes("headers['X-BSRE-Admission'] = JSON.stringify(proof)"));
+  assert.ok(admission.candidate.includes("throw new Error('Admission proof unavailable')"));
+  assert.equal(Object.hasOwn(purpose, 'profile'), false);
+  assert.equal(purpose.candidate, buildPurposeClientCandidate(baseline).replace(prefix + oldDigits + suffix, prefix + syntheticDigits + suffix));
+  const unrelated = Buffer.concat([target, Buffer.from('\n// unrelated')]);
+  assert.throws(() => buildAdmission(baseline, unrelated, bindingFor(unrelated)), /UNRELATED_SOURCE/);
+  assert.throws(() => buildAdmission(baseline, target, {...bindingFor(target), generator: () => ''}), /BINDING_SHAPE/);
+});
 
 function page(code, href, {analytics = true, eligible = true, name = '', kind = 'whatsapp', marked = true} = {}) {
   const measurements = [], handlers = new Map(), storage = new Map();
