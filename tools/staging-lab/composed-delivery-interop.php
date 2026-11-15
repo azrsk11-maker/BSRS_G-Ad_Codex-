@@ -83,8 +83,12 @@ function guarded_cases(array &$current, array $settings, &$mapped): void {
         && is_string($prepared['request_id'] ?? null) && is_array($prepared['admission'] ?? null)
         && ($prepared['admission']['request_id'] ?? null) === $prepared['request_id']
         && A\valid_proof($prepared['admission'], $prepared['request_id'], $_COOKIE[E\COOKIE], BSRE_LEAD_HMAC_SECRET, A\configuration(), time(), true));
-    $payload = json_decode($current['wire'], true, 16, JSON_THROW_ON_ERROR); $payload['request_id'] = $prepared['request_id'];
+    // Preserve empty attribution objects: associative decode would re-encode {} as [].
+    $payload = json_decode($current['wire'], false, 16, JSON_THROW_ON_ERROR);
+    check('negative_payload_is_object', $payload instanceof \stdClass);
+    $payload->request_id = $prepared['request_id'];
     $wire = wp_json_encode($payload); $before = count($forwards);
+    check('negative_payload_passes_real_schema', E\validate_payload($wire, home_url('/'), E\live_paths()));
     $headers = ['x-bsre-csrf' => $current['csrf'], 'x-bsre-consent-decision' => $current['snapshot']['decision_version']];
     $invalid = $prepared['admission']; $invalid['signature'] = str_repeat('0', 64);
     $expiryNow = time(); $expiryGate = A\configuration();
@@ -97,7 +101,8 @@ function guarded_cases(array &$current, array $settings, &$mapped): void {
     check('authentic_expired_proof_wrapper_still_accepts', A\valid_proof($expiredProof, $prepared['request_id'], $_COOKIE[E\COOKIE], BSRE_LEAD_HMAC_SECRET, $expiryGate, $expiryNow, false));
     check('expired_proof_was_fresh_at_issue', A\valid_proof($expiredProof, $prepared['request_id'], $_COOKIE[E\COOKIE], BSRE_LEAD_HMAC_SECRET, $expiryGate, $expiredProof['issued_at'], true));
     check('expired_proof_is_not_fresh_now', !A\valid_proof($expiredProof, $prepared['request_id'], $_COOKIE[E\COOKIE], BSRE_LEAD_HMAC_SECRET, $expiryGate, $expiryNow, true));
-    check('negative_uuid_has_no_existing_capture', (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s", $prepared['request_id'])) === 0);
+    $capturesBefore = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s", $prepared['request_id']));
+    check('negative_uuid_has_no_existing_capture', $capturesBefore === 0);
     // Authentic expired proofs may recover existing accepted requests; a fresh UUID fails at the store.
     $expected = ['missing' => [503, 'ADMISSION_UNCONFIRMED'], 'invalid' => [400, 'ADMISSION_INVALID'],
         'expired' => [503, 'ADMISSION_UNCONFIRMED']];
@@ -106,6 +111,15 @@ function guarded_cases(array &$current, array $settings, &$mapped): void {
         $response = post('lead', $wire, $sent);
         [$expectedStatus, $expectedCode] = $expected[$name];
         $data = $response->get_data();
+        $capturesAfter = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}bsre_consent_captures WHERE request_id=%s", $prepared['request_id']));
+        if ($response->get_status() !== $expectedStatus || !is_array($data) || ($data['code'] ?? null) !== $expectedCode
+            || count($forwards) !== $before || $capturesAfter !== $capturesBefore) {
+            $publicCode = is_array($data) && is_string($data['code'] ?? null) && preg_match('/^[A-Z][A-Z0-9_]{0,63}$/D', $data['code'])
+                ? $data['code'] : 'UNAVAILABLE';
+            fwrite(STDERR, wp_json_encode(['phase' => 'composed_admission_negative', 'case' => $name,
+                'http_status' => (int) $response->get_status(), 'wp_code' => $publicCode,
+                'forward_delta' => count($forwards) - $before, 'capture_delta' => $capturesAfter - $capturesBefore]) . "\n");
+        }
         check('actual_admission_' . $name . '_denied_before_forward', $response->get_status() === $expectedStatus
             && is_array($data) && ($data['code'] ?? null) === $expectedCode && count($forwards) === $before);
     }
