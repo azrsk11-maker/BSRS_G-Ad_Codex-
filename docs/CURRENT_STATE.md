@@ -1,0 +1,12 @@
+# Current engineering state — 15 November 2026
+
+Read only the relevant linked section/evidence next. This is a routing summary, not a replacement for complete supplied Master requirements or acceptance gates.
+
+- Requirements: [supplied specifications](google-ads/), [execution plan](EXECUTION_PLAN.md), [governance](GOVERNANCE.md). Scope decisions and conflicts: [owner decisions](decisions/OWNER_DECISIONS.md) and their linked issues. Read the complete applicable source specifications when assessing requirements or release readiness.
+- Published baseline: [PR #8](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8) has the accepted JSON-shape correction and all three required checks passed. Both isolated database profiles recorded 66 native composed checks each. That joined native scope is tenant/both-purpose, with synthetic SDK command observation; it is not all-role or provider acceptance.
+- Current local work: the native composed role/purpose matrix is prepared for review, not published or accepted by CI. Its intended 25 cases are five owned roles × both, analytics-only, advertising-only, explicit denial and no choice. Start at **“Native composed role/purpose matrix”** in [PROGRESS](PROGRESS.md), then [lab scope](../tools/staging-lab/README.md) and [client/command contracts](../tools/website-tracking/tracking-system/README.md). Require the actual per-case native receipts after exact-revision CI; local VM/static checks do not substitute.
+- Contact business authority and the canonical owned-funnel conversion policy are settled in the decision register. Legacy tracking remains untouched. Full coupled plugin/client ABI compatibility, complete served-script convergence, real browser/TLS/CSP, published container activation and real provider delivery/dedup remain unaccepted.
+- Business/factual evidence, staff/history/provider operations, complete reviewed libraries, independent human review and separate production/release approvals remain gates. Research, synthetic checks and deployment counts are distinct. Follow their exact decision/evidence links rather than loading unrelated historical progress.
+- Production remains unchanged; all Ads stay paused. No source test, passing CI or this summary authorizes live events/imports, deployment, merge, activation or spending.
+
+Update this compact page after a material accepted-state change. Keep detailed evidence in its existing owner file; do not copy records, secrets or private destination identities here.
