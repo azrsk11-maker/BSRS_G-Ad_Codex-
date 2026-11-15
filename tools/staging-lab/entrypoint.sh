@@ -39,6 +39,7 @@ php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission
 php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission-native.php
 php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission-native.php --composed-delivery
 php -d sendmail_path=/bin/false /opt/lab/retention-admission/retention-admission-native.php --g1-retention
+php -d sendmail_path=/bin/false /opt/lab/g1-retention/concurrency.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/test_workflow.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/test_no_mail_copy.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/native-test.php

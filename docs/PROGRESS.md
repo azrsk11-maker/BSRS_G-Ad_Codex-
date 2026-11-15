@@ -1,5 +1,12 @@
 # Implementation progress
 
+## G1 two-connection retirement schedules — 15 November 2026
+
+- Added a separate finite CLI-only synthetic lane using the current G1 store, actual guarded retirement apply and two real database connections. Four schedules cover retire/stage winners with commit and injected precommit rollback. Real MariaDB wait metadata and barriers must demonstrate the blocked second connection; fixed sleeps alone cannot pass. Audit, ledger anchor, capture identity and the safe stale-plan hold are asserted.
+- Strengthened the earlier known-retirement HTTP rejection check to require ADMISSION_UNCONFIRMED as well as status503, no acceptance and no forwarding. Existing default, composed and deterministic G1 commands, fixture/receiver pins and isolation/resource/time limits remain unchanged.
+- Local integration matches all four independently reviewed candidate hashes and 16 source bindings. Two PHP files parse with the bundled grammar; five workflow-input tests and original30-member/receiver pin checks pass. Six producer static checks were reused, not rerun. Actual PHP/SQL/waits/commit/rollback outcomes remain unexecuted at preparation and require the exact-revision isolated run on both database profiles.
+- These schedules use delayed direct-repository snapshots and guarded policy apply; they do not prove live consent/REST/receiver/provider concurrency, every lock ordering or full-profile readiness. The preceding G1 eleven-case and 25-cell matrices are accepted at [CEA4d100](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6899451362), with all three required checks passed. G2–G5, business, human and separate release gates remain; production unchanged and Ads paused.
+
 ## G1 known-evidence retirement-store candidate — 15 November 2026
 
 - Added a separate, immutable-base-bound derivation that checks known consent evidence under state/history locks before the unchanged admission/purpose staging. Unknown or stale-subject enquiries retain denied measurement and can proceed; the earlier unconditional private prototype was superseded. Original builders, fixture/receiver pins, wire-v1 and schemas remain unchanged.

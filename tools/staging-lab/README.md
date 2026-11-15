@@ -1,5 +1,11 @@
 # Disposable native WordPress lab
 
+## G1 two-connection schedules
+
+The separate concurrency process follows the existing G1 HTTP lane. It uses actual G1 staging and guarded preference-retirement apply with two real connections and four fixed commit/rollback schedules. Required outcomes are: retire commit rejects the delayed stage; stage commit makes the approved deletion plan stale; retire rollback permits staging; stage rollback permits policy deletion. The runner must observe a real database lock wait, then verify state/history/captures and atomic audit/ledger outcomes. Fixture setup drops only the nine allowlisted synthetic tables and is never counted as policy deletion.
+
+The lane is CLI-only with fixed local origin/database/socket/user/prefix, rejects HTTP/mail, bounds IPC and owned child cleanup, and retains existing kernel isolation and outer CI limits. Its sixty-second budget is checked before each case rather than being a hard aggregate cancellation. Actual execution and both-profile results must come from the exact-revision job; source/grammar checks do not prove them. Direct repository snapshots are not live REST/receiver/provider concurrency or full-profile acceptance.
+
 ## G1 known-evidence fence lane
 
 The separate fixed `--g1-retention` lane selects only the generated G1 store and a finite synthetic runner; default and composed lanes remain unchanged. It proposes eleven actual SQL/REST cases plus a same-request v0-to-v1 upgrade probe. Unknown captures must persist zero eligibility/optional permission/click evidence; acknowledged refusal can retain eligibility while optional grants stay zero. Known retired evidence must reject before forwarding. Inspect the exact-revision job receipts from both existing database profiles for execution results.

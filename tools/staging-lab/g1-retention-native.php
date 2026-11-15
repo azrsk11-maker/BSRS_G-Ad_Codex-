@@ -133,7 +133,7 @@ function runG1RetentionNative(): void {
                 \admission_check('g1_'.$label.'_no_optional_grants',(int)$row['analytics']===0 && (int)$row['ad_measurement']===0);
             }
         } else {
-            \admission_check('g1_'.$label.'_held_before_forward',$response->get_status()===503 && ($data['accepted']??false)!==true && count($forwards)===$before);
+            \admission_check('g1_'.$label.'_held_before_forward',$response->get_status()===503 && ($data['code']??null)==='ADMISSION_UNCONFIRMED' && ($data['accepted']??false)!==true && count($forwards)===$before);
             \admission_check('g1_'.$label.'_no_capture_resurrection',$row===null);
         }
         if ($retire!=='none') {

@@ -59,6 +59,7 @@ COPY tools/owner-mail-review /opt/lab/owner-mail-review
 COPY tools/website-tracking/tracking-system/build-g1-retention-store-candidate.mjs /opt/lab/website-tracking/tracking-system/
 COPY tools/staging-lab/build-g1-retention-lab-store.mjs /opt/lab/staging-lab/
 COPY tools/staging-lab/g1-retention-native.php /opt/lab/g1-retention/native.php
+COPY tools/staging-lab/g1-retention-concurrency.php /opt/lab/g1-retention/concurrency.php
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
