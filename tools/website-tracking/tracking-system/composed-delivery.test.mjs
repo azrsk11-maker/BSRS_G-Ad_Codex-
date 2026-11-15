@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {composedPage} from './composed-delivery-fixture.mjs';
+import {composedPage, COMPOSED_SERVICES} from './composed-delivery-fixture.mjs';
 
 test('full admission/contact client connects actual parent and child, retaining receiver identity and privacy', async () => {
   const f = composedPage(); await f.pump(true); await f.submit(); await f.pump(true);
@@ -120,10 +120,13 @@ test('fresh child can attempt the same transaction again: explicit per-realm ded
 });
 
 // Async interface unit checks only: these replies are NOT PHP execution evidence.
-function asyncRestDouble(badAsset = false) {
-  const reference = composedPage(), origin = 'https://blackswanrealestate.ae', leases = [];
+function asyncRestDouble(badAsset = false, options = {}) {
+  const reference = composedPage(options), origin = 'https://blackswanrealestate.ae', leases = [];
   const version = 'gm1-' + 'a'.repeat(32), token = `ml1|${Math.floor(Date.now() / 1000) + 60}|${'b'.repeat(64)}`;
-  return {leases, snapshot: reference.window.BSREConsentBridge.getSnapshot(), csrf: 'SYNTHETIC_CSRF',
+  const snapshot = reference.window.BSREConsentBridge.getSnapshot();
+  if (options.known === false) Object.assign(snapshot, {known: false, acknowledged: false, measurement_eligible: false,
+    decision_version: 'none', preferences: {analytics: false, ad_measurement: false, personalization: false}});
+  return {leases, snapshot, csrf: 'SYNTHETIC_CSRF',
     publicConfig: {enabled: true, analytics_enabled: true, advertising_enabled: true, config_version: version,
       runtime_endpoint: origin + '/wp-json/bsre/v1/measurement/runtime'},
     async request(data) {
@@ -159,4 +162,39 @@ test('async REST/config/lease injection supports returned public prefix plus fic
 test('async returned runtime with foreign script origin is rejected before child execution', async () => {
   const f = composedPage({native: asyncRestDouble(true)});
   await assert.rejects(f.pump(true)); assert.equal(f.commands().length, 0);
+});
+
+test('all five role payloads and four independent choices preserve exact wire retry and receiver/command identity', async () => {
+  const expected = [['off-plan', 'off_plan'], ['resale', 'resale'], ['rent', 'tenant'], ['sell', 'seller'], ['let', 'landlord']];
+  assert.deepEqual(Object.entries(COMPOSED_SERVICES).map(([slug, value]) => [slug, value.role]), expected);
+  let cases = 0;
+  for (const [service, role] of expected) for (const [analytics, advertising] of [[true, true], [true, false], [false, true], [false, false]]) {
+    const f = composedPage({service, analytics, advertising, loseAcknowledgement: true});
+    await f.pump(false); await f.submit(); await f.pump(false);
+    await f.submit(); await f.pump(true); await f.submit(); await f.pump(true);
+    assert.equal(f.state.requests.length, 2); assert.equal(f.state.requests[0].body, f.state.requests[1].body);
+    assert.equal(f.state.requests[0].admission, f.state.requests[1].admission);
+    const payload = JSON.parse(f.state.requests[0].body);
+    assert.equal(payload.role, role); assert.equal(payload.landing_page, 'https://blackswanrealestate.ae/enquire/' + service + '/');
+    assert.equal(payload.authority, ['seller', 'landlord'].includes(role) ? 'owner' : '');
+    assert.equal(f.state.receiver.rows.length, 2); assert.equal(f.state.receiver.rows[1].length, 26);
+    assert.equal(f.state.receiver.rows[1][14], role);
+    assert.equal(f.conversions().length, Number(advertising));
+    const acceptedAnalytics = f.commands().filter(e => e.args[1] === 'generate_lead');
+    assert.equal(acceptedAnalytics.length, Number(analytics));
+    if (analytics) { assert.equal(acceptedAnalytics[0].args[2].role, role); assert.equal(acceptedAnalytics[0].args[2].page_path, '/enquire/' + service + '/'); }
+    if (advertising) assert.equal(f.conversions()[0].args[2].transaction_id, f.state.receiver.rows[1][2]);
+    await f.retire(); assert.ok(f.frames.every(frame => frame.removed)); cases++;
+  }
+  assert.equal(cases, 20);
+});
+
+test('unknown snapshot interface permits isolated intake but no optional contexts for every role', async () => {
+  for (const service of Object.keys(COMPOSED_SERVICES)) {
+    // Explicit interface double only; real unknown-cookie/SQL behavior belongs to native CI.
+    const native = asyncRestDouble(false, {service, analytics: false, advertising: false, known: false});
+    const f = composedPage({service, native}); await f.pump(true); await f.submit(); await f.pump(true);
+    assert.equal(f.state.accepted.accepted, true); assert.equal(f.frames.length, 0); assert.equal(f.commands().length, 0);
+  }
+  for (const service of ['../rent', 'constructor', 'off_plan']) assert.throws(() => composedPage({service}), /Unknown composed service/);
 });

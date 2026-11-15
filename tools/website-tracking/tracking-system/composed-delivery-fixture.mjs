@@ -26,13 +26,23 @@ const handlersFor = () => {
     async emit(name, value) { for (const fn of handlers.get(name) ?? []) await fn(value); }};
 };
 
+export const COMPOSED_SERVICES = Object.freeze({
+  'off-plan': Object.freeze({role: 'off_plan', timeline: 'Within 1 month', authority: ''}),
+  resale: Object.freeze({role: 'resale', timeline: 'Within 1 month', authority: ''}),
+  rent: Object.freeze({role: 'tenant', timeline: 'Immediate / move now', authority: ''}),
+  sell: Object.freeze({role: 'seller', timeline: 'As soon as practical', authority: 'owner'}),
+  let: Object.freeze({role: 'landlord', timeline: 'Vacant / available to discuss now', authority: 'owner'}),
+});
+
 export function receiverState() {
   return {receiver: lab(), id: randomUUID(), requests: [], accepted: null, capture: null};
 }
 
 export function composedPage({state = null, store = new Map(), analytics = true, advertising = true,
   eligible = true, name = 'SYNTHETIC composition fixture', blank = false, proofMode = 'valid',
-  loseAcknowledgement = false, postFault = '', denyLease = false, native = null} = {}) {
+  loseAcknowledgement = false, postFault = '', denyLease = false, native = null, service = 'rent'} = {}) {
+  assert.ok(Object.hasOwn(COMPOSED_SERVICES, service), 'Unknown composed service');
+  const definition = COMPOSED_SERVICES[service], pagePath = '/enquire/' + service + '/';
   state ??= native ? {requests: [], accepted: null} : receiverState();
   let nativeSnapshot = native?.snapshot;
   if (native) {
@@ -58,9 +68,9 @@ export function composedPage({state = null, store = new Map(), analytics = true,
   };
   const button = {dataset: {}, textContent: 'Submit'}, status = {dataset: {}};
   const values = {name: blank ? '' : name, phone: '+971500000000', email: 'fixture@example.invalid', country: 'UAE',
-    area: 'Synthetic', budget: 'To discuss', timeline: 'Immediate / move now', funding: 'To discuss',
-    property_type: 'Apartment', property_details: 'SYNTHETIC NOT INVENTORY', authority: ''};
-  const form = {dataset: {role: 'tenant', landingPath: '/enquire/rent/', campaign: 'SYNTHETIC'},
+    area: 'Synthetic', budget: 'To discuss', timeline: definition.timeline, funding: 'To discuss',
+    property_type: 'Apartment', property_details: 'SYNTHETIC NOT INVENTORY', authority: definition.authority};
+  const form = {dataset: {role: definition.role, landingPath: pagePath, campaign: 'SYNTHETIC'},
     elements: {namedItem: key => key === 'contact_consent' ? {checked: !blank} : key === 'marketing_consent' ? {checked: false} : {value: values[key] ?? ''}},
     querySelector: selector => selector === '[data-bsre-status]' ? status : button,
     reportValidity: () => !blank, addEventListener: (name, fn) => formEvents.add(name, fn)};
@@ -110,7 +120,7 @@ export function composedPage({state = null, store = new Map(), analytics = true,
     return response({...receipt, measurement: state.capture});
   }
 
-  const window = {location: new URL(origin + '/enquire/rent/'), crypto: {randomUUID},
+  const window = {location: new URL(origin + pagePath), crypto: {randomUUID},
     BSRELeadConfig: {endpoint: origin + '/wp-json/bsre/v1/lead', retentionAdmissionRequired: true,
       measurementEligible: eligible, purposeAttributionEndpoint: '', ...(native ? {csrfToken: native.csrf} : {})},
     BSREConsentBridge: {permissions: () => ({...flags}), measurementEligible: () => eligible,
@@ -217,6 +227,7 @@ export function composedPage({state = null, store = new Map(), analytics = true,
   const commands = () => frames.flatMap(frame => (frame.contentWindow.dataLayer ?? [])
     .filter(entry => entry[0] === 'event').map(entry => ({purpose: frame.config.purpose, args: clone(Array.from(entry))})));
   return {state, store, frames, requests, status, button, bus, attempts, get admission() { return state.admission; }, window,
+    retire: () => events.emit('pagehide', {}),
     submit: () => formEvents.emit('submit', {preventDefault() {}}), pump,
     commands, conversions: () => commands().filter(row => row.args[1] === 'conversion'),
     async choice(next) {
