@@ -1,6 +1,6 @@
 # Black Swan Real Estate execution rules
 
-Read `docs/PROGRESS.md`, then only the task-relevant evidence. The complete requirements are in `docs/google-ads/`; preserve the supplied files verbatim. Reconcile conflicts in `docs/decisions/OWNER_DECISIONS.md` and linked owner-decision issues; never silently choose between them.
+Read `docs/CURRENT_STATE.md` first, then only the named task-relevant section of `docs/PROGRESS.md` and its evidence. This routing summary does not replace complete Master/specification reads when required by the task: the complete requirements are in `docs/google-ads/`; preserve the supplied files verbatim. Reconcile conflicts in `docs/decisions/OWNER_DECISIONS.md` and linked owner-decision issues; never silently choose between them.
 
 - Real Estate only. Exclude Business Setup and Zoho/CRM synchronization. Keep the original lead workbook private.
 - Work on `codex/*` branches and submit PRs. No direct main writes, force pushes, self-approval or bypass of protection. Bootstrap commit contains only the initial README.
