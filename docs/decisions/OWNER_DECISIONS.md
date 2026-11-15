@@ -1,6 +1,10 @@
 # Owner decisions
 
-The latest direct owner request on 7 November 2026 authorizes audit, local development, GitHub upload, issues, PRs and protective repository governance. It explicitly withholds live Ads changes/spend, live tracking changes and production page publication. This register is the shared decision history; GitHub issue approvals must be linked and scope-specific.
+## CURRENT_CONTACT authority — 15 November 2026 (Dubai)
+
+The owner directly answered: “Yes—authorized for calls and WhatsApp” for the captured CURRENT_CONTACT business destination. This resolves destination authority for those two channels only. The exact identity remains in private custody; no contact value or identity hash is published here. This is the execution agent's transcription of the direct owner reply, not independent human PR approval. Served-script convergence, rendered pairing, conversion policy/provider acceptance and separate human/release gates remain open. No production edit, cache action, live tracking/provider event, Ads activation or spending is authorized by this answer. [CONTACT-01 #13](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/13) is closed for this limited business-destination authority decision only; its owner-decision-required classification does not grant deployment or release approval.
+
+The direct owner request on 7 November 2026 authorizes audit, local development, GitHub upload, issues, PRs and protective repository governance. It explicitly withholds live Ads changes/spend, live tracking changes and production page publication. This register is the shared decision history; GitHub issue approvals must be linked and scope-specific.
 
 ## Four-block execution authorization — 13 November 2026 (Dubai)
 
