@@ -62,3 +62,15 @@ php -d sendmail_path=/bin/false /opt/lab/g3/native.php malformed
 php -d sendmail_path=/bin/false /opt/lab/g3/native.php enforced
 php -d sendmail_path=/bin/false /opt/lab/g34/native.php
 php -d sendmail_path=/bin/false /opt/lab/g5/tests/native.php
+
+# G35 first-global bootstrap and common G2/G3/G5 custody; synthetic fixture only.
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php disabled
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php enabled
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php malformed-flag
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php existing-global
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php namespace-collision
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php manifest-tampered
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php source-tampered
+php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php producer-tampered
+php -d sendmail_path=/bin/false /opt/lab/g35/route-native.php routes
+php -d sendmail_path=/bin/false /opt/lab/g35/route-native.php loss

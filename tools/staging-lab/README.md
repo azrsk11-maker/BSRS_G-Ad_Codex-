@@ -1,5 +1,13 @@
 # Disposable native WordPress lab
 
+## First canonical lease connection
+
+The separate G35 site tree selects the original reconnect-denying lease class through WordPress's early `db.php` seam. It creates the first global object rather than replacing the object G2 already bound or passing a second handle. See [exact scope and deployment holds](../website-tracking/canonical-lease/README.md). The default remains OFF; no production configuration or existing drop-in is changed.
+
+Eight additive SHORTINIT modes test ordinary disabled behavior, enabled core/temporary-table rollback and pre-global refusal of malformed selection, preexisting objects/classes and tampered manifest/source/producer. Two later full modes derive the accepted G3 route/receipt/outbox assertions, then exercise the actual producer and G5 named custody on the same canonical object; the loss mode kills only its own isolated connection and must preserve capture rows while rejecting reconnect/stale handles. New invocations follow every previously accepted lane in both database profiles. Existing isolation/resource limits and pinned domain guards remain.
+
+Native execution requires complete exact-head receipts. The constructor source/manifest checks and synthetic key/anchor/evidence fixtures do not establish genuine provider authority, historical qualifications, complete coupled contact compatibility, recovery or the two unimplemented operational ports. SHORTINIT is core-bootstrap evidence only, not whole-site default-OFF equivalence.
+
 ## G3–G5 additive integration
 
 The accepted `00452c69` run passed all three required checks, including G1 deterministic/concurrency and G2 modes under both database profiles. Historical execution-pending descriptions below describe their original introduction; use the dated exact-head PR result for accepted execution.

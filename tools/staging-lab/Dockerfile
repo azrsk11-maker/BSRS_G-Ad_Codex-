@@ -78,6 +78,12 @@ COPY tools/website-tracking/tracking-system/native-page-context /opt/lab/website
 COPY tools/staging-lab/build-g34-profile-lab.mjs tools/staging-lab/build-g5-runtime-lab.mjs /opt/lab/staging-lab/
 COPY tools/staging-lab/native-page-context-native.php /opt/lab/g34/native.php
 COPY tools/website-tracking/g5-runtime-ports /opt/lab/website-tracking/g5-runtime-ports
+# Explicit first-canonical-connection candidate, separate from all accepted trees.
+COPY tools/website-tracking/canonical-lease /opt/lab/website-tracking/canonical-lease
+COPY tools/staging-lab/g3-route-context-native.php /opt/lab/staging-lab/g3-route-context-native.php
+COPY tools/staging-lab/build-canonical-lease-lab.mjs /opt/lab/staging-lab/
+COPY tools/staging-lab/canonical-lease-bootstrap-native.php /opt/lab/g35/bootstrap-native.php
+COPY tools/staging-lab/canonical-purpose-native.php /opt/lab/g35/purpose-native.php
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
@@ -90,5 +96,6 @@ RUN node /opt/lab/staging-lab/build-g2-profile-lab.mjs
 RUN node /opt/lab/staging-lab/build-g3-profile-lab.mjs
 RUN node /opt/lab/staging-lab/build-g34-profile-lab.mjs
 RUN node /opt/lab/staging-lab/build-g5-runtime-lab.mjs
+RUN node /opt/lab/staging-lab/build-canonical-lease-lab.mjs
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

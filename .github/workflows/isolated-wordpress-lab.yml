@@ -14,6 +14,7 @@ on:
       - 'tools/release-control/**'
       - 'docs/audit/INSTALLED_SOURCE_COMPARISON_2026-11-07.json'
       - 'tools/website-tracking/g5-runtime-ports/**'
+      - 'tools/website-tracking/canonical-lease/**'
       - 'tools/website-tracking/tracking-system/**'
 permissions:
   contents: read
