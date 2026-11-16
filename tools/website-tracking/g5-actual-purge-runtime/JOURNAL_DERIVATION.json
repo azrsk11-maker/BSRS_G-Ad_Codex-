@@ -1,0 +1,37 @@
+{
+  "preimage": "b6a4a8b011e6215237360637eabe6db38ae46494a184e6fb335041169f9344f9",
+  "output": "ee605ea6ce19f65fd30bd9eae6f6538ede84abd697f98c6cda1310a96db0b984",
+  "reverse_verified": true,
+  "edits": [
+    {
+      "offset": 707,
+      "before": "final class ActualReceiverJournal",
+      "after": "final class ActualPurgeJournal"
+    },
+    {
+      "offset": 1599,
+      "before": "private ?CanonicalCaptureProducer $receiverProducer = null)",
+      "after": "private ?CanonicalCaptureProducer $receiverProducer, private PurgeBoundary $purgeBoundary)"
+    },
+    {
+      "offset": 6843,
+      "before": "    private function query(string $sql): int\n    {\n        $this->guard();",
+      "after": "    public function purgeBoundary(): PurgeBoundary { return $this->purgeBoundary; }\n    public function purgeAuthority(): OwnerAuthority { return $this->authority; }\n    private function query(string $sql): int\n    {\n        $this->guard();\n        $this->purgeBoundary->check('journal_sql_boundary');"
+    },
+    {
+      "offset": 1995,
+      "before": "        $receiverProducer->assertCurrent($db);",
+      "after": "        if (!$purgeBoundary->boundTo($db,$receiverProducer,$policy)) RuntimePolicy::fail('ACTUAL_PURGE_JOURNAL_COMPOSITION_CONFLICT');\n        $receiverProducer->assertCurrent($db);"
+    },
+    {
+      "offset": 20804,
+      "before": "        $next=$record; $next['revision']++; $s['jobs'][$digest]=$next; $this->write($s);",
+      "after": "        if ($old!==null && ($old['completed_at']??null)!==null && ($record['completed_at']??null)!==$old['completed_at']) RuntimePolicy::fail('ACTUAL_PURGE_COMPLETION_DEADLINE_CHANGED');\n        $next=$record; $next['revision']++; $s['jobs'][$digest]=$next; $this->write($s);"
+    },
+    {
+      "offset": 13873,
+      "before": "            $this->custody->advance($before, ['revision'=>$revision,'hash'=>$hash]);",
+      "after": "            $transition=['before'=>$before,'after'=>['revision'=>$revision,'hash'=>$hash],'encrypted_body'=>$body];\n            $this->purgeBoundary->check('journal_anchor_advance',null,$transition);\n            $this->custody->advance($before, ['revision'=>$revision,'hash'=>$hash]);\n            $this->purgeBoundary->check('journal_anchor_advance:readback',null,$transition);"
+    }
+  ]
+}

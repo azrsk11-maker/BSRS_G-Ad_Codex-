@@ -134,3 +134,9 @@ php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php choose_comm
 php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php choose_rollback
 php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php stage_commit
 php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php stage_rollback
+
+# Append after every retained receiver/G36/G37/G38 command in BOTH existing profiles.
+# The two commands use distinct fixed namespaces/progress paths in the SAME isolated DB.
+# Retained G37 large_unrelated (1100 foreign captures) is a required predecessor.
+php -d sendmail_path=/bin/false /opt/lab/g5-actual-purge-runtime/tests/purge-held-native.php
+php -d sendmail_path=/bin/false /opt/lab/g5-actual-purge-runtime/tests/purge-positive-native.php

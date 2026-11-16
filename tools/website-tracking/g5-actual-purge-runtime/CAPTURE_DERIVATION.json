@@ -1,0 +1,42 @@
+{
+  "preimage": "30685843d5b56551e15984150d7ec2ba83d9c4152b4a154ca40efe71bedbf177",
+  "output": "0944c1e2468e708d8195da3618ac4a10dd05dc20cff7fd1197724c74dd0aa62c",
+  "reverse_verified": true,
+  "edits": [
+    {
+      "offset": 132,
+      "before": "require_once __DIR__ . '/ActualJournal.php';",
+      "after": "require_once __DIR__ . '/ActualPurgeJournal.php';"
+    },
+    {
+      "offset": 404,
+      "before": "final class ActualCaptureResource",
+      "after": "final class ActualPurgeCaptureResource"
+    },
+    {
+      "offset": 799,
+      "before": "private ActualJournal $journal",
+      "after": "private ActualPurgeJournal $journal"
+    },
+    {
+      "offset": 844,
+      "before": "private RuntimePolicy $policy, private CaptureProducer $producer)",
+      "after": "private RuntimePolicy $policy, private CanonicalCaptureProducer $producer, private PurgeBoundary $boundary)"
+    },
+    {
+      "offset": 958,
+      "before": "        $this->table=$policy->prefix.'bsre_consent_captures'; $this->guard();",
+      "after": "        if (!$boundary->boundTo($db,$producer,$policy) || $journal->purgeBoundary()!==$boundary) RuntimePolicy::fail('ACTUAL_PURGE_CAPTURE_COMPOSITION_CONFLICT');\n        $this->table=$policy->prefix.'bsre_consent_captures'; $this->guard();"
+    },
+    {
+      "offset": 1205,
+      "before": "    private function guard(): void",
+      "after": "    public function boundTo(ActualPurgeJournal $j,PurgeBoundary $b,RuntimePolicy $p): bool { return $this->journal===$j && $this->boundary===$b && $this->policy===$p; }\n    private function guard(): void"
+    },
+    {
+      "offset": 2055,
+      "before": "        $this->journal->assertProviderCustody($this->db,$this->activeRequest,$this->mutating);",
+      "after": "        $this->journal->assertProviderCustody($this->db,$this->activeRequest,$this->mutating);\n        $this->boundary->check('capture_sql_boundary');"
+    }
+  ]
+}

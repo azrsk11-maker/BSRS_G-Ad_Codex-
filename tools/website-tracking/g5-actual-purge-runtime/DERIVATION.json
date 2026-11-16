@@ -1,0 +1,163 @@
+{
+  "preimage": "5e9c7d4b0816f83b6349d08051a8dac552faa5af44a877966d2e042a635cb8f7",
+  "output": "45672cee028610d3ce14b89835648cc3f3c9b4a8f4d27ba6eb44cc9733c598a4",
+  "reverse_verified": true,
+  "edits": [
+    {
+      "label": "SEPARATE_HEADER",
+      "offset": 0,
+      "before": "<?php\ndeclare(strict_types=1);\nnamespace BSRE\\ClosedRetention;\n\nrequire_once __DIR__ . '/../consent-retention/RetentionInventory.php';\nrequire_once __DIR__ . '/NoMailCopy.php';\nrequire_once __DIR__ . '/RetirementIntent.php';\nrequire_once __DIR__ . '/ClosureCollection.php';\n\n/** The adapter serializes closure edits with this lock; journal writes commit immediately. */\ninterface Journal\n{\n    public function locked(string $closureId, callable $operation);\n    public function closure(string $closureId): ?array;\n    public function journal(string $planId): ?array;\n    public function save(array &$record): void;\n    public function markHistoryIncomplete(): void;\n    public function historyIncomplete(): bool;\n    public function pinAdmissionFloor(string $policyHash): void;\n    public function admissionFloor(): ?string;\n    public function forget(string $closureId, string $planId, bool $keepClosure = false): void;\n}\n\n/** Internal protected writer; the same Journal closure lease must already be held. */\ninterface ClosureWriter\n{\n    public function replaceClosure(array $before, array $after): void;\n}\n\n/** Same closure lease and authoritative Journal, never the expiring owner UI cache. */\ninterface RetirementWriter\n{\n    public function assertRetirementOpen(): void;\n    public function stageRetirement(array &$record, int $now): void;\n    public function assertRetirementSource(array $record, int $now): void;\n    public function commitRetirement(array $record, array $proof, int $now): void;\n    public function scrubRetirement(array $record, int $now): bool;\n}\n\n/** Stable keys only. removeExact must compare the full binding and never delete by row number. */\ninterface ResourceAdapter\n{\n    public function inventory(string $requestId): array;\n    /** null means confirmed absence in the complete authorized surface, including Trash for mail. */\n    public function read(string $key): ?array;\n    public function removeExact(array $binding): void;\n}\n\ninterface Authority\n{\n    public function canReview(string $actor): bool;\n    public function canApply(string $actor, string $planDigest, int $now, string $action): bool;\n    public function mailReceipt(string $actor, string $planDigest, string $messageId): ?array;\n}\n\n/** Runtime-owned readback, never an owner-supplied true/complete flag. */\ninterface Admission\n{\n    public function readback(int $now): ?array;\n}\n\nfinal class UnverifiedAdmission implements Admission\n{\n    public function readback(int $now): ?array { return null; }\n}\n\n",
+      "after": "<?php\ndeclare(strict_types=1);\nnamespace BSRE\\ActualRetention;\nuse BSRE\\ClosedRetention\\{Journal,ResourceAdapter,Authority,Admission,NoMailCopy,UnverifiedAdmission,UnverifiedNoMailCopy,NoMailCopyProof,RetirementIntent,RetirementWriter,ClosureCollectorWriter,ClosureCollection,Failure};\nrequire_once __DIR__.'/PurgeBoundary.php';\n"
+    },
+    {
+      "label": "SEPARATE_CLASS",
+      "offset": 329,
+      "before": "final class Workflow",
+      "after": "final class ActualPurgeEngine"
+    },
+    {
+      "label": "TYPED_COMPOSITION",
+      "offset": 672,
+      "before": "    public function __construct(Journal $journal, array $adapters, Authority $authority, ?Admission $admission = null,\n        ?NoMailCopy $noMailCopy = null)",
+      "after": "    private PurgeBoundary $boundary;\n    public function __construct(Journal $journal, array $adapters, Authority $authority, Admission $admission,\n        ActualPurgeNoCopy $noMailCopy, PurgeBoundary $boundary)"
+    },
+    {
+      "label": "BOUNDARY",
+      "offset": 1194,
+      "before": "        $this->journal = $journal;",
+      "after": "        $this->boundary = $boundary;\n        $this->journal = $journal;"
+    },
+    {
+      "label": "FRESH_INITIAL_JOB_DEADLINE",
+      "offset": 3668,
+      "before": "                $record = ['plan' => $plan, 'revision' => 0, 'state' => 'PENDING', 'started_at' => $now,",
+      "after": "                $now = time();\n                if ($now < $plan['created_at'] || $now >= $plan['expires_at']) self::fail('PLAN_EXPIRED');\n                $record = ['plan' => $plan, 'revision' => 0, 'state' => 'PENDING', 'started_at' => $now,"
+    },
+    {
+      "label": "FRESH_DURABLE_INTENT",
+      "offset": 7587,
+      "before": "                        $record['intent_at'][$index] = $now;",
+      "after": "                        $record['intent_at'][$index] = time();"
+    },
+    {
+      "label": "FRESH_COMPLETION_TIME",
+      "offset": 8529,
+      "before": "                $record['completed_at'] = $now;",
+      "after": "                $record['completed_at'] = time();"
+    },
+    {
+      "label": "FRESH_CLOCK_private function proposal",
+      "offset": 14362,
+      "before": "    private function proposal(string $closureId, int $now): array\n    {",
+      "after": "    private function proposal(string $closureId, int $now): array\n    {\n        $now = time();"
+    },
+    {
+      "label": "FRESH_CLOCK_private function recheck",
+      "offset": 20122,
+      "before": "    private function recheck(array $plan, int $now, bool $cleanup = false, ?array $ticket = null, bool $requireIntakeAbsent = false): void\n    {",
+      "after": "    private function recheck(array $plan, int $now, bool $cleanup = false, ?array $ticket = null, bool $requireIntakeAbsent = false): void\n    {\n        $now = time();"
+    },
+    {
+      "label": "FRESH_CLOCK_private function verifiedAdmission",
+      "offset": 23954,
+      "before": "    private function verifiedAdmission(int $now): array\n    {",
+      "after": "    private function verifiedAdmission(int $now): array\n    {\n        $now = time();"
+    },
+    {
+      "label": "ENTRY_0",
+      "offset": 1623,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ENTRY_1",
+      "offset": 2247,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ENTRY_2",
+      "offset": 2717,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ENTRY_3",
+      "offset": 9192,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ENTRY_4",
+      "offset": 11826,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ENTRY_5",
+      "offset": 16197,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ENTRY_6",
+      "offset": 17673,
+      "before": "self::lab();",
+      "after": "$this->boundary->check();"
+    },
+    {
+      "label": "ACTUAL_PREPARE_PROOF",
+      "offset": 15657,
+      "before": "            $proofHash = NoMailCopyProof::verify($this->noMailCopy->readback($scope, $now), $scope, $now);",
+      "after": "            $proofHash = $this->noMailCopy->verify($this->noMailCopy->readback($scope, time()), $scope, time());"
+    },
+    {
+      "label": "ACTUAL_RECHECK_PROOF",
+      "offset": 21192,
+      "before": "            $hash = NoMailCopyProof::verify($readback, $scope, $now, $cleanup);",
+      "after": "            $hash = $this->noMailCopy->verify($readback, $scope, time(), $cleanup, $ticket);"
+    },
+    {
+      "label": "ACTUAL_ROW_STATE",
+      "offset": 21385,
+      "before": "            if ($requireIntakeAbsent && $readback['row_state'] !== 'ABSENT') self::fail('NO_COPY_INTAKE_NOT_ABSENT');",
+      "after": "            if ($requireIntakeAbsent && $this->noMailCopy->rowState($readback, $scope, time(), $cleanup, $ticket) !== 'ABSENT') self::fail('NO_COPY_INTAKE_NOT_ABSENT');"
+    },
+    {
+      "label": "ACTUAL_CLEANUP_PROOF",
+      "offset": 22196,
+      "before": "        $hash = NoMailCopyProof::verify($this->noMailCopy->readback($scope, $now, true, $ticket), $scope, $now, true);",
+      "after": "        $hash = $this->noMailCopy->verify($this->noMailCopy->readback($scope, time(), true, $ticket), $scope, time(), true, $ticket);"
+    },
+    {
+      "label": "NO_BLIND_RETRY",
+      "offset": 7490,
+      "before": "                    if ($record['steps'][$index] === 'PENDING') {",
+      "after": "                    if ($record['steps'][$index] === 'INTENT_RECORDED' && $resource['store'] !== 'email') self::fail('ACTUAL_AMBIGUOUS_WRITE_REVIEW_REQUIRED');\n                    if ($record['steps'][$index] === 'PENDING') {"
+    },
+    {
+      "label": "IMMUTABLE_COMPLETED_DEADLINE",
+      "offset": 14265,
+      "before": "        $record['state'] = 'HELD';\n        $record['completed_at'] = null;",
+      "after": "        if ($record['state'] !== 'COMPLETE') { $record['state'] = 'HELD'; $record['completed_at'] = null; }"
+    },
+    {
+      "label": "ACTUAL_SUMMARY",
+      "offset": 36814,
+      "before": "'scope' => 'SYNTHETIC_CLOSED_RETENTION'",
+      "after": "'scope' => 'ACTUAL_CLOSED_RETENTION_CANDIDATE'"
+    },
+    {
+      "label": "ORIGINAL_FAILURE_ONLY",
+      "offset": 37613,
+      "before": "\nfinal class Failure extends \\RuntimeException {}",
+      "after": "\n"
+    },
+    {
+      "label": "NEW_PROFILE_EOF",
+      "offset": 37613,
+      "before": "\n\n",
+      "after": ""
+    }
+  ]
+}

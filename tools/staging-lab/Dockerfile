@@ -148,5 +148,15 @@ RUN node /opt/lab/staging-lab/build-preference-runtime-lab.mjs
 # Fixed synthetic G38 races; preserve all G36/G37 closed manifests.
 COPY tools/staging-lab/g38/native/g2-retirement-races.php /opt/lab/g38/g2-retirement-races.php
 
+# Insert after retained receiver/G36/G37/G38 builds and before USER mysql.
+# Existing receiver/G36/G37/G38 COPY/RUN instructions remain unchanged.
+COPY tools/website-tracking/g5-actual-purge-runtime/build-native-addon.mjs tools/website-tracking/g5-actual-purge-runtime/build-native.mjs tools/website-tracking/g5-actual-purge-runtime/build.mjs tools/website-tracking/g5-actual-purge-runtime/REVIEWED_RECEIVER_INPUTS.json /opt/lab/website-tracking/g5-actual-purge-runtime/
+COPY tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeCaptureResource.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeEngine.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeJournal.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeResources.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeWorkflow.php tools/website-tracking/g5-actual-purge-runtime/code/PurgeBoundary.php /opt/lab/website-tracking/g5-actual-purge-runtime/code/
+COPY tools/website-tracking/g5-actual-purge-runtime/tests/native-extension.php tools/website-tracking/g5-actual-purge-runtime/tests/native-positive.php tools/website-tracking/g5-actual-purge-runtime/tests/foreign-capture-snapshot.php /opt/lab/website-tracking/g5-actual-purge-runtime/tests/
+COPY tools/qualification-history/schema/outcome-register-schema.json /opt/lab/qualification-history/schema/
+COPY tools/staging-lab/build-actual-purge-runtime-lab.mjs /opt/lab/staging-lab/
+# Read only the existing curated receiver/G5/Intake build inputs; create only the new fixed root.
+RUN node /opt/lab/staging-lab/build-actual-purge-runtime-lab.mjs
+
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]
