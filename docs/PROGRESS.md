@@ -1,5 +1,9 @@
 # Implementation progress
 
+## Align the bounded preflight assertion - 17 November 2026
+
+The timeout-only59a66ba2 trial failed before image construction because the database-profile preflight still asserted the old15-minute limit. The earlier six workflow-input tests did not exercise that assertion; reusing those results was insufficient for this workflow change. Raw log SHA25657dc501b5dd1da85b652b371fedb043bb63c8db464413262e37ab5fe21b9e9b3. Only that exact expected limit changes to25; the assertion remains mandatory. All seven locally available preflight phases passed before upload in2.028seconds:60Node tests, six workflow-input checks and the fixture/G38 preflights. PHP execution remains a CI-only gate on this Windows host. AGENTS now records this preflight dependency to prevent recurrence. Runtime, commands, permissions, isolation and cleanup remain unchanged. Production unchanged; Ads paused. No full native acceptance is claimed from either partial or failed trial.
+
 ## Preserve complete dual-profile execution within a measured bound - 17 November 2026
 
 The exact e9d15986 native job passed the25-assertion identity contract and four-case admission-clock contract before image construction. Its first complete profile passed in8minutes27seconds. The second profile was progressing when GitHub cancelled the job at its15-minute limit. The provider annotation explicitly states that maximum execution time was exceeded; raw log SHA256 ed9274a29c2b6cbe68d7dfd56a611a8f3e8974b37f73159f47eba22dc4f8a9a5. Partial evidence is not full native acceptance, and no previous assertion failure is retrospectively assigned a cause.
