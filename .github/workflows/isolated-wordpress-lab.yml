@@ -31,7 +31,7 @@ jobs:
   isolated-native-wordpress:
     # Standard public-repository hosted runner; no paid/self-hosted runner.
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:

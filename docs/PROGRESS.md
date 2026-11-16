@@ -1,5 +1,11 @@
 # Implementation progress
 
+## Preserve complete dual-profile execution within a measured bound - 17 November 2026
+
+The exact e9d15986 native job passed the25-assertion identity contract and four-case admission-clock contract before image construction. Its first complete profile passed in8minutes27seconds. The second profile was progressing when GitHub cancelled the job at its15-minute limit. The provider annotation explicitly states that maximum execution time was exceeded; raw log SHA256 ed9274a29c2b6cbe68d7dfd56a611a8f3e8974b37f73159f47eba22dc4f8a9a5. Partial evidence is not full native acceptance, and no previous assertion failure is retrospectively assigned a cause.
+
+The only executable change raises the isolated job deadline from15to25minutes. Every step, action pin, runner, permission, network guard, runtime, assertion and cleanup command remains byte-identical after reversing that single scalar. This bounded allowance accommodates both measured full profiles and image builds without weakening their gates or buying hosting/enabling paid overages. Twenty-one Node results remain reusable on unchanged runtime inputs; six workflow checks are rerun for the changed workflow. A new exact-head complete CI/raw audit remains required. Production unchanged; Ads paused.
+
 ## Admission clock boundary correction — 17 November 2026
 
 The `7f4eac61` diagnostic trial failed earlier at `purge_false_manual_receipt_holds`, before its lost-ack diagnostic could execute. Raw SHA256: `a98110c13a8a7cc9bf81cc10bfc87d14e027086f22e17e51245c0a8e41a3c3a2`. The returned hold is still unobserved; the following independently identified clock defect is not claimed as that trial's proven cause.
