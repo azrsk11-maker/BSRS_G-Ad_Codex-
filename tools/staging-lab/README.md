@@ -182,3 +182,7 @@ In ordinary Chrome, the live rental page showed both optional choices unchecked.
 ### TLS regression checks
 
 Run `python -B tools/staging-lab/browser_tls_checks.py` from the repository root (Node 24 and Python cryptography required). This explicit opt-in suite belongs to the optional browser harnesses and is required before publishing changes to them. It is outside normal Foundation test discovery, which installs no cryptography dependency; no existing check is skipped or replaced. Tests use temporary synthetic certificates and process-local test roots only; they install no CA, launch no browser and establish no native acceptance. Missing, untrusted, expired, wrong-host, malformed and mismatched certificate material must fail closed. The CTA harness requires `BSRE_BROWSER_PATH`, `BSRE_TLS_CERT` and `BSRE_TLS_KEY`; its Node TLS preflight and Chrome both use normal validation.
+
+## Separate default-OFF operational retention candidates
+
+The fixed receiver and preference materializers add new synthetic roots after the retained G36 build. The receiver driver has28 prepared checks; preference has28 prepared modes. Each requires nine isolation assertions in both existing database profiles. All predecessor commands and kernel isolation remain unchanged. These new paths need their own exact-head CI; construction tests or the accepted parent do not establish native/provider acceptance. See the separate runtime READMEs/protocol for unimplemented purge, genuine authority/custody, fault/race/scale and release gates.

@@ -92,3 +92,39 @@ php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php resale
 php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php rent
 php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php sell
 php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php let
+
+
+# Append after every retained G36 contact command in the existing entrypoint.
+# Both isolated database profiles use that same unchanged prefix of commands.
+php -d sendmail_path=/bin/false /opt/lab/g5-receiver-runtime/tests/receiver-runtime-native.php
+
+
+# Explicit fixed G37 preference runtime, after all accepted G36 lanes.
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php disabled
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php missing_provider
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php nonce
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php signature
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php coverage
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php reference_coverage
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php closed_due
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php closed_early
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php retire
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php known_after
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php unknown_after
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php new_choice
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php restore_later
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php cas_ack
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php rollback
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php trigger
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php foreign_key
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php snapshot_expiry
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php compact
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php floor_restore
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php upgrade_scope
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php large_unrelated
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php partition_conflict
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php orphan_history
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php expired_approval
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php revoked_cleanup
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php expired_backup_reference
+php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php external_deadlines

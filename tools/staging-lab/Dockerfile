@@ -124,5 +124,26 @@ COPY tools/website-tracking/coupled-package-v3/build-native.mjs tools/website-tr
 COPY tools/staging-lab/build-coupled-canonical-v3-lab.mjs tools/staging-lab/canonical-coupled-contact-native.php /opt/lab/staging-lab/
 # Place this RUN after existing byte builds and before USER mysql.
 RUN node /opt/lab/staging-lab/build-coupled-canonical-v3-lab.mjs
+# Insert after the retained G36 byte build and before USER mysql. Public code only.
+COPY tools/website-tracking/g5-receiver-runtime/build-native-lab.mjs tools/website-tracking/g5-receiver-runtime/build-candidate.mjs /opt/lab/website-tracking/g5-receiver-runtime/
+COPY tools/website-tracking/g5-receiver-runtime/runtime/control.gs tools/website-tracking/g5-receiver-runtime/runtime/no-copy.gs /opt/lab/website-tracking/g5-receiver-runtime/runtime/
+COPY tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ReceiverContracts.php tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/NoMailCopyAlgebra.php tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ActualRetirementPort.php tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ReceiverOperationalEvidence.php tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ActualReceiverWorkflow.php /opt/lab/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/
+COPY tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/closed-enquiry-retention/ActualReceiverJournal.php /opt/lab/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/closed-enquiry-retention/
+COPY tools/website-tracking/g5-receiver-runtime/tests/control-fixture.mjs tools/website-tracking/g5-receiver-runtime/tests/native-bridge.mjs tools/website-tracking/g5-receiver-runtime/tests/receiver-runtime-native.php /opt/lab/website-tracking/g5-receiver-runtime/tests/
+COPY tools/staging-lab/build-receiver-runtime-lab.mjs /opt/lab/staging-lab/
+# These two curated additions supply the recorded /opt/lab/g36-source bridge root.
+# Keep each exactly once if already added by the integration correction.
+COPY tools/closed-enquiry-retention/receiver-fence/lab.mjs /opt/lab/g36-source/tools/closed-enquiry-retention/receiver-fence/
+COPY tools/staging-lab/receiver-lab.mjs /opt/lab/g36-source/tools/staging-lab/
+RUN node /opt/lab/staging-lab/build-receiver-runtime-lab.mjs
+
+# Explicit fixed G37 preference input cache; retain the accepted G36 site/helper.
+COPY tools/website-tracking/g5-preference-runtime/build-native-addon.mjs tools/website-tracking/g5-preference-runtime/build-runtime.mjs /opt/lab/website-tracking/g5-preference-runtime/
+COPY tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/ActualPreferenceRetention.php tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAlgebra.php tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAtomicStore.php tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceContracts.php tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceCustody.php /opt/lab/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/
+COPY tools/website-tracking/g5-preference-runtime/native/FixturePorts.php tools/website-tracking/g5-preference-runtime/native/native.php /opt/lab/website-tracking/g5-preference-runtime/native/
+COPY tools/staging-lab/build-preference-runtime-lab.mjs /opt/lab/staging-lab/
+# Run after build-coupled-canonical-v3-lab.mjs and before USER mysql.
+RUN node /opt/lab/staging-lab/build-preference-runtime-lab.mjs
+
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

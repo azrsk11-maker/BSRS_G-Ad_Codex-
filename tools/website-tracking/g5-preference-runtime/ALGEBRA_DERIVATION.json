@@ -1,0 +1,142 @@
+{
+  "source_path": "tools/consent-retention/RetirementLedger.php",
+  "source_sha256": "9675b7928ee0bae042c5f0305cdd1d73d13a343fda4dc8800d3e4d0568c1cba3",
+  "output_sha256": "d06553be8d606dbb41cc552d2066cf9d9358e46d7f11e913ba6e0edbc8ff6d91",
+  "receipts": [
+    {
+      "method": "rowHash",
+      "source_start": 962,
+      "source_end": 1094,
+      "input_sha256": "147c3a3a683386811eb35fbb67a82e639edb8d33f55b6f49e4c632acd6adf591",
+      "output_sha256": "147c3a3a683386811eb35fbb67a82e639edb8d33f55b6f49e4c632acd6adf591",
+      "edits": [],
+      "reverse_verified": true
+    },
+    {
+      "method": "uint",
+      "source_start": 1095,
+      "source_end": 1506,
+      "input_sha256": "1fa61ccee1348dbd66223402fc242ddfea1301eca747e2a788b93008cc69812d",
+      "output_sha256": "1fa61ccee1348dbd66223402fc242ddfea1301eca747e2a788b93008cc69812d",
+      "edits": [],
+      "reverse_verified": true
+    },
+    {
+      "method": "clock",
+      "source_start": 1507,
+      "source_end": 1677,
+      "input_sha256": "06f4e5a3e2ec5eb3f4bac9fadc1a2abbdf6ebd7ac2a121f1e5ab0985ac5f590b",
+      "output_sha256": "06f4e5a3e2ec5eb3f4bac9fadc1a2abbdf6ebd7ac2a121f1e5ab0985ac5f590b",
+      "edits": [],
+      "reverse_verified": true
+    },
+    {
+      "method": "anchor",
+      "source_start": 2391,
+      "source_end": 2730,
+      "input_sha256": "556ffcec40ba4e67e4ed4d29966425dfc4bd4a4da3da8bc993cb998230e89a45",
+      "output_sha256": "556ffcec40ba4e67e4ed4d29966425dfc4bd4a4da3da8bc993cb998230e89a45",
+      "edits": [],
+      "reverse_verified": true
+    },
+    {
+      "method": "compactionPlan-calculation-only",
+      "source_start": 8829,
+      "input_sha256": "4698fa28869779ce0f862e6e2e1410986dcad2c157cf558e7f69025a978640b5",
+      "output_sha256": "4698fa28869779ce0f862e6e2e1410986dcad2c157cf558e7f69025a978640b5",
+      "reverse_verified": true
+    },
+    {
+      "method": "restorePlan",
+      "source_start": 13527,
+      "source_end": 17385,
+      "input_sha256": "67553f31c466bbb80fae453ebee2f6d7b1fd6220d9849d207ea8dfd542e5d1c5",
+      "output_sha256": "088ddaf98d4477c57dcb5da152a826c8fa2b6c7874ea49bbc42aec5db0f889d4",
+      "edits": [
+        {
+          "offset": 4,
+          "before": "public function restorePlan",
+          "after": "public static function restorePlan"
+        },
+        {
+          "offset": 364,
+          "before": "$metadata['source']!=='SYNTHETIC_BSRE_LAB'",
+          "after": "$metadata['source']!=='ACTUAL_PREFERENCE_SNAPSHOT_V1'"
+        },
+        {
+          "offset": 1636,
+          "before": "RetentionInventory::plan($snapshot,$now,true);",
+          "after": "SnapshotFormat::plan($snapshot,$now,true);"
+        },
+        {
+          "offset": 1687,
+          "before": "$eligible=[];",
+          "after": "\\BSRE\\PurposeRetention\\RetentionInventory::assertRestoreReferences($snapshot,$retired);\n        $eligible=[];"
+        }
+      ],
+      "reverse_verified": true
+    },
+    {
+      "method": "restore-reference-calculation-only",
+      "source_start": 14709,
+      "input_sha256": "7cfddab4b53d9539361bc3ef67cdf9e7a93afddd502fb31881fd5e517f09c1c2",
+      "output_sha256": "22b2b03570b7c15fd33d5de91049c5db512775fc606534f92e71b5611fa74e84",
+      "original_reference_math_preserved": true,
+      "reverse_verified": true
+    },
+    {
+      "method": "record",
+      "source_start": 7003,
+      "source_end": 8623,
+      "input_sha256": "f3377575cc67e98c5e4a6708758fd88de1ac7304ad067b92504a5c2846b6884f",
+      "output_sha256": "fbbf52696ebabe2e5b6b7a3008cba6f6bc2214ef28f239fd06c6468ec4493321",
+      "edits": [
+        {
+          "offset": 4,
+          "before": "public function record",
+          "after": "public static function append"
+        },
+        {
+          "offset": 130,
+          "before": "$planHash=hash('sha256',json_encode($plan,JSON_THROW_ON_ERROR))",
+          "after": "$planHash=Guard::digest($plan)"
+        },
+        {
+          "offset": 170,
+          "before": "$pending=count(array_filter($snapshot['history'],fn($row)=>in_array('bsre_consent_history:'.$row['receipt'],$plan['eligible'],true)));",
+          "after": "$pending=count(array_filter($snapshot['history'],fn($row)=>in_array('bsre_consent_history:'.$row['receipt'],$plan['details']['eligible'],true)));"
+        },
+        {
+          "offset": 694,
+          "before": "if (!in_array('bsre_consent_history:'.$history['receipt'],$plan['eligible'],true)) continue;",
+          "after": "if (!in_array('bsre_consent_history:'.$history['receipt'],$plan['details']['eligible'],true)) continue;"
+        },
+        {
+          "offset": 1189,
+          "before": "            if ($this->db->insert($this->db->prefix.'bsre_retirement_ledger',$row)===false) throw new \\RuntimeException('LEDGER_STORAGE_UNAVAILABLE');",
+          "after": "            $ledger['rows'][]=$row;"
+        },
+        {
+          "offset": 1235,
+          "before": "        $this->query($this->db->prepare(\"UPDATE {$this->db->prefix}bsre_retirement_checkpoint SET sequence_no=%d,chain_hash=%s WHERE id=1\",$anchor['sequence'],$anchor['hash']));\n",
+          "after": ""
+        },
+        {
+          "offset": 1243,
+          "before": "return self::anchor($anchor['sequence'],$anchor['hash'],$ledger['floor']);",
+          "after": "return ['anchor'=>self::anchor($anchor['sequence'],$anchor['hash'],$ledger['floor']),'floor'=>$ledger['floor'],'rows'=>$ledger['rows']];"
+        }
+      ],
+      "reverse_verified": true
+    },
+    {
+      "method": "read-validation-only",
+      "source_start": 5401,
+      "input_sha256": "96608c3598256252a87bedcc4af632798bbee10b2192f85f15bd267a0c9630f9",
+      "output_sha256": "96608c3598256252a87bedcc4af632798bbee10b2192f85f15bd267a0c9630f9",
+      "reverse_verified": true
+    }
+  ],
+  "original_classes_unchanged": true,
+  "pure_algebra_not_authority": true
+}

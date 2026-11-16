@@ -1,0 +1,1972 @@
+{
+  "cases": {
+    "test_pest_commercial_services_admission": [
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_all_held_groups_are_protected_or_already_protected_without_overwriting",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_all_semantic_holds_and_full_literals_survive",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_all_seventeen_semantic_tampers_including_prior_exclusions_are_rejected",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_approval_authority_cannot_be_invented_even_with_recomputed_subject",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_campaign_scope_does_not_become_a_live_campaign_mapping",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_complete_history_and_rollback_preserve_every_old_body_and_field",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_default_entrypoints_use_new_stage_and_septic_snapshot_stays_frozen",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_every_source_row_including_all_noncohort_and_held_peers_is_compared",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_evidence_bound_rebalance_preserves_target_and_every_qualified_original",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_exact_original_source_and_complete_public_cells_bind_every_new_record",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_future_and_expired_review_are_rejected",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_held_or_noncohort_source_peer_blocks_otherwise_proposed_literal",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_held_or_outside_cohort_cannot_be_added_to_selection",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_largest_remainder_has_independently_calculated_integer_result",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_modified_new_body_cannot_pass_saved_verification",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_rebalance_is_order_independent_and_preserves_fully_admitted_pools",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_rebalance_rejects_boolean_overflow_and_inconsistent_previous_evidence",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_rebalance_uses_capacity_without_transfer_until_exhausted",
+      "test_pest_commercial_services_admission.PestCommercialServicesAdmissionTests.test_truncated_base_fails_before_comparison"
+    ],
+    "test_pool_sprinkler_admission": [
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_all_held_groups_are_protected_or_already_protected_without_overwriting",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_all_semantic_holds_and_full_literals_survive",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_all_seventeen_semantic_tampers_including_prior_exclusions_are_rejected",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_approval_authority_cannot_be_invented_even_with_recomputed_subject",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_campaign_scope_does_not_become_a_live_campaign_mapping",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_complete_history_and_rollback_preserve_every_old_body_and_field",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_complete_negative_count_does_not_grant_approval_or_deployment",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_default_entrypoints_use_new_stage_and_septic_snapshot_stays_frozen",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_every_source_row_including_all_noncohort_and_held_peers_is_compared",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_evidence_bound_rebalance_preserves_target_and_every_qualified_original",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_exact_original_source_and_complete_public_cells_bind_every_new_record",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_future_and_expired_review_are_rejected",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_held_or_noncohort_source_peer_blocks_otherwise_proposed_literal",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_held_or_outside_cohort_cannot_be_added_to_selection",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_largest_remainder_has_independently_calculated_integer_result",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_modified_new_body_cannot_pass_saved_verification",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_rebalance_is_order_independent_and_preserves_fully_admitted_pools",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_rebalance_rejects_boolean_overflow_and_inconsistent_previous_evidence",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_rebalance_uses_capacity_without_transfer_until_exhausted",
+      "test_pool_sprinkler_admission.PoolSprinklerAdmissionTests.test_truncated_base_fails_before_comparison"
+    ]
+  },
+  "date": "2026-11-13",
+  "files": {
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/README.md": {
+      "bytes": 6660,
+      "sha256": "e8e71e591d004e4d6a9b11fe06d354e8d03506eb3c409438cd770c59c5e8b148"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/abu-dhabi-sharjah.json": {
+      "bytes": 2057677,
+      "sha256": "eed2da3518d48a82fffb1ac3ab3b2706e6b32902bc313653c328685e13bcf095"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/capture.json": {
+      "bytes": 1299,
+      "sha256": "719d1bcdce7620740266046ed24705b6c05fdf521cdb67e9be3b6a014023f62d"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/geography.json": {
+      "bytes": 1422,
+      "sha256": "8e01ea27127f5d6439ce3a00548de86a110ca558f8d67e839aff2565d84f251f"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/overlap.json": {
+      "bytes": 1205580,
+      "sha256": "8b12e01798761923f6ac47f92610f7f027ed8b89e33c898ed846c5141442f70c"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/proposals.json": {
+      "bytes": 1447312,
+      "sha256": "91e67eccf83dda044425ebc4ddce60d0a52a9823a088ad1dc9f1e610095ac689"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/protection-screen.json": {
+      "bytes": 93504,
+      "sha256": "e61ff996dd4bf240ff41d9d34b5f65af3251dc03d8e794d7bc9aeb9999b36ef1"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/verify_capture.py": {
+      "bytes": 4620,
+      "sha256": "29cb1322a6e37aa27614ad02fd3e3e51fa3a923a9891418a9a1f02636b7e55fb"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/verify_triage.py": {
+      "bytes": 2071,
+      "sha256": "bf73d277cc00f710a3a429a413938d6b5a3e2336954607695214647b3465911f"
+    },
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json": {
+      "bytes": 4032690,
+      "sha256": "ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4"
+    },
+    "docs/audit/keyword-application-documents-2026-11-13/README.md": {
+      "bytes": 1660,
+      "sha256": "2acf3b5c7e403e0428f571740f521d046f743fadcbae206653dc3abb7b90603e"
+    },
+    "docs/audit/keyword-application-documents-2026-11-13/application-documents.json": {
+      "bytes": 3949534,
+      "sha256": "308e98c6a5836459cf572e7ff8d4e063b06cdd1881170f245f17b0f6b8bbb587"
+    },
+    "docs/audit/keyword-application-documents-2026-11-13/capture.json": {
+      "bytes": 908,
+      "sha256": "2a5c148cd42f6a94077553ee9cef4e97fb59d03dfd358c947d030c9b965f34b3"
+    },
+    "docs/audit/keyword-application-documents-2026-11-13/verify_capture.py": {
+      "bytes": 7358,
+      "sha256": "599ad56a91f4c5f5e005ddb925903b78f33461f9c28337b3628ea2c151feaae8"
+    },
+    "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/README.md": {
+      "bytes": 3129,
+      "sha256": "2578d74cea77701d8e952086ae853705d0d6c4b3edf9c50a54a4b5b8dc17c818"
+    },
+    "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/projection.json": {
+      "bytes": 18292,
+      "sha256": "1f5d3a3d6baf3c0b2d1e82c18cf2552b6572687a9741311a3449916f6ea7122f"
+    },
+    "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/source.json": {
+      "bytes": 7489,
+      "sha256": "b20eac063ead4bb4882d8535a396a320e2336673941a509a10fa570cf54bc1fb"
+    },
+    "docs/audit/keyword-apprenticeship-review-2026-11-12/README.md": {
+      "bytes": 4202,
+      "sha256": "61f2713dc14332be9eaa679c8973fb3567505f4dc22f221b74437312fec372df"
+    },
+    "docs/audit/keyword-apprenticeship-review-2026-11-12/independent-review.json": {
+      "bytes": 40951,
+      "sha256": "6ad55fadbbcd94f5e371159ecf5c605f161a391746628b184d4c3ce3184d421b"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/README.md": {
+      "bytes": 6831,
+      "sha256": "4b1d61ac2f1afe5e613a59ad050e03e97a2ddca5b99e702f87c26cf44be73677"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/bank-access-navigation.json": {
+      "bytes": 3119365,
+      "sha256": "822129ae18676ee62700c0726dcc11179c1bb7293636f031d7f3908e6fc879ea"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/capture.json": {
+      "bytes": 2114,
+      "sha256": "a3d6fe2f1c2caa5c905651d4f8955a338118a6380d5a7e6251b17c82767f3c99"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-a.json": {
+      "bytes": 586932,
+      "sha256": "89df3708b481a29d8c0d94ba068e99046e7f388ce2780cbc8e49af7d66dbbe6a"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-a.md": {
+      "bytes": 9248,
+      "sha256": "57086f255179de855c3abcc97d2f5799a3e4f1bf9da28a9534d620d5304ad520"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-b.json": {
+      "bytes": 593721,
+      "sha256": "4f8489d14c2b0233ce8db8c920a886eabc57baead6161d99864547bfab45fecb"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-b.md": {
+      "bytes": 3987,
+      "sha256": "8242e0b5e2d34272c3ddc1b6c260b09468aff9e0598910aba5b80717a3e2fed7"
+    },
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/verify_capture.py": {
+      "bytes": 7158,
+      "sha256": "890ae388335ecef0088ccc8f21ef57bf5b49253e0e27c3f122e3f5228952cc7e"
+    },
+    "docs/audit/keyword-bank-channel-login-review-2026-11-13/README.md": {
+      "bytes": 2834,
+      "sha256": "f12d74f826b3eba4442f39a25a41b87616474b1a433c6d68cab581ad1eec9b38"
+    },
+    "docs/audit/keyword-bank-channel-login-review-2026-11-13/review.json": {
+      "bytes": 139305,
+      "sha256": "0c5dd4ffe8cbe4a39f11e17f6e309cb492a106bde1ac3ef378d299e4b790d147"
+    },
+    "docs/audit/keyword-bank-channel-login-review-2026-11-13/verify_review.py": {
+      "bytes": 9352,
+      "sha256": "5a9c8e11f929dd5c3a158044795ec7ca76101a9e6f08b5a8cb2b721288edff3a"
+    },
+    "docs/audit/keyword-bank-support-review-2026-11-12/README.md": {
+      "bytes": 4901,
+      "sha256": "12cd086148de805fbf01e1e22a307e52c96b451a13132264e40a78c7dc133e61"
+    },
+    "docs/audit/keyword-bank-support-review-2026-11-12/review.json": {
+      "bytes": 378409,
+      "sha256": "cc3a3d36d564bb577cc1b8b2015e3600e5d8daaecd2fa3b30a80246f7ffca89d"
+    },
+    "docs/audit/keyword-bank-support-review-2026-11-12/verify_review.py": {
+      "bytes": 9096,
+      "sha256": "5320c25a9834977db941af35035aef7d4025df752664e018e6c8535164ea55e3"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/README.md": {
+      "bytes": 7111,
+      "sha256": "816df36cd756b99a2de1b35d66efa87722ed90c5f8d31ffbf1d60eae9bfd4c9c"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/capture.json": {
+      "bytes": 1306,
+      "sha256": "a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/developer-employment.json": {
+      "bytes": 827787,
+      "sha256": "3779c708adbe0aae5cbe3f9ee51d1f3a11d334cb976041c05fe0af77e00af1cd"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/overlap.json": {
+      "bytes": 484212,
+      "sha256": "a6c89d14c576a4bed51a87a96ef620ae6e56180fc26feff8596ca1dfe32ecef2"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/proposals.json": {
+      "bytes": 694951,
+      "sha256": "eb9053509274880b5972305c0bd1860c74f05c982bda6d1b03fbd55b4bd5c193"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/protection-screen.json": {
+      "bytes": 216064,
+      "sha256": "022d5cec6e4b4c99927e6ea3db4b1146a7ee9eaa8193a1631688480b8f3ba776"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/verify_capture.py": {
+      "bytes": 3323,
+      "sha256": "2d37c6c66cf52cafe422697c16d866c1d02ca6593bae0a26b4922b3eb4d15252"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/verify_triage.py": {
+      "bytes": 3704,
+      "sha256": "d56a63870b8582f624fa6fd02e7a59cf00f2e069b4561ff404f33ee7fd1bbb2c"
+    },
+    "docs/audit/keyword-developer-employment-2026-11-11/workbench.json": {
+      "bytes": 1520922,
+      "sha256": "a7cb70063367d08f4518e42aaf7f230ae8c872f111a1eaa0069e76dc088b3a99"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/README.md": {
+      "bytes": 5070,
+      "sha256": "4de2a9f7c1e19e258326354aea374e55ec53082502e60760608130c56895823d"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/buyers.json": {
+      "bytes": 3016097,
+      "sha256": "2c742c953164e44038032c828808769e4b4db3f5b713e689a7edee79df1dbf36"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/capture.json": {
+      "bytes": 2877,
+      "sha256": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/commercial.json": {
+      "bytes": 627017,
+      "sha256": "0e0976a1dd40288917cdbac847ed4c2c553ab3a28bc7c9cf36c2f635fb63478f"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/owners.json": {
+      "bytes": 316379,
+      "sha256": "d89d9ee30ab0b02d2525d6833af1d92a545b48157ce65e2dc6e4bffac376f681"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/tenants.json": {
+      "bytes": 4007317,
+      "sha256": "72f757844e324a6bc0c01e89e3bdb21559b1ad13b503210ca5f83f6c71a13b33"
+    },
+    "docs/audit/keyword-discovery-2026-11-08/verify_capture.py": {
+      "bytes": 5147,
+      "sha256": "d57fbe7f95d74270f0880a63d59e1776afd3e3c68a8cfd154ca399cd9ff63cee"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/INTENT_REVIEW.md": {
+      "bytes": 4964,
+      "sha256": "e7834b5f30f72afdafd3ce1e8caf0252c2b0eb7f5ce51e50e9a0ca3ad5ffaf38"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/README.md": {
+      "bytes": 9755,
+      "sha256": "8c2ef454207d4eee149dc717e2d091f7906844ff4d5ee2162ac79815b3823014"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/capture.json": {
+      "bytes": 1628,
+      "sha256": "279b71e166ecbb3806af143549a99f559ac7846ffa9396497f266b871a2012a7"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/landlords.json": {
+      "bytes": 14714,
+      "sha256": "a1c5ab276d12b76541508ad00587a9d2c3f0ddd01b75c7be63c842bfe3690c11"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/overlap.json": {
+      "bytes": 17058,
+      "sha256": "1379da9e835e647f6df40d9c52c384a6d62ee6eb7fcc1a5e000b94ba8f21b776"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/proposals.json": {
+      "bytes": 17268,
+      "sha256": "84261d3eefb8936b7f7a9a0102e02386f994bb370e8aebbd620700b9f602f5b3"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/sellers.json": {
+      "bytes": 19266,
+      "sha256": "ad59fa643c50af4b2e03782428979a841e64ed17557f8e376280fe57f151781e"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/verify_capture.py": {
+      "bytes": 3092,
+      "sha256": "ad448ba54c6722ba49191a34108127882b600bad5c51a5d039b20882c37a40f3"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/verify_triage.py": {
+      "bytes": 1769,
+      "sha256": "d20133a082463768d695bd8ebc5c02bf7430784f7735960b9e85f90d7912066a"
+    },
+    "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json": {
+      "bytes": 46759,
+      "sha256": "b7118852ef5592db4501f28ae14201dc7715bca5f1ca5bf8036d66e6b5fb9cc2"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/README.md": {
+      "bytes": 5275,
+      "sha256": "c3d969e9135b212bfd266a7b15b85aa5c1838a930cad4d36a1fe250d3df35fbf"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/capture.json": {
+      "bytes": 1251,
+      "sha256": "bdc847f3c9759eb166d2bb89122ac365ce414127200463ce0b423a9628eef864"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/employment-broad.json": {
+      "bytes": 125239,
+      "sha256": "489754ba9986842d61704c9cfb56a378b596d79ce2782972eac4dd53b0628b8b"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/overlap.json": {
+      "bytes": 72753,
+      "sha256": "da04bfec018447535ac1f54d8a1b10924ec49471a28cf8a9fa22362d9319161d"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/proposals.json": {
+      "bytes": 81684,
+      "sha256": "523226d018018157e44a3e7e7c3fe53c286ad5742fd044138d2eda4c36d41fa4"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/protection-screen.json": {
+      "bytes": 126752,
+      "sha256": "d8e748bc857d1f697a0676fddc6169a8c8e4c1599cae8779ec7ed57d128657ba"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/verify_capture.py": {
+      "bytes": 2725,
+      "sha256": "fc665e997c668baa90e435a40fea1878e8051867ea981f17cf93a638a4340393"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/verify_triage.py": {
+      "bytes": 3249,
+      "sha256": "530f6fef4cdc3bd23e1b99f672a0f4cf7536ba236158ba055f5764957cc5d4eb"
+    },
+    "docs/audit/keyword-employment-broad-2026-11-10/workbench.json": {
+      "bytes": 205623,
+      "sha256": "c93745c44b95b530b8c4dbcd1ac6f7e4b7b04cdd8eabfacaaf9a6578b1fa2002"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/ENTITY_REVIEW.md": {
+      "bytes": 2327,
+      "sha256": "72703422ad2a894dd7f803db7fe60858b185df1c6f4e90d3e2871f5d4af7606d"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/README.md": {
+      "bytes": 4829,
+      "sha256": "e12e104e2d2933ac2f5657ab0436ab0a8356e3d807fe451a869bf9367573af57"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/TRIAGE.md": {
+      "bytes": 5335,
+      "sha256": "0af7e241827ced262894bcbd2704e4f75d0e3f5a0cb76e633b7c432550b8c967"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/capture.json": {
+      "bytes": 2077,
+      "sha256": "8129d8f27594257e58d35e112dd1f12ba6566e238f8b544ab66e82af08a00e3f"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/education-broader.json": {
+      "bytes": 232050,
+      "sha256": "231b7029722f786705a3eaa14c658f657b3b38179deca37e862d9afc259002de"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/education-specific.json": {
+      "bytes": 5540,
+      "sha256": "fcc4f35fe10a04d9ab11da4d7d6674e6779881c81b3b16690c4d9f8740f3f969"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/employment.json": {
+      "bytes": 9373,
+      "sha256": "34848eca2c291995570ba381850fac8ddbeac5f7878ff09777d879f228efa532"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/overlap.json": {
+      "bytes": 139973,
+      "sha256": "514be2602a5f6dd2406c82dfa69353c4b44eae5c0a43a0f5240f87b21dc02d93"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/proposals.json": {
+      "bytes": 158251,
+      "sha256": "058acc675edac89a0ea379aa4c10f30088f2db5786705d54ec8e17536636168f"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/protection-screen.json": {
+      "bytes": 52294,
+      "sha256": "c1d11d04292032ae1664a70ddce38b32d0bc137ea81ffc01adb2a9187556eb30"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/verify_capture.py": {
+      "bytes": 3175,
+      "sha256": "fb19b3254720085b00d84170b9a71bc4efc758ad3ce9188236653ad70546e0e5"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/verify_triage.py": {
+      "bytes": 3404,
+      "sha256": "6dc548c52cbf8927675758606fdcae60505c3dc25e8ca4826ccac533609f7666"
+    },
+    "docs/audit/keyword-employment-education-2026-11-10/workbench.json": {
+      "bytes": 393050,
+      "sha256": "b22f03d89237aa4467b2e7d9cc8a74c36882cdee104cabb85d55f8150e6f139a"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11-batch2/README.md": {
+      "bytes": 1938,
+      "sha256": "a202382137d349fce88cc9da6806f57b5e6a334271c48a3583782898db571ae7"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11-batch2/capture.json": {
+      "bytes": 898,
+      "sha256": "47127cdbae1656ee8904a5486d8a500206ade837892d56b9be8b9143e628798e"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11-batch2/employment-followup-batch2.json": {
+      "bytes": 399991,
+      "sha256": "a39cb137570e71e64c50081d8019268d30ee96498cdb651f66bfc3a99f4a1189"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11-batch2/semantic-review-preview.json": {
+      "bytes": 158771,
+      "sha256": "d9694957f42bd4ef115bd300383f3016ed11b2556d8d681a99bceabf00fb09e5"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11/README.md": {
+      "bytes": 2809,
+      "sha256": "0f80a60ca4ea188b7cdfe4baf041d9f375f750baed7bb6c0425662a656d6d642"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11/REVIEW_PREVIEW.md": {
+      "bytes": 1656,
+      "sha256": "87026f581befa01588a8d7f58a484f024873ca3d5558e61dcfeedf64b8278807"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11/capture.json": {
+      "bytes": 899,
+      "sha256": "3f9b864bf9db426696f4af2d901f8f767280ec596325fe8417720cd0ca646249"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11/employment-followup.json": {
+      "bytes": 399992,
+      "sha256": "860733d2098bef9447b2ffd36fb2246a7380873a22e2ef0dbe9c6028960d84fe"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11/protected-overlap-report.json": {
+      "bytes": 1292,
+      "sha256": "27bf3c395b9c1dcd5eb75c19089aa794321d51fda7661fa1f908745a54e0af01"
+    },
+    "docs/audit/keyword-employment-followup-2026-11-11/semantic-review-preview.json": {
+      "bytes": 162680,
+      "sha256": "e983b3eaacf26f076b819db65bed552cca05b3b2fc0fe6e0957551ffc7d54c34"
+    },
+    "docs/audit/keyword-employment-followup-reconciled-2026-11-11/review.json": {
+      "bytes": 328198,
+      "sha256": "706a600d1db0d72a663d2810e5307312c7aebe001cb3c1a47cb9227d71fd45d5"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/README.md": {
+      "bytes": 7389,
+      "sha256": "5e09fb0ba2050c3fa223fe5d40b2e5afa7bf8da72e4772895ae61660c77db834"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/capture.json": {
+      "bytes": 1286,
+      "sha256": "94dfa8a6fe28a0ed76b865a5a230c4404a5bc8c25ecfa0cd9fae6f6311fa78c1"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/employment-lifecycle.json": {
+      "bytes": 1515158,
+      "sha256": "ff63d459628f60eb7bf3b64b7ee881d57e7f8abacb734c15d7f7e597b5a12b7e"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/overlap.json": {
+      "bytes": 905482,
+      "sha256": "10e0b36c00f062387e7e551cbf306d5477d0743cfc7fe80627a9906fcd8477bb"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/proposals.json": {
+      "bytes": 1264874,
+      "sha256": "3df02838ac668271034bfb6e84907884c27193234733cb2b4c622670ed73cd59"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/protection-screen.json": {
+      "bytes": 575768,
+      "sha256": "d4317c7bb94502076d60449a14d74e60a0d48dad28145f5921b612e070b6f783"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_capture.py": {
+      "bytes": 3573,
+      "sha256": "2fd84de74a831d2879a259af370808b7052be3e039e041de9ba801dbde224ad4"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/verify_triage.py": {
+      "bytes": 3704,
+      "sha256": "facde27e88a457f44205bd141c6814928bde61415ba695e13463182c0a30af79"
+    },
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json": {
+      "bytes": 2854508,
+      "sha256": "d55c2ba4f03fe8f91cc49477f938cd0eae0ac638b1667709de422ab540404449"
+    },
+    "docs/audit/keyword-entertainment-admission-review-2026-11-11/README.md": {
+      "bytes": 2694,
+      "sha256": "8dc8ab075e1ca1a01268f01ade5370b3ff4a875f83637cc0043e4fc9ac4a0bdb"
+    },
+    "docs/audit/keyword-entertainment-admission-review-2026-11-11/reconciliation.json": {
+      "bytes": 6366,
+      "sha256": "dc7a56254791a137b546333203e4c83a4dc5a5e7872fa09657aae0685c578995"
+    },
+    "docs/audit/keyword-entertainment-admission-review-2026-11-11/resolution-evidence.json": {
+      "bytes": 8343,
+      "sha256": "8a67879ba41b8aadca3c70656d18ba9a3f51f85080a065d358d4590763b21346"
+    },
+    "docs/audit/keyword-entertainment-admission-review-2026-11-11/review.json": {
+      "bytes": 285402,
+      "sha256": "c96f199aae33de35356c26930d331e1225e37065bb7ae5a78e31d509ae1ef5ce"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/README.md": {
+      "bytes": 6717,
+      "sha256": "dbc7e131cd9df3517dd222b1bbd3626ea87bcc04374a359cd23e85873455a7da"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/capture.json": {
+      "bytes": 2340,
+      "sha256": "929321ac43e8a7acf9511c5d974b124d6a1448099860873929099991556aeabc"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/capture_tools.py": {
+      "bytes": 6705,
+      "sha256": "135956c53c683d72c7357747d1c7f92bc44e313b5d1922b69f672caa44ab0140"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/keywords.json": {
+      "bytes": 41278,
+      "sha256": "a3d8882f5edc61e40c482772723596caaf050a0d7a792e5fe4991be64b14e74f"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/lexical.json": {
+      "bytes": 15177,
+      "sha256": "e12dc3149d9ba8d8543d8ce4505899aa0f19f4a7ef5a99382afd6fd7097de597"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/review.json": {
+      "bytes": 66481,
+      "sha256": "dad9ca570b860ce3a0061eff2269d0a8d9c5cf026c20d83ff5eabff284bc5179"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/test_capture.py": {
+      "bytes": 3791,
+      "sha256": "aab0fad404d08581bdda079be00336bb9b7b9ed6e02733ba8c9adc06c2935184"
+    },
+    "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py": {
+      "bytes": 1439,
+      "sha256": "2f4ba4f9e2d132ee972e2d776efa4aa59690e2632c1b8350f0d15d76150b6b55"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/ENTITY_REVIEW.md": {
+      "bytes": 3295,
+      "sha256": "7bbe7af900cd89401660f7267f59cc08393c0173ab2b1c246511fa7e875f999d"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/README.md": {
+      "bytes": 6777,
+      "sha256": "deac4e30c88591225d74d1de383bf288e8d1204010e51fd1977f7977733e7cee"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/capture.json": {
+      "bytes": 1269,
+      "sha256": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/overlap.json": {
+      "bytes": 1252149,
+      "sha256": "87a60fd42be12f8ad0564aec81c9377b143662c56dcaf79fa766df52fcf1907d"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/proposals.json": {
+      "bytes": 1479489,
+      "sha256": "20e6c1b0c54b3f021aa12211b1118f30682944f88b1b7bf74643c2af865ded88"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/protected-cases.json": {
+      "bytes": 3013,
+      "sha256": "ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/protection-screen.json": {
+      "bytes": 653928,
+      "sha256": "6a8f623bb77907176b5ead60f892289e72a84856194173f0de3455730dcc6e1b"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/software-services-products.json": {
+      "bytes": 2109610,
+      "sha256": "23c440857a175a0674332b037d8acfedd550c2d060300cbad5b14a48acd5edaa"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/verify_capture.py": {
+      "bytes": 2863,
+      "sha256": "b5fb2fbc2810bf857ebb36492bfd66fab589870baab428953e7deafa2c6edb5b"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/verify_triage.py": {
+      "bytes": 5254,
+      "sha256": "4643f7879ee86a8d022c8903967b7490daa09c6c0666776672f9c6117e759772"
+    },
+    "docs/audit/keyword-exclusions-2026-11-10/workbench.json": {
+      "bytes": 3578263,
+      "sha256": "585ea863a978e63537b440b5eb6feaedaf236d07f05878d19c7f7ce267ef4a58"
+    },
+    "docs/audit/keyword-front-office-documents-review-2026-11-13/README.md": {
+      "bytes": 2702,
+      "sha256": "7113c9edc900f2011c74f1fb9c67fd83b0a263af687551ba653378431e8784ad"
+    },
+    "docs/audit/keyword-front-office-documents-review-2026-11-13/membership-diagnostic.json": {
+      "bytes": 2852096,
+      "sha256": "e8e9a30a4657476d41d74fdd034779283341e2ef77c0a2b39c1e774711cd5ef3"
+    },
+    "docs/audit/keyword-front-office-documents-review-2026-11-13/review.json": {
+      "bytes": 635868,
+      "sha256": "828e2c5c87e8156d8885533d39e31b8f31bf3524594018ca1480939ae60e8fa8"
+    },
+    "docs/audit/keyword-front-office-documents-review-2026-11-13/verify_membership.py": {
+      "bytes": 6005,
+      "sha256": "ca02ec3d7a713c066206ecd4121c6b3b24bed1233336884d31dd1aec0399d84d"
+    },
+    "docs/audit/keyword-front-office-documents-review-2026-11-13/verify_review.py": {
+      "bytes": 9091,
+      "sha256": "5da8a1f58002b76333243c7b4612e829e21cc2409ea10949767e19c41e80e62b"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/PRIMARY_CONTEXT.md": {
+      "bytes": 1148,
+      "sha256": "9dca253a49753534e0fdab4ce5e7297bd4022f0c15206f9893bb87ef36385ef3"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/README.md": {
+      "bytes": 7491,
+      "sha256": "a39f83fadb19904ae616303eeb9bd04bee9a96f1342116d585235f5c71329a94"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/capture.json": {
+      "bytes": 2429,
+      "sha256": "5ccdbf45f7d9b4408792a9f241e5d9f8b90f1e612620a3770c6c3e03881dc3f9"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/digital-assets-software.json": {
+      "bytes": 747920,
+      "sha256": "60d0f44806b8003710ccc4d6231452d96c1392dfb8c2f24812a39f31e63f7f36"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/overlap.json": {
+      "bytes": 1684715,
+      "sha256": "7b523e5316cf7050ffaf299aea4fc86a0ecfaf1ae721db08924418aa295b3657"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/property-support-employment.json": {
+      "bytes": 1582006,
+      "sha256": "18ead17ffd1a2f6bc9203c0dc2eb46b35239a99a0fd83b783e61695851438f63"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/proposals.json": {
+      "bytes": 1652436,
+      "sha256": "fe951e3d89b34461f20a007076f57be319ef2de49b23ca243018695fa178f4c9"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/protection-screen.json": {
+      "bytes": 833609,
+      "sha256": "68ffd00b5e218f80e2db751c5c2fa6ff16fe0334b7489f210bee60147bbccb8c"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/repair-trade-services.json": {
+      "bytes": 438943,
+      "sha256": "242faace7f5d76b35cba7775031f8b5acfa1abe8d114353c1085a240a27984a8"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/verify_capture.py": {
+      "bytes": 4259,
+      "sha256": "20a02c6bd8a1ab76031d06093a70523e6e764113281908b4449db4f8fbc0e44b"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/verify_triage.py": {
+      "bytes": 4439,
+      "sha256": "e9d88d0754a5fb4003c26d9a91b3b1fe7cacb42c30b0766d21c7362b5b9a47a0"
+    },
+    "docs/audit/keyword-gap-research-2026-11-11/workbench.json": {
+      "bytes": 4440230,
+      "sha256": "73da881c9b8ccea784178fd204a6e1dbb22dcdf309671c6d6f32cb51d1fbfd42"
+    },
+    "docs/audit/keyword-gap-review-coverage-2026-11-11/report.json": {
+      "bytes": 77622,
+      "sha256": "2e002befa838eff66cfa042dece08471f7bca2c3355f35c8e3b34f9b8ad7d649"
+    },
+    "docs/audit/keyword-negative-academic-admission-2026-11-11/README.md": {
+      "bytes": 6340,
+      "sha256": "c5e1ca50e63aef39b8ed94d7255fff34360ae3aef935eaf78469896c91dae49a"
+    },
+    "docs/audit/keyword-negative-academic-admission-2026-11-11/cohort-report.json": {
+      "bytes": 711,
+      "sha256": "7813dd28b0fa8c3ec4996d1cbd1a62d59d5aea298b5c5e1876896b3203d535fb"
+    },
+    "docs/audit/keyword-negative-academic-admission-2026-11-11/library-report.json": {
+      "bytes": 1594,
+      "sha256": "24fb7dd102bdbc0976ac6e5bb845a3949e2b3501390df885e3af971a9f7bb347"
+    },
+    "docs/audit/keyword-negative-academic-admission-2026-11-11/review.json": {
+      "bytes": 14668,
+      "sha256": "68dae20ec5ef1a3226b52c0f8bff3110b6a4f43890a195d6b1a7ca0b6627c3ea"
+    },
+    "docs/audit/keyword-negative-admission-2026-11-11/README.md": {
+      "bytes": 8401,
+      "sha256": "da8efdfd14e57f71828942f62a54c4390c639b780c7071be2e1f97031080b2d4"
+    },
+    "docs/audit/keyword-negative-admission-2026-11-11/admission-report.json": {
+      "bytes": 1512,
+      "sha256": "da48963260945b2e97a6ed3870ed044b24819c10360604073dfa8b87ae220c99"
+    },
+    "docs/audit/keyword-negative-admission-2026-11-11/review.json": {
+      "bytes": 2256,
+      "sha256": "64be0f3cf6b4345f73a83af9f91eb56445b9bfa31b81b1990b009c39739e8e40"
+    },
+    "docs/audit/keyword-negative-admission-2026-11-11/service-context.json": {
+      "bytes": 774,
+      "sha256": "48915be7de329a10475ffcb8bc24dd8eb89f19f1b94d80f2f4bf1ccfe2341f17"
+    },
+    "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/README.md": {
+      "bytes": 4574,
+      "sha256": "673233a2472409ae7e3d1b7fe2817371f6fce36085b8f353b9285efdd45dbc9d"
+    },
+    "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/cohort-report.json": {
+      "bytes": 1272,
+      "sha256": "9da535240733bb47e27f72f7ab5d52aa75edd6ccbec55e32e38cdad9381bd842"
+    },
+    "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/index.json": {
+      "bytes": 3961,
+      "sha256": "9975ed7062101070b410258913392e15669006abbe596baa36da057c0212372a"
+    },
+    "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/library-report.json": {
+      "bytes": 924,
+      "sha256": "31823e15b154608a1e41480226c11b82789e00cbfc4fc6553455959b17398051"
+    },
+    "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/research-pool-allocation.json": {
+      "bytes": 1307,
+      "sha256": "7081460c15662dd875602992c5d2fc2ec991bf63a9e1e5ed283a7e81e289bb37"
+    },
+    "docs/audit/keyword-negative-apprenticeship-admission-2026-11-12/review.json": {
+      "bytes": 4139,
+      "sha256": "bb0fc935b24f263b24e7803b39ef5e5df83c6b042cf77f82e7293d0ad2bfc86b"
+    },
+    "docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/README.md": {
+      "bytes": 4030,
+      "sha256": "40fdbe03512ff21aef6ddd293772f5ced7723c61209b4b54dd615a2f16be1b7c"
+    },
+    "docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/cohort-report.json": {
+      "bytes": 1978,
+      "sha256": "bf70563984b61b9c34483b762ada6bfc233a5cb471ac3d1934567bbca8a4c814"
+    },
+    "docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/index.json": {
+      "bytes": 17498,
+      "sha256": "364fa785057f2bf825d627d71ef944b977eab1c243aa530f5e3319587c2c7f88"
+    },
+    "docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/library-report.json": {
+      "bytes": 891,
+      "sha256": "9285460d607d99491fb340999a9c146b7f13e800ec2465de47500574c2702220"
+    },
+    "docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/research-pool-allocation.json": {
+      "bytes": 1379,
+      "sha256": "7b0225d3d59d22e62cbcb9c281171f4832650ddbe5273d785e6781fdfce04746"
+    },
+    "docs/audit/keyword-negative-bank-channel-login-admission-2026-11-13/review.json": {
+      "bytes": 4927693,
+      "sha256": "cf6bd76fb5438976ce1984086ff49014819b2a9d68e22a325d24e98c5e6337bb"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/README.md": {
+      "bytes": 4509,
+      "sha256": "7e8f896f31d751d8315f550999cbfc8b61fba61eb9a30456529bfe6022206ee2"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/cohort-report.json": {
+      "bytes": 2073,
+      "sha256": "6228a82433804a240364a7eaa6fca99dac3139b139be6d175b01155a25e7d350"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/index.json": {
+      "bytes": 36886,
+      "sha256": "67434034ca5aa49ea7edcc7fb8652bf17bc559af7393c6a4279c322342475737"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/library-report.json": {
+      "bytes": 959,
+      "sha256": "80e63619807bc6c4831daba9d3aff5f8afa375f2745a22b7d202258520f7a27b"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/research-pool-allocation.json": {
+      "bytes": 1694,
+      "sha256": "5320bb346a4864a98fe508d98afbe43540202826fcadcbdb1e27eafdfa30b154"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/review-metadata.json": {
+      "bytes": 3061,
+      "sha256": "c7018da6965c19356c9d1ad92045bb2fc5eca6c462a1681a01e0664717a849d3"
+    },
+    "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/review.json": {
+      "bytes": 3203536,
+      "sha256": "f607d84650e6ddbd59027870c27df615590ec6c3f2b117da0e957f1b3bcb9210"
+    },
+    "docs/audit/keyword-negative-bank-support-admission-2026-11-12/README.md": {
+      "bytes": 5466,
+      "sha256": "33a86c55e06e7411ff4ab23d2b9e180510f27a9b7ac15f612074d59623b6008d"
+    },
+    "docs/audit/keyword-negative-bank-support-admission-2026-11-12/cohort-report.json": {
+      "bytes": 1826,
+      "sha256": "1780969bb529a849e33cc3b7abd13dfbb8003890518da964eccd30dc40fe1c42"
+    },
+    "docs/audit/keyword-negative-bank-support-admission-2026-11-12/index.json": {
+      "bytes": 33001,
+      "sha256": "57ca3ff451f2d34a7deb095ca39ef6d2a1d11530b34e3c22c270c018e4b00c6e"
+    },
+    "docs/audit/keyword-negative-bank-support-admission-2026-11-12/library-report.json": {
+      "bytes": 886,
+      "sha256": "73ab7a42a5064c730427f073f8fff135990b3d034640868094806065bac24ba6"
+    },
+    "docs/audit/keyword-negative-bank-support-admission-2026-11-12/research-pool-allocation.json": {
+      "bytes": 1377,
+      "sha256": "797054af6be1a298447b6f77030f4e7d6716b7343ca0de977b3f6359aee46a69"
+    },
+    "docs/audit/keyword-negative-bank-support-admission-2026-11-12/review.json": {
+      "bytes": 4199983,
+      "sha256": "39af91fc3a4e0a0aad049a813e128c7cd984be518890573891d827966193d969"
+    },
+    "docs/audit/keyword-negative-employment-admission-2026-11-11/README.md": {
+      "bytes": 6992,
+      "sha256": "58865b0afa11cd5165f4388b9013603cea4754c7cbbe6f09452fd49664a45d8c"
+    },
+    "docs/audit/keyword-negative-employment-admission-2026-11-11/cohort-report.json": {
+      "bytes": 777,
+      "sha256": "6940c88960de1b7193fb9aa7df1c536041d73f0505e5212bb4552c424dca4709"
+    },
+    "docs/audit/keyword-negative-employment-admission-2026-11-11/library-report.json": {
+      "bytes": 1465,
+      "sha256": "34c8edd2bfb17b7839202697e0a4ac2dab46444c8e9cf6a686139e3c1b7e7a58"
+    },
+    "docs/audit/keyword-negative-employment-admission-2026-11-11/review.json": {
+      "bytes": 3521,
+      "sha256": "b8453933eabf5fbaf75fd9b8624a8c5d41dc2ceca11cd6ec32192b0c558abcd6"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/README.md": {
+      "bytes": 5532,
+      "sha256": "4a21a326c52e6455277c59a9732b3769b8925f69c7c8e3ed8a2ca1c8e24ef813"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/actual-input-guards.json": {
+      "bytes": 2787,
+      "sha256": "8e87bc283d21a5a48d27501207ae6652887c3ecc57c4a8b2bc22c6c0c0694a65"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/cohort-report.json": {
+      "bytes": 1756,
+      "sha256": "c62f2792a56a7f5bf683dcdad66f97171c964e4db7f53f7968a11860bc70588c"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/index.json": {
+      "bytes": 20950,
+      "sha256": "bc8df0e0cc44190c7b4f7c22aa1aa59f36c46ca69ce6a62d645beb7a1341a2f8"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/library-report.json": {
+      "bytes": 818,
+      "sha256": "997377419e285494901dd22e0e4b6a62ab59119b5a94c655188164dd7914a623"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1247,
+      "sha256": "02e9a31bb2726494a34102114d90870259931601019884e67eb7998d2001cb74"
+    },
+    "docs/audit/keyword-negative-entertainment-admission-2026-11-11/review.json": {
+      "bytes": 5430,
+      "sha256": "eee92a456680a3e9a6e8681ce301ad6de117d44054c7848b91f378d79db4d9db"
+    },
+    "docs/audit/keyword-negative-followup-admission-2026-11-11/README.md": {
+      "bytes": 7237,
+      "sha256": "fb3f6daae03b3797b5bd16098cb0293f7c6d202efa81cc5fecb576ddc62ec2ed"
+    },
+    "docs/audit/keyword-negative-followup-admission-2026-11-11/cohort-report.json": {
+      "bytes": 1926,
+      "sha256": "65ad221407767f92c04bdd1b1274cee5a8009400ca7c248a9b140f1cc0bb6fdb"
+    },
+    "docs/audit/keyword-negative-followup-admission-2026-11-11/index.json": {
+      "bytes": 15278,
+      "sha256": "2486aa3e638953518c4581360befba1896f8e6e5f8ef26120e6861f3ef479df9"
+    },
+    "docs/audit/keyword-negative-followup-admission-2026-11-11/library-report.json": {
+      "bytes": 830,
+      "sha256": "484be86c6215b3df5adf35918c2c13db760f7856ecf107e49c60eef5a2e17bbc"
+    },
+    "docs/audit/keyword-negative-followup-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1348,
+      "sha256": "2f35c75fc7213902e098faeb47cbe198b834331b57f77c8c2764690da5307bac"
+    },
+    "docs/audit/keyword-negative-followup-admission-2026-11-11/review.json": {
+      "bytes": 97905,
+      "sha256": "efe1ed60f37f16f6bee3992135f61bb17ed37a390fa3aa00273e0cbda4144025"
+    },
+    "docs/audit/keyword-negative-front-office-document-admission-2026-11-13/README.md": {
+      "bytes": 4128,
+      "sha256": "f88c2378d79278b43955870c737fc30e693c9c39dd44a94171b0502afa357124"
+    },
+    "docs/audit/keyword-negative-front-office-document-admission-2026-11-13/cohort-report.json": {
+      "bytes": 1489,
+      "sha256": "379be8d30b4413e93e6adc1ab58953ac49e4e892011ef8b73f37856d27a02ffd"
+    },
+    "docs/audit/keyword-negative-front-office-document-admission-2026-11-13/index.json": {
+      "bytes": 51145,
+      "sha256": "574161772cea121cce9ae2ee15047325ad95f3ec7f81aacb1a5becbd4152d592"
+    },
+    "docs/audit/keyword-negative-front-office-document-admission-2026-11-13/library-report.json": {
+      "bytes": 894,
+      "sha256": "64a50974df94afc6add45778e25af06370777fb2c4670c24acc7fe6c5479794f"
+    },
+    "docs/audit/keyword-negative-front-office-document-admission-2026-11-13/research-pool-allocation.json": {
+      "bytes": 1378,
+      "sha256": "4a1623a22055b69e37a03894180e90faee10da660b5e8e77d32bdcc27123ffc2"
+    },
+    "docs/audit/keyword-negative-front-office-document-admission-2026-11-13/review.json": {
+      "bytes": 5245266,
+      "sha256": "0cd8aed9365e27553f93c659af56f2e0fc6d2a2fa62f6071305fac541f133b94"
+    },
+    "docs/audit/keyword-negative-gap-admission-2026-11-11/README.md": {
+      "bytes": 6046,
+      "sha256": "d74f0ef98481fbd970d6d7831054c231fa40109350d4525b0c0ec7c34cf67492"
+    },
+    "docs/audit/keyword-negative-gap-admission-2026-11-11/cohort-report.json": {
+      "bytes": 714,
+      "sha256": "0ee7db1b933058306a8c5465fdd3176d80d3279cb4f2e8846798937e09234eb0"
+    },
+    "docs/audit/keyword-negative-gap-admission-2026-11-11/library-report.json": {
+      "bytes": 2112,
+      "sha256": "384b36cc30fa89f6af5e2ec2c1240a43ecd75478d7b5b67548ce0bcd8a3a1b57"
+    },
+    "docs/audit/keyword-negative-gap-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1572,
+      "sha256": "94d313beb04085fc2c734f11080da1562509a0332234bfc7264291a1b5f32173"
+    },
+    "docs/audit/keyword-negative-gap-admission-2026-11-11/review.json": {
+      "bytes": 7408,
+      "sha256": "a3bb5d2980e195102b60a662216a8d38e9979b8178e307aa37601e3e3711a5b7"
+    },
+    "docs/audit/keyword-negative-nonproperty-admission-2026-11-11/README.md": {
+      "bytes": 5146,
+      "sha256": "286b5a30efabe08cf3bcb283df85504eabc8dbb3bd23344bc0528e732e7a9e2e"
+    },
+    "docs/audit/keyword-negative-nonproperty-admission-2026-11-11/cohort-report.json": {
+      "bytes": 711,
+      "sha256": "74468db413b5dd2badcde2e736495c3c49b4c4aa49e6ba81255477a1a26cd3c7"
+    },
+    "docs/audit/keyword-negative-nonproperty-admission-2026-11-11/library-report.json": {
+      "bytes": 1726,
+      "sha256": "94fdac67264f76fa64a7408a62f9b1722da091ce8c412234b856b7b8ffc75b8d"
+    },
+    "docs/audit/keyword-negative-nonproperty-admission-2026-11-11/review.json": {
+      "bytes": 10131,
+      "sha256": "9ccc090b096ad6c27c0c163f4cf7dcffa1d19eb1fd6033edd2eb0d8a03144488"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/README.md": {
+      "bytes": 3513,
+      "sha256": "1d0f251debfeb6cd2e6585012229d1dfed34edab7f249dedb4ec8c230e1ddff3"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/actual-input-guards.json": {
+      "bytes": 2627,
+      "sha256": "eef3ac96f9198b30edcd0255232feb07370c89a5b35813a5315d109150c3ec37"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/cohort-report.json": {
+      "bytes": 1490,
+      "sha256": "d98018263e3fea19bdfc254dac7d07bb024bd20222ab305b93cc9f931f439553"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/index.json": {
+      "bytes": 15072,
+      "sha256": "9049c82eadd0a1a06af7c25b4daa833827a1efb6beee54f02dabb2c4f4666edd"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/library-report.json": {
+      "bytes": 906,
+      "sha256": "6ea26269b1e8a59e8dd593cad6e2a14b14bada8d1e4466c3355bafc24b11880c"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1516,
+      "sha256": "1cf6d2e6e3aae0ea6f9a598b48eafd80c2e828e66eb2e3a111958599971d50a5"
+    },
+    "docs/audit/keyword-negative-ofqual-admission-2026-11-11/review.json": {
+      "bytes": 44807,
+      "sha256": "ab1bfc9dfc73927c487e0d6abef78ec50472cb801773d6d94912ffc59f2c94b0"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/README.md": {
+      "bytes": 5613,
+      "sha256": "290552d35b79636f023321d3d9e0c71be35747ea2bd0d8a826bea0087be4f81f"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/cohort-report.json": {
+      "bytes": 1053,
+      "sha256": "4641cf0f5c08bc7d7277892b383431139f999ca391bd44f7a8caf9e78e2b03e1"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/index.json": {
+      "bytes": 14819,
+      "sha256": "aab0fb37cf7aa15d34bb3d90f74ef15122cc4251bbef4fd2cdf00a4724b85a29"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/library-report.json": {
+      "bytes": 885,
+      "sha256": "9e49f3a1341392411926b17a307c055a80f2a29dc362e4c38a88e0090fb93b45"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/research-pool-allocation.json": {
+      "bytes": 1371,
+      "sha256": "d90761c35213bc5dddf9ff327f729e02a306072b0081de2ad60893b9f56d84db"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/review.json": {
+      "bytes": 520993,
+      "sha256": "870a60fbcfa14da5b4612fefc59b4ff797287d19a83d65bf7748fbce8a031292"
+    },
+    "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/wording-evidence.json": {
+      "bytes": 1596,
+      "sha256": "4f035649956d62fe51f385e23c0efe509b602f108b7b67ef225a2c84c6c0c35e"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/README.md": {
+      "bytes": 7761,
+      "sha256": "bd29ed2247ced642c7a13d1505ba8cbfb3ef1eb00de2aa42df1a32353e154b16"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/cohort-report.json": {
+      "bytes": 1404,
+      "sha256": "2b896735516cc18f66b596f294ac758001ce27f58d58cbaca524ddaca89fd874"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/index.json": {
+      "bytes": 23944,
+      "sha256": "cd85c0306a8494c342ada20254b83392e816f859156d95939cf539aea5b3bc6c"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/library-report.json": {
+      "bytes": 956,
+      "sha256": "55ebf0a4c11961bebc4e3a25681bfdbe264ae528f462fb9b42cfd18da17b4df0"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/research-pool-allocation.json": {
+      "bytes": 1584,
+      "sha256": "9a05d86b547cff58350e68c130aff002a7b7f068bda0cd7cb842ef75e76c5ae3"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/review-metadata.json": {
+      "bytes": 4574,
+      "sha256": "b6b84d06f8d765ce4462048cebb37e43902bf44f971ef1880d8b3023fef7430b"
+    },
+    "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/review.json": {
+      "bytes": 109201,
+      "sha256": "71309898f85a5dac4f820126aaa312f7e0afc8572450e55c1f9a395d53737dea"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/README.md": {
+      "bytes": 8351,
+      "sha256": "ac3aa1c141aab47e01e4372c0f45a97afaef17f1b9174db284ba7e55104adc47"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/cohort-report.json": {
+      "bytes": 1620,
+      "sha256": "6127a8be50ecbc4d908478233d6a97ff70c416cd987358699ee9131b125268b3"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/index.json": {
+      "bytes": 6452,
+      "sha256": "403e3058d0403cfa24ceb53cef180af05ddc615f90fdbbcffc6ea333e42a78e7"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/library-report.json": {
+      "bytes": 949,
+      "sha256": "63d0cd7c848d4e846bb92fce3dacca970161e336a8127e4eff05d0cac12ee3cc"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/research-pool-allocation.json": {
+      "bytes": 1585,
+      "sha256": "38cf12a92abbc06f89f256666f41fe17c4df6172d4c515ba41786c1a9a0139ae"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/review-metadata.json": {
+      "bytes": 5099,
+      "sha256": "763f9d0602aa244d0a5b27a7fa4ac6323c93925266f63adc86d16a76e34d0a5f"
+    },
+    "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/review.json": {
+      "bytes": 63786,
+      "sha256": "5fd9d98b9b2ad620cd0b0ddd9bdc6b4fa1ac7d54d3cf71d3e14b5b6ed62bdc87"
+    },
+    "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/README.md": {
+      "bytes": 4318,
+      "sha256": "5980181abf303274447c5c88a6ec0e6e429f97eb240fda4e76165c5e03c026b5"
+    },
+    "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/cohort-report.json": {
+      "bytes": 1480,
+      "sha256": "25b2ba59afabcb142f6cdf086122e6436289e8651f6ca536898d719cd9dfada7"
+    },
+    "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/index.json": {
+      "bytes": 17839,
+      "sha256": "32104397dc9dbb12f3bc391ee1fc742751dec100b6d6004efa075854f0cbe123"
+    },
+    "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/library-report.json": {
+      "bytes": 893,
+      "sha256": "a195fb756d261a52692174924fbc0cfd4a96063d85e037e9e11b49c15ee80e19"
+    },
+    "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/research-pool-allocation.json": {
+      "bytes": 2432,
+      "sha256": "81c298b8b7f40469ba0f69cf2b92738b474a054490bc49c1e4f482a1016d3647"
+    },
+    "docs/audit/keyword-negative-pest-commercial-services-admission-2026-11-13/review.json": {
+      "bytes": 8075196,
+      "sha256": "aecc1a6450f91c6ace5f1405248ad5f6119b9c41394e4720f8f29ad9f43f4b64"
+    },
+    "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/README.md": {
+      "bytes": 4123,
+      "sha256": "03c3d4bfc1f34532503538846dc0f902a7727209859bbb503f47cfee87df008a"
+    },
+    "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/cohort-report.json": {
+      "bytes": 1458,
+      "sha256": "2df02a833703417b3910e396ddf4d5f6c397df95bfa5942980de5af6829fb599"
+    },
+    "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/index.json": {
+      "bytes": 13984,
+      "sha256": "81a6a7b9e01c482a1a424cd99eaef7ba99b69afcbe0de901288117fc47a0b702"
+    },
+    "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/library-report.json": {
+      "bytes": 881,
+      "sha256": "34357935d517c25ff87632e05759fd28b8777fdd1fdd2fef7af8f6ad8cdca701"
+    },
+    "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/research-pool-allocation.json": {
+      "bytes": 2397,
+      "sha256": "8d8a3fa60f69b35b4ac2fa5e56a3e2321280118cb06cc90a3085dab5b851b695"
+    },
+    "docs/audit/keyword-negative-pool-sprinkler-admission-2026-11-13/review.json": {
+      "bytes": 8173273,
+      "sha256": "b5f8a690ff8046e0dddd485254c954f6eae9506c3363c72b856f4d33c1805e5e"
+    },
+    "docs/audit/keyword-negative-role-admission-2026-11-11/README.md": {
+      "bytes": 6042,
+      "sha256": "12f1e4521a8b160b37e68dfe8f7c872fecb567de0fb7192eba48b93259fcafe5"
+    },
+    "docs/audit/keyword-negative-role-admission-2026-11-11/cohort-report.json": {
+      "bytes": 711,
+      "sha256": "46925157361d2fdfdce041b3c4cd00bc91408a2dcb82bb7e94c1d59ce167d9ab"
+    },
+    "docs/audit/keyword-negative-role-admission-2026-11-11/library-report.json": {
+      "bytes": 1417,
+      "sha256": "61352575aa6f8c2ea08d9fbe5cc6eec8ecfc02fc06ddd486a09ddf9773c05c6f"
+    },
+    "docs/audit/keyword-negative-role-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1390,
+      "sha256": "1e2b7b4262162f1a72d83b2afe11e88afaf3414d65748d540315c5dd090535a1"
+    },
+    "docs/audit/keyword-negative-role-admission-2026-11-11/review.json": {
+      "bytes": 8915,
+      "sha256": "e4572216faf4f02ce9071c733c0552b370794a22d111f818a502c5fb7ff88136"
+    },
+    "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/README.md": {
+      "bytes": 2328,
+      "sha256": "d8b72ecd5e72b24650b015a5e1318146e9cb3fdae39b9617a613d8bee0e6eb24"
+    },
+    "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/cohort-report.json": {
+      "bytes": 1466,
+      "sha256": "76a29f67b0b9ddb397f954ad67e4e321c84fb880a262d031ac6d262ea5c1f02c"
+    },
+    "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/index.json": {
+      "bytes": 44907,
+      "sha256": "d456d0520b2f10d7e38cc9f78b88397564936cd8719f00d6e724ab5fa59bc74c"
+    },
+    "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/library-report.json": {
+      "bytes": 886,
+      "sha256": "425c81343157a8227998daa5bf1cdb8140563b26cda151cbf37d61d50fb4a81a"
+    },
+    "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/research-pool-allocation.json": {
+      "bytes": 1378,
+      "sha256": "93e64ac6e61ed8320c8eb715d80c6dfc08f40f01ea7c2f65cab7fbc6c9e8edc1"
+    },
+    "docs/audit/keyword-negative-septic-grease-admission-2026-11-13/review.json": {
+      "bytes": 6558366,
+      "sha256": "b02043e514eaabb35ddd6231ca9ef1d6bf442dff0db7ed15c58a73ed940a701b"
+    },
+    "docs/audit/keyword-negative-study-goods-admission-2026-11-11/PRIMARY_CONTEXT.md": {
+      "bytes": 1287,
+      "sha256": "c14e549c5d2c83b5e0868ed04f7cdc368cf6fcd738a19bee853863960727eab9"
+    },
+    "docs/audit/keyword-negative-study-goods-admission-2026-11-11/README.md": {
+      "bytes": 6797,
+      "sha256": "c20c83417b7d9677db0796f73f853d8781b7cce32be92ebcd15fb2b3b5267da4"
+    },
+    "docs/audit/keyword-negative-study-goods-admission-2026-11-11/cohort-report.json": {
+      "bytes": 711,
+      "sha256": "7860e1f32e5415abb57b8e7ccc6ded762d3bf1655f7d8063daf305c03e850968"
+    },
+    "docs/audit/keyword-negative-study-goods-admission-2026-11-11/library-report.json": {
+      "bytes": 1986,
+      "sha256": "a5b8201a593ae99c9561f4f802e503cc79d87948a511d3dbcb17375024abab01"
+    },
+    "docs/audit/keyword-negative-study-goods-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1613,
+      "sha256": "e9b07c9e2918bed01fdc4c02d5f9d23113b4b625cc9657bc9b5d1b40555ce888"
+    },
+    "docs/audit/keyword-negative-study-goods-admission-2026-11-11/review.json": {
+      "bytes": 16716,
+      "sha256": "ce32ec9287f9d88b71fea69fdba1f55cbbebd2bb4f9d22a5c9120b127ae2f268"
+    },
+    "docs/audit/keyword-negative-trade-services-admission-2026-11-13/README.md": {
+      "bytes": 3095,
+      "sha256": "df3f7a0fd1b99f21f841d2130ab12f621e255619100c3d5da9ba5ae60ae8e38e"
+    },
+    "docs/audit/keyword-negative-trade-services-admission-2026-11-13/cohort-report.json": {
+      "bytes": 1470,
+      "sha256": "1b900e3ea38f68d73f0506c1280f127de6bb5259d3204924b721a37fc17ab95d"
+    },
+    "docs/audit/keyword-negative-trade-services-admission-2026-11-13/index.json": {
+      "bytes": 49944,
+      "sha256": "cbf4b10c7ce9c592e6290364857ead4f85ee8f25b3a78f6fa8c8a02c682dfd70"
+    },
+    "docs/audit/keyword-negative-trade-services-admission-2026-11-13/library-report.json": {
+      "bytes": 887,
+      "sha256": "53a750a82bec466f41c5a349f981521568d9d0795224fe5583dbe4e0fe76addc"
+    },
+    "docs/audit/keyword-negative-trade-services-admission-2026-11-13/research-pool-allocation.json": {
+      "bytes": 2419,
+      "sha256": "2069dba9f78c7b4fd17f75053d2ba7fe9d6a88fadb20bb0261bf09b4f12cfbcd"
+    },
+    "docs/audit/keyword-negative-trade-services-admission-2026-11-13/review.json": {
+      "bytes": 7544482,
+      "sha256": "4c615695eb908d53e96134ff5efc01cf678b7714daba1ddeee18d066dff0f553"
+    },
+    "docs/audit/keyword-negative-valuation-admission-2026-11-11/README.md": {
+      "bytes": 6369,
+      "sha256": "bdeea7e746f8165d655e903f98a030ffdad74df2c28698a6042ff4e03a544ef9"
+    },
+    "docs/audit/keyword-negative-valuation-admission-2026-11-11/cohort-report.json": {
+      "bytes": 1488,
+      "sha256": "a0f149409fb6de2178aeedf58a2317203a8ca9dd12b819207fbf3b8fce427b44"
+    },
+    "docs/audit/keyword-negative-valuation-admission-2026-11-11/index.json": {
+      "bytes": 34448,
+      "sha256": "887f53e1e7cc98df1bdb4bef4159d4d2fb77694818046f2c4cb5d18bfcd3f57c"
+    },
+    "docs/audit/keyword-negative-valuation-admission-2026-11-11/library-report.json": {
+      "bytes": 852,
+      "sha256": "bd0782809fc30ae0f39898045eaa177acc85242cb4af254d485f3cb4fa223456"
+    },
+    "docs/audit/keyword-negative-valuation-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1562,
+      "sha256": "227a68f0732b9c6b62a58a747669e0b53bb213f2eeb1e40ad94c1b558264ddcb"
+    },
+    "docs/audit/keyword-negative-valuation-admission-2026-11-11/review.json": {
+      "bytes": 38569,
+      "sha256": "bff7782db75cc1076f83b9d9084b1fe2c9b88a6349f1c487cfe11b7b0c430f7b"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/README.md": {
+      "bytes": 6991,
+      "sha256": "8b185a3659fb1dacf28040f23fa8fee4e50314f21305dded6bc0dc6d2312ad6c"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/cohort-report.json": {
+      "bytes": 715,
+      "sha256": "3abc58e9dc0f8692dfdd333f389e2b574364089821672d99aacfceccc675a901"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/diagnostic-measurements.json": {
+      "bytes": 1896,
+      "sha256": "020adb6575e9c647587e1627f68ef46a1b09f7b1fb1bad55323d5d8a9abff150"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/library-report.json": {
+      "bytes": 1854,
+      "sha256": "dd987a8c43f93a17d91db93f5f17a8c7f6dbc7f642eae66085a7574b0fb5b9e1"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/measure_diagnostics.py": {
+      "bytes": 2192,
+      "sha256": "58a536d27473d96467cd108268d78234e2597eaa570d1839ffeb71da31da13bb"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1475,
+      "sha256": "bd5ad9a1291a3b15ec9c991b42cebc276bdd14da7e0f41c045a34332e77e344e"
+    },
+    "docs/audit/keyword-negative-vehicle-admission-2026-11-11/review.json": {
+      "bytes": 14452,
+      "sha256": "cece889ed2775eecb0480157b6ab6e96aff93384e09f9fa19b1eb9db24a0cd0b"
+    },
+    "docs/audit/keyword-negative-vendor-admission-2026-11-11/README.md": {
+      "bytes": 7412,
+      "sha256": "1cc493d59a3add0c05acd2decedfe4cedef2582a3de563501a31dcd5ee7776db"
+    },
+    "docs/audit/keyword-negative-vendor-admission-2026-11-11/cohort-report.json": {
+      "bytes": 637,
+      "sha256": "7aeaec49840ef9ce13c8f7900cdd52536aa31772555b35faed5d2c0303ba2a22"
+    },
+    "docs/audit/keyword-negative-vendor-admission-2026-11-11/library-report.json": {
+      "bytes": 772,
+      "sha256": "0108165b9fedac03dde1aee5b89e6482dcf958521aa45c702fb77cf2252e76b6"
+    },
+    "docs/audit/keyword-negative-vendor-admission-2026-11-11/research-pool-allocation.json": {
+      "bytes": 1471,
+      "sha256": "b39bc2500950b2a77367d137d05dc9666f1c4df8c80469f8a0f26ce4b7a42291"
+    },
+    "docs/audit/keyword-negative-vendor-admission-2026-11-11/review.json": {
+      "bytes": 34740,
+      "sha256": "d3ce7a49aaa5bf872c1994e8b1d9c3c1ecfa933ce85ac3e924a2df012587ab2d"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/README.md": {
+      "bytes": 6376,
+      "sha256": "999853160b2989857714682576573256e8fec444d0537c535332bf3e34b1f72d"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/capture.json": {
+      "bytes": 1272,
+      "sha256": "55fb083ab6f73b57ed7ae18815b64eed22f6c8e2c4caec173bef6405b7b04a83"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/geography.json": {
+      "bytes": 1414,
+      "sha256": "283520b1ceda9788a8a565dbd290f2ab8b43aed48c2e27141de8864bc8d369eb"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/northern-emirates.json": {
+      "bytes": 637965,
+      "sha256": "c290895884a00f5da71b985afd53eb465ed0c21e7cf38d43dec950beca8cb53e"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/overlap.json": {
+      "bytes": 369762,
+      "sha256": "61c1241b22136f251c2500e78018c6035848baf2b07ae5ba58a88030cf7d1ddb"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/proposals.json": {
+      "bytes": 436927,
+      "sha256": "e96bbe7cce033b93ad4600eec31b54813e9a637cf74363009dcb795e54fd8c24"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/protection-screen.json": {
+      "bytes": 28459,
+      "sha256": "9f2c5bf428778f53630415d472d910302cf2e2a5cd25cfcac98c24409fa9b525"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/verify_capture.py": {
+      "bytes": 4499,
+      "sha256": "9132ac46abaa66f0691ab3219a75f4aff8ffab95e0785e889ebb8044042fa958"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/verify_triage.py": {
+      "bytes": 2047,
+      "sha256": "426bbfea14aac50201e2755dfb44e51ba563cff0ab308a72fec639dd67606861"
+    },
+    "docs/audit/keyword-northern-emirates-2026-11-11/workbench.json": {
+      "bytes": 1192038,
+      "sha256": "eb0035f901825002009107ff05f81e2ca1c9671b54f99eafeeed0af1a12d6ed3"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/README.md": {
+      "bytes": 7632,
+      "sha256": "534ce707a6f35edc5bdab3d12b24e982e875b40304ea55d4de9886d4971030e7"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/capture.json": {
+      "bytes": 1291,
+      "sha256": "1e30f171310155e76229d35922e951aed2965def632af757f3c8d30386eb6217"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/occupational-education.json": {
+      "bytes": 1232109,
+      "sha256": "da46ec51edf53f71c5fe08521853b31ba716f8034bf6b312488ee6a59f6992b1"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/overlap.json": {
+      "bytes": 738535,
+      "sha256": "0bb80f078b37263a6fc10ccb3962ceb32a5b7afd77719fcf1487989732c1eec6"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/proposals.json": {
+      "bytes": 1004554,
+      "sha256": "5bc5aceb9847e58f3500ad5dc76c4a48fb7728b6100e6805578a6081fbd45a1e"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/protection-screen.json": {
+      "bytes": 261764,
+      "sha256": "130d759500068d55142069ca3ac04128203576640913135d5be73086d7741d15"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/verify_capture.py": {
+      "bytes": 3453,
+      "sha256": "cb805c3111d356d9c9dbe811701cb40fab998c56b755ad297711f1e6d7e1dc98"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/verify_triage.py": {
+      "bytes": 3745,
+      "sha256": "7cef176e49c15d9616c6fe31514993fd2489c69ea38f79f0750c45522de9995f"
+    },
+    "docs/audit/keyword-occupational-education-2026-11-11/workbench.json": {
+      "bytes": 2257738,
+      "sha256": "4487755de36391aa59f5bdb06d8bb72edb3c48a8f46ca2a89a6d733248daa1b0"
+    },
+    "docs/audit/keyword-ofqual-admission-review-2026-11-11/independent-review.json": {
+      "bytes": 159372,
+      "sha256": "115dad89e56f9ebf2cc0d37a67468bc6d59b585a5abb36ab79264bb9a9fd31d7"
+    },
+    "docs/audit/keyword-ofqual-admission-review-2026-11-11/independent-review.md": {
+      "bytes": 4289,
+      "sha256": "3e9e9d9c585aeff649cb2525d01003d8d26dd9b76ba582e76dc7ba4dcf3ce272"
+    },
+    "docs/audit/keyword-ofqual-admission-review-2026-11-11/resolution-evidence.json": {
+      "bytes": 10804,
+      "sha256": "a53e829885284c1dd99df7025f50dc57a2c2cf2a659517f34dba5b5d84c33c67"
+    },
+    "docs/audit/keyword-ofqual-admission-review-2026-11-11/resolution-evidence.md": {
+      "bytes": 3480,
+      "sha256": "f19b486bf96d3eee493856c0e1f438dc7159549b0c1d37697ebda1be50b0f7cc"
+    },
+    "docs/audit/keyword-ofqual-animal-care-2026-11-12/README.md": {
+      "bytes": 6014,
+      "sha256": "b7eadf9b582f515b523b29bdd72929162594ad31eb800254588b09a93d541642"
+    },
+    "docs/audit/keyword-ofqual-animal-care-2026-11-12/capture.json": {
+      "bytes": 1784,
+      "sha256": "6ae964664aa6dec7f6f79f8c06c89bf3c05bb2fc0e1b05446e515be4e1bf4387"
+    },
+    "docs/audit/keyword-ofqual-animal-care-2026-11-12/extract.py": {
+      "bytes": 15723,
+      "sha256": "c4866ea958a8d4714d09c3b42cb1afebc0b9ac092198c97a0baf3efc4785689d"
+    },
+    "docs/audit/keyword-ofqual-animal-care-2026-11-12/qualifications.json": {
+      "bytes": 377387,
+      "sha256": "e265c3aa15e185b3457321df54365386330a0e75548cc251a8d114ac1043a903"
+    },
+    "docs/audit/keyword-ofqual-animal-care-2026-11-12/semantic-review.json": {
+      "bytes": 255949,
+      "sha256": "ae971dfa91438e9ae00927b6b3bfe1493096ca7e3cb56ca9528dea307d83126e"
+    },
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/README.md": {
+      "bytes": 6272,
+      "sha256": "1fcad8b611ee892b930e3b012f7f11fb9e0cc5115bd618373fc1915f88314955"
+    },
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/capture.json": {
+      "bytes": 1632,
+      "sha256": "40563540ed29d76e03e2bea8be1a46aca960d888c138fcc2f9ac2f54dec2e9f7"
+    },
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/qualifications.json": {
+      "bytes": 199481,
+      "sha256": "2869cab8a06a76fa113ef430b28d09c53a324b72555cd0b3b36d3bdf82de4ccc"
+    },
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.json": {
+      "bytes": 434630,
+      "sha256": "d187bb0f469a97924bcb98bc8d64949bbba6f305d23a45c0ce9edc09abf50d24"
+    },
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.md": {
+      "bytes": 6232,
+      "sha256": "96fcffd5e22b8c731f04d957e8c3bb41ceba851b4c4d4d5f4a205b82aa3285bb"
+    },
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/verify_capture.py": {
+      "bytes": 1037,
+      "sha256": "065dcc151b644debdc3772f51a70e928e4268b9f55fe147bf80545c0e3d52794"
+    },
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/README.md": {
+      "bytes": 8636,
+      "sha256": "abff0ee4739ea747072fd9579cc03f4420ca80755d110a3a9c48642ba2137537"
+    },
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/capture.json": {
+      "bytes": 5257,
+      "sha256": "85c9a3ed815c72a8bfc3966fdaa016aec64063e43c4dd352e59e5504fa61530e"
+    },
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/extract.py": {
+      "bytes": 16708,
+      "sha256": "c37a98859e1865d543e82c43886608b63f265b0ac3d44725fd52bdc30ab199ed"
+    },
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/qualifications.json": {
+      "bytes": 646710,
+      "sha256": "8cdd1a1e0475857b1fc7473734756da9bb20b2229890c61d639ee41ed6dac91c"
+    },
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/semantic-decisions.json": {
+      "bytes": 616193,
+      "sha256": "5f7aeb754ae4d8feccd2024847fef9b625d1bf6be94bc903900b59239627c7ee"
+    },
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/semantic-review.md": {
+      "bytes": 4226,
+      "sha256": "9a6e977f2dfe914ce05906e86e1cb408f16d5f0743e9a43b46a9d66f5309234c"
+    },
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": {
+      "bytes": 7515,
+      "sha256": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+    },
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/capture.json": {
+      "bytes": 4287,
+      "sha256": "ecf76b2123ff80f7f4518c0a1c3f157cab3ab499768e6d2cea7d8be4ad258afd"
+    },
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": {
+      "bytes": 19091,
+      "sha256": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712"
+    },
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/qualifications.json": {
+      "bytes": 107831,
+      "sha256": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa"
+    },
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-decisions.json": {
+      "bytes": 75126,
+      "sha256": "7c280316bab94d4ad892b58f2f738d3295913cb0dbc90e608c404a238113b68b"
+    },
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": {
+      "bytes": 5460,
+      "sha256": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78"
+    },
+    "docs/audit/keyword-pest-commercial-services-review-2026-11-13/README.md": {
+      "bytes": 2133,
+      "sha256": "02cd7cba9a1cc07f9c02e5ebe04c922aeeb83c9fd95dca3e9996c4283b285119"
+    },
+    "docs/audit/keyword-pest-commercial-services-review-2026-11-13/review.json": {
+      "bytes": 96017,
+      "sha256": "704457d2646095a1c46aee54faac8becb4d99bc353fa27129ba174b54e82ca90"
+    },
+    "docs/audit/keyword-pest-commercial-services-review-2026-11-13/verify_review.py": {
+      "bytes": 10148,
+      "sha256": "59e335a5ae01122b5c4e2f338575a63fd5f9ed094ceaf84ec03815745b80fb87"
+    },
+    "docs/audit/keyword-pool-sprinkler-review-2026-11-13/README.md": {
+      "bytes": 1955,
+      "sha256": "f26a3e2e48f80437fa77ee1f49938db22c5991b98a5005d150fb83be9d64167f"
+    },
+    "docs/audit/keyword-pool-sprinkler-review-2026-11-13/review.json": {
+      "bytes": 28601,
+      "sha256": "9f9245969fa2cca6eb50ac959f38567642d921622a57e5478aafe5dc3558de92"
+    },
+    "docs/audit/keyword-pool-sprinkler-review-2026-11-13/verify_review.py": {
+      "bytes": 9968,
+      "sha256": "7fc5d2d58d723d49a42c6c9b40ee5b357b6c8239b3715870af80757329366c31"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/README.md": {
+      "bytes": 6509,
+      "sha256": "41c31d3ed575790deb07cbcfb57df76c55bea9a8c4388fa068aaf6af598edff7"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/capture.json": {
+      "bytes": 1352,
+      "sha256": "81a1c496372d528668f42dc1056d67d29911a3951bee23ac0dc2ae878522539f"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/overlap.json": {
+      "bytes": 22172,
+      "sha256": "2c261724e2507bae55063eaf35a9f2c884692d20974bcf9b6f1c7059dcc5669a"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/property-readiness.json": {
+      "bytes": 29919,
+      "sha256": "979aa29d3836d84ea40306c78b4423acb28d45f3c9099a12c18f7215664eb198"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/proposals.json": {
+      "bytes": 19318,
+      "sha256": "9bfe7abc7e5e6d9e69bb9b959aee316f0d5d40d8fa83eb11a5d0c2c4f38c8e0f"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/protection-screen.json": {
+      "bytes": 3377,
+      "sha256": "e52141c776d3ebd32a19eaf51cb9a051d741aa79de5b9b5bbf4e44d64d688711"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/verify_capture.py": {
+      "bytes": 2953,
+      "sha256": "189dc00fdfb4a6f2f750ee6cdd088516b884f03538148c26abad664ed9e6cc53"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/verify_triage.py": {
+      "bytes": 2072,
+      "sha256": "ea3375ffc02f4360da40c0e8a5c6a76e981210603238c837575e08caed167803"
+    },
+    "docs/audit/keyword-property-readiness-2026-11-11/workbench.json": {
+      "bytes": 51219,
+      "sha256": "835894b843b9c80e27468cf0ddfa1ab5104a227dca6841f7e18126523294ea4d"
+    },
+    "docs/audit/keyword-review-coverage-2026-11-11/report.json": {
+      "bytes": 29296,
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/PRIMARY_CONTEXT.md": {
+      "bytes": 2054,
+      "sha256": "9f6e203e551d2ca8b0a127e86732b4aedb7d8fc4ea7f6c560424cec7c45afc3c"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/README.md": {
+      "bytes": 7071,
+      "sha256": "ba1bb436743b9e6c44156811bd1d6b57d0d4f03d68d19cc3b18ded7e4b199dd0"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/capture.json": {
+      "bytes": 2146,
+      "sha256": "ec254a5df735685452ce344da2201c6d44ef87b5775479cbac2e2b10c68d0092"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/occupational-exam-practice.json": {
+      "bytes": 752565,
+      "sha256": "c161ceaaf01efcb25fdae88819f7b6c789e2cfca68dc5292e49aad2c8a412339"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/overlap.json": {
+      "bytes": 1012760,
+      "sha256": "0093e5b18ade1725a845c5fe88ab7e5215aa580c56e92eb36d41ecfccb8cd765"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/property-employment-applications.json": {
+      "bytes": 167661,
+      "sha256": "9a7603e12902c0c2ab55d58168ffa689d26f98f8fddd139121854c4751410e81"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/property-marketing-assets.json": {
+      "bytes": 477069,
+      "sha256": "06048046a7395c0f4c13d93bc4684a654c44a87bb8a7c3b4862817fae2b1e14a"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/proposals.json": {
+      "bytes": 1057750,
+      "sha256": "1416cf5e3092bca442b0be86e0f7de53ada4af1efcc3d80d99ba090abe9dbe00"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/protection-screen.json": {
+      "bytes": 575917,
+      "sha256": "c9f9d631a54cb812f46156c29a1168afcb244a3ba76b6b83664a3298606a140e"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/quarantine.json": {
+      "bytes": 658,
+      "sha256": "dc289e23e3fe112a5652cf41d9ca87a800e659b6ef1a0a262375cad71595efc0"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/supporting-property-employment.json": {
+      "bytes": 153518,
+      "sha256": "8ddc6cd209183668cf92bd92d5cb29e82d1b1a020506e1a26ba4fc6e7368336a"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/verify_capture.py": {
+      "bytes": 4730,
+      "sha256": "f73cb1fa25cd9922592d1a5b93ba1f47e6e016c1d3c21999982168656d45e82c"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/verify_triage.py": {
+      "bytes": 4556,
+      "sha256": "e5b163e125d2bffeb90554579089de5b00a9427bf002d8f913fca00ac19b9e79"
+    },
+    "docs/audit/keyword-role-exam-assets-2026-11-11/workbench.json": {
+      "bytes": 2645869,
+      "sha256": "5c760a1135b7ef0694efe04e4305025a1c2fa44904402a20e0172707bcd333e5"
+    },
+    "docs/audit/keyword-role-review-coverage-2026-11-11/README.md": {
+      "bytes": 5666,
+      "sha256": "bf8cc77b68dd08a533283192aa578c46d7d9d37f50c838d4dddea9bf8519e5a0"
+    },
+    "docs/audit/keyword-role-review-coverage-2026-11-11/admitted-master-impact.json": {
+      "bytes": 1632,
+      "sha256": "f45d517838aa95e3b5aa23d8710e55367f707a7ce6597233bf95202123347448"
+    },
+    "docs/audit/keyword-role-review-coverage-2026-11-11/report.json": {
+      "bytes": 227778,
+      "sha256": "7b7ac5aa4d8dd65dafe80fd6a1409a0edddb7eecd12c88a44b442646ac2e6c4c"
+    },
+    "docs/audit/keyword-role-review-coverage-2026-11-11/reuse-benchmark.json": {
+      "bytes": 1571,
+      "sha256": "e413af32e4751609c626e44488c3894c858774d6104e42ae170627e24c2bc887"
+    },
+    "docs/audit/keyword-role-review-coverage-2026-11-11/verify_coverage.py": {
+      "bytes": 10441,
+      "sha256": "1d4f8acaed7acfc2ee0db7ce5224e2b3baab9e0cd656142633623ebb6d5cf892"
+    },
+    "docs/audit/keyword-septic-grease-review-2026-11-13/README.md": {
+      "bytes": 2428,
+      "sha256": "c7bf90519fa8af738deb8e8324a5e74b959e97133d1f4492e0c0ed2b5c4474f1"
+    },
+    "docs/audit/keyword-septic-grease-review-2026-11-13/membership-diagnostic.json": {
+      "bytes": 3707358,
+      "sha256": "e8fba67815fa0e221209b987e5418fbb8b9ac69f44a8f3cee91217a6cc2ec549"
+    },
+    "docs/audit/keyword-septic-grease-review-2026-11-13/review.json": {
+      "bytes": 498830,
+      "sha256": "5d8c1d8af6ccff0a0c0f40faff8f899e2f6bd56e372959c4083220662581f028"
+    },
+    "docs/audit/keyword-septic-grease-review-2026-11-13/verify_membership.py": {
+      "bytes": 5997,
+      "sha256": "6947424d781d5f11761f0e0cc7447aa9e7d7774695916ad93562154e21719c25"
+    },
+    "docs/audit/keyword-septic-grease-review-2026-11-13/verify_review.py": {
+      "bytes": 11204,
+      "sha256": "7d913497d8333686d5113abc3d971fa5576b49ad32dbf13387fe87269d161f62"
+    },
+    "docs/audit/keyword-service-installation-2026-11-13/README.md": {
+      "bytes": 1875,
+      "sha256": "66c49274d2ac0148889ca73fc7d90cba69146550ac5757b28df2d56de1cc08b6"
+    },
+    "docs/audit/keyword-service-installation-2026-11-13/capture.json": {
+      "bytes": 915,
+      "sha256": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea"
+    },
+    "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": {
+      "bytes": 5448286,
+      "sha256": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392"
+    },
+    "docs/audit/keyword-service-installation-2026-11-13/verify_capture.py": {
+      "bytes": 7406,
+      "sha256": "7814cc6fafc96b736233a5c5834c3c7fddfc3a8abbd2b634263f9be804af2ebe"
+    },
+    "docs/audit/keyword-trade-services-review-2026-11-13/README.md": {
+      "bytes": 2540,
+      "sha256": "5bc96fadf24a85811eef73d80a02fac9d15acee182a7605d25c6ea59a0f0f95b"
+    },
+    "docs/audit/keyword-trade-services-review-2026-11-13/membership-diagnostic.json": {
+      "bytes": 3915157,
+      "sha256": "c2d8a22489e39950c8e557a3563f2a10eec825ae461f1b59e4370396a93eddaf"
+    },
+    "docs/audit/keyword-trade-services-review-2026-11-13/review.json": {
+      "bytes": 553858,
+      "sha256": "597a03ccdbc92ae5a58b429981b0dafbc7749676730e2db5d697926076ebdd60"
+    },
+    "docs/audit/keyword-trade-services-review-2026-11-13/verify_membership.py": {
+      "bytes": 5992,
+      "sha256": "192555706d76a4dca665de61a3295c8c4c3cdaa7659a908c7df44ddbf9ee30be"
+    },
+    "docs/audit/keyword-trade-services-review-2026-11-13/verify_review.py": {
+      "bytes": 11578,
+      "sha256": "ac06de91afa2f60e18a16abba6a87fefd1f29409f39989c050ec001f05252e4d"
+    },
+    "docs/audit/keyword-triage-2026-11-08/README.md": {
+      "bytes": 20058,
+      "sha256": "c3fe049d709bed38266a44c176622bd99320df9d307c3c346974502d70450129"
+    },
+    "docs/audit/keyword-triage-2026-11-08/proposals.json": {
+      "bytes": 3777930,
+      "sha256": "e5e5375f451eb8c92b721105efe8cdadf72d4c9101ddae58e96a66adc9a307e5"
+    },
+    "docs/audit/keyword-triage-2026-11-08/verify_workbench.py": {
+      "bytes": 2723,
+      "sha256": "329218b61714fd6e6f7209442512f69cf5a46d002b80cb25affecb5f97efb6ea"
+    },
+    "docs/audit/keyword-triage-2026-11-08/workbench.json": {
+      "bytes": 8488926,
+      "sha256": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/README.md": {
+      "bytes": 4381,
+      "sha256": "ab816b9946a5ba7db5afb4c2786bdccb022b059222d9ac04aeb30313c710a63c"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/capture.json": {
+      "bytes": 730,
+      "sha256": "9408a2be59c1858152c770d82e833e18a87a6e89b25e927284ad93ef27ecfb76"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/existing-overlap-reconciliation.json": {
+      "bytes": 31872,
+      "sha256": "1e94820037d0cfe5445fa39f0374659d17b721fec87600fc2e8c9fa6a28636a0"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/existing-overlap-reconciliation.md": {
+      "bytes": 2873,
+      "sha256": "ac0f87ede5be3c8cf8993d56b2ecf2cf5e8e91a4b9e2e75f2e352621b704994b"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/membership-snapshot.json": {
+      "bytes": 62190,
+      "sha256": "15ab02cbc6eca0ad5791f8b1b01a2823d41a975b3be32cfc0041b8b61ba090e4"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/semantic-review.json": {
+      "bytes": 273575,
+      "sha256": "f76d38225613c010a84ce7f95ecd8e84b09153f56bfbff469d70329af03760e1"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/semantic-review.md": {
+      "bytes": 4463,
+      "sha256": "cd34ae4f4f3ae42d436ccb3c2286394b0416ad3391ba75f90a4df0a49f298404"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/valuation-employment.json": {
+      "bytes": 519915,
+      "sha256": "7be9d5d16a1413cf738b49e8bb92adcdb75e4c02b86bd7e61c940640d7f9371b"
+    },
+    "docs/audit/keyword-valuation-employment-2026-11-11/verify_capture.py": {
+      "bytes": 1087,
+      "sha256": "dc0cfa5cdb1726f63107036464291cb15fd326e6aa13b15b75bf96d8d69f2d10"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/PRIMARY_CONTEXT.md": {
+      "bytes": 2325,
+      "sha256": "0106405101f6f7ad4b028f512ccf3f75e7fd58bc1cd7988d43063e39795b535d"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/README.md": {
+      "bytes": 7715,
+      "sha256": "a0bda63cdf9e6e9996661f0134ae2fd878deaee438e140aced3a4fc10ac4fb5e"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/capture.json": {
+      "bytes": 1730,
+      "sha256": "cd18511e136d67cde9f7cd704731423670a43a9e700cc29df110c4c1cd7d8bff"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/commercial-industrial-property.json": {
+      "bytes": 119462,
+      "sha256": "90d655d2ca4a600d7cfccee255efcb791f8c2a5ca37ab7129d8810c5253a30e5"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/management-software.json": {
+      "bytes": 2548324,
+      "sha256": "ec726b055bde9fbd33e7d55015c84700aefbac0ef2634462634f84a7c4154063"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/overlap.json": {
+      "bytes": 2162580,
+      "sha256": "bbab6bcdb5d418275ad9aacba6e82a2c306670e16b3c027d05fcee2a09830361"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/property-operations-employment.json": {
+      "bytes": 716818,
+      "sha256": "466a47fac06312ade996e9c9596f512775da3b726f87876aaf7bbe778a4210cc"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/proposals.json": {
+      "bytes": 2530697,
+      "sha256": "c45fb57383057e4de38f34da573aab32ee15d2254c87112121bccc6edaac0640"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/protection-screen.json": {
+      "bytes": 885286,
+      "sha256": "ddebf84bb59925ae4dc5f32fa086ee7a287e8ae8cdd5374db28f3b3e8ee1dc8b"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/verify_capture.py": {
+      "bytes": 4503,
+      "sha256": "b958b507f5cdc15e55c48379d64a2f8e5e911d8ad912e9f05abd46d55fc9dba1"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/verify_triage.py": {
+      "bytes": 7451,
+      "sha256": "adf94e749a1d57ddf7a54f686e44ab6d7a0454d433fc19c2656ffb3eaec846f0"
+    },
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/workbench.json": {
+      "bytes": 5993138,
+      "sha256": "10cd054e471948b21db06203cec7293145396a2f9019796b0a8228eac0c39701"
+    },
+    "docs/audit/keyword-vendor-review-coverage-2026-11-11/README.md": {
+      "bytes": 5055,
+      "sha256": "b5b788e416091234b2134cf8bbd29d251a5acd3e3d63ec64eb0fef4e77afd2f5"
+    },
+    "docs/audit/keyword-vendor-review-coverage-2026-11-11/admitted-master-impact.json": {
+      "bytes": 3650,
+      "sha256": "493b4360dd2037e098521971027535fda355cc055eb6650e99ef41308fa4245d"
+    },
+    "docs/audit/keyword-vendor-review-coverage-2026-11-11/report.json": {
+      "bytes": 479953,
+      "sha256": "42d02347ba05fccc0f636bec212b36acd80491f2becb2575c9aecbef33672210"
+    },
+    "docs/audit/keyword-vendor-review-coverage-2026-11-11/verify_coverage.py": {
+      "bytes": 11329,
+      "sha256": "1a2687c268ac3f45948c3462bd782e7a3a86a0a70cef92f9c172da8ae846bf12"
+    },
+    "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md": {
+      "bytes": 92437,
+      "sha256": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4"
+    },
+    "docs/google-ads/planned_campaign_page_registry.json": {
+      "bytes": 354143,
+      "sha256": "4cb1101bd54e687674938a368a73e6eacd3cee5a4743d2046f2d8bc6abef7b65"
+    },
+    "tools/efficiency/keyword_resources.py": {
+      "bytes": 3613,
+      "sha256": "8e2cd7713de8c508117decdd49042ac6df67c85f0bb9e80ee5b5200d96c4e607"
+    },
+    "tools/keyword-system/.gitattributes": {
+      "bytes": 101,
+      "sha256": "11b8ce53ad236b494093ce19c1ca87b5feb322d10c1aacf7de248221b5eaf1eb"
+    },
+    "tools/keyword-system/README.md": {
+      "bytes": 32546,
+      "sha256": "c90e519d254ec1a05b9343c197560602f30859a7da539587b96911ac2ad46dc2"
+    },
+    "tools/keyword-system/REVIEW.md": {
+      "bytes": 1832,
+      "sha256": "ed3b3891f70d22a7b1ac4a47b3a0a1c4d52f4b61b01437dd8b8ff16025e7c0c0"
+    },
+    "tools/keyword-system/append_only_admission.py": {
+      "bytes": 4858,
+      "sha256": "077053f8098ed75776fc06a533655910caac77df50fd5017700be7ab3ed0904f"
+    },
+    "tools/keyword-system/apprenticeship_admission.py": {
+      "bytes": 24462,
+      "sha256": "a99a91d7121296dec9dca439d64ff226a264770a8b5f0859cb99df31be2f7ebe"
+    },
+    "tools/keyword-system/bank_channel_login_admission.py": {
+      "bytes": 25453,
+      "sha256": "713f71f452eacbba3a07d515b932cfd914eea97d3953aaa610d0cc9071c31fbd"
+    },
+    "tools/keyword-system/bank_credential_admission.py": {
+      "bytes": 36683,
+      "sha256": "60d9dd2c8be19a7bca7049175ff2fbcf84ee39a5ca7d2c482b022f6c7a31f576"
+    },
+    "tools/keyword-system/bank_support_admission.py": {
+      "bytes": 24500,
+      "sha256": "7751b56078497921dae4e812c1299e30a699b7acd661f200ef034216d703565f"
+    },
+    "tools/keyword-system/coverage-review.schema.json": {
+      "bytes": 3369,
+      "sha256": "54a01d44e69d92a616c9f294600aa1b8560b237668eefeba1684fd0fd47a56da"
+    },
+    "tools/keyword-system/coverage_audit.py": {
+      "bytes": 17386,
+      "sha256": "29a19b56c0b81f62a1b1177ba4324422feeda67f4970ced3edc5ee51bf36513e"
+    },
+    "tools/keyword-system/current_negative_library.py": {
+      "bytes": 36730,
+      "sha256": "77122074aae8dbd050e4e00d4f659870aff107449461ade9e5edfa7fdfc94795"
+    },
+    "tools/keyword-system/data/campaign_context.json": {
+      "bytes": 343,
+      "sha256": "b32986087b40a11c32c0a9a7e08d8bf123e4b89115056525ff264df3a590df97"
+    },
+    "tools/keyword-system/data/negative-current-index.json": {
+      "bytes": 281325,
+      "sha256": "a33b9b8e4764121842d35417b79df4f5f9e618cd652eb15c914e4fdf0066dd33"
+    },
+    "tools/keyword-system/data/negative-extension-index.json": {
+      "bytes": 69472,
+      "sha256": "dad9573128190e6a8fa9d039af6d9cc8a0ef2720d7796dc875cfc2b0ca625229"
+    },
+    "tools/keyword-system/data/negative-latest-review-index.json": {
+      "bytes": 1253,
+      "sha256": "4fe30cd2c768f5779982dc4d7cc41be3b8aa7055e67dda8008672624d9a58293"
+    },
+    "tools/keyword-system/data/negative-research-index.json": {
+      "bytes": 314472,
+      "sha256": "ff04733c369954f66d562dc14a263bf40b58c7b14877332767f309472cb5e525"
+    },
+    "tools/keyword-system/data/negative.json": {
+      "bytes": 14740533,
+      "sha256": "b94b35103a62a7e78e8142797a6f146c23abbacfde080b5bfdde5530773ae29b"
+    },
+    "tools/keyword-system/data/positive.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "tools/keyword-system/data/protected_queries.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "tools/keyword-system/data/sources.json": {
+      "bytes": 5159,
+      "sha256": "9060f4dba836bcdf043ccee05bd3c7067bfe09d49de24c1e516c26d76862b7b4"
+    },
+    "tools/keyword-system/discovery_review_coverage.py": {
+      "bytes": 8330,
+      "sha256": "09a71b01847eb1113e20efe452a70623251fd662501b4dc4d51f7212cac0a44d"
+    },
+    "tools/keyword-system/entertainment_admission.py": {
+      "bytes": 24913,
+      "sha256": "2a27de8b786644b9818c9556c8a8bc6de46a1257473a621f93b79443e053adb2"
+    },
+    "tools/keyword-system/followup_admission.py": {
+      "bytes": 25687,
+      "sha256": "74d3e448ddcf2ae570c8cceb31fa4c5612d0d6895ec42f7b09966feaa3267c9c"
+    },
+    "tools/keyword-system/followup_reconciliation.py": {
+      "bytes": 19446,
+      "sha256": "1faaba67d1ed7217600990e2e8371d41d8f953faa24e58c6693579e7b36b1050"
+    },
+    "tools/keyword-system/front_office_document_admission.py": {
+      "bytes": 25098,
+      "sha256": "9331de366ef52d2246ac30c413386bd45fe4a02697c0f3933864f99d1c3d035f"
+    },
+    "tools/keyword-system/historical-intake.schema.json": {
+      "bytes": 5997,
+      "sha256": "4f35ec3327bc33dabb8ff88c0f5af46b7613b2c7e32f545d24d6136613ebf288"
+    },
+    "tools/keyword-system/keyword_audit.py": {
+      "bytes": 51646,
+      "sha256": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6"
+    },
+    "tools/keyword-system/keyword_text_compatibility.py": {
+      "bytes": 6420,
+      "sha256": "723988151adfeae8f2a6efeb073a399451eefcbfe1d3f8c311e0e168fd56763f"
+    },
+    "tools/keyword-system/negative_admission.py": {
+      "bytes": 17448,
+      "sha256": "2677468f05c54357c6b8d00cfcd4a60af46eb37b29ab462a57be53d3f40e12c0"
+    },
+    "tools/keyword-system/negative_employment_admission.py": {
+      "bytes": 12900,
+      "sha256": "5aba26143d00df413c64b5d5828cb8b00645245e0e77a04411b44df57e6ef16e"
+    },
+    "tools/keyword-system/negative_library.py": {
+      "bytes": 11191,
+      "sha256": "c43870fad15fac17a158052798e91e8ce6e036e33687059be5ff3ef0a40728e9"
+    },
+    "tools/keyword-system/negative_partition.py": {
+      "bytes": 5040,
+      "sha256": "cc02494e48581bed094c18badd199ff5866d0dda6fe31ce66750c97873334691"
+    },
+    "tools/keyword-system/negative_reviewed_cohort.py": {
+      "bytes": 16881,
+      "sha256": "51dad6f970617fefd58e749fc3577d0b399c91b2ff87f3cbc41332b91d27c6e7"
+    },
+    "tools/keyword-system/ofqual_admission.py": {
+      "bytes": 21560,
+      "sha256": "7c2defe7cb9537d2092c110b026ee1bca7d20c831011613f1949a081061d7fba"
+    },
+    "tools/keyword-system/ofqual_animal_care_admission.py": {
+      "bytes": 27409,
+      "sha256": "41e08b991106a6ca3a7b89b9223f8187549c835ba347cb38ce368d36568e6208"
+    },
+    "tools/keyword-system/ofqual_discovery.py": {
+      "bytes": 17475,
+      "sha256": "0c6e1ca3c8109237d98ea173c0b460d4e5b95d5f78f16a25c72836ed2041ebd2"
+    },
+    "tools/keyword-system/ofqual_occupational_admission.py": {
+      "bytes": 28448,
+      "sha256": "4e3840b019fb94e7fa441af318f4dc48c13302901618783e2eaca735181f173c"
+    },
+    "tools/keyword-system/ofqual_veterinary_admission.py": {
+      "bytes": 33582,
+      "sha256": "ef26d534f47e9c278a40ba613efbbae424e0d965a70bbd61c87482399e13c7e4"
+    },
+    "tools/keyword-system/pest_commercial_services_admission.py": {
+      "bytes": 25484,
+      "sha256": "53bae39595b5d15be8d61630be29b3519ec9c78b52ba80d4a6f4a1b755f76c48"
+    },
+    "tools/keyword-system/planner_discovery.py": {
+      "bytes": 7870,
+      "sha256": "952423aac9ed3d1a4cb23185dd8da2a5451d19f7166fc73ce1c2b86391aadf9b"
+    },
+    "tools/keyword-system/pool_sprinkler_admission.py": {
+      "bytes": 25171,
+      "sha256": "a5a77e8cce2027b58398c96d3bbf6bdda091138922ea7f53197fa735c0ce3ad4"
+    },
+    "tools/keyword-system/research.schema.json": {
+      "bytes": 10222,
+      "sha256": "e2a6478d8d559b7fc287acd43f782f2dd44c8a2acbe4e04d858128ecdb924719"
+    },
+    "tools/keyword-system/results/negative.json": {
+      "bytes": 1697,
+      "sha256": "5abe7e9deaefe14bb8612266c4b3db09b381c0170e23f03a904b97a921d3f3f6"
+    },
+    "tools/keyword-system/results/positive.json": {
+      "bytes": 1700,
+      "sha256": "9b72fcb399b73ef6dcf7eedefb822b5908b997a5831eb1e21d50377a4ea12dd1"
+    },
+    "tools/keyword-system/results/test-results.json": {
+      "bytes": 582,
+      "sha256": "c1b3e1e0fd1601f63c6db3705a5260c63f4b5e03a4e5f89cf69ed1d37cc8c4da"
+    },
+    "tools/keyword-system/septic_grease_admission.py": {
+      "bytes": 22683,
+      "sha256": "1d303a9f75e68c86c57c360632a5b64f0981574c11fe875bf7e5893a8f6a35a3"
+    },
+    "tools/keyword-system/source_membership_diagnostic.py": {
+      "bytes": 5746,
+      "sha256": "bd8bafb4c49d23185b8cff91112e1c79679ae39bd9def9974e6d911ed891e41c"
+    },
+    "tools/keyword-system/staging/historical-intake.json": {
+      "bytes": 149400,
+      "sha256": "2fb4fc05496184628c6cab7e900f4bf4c62426e0a84f8c8f9c73302f3f76308e"
+    },
+    "tools/keyword-system/staging/historical-negative-intake.json": {
+      "bytes": 34111,
+      "sha256": "740b9e74e0a02ef263807f62a457b1ee7f5fef2caf984f75fca9c031898d8fd4"
+    },
+    "tools/keyword-system/staging/intake-validation.json": {
+      "bytes": 399,
+      "sha256": "760a08de62f2731bdbefd9297baacd3a3436885bed53f5c3dfd9e645e894c9f7"
+    },
+    "tools/keyword-system/staging/negative-intake-validation.json": {
+      "bytes": 483,
+      "sha256": "a91edd79ec5e4629b0fa64a637a53947bfc5d0ee942e9dd4f5d3f4d119bf92d0"
+    },
+    "tools/keyword-system/staging/test-results.json": {
+      "bytes": 536,
+      "sha256": "63816626115f8ca60868c7e85dddd8f8a139999da2b4442f2638bd35378f1845"
+    },
+    "tools/keyword-system/supplemental_discovery.py": {
+      "bytes": 17005,
+      "sha256": "727230214dd3537089a093e0ad0a819e62986db8ca310e6856714403269106bf"
+    },
+    "tools/keyword-system/supplemental_triage.py": {
+      "bytes": 7163,
+      "sha256": "3f3090063a1c69396f989cb239dc78b96fc3c191e07c94aa006067037e2a21f3"
+    },
+    "tools/keyword-system/test_bank_credential_admission.py": {
+      "bytes": 11380,
+      "sha256": "1e1addf06589f1de76e4c2c37fa400f7180873e509704f4f5f29c75298af21a3"
+    },
+    "tools/keyword-system/test_entertainment_admission.py": {
+      "bytes": 10732,
+      "sha256": "33fa4737f049d1c169442b7eb751d0e71c8928744ab0d7dc22cfaf7298401874"
+    },
+    "tools/keyword-system/test_ofqual_occupational_admission.py": {
+      "bytes": 13591,
+      "sha256": "72631013f3e0ecbad1521ec7693158aafa540e7f688d46939e79d4488d3d508d"
+    },
+    "tools/keyword-system/test_ofqual_veterinary_admission.py": {
+      "bytes": 16262,
+      "sha256": "a61ccbfe601a977a67f33dc92ef319337f5aeea2a506465737d45b9c28adc122"
+    },
+    "tools/keyword-system/test_pest_commercial_services_admission.py": {
+      "bytes": 12575,
+      "sha256": "718e1a197d13f25fce59f415c6585b2853ef553574203fba609729f22331f558"
+    },
+    "tools/keyword-system/test_pool_sprinkler_admission.py": {
+      "bytes": 13062,
+      "sha256": "00a337a4d14c12c63ff5a0b63b09d81556a895c74de70e3295453c6159f5a524"
+    },
+    "tools/keyword-system/trade_services_admission.py": {
+      "bytes": 25079,
+      "sha256": "a6226777575f828237efbb31330fbf5cba57487a892d4f0221e86592f1581f3b"
+    },
+    "tools/keyword-system/triage_protection.py": {
+      "bytes": 2182,
+      "sha256": "fde6f16ba5fc6eab9ccf783289ca69b8f090298a54d4db3dd9cb4410f509ddc8"
+    },
+    "tools/keyword-system/triage_workbench.py": {
+      "bytes": 10043,
+      "sha256": "bbb97ce50b83e01576ffc4430c1b86ca9f638ee677b8bbd11deac529e46c033a"
+    },
+    "tools/keyword-system/valuation_admission.py": {
+      "bytes": 27365,
+      "sha256": "3765e9702a4da018524a0423a2a9dd180ffbef412e3ba790297d7670cfe72c56"
+    }
+  },
+  "profile": "pest-pool-v1",
+  "schema": "bsre-focused-keyword-profiles-v1",
+  "scope": "CONTROLLED_TEST_INPUTS_NOT_APPROVAL_OR_VERDICT_CACHE",
+  "support_pins": {
+    "owned_process.py": "62840a0c6d55b52695a758a5c27d5e56f75fa4055c6ca426068ca7f19ec54f37"
+  }
+}
