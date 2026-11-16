@@ -15,12 +15,38 @@ final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Tr
     public ?string $wrongRead=null;public ?string $changedAck=null;public ?string $lostAck=null;public ?string $ambiguous=null;
     public bool $falseReceipt=false;public bool $expiredGrant=false;public int $transitions=0;
     public int $inventoryDelaySeconds=0;
-    private wpdb $reader;
+    private \mysqli $reader;
+    private string $readerConnection;
     public function __construct(private A\RuntimePolicy $policy,private A\ActualRecoveryCustody $custody,private R\ReceiverPolicy $receiverPolicy) {
-        $this->reader=new wpdb(DB_USER,DB_PASSWORD,DB_NAME,DB_HOST);$this->reader->save_queries=false;
-        if($this->reader->get_var('SELECT DATABASE()')!=='bsre_synthetic')throw new RuntimeException('SYNTHETIC_REVIEW_DATABASE_REQUIRED');
+        // This independent service reader must not register a second WordPress
+        // placeholder callback in the canonical writer's global query hook.
+        if(DB_HOST!=='localhost:/tmp/bsre.sock'||DB_NAME!=='bsre_synthetic')throw new RuntimeException('SYNTHETIC_REVIEW_DATABASE_REQUIRED');
+        try{
+            $this->reader=new \mysqli('localhost',DB_USER,DB_PASSWORD,DB_NAME,0,'/tmp/bsre.sock');
+            $this->readerConnection=(string)$this->reader->thread_id;
+            if(!$this->reader->set_charset('utf8mb4')||!$this->reader->autocommit(true)
+                ||$this->reader->query('SET SESSION TRANSACTION READ ONLY')!==true)throw new RuntimeException('SYNTHETIC_REVIEW_READER_SETUP_FAILED');
+            $facts=$this->readerFacts();
+            if($facts['db_name']!=='bsre_synthetic'||(string)$facts['connection_id']!==$this->readerConnection
+                ||(string)$facts['autocommit']!=='1'||(string)$facts['in_transaction']!=='0'||(string)$facts['tx_read_only']!=='1')throw new RuntimeException('SYNTHETIC_REVIEW_READER_FACTS_REQUIRED');
+        }catch(Throwable $error){
+            if(isset($this->reader)){try{$this->reader->close();}catch(Throwable $ignored){}}
+            throw new RuntimeException('SYNTHETIC_REVIEW_READER_SETUP_FAILED');
+        }
         $this->snapshots[0]=['schema_version'=>1,'closures'=>[],'jobs'=>[],'incomplete'=>false,'expired_unresolved'=>0,'admission_floor'=>null];
         $this->anchors[0]=['revision'=>0,'hash'=>str_repeat('0',64)];
+    }
+    private function read(string $sql):array {
+        if(!str_starts_with($sql,'SELECT ')||(string)$this->reader->thread_id!==$this->readerConnection)throw new RuntimeException('SYNTHETIC_REVIEW_SELECT_ONLY');
+        $result=$this->reader->query($sql);
+        if(!$result instanceof \mysqli_result)throw new RuntimeException('SYNTHETIC_REVIEW_READ_FAILED');
+        try{$rows=$result->fetch_all(MYSQLI_ASSOC);}finally{$result->free();}
+        if(count($rows)>2||(string)$this->reader->thread_id!==$this->readerConnection)throw new RuntimeException('SYNTHETIC_REVIEW_READ_BOUND_OR_CONNECTION_CHANGED');
+        return $rows;
+    }
+    public function readerFacts():array {
+        $rows=$this->read('SELECT DATABASE() AS db_name,CONNECTION_ID() AS connection_id,@@session.autocommit AS autocommit,@@session.in_transaction AS in_transaction,@@session.tx_read_only AS tx_read_only');
+        if(count($rows)!==1)throw new RuntimeException('SYNTHETIC_REVIEW_READER_FACTS_REQUIRED');return $rows[0];
     }
     public function allow(string $action,string $digest):void{$this->approvals[$action.':'.$digest]=true;}
     public function approve(array $plan,string $action='PURGE'):void {
@@ -29,9 +55,9 @@ final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Tr
             'approved_at'=>time(),'approval_expires_at'=>time()+900];
     }
     private function row():?array {
-        $count=$this->reader->get_var("SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='g5_receiver_synthetic_bsre_g5_journal'");
+        $count=$this->read("SELECT COUNT(*) AS row_count FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='g5_receiver_synthetic_bsre_g5_journal'")[0]['row_count'];
         if((string)$count==='0')return null;
-        $rows=$this->reader->get_results('SELECT revision,body_hash,body FROM g5_receiver_synthetic_bsre_g5_journal ORDER BY id LIMIT 2',ARRAY_A);
+        $rows=$this->read('SELECT revision,body_hash,body FROM g5_receiver_synthetic_bsre_g5_journal ORDER BY id LIMIT 2');
         if(!is_array($rows)||count($rows)>1)throw new RuntimeException('SYNTHETIC_REVIEW_JOURNAL_SHAPE');return $rows[0]??null;
     }
     public function state():array {
@@ -202,6 +228,10 @@ function positiveReadJob(A\PurgeBoundary $b,A\ActualPurgeJournal $j,array $plan)
 
 define('BSRE_ACTUAL_PURGE_ENABLED',true);
 $positiveService=new PositivePurgeService($policy,$custody,$rp);
+$positiveReaderFacts=$positiveService->readerFacts();$positiveWriterConnection=(string)$wpdb->get_var('SELECT CONNECTION_ID()');$producer->assertCurrent($wpdb);
+receiver_check('purge_fixture_reader_is_distinct_read_only_and_preserves_canonical_hooks',
+    $positiveReaderFacts['db_name']===DB_NAME&&(string)$positiveReaderFacts['connection_id']!==$positiveWriterConnection
+    &&(string)$positiveReaderFacts['autocommit']==='1'&&(string)$positiveReaderFacts['in_transaction']==='0'&&(string)$positiveReaderFacts['tx_read_only']==='1');
 $positiveSigned=new A\SignedPurgeService($policy,$positiveService,'synthetic-rfc8032',hex2bin('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a'),hash('sha256','SYNTHETIC_PURGE_SERVICE_V2'));
 $positiveBoundary=new A\PurgeBoundary($policy,$wpdb,$producer,$positiveSigned);
 $positiveEvidence=new R\ReceiverOperationalEvidence($rp,$proof,$positiveService);$positiveAuthority=new A\OwnerAuthority($policy,$positiveEvidence);

@@ -1,5 +1,13 @@
 # Implementation progress
 
+## Positive purge fixture connection correction — 17 November 2026
+
+The corrected image at `79a68504f45e7a9f7700b6b0665d0587a6c0a64b` built and completed the first profile's predecessors and 38-check held purge case. Positive startup then failed `CANONICAL_PRODUCER_QUERY_INTERCEPTOR_UNVERIFIED` before its guarded journal could be constructed. The private failed log is retained with SHA256 `19f2dbd3c5d8d183b9b8287e9549a9cc98d998405e60cd952445118e3b42ee36`. It does not establish second-profile or complete purge acceptance.
+
+The positive synthetic service's second `wpdb` registered another core placeholder callback. [WordPress documents that registration](https://developer.wordpress.org/reference/classes/wpdb/placeholder_escape/); the canonical guard correctly permits only its own callback. The fixture now uses a private independent `mysqli` reader on the same fixed synthetic Unix socket/database and requires verified autocommit and server read-only state. SELECT-only reads preserve exact rows and check connection identity; setup failure closes that owned reader. No global hook, `mysqli_report`, canonical writer, guard, runtime class or permission is changed.
+
+The new native assertion requires distinct writer/reader connections, read-only/autocommit/session facts and successful unchanged canonical guard validation. All previous 29 positive assertions remain; this makes 30, alongside the unchanged held38. A new portable construction check makes 20 local tests passing (0.393059 seconds); six unchanged workflow checks are reused. The 26-file manifest is rebuilt from the corrected fixture. Both complete profiles and all required exact-head checks still must pass; the earlier partial run remains diagnostic. Production unchanged; Ads paused.
+
 ## Purge lab image-layer correction — 16 November 2026
 
 The first published purge cut `ba1e25a7419e887003f00fff3189f0fb2c19796e` stopped during Docker image construction with `max depth exceeded`; WordPress and the new native cases did not execute. The private failed raw log is retained with SHA256 `e38da16f3df1be8534ed8160146e7f340cbf3076a840081d1d5af1d6561c6168`. This is diagnostic evidence, not native acceptance. [Docker's storage documentation](https://docs.docker.com/engine/storage/drivers/overlayfs-driver/) explains the layer-depth constraint; the runner's exact storage-driver identity was not independently established.

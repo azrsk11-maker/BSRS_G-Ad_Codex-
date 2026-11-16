@@ -7,7 +7,9 @@ Public-layout files are staged only under `integration-ready/tools/website-track
 | Case | Fixed prefix | Length | Progress | Phase | Checks |
 |---|---|---:|---|---|---:|
 | held | g5_purge_held_synthetic_ | 24 | /tmp/g5-purge-held-progress.json | g5_actual_purge_held | 38 |
-| positive | g5_purge_positive_synthetic_ | 28 | /tmp/g5-purge-positive-progress.json | g5_actual_purge_positive | 29 |
+| positive | g5_purge_positive_synthetic_ | 28 | /tmp/g5-purge-positive-progress.json | g5_actual_purge_positive | 30 |
+
+The current positive case adds a distinct read-only `mysqli` service-reader assertion to the original 29 checks. It leaves the canonical writer and its sole WordPress placeholder callback unchanged. The earlier frozen packaging's 29-check manifest is historical; the current fixed builder emits the authoritative 30-check order and its new manifest hash.
 
 Each case rejects any existing table in its exact prefix before install; the inherited exact missing-journal and missing-progress gates remain. This makes a repeated/partial case hold, without deleting or ignoring foreign records. `same-db-native-packet/G38_BUILD.json` records exact raw manifest bytes, 26 closed runtime members, every reversible root/prefix/progress transformation and the **runtime check order** obtained by expanding exactly one extension include. Native receipts retain only `phase`, `checks`, `runtime_isolation`, `synthetic_services=true`, `provider_accepted=false` and `production_authorized=false`. Progress files persist check booleans in that execution order. No row payload is printed.
 
