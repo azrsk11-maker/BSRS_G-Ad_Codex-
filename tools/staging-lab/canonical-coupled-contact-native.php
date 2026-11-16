@@ -17,14 +17,36 @@ foreach($isolation as $pass)if(!$pass)throw new RuntimeException('G36_CONTACT_IS
 $checks=[];$progress='/tmp/g36_contact_'.$mode.'_progress.json';
 if(file_exists($progress)||is_link($progress))throw new RuntimeException('G36_FRESH_CONTACT_PROGRESS_REQUIRED');
 $handle=fopen($progress,'x');if(!is_resource($handle))throw new RuntimeException('G36_CONTACT_PROGRESS_UNAVAILABLE');fclose($handle);
-$completed=false;ob_start();
-register_shutdown_function(static function()use(&$completed):void{if(!$completed){while(ob_get_level()>0)@ob_end_clean();fwrite(STDERR,"G36_CONTACT_INCOMPLETE\n");exit(1);}});
+$completed=false;$stage='wordpress_setup';$failure=null;$GLOBALS['g36_contact_table_count']=null;ob_start();
+register_shutdown_function(static function()use(&$completed,&$checks,&$stage,&$failure,$mode):void{
+    if($completed)return;
+    while(ob_get_level()>0)@ob_end_clean();
+    $last=error_get_last();$caught=$failure instanceof Throwable;
+    $message=$caught?$failure->getMessage():(string)($last['message']??'');$code=null;
+    if(preg_match('/\b([A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+)\b/',$message,$matched)===1)$code=substr($matched[1],0,96);
+    $class=$caught?substr(preg_replace('/[^A-Za-z0-9_\\\\]/','',get_class($failure)),0,96):null;
+    $file=$caught?$failure->getFile():(string)($last['file']??'');
+    $file=substr(preg_replace('/[^A-Za-z0-9_.-]/','',basename(str_replace('\\','/',$file))),0,80);
+    $line=$caught?$failure->getLine():($last['line']??null);
+    $safe=[];foreach(array_slice($checks,0,64,true) as $name=>$pass)if(is_string($name)&&preg_match('/^[a-z0-9_]{1,96}$/D',$name)===1&&is_bool($pass))$safe[$name]=$pass;
+    $tables=$GLOBALS['g36_contact_table_count']??null;
+    $diagnostic=['phase'=>'g36_contact_diagnostic','status'=>'FAIL','mode'=>$mode,'stage'=>$stage,
+        'completed_check_count'=>count($checks),'checks'=>$safe,'observed_table_count'=>is_int($tables)&&$tables>=0?$tables:null,
+        'throwable_class'=>$class,'file_basename'=>$file,'line'=>is_int($line)&&$line>0?$line:null,'error_code'=>$code,
+        'synthetic_only'=>true,'native_accepted'=>false];
+    $encoded=json_encode($diagnostic,JSON_UNESCAPED_SLASHES);
+    if(is_string($encoded)&&strlen($encoded)<=16384)fwrite(STDERR,$encoded."\n");
+    fwrite(STDERR,"G36_CONTACT_INCOMPLETE\n");exit(1);
+});
 function g36contact(string $name,bool $pass):void {
-    global $checks,$progress;if(array_key_exists($name,$checks))throw new RuntimeException('G36_DUPLICATE_CONTACT_CHECK');
-    $checks[$name]=$pass;$bytes=json_encode($checks,JSON_THROW_ON_ERROR);
+    global $checks,$progress,$stage;if(array_key_exists($name,$checks))throw new RuntimeException('G36_DUPLICATE_CONTACT_CHECK');
+    $stage='check:'.$name;$checks[$name]=$pass;$bytes=json_encode($checks,JSON_THROW_ON_ERROR);
     if(file_put_contents($progress,$bytes,LOCK_EX)!==strlen($bytes))throw new RuntimeException('G36_CONTACT_PROGRESS_UNAVAILABLE');
     if(!$pass)throw new RuntimeException('G36_CONTACT_ASSERTION_FAILED:'.$name);
 }
+use BSRE\Enquiries as E;use BSRE\SharedRepository as G;use BSRE\G36Native as N;
+try{
+$stage='wordpress_bootstrap';
 define('WP_ENVIRONMENT_TYPE','local');define('WP_CONTENT_DIR','/opt/lab/g36/wp-content');define('WP_PLUGIN_DIR',WP_CONTENT_DIR.'/plugins');
 define('BSRE_CANONICAL_LEASE_ENABLED',true);define('BSRE_G3_ROUTE_CONTEXT_ENABLED',true);define('BSRE_G2_SHARED_REPOSITORY_ENABLED',true);
 define('BSRE_PURPOSE_ATTRIBUTION_ENABLED',true);define('BSRE_RETENTION_ADMISSION_ENABLED',true);
@@ -34,8 +56,8 @@ define('BSRE_LEAD_HMAC_SECRET',str_repeat('synthetic-key-',4));define('BSRE_ROUT
 $_SERVER['HTTPS']='on';$_SERVER['SERVER_PORT']='443';$_SERVER['REQUEST_METHOD']='GET';$_SERVER['REQUEST_URI']='/enquire/';
 require '/opt/wordpress/wp-load.php';require_once WP_PLUGIN_DIR.'/bsre-enquiries/bsre-enquiries.php';
 require_once '/opt/lab/g36/contact-abi.php';
-use BSRE\Enquiries as E;use BSRE\SharedRepository as G;use BSRE\G36Native as N;
-N\fixed();
+
+$stage='helper_fixed';N\fixed();
 add_filter('home_url',fn($url,$path)=>'https://blackswanrealestate.ae'.($path===''?'':'/'.ltrim($path,'/')),10,2);
 add_filter('plugins_url',fn($url)=>'https://blackswanrealestate.ae'.parse_url($url,PHP_URL_PATH));
 add_filter('rest_url',fn($url,$route)=>'https://blackswanrealestate.ae/wp-json/'.ltrim($route,'/'),10,2);
@@ -44,12 +66,12 @@ add_filter('pre_http_request',function()use(&$networkCalls){$networkCalls++;thro
 add_filter('pre_wp_mail',function()use(&$mailCalls){$mailCalls++;throw new RuntimeException('G36_CONTACT_MAIL_FORBIDDEN');},PHP_INT_MAX);
 $owner=get_user_by('login','synthetic_owner');N\need($owner instanceof WP_User,'G36_SYNTHETIC_OWNER_REQUIRED');wp_set_current_user($owner->ID);
 $GLOBALS['wp_rewrite']->set_permalink_structure('/%postname%/');
-$beforeRows=N\captures();$fixture=N\reconcile();
+$stage='capture_snapshot_before_reconcile';$beforeRows=N\captures();$stage='reconcile';$fixture=N\reconcile();
 g36contact('candidate_hub_exact_native_body',get_post_field('post_content',$fixture['hub'],'raw')===E\owned_parent_source('hub'));
 g36contact('candidate_hub_guard_bound',hash('sha256',E\owned_parent_source('hub'))===E\OWNED_HUB_SHA256 && E\OWNED_HUB_PAGE_ID===26750);
 g36contact('known_service_hierarchy_preserved',count($fixture['services'])===5 && $fixture['prior_preserved']);
 g36contact('hub_reconciliation_preserves_retained_rows',N\captures()===$beforeRows);
-$probe=wp_insert_post(['post_type'=>'page','post_status'=>'draft','post_parent'=>$fixture['hub'],'post_name'=>'g36-unregistered-child-'.$mode,
+$stage='collision_probe_insert';$probe=wp_insert_post(['post_type'=>'page','post_status'=>'draft','post_parent'=>$fixture['hub'],'post_name'=>'g36-unregistered-child-'.$mode,
     'post_title'=>'SYNTHETIC G36 collision probe','post_content'=>'SYNTHETIC DISPOSABLE PROBE','meta_input'=>['_bsre_g36_native_fixture'=>'1']],true);
 N\need(!is_wp_error($probe) && is_int($probe) && $probe>0,'G36_COLLISION_PROBE_FAILED');
 $denied=false;$attemptedWrites=0;$readonlyQueries=0;$removed=null;
@@ -57,7 +79,7 @@ $readGuard=static function(string $sql)use(&$attemptedWrites,&$readonlyQueries):
     $readonlyQueries++;if(preg_match('/^\s*(?:SELECT|SHOW)\b/i',$sql)!==1){$attemptedWrites++;throw new RuntimeException('G36_RECONCILE_WRITE_FORBIDDEN');}return $sql;
 };
 try{
-    add_filter('query',$readGuard,PHP_INT_MAX);
+    $stage='collision_probe_reconcile';add_filter('query',$readGuard,PHP_INT_MAX);
     try{N\reconcile();}catch(Throwable $e){$denied=$e->getMessage()==='G36_UNREGISTERED_NATIVE_CHILD_COLLISION';}
     finally{remove_filter('query',$readGuard,PHP_INT_MAX);}
 }finally{
@@ -66,16 +88,16 @@ try{
 }
 g36contact('unregistered_native_child_denied_before_fixture_writes',$denied && $attemptedWrites===0 && $readonlyQueries>0);
 g36contact('only_new_synthetic_collision_probe_removed',$removed instanceof WP_Post && $removed->ID===$probe && get_post($probe)===null && N\captures()===$beforeRows);
-$privacy=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_name'=>'g36-synthetic-privacy-'.$mode,'post_title'=>'SYNTHETIC G36 NOTICE'],true);
+$stage='privacy_fixture';$privacy=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_name'=>'g36-synthetic-privacy-'.$mode,'post_title'=>'SYNTHETIC G36 NOTICE'],true);
 N\need(!is_wp_error($privacy) && is_int($privacy) && $privacy>0,'G36_PRIVACY_FIXTURE_FAILED');define('BSRE_PRIVACY_NOTICE_PAGE_ID',$privacy);
-$wpdb->prefix='g36_abi_'.str_replace('-','_',$mode).'_synthetic_';E\install();N\need(G\migrate(),'G36_ABI_MIGRATION_FAILED');
+$stage='canonical_install_and_migrate';$wpdb->prefix='g36_abi_'.str_replace('-','_',$mode).'_synthetic_';E\install();N\need(G\migrate(),'G36_ABI_MIGRATION_FAILED');
 $producer=new \BSRE\ActualRetention\CanonicalCaptureProducer($wpdb);$producer->assertCurrent($wpdb);
 g36contact('canonical_first_global_and_repository',get_class($wpdb)==='BSRE\\ClosedRetention\\LeaseBoundWpdb' && G\repository()->database()===$wpdb);
 $manifest=N\sourceManifest();g36contact('final_manifest64_runtime_bound',count($manifest['files'])===64);
-foreach(N\modules() as $name=>$pass)g36contact($name,$pass);
+$stage='class_only_modules';foreach(N\modules() as $name=>$pass)g36contact($name,$pass);
 $producer->assertCurrent($wpdb);g36contact('canonical_producer_after_class_only_load',true);
 $id=$mode==='hub'?$fixture['hub']:$fixture['services'][$mode];
-$GLOBALS['wp_query']=new WP_Query(['page_id'=>$id,'post_type'=>'page']);$GLOBALS['wp_the_query']=$GLOBALS['wp_query'];
+$stage='actual_wordpress_query';$GLOBALS['wp_query']=new WP_Query(['page_id'=>$id,'post_type'=>'page']);$GLOBALS['wp_the_query']=$GLOBALS['wp_query'];
 $_SERVER['REQUEST_URI']=$mode==='hub'?'/enquire/':'/enquire/'.$mode.'/';wp_set_current_user(0);
 $scope=E\owned_parent_scope();$document=is_array($scope)?E\owned_parent_document($scope):null;
 g36contact('actual_wordpress_query_owned_and_live',get_queried_object_id()===$id && is_array($document) && $document['binding']['mode']==='live' && $document['full_assets']===true);
@@ -85,8 +107,8 @@ g36contact('candidate_source_contact_counts',is_string($body) && substr_count($b
 g36contact('candidate_source_original_contact_absent',!str_contains($body,'971568285677') && !str_contains($body,'+971 56 828 5677'));
 $lead=file_get_contents(WP_PLUGIN_DIR.'/bsre-enquiries/assets/lead.js');
 g36contact('served_contact_matcher_uses_candidate',is_string($lead) && substr_count($lead,'wa\\.me\\/19995550123')===1 && !str_contains($lead,'971568285677'));
-$beforeRender=N\captures();
-ob_start();require WP_PLUGIN_DIR.'/bsre-enquiries/templates/page.php';$html=(string)ob_get_clean();
+$stage='capture_snapshot_before_render';$beforeRender=N\captures();
+$stage='actual_template_render';ob_start();require WP_PLUGIN_DIR.'/bsre-enquiries/templates/page.php';$html=(string)ob_get_clean();
 g36contact('actual_template_renders_contact_counts',substr_count($html,'https://wa.me/19995550123')===$wa
     && substr_count($html,'tel:+19995550123')===$tel && substr_count($html,'+1 999 555 0123')===$display);
 g36contact('actual_template_original_contact_absent',!str_contains($html,'971568285677') && !str_contains($html,'+971 56 828 5677'));
@@ -108,3 +130,4 @@ echo json_encode(['phase'=>'g36_coupled_contact_abi','mode'=>$mode,'checks'=>$ch
     'synthetic_only'=>true,'network_calls'=>$networkCalls,'mail_calls'=>$mailCalls,'provider_events'=>0,'native_provider_accepted'=>false,
     'limits'=>'Actual isolated native template/config contact ABI only; no browser/SDK/provider/human/production acceptance.'],JSON_THROW_ON_ERROR)."\n";
 $completed=true;
+}catch(Throwable $error){$failure=$error;exit(1);}

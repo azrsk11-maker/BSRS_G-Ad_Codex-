@@ -1,5 +1,9 @@
 # Implementation progress
 
+## G36 failed trial diagnostic correction — 16 November 2026
+
+The b9c53182 isolated trial completed first-profile predecessors plus G36 bootstrap/route/custody, then terminated in the first hub contact test with only G36_CONTACT_INCOMPLETE. The shutdown handler cleared the original error; neither contact nor second-profile acceptance was established. The new failure-only diagnostic retains stage, named boolean progress, numeric table count and sanitized throwable location/code, bounded to 16 KiB. It emits no raw message, trace, SQL rows or configuration, still clears buffers and exits 1. Every assertion, isolation check and existing table/row bound is preserved. Root cause remains unverified; the next run is evidence gathering after this concrete diagnostic correction, not an unchanged retry. A proposed REST callback-argument explanation was independently rejected: the exact committed registration already had 10,2 and was left unchanged.
+
 ## Held V3 canonical contact integration — 16 November 2026
 
 The accepted baseline is b00a6aae, with all three required checks and both G35 database profiles passing; see [the verified PR result](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6920821968). The new explicit G36 profile composes the unchanged V2 contact/receipt/G4 ancestry with the accepted canonical connection and producer. All 64 final plugin source members are bound after the reversible main include. Its closed 68-of-70 inventory contains a 67-file site and unchanged receiver companion; ActualPreferenceRetention and ActualRetirementPort remain absent. Original profiles, fixture pins, default-OFF flags, wire-v1, intake/outbox schemas and all domain authority guards are preserved.
