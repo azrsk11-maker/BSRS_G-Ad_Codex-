@@ -400,6 +400,7 @@ final class ActualPurgeEngine
     {
         $now = time();
         $value = $this->admission->readback($now);
+        $now = time();
         if ($value === null) self::fail('ADMISSION_UNVERIFIED');
         self::keys($value, ['wp', 'receiver', 'source_hashes', 'restore_policy_hash', 'evidence_reference', 'evidence_hash', 'observed_at', 'expires_at']);
         self::bounded($value['evidence_reference'], 256);

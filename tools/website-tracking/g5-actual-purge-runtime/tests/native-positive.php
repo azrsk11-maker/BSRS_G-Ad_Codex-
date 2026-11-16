@@ -52,8 +52,8 @@ final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Tr
     public function allow(string $action,string $digest):void{$this->approvals[$action.':'.$digest]=true;}
     public function approve(array $plan,string $action='PURGE'):void {
         $this->allow($action,$plan['digest']);$k=$action.':'.$plan['digest'];
-        if(!isset($this->grants[$k]))$this->grants[$k]=['actor'=>$this->policy->actor(),'action'=>$action,'plan_digest'=>$plan['digest'],
-            'approved_at'=>time(),'approval_expires_at'=>time()+900];
+        if(!isset($this->grants[$k])){$approved=time();$this->grants[$k]=['actor'=>$this->policy->actor(),'action'=>$action,'plan_digest'=>$plan['digest'],
+            'approved_at'=>$approved,'approval_expires_at'=>$approved+900];}
     }
     private function row():?array {
         $count=$this->read("SELECT COUNT(*) AS row_count FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='g5_receiver_synthetic_bsre_g5_journal'")[0]['row_count'];
@@ -184,8 +184,8 @@ final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Tr
         elseif($operation==='resource')$r=$this->resource($b);
         elseif($operation==='manual_mail_receipt'){$r=['receipt'=>$this->receipts[$b['plan_digest']]??null];if($this->falseReceipt&&$r['receipt']!==null)$r['receipt']['binding_hash']=str_repeat('7',64);}
         else throw new RuntimeException('SYNTHETIC_PURGE_OPERATION_UNKNOWN');
-        $s=['contract'=>'bsre-actual-purge-evidence-v1','actor'=>$q['actor'],'policy'=>$q['policy'],'source_hash'=>$q['source_hash'],'operation'=>$operation,
-            'challenge'=>$q['challenge'],'request_hash'=>C\Workflow::digest($q),'issued_at'=>time(),'expires_at'=>time()+30,'result'=>$r];
+        $issued=time();$s=['contract'=>'bsre-actual-purge-evidence-v1','actor'=>$q['actor'],'policy'=>$q['policy'],'source_hash'=>$q['source_hash'],'operation'=>$operation,
+            'challenge'=>$q['challenge'],'request_hash'=>C\Workflow::digest($q),'issued_at'=>$issued,'expires_at'=>$issued+30,'result'=>$r];
         return R\Guard::canonical(['key_id'=>'synthetic-rfc8032','statement'=>$s,'signature'=>base64_encode(sodium_crypto_sign_detached(C\Workflow::digest($s),receiver_test_secret()))]);
     }
     private function receiverReview(string $operation,array $q):string {
@@ -197,9 +197,9 @@ final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Tr
             &&($s['closures'][$p['closure_id']]??null)===$b['closure']&&$b['request_id']===$b['closure']['request_id']
             &&$s['incomplete']===true&&$s['admission_floor']===$p['admission_hash']&&($this->approvals['PURGE:'.$p['digest']]??false)===true;}
         else throw new RuntimeException('SYNTHETIC_RECEIVER_REVIEW_OPERATION');
-        $s=['contract'=>R\ReceiverPolicy::EVIDENCE,'service'=>R\ReceiverPolicy::SERVICE,'operation'=>$operation,'scope'=>C\Workflow::digest($b),
+        $issued=time();$s=['contract'=>R\ReceiverPolicy::EVIDENCE,'service'=>R\ReceiverPolicy::SERVICE,'operation'=>$operation,'scope'=>C\Workflow::digest($b),
             'source'=>$this->receiverPolicy->sources(),'actor'=>$q['actor'],'challenge'=>$q['challenge'],'request_hash'=>C\Workflow::digest(['operation'=>$operation,'body'=>R\Guard::canonical($q)]),
-            'issued_at'=>time(),'expires_at'=>time()+60,'claims'=>['result'=>$result,'intent_digest'=>null,'current_history'=>true,'receiver_only'=>true]];
+            'issued_at'=>$issued,'expires_at'=>$issued+60,'claims'=>['result'=>$result,'intent_digest'=>null,'current_history'=>true,'receiver_only'=>true]];
         return R\Guard::canonical(['key_id'=>'synthetic-rfc8032','statement'=>$s,'signature'=>base64_encode(sodium_crypto_sign_detached(C\Workflow::digest($s),receiver_test_secret()))]);
     }
 }
@@ -209,10 +209,10 @@ final class PositivePurgeAdmission implements C\Admission {
     public function readback(int $now):?array {
         // This authoritative assertion verifies the exact final G3 routes/common store.
         // Do not rewrite the deprecated pre-G3 readback's false routes_installed flag.
-        $this->producer->assertCurrent($this->db);$wp=$this->wp+['routes_installed'=>true,'store_installed'=>true];$receiver=$this->wp;return [
+        $this->producer->assertCurrent($this->db);$observed=time();$wp=$this->wp+['routes_installed'=>true,'store_installed'=>true];$receiver=$this->wp;return [
         'wp'=>$wp,'receiver'=>$receiver,'source_hashes'=>['wp'=>$this->wpSource,'receiver'=>$this->receiverSource],
         'restore_policy_hash'=>hash('sha256','SYNTHETIC_PURGE_RECOVERY_POLICY_V1'),'evidence_reference'=>'SYNTHETIC_INDEPENDENT_ADMISSION',
-        'evidence_hash'=>hash('sha256','SYNTHETIC_ADMISSION_EVIDENCE'),'observed_at'=>time(),'expires_at'=>time()+300];}
+        'evidence_hash'=>hash('sha256','SYNTHETIC_ADMISSION_EVIDENCE'),'observed_at'=>$observed,'expires_at'=>$observed+300];}
 }
 function positiveCaptureRow(array $closure):array {
     $reflection=new ReflectionClass(A\ActualPurgeCaptureResource::class);$schema=$reflection->getConstant('SCHEMA')+$reflection->getConstant('PURPOSE_SCHEMA');$row=[];
@@ -224,6 +224,23 @@ function positiveCaptureRow(array $closure):array {
 function positiveCaptureSeed(array $closure):void {
     global $wpdb;$row=positiveCaptureRow($closure);
     if($wpdb->insert('g5_receiver_synthetic_bsre_consent_captures',$row)!==1)throw new RuntimeException('SYNTHETIC_POSITIVE_CAPTURE_SEED_FAILED');
+}
+function positiveFailureDiagnostic(string $check,array $summary,PositivePurgeService $service):void {
+    if(!in_array($check,['lost_intake_ack','false_manual_receipt'],true))throw new RuntimeException('SYNTHETIC_DIAGNOSTIC_SCOPE_INVALID');
+    // Failure-only bounded aggregates; never print a plan, record, identifier or signed body.
+    $codes=$summary['hold_codes']??null;$codesKnown=is_array($codes)&&count($codes)<=16;
+    if($codesKnown)foreach($codes as $code)if(!is_string($code)||preg_match('/^[A-Z][A-Z0-9_]{0,95}$/D',$code)!==1){$codesKnown=false;break;}
+    $countsKnown=true;foreach([$service->deleteCounts,$service->removeAttempts] as $counts){
+        if(array_keys($counts)!==['intake','outcome','email']){$countsKnown=false;break;}
+        foreach($counts as $count)if(!is_int($count)||$count<0||$count>1000){$countsKnown=false;break;}
+    }
+    $diagnostic=['phase'=>'g5_actual_purge_diagnostic','check'=>$check,'status'=>in_array($summary['status']??null,['HELD','COMPLETE','AWAITING_OWNER_MAIL_ACTION'],true)?$summary['status']:'UNVERIFIED',
+        'hold_codes_known'=>$codesKnown,'hold_codes'=>$codesKnown?array_values($codes):[],
+        'counts_known'=>$countsKnown,'delete_counts'=>$countsKnown?$service->deleteCounts:[],
+        'remove_attempts'=>$countsKnown?$service->removeAttempts:[],
+        'pending_lost_intake_ack'=>$service->lostAck==='intake','pending_changed_outcome_ack'=>$service->changedAck==='outcome',
+        'provider_accepted'=>false,'production_authorized'=>false];
+    fwrite(STDERR,json_encode($diagnostic,JSON_THROW_ON_ERROR|JSON_UNESCAPED_SLASHES)."\n");fflush(STDERR);
 }
 function positiveReadJob(A\PurgeBoundary $b,A\ActualPurgeJournal $j,array $plan):?array {$b->begin($plan['closure_id'],$plan,'PURGE');try{return $j->locked($plan['closure_id'],fn()=>$j->journal($plan['digest']));}finally{$b->end();}}
 
@@ -257,29 +274,16 @@ receiver_check('purge_positive_plan_has_exact_four_surfaces',array_column($posit
 $pending=$positiveWorkflow->execute($positivePlan);receiver_check('purge_positive_persists_manual_intent_first',$pending['status']==='AWAITING_OWNER_MAIL_ACTION');
 $action=$positiveWorkflow->ownerMailAction($positivePlan);receiver_check('purge_positive_manual_manifest_exact',$action!==null&&$action['plan_digest']===$positivePlan['digest']&&$action['binding']['mailbox']==='marketing@blackswanrealestate.ae');
 $positiveService->manualDelete($action);$positiveService->falseReceipt=true;$held=$positiveWorkflow->execute($positivePlan);
-receiver_check('purge_false_manual_receipt_holds',$held['status']==='HELD'&&in_array('OWNER_MAIL_RECEIPT_CONFLICT',$held['hold_codes'],true)&&array_sum($positiveService->deleteCounts)===0);$positiveService->falseReceipt=false;
+$falseMailCheck=$held['status']==='HELD'&&in_array('OWNER_MAIL_RECEIPT_CONFLICT',$held['hold_codes'],true)&&array_sum($positiveService->deleteCounts)===0;
+if(!$falseMailCheck)positiveFailureDiagnostic('false_manual_receipt',$held,$positiveService);
+receiver_check('purge_false_manual_receipt_holds',$falseMailCheck);$positiveService->falseReceipt=false;
 $positiveService->wrongRead='outcome';$held=$positiveWorkflow->execute($positivePlan);
 receiver_check('purge_wrong_row_holds_before_provider_mutation',$held['status']==='HELD'&&in_array('RESOURCE_BINDING_CHANGED',$held['hold_codes'],true)&&array_sum($positiveService->deleteCounts)===0);
 $positiveService->changedAck='outcome';$positiveService->lostAck='intake';$held=$positiveWorkflow->execute($positivePlan);
 receiver_check('purge_changed_ack_holds_after_single_exact_mutation',$held['status']==='HELD'&&$positiveService->deleteCounts['outcome']===1&&$positiveService->removeAttempts['outcome']===1);
 $held=$positiveWorkflow->execute($positivePlan);
 $lostAckCheck=$held['status']==='HELD'&&$positiveService->deleteCounts['intake']===1&&$positiveService->removeAttempts['outcome']===1;
-if(!$lostAckCheck){
-    // Failure-only bounded aggregates; never print a plan, record, identifier or signed body.
-    $codes=$held['hold_codes']??null;$codesKnown=is_array($codes)&&count($codes)<=16;
-    if($codesKnown)foreach($codes as $code)if(!is_string($code)||preg_match('/^[A-Z][A-Z0-9_]{0,95}$/D',$code)!==1){$codesKnown=false;break;}
-    $countsKnown=true;foreach([$positiveService->deleteCounts,$positiveService->removeAttempts] as $counts){
-        if(array_keys($counts)!==['intake','outcome','email']){$countsKnown=false;break;}
-        foreach($counts as $count)if(!is_int($count)||$count<0||$count>1000){$countsKnown=false;break;}
-    }
-    $diagnostic=['phase'=>'g5_actual_purge_diagnostic','check'=>'lost_intake_ack','status'=>in_array($held['status']??null,['HELD','COMPLETE','AWAITING_OWNER_MAIL_ACTION'],true)?$held['status']:'UNVERIFIED',
-        'hold_codes_known'=>$codesKnown,'hold_codes'=>$codesKnown?array_values($codes):[],
-        'counts_known'=>$countsKnown,'delete_counts'=>$countsKnown?$positiveService->deleteCounts:[],
-        'remove_attempts'=>$countsKnown?$positiveService->removeAttempts:[],
-        'pending_lost_intake_ack'=>$positiveService->lostAck==='intake','pending_changed_outcome_ack'=>$positiveService->changedAck==='outcome',
-        'provider_accepted'=>false,'production_authorized'=>false];
-    fwrite(STDERR,json_encode($diagnostic,JSON_THROW_ON_ERROR|JSON_UNESCAPED_SLASHES)."\n");fflush(STDERR);
-}
+if(!$lostAckCheck)positiveFailureDiagnostic('lost_intake_ack',$held,$positiveService);
 receiver_check('purge_lost_intake_ack_holds_without_redeleting_outcome',$lostAckCheck);
 $completionInvocation=time();$complete=$positiveWorkflow->execute($positivePlan);$done=positiveReadJob($positiveBoundary,$positiveJournal,$positivePlan);
 receiver_check('purge_positive_reconciles_same_job_to_complete',$complete['status']==='COMPLETE'&&$done['state']==='COMPLETE'&&$done['plan']===$positivePlan&&$done['steps']===array_fill(0,4,'CONFIRMED_ABSENT'));

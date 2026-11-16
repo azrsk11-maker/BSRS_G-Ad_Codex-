@@ -15,6 +15,7 @@ export function derive(input){
  edit("                        $record['intent_at'][$index] = $now;","                        $record['intent_at'][$index] = time();",'FRESH_DURABLE_INTENT');
  edit("                $record['completed_at'] = $now;","                $record['completed_at'] = time();",'FRESH_COMPLETION_TIME');
  for(const signature of ['private function proposal(string $closureId, int $now): array','private function recheck(array $plan, int $now, bool $cleanup = false, ?array $ticket = null, bool $requireIntakeAbsent = false): void','private function verifiedAdmission(int $now): array'])edit('    '+signature+'\n    {','    '+signature+'\n    {\n        $now = time();','FRESH_CLOCK_'+signature.split('(')[0]);
+ edit('        $value = $this->admission->readback($now);','        $value = $this->admission->readback($now);\n        $now = time();','FRESH_ADMISSION_CLOCK_AFTER_IO');
  // Replacements record every exact site and reverse in order; pure rules stay byte exact.
  const entries=text.split('self::lab();').length-1;if(entries!==7)throw Error('ENTRY_COUNT_CHANGED:'+entries);
  for(let i=0;i<entries;i++){const at=text.indexOf('self::lab();'),before='self::lab();',after='$this->boundary->check();';edits.push({label:'ENTRY_'+i,offset:Buffer.byteLength(text.slice(0,at)),before,after});text=text.slice(0,at)+after+text.slice(at+before.length);}

@@ -1,6 +1,6 @@
 {
   "preimage": "5e9c7d4b0816f83b6349d08051a8dac552faa5af44a877966d2e042a635cb8f7",
-  "output": "45672cee028610d3ce14b89835648cc3f3c9b4a8f4d27ba6eb44cc9733c598a4",
+  "output": "cca80dec6c744069a16c209182849f0fa3efea3195c44634952eac224a53bb40",
   "reverse_verified": true,
   "edits": [
     {
@@ -62,6 +62,12 @@
       "offset": 23954,
       "before": "    private function verifiedAdmission(int $now): array\n    {",
       "after": "    private function verifiedAdmission(int $now): array\n    {\n        $now = time();"
+    },
+    {
+      "label": "FRESH_ADMISSION_CLOCK_AFTER_IO",
+      "offset": 24039,
+      "before": "        $value = $this->admission->readback($now);",
+      "after": "        $value = $this->admission->readback($now);\n        $now = time();"
     },
     {
       "label": "ENTRY_0",
@@ -143,19 +149,19 @@
     },
     {
       "label": "ACTUAL_SUMMARY",
-      "offset": 36814,
+      "offset": 36837,
       "before": "'scope' => 'SYNTHETIC_CLOSED_RETENTION'",
       "after": "'scope' => 'ACTUAL_CLOSED_RETENTION_CANDIDATE'"
     },
     {
       "label": "ORIGINAL_FAILURE_ONLY",
-      "offset": 37613,
+      "offset": 37636,
       "before": "\nfinal class Failure extends \\RuntimeException {}",
       "after": "\n"
     },
     {
       "label": "NEW_PROFILE_EOF",
-      "offset": 37613,
+      "offset": 37636,
       "before": "\n\n",
       "after": ""
     }

@@ -1,5 +1,13 @@
 # Implementation progress
 
+## Admission clock boundary correction — 17 November 2026
+
+The `7f4eac61` diagnostic trial failed earlier at `purge_false_manual_receipt_holds`, before its lost-ack diagnostic could execute. Raw SHA256: `a98110c13a8a7cc9bf81cc10bfc87d14e027086f22e17e51245c0a8e41a3c3a2`. The returned hold is still unobserved; the following independently identified clock defect is not claimed as that trial's proven cause.
+
+`verifiedAdmission` captured its validation time before wrapped readback I/O, then rejected a legitimate later observation as future evidence. The separate engine now refreshes actual time immediately after readback. Its exact reversible derivative retains every observed/future/expiry/300-second check and the original generic source unchanged. The positive fixture also derives each grant/evidence/admission expiry from one captured instant (900/30/60/300 seconds), avoiding a one-second boundary inflating an interval. Existing grants never renew.
+
+A pure PHP validation-unit test uses real elapsed time, without overriding a clock: a post-I/O observation must pass, while future, expired and 301-second evidence must fail. Reflection invokes only this private value validator, never an active or mutable workflow; no WordPress, database or provider starts. This four-case test runs before image construction, alongside the unchanged 25-assertion identity test. Local PHP is unavailable; 21 Node checks pass and PHP execution remains pending. Both false-mail and lost-ack assertions now use the same bounded failure projection, with their exact predicates preserved. Full held38/positive30 execution on both profiles and every operational/release gate remain mandatory. Production unchanged; Ads paused.
+
 ## Lost-ack recovery diagnostic trial — 17 November 2026
 
 The `a70ae36b` run passed the 25-assertion PHP identity contract before image construction. The first database profile then progressed through the held case and positive approval/manual-mail/wrong-row/changed-ack checks, but failed `purge_lost_intake_ack_holds_without_redeleting_outcome`. Failed raw SHA256: `937298706f6826ea161f356f3acc6297707f51fa08627cfb32469fc8ddd1d342`. The compound assertion did not expose its returned status, hold code or mutation counters; no root cause or complete native acceptance is inferred.
