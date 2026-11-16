@@ -53,3 +53,12 @@ php -d sendmail_path=/bin/false /opt/lab/owner-mail-review/collection-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/capture-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/admission-capture-native.php
 php -d sendmail_path=/bin/false /opt/lab/closed-enquiry-retention/combined-native.php
+
+# Additive G3-G5 fixtures run after all original lanes; never mutate their setup.
+php -d sendmail_path=/bin/false /opt/lab/g3/native.php inactive
+php -d sendmail_path=/bin/false /opt/lab/g3/native.php missing-store
+php -d sendmail_path=/bin/false /opt/lab/g3/native.php disabled
+php -d sendmail_path=/bin/false /opt/lab/g3/native.php malformed
+php -d sendmail_path=/bin/false /opt/lab/g3/native.php enforced
+php -d sendmail_path=/bin/false /opt/lab/g34/native.php
+php -d sendmail_path=/bin/false /opt/lab/g5/tests/native.php

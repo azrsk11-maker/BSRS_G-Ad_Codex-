@@ -1,0 +1,28 @@
+{
+  "contract": "bsre-native-page-context-v2",
+  "status": "ENGINEERING_CANDIDATE_NOT_DEPLOYED",
+  "compatibility_delta": "The previous unchanged child rejects G4 metadata and phone_click. This explicit profile derives the child separately; original fixture bytes and the previous lane remain unchanged.",
+  "parent_derivation_order": ["original google-measurement.js", "buildFrameDeliveryCandidate", "buildNativeFrameParent"],
+  "child_derivation_order": ["original google-runtime.js", "buildNativeFrameChild"],
+  "original_child_sha256": "459ab031d0bb3e0f079fdce5d2de36d266748f0c57f361c262e8ed5c03bfed4d",
+  "client_derivation_order": ["original lead.js", "full retention-admission derivation and G3", "buildNativePageContextClient", "exact contact overlay"],
+  "presentation_derivation_order": ["selected G3 presentation.php", "buildNativePageContextPresentation"],
+  "native_port_plugin_path": "includes/candidate/tracking/NativePageContext.php",
+  "native_port_load": "selected G3 bootstrap after original dependencies, before rendering",
+  "frame_init": {
+    "context_contract": "bsre-native-page-context-v2",
+    "message_version": "1.0.0",
+    "metadata_authority": "same-origin parent NativePageContext current server-emitted projection",
+    "message_or_url_metadata_authoritative": false,
+    "current_parent_path_and_snapshot_must_match": true
+  },
+  "existing_runtime_endpoint_status_lease_protocol_changed": false,
+  "preserved_guards": ["same origin", "parent/source", "nonce", "monotonic sequence", "configuration generation", "purpose lease", "live consent and eligibility", "QA exclusion", "URL privacy", "withdrawal", "accepted receipt dispatch", "Ads receipt dedup"],
+  "ga4_delivery_events_implemented": ["phone_click", "whatsapp_click", "form_start", "generate_lead"],
+  "automatic_page_view": "one owned runtime page_view with exact reviewed context; no second manual page_view",
+  "canonical_aliases": {"telephone_click": "phone_click", "form_submit": "operational form_accepted / GA4 generate_lead"},
+  "canonical_event_schema_or_wireV1_Intake26_Outcome40_changed": false,
+  "general_analytics_excludes": ["Lead ID", "event ID", "receipt", "consent revision", "private purpose histories", "click IDs", "raw URL/query", "form text", "unknown keys"],
+  "remaining_acceptance": ["root complete package composition", "both isolated native WordPress database profiles", "reviewed actual native page/form/CTA catalog", "actual main-site/public-form and private-history/receipt joins", "new diagnostic listeners and provider/result evidence", "TLS/CSP/browser/Google dedup", "independent human and separate release gates"],
+  "publication_or_provider_or_ads_activation_authorized": false
+}

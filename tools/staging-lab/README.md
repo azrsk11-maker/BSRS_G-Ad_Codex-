@@ -1,5 +1,15 @@
 # Disposable native WordPress lab
 
+## G3–G5 additive integration
+
+The accepted `00452c69` run passed all three required checks, including G1 deterministic/concurrency and G2 modes under both database profiles. Historical execution-pending descriptions below describe their original introduction; use the dated exact-head PR result for accepted execution.
+
+New fixed G3, G34 and G5 trees remain separate from the original/default and G1/G2 trees. Seven additive CLI invocations run **after every original lane**: G3 inactive, missing-store, disabled, malformed and enforced; G34 native page context; G5 durable ports. This ordering prevents their synthetic core-page setup from changing earlier fixtures. All existing resource, pre-start isolation, network-none, read-only, capability and database-profile controls remain required.
+
+G3 requires canonical G2 availability and selected admission enforcement before exposing intake/context/status; held profiles must reject without forwarding. Its five modes expect 4/8/8/8/84 checks, including twenty mock forwards in enforced mode. G34 expects 42 checks against real WordPress queried-page context and explicit registry ownership. G5 expects 31 checks using actual SQL/crypto with synthetic authority, evidence, keys and anchor services. These are intended assertions until the exact-head completed receipts are reviewed; grammar or VM checks do not prove execution.
+
+V2 parent and child are explicitly derived together because the original child rejects the new canonical event/metadata contract. Original pinned fixtures and default behavior are unchanged. Neither VM nor in-process native fixtures establish browser TLS/CSP, vendor SDK/container activation, genuine Google delivery/deduplication, complete served-script convergence or operational retention/recovery authority. The G5 canonical reconnect-denying connection integration and two operational ports remain incomplete. No production credentials or real events enter this lab.
+
 ## G2 isolated shared-repository candidate — execution pending
 
 The image derives a separate fixed 39-member plugin at `/opt/lab/g2/plugins/bsre-enquiries`; the original/default and G1 lanes remain intact. Three separate CLI processes immediately after the baseline installer load the fixed candidate explicitly: `--disabled`, `--namespace-collision` and enabled mode (no arguments). They do not activate or publish a production plugin. The disabled profile must retain original factory/stage/link behavior without additive columns. Enabled mode checks an independently versioned additive migration, existing-row preservation, conflicting and partial schemas, canonical selectors, foreign overrides, cached and retained-handle database changes, and repeated loading/migration. The adapter delegates to the complete unchanged G1 store.

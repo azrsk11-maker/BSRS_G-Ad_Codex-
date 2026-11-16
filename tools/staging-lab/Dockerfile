@@ -68,6 +68,16 @@ COPY tools/staging-lab/build-g2-profile-lab.mjs /opt/lab/staging-lab/
 COPY tools/staging-lab/g2-shared-repository-native.php /opt/lab/g2/g2-shared-repository-native.php
 COPY tools/staging-lab/g2-namespace-collision-fixture.php /opt/lab/g2/g2-namespace-collision-fixture.php
 COPY docs/audit/INSTALLED_SOURCE_COMPARISON_2026-11-07.json /opt/lab/g2/original-member-audit.json
+# Separate fixed G3 route/context candidate; no production activation.
+COPY tools/website-tracking/tracking-system/build-g3-profile-candidate.mjs tools/website-tracking/tracking-system/g3-bootstrap.php tools/website-tracking/tracking-system/g3-route-context.php /opt/lab/website-tracking/tracking-system/
+COPY tools/staging-lab/build-g3-profile-lab.mjs /opt/lab/staging-lab/
+COPY tools/staging-lab/g3-route-context-native.php /opt/lab/g3/native.php
+# Explicit G4 V2 joined tree and independent durable G5 ports, all held.
+COPY tools/website-tracking/tracking-system/build-g34-profile-candidate.mjs tools/website-tracking/tracking-system/build-native-page-context-candidate.mjs tools/website-tracking/tracking-system/build-native-frame-candidate.mjs /opt/lab/website-tracking/tracking-system/
+COPY tools/website-tracking/tracking-system/native-page-context /opt/lab/website-tracking/tracking-system/native-page-context
+COPY tools/staging-lab/build-g34-profile-lab.mjs tools/staging-lab/build-g5-runtime-lab.mjs /opt/lab/staging-lab/
+COPY tools/staging-lab/native-page-context-native.php /opt/lab/g34/native.php
+COPY tools/website-tracking/g5-runtime-ports /opt/lab/website-tracking/g5-runtime-ports
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
@@ -77,5 +87,8 @@ RUN node /opt/lab/tracking-system/build-retention-admission-candidate.mjs store 
     && node /opt/lab/tracking-system/build-retention-admission-candidate.mjs intake /opt/wordpress/wp-content/plugins/bsre-enquiries/bsre-enquiries.php /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent.php /opt/lab/retention-admission/intake.php
 RUN node /opt/lab/staging-lab/build-g1-retention-lab-store.mjs
 RUN node /opt/lab/staging-lab/build-g2-profile-lab.mjs
+RUN node /opt/lab/staging-lab/build-g3-profile-lab.mjs
+RUN node /opt/lab/staging-lab/build-g34-profile-lab.mjs
+RUN node /opt/lab/staging-lab/build-g5-runtime-lab.mjs
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

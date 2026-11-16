@@ -1,0 +1,31 @@
+{
+  "audit_path": "docs/audit/INSTALLED_SOURCE_COMPARISON_2026-11-07.json",
+  "audit_sha256": "271c3687d63d4801b274d34dcba6833908169d1349b4caadbbc46b6d33ef60c3",
+  "modules": {
+    "tools/closed-enquiry-retention/receiver-fence/build-candidate.mjs": "5a620c8ad00a5c8a0c9b98228aa8d4fd7d5005cec948981372c09cb673028bec",
+    "tools/closed-enquiry-retention/receiver-fence/runtime.gs": "d6eb11594e1c78b61788ae43e6d987c69acaacad089253940bbea9215b6983ee",
+    "tools/staging-lab/build-rental-copy-candidate.mjs": "64ecb2c54e5ff8d8e85365090bc2b67a4356cba60c6896646bfc0f92a138b160",
+    "tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs": "c4f13d179f0cac6ab27dcd9040b73ab2e43bb31179dc3c0f11611bc7bfd70497",
+    "tools/website-tracking/tracking-system/build-contact-compatible-client-candidate.mjs": "0b2fd7e32b349486205c2caa1c915ac86af333f45e9ffffcab771acccc89ba45",
+    "tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs": "21c265855c5f7483a2febccffa011558cf6fa912ab6ab90002104e84b91cca54",
+    "tools/website-tracking/tracking-system/build-g1-retention-store-candidate.mjs": "360dc4302de27a39d1a7ca7939f849609bd313998b69999e43f04a8577d64297",
+    "tools/website-tracking/tracking-system/build-g2-profile-candidate.mjs": "0e510efd59e3d50e36f6fb425a6e4d14d228738d02b9863d2ad4e89f8cc00c13",
+    "tools/website-tracking/tracking-system/build-g2-shared-repository-candidate.mjs": "10bd04c377331a2f714fbfa31160ea338045426f70e455f26fab7025447388e3",
+    "tools/website-tracking/tracking-system/build-g3-profile-candidate.mjs": "45b2a4c4f9afdf288a24bb73c77c106a50df32b2cbd0c732451f5be8368c0417",
+    "tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs": "416d0ea049fad7ed998bc64106a0741e2f8e212fa0bf2121c8c40e888a2b4197",
+    "tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs": "3adf7c825e21604b1a81077ec83b39098e9657d002d81e0a7356f20d2271378f",
+    "tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs": "8f5cfd10d791750ebbed0e102b41a9ae174b6fd212057925b9effe3342392bdb",
+    "tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs": "a7f50f58f03102817fe3c3a1c9ed8ec5398fde77e8867e8b6189fb1d7c80981e",
+    "tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs": "c5be7b870b424789246a43c9de55b869cc1cb98a340c8f6a558897cb16ac1171",
+    "tools/website-tracking/tracking-system/g2-shared-bootstrap.php": "c8b65ea6784e4818abc0370cbd5cedc158ae173ada3978f7c7a69dc664d37def",
+    "tools/website-tracking/tracking-system/g2-shared-repository.php": "a79e6fea5c2f790242ff4f2b1dc365ced0f3042e6eec98cb121b05268e09d3ae",
+    "tools/website-tracking/tracking-system/g3-bootstrap.php": "5b340f59241c8491440546207c50919ce65d617ff3eeae1ca9606a53afe0be15",
+    "tools/website-tracking/tracking-system/g3-route-context.php": "5d1742682cad90bdb0a3d81819be91df4853435a4543c26f804b4aaa7095f441",
+    "tools/website-tracking/tracking-system/purpose-attribution.php": "de6eec40c0123ca4239f30b1d99f5547179c166bd19d47d254ea61db118bfa08",
+    "tools/website-tracking/tracking-system/receipt-recovery-wordpress.php": "de72e87d9dce89e9511607cb3447fbc9216ceafe33b011f7b2ffd58ab02518f4",
+    "tools/website-tracking/tracking-system/receipt-recovery.php": "b6ef6dacbb35823b4a2c52040b190d5ce8e57fbab355ba4a48d3c411fbd07ddd",
+    "tools/website-tracking/tracking-system/receipt-status.php": "dc4d07d6adc573c0a6a88013cb91cdb3babdd06ad3a3cb3a6da9761b013496e1",
+    "tools/website-tracking/tracking-system/retention-admission.php": "c4ad3ed68da65ee33445274cd995fb658923a5f22aef663a2352dcd699780988"
+  },
+  "schema": "bsre-coupled-g3-source-pins-v2"
+}

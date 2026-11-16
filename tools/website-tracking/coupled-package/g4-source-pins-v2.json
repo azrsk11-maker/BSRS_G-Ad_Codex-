@@ -1,0 +1,10 @@
+{
+  "modules": {
+    "tools/website-tracking/tracking-system/build-native-frame-candidate.mjs": "54efc8c620bf24fa8852ed6138326403a2247df9376aaa6f32bb2adba41cf9ab",
+    "tools/website-tracking/tracking-system/build-native-page-context-candidate.mjs": "df12619843a7939d4ba6f0319abf54972dbd7253b0eeb967c3f1647ce6adc661",
+    "tools/website-tracking/tracking-system/native-page-context/NativePageContext.php": "78034d04b6f7dd3793e265182e5af7e6c34a022e9e41f11c16c3e61cb8a0c742",
+    "tools/website-tracking/tracking-system/native-page-context/client.js": "22d59ec5a71ba8334b18f8870601a28e94ccd73ccefc7dd6162a16616dd8a5e2"
+  },
+  "profile": "G4_NATIVE_CLIENT_PARENT_CHILD_V2",
+  "schema": "bsre-coupled-g4-source-pins-v2"
+}
