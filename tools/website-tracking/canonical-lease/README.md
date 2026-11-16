@@ -8,6 +8,8 @@ The deterministic builder emits 58 site files: G34's42 plus the13 unchanged part
 
 This site inventory is a separate engineering profile. It does not silently amend the67-member held contact composition contract or admit its two absent operational ports. Contact-specific composition must derive a fresh manifest from its actual final files and receive its own integration acceptance. File hashes/reflection are not resident-opcode attestation, served-script convergence or platform/provider proof.
 
+The query guard permits only WordPress's [core placeholder-unescape callback](https://developer.wordpress.org/reference/classes/wpdb/placeholder_escape/) on the exact canonical object, at priority zero with one argument. The inherited methods bind to the pinned 7.1.4 core file hash/reflection path. Extra or foreign callbacks, wrong priority/argument shape and global observers remain held; the guard does not remove or repair callbacks. Test fixtures clean up only callbacks they explicitly created.
+
 ## Verification scope
 
 The additive lab runs eight SHORTINIT core-bootstrap modes, then two full route/custody modes under both existing isolated database profiles. SHORTINIT proves the first-object seam and refusal behavior before plugin autoload; it does not prove whole-site default-OFF equivalence. Full modes preserve the accepted G3 enquiry/queue/identity assertions and add the actual producer/common G2/G3/G5 connection, guard rejection and real connection-loss quarantine checks. Synthetic witnesses, keys, authority and clock derivatives remain test services, never runtime providers or historical prospect evidence.

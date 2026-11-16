@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
-const TEMPLATE_SHA256='04ba401f8bcaa28f1c36baaf15558a0493bcfb46ad4452743b59f6308cd75e7c';
+const TEMPLATE_SHA256='99b6ea65a51f86ca8f832064d10b75c5dd2f177f6f90b096e5e877c2749932c8';
 const MARKER='__BSRE_CODE_MANIFEST_SHA256__';
 const SELF='includes/candidate/runtime/CanonicalCaptureProducer.php';
 const MANIFEST='includes/candidate/runtime/canonical-source.json';

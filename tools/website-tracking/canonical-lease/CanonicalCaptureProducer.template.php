@@ -14,6 +14,7 @@ final class CanonicalCaptureProducer implements CaptureProducer
     private const MANIFEST_SHA256='__BSRE_CODE_MANIFEST_SHA256__';
     private const MANIFEST_SCHEMA='bsre-canonical-lease-source-v1';
     private const MANIFEST_PROFILE='G35_CANONICAL_LEASE_CODE_ONLY';
+    private const WPDB_CORE_SHA256='e15403e90032dd0508811301505e491d4212de5152581a98f51b744a1a3903bd';
     private string $prefix;
     private string $database;
     private ?array $admission=null;
@@ -158,7 +159,36 @@ final class CanonicalCaptureProducer implements CaptureProducer
     private function noInterceptors(): void
     {
         if((defined('SAVEQUERIES')&&SAVEQUERIES) || ($this->db->save_queries??false)) self::fail('QUERY_LOGGING_ENABLED');
-        if(!function_exists('has_filter') || has_filter('query')!==false || has_filter('all')!==false) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        global $wp_filter;
+        if(!function_exists('has_filter') || !is_array($wp_filter)) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        // No global observer is accepted. Inspect the raw core hook container rather
+        // than treating a callback's priority 0 as falsy absence.
+        $all=$wp_filter['all']??null;
+        if($all!==null && (!is_object($all) || get_class($all)!=='WP_Hook' || !is_array($all->callbacks) || $all->callbacks!==[])) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        $hook=$wp_filter['query']??null;
+        if($hook===null) return;
+        if(!is_object($hook) || get_class($hook)!=='WP_Hook' || !is_array($hook->callbacks)) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        if($hook->callbacks===[]) return;
+        if(array_keys($hook->callbacks)!==[0] || !is_array($hook->callbacks[0]) || count($hook->callbacks[0])!==1) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        $entries=array_values($hook->callbacks[0]);$entry=$entries[0];
+        if(!is_array($entry)) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        $keys=array_keys($entry);sort($keys);
+        $callback=$entry['function']??null;
+        if($keys!==['accepted_args','function'] || ($entry['accepted_args']??null)!==1 || !is_array($callback) || array_keys($callback)!==[0,1]
+            || $callback[0]!==$this->db || $callback[1]!=='remove_placeholder_escape') self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        // prepare() itself installs this sole mandatory core unescape callback.
+        // It is not an arbitrary query interceptor: bind inherited methods to the
+        // exact class-wpdb.php bytes from the pinned WordPress 7.1.4 archive.
+        if(!defined('ABSPATH') || !is_string(ABSPATH) || !defined('WPINC') || !is_string(WPINC)) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        $core=realpath(ABSPATH.WPINC.'/class-wpdb.php');
+        if($core===false || !is_file($core) || !hash_equals(self::WPDB_CORE_SHA256,(string)hash_file('sha256',$core))) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+        try {
+            foreach(['prepare','add_placeholder_escape','placeholder_escape','remove_placeholder_escape'] as $name) {
+                $method=new \ReflectionMethod($this->db,$name);
+                if($method->getDeclaringClass()->getName()!=='wpdb' || !$method->isPublic() || $method->isStatic()
+                    || realpath((string)$method->getFileName())!==$core) self::fail('QUERY_INTERCEPTOR_UNVERIFIED');
+            }
+        } catch(\Throwable $error) { self::fail('QUERY_INTERCEPTOR_UNVERIFIED'); }
     }
     /** Inspection only: never starts a transaction, takes a lock or grants custody. */
     private function executionContext(): void

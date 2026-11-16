@@ -58,3 +58,10 @@ test('purpose validation reuses pinned routines and preserves expired/asymmetric
  assert.doesNotMatch(text,/add_action\(|register_rest_route\(|wp_mail\(|wp_remote_|proc_open\(|provider_authority\s*=>\s*true/);
  assert.ok(text.indexOf("foreach(['known','eligible','analytics','ad_measurement']")<text.indexOf('if((int)$version===0)'));
 });
+test('query exception is bound only to one canonical inherited pinned-core placeholder callback',()=>{
+ const text=buildCanonicalCaptureProducer(raw).producer.toString();
+ for(const token of ["WPDB_CORE_SHA256='e15403e90032dd0508811301505e491d4212de5152581a98f51b744a1a3903bd'",
+  'array_keys($hook->callbacks)!==[0]','count($hook->callbacks[0])!==1',"($entry['accepted_args']??null)!==1","$callback[0]!==$this->db","$callback[1]!=='remove_placeholder_escape'",
+  "get_class($hook)!=='WP_Hook'","$all->callbacks!==[]","new \\ReflectionMethod($this->db,$name)","$method->getDeclaringClass()->getName()!=='wpdb'",'hash_equals(self::WPDB_CORE_SHA256',"realpath((string)$method->getFileName())!==$core"]){assert(text.includes(token),token);}
+ assert.doesNotMatch(text,/remove_filter\(|remove_all_filters\(|add_filter\(/);
+});
