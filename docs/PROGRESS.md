@@ -1,5 +1,9 @@
 # Implementation progress
 
+## G2 native database-switch harness correction — 16 November 2026
+
+The first published2369f575 isolated run failed at G2_FOREIGN_SELECT_FAILED, then its finally check masked that error as G2_DATABASE_RESTORE_FAILED. The harness incorrectly treated wpdb::select() as returning a success boolean. WordPress's [actual method](https://developer.wordpress.org/reference/classes/wpdb/select/) has no success return value. The corrected setup and restoration call select(), then prove SELECT DATABASE() equals the expected fixed synthetic name. The foreign-operation observer is installed only after setup verification and removed before restoration, retaining exact identity-only query counts and every existing assertion. No runtime guard, provider, fixture pin, resource limit, production setting or permission was weakened. Native exact-head acceptance remains pending this corrected revision; the failed trial is diagnostic evidence.
+
 ## G2 shared repository corrections — 16 November 2026
 
 - Integrated a separately generated, inert 39-member candidate: 28 original members unchanged, two exact derived selectors and nine additions. Fixed source/member/ZIP pins and the complete G1 store remain unchanged. This is not the complete 62-output coupled plugin or G3 transport/routes.

@@ -154,7 +154,9 @@ $observedQueries=[];
 $observeQuery=static function(string $sql) use (&$observedQueries): string { $observedQueries[]=$sql; return $sql; };
 try {
     $objectId=spl_object_id($wpdb); $samePrefix=$wpdb->prefix;
-    if (!$wpdb->select($foreign)) throw new RuntimeException('G2_FOREIGN_SELECT_FAILED');
+    // wpdb::select() has no success return value; prove the actual connection state.
+    $wpdb->select($foreign);
+    if ($wpdb->get_var('SELECT DATABASE()')!==$foreign) throw new RuntimeException('G2_FOREIGN_SELECT_FAILED');
     add_filter('query',$observeQuery,PHP_INT_MAX);
     g2check('same_object_same_prefix_database_switch',spl_object_id($wpdb)===$objectId && $wpdb->prefix===$samePrefix);
     g2check('foreign_default_selection_rejected',g2denied(fn()=>E\consent_repository(),'G2_DATABASE_CHANGED'));
@@ -183,7 +185,8 @@ try {
     g2check('foreign_database_has_no_tables',$wpdb->get_col('SHOW TABLES')===[]);
 } finally {
     remove_filter('query',$observeQuery,PHP_INT_MAX);
-    if (!$wpdb->select($configured)) throw new RuntimeException('G2_DATABASE_RESTORE_FAILED');
+    $wpdb->select($configured);
+    if ($wpdb->get_var('SELECT DATABASE()')!==$configured) throw new RuntimeException('G2_DATABASE_RESTORE_FAILED');
     if ($wpdb->query('DROP DATABASE `g2_foreign_synthetic`')===false) throw new RuntimeException('G2_FOREIGN_CLEANUP_FAILED');
 }
 wp_set_current_user(0);
