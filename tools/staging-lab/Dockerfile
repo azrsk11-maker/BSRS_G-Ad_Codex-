@@ -60,6 +60,14 @@ COPY tools/website-tracking/tracking-system/build-g1-retention-store-candidate.m
 COPY tools/staging-lab/build-g1-retention-lab-store.mjs /opt/lab/staging-lab/
 COPY tools/staging-lab/g1-retention-native.php /opt/lab/g1-retention/native.php
 COPY tools/staging-lab/g1-retention-concurrency.php /opt/lab/g1-retention/concurrency.php
+# Fixed G2 candidate-only plugin tree; ordinary/default/G1 paths retained.
+COPY tools/website-tracking/tracking-system/build-g2-shared-repository-candidate.mjs tools/website-tracking/tracking-system/build-g2-profile-candidate.mjs /opt/lab/website-tracking/tracking-system/
+COPY tools/website-tracking/tracking-system/g2-shared-repository.php tools/website-tracking/tracking-system/g2-shared-bootstrap.php /opt/lab/website-tracking/tracking-system/
+COPY tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php /opt/lab/website-tracking/tracking-system/
+COPY tools/staging-lab/build-g2-profile-lab.mjs /opt/lab/staging-lab/
+COPY tools/staging-lab/g2-shared-repository-native.php /opt/lab/g2/g2-shared-repository-native.php
+COPY tools/staging-lab/g2-namespace-collision-fixture.php /opt/lab/g2/g2-namespace-collision-fixture.php
+COPY docs/audit/INSTALLED_SOURCE_COMPARISON_2026-11-07.json /opt/lab/g2/original-member-audit.json
 # Byte-only candidate derivation; no WordPress/custom PHP execution during build.
 RUN node /opt/lab/consent-retention/build-candidate.mjs /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/consent-retention/candidate-store.php
 RUN node /opt/lab/tracking-system/build-purpose-attribution-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/purpose/store.php \
@@ -68,5 +76,6 @@ RUN node /opt/lab/tracking-system/build-purpose-retention-candidate.mjs /opt/lab
 RUN node /opt/lab/tracking-system/build-retention-admission-candidate.mjs store /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent-store.php /opt/lab/retention-admission/store.php \
     && node /opt/lab/tracking-system/build-retention-admission-candidate.mjs intake /opt/wordpress/wp-content/plugins/bsre-enquiries/bsre-enquiries.php /opt/wordpress/wp-content/plugins/bsre-enquiries/includes/consent.php /opt/lab/retention-admission/intake.php
 RUN node /opt/lab/staging-lab/build-g1-retention-lab-store.mjs
+RUN node /opt/lab/staging-lab/build-g2-profile-lab.mjs
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

@@ -16,6 +16,9 @@ done
 node /opt/lab/database-profile.mjs
 mariadb --no-defaults --user=root --socket=/tmp/bsre.sock -e 'CREATE DATABASE bsre_synthetic;'
 php -d sendmail_path=/bin/false /opt/lab/native.php
+php -d sendmail_path=/bin/false /opt/lab/g2/g2-shared-repository-native.php --disabled
+php -d sendmail_path=/bin/false /opt/lab/g2/g2-shared-repository-native.php --namespace-collision
+php -d sendmail_path=/bin/false /opt/lab/g2/g2-shared-repository-native.php
 php -d sendmail_path=/bin/false /opt/reviewed/native-draft-writer-test.php
 php -d sendmail_path=/bin/false /opt/lab/property-decision-tools/native-wordpress-test.php
 php -d sendmail_path=/bin/false /opt/lab/plugin.php

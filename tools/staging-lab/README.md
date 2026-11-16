@@ -1,5 +1,13 @@
 # Disposable native WordPress lab
 
+## G2 isolated shared-repository candidate — execution pending
+
+The image derives a separate fixed 39-member plugin at `/opt/lab/g2/plugins/bsre-enquiries`; the original/default and G1 lanes remain intact. Three separate CLI processes immediately after the baseline installer load the fixed candidate explicitly: `--disabled`, `--namespace-collision` and enabled mode (no arguments). They do not activate or publish a production plugin. The disabled profile must retain original factory/stage/link behavior without additive columns. Enabled mode checks an independently versioned additive migration, existing-row preservation, conflicting and partial schemas, canonical selectors, foreign overrides, cached and retained-handle database changes, and repeated loading/migration. The adapter delegates to the complete unchanged G1 store.
+
+The original pre-database isolation guard still runs first. G2 later checks the running isolated database, non-root/loopback/no-routes/no-capabilities/no-new-privileges/read-only application and absence of a Docker socket before WordPress. Only the fixed synthetic database/prefixes may be used. Foreign-database tests create and remove `g2_foreign_synthetic` inside this disposable, socket-only lab; rejected factory/held-operation probes must issue identity reads only. These controls do not authorize host or production database access.
+
+Local Node, grammar, input-path and provenance checks pass; PHP/SQL/namespace runtime acceptance remains pending both profile receipts on the exact published revision. Existing 15-minute resource limits and all previous commands are unchanged. No production credentials, real provider events, deployment or spending are permitted. This G2 slice does not select G3 routes/transport or complete the contact, metadata, browser or provider gates.
+
 ## G1 two-connection schedules
 
 The separate concurrency process follows the existing G1 HTTP lane. It uses actual G1 staging and guarded preference-retirement apply with two real connections and four fixed commit/rollback schedules. Required outcomes are: retire commit rejects the delayed stage; stage commit makes the approved deletion plan stale; retire rollback permits staging; stage rollback permits policy deletion. The runner must observe a real database lock wait, then verify state/history/captures and atomic audit/ledger outcomes. Fixture setup drops only the nine allowlisted synthetic tables and is never counted as policy deletion.
