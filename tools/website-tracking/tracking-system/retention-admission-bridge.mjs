@@ -13,7 +13,16 @@ for await (const line of createInterface({input: process.stdin, crlfDelay: Infin
     Object.assign(receiver.properties, request.properties);
     result = receiver.context.retentionAdmissionDescriptor_();
   } else if (request.op === 'post') result = receiver.postWire(request.raw);
+  else if (request.op === 'outbox') result = receiver.context.processLeadOutbox();
   else if (request.op === 'snapshot') result = {rows: receiver.rows.length - 1, mail: receiver.mail.length, columns: receiver.context.LEAD_HEADERS.length};
+  else if (request.op === 'delivery_audit') {
+    const rows=receiver.rows.slice(1),messages=receiver.mail;
+    result={rows:rows.length,mail:messages.length,columns:receiver.context.LEAD_HEADERS.length,
+      exact_once_identity:rows.length===messages.length && new Set(rows.map(row=>row[1])).size===rows.length
+        && new Set(rows.map(row=>row[2])).size===rows.length
+        && rows.every(row=>row.length===26 && row[6]==='SENT' && row[7]===1
+          && messages.filter(message=>message.body.includes('Lead ID: '+row[1]+'\nEvent ID: '+row[2]+'\n')).length===1)};
+  }
   else if (request.op === 'purge_synthetic') {
     const matches = receiver.rows.map((row, index) => row[0] === request.request_id ? index : -1).filter(index => index > 0);
     if (matches.length !== 1) throw new Error('SYNTHETIC_PURGE_REQUIRES_ONE_ROW');

@@ -81,6 +81,11 @@ try{
         $status=g3api('receipt-recovery/status',wp_json_encode(['proof'=>$prepared['proof']]),$headers)->get_data();g3check($name.'_status_same_receipt',($status['status']??null)==='ACCEPTED' && ($status['reference']??null)===$accepted['lead_id'] && !isset($status['event_id']));
         if($route==='purpose-lead')g3check($name.'_legacy_conflict_preserved',g3api('lead',$wire,$proofHeaders)->get_status()===409);
     }
+    $snapshot=g3receiver(['op'=>'snapshot']);g3check('accepted_receipts_queue_before_outbox',$snapshot['rows']===10 && $snapshot['mail']===0 && $snapshot['columns']===26);
+    g3check('first_outbox_batch_bounded_sent_five',g3receiver(['op'=>'outbox'])['sent']===5);
+    g3check('second_outbox_batch_bounded_sent_five',g3receiver(['op'=>'outbox'])['sent']===5);
+    g3check('repeated_outbox_sends_zero',g3receiver(['op'=>'outbox'])['sent']===0);
     $snapshot=g3receiver(['op'=>'snapshot']);g3check('exact_receiver_row_and_email_count',$snapshot['rows']===10 && $snapshot['mail']===10 && $snapshot['columns']===26);
+    $audit=g3receiver(['op'=>'delivery_audit']);g3check('receiver_rows_emails_identity_exact_once',$audit['rows']===10 && $audit['mail']===10 && $audit['columns']===26 && $audit['exact_once_identity']===true);
     echo wp_json_encode(['phase'=>'g3_route_context','mode'=>$mode,'checks'=>$checks,'runtime_isolation'=>$isolation,'forward_count'=>count($forwards),'limits'=>'Actual isolated routes/storage and pinned receiver service doubles; no browser/provider/production acceptance.'])."\n";
 }finally{fclose($pipes[0]);fclose($pipes[1]);if(proc_close($bridge)!==0)throw new RuntimeException('G3_BRIDGE_EXIT_FAILED');}
