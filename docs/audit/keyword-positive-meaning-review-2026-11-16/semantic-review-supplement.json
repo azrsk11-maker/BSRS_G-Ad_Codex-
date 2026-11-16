@@ -1,0 +1,219 @@
+{
+  "all_selected_component_literals_and_peers_read": true,
+  "approval_granted": false,
+  "business_fact_claims_added": 0,
+  "canonical_merges_approved": 0,
+  "complete_preliminary_review_sha256": "e0f89ea7c1d63bddcc12365b3bf434ec73f668ecd780a451934e05f7ad51df6d",
+  "deployment_authorized": false,
+  "original_preparation_scope": "PRIVATE_SIX_CONTEXT_SUPPLEMENT_NOT_COMPLETE_REPLACEMENT_OR_ADMISSION",
+  "positive_admissions_added": 0,
+  "reviewed_components": [
+    {
+      "buyer_ordinals": [
+        1,
+        25,
+        1064,
+        1870
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-001",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Independent AI wording reread only. Same broad property-purchase task; actual subject, subtype and five factual/admission reviews remain unresolved. No canonical merge or campaign assignment.",
+      "review_note": "All four literals request purchase of an apartment/flat in Dubai. Word order and the omitted in do not change the broad purchase task. Flat/apartment vocabulary is compatible for this generic task, but no particular unit, layout, number of properties or development stage is identified. Do not infer off-plan eligibility or owner selling intent.",
+      "source_ordinals": [
+        1,
+        25,
+        1064,
+        1870
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        2,
+        482,
+        549
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-002",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Independent AI wording reread only. Same broad property-purchase task; actual subject, subtype and five factual/admission reviews remain unresolved. No canonical merge or campaign assignment.",
+      "review_note": "All three literals request buying a villa in Dubai. Reordering and the in preposition preserve that broad task. No named villa, community, condition, possession, readiness or off-plan stage is given. Buyers retains both primary off-plan and secondary ready/resale service context; exact subject, ad-group and page ownership still need reviewed binding without inferring a stage from generic wording.",
+      "source_ordinals": [
+        2,
+        482,
+        549
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        4,
+        22,
+        518
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-004",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Independent AI wording reread only. Same broad property-purchase task; actual subject, subtype and five factual/admission reviews remain unresolved. No canonical merge or campaign assignment.",
+      "review_note": "All three literals describe Dubai apartment/flat/apt property offered for sale, supporting buyer discovery rather than an explicit instruction to sell the searcher's property. Singular/plural and abbreviated asset wording do not identify the same actual inventory or quantity. Off-plan versus ready is unresolved.",
+      "source_ordinals": [
+        4,
+        22,
+        518
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        7,
+        121,
+        129,
+        755
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-005",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Independent AI wording reread only. Same broad property-purchase task; actual subject, subtype and five factual/admission reviews remain unresolved. No canonical merge or campaign assignment.",
+      "review_note": "All four literals concern a Dubai townhouse purchase search. Townhouse/town house spacing and word order give compatible broad purchase meaning; town houses plural does not establish a single identical stock subject. No developer, community, price, availability, handover or off-plan status is present.",
+      "source_ordinals": [
+        7,
+        121,
+        129,
+        755
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        8,
+        434,
+        659
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-006",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Independent AI wording reread only. Same broad property-purchase task; actual subject, subtype and five factual/admission reviews remain unresolved. No canonical merge or campaign assignment.",
+      "review_note": "All three literals request purchase of property in Dubai. Property remains an unspecified asset class and cannot be silently classified residential, commercial, villa, apartment, ready or off-plan. Compatible broad task does not establish a common actual subject or page-family allocation.",
+      "source_ordinals": [
+        8,
+        434,
+        659
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        10,
+        1877
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-007",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Independent AI wording reread only. Same broad property-purchase task; actual subject, subtype and five factual/admission reviews remain unresolved. No canonical merge or campaign assignment.",
+      "review_note": "Both literals describe Dubai real estate for sale. The real estate/realestate spacing is compatible wording for a general purchase search; it neither names the same actual property nor establishes a residential/off-plan segment or a seller mandate. Retain both source forms without claiming new semantic novelty.",
+      "source_ordinals": [
+        10,
+        1877
+      ],
+      "subject_identity_verified": false
+    }
+  ],
+  "reviewed_on_dubai": "2026-11-16",
+  "reviewer": "Codex AI independent audit; not human or owner approval",
+  "row_schema": "Existing buyer canonical review reviewed_components rows and decision vocabulary; partial supplement, never submitted as the complete 233-context manual review.",
+  "schema_version": 1,
+  "scope": "SHARED_AI_RESEARCH_SUPPLEMENT_NOT_APPROVAL_MERGE_OR_ADMISSION",
+  "selected_contexts": 6,
+  "selected_source_literals": 19,
+  "source_candidates_sha256": "1e73e554543e27c70fadcd386ee33dea7c70057f345358f8b9ea8f57e85c7230",
+  "source_manifest": [
+    {
+      "component_id": "BUYER-COMP-001",
+      "external_references": [],
+      "held_source_peer_ordinals": [],
+      "source_literals_sha256": "a011f6300fed3871870501bfd7945f015156dccec6bdbe05f7c9a4b2e66daa90",
+      "source_ordinals": [
+        1,
+        25,
+        1064,
+        1870
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-002",
+      "external_references": [],
+      "held_source_peer_ordinals": [],
+      "source_literals_sha256": "1f7735120a1a8ce153029aa79f9322cea044550410f64b4a5a5ecaac025bf191",
+      "source_ordinals": [
+        2,
+        482,
+        549
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-004",
+      "external_references": [],
+      "held_source_peer_ordinals": [],
+      "source_literals_sha256": "ec27f93d622f2572e75f1b09f87845b2069ce64eaa167ec67f01d82ecd769fe1",
+      "source_ordinals": [
+        4,
+        22,
+        518
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-005",
+      "external_references": [],
+      "held_source_peer_ordinals": [],
+      "source_literals_sha256": "f50f189cae5920575dd51ab23c5f65eaeacd6509780cca230e514134887cd8af",
+      "source_ordinals": [
+        7,
+        121,
+        129,
+        755
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-006",
+      "external_references": [],
+      "held_source_peer_ordinals": [],
+      "source_literals_sha256": "290397b44091664e4f4f25d341a42edc83902bc59c00ada1416d6e90820738d4",
+      "source_ordinals": [
+        8,
+        434,
+        659
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-007",
+      "external_references": [],
+      "held_source_peer_ordinals": [],
+      "source_literals_sha256": "f64f3e2899ef50d1729e658bc367ac4d586ef47a9c82ba38d38791e3f1189f18",
+      "source_ordinals": [
+        10,
+        1877
+      ]
+    }
+  ],
+  "source_review_sha256": "e49efc10088d3d20fc12f188c96086035d80bc0abf3b7956ae2be2ab151095ac",
+  "subject_identity_verified": false
+}

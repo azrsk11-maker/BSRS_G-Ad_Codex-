@@ -128,3 +128,9 @@ php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php expired_approval
 php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php revoked_cleanup
 php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php expired_backup_reference
 php -d sendmail_path=/bin/false /opt/lab/g37-pref/native.php external_deadlines
+
+# Additional bounded G2 versus actual preference retirement races.
+php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php choose_commit
+php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php choose_rollback
+php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php stage_commit
+php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php stage_rollback

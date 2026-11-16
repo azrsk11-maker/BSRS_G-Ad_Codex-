@@ -145,5 +145,8 @@ COPY tools/staging-lab/build-preference-runtime-lab.mjs /opt/lab/staging-lab/
 # Run after build-coupled-canonical-v3-lab.mjs and before USER mysql.
 RUN node /opt/lab/staging-lab/build-preference-runtime-lab.mjs
 
+# Fixed synthetic G38 races; preserve all G36/G37 closed manifests.
+COPY tools/staging-lab/g38/native/g2-retirement-races.php /opt/lab/g38/g2-retirement-races.php
+
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

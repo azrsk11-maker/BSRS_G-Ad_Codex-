@@ -44,6 +44,8 @@ jobs:
           test "$REPOSITORY_VISIBILITY" = public
           python3 -B tools/staging-lab/verify_fixture.py
           node --test tools/staging-lab/database-profile.test.mjs
+          node --test tools/staging-lab/g38/construction.test.mjs
+          node tools/staging-lab/g38/preflight.mjs
           node --test --test-reporter=tap tools/staging-lab/build-receiver-runtime-lab.test.mjs tools/staging-lab/build-preference-runtime-lab.test.mjs
           sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/staging-lab/*profile*.mjs tools/staging-lab/database-11.8.9.lock.json tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json
           find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l
