@@ -89,7 +89,7 @@ function reconcile():array {
 }
 /** Hashes of synthetic retained rows only, never rows or identifiers in public receipts. */
 function captures():array {
-    global $wpdb;fixed();$tables=$wpdb->get_col('SHOW TABLES');$GLOBALS['g36_contact_table_count']=is_array($tables)?count($tables):null;need(is_array($tables) && count($tables)<=256,'G36_TABLE_BOUND');$out=[];
+    global $wpdb;fixed();$wpdb->last_error='';$tables=$wpdb->get_col("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND RIGHT(TABLE_NAME,22)='_bsre_consent_captures' ORDER BY TABLE_NAME LIMIT 257");$GLOBALS['g36_contact_table_count']=is_array($tables)?count($tables):null;need($wpdb->last_error==='','G36_CAPTURE_INVENTORY_UNAVAILABLE');need(is_array($tables) && count($tables)<=256,'G36_TABLE_BOUND');$out=[];
     foreach($tables as $table)if(is_string($table) && preg_match('/^[a-z][a-z0-9_]{0,80}_bsre_consent_captures$/D',$table)===1){
         $rows=$wpdb->get_results('SELECT * FROM `'.$table.'` ORDER BY request_id LIMIT 1001',ARRAY_A);
         need(is_array($rows) && count($rows)<=1000 && $wpdb->last_error==='','G36_CAPTURE_SNAPSHOT_UNAVAILABLE');$out[$table]=hash('sha256',json_encode($rows,JSON_THROW_ON_ERROR));

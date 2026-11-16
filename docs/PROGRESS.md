@@ -1,5 +1,11 @@
 # Implementation progress
 
+## G36 capture-inventory scope correction — 16 November 2026
+
+The 2f41428 diagnostic trial identified the actual failure: after eight successful hub checks, the fixed synthetic database contained 258 total tables and the capture auditor rejected its global SHOW TABLES inventory at 256. Earlier accepted lanes and the new namespaces legitimately contributed unrelated tables. The correction selects only capture-suffix metadata in the same canonical database, with LIMIT 257 and rejection above 256 raw selected rows before regex filtering. Per-table LIMIT 1001/rejection above 1000, the exact original name regex, row order/hashes and every operational/isolation guard remain. Metadata SQL errors now fail closed rather than being accepted as an empty inventory. No table-type filter excludes views or other supported table kinds.
+
+An added native assertion compares every selected capture-table key with independent SHOW TABLES plus the original regex. Thus each contact mode requires all 36 original checks plus this completeness check (37 total). Both failed trials remain diagnostic evidence; no contact/parity acceptance is claimed until the corrected exact head passes both complete database profiles and all required CI. Production unchanged; Ads paused.
+
 ## G36 failed trial diagnostic correction — 16 November 2026
 
 The b9c53182 isolated trial completed first-profile predecessors plus G36 bootstrap/route/custody, then terminated in the first hub contact test with only G36_CONTACT_INCOMPLETE. The shutdown handler cleared the original error; neither contact nor second-profile acceptance was established. The new failure-only diagnostic retains stage, named boolean progress, numeric table count and sanitized throwable location/code, bounded to 16 KiB. It emits no raw message, trace, SQL rows or configuration, still clears buffers and exits 1. Every assertion, isolation check and existing table/row bound is preserved. Root cause remains unverified; the next run is evidence gathering after this concrete diagnostic correction, not an unchanged retry. A proposed REST callback-argument explanation was independently rejected: the exact committed registration already had 10,2 and was left unchanged.

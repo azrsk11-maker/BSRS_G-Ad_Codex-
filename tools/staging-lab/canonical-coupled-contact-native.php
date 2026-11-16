@@ -94,6 +94,11 @@ $stage='canonical_install_and_migrate';$wpdb->prefix='g36_abi_'.str_replace('-',
 $producer=new \BSRE\ActualRetention\CanonicalCaptureProducer($wpdb);$producer->assertCurrent($wpdb);
 g36contact('canonical_first_global_and_repository',get_class($wpdb)==='BSRE\\ClosedRetention\\LeaseBoundWpdb' && G\repository()->database()===$wpdb);
 $manifest=N\sourceManifest();g36contact('final_manifest64_runtime_bound',count($manifest['files'])===64);
+$stage='capture_inventory_completeness';$wpdb->last_error='';$allTables=$wpdb->get_col('SHOW TABLES');
+N\need(is_array($allTables) && $wpdb->last_error==='','G36_CAPTURE_INVENTORY_METADATA_UNAVAILABLE');
+$matchingTables=array_values(array_filter($allTables,static fn($table)=>is_string($table) && preg_match('/^[a-z][a-z0-9_]{0,80}_bsre_consent_captures$/D',$table)===1));
+sort($matchingTables,SORT_STRING);$inventory=N\captures();
+g36contact('capture_inventory_covers_all_matching_tables',array_keys($inventory)===$matchingTables);
 $stage='class_only_modules';foreach(N\modules() as $name=>$pass)g36contact($name,$pass);
 $producer->assertCurrent($wpdb);g36contact('canonical_producer_after_class_only_load',true);
 $id=$mode==='hub'?$fixture['hub']:$fixture['services'][$mode];
