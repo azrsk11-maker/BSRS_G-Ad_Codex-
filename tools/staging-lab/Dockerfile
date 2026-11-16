@@ -28,30 +28,17 @@ COPY tools/staging-lab/receiver-lab.mjs /opt/lab/staging-lab/receiver-lab.mjs
 COPY tools/staging-lab/fixtures/receiver-v2 /opt/lab/staging-lab/fixtures/receiver-v2
 COPY tools/staging-lab/fixtures/bsre-enquiries /opt/lab/staging-lab/fixtures/bsre-enquiries
 COPY tools/staging-lab/composed-delivery-interop.php tools/staging-lab/composed-delivery-interop.mjs /opt/lab/
-COPY tools/website-tracking/tracking-system/composed-delivery-fixture.mjs tools/website-tracking/tracking-system/build-contact-compatible-client-candidate.mjs tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs /opt/lab/website-tracking/tracking-system/
-COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs \
-    tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs \
-    tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs \
-    tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs \
-    tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs \
-    tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs \
-    tools/website-tracking/tracking-system/contract.mjs /opt/lab/website-tracking/tracking-system/
+COPY tools/website-tracking/tracking-system/composed-delivery-fixture.mjs tools/website-tracking/tracking-system/build-contact-compatible-client-candidate.mjs tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs tools/website-tracking/tracking-system/contract.mjs /opt/lab/website-tracking/tracking-system/
 COPY tools/consent-retention /opt/lab/consent-retention
 COPY tools/recovery-package /opt/lab/recovery-package
 COPY tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/receipt-status.test.php /opt/lab/receipt-recovery/
-COPY tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs /opt/lab/tracking-system/
-COPY tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs /opt/lab/tracking-system/
-COPY tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs /opt/lab/tracking-system/
-COPY tools/staging-lab/client-interop.php tools/staging-lab/client-interop.mjs /opt/lab/
-COPY tools/staging-lab/client-page.mjs tools/staging-lab/consented-client-interop.php tools/staging-lab/consented-client-interop.mjs /opt/lab/
-COPY tools/staging-lab/browser-prerequisites.php /opt/lab/
-COPY tools/staging-lab/consent-http-router.php tools/staging-lab/consent-http.mjs /opt/lab/
+COPY tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs /opt/lab/tracking-system/
+COPY tools/staging-lab/client-interop.php tools/staging-lab/client-interop.mjs tools/staging-lab/client-page.mjs tools/staging-lab/consented-client-interop.php tools/staging-lab/consented-client-interop.mjs tools/staging-lab/browser-prerequisites.php tools/staging-lab/consent-http-router.php tools/staging-lab/consent-http.mjs /opt/lab/
 COPY tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs tools/website-tracking/tracking-system/contract.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/purpose-attribution.test.php tools/website-tracking/tracking-system/purpose-retention.php /opt/lab/purpose/
 COPY tools/website-tracking/tracking-system/build-purpose-retention-candidate.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/purpose-retention.php /opt/lab/purpose-retention/
-COPY tools/staging-lab/purpose-client-interop.php tools/staging-lab/purpose-client-interop.mjs /opt/lab/
-COPY tools/staging-lab/purpose-concurrency.php /opt/lab/
+COPY tools/staging-lab/purpose-client-interop.php tools/staging-lab/purpose-client-interop.mjs tools/staging-lab/purpose-concurrency.php /opt/lab/
 COPY tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs tools/website-tracking/tracking-system/retention-admission-bridge.mjs tools/website-tracking/tracking-system/retention-admission-client.mjs /opt/lab/tracking-system/
 COPY tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/retention-admission.test.php tools/website-tracking/tracking-system/retention-admission-native.php /opt/lab/retention-admission/
 COPY tools/closed-enquiry-retention /opt/lab/closed-enquiry-retention
@@ -61,9 +48,7 @@ COPY tools/staging-lab/build-g1-retention-lab-store.mjs /opt/lab/staging-lab/
 COPY tools/staging-lab/g1-retention-native.php /opt/lab/g1-retention/native.php
 COPY tools/staging-lab/g1-retention-concurrency.php /opt/lab/g1-retention/concurrency.php
 # Fixed G2 candidate-only plugin tree; ordinary/default/G1 paths retained.
-COPY tools/website-tracking/tracking-system/build-g2-shared-repository-candidate.mjs tools/website-tracking/tracking-system/build-g2-profile-candidate.mjs /opt/lab/website-tracking/tracking-system/
-COPY tools/website-tracking/tracking-system/g2-shared-repository.php tools/website-tracking/tracking-system/g2-shared-bootstrap.php /opt/lab/website-tracking/tracking-system/
-COPY tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php /opt/lab/website-tracking/tracking-system/
+COPY tools/website-tracking/tracking-system/build-g2-shared-repository-candidate.mjs tools/website-tracking/tracking-system/build-g2-profile-candidate.mjs tools/website-tracking/tracking-system/g2-shared-repository.php tools/website-tracking/tracking-system/g2-shared-bootstrap.php tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/retention-admission.php tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php /opt/lab/website-tracking/tracking-system/
 COPY tools/staging-lab/build-g2-profile-lab.mjs /opt/lab/staging-lab/
 COPY tools/staging-lab/g2-shared-repository-native.php /opt/lab/g2/g2-shared-repository-native.php
 COPY tools/staging-lab/g2-namespace-collision-fixture.php /opt/lab/g2/g2-namespace-collision-fixture.php

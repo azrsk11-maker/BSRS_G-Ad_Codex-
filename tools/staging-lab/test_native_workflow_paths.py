@@ -94,6 +94,15 @@ def uncovered_inputs(root, dockerfile, workflow):
 
 
 class NativeWorkflowPathTests(unittest.TestCase):
+    def test_layer_heavy_instructions_stay_below_accepted_baseline(self):
+        # The first purge image failed at max depth with 122 COPY/RUN/ADD steps.
+        # The same pinned base passed G38 with 116. Keep a lower budget here;
+        # this counts layer-heavy instructions, not total image/base layers.
+        docker = (ROOT / "tools/staging-lab/Dockerfile").read_text(encoding="utf-8")
+        logical = re.sub(r"\\\r?\n", " ", docker).splitlines()
+        layers = sum(bool(re.match(r"(?i)^\s*(COPY|RUN|ADD)\s", line)) for line in logical)
+        self.assertLessEqual(layers, 114, "Coalesce equivalent COPY inputs before adding image layers")
+
     def test_every_actual_local_copy_input_triggers_native_ci(self):
         missing = uncovered_inputs(ROOT,
             (ROOT / "tools/staging-lab/Dockerfile").read_text(encoding="utf-8"),

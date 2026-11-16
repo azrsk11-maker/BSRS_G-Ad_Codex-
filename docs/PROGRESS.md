@@ -1,5 +1,13 @@
 # Implementation progress
 
+## Purge lab image-layer correction — 16 November 2026
+
+The first published purge cut `ba1e25a7419e887003f00fff3189f0fb2c19796e` stopped during Docker image construction with `max depth exceeded`; WordPress and the new native cases did not execute. The private failed raw log is retained with SHA256 `e38da16f3df1be8534ed8160146e7f340cbf3076a840081d1d5af1d6561c6168`. This is diagnostic evidence, not native acceptance. [Docker's storage documentation](https://docs.docker.com/engine/storage/drivers/overlayfs-driver/) explains the layer-depth constraint; the runner's exact storage-driver identity was not independently established.
+
+The correction merges only five groups of strictly adjacent file COPY instructions with identical trailing-slash destinations and distinct basenames. It preserves source order, all 432 source-to-destination bindings at every one of 17 RUN boundaries and the final image input map, and every non-COPY instruction. The transformation reverses to the exact failed Dockerfile. Layer-heavy COPY/RUN/ADD instructions decrease from 122 to 113, below the accepted G38 baseline's 116; these are instruction counts, not total image/base-layer counts or measured time savings. No runtime, data, isolation, command, dependency pin or assertion is removed.
+
+A sixth native-workflow test now rejects more than 114 such instructions before an expensive image build. The 19 unchanged runtime checks are reused; only the changed layout/input checks and exact-revision CI need rerunning. All original predecessors, both profiles and the new held/positive cases remain mandatory. Actual purge acceptance stays pending until the corrected exact head executes and its complete raw log is audited. Production unchanged; Ads paused.
+
 ## Actual purge integration, default OFF — 16 November 2026
 
 Accepted parent `45e064f569e28e788655ea205dbf344e9c5d37cb` has all three required checks, equal merge tree and strict actual raw-log acceptance on both profiles. The new separate profile integrates the reviewed purge candidate without modifying original guarded classes, G36/G37/G38 runtime inputs or prior commands. Twenty-one project-path members remain exact frozen copies; three files explicitly derive the new engine's single terminal newline, including a guarded reversible builder edit and its receipt. Packaging-only root metadata stays outside the repository. A fixed writer builds 26 closed runtime members in a new root, with distinct synthetic namespaces/progress files and held then positive commands after every retained predecessor.
