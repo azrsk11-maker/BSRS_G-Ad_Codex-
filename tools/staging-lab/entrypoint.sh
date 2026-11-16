@@ -74,3 +74,21 @@ php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php source-tampere
 php -d sendmail_path=/bin/false /opt/lab/g35/bootstrap-native.php producer-tampered
 php -d sendmail_path=/bin/false /opt/lab/g35/route-native.php routes
 php -d sendmail_path=/bin/false /opt/lab/g35/route-native.php loss
+
+# Explicit G36 coupled synthetic candidate, after every accepted original/G3/G4/G5/G35 lane.
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php disabled
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php enabled
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php malformed-flag
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php existing-global
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php namespace-collision
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php manifest-tampered
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php source-tampered
+php -d sendmail_path=/bin/false /opt/lab/g36/bootstrap-native.php producer-tampered
+php -d sendmail_path=/bin/false /opt/lab/g36/route-native.php routes
+php -d sendmail_path=/bin/false /opt/lab/g36/route-native.php loss
+php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php hub
+php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php off-plan
+php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php resale
+php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php rent
+php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php sell
+php -d sendmail_path=/bin/false /opt/lab/g36/contact-native.php let

@@ -13,7 +13,7 @@ The fixed lab wrapper `tools/staging-lab/build-g5-runtime-lab.mjs` resolves the 
 Required boundaries remain:
 
 - Accepted G2/G3 uses ordinary canonical `$wpdb`; these ports require its reviewed reconnect-denying lease integration. No global connection swap or permissive second handle is included.
-- A real composed G2/G3 `CaptureProducer`, independent durable anchor/key custody, receiver/HMAC/intake/outbox identity joins, exact Marketing-mailbox/Trash/source/history evidence and their acceptance remain absent.
+- The separate [canonical lease slice](../canonical-lease/README.md) implements the G2/G3 `CaptureProducer`; [held V3 coupling](../coupled-package-v3/README.md) binds it to the final contact-specific members. Independent durable anchor/key custody, receiver/HMAC/intake/outbox identity joins, exact Marketing-mailbox/Trash/source/history evidence and their operational acceptance remain absent. The original partial G5 builder is unchanged.
 - `ActualPreferenceRetention.php`, `ActualRetirementPort.php`, real thirty-day encrypted recovery snapshot/key-expiry/preservation across restores and complete native/concurrency/failure/provider acceptance remain unimplemented or unaccepted. Existing twelve-calendar-month and no-resurrection rules are preserved in the original domain algorithms; including those originals does not make their lab-only orchestration deployable.
 
 The builder must never be used as a complete-profile certificate. Production and advertising remain unchanged.

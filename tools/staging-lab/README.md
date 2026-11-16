@@ -1,5 +1,11 @@
 # Disposable native WordPress lab
 
+## Coupled canonical contact V3
+
+The separate G36 tree uses the [explicit held V3 composer](../website-tracking/coupled-package-v3/README.md), with the public synthetic contact only. Its 67-file site binds all 64 final post-contact source members; the V2-derived receiver stays outside the site. Eight bootstrap modes and two route/custody journeys retain the G35 checks in this coupled tree. Six additional fresh processes exercise actual native query, owned template and script/config rendering for the hub and five services, preserving the once-per-request guard. Hub reconciliation preflights old and prospective page/attachment children before any fixture mutation; extra modules retain their original operational guards. The same two real retention ports remain missing.
+
+Every new invocation follows all accepted lanes in both database profiles, with the same kernel network isolation, read-only application, non-root user, mail prohibition and resource limits. Require all 18 chronological G36 receipts per profile and complete predecessor receipts on the exact reviewed source. This is synthetic native template/config proof, not browser HTTP, real Google delivery/deduplication, operational authority or deployment approval. No actual retained private package or production secret is copied into the image.
+
 ## First canonical lease connection
 
 The separate G35 site tree selects the original reconnect-denying lease class through WordPress's early `db.php` seam. It creates the first global object rather than replacing the object G2 already bound or passing a second handle. See [exact scope and deployment holds](../website-tracking/canonical-lease/README.md). The default remains OFF; no production configuration or existing drop-in is changed.
