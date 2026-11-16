@@ -59,7 +59,7 @@ try{
  require_once '/opt/lab/g36/contact-abi.php';\BSRE\G36Native\reconcile();
  $privacy=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_name'=>'g37-synthetic-privacy-'.$mode,'post_title'=>'SYNTHETIC G37 NOTICE'],true);
  if(is_wp_error($privacy))throw new RuntimeException('G37_NOTICE_FIXTURE_FAILED');define('BSRE_PRIVACY_NOTICE_PAGE_ID',$privacy);
- $wpdb->prefix='g37_pref_'.str_replace('_','',$mode).'_synthetic_';E\install();if(!G\migrate())throw new RuntimeException('G37_G2_SCHEMA_REQUIRED');
+ $wpdb->prefix='g37_pref_'.substr(hash('sha256',$mode),0,12).'_synthetic_';E\install();if(!G\migrate())throw new RuntimeException('G37_G2_SCHEMA_REQUIRED');
  require_once WP_PLUGIN_DIR.'/bsre-enquiries/includes/candidate/consent-retention/RetentionInventory.php';
  require_once WP_PLUGIN_DIR.'/bsre-enquiries/includes/candidate/purpose-retention/purpose-retention.php';
  require '/opt/lab/g37-pref/runtime/ActualPreferenceRetention.php';require '/opt/lab/g37-pref/FixturePorts.php';
