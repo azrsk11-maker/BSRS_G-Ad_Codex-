@@ -11,6 +11,7 @@ export function nativePacketFromInputs(inputs){
  const positive=base.toString('utf8').slice(0,cut)+" require __DIR__.'/native-positive.php';\n echo wp_json_encode(['phase'=>'g5_actual_purge_positive','checks'=>$checks,'runtime_isolation'=>$isolation,'synthetic_services'=>true,'provider_accepted'=>false,'production_authorized'=>false]).\"\\n\";\n}finally{fclose($pipes[0]);fclose($pipes[1]);if(proc_close($bridge)!==0)throw new RuntimeException('G5_RECEIVER_BRIDGE_EXIT_FAILED');}\n";
  files.set('tests/purge-positive-native.php',Buffer.from(positive));
  files.set('tests/native-positive.php',readFileSync(new URL('./tests/native-positive.php',import.meta.url)));
+ files.set('tests/approval-identity.php',readFileSync(new URL('./tests/approval-identity.php',import.meta.url)));
  const intakeSource=Buffer.from(inputs.intakeSource).toString('utf8');
  const headers=JSON.parse(intakeSource.match(/var LEAD_HEADERS = (\[.*?\]);/)[1].replaceAll("'",'"'));
  if(headers.length!==26)throw Error('INTAKE26_SCHEMA_CHANGED');

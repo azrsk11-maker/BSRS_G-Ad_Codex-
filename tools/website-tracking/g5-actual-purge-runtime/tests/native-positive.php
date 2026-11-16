@@ -6,6 +6,7 @@ if(PHP_SAPI!=='cli'||!isset($isolation,$wpdb,$custody,$policy,$producer,$proof,$
     ||in_array(false,$isolation,true)||DB_NAME!=='bsre_synthetic'||$wpdb->prefix!=='g5_receiver_synthetic_'
     ||realpath(__DIR__)!=='/opt/lab/g5-receiver-runtime/tests')throw new RuntimeException('ACTUAL_PURGE_POSITIVE_FIXED_CONTEXT_REQUIRED');
 require_once '/opt/lab/g5-receiver-runtime/candidate/plugin/includes/candidate/closed-enquiry-retention/ActualPurgeWorkflow.php';
+require_once __DIR__.'/approval-identity.php';
 
 /** Separate SQL reader sees committed state, never the writer's uncommitted transaction. */
 final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Transport,A\Outcome40Transport,A\MarketingMailReadTransport,R\ReviewTransport {
@@ -70,7 +71,7 @@ final class PositivePurgeService implements A\PurgeServiceTransport,A\Intake26Tr
         if($c['action']==='REVIEW')return $c['grant']===null;
         $g=$c['grant'];$p=$c['plan'];if(!is_array($g)||!is_array($p))return false;
         $known=$this->grants[$c['action'].':'.$p['digest']]??null;$now=time();
-        if($g!==$known||!($this->approvals[$c['action'].':'.$p['digest']]??false)||$g['actor']!==$this->policy->actor()
+        if(!\BSRE\PurgeNative\ApprovalIdentity::same($g,$known)||!($this->approvals[$c['action'].':'.$p['digest']]??false)||$g['actor']!==$this->policy->actor()
             ||$now<$g['approved_at']||$now>=$g['approval_expires_at'])return false;
         return true;
     }

@@ -15,7 +15,7 @@ export const RECEIVER_INPUT_PATHS=Object.freeze([
 ]);
 export const ACTUAL_PURGE_RUNTIME_PATHS=Object.freeze([
  ...RECEIVER_INPUT_PATHS,'tests/purge-held-native.php','tests/native-extension.php','tests/purge-positive-native.php','tests/native-positive.php',
- 'tests/intake26-headers.json','tests/outcome40-schema.json','tests/foreign-capture-snapshot.php',
+ 'tests/intake26-headers.json','tests/outcome40-schema.json','tests/foreign-capture-snapshot.php','tests/approval-identity.php',
  ...['ActualPurgeEngine.php','ActualPurgeJournal.php','ActualPurgeCaptureResource.php','ActualPurgeResources.php','ActualPurgeWorkflow.php','PurgeBoundary.php','CaptureRules.php'].map(n=>'candidate/plugin/includes/candidate/closed-enquiry-retention/'+n),
  'G38_BUILD.json'
 ]);
@@ -62,7 +62,7 @@ export function assembleActualPurgeAddon(packet,receiverInputs,pins){
   need(ACTUAL_PURGE_RUNTIME_PATHS.includes(member)&&!files.has(member),'G38_ADDON_FILESET_CHANGED');files.set(member,result.bytes);if(result.receipt)derivations.push(result.receipt);
  }
  files.set('tests/foreign-capture-snapshot.php',readFileSync(new URL('./tests/foreign-capture-snapshot.php',import.meta.url)));
- need(files.size===25,'G38_ADDON_FILESET_CHANGED');
+ need(files.size===26,'G38_ADDON_FILESET_CHANGED');
  for(const [mode,c]of Object.entries(PURGE_CASES)){
   need(c.prefix.length<=41&&/^[a-z][a-z0-9_]+_$/.test(c.prefix),'G38_NAMESPACE_INVALID');
   const driver=files.get(c.entry).toString();need(driver.includes("$wpdb->prefix='"+c.prefix+"'")&&driver.includes(c.progress)&&driver.includes("realpath(__DIR__)!=='"+FIXED_PURGE_ROOT+"/tests'"),'G38_CASE_BINDING_INVALID');

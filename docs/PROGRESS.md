@@ -1,5 +1,13 @@
 # Implementation progress
 
+## Signed approval fixture identity — 17 November 2026
+
+The `b89c7785` trial cleared the reader/interceptor gate but stopped at `ACTUAL_PURGE_CUSTODY_HELD` on the first positive execute. The failed raw log is retained with SHA256 `ea7b52bf1361c9859b90ef995306a93cd99a072229823740815d22f1fd929a1d`. Signed approval results pass through canonical JSON and decoding; the fixture compared that reordered five-field map with its insertion-ordered PHP grant using strict array identity. No clock, signature or custody gate is being waived.
+
+A fixture-only identity helper now requires the exact five keys, known scalar types and identical values while ignoring object-key order. Actor values retain the actual runtime's `wp-user:ID` string type. Owner/action/digest and expiry checks remain unchanged. A pure PHP contract test uses the actual canonical encoder to reproduce the original mismatch and exercise reordered identity, all field mutations, wrong types, missing/extra fields and input immutability. CI runs it before constructing the expensive image or starting WordPress. Local PHP is unavailable, so its execution is pending CI; 20 Node and six workflow checks pass locally.
+
+The closed runtime grows from 26 to 27 members solely to include the identity helper; the standalone test stays outside it. The existing COPY instruction adds that one input without adding a layer. Held38/positive30 and every preceding assertion remain required on both profiles. All original runtime guards, workflow and journal code remain unchanged. The complete raw-log audit and all other operational/provider/release gates remain open; production unchanged and Ads paused.
+
 ## Positive purge fixture connection correction — 17 November 2026
 
 The corrected image at `79a68504f45e7a9f7700b6b0665d0587a6c0a64b` built and completed the first profile's predecessors and 38-check held purge case. Positive startup then failed `CANONICAL_PRODUCER_QUERY_INTERCEPTOR_UNVERIFIED` before its guarded journal could be constructed. The private failed log is retained with SHA256 `19f2dbd3c5d8d183b9b8287e9549a9cc98d998405e60cd952445118e3b42ee36`. It does not establish second-profile or complete purge acceptance.

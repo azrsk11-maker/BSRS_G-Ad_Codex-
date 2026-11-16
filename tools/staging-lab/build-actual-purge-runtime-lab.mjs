@@ -18,7 +18,7 @@ function keys(value,expected,code){
 export function planActualPurgeRuntimeLab(packet){
  keys(packet,['files','manifest','synthetic_only','provider_accepted','production_authorized'],'ACTUAL_PURGE_LAB_PACKET_INVALID');
  need(packet.synthetic_only===true&&packet.provider_accepted===false&&packet.production_authorized===false,'ACTUAL_PURGE_LAB_BOUNDARY_INVALID');
- need(packet.files instanceof Map&&packet.files.size===26,'ACTUAL_PURGE_LAB_FILESET_CHANGED');
+ need(packet.files instanceof Map&&packet.files.size===27,'ACTUAL_PURGE_LAB_FILESET_CHANGED');
  need([...packet.files.keys()].sort().join('\n')===ACTUAL_PURGE_RUNTIME_PATHS.slice().sort().join('\n'),'ACTUAL_PURGE_LAB_FILESET_CHANGED');
  const files=new Map();
  for(const path of ACTUAL_PURGE_RUNTIME_PATHS){
