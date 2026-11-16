@@ -262,7 +262,25 @@ $positiveService->wrongRead='outcome';$held=$positiveWorkflow->execute($positive
 receiver_check('purge_wrong_row_holds_before_provider_mutation',$held['status']==='HELD'&&in_array('RESOURCE_BINDING_CHANGED',$held['hold_codes'],true)&&array_sum($positiveService->deleteCounts)===0);
 $positiveService->changedAck='outcome';$positiveService->lostAck='intake';$held=$positiveWorkflow->execute($positivePlan);
 receiver_check('purge_changed_ack_holds_after_single_exact_mutation',$held['status']==='HELD'&&$positiveService->deleteCounts['outcome']===1&&$positiveService->removeAttempts['outcome']===1);
-$held=$positiveWorkflow->execute($positivePlan);receiver_check('purge_lost_intake_ack_holds_without_redeleting_outcome',$held['status']==='HELD'&&$positiveService->deleteCounts['intake']===1&&$positiveService->removeAttempts['outcome']===1);
+$held=$positiveWorkflow->execute($positivePlan);
+$lostAckCheck=$held['status']==='HELD'&&$positiveService->deleteCounts['intake']===1&&$positiveService->removeAttempts['outcome']===1;
+if(!$lostAckCheck){
+    // Failure-only bounded aggregates; never print a plan, record, identifier or signed body.
+    $codes=$held['hold_codes']??null;$codesKnown=is_array($codes)&&count($codes)<=16;
+    if($codesKnown)foreach($codes as $code)if(!is_string($code)||preg_match('/^[A-Z][A-Z0-9_]{0,95}$/D',$code)!==1){$codesKnown=false;break;}
+    $countsKnown=true;foreach([$positiveService->deleteCounts,$positiveService->removeAttempts] as $counts){
+        if(array_keys($counts)!==['intake','outcome','email']){$countsKnown=false;break;}
+        foreach($counts as $count)if(!is_int($count)||$count<0||$count>1000){$countsKnown=false;break;}
+    }
+    $diagnostic=['phase'=>'g5_actual_purge_diagnostic','check'=>'lost_intake_ack','status'=>in_array($held['status']??null,['HELD','COMPLETE','AWAITING_OWNER_MAIL_ACTION'],true)?$held['status']:'UNVERIFIED',
+        'hold_codes_known'=>$codesKnown,'hold_codes'=>$codesKnown?array_values($codes):[],
+        'counts_known'=>$countsKnown,'delete_counts'=>$countsKnown?$positiveService->deleteCounts:[],
+        'remove_attempts'=>$countsKnown?$positiveService->removeAttempts:[],
+        'pending_lost_intake_ack'=>$positiveService->lostAck==='intake','pending_changed_outcome_ack'=>$positiveService->changedAck==='outcome',
+        'provider_accepted'=>false,'production_authorized'=>false];
+    fwrite(STDERR,json_encode($diagnostic,JSON_THROW_ON_ERROR|JSON_UNESCAPED_SLASHES)."\n");fflush(STDERR);
+}
+receiver_check('purge_lost_intake_ack_holds_without_redeleting_outcome',$lostAckCheck);
 $completionInvocation=time();$complete=$positiveWorkflow->execute($positivePlan);$done=positiveReadJob($positiveBoundary,$positiveJournal,$positivePlan);
 receiver_check('purge_positive_reconciles_same_job_to_complete',$complete['status']==='COMPLETE'&&$done['state']==='COMPLETE'&&$done['plan']===$positivePlan&&$done['steps']===array_fill(0,4,'CONFIRMED_ABSENT'));
 receiver_check('purge_completion_uses_current_observation_time',$done['completed_at']>=$completionInvocation&&$done['completed_at']<=time());

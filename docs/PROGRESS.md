@@ -1,5 +1,11 @@
 # Implementation progress
 
+## Lost-ack recovery diagnostic trial — 17 November 2026
+
+The `a70ae36b` run passed the 25-assertion PHP identity contract before image construction. The first database profile then progressed through the held case and positive approval/manual-mail/wrong-row/changed-ack checks, but failed `purge_lost_intake_ack_holds_without_redeleting_outcome`. Failed raw SHA256: `937298706f6826ea161f356f3acc6297707f51fa08627cfb32469fc8ddd1d342`. The compound assertion did not expose its returned status, hold code or mutation counters; no root cause or complete native acceptance is inferred.
+
+The next cut adds failure-only bounded aggregate diagnostics immediately before that same assertion. It prints only an allowlisted status, validated symbolic codes, three-store integer counters and pending-fault booleans, then flushes them before the unchanged failure. It prints no plan, record, grant, identifier or signed body. No fault flag/counter is modified and no extra workflow execution occurs. The assertion, all guards and held38/positive30 contracts remain unchanged. A privacy/order construction check makes 21 Node checks passing; six unchanged workflow checks are reused. The next exact-head lab run is diagnostic evidence gathering, not an unchanged retry or claimed recovery fix.
+
 ## Signed approval fixture identity — 17 November 2026
 
 The `b89c7785` trial cleared the reader/interceptor gate but stopped at `ACTUAL_PURGE_CUSTODY_HELD` on the first positive execute. The failed raw log is retained with SHA256 `ea7b52bf1361c9859b90ef995306a93cd99a072229823740815d22f1fd929a1d`. Signed approval results pass through canonical JSON and decoding; the fixture compared that reordered five-field map with its insertion-ordered PHP grant using strict array identity. No clock, signature or custody gate is being waived.
