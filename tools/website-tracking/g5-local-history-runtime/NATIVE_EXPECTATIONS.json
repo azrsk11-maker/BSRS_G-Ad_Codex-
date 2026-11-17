@@ -1,0 +1,436 @@
+{
+  "schema": "bsre-g39-frozen-native-expectations-v1",
+  "manifest": {
+    "schema": "bsre-g39-private-local-history-native-v1",
+    "accepted_source_head": "c6fab35e579fb942c28c0ae6d91a81f5c0be8cef",
+    "fixed_root": "/opt/lab/g39-history-local",
+    "fixed_prefix": "g39_history_synthetic_",
+    "entry": "tests/local-history-native.php",
+    "phase": "g39_local_history",
+    "expected_checks": [
+      "first_global_is_canonical_original",
+      "fresh_owned_journal_required",
+      "selected_receiver_base_exact",
+      "admitted_exact_intake26_zero_attempt",
+      "missing_independent_signer_holds_before_transport",
+      "actual_signed_inspection_positive",
+      "lead_hmac_cannot_replace_independent_signature",
+      "g39_journal_unapproved_initializer_denied",
+      "g39_real_preference_initializer_seeds_one_partition",
+      "g39_all_256_partitions_observed_in_order",
+      "g39_physical_control_inventory_exact",
+      "g39_exact_one_anchored_and_255_absent_partitions",
+      "g39_one_canonical_connection_for_every_signed_current",
+      "g39_reconnect_entrypoints_refused_under_parent_custody",
+      "g39_exact_readonly_ledger_bytes_bound",
+      "g39_current_admission_and_local_scope_only",
+      "g39_no_observation_storage_or_anchor_writes",
+      "g39_no_custody_or_transaction_after_success",
+      "g39_retained_proof_31s_old_unexpired_clock_denied",
+      "g39_borrow_without_parent_denied",
+      "g39_out_of_domain_physical_control_row_denied",
+      "g39_nonzero_signed_anchor_and_absent_row_denied",
+      "g39_forged_signed_anchor_denied",
+      "g39_changed_expected_ledger_bytes_denied",
+      "g39_stale_admission_denied",
+      "g39_future_admission_denied",
+      "g39_changed_source_binding_denied",
+      "g39_foreign_base_scope_denied",
+      "g39_revoked_owner_denied",
+      "g39_query_logging_denied",
+      "g39_compacted_floor_retains_local_veto",
+      "g39_submitted_incomplete_retains_local_veto",
+      "g39_original_connection_and_clean_lease_preserved",
+      "g39_network_and_mail_never_called",
+      "g39_all_foreign_capture_tables_preserved"
+    ],
+    "preference_source_sha256": "49fe9edc2b5e84518b0a8b640dabf8aae22a941c2701ac877bc4c26e85dceac8",
+    "local_scope_only": true,
+    "native_executed": false,
+    "provider_accepted": false,
+    "production_authorized": false,
+    "derivations": {
+      "ActualReceiverJournal.php": {
+        "preimage_sha256": "b6a4a8b011e6215237360637eabe6db38ae46494a184e6fb335041169f9344f9",
+        "output_sha256": "bc40b01ac47daf36be56ae05bffb4c9cf39b121086e3f4e484be357ada6e0d6e",
+        "reverse_verified": true,
+        "edits": [
+          {
+            "label": "PRIVATE_READ_QUARANTINE",
+            "offset": 1159,
+            "before": "    private bool $uncertain = false;",
+            "after": "    private bool $uncertain = false;\n    private bool $localHistoryUncertain = false;"
+          },
+          {
+            "label": "RETAIN_UNCERTAIN_READ_CUSTODY",
+            "offset": 5603,
+            "before": "                if ($held) {",
+            "after": "                if ($held && !$this->localHistoryUncertain) {"
+          },
+          {
+            "label": "PURPOSE_SPECIFIC_CURRENT_READ",
+            "offset": 20843,
+            "before": "    public function historyIncomplete(): bool",
+            "after": "    /** Purpose-specific local observation; the enclosing journal retains lease ownership. */\n    public function localHistoryCheckpoint(\\BSRE\\ClosedRetention\\LeaseBoundWpdb $db, RuntimePolicy $policy, CanonicalCaptureProducer $producer): array\n    {\n        if ($db!==$this->db || $policy!==$this->policy || $producer!==$this->receiverProducer) RuntimePolicy::fail('G39_JOURNAL_COMPOSITION_CONFLICT');\n        $this->assertCurrentLease();\n        if ($this->scalar('SELECT @@session.in_transaction')!=='1' || $this->scalar('SELECT @@session.tx_read_only')!=='1'\n            || $this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ') RuntimePolicy::fail('G39_READ_ONLY_SNAPSHOT_REQUIRED');\n        $s=$this->state(); $row=$this->raw(); $anchor=$this->custody->current();\n        if ($row===null || $anchor!==['revision'=>(int)$row['revision'],'hash'=>$row['body_hash']]) RuntimePolicy::fail('G5_CURRENT_ANCHOR_MISMATCH');\n        return ['scope'=>$policy->scope(),'anchor'=>$anchor,'cipher_sha256'=>$row['body_hash'],\n            'incomplete'=>$s['incomplete'],'admission_floor'=>$s['admission_floor']];\n    }\n    /** A failed rollback must retain custody; it is never permission to release a live transaction. */\n    public function quarantineLocalHistoryRead(\\BSRE\\ClosedRetention\\LeaseBoundWpdb $db): void\n    {\n        if ($db!==$this->db) RuntimePolicy::fail('G39_JOURNAL_COMPOSITION_CONFLICT');\n        $this->localHistoryUncertain=true;\n    }\n    public function historyIncomplete(): bool"
+          }
+        ]
+      },
+      "ActualPurgeJournal.php": {
+        "preimage_sha256": "ee605ea6ce19f65fd30bd9eae6f6538ede84abd697f98c6cda1310a96db0b984",
+        "output_sha256": "aacfc5ab83148155a9a158e18b1abea9b69d2a84f7ad67a42aebfc16a6f45b1e",
+        "reverse_verified": true,
+        "edits": [
+          {
+            "label": "PRIVATE_READ_QUARANTINE",
+            "offset": 1156,
+            "before": "    private bool $uncertain = false;",
+            "after": "    private bool $uncertain = false;\n    private bool $localHistoryUncertain = false;"
+          },
+          {
+            "label": "RETAIN_UNCERTAIN_READ_CUSTODY",
+            "offset": 5766,
+            "before": "                if ($held) {",
+            "after": "                if ($held && !$this->localHistoryUncertain) {"
+          },
+          {
+            "label": "PURPOSE_SPECIFIC_CURRENT_READ",
+            "offset": 21713,
+            "before": "    public function historyIncomplete(): bool",
+            "after": "    /** Purpose-specific local observation; the enclosing journal retains lease ownership. */\n    public function localHistoryCheckpoint(\\BSRE\\ClosedRetention\\LeaseBoundWpdb $db, RuntimePolicy $policy, CanonicalCaptureProducer $producer): array\n    {\n        if ($db!==$this->db || $policy!==$this->policy || $producer!==$this->receiverProducer) RuntimePolicy::fail('G39_JOURNAL_COMPOSITION_CONFLICT');\n        $this->assertCurrentLease();\n        if ($this->scalar('SELECT @@session.in_transaction')!=='1' || $this->scalar('SELECT @@session.tx_read_only')!=='1'\n            || $this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ') RuntimePolicy::fail('G39_READ_ONLY_SNAPSHOT_REQUIRED');\n        $s=$this->state(); $row=$this->raw(); $anchor=$this->custody->current();\n        if ($row===null || $anchor!==['revision'=>(int)$row['revision'],'hash'=>$row['body_hash']]) RuntimePolicy::fail('G5_CURRENT_ANCHOR_MISMATCH');\n        return ['scope'=>$policy->scope(),'anchor'=>$anchor,'cipher_sha256'=>$row['body_hash'],\n            'incomplete'=>$s['incomplete'],'admission_floor'=>$s['admission_floor']];\n    }\n    /** A failed rollback must retain custody; it is never permission to release a live transaction. */\n    public function quarantineLocalHistoryRead(\\BSRE\\ClosedRetention\\LeaseBoundWpdb $db): void\n    {\n        if ($db!==$this->db) RuntimePolicy::fail('G39_JOURNAL_COMPOSITION_CONFLICT');\n        $this->localHistoryUncertain=true;\n    }\n    public function historyIncomplete(): bool"
+          }
+        ]
+      },
+      "PreferenceAtomicStore.php": {
+        "preimage_sha256": "a22097e3d4c2547b02c7bfd76550e373ab29d0d329f7289e341f582c2253e4da",
+        "output_sha256": "983d160de15911e5532062983ac7a701a302e8488e8401560a24fdf77d9af650",
+        "reverse_verified": true,
+        "edits": [
+          {
+            "label": "PRIVATE_READ_MODE",
+            "offset": 362,
+            "before": "    private bool $leased=false;private bool $transaction=false;private bool $uncertain=false;",
+            "after": "    private bool $leased=false;private bool $transaction=false;private bool $uncertain=false;\n    private bool $historyBorrowed=false;"
+          },
+          {
+            "label": "NO_SQL_MUTATION_WHILE_BORROWED",
+            "offset": 1606,
+            "before": "    private function query(string $sql): int {\n        $this->guard(true);",
+            "after": "    private function query(string $sql): int {\n        if($this->historyBorrowed)Guard::fail('G39_READ_ONLY_BORROW_NO_MUTATION');\n        $this->guard(true);"
+          },
+          {
+            "label": "LEASE_READ_ONLY_BORROW",
+            "offset": 5602,
+            "before": "        if(!$this->leased||!$this->db->custodyIsActive()",
+            "after": "        if($this->historyBorrowed&&($this->scalar('SELECT @@session.in_transaction')!=='1'||$this->scalar('SELECT @@session.tx_read_only')!=='1'||$this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ'))Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');\n        if((!$this->leased&&!$this->historyBorrowed)||!$this->db->custodyIsActive()"
+          },
+          {
+            "label": "PURPOSE_SPECIFIC_BORROW",
+            "offset": 18555,
+            "before": "    public function discover(string $cursor): array {",
+            "after": "    /** Bound the whole physical control-id domain under the parent's read-only snapshot. */\n    public function observeBorrowedControlInventory(): array {\n        $this->guard();\n        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$this->db->custodyIsActive())Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');\n        $this->historyBorrowed=true;$this->transaction=true;\n        try{\n            $this->lease();$this->schema();\n            $rows=$this->rows(\"SELECT id FROM {$this->table} ORDER BY BINARY id LIMIT 257\",257);\n            $count=Guard::uint($this->scalar(\"SELECT COUNT(*) FROM {$this->table}\"));\n            if($count>256||count($rows)!==$count)Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');\n            $ids=[];$seen=[];\n            foreach($rows as $row){\n                if(array_keys($row)!==['id']||!is_string($row['id'])||preg_match('/^[a-f0-9]{2}$/D',$row['id'])!==1||isset($seen[$row['id']]))Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');\n                $seen[$row['id']]=true;$ids[]=$row['id'];\n            }\n            $sorted=$ids;sort($sorted,SORT_STRING);if($ids!==$sorted)Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');\n            $this->lease();return$ids;\n        }finally{$this->historyBorrowed=false;$this->transaction=false;}\n    }\n    /** Read-only borrow only: never GET_LOCK, RELEASE_LOCK, begin/endCustody or a callback. */\n    public function observeBorrowedHistory(): array {\n        $this->guard();\n        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$this->db->custodyIsActive())Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');\n        $id=$this->db->custodyConnectionId();\n        if($id===null||$this->scalar('SELECT CONNECTION_ID()')!==$id||\n            $this->scalar($this->db->prepare('SELECT IS_USED_LOCK(%s)',$this->lock))!==$id||\n            $this->scalar('SELECT @@session.in_transaction')!=='1'||$this->scalar('SELECT @@session.tx_read_only')!=='1'||\n            $this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ')Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');\n        $this->historyBorrowed=true;$this->transaction=true;\n        try {\n            $this->schema();$row=$this->raw(false);$proof=null;\n            if($row===null){\n                $claims=$this->proofs->request('preference-anchor','CURRENT',[],$proof);Guard::keys($claims,['anchor']);\n                if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);\n                if($claims['anchor']!==Custody::zero())Guard::fail('G39_PREFERENCE_ABSENT_ANCHOR_CONFLICT');\n                $anchor=$claims['anchor'];$observation='ZERO_ANCHOR_AND_PHYSICAL_ABSENCE';$body=null;$floor=0;\n            }else{\n                // Preserve the existing schema/READY/audit/crypto/algebra/current-anchor checks.\n                $current=$this->current(false);\n                $claims=$this->proofs->request('preference-anchor','CURRENT',[],$proof);Guard::keys($claims,['anchor']);\n                if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);\n                if($claims['anchor']!==$current['anchor']||$row['after']!==$current['anchor'])Guard::fail('PREFERENCE_INDEPENDENT_ANCHOR_MISMATCH');\n                $anchor=$current['anchor'];$observation='ANCHORED_LEDGER';$body=$row['body_hash'];$floor=$current['ledger']['floor']['generation'];\n            }\n            $this->lease();\n            return ['partition'=>$this->policy->partition,'scope'=>$this->policy->scope(),'observation'=>$observation,\n                'anchor'=>$anchor,'body_sha256'=>$body,'floor_generation'=>$floor,'proofs'=>[$proof]];\n        }finally{$this->historyBorrowed=false;$this->transaction=false;}\n    }\n    /** A final current-anchor challenge detects changes observed during the bounded aggregate read. */\n    public function recheckBorrowedHistory(array $expected): array {\n        $this->guard();\n        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$this->db->custodyIsActive())Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');\n        $this->historyBorrowed=true;$this->transaction=true;\n        try{\n            $this->lease();$proof=null;$claims=$this->proofs->request('preference-anchor','CURRENT',[],$proof);Guard::keys($claims,['anchor']);\n            if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);\n            if($claims['anchor']!==$expected)Guard::fail('G39_PREFERENCE_ANCHOR_CHANGED');$this->lease();return $proof;\n        }finally{$this->historyBorrowed=false;$this->transaction=false;}\n    }\n    public function discover(string $cursor): array {"
+          }
+        ]
+      },
+      "VerifiedAdmission.php": {
+        "kind": "EXACT_METHOD_EXTRACTION",
+        "engine_slice": {
+          "offset": 24323,
+          "bytes": 2465,
+          "sha256": "a0ddb4efc3165ece42078864bd70938a694c92d7708ea8ba24cc8dbb85796687"
+        },
+        "primitives_slice": {
+          "offset": 36707,
+          "bytes": 677,
+          "sha256": "4f54bdfa375568bc41d0d9091e6d320e8b0cccc19477a5c1b2426391e7cf25b9"
+        },
+        "method_derivation": {
+          "preimage_sha256": "a0ddb4efc3165ece42078864bd70938a694c92d7708ea8ba24cc8dbb85796687",
+          "output_sha256": "5d0ec181473ec8b71400b9c393a4b1cc91ef4086bfb3e43c5d2627d4a0e9265b",
+          "reverse_verified": true,
+          "edits": [
+            {
+              "label": "READ_METHOD",
+              "offset": 4,
+              "before": "private function verifiedAdmission",
+              "after": "public function read"
+            },
+            {
+              "label": "CONFIGURATION_DIGEST_METHOD",
+              "offset": 2077,
+              "before": "private static function admissionHash",
+              "after": "public static function configurationHash"
+            }
+          ]
+        },
+        "output_sha256": "6d030bb3feda5b0bae5171c64389108ab1292f66afaa57fe433442ef820900e3"
+      },
+      "local-history-native.php": {
+        "preimage_sha256": "cad4718a78f229ebecb376575cf78166c1cfb8e2ab0c76109fcee56ad3ec97c9",
+        "output_sha256": "68d0ad24c3658f152787bfd0b9e4c62a0266f5751534372f8c6bfc87578d67a1",
+        "reverse_verified": true,
+        "edits": [
+          {
+            "label": "OWN_LOCAL_OBSERVER_TAIL",
+            "offset": 14138,
+            "before": " $journal=new A\\ActualReceiverJournal($wpdb,$policy,$custody,$authority,$evidence,$proof,$producer);\n receiver_check('new_journal_rejects_unapproved_initialization',receiver_denied(fn()=>$journal->initialize(),'G5_EXACT_APPROVAL_REQUIRED'));\n $review->allow('INITIALIZE_JOURNAL',C\\Workflow::digest(['scope'=>$policy->scope(),'operation'=>'INITIALIZE_JOURNAL','schema'=>1]));$journal->initialize();\n $review->allow('COLLECT',C\\Workflow::digest($before));$journal->locked($before['closure_id'],fn()=>$journal->insertClosure($before));\n receiver_check('actual_journal_collects_exact_synthetic_closure',$journal->locked($before['closure_id'],fn()=>$journal->closure($before['closure_id']))===$before);\n $created=time();$plan=['schema_version'=>1,'contract'=>C\\RetirementIntent::CONTRACT,'closure_id'=>$before['closure_id'],'actor'=>$policy->actor(),'before'=>$before,'after'=>$after,'before_hash'=>C\\Workflow::digest($before),'after_hash'=>C\\Workflow::digest($after),'scope'=>$scope,'admission_hash'=>$rp->admission,'inventory_hash'=>C\\Workflow::digest($inspection),'created_at'=>$created,'expires_at'=>$created+900];$plan['digest']=C\\Workflow::digest($plan);\n $record=['schema_version'=>1,'contract'=>C\\RetirementIntent::CONTRACT,'revision'=>0,'plan'=>$plan,'approved_at'=>$plan['created_at'],'recovery_until'=>$plan['created_at']+2592000,'phase'=>'INTENT_RECORDED','proof_hash'=>null,'hold_codes'=>[]];\n $workflow=new A\\ActualReceiverWorkflow($journal,$port,$wpdb,$producer);$calls=$transport->calls;\n receiver_check('unapproved_retirement_never_calls_source',receiver_denied(fn()=>$workflow->retire($record,time()))&&$transport->calls===$calls);\n $review->allow('RETIRE_NO_COPY',$plan['digest']);$review->rejectIntent=true;\n receiver_check('durable_intent_registration_failure_never_calls_source',receiver_denied(fn()=>$workflow->retire($record,time()))&&$transport->calls===$calls);\n $record=$journal->locked($before['closure_id'],fn()=>$journal->journal($plan['digest']));$review->rejectIntent=false;\n // Real elapsed local seconds, not a frozen-Date fixture: no deadline is extended.\n $transport->delaySeconds=2;$review->delayIntentSeconds=2;$began=time();\n $done=$workflow->recover($record,time());$elapsed=time()-$began;$transport->delaySeconds=0;$review->delayIntentSeconds=0;\n receiver_check('healthy_multi_rpc_workflow_over_five_seconds_uses_fresh_clocks',$elapsed>=6&&$done['approved_at']===$record['approved_at']&&$done['plan']['expires_at']===$record['plan']['expires_at']&&$done['recovery_until']===$record['recovery_until']);\n receiver_check('consumed_actual_workflow_commits_retirement',$done['phase']==='RETIREMENT_RECORDED'&&$journal->locked($before['closure_id'],fn()=>$journal->closure($before['closure_id']))===$after);\n receiver_check('independent_service_verified_anchored_durable_intent',$review->registered===1);\n $sql=$wpdb->get_row('SELECT revision,body_hash,body FROM g5_receiver_synthetic_bsre_g5_journal WHERE id=1',ARRAY_A);$state=$custody->open($sql['body'],(int)$sql['revision']);\n receiver_check('old_six_key_document_schema_preserved',array_keys($state)===['schema_version','closures','jobs','incomplete','expired_unresolved','admission_floor']);\n receiver_check('current_anchor_binds_exact_encrypted_journal',$custody->current()===['revision'=>(int)$sql['revision'],'hash'=>hash('sha256',$sql['body'])]&&$sql['body_hash']===hash('sha256',$sql['body']));\n $readback=$port->readback($scope,time());receiver_check('actual_readback_same_stable_fence',$proof->readback($readback,$scope,time(),false,null)===$done['proof_hash']);\n $stats=receiver_bridge(['op'=>'stats']);$again=$workflow->recover($done,time());$stats2=receiver_bridge(['op'=>'stats']);\n receiver_check('recovery_keeps_exact_closure_revision',$again===$done&&$journal->locked($before['closure_id'],fn()=>$journal->closure($before['closure_id']))['revision']===2);\n receiver_check('recovery_does_not_advance_sender_epoch',$stats2['epoch_revision']===$stats['epoch_revision']);\n receiver_check('retired_intake26_row_exact_and_unsent',$stats2['rows']===1&&$stats2['columns']===26&&$stats2['status']==='RETIRED_NO_COPY'&&$stats2['attempts']===0&&$stats2['sent_at']===''&&$stats2['send_started_at']==='');\n receiver_check('retirement_never_sends_or_deletes_intake',$stats2['mail']===0&&$stats2['intake_deletes']===0);\n receiver_check('early_cleanup_remains_held',receiver_denied(fn()=>$port->prepareCleanup($scope,time())));\n $calls=$transport->calls;wp_set_current_user(0);receiver_check('owner_revocation_holds_before_source',receiver_denied(fn()=>$workflow->recover($done,time()))&&$transport->calls===$calls);wp_set_current_user($owner->ID);\n $prefix=$wpdb->prefix;$wpdb->prefix='g5_receiver_foreign_synthetic_';receiver_check('changed_prefix_held_by_canonical_producer',receiver_denied(fn()=>$workflow->recover($done,time())));$wpdb->prefix=$prefix;\n $wpdb->save_queries=true;receiver_check('query_logging_held_by_canonical_producer',receiver_denied(fn()=>$workflow->recover($done,time())));$wpdb->save_queries=false;\n $producer->assertCurrent($wpdb);receiver_check('lease_clean_and_original_global_preserved',!$wpdb->custodyIsActive()&&$GLOBALS['wpdb']===$wpdb&&G\\repository()->database()===$wpdb);\n receiver_check('stable_journal_namespace_excludes_actor_and_code',$policy->scope()===(new A\\RuntimePolicy(DB_NAME,$prefix,'https://blackswanrealestate.ae',(int)$owner->ID+1))->scope());\n receiver_check('no_network_or_wordpress_mail',$networkCalls===0&&$mailCalls===0);\n echo wp_json_encode(['phase'=>'g5_receiver_runtime','checks'=>$checks,'runtime_isolation'=>$isolation,'synthetic_services'=>true,'provider_accepted'=>false,'production_authorized'=>false]).\"\\n\";\n}finally{fclose($pipes[0]);fclose($pipes[1]);if(proc_close($bridge)!==0)throw new RuntimeException('G5_RECEIVER_BRIDGE_EXIT_FAILED');}\n",
+            "after": " require __DIR__.'/native-history.php';\n$g39ForeignAfter=\\BSRE\\G38PurgeLab\\snapshot();\nif(!isset($g39ForeignAfter['g39_history_synthetic_bsre_consent_captures']))throw new RuntimeException('G39_OWN_CAPTURE_TABLE_MISSING');\nunset($g39ForeignAfter['g39_history_synthetic_bsre_consent_captures']);\nreceiver_check('g39_all_foreign_capture_tables_preserved',$g39ForeignAfter===$g39ForeignBefore);\n echo wp_json_encode(['phase'=>'g39_local_history','checks'=>$checks,'runtime_isolation'=>$isolation,'local_checkpoint_digest'=>$historyCheckpoint['digest'],'synthetic_services'=>true,'provider_accepted'=>false,'production_authorized'=>false]).\"\\n\";\n}finally{fclose($pipes[0]);fclose($pipes[1]);if(proc_close($bridge)!==0)throw new RuntimeException('G39_RECEIVER_BRIDGE_EXIT_FAILED');}\n"
+          },
+          {
+            "label": "OWN_RUNTIME_ROOT",
+            "offset": 756,
+            "before": "/opt/lab/g5-receiver-runtime",
+            "after": "/opt/lab/g39-history-local"
+          },
+          {
+            "label": "OWN_RUNTIME_ROOT",
+            "offset": 2459,
+            "before": "/opt/lab/g5-receiver-runtime",
+            "after": "/opt/lab/g39-history-local"
+          },
+          {
+            "label": "OWN_RUNTIME_ROOT",
+            "offset": 2672,
+            "before": "/opt/lab/g5-receiver-runtime",
+            "after": "/opt/lab/g39-history-local"
+          },
+          {
+            "label": "OWN_RUNTIME_ROOT",
+            "offset": 4712,
+            "before": "/opt/lab/g5-receiver-runtime",
+            "after": "/opt/lab/g39-history-local"
+          },
+          {
+            "label": "OWN_FIXED_NAMESPACE",
+            "offset": 3707,
+            "before": "g5_receiver_synthetic_",
+            "after": "g39_history_synthetic_"
+          },
+          {
+            "label": "OWN_FIXED_NAMESPACE",
+            "offset": 11613,
+            "before": "g5_receiver_synthetic_",
+            "after": "g39_history_synthetic_"
+          },
+          {
+            "label": "OWN_PROGRESS",
+            "offset": 3924,
+            "before": "/tmp/g5-receiver-runtime-progress.json",
+            "after": "/tmp/g39-local-history-progress.json"
+          },
+          {
+            "label": "EXPLICIT_PREFERENCE_BINDING",
+            "offset": 1777,
+            "before": "define('BSRE_ACTUAL_RECEIVER_RETIREMENT_ENABLED',true);",
+            "after": "define('BSRE_ACTUAL_RECEIVER_RETIREMENT_ENABLED',true);\ndefine('BSRE_G5_PREFERENCE_RUNTIME_ENABLED',true);\ndefine('BSRE_G5_PREFERENCE_SOURCE_SHA256',hash_file('sha256','/opt/lab/g39-history-local/preference/preference-source.json'));"
+          },
+          {
+            "label": "FRESH_FIXED_NAMESPACE",
+            "offset": 3870,
+            "before": "$wpdb->prefix='g39_history_synthetic_';E\\install();",
+            "after": "$wpdb->prefix='g39_history_synthetic_';\n$wpdb->last_error='';$g39Existing=$wpdb->get_col($wpdb->prepare('SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND BINARY LEFT(TABLE_NAME,%d)=BINARY %s ORDER BY TABLE_NAME LIMIT 2',strlen($wpdb->prefix),$wpdb->prefix));\nif($wpdb->last_error!==''||$g39Existing!==[])throw new RuntimeException('G39_FRESH_NAMESPACE_REQUIRED');\nrequire_once '/opt/lab/g36/contact-abi.php';\nrequire_once __DIR__.'/foreign-capture-snapshot.php';\n$g39ForeignBefore=\\BSRE\\G38PurgeLab\\snapshot();\nif(!array_filter($g39ForeignBefore,fn($row)=>$row['rows']>=1100))throw new RuntimeException('G39_FOREIGN_SCALE_PREDECESSOR_REQUIRED');\nE\\install();"
+          }
+        ]
+      }
+    },
+    "files": {
+      "build-candidate.mjs": {
+        "sha256": "aac9168e26e8ef2c7823974b3d84e2368f0d868cbbd089bed03361bb535cebfe",
+        "bytes": 3829
+      },
+      "runtime/control.gs": {
+        "sha256": "fc5f868054d7ac7a02747ba0c514ef3c04df1536a271c908ab00a81b360284b6",
+        "bytes": 12557
+      },
+      "runtime/no-copy.gs": {
+        "sha256": "c1c247fb7e583082c22f19ae805b980c16ceb0bd2cbe432eaf3806e536eb1857",
+        "bytes": 25368
+      },
+      "candidate/plugin/includes/candidate/receiver/ReceiverContracts.php": {
+        "sha256": "ed3ad716bdb0a926ea516cb132ccde86565ca6bdc37f9228b54a811157d94d63",
+        "bytes": 14351
+      },
+      "candidate/plugin/includes/candidate/receiver/NoMailCopyAlgebra.php": {
+        "sha256": "06d7f35a19c8287ad268547825898291a99fd5fe317aaf19067dceba083d28ef",
+        "bytes": 8333
+      },
+      "candidate/plugin/includes/candidate/receiver/ActualRetirementPort.php": {
+        "sha256": "5c14ce6e6fa148e0b43e5703f85b801c9aa560e09659dd45a375e4dd9f5d04ef",
+        "bytes": 3741
+      },
+      "candidate/plugin/includes/candidate/receiver/ReceiverOperationalEvidence.php": {
+        "sha256": "399e5569b580d5706255345dc0e5cd46fb851b5c98d8e5f1247dc5aa841bb157",
+        "bytes": 6226
+      },
+      "candidate/plugin/includes/candidate/receiver/ActualReceiverWorkflow.php": {
+        "sha256": "7d8231bd5cb74a31eee5903187786e81720ea6866d584145e5c80c80688dabbf",
+        "bytes": 5604
+      },
+      "tests/control-fixture.mjs": {
+        "sha256": "dc80ae75838dd6755049d0571b702b18013f5a355779854dc7e3480d7d79f0b5",
+        "bytes": 13952
+      },
+      "tests/native-bridge.mjs": {
+        "sha256": "c9dbcea2abf9058478bca62d3360577bc0546b613597c336cc61c29ca5911a6d",
+        "bytes": 3258
+      },
+      "candidate/plugin/includes/candidate/closed-enquiry-retention/ActualReceiverJournal.php": {
+        "sha256": "bc40b01ac47daf36be56ae05bffb4c9cf39b121086e3f4e484be357ada6e0d6e",
+        "bytes": 27226
+      },
+      "candidate/plugin/includes/candidate/closed-enquiry-retention/ActualPurgeJournal.php": {
+        "sha256": "aacfc5ab83148155a9a158e18b1abea9b69d2a84f7ad67a42aebfc16a6f45b1e",
+        "bytes": 28096
+      },
+      "preference/ActualPreferenceRetention.php": {
+        "sha256": "740ed6eccef5e8cb4edccb2f7c948c4b4a6ca0bfbf8f9acca7d96bb02a4a1094",
+        "bytes": 14720
+      },
+      "preference/PreferenceAlgebra.php": {
+        "sha256": "d06553be8d606dbb41cc552d2066cf9d9358e46d7f11e913ba6e0edbc8ff6d91",
+        "bytes": 12837
+      },
+      "preference/PreferenceAtomicStore.php": {
+        "sha256": "983d160de15911e5532062983ac7a701a302e8488e8401560a24fdf77d9af650",
+        "bytes": 41601
+      },
+      "preference/PreferenceContracts.php": {
+        "sha256": "1fa788e74dea911900181b6e15c66e2b177235dc82cb7da9d6524cab71d93008",
+        "bytes": 19296
+      },
+      "preference/PreferenceCustody.php": {
+        "sha256": "64c9b832569a5fe43ab28f4b482cba4fe6d567f7bbcf3977fb0b2eba942c3ff4",
+        "bytes": 10786
+      },
+      "preference/preference-source.json": {
+        "sha256": "49fe9edc2b5e84518b0a8b640dabf8aae22a941c2701ac877bc4c26e85dceac8",
+        "bytes": 521
+      },
+      "history/VerifiedAdmission.php": {
+        "sha256": "6d030bb3feda5b0bae5171c64389108ab1292f66afaa57fe433442ef820900e3",
+        "bytes": 3601
+      },
+      "history/LocalHistoryObserver.php": {
+        "sha256": "865abe6d7831089c9efaed502de801f172ef12caa280b66afe174b3987bea217",
+        "bytes": 11300
+      },
+      "tests/foreign-capture-snapshot.php": {
+        "sha256": "e499aecf0b50351a8f295e98a9111a1c39080abc615690643d56b20ddb0f2e95",
+        "bytes": 6632
+      },
+      "tests/native-history.php": {
+        "sha256": "083aed89973c924d9d04e193b840459d92f43eb9ed0f5617e3e470f3df2727ec",
+        "bytes": 21943
+      },
+      "tests/synthetic-ledger.json": {
+        "sha256": "2726e98390e0a8eae51f286856ca7dac880aae916fb66e402622e35aeb3aa54b",
+        "bytes": 82
+      },
+      "tests/local-history-native.php": {
+        "sha256": "68d0ad24c3658f152787bfd0b9e4c62a0266f5751534372f8c6bfc87578d67a1",
+        "bytes": 15725
+      }
+    }
+  },
+  "files": {
+    "build-candidate.mjs": {
+      "bytes": 3829,
+      "sha256": "aac9168e26e8ef2c7823974b3d84e2368f0d868cbbd089bed03361bb535cebfe"
+    },
+    "runtime/control.gs": {
+      "bytes": 12557,
+      "sha256": "fc5f868054d7ac7a02747ba0c514ef3c04df1536a271c908ab00a81b360284b6"
+    },
+    "runtime/no-copy.gs": {
+      "bytes": 25368,
+      "sha256": "c1c247fb7e583082c22f19ae805b980c16ceb0bd2cbe432eaf3806e536eb1857"
+    },
+    "candidate/plugin/includes/candidate/receiver/ReceiverContracts.php": {
+      "bytes": 14351,
+      "sha256": "ed3ad716bdb0a926ea516cb132ccde86565ca6bdc37f9228b54a811157d94d63"
+    },
+    "candidate/plugin/includes/candidate/receiver/NoMailCopyAlgebra.php": {
+      "bytes": 8333,
+      "sha256": "06d7f35a19c8287ad268547825898291a99fd5fe317aaf19067dceba083d28ef"
+    },
+    "candidate/plugin/includes/candidate/receiver/ActualRetirementPort.php": {
+      "bytes": 3741,
+      "sha256": "5c14ce6e6fa148e0b43e5703f85b801c9aa560e09659dd45a375e4dd9f5d04ef"
+    },
+    "candidate/plugin/includes/candidate/receiver/ReceiverOperationalEvidence.php": {
+      "bytes": 6226,
+      "sha256": "399e5569b580d5706255345dc0e5cd46fb851b5c98d8e5f1247dc5aa841bb157"
+    },
+    "candidate/plugin/includes/candidate/receiver/ActualReceiverWorkflow.php": {
+      "bytes": 5604,
+      "sha256": "7d8231bd5cb74a31eee5903187786e81720ea6866d584145e5c80c80688dabbf"
+    },
+    "tests/control-fixture.mjs": {
+      "bytes": 13952,
+      "sha256": "dc80ae75838dd6755049d0571b702b18013f5a355779854dc7e3480d7d79f0b5"
+    },
+    "tests/native-bridge.mjs": {
+      "bytes": 3258,
+      "sha256": "c9dbcea2abf9058478bca62d3360577bc0546b613597c336cc61c29ca5911a6d"
+    },
+    "candidate/plugin/includes/candidate/closed-enquiry-retention/ActualReceiverJournal.php": {
+      "bytes": 27226,
+      "sha256": "bc40b01ac47daf36be56ae05bffb4c9cf39b121086e3f4e484be357ada6e0d6e"
+    },
+    "candidate/plugin/includes/candidate/closed-enquiry-retention/ActualPurgeJournal.php": {
+      "bytes": 28096,
+      "sha256": "aacfc5ab83148155a9a158e18b1abea9b69d2a84f7ad67a42aebfc16a6f45b1e"
+    },
+    "preference/ActualPreferenceRetention.php": {
+      "bytes": 14720,
+      "sha256": "740ed6eccef5e8cb4edccb2f7c948c4b4a6ca0bfbf8f9acca7d96bb02a4a1094"
+    },
+    "preference/PreferenceAlgebra.php": {
+      "bytes": 12837,
+      "sha256": "d06553be8d606dbb41cc552d2066cf9d9358e46d7f11e913ba6e0edbc8ff6d91"
+    },
+    "preference/PreferenceAtomicStore.php": {
+      "bytes": 41601,
+      "sha256": "983d160de15911e5532062983ac7a701a302e8488e8401560a24fdf77d9af650"
+    },
+    "preference/PreferenceContracts.php": {
+      "bytes": 19296,
+      "sha256": "1fa788e74dea911900181b6e15c66e2b177235dc82cb7da9d6524cab71d93008"
+    },
+    "preference/PreferenceCustody.php": {
+      "bytes": 10786,
+      "sha256": "64c9b832569a5fe43ab28f4b482cba4fe6d567f7bbcf3977fb0b2eba942c3ff4"
+    },
+    "preference/preference-source.json": {
+      "bytes": 521,
+      "sha256": "49fe9edc2b5e84518b0a8b640dabf8aae22a941c2701ac877bc4c26e85dceac8"
+    },
+    "history/VerifiedAdmission.php": {
+      "bytes": 3601,
+      "sha256": "6d030bb3feda5b0bae5171c64389108ab1292f66afaa57fe433442ef820900e3"
+    },
+    "history/LocalHistoryObserver.php": {
+      "bytes": 11300,
+      "sha256": "865abe6d7831089c9efaed502de801f172ef12caa280b66afe174b3987bea217"
+    },
+    "tests/foreign-capture-snapshot.php": {
+      "bytes": 6632,
+      "sha256": "e499aecf0b50351a8f295e98a9111a1c39080abc615690643d56b20ddb0f2e95"
+    },
+    "tests/native-history.php": {
+      "bytes": 21943,
+      "sha256": "083aed89973c924d9d04e193b840459d92f43eb9ed0f5617e3e470f3df2727ec"
+    },
+    "tests/synthetic-ledger.json": {
+      "bytes": 82,
+      "sha256": "2726e98390e0a8eae51f286856ca7dac880aae916fb66e402622e35aeb3aa54b"
+    },
+    "tests/local-history-native.php": {
+      "bytes": 15725,
+      "sha256": "68d0ad24c3658f152787bfd0b9e4c62a0266f5751534372f8c6bfc87578d67a1"
+    },
+    "G39_BUILD.json": {
+      "bytes": 28632,
+      "sha256": "cd597fabf225afd0a2977624a2b109b4d95c36c67b4e217fcc8df5932e8e847f"
+    }
+  }
+}

@@ -140,3 +140,6 @@ php -d sendmail_path=/bin/false /opt/lab/g38/g2-retirement-races.php stage_rollb
 # Retained G37 large_unrelated (1100 foreign captures) is a required predecessor.
 php -d sendmail_path=/bin/false /opt/lab/g5-actual-purge-runtime/tests/purge-held-native.php
 php -d sendmail_path=/bin/false /opt/lab/g5-actual-purge-runtime/tests/purge-positive-native.php
+
+# Local-only observation after every retained predecessor; no provider/export authority.
+php -d sendmail_path=/bin/false /opt/lab/g39-history-local/tests/local-history-native.php

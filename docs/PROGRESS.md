@@ -1,5 +1,15 @@
 # Implementation progress
 
+## Coordinated 100-goal execution - 17 November 2026
+
+Independent work advances under one project and one Source/Git writer. The [offline goal ledger](../tools/goal-ledger/README.md) preserves exactly100 canonical IDs/dependencies and separates native, human, authorization, deployment and genuine-event evidence. Its16focused tests pass; G001 is running, with all completion claims held to their full gates. A small independent CI job validates the coordinator without credentials or provider calls.
+
+The [G39 local-history observer](../tools/website-tracking/g5-local-history-runtime/README.md) is wired into both approved disposable database profiles after every retained predecessor. Combined33observer+19materializer tests pass locally. The reviewed fixed materializer checks all26source inputs, creates25new runtime files and preserves all433previous COPY destinations; the114instruction layer budget is retained. Docker/entry/workflow have exact byte inverses to the accepted C6 baseline. The35native checks per profile remain pending actual execution; no whole-business history or export authority follows from this module.
+
+An independent keyword review found Python equality accepting boolean/integer/float substitutions in the default held workorder. Canonical JSON hashing now rejects those six mutations while retaining authentic-packet output and all false authority flags. This adds zero keyword admissions or business evidence.
+
+The previously published documentation revision df0c44bedb22756862cbb8f20565f59f43b483ed passed all three checks. Accepted runtime C6 remains the bounded native baseline until the new exact revision is accepted. Marketing identity, rehearsal/business evidence, full keyword libraries, independent human review and separate release approvals remain unresolved. Production unchanged; Ads paused.
+
 ## Owner prioritization:100 remaining goals - 17 November 2026
 
 The [100-goal map](EXECUTION_BACKLOG_100.md) separates completed construction, prepared code and unaccepted real-world obligations. It preserves fullMaster scope and the full-library prelaunch condition; live Ads configuration, website, tracking, activation and spending authorities remain separate. The first-genuine-import timing ambiguity is documented rather than turned into a synthetic conversion requirement.

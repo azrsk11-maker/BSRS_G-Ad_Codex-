@@ -113,7 +113,7 @@ def build_packet(root=ROOT):
 def verify_packet(content, root=ROOT):
     expected = build_packet(root)
     actual = keyword_audit.parse_json_bytes(content)
-    if actual != expected:
+    if canonical_sha256(actual) != canonical_sha256(expected):
         raise ValueError("Intake packet differs from freshly reconstructed source-bound held workorder")
     return {"status": "PASS_INTAKE_CONSISTENCY_ONLY", **expected["counts"],
             "business_evidence_accepted": False, "master_admission_allowed": False,

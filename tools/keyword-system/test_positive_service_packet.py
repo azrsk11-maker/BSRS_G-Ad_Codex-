@@ -51,6 +51,24 @@ class PositiveServicePacketTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "differs"):
                 packet.verify_packet(encoded(value))
 
+
+    def test_default_workorder_rejects_json_boolean_integer_float_substitutions(self):
+        base = packet.build_packet()
+        mutations = [
+            lambda v: v.update(production_authorization=0),
+            lambda v: v.update(deployment_export_allowed=0),
+            lambda v: v.update(evidence_intake_only=1),
+            lambda v: v["counts"].update(reviewed_positive_contribution=False),
+            lambda v: v["source"].update(canonical_candidates=41.0),
+            lambda v: v["counts"].update(selected_canonical_seeds=2.0),
+        ]
+        for number, change in enumerate(mutations):
+            with self.subTest(number=number):
+                value = copy.deepcopy(base)
+                change(value)
+                with self.assertRaisesRegex(ValueError, "differs"):
+                    packet.verify_packet(encoded(value))
+
     def test_lost_or_duplicated_provenance_is_rejected(self):
         base = packet.build_packet()
         for occurrences in ([], [base["rows"][0]["historical_occurrences"][0]] * 2):

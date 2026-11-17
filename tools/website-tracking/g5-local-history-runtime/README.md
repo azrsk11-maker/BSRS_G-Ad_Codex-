@@ -1,0 +1,17 @@
+# Local history observation: isolated engineering only
+
+This separate, default-OFF module derives a disposable local observer from 26 exact source inputs. It does not replace the accepted receiver, preference or purge runtimes, enroll a service/key, establish complete business history, qualify a person or authorize an export.
+
+`build-private.mjs` is a pure byte builder despite its historical filename. `SOURCE_PINS.json` and `MATERIALIZER_INPUT_MAP.json` retain every build and review-context input. `NATIVE_EXPECTATIONS.json` closes the 25-file packet and 35 native checks. The fixed lab materializer creates only fresh `/opt/lab/g39-inputs` and `/opt/lab/g39-history-local` directories; callers cannot choose paths. Existing source bytes are checked before and after the build.
+
+The observer borrows one canonical journal connection/lease, reads the actual journal and all 256 preference partitions, verifies signed CURRENT responses and distinguishes authenticated zero plus physical absence from retained history. It rejects unknown partitions, incomplete inventories, changed sources, admission changes and expired evidence. Both rounds retain their original freshness/expiry restrictions. A local observation is not an independently signed aggregate or an external-provider lease.
+
+The isolated workflow appends this entry after every accepted predecessor in both database profiles, preserves the complete foreign capture inventory including the 1,100-row fixture and keeps networking disabled before WordPress starts. Prepared checks are not acceptance until their actual receipts pass on the exact revision. Production credentials, genuine leads and Google conversion transmission are prohibited.
+
+Focused host-safe verification:
+
+```sh
+node --test tools/website-tracking/g5-local-history-runtime/tests/preparation.test.mjs tools/staging-lab/build-local-history-runtime-lab.test.mjs
+```
+
+Native PHP and database execution belong to the approved disposable Actions lab. No production deployment, provider acceptance, import eligibility or advertising approval follows from these tests.

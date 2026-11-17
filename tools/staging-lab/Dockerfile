@@ -139,9 +139,11 @@ COPY tools/website-tracking/g5-actual-purge-runtime/build-native-addon.mjs tools
 COPY tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeCaptureResource.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeEngine.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeJournal.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeResources.php tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeWorkflow.php tools/website-tracking/g5-actual-purge-runtime/code/PurgeBoundary.php /opt/lab/website-tracking/g5-actual-purge-runtime/code/
 COPY tools/website-tracking/g5-actual-purge-runtime/tests/native-extension.php tools/website-tracking/g5-actual-purge-runtime/tests/native-positive.php tools/website-tracking/g5-actual-purge-runtime/tests/foreign-capture-snapshot.php tools/website-tracking/g5-actual-purge-runtime/tests/approval-identity.php /opt/lab/website-tracking/g5-actual-purge-runtime/tests/
 COPY tools/qualification-history/schema/outcome-register-schema.json /opt/lab/qualification-history/schema/
-COPY tools/staging-lab/build-actual-purge-runtime-lab.mjs /opt/lab/staging-lab/
+COPY tools/staging-lab/build-actual-purge-runtime-lab.mjs tools/staging-lab/build-local-history-runtime-lab.mjs tools/qualified-export-source/source_queue.py /opt/lab/staging-lab/
+COPY tools/website-tracking/g5-local-history-runtime /opt/lab/website-tracking/g5-local-history-runtime
 # Read only the existing curated receiver/G5/Intake build inputs; create only the new fixed root.
-RUN node /opt/lab/staging-lab/build-actual-purge-runtime-lab.mjs
+RUN node /opt/lab/staging-lab/build-actual-purge-runtime-lab.mjs \
+    && node /opt/lab/staging-lab/build-local-history-runtime-lab.mjs
 
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]
