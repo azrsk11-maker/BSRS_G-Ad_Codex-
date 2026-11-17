@@ -481,8 +481,8 @@
         "bytes": 3601
       },
       "history/LocalHistoryObserver.php": {
-        "sha256": "53fa12a07107f13323d0199cf1f7948cf473e586cd507ee910d1da798f2f7a67",
-        "bytes": 17596
+        "sha256": "648b6851f5e0a012b27369b5de1dde3fe016a7171828937be3a8c0843f411be7",
+        "bytes": 17998
       },
       "tests/foreign-capture-snapshot.php": {
         "sha256": "e499aecf0b50351a8f295e98a9111a1c39080abc615690643d56b20ddb0f2e95",
@@ -580,8 +580,8 @@
       "bytes": 3601
     },
     "history/LocalHistoryObserver.php": {
-      "sha256": "53fa12a07107f13323d0199cf1f7948cf473e586cd507ee910d1da798f2f7a67",
-      "bytes": 17596
+      "sha256": "648b6851f5e0a012b27369b5de1dde3fe016a7171828937be3a8c0843f411be7",
+      "bytes": 17998
     },
     "tests/foreign-capture-snapshot.php": {
       "sha256": "e499aecf0b50351a8f295e98a9111a1c39080abc615690643d56b20ddb0f2e95",
@@ -600,7 +600,7 @@
       "bytes": 15725
     },
     "G39_BUILD.json": {
-      "sha256": "b82c29093b6cf89c82f7f8d02340c84d3a1a2d2bde4e9b64daccc9b428ea43b0",
+      "sha256": "e3b69f721aafeda0242982b35ce96b8b2b61f9f92df54c34f9cd4362593e2fde",
       "bytes": 81213
     }
   }

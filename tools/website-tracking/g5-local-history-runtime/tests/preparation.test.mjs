@@ -102,7 +102,7 @@ test('observer final gate follows transaction cleanup lease release and hashing'
  const final=code.slice(completed);assert.match(final,/foreach\(\$result\['partitions'\] as \$entry\)foreach\(\$entry\['proofs'\] as \$proof\)/);
  assert.match(final,/\$result\['digest'\]=C\\Workflow::digest\(\$result\);[\s\S]*wholeObservationDeadline[\s\S]*return\$result/);
  assert.match(code,/for\(\$round=0;\$round<2;\$round\+\+\)foreach\(\$stores/);
- assert.match(code,/ROLLBACK TO SAVEPOINT '\.\$this->savepoint/);assert.match(code,/\$this->savepoint='g39_'\.bin2hex\(random_bytes\(16\)\)/);
+ assert.match(code,/RELEASE SAVEPOINT '\.\$this->savepoint/);assert.match(code,/query\('SAVEPOINT '\.\$this->savepoint\)/);assert.doesNotMatch(code,/query\('ROLLBACK TO SAVEPOINT /);assert.match(code,/\$this->savepoint='g39_'\.bin2hex\(random_bytes\(16\)\)/);
 });
 test('native MDL probe requires actual timeout with either mysqli error reporting mode',()=>{
  const code=readFileSync(join(here,'native/native-history.php'),'utf8');

@@ -25,7 +25,10 @@ final class BorrowedHistoryContext {
     private function facts(?V\Policy $preference): void {
         LocalHistoryObserver::wholeObservationDeadline($this->startedAt,$this->snapshotAt,time(),$this->elapsedMs());
         if($preference!==null){if($preference->base!==$this->policy)V\Guard::fail('G39_JOURNAL_COMPOSITION_CONFLICT');$preference->actor();}else $this->policy->actor();
-        $this->producer->assertCurrent($this->db);$this->db->last_error='';
+        $this->producer->assertCurrent($this->db);$this->sessionFacts();
+    }
+    private function sessionFacts(): void {
+        $this->db->last_error='';
         $lock='bsre-g5-'.substr($this->policy->scope(),0,48);
         $row=$this->db->get_row($this->db->prepare('SELECT DATABASE() AS selected_database,CONNECTION_ID() AS connection_id,@@session.in_transaction AS in_transaction,@@session.tx_read_only AS tx_read_only,@@session.tx_isolation AS tx_isolation,IS_USED_LOCK(%s) AS lock_owner',$lock),ARRAY_A);
         if($this->db->last_error!==''||!is_array($row)||!$this->db->custodyIsActive()||$this->db->custodyConnectionId()!==$this->connection||
@@ -35,11 +38,18 @@ final class BorrowedHistoryContext {
     }
     public function assertCurrent(?V\Policy $preference=null): void {
         $this->facts($preference);
-        // A full COMMIT/ROLLBACK, including commit-and-restart on the same connection, erases this private marker.
+        // RELEASE proves the existing marker survived. Recreate only after success, with no callback between commands.
+        // ROLLBACK TO is intentionally absent: MariaDB can release metadata locks acquired after that marker.
         $previous=$this->db->suppress_errors(true);$ok=false;
-        try{$this->db->last_error='';$ok=$this->db->query('ROLLBACK TO SAVEPOINT '.$this->savepoint)!==false&&$this->db->last_error==='';}
+        try{
+            $this->db->last_error='';
+            if($this->db->query('RELEASE SAVEPOINT '.$this->savepoint)!==false&&$this->db->last_error===''){
+                $this->db->last_error='';$ok=$this->db->query('SAVEPOINT '.$this->savepoint)!==false&&$this->db->last_error==='';
+            }
+        }
         finally{$this->db->suppress_errors($previous);}
         if(!$ok)V\Guard::fail('G39_SNAPSHOT_REPLACED');
+        $this->sessionFacts();
         LocalHistoryObserver::wholeObservationDeadline($this->startedAt,$this->snapshotAt,time(),$this->elapsedMs());
     }
 }

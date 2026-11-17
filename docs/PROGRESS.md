@@ -1,5 +1,13 @@
 # Implementation progress
 
+## Version-specific metadata-lock correction - 17 November 2026
+
+At3096b520 all three other checks passed; native profile one failed `G39_PHYSICAL_METADATA_LOCK_NOT_RETAINED`, then the synthetic storage comparison detected a change. Profile two was skipped. Independent RCA used the exact MariaDB10.11.19/11.8.9 implementations: partial rollback may release post-savepoint metadata locks when InnoDB holds no row locks. The probe targets the actual physical table. Successful DDL is inferred from the subsequent hash mismatch; its return was not separately logged. No unchanged run was repeated.
+
+Frozen cut005 changes only the observer payload plus its generated manifest, preserving all43native names/512CURRENT calls/source pins/windows. Successful marker release is mandatory before recreation with no callback gap; failures hold and clean up. Original full facts precede the pair; fresh session identity and clocks follow. Independent review passes. The public-layout62local tests and workflow/profile preflights pass; a ten-case exact extracted-method PHP contract is prepared and will execute once before images. It proves failure ordering with fake dependencies, not actual database behavior.
+
+The next runtime is25files, manifest `e3b69f721aafeda0242982b35ce96b8b2b61f9f92df54c34f9cd4362593e2fde`. Actual both-profile native acceptance remains required; the raw audit must retain458complete documents/454predecessors and require the new plain host marker. Production unchanged, Ads held, no imported events or business approvals added.
+
 ## Reviewed cut004 ready for a changed-evidence CI trial - 17 November 2026
 
 The frozen cut004 payload is25files, manifest `b82c29093b6cf89c82f7f8d02340c84d3a1a2d2bde4e9b64daccc9b428ea43b0`. Its43Node tests plus19fixed-materializer tests pass in the public layout;17prepared PHP files parse and all26source pins remain unchanged. Independent code review closes strict captured-audit operation-ID binding and final freshness after cleanup/lease release/digest. Both original CURRENT rounds (512calls), every callback guard, all35previous native checks and final foreign preservation remain. Eight additional cases cover the new boundaries. No actual SQL/timing or native PASS follows from preparation.
