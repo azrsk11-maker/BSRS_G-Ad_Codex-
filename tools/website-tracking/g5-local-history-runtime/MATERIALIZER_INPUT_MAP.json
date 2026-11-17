@@ -1,7 +1,7 @@
 {
   "schema": "bsre-g39-materializer-input-map-v1",
-  "frozen_cut": "003",
-  "code_freeze_sha256": "a99597d64acdcb73781b2f6d377d6ed2a2a6499e3b0986234089e0584761dec4",
+  "frozen_cut": "004",
+  "code_freeze_sha256": "b4fa4f5b43394b34dfc2bf1ca1d363cb0f6dc4df6b3c45349a566295aae654cf",
   "build_required": 21,
   "review_context_still_checked": 5,
   "all_pins_required_by_current_build": true,

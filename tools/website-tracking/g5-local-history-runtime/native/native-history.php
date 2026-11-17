@@ -31,12 +31,19 @@ final class G39HistoryKeys implements HV\SnapshotKeys {
 final class G39HistoryServices implements HV\SignedTransport,HV\IndependentKeys {
  public array $anchors=[];public array $readScopes=[];public int $mutableCalls=0;
  public bool $badSignature=false;public bool $observing=false;public array $connectionIds=[];public bool $reconnectGuardsVerified=false;
+ public ?string $transactionFault=null;public bool $revokeOnKey=false;
+ public ?mysqli $probeWriter=null;public bool $probeCommitted=false;public bool $probeViewPreserved=false;public bool $probeMetadataHeld=false;public bool $probeLeaseHeld=false;
  private array $policies=[];
  public function __construct(private A\RuntimePolicy $base,private string $source,private C\LeaseBoundWpdb $db){
   g39_fixed();for($i=0;$i<256;$i++){$p=new HV\Policy($base,$source,sprintf('%02x',$i));$this->policies[$p->scope()]=$p;}
  }
  public function publicKey(string $service,string $keyId):string {
   g39_fixed();if(!in_array($service,['preference-anchor','owner-approval'],true)||$keyId!=='g39-rfc8032')throw new RuntimeException('G39_SYNTHETIC_SIGNER_ABSENT');
+  if($this->observing&&$this->revokeOnKey){$this->revokeOnKey=false;wp_set_current_user(0);}
+  if($this->observing&&$this->probeCommitted){
+   if((string)$this->db->get_var('SELECT marker FROM g39_history_synthetic_g39_snapshot_probe WHERE id=1')!=='1')throw new RuntimeException('G39_SAVEPOINT_READ_VIEW_CHANGED');
+   $this->probeViewPreserved=true;
+  }
   return hex2bin('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a');
  }
  private function approval(array $request):string {
@@ -77,6 +84,31 @@ final class G39HistoryServices implements HV\SignedTransport,HV\IndependentKeys 
      $this->reconnectGuardsVerified=true;
     }
     $this->connectionIds[$id]=true;$this->readScopes[$request['scope']]=($this->readScopes[$request['scope']]??0)+1;
+    if($this->probeWriter!==null&&!$this->probeCommitted){
+     $lock='bsre-g5-'.substr($this->base->scope(),0,48);$quoted=$this->probeWriter->real_escape_string($lock);
+     $lockRow=$this->probeWriter->query("SELECT GET_LOCK('".$quoted."',0) AS acquired")->fetch_assoc();
+     if((string)$lockRow['acquired']!=='0')throw new RuntimeException('G39_RETIREMENT_LEASE_NOT_EXCLUSIVE');$this->probeLeaseHeld=true;
+     if((string)$this->db->get_var('SELECT marker FROM g39_history_synthetic_g39_snapshot_probe WHERE id=1')!=='1'||
+        $this->probeWriter->query('UPDATE g39_history_synthetic_g39_snapshot_probe SET marker=2 WHERE id=1')!==true||$this->probeWriter->affected_rows!==1||
+        (string)$this->db->get_var('SELECT marker FROM g39_history_synthetic_g39_snapshot_probe WHERE id=1')!=='1')throw new RuntimeException('G39_READ_VIEW_PROBE_FAILED');
+     if($this->probeWriter->query('SET SESSION lock_wait_timeout=1')!==true)throw new RuntimeException('G39_MDL_PROBE_SETUP_FAILED');
+     $ddlResult=false;$ddlError=0;
+     try{$ddlResult=$this->probeWriter->query('ALTER TABLE g39_history_synthetic_bsre_pref_runtime ADD COLUMN g39_mdl_probe int NULL');$ddlError=$this->probeWriter->errno;}
+     catch(mysqli_sql_exception $error){$ddlError=$error->getCode();}
+     $this->probeMetadataHeld=$ddlResult===false&&$ddlError===1205;
+     if(!$this->probeMetadataHeld)throw new RuntimeException('G39_PHYSICAL_METADATA_LOCK_NOT_RETAINED');$this->probeCommitted=true;
+    }
+    if($this->transactionFault!==null){
+     $fault=$this->transactionFault;$this->transactionFault=null;
+     if(!in_array($fault,['commit','rollback_restart','commit_restart','exception_restart','implicit_commit'],true))throw new RuntimeException('G39_SYNTHETIC_TRANSACTION_FAULT_INVALID');
+     if($fault==='implicit_commit'){
+      if($this->db->query('START TRANSACTION WITH CONSISTENT SNAPSHOT')===false)throw new RuntimeException('G39_SYNTHETIC_RESTART_FAILED');
+     }else{
+      if($this->db->query($fault==='commit'||$fault==='commit_restart'?'COMMIT':'ROLLBACK')===false)throw new RuntimeException('G39_SYNTHETIC_RESTART_FAILED');
+      if($fault!=='commit'&&$this->db->query('START TRANSACTION WITH CONSISTENT SNAPSHOT')===false)throw new RuntimeException('G39_SYNTHETIC_RESTART_FAILED');
+     }
+     if($fault==='exception_restart')throw new RuntimeException('G39_SYNTHETIC_RESTART_CALLBACK_FAILURE');
+    }
    }
    $claims=['anchor'=>$this->anchors[$request['scope']]??HV\Custody::zero()];
   }elseif($service==='owner-approval'&&$operation==='APPROVE'){
@@ -144,6 +176,23 @@ function g39_observation_attempt(callable $call,G39HistoryServices $services):mi
  }
 }
 
+/** Fixture-only direct borrowed-validator probe; runtime does not accept an arbitrary callback. */
+function g39_test_snapshot(callable $call):mixed {
+ global $wpdb,$policy,$producer,$journal,$historyLease;g39_fixed();
+ return $journal->locked($historyLease,function()use($call,$wpdb,$policy,$producer):mixed{
+  $original=(string)$wpdb->get_var('SELECT @@session.tx_read_only');$began=time();$mono=hrtime(true);
+  if($original==='0'&&$wpdb->query('SET SESSION TRANSACTION READ ONLY')===false)throw new RuntimeException('G39_FIXTURE_READ_ONLY_SETUP_FAILED');
+  try{
+   if($wpdb->query('START TRANSACTION WITH CONSISTENT SNAPSHOT')===false)throw new RuntimeException('G39_FIXTURE_SNAPSHOT_SETUP_FAILED');
+   $context=new HL\BorrowedHistoryContext($wpdb,$policy,$producer,$began,time(),$mono);return$call($context);
+  }finally{
+   $wpdb->last_error='';$ok=$wpdb->query('ROLLBACK')!==false&&$wpdb->last_error==='';
+   if($original==='0')$ok=$wpdb->query('SET SESSION TRANSACTION READ WRITE')!==false&&$ok;
+   if(!$ok||(string)$wpdb->get_var('SELECT @@session.in_transaction')!=='0'){$GLOBALS['journal']->quarantineLocalHistoryRead($wpdb);throw new RuntimeException('G39_FIXTURE_CLEANUP_FAILED');}
+  }
+ });
+}
+
 g39_fixed();
 $journal=new A\ActualReceiverJournal($wpdb,$policy,$custody,$authority,$evidence,$proof,$producer);
 receiver_check('g39_journal_unapproved_initializer_denied',receiver_denied(fn()=>$journal->initialize(),'G5_EXACT_APPROVAL_REQUIRED'));
@@ -175,11 +224,19 @@ receiver_check('g39_exact_one_anchored_and_255_absent_partitions',
 receiver_check('g39_one_canonical_connection_for_every_signed_current',count($historyServices->connectionIds)===1&&isset($historyServices->connectionIds[(string)$historyCheckpoint['connection_id']]));
 receiver_check('g39_reconnect_entrypoints_refused_under_parent_custody',$historyServices->reconnectGuardsVerified);
 receiver_check('g39_exact_readonly_ledger_bytes_bound',$historyCheckpoint['inputs']['ledger_sha256']===$historyLedgerSha&&$historyCheckpoint['inputs']['ledger_bytes']===strlen($historyLedgerBytes)&&!is_writable($historyLedgerPath));
-receiver_check('g39_current_admission_and_local_scope_only',$historyAdmission->calls>=2&&$historyCheckpoint['schema']==='bsre-g39-local-history-observation-v1'&&$historyCheckpoint['authority']==='LOCAL_OBSERVATION_ONLY'&&$historyCheckpoint['local_vetoes']===[]&&
+receiver_check('g39_current_admission_and_local_scope_only',$historyAdmission->calls>=2&&$historyCheckpoint['schema']==='bsre-g39-local-history-observation-v2'&&$historyCheckpoint['authority']==='LOCAL_OBSERVATION_ONLY'&&$historyCheckpoint['local_vetoes']===[]&&
  $historyCheckpoint['unresolved_authority']===HL\LocalHistoryObserver::UNRESOLVED&&count($historyCheckpoint['unresolved_authority'])===3&&
  !array_key_exists('history_marker_verified',$historyCheckpoint)&&!array_key_exists('whole_history_complete',$historyCheckpoint)&&!array_key_exists('eligible_exports',$historyCheckpoint));
 receiver_check('g39_no_observation_storage_or_anchor_writes',$historyServices->mutableCalls===1);
 receiver_check('g39_no_custody_or_transaction_after_success',!$wpdb->custodyIsActive()&&(string)$wpdb->get_var('SELECT @@session.in_transaction')==='0');
+receiver_check('g39_whole_observation_includes_cleanup_with_original_30_second_bound',
+ $historyCheckpoint['observation_started_at']<=$historyCheckpoint['snapshot_started_at']&&$historyCheckpoint['snapshot_started_at']<=$historyCheckpoint['observed_at']&&
+ $historyCheckpoint['observed_at']<=$historyCheckpoint['completed_at']&&$historyCheckpoint['completed_at']<$historyCheckpoint['observation_started_at']+30&&
+ $historyCheckpoint['elapsed_ms']>=0&&$historyCheckpoint['elapsed_ms']<30000&&$historyCheckpoint['expires_at']<=$historyCheckpoint['observation_started_at']+30&&
+ preg_match('/^[a-f0-9]{64}$/D',$historyCheckpoint['snapshot_guard_sha256'])===1);
+receiver_check('g39_exact_two_original_current_rounds_for_all256_partitions',count($historyServices->readScopes)===256&&array_values(array_unique(array_values($historyServices->readScopes)))===[2]&&array_sum(array_map(static fn(array $p):int=>count($p['proofs']),$historyCheckpoint['partitions']))===512);
+receiver_check('g39_fresh_proofs_do_not_refresh_an_old_physical_snapshot',receiver_denied(fn()=>HL\LocalHistoryObserver::wholeObservationDeadline(time()-31,time()-31,time(),10),'G39_OBSERVATION_SNAPSHOT_STALE'));
+receiver_check('g39_delayed_cleanup_cannot_return_a_stale_success',receiver_denied(fn()=>HL\LocalHistoryObserver::wholeObservationDeadline(time()-31,time()-31,time(),31000),'G39_OBSERVATION_SNAPSHOT_STALE'));
 
 // Clock predicate only: this altered copy is not claimed to retain its original signature validity.
 $agedRetainedProof=$historyCheckpoint['partitions'][0]['proofs'][0];$retainedProofClock=time();
@@ -189,6 +246,13 @@ receiver_check('g39_retained_proof_31s_old_unexpired_clock_denied',receiver_deni
 $historyProofs=new HV\Proofs($historyPolicy,$historyServices,$historyServices);$historyCrypto=new HV\Custody($historyPolicy,$historyProofs,$historyKeys);
 $historyBorrowStore=new HV\AtomicStore($wpdb,$historyPolicy,$producer,$historyCrypto,$historyProofs);
 receiver_check('g39_borrow_without_parent_denied',receiver_denied(fn()=>$historyBorrowStore->observeBorrowedHistory(),'G39_BORROWED_CUSTODY_REQUIRED'));
+$historyAllPolicy=new HV\Policy($policy,$historySource,'00');$historyAllProofs=new HV\Proofs($historyAllPolicy,$historyServices,$historyServices);
+$historyAllStore=new HV\AtomicStore($wpdb,$historyAllPolicy,$producer,new HV\Custody($historyAllPolicy,$historyAllProofs,$historyKeys),$historyAllProofs);
+$wrongAuditHolds=g39_observation_attempt(fn()=>g39_test_snapshot(function(HL\BorrowedHistoryContext $context)use($historyAllStore,$historyBorrowStore):bool{
+ $physical=$historyAllStore->readAllBorrowedPhysicalHistory($context);$row=$physical['rows']['aa'];$audit=$physical['audit'][$row['operation_id']];$audit['operation_id']=hash('sha256','SYNTHETIC_WRONG_AUDIT_ID');
+ return receiver_denied(fn()=>$historyBorrowStore->authenticateBorrowedPhysicalHistory($row,$audit,$context),'PREFERENCE_AUDIT_BINDING_INVALID');
+}),$historyServices);
+receiver_check('g39_captured_audit_operation_id_remains_strictly_bound',$wrongAuditHolds);
 
 // Physical control inventory must reject malformed IDs before reading any partition anchor.
 $beforeInvalidControl=g39_storage_hash();$invalidControlDenied=false;$invalidControlReadScopes=null;
@@ -204,6 +268,27 @@ $absentPolicy=new HV\Policy($policy,$historySource,'ab');$historyServices->ancho
 receiver_check('g39_nonzero_signed_anchor_and_absent_row_denied',receiver_denied($observeHistory,'G39_PREFERENCE_ABSENT_ANCHOR_CONFLICT'));
 unset($historyServices->anchors[$absentPolicy->scope()]);
 $historyServices->badSignature=true;receiver_check('g39_forged_signed_anchor_denied',receiver_denied($observeHistory,'PREFERENCE_AUTHENTICATED_PROOF_REQUIRED'));$historyServices->badSignature=false;
+foreach(['commit','rollback_restart','commit_restart','exception_restart','implicit_commit'] as $historyFault){
+ $historyServices->transactionFault=$historyFault;
+ if(!receiver_denied($observeHistory,'G39_SNAPSHOT_REPLACED'))throw new RuntimeException('G39_TRANSACTION_REPLACEMENT_NOT_HELD');
+}
+receiver_check('g39_commit_rollback_implicit_commit_and_exception_restarts_are_held',!$wpdb->custodyIsActive()&&(string)$wpdb->get_var('SELECT @@session.in_transaction')==='0');
+$historyServices->revokeOnKey=true;$historyKeyRevocationHolds=receiver_denied($observeHistory);wp_set_current_user($owner->ID);
+receiver_check('g39_key_callback_owner_revocation_is_held',$historyKeyRevocationHolds&&!$historyServices->revokeOnKey);
+// An independent writer is not fenced by the G5 named lease; the observed read view remains an explicitly bounded snapshot.
+if($wpdb->query('CREATE TABLE g39_history_synthetic_g39_snapshot_probe (id int NOT NULL PRIMARY KEY,marker int NOT NULL) ENGINE=InnoDB')===false||
+   $wpdb->query('INSERT INTO g39_history_synthetic_g39_snapshot_probe VALUES (1,1)')!==1)throw new RuntimeException('G39_READ_VIEW_PROBE_SETUP_FAILED');
+$historyProbeWriter=new mysqli('localhost',DB_USER,DB_PASSWORD,DB_NAME,0,'/tmp/bsre.sock');
+if((string)$historyProbeWriter->thread_id===(string)$wpdb->get_var('SELECT CONNECTION_ID()')||!$historyProbeWriter->autocommit(true))throw new RuntimeException('G39_READ_VIEW_PROBE_CONNECTION_FAILED');
+$historyServices->probeWriter=$historyProbeWriter;
+try{
+ $historyProbeObservation=$observeHistory();
+ receiver_check('g39_savepoint_keeps_rr_readview_mdl_and_retirement_lease',
+  $historyServices->probeCommitted&&$historyServices->probeViewPreserved&&$historyServices->probeMetadataHeld&&$historyServices->probeLeaseHeld&&
+  (string)$wpdb->get_var('SELECT marker FROM g39_history_synthetic_g39_snapshot_probe WHERE id=1')==='2'&&
+  $historyProbeObservation['authority']==='LOCAL_OBSERVATION_ONLY'&&$historyProbeObservation['unresolved_authority']===HL\LocalHistoryObserver::UNRESOLVED);
+}finally{$historyServices->probeWriter=null;$historyServices->probeCommitted=false;$historyProbeWriter->close();}
+if($wpdb->query('DROP TABLE g39_history_synthetic_g39_snapshot_probe')===false)throw new RuntimeException('G39_READ_VIEW_PROBE_CLEANUP_FAILED');
 receiver_check('g39_changed_expected_ledger_bytes_denied',receiver_denied(fn()=>g39_observation_attempt(fn()=>$makeHistoryObserver(null,null,str_repeat('f',64))->observe($historyLease),$historyServices),'G39_LEDGER_BYTES_CHANGED'));
 $historyAdmission->mode='stale';receiver_check('g39_stale_admission_denied',receiver_denied($observeHistory,'ADMISSION_STALE'));
 $historyAdmission->mode='future';receiver_check('g39_future_admission_denied',receiver_denied($observeHistory,'ADMISSION_STALE'));$historyAdmission->mode='current';

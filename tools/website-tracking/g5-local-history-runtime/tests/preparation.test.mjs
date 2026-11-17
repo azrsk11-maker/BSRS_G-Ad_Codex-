@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';import {join} from 'node:path';
 import {createPrivateKey,sign} from 'node:crypto';
-import {here,build,deriveJournal,derivePreference,editExact} from '../build-private.mjs';
+import {here,build,deriveJournal,derivePreference,deriveContracts,editExact} from '../build-private.mjs';
 import {validateLocalReceipt,parseLocal,digest,sha,zero,unresolved} from '../validate-local.mjs';
 const source=join(here,'../../..');
 const pub=Buffer.from('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a','hex');
@@ -24,7 +24,7 @@ function fixture(){
   for(const e of proofs)signProof(e);
   return {partition,scope,observation:partition==='aa'?'ANCHORED_LEDGER':'ZERO_ANCHOR_AND_PHYSICAL_ABSENCE',anchor:a,body_sha256:partition==='aa'?a.state_hash:null,floor_generation:0,proofs};
  });
- const v=stamp({schema:'bsre-g39-local-history-observation-v1',authority:'LOCAL_OBSERVATION_ONLY',base_scope:base,actor,observed_at:now,expires_at:now+30,connection_id:'123',journal:{scope:base,anchor:{revision:1,hash:sha('journal')},cipher_sha256:sha('journal'),incomplete:false,admission_floor:null},control_inventory:['aa'],partitions,inputs:{ledger_sha256:sha(ledger),ledger_bytes:ledger.length,admission_sha256:digest(admission),admission_configuration_sha256:configHash,admission},local_vetoes:[],unresolved_authority:[...unresolved]});
+ const v=stamp({schema:'bsre-g39-local-history-observation-v2',authority:'LOCAL_OBSERVATION_ONLY',base_scope:base,actor,observation_started_at:now,snapshot_started_at:now,elapsed_ms:10,snapshot_guard_sha256:sha('private-savepoint-marker'),observed_at:now,completed_at:now,expires_at:now+30,connection_id:'123',journal:{scope:base,anchor:{revision:1,hash:sha('journal')},cipher_sha256:sha('journal'),incomplete:false,admission_floor:null},control_inventory:['aa'],partitions,inputs:{ledger_sha256:sha(ledger),ledger_bytes:ledger.length,admission_sha256:digest(admission),admission_configuration_sha256:configHash,admission},local_vetoes:[],unresolved_authority:[...unresolved]});
  return {v,context};
 }
 const initial=fixture();
@@ -39,6 +39,11 @@ mutation('cross-partition proof rejected',v=>{v.partitions[1].proofs[0]=clone(v.
 mutation('forged current signature rejected',v=>{v.partitions[0].proofs[0].signature=Buffer.alloc(64,120).toString('base64');},/SIGNATURE/);
 mutation('expired current proof rejected',v=>{v.partitions[0].proofs[0].statement.expires_at=initial.context.now;},/PROOF_FRESHNESS/);
 mutation('31-second-old current proof is rejected despite 29 seconds signed TTL',v=>{v.partitions[0].proofs[0].statement.issued_at=initial.context.now-31;v.partitions[0].proofs[0].statement.expires_at=initial.context.now+29;},/PROOF_FRESHNESS/);
+mutation('fresh proofs never relabel a31-second-old physical snapshot current',v=>{v.observation_started_at=initial.context.now-31;v.snapshot_started_at=initial.context.now-31;},/SNAPSHOT_STALE/);
+mutation('monotonic elapsed deadline rejects clock-window extension',v=>{v.elapsed_ms=30000;},/SNAPSHOT_STALE/);
+mutation('delayed cleanup cannot return a pre-cleanup timestamp as a fresh success',(v,c)=>{v.completed_at=v.observation_started_at+31;v.elapsed_ms=31000;c.now=v.completed_at;v.expires_at=c.now+10;},/SNAPSHOT_STALE/);
+mutation('snapshot cannot precede actual observation start',v=>{v.snapshot_started_at=initial.context.now-1;},/SNAPSHOT_STALE/);
+mutation('result expiry cannot exceed original whole-observation deadline',v=>{v.observation_started_at=initial.context.now-5;v.snapshot_started_at=initial.context.now-5;},/SNAPSHOT_STALE/);
 mutation('out-of-domain physical id is rejected',v=>{v.control_inventory=['aa','gg'];},/CONTROL_DOMAIN/);
 mutation('omitted initialized physical id is rejected',v=>{v.control_inventory=[];},/CONTROL_RECONCILIATION/);
 mutation('duplicate physical id is rejected',v=>{v.control_inventory=['aa','aa'];},/CONTROL_DOMAIN/);
@@ -55,10 +60,52 @@ mutation('missing local history veto rejected',v=>{v.journal.incomplete=true;},/
 test('observed incomplete journal remains a local veto',()=>{const v=clone(initial.v);v.journal.incomplete=true;v.local_vetoes=['SUBMITTED_JOURNAL_INCOMPLETE'];stamp(v);assert.deepEqual(validateLocalReceipt(v,initial.context).local_vetoes,v.local_vetoes);});
 test('observed compacted preference remains a local veto',()=>{const v=clone(initial.v),p=v.partitions[170];Object.assign(p.anchor,{sequence:1,chain_hash:sha('floor'),floor_sequence:1,floor_hash:sha('floor'),floor_generation:1,compacted_at:initial.context.now-1});p.floor_generation=1;for(const e of p.proofs){e.statement.claims.anchor=p.anchor;signProof(e);}v.local_vetoes=['PREFERENCE_COMPACTED_HISTORY:aa'];stamp(v);assert.deepEqual(validateLocalReceipt(v,initial.context).local_vetoes,v.local_vetoes);});
 test('duplicate malformed oversized and pretty JSON rejected',()=>{assert.throws(()=>parseLocal('{"a":1,"a":2}'),/CANONICAL_JSON/);assert.throws(()=>parseLocal('{bad'),SyntaxError);assert.throws(()=>parseLocal(' '.repeat(2097153)),/SIZE/);assert.throws(()=>parseLocal('{ "a": 1 }'),/CANONICAL_JSON/);});
-test('pinned packet derives all original guard bodies reversibly',()=>{const p=build(source);assert.equal(p.files.size,25);assert.equal(p.manifest.expected_checks.length,35);for(const name of ['ActualReceiverJournal.php','ActualPurgeJournal.php','PreferenceAtomicStore.php','local-history-native.php'])assert.equal(p.manifest.derivations[name].reverse_verified,true);assert.equal(p.manifest.local_scope_only,true);});
+test('pinned packet derives all original guard bodies reversibly',()=>{const p=build(source);assert.equal(p.files.size,25);assert.equal(p.manifest.expected_checks.length,43);for(const name of ['ActualReceiverJournal.php','ActualPurgeJournal.php','PreferenceAtomicStore.php','PreferenceContracts.php','local-history-native.php'])assert.equal(p.manifest.derivations[name].reverse_verified,true);assert.equal(p.manifest.local_scope_only,true);});
 test('accepted full foreign scanner is exact and covers complete keysets above1000',()=>{const p=build(source),path='tools/website-tracking/g5-actual-purge-runtime/tests/foreign-capture-snapshot.php';assert.deepEqual(p.files.get('tests/foreign-capture-snapshot.php'),readFileSync(join(source,path)));const code=p.files.get('tests/foreign-capture-snapshot.php').toString();assert.match(code,/while\(true\)/);assert.match(code,/ORDER BY BINARY request_id LIMIT 256/);assert.match(code,/\$seen!==\$expected/);const driver=p.files.get('tests/local-history-native.php').toString();assert.ok(driver.indexOf('$g39ForeignBefore=')<driver.indexOf('E\\install();'));assert.ok(driver.indexOf('$g39ForeignAfter=')>driver.indexOf("require __DIR__.'/native-history.php'"));assert.match(driver,/\$row\['rows'\]>=1100/);assert.equal(p.manifest.expected_checks.at(-1),'g39_all_foreign_capture_tables_preserved');});
-test('all cut002 native names retain their relative order',()=>{const old=JSON.parse(readFileSync(join(here,'tests/cut002-native-checks.json'),'utf8')).expected_checks,newer=build(source).manifest.expected_checks;assert.deepEqual(newer.slice(0,old.length),old);assert.equal(newer.length,old.length+1);});
+test('all cut003 native names retain their relative order',()=>{const old=JSON.parse(readFileSync(join(here,'tests/cut003-native-checks.json'),'utf8')).expected_checks,newer=build(source).manifest.expected_checks;assert.deepEqual(newer.filter(n=>old.includes(n)),old);assert.equal(newer.length,old.length+8);});
 test('drifted old journal cleanup anchor is held',()=>{const p=readFileSync(join(source,'tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/closed-enquiry-retention/ActualReceiverJournal.php'));assert.throws(()=>deriveJournal(p.toString().replace('                if ($held) {','                if ($held || true) {')),/EDIT_ANCHOR/);});
 test('drifted old preference lease anchor is held',()=>{const p=readFileSync(join(source,'tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAtomicStore.php'));assert.throws(()=>derivePreference(p.toString().replace('        if(!$this->leased||!$this->db->custodyIsActive()','        if(false||!$this->db->custodyIsActive()')),/EDIT_ANCHOR/);});
 test('duplicate derivative anchors fail closed',()=>{assert.throws(()=>editExact(Buffer.from('twice twice'),[['duplicate','twice','replacement']]),/EDIT_ANCHOR/);});
 test('borrowed read has no lock/custody owner operations or callback',()=>{const m=readFileSync(join(here,'edits/preference-history-methods.php.txt'),'utf8').replace(/\/\*\*[\s\S]*?\*\//g,'');assert.doesNotMatch(m,/GET_LOCK|RELEASE_LOCK|beginCustody|endCustody|callable/);const d=derivePreference(readFileSync(join(source,'tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAtomicStore.php'))).bytes.toString();assert.match(d,/if\(\$this->historyBorrowed\)Guard::fail\('G39_READ_ONLY_BORROW_NO_MUTATION'\)/);});
+test('typed physical SQL block is closed and cannot call a signed service or key',()=>{
+ const code=readFileSync(join(here,'edits/preference-physical-methods.php.txt'),'utf8');
+ const block=code.slice(code.indexOf('$this->historyReadBlock=true;'),code.indexOf('}finally{$this->historyReadBlock=false;}'));
+ assert.equal((block.match(/\$this->historySchema\(\)/g)||[]).length,2);
+ assert.doesNotMatch(block,/\$context->|\$this->(?:proofs|custody|producer|policy)->|callable|exchange\(|publicKey\(/);
+ assert.match(block,/ORDER BY BINARY id LIMIT 257/);assert.match(block,/\$count>256/);assert.match(block,/\$actualBytes!==\$bytes/);
+ assert.match(block,/\$auditCount!==count\(\$ids\)/);assert.match(block,/\$bytes>384000000/);
+ assert.match(code,/\$context->assertCurrent\(\$this->policy\);\$this->historyReadBlock=true/);
+ assert.match(code,/finally\{\$this->historyReadBlock=false;\}\s*\$context->assertCurrent\(\$this->policy\)/);
+});
+test('captured audit validator explicitly preserves original SQL operation binding',()=>{
+ const code=build(source).files.get('preference/PreferenceAtomicStore.php').toString();
+ assert.match(code,/if\(\(\$auditRow\['operation_id'\]\?\?null\)!==\$intent\['operation'\]\)Guard::fail\('PREFERENCE_AUDIT_BINDING_INVALID'\)/);
+ const drift=readFileSync(join(source,'tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAtomicStore.php'),'utf8').replace('WHERE operation_id=%s','WHERE operation_id<>%s');
+ assert.throws(()=>derivePreference(drift),/EDIT_ANCHOR/);
+});
+test('guarded CURRENT derivative leaves original ABI and source body intact',()=>{
+ const input=readFileSync(join(source,'tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceContracts.php'));
+ const result=deriveContracts(input),text=result.bytes.toString(),original=input.toString();
+ const a='    public function request(',b='    public function approval(';
+ assert.ok(text.includes(original.slice(original.indexOf(a),original.indexOf(b))));
+ assert.match(text,/try\{\$raw=\$this->transport->exchange\(\$operation,\$request\);\}finally\{\$context->assertCurrent\(\$this->policy\);\}/);
+ assert.match(text,/try\{\$key=\$this->keys->publicKey\(\$service,\$e\['key_id'\]\);\}finally\{\$context->assertCurrent\(\$this->policy\);\}\s*\$now=time\(\)/);
+ assert.match(text,/historyReadRequest\('preference-anchor','CURRENT',\[\],\$context,\$attestation\)/);
+ assert.doesNotMatch(text,/CURRENT_ALL|CURRENT_BATCH/);
+ const drift=original.replace('$now=time();$sig=base64_decode', '$now=time()+1;$sig=base64_decode');
+ assert.throws(()=>deriveContracts(drift),/EDIT_ANCHOR/);
+});
+test('observer final gate follows transaction cleanup lease release and hashing',()=>{
+ const code=readFileSync(join(here,'history/LocalHistoryObserver.php'),'utf8');
+ const cleanup=code.indexOf("$this->db->query('ROLLBACK')"),release=code.indexOf('// The final gate is after'),completed=code.indexOf('$completedAt=time()');
+ assert.ok(cleanup>0&&release>cleanup&&completed>release);
+ const final=code.slice(completed);assert.match(final,/foreach\(\$result\['partitions'\] as \$entry\)foreach\(\$entry\['proofs'\] as \$proof\)/);
+ assert.match(final,/\$result\['digest'\]=C\\Workflow::digest\(\$result\);[\s\S]*wholeObservationDeadline[\s\S]*return\$result/);
+ assert.match(code,/for\(\$round=0;\$round<2;\$round\+\+\)foreach\(\$stores/);
+ assert.match(code,/ROLLBACK TO SAVEPOINT '\.\$this->savepoint/);assert.match(code,/\$this->savepoint='g39_'\.bin2hex\(random_bytes\(16\)\)/);
+});
+test('native MDL probe requires actual timeout with either mysqli error reporting mode',()=>{
+ const code=readFileSync(join(here,'native/native-history.php'),'utf8');
+ assert.match(code,/\$ddlError=\$this->probeWriter->errno/);assert.match(code,/catch\(mysqli_sql_exception \$error\)\{\$ddlError=\$error->getCode\(\);\}/);
+ assert.match(code,/\$this->probeMetadataHeld=\$ddlResult===false&&\$ddlError===1205/);assert.doesNotMatch(code,/mysqli_report\(/);
+});

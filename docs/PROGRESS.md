@@ -1,5 +1,11 @@
 # Implementation progress
 
+## Reviewed cut004 ready for a changed-evidence CI trial - 17 November 2026
+
+The frozen cut004 payload is25files, manifest `b82c29093b6cf89c82f7f8d02340c84d3a1a2d2bde4e9b64daccc9b428ea43b0`. Its43Node tests plus19fixed-materializer tests pass in the public layout;17prepared PHP files parse and all26source pins remain unchanged. Independent code review closes strict captured-audit operation-ID binding and final freshness after cleanup/lease release/digest. Both original CURRENT rounds (512calls), every callback guard, all35previous native checks and final foreign preservation remain. Eight additional cases cover the new boundaries. No actual SQL/timing or native PASS follows from preparation.
+
+The fixed writer remains25files/26inputs; the layer bound114 and433old COPY destinations are preserved. Its closed exact case count is now43. The original failed-trial proof is retained byte-exact; the new integration proof is separate. Strict-v2 compatibility, the22-test preparation-aware coordinator and the privacy-clean contact matrix are integrated without changing historical keyword pins or business approvals. All four CI contexts will be checked on the exact next published revision. Accepted runtime remains C6; production unchanged and Ads held.
+
 ## First coordinated trial: correction in progress - 17 November 2026
 
 The coordinator now passes22focused tests with all16original tests retained. Explicit preparation-only mode permits independent offline work with unfinished completion dependencies; verified acceptance still requires the original dependencies and evidence kinds. The current snapshot records G001 running and G002/G021/G033 preparing, with zero verified goals. The strict-v2 correction passes15targeted legacy/v2 tests and the actual original base-input loader without changing a historical pin.

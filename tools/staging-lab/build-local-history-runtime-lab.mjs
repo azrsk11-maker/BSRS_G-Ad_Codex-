@@ -39,7 +39,7 @@ export function planLocalHistoryRuntimeLab(packet){
  const manifest=JSON.parse(files.get('G39_BUILD.json').toString('utf8'));
  need(JSON.stringify(manifest)===JSON.stringify(packet.manifest)&&JSON.stringify(manifest)===JSON.stringify(expected.manifest),'G39_LAB_MANIFEST_CHANGED');
  need(manifest.fixed_root===FIXED_LOCAL_HISTORY_ROOT&&manifest.fixed_prefix===FIXED_PREFIX&&manifest.local_scope_only===true&&manifest.native_executed===false&&manifest.provider_accepted===false&&manifest.production_authorized===false,'G39_LAB_AUTHORITY_CHANGED');
- need(manifest.expected_checks.length===35&&new Set(manifest.expected_checks).size===35,'G39_LAB_CASESET_CHANGED');
+ need(manifest.expected_checks.length===43&&new Set(manifest.expected_checks).size===43,'G39_LAB_CASESET_CHANGED');
  for(const path of Object.keys(manifest.files)){
   const b=files.get(path),pin=manifest.files[path];need(Buffer.isBuffer(b)&&b.length===pin.bytes&&sha(b)===pin.sha256,'G39_LAB_INNER_BINDING_CHANGED');
  }

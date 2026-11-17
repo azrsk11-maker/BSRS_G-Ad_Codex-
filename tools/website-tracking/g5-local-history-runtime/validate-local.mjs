@@ -34,12 +34,14 @@ function admission(v,now){
 }
 /** Validates a local observation, never authorizes qualification, exports, enrollment or global history. */
 export function validateLocalReceipt(v,context){
- keys(v,['schema','authority','base_scope','actor','observed_at','expires_at','connection_id','journal','control_inventory','partitions','inputs','local_vetoes','unresolved_authority','digest']);
+ keys(v,['schema','authority','base_scope','actor','observation_started_at','snapshot_started_at','elapsed_ms','snapshot_guard_sha256','observed_at','completed_at','expires_at','connection_id','journal','control_inventory','partitions','inputs','local_vetoes','unresolved_authority','digest']);
  const now=context.now;uint(now);hash(v.base_scope);hash(v.digest);
- need(v.schema==='bsre-g39-local-history-observation-v1'&&v.authority==='LOCAL_OBSERVATION_ONLY'&&eq(v.unresolved_authority,unresolved),'G39_LOCAL_AUTHORITY');
+ need(v.schema==='bsre-g39-local-history-observation-v2'&&v.authority==='LOCAL_OBSERVATION_ONLY'&&eq(v.unresolved_authority,unresolved),'G39_LOCAL_AUTHORITY');
  const copy={...v};delete copy.digest;need(digest(copy)===v.digest,'G39_LOCAL_DIGEST');
  need(v.base_scope===context.base_scope&&v.actor===context.actor&&typeof v.actor==='string'&&/^wp-user:[1-9][0-9]*$/.test(v.actor),'G39_LOCAL_SCOPE');
  need(Number.isSafeInteger(v.observed_at)&&Number.isSafeInteger(v.expires_at)&&v.observed_at<=now&&now<v.expires_at&&v.expires_at<=v.observed_at+60,'G39_LOCAL_EXPIRED');
+ uint(v.observation_started_at);uint(v.snapshot_started_at);uint(v.completed_at);uint(v.elapsed_ms);hash(v.snapshot_guard_sha256);
+ need(v.observation_started_at>0&&v.observation_started_at<=v.snapshot_started_at&&v.snapshot_started_at<=v.observed_at&&v.observed_at<=v.completed_at&&v.completed_at<=now&&v.completed_at<v.observation_started_at+30&&v.elapsed_ms<30000&&v.expires_at<=v.observation_started_at+30,'G39_LOCAL_SNAPSHOT_STALE');
  need(typeof v.connection_id==='string'&&/^[1-9][0-9]*$/.test(v.connection_id),'G39_LOCAL_CONNECTION');
  keys(v.inputs,['ledger_sha256','ledger_bytes','admission_sha256','admission_configuration_sha256','admission']);
  need(Buffer.isBuffer(context.ledger_bytes)&&context.ledger_bytes.length===v.inputs.ledger_bytes&&sha(context.ledger_bytes)===v.inputs.ledger_sha256,'G39_LOCAL_LEDGER_BYTES');

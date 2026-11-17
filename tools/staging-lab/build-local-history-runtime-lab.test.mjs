@@ -28,7 +28,7 @@ test('fixed plan closes all25 files and26 source inputs with local authority onl
  assert.equal(plan.synthetic_only,true);assert.equal(plan.local_scope_only,true);
  assert.equal(plan.provider_accepted,false);assert.equal(plan.production_authorized,false);
  assert.equal(plan.manifest_sha256,sha(p.files.get('G39_BUILD.json')));
- assert.equal(base.manifest.expected_checks.length,35);assert.equal(new Set(base.manifest.expected_checks).size,35);
+ assert.equal(base.manifest.expected_checks.length,43);assert.equal(new Set(base.manifest.expected_checks).size,43);
  for(const row of plan.files){assert.deepEqual(Object.keys(row),['path','bytes','sha256']);assert.equal(row.bytes,p.files.get(row.path).length);assert.equal(row.sha256,sha(p.files.get(row.path)));assert.deepEqual(row,expectations.files[row.path]&&{path:row.path,...expectations.files[row.path]});}
 });
 test('closed packet rejects missing extra inherited and null-prototype metadata',()=>{

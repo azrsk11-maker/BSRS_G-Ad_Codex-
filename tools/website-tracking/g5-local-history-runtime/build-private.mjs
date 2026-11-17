@@ -33,13 +33,58 @@ export function deriveJournal(bytes){
 }
 export function derivePreference(bytes){
  const methods=readFileSync(join(here,'edits/preference-history-methods.php.txt'),'utf8');
- return editExact(bytes,[
-  ['PRIVATE_READ_MODE','    private bool $leased=false;private bool $transaction=false;private bool $uncertain=false;','    private bool $leased=false;private bool $transaction=false;private bool $uncertain=false;\n    private bool $historyBorrowed=false;'],
+ const physical=readFileSync(join(here,'edits/preference-physical-methods.php.txt'),'utf8');
+ const source=Buffer.from(bytes).toString('utf8'),parts=preferenceReadMethods(source);
+ const result=editExact(bytes,[
+  ['PRIVATE_READ_MODE','    private bool $leased=false;private bool $transaction=false;private bool $uncertain=false;','    private bool $leased=false;private bool $transaction=false;private bool $uncertain=false;\n    private bool $historyBorrowed=false;private bool $historyReadBlock=false;'],
   ['NO_SQL_MUTATION_WHILE_BORROWED','    private function query(string $sql): int {\n        $this->guard(true);',"    private function query(string $sql): int {\n        if($this->historyBorrowed)Guard::fail('G39_READ_ONLY_BORROW_NO_MUTATION');\n        $this->guard(true);"],
   ['LEASE_READ_ONLY_BORROW','        if(!$this->leased||!$this->db->custodyIsActive()',
    "        if($this->historyBorrowed&&($this->scalar('SELECT @@session.in_transaction')!=='1'||$this->scalar('SELECT @@session.tx_read_only')!=='1'||$this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ'))Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');\n        if((!$this->leased&&!$this->historyBorrowed)||!$this->db->custodyIsActive()"],
-  ['PURPOSE_SPECIFIC_BORROW','    public function discover(string $cursor): array {',methods+'    public function discover(string $cursor): array {']
+  ['PURPOSE_SPECIFIC_BORROW','    public function discover(string $cursor): array {',methods+physical+parts.map(p=>p.bytes.toString()).join('')+'    public function discover(string $cursor): array {']
  ]);
+ result.receipt.extracted_validators=parts.map(p=>p.receipt);return result;
+}
+function extracted(text,start,end,changes,label){
+ const at=text.indexOf(start),last=text.indexOf(end,at+start.length);if(at<0||last<0||text.indexOf(start,at+1)!==-1)throw Error('G39_EXTRACTION_ANCHOR:'+label);
+ const original=text.slice(at,last),result=editExact(Buffer.from(original),changes);
+ result.receipt={label,source_offset:Buffer.byteLength(text.slice(0,at)),source_bytes:Buffer.byteLength(original),source_sha256:sha(original),...result.receipt};return result;
+}
+function replaceAllEdits(text,before,after,label){
+ const changes=[];const n=text.split(before).length-1;if(!n)throw Error('G39_EXTRACTION_REPLACE:'+label);
+ for(let i=0;i<n;i++)changes.push([label+'_'+i,before,after]);
+ // editExact requires unique anchors; include one complete evolving method for each repeated replacement.
+ const stages=[];for(let i=0;i<n;i++){const next=text.replace(before,after);stages.push([label+'_'+i,text,next]);text=next;}return stages;
+}
+function preferenceReadMethods(source){
+ const schemaStart='    private function schema(): void {',schemaEnd='    private function metadataVisibility(array $tables): void {';
+ const original=source.slice(source.indexOf(schemaStart),source.indexOf(schemaEnd));
+ let work=original;const schemaChanges=[];
+ for(const [label,before,after]of [['SCHEMA_READ_NAME','private function schema()','private function historySchema()'],['OWNER_MOVED_TO_TYPED_BLOCK','        $this->lease();\n        $this->metadataVisibility([$this->table,$this->audit]);\n','']]){schemaChanges.push([label,before,after]);work=work.replace(before,after);}
+ for(const [before,after,label]of [['$this->rows(','$this->historyRows(','TYPED_ROWS'],['$this->scalar(','$this->historyScalar(','TYPED_SCALAR']]){const stages=replaceAllEdits(work,before,after,label);schemaChanges.push(...stages);work=stages.at(-1)[2];}
+ const schema=extracted(source,schemaStart,schemaEnd,schemaChanges,'EXACT_SHARED_SCHEMA_VALIDATORS');
+ const metadata=extracted(source,schemaEnd,'    private function consentMutationSchema(): void {',[
+  ['METADATA_READ_NAME','private function metadataVisibility(array $tables)','private function historyMetadataVisibility(array $tables,\\BSRE\\ActualRetention\\HistoryLocalV1\\BorrowedHistoryContext $context)'],
+  ['GUARDED_EXISTING_METADATA_PROTOCOL',"$this->proofs->request('preference-metadata','COMPLETE_CONSTRAINT_VISIBILITY',$request)",'$this->proofs->historyMetadataVisibility($request,$context)']
+ ],'EXACT_METADATA_VISIBILITY_VALIDATORS');
+ const rawStart='    private function raw(bool $lock): ?array {',rawEnd='    public function current(bool $lock=false): array {';
+ const raw=extracted(source,rawStart,rawEnd,[
+  ['RAW_READ_NAME','private function raw(bool $lock): ?array','private function historyRaw(array $r,array $auditRow,\\BSRE\\ActualRetention\\HistoryLocalV1\\BorrowedHistoryContext $context): array'],
+  ['CAPTURED_TYPED_CONTROL_ROW','        $this->lease();$r=$this->rows($this->db->prepare("SELECT * FROM {$this->table} WHERE id=%s ORDER BY id LIMIT 2",$this->policy->partition).($lock?\' FOR UPDATE\':\'\'),1);\n        if($r===[])return null;$r=$r[0];\n',''],
+  ['GUARDED_CUSTODY_KEY_CALLBACK','$state=$this->custody->open($r[\'body\'],$r[\'operation_revision\']);',"$context->assertCurrent($this->policy);\n        try{$state=$this->custody->open($r['body'],$r['operation_revision']);}finally{$context->assertCurrent($this->policy);}"],
+  ['CAPTURED_TYPED_AUDIT_ROW','$audit=$this->rows($this->db->prepare("SELECT * FROM {$this->audit} WHERE operation_id=%s",$intent[\'operation\']),1);',"if(($auditRow['operation_id']??null)!==$intent['operation'])Guard::fail('PREFERENCE_AUDIT_BINDING_INVALID');\n        $audit=[$auditRow];"]
+ ],'EXACT_CONTROL_CIPHER_INTENT_AUDIT_VALIDATORS');
+ return[schema,metadata,raw];
+}
+export function deriveContracts(bytes){
+ const source=Buffer.from(bytes).toString('utf8'),start='    public function request(string $service,string $operation,array $payload,?array &$attestation=null): array {',end='    public function approval(';
+ const method=extracted(source,start,end,[
+  ['PURPOSE_SPECIFIC_GUARDED_READ','public function request(string $service,string $operation,array $payload,?array &$attestation=null)','private function historyReadRequest(string $service,string $operation,array $payload,\\BSRE\\ActualRetention\\HistoryLocalV1\\BorrowedHistoryContext $context,?array &$attestation=null)'],
+  ['READ_OPERATION_WHITELIST',"        $source=$this->policy->source();","        if(!(($service==='preference-anchor'&&$operation==='CURRENT'&&$payload===[])||($service==='preference-metadata'&&$operation==='COMPLETE_CONSTRAINT_VISIBILITY')))Guard::fail('G39_READ_ONLY_PROOF_SCOPE_REQUIRED');\n        $source=$this->policy->source();"],
+  ['GUARDED_TRANSPORT_CALLBACK',"        $e=Guard::json($this->transport->exchange($operation,$request));",'        $context->assertCurrent($this->policy);\n        try{$raw=$this->transport->exchange($operation,$request);}finally{$context->assertCurrent($this->policy);}\n        $e=Guard::json($raw);'],
+  ['GUARDED_KEY_CALLBACK_AND_POST_IO_CLOCK',"        $now=time();$sig=base64_decode($e['signature'],true);$key=$this->keys->publicKey($service,$e['key_id']);", "        // The post-transport full guard also precedes this key callback: only pure closed JSON/type/binding checks intervene.\n        $sig=base64_decode($e['signature'],true);\n        try{$key=$this->keys->publicKey($service,$e['key_id']);}finally{$context->assertCurrent($this->policy);}\n        $now=time();"]
+ ],'EXACT_SIGNED_REQUEST_VALIDATORS_WITH_GUARDED_READ_CALLBACKS');
+ const entries="    public function historyCurrent(\\BSRE\\ActualRetention\\HistoryLocalV1\\BorrowedHistoryContext $context,?array &$attestation=null): array {return $this->historyReadRequest('preference-anchor','CURRENT',[],$context,$attestation);}\n    public function historyMetadataVisibility(array $payload,\\BSRE\\ActualRetention\\HistoryLocalV1\\BorrowedHistoryContext $context): array {return $this->historyReadRequest('preference-metadata','COMPLETE_CONSTRAINT_VISIBILITY',$payload,$context);}\n";
+ const result=editExact(bytes,[['ADDITIVE_PURPOSE_SPECIFIC_PROOF_READS',end,entries+method.bytes.toString()+end]]);result.receipt.extracted_validators=[method.receipt];return result;
 }
 function admissionHelper(engine,workflow){
  const a=engine.indexOf('    private function verifiedAdmission(int $now): array');
@@ -73,7 +118,7 @@ export function build(sourceRoot){
   const d=deriveJournal(inputs.get(path));files.set('candidate/plugin/includes/candidate/closed-enquiry-retention/'+name,d.bytes);derivations[name]=d.receipt;
  }
  const prefNames=['ActualPreferenceRetention.php','PreferenceAlgebra.php','PreferenceAtomicStore.php','PreferenceContracts.php','PreferenceCustody.php'];
- for(const name of prefNames){const b=inputs.get(pref+name);if(name==='PreferenceAtomicStore.php'){const d=derivePreference(b);files.set('preference/'+name,d.bytes);derivations[name]=d.receipt;}else files.set('preference/'+name,b);}
+ for(const name of prefNames){const b=inputs.get(pref+name);if(name==='PreferenceAtomicStore.php'||name==='PreferenceContracts.php'){const d=name==='PreferenceAtomicStore.php'?derivePreference(b):deriveContracts(b);files.set('preference/'+name,d.bytes);derivations[name]=d.receipt;}else files.set('preference/'+name,b);}
  const prefManifest={contract:'bsre-preference-runtime-v1',files:Object.fromEntries(prefNames.map(n=>[n,sha(files.get('preference/'+n))]))};
  files.set('preference/preference-source.json',Buffer.from(JSON.stringify(prefManifest)+'\n'));
  const helper=admissionHelper(inputs.get('tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeEngine.php').toString(),inputs.get('tools/closed-enquiry-retention/Workflow.php').toString());
