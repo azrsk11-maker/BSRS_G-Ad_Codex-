@@ -134,7 +134,7 @@ test('both profiles retain the complete lab and identical required isolation con
   assert.equal(create.length, 2);
   const controls = '--network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 1g --cpus 2 --pids-limit 128 --tmpfs /tmp:rw,noexec,nosuid,size=512m,mode=1777';
   for (const line of create) assert.ok(line.includes(controls));
-  assert.match(workflow, /isolated-native-wordpress:\n/); assert.match(workflow, /timeout-minutes: 25/);
+  assert.match(workflow, /isolated-native-wordpress:\n/); assert.match(workflow, /timeout-minutes: 30/);
   assert.ok(workflow.includes('--build-arg BSRE_DB_PROFILE=mariadb-11.8.9'));
   assert.ok(entry.indexOf('/opt/lab/isolation.php') < entry.indexOf('mkdir /tmp/database'));
   assert.ok(entry.includes('--skip-networking'));

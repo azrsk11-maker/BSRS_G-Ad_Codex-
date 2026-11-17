@@ -1,5 +1,11 @@
 # Implementation progress
 
+## Measured native CI resource budget - 17 November 2026
+
+c9d24741 passed full offline, PHP/syntax and goal-ledger checks. The first complete database profile passed in693seconds. Image builds took66+126seconds; the second profile began with604seconds left in the25-minute job cap. GitHub's actual annotation confirms the job exceeded25m0s and cancelled it during profile two. This remains partial diagnostic evidence, not full native acceptance.
+
+Independent review approved the minimal two-scalar change to a30-minute workflow cap and matching existing profile-test assertion. Container CPU/memory/PID/network/read-only controls,43cases,512CURRENT calls, guards and original30/60-second application windows are unchanged. Fifteen profile and six workflow-input tests pass; the estimate based on equal profile duration is26m29s before cleanup, not a guaranteed completion time. No paid runner or overage is enabled. The next exact-revision raw audit must preserve all old186source assertions through four explicit byte inverses, including this resource-test scalar.
+
 ## Version-specific metadata-lock correction - 17 November 2026
 
 At3096b520 all three other checks passed; native profile one failed `G39_PHYSICAL_METADATA_LOCK_NOT_RETAINED`, then the synthetic storage comparison detected a change. Profile two was skipped. Independent RCA used the exact MariaDB10.11.19/11.8.9 implementations: partial rollback may release post-savepoint metadata locks when InnoDB holds no row locks. The probe targets the actual physical table. Successful DDL is inferred from the subsequent hash mismatch; its return was not separately logged. No unchanged run was repeated.
