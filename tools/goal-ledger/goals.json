@@ -49,6 +49,27 @@
       "goals": [
         "G001"
       ]
+    },
+    "preparing-g002": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G002"
+      ]
+    },
+    "preparing-g021": {
+      "kind": "local_test",
+      "ref": "tools/keyword-system/POSITIVE_SERVICE_PACKET_V2.md",
+      "goals": [
+        "G021"
+      ]
+    },
+    "preparing-g033": {
+      "kind": "observation",
+      "ref": "docs/audit/PUBLIC_CONTACT_MATRIX_2026-11-17.json",
+      "goals": [
+        "G033"
+      ]
     }
   },
   "goals": [
@@ -66,11 +87,12 @@
         "G001"
       ],
       "evidence_refs": [
-        "g39-local-33-pass"
+        "preparing-g002"
       ],
       "id": "G002",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -253,10 +275,13 @@
       "depends_on": [
         "G005"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "preparing-g021"
+      ],
       "id": "G021",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -370,10 +395,13 @@
         "G055",
         "G071"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "preparing-g033"
+      ],
       "id": "G033",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [

@@ -44,8 +44,20 @@ Update a status only after assessing its complete canonical gate. Add an evidenc
 entry with a public repository-relative `docs/` or `tools/` reference, its exact goal
 bindings and appropriate kind; attach its key to the goal's `evidence_refs`.
 `blocked` requires a bound `blocker`; `running` requires a progress/evidence
-reference. `running` and `verified` require verified dependencies. `verified`
-requires goal acceptance evidence. Native CI, independent
+reference. By default, `running` and `verified` require verified dependencies.
+For independent offline preparation, a running row may explicitly set the boolean
+`"preparation_only": true`; it still needs bound nonblocker progress evidence, while
+unfinished completion dependencies remain visible in `waiting_on`. The flag must
+be an actual boolean and true is valid only for `running`. Missing/false keeps the
+normal dependency checks. `verified` rejects preparation mode and always requires
+all dependencies verified. Set the flag false or remove it before seeking final
+acceptance; this neither grants approval nor changes the canonical goal graph.
+The summary separates `running_preparation` and `running_execution`. Legacy
+`running` remains their aggregate; `ready` remains pending dependency-ready work.
+`ready_to_finish` includes pending/running execution rows whose dependencies are
+verified, excluding preparation rows even after their dependencies complete. It
+indicates dependency readiness only; complete acceptance evidence is still required.
+Verified status requires goal acceptance evidence. Native CI, independent
 human review, full-library approval, scoped authorization, publication readback,
 activation and genuine-event goals require their distinct evidence kinds. Local
 tests do not satisfy them. Authorization alone does not prove deployment. An old

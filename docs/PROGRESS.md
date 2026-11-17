@@ -1,12 +1,22 @@
 # Implementation progress
 
+## First coordinated trial: correction in progress - 17 November 2026
+
+The coordinator now passes22focused tests with all16original tests retained. Explicit preparation-only mode permits independent offline work with unfinished completion dependencies; verified acceptance still requires the original dependencies and evidence kinds. The current snapshot records G001 running and G002/G021/G033 preparing, with zero verified goals. The strict-v2 correction passes15targeted legacy/v2 tests and the actual original base-input loader without changing a historical pin.
+
+At6ed96e2b, goal-ledger and PHP/syntax checks passed, while offline and isolated native checks failed. The offline failure identified one historical keyword-reader byte pin used transitively by seven review modules. The historical reader and tests are restored byte-exact to C6; the new [strict v2 entry](../tools/keyword-system/POSITIVE_SERVICE_PACKET_V2.md) retains type-coercion rejection without changing any historical pin, approval or admission. The legacy reader remains explicitly historical and non-strict.
+
+The first G39 observation failed closed with `G39_OBSERVATION_PROOF_STALE` after156.110132seconds following the retained positive-purge receipt. The second database profile was skipped. This is diagnostic evidence, not native acceptance. A private typed-read scheduling correction is under review; all original proof-age and whole-observation freshness limits must remain. There has been no unchanged rerun or widening of windows. Accepted runtime remains C6.
+
+Separately, the [public contact matrix](audit/PUBLIC_CONTACT_MATRIX_2026-11-17.json) sampled six owned routes with seven GETs. All15marked WhatsApp hrefs on five service pages align with the observed script; the hub has no comparable link. Raw responses remain private. Browser, consent and provider acceptance are not inferred. Production unchanged; Ads paused.
+
 ## Coordinated 100-goal execution - 17 November 2026
 
 Independent work advances under one project and one Source/Git writer. The [offline goal ledger](../tools/goal-ledger/README.md) preserves exactly100 canonical IDs/dependencies and separates native, human, authorization, deployment and genuine-event evidence. Its16focused tests pass; G001 is running, with all completion claims held to their full gates. A small independent CI job validates the coordinator without credentials or provider calls.
 
 The [G39 local-history observer](../tools/website-tracking/g5-local-history-runtime/README.md) is wired into both approved disposable database profiles after every retained predecessor. Combined33observer+19materializer tests pass locally. The reviewed fixed materializer checks all26source inputs, creates25new runtime files and preserves all433previous COPY destinations; the114instruction layer budget is retained. Docker/entry/workflow have exact byte inverses to the accepted C6 baseline. The35native checks per profile remain pending actual execution; no whole-business history or export authority follows from this module.
 
-An independent keyword review found Python equality accepting boolean/integer/float substitutions in the default held workorder. Canonical JSON hashing now rejects those six mutations while retaining authentic-packet output and all false authority flags. This adds zero keyword admissions or business evidence.
+An independent keyword review found Python equality accepting boolean/integer/float substitutions in the default held workorder. The first direct correction invalidated a historical byte pin; the current correction uses a separately versioned strict reader while preserving the original reader, its historical pins and all false authority flags. This adds zero keyword admissions or business evidence.
 
 The previously published documentation revision df0c44bedb22756862cbb8f20565f59f43b483ed passed all three checks. Accepted runtime C6 remains the bounded native baseline until the new exact revision is accepted. Marketing identity, rehearsal/business evidence, full keyword libraries, independent human review and separate release approvals remain unresolved. Production unchanged; Ads paused.
 

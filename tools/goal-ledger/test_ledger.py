@@ -81,6 +81,75 @@ class LedgerTests(unittest.TestCase):
         evidence(data, "G001", "local_test")
         self.assertEqual([], ledger.validate(data))
 
+    def test_preparation_can_run_with_unfinished_completion_dependencies(self):
+        data = fixture()
+        data["goals"][1].update(status="running", preparation_only=True, depends_on=["G001"])
+        data["canonical_plan_sha256"] = ledger.plan_digest(data["goals"])
+        evidence(data, "G002", "observation")
+        self.assertEqual([], ledger.validate(data))
+        result = ledger.summary(data)
+        self.assertEqual(["G002"], result["running_preparation"])
+        self.assertEqual([], result["running_execution"])
+        self.assertEqual(["G001"], result["waiting_on"]["G002"])
+        self.assertNotIn("G002", result["ready_to_finish"]["prelaunch"])
+        self.assertFalse(result["launch"]["prerequisites_verified"])
+
+    def test_explicit_false_retains_running_dependency_checks(self):
+        data = fixture()
+        data["goals"][1].update(status="running", preparation_only=False, depends_on=["G001"])
+        data["canonical_plan_sha256"] = ledger.plan_digest(data["goals"])
+        evidence(data, "G002", "observation")
+        self.assertTrue(any("unverified dependencies" in error for error in ledger.validate(data)))
+
+    def test_preparation_flag_requires_actual_boolean(self):
+        for value in (0, 1, None, "true", "false", [], {}):
+            with self.subTest(value=value):
+                data = fixture()
+                data["goals"][0].update(status="running", preparation_only=value)
+                evidence(data, "G001", "observation")
+                self.assertTrue(any("preparation_only must be a boolean" in error
+                                    for error in ledger.validate(data)))
+
+    def test_preparation_true_cannot_describe_verified_pending_or_blocked(self):
+        for status in ("verified", "pending", "blocked"):
+            data = fixture()
+            data["goals"][0].update(status=status, preparation_only=True)
+            evidence(data, "G001", "blocker" if status == "blocked" else "goal_acceptance")
+            self.assertTrue(any("preparation_only true requires running status" in error
+                                for error in ledger.validate(data)))
+        data = fixture()
+        data["goals"][1].update(status="verified", preparation_only=True, depends_on=["G001"])
+        data["canonical_plan_sha256"] = ledger.plan_digest(data["goals"])
+        evidence(data, "G002", "native_ci")
+        self.assertTrue(any("unverified dependencies" in error for error in ledger.validate(data)))
+
+    def test_preparation_still_requires_bound_nonblocker_progress_evidence(self):
+        for kind in (None, "blocker"):
+            data = fixture()
+            data["goals"][1].update(status="running", preparation_only=True, depends_on=["G001"])
+            data["canonical_plan_sha256"] = ledger.plan_digest(data["goals"])
+            if kind:
+                evidence(data, "G002", kind)
+            self.assertTrue(any("running requires a bound progress/evidence reference" in error
+                                for error in ledger.validate(data)))
+
+    def test_preparation_remains_separate_even_after_dependencies_verify(self):
+        data = fixture()
+        data["goals"][0]["status"] = "verified"
+        evidence(data, "G001", "goal_acceptance", "prerequisite")
+        data["goals"][1].update(status="running", preparation_only=True, depends_on=["G001"])
+        data["canonical_plan_sha256"] = ledger.plan_digest(data["goals"])
+        evidence(data, "G002", "observation", "preparation")
+        prepared = ledger.summary(data)
+        self.assertNotIn("G002", prepared["ready_to_finish"]["prelaunch"])
+        self.assertNotIn("G002", prepared["waiting_on"])
+        data["goals"][1]["preparation_only"] = False
+        execution = ledger.summary(data)
+        self.assertEqual([], execution["running_preparation"])
+        self.assertEqual(["G002"], execution["running_execution"])
+        self.assertIn("G002", execution["ready_to_finish"]["prelaunch"])
+        self.assertEqual("planning_only_no_execution_permission", execution["authority"])
+
     def test_local_tests_cannot_verify_native_human_or_authority_gates(self):
         for goal in ("G002", "G003", "G025", "G029", "G070", "G082", "G084", "G088"):
             data = fixture()

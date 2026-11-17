@@ -98,6 +98,11 @@ def validate(data):
             errors.append(f"{goal_id}: invalid launch classification")
         if row.get("status") not in STATUSES:
             errors.append(f"{goal_id}: invalid status")
+        preparation = row.get("preparation_only", False)
+        if type(preparation) is not bool:
+            errors.append(f"{goal_id}: preparation_only must be a boolean")
+        if preparation is True and row.get("status") != "running":
+            errors.append(f"{goal_id}: preparation_only true requires running status")
         refs = row.get("evidence_refs")
         if (not isinstance(refs, list) or any(not isinstance(x, str) for x in refs)
                 or len(set(refs)) != len(refs)):
@@ -121,7 +126,8 @@ def validate(data):
             missing = sorted(required_kinds(goal_id) - kinds)
             if missing:
                 errors.append(f"{goal_id}: verified requires evidence kinds {','.join(missing)}")
-        if row.get("status") in ("running", "verified"):
+        if (row.get("status") == "verified"
+                or row.get("status") == "running" and preparation is not True):
             unmet = [dep for dep in deps if by_id[dep].get("status") != "verified"]
             if unmet:
                 errors.append(f"{goal_id}: unverified dependencies {','.join(unmet)}")
@@ -152,11 +158,15 @@ def summary(data):
     rows = data["goals"]
     by_id = {row["id"]: row for row in rows}
     ready = {gate: [] for gate in GATES}
+    ready_to_finish = {gate: [] for gate in GATES}
     waiting = {}
     for row in rows:
         unmet = [dep for dep in row["depends_on"] if by_id[dep]["status"] != "verified"]
         if row["status"] == "pending" and not unmet:
             ready[row["launch_gate"]].append(row["id"])
+        if (row["status"] in ("pending", "running") and not unmet
+                and row.get("preparation_only", False) is not True):
+            ready_to_finish[row["launch_gate"]].append(row["id"])
         if row["status"] != "verified" and unmet:
             waiting[row["id"]] = unmet
     launch = [row["id"] for row in rows if row["launch_gate"] == "prelaunch"]
@@ -165,7 +175,12 @@ def summary(data):
         "schema_version": 1, "goal_count": 100,
         "counts": {status: sum(row["status"] == status for row in rows) for status in STATUSES},
         "ready": ready,
+        "ready_to_finish": ready_to_finish,
         "running": [row["id"] for row in rows if row["status"] == "running"],
+        "running_preparation": [row["id"] for row in rows if row["status"] == "running"
+                                and row.get("preparation_only", False) is True],
+        "running_execution": [row["id"] for row in rows if row["status"] == "running"
+                              and row.get("preparation_only", False) is False],
         "blocked": [row["id"] for row in rows if row["status"] == "blocked"],
         "waiting_on": waiting,
         "launch": {"required_count": len(launch), "open_goals": open_launch,
