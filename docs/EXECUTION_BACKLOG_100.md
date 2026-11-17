@@ -1,6 +1,8 @@
-# Black Swan Real Estate: completed work and 100 remaining goals
+# Black Swan Real Estate: 100-goal execution register
 
 As of 17 November 2026, Asia/Dubai. This is a prioritization map, not a new scope or permission to deploy. The [supplied Master/specifications](google-ads/), [owner decisions](decisions/OWNER_DECISIONS.md), [execution plan](EXECUTION_PLAN.md) and protected PR remain authoritative.
+
+G001/G002 are verified at the immutable accepted revision recorded below;98goals remain. IDs and their complete acceptance criteria are preserved.
 
 ## What is already completed or established
 
@@ -10,8 +12,8 @@ As of 17 November 2026, Asia/Dubai. This is a prioritization map, not a new scop
 | Campaign construction | Four V2 campaigns, six ad groups, six RSAs and82 starter exact/phrase keywords were created previously. The accepted import applied94/94 rows. Historical8Nov readback:17Paused/3Removed/0Enabled; the four budgets1200/400/300/100 totalAED2,000 average/day. Current full launch readback remains required. |
 | Brand | Approval was recorded2Nov. Fresh policy/destination confirmation remains; do not repeat the original appeal without a new reason. |
 | Website/route foundation | Existing five enquiry funnels and hub are native WordPress pages. The signed wire-v1/private Sheet/Marketing-email architecture and stable lead IDs are preserved. Full upgraded production acceptance is not established by this fact. |
-| Accepted engineering | Published runtime baselinec6fab35e passed all3required checks and independent raw-log audit:454 complete documents,186 Source pins, both full database profiles and all retained predecessor assertions. This is bounded synthetic evidence, not genuine provider or launch acceptance. |
-| Current local preparation | G39 local history observer preparation/static review exists; its public-layout33Node tests pass. Its35native checks per profile and CI wiring are unfinished; this code is still uncommitted and not deployed. |
+| Accepted engineering | G001/G002 are verified at1123575e: all4checks, both database profiles and independent actual-log audit passed;458complete documents/218Source bindings, retaining454predecessors/186old bindings. See the [immutable bounded receipt](audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json). This does not grant human/provider/whole-history or release acceptance. |
+| Current local preparation | G39 cut005 integration and native verification are committed and accepted at112;43native checks plus9isolation assertions per profile and the10-case marker contract passed. Remaining98goals need their own evidence. Offline keyword, consumer and content preparation does not count as complete business acceptance. |
 | Research/planning | The360/15 planning architecture, separate300brief roadmap and640catalogue definitions/frameworks exist.14,000negative AI-research records exist; independent approval/application is not complete. The positive library is incomplete and has zero admitted records in the current research pipeline. Starter Ads keywords are a separate historical cohort. |
 | Current contact observation | Two saved17Nov script observations match the recorded installed-member hash. One confirmation pair reports all3WhatsApp hrefs aligned with the authorized full contact identity. No global cache/browser/provider/dedup acceptance is inferred. See the [scoped public receipt](audit/PUBLIC_CONTACT_SCRIPT_READBACK_2026-11-17.json). |
 | Operating decisions | Amit's Real Estate account,10:00–19:00Dubai daily shift,30-minute first-contact target, privacy/retention/recovery/content roles and original-workbook privacy are settled. Rehearsal completion was reported; measured evidence and300/day capacity are not yet accepted. |
@@ -20,7 +22,7 @@ As of 17 November 2026, Asia/Dubai. This is a prioritization map, not a new scop
 ## Start in this order
 
 1. Owner/access lane: G005 first. Current connected Gmail and Drive profiles belong to Business Setup, not Real Estate Marketing; no BSS mailbox/files were searched. Verify Marketing access, then G006–G009. Nominate an eligible independent human for G003 in parallel; the final approval follows the exact checked revision.
-2. Codex lane: G001→G002 can finish the already-prepared local work. In parallel, begin G021–G030 and the selected-page evidence work G051–G054 as access permits. Both full reviewed14,000 libraries remain mandatory before first launch.
+2. Codex lane: reuse completed G001/G002 at112. Continue G021-G030, G051-G054 and other independent preparation as real evidence permits. Both full reviewed14,000 libraries remain mandatory before release; do not rerun unchanged accepted native work merely because an older progress section says pending.
 3. Close genuine service/history, measurement, staff and native-page acceptance across G011–G080. Parallelize only disjoint work; one Source/Git/browser writer remains required.
 4. G081–G089 are separately authorized release steps. G048 and G090 reconcile genuine outcomes after they exist; do not fabricate a prelaunch prospect or upload synthetic conversions.
 5. G091–G099 are operating/expansion work or conditional selections. G100 is the full-goal completion audit and checksum handover. Some rows are bounded batch outcomes, not equal-duration tasks; no execution-time guarantee is made.

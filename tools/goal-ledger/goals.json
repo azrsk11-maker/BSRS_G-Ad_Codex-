@@ -70,29 +70,56 @@
       "goals": [
         "G033"
       ]
+    },
+    "accepted112-g001": {
+      "kind": "goal_acceptance",
+      "ref": "docs/audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json",
+      "goals": [
+        "G001"
+      ]
+    },
+    "accepted112-g002": {
+      "kind": "native_ci",
+      "ref": "docs/audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json",
+      "goals": [
+        "G002"
+      ]
+    },
+    "preparing-g070-strict-json": {
+      "kind": "local_test",
+      "ref": "tools/release-control/test_validate_release_controls.py",
+      "goals": [
+        "G070"
+      ]
+    },
+    "preparing-g095-private-content": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G095"
+      ]
     }
   },
   "goals": [
     {
       "depends_on": [],
       "evidence_refs": [
-        "g39-integration-running"
+        "accepted112-g001"
       ],
       "id": "G001",
       "launch_gate": "prelaunch",
-      "status": "running"
+      "status": "verified"
     },
     {
       "depends_on": [
         "G001"
       ],
       "evidence_refs": [
-        "preparing-g002"
+        "accepted112-g002"
       ],
       "id": "G002",
       "launch_gate": "prelaunch",
-      "status": "running",
-      "preparation_only": true
+      "status": "verified"
     },
     {
       "depends_on": [
@@ -781,10 +808,13 @@
         "G068",
         "G069"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "preparing-g070-strict-json"
+      ],
       "id": "G070",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -1070,10 +1100,13 @@
         "G056",
         "G059"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "preparing-g095-private-content"
+      ],
       "id": "G095",
       "launch_gate": "later",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -1235,17 +1268,24 @@
   "snapshot": {
     "ads": "paused",
     "as_of": "2026-11-17",
-    "baseline": "C6_bounded_native_accepted",
+    "baseline": "bounded_engineering_accepted_at_1123575e",
     "connected_identity": "Business_Setup_not_Marketing",
     "context_refs": [
-      "c6-bounded-baseline"
+      "c6-bounded-baseline",
+      "accepted112-g001",
+      "accepted112-g002"
     ],
-    "g39_local_tests_passed": 33,
-    "g39_native_ci_integration": "pending",
+    "g39_native_ci_integration": "accepted_at_1123575e",
     "independent_pr_reviews": 0,
     "marketing_identity_verified": false,
     "negative_full_library_approved": false,
     "positive_full_library_approved": false,
-    "production": "unchanged"
+    "production": "unchanged",
+    "accepted_at_head": "1123575ed9d495eea5a19fd2cb4b6d8fead5720c",
+    "current_head_ci_not_inferred": true,
+    "g39_observer_local_tests_passed": 43,
+    "g39_materializer_local_tests_passed": 19,
+    "g39_combined_local_tests_passed": 62,
+    "g39_native_checks_per_profile": 43
   }
 }

@@ -1,5 +1,17 @@
 # Implementation progress
 
+## Remaining98: strict release-control preparation - 17 November 2026
+
+The existing offline release checker reproduced four false passes from Python JSON equality: boolean schema version, integer targeting flag, floating campaign budget and boolean bid adjustment. The narrow correction rejects duplicate keys, nonfinite values, nonobject documents and boolean/integer/float substitutions while preserving key-order independence and the exact valid held fixture. All three original tests remain; seven focused tests pass. The construction fixture is unchanged and still returns activation_authorized:false; it is not a current live-campaign readback. G070 remains preparation only and its authorization/readback dependencies remain open.
+
+Independent G013 preparation confirmed that a copied local-observer envelope needs protected producer custody: its outer journal flags are not independently authenticated by the512signed CURRENT proofs. The existing consumer already holds unknown authoritative history; no always-held wrapper or authority-promoting adapter was added. Keyword owner rows remain held for exact same-subject campaign/page/ad bindings and genuine reviews; no admissions were added. Existing private first30 content candidates/contact overlays remain unpublished, with exact factual/rights/body approval still required. These are preparation results, not completed business goals.
+
+## Bounded engineering accepted; remaining98 remain evidence-gated - 17 November 2026
+
+G001/G002 completed at1123575ed9d495eea5a19fd2cb4b6d8fead5720c, with all4checks successful. The native job completed in22m07s on both database profiles; the independently checked raw log contains458complete documents/218Source bindings, retaining454predecessors/186old bindings. Both43-case G39 receipts,9isolation assertions per profile and the10-case extracted marker contract pass. The [immutable receipt](audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json) records exact revision, log/hash, counts, scope and false authority flags. Earlier pending/failure sections below are historical; no relevant runtime or freshness control was relaxed.
+
+The committed coordinator now records these two historical milestones with their actual evidence kinds, rather than leaving them running and causing rediscovery. This receipt is not a claim that later revisions passed CI. [Issue4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4) now preserves reported rehearsal completion while holding evidence/capacity acceptance; [issue6](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/6) marks execution Git access resolved and independent human review still missing. Fresh Gmail/Drive profiles still identify Business Setup; no excluded content was searched. Independent consumer/keyword/release preparation continues, without fabricating source, approval or production proof. Production unchanged; Ads paused.
+
 ## Measured native CI resource budget - 17 November 2026
 
 c9d24741 passed full offline, PHP/syntax and goal-ledger checks. The first complete database profile passed in693seconds. Image builds took66+126seconds; the second profile began with604seconds left in the25-minute job cap. GitHub's actual annotation confirms the job exceeded25m0s and cancelled it during profile two. This remains partial diagnostic evidence, not full native acceptance.

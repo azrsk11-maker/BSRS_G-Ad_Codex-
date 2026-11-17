@@ -10,14 +10,30 @@ EXPECTED = {
     "BSRE_V2_SEARCH_BRAND_UAE_EN": 100,
 }
 
+def unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("DUPLICATE_JSON_KEY")
+        result[key] = value
+    return result
+
+
+def canonical_json(value):
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
+
+
 def validate(path: Path) -> dict:
     try:
-        data = json.loads(Path(path).read_text(encoding="utf-8"))
+        data = json.loads(Path(path).read_text(encoding="utf-8"), object_pairs_hook=unique_object)
+        canonical_json(data)  # Reject nonfinite numbers anywhere, including exponent overflow.
     except (OSError, ValueError) as exc:
         raise ValueError("INVALID_RELEASE_CONTROLS") from exc
-    if data.get("schema_version") != 1 or data.get("account_id") != "573-038-4686":
+    if not isinstance(data, dict):
+        raise ValueError("INVALID_RELEASE_CONTROLS")
+    if type(data.get("schema_version")) is not int or data["schema_version"] != 1 or data.get("account_id") != "573-038-4686":
         raise ValueError("ACCOUNT_OR_SCHEMA")
-    if data.get("currency") != "AED" or data.get("aggregate_average_daily_budget") != 2000:
+    if data.get("currency") != "AED" or type(data.get("aggregate_average_daily_budget")) is not int or data["aggregate_average_daily_budget"] != 2000:
         raise ValueError("AGGREGATE_BUDGET")
     if data.get("release_authorized") is not False or data.get("ads_activation_authorized") is not False:
         raise ValueError("AUTHORITY_PRESENT")
@@ -28,9 +44,9 @@ def validate(path: Path) -> dict:
         "display_expansion": False, "ai_max": False, "ai_max_search_term_matching": False,
         "ai_max_text_customization": False, "ai_max_final_url_expansion": False,
     }
-    if targeting != expected_targeting:
+    if canonical_json(targeting) != canonical_json(expected_targeting):
         raise ValueError("TARGETING_EXPANSION")
-    if data.get("bidding") != {"strategy": "MAXIMIZE_CLICKS", "service_campaign_cpc_limit_aed": 20, "brand_campaign_cpc_limit_aed": 5, "positive_bid_adjustments_percent": 0}:
+    if canonical_json(data.get("bidding")) != canonical_json({"strategy": "MAXIMIZE_CLICKS", "service_campaign_cpc_limit_aed": 20, "brand_campaign_cpc_limit_aed": 5, "positive_bid_adjustments_percent": 0}):
         raise ValueError("BIDDING_CONTROLS")
     campaigns = data.get("campaigns")
     if not isinstance(campaigns, list) or len(campaigns) != len(EXPECTED):
@@ -40,7 +56,7 @@ def validate(path: Path) -> dict:
         if not isinstance(row, dict) or set(row) != {"name", "average_daily_budget", "status", "google_campaign_id"}:
             raise ValueError("CAMPAIGN_SHAPE")
         name = row["name"]
-        if name in observed or name not in EXPECTED or row["average_daily_budget"] != EXPECTED[name]:
+        if not isinstance(name, str) or name in observed or name not in EXPECTED or type(row["average_daily_budget"]) is not int or row["average_daily_budget"] != EXPECTED[name]:
             raise ValueError("CAMPAIGN_ALLOCATION")
         if row["status"] != "PAUSED_CONSTRUCTION" or row["google_campaign_id"] is not None:
             raise ValueError("CAMPAIGN_NOT_HELD")

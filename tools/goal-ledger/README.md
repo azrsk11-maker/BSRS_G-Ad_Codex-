@@ -70,9 +70,13 @@ complete launch count grants no execution permission. Unknown/missing evidence
 remains pending or blocked. Keep private IDs, records and personal paths outside
 this public artifact.
 
-The snapshot retains bounded C6 acceptance and records G001 in progress: G39's
-combined 52 local tests pass, while native integration acceptance remains pending.
-Zero independent PR reviews, unverified Marketing identity, both full libraries
-unapproved, unchanged production and paused Ads remain explicit. The four
-blockers are G003/G005/G025/G029. Update statuses only when fresh evidence
-establishes completion of each whole goal.
+The snapshot records G001/G002 as completed bounded engineering milestones at
+immutable revision1123575e, using the public-safe acceptance receipt referenced by
+their distinct evidence entries. It never asserts that a later head passed CI;
+relevant runtime/materializer/pin changes require fresh acceptance. Preparation
+for G021/G033/G070/G095 continues without satisfying unfinished dependencies.
+Zero independent human PR reviews, unverified Marketing identity, both full
+libraries unapproved, unchanged production and paused Ads remain explicit. The
+four blockers are G003/G005/G025/G029. Update each status only when evidence
+establishes that whole goal's gate; a clean local observer cannot supply whole
+business history, genuine outcome data or execution authority.
