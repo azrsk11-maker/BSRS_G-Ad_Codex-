@@ -1,5 +1,11 @@
 # Implementation progress
 
+## Owner prioritization:100 remaining goals - 17 November 2026
+
+The [100-goal map](EXECUTION_BACKLOG_100.md) separates completed construction, prepared code and unaccepted real-world obligations. It preserves fullMaster scope and the full-library prelaunch condition; live Ads configuration, website, tracking, activation and spending authorities remain separate. The first-genuine-import timing ambiguity is documented rather than turned into a synthetic conversion requirement.
+
+Fresh native connector profiles identify Business Setup for Gmail/Drive; Marketing evidence access is still unavailable and no BSS content was searched. PR8 remains open/unmerged at the acceptedC6runtime baseline with no review submissions. Four campaigns and Brand approval are existing work, not tasks to recreate. The latest saved public rental confirmation is contact-aligned within its narrow observation scope; real browser/provider proof remains held. G39 has33local test passes but unfinished wiring/native35checks and is not published. No production, Ads, sharing or financial record changed.
+
 ## Align the bounded preflight assertion - 17 November 2026
 
 The timeout-only59a66ba2 trial failed before image construction because the database-profile preflight still asserted the old15-minute limit. The earlier six workflow-input tests did not exercise that assertion; reusing those results was insufficient for this workflow change. Raw log SHA25657dc501b5dd1da85b652b371fedb043bb63c8db464413262e37ab5fe21b9e9b3. Only that exact expected limit changes to25; the assertion remains mandatory. All seven locally available preflight phases passed before upload in2.028seconds:60Node tests, six workflow-input checks and the fixture/G38 preflights. PHP execution remains a CI-only gate on this Windows host. AGENTS now records this preflight dependency to prevent recurrence. Runtime, commands, permissions, isolation and cleanup remain unchanged. Production unchanged; Ads paused. No full native acceptance is claimed from either partial or failed trial.
