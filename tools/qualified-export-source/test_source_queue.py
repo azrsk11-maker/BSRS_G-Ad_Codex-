@@ -225,6 +225,56 @@ class SourceQueueTests(unittest.TestCase):
             with self.assertRaisesRegex(source.SourceError, "REVIEW_SNAPSHOT_MISMATCH"):
                 queue.mark_reviewed(OID, item.sha256, "SYNTHETIC-OWNER", later)
 
+    def test_fresh_shortened_deadline_purges_in_the_same_stage(self):
+        for deadline_source in ("permission", "retention"):
+            for offset in (timedelta(0), timedelta(seconds=-1)):
+                with self.subTest(source=deadline_source, offset=offset):
+                    path = self.path.with_name(f"{deadline_source}-{offset.total_seconds()}.sqlite")
+                    with source.PrivateQueue(path) as queue:
+                        original = self.reviewed(queue)
+                        parts = fixture()
+                        deadline = (NOW + offset).isoformat().replace("+00:00", "Z")
+                        if deadline_source == "permission":
+                            parts[1][0]["expires_at_utc"] = deadline
+                        else:
+                            parts[3]["records"][0]["retention_due_at_utc"] = deadline
+                        result = queue.stage(snapshot(parts), NOW)
+                        self.assertEqual(queue.db.execute("SELECT count(*) FROM queue").fetchone()[0], 0)
+                        self.assertTrue(result["durable_history_gap"])
+                        self.assertEqual(result["states"], {})
+                    # Restart and a later complete attestation must not restore
+                    # the deleted private person/GCLID reservation.
+                    with source.PrivateQueue(path) as queue:
+                        self.assertEqual(queue.projection(original, NOW)["rows"], [])
+                        self.assertEqual(queue.db.execute("SELECT count(*) FROM queue").fetchone()[0], 0)
+                    raw = path.read_bytes()
+                    self.assertNotIn(b"SYNTHETIC-PERSON-001", raw)
+                    self.assertNotIn(b"SYNTHETIC_NEVER_UPLOAD", raw)
+
+    def test_fresh_shortened_future_deadline_preserves_until_expiry(self):
+        for deadline_source in ("permission", "retention"):
+            with self.subTest(source=deadline_source):
+                path = self.path.with_name(f"{deadline_source}-future.sqlite")
+                with source.PrivateQueue(path) as queue:
+                    self.reviewed(queue)
+                    parts = fixture()
+                    deadline = NOW + timedelta(seconds=1)
+                    stamp = deadline.isoformat().replace("+00:00", "Z")
+                    if deadline_source == "permission":
+                        parts[1][0]["expires_at_utc"] = stamp
+                    else:
+                        parts[3]["records"][0]["retention_due_at_utc"] = stamp
+                    item = snapshot(parts)
+                    result = queue.stage(item, NOW)
+                    self.assertFalse(result["durable_history_gap"])
+                    row = queue.db.execute("SELECT * FROM queue").fetchone()
+                    self.assertEqual(source.when(row["retire_at"]), deadline)
+                    self.assertIsNotNone(row["payload"])
+                    self.assertEqual(row["state"], "OWNER_REVIEW")
+                    result = queue.stage(item, deadline)
+                    self.assertTrue(result["durable_history_gap"])
+                    self.assertEqual(queue.db.execute("SELECT count(*) FROM queue").fetchone()[0], 0)
+
     def test_authoritative_retention_gap_vetoes_first_run_and_latches(self):
         parts = fixture()
         parts[3]["history_incomplete"] = True

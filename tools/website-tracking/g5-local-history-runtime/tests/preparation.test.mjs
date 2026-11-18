@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';import {join} from 'node:path';
 import {createPrivateKey,sign} from 'node:crypto';
-import {here,build,deriveJournal,derivePreference,deriveContracts,editExact} from '../build-private.mjs';
+import {here,buildCurrent as build,deriveJournal,derivePreference,deriveContracts,editExact} from '../build-private.mjs';
 import {validateLocalReceipt,parseLocal,digest,sha,zero,unresolved} from '../validate-local.mjs';
 const source=join(here,'../../..');
 const pub=Buffer.from('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a','hex');

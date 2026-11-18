@@ -1,0 +1,113 @@
+{
+  "schema": "bsre-current-safety-fix-preparation-v1",
+  "as_of": "2026-11-18",
+  "base": "eb323a307001b00c534070d024ab406771fdda16",
+  "classification": "LOCALLY_TESTED_FEATURE_PREPARATION_NOT_OPERATIONAL_ACCEPTANCE",
+  "fixes": [
+    {
+      "area": "qualified-export private queue",
+      "trigger": "Fresh reviewed evidence shortens an existing retirement deadline to now or earlier.",
+      "before": "Person/GCLID reservation remained HELD until another operation.",
+      "after": "The same transaction erases it and latches aggregate history uncertainty; no person tombstone or replay revival.",
+      "source": "tools/qualified-export-source/source_queue.py",
+      "tests": 28
+    },
+    {
+      "area": "native campaign draft compiler",
+      "trigger": "Actual Buyers/Owners fragment links or role order differ from declared destinations.",
+      "before": "Compiler hashed the fragment but could still claim correct routes.",
+      "after": "Actual inert markup, exact clean role routes/order and raw text digest are checked; valid saved proposal is unchanged.",
+      "source": "tools/native-wordpress/compile_entry_cohort.py",
+      "tests": 39
+    },
+    {
+      "area": "selected held measurement candidate",
+      "trigger": "Malformed accepted acknowledgement carries a non-opaque event ID.",
+      "before": "A phone-like ID could reach the Ads transaction parameter in synthetic execution of the composed path.",
+      "after": "The final selected child rejects unsupported IDs; intake, GA4 and valid opaque-ID behavior are preserved.",
+      "source": "tools/website-tracking/coupled-package-v3/compose-v3.mjs",
+      "tests": 27,
+      "observed_bad_production_ids": false
+    }
+  ],
+  "integrated_checks": {
+    "core": 181,
+    "private_current_audit": 23,
+    "post_instrumentation_physical_sdk_profile": 23,
+    "workflow_input_coverage": 6,
+    "counts_overlap_and_must_not_be_summed_as_unique": true
+  },
+  "new_current_context": {
+    "descriptor": "tools/website-tracking/g5-local-history-runtime/CURRENT_INPUT_CONTEXT.json",
+    "descriptor_pin": {
+      "bytes": 1234,
+      "sha256": "64c019a17840c74e038c8377793e34014cede87880486fa4934a83b0b6c0e340"
+    },
+    "unchanged_native_packet_files": 25,
+    "unchanged_native_assertions_per_profile": 43,
+    "old_input_map_and_pins_unchanged": true,
+    "genuine_history_or_custody_bound": false
+  },
+  "current_native_acceptance": {
+    "tool": "tools/website-tracking/current-native-audit/README.md",
+    "status_at_artifact_creation": "PENDING_COMMITTED_HEAD_AND_ACTUAL_CI_LOG",
+    "required_complete_documents": 460,
+    "new_physical_identity_receipts": 2,
+    "retained_budget30_documents": 458,
+    "retained_predecessor_documents": 454,
+    "historical_source_assertions": 186,
+    "historical_candidate_source_assertions": 17,
+    "historical_proofs_modified": false
+  },
+  "authority": {
+    "human_review": false,
+    "business_factual_review": false,
+    "website_publication": false,
+    "live_tracking": false,
+    "Ads_changes": false,
+    "spend": false,
+    "provider_events": false
+  },
+  "production_changed": false,
+  "Ads_changed": false,
+  "positive_admissions_added": 0,
+  "new_whole_goals_complete": 0,
+  "verification_tool_output_guard": {
+    "source_and_history_overwrite_denied": true,
+    "input_alias_and_existing_output_denied": true,
+    "reserved_names_and_streams_denied": true,
+    "parent_directory_anchored_during_exclusive_creation": true,
+    "private_new_file_permissions": true,
+    "full_tests": 23,
+    "self_contained_CI_cases": 9,
+    "actual_Ubuntu_execution_at_artifact_creation": false
+  },
+  "required_local_repository_check": {
+    "passed": false,
+    "elapsed_seconds": 625.264804,
+    "failures": [
+      {
+        "check": "keyword-negative-research-composition",
+        "kind": "TimeoutExpired",
+        "seconds": 120.026615
+      },
+      {
+        "check": "keyword-system-behavior",
+        "kind": "TimeoutExpired",
+        "seconds": 300.019637
+      }
+    ],
+    "keyword_runner_resources": {
+      "cpu_count": 12,
+      "maximum_workers": 4,
+      "memory_available_bytes": 1576476672,
+      "memory_per_worker_bytes": 2147483648,
+      "mode": "auto",
+      "selected_workers": 1
+    },
+    "keyword_code_or_research_artifacts_changed": false,
+    "other_local_checks_passed": true,
+    "limits_or_assertions_weakened": false,
+    "next": "Run all four required checks on exact committed head in existing authorized GitHub Actions; no failed local run is acceptance."
+  }
+}

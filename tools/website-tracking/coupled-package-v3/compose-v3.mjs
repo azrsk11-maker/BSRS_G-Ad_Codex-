@@ -182,6 +182,19 @@ async function compose(input){
   const nine=[...['Cleanup.php','OwnerClosure.php','OwnerCollection.php','OwnerMailReview.php','OwnerRetirement.php','WordPress.php'].map(n=>'includes/candidate/owner-mail-review/'+n),
     ...['PreferenceRetirement.php','RetirementLedger.php','purpose-retention.php'].map(n=>'includes/candidate/purpose-retention/'+n)];
   need(added.length===9&&nine.every(p=>added.includes(p)),'V3_EXTRA_SOURCE_NINE_SET');
+  // The accepted receipt guard allows generic opaque-looking strings. Do not
+  // disclose a phone-like or free-text value as an Ads transaction identifier.
+  // Tighten only the final selected child after proving its unchanged ancestry;
+  // original runtime/G4/V2 bytes and their frozen source pins remain intact.
+  const childPath='assets/google-runtime.js',childBefore=sourceMembers.get(childPath);
+  const broadId="!/^[A-Za-z0-9._:-]{1,64}$/.test(payload.transaction_id)";
+  const opaqueId="!/^(?:bsre-event-|evt_)[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(payload.transaction_id)";
+  const childText=childBefore.toString('utf8');need(childText.split(broadId).length===2,'V3_ADS_ID_GUARD_ANCHOR');
+  const childAfter=Buffer.from(childText.replace(broadId,opaqueId));
+  need(childAfter.toString().split(opaqueId).length===2&&Buffer.from(childAfter.toString().replace(opaqueId,broadId)).equals(childBefore),'V3_ADS_ID_GUARD_REVERSE');
+  sourceMembers.set(childPath,childAfter);
+  const adsIdGuard={member:childPath,input_sha256:digest(childBefore),output_sha256:digest(childAfter),
+    before:broadId,after:opaqueId,reverse_verified:true,invalid_id_policy:'DROP_OPTIONAL_ADS_DISPATCH_NO_REWRITE'};
   const sourceMap=Object.fromEntries([...sourceMembers].sort(([a],[b])=>a.localeCompare(b)).map(([path,bytes])=>[path,digest(bytes)]));
   const manifest=Buffer.from(JSON.stringify({schema:CONTRACT_V3.runtime_manifest_schema,profile:CONTRACT_V3.profile,files:sourceMap,deployment_prohibited:true},null,2)+'\n');
   const rendered=renderBindings(root,manifest);
@@ -199,6 +212,7 @@ async function compose(input){
   const result={files,public_summary:summary,private_manifest:{schema:'bsre-coupled-canonical-private-manifest-v3',classification:'PRIVATE_DO_NOT_PUBLISH',summary,
     v2_private_manifest:v2.private_manifest,v2_source_composer_sha256:pins.files[V2+'compose-v2.mjs'],source_pin_manifest_sha256:digest(pinBytes),
     source_files:{...pins.files},selected_domain_derivations:selected.proof,critical_G35_source_members:Object.keys(oldManifest.files),additional_nine_source_members:added,
+    ads_transaction_id_guard:adsIdGuard,
     main_include:{input_sha256:digest(mainBefore),output_sha256:digest(main),appended_bytes:MAIN_SUFFIX.length,reverse_verified:true,class_only:true},
     bindings:{M:rendered.M,P:rendered.P,dropin_sha256:digest(rendered.dropin),source_manifest_members:64,profile:CONTRACT_V3.profile},
     template_derivation:rendered.proof,receiver_sha256:digest(files.get(CONTRACT_V3.receiver_path)),

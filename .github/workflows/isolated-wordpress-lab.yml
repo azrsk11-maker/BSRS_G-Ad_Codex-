@@ -22,6 +22,7 @@ on:
       - 'tools/qualification-history/schema/outcome-register-schema.json'
       - 'tools/website-tracking/canonical-lease/**'
       - 'tools/website-tracking/coupled-package-v3/**'
+      - 'tools/website-tracking/current-native-audit/**'
       - 'tools/website-tracking/coupled-package/**'
       - 'tools/website-tracking/tracking-system/**'
 permissions:
@@ -54,7 +55,8 @@ jobs:
           php tools/website-tracking/g5-actual-purge-runtime/tests/approval-identity.test.php
           php tools/website-tracking/g5-actual-purge-runtime/tests/admission-clock.test.php
           node --test --test-reporter=tap tools/staging-lab/build-receiver-runtime-lab.test.mjs tools/staging-lab/build-preference-runtime-lab.test.mjs
-          node --test --test-reporter=tap tools/website-tracking/g5-local-history-runtime/tests/preparation.test.mjs tools/staging-lab/build-local-history-runtime-lab.test.mjs
+          node --test --test-reporter=tap tools/website-tracking/g5-local-history-runtime/tests/preparation.test.mjs tools/staging-lab/build-local-history-runtime-lab.test.mjs tools/website-tracking/g5-local-history-runtime/tests/current-input-context.test.mjs tools/website-tracking/current-native-audit/physical-identity.test.mjs
+          python -B -m unittest discover -s tools/website-tracking/current-native-audit -p test_current_native_audit.py -k OutputGuardTest -v
           php tools/website-tracking/g5-local-history-runtime/tests/snapshot-marker.test.php
           sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/staging-lab/*profile*.mjs tools/staging-lab/database-11.8.9.lock.json tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json
           find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l

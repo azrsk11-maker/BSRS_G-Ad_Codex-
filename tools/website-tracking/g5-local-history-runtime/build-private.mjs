@@ -2,6 +2,7 @@ import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {dirname,join,resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {currentInputProfile} from './current-input-context.mjs';
 export const here=dirname(fileURLToPath(import.meta.url));
 export const sha=b=>createHash('sha256').update(b).digest('hex');
 const pref='tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/';
@@ -107,8 +108,7 @@ function replaceEvery(text,before,after,label,edits){
  const n=text.split(before).length-1;if(n===0)throw Error('G39_DRIVER_ANCHOR:'+label);
  for(let i=0;i<n;i++){const offset=Buffer.byteLength(text.slice(0,text.indexOf(before)));edits.push({label,offset,before,after});text=text.replace(before,after);}return text;
 }
-export function build(sourceRoot){
- const pins=JSON.parse(readFileSync(join(here,'SOURCE_PINS.json'),'utf8'));
+function buildPinned(sourceRoot,pins){
  const inputs=new Map();for(const [p,pin] of Object.entries(pins.files)){
   const b=readFileSync(join(sourceRoot,p));if(b.length!==pin.bytes||sha(b)!==pin.sha256)throw Error('G39_SOURCE_PIN_CHANGED:'+p);inputs.set(p,b);
  }
@@ -157,6 +157,19 @@ export function build(sourceRoot){
   local_scope_only:true,native_executed:false,provider_accepted:false,production_authorized:false,
   derivations,files:Object.fromEntries([...files].map(([p,b])=>[p,{sha256:sha(b),bytes:b.length}]))};
  files.set('G39_BUILD.json',Buffer.from(JSON.stringify(manifest,null,2)+'\n'));return{files,manifest};
+}
+/** Frozen historical context; rejects the successor queue bytes. */
+export function build(sourceRoot){
+ return buildPinned(sourceRoot,JSON.parse(readFileSync(join(here,'SOURCE_PINS.json'),'utf8')));
+}
+/** Explicit held current input context; native packet bytes must remain identical. */
+export function buildCurrent(sourceRoot){
+ if(arguments.length!==1)throw Error('G39_CURRENT_EXACT_SOURCE_ROOT_REQUIRED');
+ const profile=currentInputProfile(),packet=buildPinned(sourceRoot,profile.pins);
+ if(packet.files.size!==25||packet.manifest.expected_checks.length!==43||
+    sha(packet.files.get('G39_BUILD.json'))!==profile.receipt.frozen_runtime_manifest_sha256)
+  throw Error('G39_CURRENT_RUNTIME_BYTES_CHANGED');
+ return packet;
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const source=process.argv[2];if(!source||process.argv.length!==3)throw Error('G39_EXACT_SOURCE_ROOT_REQUIRED');

@@ -1,5 +1,9 @@
 # Owner decisions
 
+## Autonomous independent implementation — 18 November 2026
+
+The owner requested completion of “everything where you don't need my input” using the token-optimisation skill. This authorizes independent code preparation, research, verification and repository delivery within the existing boundaries. It supplies no missing business facts, independent human review, production publication, live tracking, Ads activation/expenditure, permission expansion or gate waiver. Existing decisions remain in force.
+
 ## Marketing account connection confirmed — 18 November 2026
 
 The owner confirmed marketing@blackswanrealestate.ae appears in both Gmail and Google Drive connection lists. Fresh authenticated calls explicitly selecting those Marketing connections verified the same intended Google profile for both services; BSS remains separately listed. G005 identity acceptance is recorded in the [public-safe receipt](../audit/MARKETING_CONNECTION_ACCEPTANCE_2026-11-18.json). This grants no new sharing, service enrollment, website/tracking/Ads publication or spending authority. Private connection/profile IDs remain outside this repository.

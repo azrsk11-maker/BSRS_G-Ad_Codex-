@@ -13,6 +13,8 @@ The output layout is explicit:
 
 V2 produces64 plugin members plus its separate receiver. V3 appends the exact accepted class-only require to final main, proves its inverse, and hashes all64 final source members into the existing runtime manifest schema `bsre-canonical-lease-source-v1`. The producer/manifest themselves, drop-in and receiver stay outside that64-member source map. The two generated plugin members plus drop-in add three outputs:68 available,70 required. This fixed partial profile rejects attempts to add arbitrary members or silently claim that the missing ports are implemented.
 
+The final selected child also applies one reversible Ads transaction-ID guard after its unchanged V2/G35 ancestry is verified, before the64-member manifest is rendered. Only `evt_` or `bsre-event-` plus a lowercase UUIDv4 can reach the optional Ads command; malformed IDs are dropped without rewriting the receipt, blocking intake, or changing GA4. The original runtime, G4/V2 derivations and all97 source pins stay unchanged. `ads_transaction_id_guard` binds the exact preimage/output hashes and inverse in the private manifest. The corrected child changes M/P/drop-in identities; historical prepared identities remain separately verified by inversion and cannot select the new output.
+
 ## API and derivation
 
 `composeCoupledCanonicalLeaseV3({source_root,v2_input})` has exactly those two top-level fields. Both `v2_input.source_root` and `g4_source_root` must identify that same pinned source checkout. The typed original/capture/identity/provenance/native/G3/G4 selection inputs are the existing V2 contract. The optional explicit reviewed capture-comment policy is preserved. Caller-supplied selected outputs/pins, manifests, callbacks, builders, source overrides and complete-profile flags are rejected.
@@ -56,6 +58,8 @@ node --test tools/website-tracking/coupled-package-v3/compose-v3.test.mjs
 ```
 
 The focused integration gates also run the unchanged V2 and G35 suites. Tests use synthetic identities/reviews and actual builders/source bytes; no filler modules, real approval receipt, provider request or historical lead replay is used. New V3 native source/route/custody acceptance must follow Root review. Operational ports, real history/custody/provider evidence, served convergence, independent human review and separate production permission remain holds. Ads stay paused.
+
+`ads-transaction-privacy.test.mjs` executes the actual final V3 client, parent and child with local DOM/HTTP/SDK doubles. A malformed accepted HTTP acknowledgment reproduces the previous numeric-ID dispatch through the real upstream receipt guard; the correction suppresses only its Ads command. Both valid receiver prefixes preserve exact IDs and one GA4/Ads command. This proves fail-closed behavior at the mocked acknowledgment boundary, not that the genuine receiver ever issued a malformed ID, nor native/browser/provider acceptance.
 
 For a native image builder, import the separate `synthetic-input.mjs` helper; it contains no `node:test` import or auto-executing tests. `await syntheticInput({source_root:'/opt/reviewed'})` returns a pure synthetic composition input built from the actual immutable original audit/fixtures and actual G3/G34 derivations. Pass it to `composeCoupledCanonicalLeaseV3()`; that entry derives all22 real domain outputs internally. No actual contact approval, retained capture, key or provider is read.
 

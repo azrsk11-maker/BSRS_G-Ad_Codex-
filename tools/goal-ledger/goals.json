@@ -196,6 +196,23 @@
       "goals": [
         "G051"
       ]
+    },
+    "current-safety-fix-preparation-20261118": {
+      "kind": "local_test",
+      "ref": "docs/audit/CURRENT_SAFETY_FIX_PREPARATION_2026-11-18.json",
+      "goals": [
+        "G035",
+        "G036",
+        "G046",
+        "G055"
+      ]
+    },
+    "primary-project-discovery-20261118": {
+      "kind": "local_test",
+      "ref": "docs/audit/PRIMARY_PROJECT_DISCOVERY_2026-11-18.json",
+      "goals": [
+        "G022"
+      ]
     }
   },
   "goals": [
@@ -420,7 +437,8 @@
         "G021"
       ],
       "evidence_refs": [
-        "bounded-preparation-g022"
+        "bounded-preparation-g022",
+        "primary-project-discovery-20261118"
       ],
       "id": "G022",
       "launch_gate": "prelaunch",
@@ -557,10 +575,13 @@
         "G031",
         "G034"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
       "id": "G035",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -569,10 +590,13 @@
         "G034",
         "G035"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
       "id": "G036",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -675,10 +699,13 @@
         "G019",
         "G043"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
       "id": "G046",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [
@@ -760,10 +787,13 @@
       "depends_on": [
         "G051"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
       "id": "G055",
       "launch_gate": "prelaunch",
-      "status": "pending"
+      "status": "running",
+      "preparation_only": true
     },
     {
       "depends_on": [

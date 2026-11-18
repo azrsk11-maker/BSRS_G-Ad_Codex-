@@ -1,5 +1,6 @@
 """Four campaign-entry candidates for review; no CMS, Ads or registry writer."""
 from collections import defaultdict
+from html.parser import HTMLParser
 import argparse
 import hashlib
 import json
@@ -39,6 +40,61 @@ def same(left,right):
     return left==right
 
 
+class _DraftFragment(HTMLParser):
+    """Inspect only the existing inert core paragraph/buttons fragment contract."""
+    COMMENTS={'wp:paragraph','/wp:paragraph','wp:buttons','/wp:buttons','wp:button','/wp:button'}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack=[];self.paths=[];self.label=[]
+
+    def handle_starttag(self,tag,attrs):
+        need(tag in ('p','div','a'),'DRAFT_UNSUPPORTED_MARKUP')
+        need(len(dict(attrs))==len(attrs),'DRAFT_UNSUPPORTED_ATTRIBUTES')
+        attributes=dict(attrs)
+        if tag=='p':
+            need(not attributes,'DRAFT_UNSUPPORTED_ATTRIBUTES')
+        elif tag=='div':
+            need(set(attributes)=={'class'}and attributes['class']in ('wp-block-buttons','wp-block-button'),
+                 'DRAFT_UNSUPPORTED_ATTRIBUTES')
+        else:
+            need(set(attributes)=={'class','href'}and attributes['class']=='wp-block-button__link wp-element-button'
+                 and isinstance(attributes['href'],str),'DRAFT_UNSUPPORTED_ATTRIBUTES')
+            need('a'not in self.stack,'DRAFT_INVALID_NESTING')
+            self.paths.append(attributes['href']);self.label=[]
+        self.stack.append(tag)
+
+    def handle_endtag(self,tag):
+        need(bool(self.stack)and self.stack[-1]==tag,'DRAFT_INVALID_NESTING')
+        if tag=='a':need(''.join(self.label).strip(),'DRAFT_CTA_LABEL_REQUIRED')
+        self.stack.pop()
+
+    def handle_startendtag(self,tag,attrs):
+        raise ValueError('DRAFT_UNSUPPORTED_MARKUP')
+
+    def handle_data(self,data):
+        if 'a'in self.stack:self.label.append(data)
+
+    def handle_comment(self,data):
+        need(data.strip()in self.COMMENTS,'DRAFT_UNSUPPORTED_MARKUP')
+
+    def handle_decl(self,decl):
+        raise ValueError('DRAFT_UNSUPPORTED_MARKUP')
+
+    def handle_pi(self,data):
+        raise ValueError('DRAFT_UNSUPPORTED_MARKUP')
+
+    def unknown_decl(self,data):
+        raise ValueError('DRAFT_UNSUPPORTED_MARKUP')
+
+
+def validate_draft_fragment(body,paths):
+    need(type(body)is str and 0<len(body.encode('utf-8'))<16384,'DRAFT_BYTE_BOUND')
+    parsed=_DraftFragment();parsed.feed(body);parsed.close()
+    need(not parsed.stack,'DRAFT_INVALID_NESTING')
+    need(same(parsed.paths,list(paths)),'DRAFT_CTA_ROUTES_CHANGED')
+
+
 def load_inputs(root=ROOT):
     loaded={};pins={}
     for name,relative in INPUTS.items():
@@ -47,15 +103,25 @@ def load_inputs(root=ROOT):
         with path.open('rb')as stream:blob=stream.read(MAX_BYTES+1)
         need(0<len(blob)<=MAX_BYTES,'INPUT_BYTE_BOUND')
         loaded[name]=json.loads(blob.decode('utf-8-sig'));pins[relative]=hashlib.sha256(blob).hexdigest()
+    loaded['draft_fragments']={}
     for name in ('buyers.html','owners.html'):
         relative='tools/native-wordpress/entry-drafts/'+name
         with(root/relative).open('rb')as stream:blob=stream.read(16385)
         need(0<len(blob)<16384,'DRAFT_BYTE_BOUND')
+        loaded['draft_fragments'][name]=blob.decode('utf-8')
         pins[relative]=hashlib.sha256(blob).hexdigest()
     return loaded,pins
 
 
 def compile_proposal(inputs,pins):
+    fragments=inputs.get('draft_fragments')
+    need(type(fragments)is dict and set(fragments)=={'buyers.html','owners.html'},'EXACT_DRAFT_FRAGMENT_SET_REQUIRED')
+    for role,key,family,secondary,paths,fragment,reuse in SETTINGS:
+        if fragment:
+            validate_draft_fragment(fragments[fragment],paths)
+            relative='tools/native-wordpress/entry-drafts/'+fragment
+            need(pins.get(relative)==hashlib.sha256(fragments[fragment].encode('utf-8')).hexdigest(),
+                 'DRAFT_FRAGMENT_PIN_MISMATCH')
     native=compile_manifest(inputs['registry'],inputs['allocation'])
     need(same(native,inputs['native_manifest']),'NATIVE_MANIFEST_DRIFT')
     release=inputs['release_controls']

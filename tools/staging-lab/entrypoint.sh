@@ -3,6 +3,7 @@ set -eu
 # Must pass BEFORE DB initialization and the first WordPress bootstrap.
 php -d sendmail_path=/bin/false /opt/lab/isolation.php
 php -d sendmail_path=/bin/false /opt/lab/browser-prerequisites.php
+node /opt/lab/staging-lab/physical-identity.mjs
 node --test /opt/lab/closed-enquiry-retention/receiver-fence/candidate.test.mjs
 mkdir /tmp/database
 mariadb-install-db --no-defaults --datadir=/tmp/database --auth-root-authentication-method=normal > /tmp/db-init.log 2>&1

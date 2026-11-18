@@ -1,5 +1,17 @@
 # Implementation progress
 
+## Current safety fixes and explicit successor binding — 18 November 2026
+
+Three reproduced defects now have reviewed source corrections: immediate erasure when fresh queue evidence shortens expiry; actual Buyers/Owners CTA route/order/markup/digest validation; and opaque Ads transaction-ID enforcement in the final composed child. Intake and valid-ID behavior remain intact. The [preparation receipt](audit/CURRENT_SAFETY_FIX_PREPARATION_2026-11-18.json) distinguishes 181 integrated core checks from the later 23 audit (including nine output-safety cases), 23 readback/SDK/profile and six workflow tests; overlapping counts are not unique totals. Tests used synthetic fixtures, with no genuine provider event.
+
+The explicit current input context binds the queue correction without silently changing historical input maps or the 25-file G39 packet. The [current native audit](../tools/website-tracking/current-native-audit/README.md) requires two new physical identity receipts plus all 458 retained documents, exact current committed bytes and the full historical assertions through declared byte inverses. Old frozen proofs are untouched. New current-head native execution is not asserted by this preparation record; consult the latest exact-head PR checkpoint after CI. Human, history/custody, factual, browser/provider, full-library and release gates remain open. G035/G036/G046/G055 are preparation only; six goals remain verified and 94 incomplete.
+
+The required local Foundation run completed in 625.264804 seconds with two unchanged keyword phases timing out at their existing 120/300-second bounds. The resource selector observed 1,576,476,672 available bytes and selected one worker. Every other local check passed. This failed run is diagnostic, not acceptance; no limits, worker memory budget or assertions were weakened. All four remote checks remain required on the new exact commit.
+
+## New primary project discovery, all held — 18 November 2026
+
+Seven fresh first-party captures support six named project subjects: Tilal Binghatti, Breez by Danube, Sobha One, Oxford Cove by IMAN, Samana Mykonos Signature and Sobha Sanctuary Estate Villas. [Public-safe evidence](audit/PRIMARY_PROJECT_DISCOVERY_2026-11-18.json) retains URLs, capture pins, unresolved card-data contradictions and 189 independent integrity checks. No matching project name occurred within the bounded 41-candidate/3,691-query comparison; global novelty remains unknown. Capture time is not inventory freshness. All six are HOLD; prices, availability, metrics, mandates, rights and mappings remain unverified. No keyword variants or admissions were added, and G022 remains incomplete. Raw HTML and private corpus paths are excluded from the repository.
+
 ## Selected factual review boundary clarified - 18 November 2026
 
 The [G 051 sufficiency result](audit/FACTUAL_REVIEW_GAP_2026-11-18.json) covers four campaign candidates and two guides with existing approved private insertions. Current inspected versions make no property offer; unit inventory/prices are not required for those claims. Acceptance still needs Amit’s dated, exact-version factual decision and supporting source/refresh controls. Rights/mandates/permits are conditional on actual selected claims/assets. READY-004 stays withdrawn; existing private insertions do not approve complete pages or publication. No new cloud search or permissions were needed.

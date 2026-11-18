@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {posix} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
-import {build} from '../website-tracking/g5-local-history-runtime/build-private.mjs';
+import {buildCurrent as build} from '../website-tracking/g5-local-history-runtime/build-private.mjs';
 import {planLocalHistoryRuntimeLab,localHistoryRuntimeLabBytes,writeFixedLocalHistoryRuntimeLab,FIXED_LOCAL_HISTORY_ROOT,FIXED_LOCAL_INPUT_ROOT,LOCAL_HISTORY_RUNTIME_PATHS} from './build-local-history-runtime-lab.mjs';
 
 const sourceRoot=fileURLToPath(new URL('../../',import.meta.url));

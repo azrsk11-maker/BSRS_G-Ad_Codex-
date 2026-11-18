@@ -3,7 +3,8 @@ import {constants,lstatSync,realpathSync,mkdirSync,openSync,closeSync,fstatSync,
 import {dirname,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
-import {build,FIXED_ROOT,FIXED_PREFIX} from '../website-tracking/g5-local-history-runtime/build-private.mjs';
+import {build,buildCurrent,FIXED_ROOT,FIXED_PREFIX} from '../website-tracking/g5-local-history-runtime/build-private.mjs';
+import {currentInputProfile} from '../website-tracking/g5-local-history-runtime/current-input-context.mjs';
 
 const moduleRoot=new URL('../website-tracking/g5-local-history-runtime/',import.meta.url);
 const expected=JSON.parse(readFileSync(new URL('NATIVE_EXPECTATIONS.json',moduleRoot),'utf8'));
@@ -74,6 +75,15 @@ function tree(root,paths,bytesFor){
 /** Zero arguments, root-only image build, fixed new aliases and runtime. No overwrite/delete. */
 export function writeFixedLocalHistoryRuntimeLab(){
  need(arguments.length===0,'G39_LAB_NO_ARGUMENTS');
+ return writeFixedForContext(pins,inputMap,build);
+}
+/** Explicit successor review context; no production or export authority. */
+export function writeFixedCurrentLocalHistoryRuntimeLab(){
+ need(arguments.length===0,'G39_LAB_NO_ARGUMENTS');
+ const current=currentInputProfile();
+ return writeFixedForContext(current.pins,current.inputMap,buildCurrent);
+}
+function writeFixedForContext(pins,inputMap,builder){
  need(process.platform==='linux'&&typeof process.getuid==='function'&&process.getuid()===0,'G39_LAB_BUILD_ROOT_REQUIRED');
  need(Number.isInteger(constants.O_NOFOLLOW),'G39_LAB_NOFOLLOW_REQUIRED');
  for(const p of ['/','/opt','/opt/lab'])directory(p);absent(FIXED_LOCAL_INPUT_ROOT);absent(FIXED_LOCAL_HISTORY_ROOT);
@@ -84,11 +94,13 @@ export function writeFixedLocalHistoryRuntimeLab(){
   const b=fileBytes(row.image_source),pin=pins.files[path];need(row.bytes===pin.bytes&&row.sha256===pin.sha256&&b.length===pin.bytes&&sha(b)===pin.sha256,'G39_LAB_SOURCE_PIN_CHANGED');inputs.set(path,b);
  }
  tree(FIXED_LOCAL_INPUT_ROOT,[...inputs.keys()],p=>inputs.get(p));
- const plan=planLocalHistoryRuntimeLab(build(FIXED_LOCAL_INPUT_ROOT));
+ const plan=planLocalHistoryRuntimeLab(builder(FIXED_LOCAL_INPUT_ROOT));
  tree(FIXED_LOCAL_HISTORY_ROOT,LOCAL_HISTORY_RUNTIME_PATHS,p=>localHistoryRuntimeLabBytes(plan,p));
  for(const [path,row]of Object.entries(inputMap.files))need(fileBytes(row.image_source).equals(inputs.get(path)),'G39_LAB_ORIGINAL_INPUT_CHANGED');
  return plan;
 }
 if(process.argv[1]&&pathToFileURL(process.argv[1]).href===import.meta.url){
- need(process.argv.length===2,'G39_LAB_NO_ARGUMENTS');process.stdout.write(JSON.stringify(writeFixedLocalHistoryRuntimeLab())+'\n');
+ need(process.argv.length===2||(process.argv.length===3&&process.argv[2]==='--input-context=retention-expiry-v1'),'G39_LAB_EXPLICIT_INPUT_CONTEXT_REQUIRED');
+ const plan=process.argv.length===2?writeFixedLocalHistoryRuntimeLab():writeFixedCurrentLocalHistoryRuntimeLab();
+ process.stdout.write(JSON.stringify(plan)+'\n');
 }

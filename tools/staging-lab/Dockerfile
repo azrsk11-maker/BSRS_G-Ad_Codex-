@@ -106,7 +106,7 @@ COPY tools/website-tracking/g5-runtime-ports/tests/native.php /opt/lab/g36-sourc
 COPY tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs tools/website-tracking/tracking-system/build-contact-compatible-client-candidate.mjs tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs tools/website-tracking/tracking-system/build-g1-retention-store-candidate.mjs tools/website-tracking/tracking-system/build-g2-profile-candidate.mjs tools/website-tracking/tracking-system/build-g2-shared-repository-candidate.mjs tools/website-tracking/tracking-system/build-g3-profile-candidate.mjs tools/website-tracking/tracking-system/build-g34-profile-candidate.mjs tools/website-tracking/tracking-system/build-native-frame-candidate.mjs tools/website-tracking/tracking-system/build-native-page-context-candidate.mjs tools/website-tracking/tracking-system/build-purpose-attribution-candidate.mjs tools/website-tracking/tracking-system/build-purpose-retention-candidate.mjs tools/website-tracking/tracking-system/build-receipt-client-candidate.mjs tools/website-tracking/tracking-system/build-receipt-status-candidate.mjs tools/website-tracking/tracking-system/build-reload-guard-candidate.mjs tools/website-tracking/tracking-system/build-retention-admission-candidate.mjs tools/website-tracking/tracking-system/g2-shared-bootstrap.php tools/website-tracking/tracking-system/g2-shared-repository.php tools/website-tracking/tracking-system/g3-bootstrap.php tools/website-tracking/tracking-system/g3-route-context.php tools/website-tracking/tracking-system/purpose-attribution.php tools/website-tracking/tracking-system/purpose-retention.php tools/website-tracking/tracking-system/receipt-recovery-wordpress.php tools/website-tracking/tracking-system/receipt-recovery.php tools/website-tracking/tracking-system/receipt-status.php tools/website-tracking/tracking-system/retention-admission.php /opt/lab/g36-source/tools/website-tracking/tracking-system/
 COPY tools/website-tracking/tracking-system/native-page-context/client.js tools/website-tracking/tracking-system/native-page-context/NativePageContext.php /opt/lab/g36-source/tools/website-tracking/tracking-system/native-page-context/
 COPY tools/website-tracking/coupled-package-v3/build-native.mjs tools/website-tracking/coupled-package-v3/native-contact-abi.php /opt/lab/website-tracking/coupled-package-v3/
-COPY tools/staging-lab/build-coupled-canonical-v3-lab.mjs tools/staging-lab/canonical-coupled-contact-native.php /opt/lab/staging-lab/
+COPY tools/staging-lab/build-coupled-canonical-v3-lab.mjs tools/staging-lab/canonical-coupled-contact-native.php tools/website-tracking/current-native-audit/physical-identity.mjs /opt/lab/staging-lab/
 # Place this RUN after existing byte builds and before USER mysql.
 RUN node /opt/lab/staging-lab/build-coupled-canonical-v3-lab.mjs
 # Insert after the retained G36 byte build and before USER mysql. Public code only.
@@ -143,7 +143,7 @@ COPY tools/staging-lab/build-actual-purge-runtime-lab.mjs tools/staging-lab/buil
 COPY tools/website-tracking/g5-local-history-runtime /opt/lab/website-tracking/g5-local-history-runtime
 # Read only the existing curated receiver/G5/Intake build inputs; create only the new fixed root.
 RUN node /opt/lab/staging-lab/build-actual-purge-runtime-lab.mjs \
-    && node /opt/lab/staging-lab/build-local-history-runtime-lab.mjs
+    && node /opt/lab/staging-lab/build-local-history-runtime-lab.mjs --input-context=retention-expiry-v1
 
 USER mysql
 ENTRYPOINT ["sh", "/opt/lab/entrypoint.sh"]

@@ -318,6 +318,11 @@ class PrivateQueue:
             self._set_meta("fixture_only", fixture)
             existing = {row["person_key"]: row for row in self.db.execute("SELECT * FROM queue")}
             expired = {person for person, row in existing.items() if when(row["retire_at"]) <= now}
+            # Fresh reviewed evidence can shorten an existing deadline into the
+            # past. Erase that reservation now, before it could be rewritten as
+            # a HELD row retaining an already-expired person/GCLID payload.
+            expired.update(person for person, item in evaluated["candidates"].items()
+                           if person in existing and when(item["retire_at"]) <= now)
             for person in expired:
                 self.db.execute("DELETE FROM queue WHERE person_key=?", (person,))
                 existing.pop(person)

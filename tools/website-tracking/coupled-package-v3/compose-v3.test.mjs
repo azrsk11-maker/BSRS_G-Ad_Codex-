@@ -41,6 +41,11 @@ test('final postcontact client/templates are M-bound while receiver and V2 proof
   const independently=await composeCoupledPackageV2({...input.v2_input,selected_outputs:selected,
     selected_output_pins:Object.fromEntries(selected.map(row=>[row.path,digest(row.bytes)]))});
   for(const [path,bytes]of independently.files){if(path==='plugin/bsre-enquiries.php')assert.equal(digest(bytes),m.main_include.input_sha256);
+    else if(path==='plugin/assets/google-runtime.js'){
+      const proof=m.ads_transaction_id_guard,child=result.files.get(CONTRACT_V3.plugin_prefix+proof.member);
+      assert.equal(proof.reverse_verified,true);assert.equal(proof.input_sha256,digest(bytes));assert.equal(proof.output_sha256,digest(child));
+      assert.ok(Buffer.from(child.toString().replace(proof.after,proof.before)).equals(bytes));
+    }
     else assert.ok(result.files.get(path.startsWith('plugin/')?CONTRACT_V3.plugin_prefix+path.slice(7):path).equals(bytes),path);}
   const privateV2=m.v2_private_manifest;assert.equal(privateV2.ancestry.length,8);assert.ok(privateV2.ancestry.every(r=>r.reverse_verified));
   assert.equal(privateV2.capture_guard_compatibility.actual_raw_members.length,30);assert.equal(privateV2.capture_guard_compatibility.actual_capture_rewritten,false);

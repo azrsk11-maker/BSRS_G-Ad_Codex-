@@ -28,11 +28,17 @@ function copiedSources(temp){
   for(const path of paths){const dest=join(root,path);mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,readFileSync(join(SOURCE_ROOT,path)));}
   return root;
 }
-test('writer hardening preserves the already prepared synthetic G36 native M/P/dropin receipt',async()=>{
+test('Ads guard inverse preserves the prepared historical G36 M/P/dropin receipt separately',async()=>{
   const result=await make(),b=result.private_manifest.bindings;
-  assert.equal(b.M,'5d8107cb2abc02c493b68290816368d57efae0d30d5d65693660c3c8b504db71');
-  assert.equal(b.P,'9b6880972fc094ab0b3f7b10d2eea2d4109e1b13ec9c815299a14064fa41e40c');
-  assert.equal(b.dropin_sha256,'7223236ea357446287ea7362b91a4d82dfa69490488a1e165ba6e6557960d6de');
+  const proof=result.private_manifest.ads_transaction_id_guard,manifest=JSON.parse(result.files.get(CONTRACT_V3.manifest_path));
+  assert.equal(manifest.files[proof.member],proof.output_sha256);manifest.files[proof.member]=proof.input_sha256;
+  const oldM=digest(Buffer.from(JSON.stringify(manifest,null,2)+'\n'));
+  const oldProducer=Buffer.from(result.files.get(CONTRACT_V3.producer_path).toString().replace(b.M,oldM)),oldP=digest(oldProducer);
+  const oldDropin=Buffer.from(result.files.get(CONTRACT_V3.dropin_path).toString().replaceAll(b.M,oldM).replaceAll(b.P,oldP));
+  assert.equal(oldM,'5d8107cb2abc02c493b68290816368d57efae0d30d5d65693660c3c8b504db71');
+  assert.equal(oldP,'9b6880972fc094ab0b3f7b10d2eea2d4109e1b13ec9c815299a14064fa41e40c');
+  assert.equal(digest(oldDropin),'7223236ea357446287ea7362b91a4d82dfa69490488a1e165ba6e6557960d6de');
+  assert.notEqual(b.M,oldM);assert.notEqual(b.P,oldP);assert.notEqual(b.dropin_sha256,digest(oldDropin));
   assert.equal(result.files.size,68);assert.equal(b.source_manifest_members,64);
 });
 test('genuine rehashed receiver counterexample is rejected by both validators and writer before output mutation',async()=>{

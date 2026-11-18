@@ -1,0 +1,355 @@
+{
+  "schema": "bsre-current-native-scope-v1",
+  "baseline_head": "eb323a307001b00c534070d024ab406771fdda16",
+  "old_document_count": 458,
+  "new_physical_identity_receipts": 2,
+  "historical_predecessor_documents": 454,
+  "historical_auditor": {
+    "bytes": 23149,
+    "sha256": "ed1b48c40d395bf20f788c63279e7dffbeecaa18d2eb24d9966c33d79c6f4108"
+  },
+  "historical_freeze": {
+    "bytes": 14604,
+    "sha256": "38e8ddbe57e1ca9e22f51fc8e118fd31e6d9c82d54f8fe61f9e3a10cf0b06016"
+  },
+  "composer": {
+    "path": "tools/website-tracking/coupled-package-v3/compose-v3.mjs",
+    "before": {
+      "bytes": 23215,
+      "sha256": "22522b7dffab2c9e701f89638d06dc2f45ee95e21c27003bf26a209856538ac5"
+    },
+    "after": {
+      "bytes": 24490,
+      "sha256": "94e1de310a908038fb6a5c35e8f24debc2131da9675fdb06210e446c6a86e02a"
+    },
+    "inverse_edits": [
+      {
+        "before": "  // The accepted receipt guard allows generic opaque-looking strings. Do not\n  // disclose a phone-like or free-text value as an Ads transaction identifier.\n  // Tighten only the final selected child after proving its unchanged ancestry;\n  // original runtime/G4/V2 bytes and their frozen source pins remain intact.\n  const childPath='assets/google-runtime.js',childBefore=sourceMembers.get(childPath);\n  const broadId=\"!/^[A-Za-z0-9._:-]{1,64}$/.test(payload.transaction_id)\";\n  const opaqueId=\"!/^(?:bsre-event-|evt_)[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(payload.transaction_id)\";\n  const childText=childBefore.toString('utf8');need(childText.split(broadId).length===2,'V3_ADS_ID_GUARD_ANCHOR');\n  const childAfter=Buffer.from(childText.replace(broadId,opaqueId));\n  need(childAfter.toString().split(opaqueId).length===2&&Buffer.from(childAfter.toString().replace(opaqueId,broadId)).equals(childBefore),'V3_ADS_ID_GUARD_REVERSE');\n  sourceMembers.set(childPath,childAfter);\n  const adsIdGuard={member:childPath,input_sha256:digest(childBefore),output_sha256:digest(childAfter),\n    before:broadId,after:opaqueId,reverse_verified:true,invalid_id_policy:'DROP_OPTIONAL_ADS_DISPATCH_NO_REWRITE'};\n",
+        "after": ""
+      },
+      {
+        "before": "    ads_transaction_id_guard:adsIdGuard,\n",
+        "after": ""
+      }
+    ]
+  },
+  "source_deltas": [
+    {
+      "path": ".github/workflows/isolated-wordpress-lab.yml",
+      "before": {
+        "bytes": 6040,
+        "sha256": "bc9ac04b83baaef2605bc14e94cce85562ff128a7b8c9b2a44596b8e16c4b4f7"
+      },
+      "after": {
+        "bytes": 6395,
+        "sha256": "295475c91c78eea35661e678bd4d7f2097640d63587048753962a47cc9d457ce"
+      },
+      "inverse_edits": [
+        {
+          "before": "          python -B -m unittest discover -s tools/website-tracking/current-native-audit -p test_current_native_audit.py -k OutputGuardTest -v\n",
+          "after": ""
+        },
+        {
+          "before": "tools/website-tracking/g5-local-history-runtime/tests/current-input-context.test.mjs tools/website-tracking/current-native-audit/physical-identity.test.mjs\n",
+          "after": "tools/website-tracking/g5-local-history-runtime/tests/current-input-context.test.mjs\n"
+        },
+        {
+          "before": "      - 'tools/website-tracking/coupled-package-v3/**'\n      - 'tools/website-tracking/current-native-audit/**'\n",
+          "after": "      - 'tools/website-tracking/coupled-package-v3/**'\n"
+        },
+        {
+          "before": "          php tools/website-tracking/g5-actual-purge-runtime/tests/approval-identity.test.php\n          php tools/website-tracking/g5-actual-purge-runtime/tests/admission-clock.test.php\n          node --test --test-reporter=tap tools/staging-lab/build-receiver-runtime-lab.test.mjs tools/staging-lab/build-preference-runtime-lab.test.mjs\n          node --test --test-reporter=tap tools/website-tracking/g5-local-history-runtime/tests/preparation.test.mjs tools/staging-lab/build-local-history-runtime-lab.test.mjs tools/website-tracking/g5-local-history-runtime/tests/current-input-context.test.mjs\n          php tools/website-tracking/g5-local-history-runtime/tests/snapshot-marker.test.php\n          sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/staging-lab/*profile*.mjs tools/staging-lab/database-11.8.9.lock.json tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json\n          find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l\n",
+          "after": "          php tools/website-tracking/g5-actual-purge-runtime/tests/approval-identity.test.php\n          php tools/website-tracking/g5-actual-purge-runtime/tests/admission-clock.test.php\n          node --test --test-reporter=tap tools/staging-lab/build-receiver-runtime-lab.test.mjs tools/staging-lab/build-preference-runtime-lab.test.mjs\n          node --test --test-reporter=tap tools/website-tracking/g5-local-history-runtime/tests/preparation.test.mjs tools/staging-lab/build-local-history-runtime-lab.test.mjs\n          php tools/website-tracking/g5-local-history-runtime/tests/snapshot-marker.test.php\n          sha256sum tools/staging-lab/Dockerfile tools/staging-lab/*.php tools/staging-lab/*.sh tools/staging-lab/*.py tools/staging-lab/*profile*.mjs tools/staging-lab/database-11.8.9.lock.json tools/native-wordpress/native-draft-preview.php tools/native-wordpress/native-page-manifest.json\n          find tools/staging-lab tools/consent-retention -name '*.php' -print0 | xargs -0 -n 1 php -l\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/staging-lab/Dockerfile",
+      "before": {
+        "bytes": 25606,
+        "sha256": "b57155dfa6db8e29ae0f252dccc4f1f3e8737080352582e4d76303c1f0a15915"
+      },
+      "after": {
+        "bytes": 25708,
+        "sha256": "062952cf9c37377562c3393c0d4bfdfff00f3a8738dc70cd36d3c028c7d9d499"
+      },
+      "inverse_edits": [
+        {
+          "before": "COPY tools/staging-lab/build-coupled-canonical-v3-lab.mjs tools/staging-lab/canonical-coupled-contact-native.php tools/website-tracking/current-native-audit/physical-identity.mjs /opt/lab/staging-lab/",
+          "after": "COPY tools/staging-lab/build-coupled-canonical-v3-lab.mjs tools/staging-lab/canonical-coupled-contact-native.php /opt/lab/staging-lab/"
+        },
+        {
+          "before": "COPY tools/website-tracking/g5-local-history-runtime /opt/lab/website-tracking/g5-local-history-runtime\n# Read only the existing curated receiver/G5/Intake build inputs; create only the new fixed root.\nRUN node /opt/lab/staging-lab/build-actual-purge-runtime-lab.mjs \\\n    && node /opt/lab/staging-lab/build-local-history-runtime-lab.mjs --input-context=retention-expiry-v1\n\nUSER mysql\nENTRYPOINT [\"sh\", \"/opt/lab/entrypoint.sh\"]\n",
+          "after": "COPY tools/website-tracking/g5-local-history-runtime /opt/lab/website-tracking/g5-local-history-runtime\n# Read only the existing curated receiver/G5/Intake build inputs; create only the new fixed root.\nRUN node /opt/lab/staging-lab/build-actual-purge-runtime-lab.mjs \\\n    && node /opt/lab/staging-lab/build-local-history-runtime-lab.mjs\n\nUSER mysql\nENTRYPOINT [\"sh\", \"/opt/lab/entrypoint.sh\"]\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/staging-lab/build-local-history-runtime-lab.mjs",
+      "before": {
+        "bytes": 7902,
+        "sha256": "900809d2c479ebb8d33a158fd4844dbee5487b2821b8fe7c601127d7e1d7dade"
+      },
+      "after": {
+        "bytes": 8623,
+        "sha256": "c0b02a343481bc6b511b5294d96f0ffd93faeb9e4a8498b4e74a373608e51ebb"
+      },
+      "inverse_edits": [
+        {
+          "before": "import {dirname,join} from 'node:path';\nimport {pathToFileURL} from 'node:url';\nimport {createHash} from 'node:crypto';\nimport {build,buildCurrent,FIXED_ROOT,FIXED_PREFIX} from '../website-tracking/g5-local-history-runtime/build-private.mjs';\nimport {currentInputProfile} from '../website-tracking/g5-local-history-runtime/current-input-context.mjs';\n\nconst moduleRoot=new URL('../website-tracking/g5-local-history-runtime/',import.meta.url);\nconst expected=JSON.parse(readFileSync(new URL('NATIVE_EXPECTATIONS.json',moduleRoot),'utf8'));\n",
+          "after": "import {dirname,join} from 'node:path';\nimport {pathToFileURL} from 'node:url';\nimport {createHash} from 'node:crypto';\nimport {build,FIXED_ROOT,FIXED_PREFIX} from '../website-tracking/g5-local-history-runtime/build-private.mjs';\n\nconst moduleRoot=new URL('../website-tracking/g5-local-history-runtime/',import.meta.url);\nconst expected=JSON.parse(readFileSync(new URL('NATIVE_EXPECTATIONS.json',moduleRoot),'utf8'));\n"
+        },
+        {
+          "before": "/** Zero arguments, root-only image build, fixed new aliases and runtime. No overwrite/delete. */\nexport function writeFixedLocalHistoryRuntimeLab(){\n need(arguments.length===0,'G39_LAB_NO_ARGUMENTS');\n return writeFixedForContext(pins,inputMap,build);\n}\n/** Explicit successor review context; no production or export authority. */\nexport function writeFixedCurrentLocalHistoryRuntimeLab(){\n need(arguments.length===0,'G39_LAB_NO_ARGUMENTS');\n const current=currentInputProfile();\n return writeFixedForContext(current.pins,current.inputMap,buildCurrent);\n}\nfunction writeFixedForContext(pins,inputMap,builder){\n need(process.platform==='linux'&&typeof process.getuid==='function'&&process.getuid()===0,'G39_LAB_BUILD_ROOT_REQUIRED');\n need(Number.isInteger(constants.O_NOFOLLOW),'G39_LAB_NOFOLLOW_REQUIRED');\n for(const p of ['/','/opt','/opt/lab'])directory(p);absent(FIXED_LOCAL_INPUT_ROOT);absent(FIXED_LOCAL_HISTORY_ROOT);\n",
+          "after": "/** Zero arguments, root-only image build, fixed new aliases and runtime. No overwrite/delete. */\nexport function writeFixedLocalHistoryRuntimeLab(){\n need(arguments.length===0,'G39_LAB_NO_ARGUMENTS');\n need(process.platform==='linux'&&typeof process.getuid==='function'&&process.getuid()===0,'G39_LAB_BUILD_ROOT_REQUIRED');\n need(Number.isInteger(constants.O_NOFOLLOW),'G39_LAB_NOFOLLOW_REQUIRED');\n for(const p of ['/','/opt','/opt/lab'])directory(p);absent(FIXED_LOCAL_INPUT_ROOT);absent(FIXED_LOCAL_HISTORY_ROOT);\n"
+        },
+        {
+          "before": "  const b=fileBytes(row.image_source),pin=pins.files[path];need(row.bytes===pin.bytes&&row.sha256===pin.sha256&&b.length===pin.bytes&&sha(b)===pin.sha256,'G39_LAB_SOURCE_PIN_CHANGED');inputs.set(path,b);\n }\n tree(FIXED_LOCAL_INPUT_ROOT,[...inputs.keys()],p=>inputs.get(p));\n const plan=planLocalHistoryRuntimeLab(builder(FIXED_LOCAL_INPUT_ROOT));\n tree(FIXED_LOCAL_HISTORY_ROOT,LOCAL_HISTORY_RUNTIME_PATHS,p=>localHistoryRuntimeLabBytes(plan,p));\n for(const [path,row]of Object.entries(inputMap.files))need(fileBytes(row.image_source).equals(inputs.get(path)),'G39_LAB_ORIGINAL_INPUT_CHANGED');\n return plan;\n}\nif(process.argv[1]&&pathToFileURL(process.argv[1]).href===import.meta.url){\n need(process.argv.length===2||(process.argv.length===3&&process.argv[2]==='--input-context=retention-expiry-v1'),'G39_LAB_EXPLICIT_INPUT_CONTEXT_REQUIRED');\n const plan=process.argv.length===2?writeFixedLocalHistoryRuntimeLab():writeFixedCurrentLocalHistoryRuntimeLab();\n process.stdout.write(JSON.stringify(plan)+'\\n');\n}\n",
+          "after": "  const b=fileBytes(row.image_source),pin=pins.files[path];need(row.bytes===pin.bytes&&row.sha256===pin.sha256&&b.length===pin.bytes&&sha(b)===pin.sha256,'G39_LAB_SOURCE_PIN_CHANGED');inputs.set(path,b);\n }\n tree(FIXED_LOCAL_INPUT_ROOT,[...inputs.keys()],p=>inputs.get(p));\n const plan=planLocalHistoryRuntimeLab(build(FIXED_LOCAL_INPUT_ROOT));\n tree(FIXED_LOCAL_HISTORY_ROOT,LOCAL_HISTORY_RUNTIME_PATHS,p=>localHistoryRuntimeLabBytes(plan,p));\n for(const [path,row]of Object.entries(inputMap.files))need(fileBytes(row.image_source).equals(inputs.get(path)),'G39_LAB_ORIGINAL_INPUT_CHANGED');\n return plan;\n}\nif(process.argv[1]&&pathToFileURL(process.argv[1]).href===import.meta.url){\n need(process.argv.length===2,'G39_LAB_NO_ARGUMENTS');process.stdout.write(JSON.stringify(writeFixedLocalHistoryRuntimeLab())+'\\n');\n}\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/staging-lab/build-local-history-runtime-lab.test.mjs",
+      "before": {
+        "bytes": 10906,
+        "sha256": "8faa7d0e3ece45ab4d728f0b21c3127e615d093898d01cce3803ca2ba15d3939"
+      },
+      "after": {
+        "bytes": 10922,
+        "sha256": "12cd44609167fb9610367416b36c6ede40189dfba4a967173981f1732bb6987f"
+      },
+      "inverse_edits": [
+        {
+          "before": "import {posix} from 'node:path';\nimport {fileURLToPath} from 'node:url';\nimport {createHash} from 'node:crypto';\nimport {buildCurrent as build} from '../website-tracking/g5-local-history-runtime/build-private.mjs';\nimport {planLocalHistoryRuntimeLab,localHistoryRuntimeLabBytes,writeFixedLocalHistoryRuntimeLab,FIXED_LOCAL_HISTORY_ROOT,FIXED_LOCAL_INPUT_ROOT,LOCAL_HISTORY_RUNTIME_PATHS} from './build-local-history-runtime-lab.mjs';\n\nconst sourceRoot=fileURLToPath(new URL('../../',import.meta.url));\n",
+          "after": "import {posix} from 'node:path';\nimport {fileURLToPath} from 'node:url';\nimport {createHash} from 'node:crypto';\nimport {build} from '../website-tracking/g5-local-history-runtime/build-private.mjs';\nimport {planLocalHistoryRuntimeLab,localHistoryRuntimeLabBytes,writeFixedLocalHistoryRuntimeLab,FIXED_LOCAL_HISTORY_ROOT,FIXED_LOCAL_INPUT_ROOT,LOCAL_HISTORY_RUNTIME_PATHS} from './build-local-history-runtime-lab.mjs';\n\nconst sourceRoot=fileURLToPath(new URL('../../',import.meta.url));\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/website-tracking/g5-local-history-runtime/build-private.mjs",
+      "before": {
+        "bytes": 20013,
+        "sha256": "25cd5d4adcf2dc1643c735bfc95c8e65fcedb558a80d782f4071c73ef71ed07a"
+      },
+      "after": {
+        "bytes": 20737,
+        "sha256": "0f46ead2b807f101666ac96d15f69e1b7df00d92a6ba5724d18797013a106b7c"
+      },
+      "inverse_edits": [
+        {
+          "before": "import {dirname,join,resolve} from 'node:path';\nimport {fileURLToPath} from 'node:url';\nimport {createHash} from 'node:crypto';\nimport {currentInputProfile} from './current-input-context.mjs';\nexport const here=dirname(fileURLToPath(import.meta.url));\nexport const sha=b=>createHash('sha256').update(b).digest('hex');\nconst pref='tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/';\n",
+          "after": "import {dirname,join,resolve} from 'node:path';\nimport {fileURLToPath} from 'node:url';\nimport {createHash} from 'node:crypto';\nexport const here=dirname(fileURLToPath(import.meta.url));\nexport const sha=b=>createHash('sha256').update(b).digest('hex');\nconst pref='tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/';\n"
+        },
+        {
+          "before": " const n=text.split(before).length-1;if(n===0)throw Error('G39_DRIVER_ANCHOR:'+label);\n for(let i=0;i<n;i++){const offset=Buffer.byteLength(text.slice(0,text.indexOf(before)));edits.push({label,offset,before,after});text=text.replace(before,after);}return text;\n}\nfunction buildPinned(sourceRoot,pins){\n const inputs=new Map();for(const [p,pin] of Object.entries(pins.files)){\n  const b=readFileSync(join(sourceRoot,p));if(b.length!==pin.bytes||sha(b)!==pin.sha256)throw Error('G39_SOURCE_PIN_CHANGED:'+p);inputs.set(p,b);\n }\n",
+          "after": " const n=text.split(before).length-1;if(n===0)throw Error('G39_DRIVER_ANCHOR:'+label);\n for(let i=0;i<n;i++){const offset=Buffer.byteLength(text.slice(0,text.indexOf(before)));edits.push({label,offset,before,after});text=text.replace(before,after);}return text;\n}\nexport function build(sourceRoot){\n const pins=JSON.parse(readFileSync(join(here,'SOURCE_PINS.json'),'utf8'));\n const inputs=new Map();for(const [p,pin] of Object.entries(pins.files)){\n  const b=readFileSync(join(sourceRoot,p));if(b.length!==pin.bytes||sha(b)!==pin.sha256)throw Error('G39_SOURCE_PIN_CHANGED:'+p);inputs.set(p,b);\n }\n"
+        },
+        {
+          "before": "  derivations,files:Object.fromEntries([...files].map(([p,b])=>[p,{sha256:sha(b),bytes:b.length}]))};\n files.set('G39_BUILD.json',Buffer.from(JSON.stringify(manifest,null,2)+'\\n'));return{files,manifest};\n}\n/** Frozen historical context; rejects the successor queue bytes. */\nexport function build(sourceRoot){\n return buildPinned(sourceRoot,JSON.parse(readFileSync(join(here,'SOURCE_PINS.json'),'utf8')));\n}\n/** Explicit held current input context; native packet bytes must remain identical. */\nexport function buildCurrent(sourceRoot){\n if(arguments.length!==1)throw Error('G39_CURRENT_EXACT_SOURCE_ROOT_REQUIRED');\n const profile=currentInputProfile(),packet=buildPinned(sourceRoot,profile.pins);\n if(packet.files.size!==25||packet.manifest.expected_checks.length!==43||\n    sha(packet.files.get('G39_BUILD.json'))!==profile.receipt.frozen_runtime_manifest_sha256)\n  throw Error('G39_CURRENT_RUNTIME_BYTES_CHANGED');\n return packet;\n}\nif(process.argv[1]===fileURLToPath(import.meta.url)){\n const source=process.argv[2];if(!source||process.argv.length!==3)throw Error('G39_EXACT_SOURCE_ROOT_REQUIRED');\n const packet=build(resolve(source));for(const [p,b]of packet.files){const dest=join(here,'prepared-native',p);mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,b);}\n",
+          "after": "  derivations,files:Object.fromEntries([...files].map(([p,b])=>[p,{sha256:sha(b),bytes:b.length}]))};\n files.set('G39_BUILD.json',Buffer.from(JSON.stringify(manifest,null,2)+'\\n'));return{files,manifest};\n}\nif(process.argv[1]===fileURLToPath(import.meta.url)){\n const source=process.argv[2];if(!source||process.argv.length!==3)throw Error('G39_EXACT_SOURCE_ROOT_REQUIRED');\n const packet=build(resolve(source));for(const [p,b]of packet.files){const dest=join(here,'prepared-native',p);mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,b);}\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/website-tracking/g5-local-history-runtime/tests/preparation.test.mjs",
+      "before": {
+        "bytes": 16376,
+        "sha256": "0c65af2e29190a4f75db34b936dca63412640874b6ba89c4c5b0c83218984bd5"
+      },
+      "after": {
+        "bytes": 16392,
+        "sha256": "b12e8c96132fe23508b29e76901e829ca6bb04f9aefbfc6b5d8a48c4c6739fff"
+      },
+      "inverse_edits": [
+        {
+          "before": "import test from 'node:test';import assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';import {join} from 'node:path';\nimport {createPrivateKey,sign} from 'node:crypto';\nimport {here,buildCurrent as build,deriveJournal,derivePreference,deriveContracts,editExact} from '../build-private.mjs';\nimport {validateLocalReceipt,parseLocal,digest,sha,zero,unresolved} from '../validate-local.mjs';\nconst source=join(here,'../../..');\nconst pub=Buffer.from('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a','hex');\n",
+          "after": "import test from 'node:test';import assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';import {join} from 'node:path';\nimport {createPrivateKey,sign} from 'node:crypto';\nimport {here,build,deriveJournal,derivePreference,deriveContracts,editExact} from '../build-private.mjs';\nimport {validateLocalReceipt,parseLocal,digest,sha,zero,unresolved} from '../validate-local.mjs';\nconst source=join(here,'../../..');\nconst pub=Buffer.from('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a','hex');\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/qualified-export-source/source_queue.py",
+      "before": {
+        "bytes": 29937,
+        "sha256": "efc094cd32b60702fa65ba53f11a5d079ba5713f25bed86c2b3346547ba65392"
+      },
+      "after": {
+        "bytes": 30344,
+        "sha256": "5f48da6b20cc55586056fc37f9fcb8ccacc7ced4236a553bd8cdafdd40c35c39"
+      },
+      "inverse_edits": [
+        {
+          "before": "            self._set_meta(\"fixture_only\", fixture)\n            existing = {row[\"person_key\"]: row for row in self.db.execute(\"SELECT * FROM queue\")}\n            expired = {person for person, row in existing.items() if when(row[\"retire_at\"]) <= now}\n            # Fresh reviewed evidence can shorten an existing deadline into the\n            # past. Erase that reservation now, before it could be rewritten as\n            # a HELD row retaining an already-expired person/GCLID payload.\n            expired.update(person for person, item in evaluated[\"candidates\"].items()\n                           if person in existing and when(item[\"retire_at\"]) <= now)\n            for person in expired:\n                self.db.execute(\"DELETE FROM queue WHERE person_key=?\", (person,))\n                existing.pop(person)\n",
+          "after": "            self._set_meta(\"fixture_only\", fixture)\n            existing = {row[\"person_key\"]: row for row in self.db.execute(\"SELECT * FROM queue\")}\n            expired = {person for person, row in existing.items() if when(row[\"retire_at\"]) <= now}\n            for person in expired:\n                self.db.execute(\"DELETE FROM queue WHERE person_key=?\", (person,))\n                existing.pop(person)\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/qualified-export-source/test_source_queue.py",
+      "before": {
+        "bytes": 20163,
+        "sha256": "1ba30b03d86114fa86d2092e319afda0cfd3957fbfab4300ae5bb5cacdddc52b"
+      },
+      "after": {
+        "bytes": 23338,
+        "sha256": "a8846f65b28046fd9e31c9a28f7cfb2b4a5ac7a8cb754e68d872c5c2ac8ad102"
+      },
+      "inverse_edits": [
+        {
+          "before": "            with self.assertRaisesRegex(source.SourceError, \"REVIEW_SNAPSHOT_MISMATCH\"):\n                queue.mark_reviewed(OID, item.sha256, \"SYNTHETIC-OWNER\", later)\n\n    def test_fresh_shortened_deadline_purges_in_the_same_stage(self):\n        for deadline_source in (\"permission\", \"retention\"):\n            for offset in (timedelta(0), timedelta(seconds=-1)):\n                with self.subTest(source=deadline_source, offset=offset):\n                    path = self.path.with_name(f\"{deadline_source}-{offset.total_seconds()}.sqlite\")\n                    with source.PrivateQueue(path) as queue:\n                        original = self.reviewed(queue)\n                        parts = fixture()\n                        deadline = (NOW + offset).isoformat().replace(\"+00:00\", \"Z\")\n                        if deadline_source == \"permission\":\n                            parts[1][0][\"expires_at_utc\"] = deadline\n                        else:\n                            parts[3][\"records\"][0][\"retention_due_at_utc\"] = deadline\n                        result = queue.stage(snapshot(parts), NOW)\n                        self.assertEqual(queue.db.execute(\"SELECT count(*) FROM queue\").fetchone()[0], 0)\n                        self.assertTrue(result[\"durable_history_gap\"])\n                        self.assertEqual(result[\"states\"], {})\n                    # Restart and a later complete attestation must not restore\n                    # the deleted private person/GCLID reservation.\n                    with source.PrivateQueue(path) as queue:\n                        self.assertEqual(queue.projection(original, NOW)[\"rows\"], [])\n                        self.assertEqual(queue.db.execute(\"SELECT count(*) FROM queue\").fetchone()[0], 0)\n                    raw = path.read_bytes()\n                    self.assertNotIn(b\"SYNTHETIC-PERSON-001\", raw)\n                    self.assertNotIn(b\"SYNTHETIC_NEVER_UPLOAD\", raw)\n\n    def test_fresh_shortened_future_deadline_preserves_until_expiry(self):\n        for deadline_source in (\"permission\", \"retention\"):\n            with self.subTest(source=deadline_source):\n                path = self.path.with_name(f\"{deadline_source}-future.sqlite\")\n                with source.PrivateQueue(path) as queue:\n                    self.reviewed(queue)\n                    parts = fixture()\n                    deadline = NOW + timedelta(seconds=1)\n                    stamp = deadline.isoformat().replace(\"+00:00\", \"Z\")\n                    if deadline_source == \"permission\":\n                        parts[1][0][\"expires_at_utc\"] = stamp\n                    else:\n                        parts[3][\"records\"][0][\"retention_due_at_utc\"] = stamp\n                    item = snapshot(parts)\n                    result = queue.stage(item, NOW)\n                    self.assertFalse(result[\"durable_history_gap\"])\n                    row = queue.db.execute(\"SELECT * FROM queue\").fetchone()\n                    self.assertEqual(source.when(row[\"retire_at\"]), deadline)\n                    self.assertIsNotNone(row[\"payload\"])\n                    self.assertEqual(row[\"state\"], \"OWNER_REVIEW\")\n                    result = queue.stage(item, deadline)\n                    self.assertTrue(result[\"durable_history_gap\"])\n                    self.assertEqual(queue.db.execute(\"SELECT count(*) FROM queue\").fetchone()[0], 0)\n\n    def test_authoritative_retention_gap_vetoes_first_run_and_latches(self):\n        parts = fixture()\n        parts[3][\"history_incomplete\"] = True\n",
+          "after": "            with self.assertRaisesRegex(source.SourceError, \"REVIEW_SNAPSHOT_MISMATCH\"):\n                queue.mark_reviewed(OID, item.sha256, \"SYNTHETIC-OWNER\", later)\n\n    def test_authoritative_retention_gap_vetoes_first_run_and_latches(self):\n        parts = fixture()\n        parts[3][\"history_incomplete\"] = True\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/website-tracking/coupled-package-v3/compose-v3.mjs",
+      "before": {
+        "bytes": 23215,
+        "sha256": "22522b7dffab2c9e701f89638d06dc2f45ee95e21c27003bf26a209856538ac5"
+      },
+      "after": {
+        "bytes": 24490,
+        "sha256": "94e1de310a908038fb6a5c35e8f24debc2131da9675fdb06210e446c6a86e02a"
+      },
+      "inverse_edits": [
+        {
+          "before": "  // The accepted receipt guard allows generic opaque-looking strings. Do not\n  // disclose a phone-like or free-text value as an Ads transaction identifier.\n  // Tighten only the final selected child after proving its unchanged ancestry;\n  // original runtime/G4/V2 bytes and their frozen source pins remain intact.\n  const childPath='assets/google-runtime.js',childBefore=sourceMembers.get(childPath);\n  const broadId=\"!/^[A-Za-z0-9._:-]{1,64}$/.test(payload.transaction_id)\";\n  const opaqueId=\"!/^(?:bsre-event-|evt_)[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(payload.transaction_id)\";\n  const childText=childBefore.toString('utf8');need(childText.split(broadId).length===2,'V3_ADS_ID_GUARD_ANCHOR');\n  const childAfter=Buffer.from(childText.replace(broadId,opaqueId));\n  need(childAfter.toString().split(opaqueId).length===2&&Buffer.from(childAfter.toString().replace(opaqueId,broadId)).equals(childBefore),'V3_ADS_ID_GUARD_REVERSE');\n  sourceMembers.set(childPath,childAfter);\n  const adsIdGuard={member:childPath,input_sha256:digest(childBefore),output_sha256:digest(childAfter),\n    before:broadId,after:opaqueId,reverse_verified:true,invalid_id_policy:'DROP_OPTIONAL_ADS_DISPATCH_NO_REWRITE'};\n",
+          "after": ""
+        },
+        {
+          "before": "    ads_transaction_id_guard:adsIdGuard,\n",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "path": "tools/staging-lab/entrypoint.sh",
+      "before": {
+        "bytes": 10149,
+        "sha256": "0fc954a8241efdb31b6592d7e2b45a42ea8848c221d07c6bc80f8f3837e46a5b"
+      },
+      "after": {
+        "bytes": 10197,
+        "sha256": "7d985474150908401d0d7d36ea492efa39306dc4d7a5b639351edd89ec3c309a"
+      },
+      "inverse_edits": [
+        {
+          "before": "php -d sendmail_path=/bin/false /opt/lab/browser-prerequisites.php\nnode /opt/lab/staging-lab/physical-identity.mjs\n",
+          "after": "php -d sendmail_path=/bin/false /opt/lab/browser-prerequisites.php\n"
+        }
+      ]
+    }
+  ],
+  "new_source_files": [
+    {
+      "path": "tools/website-tracking/g5-local-history-runtime/CURRENT_INPUT_CONTEXT.json",
+      "pin": {
+        "bytes": 1234,
+        "sha256": "64c019a17840c74e038c8377793e34014cede87880486fa4934a83b0b6c0e340"
+      }
+    },
+    {
+      "path": "tools/website-tracking/g5-local-history-runtime/current-input-context.mjs",
+      "pin": {
+        "bytes": 3454,
+        "sha256": "2c216dee17f88d741d374f113c06992f1cfaa77f6626be1672d549b0d89c72da"
+      }
+    },
+    {
+      "path": "tools/website-tracking/g5-local-history-runtime/tests/current-input-context.test.mjs",
+      "pin": {
+        "bytes": 7466,
+        "sha256": "750b4f90edb2ae0fd9688a8f66ad27f4a60f629f25010062643b0b7fafac0960"
+      }
+    },
+    {
+      "path": "tools/website-tracking/current-native-audit/physical-identity.mjs",
+      "pin": {
+        "bytes": 4423,
+        "sha256": "465d2b5df106b300017fedfafedfdcd5dcb22741aea81d9ab420b730d1a2f4b3"
+      }
+    }
+  ],
+  "retention_context": {
+    "descriptor_source": "tools/website-tracking/g5-local-history-runtime/CURRENT_INPUT_CONTEXT.json",
+    "queue_source": "tools/qualified-export-source/source_queue.py"
+  },
+  "retention_source_proof": {
+    "bytes": 24072,
+    "sha256": "f91e13f3bb68f6332d0dbaedcdfa17b42afedb4db755be2577f4448b09e9e0f6"
+  },
+  "derivation_helper": {
+    "bytes": 3582,
+    "sha256": "fe76f9ddb0385e19afb9436faaf14d474887fe8d2492ddbb204f755218de7f22"
+  },
+  "expected_receipt": {
+    "schema": "bsre-current-g36-physical-identity-v1",
+    "phase": "current_g36_physical_identity",
+    "profile": "G36_COUPLED_CANONICAL_LEASE_V3",
+    "site_files": 67,
+    "source_members": 64,
+    "files": {
+      "wp-content/plugins/bsre-enquiries/assets/google-runtime.js": {
+        "bytes": 12962,
+        "sha256": "82c7b47ff59a33a656f57828bcaa206457ec51ba8ab55c784e12ed28b92ac166"
+      },
+      "wp-content/plugins/bsre-enquiries/includes/candidate/runtime/CanonicalCaptureProducer.php": {
+        "bytes": 21397,
+        "sha256": "40471f7ff946ff3bd56315a01307b8bed434d55aa5bc1ec089ab4e76e57faac3"
+      },
+      "wp-content/plugins/bsre-enquiries/includes/candidate/runtime/canonical-source.json": {
+        "bytes": 7458,
+        "sha256": "b9d41be7243cf625b59967b3db803fd7a0dd7b1c49aa37d4b13bc75e5fec27ae"
+      },
+      "wp-content/db.php": {
+        "bytes": 4907,
+        "sha256": "3ff0ee2923d46d29f34c1beb438eaf665a50b99c68911007243ed3deabbf2ca2"
+      }
+    },
+    "build": {
+      "bytes": 12517,
+      "sha256": "9c3df7d616cb69bd9bf818510bba304ff8cf1b98ac41fde829117f0d3ffc1532"
+    },
+    "native_build": {
+      "bytes": 6494,
+      "sha256": "410fce31e989dfee63a6fcdbac9ce8bebd1cffe6b2dd89d377cd5180e852ef75"
+    },
+    "bindings": {
+      "M": "b9d41be7243cf625b59967b3db803fd7a0dd7b1c49aa37d4b13bc75e5fec27ae",
+      "P": "40471f7ff946ff3bd56315a01307b8bed434d55aa5bc1ec089ab4e76e57faac3",
+      "dropin_sha256": "3ff0ee2923d46d29f34c1beb438eaf665a50b99c68911007243ed3deabbf2ca2"
+    },
+    "retention_context": {
+      "descriptor": {
+        "bytes": 1234,
+        "sha256": "64c019a17840c74e038c8377793e34014cede87880486fa4934a83b0b6c0e340"
+      },
+      "source_queue_alias": {
+        "bytes": 30344,
+        "sha256": "5f48da6b20cc55586056fc37f9fcb8ccacc7ced4236a553bd8cdafdd40c35c39"
+      }
+    },
+    "all_site_files_readback_verified": true,
+    "all_manifest_sources_readback_verified": true,
+    "synthetic_only": true,
+    "wordpress_started_by_receipt": false,
+    "database_started_by_receipt": false,
+    "network_calls": 0,
+    "provider_events": 0,
+    "production_authorized": false
+  },
+  "guard": {
+    "member": "assets/google-runtime.js",
+    "input_sha256": "d3a4017bee0f480f3dbfdf0d78a04584409773fd633f02f6ba7c4082b5372666",
+    "output_sha256": "82c7b47ff59a33a656f57828bcaa206457ec51ba8ab55c784e12ed28b92ac166",
+    "before": "!/^[A-Za-z0-9._:-]{1,64}$/.test(payload.transaction_id)",
+    "after": "!/^(?:bsre-event-|evt_)[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(payload.transaction_id)",
+    "reverse_verified": true,
+    "invalid_id_policy": "DROP_OPTIONAL_ADS_DISPATCH_NO_REWRITE"
+  },
+  "receiver": {
+    "bytes": 50830,
+    "sha256": "00b62f1edc8996ab4f566a80155715a85f741bc5d68e7a0a54c94fc4ef2cbdc5"
+  }
+}
