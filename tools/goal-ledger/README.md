@@ -74,9 +74,11 @@ The snapshot records G001/G002 as completed bounded engineering milestones at
 immutable revision1123575e, using the public-safe acceptance receipt referenced by
 their distinct evidence entries. It never asserts that a later head passed CI;
 relevant runtime/materializer/pin changes require fresh acceptance. Preparation
-for G021/G033/G070/G095 continues without satisfying unfinished dependencies.
-Zero independent human PR reviews, unverified Marketing identity, both full
-libraries unapproved, unchanged production and paused Ads remain explicit. The
-four blockers are G003/G005/G025/G029. Update each status only when evidence
+for G033/G070/G095 continues without satisfying unfinished dependencies.
+G005 records Marketing identity, G010 source audit with gaps, G021 full-cohort HOLD
+triage and G026 negative research evidence using their distinct acceptance scopes.
+G006/G011 discovery reached explicit results/scope-version gaps; both stay blocked.
+Zero independent human PR reviews, both full libraries unapproved, unchanged
+production and paused Ads remain explicit. Blockers are G003/G006/G007/G011/G025/G029/G051. Update each status only when evidence
 establishes that whole goal's gate; a clean local observer cannot supply whole
 business history, genuine outcome data or execution authority.

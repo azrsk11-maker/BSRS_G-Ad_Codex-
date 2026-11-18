@@ -1,5 +1,31 @@
 # Implementation progress
 
+## Selected factual review boundary clarified - 18 November 2026
+
+The [G 051 sufficiency result](audit/FACTUAL_REVIEW_GAP_2026-11-18.json) covers four campaign candidates and two guides with existing approved private insertions. Current inspected versions make no property offer; unit inventory/prices are not required for those claims. Acceptance still needs Amit’s dated, exact-version factual decision and supporting source/refresh controls. Rights/mandates/permits are conditional on actual selected claims/assets. READY-004 stays withdrawn; existing private insertions do not approve complete pages or publication. No new cloud search or permissions were needed.
+
+## Bounded positive/privacy and negative-scope preparation - 18 November 2026
+
+The [preparation receipt](audit/KEYWORD_PREPARATION_2026-11-18.json) preserves incomplete G 022/G 027 gates. Six existing generic seller identities/seven historical placements received a private finite privacy/context review and 80 checks; they remain one disposal context with semantic novelty unresolved, zero new source identities and zero admissions. G 027 prepares 25 campaign-specific EXACT proposals with 61 checks/33 input pins, retaining 20 holds and the historical lexical matcher. The other 13975 rows, canonical campaign ownership and provider matching assurance remain unaccepted. Saved research planning C 0301/LP 0301 is not a verified four-cohort crosswalk. Neither preparation grants scope approval, exclusion export, full privacy acceptance or full-library conflict acceptance. No production or Ads changes.
+
+## Source-identity audit completed with explicit D 1 gaps - 18 November 2026
+
+G 010 audited available recovered source identities, including byte equality between the recovered Word source and embedded original. The [public-safe audit receipt](audit/SOURCE_IDENTITY_AUDIT_2026-11-18.json) records the still-unresolved exact D 1 identity, section mapping and semantic crosswalk. DEC-07 remains open; no semantic equivalence, downstream admission, duplicate 300/640/360 generation or publication is inferred. This completes the canonical audit-with-gaps gate only.
+
+## Negative research evidence accepted; remaining readiness boundaries - 18 November 2026
+
+G 026 verifies the existing 14000 distinct negative research records through unchanged saved-artifact provenance,1049 bindings,52 metadata checks and 14 assessment checks. [Research-only acceptance](audit/NEGATIVE_RESEARCH_ACCEPTANCE_2026-11-18.json) preserves dated local review deadlines and separates G 027 scopes/G 028 full-positive conflicts/G 029 approval. No exclusion is approved/applied and no current market demand is inferred. G 007 retains actual Amit QA access/save and original-workbook denial, but direct unassigned-record denial remains unproved; that gate stays blocked. G 010 D 1 source reconciliation and G 022 bounded genuine positive discovery are running independently with private outputs. No new staff login, permission change, production event or Ads change was performed.
+
+## Current held-candidate triage completed - 18 November 2026
+
+G 021 now has new source/context-bound HOLD decisions for all 41 historical candidates/82 placements, with 13 integrity checks and independent AI review. The [public-safe receipt](audit/CANDIDATE_TRIAGE_2026-11-18.json) distinguishes triage from admission: all 205 purpose reviews remain NOT_REVIEWED, missing final subject/research bindings remain held, and zero keywords or business reviews were admitted/approved. Eight supplementary occurrences are reconciled separately, with six literal/semantic links unresolved. G 022-G 025 still require discovery, full 14000 positive research, mappings and full approval; no release gate is waived.
+
+## Marketing identity accepted; evidence work resumed - 18 November 2026
+
+G 005 passed fresh authenticated profile checks for marketing@blackswanrealestate.ae in both Gmail and Drive, selecting each listed Marketing connection explicitly through the updated link_id contract. Both calls identify the same Google profile; BSS remains separately listed and was not modified or searched. The [public-safe identity receipt](audit/MARKETING_CONNECTION_ACCEPTANCE_2026-11-18.json) excludes private connection/profile/resource IDs. This resolves identity selection only, not staff/history/content acceptance. G 006 rehearsal evidence recovery and G 011 source-history inventory resumed independently with private output ownership and explicit Marketing selection on every provider call. No Source runtime, original-workbook sharing, live settings, production or Ads changes.
+
+The [bounded discovery result](audit/EVIDENCE_DISCOVERY_2026-11-18.json) now distinguishes access from evidence: the existing sent request had no reply in the checked thread, and the approved folder had no children at capture. G 006 results remain unrecovered while owner-reported completion is preserved. The approved register exposed 7 tabs/7 listed revisions and bounded headers/provenance, but G 011 covered-history scope and business-ledger version remain unbound. No original-workbook sharing, bulk prospect export, repeated outreach or automatic rehearsal was performed. These are explicit evidence blocks, not failed Marketing authentication.
+
 ## Remaining98: strict release-control preparation - 17 November 2026
 
 The existing offline release checker reproduced four false passes from Python JSON equality: boolean schema version, integer targeting flag, floating campaign budget and boolean bid adjustment. The narrow correction rejects duplicate keys, nonfinite values, nonobject documents and boolean/integer/float substitutions while preserving key-order independence and the exact valid held fixture. All three original tests remain; seven focused tests pass. The construction fixture is unchanged and still returns activation_authorized:false; it is not a current live-campaign readback. G070 remains preparation only and its authorization/readback dependencies remain open.

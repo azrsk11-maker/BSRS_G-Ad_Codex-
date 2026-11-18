@@ -1,0 +1,25 @@
+{
+  "schema": "bsre-g010-source-identity-audit-acceptance-v1",
+  "goal": "G010",
+  "status": "VERIFIED_AUDIT_WITH_EXPLICIT_GAPS",
+  "date": "2026-11-18",
+  "available_source_identity_audit_complete": true,
+  "recovered_Word_bytes_match_embedded_original": true,
+  "D1_equivalence_established": false,
+  "unresolved_gap_ids": [
+    "D1-GAP-01",
+    "D1-GAP-02",
+    "D1-GAP-03"
+  ],
+  "unresolved_scope": [
+    "exact_D1_identity",
+    "D1_section_mapping",
+    "semantic_crosswalk"
+  ],
+  "DEC_07": "OPEN_UNCHANGED",
+  "private_audit_sha256": "422afa2ca9db72751f4ee2a1ca0b5b66dfb2825221c040e77698d8dc36a44990",
+  "new_300_briefs_640_catalogue_360_definitions_generated": false,
+  "downstream_acceptance_granted": [],
+  "production_authority": false,
+  "Ads_authority": false
+}

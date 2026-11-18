@@ -3,6 +3,7 @@
 Read `docs/CURRENT_STATE.md` first, then only the named task-relevant section of `docs/PROGRESS.md` and its evidence. This routing summary does not replace complete Master/specification reads when required by the task: the complete requirements are in `docs/google-ads/`; preserve the supplied files verbatim. Reconcile conflicts in `docs/decisions/OWNER_DECISIONS.md` and linked owner-decision issues; never silently choose between them.
 
 - Real Estate only. Exclude Business Setup and Zoho/CRM synchronization. Keep the original lead workbook private.
+- Gmail/Drive calls must explicitly select the Marketing link_id listed in current tool metadata. Verify marketing@blackswanrealestate.ae and never use an unscoped/default or BSS connection. Connection/profile/resource IDs stay private; identity verification does not establish business-evidence acceptance.
 - Work on `codex/*` branches and submit PRs. No direct main writes, force pushes, self-approval or bypass of protection. Bootstrap commit contains only the initial README.
 - Read approved issue decisions before affected work. A proposal, issue comment by a non-owner, merge, green test or old authorization does not authorize a separate production action.
 - No publication, live tags, Google Ads changes or expenditure without specific separate owner authorization. No production credentials in CI; no deployment workflow in this phase.

@@ -2,7 +2,7 @@
 
 As of 17 November 2026, Asia/Dubai. This is a prioritization map, not a new scope or permission to deploy. The [supplied Master/specifications](google-ads/), [owner decisions](decisions/OWNER_DECISIONS.md), [execution plan](EXECUTION_PLAN.md) and protected PR remain authoritative.
 
-G001/G002 are verified at the immutable accepted revision recorded below;98goals remain. IDs and their complete acceptance criteria are preserved.
+G001/G002 retain immutable bounded engineering acceptance; G005 has authenticated Marketing identity, G021 has full-cohort HOLD triage and G026 has negative research-evidence acceptance; G010 has source-identity audit acceptance with explicit D1 gaps. 94 goals remain. IDs and their complete acceptance criteria are preserved.
 
 ## What is already completed or established
 
@@ -21,7 +21,7 @@ G001/G002 are verified at the immutable accepted revision recorded below;98goals
 
 ## Start in this order
 
-1. Owner/access lane: G005 first. Current connected Gmail and Drive profiles belong to Business Setup, not Real Estate Marketing; no BSS mailbox/files were searched. Verify Marketing access, then G006–G009. Nominate an eligible independent human for G003 in parallel; the final approval follows the exact checked revision.
+1. Evidence lane: G005 is verified for Marketing Gmail/Drive with explicit connection selection. Continue G006-G009 and other now-ready evidence work; keep the original workbook private and BSS excluded. G003 still needs an eligible independent human review of the exact checked revision.
 2. Codex lane: reuse completed G001/G002 at112. Continue G021-G030, G051-G054 and other independent preparation as real evidence permits. Both full reviewed14,000 libraries remain mandatory before release; do not rerun unchanged accepted native work merely because an older progress section says pending.
 3. Close genuine service/history, measurement, staff and native-page acceptance across G011–G080. Parallelize only disjoint work; one Source/Git/browser writer remains required.
 4. G081–G089 are separately authorized release steps. G048 and G090 reconcile genuine outcomes after they exist; do not fabricate a prelaunch prospect or upload synthetic conversions.

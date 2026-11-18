@@ -1,0 +1,27 @@
+{
+  "schema": "bsre-marketing-connection-acceptance-v1",
+  "goal": "G005",
+  "client_date": "2026-11-18",
+  "status": "VERIFIED_IDENTITY_ONLY",
+  "account_email": "marketing@blackswanrealestate.ae",
+  "services": {
+    "Gmail": {
+      "selected_Marketing_connection": true,
+      "authenticated_profile_verified": true
+    },
+    "Google_Drive": {
+      "selected_Marketing_connection": true,
+      "authenticated_profile_verified": true
+    }
+  },
+  "same_authenticated_Google_profile": true,
+  "selection_contract": "Select the listed Marketing link_id from current tool metadata explicitly for every Gmail/Drive call; a default invocation can select a different account.",
+  "BSS_connection_remains_listed": true,
+  "BSS_connections_changed": false,
+  "provider_content_read_to_verify_identity": false,
+  "scope": "Correct authenticated account selection only; private source/content/history acceptance is separate.",
+  "private_account_link_ids_or_resource_ids_included": false,
+  "independent_human_review": false,
+  "production_authority": false,
+  "Ads_authority": false
+}

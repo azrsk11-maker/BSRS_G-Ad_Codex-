@@ -1,5 +1,9 @@
 # Owner decisions
 
+## Marketing account connection confirmed — 18 November 2026
+
+The owner confirmed marketing@blackswanrealestate.ae appears in both Gmail and Google Drive connection lists. Fresh authenticated calls explicitly selecting those Marketing connections verified the same intended Google profile for both services; BSS remains separately listed. G005 identity acceptance is recorded in the [public-safe receipt](../audit/MARKETING_CONNECTION_ACCEPTANCE_2026-11-18.json). This grants no new sharing, service enrollment, website/tracking/Ads publication or spending authority. Private connection/profile IDs remain outside this repository.
+
 ## Owned-enquiry canonical action policy — 15 November 2026 (Dubai)
 
 The owner directly answered “Approve this action and policy (Recommended)” to the scoped DEC-05 planning question. For the owned enquiry funnels only, action 7873290954 (BSRE Accepted Enquiry (Secondary)) is the sole native accepted-enquiry action. Retain Secondary, Count One and the current AED0 fallback value policy; do not duplicate accepted receipts through a GA4 receipt import. [Exact approval and limits](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/5#issuecomment-6892563589). Legacy producers, including distinct historical action 7859602954, remain untouched. This is the execution agent's transcription of the direct owner reply, not independent human PR approval or authorization for live changes.
