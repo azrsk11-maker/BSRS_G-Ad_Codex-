@@ -239,6 +239,83 @@
           "after": "php -d sendmail_path=/bin/false /opt/lab/browser-prerequisites.php\n"
         }
       ]
+    },
+    {
+      "path": "tools/staging-lab/g38/native/g2-retirement-races.php",
+      "before": {
+        "sha256": "703c25f137584c3aab2f01cbdf889dc24010b3a645c8ea54d4f6786193ba42f3",
+        "bytes": 27393
+      },
+      "after": {
+        "sha256": "261c841a7ce26bfa251eec979c5eed7d6f2cca3d560dc40ebdc916c011874741",
+        "bytes": 31060
+      },
+      "inverse_edits": [
+        {
+          "before": "    $g38Stage='apply';\n    try{$result=$runtime->apply($plan,$nonce('RETIRE',V\\Guard::digest($plan)));}catch(Throwable $e){$error=$e->getMessage();$applyFailure=g38applyDiagnostic($e);}",
+          "after": "    try{$result=$runtime->apply($plan,$nonce('RETIRE',V\\Guard::digest($plan)));}catch(Throwable $e){$error=$e->getMessage();}"
+        },
+        {
+          "before": "        $g38Stage='child_start';$child=new G38Child($mode,$choice,$notice,$originalCapture);\n        $g38Stage='coverage_wait';$wait=g38wait($child,$operation,$lock);",
+          "after": "        $child=new G38Child($mode,$choice,$notice,$originalCapture);$wait=g38wait($child,$operation,$lock);"
+        },
+        {
+          "before": "$lock,$originalCapture,&$child,&$wait,&$g38Stage):void{",
+          "after": "$lock,$originalCapture,&$child,&$wait):void{"
+        },
+        {
+          "before": "    g38send(STDERR,['phase'=>'g38_g2_race_diagnostic','status'=>'FAIL','mode'=>$mode,'checks'=>$checks,'error_code'=>$code,\n        'apply_failure'=>$applyFailure,'apply_failure_expected_after_wait'=>is_array($wait)&&str_ends_with($mode,'_rollback')&&($applyFailure['code']??null)==='G37_INJECTED_KEY_FAILURE',\n        'failure_stage'=>$g38Stage,'last_wait_observation'=>$g38WaitDiagnostic,'native_provider_accepted'=>false]);",
+          "after": "    g38send(STDERR,['phase'=>'g38_g2_race_diagnostic','status'=>'FAIL','mode'=>$mode,'checks'=>$checks,'error_code'=>$code,'native_provider_accepted'=>false]);"
+        },
+        {
+          "before": "register_shutdown_function(static function()use(&$completed,&$failure,&$child,&$checks,&$wait,&$applyFailure,&$g38Stage,&$g38WaitDiagnostic,$mode):void{",
+          "after": "register_shutdown_function(static function()use(&$completed,&$failure,&$child,&$checks,$mode):void{"
+        },
+        {
+          "before": "$checks=[];$child=null;$wait=null;$failure=null;$completed=false;$started=hrtime(true);ob_start();\n$applyFailure=null;$g38Stage='boot';$g38WaitDiagnostic=null;",
+          "after": "$checks=[];$child=null;$wait=null;$failure=null;$completed=false;$started=hrtime(true);ob_start();"
+        },
+        {
+          "before": "    $g38WaitDiagnostic['phase']='deadline';$g38WaitDiagnostic['elapsed_ms']=(hrtime(true)-$started)/1000000;\n    throw new RuntimeException('G38_REAL_SQL_WAIT_MISSING');",
+          "after": "    throw new RuntimeException('G38_REAL_SQL_WAIT_MISSING');"
+        },
+        {
+          "before": "        $g38WaitDiagnostic['phase']='backoff';\n        // MariaDB's shared INNODB_* cache needs >100ms without reads to refresh.\n        usleep(200000); // SQL metadata backoff only; elapsed time is never wait evidence.",
+          "after": "        usleep(20000); // Backoff only: elapsed time is never accepted as wait evidence."
+        },
+        {
+          "before": "            $g38WaitDiagnostic['phase']='observed';$g38WaitDiagnostic['last_rejection']=null;\n            return ['mechanism'=>'INNODB_LOCK_WAITS'",
+          "after": "            return ['mechanism'=>'INNODB_LOCK_WAITS'"
+        },
+        {
+          "before": "            $g38WaitDiagnostic['phase']='owner_validation';$g38WaitDiagnostic['last_rejection']='OWNER_NOT_VERIFIED';\n            $g38WaitDiagnostic['last_owner_facts']=is_array($facts)?g38diagnosticValues($facts,['parent_connection'=>32,'selected_database'=>64,'session_in_transaction'=>8,'session_tx_isolation'=>32,'named_lock_owner'=>32]):null;\n            $process=$child->observedProcess();$parentPid=getmypid();",
+          "after": "            $process=$child->observedProcess();$parentPid=getmypid();"
+        },
+        {
+          "before": "            $g38WaitDiagnostic['phase']='raw_metadata_validation';$g38WaitDiagnostic['last_rejection']='RAW_METADATA_INVALID';\n            if(strlen($query)>2048||!is_string($row['waiting_table'])",
+          "after": "            if(strlen($query)>2048||!is_string($row['waiting_table'])"
+        },
+        {
+          "before": "            $g38WaitDiagnostic['phase']='row_filter';\n            $g38WaitDiagnostic['last_sample']=g38diagnosticValues($row,['waiter'=>32,'blocker'=>32,'requesting_trx_id'=>32,'blocking_trx_id'=>32,'waiting_table'=>256,'waiting_index'=>64]);\n            $g38WaitDiagnostic['last_sample']['waiting_query_sha256']=is_string($query)?hash('sha256',$query):null;\n            $g38WaitDiagnostic['last_sample']['waiting_query_bytes']=is_string($query)?strlen($query):null;\n            $g38WaitDiagnostic['last_sample']['waiting_query_matches']=$sqlOk;\n            if(!$sqlOk||str_replace(['`','\"'],'',(string)$row['waiting_table'])!==DB_NAME.'.'.$table||$row['waiting_index']!=='PRIMARY'){\n                $g38WaitDiagnostic['last_rejection']=!$sqlOk?'WAITING_QUERY_MISMATCH':(str_replace(['`','\"'],'',(string)$row['waiting_table'])!==DB_NAME.'.'.$table?'WAITING_TABLE_MISMATCH':'WAITING_INDEX_MISMATCH');continue;\n            }",
+          "after": "            if(!$sqlOk||str_replace(['`','\"'],'',(string)$row['waiting_table'])!==DB_NAME.'.'.$table||$row['waiting_index']!=='PRIMARY')continue;"
+        },
+        {
+          "before": "        $g38WaitDiagnostic['polls']=$polls+1;$g38WaitDiagnostic['elapsed_ms']=(hrtime(true)-$started)/1000000;\n        $g38WaitDiagnostic['row_count']=is_array($rows)?count($rows):null;\n        $g38WaitDiagnostic['metadata_error_sha256']=$wpdb->last_error!==''?hash('sha256',$wpdb->last_error):null;\n        if($wpdb->last_error!==''||!is_array($rows))throw new RuntimeException('G38_LOCK_METADATA_UNAVAILABLE');$polls++;\n        if($rows===[])$g38WaitDiagnostic['last_rejection']='NO_ROWS';",
+          "after": "        if($wpdb->last_error!==''||!is_array($rows))throw new RuntimeException('G38_LOCK_METADATA_UNAVAILABLE');$polls++;"
+        },
+        {
+          "before": "        $g38WaitDiagnostic['phase']='process';$g38WaitDiagnostic['child_live']=$child->live();\n        if(!$g38WaitDiagnostic['child_live'])throw new RuntimeException('G38_CHILD_EXITED_BEFORE_WAIT');$wpdb->last_error='';\n        $g38WaitDiagnostic['phase']='lock_query';",
+          "after": "        if(!$child->live())throw new RuntimeException('G38_CHILD_EXITED_BEFORE_WAIT');$wpdb->last_error='';"
+        },
+        {
+          "before": "    global $wpdb,$g38WaitDiagnostic;\n    $g38WaitDiagnostic=['phase'=>'identity','polls'=>0,'elapsed_ms'=>0,'row_count'=>null,'last_rejection'=>null,'parent_pid'=>getmypid(),'child_pid'=>$child->pid,'child_connection'=>$child->connection];\n    $parent=(int)$wpdb->get_var('SELECT CONNECTION_ID()');$g38WaitDiagnostic['parent_connection']=$parent;",
+          "after": "    global $wpdb;$parent=(int)$wpdb->get_var('SELECT CONNECTION_ID()');"
+        },
+        {
+          "before": "/** Failure-only observations exclude SQL text and all choice/capture payloads. */\nfunction g38diagnosticValues(array $values,array $limits): array {\n    $out=[];\n    foreach($limits as $key=>$limit)if(array_key_exists($key,$values)){\n        $value=$values[$key];\n        $out[$key]=is_string($value)&&strlen($value)>$limit?['bytes'=>strlen($value),'sha256'=>hash('sha256',$value)]:\n            ((is_scalar($value)||$value===null)?$value:['unexpected_type'=>get_debug_type($value)]);\n    }return$out;\n}\nfunction g38applyDiagnostic(Throwable $error): array {\n    $message=$error->getMessage();\n    return ['code'=>preg_match('/^[A-Z][A-Z0-9_]{0,95}$/D',$message)===1?$message:'G38_UNEXPECTED_APPLY_FAILURE',\n        'message_sha256'=>hash('sha256',$message)];\n}\nfunction g38wait(G38Child $child,string $operation,string $lock): array {",
+          "after": "function g38wait(G38Child $child,string $operation,string $lock): array {"
+        }
+      ]
     }
   ],
   "new_source_files": [

@@ -12,7 +12,7 @@ import subprocess
 import tempfile
 
 OWN = Path(__file__).resolve().parent
-SCOPE_SHA256 = '8c1b898d028f1ee27f2e234d6e454081e1205cc53b19f58c1c97ae111c64f810'
+SCOPE_SHA256 = 'b0f4f09db09ccc1b30bbe463e484078f25f3a986f0c22a82116b1e01e2243f3d'
 PHASE = 'current_g36_physical_identity'
 BUDGET_DIR = 'g39-native-log-audit-budget30-20261117'
 

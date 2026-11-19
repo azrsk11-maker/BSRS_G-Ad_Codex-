@@ -1,5 +1,13 @@
 # Current engineering state — 19 November 2026
 
+## Native metadata sampling correction — 19 November 2026
+
+The corrected keyword revision `2f28c0c` passed full offline validation in 7m53s plus the native configuration and goal-ledger checks, but its isolated native trial failed the G38 `choose_rollback` real-wait observation on MariaDB 11.8.9 after 12m39s. Five earlier G38 cases passed. The original apply exception was masked; those missing observations cannot be recovered and the exact failed interleaving is unproved.
+
+The [forensic receipt](audit/NATIVE_METADATA_SAMPLER_2026-11-19.json) separately establishes a metadata observer defect from pinned MariaDB source and a deterministic model: repeated 20ms reads can starve a cache requiring more than 100ms idle. Sampling now uses 200ms within the unchanged four-second deadline, with bounded failure-only exception/stage/sample diagnostics. All existing scenarios, assertions, SQL/owner checks, worker controls and successful receipt fields remain unchanged. An explicit exact-byte inverse preserves the original 186 source and 17 candidate assertions; historical pins and the website package are unchanged. Independent static/model and binding reviews passed 21 and 23 checks respectively; these are not actual database acceptance.
+
+All four CI checks and the actual current-head native-log audit remain required on the successor revision. Previous failed trials and accepted DF receipts keep their exact revision scopes. No whole goal is newly closed: six verified, 94 incomplete. Production unchanged; Ads paused, with all human, history, factual, full-library, provider and release gates retained.
+
 Read only the relevant linked section/evidence next. This routing summary does not replace complete supplied requirements or acceptance gates.
 
 - Requirements: [supplied specifications](google-ads/), [execution plan](EXECUTION_PLAN.md), [governance](GOVERNANCE.md). Scope decisions and conflicts: [owner decisions](decisions/OWNER_DECISIONS.md) and linked owner-decision issues.

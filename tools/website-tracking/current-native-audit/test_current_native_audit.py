@@ -86,7 +86,8 @@ class CurrentAuditTest(unittest.TestCase):
 
     def test_all_declared_current_source_inverses_are_exact(self):
         restored=audit.source_deltas(self.source,self.scope)
-        self.assertEqual(len(restored),10)
+        self.assertEqual(len(restored),11)
+        self.assertIn("tools/staging-lab/g38/native/g2-retirement-races.php",restored)
         for row in self.scope['source_deltas']:
             self.assertEqual(audit.pin(restored[row['path']]),row['before'])
         composer=self.scope['composer'];raw=audit.read(self.source/composer['path'])

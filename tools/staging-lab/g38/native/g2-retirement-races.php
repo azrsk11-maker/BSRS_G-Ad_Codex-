@@ -139,24 +139,57 @@ final class G38Child {
     }
     public function __destruct(){$this->stop();}
 }
+/** Failure-only observations exclude SQL text and all choice/capture payloads. */
+function g38diagnosticValues(array $values,array $limits): array {
+    $out=[];
+    foreach($limits as $key=>$limit)if(array_key_exists($key,$values)){
+        $value=$values[$key];
+        $out[$key]=is_string($value)&&strlen($value)>$limit?['bytes'=>strlen($value),'sha256'=>hash('sha256',$value)]:
+            ((is_scalar($value)||$value===null)?$value:['unexpected_type'=>get_debug_type($value)]);
+    }return$out;
+}
+function g38applyDiagnostic(Throwable $error): array {
+    $message=$error->getMessage();
+    return ['code'=>preg_match('/^[A-Z][A-Z0-9_]{0,95}$/D',$message)===1?$message:'G38_UNEXPECTED_APPLY_FAILURE',
+        'message_sha256'=>hash('sha256',$message)];
+}
 function g38wait(G38Child $child,string $operation,string $lock): array {
-    global $wpdb;$parent=(int)$wpdb->get_var('SELECT CONNECTION_ID()');
+    global $wpdb,$g38WaitDiagnostic;
+    $g38WaitDiagnostic=['phase'=>'identity','polls'=>0,'elapsed_ms'=>0,'row_count'=>null,'last_rejection'=>null,'parent_pid'=>getmypid(),'child_pid'=>$child->pid,'child_connection'=>$child->connection];
+    $parent=(int)$wpdb->get_var('SELECT CONNECTION_ID()');$g38WaitDiagnostic['parent_connection']=$parent;
     if($child->connection===$parent||$parent<1||$child->pid===getmypid())throw new RuntimeException('G38_DISTINCT_PROCESSES_REQUIRED');
     $started=hrtime(true);$polls=0;$table=$wpdb->prefix.'bsre_consent_state';
     do{
-        if(!$child->live())throw new RuntimeException('G38_CHILD_EXITED_BEFORE_WAIT');$wpdb->last_error='';
+        $g38WaitDiagnostic['phase']='process';$g38WaitDiagnostic['child_live']=$child->live();
+        if(!$g38WaitDiagnostic['child_live'])throw new RuntimeException('G38_CHILD_EXITED_BEFORE_WAIT');$wpdb->last_error='';
+        $g38WaitDiagnostic['phase']='lock_query';
         $rows=$wpdb->get_results($wpdb->prepare('SELECT r.trx_mysql_thread_id AS waiter,b.trx_mysql_thread_id AS blocker,w.requesting_trx_id AS requesting_trx_id,w.blocking_trx_id AS blocking_trx_id,r.trx_query AS waiting_query,l.lock_table AS waiting_table,l.lock_index AS waiting_index FROM information_schema.INNODB_LOCK_WAITS w JOIN information_schema.INNODB_TRX r ON r.trx_id=w.requesting_trx_id JOIN information_schema.INNODB_TRX b ON b.trx_id=w.blocking_trx_id JOIN information_schema.INNODB_LOCKS l ON l.lock_id=w.requested_lock_id WHERE r.trx_mysql_thread_id=%d AND b.trx_mysql_thread_id=%d',$child->connection,$parent),ARRAY_A);
+        $g38WaitDiagnostic['polls']=$polls+1;$g38WaitDiagnostic['elapsed_ms']=(hrtime(true)-$started)/1000000;
+        $g38WaitDiagnostic['row_count']=is_array($rows)?count($rows):null;
+        $g38WaitDiagnostic['metadata_error_sha256']=$wpdb->last_error!==''?hash('sha256',$wpdb->last_error):null;
         if($wpdb->last_error!==''||!is_array($rows))throw new RuntimeException('G38_LOCK_METADATA_UNAVAILABLE');$polls++;
+        if($rows===[])$g38WaitDiagnostic['last_rejection']='NO_ROWS';
         foreach($rows as $row){
             $query=$row['waiting_query']??'';$sqlOk=is_string($query)&&($operation==='choose'?str_starts_with($query,'INSERT IGNORE INTO '.$table.' '):str_starts_with($query,'SELECT * FROM '.$table.' WHERE subject_key=')&&str_ends_with($query,' FOR UPDATE'));
-            if(!$sqlOk||str_replace(['`','"'],'',(string)$row['waiting_table'])!==DB_NAME.'.'.$table||$row['waiting_index']!=='PRIMARY')continue;
+            $g38WaitDiagnostic['phase']='row_filter';
+            $g38WaitDiagnostic['last_sample']=g38diagnosticValues($row,['waiter'=>32,'blocker'=>32,'requesting_trx_id'=>32,'blocking_trx_id'=>32,'waiting_table'=>256,'waiting_index'=>64]);
+            $g38WaitDiagnostic['last_sample']['waiting_query_sha256']=is_string($query)?hash('sha256',$query):null;
+            $g38WaitDiagnostic['last_sample']['waiting_query_bytes']=is_string($query)?strlen($query):null;
+            $g38WaitDiagnostic['last_sample']['waiting_query_matches']=$sqlOk;
+            if(!$sqlOk||str_replace(['`','"'],'',(string)$row['waiting_table'])!==DB_NAME.'.'.$table||$row['waiting_index']!=='PRIMARY'){
+                $g38WaitDiagnostic['last_rejection']=!$sqlOk?'WAITING_QUERY_MISMATCH':(str_replace(['`','"'],'',(string)$row['waiting_table'])!==DB_NAME.'.'.$table?'WAITING_TABLE_MISMATCH':'WAITING_INDEX_MISMATCH');continue;
+            }
+            $g38WaitDiagnostic['phase']='raw_metadata_validation';$g38WaitDiagnostic['last_rejection']='RAW_METADATA_INVALID';
             if(strlen($query)>2048||!is_string($row['waiting_table'])||strlen($row['waiting_table'])>256||!is_string($row['waiting_index'])||strlen($row['waiting_index'])>64||preg_match('/^[1-9][0-9]{0,31}$/D',(string)$row['requesting_trx_id'])!==1||preg_match('/^[1-9][0-9]{0,31}$/D',(string)$row['blocking_trx_id'])!==1||(string)$row['requesting_trx_id']===(string)$row['blocking_trx_id'])throw new RuntimeException('G38_RAW_WAIT_METADATA_INVALID');
             // Preserve exact selected synthetic metadata. No expected table/query is
             // substituted and oversized observations are refused rather than truncated.
             $facts=$wpdb->get_row($wpdb->prepare('SELECT CONNECTION_ID() AS parent_connection,DATABASE() AS selected_database,@@session.in_transaction AS session_in_transaction,@@session.tx_isolation AS session_tx_isolation,IS_USED_LOCK(%s) AS named_lock_owner',$lock),ARRAY_A);
+            $g38WaitDiagnostic['phase']='owner_validation';$g38WaitDiagnostic['last_rejection']='OWNER_NOT_VERIFIED';
+            $g38WaitDiagnostic['last_owner_facts']=is_array($facts)?g38diagnosticValues($facts,['parent_connection'=>32,'selected_database'=>64,'session_in_transaction'=>8,'session_tx_isolation'=>32,'named_lock_owner'=>32]):null;
             $process=$child->observedProcess();$parentPid=getmypid();$custodyConnection=$wpdb->custodyConnectionId();$custodyActive=$wpdb->custodyIsActive();$canonicalClass=get_class($wpdb);
             $bootstrapped=defined('BSRE_CANONICAL_LEASE_BOOTSTRAPPED')&&BSRE_CANONICAL_LEASE_BOOTSTRAPPED===true;$sameObject=G\Runtime::$db===$wpdb;
             if($wpdb->last_error!==''||!is_array($facts)||(int)$facts['parent_connection']!==$parent||(int)$facts['named_lock_owner']!==$parent||$facts['selected_database']!==DB_NAME||(string)$facts['session_in_transaction']!=='1'||$facts['session_tx_isolation']!=='REPEATABLE-READ'||!$custodyActive||(string)$custodyConnection!==(string)$parent||$canonicalClass!=='BSRE\\ClosedRetention\\LeaseBoundWpdb'||!$bootstrapped||!$sameObject||$process['running']!==true||$process['pid']!==$child->pid||$parentPid===$process['pid'])throw new RuntimeException('G38_LOCK_OWNER_UNVERIFIED');
+            $g38WaitDiagnostic['phase']='observed';$g38WaitDiagnostic['last_rejection']=null;
             return ['mechanism'=>'INNODB_LOCK_WAITS','real_wait'=>true,'child_live'=>$process['running'],'distinct_processes'=>true,'distinct_connections'=>true,
                 'waiter'=>(int)$row['waiter'],'blocker'=>(int)$row['blocker'],'named_lock_owner'=>(int)$facts['named_lock_owner'],'state_primary_wait'=>true,
                 'waiting_statement'=>$operation==='choose'?'INSERT_IGNORE_STATE':'SELECT_STATE_FOR_UPDATE','polls'=>$polls,'elapsed_ms'=>(hrtime(true)-$started)/1000000,
@@ -167,8 +200,11 @@ function g38wait(G38Child $child,string $operation,string $lock): array {
                 'canonical_bootstrapped'=>$bootstrapped,'canonical_g2_same_object'=>$sameObject,'custody_active'=>$custodyActive,
                 'custody_connection'=>$custodyConnection,'session_in_transaction'=>(string)$facts['session_in_transaction'],'session_tx_isolation'=>$facts['session_tx_isolation']];
         }
-        usleep(20000); // Backoff only: elapsed time is never accepted as wait evidence.
+        $g38WaitDiagnostic['phase']='backoff';
+        // MariaDB's shared INNODB_* cache needs >100ms without reads to refresh.
+        usleep(200000); // SQL metadata backoff only; elapsed time is never wait evidence.
     }while(hrtime(true)-$started<4000000000);
+    $g38WaitDiagnostic['phase']='deadline';$g38WaitDiagnostic['elapsed_ms']=(hrtime(true)-$started)/1000000;
     throw new RuntimeException('G38_REAL_SQL_WAIT_MISSING');
 }
 
@@ -181,11 +217,14 @@ $isolation=['cli'=>PHP_SAPI==='cli','non_root'=>function_exists('posix_geteuid')
     'database_already_started'=>is_dir('/tmp/database')&&file_exists('/tmp/bsre.sock'),'no_docker_socket'=>!file_exists('/var/run/docker.sock')];
 foreach($isolation as $ok)if(!$ok)throw new RuntimeException('G38_ISOLATION_REQUIRED');
 $checks=[];$child=null;$wait=null;$failure=null;$completed=false;$started=hrtime(true);ob_start();
-register_shutdown_function(static function()use(&$completed,&$failure,&$child,&$checks,$mode):void{
+$applyFailure=null;$g38Stage='boot';$g38WaitDiagnostic=null;
+register_shutdown_function(static function()use(&$completed,&$failure,&$child,&$checks,&$wait,&$applyFailure,&$g38Stage,&$g38WaitDiagnostic,$mode):void{
     if($completed)return;if($child instanceof G38Child)$child->stop();while(ob_get_level())@ob_end_clean();
     $message=$failure instanceof Throwable?$failure->getMessage():'';
     $code=preg_match('/^[A-Z][A-Z0-9_]+$/D',$message)===1?$message:'G38_UNEXPECTED_FAILURE';
-    g38send(STDERR,['phase'=>'g38_g2_race_diagnostic','status'=>'FAIL','mode'=>$mode,'checks'=>$checks,'error_code'=>$code,'native_provider_accepted'=>false]);
+    g38send(STDERR,['phase'=>'g38_g2_race_diagnostic','status'=>'FAIL','mode'=>$mode,'checks'=>$checks,'error_code'=>$code,
+        'apply_failure'=>$applyFailure,'apply_failure_expected_after_wait'=>is_array($wait)&&str_ends_with($mode,'_rollback')&&($applyFailure['code']??null)==='G37_INJECTED_KEY_FAILURE',
+        'failure_stage'=>$g38Stage,'last_wait_observation'=>$g38WaitDiagnostic,'native_provider_accepted'=>false]);
 });
 try{
     $init=$worker?g38read(STDIN):null;
@@ -224,12 +263,14 @@ try{
     g38check('exact_two_retirement_targets',count($plan['details']['eligible'])===2);
     $controlBefore=g38control();$anchorBefore=$services->anchor;$casBefore=$services->casCalls;
     $lock='bsre-g5-'.substr($base->scope(),0,48);
-    $services->onCoverage=function()use($mode,$choice,$notice,$operation,$lock,$originalCapture,&$child,&$wait):void{
-        $child=new G38Child($mode,$choice,$notice,$originalCapture);$wait=g38wait($child,$operation,$lock);
+    $services->onCoverage=function()use($mode,$choice,$notice,$operation,$lock,$originalCapture,&$child,&$wait,&$g38Stage):void{
+        $g38Stage='child_start';$child=new G38Child($mode,$choice,$notice,$originalCapture);
+        $g38Stage='coverage_wait';$wait=g38wait($child,$operation,$lock);
         g38send(STDERR,['phase'=>'g38_wait','mode'=>$mode]+$wait);
     };
     $services->rollbackKey=$rollback;$result=null;$error=null;
-    try{$result=$runtime->apply($plan,$nonce('RETIRE',V\Guard::digest($plan)));}catch(Throwable $e){$error=$e->getMessage();}
+    $g38Stage='apply';
+    try{$result=$runtime->apply($plan,$nonce('RETIRE',V\Guard::digest($plan)));}catch(Throwable $e){$error=$e->getMessage();$applyFailure=g38applyDiagnostic($e);}
     g38check('observed_real_wait',is_array($wait)&&$wait['real_wait']&&$wait['named_lock_owner']===$wait['blocker']);
     g38check('exact_retirement_outcome',$rollback?$error==='G37_INJECTED_KEY_FAILURE':$error===null&&($result['status']??'')==='COMMITTED_AND_ANCHORED');
     if(!$child instanceof G38Child)throw new RuntimeException('G38_CHILD_NOT_STARTED');$childResult=$child->finish();$child=null;
