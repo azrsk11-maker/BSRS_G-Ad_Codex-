@@ -1,6 +1,7 @@
 """Synthetic-only adversarial tests. Fixtures are not research master rows."""
 import copy
 import csv
+import io
 from datetime import date
 import json
 import os
@@ -296,6 +297,128 @@ class KeywordAuditTests(unittest.TestCase):
             path.write_text("keyword_id,keyword_id\none,two\n", encoding="utf-8")
             with self.assertRaises(ValueError):
                 ka.read_records(path)
+
+    def test_csv_nested_nonfinite_constants_rejected(self):
+        for field in sorted(ka.JSON_FIELDS):
+            for constant in ("NaN", "Infinity", "-Infinity"):
+                with self.subTest(field=field, constant=constant):
+                    value = "[" + constant + "]" if field in ka.LIST_FIELDS else '{"value":' + constant + '}'
+                    handle = io.StringIO(newline="")
+                    writer = csv.writer(handle)
+                    writer.writerow([field])
+                    writer.writerow([value])
+                    with self.assertRaisesRegex(ValueError, "Invalid number"):
+                        ka.read_records(Path("fixture.csv"), content=handle.getvalue().encode("utf-8"))
+
+    def test_json_nested_nonfinite_constants_rejected(self):
+        for field in sorted(ka.JSON_FIELDS):
+            for constant in ("NaN", "Infinity", "-Infinity"):
+                with self.subTest(field=field, constant=constant):
+                    value = "[" + constant + "]" if field in ka.LIST_FIELDS else '{"value":' + constant + '}'
+                    raw = ('[{"' + field + '":' + value + '}]').encode("utf-8")
+                    with self.assertRaisesRegex(ValueError, "Invalid number"):
+                        ka.read_records(Path("fixture.json"), content=raw)
+
+    def test_csv_nested_finite_values_and_empty_defaults_preserved(self):
+        row = negative()
+        row["scope_target"]["synthetic_finite_metadata"] = [0, -1, 1.5, None, True, "NaN"]
+        encoded = {key: json.dumps(value) if key in ka.JSON_FIELDS else "" if value is None else value
+                   for key, value in row.items()}
+        handle = io.StringIO(newline="")
+        writer = csv.DictWriter(handle, fieldnames=list(encoded))
+        writer.writeheader()
+        writer.writerow(encoded)
+        parsed = ka.read_records(Path("fixture.csv"), content=b"\xef\xbb\xbf" + handle.getvalue().encode("utf-8"))
+        self.assertEqual(parsed, [row])
+        self.assertTrue(audit("negative", parsed)["structural_pass"])
+        defaults = ka.read_records(Path("fixture.csv"), content=b'scope_target,eligible_campaigns\n,\n')
+        self.assertEqual(defaults, [{"scope_target": {}, "eligible_campaigns": []}])
+
+    def test_csv_nested_duplicate_keys_and_bom_still_rejected(self):
+        for raw_json in ('{"campaign_key":"QA-C1","campaign_key":"QA-C2"}', '\ufeff{}'):
+            with self.subTest(raw_json=raw_json):
+                handle = io.StringIO(newline="")
+                writer = csv.writer(handle)
+                writer.writerow(["scope_target"])
+                writer.writerow([raw_json])
+                with self.assertRaises(ValueError):
+                    ka.read_records(Path("fixture.csv"), content=handle.getvalue().encode("utf-8"))
+
+    def test_cli_nonfinite_csv_fails_with_diagnostic_and_preserves_output(self):
+        import contextlib
+        import io
+        import sys
+        from unittest.mock import patch
+        for constant in ("nan", "inf", "-inf"):
+            for existing_output in (False, True):
+                with self.subTest(constant=constant, existing_output=existing_output), tempfile.TemporaryDirectory() as folder:
+                    root = Path(folder)
+                    row = negative()
+                    row["scope_target"]["invalid_json_constant"] = float(constant)
+                    encoded = {key: json.dumps(value) if key in ka.JSON_FIELDS else "" if value is None else value
+                               for key, value in row.items()}
+                    records = root / "records.csv"
+                    with records.open("w", encoding="utf-8", newline="") as handle:
+                        writer = csv.DictWriter(handle, fieldnames=list(encoded))
+                        writer.writeheader()
+                        writer.writerow(encoded)
+                    argv = ["keyword_audit.py", "--kind", "negative", "--input", str(records), "--as-of", str(TODAY)]
+                    for flag, value in (("sources", SOURCES), ("campaigns", CAMPAIGNS), ("campaign-context", CONTEXT),
+                                        ("protected", PROTECTED), ("scope-bindings", SCOPE_BINDINGS)):
+                        path = root / (flag + ".json")
+                        path.write_text(json.dumps(value), encoding="utf-8")
+                        argv.extend(["--" + flag, str(path)])
+                    output = root / "report.json"
+                    if existing_output:
+                        output.write_bytes(b"existing-output-must-survive")
+                    argv.extend(["--output", str(output)])
+                    diagnostic = io.StringIO()
+                    with patch.object(sys, "argv", argv), contextlib.redirect_stderr(diagnostic), contextlib.redirect_stdout(io.StringIO()):
+                        with self.assertRaises(SystemExit) as failure:
+                            ka.main()
+                    self.assertEqual(failure.exception.code, 2)
+                    self.assertIn("Invalid number", diagnostic.getvalue())
+                    self.assertNotIn("Traceback", diagnostic.getvalue())
+                    if existing_output:
+                        self.assertEqual(output.read_bytes(), b"existing-output-must-survive")
+                    else:
+                        self.assertFalse(output.exists())
+
+    def test_cli_valid_json_and_csv_have_identical_audit_behavior(self):
+        import contextlib
+        import io
+        import sys
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            row = negative()
+            row["scope_target"]["finite_metadata"] = [0, -1, 1.5, None, True, "NaN"]
+            encoded = {key: json.dumps(value) if key in ka.JSON_FIELDS else "" if value is None else value
+                       for key, value in row.items()}
+            with (root / "records.csv").open("w", encoding="utf-8-sig", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=list(encoded))
+                writer.writeheader()
+                writer.writerow(encoded)
+            (root / "records.json").write_text(json.dumps([row]), encoding="utf-8-sig")
+            shared = ["--kind", "negative", "--as-of", str(TODAY)]
+            for flag, value in (("sources", SOURCES), ("campaigns", CAMPAIGNS), ("campaign-context", CONTEXT),
+                                ("protected", PROTECTED), ("scope-bindings", SCOPE_BINDINGS)):
+                path = root / (flag + ".json")
+                path.write_text(json.dumps(value), encoding="utf-8")
+                shared.extend(["--" + flag, str(path)])
+            reports = []
+            for suffix in ("json", "csv"):
+                output = root / (suffix + "-report.json")
+                argv = ["keyword_audit.py"] + shared + ["--input", str(root / ("records." + suffix)), "--output", str(output)]
+                diagnostic = io.StringIO()
+                with patch.object(sys, "argv", argv), contextlib.redirect_stderr(diagnostic), contextlib.redirect_stdout(io.StringIO()):
+                    self.assertEqual(ka.main(), 0)
+                self.assertEqual(diagnostic.getvalue(), "")
+                report = json.loads(output.read_text(encoding="utf-8"))
+                report.pop("input_sha256")  # Raw input formats intentionally have different provenance hashes.
+                reports.append(report)
+            self.assertEqual(reports[0], reports[1])
+            self.assertTrue(reports[0]["structural_pass"])
 
     def test_output_cannot_overwrite_input_or_hardlink(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -1,0 +1,76 @@
+{
+  "schema": "bsre-negative-csv-parser-parity-private-proof-v1",
+  "prepared_on": "2026-11-19",
+  "status": "HELD_LOCAL_CANDIDATE_NOT_INTEGRATED_OR_LIVE_ACCEPTANCE",
+  "source_preimage_head": "df241ad26305cfad79a5888ee5a712e08c7cc3c3",
+  "implementation_files": [
+    {
+      "path": "tools/keyword-system/keyword_audit.py",
+      "preimage": {
+        "sha256": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+        "bytes": 51646
+      },
+      "candidate": {
+        "sha256": "5fe078901695ab597933f071b00c7f2bfc1b22dee3589f5d86ae1cbe9bbc5ff9",
+        "bytes": 51880
+      }
+    },
+    {
+      "path": "tools/keyword-system/test_keyword_audit.py",
+      "preimage": {
+        "sha256": "6f8360a91a128ab92f91acd4a40428608b55a52614ba8d8d72dd3f6d4f4cf6ac",
+        "bytes": 18382
+      },
+      "candidate": {
+        "sha256": "0464964fc6ba6343e39d29d295ac1617087c01c3fb5ca3d57b110bb7a51f9d88",
+        "bytes": 25910
+      }
+    }
+  ],
+  "platform": "Windows",
+  "python": "3.12.14",
+  "defect": "Nested structured CSV fields accepted NaN/Infinity/-Infinity although equivalent JSON input rejected them. An otherwise-valid synthetic negative with NaN in ignored scope metadata could retain structural_pass=True.",
+  "correction": "Use the existing JSON branch's rejecting parse_constant callback for nested CSV JSON. Catch parsing/audit ValueError at main() and return argparse's exit-2 diagnostic before writing a report.",
+  "old_test_methods_byte_unchanged": 34,
+  "new_test_methods": [
+    "test_cli_nonfinite_csv_fails_with_diagnostic_and_preserves_output",
+    "test_cli_valid_json_and_csv_have_identical_audit_behavior",
+    "test_csv_nested_duplicate_keys_and_bom_still_rejected",
+    "test_csv_nested_finite_values_and_empty_defaults_preserved",
+    "test_csv_nested_nonfinite_constants_rejected",
+    "test_json_nested_nonfinite_constants_rejected"
+  ],
+  "baseline_new_test_methods_run": 6,
+  "baseline_failing_subcases": 36,
+  "candidate_affected_module": {
+    "tests_run": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "external_cli_probe_count": 10,
+  "valid_reports_identical_across_formats_and_patch": true,
+  "invalid_cli_expected": {
+    "cases": 6,
+    "exit": 2,
+    "diagnostic": "Invalid number",
+    "traceback": false,
+    "fresh_output_created": false,
+    "existing_output_overwritten": false
+  },
+  "focused_command": "python3 -B -m unittest discover -s tools/keyword-system -p test_keyword_audit.py",
+  "ci_wiring": [
+    ".github/workflows/validate.yml runs tools/check_repository.py",
+    "tools/check_repository.py runs tools/efficiency/keyword_modules.py for tools/keyword-system",
+    "keyword_modules.py dynamically discovers test_*.py and executes every discovered test in each complete module"
+  ],
+  "synthetic_fixtures_only": true,
+  "research_records_mutated": 0,
+  "positive_keyword_admissions": 0,
+  "new_real_exclusion_approvals": 0,
+  "new_real_exclusions_applied": 0,
+  "application_authorized": false,
+  "production_changed": false,
+  "full_ci_or_current_native_acceptance_claimed": false
+}

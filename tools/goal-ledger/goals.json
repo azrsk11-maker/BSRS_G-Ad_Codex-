@@ -213,6 +213,39 @@
       "goals": [
         "G022"
       ]
+    },
+    "df-native-engineering-20261118": {
+      "kind": "native_ci",
+      "ref": "docs/audit/CURRENT_NATIVE_ENGINEERING_ACCEPTANCE_2026-11-18.json",
+      "goals": []
+    },
+    "g011-register-preparation-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/CURRENT_REGISTER_OBSERVATION_2026-11-19.json",
+      "goals": [
+        "G011"
+      ]
+    },
+    "g022-developer-corroboration-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/PRIMARY_PROJECT_CORROBORATION_2026-11-19.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g027-csv-parser-parity-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_CSV_PARSER_PARITY_2026-11-19.json",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g027-bounded-scope-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_SCOPE_TRANCHE_2026-11-19.md",
+      "goals": [
+        "G027"
+      ]
     }
   },
   "goals": [
@@ -323,7 +356,8 @@
         "G005"
       ],
       "evidence_refs": [
-        "evidence-gap-g011"
+        "evidence-gap-g011",
+        "g011-register-preparation-20261119"
       ],
       "id": "G011",
       "launch_gate": "prelaunch",
@@ -438,7 +472,8 @@
       ],
       "evidence_refs": [
         "bounded-preparation-g022",
-        "primary-project-discovery-20261118"
+        "primary-project-discovery-20261118",
+        "g022-developer-corroboration-20261119"
       ],
       "id": "G022",
       "launch_gate": "prelaunch",
@@ -490,7 +525,9 @@
         "G026"
       ],
       "evidence_refs": [
-        "bounded-preparation-g027"
+        "bounded-preparation-g027",
+        "g027-csv-parser-parity-20261119",
+        "g027-bounded-scope-20261119"
       ],
       "id": "G027",
       "launch_gate": "prelaunch",
@@ -1412,13 +1449,14 @@
   "schema_version": 1,
   "snapshot": {
     "ads": "paused",
-    "as_of": "2026-11-18",
+    "as_of": "2026-11-19",
     "baseline": "bounded_engineering_accepted_at_1123575e",
     "connected_identity": "Marketing_explicitly_selected_BSS_preserved",
     "context_refs": [
       "c6-bounded-baseline",
       "accepted112-g001",
-      "accepted112-g002"
+      "accepted112-g002",
+      "df-native-engineering-20261118"
     ],
     "g39_native_ci_integration": "accepted_at_1123575e",
     "independent_pr_reviews": 0,

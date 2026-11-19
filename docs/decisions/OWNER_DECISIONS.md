@@ -1,5 +1,9 @@
 # Owner decisions
 
+## Continued autonomous preparation - 19 November 2026
+
+The owner renewed the instruction to continue the remaining 94 goals autonomously, keep production unchanged and Ads paused, and request only essential missing inputs or approvals. This authorizes independent reversible preparation, public-source research, verification and repository delivery within the existing writer and privacy boundaries. It supplies no new business facts, source-universe/version acceptance, property or content rights, human PR review, exclusion approval, live provider event, export, merge, publication, activation or spending authority. Both full reviewed 14,000-row keyword libraries and all original release gates remain required. The previously reported absence of an independent human reviewer remains unresolved; it is not asked again by this continuation.
+
 ## Autonomous independent implementation — 18 November 2026
 
 The owner requested completion of “everything where you don't need my input” using the token-optimisation skill. This authorizes independent code preparation, research, verification and repository delivery within the existing boundaries. It supplies no missing business facts, independent human review, production publication, live tracking, Ads activation/expenditure, permission expansion or gate waiver. Existing decisions remain in force.
