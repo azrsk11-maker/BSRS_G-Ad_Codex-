@@ -1,3 +1,11 @@
+## Current strict intake and frozen-review preservation — 19 November 2026
+
+The first CSV candidate `f76673e` passed 40 local parser cases but full Foundation correctly rejected its change to the historical Ofqual core pin. Its failed log is preserved and its obsolete disposable native run was cancelled; no complete CI acceptance is claimed for that candidate. The correction restores the original `keyword_audit.py` bytes and selects [current_keyword_audit.py](../tools/keyword-system/current_keyword_audit.py) for new intake. No historical review, code pin, research literal or allocation was repinned.
+
+An independent probe also reproduced decoded numeric overflow (`1e400`) bypassing constant-only rejection. The current IO layer now checks the complete decoded JSON/CSV/config tree before lossy normalization, including scalar metric conversions, while retaining valid finite values and text. It snapshots each input once for parsing and provenance. All 40 existing method bodies remain unchanged; eight architecture/overflow cases bring integrated current-input coverage to 48. The original Ofqual code/AST preflight passes on the actual corrected Source. Independent CLI rejection, finite controls, output preservation and snapshot checks are separate scoped evidence, not deduplicated totals or provider equivalence.
+
+The dated DF/112 receipts retain their scopes. All four cloud checks and a new actual native-log audit remain required at the corrected commit; neither the failed candidate nor prior proof certifies that future head. The previous low-memory host timeouts remain diagnostic; the unchanged full host command was not repeated. Goal states stay 6 verified / 7 blocked / 9 preparation-only / 78 pending. Production unchanged, Ads paused; all human, history, business, full-library, provider and release gates remain.
+
 # Implementation progress
 
 ## Current CSV correction and bounded evidence preparation - 19 November 2026

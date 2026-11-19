@@ -31,4 +31,4 @@ Traceability: literals are matched by original research identity, source line an
 
 The prior 25 proposals and 20 held groups are preserved. Across the prior tranche and this tranche there are 34 proposed literals, plus this one new applicability hold; 13,965 current research identities have no proposal or this hold from these two tranches. This does not close G027. Full positive/protected-library conflict clearance is still G028 work. G029 exclusion review/approval and release/application remain separate and false. Ads stay paused and production is unchanged.
 
-The separately reproduced structured-CSV parser defect and held two-file correction are recorded in [the local parser parity receipt](NEGATIVE_CSV_PARSER_PARITY_2026-11-19.json). Its synthetic tests do not approve any real exclusion.
+The separately reproduced structured-CSV parser defect and held current-entrypoint correction with the historical research core restored exactly are recorded in [the local parser parity receipt](NEGATIVE_CSV_PARSER_PARITY_2026-11-19.json). Its synthetic tests do not approve any real exclusion.

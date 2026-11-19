@@ -113,8 +113,7 @@ def read_records(path: Path, *, content=None):
                 if None in record or any(value is None for value in record.values()):
                     raise ValueError("CSV row has mismatched column count")
                 for key in JSON_FIELDS & record.keys():
-                    record[key] = json.loads(record[key] or ("[]" if key in LIST_FIELDS else "{}"), object_pairs_hook=duplicate_safe_object,
-                                             parse_constant=lambda value: (_ for _ in ()).throw(ValueError("Invalid number " + value)))
+                    record[key] = json.loads(record[key] or ("[]" if key in LIST_FIELDS else "{}"), object_pairs_hook=duplicate_safe_object)
                 for key in NULL_FIELDS & record.keys():
                     if record[key] == "":
                         record[key] = None
@@ -769,15 +768,12 @@ def main():
     # Each input is read once. Parsing and raw provenance use identical bytes,
     # even if an editor changes a file while the audit is running.
     snapshots = {role: path.read_bytes() for role, path in zip(roles, inputs)}
-    try:
-        report = audit(args.kind, read_records(args.input, content=snapshots["records"]),
-                       parse_json_bytes(snapshots["sources"]), parse_json_bytes(snapshots["campaigns"]),
-                       parse_json_bytes(snapshots["campaign_context"]), parse_json_bytes(snapshots["protected_queries"]), args.as_of,
-                       parse_json_bytes(snapshots["scope_bindings"]) if args.scope_bindings else None,
-                       read_records(args.positive_library, content=snapshots["positive_library"]) if args.positive_library else None,
-                       parse_json_bytes(snapshots["coverage_review"]) if args.coverage_review else None)
-    except ValueError as error:
-        parser.error(str(error))
+    report = audit(args.kind, read_records(args.input, content=snapshots["records"]),
+                   parse_json_bytes(snapshots["sources"]), parse_json_bytes(snapshots["campaigns"]),
+                   parse_json_bytes(snapshots["campaign_context"]), parse_json_bytes(snapshots["protected_queries"]), args.as_of,
+                   parse_json_bytes(snapshots["scope_bindings"]) if args.scope_bindings else None,
+                   read_records(args.positive_library, content=snapshots["positive_library"]) if args.positive_library else None,
+                   parse_json_bytes(snapshots["coverage_review"]) if args.coverage_review else None)
     report["input_sha256"] = {role: {"filename": p.name, "sha256": hashlib.sha256(snapshots[role]).hexdigest()} for role, p in zip(roles, inputs)}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

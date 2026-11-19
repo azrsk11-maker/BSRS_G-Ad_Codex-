@@ -9,7 +9,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-import keyword_audit as ka
+import current_keyword_audit as ka
 from test_positive_admission import complete_campaigns, complete_positive, complete_sources
 
 TODAY = date(2026, 11, 7)

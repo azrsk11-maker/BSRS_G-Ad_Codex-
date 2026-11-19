@@ -1,76 +1,103 @@
 {
-  "schema": "bsre-negative-csv-parser-parity-private-proof-v1",
+  "schema": "bsre-current-negative-csv-parser-compatibility-v3",
   "prepared_on": "2026-11-19",
-  "status": "HELD_LOCAL_CANDIDATE_NOT_INTEGRATED_OR_LIVE_ACCEPTANCE",
-  "source_preimage_head": "df241ad26305cfad79a5888ee5a712e08c7cc3c3",
-  "implementation_files": [
-    {
-      "path": "tools/keyword-system/keyword_audit.py",
-      "preimage": {
-        "sha256": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
-        "bytes": 51646
-      },
-      "candidate": {
-        "sha256": "5fe078901695ab597933f071b00c7f2bfc1b22dee3589f5d86ae1cbe9bbc5ff9",
-        "bytes": 51880
-      }
+  "status": "HELD_LOCAL_SUCCESSOR_CANDIDATE_NOT_CI_OR_LIVE_ACCEPTANCE",
+  "source_preimage_head": "f76673e8f085e0e15f8c9a4e6fe40dc14d931f50",
+  "initial_parser_receipt_pin": {
+    "sha256": "47a1a768b36e1abd83cfa67c52559fec590338007e15ba70ec5b78b1047cebea",
+    "bytes": 3101
+  },
+  "first_integrated_revision_failure": {
+    "head": "f76673e8f085e0e15f8c9a4e6fe40dc14d931f50",
+    "check": "offline-validation",
+    "job_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44466210580/job/135364488983",
+    "error": "OFQUAL_CURRENT_IMPLEMENTATION_CHANGED",
+    "full_Foundation_suite_executed": false,
+    "raw_job_log_pin": {
+      "bytes": 21320,
+      "sha256": "3adb9b6dd3c80de720f3f651f11775584e4b363605fc04fe4ab0fd835aa7a832"
     },
-    {
-      "path": "tools/keyword-system/test_keyword_audit.py",
-      "preimage": {
-        "sha256": "6f8360a91a128ab92f91acd4a40428608b55a52614ba8d8d72dd3f6d4f4cf6ac",
-        "bytes": 18382
-      },
-      "candidate": {
-        "sha256": "0464964fc6ba6343e39d29d295ac1617087c01c3fb5ca3d57b110bb7a51f9d88",
-        "bytes": 25910
-      }
-    }
-  ],
-  "platform": "Windows",
-  "python": "3.12.14",
-  "defect": "Nested structured CSV fields accepted NaN/Infinity/-Infinity although equivalent JSON input rejected them. An otherwise-valid synthetic negative with NaN in ignored scope metadata could retain structural_pass=True.",
-  "correction": "Use the existing JSON branch's rejecting parse_constant callback for nested CSV JSON. Catch parsing/audit ValueError at main() and return argparse's exit-2 diagnostic before writing a report.",
-  "old_test_methods_byte_unchanged": 34,
-  "new_test_methods": [
-    "test_cli_nonfinite_csv_fails_with_diagnostic_and_preserves_output",
-    "test_cli_valid_json_and_csv_have_identical_audit_behavior",
-    "test_csv_nested_duplicate_keys_and_bom_still_rejected",
-    "test_csv_nested_finite_values_and_empty_defaults_preserved",
-    "test_csv_nested_nonfinite_constants_rejected",
-    "test_json_nested_nonfinite_constants_rejected"
-  ],
-  "baseline_new_test_methods_run": 6,
-  "baseline_failing_subcases": 36,
-  "candidate_affected_module": {
-    "tests_run": 40,
+    "reason": "The first correction changed the exact historical keyword_audit.py whole-file hash. Its matching functions were unchanged, but the retained Ofqual implementation binding correctly rejected different bytes."
+  },
+  "selection": {
+    "current_module": "current_keyword_audit",
+    "current_CLI": "tools/keyword-system/current_keyword_audit.py",
+    "legacy_core": "tools/keyword-system/keyword_audit.py",
+    "legacy_core_restored_exact": {
+      "sha256": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+      "bytes": 51646
+    },
+    "Ofqual_CODE_PINS_and_reviews_unchanged": true,
+    "all_research_literals_unchanged": true,
+    "current_matching_and_audit_are_explicit_legacy_delegates": true,
+    "legacy_permissive_CSV_reader_retained_as_historical_not_supported_for_new_untrusted_intake": true,
+    "new_current_CSV_reader_never_calls_legacy_CSV_reader": true,
+    "untrusted_exec_global_monkeypatch_or_whole_core_copy_in_current_module": false,
+    "input_snapshots_read_once_and_reused_for_parsing_and_provenance": true
+  },
+  "superseded_private_v1": {
+    "patch": {
+      "sha256": "db7cacdfca4197d10408531429e91572677afafd3ad00b86df2d789c7e84e088",
+      "bytes": 23415
+    },
+    "manifest": {
+      "sha256": "95d91aef87d5ebd0a92dbbf3d2e44a559dd4d53e3cc31210671d32fc3691b445",
+      "bytes": 6387
+    },
+    "review_status": "CHANGES_REQUIRED_CONFIRMED_NUMERIC_OVERFLOW_NOT_PASS",
+    "bytes_preserved_unchanged": true,
+    "finding": "The v1 current entrypoint accepted numeric literal1e400 as decoded infinity in ignored metadata. Output normalization could drop that metadata; absence of Infinity in the report did not establish finite input."
+  },
+  "correction": "Current JSON parsing and the completed CSV decode tree reject every decoded non-finite float, including nested positive/negative exponent overflow, before audit normalization. Non-standard NaN/Infinity/-Infinity constants are also rejected. Public current parse_json_bytes/load_json and CLI configuration parsing share the same guard; current CLI reports input/parse errors with exit2 before any report write. Frozen legacy validation/matching and its reviewed bytes remain unchanged.",
+  "focused_checks": {
+    "existing_method_bodies_unchanged": 40,
+    "pre_initial_CSV_method_bodies_unchanged": 34,
+    "current_keyword_test_module": 40,
+    "single_snapshot_and_delegation_tests": 3,
+    "new_overflow_test_methods": 5,
+    "total_tests": 48,
     "failures": 0,
     "errors": 0,
-    "skipped": 0,
-    "passed": true
+    "original_Ofqual_pre_expensive_check": "PASS_IN_EXPLICIT_PRIVATE_EXACT_BYTE_SOURCE_VIEW",
+    "external_CLI_probes": 14,
+    "valid_positive_negative_JSON_CSV_cases": 8,
+    "valid_reports_equal_across_core_current_and_formats": true,
+    "invalid_NaN_Infinity_negativeInfinity_fresh_existing_output_cases": 6,
+    "invalid_exit": 2,
+    "invalid_traceback": false,
+    "invalid_output_created_or_overwritten": false,
+    "extra_CLI_audit_hook_probe": {
+      "inputs": 6,
+      "reads_per_input": 1,
+      "global_monkeypatch": false
+    },
+    "prototype_single_read_test_bodies_unchanged": 2,
+    "prototype_parser_identity_assertion_strengthened": "Every validation/matching alias assertion retained; current JSON parser is separate, finite-parity checked and overflow rejecting.",
+    "overflow_reader_matrix": "All10 structured fields,2signs,3nested shapes,JSON+CSV; public JSON/config API and scalar CSV metrics also checked.",
+    "v1_synthetic_overflow_baselines": 8,
+    "v2_actual_CLI_record_overflow_rejections": 16,
+    "v2_actual_CLI_source_config_overflow_rejections": 8,
+    "large_finite_baseline_controls_legacy_v1_v2_positive_negative_JSON_CSV": 12,
+    "large_finite_control_reports_equal_excluding_raw_input_hashes": true,
+    "finite_controls_include": [
+      "1e308",
+      "-1e308",
+      "1e-308",
+      "string1e400",
+      "UTF8_BOM",
+      "Unicode"
+    ]
   },
-  "external_cli_probe_count": 10,
-  "valid_reports_identical_across_formats_and_patch": true,
-  "invalid_cli_expected": {
-    "cases": 6,
-    "exit": 2,
-    "diagnostic": "Invalid number",
-    "traceback": false,
-    "fresh_output_created": false,
-    "existing_output_overwritten": false
-  },
-  "focused_command": "python3 -B -m unittest discover -s tools/keyword-system -p test_keyword_audit.py",
-  "ci_wiring": [
-    ".github/workflows/validate.yml runs tools/check_repository.py",
-    "tools/check_repository.py runs tools/efficiency/keyword_modules.py for tools/keyword-system",
-    "keyword_modules.py dynamically discovers test_*.py and executes every discovered test in each complete module"
+  "callsite_selection": "Whole-repository runtime/workflow/producer literal inspection found historical hash/AST/source references, no current subprocess invoking legacy keyword_audit.py. README's current CLI example selects the new entrypoint. Historical finite JSON reconstruction APIs remain unchanged.",
+  "focused_commands": [
+    "python3 -B -m unittest discover -s tools/keyword-system -p test_keyword_audit.py",
+    "python3 -B -m unittest discover -s tools/keyword-system -p test_current_keyword_audit.py"
   ],
   "synthetic_fixtures_only": true,
-  "research_records_mutated": 0,
-  "positive_keyword_admissions": 0,
   "new_real_exclusion_approvals": 0,
   "new_real_exclusions_applied": 0,
+  "positive_keyword_admissions": 0,
   "application_authorized": false,
   "production_changed": false,
-  "full_ci_or_current_native_acceptance_claimed": false
+  "full_CI_or_current_native_acceptance_claimed": false
 }
