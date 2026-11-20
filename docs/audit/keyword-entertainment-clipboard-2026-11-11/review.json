@@ -1,0 +1,2656 @@
+{
+  "version": 1,
+  "scope": "PRELIMINARY_AI_REVIEW_SOURCE_ONLY_NO_ADMISSION",
+  "review_date_dubai": "2026-11-11",
+  "projection_file": "keywords.json",
+  "reviewed_complete_ordinal_ranges": [
+    [
+      1,
+      130
+    ],
+    [
+      131,
+      260
+    ],
+    [
+      261,
+      390
+    ],
+    [
+      391,
+      518
+    ]
+  ],
+  "source_occurrences_assessed": 518,
+  "proposed_exact": 318,
+  "held": 200,
+  "unassessed": 0,
+  "proposal_match_type": "EXACT_PENDING_INDEPENDENT_REVIEW",
+  "context_reference": {
+    "url": "https://store.steampowered.com/app/1190970/House_Flipper_2/",
+    "basis": "Parent operator read this official game listing; source-bound capture verification does not independently authenticate its content",
+    "limitation": "Game context only, not proof of compatibility, release dates, prices, other games/DLC, download legality or real-estate service facts"
+  },
+  "intent_rule": "Apply the full literal; seed topic alone is insufficient. Preserve real flipping/investment, renovation/design/physical services, named-house ambiguity and genuine buyer/owner guides.",
+  "reason_definitions": {
+    "EXPLICIT_GAMEPLAY": "The complete literal explicitly requests a game, games, gameplay or play of the named franchise, rather than actual property purchase/renovation services. Preliminary unapproved EXACT proposal only; no game availability, feature or platform compatibility claim.",
+    "EXPLICIT_GAME_PLATFORM": "The complete literal has a console, computer/mobile platform, operating system or game-platform cue with the captured title wording. This supports digital entertainment intent; it does not prove that a compatible product exists or authorize broad platform-word exclusions.",
+    "EXPLICIT_DIGITAL_PRODUCT": "The complete literal explicitly requests downloading/installing the captured title or a digital product key. No underlying download legality, licence, safety, availability or provider relationship is inferred; actual property brochures/floor plans remain protected.",
+    "CONFIRMED_GAME_TITLE_2": "The exact House Flipper 2 game title or its title-specific product/release navigation is corroborated by the parent-observed official Steam reference. This does not establish a release date, platform support, price or feature. Aliases and token permutations remain unresolved.",
+    "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY": "The complete literal can describe real property flipping/investment, houses to buy, pricing/sale, renovation/design, physical services or client information. The seed topic does not remove that reading; HOLD.",
+    "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT": "Named house, pet, garden, luxury, television, horror or character wording lacks a sufficient complete-literal game/platform/download cue or corroborated entity mapping. Preserve possible actual property or client-guide intent; HOLD.",
+    "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED": "Entity/vendor/site/review/navigation wording is not independently resolved in this capture. No inherited game classification, provider affiliation, actual feature or service exclusion; HOLD.",
+    "UNRESOLVED_ALIAS_SPELLING_LANGUAGE": "Unspaced, malformed, abbreviated, language-sensitive or possible spelling/alias wording needs separate review. Original provider text stays unchanged; no corrected keyword is generated; HOLD.",
+    "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT": "Unexplained sequel/version/date/numeric or generic simulator/product wording does not establish the specific game or exclude investment simulation/client guidance. No release/version/availability fact is inferred; HOLD."
+  },
+  "reason_counts": {
+    "EXPLICIT_GAMEPLAY": 127,
+    "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED": 30,
+    "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT": 58,
+    "EXPLICIT_GAME_PLATFORM": 146,
+    "CONFIRMED_GAME_TITLE_2": 7,
+    "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY": 48,
+    "EXPLICIT_DIGITAL_PRODUCT": 38,
+    "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT": 48,
+    "UNRESOLVED_ALIAS_SPELLING_LANGUAGE": 16
+  },
+  "variant_rule": "All 87 equal-token groups and seven closed-string alias groups remain unresolved for distinct concepts/Google equivalence; actual source literals are not generated variants. Conditional semantic proposals are not admission-ready counts.",
+  "full_current_library_membership_verified": false,
+  "independent_human_review_verified": false,
+  "master_contribution": 0,
+  "approved_contribution": 0,
+  "deployed_contribution": 0,
+  "actual_campaign_bindings": [],
+  "assessments": [
+    {
+      "ordinal": 1,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 2,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 3,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 4,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 5,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 6,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 7,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 8,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 9,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 10,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 11,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 12,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 13,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 14,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 15,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 16,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 17,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 18,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 19,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 20,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 21,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 22,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 23,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 24,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 25,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 26,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 27,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 28,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 29,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 30,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 31,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 32,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 33,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 34,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 35,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 36,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 37,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 38,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 39,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 40,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 41,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 42,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 43,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 44,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 45,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 46,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 47,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 48,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 49,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 50,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 51,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 52,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 53,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 54,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 55,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 56,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 57,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 58,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 59,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 60,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 61,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 62,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 63,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 64,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 65,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 66,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 67,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 68,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 69,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 70,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 71,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 72,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 73,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 74,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 75,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 76,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 77,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 78,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 79,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 80,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 81,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 82,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 83,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 84,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 85,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 86,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 87,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 88,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 89,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 90,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 91,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 92,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 93,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 94,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 95,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 96,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 97,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 98,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 99,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 100,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 101,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 102,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 103,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 104,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 105,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 106,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 107,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 108,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 109,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 110,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 111,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 112,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 113,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 114,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 115,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 116,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 117,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 118,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 119,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 120,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 121,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 122,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 123,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 124,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 125,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 126,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 127,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 128,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 129,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 130,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 131,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 132,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 133,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 134,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 135,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 136,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 137,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 138,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 139,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 140,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 141,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 142,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 143,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 144,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 145,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 146,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 147,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 148,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 149,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 150,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 151,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 152,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 153,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 154,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 155,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 156,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 157,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 158,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "CONFIRMED_GAME_TITLE_2"
+    },
+    {
+      "ordinal": 159,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 160,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 161,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 162,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 163,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 164,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 165,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 166,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 167,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 168,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 169,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 170,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 171,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 172,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 173,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 174,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 175,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 176,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 177,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 178,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 179,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 180,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 181,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 182,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 183,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 184,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 185,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 186,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 187,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 188,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 189,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 190,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 191,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 192,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 193,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 194,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 195,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 196,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 197,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 198,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 199,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 200,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 201,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 202,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 203,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 204,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 205,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 206,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 207,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 208,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 209,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 210,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 211,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 212,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 213,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 214,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 215,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 216,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 217,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 218,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 219,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 220,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 221,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 222,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 223,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 224,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 225,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 226,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 227,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 228,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 229,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 230,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 231,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 232,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 233,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 234,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 235,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 236,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 237,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 238,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 239,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 240,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 241,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 242,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 243,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 244,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 245,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 246,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 247,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 248,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 249,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 250,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 251,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 252,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 253,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 254,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 255,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 256,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 257,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 258,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 259,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 260,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 261,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 262,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 263,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 264,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 265,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 266,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 267,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 268,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 269,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 270,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 271,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 272,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 273,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 274,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 275,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 276,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 277,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 278,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 279,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 280,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 281,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 282,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 283,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 284,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 285,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 286,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 287,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 288,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 289,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 290,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 291,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 292,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 293,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 294,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 295,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 296,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 297,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 298,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 299,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 300,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 301,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 302,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 303,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 304,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 305,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 306,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 307,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 308,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 309,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 310,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 311,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 312,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 313,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 314,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 315,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 316,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 317,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 318,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 319,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 320,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 321,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 322,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 323,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 324,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 325,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 326,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 327,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 328,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 329,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 330,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 331,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 332,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 333,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 334,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 335,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 336,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 337,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 338,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 339,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 340,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 341,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 342,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 343,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 344,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 345,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 346,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 347,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 348,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 349,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 350,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 351,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 352,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 353,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 354,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 355,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 356,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 357,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 358,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 359,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 360,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 361,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 362,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 363,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 364,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 365,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 366,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 367,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 368,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 369,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 370,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 371,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 372,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 373,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 374,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 375,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 376,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 377,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 378,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 379,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 380,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 381,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 382,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 383,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 384,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 385,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 386,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 387,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 388,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 389,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 390,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 391,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 392,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 393,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 394,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 395,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 396,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 397,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 398,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 399,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 400,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 401,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 402,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 403,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 404,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 405,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 406,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 407,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 408,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 409,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 410,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 411,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 412,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 413,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 414,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 415,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_DIGITAL_PRODUCT"
+    },
+    {
+      "ordinal": 416,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 417,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 418,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 419,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 420,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 421,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 422,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 423,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 424,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 425,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 426,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 427,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 428,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 429,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 430,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 431,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 432,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 433,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 434,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 435,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 436,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 437,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 438,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 439,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 440,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 441,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 442,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 443,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 444,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 445,
+      "disposition": "HOLD",
+      "reason_code": "UNVERIFIED_NUMBER_VERSION_OR_PRODUCT"
+    },
+    {
+      "ordinal": 446,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 447,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 448,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 449,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 450,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 451,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 452,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 453,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 454,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 455,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 456,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 457,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 458,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 459,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 460,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 461,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 462,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 463,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 464,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 465,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 466,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 467,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 468,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 469,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 470,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 471,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 472,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 473,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 474,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 475,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 476,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 477,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 478,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 479,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 480,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 481,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 482,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 483,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 484,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 485,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 486,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 487,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 488,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 489,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 490,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 491,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 492,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 493,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 494,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 495,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 496,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 497,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 498,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 499,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 500,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 501,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 502,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 503,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 504,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 505,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 506,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAME_PLATFORM"
+    },
+    {
+      "ordinal": 507,
+      "disposition": "HOLD",
+      "reason_code": "UNRESOLVED_ALIAS_SPELLING_LANGUAGE"
+    },
+    {
+      "ordinal": 508,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 509,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 510,
+      "disposition": "HOLD",
+      "reason_code": "ENTITY_OR_VENDOR_NAVIGATION_UNRESOLVED"
+    },
+    {
+      "ordinal": 511,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 512,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 513,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 514,
+      "disposition": "HOLD",
+      "reason_code": "NAMED_HOUSE_OR_UNCORROBORATED_CONTENT"
+    },
+    {
+      "ordinal": 515,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 516,
+      "disposition": "HOLD",
+      "reason_code": "PROPERTY_DEMAND_OR_GUIDE_AMBIGUITY"
+    },
+    {
+      "ordinal": 517,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    },
+    {
+      "ordinal": 518,
+      "disposition": "PROPOSE_EXACT",
+      "reason_code": "EXPLICIT_GAMEPLAY"
+    }
+  ]
+}

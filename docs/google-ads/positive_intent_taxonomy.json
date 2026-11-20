@@ -1,0 +1,562 @@
+[
+  {
+    "signal_id": "SIG-001",
+    "group": "Residential off-plan",
+    "signal": "Off-plan apartments",
+    "example_candidate": "off plan apartment payment schedule dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-002",
+    "group": "Residential off-plan",
+    "signal": "Off-plan villas",
+    "example_candidate": "new villa projects payment plan uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-003",
+    "group": "Residential off-plan",
+    "signal": "Off-plan townhouses",
+    "example_candidate": "townhouse launch payment plan uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-004",
+    "group": "Residential off-plan",
+    "signal": "New launch comparisons",
+    "example_candidate": "compare new residential launches uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-005",
+    "group": "Residential off-plan",
+    "signal": "Near-handover purchase",
+    "example_candidate": "near completion apartment for sale dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-006",
+    "group": "Residential ready and secondary",
+    "signal": "Vacant possession",
+    "example_candidate": "vacant on transfer apartment dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-007",
+    "group": "Residential ready and secondary",
+    "signal": "Tenanted investment",
+    "example_candidate": "tenanted apartment for sale with lease details",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-008",
+    "group": "Residential ready and secondary",
+    "signal": "Financed ready purchases",
+    "example_candidate": "mortgage eligible ready apartment abu dhabi",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-009",
+    "group": "Residential ready and secondary",
+    "signal": "Furnished ready purchases",
+    "example_candidate": "furnished apartment to buy dubai marina",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-010",
+    "group": "Residential ready and secondary",
+    "signal": "Condition and renovation suitability",
+    "example_candidate": "ready villa for sale renovation potential uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-011",
+    "group": "Residential rental",
+    "signal": "Move-in deadline",
+    "example_candidate": "apartment available to rent next month dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-012",
+    "group": "Residential rental",
+    "signal": "Furnished versus unfurnished",
+    "example_candidate": "furnished annual rental apartment abu dhabi",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-013",
+    "group": "Residential rental",
+    "signal": "Bedrooms and household requirements",
+    "example_candidate": "three bedroom rental near schools sharjah",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-014",
+    "group": "Residential rental",
+    "signal": "Commute and transport",
+    "example_candidate": "apartment for rent near metro business bay",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-015",
+    "group": "Residential rental",
+    "signal": "Annual rent and payment structure",
+    "example_candidate": "annual apartment rent four cheques dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-016",
+    "group": "Commercial off-plan purchase",
+    "signal": "Off-plan offices",
+    "example_candidate": "off plan office payment plan dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-017",
+    "group": "Commercial off-plan purchase",
+    "signal": "Off-plan retail",
+    "example_candidate": "retail unit new project for sale uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-018",
+    "group": "Commercial off-plan purchase",
+    "signal": "Commercial unit specifications",
+    "example_candidate": "commercial unit shell and core new development",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-019",
+    "group": "Commercial off-plan purchase",
+    "signal": "Future owner occupation",
+    "example_candidate": "buy future office premises for company uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-020",
+    "group": "Commercial off-plan purchase",
+    "signal": "Future income scenarios",
+    "example_candidate": "off plan commercial property rental income assumptions",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-021",
+    "group": "Commercial ready purchase",
+    "signal": "Fitted offices",
+    "example_candidate": "fitted office for sale business bay",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-022",
+    "group": "Commercial ready purchase",
+    "signal": "Shell-and-core offices",
+    "example_candidate": "shell and core office for sale dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-023",
+    "group": "Commercial ready purchase",
+    "signal": "Retail investments",
+    "example_candidate": "shop for sale with existing tenant uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-024",
+    "group": "Commercial ready purchase",
+    "signal": "Showrooms",
+    "example_candidate": "showroom property for sale uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-025",
+    "group": "Commercial ready purchase",
+    "signal": "Warehouses and industrial assets",
+    "example_candidate": "warehouse with loading bay for sale sharjah",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-026",
+    "group": "Commercial leasing",
+    "signal": "Team-size office fit",
+    "example_candidate": "office for rent for twenty employees dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-027",
+    "group": "Commercial leasing",
+    "signal": "Warehouse operating specifications",
+    "example_candidate": "warehouse for rent three phase power sharjah",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-028",
+    "group": "Commercial leasing",
+    "signal": "Activity-compatible retail premises",
+    "example_candidate": "retail premises for rent suitable for restaurant uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-029",
+    "group": "Commercial leasing",
+    "signal": "Customer and logistics access",
+    "example_candidate": "showroom for rent with customer parking dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-030",
+    "group": "Commercial leasing",
+    "signal": "Expansion and relocation",
+    "example_candidate": "larger office lease for growing company uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-031",
+    "group": "Developer and project intelligence",
+    "signal": "Developer comparisons",
+    "example_candidate": "compare developers payment plans dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-032",
+    "group": "Developer and project intelligence",
+    "signal": "Named project availability",
+    "example_candidate": "available units in verified project",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-033",
+    "group": "Developer and project intelligence",
+    "signal": "Payment milestones",
+    "example_candidate": "project payment milestone comparison uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-034",
+    "group": "Developer and project intelligence",
+    "signal": "Delivery and handover research",
+    "example_candidate": "developer handover record property comparison",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-035",
+    "group": "Developer and project intelligence",
+    "signal": "Unavailable-project alternatives",
+    "example_candidate": "alternatives to sold out project uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-036",
+    "group": "Community and location",
+    "signal": "Community comparisons",
+    "example_candidate": "business bay versus jlt office purchase",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-037",
+    "group": "Community and location",
+    "signal": "Commute trade-offs",
+    "example_candidate": "compare rental areas commute to business bay",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-038",
+    "group": "Community and location",
+    "signal": "School and amenity access",
+    "example_candidate": "villa communities near schools abu dhabi",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-039",
+    "group": "Community and location",
+    "signal": "Waterfront and view preferences",
+    "example_candidate": "waterfront apartment purchase ras al khaimah",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-040",
+    "group": "Community and location",
+    "signal": "Verified infrastructure context",
+    "example_candidate": "property near announced transport project uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-041",
+    "group": "Investment economics",
+    "signal": "Net rather than gross yield",
+    "example_candidate": "apartment yield after service charges dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-042",
+    "group": "Investment economics",
+    "signal": "Total acquisition cost",
+    "example_candidate": "total cash needed to buy property uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-043",
+    "group": "Investment economics",
+    "signal": "Cash-flow timing",
+    "example_candidate": "off plan payment cash flow calculator uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-044",
+    "group": "Investment economics",
+    "signal": "Vacancy and occupancy scenarios",
+    "example_candidate": "commercial investment vacancy sensitivity uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-045",
+    "group": "Investment economics",
+    "signal": "Exit and resale liquidity",
+    "example_candidate": "off plan versus ready property exit costs",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-046",
+    "group": "Financial readiness",
+    "signal": "Rent versus buy",
+    "example_candidate": "rent versus buy apartment abu dhabi calculator",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-047",
+    "group": "Financial readiness",
+    "signal": "Mortgage preparation",
+    "example_candidate": "buy property after mortgage pre approval dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-048",
+    "group": "Financial readiness",
+    "signal": "Deposit and cash requirements",
+    "example_candidate": "property purchase down payment and fees uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-049",
+    "group": "Financial readiness",
+    "signal": "Post-handover plans",
+    "example_candidate": "compare post handover payment plans uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-050",
+    "group": "Financial readiness",
+    "signal": "Nonresident funding",
+    "example_candidate": "nonresident property purchase funding requirements uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-051",
+    "group": "International buyers and relocation",
+    "signal": "Overseas purchase process",
+    "example_candidate": "buy uae property from united kingdom",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-052",
+    "group": "International buyers and relocation",
+    "signal": "Remote viewings and completion",
+    "example_candidate": "remote property viewing uae overseas buyer",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-053",
+    "group": "International buyers and relocation",
+    "signal": "Funding and remittance planning",
+    "example_candidate": "funding property purchase uae from abroad",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-054",
+    "group": "International buyers and relocation",
+    "signal": "Property-related residency research",
+    "example_candidate": "property purchase residency eligibility uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-055",
+    "group": "International buyers and relocation",
+    "signal": "Relocation-led property demand",
+    "example_candidate": "moving to uae rent first or buy home",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-056",
+    "group": "Sellers",
+    "signal": "Sale valuation",
+    "example_candidate": "sell my apartment valuation dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-057",
+    "group": "Sellers",
+    "signal": "Time-sensitive sale",
+    "example_candidate": "sell vacant villa within planned timeframe uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-058",
+    "group": "Sellers",
+    "signal": "Off-plan assignment",
+    "example_candidate": "sell off plan apartment before handover uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-059",
+    "group": "Sellers",
+    "signal": "Tenanted-property disposal",
+    "example_candidate": "sell apartment with tenant dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-060",
+    "group": "Sellers",
+    "signal": "Portfolio and commercial disposal",
+    "example_candidate": "sell commercial property portfolio uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-061",
+    "group": "Landlords",
+    "signal": "Tenant sourcing",
+    "example_candidate": "find tenant for my apartment dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-062",
+    "group": "Landlords",
+    "signal": "Rental pricing",
+    "example_candidate": "rental valuation for my villa abu dhabi",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-063",
+    "group": "Landlords",
+    "signal": "Vacancy reduction",
+    "example_candidate": "lease vacant office property dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-064",
+    "group": "Landlords",
+    "signal": "Reletting and lease planning",
+    "example_candidate": "relet apartment after tenant leaves uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-065",
+    "group": "Landlords",
+    "signal": "Multiple-unit letting",
+    "example_candidate": "broker to lease multiple commercial units uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-066",
+    "group": "Choice, brand and distribution",
+    "signal": "Broker and portal alternatives",
+    "example_candidate": "compare property broker services uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-067",
+    "group": "Choice, brand and distribution",
+    "signal": "BlackSwan branded intent",
+    "example_candidate": "blackswan real estate property enquiry",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-068",
+    "group": "Choice, brand and distribution",
+    "signal": "Events and launches",
+    "example_candidate": "property exhibition investment consultation uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-069",
+    "group": "Choice, brand and distribution",
+    "signal": "Viewing readiness",
+    "example_candidate": "book viewing suitable office for rent dubai",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  },
+  {
+    "signal_id": "SIG-070",
+    "group": "Choice, brand and distribution",
+    "signal": "Luxury and property-type alternatives",
+    "example_candidate": "branded residence versus luxury apartment uae",
+    "example_status": "ILLUSTRATIVE_NOT_VOLUME_VERIFIED",
+    "fixed_per_signal_quota": false
+  }
+]

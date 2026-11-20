@@ -1,0 +1,4252 @@
+{
+  "scope": "OBSERVED_CAPTURE_OVERLAP_ONLY",
+  "counts": {
+    "original_unique": 7735,
+    "supplemental_unique": 263,
+    "overlap_unique": 0,
+    "original_only_unique": 7735,
+    "supplemental_only_unique": 263,
+    "combined_unique": 7998,
+    "original_occurrences": 8809,
+    "supplemental_occurrences": 266,
+    "combined_occurrences": 9075,
+    "repeated_occurrences": 1077
+  },
+  "classification_inherited": false,
+  "deployment_authorized": false,
+  "prior_manifest_sha256": {
+    "keyword-discovery-2026-11-08/capture.json": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+    "keyword-discovery-supply-2026-11-08/capture.json": "279b71e166ecbb3806af143549a99f559ac7846ffa9396497f266b871a2012a7"
+  },
+  "supplemental_phrases": [
+    {
+      "normalized_text": "30 hour post license course",
+      "original_forms": [
+        "30 hour post license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 151
+        }
+      ]
+    },
+    {
+      "normalized_text": "72 hour frec approved pre licensing course for brokers",
+      "original_forms": [
+        "72 hour frec approved pre licensing course for brokers"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 40
+        }
+      ]
+    },
+    {
+      "normalized_text": "75 hour broker prelicensing course",
+      "original_forms": [
+        "75 hour broker prelicensing course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 54
+        }
+      ]
+    },
+    {
+      "normalized_text": "agent real estate schools",
+      "original_forms": [
+        "agent real estate schools"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 47
+        }
+      ]
+    },
+    {
+      "normalized_text": "apply for dubai property consultant job",
+      "original_forms": [
+        "apply for dubai property consultant job"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 4
+        }
+      ]
+    },
+    {
+      "normalized_text": "apply for real estate internship dubai",
+      "original_forms": [
+        "apply for real estate internship dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 9
+        }
+      ]
+    },
+    {
+      "normalized_text": "be a real estate broker",
+      "original_forms": [
+        "be a real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 205
+        }
+      ]
+    },
+    {
+      "normalized_text": "become a real estate agent for free",
+      "original_forms": [
+        "become a real estate agent for free"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 127
+        }
+      ]
+    },
+    {
+      "normalized_text": "best 60 hour post license real estate broker course",
+      "original_forms": [
+        "best 60 hour post license real estate broker course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 69
+        }
+      ]
+    },
+    {
+      "normalized_text": "best real estate agent course",
+      "original_forms": [
+        "best real estate agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 55
+        }
+      ]
+    },
+    {
+      "normalized_text": "best real estate agent courses online",
+      "original_forms": [
+        "best real estate agent courses online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 178
+        }
+      ]
+    },
+    {
+      "normalized_text": "best real estate agent training programs",
+      "original_forms": [
+        "best real estate agent training programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 90
+        }
+      ]
+    },
+    {
+      "normalized_text": "best real estate broker exam prep",
+      "original_forms": [
+        "best real estate broker exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 111
+        }
+      ]
+    },
+    {
+      "normalized_text": "best real estate training for new agents",
+      "original_forms": [
+        "best real estate training for new agents"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 82
+        }
+      ]
+    },
+    {
+      "normalized_text": "best training for real estate agents",
+      "original_forms": [
+        "best training for real estate agents"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 155
+        }
+      ]
+    },
+    {
+      "normalized_text": "bls real estate agent",
+      "original_forms": [
+        "bls real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 206
+        }
+      ]
+    },
+    {
+      "normalized_text": "bpo real estate training",
+      "original_forms": [
+        "bpo real estate training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 152
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker agent course",
+      "original_forms": [
+        "broker agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 197
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker classes",
+      "original_forms": [
+        "broker classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 15
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker classes near me",
+      "original_forms": [
+        "broker classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 14
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker continuing education",
+      "original_forms": [
+        "broker continuing education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 30
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker course",
+      "original_forms": [
+        "broker course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 9
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker course online",
+      "original_forms": [
+        "broker course online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 21
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker course real estate",
+      "original_forms": [
+        "broker course real estate"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 81
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker courses near me",
+      "original_forms": [
+        "broker courses near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 66
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker crash course",
+      "original_forms": [
+        "broker crash course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 133
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker educational sales & training",
+      "original_forms": [
+        "broker educational sales & training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 207
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker educational sales and training",
+      "original_forms": [
+        "broker educational sales and training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 208
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker exam crash course",
+      "original_forms": [
+        "broker exam crash course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 201
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker exam prep",
+      "original_forms": [
+        "broker exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 51
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker exam prep course",
+      "original_forms": [
+        "broker exam prep course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 63
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker in charge course",
+      "original_forms": [
+        "broker in charge course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 209
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker license classes",
+      "original_forms": [
+        "broker license classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 24
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker license classes near me",
+      "original_forms": [
+        "broker license classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 117
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker license course",
+      "original_forms": [
+        "broker license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 65
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker license online courses",
+      "original_forms": [
+        "broker license online courses"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 114
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker license training",
+      "original_forms": [
+        "broker license training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 210
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker management course",
+      "original_forms": [
+        "broker management course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 149
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker online classes",
+      "original_forms": [
+        "broker online classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 132
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker post license",
+      "original_forms": [
+        "broker post license"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 146
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker post license course",
+      "original_forms": [
+        "broker post license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 75
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker pre license",
+      "original_forms": [
+        "broker pre license"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 153
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker pre license course",
+      "original_forms": [
+        "broker pre license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 37
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker prelicensing course",
+      "original_forms": [
+        "broker prelicensing course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 71
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker real estate classes",
+      "original_forms": [
+        "broker real estate classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 59
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker renewal continuing education",
+      "original_forms": [
+        "broker renewal continuing education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 50
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker responsibility course",
+      "original_forms": [
+        "broker responsibility course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 38
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker training courses",
+      "original_forms": [
+        "broker training courses"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 211
+        }
+      ]
+    },
+    {
+      "normalized_text": "broker training exam",
+      "original_forms": [
+        "broker training exam"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 212
+        }
+      ]
+    },
+    {
+      "normalized_text": "brokerage classes near me",
+      "original_forms": [
+        "brokerage classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 57
+        }
+      ]
+    },
+    {
+      "normalized_text": "brokerage training programs",
+      "original_forms": [
+        "brokerage training programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 198
+        }
+      ]
+    },
+    {
+      "normalized_text": "business broking course",
+      "original_forms": [
+        "business broking course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 213
+        }
+      ]
+    },
+    {
+      "normalized_text": "ce for real estate agents",
+      "original_forms": [
+        "ce for real estate agents"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 36
+        }
+      ]
+    },
+    {
+      "normalized_text": "certificate iv in property services business broking",
+      "original_forms": [
+        "certificate iv in property services business broking"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 214
+        }
+      ]
+    },
+    {
+      "normalized_text": "certified training for real estate brokers",
+      "original_forms": [
+        "certified training for real estate brokers"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 150
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes for brokers license",
+      "original_forms": [
+        "classes for brokers license"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 137
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes for mortgage broker",
+      "original_forms": [
+        "classes for mortgage broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 181
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes for real estate broker",
+      "original_forms": [
+        "classes for real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 190
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes needed to become a real estate agent",
+      "original_forms": [
+        "classes needed to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 215
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes to become a real estate agent",
+      "original_forms": [
+        "classes to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 27
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes to become real estate agent",
+      "original_forms": [
+        "classes to become real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 183
+        }
+      ]
+    },
+    {
+      "normalized_text": "classes to take to become a real estate agent",
+      "original_forms": [
+        "classes to take to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 164
+        }
+      ]
+    },
+    {
+      "normalized_text": "commercial brokerage administrator jobs dubai",
+      "original_forms": [
+        "commercial brokerage administrator jobs dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 7
+        }
+      ]
+    },
+    {
+      "normalized_text": "commercial real estate agent course",
+      "original_forms": [
+        "commercial real estate agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 134
+        }
+      ]
+    },
+    {
+      "normalized_text": "commercial real estate agent training",
+      "original_forms": [
+        "commercial real estate agent training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 70
+        }
+      ]
+    },
+    {
+      "normalized_text": "commercial real estate broker training",
+      "original_forms": [
+        "commercial real estate broker training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 143
+        }
+      ]
+    },
+    {
+      "normalized_text": "commercial sales and leasing consultant job dubai",
+      "original_forms": [
+        "commercial sales and leasing consultant job dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 10
+        }
+      ]
+    },
+    {
+      "normalized_text": "continuing education for real estate brokers",
+      "original_forms": [
+        "continuing education for real estate brokers"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 112
+        }
+      ]
+    },
+    {
+      "normalized_text": "course broker",
+      "original_forms": [
+        "course broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 216
+        }
+      ]
+    },
+    {
+      "normalized_text": "courses ryan serhant",
+      "original_forms": [
+        "courses ryan serhant"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 217
+        }
+      ]
+    },
+    {
+      "normalized_text": "courses to become a real estate agent",
+      "original_forms": [
+        "courses to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 74
+        }
+      ]
+    },
+    {
+      "normalized_text": "courses to take to become a real estate agent",
+      "original_forms": [
+        "courses to take to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 176
+        }
+      ]
+    },
+    {
+      "normalized_text": "cpd for real estate brokers",
+      "original_forms": [
+        "cpd for real estate brokers"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 218
+        }
+      ]
+    },
+    {
+      "normalized_text": "cpd real estate broker 2021",
+      "original_forms": [
+        "cpd real estate broker 2021"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 219
+        }
+      ]
+    },
+    {
+      "normalized_text": "cpd seminar for real estate brokers 2021",
+      "original_forms": [
+        "cpd seminar for real estate brokers 2021"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 220
+        }
+      ]
+    },
+    {
+      "normalized_text": "customs broker courses",
+      "original_forms": [
+        "customs broker courses"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 187
+        }
+      ]
+    },
+    {
+      "normalized_text": "degree needed to be a real estate agent",
+      "original_forms": [
+        "degree needed to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 221
+        }
+      ]
+    },
+    {
+      "normalized_text": "degree to be a real estate agent",
+      "original_forms": [
+        "degree to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 173
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai broker training course registration",
+      "original_forms": [
+        "dubai broker training course registration"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-SPECIFIC",
+          "topic": "education-specific",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_49_23.csv",
+          "source_sha256": "901adec6b1b8d212a249b2b36945ff89c3fbc810c1646cdbde88e64a0c40cf84",
+          "source_line": 5
+        },
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 258
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai leasing consultant job application",
+      "original_forms": [
+        "dubai leasing consultant job application"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 5
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai real estate broker exam preparation course",
+      "original_forms": [
+        "dubai real estate broker exam preparation course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-SPECIFIC",
+          "topic": "education-specific",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_49_23.csv",
+          "source_sha256": "901adec6b1b8d212a249b2b36945ff89c3fbc810c1646cdbde88e64a0c40cf84",
+          "source_line": 4
+        },
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 257
+        }
+      ]
+    },
+    {
+      "normalized_text": "education for real estate broker",
+      "original_forms": [
+        "education for real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 222
+        }
+      ]
+    },
+    {
+      "normalized_text": "education needed to be a real estate agent",
+      "original_forms": [
+        "education needed to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 157
+        }
+      ]
+    },
+    {
+      "normalized_text": "education of a real estate agent",
+      "original_forms": [
+        "education of a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 223
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agency and property management course",
+      "original_forms": [
+        "estate agency and property management course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 224
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agency courses",
+      "original_forms": [
+        "estate agency courses"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 31
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agency degree",
+      "original_forms": [
+        "estate agency degree"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 225
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agency training",
+      "original_forms": [
+        "estate agency training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 107
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agency training course",
+      "original_forms": [
+        "estate agency training course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 226
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agent certificate",
+      "original_forms": [
+        "estate agent certificate"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 118
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agent courses near me",
+      "original_forms": [
+        "estate agent courses near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 227
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agent courses online",
+      "original_forms": [
+        "estate agent courses online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 79
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agent qualification",
+      "original_forms": [
+        "estate agent qualification"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 185
+        }
+      ]
+    },
+    {
+      "normalized_text": "estate agent qualifications online",
+      "original_forms": [
+        "estate agent qualifications online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 228
+        }
+      ]
+    },
+    {
+      "normalized_text": "free real estate agent classes",
+      "original_forms": [
+        "free real estate agent classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 110
+        }
+      ]
+    },
+    {
+      "normalized_text": "free real estate agent course",
+      "original_forms": [
+        "free real estate agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 130
+        }
+      ]
+    },
+    {
+      "normalized_text": "georgia broker license course",
+      "original_forms": [
+        "georgia broker license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 98
+        }
+      ]
+    },
+    {
+      "normalized_text": "georgia broker pre license course",
+      "original_forms": [
+        "georgia broker pre license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 136
+        }
+      ]
+    },
+    {
+      "normalized_text": "house agent course",
+      "original_forms": [
+        "house agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 115
+        }
+      ]
+    },
+    {
+      "normalized_text": "housing agent course",
+      "original_forms": [
+        "housing agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 113
+        }
+      ]
+    },
+    {
+      "normalized_text": "i want to be a real estate broker",
+      "original_forms": [
+        "i want to be a real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 229
+        }
+      ]
+    },
+    {
+      "normalized_text": "learn to be a real estate agent",
+      "original_forms": [
+        "learn to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 139
+        }
+      ]
+    },
+    {
+      "normalized_text": "learn to become a real estate agent",
+      "original_forms": [
+        "learn to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 202
+        }
+      ]
+    },
+    {
+      "normalized_text": "license to be a real estate agent",
+      "original_forms": [
+        "license to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 161
+        }
+      ]
+    },
+    {
+      "normalized_text": "licensed real estate agent course",
+      "original_forms": [
+        "licensed real estate agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 49
+        }
+      ]
+    },
+    {
+      "normalized_text": "maine designated broker course",
+      "original_forms": [
+        "maine designated broker course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 179
+        }
+      ]
+    },
+    {
+      "normalized_text": "managing broker classes",
+      "original_forms": [
+        "managing broker classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 125
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage broker classes online",
+      "original_forms": [
+        "mortgage broker classes online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 33
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage broker continuing education",
+      "original_forms": [
+        "mortgage broker continuing education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 56
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage broker exam prep",
+      "original_forms": [
+        "mortgage broker exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 120
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage broker license classes",
+      "original_forms": [
+        "mortgage broker license classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 124
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage broker license course",
+      "original_forms": [
+        "mortgage broker license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 68
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage broker pre licensing course",
+      "original_forms": [
+        "mortgage broker pre licensing course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 156
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage license classes",
+      "original_forms": [
+        "mortgage license classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 18
+        }
+      ]
+    },
+    {
+      "normalized_text": "mortgage license classes near me",
+      "original_forms": [
+        "mortgage license classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 119
+        }
+      ]
+    },
+    {
+      "normalized_text": "new real estate agent training programs",
+      "original_forms": [
+        "new real estate agent training programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 45
+        }
+      ]
+    },
+    {
+      "normalized_text": "off plan sales specialist vacancy dubai",
+      "original_forms": [
+        "off plan sales specialist vacancy dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 6
+        }
+      ]
+    },
+    {
+      "normalized_text": "online broker classes",
+      "original_forms": [
+        "online broker classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 35
+        }
+      ]
+    },
+    {
+      "normalized_text": "online broker license",
+      "original_forms": [
+        "online broker license"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 123
+        }
+      ]
+    },
+    {
+      "normalized_text": "online classes for real estate agent",
+      "original_forms": [
+        "online classes for real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 199
+        }
+      ]
+    },
+    {
+      "normalized_text": "online classes to become a real estate agent",
+      "original_forms": [
+        "online classes to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 144
+        }
+      ]
+    },
+    {
+      "normalized_text": "online courses for real estate agents",
+      "original_forms": [
+        "online courses for real estate agents"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 128
+        }
+      ]
+    },
+    {
+      "normalized_text": "online courses to become a real estate agent",
+      "original_forms": [
+        "online courses to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 126
+        }
+      ]
+    },
+    {
+      "normalized_text": "online mortgage license classes",
+      "original_forms": [
+        "online mortgage license classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 58
+        }
+      ]
+    },
+    {
+      "normalized_text": "online real estate broker classes",
+      "original_forms": [
+        "online real estate broker classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 25
+        }
+      ]
+    },
+    {
+      "normalized_text": "oqood training course registration dubai",
+      "original_forms": [
+        "oqood training course registration dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-SPECIFIC",
+          "topic": "education-specific",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_49_23.csv",
+          "source_sha256": "901adec6b1b8d212a249b2b36945ff89c3fbc810c1646cdbde88e64a0c40cf84",
+          "source_line": 6
+        },
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 259
+        }
+      ]
+    },
+    {
+      "normalized_text": "pre license mortgage broker class",
+      "original_forms": [
+        "pre license mortgage broker class"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 122
+        }
+      ]
+    },
+    {
+      "normalized_text": "pre licensing mortgage broker training",
+      "original_forms": [
+        "pre licensing mortgage broker training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 121
+        }
+      ]
+    },
+    {
+      "normalized_text": "prep agent real estate course",
+      "original_forms": [
+        "prep agent real estate course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 86
+        }
+      ]
+    },
+    {
+      "normalized_text": "prep agent real estate exam prep",
+      "original_forms": [
+        "prep agent real estate exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 93
+        }
+      ]
+    },
+    {
+      "normalized_text": "prep agent real estate practice exam",
+      "original_forms": [
+        "prep agent real estate practice exam"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 88
+        }
+      ]
+    },
+    {
+      "normalized_text": "preparation for real estate license exam",
+      "original_forms": [
+        "preparation for real estate license exam"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 174
+        }
+      ]
+    },
+    {
+      "normalized_text": "property agent certificate",
+      "original_forms": [
+        "property agent certificate"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 109
+        }
+      ]
+    },
+    {
+      "normalized_text": "property agent course",
+      "original_forms": [
+        "property agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 10
+        }
+      ]
+    },
+    {
+      "normalized_text": "property agent license course",
+      "original_forms": [
+        "property agent license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 166
+        }
+      ]
+    },
+    {
+      "normalized_text": "property agent qualification",
+      "original_forms": [
+        "property agent qualification"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 200
+        }
+      ]
+    },
+    {
+      "normalized_text": "property agent training",
+      "original_forms": [
+        "property agent training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 167
+        }
+      ]
+    },
+    {
+      "normalized_text": "property broker course",
+      "original_forms": [
+        "property broker course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 159
+        }
+      ]
+    },
+    {
+      "normalized_text": "property estate agent courses",
+      "original_forms": [
+        "property estate agent courses"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 230
+        }
+      ]
+    },
+    {
+      "normalized_text": "property sales agent course",
+      "original_forms": [
+        "property sales agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 162
+        }
+      ]
+    },
+    {
+      "normalized_text": "provisional broker pre licensing course",
+      "original_forms": [
+        "provisional broker pre licensing course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 231
+        }
+      ]
+    },
+    {
+      "normalized_text": "qualification for real estate broker",
+      "original_forms": [
+        "qualification for real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 232
+        }
+      ]
+    },
+    {
+      "normalized_text": "qualifications needed to be a real estate agent",
+      "original_forms": [
+        "qualifications needed to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 233
+        }
+      ]
+    },
+    {
+      "normalized_text": "qualifications needed to be an estate agent",
+      "original_forms": [
+        "qualifications needed to be an estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 234
+        }
+      ]
+    },
+    {
+      "normalized_text": "qualifications to be a real estate broker",
+      "original_forms": [
+        "qualifications to be a real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 203
+        }
+      ]
+    },
+    {
+      "normalized_text": "qualifications to be real estate agent",
+      "original_forms": [
+        "qualifications to be real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 235
+        }
+      ]
+    },
+    {
+      "normalized_text": "qualifications to become a real estate agent",
+      "original_forms": [
+        "qualifications to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 158
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agencies that offer training",
+      "original_forms": [
+        "real estate agencies that offer training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 188
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent bachelor degree",
+      "original_forms": [
+        "real estate agent bachelor degree"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 236
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent certificate course",
+      "original_forms": [
+        "real estate agent certificate course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 34
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent certification",
+      "original_forms": [
+        "real estate agent certification"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 13
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent certification online",
+      "original_forms": [
+        "real estate agent certification online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 85
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent classes",
+      "original_forms": [
+        "real estate agent classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 6
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent classes cost",
+      "original_forms": [
+        "real estate agent classes cost"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 101
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent classes near me",
+      "original_forms": [
+        "real estate agent classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 12
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent classes online",
+      "original_forms": [
+        "real estate agent classes online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 17
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent coaching programs",
+      "original_forms": [
+        "real estate agent coaching programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 108
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent continuing education",
+      "original_forms": [
+        "real estate agent continuing education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 32
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent continuing education classes",
+      "original_forms": [
+        "real estate agent continuing education classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 77
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent continuing education courses",
+      "original_forms": [
+        "real estate agent continuing education courses"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 180
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent course",
+      "original_forms": [
+        "real estate agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 5
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent course cost",
+      "original_forms": [
+        "real estate agent course cost"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 147
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent course near me",
+      "original_forms": [
+        "real estate agent course near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 48
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent course online",
+      "original_forms": [
+        "real estate agent course online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 7
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent course price",
+      "original_forms": [
+        "real estate agent course price"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 169
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent crash course",
+      "original_forms": [
+        "real estate agent crash course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 191
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent degree",
+      "original_forms": [
+        "real estate agent degree"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 53
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent degree needed",
+      "original_forms": [
+        "real estate agent degree needed"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 237
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent degree online",
+      "original_forms": [
+        "real estate agent degree online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 102
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent education",
+      "original_forms": [
+        "real estate agent education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 44
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent education and training",
+      "original_forms": [
+        "real estate agent education and training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 238
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent education requirement",
+      "original_forms": [
+        "real estate agent education requirement"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 239
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent exam prep",
+      "original_forms": [
+        "real estate agent exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 84
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent free course",
+      "original_forms": [
+        "real estate agent free course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 106
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent free training",
+      "original_forms": [
+        "real estate agent free training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 138
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent in training",
+      "original_forms": [
+        "real estate agent in training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 240
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent lessons",
+      "original_forms": [
+        "real estate agent lessons"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 165
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent licence course",
+      "original_forms": [
+        "real estate agent licence course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 64
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent license classes",
+      "original_forms": [
+        "real estate agent license classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 96
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent license classes near me",
+      "original_forms": [
+        "real estate agent license classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 193
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent license course",
+      "original_forms": [
+        "real estate agent license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 16
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent license online",
+      "original_forms": [
+        "real estate agent license online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 46
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent license online course",
+      "original_forms": [
+        "real estate agent license online course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 116
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent license training",
+      "original_forms": [
+        "real estate agent license training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 177
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent pre license course",
+      "original_forms": [
+        "real estate agent pre license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 19
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent prep",
+      "original_forms": [
+        "real estate agent prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 160
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent programs",
+      "original_forms": [
+        "real estate agent programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 92
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent programs near me",
+      "original_forms": [
+        "real estate agent programs near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 76
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent qualification",
+      "original_forms": [
+        "real estate agent qualification"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 99
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent representative course",
+      "original_forms": [
+        "real estate agent representative course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 29
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent schooling needed",
+      "original_forms": [
+        "real estate agent schooling needed"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 241
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent seminars near me",
+      "original_forms": [
+        "real estate agent seminars near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 192
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent study",
+      "original_forms": [
+        "real estate agent study"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 39
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent training",
+      "original_forms": [
+        "real estate agent training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 8
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent training course",
+      "original_forms": [
+        "real estate agent training course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 73
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent training near me",
+      "original_forms": [
+        "real estate agent training near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 61
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent training online",
+      "original_forms": [
+        "real estate agent training online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 184
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent training programs",
+      "original_forms": [
+        "real estate agent training programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 242
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agent training provided",
+      "original_forms": [
+        "real estate agent training provided"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 154
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agents rep course",
+      "original_forms": [
+        "real estate agents rep course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 87
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate agents representative certificate",
+      "original_forms": [
+        "real estate agents representative certificate"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 43
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate bpo training",
+      "original_forms": [
+        "real estate bpo training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 243
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker bls",
+      "original_forms": [
+        "real estate broker bls"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 244
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker certification",
+      "original_forms": [
+        "real estate broker certification"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 67
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker classes",
+      "original_forms": [
+        "real estate broker classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 11
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker classes near me",
+      "original_forms": [
+        "real estate broker classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 23
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker continuing education",
+      "original_forms": [
+        "real estate broker continuing education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 20
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker course",
+      "original_forms": [
+        "real estate broker course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 4
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker course near me",
+      "original_forms": [
+        "real estate broker course near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 189
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker course online",
+      "original_forms": [
+        "real estate broker course online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 22
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker courses near me",
+      "original_forms": [
+        "real estate broker courses near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 104
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker crash course",
+      "original_forms": [
+        "real estate broker crash course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 141
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker degree",
+      "original_forms": [
+        "real estate broker degree"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 129
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker education",
+      "original_forms": [
+        "real estate broker education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 95
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker exam crash course",
+      "original_forms": [
+        "real estate broker exam crash course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 103
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker exam prep",
+      "original_forms": [
+        "real estate broker exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 41
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker exam prep course",
+      "original_forms": [
+        "real estate broker exam prep course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 195
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker license classes",
+      "original_forms": [
+        "real estate broker license classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 62
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker license classes near me",
+      "original_forms": [
+        "real estate broker license classes near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 140
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker license course",
+      "original_forms": [
+        "real estate broker license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 60
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker license online",
+      "original_forms": [
+        "real estate broker license online"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 105
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker license online course",
+      "original_forms": [
+        "real estate broker license online course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 145
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker license training",
+      "original_forms": [
+        "real estate broker license training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 245
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker pre license course",
+      "original_forms": [
+        "real estate broker pre license course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 28
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker pre licensing",
+      "original_forms": [
+        "real estate broker pre licensing"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 246
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker pre licensing education",
+      "original_forms": [
+        "real estate broker pre licensing education"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 135
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker prep",
+      "original_forms": [
+        "real estate broker prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 247
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker prep course",
+      "original_forms": [
+        "real estate broker prep course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 148
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker programs",
+      "original_forms": [
+        "real estate broker programs"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 186
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker study",
+      "original_forms": [
+        "real estate broker study"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 182
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate broker training",
+      "original_forms": [
+        "real estate broker training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 52
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate brokers can be licensed real estate",
+      "original_forms": [
+        "real estate brokers can be licensed real estate"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 248
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate closing agent training",
+      "original_forms": [
+        "real estate closing agent training"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 249
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate conveyancer job application dubai",
+      "original_forms": [
+        "real estate conveyancer job application dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EMPLOYMENT",
+          "topic": "employment",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_48_27.csv",
+          "source_sha256": "f7ed03e1617ecfcbac2263729b922589c464b41ad88f7342ca05f96d7ef6c796",
+          "source_line": 8
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate exam prep agent",
+      "original_forms": [
+        "real estate exam prep agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 204
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate online broker",
+      "original_forms": [
+        "real estate online broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 170
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate sales agent classes",
+      "original_forms": [
+        "real estate sales agent classes"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 175
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate sales agent course",
+      "original_forms": [
+        "real estate sales agent course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 83
+        }
+      ]
+    },
+    {
+      "normalized_text": "real estate training for new agents",
+      "original_forms": [
+        "real estate training for new agents"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 97
+        }
+      ]
+    },
+    {
+      "normalized_text": "realtor license class",
+      "original_forms": [
+        "realtor license class"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 78
+        }
+      ]
+    },
+    {
+      "normalized_text": "realtor license class near me",
+      "original_forms": [
+        "realtor license class near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 142
+        }
+      ]
+    },
+    {
+      "normalized_text": "realtor license course near me",
+      "original_forms": [
+        "realtor license course near me"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 172
+        }
+      ]
+    },
+    {
+      "normalized_text": "reca mortgage broker course",
+      "original_forms": [
+        "reca mortgage broker course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 163
+        }
+      ]
+    },
+    {
+      "normalized_text": "requirement to be a real estate agent",
+      "original_forms": [
+        "requirement to be a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 194
+        }
+      ]
+    },
+    {
+      "normalized_text": "rera broker certification course",
+      "original_forms": [
+        "rera broker certification course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 250
+        }
+      ]
+    },
+    {
+      "normalized_text": "rera certified training for real estate brokers",
+      "original_forms": [
+        "rera certified training for real estate brokers"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 171
+        }
+      ]
+    },
+    {
+      "normalized_text": "ryan serhant com course",
+      "original_forms": [
+        "ryan serhant com course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 251
+        }
+      ]
+    },
+    {
+      "normalized_text": "ryan serhant course",
+      "original_forms": [
+        "ryan serhant course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 26
+        }
+      ]
+    },
+    {
+      "normalized_text": "ryan serhant course cost",
+      "original_forms": [
+        "ryan serhant course cost"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 252
+        }
+      ]
+    },
+    {
+      "normalized_text": "ryan serhant online course",
+      "original_forms": [
+        "ryan serhant online course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 253
+        }
+      ]
+    },
+    {
+      "normalized_text": "ryan serhant real estate course",
+      "original_forms": [
+        "ryan serhant real estate course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 89
+        }
+      ]
+    },
+    {
+      "normalized_text": "ryan serhant sales course",
+      "original_forms": [
+        "ryan serhant sales course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 254
+        }
+      ]
+    },
+    {
+      "normalized_text": "sales training for real estate agents",
+      "original_forms": [
+        "sales training for real estate agents"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 91
+        }
+      ]
+    },
+    {
+      "normalized_text": "schools to become a real estate agent",
+      "original_forms": [
+        "schools to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 94
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell it like serhant the course",
+      "original_forms": [
+        "sell it like serhant the course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 196
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell like serhant course",
+      "original_forms": [
+        "sell like serhant course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 168
+        }
+      ]
+    },
+    {
+      "normalized_text": "serhant course",
+      "original_forms": [
+        "serhant course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 72
+        }
+      ]
+    },
+    {
+      "normalized_text": "serhant real estate course",
+      "original_forms": [
+        "serhant real estate course"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 131
+        }
+      ]
+    },
+    {
+      "normalized_text": "steps to be a real estate broker",
+      "original_forms": [
+        "steps to be a real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 255
+        }
+      ]
+    },
+    {
+      "normalized_text": "study to become a real estate agent",
+      "original_forms": [
+        "study to become a real estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 80
+        }
+      ]
+    },
+    {
+      "normalized_text": "to be a real estate broker",
+      "original_forms": [
+        "to be a real estate broker"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 256
+        }
+      ]
+    },
+    {
+      "normalized_text": "training agents real estate",
+      "original_forms": [
+        "training agents real estate"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 42
+        }
+      ]
+    },
+    {
+      "normalized_text": "washington managing broker exam prep",
+      "original_forms": [
+        "washington managing broker exam prep"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-20261110-EDUCATION-BROADER",
+          "topic": "education-broader",
+          "source_basename": "Keyword Stats 2026-11-10 at 21_55_01.csv",
+          "source_sha256": "7b1a586794a92fb40efc137eb48179883e8bb2924ce7ae9419daf16158fbb6e6",
+          "source_line": 100
+        }
+      ]
+    }
+  ]
+}

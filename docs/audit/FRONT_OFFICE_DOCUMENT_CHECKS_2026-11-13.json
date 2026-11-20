@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-13",
+  "scope": "LOCAL_DEVELOPMENT_ACCEPTANCE_NOT_PRODUCTION_OR_EXCLUSION_APPROVAL",
+  "source_records": 4356,
+  "complete_literals_read": 1100,
+  "semantic_proposals": 1060,
+  "semantic_holds": 40,
+  "admitted_original_phrases": 869,
+  "held_groups": 231,
+  "new_exact_protections": 228,
+  "existing_held_protections": 3,
+  "full_source_external_comparisons": 17424,
+  "full_source_within_source_comparisons": 17424,
+  "fresh_history_and_focused": {
+    "passed": true,
+    "tests_run": 29,
+    "failures": 0,
+    "errors": 0,
+    "times": {
+      "fresh_base_seconds": 89.822452,
+      "fresh_review_seconds": 1.658038,
+      "generation_seconds": 4.693926,
+      "focused_seconds": 27.190301,
+      "total_seconds": 129.762813
+    },
+    "base_sha256": "a93d5aa368975f79d3fd5bd92223ccfe93d8b48d725ac8c301013aba8d3868cb",
+    "complete_inputs_sha256": "b83194a546a36acdf7e60a38214003a6d785ff8f2af63a8120aed1106686b814"
+  },
+  "generic_diagnostic_tests": {
+    "passed": true,
+    "tests": 12,
+    "seconds": 0.003
+  },
+  "semantic_review": {
+    "passed": true,
+    "tamper_cases_rejected": 16,
+    "seconds": 0.527186
+  },
+  "capture": {
+    "private_raw_equivalence_passed": true,
+    "source_and_ui_count": 4356,
+    "tamper_cases_rejected": 12,
+    "seconds": 1.208459
+  },
+  "pre_admission_diagnostic": {
+    "fresh_base_seconds": 90.132901,
+    "comparison_seconds": 0.67931,
+    "unmatched_compatible_proposals": 897,
+    "report_sha256": "e8e9a30a4657476d41d74fdd034779283341e2ef77c0a2b39c1e774711cd5ef3",
+    "standalone_fresh_reproduction": {
+      "passed": true,
+      "tamper_cases_rejected": 14,
+      "seconds": 94.614609,
+      "library_rows_added": 0
+    }
+  },
+  "efficiency_regression": {
+    "tests": 106,
+    "passed": 103,
+    "existing_platform_skips": 3,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 17.167
+  },
+  "scheduling_change": "New full-history module starts early; its measured fixture dependency alone takes89.822452s. Dynamic discovery, all cases,300s deadline, resources and owned-process containment remain unchanged.",
+  "required_keyword_suite": {
+    "modules": 44,
+    "cases": 559,
+    "skips_expected": 0
+  },
+  "ci_status": "REQUIRED_FOR_CURRENT_HEAD_NOT_YET_RUN",
+  "independent_human_approval_claimed": false,
+  "production_or_ads_changed": false,
+  "exact_billed_tokens_or_cost": "UNAVAILABLE"
+}

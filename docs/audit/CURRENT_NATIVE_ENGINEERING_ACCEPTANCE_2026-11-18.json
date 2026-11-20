@@ -1,0 +1,105 @@
+{
+  "schema": "bsre-immutable-current-native-engineering-acceptance-v1",
+  "status": "PASS_CURRENT_NATIVE_ENGINEERING_ONLY",
+  "accepted_at_head": "df241ad26305cfad79a5888ee5a712e08c7cc3c3",
+  "accepted_tree": "ac5a2a3c5eb93ff0a844391919fe38cc7fd1ce49",
+  "scope": "Exact-revision synthetic native engineering acceptance for the three safety corrections and current native audit output guard; not whole-business, provider or release acceptance.",
+  "immutable_revision_receipt": true,
+  "not_current_head_ci_receipt": true,
+  "covers_later_commits_or_uncommitted_preparation": false,
+  "run_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44373849909",
+  "native_job_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44373849909/job/135047589607",
+  "native_job_id": 135047589607,
+  "required_checks": {
+    "native-wordpress-check": "success",
+    "offline-validation": "success",
+    "goal-ledger-check": "success",
+    "isolated-native-wordpress": "success"
+  },
+  "required_checks_observed_at_utc": "2026-11-18T19:13:06.703696+00:00",
+  "native_started_at_utc": "2026-11-18T18:49:24Z",
+  "native_completed_at_utc": "2026-11-18T19:12:54Z",
+  "measured_native_job_seconds": 1410,
+  "measured_native_job_duration": "23m30s",
+  "CI_merge_binding": {
+    "checkout_merge_commit": "96a1e47f6b881d2ed8f6e8684de96c3628345b34",
+    "feature_tree": "ac5a2a3c5eb93ff0a844391919fe38cc7fd1ce49",
+    "CI_merge_tree": "ac5a2a3c5eb93ff0a844391919fe38cc7fd1ce49",
+    "trees_equal": true,
+    "ancestry_claim": false
+  },
+  "profiles": [
+    "debian-bookworm",
+    "mariadb-11.8.9"
+  ],
+  "raw_log": {
+    "bytes": 983215,
+    "sha256": "fc336b9b08627585bceda6ed52b12318ed20bb2e17e34b4f194f0396ae170bc1"
+  },
+  "complete_json_documents": 460,
+  "new_current_physical_identity_receipts": 2,
+  "retained_budget30_documents": 458,
+  "retained_predecessor_documents": 454,
+  "current_committed_source_bindings": 228,
+  "historical_source_assertions": 186,
+  "historical_candidate_source_assertions": 17,
+  "site_files_verified": 67,
+  "manifest_members_verified": 64,
+  "changed_physical_files_verified": 4,
+  "actual_Ubuntu_output_guard_cases_passed": 9,
+  "retention_context": {
+    "descriptor": {
+      "bytes": 1234,
+      "sha256": "64c019a17840c74e038c8377793e34014cede87880486fa4934a83b0b6c0e340"
+    },
+    "source_queue_alias": {
+      "bytes": 30344,
+      "sha256": "5f48da6b20cc55586056fc37f9fcb8ccacc7ced4236a553bd8cdafdd40c35c39"
+    }
+  },
+  "all_prior_behavior_assertions_retained": true,
+  "raw_log_rewritten": false,
+  "native_executed_by_auditor": false,
+  "proof_pins": {
+    "actual_audit": {
+      "bytes": 20480,
+      "sha256": "8dcc86864ccd2ed5612639f5ad03841c816231702b7ec499b9cc201522820c6b"
+    },
+    "audit_summary": {
+      "bytes": 3125,
+      "sha256": "3a3e0bc4c989d4be693d7f9e96f83b84fdc3734ccf7bb65602600e72ee96f480"
+    },
+    "merge_tree_binding": {
+      "bytes": 531,
+      "sha256": "c39eeeab7a7b681148d60c9906fba2a8c7b06ddd1a78f686bce20708cadf586a"
+    },
+    "completed_watch": {
+      "bytes": 1213,
+      "sha256": "9b480e440e700ec9651386cf28973d3e4858330c7348dc658d4e601d02c79644"
+    }
+  },
+  "original_G001_G002_milestones": {
+    "receipt": "docs/audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json",
+    "accepted_at_head": "1123575ed9d495eea5a19fd2cb4b6d8fead5720c",
+    "unchanged": true
+  },
+  "authority": {
+    "independent_human_review": false,
+    "genuine_source_service_signer_or_history_custody_accepted": false,
+    "provider_or_whole_business_history_acceptance": false,
+    "full_library_approval": false,
+    "content_publication_authority": false,
+    "qualification_or_export_authority": false,
+    "merge_or_release_authority": false,
+    "production_authority": false,
+    "Ads_authority": false
+  },
+  "whole_goals_completed_by_this_receipt": 0,
+  "production_changed": false,
+  "Ads_changed": false,
+  "limits": [
+    "Passing synthetic native checks does not supply genuine provider events, operational custody, human review, business facts or release authority.",
+    "Frozen historical proof inputs and original 112 goal milestones remain unchanged.",
+    "Later relevant code, materializer, context or source-binding changes require fresh exact-head checks and native acceptance."
+  ]
+}

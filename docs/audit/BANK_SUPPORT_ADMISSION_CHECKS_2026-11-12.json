@@ -1,0 +1,81 @@
+{
+  "schema": "bsre-bank-support-admission-checks-v1",
+  "observed_on_dubai": "2026-11-12",
+  "scope": "OFFLINE_RESEARCH_NOT_EXCLUSION_APPROVAL_OR_RELEASE",
+  "passed": true,
+  "tests_run": 28,
+  "new_support_cases": 13,
+  "retained_credential_cases": 14,
+  "guarded_public_entrypoints": 20,
+  "times": {
+    "fresh_base_seconds": 73.240373,
+    "fresh_review_seconds": 1.648309,
+    "generation_seconds": 5.241194,
+    "focused_seconds": 32.907687,
+    "total_seconds": 119.884426
+  },
+  "source_files": {
+    "tools/keyword-system/bank_support_admission.py": {
+      "sha256": "7751b56078497921dae4e812c1299e30a699b7acd661f200ef034216d703565f",
+      "bytes": 24500
+    },
+    "tools/keyword-system/test_bank_support_admission.py": {
+      "sha256": "6eff52a58c1b53db1741a72e241a03e82bf416616880ded02ab3b292bea4cee4",
+      "bytes": 8896
+    },
+    "tools/keyword-system/current_negative_library.py": {
+      "sha256": "849d0121bbaaf81d6a8d127e49d8bcad1b77f40e52a788c84db5706f9db06508",
+      "bytes": 31905
+    },
+    "tools/keyword-system/test_bank_credential_admission.py": {
+      "sha256": "1e1addf06589f1de76e4c2c37fa400f7180873e509704f4f5f29c75298af21a3",
+      "bytes": 11380
+    },
+    "tools/keyword-system/test_entertainment_admission.py": {
+      "sha256": "a03b22200b9ee6b57c4a9e1eedebdce76e2500b20d1780961e6a0cd6da4cb494",
+      "bytes": 10012
+    }
+  },
+  "base_sha256": "1dca63fa6758184bca46527e9c474b6cca5eccf7fe6670d9c64894b7701c9e33",
+  "review_pin": "39af91fc3a4e0a0aad049a813e128c7cd984be518890573891d827966193d969",
+  "output_pins": {
+    "index.json": "57ca3ff451f2d34a7deb095ca39ef6d2a1d11530b34e3c22c270c018e4b00c6e",
+    "cohort-report.json": "1780969bb529a849e33cc3b7abd13dfbb8003890518da964eccd30dc40fe1c42",
+    "library-report.json": "73ab7a42a5064c730427f073f8fff135990b3d034640868094806065bac24ba6",
+    "research-pool-allocation.json": "797054af6be1a298447b6f77030f4e7d6716b7343ca0de977b3f6359aee46a69"
+  },
+  "complete_inputs_sha256": "bbb5968ad7a28f8a7e8d036a979c0d08455dee97860fd1aa6b0dca159f713171",
+  "research_summary": {
+    "scope": "CURRENT_RESEARCH_AFTER_BANK_SUPPORT_APPEND_ONLY_REVIEW",
+    "as_of": "2026-11-12",
+    "input_rows": 11885,
+    "distinct_nonblank_phrases": 11885,
+    "reviewed_eligible_rows": 11885,
+    "excluded_rows": 0,
+    "approved_exclusion_rows": 0,
+    "target": 14000,
+    "deficit": 2115,
+    "exact_target_pass": false,
+    "structural_pass": true,
+    "deployment_export_allowed": false,
+    "production_writes_available": false,
+    "positive_library_coverage_verified": false,
+    "protected_queries_indexed": 17522,
+    "computed_conflicts": 0,
+    "prior_rows": 11524,
+    "new_rows": 361,
+    "archived_original_rows": 18,
+    "source_occurrences_retained_in_current_records": 12098,
+    "new_exact_provenance_occurrences": 361,
+    "new_proposal_holds": 329,
+    "historical_records_rewritten": false,
+    "human_review_verified": false,
+    "live_campaign_mapping_verified": false,
+    "release_authorized": false
+  },
+  "independent_ai_approval_claimed": false,
+  "independent_human_approval_claimed": false,
+  "current_source_ci": "PENDING",
+  "production_or_ads_changed": false,
+  "release_authorized": false
+}

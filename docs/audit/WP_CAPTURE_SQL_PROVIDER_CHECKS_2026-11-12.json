@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date_dubai": "2026-11-12",
+  "scope": "CONCRETE_WORDPRESS_CAPTURE_SQL_PROVIDER_CANDIDATE",
+  "preceding_reviewed_commit": "fa3a8a345399a85e5c07e6966de8ca30d709961a",
+  "preceding_remote_green_head": "32937cbe8a9ae4ed99acad5d8bf519d89494c1ae",
+  "code_sha256": {
+    "tools/check_repository.py": "9773cc5c39e37cbec79c9ba9361a1271984ab77e90f14365f13a9f536e6d7bee",
+    "tools/closed-enquiry-retention/LabAdapters.php": "b9f0f3fa112f405e680d88bbfd030bbebd3d97a2ef08d8f7b95bf9ce36c3e547",
+    "tools/efficiency/test_foundation_php_isolation.py": "cc5284205ad0b4d9a5604c0b8d9d82c2eb4ee964e17fd02ed117311e9e37d200",
+    "tools/staging-lab/entrypoint.sh": "2aa2f9de01f570c52c15d3be0cf3956300cc35127d9e8550613c8dacfcec2a30",
+    "tools/closed-enquiry-retention/WpCaptureResource.php": "1eabea32411fd9800b58381b990df34cb1859402d81ba2607766af1086119e0c",
+    "tools/closed-enquiry-retention/capture-native.php": "5692e30c53d531f9540bd1fbbbec9f6dae047d69018784f4a885d6aeb8488188",
+    "tools/closed-enquiry-retention/test_wp_capture_guard.php": "b84756948cb9b26cd01719d1f25d51e4d8288cf5715f3e9f58dfc97e9e3433cd"
+  },
+  "reviewed_producer": {
+    "file": "tools/staging-lab/fixtures/bsre-enquiries/includes/consent-store.php",
+    "sha256": "7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262",
+    "fixture_unchanged": true,
+    "installed_runtime_currently_verified": false
+  },
+  "root_focused_results": {
+    "results": [
+      {
+        "name": "capture_guards",
+        "passed": true,
+        "seconds": 0.089784
+      },
+      {
+        "name": "foundation_orchestration",
+        "passed": true,
+        "seconds": 0.32686
+      },
+      {
+        "name": "current_gate",
+        "passed": true,
+        "seconds": 2.827496
+      },
+      {
+        "name": "previous_gate",
+        "passed": true,
+        "seconds": 0.064274
+      }
+    ],
+    "lints": 4,
+    "source_hashes": {
+      "tools/closed-enquiry-retention/WpCaptureResource.php": "1eabea32411fd9800b58381b990df34cb1859402d81ba2607766af1086119e0c",
+      "tools/closed-enquiry-retention/capture-native.php": "5692e30c53d531f9540bd1fbbbec9f6dae047d69018784f4a885d6aeb8488188",
+      "tools/closed-enquiry-retention/test_wp_capture_guard.php": "b84756948cb9b26cd01719d1f25d51e4d8288cf5715f3e9f58dfc97e9e3433cd",
+      "tools/closed-enquiry-retention/LabAdapters.php": "b9f0f3fa112f405e680d88bbfd030bbebd3d97a2ef08d8f7b95bf9ce36c3e547"
+    },
+    "native_execution": false,
+    "native_selected_only": true,
+    "unchanged_full_suites_not_repeated": true
+  },
+  "agent_reported_checks": {
+    "restricted_guards": 13,
+    "zero_sql": true,
+    "lints": 3,
+    "combined_seconds": 0.327655
+  },
+  "foundation_targeted_cases": 21,
+  "independent_static_review": {
+    "no_remaining_p1_p2_reported": true,
+    "human_review": "STILL_REQUIRED",
+    "fixes": [
+      "exact leased canonical row ID and request scope",
+      "trigger and incoming/outgoing FK refusal under metadata lock",
+      "complete metadata visibility using existing direct privileges only",
+      "dynamic WordPress query logging refusal",
+      "no whole-namespace row cap",
+      "refused and unknown consent preserved",
+      "actual producer replay limitation explicit"
+    ]
+  },
+  "native_acceptance": {
+    "status": "PENDING_CURRENT_SOURCE_CI",
+    "actual_wordpress_repository_and_mariadb_selected": true,
+    "other_resource_adapters": "SYNTHETIC_MEMORY",
+    "interruption_connection_loss_and_lost_commit_ack_selected": true,
+    "shared_consent_state_history_preservation_selected": true,
+    "trigger_fk_and_metadata_visibility_cases_selected": true,
+    "original_stage_link_recreation_and_workflow_hold_selected": true,
+    "producer_restore_fence_acceptance": "HELD",
+    "durable_absence_claimed": false
+  },
+  "php_selection": {
+    "complete_checks": 43,
+    "lints": 30,
+    "previous_checks": 39,
+    "removed_checks": 0,
+    "timeout_changes": false,
+    "isolation_relaxed": false
+  },
+  "public_live_audit": "docs/audit/LIVE_PROVIDER_INTERFACE_AUDIT_2026-11-12.json",
+  "current_gate_matrix": "docs/audit/CURRENT_GATE_MATRIX_2026-11-12.json",
+  "boundaries": [
+    "synthetic local prefix only; no production route or permission grant",
+    "same guarded connection and current namespace/closure custody",
+    "due closed canonical source and allowed outbox status before mutation",
+    "complete-row exact binding and single-row transactional deletion",
+    "no retry after uncertain commit or missing target",
+    "shared consent state/history untouched",
+    "schema and metadata visibility cannot be inferred from empty restricted views",
+    "SQL point-in-time absence does not establish producer quiescence or supported restore fencing"
+  ],
+  "remaining": [
+    "current-source native and combined CI",
+    "authenticated production source/schema/runtime and supported migration",
+    "genuine closure evidence and complete exact mailbox identities/readback",
+    "actual producer/admission/restore/owner-intent/custody integration",
+    "independent human review and all business/keyword/staff/finance/Brand/live release gates"
+  ],
+  "production_authorized": false,
+  "production_or_ads_changes": false,
+  "new_permissions": false
+}

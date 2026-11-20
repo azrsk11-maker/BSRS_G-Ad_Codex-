@@ -1,0 +1,67 @@
+{
+  "scope": "FOUR_FRESH_COMPLETE_INPUT_AND_REPORT_COMPARISONS_NOT_PRODUCTION_ACCEPTANCE",
+  "as_of": "2026-11-12",
+  "original_merge_function_commit": "7dcfd03c449ea42607892363e171fa4907cc1961",
+  "order": "AB then BA in a second interpreter; every reconstruction fresh",
+  "measurements": [
+    {
+      "variant": "before",
+      "elapsed_seconds": 78.240213,
+      "complete_bytes": 28008396,
+      "sha256": "148e16ac7ff63733ed513b5252ce1fc4735559a925dae44488b86707f39ddd11",
+      "records": 10955,
+      "protections": 16383,
+      "all_current_acceptance_checks_executed": true
+    },
+    {
+      "variant": "after",
+      "elapsed_seconds": 41.725412,
+      "complete_bytes": 28008396,
+      "sha256": "148e16ac7ff63733ed513b5252ce1fc4735559a925dae44488b86707f39ddd11",
+      "records": 10955,
+      "protections": 16383,
+      "all_current_acceptance_checks_executed": true
+    },
+    {
+      "variant": "after",
+      "elapsed_seconds": 40.11979,
+      "complete_bytes": 28008396,
+      "sha256": "148e16ac7ff63733ed513b5252ce1fc4735559a925dae44488b86707f39ddd11",
+      "records": 10955,
+      "protections": 16383,
+      "all_current_acceptance_checks_executed": true
+    },
+    {
+      "variant": "before",
+      "elapsed_seconds": 41.56813,
+      "complete_bytes": 28008396,
+      "sha256": "148e16ac7ff63733ed513b5252ce1fc4735559a925dae44488b86707f39ddd11",
+      "records": 10955,
+      "protections": 16383,
+      "all_current_acceptance_checks_executed": true
+    }
+  ],
+  "complete_outputs_equal": true,
+  "source_hashes": {
+    "tools/keyword-system/negative_library.py": "c43870fad15fac17a158052798e91e8ce6e036e33687059be5ff3ef0a40728e9",
+    "tools/keyword-system/current_negative_library.py": "5f2afbb4131bb35d13bd4ea753586b17603a41b6088a05b2ebf10c8439c6ff8e",
+    "tools/keyword-system/keyword_audit.py": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+    "tools/keyword-system/append_only_admission.py": "83cae98d6c5075a3003e88b5e8682372df26f1ffbe9bbe9f5fef1fd6b518f244"
+  },
+  "source_files_unchanged": true,
+  "patches_restored": true,
+  "acceptance_cache": false,
+  "private_diagnostic_report_sha256": [
+    "3465f13d96ba6a7cab0041f541982fea00e2eef9894c404dad830301b25e1eb4",
+    "1e68e4efeb909c67a60bec4d89edcec839d0061e483652d3d70ff2ebe57965e0"
+  ],
+  "timing_ranges_overlap": true,
+  "whole_workflow_causal_speedup_claimed": false,
+  "limits": [
+    "Whole reconstruction timings overlap and vary materially; do not generalize the isolated merge gain.",
+    "All historical source, membership, scope, review, protected-intent, freshness and saved-output checks were rerun in each invocation.",
+    "No source/output pin, generic auditor, timeout, production state or Ads configuration changed.",
+    "Required Foundation and native/live acceptance are separate."
+  ],
+  "release_authorized": false
+}

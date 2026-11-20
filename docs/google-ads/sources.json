@@ -1,0 +1,156 @@
+[
+  {
+    "id": "D1",
+    "title": "Uploaded BlackSwan_Google_Ads_Master_Dossier(1).docx",
+    "supports": "User-provided reference; especially sections 2, 9–10, 15–21, 24–26, 29–32 and Appendix C",
+    "url": "",
+    "checked_on": null
+  },
+  {
+    "id": "G1",
+    "title": "Google Search Central: block indexing",
+    "supports": "Noindex needs crawler access; not access control",
+    "url": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G2",
+    "title": "Google Ads: account limits",
+    "supports": "Negative list and campaign limits",
+    "url": "https://support.google.com/google-ads/answer/6372658?hl=en",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G3",
+    "title": "Google Ads: negative keywords",
+    "supports": "Matching, variants and exclusion risk",
+    "url": "https://support.google.com/google-ads/answer/2453972/",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G4",
+    "title": "Google Ads: final URL expansion in Search",
+    "supports": "Final URL controls",
+    "url": "https://support.google.com/google-ads/answer/16230205?hl=en",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G5",
+    "title": "Google Ads: destination requirements",
+    "supports": "Functional useful accessible destinations",
+    "url": "https://support.google.com/adspolicy/answer/6368661?hl=en",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G6",
+    "title": "Google Search: site position FAQ",
+    "supports": "Advertising does not buy organic ranking",
+    "url": "https://developers.google.com/search/help/site-position-in-search-faq",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G7",
+    "title": "Google Ads: custom segments",
+    "supports": "Inferred interests, not a visitor list from another site",
+    "url": "https://support.google.com/google-ads/answer/9805516?hl=en",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G8",
+    "title": "Google Ads API: responsive search ads",
+    "supports": "Headline/description requirements",
+    "url": "https://developers.google.com/google-ads/api/docs/responsive-search-ads/create-responsive-search-ads",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G9",
+    "title": "Google Ads: spending limits",
+    "supports": "Average daily budgets and spending limits",
+    "url": "https://support.google.com/google-ads/answer/10486637/about-spending-limits",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G10",
+    "title": "Google Ads: Data Manager and enhanced leads",
+    "supports": "Supported offline feedback design",
+    "url": "https://support.google.com/google-ads/answer/15707550?hl=en",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "G11",
+    "title": "Google advertising policy: housing targeting FAQ",
+    "supports": "US/Canada audience-origin policy checks",
+    "url": "https://support.google.com/adspolicy/answer/9997418?hl=en",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "U1",
+    "title": "Dubai Land Department: real estate ad permit",
+    "supports": "Electronic advertising included in permit services",
+    "url": "https://dubailand.gov.ae/en/eservices/real-estate-ad-permit/",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "U2",
+    "title": "Dubai Land Department: Madmoun",
+    "supports": "Property advertisement verification",
+    "url": "https://dubailand.gov.ae/en/news-media/dubai-land-department-provides-madmoun-service-to-verify-validity-of-real-estate-ads-via-qr-codes",
+    "checked_on": "2026-11-05"
+  },
+  {
+    "id": "H1",
+    "title": "Hostinger: connect Google Tag Manager in builder manual mode",
+    "supports": "Supported builder GTM integration; does not identify the live BlackSwan CMS",
+    "url": "https://www.hostinger.com/support/6463092-hostinger-ai-builder-manual-mode-how-to-connect-google-tag-manager/",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G12",
+    "title": "Google Tag Manager: Google Ads conversions",
+    "supports": "Actual conversion ID/label and supported transaction-ID deduplication",
+    "url": "https://support.google.com/tagmanager/answer/6105160?hl=en",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G13",
+    "title": "Google Ads: auto-tagging",
+    "supports": "Auto-tagging and preserving GCLID through redirects",
+    "url": "https://support.google.com/google-ads/answer/3095550?hl=en",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G14",
+    "title": "Google Tag Platform: consent mode overview",
+    "supports": "Consent types, choices and implementation modes",
+    "url": "https://developers.google.com/tag-platform/security/concepts/consent-mode",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G15",
+    "title": "Google Tag Platform: the data layer",
+    "supports": "Structured event/context handling and persistence limitations",
+    "url": "https://developers.google.com/tag-platform/tag-manager/datalayer",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G16",
+    "title": "Google Ads: measure calls from ads",
+    "supports": "Call-reporting eligibility and evidence distinctions",
+    "url": "https://support.google.com/google-ads/answer/6095882?hl=en",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G17",
+    "title": "Google Analytics: recommended events",
+    "supports": "Recommended event mappings including generate_lead",
+    "url": "https://developers.google.com/analytics/devguides/collection/ga4/reference/events",
+    "checked_on": "2026-11-06"
+  },
+  {
+    "id": "G18",
+    "title": "Google Analytics: avoid personally identifiable information",
+    "supports": "No personal details in GA4 event data, URLs or campaign parameters",
+    "url": "https://support.google.com/analytics/answer/6366371?hl=en",
+    "checked_on": "2026-11-06"
+  }
+]

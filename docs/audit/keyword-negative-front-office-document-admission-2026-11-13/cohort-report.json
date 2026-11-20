@@ -1,0 +1,33 @@
+{
+  "scope": "AI_REVIEWED_FRONT_OFFICE_DOCUMENT_RESEARCH_NOT_SEARCH_DEMAND",
+  "full_source_groups": 4356,
+  "cohort_groups": 1100,
+  "semantic_proposed_groups": 1060,
+  "semantic_hold_groups": 40,
+  "selected_groups": 869,
+  "held_groups": 231,
+  "outside_semantic_cohort": 3256,
+  "all_source_groups_compared": 4356,
+  "external_key_comparisons": 17424,
+  "within_source_key_comparisons": 17424,
+  "cohort_external_key_comparisons": 4400,
+  "cohort_within_source_key_comparisons": 4400,
+  "additional_variant_holds": 191,
+  "additional_protected_queries": 228,
+  "existing_held_protection_occurrences": 3,
+  "text_compatibility_classifications": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 1100
+  },
+  "independent_review_claimed": false,
+  "source_pins": {
+    "docs/audit/keyword-application-documents-2026-11-13/application-documents.json": "308e98c6a5836459cf572e7ff8d4e063b06cdd1881170f245f17b0f6b8bbb587",
+    "docs/audit/keyword-application-documents-2026-11-13/capture.json": "2a5c148cd42f6a94077553ee9cef4e97fb59d03dfd358c947d030c9b965f34b3",
+    "docs/audit/keyword-front-office-documents-review-2026-11-13/review.json": "828e2c5c87e8156d8885533d39e31b8f31bf3524594018ca1480939ae60e8fa8"
+  },
+  "record_bodies_sha256": "e160b30a32901e0932b00f172395e3440ab14d3f66c5b64615be26e6b6a9c670",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}

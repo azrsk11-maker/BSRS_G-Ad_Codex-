@@ -1,0 +1,427 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-11",
+  "proposals": [
+    {
+      "text": "property transfer fees dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property transfer fees dubai"
+      ]
+    },
+    {
+      "text": "buying property in dubai process",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "buying property in dubai process"
+      ]
+    },
+    {
+      "text": "mortgage pre approval dubai",
+      "disposition": "HOLD",
+      "intent": "DIRECT_FINANCE_OR_REGISTRATION_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Standalone mortgage pre-approval/registration may seek a lender or official transaction service. Those are not verified direct Black Swan services. Retain possible property readiness without a negative or financing/registration offer.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "mortgage pre approval dubai"
+      ]
+    },
+    {
+      "text": "buy apartment in dubai without down payment",
+      "disposition": "HOLD",
+      "intent": "UNVERIFIED_ZERO_DOWN_PAYMENT_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit property-buying intent is protected, but a zero-down-payment premise needs a real, compliant, source-dated feasible offer and suitability review. None is established; do not promise financing or blanket-exclude affordability.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "buy apartment in dubai without down payment"
+      ]
+    },
+    {
+      "text": "palm jumeirah house price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "COMMUNITY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "A named-community home-price search is potential property comparison intent. Current stock, listing rights, valuations, community facts and the specific native destination remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "palm jumeirah house price"
+      ]
+    },
+    {
+      "text": "dubai home price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai home price"
+      ]
+    },
+    {
+      "text": "house prices dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "house prices dubai"
+      ]
+    },
+    {
+      "text": "2 bhk flat price in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "2 bhk flat price in dubai"
+      ]
+    },
+    {
+      "text": "dubai house for sale low price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai house for sale low price"
+      ]
+    },
+    {
+      "text": "buy a house in dubai price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "buy a house in dubai price"
+      ]
+    },
+    {
+      "text": "dubai villa price in indian rupees",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_CURRENCY_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Dubai property-price wording in INR can express purchase comparison. It proves neither user nationality/location nor a conversion rate, legal/tax claim or approved India campaign; no targeting or jurisdiction-guide publication is authorized.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai villa price in indian rupees"
+      ]
+    },
+    {
+      "text": "dubai house sale price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai house sale price"
+      ]
+    },
+    {
+      "text": "buying a property in dubai process",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "buying a property in dubai process"
+      ]
+    },
+    {
+      "text": "real estate prices dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "real estate prices dubai"
+      ]
+    },
+    {
+      "text": "dubai mansion price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai mansion price"
+      ]
+    },
+    {
+      "text": "buying off plan property in dubai process",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "buying off plan property in dubai process"
+      ]
+    },
+    {
+      "text": "price of a house in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "price of a house in dubai"
+      ]
+    },
+    {
+      "text": "average house price dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "average house price dubai"
+      ]
+    },
+    {
+      "text": "property buying process in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property buying process in dubai"
+      ]
+    },
+    {
+      "text": "dubai palm house price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "COMMUNITY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "A named-community home-price search is potential property comparison intent. Current stock, listing rights, valuations, community facts and the specific native destination remain unverified.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai palm house price"
+      ]
+    },
+    {
+      "text": "price of home in dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "price of home in dubai"
+      ]
+    },
+    {
+      "text": "dubai property buying guide",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai property buying guide"
+      ]
+    },
+    {
+      "text": "palm jumeirah house price in inr",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_CURRENCY_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Dubai property-price wording in INR can express purchase comparison. It proves neither user nationality/location nor a conversion rate, legal/tax claim or approved India campaign; no targeting or jurisdiction-guide publication is authorized.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "palm jumeirah house price in inr"
+      ]
+    },
+    {
+      "text": "dubai houses for sale price",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai houses for sale price"
+      ]
+    },
+    {
+      "text": "mortgage registration in dubai",
+      "disposition": "HOLD",
+      "intent": "DIRECT_FINANCE_OR_REGISTRATION_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Standalone mortgage pre-approval/registration may seek a lender or official transaction service. Those are not verified direct Black Swan services. Retain possible property readiness without a negative or financing/registration offer.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "mortgage registration in dubai"
+      ]
+    },
+    {
+      "text": "property registration fees dubai",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "property registration fees dubai"
+      ]
+    },
+    {
+      "text": "dubai property buying costs",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai property buying costs"
+      ]
+    },
+    {
+      "text": "mortgage registration dubai",
+      "disposition": "HOLD",
+      "intent": "DIRECT_FINANCE_OR_REGISTRATION_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Standalone mortgage pre-approval/registration may seek a lender or official transaction service. Those are not verified direct Black Swan services. Retain possible property readiness without a negative or financing/registration offer.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "mortgage registration dubai"
+      ]
+    },
+    {
+      "text": "dubai property title deed",
+      "disposition": "HOLD",
+      "intent": "TITLE_DEED_OFFICIAL_SERVICE_HOLD",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "A title-deed query may seek verification or an official record, not brokerage. No government affiliation, access to title data or official service is established; retain and protect the ambiguous property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "dubai property title deed"
+      ]
+    },
+    {
+      "text": "buy property dubai with mortgage",
+      "disposition": "POSITIVE_REVIEW",
+      "intent": "PROPERTY_PROCESS_CANDIDATE",
+      "possible_services": [
+        "residential_offplan",
+        "residential_ready_secondary"
+      ],
+      "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "buy property dubai with mortgage"
+      ]
+    }
+  ]
+}

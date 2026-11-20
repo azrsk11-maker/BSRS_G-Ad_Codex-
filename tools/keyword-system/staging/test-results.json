@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-07",
+  "command": "python -B -m unittest -q test_historical_intake.py test_keyword_audit.py",
+  "historical_intake_tests": 15,
+  "existing_keyword_tests": 33,
+  "tests_run": 48,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_seconds_reported_by_unittest": 0.046,
+  "scope": "OFFLINE_STAGING_AND_VALIDATOR_BEHAVIOR_ONLY",
+  "fixture_policy": "Synthetic in-memory transformations; separately pinned owner-source staging artifact readback",
+  "production_changes": 0,
+  "reviewed_positive_rows": 0,
+  "approved_rows": 0
+}

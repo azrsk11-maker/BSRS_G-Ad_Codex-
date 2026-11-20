@@ -1,0 +1,112 @@
+{
+  "scope": "LATEST_REVIEW_SCREEN_OF_ALL_REGISTERED_CURRENT_RESEARCH_NOT_NEW_ADMISSION",
+  "registered_input_rows": 8035,
+  "latest_review_eligible_rows": 8025,
+  "latest_deficit": 5975,
+  "latest_excluded_rows": 10,
+  "protected_queries": 15213,
+  "protected_conflicts": [
+    {
+      "negative_id": "BSRE-N-a96f27020bbc0540dd31f467",
+      "protected_query_id": "BSRE-Q-a96f27020bbc0540dd31f467",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-0ec681b8c77dcb0000e5cd3c",
+      "protected_query_id": "BSRE-Q-0ec681b8c77dcb0000e5cd3c",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-fa449b6f863d3d8af2a52ad7",
+      "protected_query_id": "BSRE-Q-fa449b6f863d3d8af2a52ad7",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-c1bffcb810942a0525287b93",
+      "protected_query_id": "BSRE-Q-c1bffcb810942a0525287b93",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-c54abee1cf8e5bf205ac3a51",
+      "protected_query_id": "BSRE-Q-c54abee1cf8e5bf205ac3a51",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-d64f96f3b579f747456aba43",
+      "protected_query_id": "BSRE-Q-d64f96f3b579f747456aba43",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-0f999277df4de92ff9c9bdb4",
+      "protected_query_id": "BSRE-Q-0f999277df4de92ff9c9bdb4",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-eedb0a2395d80027127afd4f",
+      "protected_query_id": "BSRE-Q-eedb0a2395d80027127afd4f",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-c51fafffee373aa696132d2f",
+      "protected_query_id": "BSRE-Q-c51fafffee373aa696132d2f",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-99aaebdac8783c6362563e3f",
+      "protected_query_id": "BSRE-Q-99aaebdac8783c6362563e3f",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    }
+  ],
+  "latest_approval_hold_counts": {
+    "exclusion approval missing; fail closed": 8035,
+    "independent exclusion approver required": 8035,
+    "exclusion approval: missing/invalid evidence dates": 8035,
+    "exclusion approval: dependency evidence dates invalid": 8035,
+    "verified Real Estate account scope binding missing": 8035,
+    "scope bindings: missing/invalid evidence dates": 8035,
+    "verified platform campaign binding missing for BSRE-C0301": 8035
+  },
+  "approved_exclusion_rows": 0,
+  "base_current_records_sha256": "c969b6e633462f9f1c7567449e6912b598b8fdb7b848b9e6059258c6441e0601",
+  "registered_index": {
+    "file": "tools/keyword-system/data/negative-research-index.json",
+    "sha256": "ff04733c369954f66d562dc14a263bf40b58c7b14877332767f309472cb5e525"
+  },
+  "latest_coverage_sha256": "42d02347ba05fccc0f636bec212b36acd80491f2becb2575c9aecbef33672210",
+  "historical_rows_rewritten": false,
+  "master_additions": 0,
+  "admission_held": true,
+  "independent_review_verified": false,
+  "positive_library_coverage_verified": false,
+  "deployment_authorized": false
+}

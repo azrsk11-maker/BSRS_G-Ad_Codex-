@@ -1,0 +1,33 @@
+{
+  "schema": "bsre-g026-research-evidence-acceptance-v1",
+  "goal": "G026",
+  "status": "VERIFIED_RESEARCH_EVIDENCE_ONLY",
+  "assessment_date": "2026-11-18",
+  "research_snapshot_date": "2026-11-13",
+  "distinct_research_phrases": 14000,
+  "research_deficit": 0,
+  "research_assessment_checks_passed": 14,
+  "source_manifest_bindings_checked": 1049,
+  "metadata_checks_passed": 52,
+  "binding_failures": 0,
+  "freshness": {
+    "assessment_date": "2026-11-18",
+    "reviewed_on_min": "2026-11-11",
+    "reviewed_on_max": "2026-11-13",
+    "local_deadline_min": "2026-12-11",
+    "local_deadline_max": "2026-12-13",
+    "explicit_dated_deadlines": 18,
+    "semantic_reviews_bound_to_dated_admission_reviews": 12,
+    "expired": 0,
+    "limit": "Local30-day review deadlines are not a Google expiry rule, new source capture, or a guarantee of current market demand."
+  },
+  "private_assessment_sha256": "2952591fbe9f08b27cebe31b99516bbaaffd10df51561b63948e4caf1ba41ad8",
+  "new_exclusion_approvals": 0,
+  "exclusions_applied": 0,
+  "live_campaign_scope_verified": false,
+  "full_positive_library_conflict_acceptance": false,
+  "limits": "Source-bound AI research provenance/freshness/classification only. G027narrow scopes, G028full-library conflicts and G029approval remain separate; no default account-level exclusion list.",
+  "production_authority": false,
+  "Ads_authority": false,
+  "assessed_saved_planning_context": "C0301/LP0301; no crosswalk to all four actual campaigns is inferred"
+}

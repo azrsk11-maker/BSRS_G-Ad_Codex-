@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "occupational-education.json",
+      "batch_id": "KP-20261111-OCCUPATIONAL-EDUCATION",
+      "sha256": "da46ec51edf53f71c5fe08521853b31ba716f8034bf6b312488ee6a59f6992b1",
+      "bytes": 1232109,
+      "records": 1372,
+      "distinct_normalized": 1372,
+      "source_bytes": 231352,
+      "source_sha256": "9c24f2a487440d3a1d85b881d1265e2b12c2e89e0010dd324ba9113952d82b5e"
+    }
+  ],
+  "totals": {
+    "export_rows": 1372,
+    "distinct_normalized_phrases": 1372,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Four authored course, degree, exam and diploma hypotheses follow Master section6.",
+    "All four seeds have separate exact rows. No program availability, recognized credential, entitlement, affiliation, inventory or actual served query is inferred.",
+    "Capture stays unreviewed; separate preliminary interpretation is not approval or master admission."
+  ]
+}

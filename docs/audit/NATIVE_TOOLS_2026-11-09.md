@@ -1,0 +1,29 @@
+# Native tools continuation — 9 November 2026
+
+## Implemented scope
+
+Master Plan section 9's ten user-input decision tools now have deterministic arithmetic, a native WordPress shortcode integration candidate and an accessible interactive UI. They cover yield, purchase cash, rent/buy, off-plan payment cash flow, ready/off-plan comparison, rental move-in cash, occupancy cost, office fit, seller proceeds and landlord vacancy. There are no prescribed fees, tax rates, forecasts, inventory, financing approvals or automatic business conclusions. Refundable cash, expenditure, debt and hypothetical exit values remain distinct. [Tools and calculation limits](../../tools/property-decision-tools/README.md)
+
+The shortcode is disabled by default and uses local assets only when explicitly enabled and rendered. It sends no entered figures, writes no browser storage and introduces no event, conversion or external destination. Measurement integration remains held. Native page bindings, factual approval, physical-phone checks and publication are separate work.
+
+The [disposable native draft writer](../../tools/native-wordpress/WRITER.md) implements allowlisted synthetic create/update/restore operations using real WordPress APIs, a durable journal, exact CMS/revision/state preconditions and readback. Repeated acknowledgments require unchanged committed state. Update recovery preserves revision history. Recovery of a created page holds its draft for reconciliation; it never deletes posts. The writer is deliberately incompatible with production and registers no endpoint, hook or user interface.
+
+## Review and acceptance
+
+Independent agent review identified stale displayed calculations, permissive content input, incomplete metadata locking and missing positive revision assertions. The implementation fixes those findings and adds regression coverage. The reviewer independently passed 22 arithmetic and nine UI tests, with no open actionable finding. Local PHP contract checks passed 16 cases. Native concurrency, rollback, killed-session and no-op recovery tests still require exact-head isolated CI. Agent review does not satisfy the independent human PR approval required by issue #6.
+
+The source-only Windows checkout initially converted LF bytes under the existing Git `core.autocrlf=true` configuration. A controlled comparison confirmed that `git archive` also applied that conversion, while a command-scoped `core.autocrlf=false` archive matched the raw Git blob. Unchanged files in this new agent-owned checkout were restored from the latter; no global Git setting or pre-existing checkout changed. All 30 pinned plugin files then passed their original SHA-256 checks. The project rules now record this prerequisite.
+
+Local and exact-head Actions results are recorded in the PR after execution. The required isolated lab runs with synthetic data, read-only application files, no credentials or host mounts and kernel networking disabled before WordPress starts. PHP/native database acceptance comes from that lab, not from local lints or JavaScript tests. It does not certify Hostinger/theme parity, actual Google destinations or production durability.
+
+The local combined foundation check with PHP enabled passed all 38 reported checks in 72.587248 seconds on Windows. This is a measured run duration, including the enlarged suite and local PHP process overhead; it is not comparable to older runs with different inputs and runtimes. Exact turn token usage and underlying provider API counts are unavailable. The command retained only an ignored local result and a private log; neither is published. Native database checks remain delegated to Actions.
+
+## Live access and release boundaries
+
+The code is committed locally, initially `ed85d0e`, and all 315 repository files matched its raw bytes. Source publication failed once through the connector (403 `Resource not accessible by integration`) and once through noninteractive Git (no credentials). Readback confirmed the remote feature ref remained `3e95f6a`. The connected GitHub profile is `helpdesk3701`; repository metadata explicitly reports `push:false`. Restore authentication as repository owner `azrsk11-maker` or another already authorized writer. No grant, invitation, branch bypass or additional blind write was attempted. [Issue #12](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/12) records options and implications; its requested decision label was not retained under the current account and needs owner application. New native Actions acceptance is pending upload, not green.
+
+The browser connector reported local browser use disabled in Work settings. Windows Computer Use reached the existing Amit profile, where Google Ads displayed no Ads accounts, and then opened the existing Real Estate profile. The next tab action was stopped by Computer Use because it could not establish the active URL confidently. No further browser input was attempted. This is an access limitation, not a current authenticated Ads readback. The separate Drive and Gmail connector profiles belonged to the excluded Business Setup account; no files or mail were searched through them.
+
+The owner reports that the 4 November rehearsal completed. Its private evidence location and representative timing/workload results remain unverified; the bounded local search found no completed record. [Worksheet](STAFF_REHEARSAL_WORKSHEET.md), [issue #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4)
+
+Both reviewed keyword masters remain 0/14,000. The 360 registry slots are plans, not approved published pages. Content evidence, campaign-family bindings, finance definitions, eligible independent review, live acceptance and exact production authorizations remain open. No production website, tracking, Ads configuration, advertising expenditure, workbook sharing or financial records were changed in this continuation.

@@ -1,0 +1,31 @@
+{
+  "schema": "bsre-ofqual-animal-care-wording-v1",
+  "raw_source_sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+  "raw_source_bytes": 23984795,
+  "source_occurrences": [
+    {
+      "source_record_ordinal": 12445,
+      "qualification_number": "610/8342/2",
+      "original_literal": "1st4sport Level 2 End Point Assessment for STO166 Equine Groom",
+      "owner_organisation_name": "1st4sport",
+      "apprenticeship_standard_reference_number": "ST0166",
+      "apprenticeship_standard_title": "Equine groom",
+      "complete_36_source_cells_sha256": "c92f0c089adf22d9a0c333b23623b4e2c5bcd30cc62edd642cc8c8a1bafbf46d",
+      "decision": "HOLD_UNRESOLVED_SOURCE_WORDING_NO_REPAIR",
+      "reason": "Literal STO166 differs from source auxiliary ST0166; no token replacement or standard equivalence inferred."
+    },
+    {
+      "source_record_ordinal": 41428,
+      "qualification_number": "603/4965/7",
+      "original_literal": "AIM Qualifcations Level 5 Diploma Canine Behaviour Practitioner",
+      "owner_organisation_name": "AIM Qualifications",
+      "apprenticeship_standard_reference_number": "",
+      "apprenticeship_standard_title": "",
+      "complete_36_source_cells_sha256": "440c08a8910a138d04ec3f578f2997ccc7344e547716c92c6063ad49cbf8ee9f",
+      "decision": "HOLD_UNRESOLVED_SOURCE_WORDING_NO_REPAIR",
+      "reason": "Literal Qualifcations differs from the source organisation word Qualifications; preserve the original and hold without repair."
+    }
+  ],
+  "independent_human_approval": false,
+  "new_keyword_or_canonical_form_created": false
+}

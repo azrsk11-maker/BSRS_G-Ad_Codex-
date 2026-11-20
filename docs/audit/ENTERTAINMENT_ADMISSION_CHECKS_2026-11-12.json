@@ -1,0 +1,174 @@
+{
+  "observed_on_dubai": "2026-11-12",
+  "scope": "RESEARCH_ADMISSION_AND_OFFLINE_FOUNDATION_WITH_ISOLATED_PHP_NOT_LIVE_ACCEPTANCE",
+  "implementation_commit": "549f1111374056a69457ead982efe60d79da0b7a",
+  "implementation_tree": "495520e39b670ba6872c8e2017e323ae0f634b8c",
+  "foundation_passed": true,
+  "required_php": true,
+  "checks_passed": 109,
+  "checks_failed": 0,
+  "checks_not_executed": [],
+  "elapsed_seconds": 562.181,
+  "private_raw_report_sha256": "98602615e26a0608e7d0d5cb57373b0164723c8c2b9760869e11c532bd1191cf",
+  "python_suite_summaries": {
+    "keyword-entertainment-clipboard-guards": {
+      "total": 8,
+      "skipped": 0,
+      "suite_seconds": 0.027,
+      "subprocess_seconds": 0.203683
+    },
+    "native-wordpress-behavior": {
+      "total": 8,
+      "skipped": 0,
+      "suite_seconds": 0.039,
+      "subprocess_seconds": 0.265016
+    },
+    "keyword-system-behavior": {
+      "total": 429,
+      "skipped": 2,
+      "suite_seconds": 293.144,
+      "subprocess_seconds": 294.587254
+    },
+    "efficiency-behavior": {
+      "total": 69,
+      "skipped": 2,
+      "suite_seconds": 14.519,
+      "subprocess_seconds": 14.827953
+    },
+    "qualification-history-behavior": {
+      "total": 42,
+      "skipped": 0,
+      "suite_seconds": 4.853,
+      "subprocess_seconds": 5.120782
+    },
+    "qualified-export-source-behavior": {
+      "total": 26,
+      "skipped": 0,
+      "suite_seconds": 1.281,
+      "subprocess_seconds": 1.503775
+    },
+    "github-governance-behavior": {
+      "total": 13,
+      "skipped": 0,
+      "suite_seconds": 0.005,
+      "subprocess_seconds": 0.269042
+    },
+    "content-evidence-behavior": {
+      "total": 24,
+      "skipped": 0,
+      "suite_seconds": 0.254,
+      "subprocess_seconds": 0.439628
+    },
+    "creative-validation-behavior": {
+      "total": 35,
+      "skipped": 0,
+      "suite_seconds": 0.041,
+      "subprocess_seconds": 0.212787
+    },
+    "release-control-behavior": {
+      "total": 77,
+      "skipped": 1,
+      "suite_seconds": 33.076,
+      "subprocess_seconds": 33.355362
+    },
+    "staging-lab-behavior": {
+      "total": 18,
+      "skipped": 1,
+      "suite_seconds": 0.693,
+      "subprocess_seconds": 0.940544
+    }
+  },
+  "keyword_subprocess_timeout_seconds": 300,
+  "keyword_timeout_margin_seconds": 5.412746,
+  "windows_local_expiry_journal": {
+    "tests": 22,
+    "suites": 0,
+    "pass": 5,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 17,
+    "todo": 0,
+    "duration_ms": 131.1823
+  },
+  "fresh_complete_composition_seconds": 65.266278,
+  "source_admission": {
+    "new_records": 303,
+    "new_protections": 215,
+    "researched_negative_records": 10955,
+    "negative_deficit": 3045,
+    "archived_original_records": 18,
+    "protected_queries": 16383,
+    "source_registry_rows": 23,
+    "source_occurrences_retained": 11161,
+    "media_remaining": 196,
+    "positive_admission": 0,
+    "exclusion_approved_records": 0,
+    "deployed_records": 0,
+    "reviewed_source_literals": 518,
+    "original_holds_preserved": 200,
+    "additional_holds": 15,
+    "independently_resolved_new_holds": 9,
+    "all_new_metrics_unknown": true,
+    "scope": "UNBOUND_RNT_BSRE-C0301_BSRE-LP0301_EXACT_HIGH_PENDING",
+    "actual_google_campaign_id": null,
+    "actual_destination_url": null,
+    "targets_or_budgets_changed": false
+  },
+  "preservation": {
+    "complete_prior_base_sha256": "9c4404b7997646efb9f5d9a4f8f794186425f5b7377614475d1af2536534437a",
+    "all_10652_prior_bodies_order_provenance_and_markers_preserved": true,
+    "all_18_archives_and_16168_protection_prefix_preserved": true,
+    "historical_pins_unchanged": true,
+    "frozen_vendor_records": 10014,
+    "frozen_followup_records": 10199,
+    "frozen_valuation_records": 10610,
+    "frozen_ofqual_records": 10652,
+    "public_entrypoint_freshness_failure_checks": 10,
+    "public_acceptance_cache": false,
+    "generic_auditor_or_timeouts_weakened": false
+  },
+  "actual_input_diagnostics": {
+    "receipt": "keyword-negative-entertainment-admission-2026-11-11/actual-input-guards.json",
+    "fresh_base_seconds": 60.9386729,
+    "generation_and_saved_verification_seconds": 16.0140011,
+    "archive_and_hold_reinsertions": 233,
+    "every_hypothesis_protected": true,
+    "hypothesis_eligible_rows": 0,
+    "complete_input_or_resealed_output_mutations_rejected": 16,
+    "diagnostic_seconds": 79.9637634,
+    "mocks_restored": true,
+    "complete_inputs_unchanged": true,
+    "hypotheses_persisted_or_uploaded": false,
+    "diagnostic_process_terminal": true
+  },
+  "php_validation": {
+    "runtime_version": "8.2.35",
+    "official_archive_sha256": "ebe75134c03869826cb1714d31fd5eb96afefa6d9fd35d786971c03020e7bce2",
+    "lint_checks": 19,
+    "synthetic_behavior_checks": 9,
+    "all_passed": true,
+    "no_ini_enforced_assertions_network_mail_process_helpers_disabled": true,
+    "runtime_outside_source_and_bundle": true,
+    "global_settings_changed": false
+  },
+  "efficiency": {
+    "prior_full_foundation_seconds": 546.358284,
+    "current_full_foundation_seconds": 562.181,
+    "same_workload": false,
+    "causal_speedup_claimed": false,
+    "fixture_reuse_candidate_reverted": true,
+    "fixture_reuse_receipt": "keyword-test-fixture-reuse-2026-11-11/receipt.json",
+    "exact_billable_tokens_and_underlying_api_calls": "UNAVAILABLE"
+  },
+  "limitations": [
+    "Offline validation does not establish real WordPress, database, HTTP or current-source GitHub CI acceptance.",
+    "Platform-dependent skips remain open; 17 local expiry journal cases need supported Unix runtime evidence.",
+    "No independent human approval, positive-library admission, full negative target, verified live mapping or release authority.",
+    "Production, live tracking, workbook access, financial records and Ads remain unchanged.",
+    "Original campaigns stay paused or removed; no reactivation."
+  ],
+  "release_authorized": false,
+  "production_changed": false,
+  "ads_changed": false,
+  "full_goal_complete": false
+}

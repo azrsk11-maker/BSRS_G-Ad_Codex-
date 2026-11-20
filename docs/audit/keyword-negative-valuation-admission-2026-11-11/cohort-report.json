@@ -1,0 +1,27 @@
+{
+  "scope": "AI_REVIEWED_VALUATION_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "review": {
+    "file": "docs/audit/keyword-negative-valuation-admission-2026-11-11/review.json",
+    "sha256": "bff7782db75cc1076f83b9d9084b1fe2c9b88a6349f1c487cfe11b7b0c430f7b"
+  },
+  "source_pins": {
+    "docs/audit/keyword-valuation-employment-2026-11-11/capture.json": "9408a2be59c1858152c770d82e833e18a87a6e89b25e927284ad93ef27ecfb76",
+    "docs/audit/keyword-valuation-employment-2026-11-11/valuation-employment.json": "7be9d5d16a1413cf738b49e8bb92adcdb75e4c02b86bd7e61c940640d7f9371b",
+    "docs/audit/keyword-valuation-employment-2026-11-11/semantic-review.json": "f76d38225613c010a84ce7f95ecd8e84b09153f56bfbff469d70329af03760e1",
+    "docs/audit/keyword-valuation-employment-2026-11-11/membership-snapshot.json": "15ab02cbc6eca0ad5791f8b1b01a2823d41a975b3be32cfc0041b8b61ba090e4",
+    "docs/audit/keyword-valuation-employment-2026-11-11/existing-overlap-reconciliation.json": "1e94820037d0cfe5445fa39f0374659d17b721fec87600fc2e8c9fa6a28636a0"
+  },
+  "canonical_source_rows": 865,
+  "reviewed_rows": 411,
+  "held_phrases": 408,
+  "existing_occurrence_only": 46,
+  "retained_new_record_occurrences": 411,
+  "intent_counts": {
+    "EXPLICIT_EMPLOYMENT_RESEARCH": 411
+  },
+  "record_bodies_sha256": "513ee57d5054d9deecf89ba8342aebcb6ba6623475c21eb215c32e367fa829d1",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false
+}

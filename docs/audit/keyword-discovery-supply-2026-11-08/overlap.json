@@ -1,0 +1,524 @@
+{
+  "scope": "OBSERVED_CAPTURE_OVERLAP_ONLY",
+  "counts": {
+    "original_unique": 7705,
+    "supplemental_unique": 31,
+    "overlap_unique": 1,
+    "original_only_unique": 7704,
+    "supplemental_only_unique": 30,
+    "combined_unique": 7735,
+    "original_occurrences": 8778,
+    "supplemental_occurrences": 31,
+    "combined_occurrences": 8809,
+    "repeated_occurrences": 1074
+  },
+  "classification_inherited": false,
+  "deployment_authorized": false,
+  "original_capture_manifest_sha256": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+  "supplemental_phrases": [
+    {
+      "normalized_text": "apartments for sale in sharjah",
+      "original_forms": [
+        "apartments for sale in sharjah"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 6
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai estate agent",
+      "original_forms": [
+        "dubai estate agent"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 4
+        }
+      ]
+    },
+    {
+      "normalized_text": "dubai letting agents",
+      "original_forms": [
+        "dubai letting agents"
+      ],
+      "original_refs": [
+        {
+          "batch_id": "KP-DISC-20261108-OWNERS",
+          "topic": "owners",
+          "source_basename": "Keyword Stats 2026-11-08 at 12_38_19.csv",
+          "source_sha256": "eb1c27f886df489ebe1da05aa13f9463bee3ed9bfa7d1be5acf6ec74f309dbe7",
+          "source_line": 230
+        }
+      ],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 6
+        }
+      ]
+    },
+    {
+      "normalized_text": "find tenants for my property dubai",
+      "original_forms": [
+        "find tenants for my property dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 10
+        }
+      ]
+    },
+    {
+      "normalized_text": "flat for sale in sharjah al nahda",
+      "original_forms": [
+        "flat for sale in sharjah al nahda"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 11
+        }
+      ]
+    },
+    {
+      "normalized_text": "flats for sale in sharjah",
+      "original_forms": [
+        "flats for sale in sharjah"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 7
+        }
+      ]
+    },
+    {
+      "normalized_text": "freehold villa for sale in sharjah",
+      "original_forms": [
+        "freehold villa for sale in sharjah"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 8
+        }
+      ]
+    },
+    {
+      "normalized_text": "landlord agent abu dhabi",
+      "original_forms": [
+        "landlord agent abu dhabi"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 15
+        }
+      ]
+    },
+    {
+      "normalized_text": "landlord letting agent dubai",
+      "original_forms": [
+        "landlord letting agent dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 11
+        }
+      ]
+    },
+    {
+      "normalized_text": "lease my commercial property dubai",
+      "original_forms": [
+        "lease my commercial property dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 13
+        }
+      ]
+    },
+    {
+      "normalized_text": "list my property for sale dubai",
+      "original_forms": [
+        "list my property for sale dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 16
+        }
+      ]
+    },
+    {
+      "normalized_text": "list property for sale abu dhabi",
+      "original_forms": [
+        "list property for sale abu dhabi"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 21
+        }
+      ]
+    },
+    {
+      "normalized_text": "property letting agent sharjah",
+      "original_forms": [
+        "property letting agent sharjah"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 16
+        }
+      ]
+    },
+    {
+      "normalized_text": "property letting services dubai",
+      "original_forms": [
+        "property letting services dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 12
+        }
+      ]
+    },
+    {
+      "normalized_text": "property selling agent dubai",
+      "original_forms": [
+        "property selling agent dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 17
+        }
+      ]
+    },
+    {
+      "normalized_text": "rent out my apartment dubai",
+      "original_forms": [
+        "rent out my apartment dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 8
+        }
+      ]
+    },
+    {
+      "normalized_text": "rent out my property dubai",
+      "original_forms": [
+        "rent out my property dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 7
+        }
+      ]
+    },
+    {
+      "normalized_text": "rent out my villa dubai",
+      "original_forms": [
+        "rent out my villa dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 9
+        }
+      ]
+    },
+    {
+      "normalized_text": "rent out property abu dhabi",
+      "original_forms": [
+        "rent out property abu dhabi"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 14
+        }
+      ]
+    },
+    {
+      "normalized_text": "rental agents dubai",
+      "original_forms": [
+        "rental agents dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-LANDLORDS",
+          "topic": "landlords",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_24_05.csv",
+          "source_sha256": "c4eced26107b6cab0d8ac2f41ed73eff7c797b46f1d3dd91fd0f06e06a7f2c51",
+          "source_line": 5
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell my apartment dubai",
+      "original_forms": [
+        "sell my apartment dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 14
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell my commercial property dubai",
+      "original_forms": [
+        "sell my commercial property dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 19
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell my house in dubai",
+      "original_forms": [
+        "sell my house in dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 18
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell my property abu dhabi",
+      "original_forms": [
+        "sell my property abu dhabi"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 20
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell my property dubai",
+      "original_forms": [
+        "sell my property dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 12
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell my villa dubai",
+      "original_forms": [
+        "sell my villa dubai"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 15
+        }
+      ]
+    },
+    {
+      "normalized_text": "sell property sharjah",
+      "original_forms": [
+        "sell property sharjah"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 13
+        }
+      ]
+    },
+    {
+      "normalized_text": "sharjah freehold property for sale",
+      "original_forms": [
+        "sharjah freehold property for sale"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 10
+        }
+      ]
+    },
+    {
+      "normalized_text": "sharjah house for sale",
+      "original_forms": [
+        "sharjah house for sale"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 9
+        }
+      ]
+    },
+    {
+      "normalized_text": "sharjah property for sale",
+      "original_forms": [
+        "sharjah property for sale"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 5
+        }
+      ]
+    },
+    {
+      "normalized_text": "sharjah villa for sale",
+      "original_forms": [
+        "sharjah villa for sale"
+      ],
+      "original_refs": [],
+      "supplemental_refs": [
+        {
+          "batch_id": "KP-SUPPLY-20261108-SELLERS",
+          "topic": "sellers",
+          "source_basename": "Keyword Stats 2026-11-08 at 14_19_25.csv",
+          "source_sha256": "8985cdf07024b753f15e066cdb72198927e8f4550cfc5e4b3d3695001b0af401",
+          "source_line": 4
+        }
+      ]
+    }
+  ]
+}

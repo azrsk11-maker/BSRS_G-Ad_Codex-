@@ -1,0 +1,118 @@
+{
+  "scope": "READ_ONLY_SELECTED_CHROME_CONFIGURATION_PARTIAL",
+  "observed_on": "2026-11-10",
+  "recorded_at_utc": "2026-11-10T15:49:41.418Z",
+  "account": {
+    "customer_id": "573-038-4686",
+    "name": "Black Swan Real Estate",
+    "signed_in_account": "marketing@blackswanrealestate.ae"
+  },
+  "method": "Ordinary Chrome UI navigation to WordPress admin and Google Ads Campaigns; no settings, protections, credentials or records changed.",
+  "wordpress": {
+    "requested_url": "https://blackswanrealestate.ae/wp-admin/",
+    "result": "Redirected to wp-login.php with reauth=1; Log In control present and no Plugins navigation.",
+    "authenticated_admin_verified": false,
+    "scope": "Selected Real Estate Chrome profile only; other profiles were not inspected."
+  },
+  "ads": {
+    "page": "https://ads.google.com/aw/campaigns",
+    "global_notice": "None of your ads are running",
+    "global_notice_limitation": "A non-serving notice does not prove every campaign's individual status, settings or budget.",
+    "pagination": "1 - 10 of 20",
+    "visible_configuration": [
+      {
+        "campaign_id": "24155057422",
+        "campaign": "BSRE | Search | Australia | Overseas Buyers",
+        "status": "Removed",
+        "budget": "AED200.00/day",
+        "type": "Search",
+        "bidding": "Manual CPC"
+      },
+      {
+        "campaign_id": "24230718615",
+        "campaign": "BSRE | PMax | Dubai | Leads",
+        "status": "Removed",
+        "budget": "AED150.00/day",
+        "type": "Performance Max",
+        "bidding": "Maximize conversions"
+      },
+      {
+        "campaign_id": "24236347619",
+        "campaign": "BSRE | PMax | Dubai | Leads",
+        "status": "Removed",
+        "budget": "AED150.00/day",
+        "type": "Performance Max",
+        "bidding": "Maximize conversions"
+      },
+      {
+        "campaign_id": "24150698534",
+        "campaign": "BSRE | Search | Germany | Overseas Buyers",
+        "status": "Paused",
+        "budget": "AED76.03/day",
+        "type": "Search",
+        "bidding": "Target CPA"
+      },
+      {
+        "campaign_id": "24155034442",
+        "campaign": "BSRE | Search | Dubai | Leads",
+        "status": "Paused",
+        "budget": "AED456.19/day",
+        "type": "Search",
+        "bidding": "Target CPA"
+      },
+      {
+        "campaign_id": "24155553763",
+        "campaign": "BSRE | Search | Canada | Overseas Buyers",
+        "status": "Paused",
+        "budget": "AED76.03/day",
+        "type": "Search",
+        "bidding": "Manual CPC"
+      },
+      {
+        "campaign_id": "24155555722",
+        "campaign": "BSRE | Search | Saudi Arabia | Overseas Buyers",
+        "status": "Paused",
+        "budget": "AED76.03/day",
+        "type": "Search",
+        "bidding": "Target CPA"
+      },
+      {
+        "campaign_id": "24241801813",
+        "campaign": "BSRE | PMax | Dubai | Leads",
+        "status": "Paused; all asset groups are paused",
+        "budget": "AED57.02/day",
+        "type": "Performance Max",
+        "bidding": "Maximize conversions"
+      },
+      {
+        "campaign_id": "24271138041",
+        "campaign": "BSRE | Search | Dubai Sales | LP",
+        "status": "Paused",
+        "budget": "AED19.01/day",
+        "type": "Search",
+        "bidding": "Maximize clicks"
+      },
+      {
+        "campaign_id": "24271196121",
+        "campaign": "BSRE | Search | Dubai Buyers",
+        "status": "Paused",
+        "budget": "AED38.02/day",
+        "type": "Search",
+        "bidding": "Target CPA"
+      }
+    ],
+    "projection": "Only campaign identity, displayed configuration and status were retained; UI settings icons and performance/contact fields were excluded.",
+    "blocker": "Turn off ad blockers dialog appeared after initial account/table rendering. No ad blocker or other browser protection was changed.",
+    "complete_campaign_inventory": false,
+    "all_old_campaigns_individually_reverified": false,
+    "new_campaign_budget_reverified": false,
+    "full_settings_acceptance": false
+  },
+  "boundaries": {
+    "ads_settings_changed": false,
+    "ads_activated": false,
+    "production_changed": false,
+    "expenditure_authorized": false,
+    "business_setup_accessed": false
+  }
+}

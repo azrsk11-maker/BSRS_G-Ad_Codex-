@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "remote_pr_head": "ab5e9416044d474c3baea45f90bc1354c69d69f8",
+  "local_head": "d491b55ca2dbd4cc645b8d6191bb87035d186a8b",
+  "measurement_scope": "This source snapshot excludes subsequent documentation-only commits; use git status/rev-parse for the latest local head.",
+  "comparison": "git rev-list/diff from remote PR head to local feature branch",
+  "local_commits_not_in_remote_history": 92,
+  "history_relationship": "DIVERGED_NOT_A_FAST_FORWARD",
+  "common_ancestor": "b48aa6592a577616687538066ffdc6bf00365a78",
+  "changed_paths": 63,
+  "insertions": 40329,
+  "deletions": 8,
+  "prepared_publication_snapshot": {
+    "branch": "codex/followup-publication-20261111",
+    "implementation_commit": "ad173c3a9ed3375324988c8677893ab5c987d38d",
+    "expected_remote_parent": "ab5e9416044d474c3baea45f90bc1354c69d69f8",
+    "implementation_tree": "9c242779e8a35e59e0e585f27e5eb591a409a97f",
+    "byte_equal_files": 655,
+    "missing_or_different_files": 0,
+    "remote_write_performed": false,
+    "scope": "Implementation snapshot; later documentation commits are recorded separately. Read the prepared branch HEAD before publishing."
+  },
+  "publication_status": "NOT_UPLOADED",
+  "reason": "Direct Git returns 403 for BlackSwanBss3701; owner-browser upload path returned HTTP 400 and did not change PR head.",
+  "safe_handoff": {
+    "target_repository": "azrsk11-maker/BSRS_G-Ad_Codex-",
+    "target_branch": "codex/phase0-audit-foundation",
+    "base_branch_unchanged": true,
+    "production_changes": false,
+    "ads_serving": false,
+    "next_action": "After verified write access, recheck the actual PR head against the expected parent, verify the prepared publication branch source tree, and perform an ordinary non-force feature-branch update. Do not push the divergent local history or bypass review. Read back the PR head and run current-source CI."
+  }
+}

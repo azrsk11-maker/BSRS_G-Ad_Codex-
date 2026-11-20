@@ -1,0 +1,61 @@
+{
+  "observed_at_utc": "2026-11-07T05:25:00Z",
+  "method": "Read-only authenticated Chrome accessibility snapshots; no live settings changed",
+  "ads": {
+    "account": "Black Swan Real Estate",
+    "customer_id": "573-038-4686",
+    "timezone_display": "Gulf Standard Time GMT+4",
+    "campaigns_read": 20,
+    "paused": 17,
+    "removed": 3,
+    "enabled": 0,
+    "drafts_observed": 1,
+    "new_campaigns": [
+      {"id":"24372566774","name":"BSRE_V2_SEARCH_BUYERS_UAE_EN","status":"Paused","average_daily_budget_aed":1200},
+      {"id":"24367388382","name":"BSRE_V2_SEARCH_OWNERS_UAE_EN","status":"Paused","average_daily_budget_aed":400},
+      {"id":"24378494092","name":"BSRE_V2_SEARCH_TENANTS_UAE_EN","status":"Paused","average_daily_budget_aed":300},
+      {"id":"24378494098","name":"BSRE_V2_SEARCH_BRAND_UAE_EN","status":"Paused","average_daily_budget_aed":100}
+    ],
+    "new_campaign_budget_sum_aed": 2000,
+    "budget_type": "aggregate average daily, not a hard daily cap",
+    "strategy_observed": "Maximize clicks",
+    "activation_authorized": false,
+    "not_checked_this_readback": ["CPC caps","ad schedules","location presence mode","networks","conversion goal associations","Brand current approval","automation rules and scripts","inherited assets"]
+  },
+  "gtm": {
+    "container_id":"GTM-NW8WXKRF",
+    "container_numeric_id":"267608465",
+    "published_version":1,
+    "published_name":"Empty Container",
+    "published_date":"2026-10-19",
+    "published_tags":0,
+    "published_triggers":0,
+    "published_variables":0,
+    "current_workspace_changes_not_fully_audited":true
+  },
+  "ga4": {
+    "property_id":"559502861",
+    "property_name":"Black Swan Real Estate | Owned Funnels",
+    "stream_id":"16159906474",
+    "stream_name":"BSRE Owned Funnels and Content",
+    "stream_url":"https://blackswanrealestate.ae",
+    "measurement_id":"G-W01P9W3NWE",
+    "enhanced_measurement":false,
+    "google_signals":false,
+    "user_provided_data_collection":false,
+    "granular_location_device_collection":false,
+    "connected_site_tags":0,
+    "email_redaction":true,
+    "url_query_parameter_redaction":false,
+    "interface_warning":"Data collection is not active; no data received in past 48 hours",
+    "runtime_payload_acceptance": "NOT_EXECUTED"
+  },
+  "access": {
+    "wordpress_admin":"Expired session; /wp-admin/plugins.php redirected to WordPress login",
+    "hostinger":"Existing tab is on authentication page; deployment/staging/backups unverified",
+    "github_browser":"Repository owner authenticated",
+    "github_connector":"Different connected account; target permissions pull=true push=false admin=false",
+    "private_lead_workbook":"Not read or shared in this audit"
+  },
+  "limitations":["UI configuration is not runtime conversion acceptance","No prospect or financial performance data included","Current Ads conversion labels and active receiver source require separate verified readback","No live settings modified"]
+}

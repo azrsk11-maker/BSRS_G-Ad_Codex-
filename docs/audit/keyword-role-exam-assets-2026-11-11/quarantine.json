@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "scope": "COUNT_MISMATCH_QUARANTINE_ONLY",
+  "topic": "specific-property-trades",
+  "ui_idea_count": 169,
+  "export_rows": 166,
+  "independent_parser_rows": 166,
+  "ui_unique_literals": 169,
+  "export_only_literals": 0,
+  "ui_only_literals": [
+    "tiles fixing company in dubai",
+    "tiles fixing dubai",
+    "tiles fixing in dubai"
+  ],
+  "source_sha256": "19ece04d00c248b8b1bd85dd436b648babb14343047e82c77ece43c1102e10f3",
+  "raw_exports_attempted": 1,
+  "cause_verified": false,
+  "count_gate_relaxed": false,
+  "raw_or_full_ui_literals_committed": false,
+  "included_in_capture_or_master": false,
+  "deployment_authorized": false
+}

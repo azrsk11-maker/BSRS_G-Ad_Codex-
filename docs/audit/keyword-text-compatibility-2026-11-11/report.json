@@ -1,0 +1,266 @@
+{
+  "scope": "DATED_COMPATIBILITY_SCREEN_NOT_ADMISSION_OR_PLATFORM_VALIDATION",
+  "base_sha256": "954f8143a49d050d2f86f15a9dda52fb460eae0de75a25b1ebef1eb9e5d7c5d0",
+  "base_seconds": 46.919190699991304,
+  "totals": {
+    "current_research": {
+      "original": {
+        "rows": 10610,
+        "classifications": {
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 10610
+        },
+        "reason_counts": {},
+        "observation_counts": {}
+      },
+      "provided_canonical": {
+        "rows": 10610,
+        "classifications": {
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 10610
+        },
+        "reason_counts": {},
+        "observation_counts": {}
+      }
+    },
+    "archived": {
+      "original": {
+        "rows": 18,
+        "classifications": {
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 18
+        },
+        "reason_counts": {},
+        "observation_counts": {}
+      },
+      "provided_canonical": {
+        "rows": 18,
+        "classifications": {
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 18
+        },
+        "reason_counts": {},
+        "observation_counts": {}
+      }
+    },
+    "protected_queries": {
+      "original": {
+        "rows": 15899,
+        "classifications": {
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 15899
+        },
+        "reason_counts": {},
+        "observation_counts": {
+          "PERIOD_IGNORED_OR_OPERATOR_SENSITIVE": 7
+        }
+      },
+      "provided_canonical": {
+        "rows": 0,
+        "classifications": {},
+        "reason_counts": {},
+        "observation_counts": {}
+      }
+    },
+    "ofqual_reviewed": {
+      "original": {
+        "rows": 62,
+        "classifications": {
+          "DOCUMENTED_INCOMPATIBILITY_DETECTED": 11,
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 44,
+          "REQUIRES_REVIEW": 7
+        },
+        "reason_counts": {
+          "DOCUMENTED_INVALID_SYMBOLS": 11,
+          "MATCH_SYNTAX_REQUIRES_REVIEW": 2,
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW": 7
+        },
+        "observation_counts": {}
+      },
+      "provided_canonical": {
+        "rows": 62,
+        "classifications": {
+          "DOCUMENTED_INCOMPATIBILITY_DETECTED": 11,
+          "NO_KNOWN_INCOMPATIBILITY_DETECTED": 44,
+          "REQUIRES_REVIEW": 7
+        },
+        "reason_counts": {
+          "DOCUMENTED_INVALID_SYMBOLS": 11,
+          "MATCH_SYNTAX_REQUIRES_REVIEW": 2,
+          "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW": 7
+        },
+        "observation_counts": {}
+      }
+    }
+  },
+  "source_text_digests": {
+    "current_research": "49bbb1474954931975bbaa9bbb112063a103855e37fa75c3a89d2a998318b5b7",
+    "archived": "3a8bf9db34a8ecf765ca38f176c905b2cc5ae4ee199c2a1e7258373e5b0109cc",
+    "protected_queries": "54bfe360814273666e5c9fb5ffb9ac43fd4ca984250602f326f56f0c4462fac0",
+    "ofqual_reviewed": "8afc88462b35ed44aa45819e830a5152cabe50871a1ecf656b5cac5d092db3fa"
+  },
+  "source_evidence": [
+    "https://developers.google.com/google-ads/api/fields/v25/campaign_criterion",
+    "https://developers.google.com/google-ads/api/reference/rpc/v25/KeywordInfo",
+    "https://support.google.com/google-ads/answer/2453972"
+  ],
+  "master_rows_added": 0,
+  "exclusion_approval_or_deployment": false,
+  "current_research_flagged_records": [],
+  "ofqual_provisional_screen_clear_group_ids": [
+    "OFQUAL-TITLE-006",
+    "OFQUAL-TITLE-028",
+    "OFQUAL-TITLE-029",
+    "OFQUAL-TITLE-030",
+    "OFQUAL-TITLE-042",
+    "OFQUAL-TITLE-050",
+    "OFQUAL-TITLE-051",
+    "OFQUAL-TITLE-056",
+    "OFQUAL-TITLE-057",
+    "OFQUAL-TITLE-058",
+    "OFQUAL-TITLE-059",
+    "OFQUAL-TITLE-061",
+    "OFQUAL-TITLE-062",
+    "OFQUAL-TITLE-063",
+    "OFQUAL-TITLE-064",
+    "OFQUAL-TITLE-065",
+    "OFQUAL-TITLE-067",
+    "OFQUAL-TITLE-068",
+    "OFQUAL-TITLE-075",
+    "OFQUAL-TITLE-085",
+    "OFQUAL-TITLE-086",
+    "OFQUAL-TITLE-091",
+    "OFQUAL-TITLE-099",
+    "OFQUAL-TITLE-116",
+    "OFQUAL-TITLE-117",
+    "OFQUAL-TITLE-123",
+    "OFQUAL-TITLE-124",
+    "OFQUAL-TITLE-130",
+    "OFQUAL-TITLE-131",
+    "OFQUAL-TITLE-132",
+    "OFQUAL-TITLE-140",
+    "OFQUAL-TITLE-153",
+    "OFQUAL-TITLE-161",
+    "OFQUAL-TITLE-173",
+    "OFQUAL-TITLE-196",
+    "OFQUAL-TITLE-200",
+    "OFQUAL-TITLE-201",
+    "OFQUAL-TITLE-211",
+    "OFQUAL-TITLE-214",
+    "OFQUAL-TITLE-249",
+    "OFQUAL-TITLE-255",
+    "OFQUAL-TITLE-303"
+  ],
+  "ofqual_new_text_holds": [
+    {
+      "group_id": "OFQUAL-TITLE-033",
+      "literal": "City & Guilds Level 3 Award in Principles of Social Housing Law (QCF)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS",
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-038",
+      "literal": "City & Guilds Level 3 NVQ in Local Land Charges and Property Information",
+      "reason_codes": [
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-039",
+      "literal": "City & Guilds Level 4 NVQ in Local Land Charges and Property Information",
+      "reason_codes": [
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-060",
+      "literal": "ABBE level 3 Certificate in Residential Property Management (Leasehold/Estate)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-100",
+      "literal": "ABBE Level 4 NVQ in Surveying, Property and Maintenance",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-156",
+      "literal": "CIH Level 3 Award in Governance in Housing (QCF)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-175",
+      "literal": "CII Level 3 Certificate in Financial Planning and Lifetime Mortgage Activities",
+      "reason_codes": [
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-212",
+      "literal": "NFOPP  Level 4 Certificate In Commercial Property Agency (QCF)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-215",
+      "literal": "Propertymark Qualifications Level 3 Certificate in Property Agency (Lettings)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-216",
+      "literal": "Propertymark Qualifications Level 3 Certificate in Property Agency (Commercial)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-217",
+      "literal": "Propertymark Qualifications Level 3 Certificate in Property Agency (Sales) ",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-258",
+      "literal": "OCN NI Level 3 Certificate in Housing Practice (Northern Ireland)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-266",
+      "literal": "ProQual Level 6 Diploma in Surveying, Property and Maintenance Management (QCF)",
+      "reason_codes": [
+        "DOCUMENTED_INVALID_SYMBOLS",
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-298",
+      "literal": "safeagent Level 2 Foundation Lettings Course [England]",
+      "reason_codes": [
+        "MATCH_SYNTAX_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-299",
+      "literal": "safeagent Level 3 Award in Letting & Property Management [England]",
+      "reason_codes": [
+        "MATCH_SYNTAX_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "group_id": "OFQUAL-TITLE-304",
+      "literal": "City & Guilds Level 5 Certificate in Professional Senior Housing Management  ",
+      "reason_codes": [
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW"
+      ]
+    }
+  ],
+  "source_snapshot_qualifications_sha256": "2869cab8a06a76fa113ef430b28d09c53a324b72555cd0b3b36d3bdf82de4ccc"
+}

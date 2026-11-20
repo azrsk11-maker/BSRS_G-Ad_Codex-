@@ -1,0 +1,13 @@
+# Independent full-literal review and corroboration
+
+The [518-literal source](../keyword-entertainment-clipboard-2026-11-11/README.md) and its original 318-proposal/200-hold reading remain unchanged. This separate [independent review](review.json) reads every full literal, all 87 token-bag groups and all seven spacing-alias groups. It proposes 294 conditional EXACT readings and holds 224, preserving the original 200 holds and adding 24 specific ambiguities.
+
+The contract counts distinct sourced phrases rather than distinct commercial concepts. Google's [negative-keyword guidance](https://support.google.com/google-ads/answer/2453972?hl=en) describes order-specific negative EXACT matching and separately addresses synonyms/plurals and automatic casing/misspelling handling. A shared token bag alone does not establish equivalence; every retained phrase still needs full-intent and scope review. No actual Google resource or complete equivalence certificate is claimed.
+
+The bounded [corroboration delta](resolution-evidence.json) preserves the entire earlier review and resolves only nine of its 24 additional holds. The official [original game listing](https://store.steampowered.com/app/613100/House_Flipper/) and [DLC catalogue](https://store.steampowered.com/dlc/613100?l=english) establish named entertainment context for the Pets, Garden and Luxury wording. They do not certify any requested device/VR compatibility, price, free availability, lawful download, performance or brokerage service.
+
+The combined conditional partition is **303 proposals / 215 holds**. The original 200 holds remain held. Fifteen additional ambiguities, including investment/planning simulators, unconfirmed city content, year-only downloads, controller/vendor/hardware cues and home-design material remain held. All 17 period-sensitive literals remain held. No arbitrary representative is selected from a token group and no source spelling, whitespace, word order or title is manufactured.
+
+Both JSON files preserve the independent reviewer's original bytes. The review's `source_directory` records its private working context; portable lookup uses the canonical repository source folder linked above, never that historical path. The delta's `base_review_file` and `base_review_sha256` bind the unchanged `review.json`. No keyword literal is duplicated in these ordinal-based decisions.
+
+These are AI source readings, not human approval, current-library membership, admission, actual campaign applicability, exclusion deployment or release authorization. Fresh current-source, archive, protection, variant, text, chronology and whole-library checks remain necessary. All source metrics remain unknown.

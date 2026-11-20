@@ -1,0 +1,36 @@
+{
+  "scope": "AI_REVIEWED_VETERINARY_QUALIFICATION_TITLES_NOT_SEARCH_DEMAND",
+  "source_groups": 51,
+  "source_occurrences": 51,
+  "precheck_candidate_groups": 27,
+  "peer_semantic_proposed_groups": 51,
+  "text_compatible_proposed_groups": 19,
+  "selected_groups": 6,
+  "original_text_compatibility_holds": 32,
+  "all_source_groups_compared": 51,
+  "external_key_comparisons": 204,
+  "within_source_key_comparisons": 204,
+  "explicit_alias_families": 7,
+  "retained_new_occurrences": 6,
+  "held_groups": 45,
+  "held_occurrences": 45,
+  "additional_protected_queries": 45,
+  "existing_held_protection_occurrences": 0,
+  "additional_variant_hold_groups": 13,
+  "record_bodies_sha256": "e0a195d9d67df5e6c806a56a835c6dd0ff9ec04e971754323f705b5a13d8997d",
+  "source_pins": {
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/qualifications.json": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/capture.json": "ecf76b2123ff80f7f4518c0a1c3f157cab3ab499768e6d2cea7d8be4ad258afd",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-decisions.json": "7c280316bab94d4ad892b58f2f738d3295913cb0dbc90e608c404a238113b68b"
+  },
+  "review": {
+    "file": "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/review.json",
+    "sha256": "5fd9d98b9b2ad620cd0b0ddd9bdc6b4fa1ac7d54d3cf71d3e14b5b6ed62bdc87"
+  },
+  "search_demand_verified": false,
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}

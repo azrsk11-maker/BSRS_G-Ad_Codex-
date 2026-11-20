@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-08",
+  "scope": "ONE_ORDERED_REAL_TREE_PAIR_NOT_TOTAL_PROJECT_OR_TOKEN_SAVINGS",
+  "same_local_bytes": true,
+  "same_reference": true,
+  "report_equal": true,
+  "reference_commit": "59d2afa8e44f6d741509c4651f0b5f8393505b72",
+  "source_files": 245,
+  "baseline_source_sha256": "134c7aba4b09f8440bde42cd99088013c2ff8055da3764c44d9a2960d4b59b65",
+  "candidate_source_sha256": "f646214eb5f71b2ade5e3e61a38f406adf1ed2645d997edede21135ece185efe",
+  "runs": [
+    {
+      "method": "legacy_per_file_git_show",
+      "elapsed_seconds": 32.47017149999738,
+      "exit_code": 0,
+      "report": {
+        "ref": "origin/codex/phase0-audit-foundation",
+        "commit": "59d2afa8e44f6d741509c4651f0b5f8393505b72",
+        "local_files": 245,
+        "remote_files": 241,
+        "missing_remote": [
+          "tools/efficiency/test_verify_worktree.py",
+          "tools/efficiency/verify_worktree.py",
+          "tools/website-tracking/tracking-system/attribution-client-candidate.test.mjs",
+          "tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs"
+        ],
+        "unexpected_remote": [],
+        "different": [
+          "tools/staging-lab/Dockerfile",
+          "tools/staging-lab/client-interop.mjs"
+        ],
+        "byte_equal": 239,
+        "production_changes": false
+      }
+    },
+    {
+      "method": "pinned_batch_git_cat_file",
+      "elapsed_seconds": 2.199798700050451,
+      "exit_code": 1,
+      "report": {
+        "ref": "origin/codex/phase0-audit-foundation",
+        "commit": "59d2afa8e44f6d741509c4651f0b5f8393505b72",
+        "local_files": 245,
+        "remote_files": 241,
+        "missing_remote": [
+          "tools/efficiency/test_verify_worktree.py",
+          "tools/efficiency/verify_worktree.py",
+          "tools/website-tracking/tracking-system/attribution-client-candidate.test.mjs",
+          "tools/website-tracking/tracking-system/build-attribution-client-candidate.mjs"
+        ],
+        "unexpected_remote": [],
+        "different": [
+          "tools/staging-lab/Dockerfile",
+          "tools/staging-lab/client-interop.mjs"
+        ],
+        "byte_equal": 239,
+        "production_changes": false
+      }
+    }
+  ],
+  "ratio": 14.76051945082643,
+  "difference_seconds": 30.270372799946927,
+  "order": [
+    "legacy",
+    "candidate"
+  ],
+  "limits": [
+    "Single pair, legacy runs first and can warm filesystem cache.",
+    "Measured wall time includes Python and Git process startup.",
+    "New CLI intentionally returns nonzero for unpublished or changed files; comparison JSON remains identical.",
+    "Real Windows junction creation was blocked by tool policy; junction and containment branches were tested with mocks.",
+    "No total token, provider API, billing or whole-project savings are established."
+  ]
+}

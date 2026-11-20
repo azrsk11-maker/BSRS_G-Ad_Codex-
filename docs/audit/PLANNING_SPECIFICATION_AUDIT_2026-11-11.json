@@ -1,0 +1,16 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "historical_measurement": true,
+  "superseded_reason": "This 16-file run included an authored release-control file in the supplied pack. Controls were subsequently moved to config/release_controls.json and the original 15-file manifest restored; see docs/PROGRESS.md for the later verification.",
+  "status": "PASS",
+  "files_read": 16,
+  "upstream_checks": 38,
+  "additional_checks": 14,
+  "registry_rows_checked": 360,
+  "keyword_rows_completed_in_pack": {"positive": 0, "negative": 0},
+  "keyword_deficits_in_pack": {"positive": 14000, "negative": 14000},
+  "elapsed_seconds": 0.032904,
+  "scope": "planning-integrity only; not live acceptance",
+  "production_changed": false,
+  "ads_serving": false
+}

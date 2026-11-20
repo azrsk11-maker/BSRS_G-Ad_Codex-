@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "measured_at_utc": "2026-11-10T06:16:46Z",
+  "scope": "CONTROLLED_LOCAL_REMEASUREMENT_OF_EXISTING_BATCHING_NOT_NEW_IMPLEMENTATION",
+  "baseline": "Constructed same-guard per-path Git cat-file blob reader; not a recovered historical implementation.",
+  "reference_commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+  "sources": {
+    "benchmark_sha256": "44f9e45510f9355677e9c8aeb4989b3e0ef34330607d92bf0b3fbda316462484",
+    "verifier_sha256": "f646214eb5f71b2ade5e3e61a38f406adf1ed2645d997edede21135ece185efe"
+  },
+  "environment": {
+    "platform": "Windows",
+    "python_version": "3.12.14"
+  },
+  "warmup": {
+    "method": "existing_batch",
+    "elapsed_seconds": 1.333691,
+    "git_process_count": 5,
+    "git_stdout_bytes": 24134741,
+    "git_command_counts": {
+      "cat-file": 1,
+      "ls-files": 1,
+      "ls-tree": 1,
+      "rev-parse": 2
+    },
+    "compared_files": 337,
+    "compared_bytes": 24063805,
+    "unique_git_blob_bytes": 24063793,
+    "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+    "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+    "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+    "report": {
+      "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+      "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+      "local_files": 337,
+      "remote_files": 337,
+      "missing_remote": [],
+      "unexpected_remote": [],
+      "different": [],
+      "byte_equal": 337,
+      "production_changes": false
+    }
+  },
+  "pairs": [
+    {
+      "pair": 1,
+      "order": [
+        "constructed_per_file",
+        "existing_batch"
+      ],
+      "runs": [
+        {
+          "method": "constructed_per_file",
+          "elapsed_seconds": 21.255469,
+          "git_process_count": 341,
+          "git_stdout_bytes": 24117331,
+          "git_command_counts": {
+            "cat-file": 337,
+            "ls-files": 1,
+            "ls-tree": 1,
+            "rev-parse": 2
+          },
+          "compared_files": 337,
+          "compared_bytes": 24063805,
+          "unique_git_blob_bytes": 24063793,
+          "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+          "report": {
+            "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "local_files": 337,
+            "remote_files": 337,
+            "missing_remote": [],
+            "unexpected_remote": [],
+            "different": [],
+            "byte_equal": 337,
+            "production_changes": false
+          }
+        },
+        {
+          "method": "existing_batch",
+          "elapsed_seconds": 1.313842,
+          "git_process_count": 5,
+          "git_stdout_bytes": 24134741,
+          "git_command_counts": {
+            "cat-file": 1,
+            "ls-files": 1,
+            "ls-tree": 1,
+            "rev-parse": 2
+          },
+          "compared_files": 337,
+          "compared_bytes": 24063805,
+          "unique_git_blob_bytes": 24063793,
+          "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+          "report": {
+            "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "local_files": 337,
+            "remote_files": 337,
+            "missing_remote": [],
+            "unexpected_remote": [],
+            "different": [],
+            "byte_equal": 337,
+            "production_changes": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": 2,
+      "order": [
+        "existing_batch",
+        "constructed_per_file"
+      ],
+      "runs": [
+        {
+          "method": "existing_batch",
+          "elapsed_seconds": 0.990053,
+          "git_process_count": 5,
+          "git_stdout_bytes": 24134741,
+          "git_command_counts": {
+            "cat-file": 1,
+            "ls-files": 1,
+            "ls-tree": 1,
+            "rev-parse": 2
+          },
+          "compared_files": 337,
+          "compared_bytes": 24063805,
+          "unique_git_blob_bytes": 24063793,
+          "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+          "report": {
+            "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "local_files": 337,
+            "remote_files": 337,
+            "missing_remote": [],
+            "unexpected_remote": [],
+            "different": [],
+            "byte_equal": 337,
+            "production_changes": false
+          }
+        },
+        {
+          "method": "constructed_per_file",
+          "elapsed_seconds": 19.561031,
+          "git_process_count": 341,
+          "git_stdout_bytes": 24117331,
+          "git_command_counts": {
+            "cat-file": 337,
+            "ls-files": 1,
+            "ls-tree": 1,
+            "rev-parse": 2
+          },
+          "compared_files": 337,
+          "compared_bytes": 24063805,
+          "unique_git_blob_bytes": 24063793,
+          "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+          "report": {
+            "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "local_files": 337,
+            "remote_files": 337,
+            "missing_remote": [],
+            "unexpected_remote": [],
+            "different": [],
+            "byte_equal": 337,
+            "production_changes": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": 3,
+      "order": [
+        "constructed_per_file",
+        "existing_batch"
+      ],
+      "runs": [
+        {
+          "method": "constructed_per_file",
+          "elapsed_seconds": 21.475318,
+          "git_process_count": 341,
+          "git_stdout_bytes": 24117331,
+          "git_command_counts": {
+            "cat-file": 337,
+            "ls-files": 1,
+            "ls-tree": 1,
+            "rev-parse": 2
+          },
+          "compared_files": 337,
+          "compared_bytes": 24063805,
+          "unique_git_blob_bytes": 24063793,
+          "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+          "report": {
+            "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "local_files": 337,
+            "remote_files": 337,
+            "missing_remote": [],
+            "unexpected_remote": [],
+            "different": [],
+            "byte_equal": 337,
+            "production_changes": false
+          }
+        },
+        {
+          "method": "existing_batch",
+          "elapsed_seconds": 1.004085,
+          "git_process_count": 5,
+          "git_stdout_bytes": 24134741,
+          "git_command_counts": {
+            "cat-file": 1,
+            "ls-files": 1,
+            "ls-tree": 1,
+            "rev-parse": 2
+          },
+          "compared_files": 337,
+          "compared_bytes": 24063805,
+          "unique_git_blob_bytes": 24063793,
+          "local_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "git_bytes_sha256": "15902c8b3928fb550da432f30e32c12c9eff2c883a6b963ca07ec62090ef33af",
+          "report_sha256": "9aa32ae0c3aa82ebd8836b88b25c946741d3aa1cfbe08d9f91abea02a82c4f90",
+          "report": {
+            "ref": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "commit": "bc8c72b282454ebeff44f39b993ea7928b20523a",
+            "local_files": 337,
+            "remote_files": 337,
+            "missing_remote": [],
+            "unexpected_remote": [],
+            "different": [],
+            "byte_equal": 337,
+            "production_changes": false
+          }
+        }
+      ]
+    }
+  ],
+  "all_full_reports_and_byte_digests_equal": true,
+  "medians_seconds": {
+    "constructed_per_file": 21.255469,
+    "existing_batch": 1.004085
+  },
+  "median_ratio": 21.168994,
+  "median_difference_seconds": 20.251384,
+  "benchmark_elapsed_seconds": 67.272553,
+  "limits": [
+    "One Windows checkout and one pinned full tree; three or more alternating warmed pairs, not a population estimate.",
+    "Comparators execute in the same Python process; timings include actual Git subprocesses, byte guards and digest observation, but exclude the outer tool/Python startup.",
+    "One existing-batch warmup reads all files and Git objects before measured pairs; no cold-start claim is made.",
+    "Git stdout bytes include metadata and framing; compared_bytes counts raw bytes per shared path, including duplicate blob content.",
+    "Process counts are measured local Git invocations, not provider API requests; no network, API, production or authorization changes occur.",
+    "No token, billing, whole-project or newly implemented optimization saving is established."
+  ],
+  "measurement_context": [
+    "Runner and outputs remained in ignored test-output during all comparisons; owned source artifacts were added only afterward.",
+    "Desktop/browser activity was not isolated. Six focused synthetic fixture tests briefly overlapped the first constructed-baseline run; all trials are retained without selecting or discarding results."
+  ]
+}

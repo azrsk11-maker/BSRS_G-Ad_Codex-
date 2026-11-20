@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "scope": "PRIMARY_PUBLISHED_VOCATIONAL_TITLE_FEASIBILITY_CAPTURE_NOT_KEYWORD_ADMISSION",
+  "evidence_record_created_utc": "2026-11-12T08:10:16.206Z",
+  "capture_date_dubai": "2026-11-12",
+  "source_pages": [
+    {
+      "source_page_id": "CG-MAINTENANCE-OPERATIONS-6711",
+      "url": "https://www.cityandguilds.com/qualifications-and-apprenticeships/construction/construction/6711-maintenance-operations",
+      "publisher": "City & Guilds Limited",
+      "visible_page_heading_verbatim": "Maintenance Operations (6711)",
+      "capture_section": "Level 2 / qualification details h4",
+      "source_update_date": "2026-05-18",
+      "source_update_date_status": "Displayed Last Updated date; not a claim of remote capture freshness",
+      "source_publication_date": null,
+      "primary_page_rechecked_on_dubai": "2026-11-12",
+      "capture_method": "Read-only web tool opened exact primary URL and displayed the complete qualification title with its accreditation number. A single bounded direct HTTPS attempt in the local shell failed at DNS ENOTFOUND; it returned no source bytes.",
+      "verbatim_title_excerpts": [
+        "Level 2 Diploma in Maintenance Operations (Construction)"
+      ],
+      "retained_title_excerpt_encoding": "UTF-8; exact title followed by one LF",
+      "retained_title_excerpt_utf8_lf_bytes": 57,
+      "retained_title_excerpt_sha256": "2568606fd8167bcbcf4b81cd3b84efa73bc75b4eca27775c15259abb18d749c0",
+      "remote_source_bytes": null,
+      "remote_source_sha256": null,
+      "http_date": null,
+      "http_last_modified": null,
+      "complete_html_or_http_headers_archived": false,
+      "public_qualification_metadata": {
+        "accreditation_number": "600/8049/8",
+        "product_code": "6711-23",
+        "registration_end_date": "2028-12-31",
+        "certification_end_date": "2030-12-31"
+      },
+      "ordinals": [
+        1
+      ]
+    }
+  ],
+  "rights": {
+    "copyright_notice_url": "https://www.cityandguilds.com/help/copyright",
+    "terms_url": "https://www.cityandguilds.com/help/terms-of-use",
+    "rights_pages_checked_on_dubai": "2026-11-12",
+    "open_licence_established": false,
+    "interpretation": "Publisher reserves copyright and conditions reuse. Retain only one factual qualification-title excerpt and public identifiers/dates for source verification; no lesson text, handbook, PDF, page reproduction or open-licence claim. Any downstream publication or reuse requiring permission remains unresolved.",
+    "downstream_reuse_permission_verified": false,
+    "permission_requested": false
+  },
+  "counts": {
+    "captured_distinct_literals": 1,
+    "selected_source_occurrences": 1,
+    "unreviewed": 1,
+    "reviewed_for_admission": 0,
+    "admitted": 0,
+    "approved": 0,
+    "deployed": 0
+  },
+  "controls": {
+    "observed_search_queries": false,
+    "keyword_planner_source": false,
+    "metrics_status": "NOT_OBSERVED_UNKNOWN",
+    "volume": null,
+    "cpc": null,
+    "competition": null,
+    "inventory_claimed": false,
+    "registered_provenance": false,
+    "registry_changed": false,
+    "current_library_changed": false,
+    "master_rows_added": 0,
+    "live_campaign_changes": false,
+    "production_changed": false,
+    "admission_review_complete": false,
+    "exclusion_approval_granted": false,
+    "deployment_authorized": false,
+    "original_sheet_accessed": false,
+    "business_setup_included": false
+  }
+}

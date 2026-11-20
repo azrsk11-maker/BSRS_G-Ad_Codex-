@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-10",
+  "source_files": [
+    {
+      "file": "employment-broad.json",
+      "batch_id": "KP-20261110-EMPLOYMENT-BROAD",
+      "sha256": "489754ba9986842d61704c9cfb56a378b596d79ce2782972eac4dd53b0628b8b",
+      "bytes": 125239,
+      "records": 136,
+      "distinct_normalized": 136,
+      "source_bytes": 27942,
+      "source_sha256": "84adb6d08a455809e8564bc622af183c295a68e3b9fa1edcd75986ee18fda1e0"
+    }
+  ],
+  "totals": {
+    "export_rows": 136,
+    "distinct_normalized_phrases": 136,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Three broader authored hypotheses after the previous seven long employment inputs returned no extra ideas.",
+    "All three seeds returned separately, plus133additional provider ideas. No served-query or demand inference.",
+    "Career-source language does not prove current Black Swan vacancies, service scope or exclusion approval."
+  ]
+}

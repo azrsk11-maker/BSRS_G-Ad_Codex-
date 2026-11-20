@@ -1,0 +1,233 @@
+{
+  "schema": "bsre-primary-project-discovery-v1",
+  "classification": "PUBLIC_CLAIM_RESEARCH_NOT_VERIFIED_INVENTORY",
+  "as_of": "2026-11-18",
+  "public_captures": 7,
+  "held_subjects": [
+    {
+      "public_subject_name": "Tilal Binghatti",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/tilal-binghatti-binghattis/",
+      "state": "HOLD",
+      "hold_codes": [
+        "AMIT_SUBJECT_AND_SERVICE_CONFIRMATION_REQUIRED",
+        "CURRENT_DEVELOPER_OR_DLD_FACT_EVIDENCE_REQUIRED",
+        "RIGHTS_MANDATE_AND_PERMIT_EVIDENCE_REQUIRED",
+        "CURRENT_INVENTORY_AND_STAGE_UNKNOWN",
+        "CLAIMS_LANGUAGE_AND_CANONICAL_REVIEW_NOT_COMPLETE",
+        "CAMPAIGN_AND_NATIVE_PAGE_BINDING_NOT_APPROVED"
+      ],
+      "quality_flags": [
+        "A public first-villa-community/phase-launch claim is not developer or inventory verification.",
+        "Displayed property size may describe a community rather than the advertised villa; unit-level scope needs confirmation."
+      ],
+      "current_volume": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_availability": null,
+      "inventory_verified": false,
+      "developer_mandate_verified": false,
+      "rights_verified": false,
+      "approved_for_admission": false,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "export_authorized": false,
+      "publication_authorized": false,
+      "capture": {
+        "captured_at_utc": "2026-11-18T17:52:34.830349+00:00",
+        "raw_bytes": 255808,
+        "raw_sha256": "98447cd44aa1a0aaf9707f0fbadc2816f8882d3c443e16ee55c83199bf0cc802",
+        "text_sha256": "c93bd34a5e0d7b056701fea987f1e1628f2ee3f3c2f7b39429f76e6731ac34f8"
+      }
+    },
+    {
+      "public_subject_name": "Breez by Danube",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/breez-by-danube-4/",
+      "state": "HOLD",
+      "hold_codes": [
+        "AMIT_SUBJECT_AND_SERVICE_CONFIRMATION_REQUIRED",
+        "CURRENT_DEVELOPER_OR_DLD_FACT_EVIDENCE_REQUIRED",
+        "RIGHTS_MANDATE_AND_PERMIT_EVIDENCE_REQUIRED",
+        "CURRENT_INVENTORY_AND_STAGE_UNKNOWN",
+        "CLAIMS_LANGUAGE_AND_CANONICAL_REVIEW_NOT_COMPLETE",
+        "CAMPAIGN_AND_NATIVE_PAGE_BINDING_NOT_APPROVED"
+      ],
+      "quality_flags": [
+        "The public unit-status and sales-offer text is dated; no current availability or price is established.",
+        "Studio wording and the generic bedroom metadata require subject-level clarification."
+      ],
+      "current_volume": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_availability": null,
+      "inventory_verified": false,
+      "developer_mandate_verified": false,
+      "rights_verified": false,
+      "approved_for_admission": false,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "export_authorized": false,
+      "publication_authorized": false,
+      "capture": {
+        "captured_at_utc": "2026-11-18T17:52:37.137094+00:00",
+        "raw_bytes": 259221,
+        "raw_sha256": "560de18b679687e8cb362c94143158dfef6f00da9d5377913269c541b45ced29",
+        "text_sha256": "7f324327d8d5b300fe2b8651cb9fb0e1f373106dca28d4091e2caddd75fe2afd"
+      }
+    },
+    {
+      "public_subject_name": "Sobha One",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/sobha-one/",
+      "state": "HOLD",
+      "hold_codes": [
+        "AMIT_SUBJECT_AND_SERVICE_CONFIRMATION_REQUIRED",
+        "CURRENT_DEVELOPER_OR_DLD_FACT_EVIDENCE_REQUIRED",
+        "RIGHTS_MANDATE_AND_PERMIT_EVIDENCE_REQUIRED",
+        "CURRENT_INVENTORY_AND_STAGE_UNKNOWN",
+        "CLAIMS_LANGUAGE_AND_CANONICAL_REVIEW_NOT_COMPLETE",
+        "CAMPAIGN_AND_NATIVE_PAGE_BINDING_NOT_APPROVED"
+      ],
+      "quality_flags": [
+        "Cancellation, below-market and near-ready claims are unverified public marketing statements.",
+        "The actual transaction stage, seller authority and handover timing are not established."
+      ],
+      "current_volume": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_availability": null,
+      "inventory_verified": false,
+      "developer_mandate_verified": false,
+      "rights_verified": false,
+      "approved_for_admission": false,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "export_authorized": false,
+      "publication_authorized": false,
+      "capture": {
+        "captured_at_utc": "2026-11-18T17:52:39.385387+00:00",
+        "raw_bytes": 253946,
+        "raw_sha256": "97a6fec6c759e084a0d6978396c45363147c42eeda8aef91539ff1f36291ef40",
+        "text_sha256": "bb9d3c056fe93c91ade8ff6b400a71e44b1cb8f455b31c19efe87cbecaa8f090"
+      }
+    },
+    {
+      "public_subject_name": "Oxford Cove by IMAN",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/oxford-cove-by-iman-developers-2/",
+      "state": "HOLD",
+      "hold_codes": [
+        "AMIT_SUBJECT_AND_SERVICE_CONFIRMATION_REQUIRED",
+        "CURRENT_DEVELOPER_OR_DLD_FACT_EVIDENCE_REQUIRED",
+        "RIGHTS_MANDATE_AND_PERMIT_EVIDENCE_REQUIRED",
+        "CURRENT_INVENTORY_AND_STAGE_UNKNOWN",
+        "CLAIMS_LANGUAGE_AND_CANONICAL_REVIEW_NOT_COMPLETE",
+        "CAMPAIGN_AND_NATIVE_PAGE_BINDING_NOT_APPROVED"
+      ],
+      "quality_flags": [
+        "One project page mentions several unit types and incentives; those are not separate new canonicals or verified inventory.",
+        "All location, payment-plan, pool, launch and handover statements require authoritative current evidence."
+      ],
+      "current_volume": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_availability": null,
+      "inventory_verified": false,
+      "developer_mandate_verified": false,
+      "rights_verified": false,
+      "approved_for_admission": false,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "export_authorized": false,
+      "publication_authorized": false,
+      "capture": {
+        "captured_at_utc": "2026-11-18T17:53:31.236602+00:00",
+        "raw_bytes": 258717,
+        "raw_sha256": "419d0cd7d17e5d18ee546678ba89e6669605b3e3332afe0c02b01644721531e9",
+        "text_sha256": "75cbfaa6649f1b5a0c6295f2bbabe2d50d44f3aa004634d6a4cbcbd4d6af61c5"
+      }
+    },
+    {
+      "public_subject_name": "Samana Mykonos Signature",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/samana-mykonos-signature/",
+      "state": "HOLD",
+      "hold_codes": [
+        "AMIT_SUBJECT_AND_SERVICE_CONFIRMATION_REQUIRED",
+        "CURRENT_DEVELOPER_OR_DLD_FACT_EVIDENCE_REQUIRED",
+        "RIGHTS_MANDATE_AND_PERMIT_EVIDENCE_REQUIRED",
+        "CURRENT_INVENTORY_AND_STAGE_UNKNOWN",
+        "CLAIMS_LANGUAGE_AND_CANONICAL_REVIEW_NOT_COMPLETE",
+        "CAMPAIGN_AND_NATIVE_PAGE_BINDING_NOT_APPROVED"
+      ],
+      "quality_flags": [
+        "The page advertises a specific unit, but no current availability, rights, price or pool specification is verified.",
+        "The buyer transaction stage remains unresolved; no off-plan/resale route is assigned."
+      ],
+      "current_volume": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_availability": null,
+      "inventory_verified": false,
+      "developer_mandate_verified": false,
+      "rights_verified": false,
+      "approved_for_admission": false,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "export_authorized": false,
+      "publication_authorized": false,
+      "capture": {
+        "captured_at_utc": "2026-11-18T17:53:33.952844+00:00",
+        "raw_bytes": 260357,
+        "raw_sha256": "a2618238991467919c958360eea79b1c5187baa1d77fd8d603ffb2f9cc7687b1",
+        "text_sha256": "36ce282aa5de5f2a2450b31968f58bee5763ab50271c1b0ec782754fb02bc8bc"
+      }
+    },
+    {
+      "public_subject_name": "Sobha Sanctuary Estate Villas",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/sobha-sanctuary-estate-villas/",
+      "state": "HOLD",
+      "hold_codes": [
+        "AMIT_SUBJECT_AND_SERVICE_CONFIRMATION_REQUIRED",
+        "CURRENT_DEVELOPER_OR_DLD_FACT_EVIDENCE_REQUIRED",
+        "RIGHTS_MANDATE_AND_PERMIT_EVIDENCE_REQUIRED",
+        "CURRENT_INVENTORY_AND_STAGE_UNKNOWN",
+        "CLAIMS_LANGUAGE_AND_CANONICAL_REVIEW_NOT_COMPLETE",
+        "CAMPAIGN_AND_NATIVE_PAGE_BINDING_NOT_APPROVED"
+      ],
+      "quality_flags": [
+        "Description says four bedrooms while the details field says one; the proposed subject remains held.",
+        "Community/address, actual unit, advertised handover and inventory rights need authoritative reconciliation."
+      ],
+      "current_volume": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_availability": null,
+      "inventory_verified": false,
+      "developer_mandate_verified": false,
+      "rights_verified": false,
+      "approved_for_admission": false,
+      "ad_group_key": null,
+      "landing_page_id": null,
+      "export_authorized": false,
+      "publication_authorized": false,
+      "capture": {
+        "captured_at_utc": "2026-11-18T17:53:36.149702+00:00",
+        "raw_bytes": 254756,
+        "raw_sha256": "125fbea04b0eb39087a492997a23cd8d40412bec9657f4d83c691c3c197235a6",
+        "text_sha256": "381d05efc2e86efabb6f17c5cb92965262302d5ea4268c7651555dc131f322e6"
+      }
+    }
+  ],
+  "bounded_comparison": {
+    "historical_candidates": 41,
+    "captured_query_identities": 3691,
+    "project_name_matches": 0,
+    "generic_developer_overlap_is_not_project_equivalence": true,
+    "global_canonical_novelty": null
+  },
+  "source_date_is_not_publication_or_inventory_freshness": true,
+  "raw_HTML_and_private_corpus_paths_omitted": true,
+  "independent_integrity_checks": 189,
+  "positive_admissions_added": 0,
+  "keyword_variants_generated": 0,
+  "whole_G022_complete": false,
+  "production_changed": false,
+  "Ads_changed": false
+}

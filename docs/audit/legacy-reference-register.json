@@ -1,0 +1,7057 @@
+{
+  "schema_version": "1.0",
+  "generated_on": "2026-11-07",
+  "scope": "PUBLIC_REQUIREMENTS_IDENTITIES_ONLY_NOT_DEPLOYMENT_EVIDENCE",
+  "mapping_status": "OWNER_REVIEW_REQUIRED",
+  "d1_identity_decision_issue": 7,
+  "notes": [
+    "Original routes are historical proposed routes, not verified live URLs.",
+    "Category-level correspondence does not assign an exact new campaign/page ID or authorize content migration.",
+    "IMPLEMENTABLE is a historical feasibility classification, not completed implementation, authorization or activation.",
+    "Descriptions, local filesystem paths, archives, credentials and prospect data are intentionally excluded.",
+    "Recovered original-owner brief identity must not silently be equated with the separately cited D1 dossier."
+  ],
+  "sources": {
+    "L1": {
+      "artifact": "legacy page-registry.json",
+      "sha256": "db9f0dcfea2511afb850d8a2d7feb2856658b5d02f9bd7ff359ae0e456c855da",
+      "role": "Original 300-page planning register"
+    },
+    "L2": {
+      "artifact": "legacy catalogue-all-640.json",
+      "sha256": "3a555995f4e58af8bbe62a7b518c67405df54ad844897005a277a34b680099ea",
+      "role": "Original 640-record catalogue"
+    },
+    "L3": {
+      "artifact": "page-brief-register-300.json",
+      "sha256": "76e49ccb094a1af0f13d9447f263e8e8d1d314ba31c6d6d84d5e0eb16f9eff31",
+      "role": "Derived page register, identity and route preservation verified"
+    },
+    "L4": {
+      "artifact": "catalogue-640-feasibility.json",
+      "sha256": "fb96781704d0363f87fa18eaa4d4bcd25037cf83c9f853d86ca7985ee73c9e57",
+      "role": "Derived classification register, original IDs and stored wording hashes preserved"
+    },
+    "L5": {
+      "artifact": "original-owner-brief.docx",
+      "sha256": "915e9372e5ca8e4e2d946cdd955e000e7032654ddaa74a4ab960ce801e7bba04",
+      "role": "Hash-reconciled source document; D1 equivalence unresolved"
+    }
+  },
+  "counts": {
+    "legacy_pages": 300,
+    "legacy_catalogue": 640,
+    "new_families": 15,
+    "new_planning_slots": 360,
+    "category_totals": {
+      "developer": 30,
+      "community": 40,
+      "project": 50,
+      "off_plan": 30,
+      "luxury": 20,
+      "ready": 20,
+      "roi": 20,
+      "commercial": 20,
+      "international": 30,
+      "finance": 20,
+      "comparison_event": 20
+    },
+    "catalogue_classifications": {
+      "RESEARCH": 116,
+      "CONDITIONAL": 339,
+      "IMPLEMENTABLE": 180,
+      "EXCLUDED": 5
+    }
+  },
+  "family_relations": [
+    {
+      "legacy_category": "developer",
+      "new_family_code": "DEV",
+      "new_family_slots": 30,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "community",
+      "new_family_code": "COM",
+      "new_family_slots": 40,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "project",
+      "new_family_code": "PRJ",
+      "new_family_slots": 50,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "off_plan",
+      "new_family_code": "OFP",
+      "new_family_slots": 30,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "luxury",
+      "new_family_code": "LUX",
+      "new_family_slots": 20,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "ready",
+      "new_family_code": "RDY",
+      "new_family_slots": 20,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "roi",
+      "new_family_code": "ROI",
+      "new_family_slots": 20,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "commercial",
+      "new_family_code": "CML",
+      "new_family_slots": 20,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "international",
+      "new_family_code": "INT",
+      "new_family_slots": 30,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "finance",
+      "new_family_code": "PRC",
+      "new_family_slots": 20,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": "comparison_event",
+      "new_family_code": "CMP",
+      "new_family_slots": 20,
+      "relation": "CATEGORY_LEVEL_CANDIDATE",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": null,
+      "new_family_code": "RNT",
+      "new_family_slots": 20,
+      "relation": "NEW_EXPANSION_NO_LEGACY_CATEGORY",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": null,
+      "new_family_code": "CLS",
+      "new_family_slots": 15,
+      "relation": "NEW_EXPANSION_NO_LEGACY_CATEGORY",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": null,
+      "new_family_code": "SEL",
+      "new_family_slots": 15,
+      "relation": "NEW_EXPANSION_NO_LEGACY_CATEGORY",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "legacy_category": null,
+      "new_family_code": "LND",
+      "new_family_slots": 10,
+      "relation": "NEW_EXPANSION_NO_LEGACY_CATEGORY",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    }
+  ],
+  "legacy_pages": [
+    {
+      "id": "BSRE-PAGE-DEVELOPER-001",
+      "original_route": "/developers/emaar-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-002",
+      "original_route": "/developers/damac-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-003",
+      "original_route": "/developers/nakheel/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-004",
+      "original_route": "/developers/dubai-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-005",
+      "original_route": "/developers/meraas/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-006",
+      "original_route": "/developers/sobha-realty/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-007",
+      "original_route": "/developers/binghatti/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-008",
+      "original_route": "/developers/danube-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-009",
+      "original_route": "/developers/azizi-developments/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-010",
+      "original_route": "/developers/ellington-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-011",
+      "original_route": "/developers/omniyat/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-012",
+      "original_route": "/developers/select-group/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-013",
+      "original_route": "/developers/mag-lifestyle-development/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-014",
+      "original_route": "/developers/aldar/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-015",
+      "original_route": "/developers/imtiaz-developments/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-016",
+      "original_route": "/developers/samana-developers/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-017",
+      "original_route": "/developers/wasl/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-018",
+      "original_route": "/developers/nshama/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-019",
+      "original_route": "/developers/deyaar/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-020",
+      "original_route": "/developers/arada/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-021",
+      "original_route": "/developers/tiger-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-022",
+      "original_route": "/developers/reportage-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-023",
+      "original_route": "/developers/union-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-024",
+      "original_route": "/developers/expo-city-dubai/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-025",
+      "original_route": "/developers/dubai-south-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-026",
+      "original_route": "/developers/dubai-investments-real-estate/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-027",
+      "original_route": "/developers/h-and-h-development/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-028",
+      "original_route": "/developers/ahs-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-029",
+      "original_route": "/developers/amis-properties/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-DEVELOPER-030",
+      "original_route": "/developers/leos-developments/",
+      "category": "developer",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-001",
+      "original_route": "/communities/dubai-hills-estate/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-002",
+      "original_route": "/communities/jumeirah-village-circle/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-003",
+      "original_route": "/communities/dubai-marina/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-004",
+      "original_route": "/communities/jumeirah-beach-residence/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-005",
+      "original_route": "/communities/business-bay/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-006",
+      "original_route": "/communities/downtown-dubai/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-007",
+      "original_route": "/communities/dubai-creek-harbour/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-008",
+      "original_route": "/communities/al-furjan/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-009",
+      "original_route": "/communities/town-square-dubai/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-010",
+      "original_route": "/communities/mudon/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-011",
+      "original_route": "/communities/villanova/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-012",
+      "original_route": "/communities/arabian-ranches/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-013",
+      "original_route": "/communities/emaar-south/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-014",
+      "original_route": "/communities/palm-jumeirah/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-015",
+      "original_route": "/communities/palm-jebel-ali/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-016",
+      "original_route": "/communities/dubai-islands/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-017",
+      "original_route": "/communities/dubai-harbour/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-018",
+      "original_route": "/communities/sobha-hartland-ii/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-019",
+      "original_route": "/communities/jumeirah-lakes-towers/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-020",
+      "original_route": "/communities/city-walk/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-021",
+      "original_route": "/communities/madinat-jumeirah-living/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-022",
+      "original_route": "/communities/dubai-design-district/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-023",
+      "original_route": "/communities/damac-lagoons/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-024",
+      "original_route": "/communities/damac-hills-2/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-025",
+      "original_route": "/communities/wasl-gate/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-026",
+      "original_route": "/communities/wasl1/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-027",
+      "original_route": "/communities/jumeirah-golf-estates/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-028",
+      "original_route": "/communities/dubai-maritime-city/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-029",
+      "original_route": "/communities/city-of-arabia/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-030",
+      "original_route": "/communities/al-barsha-south/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-031",
+      "original_route": "/communities/dubai-south/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-032",
+      "original_route": "/communities/meydan/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-033",
+      "original_route": "/communities/mohammed-bin-rashid-city/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-034",
+      "original_route": "/communities/arabian-ranches-iii/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-035",
+      "original_route": "/communities/damac-hills/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-036",
+      "original_route": "/communities/difc/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-037",
+      "original_route": "/communities/tilal-al-ghaf/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-038",
+      "original_route": "/communities/dubai-sports-city/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-039",
+      "original_route": "/communities/motor-city/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMUNITY-040",
+      "original_route": "/communities/dubai-silicon-oasis/",
+      "category": "community",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-001",
+      "original_route": "/projects/emaar-beachfront/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-002",
+      "original_route": "/projects/sobha-hartland-ii/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-003",
+      "original_route": "/projects/sobha-one/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-004",
+      "original_route": "/projects/bayz-102/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-005",
+      "original_route": "/projects/bayz101/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-006",
+      "original_route": "/projects/elitz/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-007",
+      "original_route": "/projects/diamondz/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-008",
+      "original_route": "/projects/azizi-venice/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-009",
+      "original_route": "/projects/azizi-riviera/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-010",
+      "original_route": "/projects/azizi-star-al-furjan/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-011",
+      "original_route": "/projects/orla/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-012",
+      "original_route": "/projects/the-lana-residences/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-013",
+      "original_route": "/projects/peninsula-one/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-014",
+      "original_route": "/projects/mag-330/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-015",
+      "original_route": "/projects/mag-777/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-016",
+      "original_route": "/projects/marriott-residences-al-barsha-south/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-017",
+      "original_route": "/projects/athlon/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-018",
+      "original_route": "/projects/haven/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-019",
+      "original_route": "/projects/beach-walk/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-020",
+      "original_route": "/projects/wasl-gate/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-021",
+      "original_route": "/projects/wasl1/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-022",
+      "original_route": "/projects/midtown/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-023",
+      "original_route": "/projects/mar-casa/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-024",
+      "original_route": "/projects/tria/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-025",
+      "original_route": "/projects/regalia/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-026",
+      "original_route": "/projects/jouri-hills/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-027",
+      "original_route": "/projects/w-residences-at-dubai-harbour/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-028",
+      "original_route": "/projects/city-walk-northline/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-029",
+      "original_route": "/projects/madinat-jumeirah-living-riwa/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-030",
+      "original_route": "/projects/address-residences-dubai-creek-harbour/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-031",
+      "original_route": "/projects/creek-waters/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-032",
+      "original_route": "/projects/park-gate-dubai-hills/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-033",
+      "original_route": "/projects/golf-lane-emaar-south/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-034",
+      "original_route": "/projects/damac-lagoons-morocco/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-035",
+      "original_route": "/projects/damac-hills-2-verona/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-036",
+      "original_route": "/projects/palm-jebel-ali-beach-collection/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-037",
+      "original_route": "/projects/palm-jebel-ali-coral-collection/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-038",
+      "original_route": "/projects/binghatti-skyrise/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-039",
+      "original_route": "/projects/binghatti-hills/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-040",
+      "original_route": "/projects/bugatti-residences-by-binghatti/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-041",
+      "original_route": "/projects/mercedes-benz-places-by-binghatti/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-042",
+      "original_route": "/projects/sobha-orbis/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-043",
+      "original_route": "/projects/sobha-solis/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-044",
+      "original_route": "/projects/ellington-the-highbury/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-045",
+      "original_route": "/projects/ellington-one-river-point/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-046",
+      "original_route": "/projects/danube-oasiz/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-047",
+      "original_route": "/projects/danube-sportz/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-048",
+      "original_route": "/projects/azizi-milan/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-049",
+      "original_route": "/projects/samana-barari-views/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-PROJECT-050",
+      "original_route": "/projects/aldar-verdes-by-haven/",
+      "category": "project",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-001",
+      "original_route": "/investment/dubai-off-plan-buying-guide/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-002",
+      "original_route": "/investment/dubai-new-launch-verification-guide/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-003",
+      "original_route": "/investment/dubai-off-plan-payment-plan-comparison/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-004",
+      "original_route": "/investment/dubai-post-handover-payment-plan-checks/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-005",
+      "original_route": "/investment/dubai-off-plan-deposit-and-total-budget-planning/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-006",
+      "original_route": "/investment/dubai-off-plan-installment-calendar/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-007",
+      "original_route": "/investment/dubai-off-plan-handover-date-research/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-008",
+      "original_route": "/investment/dubai-off-plan-construction-progress-checks/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-009",
+      "original_route": "/investment/dubai-off-plan-floor-plan-selection/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-010",
+      "original_route": "/investment/dubai-off-plan-versus-ready-purchase/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-011",
+      "original_route": "/investment/dubai-off-plan-cash-versus-mortgage-funding/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-012",
+      "original_route": "/investment/first-time-dubai-off-plan-buyer-checklist/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-013",
+      "original_route": "/investment/nonresident-dubai-off-plan-purchase-guide/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-014",
+      "original_route": "/investment/dubai-off-plan-delayed-handover-risk-review/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-015",
+      "original_route": "/investment/dubai-off-plan-purchase-cost-guide/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-016",
+      "original_route": "/investment/dubai-off-plan-escrow-verification/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-017",
+      "original_route": "/investment/dubai-off-plan-spa-review-questions/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-018",
+      "original_route": "/investment/dubai-off-plan-reservation-process/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-019",
+      "original_route": "/investment/dubai-off-plan-resale-and-assignment-checks/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-020",
+      "original_route": "/investment/dubai-compact-apartment-off-plan-layouts/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-021",
+      "original_route": "/investment/dubai-off-plan-townhouse-buying-considerations/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-022",
+      "original_route": "/investment/dubai-waterfront-off-plan-property-questions/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-023",
+      "original_route": "/investment/dubai-south-off-plan-research/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-024",
+      "original_route": "/investment/dubai-creek-harbour-off-plan-research/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-025",
+      "original_route": "/investment/dubai-hills-estate-off-plan-research/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-026",
+      "original_route": "/investment/business-bay-off-plan-research/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-027",
+      "original_route": "/investment/dubai-islands-off-plan-research/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-028",
+      "original_route": "/investment/emaar-off-plan-research-checklist/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-029",
+      "original_route": "/investment/sobha-off-plan-research-checklist/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-OFF-PLAN-030",
+      "original_route": "/investment/danube-off-plan-research-checklist/",
+      "category": "off_plan",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-001",
+      "original_route": "/property/dubai-luxury-property-due-diligence/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-002",
+      "original_route": "/property/dubai-branded-residence-buying-guide/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-003",
+      "original_route": "/property/dubai-branded-versus-unbranded-ownership-costs/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-004",
+      "original_route": "/property/dubai-penthouse-layout-and-ownership-questions/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-005",
+      "original_route": "/property/dubai-waterfront-apartment-considerations/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-006",
+      "original_route": "/property/dubai-beachfront-villa-considerations/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-007",
+      "original_route": "/property/dubai-golf-community-villa-considerations/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-008",
+      "original_route": "/property/dubai-private-pool-property-checks/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-009",
+      "original_route": "/property/dubai-large-apartment-layout-comparisons/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-010",
+      "original_route": "/property/dubai-premium-property-service-charge-review/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-011",
+      "original_route": "/property/palm-jumeirah-villa-research/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-012",
+      "original_route": "/property/palm-jebel-ali-villa-research/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-013",
+      "original_route": "/property/dubai-hills-estate-villa-research/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-014",
+      "original_route": "/property/jumeirah-golf-estates-villa-research/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-015",
+      "original_route": "/property/dubai-harbour-premium-residence-research/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-016",
+      "original_route": "/property/downtown-dubai-premium-apartment-research/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-017",
+      "original_route": "/property/orla-ownership-cost-questions/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-018",
+      "original_route": "/property/the-lana-residences-service-and-ownership-questions/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-019",
+      "original_route": "/property/w-residences-dubai-harbour-brand-and-ownership-questions/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-LUXURY-020",
+      "original_route": "/property/dubai-villa-versus-townhouse-lifestyle-costs/",
+      "category": "luxury",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-001",
+      "original_route": "/property/dubai-ready-property-purchase-guide/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-002",
+      "original_route": "/property/dubai-marina-ready-apartment-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-003",
+      "original_route": "/property/downtown-dubai-ready-home-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-004",
+      "original_route": "/property/jumeirah-beach-residence-resale-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-005",
+      "original_route": "/property/business-bay-resale-apartment-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-006",
+      "original_route": "/property/jumeirah-village-circle-resale-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-007",
+      "original_route": "/property/jumeirah-lakes-towers-ready-home-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-008",
+      "original_route": "/property/al-furjan-ready-property-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-009",
+      "original_route": "/property/dubai-hills-estate-ready-property-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-010",
+      "original_route": "/property/town-square-dubai-resale-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-011",
+      "original_route": "/property/mudon-resale-home-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-012",
+      "original_route": "/property/villanova-resale-home-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-013",
+      "original_route": "/property/arabian-ranches-resale-villa-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-014",
+      "original_route": "/property/city-walk-resale-apartment-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-015",
+      "original_route": "/property/palm-jumeirah-resale-property-research/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-016",
+      "original_route": "/property/dubai-vacant-versus-tenanted-purchase/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-017",
+      "original_route": "/property/dubai-tenanted-property-buyer-checklist/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-018",
+      "original_route": "/property/dubai-resale-viewing-checklist/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-019",
+      "original_route": "/property/dubai-resale-transfer-and-cost-checklist/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-READY-020",
+      "original_route": "/property/dubai-ready-property-availability-checks/",
+      "category": "ready",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-001",
+      "original_route": "/investment/dubai-gross-versus-net-rental-yield/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-002",
+      "original_route": "/investment/dubai-rental-yield-research-methodology/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-003",
+      "original_route": "/investment/dubai-service-charge-impact-on-returns/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-004",
+      "original_route": "/investment/dubai-property-vacancy-stress-test/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-005",
+      "original_route": "/investment/dubai-mortgage-financed-property-cash-flow/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-006",
+      "original_route": "/investment/dubai-purchase-cost-break-even-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-007",
+      "original_route": "/investment/dubai-foreign-currency-return-scenarios/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-008",
+      "original_route": "/investment/dubai-capital-appreciation-evidence-and-risks/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-009",
+      "original_route": "/investment/dubai-hills-estate-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-010",
+      "original_route": "/investment/jumeirah-village-circle-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-011",
+      "original_route": "/investment/dubai-marina-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-012",
+      "original_route": "/investment/business-bay-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-013",
+      "original_route": "/investment/downtown-dubai-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-014",
+      "original_route": "/investment/dubai-creek-harbour-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-015",
+      "original_route": "/investment/palm-jumeirah-rental-economics-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-016",
+      "original_route": "/investment/dubai-ready-versus-off-plan-investment-scenarios/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-017",
+      "original_route": "/investment/dubai-villa-versus-apartment-net-return-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-018",
+      "original_route": "/investment/dubai-long-term-versus-short-stay-assumptions/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-019",
+      "original_route": "/investment/dubai-property-exit-cost-and-liquidity-research/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-ROI-020",
+      "original_route": "/investment/dubai-property-portfolio-consultation-framework/",
+      "category": "roi",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-001",
+      "original_route": "/property/business-bay-office-purchase-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-002",
+      "original_route": "/property/difc-office-ownership-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-003",
+      "original_route": "/property/jumeirah-lakes-towers-office-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-004",
+      "original_route": "/property/business-bay-retail-unit-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-005",
+      "original_route": "/property/dubai-south-warehouse-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-006",
+      "original_route": "/property/al-quoz-industrial-property-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-007",
+      "original_route": "/property/dubai-showroom-property-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-008",
+      "original_route": "/property/dubai-whole-floor-office-purchase-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-009",
+      "original_route": "/property/dubai-small-office-ownership-guide/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-010",
+      "original_route": "/property/dubai-fitted-versus-shell-and-core-offices/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-011",
+      "original_route": "/property/dubai-commercial-property-service-charges/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-012",
+      "original_route": "/property/dubai-commercial-net-income-methodology/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-013",
+      "original_route": "/property/dubai-vacant-versus-leased-commercial-assets/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-014",
+      "original_route": "/property/dubai-leased-commercial-asset-due-diligence/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-015",
+      "original_route": "/property/dubai-commercial-free-zone-versus-mainland-questions/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-016",
+      "original_route": "/property/dubai-commercial-property-financing-questions/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-017",
+      "original_route": "/property/dubai-retail-property-investor-checklist/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-018",
+      "original_route": "/property/dubai-commercial-purchase-cost-guide/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-019",
+      "original_route": "/property/dubai-commercial-viewing-checklist/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMMERCIAL-020",
+      "original_route": "/property/dubai-commercial-resale-and-exit-research/",
+      "category": "commercial",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-001",
+      "original_route": "/international/india/inr-budget-and-dubai-purchase-process/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-002",
+      "original_route": "/international/india/nonresident-financing-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-003",
+      "original_route": "/international/india/project-and-ownership-due-diligence/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-004",
+      "original_route": "/international/india/inr-to-aed-remittance-and-total-costs/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-005",
+      "original_route": "/international/india/remote-viewing-and-consultation-readiness/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-006",
+      "original_route": "/international/saudi-arabia/dubai-purchase-and-ownership-process/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-007",
+      "original_route": "/international/saudi-arabia/villa-and-apartment-comparison-requirements/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-008",
+      "original_route": "/international/saudi-arabia/funding-remittance-and-purchase-cost-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-009",
+      "original_route": "/international/oman/dubai-purchase-documentation-and-ownership/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-010",
+      "original_route": "/international/oman/rental-income-and-recurring-cost-assumptions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-011",
+      "original_route": "/international/united-kingdom/dubai-nonresident-purchase-guide/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-012",
+      "original_route": "/international/united-kingdom/mortgage-eligibility-and-documentation/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-013",
+      "original_route": "/international/united-kingdom/gbp-to-aed-and-ownership-cost-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-014",
+      "original_route": "/international/pakistan/dubai-purchase-process-and-documents/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-015",
+      "original_route": "/international/pakistan/pkr-remittance-and-total-cost-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-016",
+      "original_route": "/international/china/dubai-foreign-buyer-process-and-documents/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-017",
+      "original_route": "/international/china/currency-funding-and-language-support-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-018",
+      "original_route": "/international/singapore/dubai-ownership-and-diversification-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-019",
+      "original_route": "/international/singapore/financing-and-cross-market-cost-assumptions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-020",
+      "original_route": "/international/hong-kong/dubai-purchase-and-legal-process-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-021",
+      "original_route": "/international/hong-kong/hkd-funding-and-ownership-cost-assumptions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-022",
+      "original_route": "/international/europe/eur-to-aed-purchase-cost-assumptions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-023",
+      "original_route": "/international/europe/residence-jurisdiction-specific-document-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-024",
+      "original_route": "/international/europe/nonresident-finance-and-inheritance-review-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-025",
+      "original_route": "/international/united-states/dubai-foreign-buyer-ownership-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-026",
+      "original_route": "/international/united-states/usd-funding-and-cross-border-tax-review-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-027",
+      "original_route": "/international/other-gcc-markets/qatar-bahrain-kuwait-residence-specific-purchase-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-028",
+      "original_route": "/international/other-gcc-markets/regional-currency-funding-and-document-questions/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-029",
+      "original_route": "/international/mauritius-and-other-markets/mauritius-resident-dubai-purchase-research/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-INTERNATIONAL-030",
+      "original_route": "/international/mauritius-and-other-markets/unlisted-residence-market-purchase-checklist/",
+      "category": "international",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-001",
+      "original_route": "/investment/dubai-resident-mortgage-eligibility-questions/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-002",
+      "original_route": "/investment/dubai-nonresident-mortgage-requirements/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-003",
+      "original_route": "/investment/dubai-mortgage-affordability-methodology/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-004",
+      "original_route": "/investment/dubai-mortgage-rate-and-fee-comparison/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-005",
+      "original_route": "/investment/dubai-mortgage-preapproval-preparation/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-006",
+      "original_route": "/investment/dubai-cash-versus-mortgage-purchase-costs/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-007",
+      "original_route": "/investment/dubai-dld-and-total-buying-cost-guide/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-008",
+      "original_route": "/investment/dubai-off-plan-registration-cost-questions/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-009",
+      "original_route": "/investment/dubai-resale-transfer-procedure/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-010",
+      "original_route": "/investment/dubai-noc-and-title-deed-verification-questions/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-011",
+      "original_route": "/investment/dubai-project-escrow-checking-workflow/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-012",
+      "original_route": "/investment/dubai-spa-and-reservation-document-checklist/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-013",
+      "original_route": "/investment/dubai-annual-service-charge-guide/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-014",
+      "original_route": "/investment/dubai-golden-visa-property-eligibility-questions/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-015",
+      "original_route": "/investment/dubai-mortgaged-property-golden-visa-questions/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-016",
+      "original_route": "/investment/dubai-foreign-property-ownership-guide/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-017",
+      "original_route": "/investment/dubai-nonresident-property-document-checklist/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-018",
+      "original_route": "/investment/dubai-property-investment-consultation/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-019",
+      "original_route": "/investment/dubai-property-viewing-and-appointment-guide/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-FINANCE-020",
+      "original_route": "/investment/dubai-property-inheritance-and-ownership-questions/",
+      "category": "finance",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-001",
+      "original_route": "/compare/emaar-versus-sobha-property-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-002",
+      "original_route": "/compare/emaar-versus-damac-property-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-003",
+      "original_route": "/compare/sobha-versus-binghatti-property-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-004",
+      "original_route": "/compare/damac-versus-danube-payment-plan-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-005",
+      "original_route": "/compare/dubai-hills-versus-creek-harbour/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-006",
+      "original_route": "/compare/dubai-marina-versus-jumeirah-beach-residence/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-007",
+      "original_route": "/compare/palm-jumeirah-versus-dubai-islands/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-008",
+      "original_route": "/compare/al-furjan-versus-town-square-dubai/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-009",
+      "original_route": "/compare/betterhomes-alternatives-for-dubai-property-search/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-010",
+      "original_route": "/compare/allsopp-and-allsopp-alternatives-for-dubai-buyers/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-011",
+      "original_route": "/compare/property-finder-dubai-listing-verification-guide/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-012",
+      "original_route": "/compare/bayut-dubai-property-search-verification-guide/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-013",
+      "original_route": "/events/dubai-property-exhibition-research-guide/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-014",
+      "original_route": "/events/cityscape-dubai-event-information-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-015",
+      "original_route": "/events/international-property-show-registration-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-016",
+      "original_route": "/events/dubai-developer-launch-event-calendar/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-017",
+      "original_route": "/events/emaar-launch-event-information-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-018",
+      "original_route": "/events/dubai-property-mumbai-roadshow-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-019",
+      "original_route": "/events/dubai-property-riyadh-roadshow-research/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "BSRE-PAGE-COMPARISON-EVENT-020",
+      "original_route": "/events/black-swan-property-webinar-planning/",
+      "category": "comparison_event",
+      "source_ref": "L1",
+      "recovery_ref": "L3",
+      "mapping_status": "OWNER_REVIEW_REQUIRED"
+    }
+  ],
+  "legacy_catalogue": [
+    {
+      "id": "A001",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A002",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A003",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A004",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A005",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A006",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A007",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A008",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A009",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A010",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A011",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A012",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A013",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A014",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A015",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A016",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A017",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A018",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A019",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A020",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A021",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A022",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A023",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A024",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A025",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A026",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A027",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A028",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A029",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A030",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A031",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A032",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A033",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A034",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A035",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A036",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A037",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A038",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A039",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A040",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A041",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A042",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A043",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A044",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A045",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A046",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A047",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A048",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A049",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A050",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A051",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A052",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A053",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A054",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A055",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A056",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A057",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A058",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A059",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A060",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A061",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A062",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A063",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A064",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A065",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A066",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A067",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A068",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A069",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A070",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A071",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A072",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A073",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A074",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A075",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A076",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A077",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A078",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A079",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A080",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A081",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A082",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A083",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A084",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A085",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A086",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A087",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A088",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A089",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A090",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A091",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A092",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A093",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A094",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A095",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A096",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A097",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A098",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A099",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A100",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A101",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A102",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A103",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A104",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A105",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A106",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A107",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A108",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A109",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A110",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A111",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A112",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A113",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A114",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A115",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A116",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A117",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A118",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A119",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A120",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A121",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A122",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A123",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A124",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A125",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A126",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A127",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A128",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A129",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A130",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A131",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A132",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A133",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A134",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A135",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A136",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A137",
+      "classification": "EXCLUDED",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A138",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A139",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A140",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A141",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A142",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A143",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A144",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A145",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A146",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A147",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A148",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A149",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A150",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A151",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A152",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A153",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A154",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A155",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A156",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A157",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A158",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A159",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A160",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A161",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A162",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A163",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A164",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A165",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A166",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A167",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A168",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A169",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A170",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A171",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A172",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A173",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A174",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A175",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A176",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A177",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A178",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A179",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A180",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A181",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A182",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A183",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A184",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A185",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A186",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A187",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A188",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A189",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A190",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A191",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A192",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A193",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A194",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A195",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A196",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A197",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A198",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A199",
+      "classification": "EXCLUDED",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A200",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A201",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A202",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A203",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A204",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A205",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A206",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A207",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A208",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A209",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A210",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A211",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A212",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A213",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A214",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A215",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A216",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A217",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A218",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A219",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A220",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A221",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A222",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A223",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A224",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A225",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A226",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A227",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A228",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A229",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A230",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A231",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A232",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A233",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A234",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A235",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A236",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A237",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A238",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A239",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "A240",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B001",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B002",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B003",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B004",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B005",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B006",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B007",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B008",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B009",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B010",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B011",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B012",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B013",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B014",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B015",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B016",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B017",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B018",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B019",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B020",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B021",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B022",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B023",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B024",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B025",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B026",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B027",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B028",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B029",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B030",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B031",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B032",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B033",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B034",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B035",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B036",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B037",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B038",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B039",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B040",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B041",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B042",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B043",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B044",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B045",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B046",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B047",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B048",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B049",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B050",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B051",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B052",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B053",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B054",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B055",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B056",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B057",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B058",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B059",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B060",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B061",
+      "classification": "EXCLUDED",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B062",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B063",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B064",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B065",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B066",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B067",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B068",
+      "classification": "EXCLUDED",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B069",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B070",
+      "classification": "EXCLUDED",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B071",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B072",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B073",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B074",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B075",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B076",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B077",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B078",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B079",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B080",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B081",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B082",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B083",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B084",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B085",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B086",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B087",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B088",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B089",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B090",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B091",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B092",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B093",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B094",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B095",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B096",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B097",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B098",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B099",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B100",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B101",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B102",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B103",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B104",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B105",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B106",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B107",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B108",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B109",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B110",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B111",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B112",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B113",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B114",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B115",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B116",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B117",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B118",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B119",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B120",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B121",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B122",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B123",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B124",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B125",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B126",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B127",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B128",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B129",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B130",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B131",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B132",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B133",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B134",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B135",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B136",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B137",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B138",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B139",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B140",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B141",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B142",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B143",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B144",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B145",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B146",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B147",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B148",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B149",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B150",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B151",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B152",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B153",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B154",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B155",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B156",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B157",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B158",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B159",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B160",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B161",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B162",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B163",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B164",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B165",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B166",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B167",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B168",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B169",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B170",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B171",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B172",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B173",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B174",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B175",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B176",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B177",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B178",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B179",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B180",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B181",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B182",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B183",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B184",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B185",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B186",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B187",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B188",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B189",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B190",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B191",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B192",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B193",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B194",
+      "classification": "RESEARCH",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B195",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B196",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B197",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B198",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B199",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "B200",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C001",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C002",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C003",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C004",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C005",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C006",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C007",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C008",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C009",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C010",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C011",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C012",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C013",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C014",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C015",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C016",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C017",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C018",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C019",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C020",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C021",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C022",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C023",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C024",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C025",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C026",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C027",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C028",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C029",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C030",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C031",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C032",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C033",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C034",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C035",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C036",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C037",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C038",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C039",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C040",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C041",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C042",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C043",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C044",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C045",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C046",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C047",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C048",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C049",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C050",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C051",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C052",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C053",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C054",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C055",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C056",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C057",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C058",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C059",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C060",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C061",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C062",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C063",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C064",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C065",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C066",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C067",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C068",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C069",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C070",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C071",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C072",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C073",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C074",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C075",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C076",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C077",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C078",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C079",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C080",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C081",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C082",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C083",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C084",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C085",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C086",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C087",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C088",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C089",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C090",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C091",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C092",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C093",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C094",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C095",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C096",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C097",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C098",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C099",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C100",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C101",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C102",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C103",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C104",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C105",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C106",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C107",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C108",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C109",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C110",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C111",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C112",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C113",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C114",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C115",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C116",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C117",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C118",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C119",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C120",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C121",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C122",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C123",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C124",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C125",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C126",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C127",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C128",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C129",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C130",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C131",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C132",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C133",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C134",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C135",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C136",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C137",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C138",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C139",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C140",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C141",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C142",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C143",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C144",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C145",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C146",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C147",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C148",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C149",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C150",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C151",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C152",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C153",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C154",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C155",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C156",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C157",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C158",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C159",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C160",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C161",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C162",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C163",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C164",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C165",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C166",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C167",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C168",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C169",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C170",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C171",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C172",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C173",
+      "classification": "IMPLEMENTABLE",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C174",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C175",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C176",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C177",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C178",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C179",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C180",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C181",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C182",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C183",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C184",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C185",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C186",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C187",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C188",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C189",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C190",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C191",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C192",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C193",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C194",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C195",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C196",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C197",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C198",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C199",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    },
+    {
+      "id": "C200",
+      "classification": "CONDITIONAL",
+      "source_ref": "L2",
+      "classification_ref": "L4",
+      "original_document_ref": "L5"
+    }
+  ]
+}

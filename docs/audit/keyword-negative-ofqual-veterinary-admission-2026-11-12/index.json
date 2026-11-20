@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "scope": "APPEND_ONLY_VETERINARY_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "previous_index": {
+    "file": "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/index.json",
+    "sha256": "cd85c0306a8494c342ada20254b83392e816f859156d95939cf539aea5b3bc6c"
+  },
+  "review": {
+    "file": "docs/audit/keyword-negative-ofqual-veterinary-admission-2026-11-12/review.json",
+    "sha256": "5fd9d98b9b2ad620cd0b0ddd9bdc6b4fa1ac7d54d3cf71d3e14b5b6ed62bdc87"
+  },
+  "source_pins": {
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/qualifications.json": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/capture.json": "ecf76b2123ff80f7f4518c0a1c3f157cab3ab499768e6d2cea7d8be4ad258afd",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-decisions.json": "7c280316bab94d4ad892b58f2f738d3295913cb0dbc90e608c404a238113b68b"
+  },
+  "text_pins": {
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78",
+    "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+  },
+  "implementation": {
+    "audit_and_compatibility": {
+      "audit_and_compatibility": {
+        "audit_and_compatibility": {
+          "current_code_sha256": {
+            "tools/keyword-system/keyword_audit.py": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+            "tools/keyword-system/keyword_text_compatibility.py": "723988151adfeae8f2a6efeb073a399451eefcbfe1d3f8c311e0e168fd56763f"
+          },
+          "function_ast_sha256": {
+            "normalize": "5c71e58fb1d9c11f92db2b1d90a95bfeaa65575dbbb10790ee8cdd2d35eb971b",
+            "tokens": "0ab49db2be49c7cef3bed9ccc84fa12e03d6fd2506a690734f50c7803b3aa1e1",
+            "negative_matches": "0bbe5bb9241ce358946fc727a217106e1733bf0259d69ca40cd4766fb4d9f664"
+          },
+          "historical_normalizer_sha256": "0cbbc8965ed891208066887eeaca0b011092efa6668af161bab3a2feb76454d9",
+          "historical_file_hash_is_dated_evidence_not_current_code_pin": true
+        },
+        "capture_code_sha256": {
+          "docs/audit/keyword-entertainment-clipboard-2026-11-11/capture_tools.py": "135956c53c683d72c7357747d1c7f92bc44e313b5d1922b69f672caa44ab0140",
+          "docs/audit/keyword-entertainment-clipboard-2026-11-11/verify_capture.py": "2f4ba4f9e2d132ee972e2d776efa4aa59690e2632c1b8350f0d15d76150b6b55"
+        }
+      },
+      "source_extractor_and_peer_narrative_sha256": {
+        "docs/audit/keyword-ofqual-occupational-2026-11-12/extract.py": "c37a98859e1865d543e82c43886608b63f265b0ac3d44725fd52bdc30ab199ed",
+        "docs/audit/keyword-ofqual-occupational-2026-11-12/semantic-review.md": "9a6e977f2dfe914ce05906e86e1cb408f16d5f0743e9a43b46a9d66f5309234c"
+      }
+    },
+    "source_extractor_and_peer_narrative_sha256": {
+      "docs/audit/keyword-ofqual-veterinary-2026-11-12/extract.py": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712",
+      "docs/audit/keyword-ofqual-veterinary-2026-11-12/semantic-review.md": "203bb34392027ae8bd454c7bdbc39098cae3ec2ccd2dfedcd1fafd985e8d0b78",
+      "docs/audit/keyword-ofqual-veterinary-2026-11-12/README.md": "1a5007ea9e59cceca1ff2aa11437476ecf52bc66625ecbc8faf8178fbf815f3b"
+    }
+  },
+  "base_state": {
+    "base_sha256": "4b3106190c37a47deaefdd391e9dfded0554c9a91b381c6d3a62424b54c80587",
+    "retained_records": 11170,
+    "retained_sources": 25,
+    "retained_protections": 16693
+  },
+  "records_sha256": "2d874b4c4661db54540608dcb52dd6e8405507f63e0f2ceb2c79fa6526227899",
+  "archived_sha256": "c4cd30d084e43f23da6e30e8dbdc2a471cd65a3155f529b6acf46124fecb4b4b",
+  "protected_sha256": "5cf5108f16728794cf81985874202f9213a31fc49c5077706ceda2bc6ec83b28",
+  "sources_sha256": "ad3a466ee8420558cc973c41475eccb8444f323152bfbcc77193a8b4a144aed7",
+  "additional_records_sha256": "e0a195d9d67df5e6c806a56a835c6dd0ff9ec04e971754323f705b5a13d8997d",
+  "complete_inputs_sha256": "0be4c040baa13d97f105f0f5cd514fd5717a29647b24d2b542b959b5ab4d295c",
+  "additional_eligible_keyword_ids": [
+    "BSRE-N-6e4eaef46a284410d9363589",
+    "BSRE-N-e55c3310791fba2fc7d281c3",
+    "BSRE-N-4c9312bdb1e6db266f855816",
+    "BSRE-N-97f081c2c983146f95c67022",
+    "BSRE-N-752fc62df1686640abd72daf",
+    "BSRE-N-d90e4d9298fd02c5d9d5abfc"
+  ],
+  "additional_protected_query_ids": [
+    "BSRE-Q-38a9914d33ec03247b855921",
+    "BSRE-Q-0f0be254a4d538d8590621fd",
+    "BSRE-Q-a0af4084893488432f1fd8fb",
+    "BSRE-Q-1da499b0104113d68c4dd3d7",
+    "BSRE-Q-c22d8c90540a39d4624881de",
+    "BSRE-Q-7857c93dd3ddc48bf3f0275b",
+    "BSRE-Q-f94f80ddbf557bdb95d54777",
+    "BSRE-Q-3916f8c64fcaa49a38f18479",
+    "BSRE-Q-dd9594d2bd26a66b98839f12",
+    "BSRE-Q-90ea2d01c957455d75bf2593",
+    "BSRE-Q-ed856503c94b0b61156a99ea",
+    "BSRE-Q-17423be3641b63b6d38e459c",
+    "BSRE-Q-9bc8c7a7e1cd050d411307d4",
+    "BSRE-Q-fdf68e556abd124277b579d4",
+    "BSRE-Q-b56cd711bde97876bdffcc98",
+    "BSRE-Q-d8461fae4fa300b058a388ce",
+    "BSRE-Q-74e294b704f1767a64cfd3bc",
+    "BSRE-Q-5fb4cb8a0683157ecd887938",
+    "BSRE-Q-00d202d04cc2d3c40fb8d349",
+    "BSRE-Q-8aba292d0b565ebac49c4600",
+    "BSRE-Q-283d01a3158e8a7ef4e0ff81",
+    "BSRE-Q-1ee49610e280ba091616b0c8",
+    "BSRE-Q-bb987ab0e0f2c56b2a5bbb04",
+    "BSRE-Q-d679f606a2e5e69791e03297",
+    "BSRE-Q-8aeda394a2a82f801ed293d8",
+    "BSRE-Q-e6450ca7555e00701e378db2",
+    "BSRE-Q-35c81b920cff135b849ffe57",
+    "BSRE-Q-b53ab167bcd787a49c53ae50",
+    "BSRE-Q-13056fc18e3e08b8e2a99aa4",
+    "BSRE-Q-e841491e100801abe0db3dcd",
+    "BSRE-Q-149f5351e3932135a8eb0e1d",
+    "BSRE-Q-8e89e46be94604a599747543",
+    "BSRE-Q-0ec71414bb1abb18ce0bb3a2",
+    "BSRE-Q-c315d87d9021ae4f782048d0",
+    "BSRE-Q-c943cbcf2736f1459f853918",
+    "BSRE-Q-170736bc2f4bd4bf29a2c650",
+    "BSRE-Q-d038e7c74746129d28b0e901",
+    "BSRE-Q-b4749940e2fd2087b4316568",
+    "BSRE-Q-fa92230d893777f2c71b02f5",
+    "BSRE-Q-c1fb027a7ae81e936bce6c64",
+    "BSRE-Q-8889ce38e016a4c8f7595442",
+    "BSRE-Q-ca9c9115197a44e0b162d2f4",
+    "BSRE-Q-b25c668324ebf27090eaa16d",
+    "BSRE-Q-59623054811e74d2f8d777ea",
+    "BSRE-Q-86c7deeea9d858561ff6ef1f"
+  ],
+  "historical_records_rewritten": false,
+  "exclusion_approval_granted": false,
+  "deployment_authorized": false
+}

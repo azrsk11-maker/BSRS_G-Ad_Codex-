@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "scope": "UNREVIEWED_VOCATIONAL_FEASIBILITY_PROJECTION_NOT_MASTER_OR_EXCLUSION_APPROVAL",
+  "source_file": "source.json",
+  "source_sha256": "2f6bb263de9ba25ca59b470a7c54dde5def9edf5ea5d1e6cf87d978092c0713c",
+  "captured_literals": 1,
+  "saved_index_exact_nonmembers": 1,
+  "reviewed_for_admission": 0,
+  "admitted": 0,
+  "approved": 0,
+  "deployed": 0,
+  "research_library_total_unchanged": 10955,
+  "current_library_changed": false,
+  "bounded_membership_evidence": {
+    "method": "Fresh local read-only check of the seven previously pinned saved index files; hashes and bytes verified. Reconciled union/addition and archived hold removals, with no current record-body or full-library reconstruction.",
+    "saved_eligible_members_reconciled": 10955,
+    "saved_archived_members_reconciled": 18,
+    "exact_candidate_identity_hits_eligible": 0,
+    "exact_candidate_identity_hits_archived": 0,
+    "measured_elapsed_seconds": 0.03155549999999999,
+    "index_files": [
+      {
+        "file": "docs/audit/keyword-negative-entertainment-admission-2026-11-11/index.json",
+        "sha256": "bc8df0e0cc44190c7b4f7c22aa1aa59f36c46ca69ce6a62d645beb7a1341a2f8",
+        "bytes": 20950,
+        "observed_pin_match": true
+      },
+      {
+        "file": "docs/audit/keyword-negative-ofqual-admission-2026-11-11/index.json",
+        "sha256": "9049c82eadd0a1a06af7c25b4daa833827a1efb6beee54f02dabb2c4f4666edd",
+        "bytes": 15072,
+        "observed_pin_match": true
+      },
+      {
+        "file": "docs/audit/keyword-negative-valuation-admission-2026-11-11/index.json",
+        "sha256": "887f53e1e7cc98df1bdb4bef4159d4d2fb77694818046f2c4cb5d18bfcd3f57c",
+        "bytes": 34448,
+        "observed_pin_match": true
+      },
+      {
+        "file": "docs/audit/keyword-negative-followup-admission-2026-11-11/index.json",
+        "sha256": "2486aa3e638953518c4581360befba1896f8e6e5f8ef26120e6861f3ef479df9",
+        "bytes": 15278,
+        "observed_pin_match": true
+      },
+      {
+        "file": "tools/keyword-system/data/negative-extension-index.json",
+        "sha256": "dad9573128190e6a8fa9d039af6d9cc8a0ef2720d7796dc875cfc2b0ca625229",
+        "bytes": 69472,
+        "observed_pin_match": true
+      },
+      {
+        "file": "tools/keyword-system/data/negative-research-index.json",
+        "sha256": "ff04733c369954f66d562dc14a263bf40b58c7b14877332767f309472cb5e525",
+        "bytes": 314472,
+        "observed_pin_match": true
+      },
+      {
+        "file": "tools/keyword-system/data/negative-latest-review-index.json",
+        "sha256": "4fe30cd2c768f5779982dc4d7cc41be3b8aa7055e67dda8008672624d9a58293",
+        "bytes": 1253,
+        "observed_pin_match": true
+      }
+    ],
+    "normalizer_file": "tools/keyword-system/keyword_audit.py",
+    "normalizer_file_sha256_at_capture": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6",
+    "normalizer_limit": "Candidate is ASCII. NFKC, trim, lowercase and whitespace collapse are equivalent here to the inspected Python normalizer. The BSRE-N prefix and first 24 SHA256 hex characters follow negative_admission.py.",
+    "limits": "Identity nonmembership is not token-peer, closed-alias, complete protected-query/scope clearance, semantic admission or platform approval."
+  },
+  "prior_capture_exact_comparison": {
+    "ofqual_projection": {
+      "file": "docs/audit/keyword-ofqual-discovery-2026-11-11/qualifications.json",
+      "sha256": "2869cab8a06a76fa113ef430b28d09c53a324b72555cd0b3b36d3bdf82de4ccc",
+      "records_compared": 338,
+      "exact_normalized_title_hits": 0,
+      "limit": "Only the 338 previously projected rows were compared; the complete 53,175-row private Ofqual CSV was not reread. A different provider-prefixed form in omitted source rows is not ruled out."
+    },
+    "apprenticeship_projection": {
+      "file": "docs/audit/keyword-apprenticeship-feasibility-2026-11-12/projection.json",
+      "sha256": "1f5d3a3d6baf3c0b2d1e82c18cf2552b6572687a9741311a3449916f6ea7122f",
+      "literals_compared": 9,
+      "exact_normalized_title_hits": 0
+    }
+  },
+  "rows": [
+    {
+      "ordinal": 1,
+      "source_page_id": "CG-MAINTENANCE-OPERATIONS-6711",
+      "source_url": "https://www.cityandguilds.com/qualifications-and-apprenticeships/construction/construction/6711-maintenance-operations",
+      "source_section": "Level 2 / qualification details h4",
+      "original_text": "Level 2 Diploma in Maintenance Operations (Construction)",
+      "normalized_text": "level 2 diploma in maintenance operations (construction)",
+      "candidate_identity": "BSRE-N-fb1c93ff419cea69062d1c59",
+      "characters": 56,
+      "whitespace_words": 7,
+      "text_bound_pass": true,
+      "captured_on_dubai": "2026-11-12",
+      "provider_publication_date": null,
+      "provider_update_date": "2026-05-18",
+      "source_kind": "primary_published_qualification_title",
+      "observed_query": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "metrics_status": "NOT_OBSERVED_UNKNOWN",
+      "feasibility_intent_screen": "The complete diploma title supplies explicit construction occupational-training intent. It does not establish search demand or an observed user query.",
+      "protected_intent_limit": "Preserve actual building/property maintenance services and legitimate guidance about qualifications, licensing, professional recognition or service eligibility. Full-literal context and intended campaign review remain necessary; no broad exclusion of maintenance, construction, diploma or qualification enquiries is proposed.",
+      "scope_limit": "Complete literal only, pending all root/independent source, variant, scope and protected-query checks. No abbreviated, phrase or broad exclusion is proposed.",
+      "saved_index_exact_eligible_member": false,
+      "saved_index_exact_archived_member": false,
+      "token_peer_check": "NOT_PERFORMED",
+      "protected_query_and_scope_check": "NOT_PERFORMED",
+      "semantic_admission_review": "PENDING",
+      "independent_review": "PENDING",
+      "rights_clearance": "UNRESOLVED_FOR_DOWNSTREAM_REUSE",
+      "admission_state": "NOT_ADMITTED",
+      "exclusion_approval_granted": false,
+      "deployment_authorized": false
+    }
+  ],
+  "remaining_checks": [
+    "Exact/token-peer/closed-alias comparison against current full literals and source variants",
+    "Current-source and historical protected-query reconciliation",
+    "Independent complete-literal semantic, occupational route and scope review",
+    "Qualification guidance/service relevance and intended campaign review",
+    "Rights review for any downstream reuse beyond factual-title source verification",
+    "Registered source/review provenance and applicable dated freshness gates",
+    "Root admission decision; separate human exclusion approval and release gates"
+  ]
+}

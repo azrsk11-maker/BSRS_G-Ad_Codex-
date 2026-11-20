@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "status": "HELD_UI_EXPORT_COUNT_MISMATCH",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-13",
+  "observed_context": {
+    "account_id": "573-038-4686",
+    "location": "United Arab Emirates",
+    "language": "English",
+    "network_display": "Google",
+    "date_preset": "Last 12 months",
+    "exclude_adult_ideas": true,
+    "website_filter": null,
+    "ui_idea_count": 176
+  },
+  "raw_export_rows": 177,
+  "difference_export_minus_ui": 1,
+  "source_sha256": "5ec969b194766310f22066bf42a9d53c7ea4c29638343bcd8195bebf0ddf92f4",
+  "source_bytes": 26924,
+  "seeds": [
+    "real estate admin jobs dubai",
+    "real estate receptionist jobs dubai",
+    "real estate walk in interview dubai",
+    "real estate internship dubai",
+    "real estate agent salary dubai",
+    "property developer careers dubai",
+    "real estate accountant jobs dubai",
+    "real estate cv",
+    "property consultant job vacancies dubai",
+    "real estate job application dubai"
+  ],
+  "seed_status": "AGENT_RESEARCH_HYPOTHESES_NOT_OBSERVED_QUERIES_OR_EXCLUSIONS",
+  "seed_relationships": [
+    {
+      "seed": "real estate admin jobs dubai",
+      "source_ordinal": 172,
+      "source_line": 175
+    },
+    {
+      "seed": "real estate receptionist jobs dubai",
+      "source_ordinal": 173,
+      "source_line": 176
+    },
+    {
+      "seed": "real estate walk in interview dubai",
+      "source_ordinal": 174,
+      "source_line": 177
+    },
+    {
+      "seed": "real estate internship dubai",
+      "source_ordinal": 1,
+      "source_line": 4
+    },
+    {
+      "seed": "real estate agent salary dubai",
+      "source_ordinal": 2,
+      "source_line": 5
+    },
+    {
+      "seed": "property developer careers dubai",
+      "source_ordinal": 175,
+      "source_line": 178
+    },
+    {
+      "seed": "real estate accountant jobs dubai",
+      "source_ordinal": 3,
+      "source_line": 6
+    },
+    {
+      "seed": "real estate cv",
+      "source_ordinal": 4,
+      "source_line": 7
+    },
+    {
+      "seed": "property consultant job vacancies dubai",
+      "source_ordinal": 176,
+      "source_line": 179
+    },
+    {
+      "seed": "real estate job application dubai",
+      "source_ordinal": 177,
+      "source_line": 180
+    }
+  ],
+  "account_notice_ads_not_running_observed": true,
+  "generic_capture_rejection": "RESEARCH_CONTEXT",
+  "cause_established": false,
+  "source_rows_removed_or_repaired": false,
+  "semantic_review_complete": false,
+  "current_library_membership_verified": false,
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "controls": {
+    "reviewed": false,
+    "approved": false,
+    "deployed": false,
+    "master_rows_added": 0,
+    "live_campaign_changes": false,
+    "raw_export_committed": false
+  },
+  "capture_accepted_for_research": false,
+  "deployment_authorized": false
+}

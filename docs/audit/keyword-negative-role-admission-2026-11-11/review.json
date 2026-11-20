@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "cohort_key": "role-artifacts-20261111",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selection": {
+    "docs/audit/keyword-role-exam-assets-2026-11-11/workbench.json": [
+      "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH",
+      "EXPLICIT_EMPLOYMENT_APPLICATION_RESEARCH",
+      "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "EXPLICIT_GRAPHIC_OR_MOCKUP_ARTIFACT_RESEARCH",
+      "EXPLICIT_MARKETING_TEMPLATE_ARTIFACT_RESEARCH",
+      "EXPLICIT_OCCUPATIONAL_STUDY_OR_ASSESSMENT_RESEARCH",
+      "EXPLICIT_SOFTWARE_DESIGN_ARTIFACT_RESEARCH"
+    ]
+  },
+  "capture_pins": {
+    "docs/audit/keyword-role-exam-assets-2026-11-11/capture.json": "ec254a5df735685452ce344da2201c6d44ef87b5775479cbac2e2b10c68d0092"
+  },
+  "pool_rows": 1051,
+  "selected_rows": 849,
+  "existing_cohort_overlaps": 178,
+  "held_phrases": {
+    "real estate booklet template": "May be a property brochure; Master section6 protects genuine property information, including brochure-equivalent booklets.",
+    "real estate feature sheet template": "May be the factual sheet for a real property; preserve brochure/specification intent.",
+    "real estate development pitch deck template": "Development/investment presentation may support genuine property due diligence; no supported content-only exclusion established.",
+    "real estate development presentation template": "Could structure a genuine development comparison or investment case; preserve uncertain property-information intent.",
+    "real estate pitch deck template": "Could concern a genuine property investment presentation; exact scope remains uncertain.",
+    "real estate pitch deck template free": "Free does not resolve genuine property-information intent; retain the same pitch-deck protection.",
+    "commercial real estate presentation template": "May structure a genuine commercial-property review; content-only intent is not sufficiently established.",
+    "real estate agent presentation template": "May request an agent's actual property or mandate presentation; preserve uncertain client-facing intent.",
+    "real estate presentation templates": "Generic presentation artifact may carry actual property information; preserve pending specific-purpose evidence.",
+    "free real estate presentation templates": "Free is not a reason to exclude useful property information; generic presentation purpose remains uncertain.",
+    "real estate presentation template free": "Free does not settle generic presentation purpose; preserve possible useful property information.",
+    "realtor presentation templates": "Could request an agent's actual property/service presentation; preserve uncertain client-facing intent.",
+    "templates for real estate agents": "No explicit content-production artifact or unrelated procurement is identified; may include useful transaction forms.",
+    "microsoft word real estate templates": "Generic document templates can include property/transaction forms; explicit unrelated purpose is not established.",
+    "word real estate templates": "Generic document templates can include property/transaction forms; explicit unrelated purpose is not established.",
+    "real estate after effects": "Bare platform-like wording lacks an explicit template or production request; retain navigation/wording uncertainty.",
+    "property job agencies": "Agency/provider-selection wording could concern recruitment by a business; preserve uncertain client-hiring intent.",
+    "real estate job agency": "Agency/provider-selection wording requires review of client-hiring versus applicant intent; do not inherit employment approval.",
+    "real estate job placement agencies": "Provider-selection wording can concern client-hiring; preserve uncertain recruitment intent.",
+    "exam prep agent": "Ambiguous generic/reordered wording; no explicit real-property or verified provider context is asserted.",
+    "prep agent exam": "Ambiguous generic/reordered wording; do not count an unresolved wording variant toward the research target.",
+    "test prep agent": "Ambiguous generic/reordered wording; do not count an unresolved wording variant toward the research target.",
+    "real estate test prep agent": "Reordered wording requires further variant review; do not assume Google equivalence or valid distinct concept.",
+    "realestate exam prep": "Unspaced spelling variant remains held rather than filling a quota with unresolved spelling differences."
+  },
+  "intent_counts": {
+    "EXPLICIT_OCCUPATIONAL_STUDY_OR_ASSESSMENT_RESEARCH": 522,
+    "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH": 84,
+    "EXPLICIT_EMPLOYMENT_APPLICATION_RESEARCH": 20,
+    "EXPLICIT_EMPLOYMENT_RESEARCH": 92,
+    "EXPLICIT_GRAPHIC_OR_MOCKUP_ARTIFACT_RESEARCH": 35,
+    "EXPLICIT_MARKETING_TEMPLATE_ARTIFACT_RESEARCH": 79,
+    "EXPLICIT_SOFTWARE_DESIGN_ARTIFACT_RESEARCH": 17
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "EXPLICIT_OCCUPATIONAL_STUDY_OR_ASSESSMENT_RESEARCH": "Full literal explicitly requests exam preparation, questions, study materials, flashcards or occupational assessment. No lawful question-bank access, current course, jurisdiction, qualification, pass guarantee, provider or licence claim. Generic buyer questions, licence verification and unclear wording remain protected.",
+    "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH": "Explicit occupational cover-letter/application document research, not a tenant brief. Preserve generic agent profiles, transaction forms, property applications and client-facing documents. No actual employment or applicant eligibility is asserted.",
+    "EXPLICIT_EMPLOYMENT_APPLICATION_RESEARCH": "Explicit full-literal job application/interview research. No job, eligibility, salary or employer affiliation is established; generic application/provider wording stays held.",
+    "EXPLICIT_EMPLOYMENT_RESEARCH": "Explicit full-literal role/vacancy/career research, not residential-rental enquiry intent. Preserve uncertain recruitment-provider/client-hiring queries and generic affordability, legal service or property demand. No actual vacancy or employer fact is asserted.",
+    "EXPLICIT_GRAPHIC_OR_MOCKUP_ARTIFACT_RESEARCH": "Explicit logo/vector/icon or sign-mockup production artifacts, not genuine property brochures, floor plans or inventory. No lawful download, asset right, platform compatibility or affiliation is asserted.",
+    "EXPLICIT_MARKETING_TEMPLATE_ARTIFACT_RESEARCH": "Explicit promotional flyer/poster/social/video or qualified presentation-production templates. Preserve brochure-equivalent booklets/feature sheets, uncertain property-investment presentations, transaction templates and genuine property information. No listing asset rights or availability is asserted.",
+    "EXPLICIT_SOFTWARE_DESIGN_ARTIFACT_RESEARCH": "Explicit named editor/template/flyer-maker production artifacts. Bare platform-like wording and generic document templates remain held. Existing primary category references establish no current product features, compatibility, licence, affiliation or asset rights."
+  },
+  "variant_review": {
+    "token_bag_groups": 38,
+    "phrases_in_groups": 79,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "Reuse the complete 1717-literal preliminary review; separately inspect the 873 non-master literals and all40token-bag groups/83phrases. Hold24uncertain wording/property-information/provider phrases; final38groups/79selected phrases. All178already-admitted overlaps remain in capture/reconciliation evidence without rewriting earlier records. Retain24disagreements/eightglobalconflicts,666preliminary holds,24newholds and two archived recruitment records. Actual source phrases, not measured searches or certified Google concepts. Same unbound RNTplanning purpose only; no URL/GoogleID/V2/D1 mapping, vacancy/course/provider/asset-rights/property fact or human approval asserted.",
+  "subject_sha256": "cee3c9d07678c4c3af1bd78aa67388a20b6cd0287f0e4c56d2ee5ff5e29fbd10",
+  "coverage_reports": [
+    {
+      "file": "docs/audit/keyword-review-coverage-2026-11-11/report.json",
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    },
+    {
+      "file": "docs/audit/keyword-role-review-coverage-2026-11-11/report.json",
+      "sha256": "7b7ac5aa4d8dd65dafe80fd6a1409a0edddb7eecd12c88a44b442646ac2e6c4c"
+    }
+  ]
+}

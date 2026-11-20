@@ -1,0 +1,21 @@
+{
+  "scope": "REGISTERED_AI_REVIEWED_COHORT_NOT_EXCLUSION_APPROVAL",
+  "as_of": "2026-11-11",
+  "input_rows": 259,
+  "distinct_nonblank_phrases": 259,
+  "reviewed_eligible_rows": 259,
+  "excluded_rows": 0,
+  "approved_exclusion_rows": 0,
+  "structural_pass": true,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "positive_library_coverage_verified": false,
+  "protected_queries_indexed": 12246,
+  "source_occurrences_retained": 261,
+  "held_phrases": 31,
+  "prior_protected_holds": 1,
+  "computed_conflicts": 0,
+  "human_review_verified": false,
+  "live_campaign_mapping_verified": false,
+  "subject_sha256": "bb2dbac637439deb89a93255ff14ac79cda7eae41c35c3de663e773e5bd408ba"
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "elapsed_seconds": 10.900377,
+  "generation_and_public_verification_seconds": 3.609142,
+  "expected_total_keyword_cases": 722,
+  "expected_total_keyword_modules": 53,
+  "original_keyword_deadline_seconds": 300,
+  "shared_orchestration_changed": false,
+  "production_changes": false,
+  "ads_activation": false,
+  "exact_head_ci_required": true
+}

@@ -1,0 +1,95 @@
+diff --git a/tools/keyword-system/negative_admission.py b/tools/keyword-system/negative_admission.py
+index c165476..e03afca 100644
+--- a/tools/keyword-system/negative_admission.py
++++ b/tools/keyword-system/negative_admission.py
+@@ -230,8 +230,8 @@ def summarize(inputs, report):
+         'token_bag_is_semantic_or_google_equivalence_oracle': False}
+ 
+ 
+-def verify(root=ROOT, at=None):
+-    inputs = reconstruct(root)
++def _verify_reconstructed(inputs, root=ROOT, at=None):
++    """Internal: audit this call's freshly pinned reconstruction, never cached inputs."""
+     when = dubai_date() if at is None else at
+     report = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
+                    inputs['campaign_context'], inputs['protected_queries'], when)
+@@ -248,6 +248,10 @@ def verify(root=ROOT, at=None):
+     return dict(summary, passed=True)
+ 
+ 
++def verify(root=ROOT, at=None):
++    return _verify_reconstructed(reconstruct(root), root, at)
++
++
+ if __name__ == '__main__':
+     try:
+         print(json.dumps(verify()))
+diff --git a/tools/keyword-system/negative_employment_admission.py b/tools/keyword-system/negative_employment_admission.py
+index 140a951..c1d6ef0 100644
+--- a/tools/keyword-system/negative_employment_admission.py
++++ b/tools/keyword-system/negative_employment_admission.py
+@@ -163,8 +163,8 @@ def summarize(inputs, result):
+         'subject_sha256': inputs['review']['subject_sha256']}
+ 
+ 
+-def verify(root=first.ROOT, at=None):
+-    inputs = reconstruct(root)
++def _verify_reconstructed(inputs, root=first.ROOT, at=None):
++    """Internal: retain every audit/report check while reusing verified inputs in-call."""
+     result = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
+         inputs['campaign_context'], inputs['protected_queries'], first.dubai_date() if at is None else at)
+     summary = summarize(inputs, result)
+@@ -178,6 +178,10 @@ def verify(root=first.ROOT, at=None):
+     return dict(summary, passed=True)
+ 
+ 
++def verify(root=first.ROOT, at=None):
++    return _verify_reconstructed(reconstruct(root), root, at)
++
++
+ if __name__ == '__main__':
+     try:
+         print(json.dumps(verify()))
+diff --git a/tools/keyword-system/negative_library.py b/tools/keyword-system/negative_library.py
+index af30b86..a0b1a4f 100644
+--- a/tools/keyword-system/negative_library.py
++++ b/tools/keyword-system/negative_library.py
+@@ -37,9 +37,13 @@ def compose(cohorts):
+         'campaigns': registry}
+ 
+ 
+-def reconstruct(root=first.ROOT):
++def reconstruct(root=first.ROOT, at=None):
+     initial = first.reconstruct(root)
+-    return compose([initial, employment.reconstruct(root, prior=initial)])
++    second = employment.reconstruct(root, prior=initial)
++    if at is not None:
++        first._verify_reconstructed(initial, root, at)
++        employment._verify_reconstructed(second, root, at)
++    return compose([initial, second])
+ 
+ 
+ def summarize(inputs, result):
+@@ -58,10 +62,9 @@ def summarize(inputs, result):
+ 
+ 
+ def verify(root=first.ROOT, at=None):
+-    # Cohort report/expiry/provenance checks cannot be bypassed by a merged count.
+-    first.verify(root, at)
+-    employment.verify(root, at)
+-    inputs = reconstruct(root)
++    # Fresh provenance once per invocation; all cohort/report/expiry checks remain.
++    when = first.dubai_date() if at is None else at
++    inputs = reconstruct(root, at=when)
+     first.need(set(OUTPUT_PINS) == {'data/negative.json', 'data/sources.json',
+         'data/campaign_context.json', 'library-report.json'}, 'LIBRARY_OUTPUT_BINDINGS')
+     for relative, expected in (('data/negative.json', inputs['records']),
+@@ -69,7 +72,7 @@ def verify(root=first.ROOT, at=None):
+         actual = first.pinned(root, 'tools/keyword-system/'+relative, OUTPUT_PINS[relative])
+         first.need(first.canonical(actual) == first.canonical(expected), 'LIBRARY_MASTER_DIFFERS_FROM_COHORTS')
+     result = audit('negative', inputs['records'], inputs['sources'], inputs['campaigns'],
+-        inputs['campaign_context'], inputs['protected_queries'], first.dubai_date() if at is None else at)
++        inputs['campaign_context'], inputs['protected_queries'], when)
+     summary = summarize(inputs, result)
+     first.need(summary['structural_pass'] and summary['reviewed_eligible_rows'] == 2113 and
+         summary['approved_exclusion_rows'] == summary['computed_conflicts'] == 0 and

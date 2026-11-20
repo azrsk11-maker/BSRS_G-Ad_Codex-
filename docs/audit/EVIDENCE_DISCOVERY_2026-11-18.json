@@ -1,0 +1,30 @@
+{
+  "schema": "bsre-bounded-evidence-discovery-v1",
+  "client_date": "2026-11-18",
+  "account_scope": "Verified explicitly selected Real Estate Marketing connections only",
+  "G006": {
+    "owner_reported_completion_preserved": true,
+    "existing_sent_evidence_request_found": true,
+    "reply_found_in_checked_thread": false,
+    "approved_evidence_folder_children_at_capture": 0,
+    "actual_desktop_phone_exercise_results_recovered": false,
+    "exercise_timing_recovered": false,
+    "gate": "BLOCKED_RESULTS_NOT_RECOVERED",
+    "limitation": "Bounded queries and inspected folder/thread only; not proof that evidence does not exist elsewhere. No new rehearsal automatically scheduled.",
+    "capacity_300_per_day": "unverified_separate_G008"
+  },
+  "G011": {
+    "approved_register_access_verified": true,
+    "workbook_tabs_observed": 7,
+    "listed_revisions_observed": 7,
+    "headers_and_bounded_provenance_inspected": true,
+    "authoritative_covered_history_scope_bound": false,
+    "business_ledger_version_bound": false,
+    "gate": "BLOCKED_SCOPE_VERSION_UNBOUND",
+    "limitation": "Current access and listed provider revisions do not establish whole-business history; service/signer/custody enrollment remains separate."
+  },
+  "private_records_or_resource_ids_included": false,
+  "original_workbook_shared": false,
+  "production_changed": false,
+  "Ads_changed": false
+}

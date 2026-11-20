@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "scope": "LOCAL_APPEND_ONLY_APPRENTICESHIP_RESEARCH_CHECKS_NOT_EXCLUSION_OR_RELEASE_APPROVAL",
+  "date_dubai": "2026-11-12",
+  "status": "FOCUSED_LOCAL_CHECKS_PASS_CURRENT_COMPLETE_CI_PENDING",
+  "evidence_refs": [
+    "keyword-negative-apprenticeship-admission-2026-11-12/README.md",
+    "keyword-negative-apprenticeship-admission-2026-11-12/index.json",
+    "keyword-negative-apprenticeship-admission-2026-11-12/library-report.json",
+    "keyword-apprenticeship-review-2026-11-12/README.md"
+  ],
+  "counts": {
+    "prior_research_rows": 10955,
+    "current_research_rows": 10963,
+    "new_research_rows": 8,
+    "archived_originals": 18,
+    "protected_queries": 16383,
+    "new_protections": 0,
+    "sources": 24,
+    "exact_provenance_occurrences": 11169,
+    "captured_new_literals": 9,
+    "new_exact_records": 8,
+    "new_exact_occurrences": 8,
+    "supporting_aliases_not_exact_occurrences": 1,
+    "positive_admissions": 0,
+    "exclusion_approvals": 0,
+    "deployed": 0,
+    "negative_target": 14000,
+    "negative_deficit": 3037
+  },
+  "partition": {
+    "selected_ordinals": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "supporting_alias_ordinal": 1,
+    "representative_ordinal": 7,
+    "route": "ST0536 / LARS 424",
+    "alias_adds_record": false,
+    "alias_adds_exact_occurrence": false,
+    "alias_adds_protection": false
+  },
+  "complete_inputs_sha256": "4db6a3a93ac0b7f4015cb2e329898b5446aa947586e2880b98b02537941373ac",
+  "prior_complete_inputs_sha256": "6732c169d372828ac96078bfa4b17dc9c9dd571e6b01b5b717d096b2c534a5ea",
+  "input_pins": {
+    "keyword-apprenticeship-feasibility-2026-11-12/source.json": "b20eac063ead4bb4882d8535a396a320e2336673941a509a10fa570cf54bc1fb",
+    "keyword-apprenticeship-feasibility-2026-11-12/projection.json": "1f5d3a3d6baf3c0b2d1e82c18cf2552b6572687a9741311a3449916f6ea7122f",
+    "keyword-apprenticeship-review-2026-11-12/independent-review.json": "6ad55fadbbcd94f5e371159ecf5c605f161a391746628b184d4c3ce3184d421b"
+  },
+  "verified_saved_output_pins": {
+    "keyword-negative-apprenticeship-admission-2026-11-12/review.json": "bb0fc935b24f263b24e7803b39ef5e5df83c6b042cf77f82e7293d0ad2bfc86b",
+    "keyword-negative-apprenticeship-admission-2026-11-12/cohort-report.json": "9da535240733bb47e27f72f7ab5d52aa75edd6ccbec55e32e38cdad9381bd842",
+    "keyword-negative-apprenticeship-admission-2026-11-12/index.json": "9975ed7062101070b410258913392e15669006abbe596baa36da057c0212372a",
+    "keyword-negative-apprenticeship-admission-2026-11-12/library-report.json": "31823e15b154608a1e41480226c11b82789e00cbfc4fc6553455959b17398051",
+    "keyword-negative-apprenticeship-admission-2026-11-12/research-pool-allocation.json": "7081460c15662dd875602992c5d2fc2ec991bf63a9e1e5ed283a7e81e289bb37"
+  },
+  "implementation_bindings_at_documentation": {
+    "../../tools/keyword-system/apprenticeship_admission.py": "a99a91d7121296dec9dca439d64ff226a264770a8b5f0859cb99df31be2f7ebe",
+    "../../tools/keyword-system/current_negative_library.py": "8abe63c68f7153a16e03dfbdf15480dbc3b7564af80df6c8bf6339543712725b",
+    "../../tools/keyword-system/test_entertainment_admission.py": "2246ebd3cedcd658a8691d4a98906ffc89a46481723a37f01944cc6005a0e2da"
+  },
+  "focused_evidence": {
+    "origin": "Ignored local apprenticeship-admission-proof.json metadata inspected; matching source-stage README and five output/review file hashes rechecked. Raw logs are not published.",
+    "local_metadata_sha256": "f3912e70e68d91b0ce602069a4d7198f4d8c464e5e9e6ab2f24a5ac35b15a560",
+    "fresh_complete_10955_base_seconds": 96.29663,
+    "generation_with_complete_audit_seconds": 8.304183,
+    "focused_tests": {
+      "passed": 10,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 63.80368
+    },
+    "shared_process_seconds": 170.947701,
+    "seconds_display_rounding": 6,
+    "construction_reused_only_inside_this_fresh_invocation": true,
+    "complete_base_serialized": false,
+    "full_foundation_run": false,
+    "documentation_pass_reran_tests_or_composition": false
+  },
+  "integration_evidence": {
+    "origin": "Root-reported local execution; this documentation pass inspected the freshness guard source but did not rerun it or read a separate raw receipt.",
+    "entertainment_tests_passed": 11,
+    "reported_seconds": 3.318,
+    "public_fresh_entrypoint_guards": 12,
+    "current_api_scope_rows": 10963,
+    "frozen_entertainment_snapshot_rows": 10955,
+    "frozen_snapshot_entrypoints": [
+      "reconstruct_entertainment_snapshot",
+      "verify_entertainment_snapshot"
+    ]
+  },
+  "preserved": {
+    "historical_bodies_order_provenance_and_extra_markers": true,
+    "archives": true,
+    "protection_prefix": true,
+    "sources": true,
+    "campaign_registry_and_context": true,
+    "old_review_and_source_pins": true,
+    "archived_sha256": "c4cd30d084e43f23da6e30e8dbdc2a471cd65a3155f529b6acf46124fecb4b4b",
+    "protected_sha256": "17a6a1ea9629c4d1a6bb787bf93cc4803b69f497af18c457588c534dfc747df2"
+  },
+  "research_scope": {
+    "campaign_key": "BSRE-C0301",
+    "landing_page_id": "BSRE-LP0301",
+    "family": "RNT",
+    "purpose": "Public residential-rental intake planning only",
+    "actual_google_campaign_id": null,
+    "actual_destination": null,
+    "match_type": "EXACT",
+    "risk_level": "HIGH",
+    "approval_state": "PENDING",
+    "observed_query": null,
+    "volume": null,
+    "cpc": null,
+    "competition": null,
+    "platform_text_acceptance_verified": false,
+    "deployment_export_allowed": false,
+    "positive_library_coverage_verified": false,
+    "independent_human_review_verified": false
+  },
+  "allocation": {
+    "new_rows": {
+      "ACADEMIC": 8
+    },
+    "academic_research_rows": 1676,
+    "academic_target_unchanged": 2000,
+    "total_target_unchanged": 14000,
+    "target_transfer": null,
+    "media_budget_changed": false,
+    "planned_average_daily_budget_aed_unchanged": 2000
+  },
+  "related_nonadmitted_evidence": {
+    "buyer_offplan": {
+      "evidence_ref": "keyword-buyer-offplan-planner-2026-11-12/README.md",
+      "complete_source_rows": 6,
+      "supplied_seed_rows": 1,
+      "provider_idea_rows": 5,
+      "confirmed_novel_positive_canonicals": 0,
+      "novel_canonical_count": "UNDETERMINED",
+      "positive_admissions": 0,
+      "source_sha256": "1a310b01460daa461c78b3ecdb19f5069cb74217187d01d608b513af5a128bfb",
+      "projection_sha256": "358099562b49c2765921d3b38f19d54914fb47abdd24cc61e497793b7c55eb92",
+      "outstanding": [
+        "Factual service/business acceptance",
+        "Inventory, coverage, availability and mandates",
+        "Rights, language and claims",
+        "Five existing subject-bound positive reviews",
+        "Destination, function, consent and release evidence"
+      ]
+    },
+    "cg1": {
+      "evidence_ref": "keyword-vocational-feasibility-2026-11-12/README.md",
+      "captured_titles": 1,
+      "unreviewed": 1,
+      "reviewed_for_admission": 0,
+      "admitted": 0,
+      "source_sha256": "2f6bb263de9ba25ca59b470a7c54dde5def9edf5ea5d1e6cf87d978092c0713c",
+      "projection_sha256": "f0e75b423dae20f53012c6c33fc8bb2da5346e7fb5b00824c4c5eb938fa7f145",
+      "holds": [
+        "Independent semantic and full current membership/protection/scope review",
+        "External variants and provider-prefixed forms",
+        "Reuse permission and legitimate maintenance/qualification guidance"
+      ]
+    }
+  },
+  "acceptance": {
+    "current_complete_ci": "PENDING_AFTER_CHANGED_SOURCE",
+    "historical_green_ci_reused": false,
+    "immutable_30_member_fixture": {
+      "status": "PASS",
+      "origin": "Root-reported current source-pin check; not rerun by this documentation pass."
+    },
+    "full_goal_complete": false,
+    "production_changed": false,
+    "ads_changed": false,
+    "all_advertising_remains_paused": true,
+    "actual_business_evidence_and_release_gates_open": true
+  },
+  "combined_discovery_only": {
+    "scope": "DISCOVERY_ONLY_NOT_EXECUTION_OR_ACCEPTANCE",
+    "modules": 35,
+    "cases": 447,
+    "expected_ids_sha256": "25c1643509f0a3bf66918af0f1de6cfc7ef5059471c015d7e3cc5f488eee6d1a",
+    "elapsed_seconds": 0.912153
+  }
+}

@@ -1,0 +1,2909 @@
+{
+  "schema_version": "bsre-asset-association-observation-v1",
+  "scope": "READ_ONLY_CONFIGURATION_PROJECTION_NOT_ROUTING_OR_RELEASE_ACCEPTANCE",
+  "observed_date": "2026-11-07",
+  "precise_observation_time_utc": null,
+  "account_id": "573-038-4686",
+  "production_changes": 0,
+  "ui_context": {
+    "provenance": "Authenticated root operator readback accompanying the export",
+    "view": "All campaigns",
+    "asset_status_filter": [
+      "Enabled",
+      "Paused"
+    ],
+    "asset_type_filter": "All",
+    "levels_filter": "All five levels"
+  },
+  "source": {
+    "basename": "Asset association report.csv",
+    "bytes": 265808,
+    "sha256": "7a6a3afe26609b996d8e62afa4f2c820420651ebe848aaa2578e32f3945065ef",
+    "encoding": "UTF-8 with optional BOM decoding",
+    "delimiter": "comma",
+    "title": "Asset association report",
+    "date_preamble": "\"October 31, 2026 - November 6, 2026\"",
+    "date_preamble_meaning": "Report selector metadata only; no performance columns were exported",
+    "columns": [
+      "Asset status",
+      "Asset",
+      "Asset type",
+      "Level",
+      "Status",
+      "Status reason",
+      "Added by",
+      "Last updated",
+      "Item ID",
+      "Campaign ID",
+      "Ad group ID",
+      "Policy details",
+      "Campaign",
+      "Ad group"
+    ],
+    "source_record_count": 1452,
+    "raw_export_committed": false
+  },
+  "baseline_join": {
+    "repository_path": "docs/audit/CAMPAIGN_STATUS_BASELINE_2026-11-07.json",
+    "sha256": "6ca56f25c21ba5b6907ea750189be48d6208a4910f47dd825739e25927da312a",
+    "method": "Exact Campaign ID membership, then verify exact campaign-name agreement; no inferred ad IDs",
+    "campaigns": [
+      {
+        "id": "24372566774",
+        "name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "baseline_status": "Paused"
+      },
+      {
+        "id": "24367388382",
+        "name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "baseline_status": "Paused"
+      },
+      {
+        "id": "24378494092",
+        "name": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "baseline_status": "Paused"
+      },
+      {
+        "id": "24378494098",
+        "name": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "baseline_status": "Paused"
+      }
+    ],
+    "name_mismatches": 0
+  },
+  "projection_rules": {
+    "retained_configuration_columns": [
+      "Asset status",
+      "Asset",
+      "Asset type",
+      "Level",
+      "Status",
+      "Status reason",
+      "Added by",
+      "Last updated",
+      "Item ID",
+      "Campaign ID",
+      "Ad group ID",
+      "Policy details",
+      "Campaign",
+      "Ad group"
+    ],
+    "configuration_columns_omitted": [],
+    "cell_representation": "Exact exported strings including empty strings, line breaks, narrow spaces and placeholder reasons",
+    "source_record_definition": "One-based logical CSV data record after the header; not physical line number",
+    "rows_retained": "All 17 Account rows plus all 114 exact-ID V2 rows",
+    "unrelated_rows_omitted": 1321,
+    "no_deduplication_applied": true
+  },
+  "source_counts": {
+    "by_level": {
+      "Account": 17,
+      "Ad": 1165,
+      "Ad group": 1,
+      "Asset group": 63,
+      "Campaign": 206
+    },
+    "asset_status": {
+      "Enabled": 1435,
+      "Paused": 17
+    },
+    "status": {
+      "Eligible": 202,
+      "Not eligible": 1228,
+      "Paused": 17,
+      "Pending": 5
+    },
+    "exact_duplicate_rows_beyond_first": 289
+  },
+  "omitted_scope_counts_only": {
+    "rows": 1321,
+    "by_level": {
+      "Ad": 1051,
+      "Ad group": 1,
+      "Asset group": 63,
+      "Campaign": 206
+    },
+    "exact_duplicate_rows_beyond_first": 289
+  },
+  "account_summary": {
+    "rows": 17,
+    "levels": {
+      "Account": 17
+    },
+    "asset_types": {
+      "Business logo": 1,
+      "Lead form": 1,
+      "Sitelink": 15
+    },
+    "asset_status": {
+      "Paused": 17
+    },
+    "status": {
+      "Paused": 17
+    },
+    "status_reason": {
+      "Paused": 17
+    },
+    "added_by": {
+      "Advertiser": 17
+    },
+    "unique_item_ids": 17,
+    "exact_duplicate_rows_beyond_first": 0,
+    "nonempty_policy_details_rows": 0,
+    "sitelink_embedded_urls": [
+      "https://lplife.blackswanrealestate.ae/"
+    ],
+    "sitelink_rows_with_embedded_legacy_url": 15,
+    "sitelink_equal_copy_groups": [
+      {
+        "first_line": "About Us",
+        "association_count": 5,
+        "item_ids": [
+          "409780597866",
+          "409605055838",
+          "409604659994",
+          "409604732576",
+          "409780690248"
+        ]
+      },
+      {
+        "first_line": "Contact Black Swan",
+        "association_count": 5,
+        "item_ids": [
+          "409604675954",
+          "409780515183",
+          "409707882370",
+          "409707766480",
+          "409780597860"
+        ]
+      },
+      {
+        "first_line": "Dubai Property Investment",
+        "association_count": 4,
+        "item_ids": [
+          "409707515575",
+          "409780690227",
+          "409780532985",
+          "409780595892"
+        ]
+      },
+      {
+        "first_line": "Buy Property",
+        "association_count": 1,
+        "item_ids": [
+          "409707873865"
+        ]
+      }
+    ]
+  },
+  "v2_summary": {
+    "rows": 114,
+    "levels": {
+      "Ad": 114
+    },
+    "asset_types": {
+      "Description": 24,
+      "Headline": 90
+    },
+    "asset_status": {
+      "Enabled": 114
+    },
+    "status": {
+      "Not eligible": 114
+    },
+    "status_reason": {
+      " --; --; --": 114
+    },
+    "added_by": {
+      "Advertiser": 114
+    },
+    "unique_item_ids": 96,
+    "exact_duplicate_rows_beyond_first": 0,
+    "nonempty_policy_details_rows": 0,
+    "ad_group_count": 6,
+    "repeated_item_id_occurrences_beyond_first": 18,
+    "item_id_type_or_text_conflicts": 0,
+    "groups": [
+      {
+        "campaign_id": "24372566774",
+        "campaign_name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "ad_group_id": "204397706154",
+        "ad_group_name": "Dubai Off-Plan Buyers",
+        "rows": 19,
+        "levels": {
+          "Ad": 19
+        },
+        "asset_types": {
+          "Description": 4,
+          "Headline": 15
+        },
+        "asset_status": {
+          "Enabled": 19
+        },
+        "status": {
+          "Not eligible": 19
+        },
+        "status_reason": {
+          " --; --; --": 19
+        },
+        "added_by": {
+          "Advertiser": 19
+        },
+        "unique_item_ids": 19,
+        "exact_duplicate_rows_beyond_first": 0,
+        "nonempty_policy_details_rows": 0
+      },
+      {
+        "campaign_id": "24372566774",
+        "campaign_name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "ad_group_id": "204397706314",
+        "ad_group_name": "Dubai Resale Buyers",
+        "rows": 19,
+        "levels": {
+          "Ad": 19
+        },
+        "asset_types": {
+          "Description": 4,
+          "Headline": 15
+        },
+        "asset_status": {
+          "Enabled": 19
+        },
+        "status": {
+          "Not eligible": 19
+        },
+        "status_reason": {
+          " --; --; --": 19
+        },
+        "added_by": {
+          "Advertiser": 19
+        },
+        "unique_item_ids": 19,
+        "exact_duplicate_rows_beyond_first": 0,
+        "nonempty_policy_details_rows": 0
+      },
+      {
+        "campaign_id": "24378494098",
+        "campaign_name": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "ad_group_id": "204397706114",
+        "ad_group_name": "Black Swan Brand",
+        "rows": 19,
+        "levels": {
+          "Ad": 19
+        },
+        "asset_types": {
+          "Description": 4,
+          "Headline": 15
+        },
+        "asset_status": {
+          "Enabled": 19
+        },
+        "status": {
+          "Not eligible": 19
+        },
+        "status_reason": {
+          " --; --; --": 19
+        },
+        "added_by": {
+          "Advertiser": 19
+        },
+        "unique_item_ids": 19,
+        "exact_duplicate_rows_beyond_first": 0,
+        "nonempty_policy_details_rows": 0
+      },
+      {
+        "campaign_id": "24367388382",
+        "campaign_name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "ad_group_id": "204397706554",
+        "ad_group_name": "Dubai Landlords",
+        "rows": 19,
+        "levels": {
+          "Ad": 19
+        },
+        "asset_types": {
+          "Description": 4,
+          "Headline": 15
+        },
+        "asset_status": {
+          "Enabled": 19
+        },
+        "status": {
+          "Not eligible": 19
+        },
+        "status_reason": {
+          " --; --; --": 19
+        },
+        "added_by": {
+          "Advertiser": 19
+        },
+        "unique_item_ids": 19,
+        "exact_duplicate_rows_beyond_first": 0,
+        "nonempty_policy_details_rows": 0
+      },
+      {
+        "campaign_id": "24367388382",
+        "campaign_name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "ad_group_id": "204397706394",
+        "ad_group_name": "Dubai Sellers",
+        "rows": 19,
+        "levels": {
+          "Ad": 19
+        },
+        "asset_types": {
+          "Description": 4,
+          "Headline": 15
+        },
+        "asset_status": {
+          "Enabled": 19
+        },
+        "status": {
+          "Not eligible": 19
+        },
+        "status_reason": {
+          " --; --; --": 19
+        },
+        "added_by": {
+          "Advertiser": 19
+        },
+        "unique_item_ids": 19,
+        "exact_duplicate_rows_beyond_first": 0,
+        "nonempty_policy_details_rows": 0
+      },
+      {
+        "campaign_id": "24378494092",
+        "campaign_name": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "ad_group_id": "204397706354",
+        "ad_group_name": "Dubai Immediate Rentals",
+        "rows": 19,
+        "levels": {
+          "Ad": 19
+        },
+        "asset_types": {
+          "Description": 4,
+          "Headline": 15
+        },
+        "asset_status": {
+          "Enabled": 19
+        },
+        "status": {
+          "Not eligible": 19
+        },
+        "status_reason": {
+          " --; --; --": 19
+        },
+        "added_by": {
+          "Advertiser": 19
+        },
+        "unique_item_ids": 19,
+        "exact_duplicate_rows_beyond_first": 0,
+        "nonempty_policy_details_rows": 0
+      }
+    ]
+  },
+  "interpretation": [
+    "All 17 exported account associations are paused. Their presence is not a claim of active V2 inheritance.",
+    "All 114 V2 component associations show Asset status Enabled and Status Not eligible. These are different status dimensions, not evidence that ads serve.",
+    "The V2 Status reason is exported literally as placeholder text; this file alone does not explain ineligibility.",
+    "Six ad-group sets of 15 headline and four description rows do not establish six RSA IDs or identify actual ads. Use the separate ad-table readback.",
+    "V2 has 96 distinct Item ID values across 114 rows. Reuse is not automatically a duplicate ad or duplicate conversion.",
+    "Repeated account sitelink copy has different Item IDs. No exact duplicate row exists in either retained subset; 289 repeated full rows belong to omitted scopes and were not silently deduplicated.",
+    "No dedicated Final URL column exists, but all 15 account sitelinks contain the legacy lplife URL within Asset text. Those strings do not verify redirect behavior or effective routing.",
+    "Blank Policy details do not prove policy approval. Policy status, ad IDs and final URLs require the separate detailed ad readback.",
+    "The paused hosted lead form exposes only its asset label here; privacy terms, fields, delivery and accepted-lead routing are not verified.",
+    "No call/phone/WhatsApp asset appears in these retained subsets. This does not establish staffed routing, website CTA behavior, manager-level controls or auto-created-asset settings.",
+    "Business ownership, claim accuracy, image rights, native destinations, consent, runtime measurement and separate release authorization remain acceptance gates."
+  ],
+  "account_associations": [
+    {
+      "source_record": 392,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "About Us\nLearn about our approach\nOne-to-one, start to finish\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780597866",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 505,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Contact Black Swan\nTalk to Black Swan directly\nCall or WhatsApp us anytime\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409604675954",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 506,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Dubai Property Investment\nExplore Dubai investment options\nSpeak to a consultant today\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409707515575",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 637,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Dubai Property Investment\nExplore Dubai investment options\nSpeak to a consultant today\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780690227",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 766,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "About Us\nLearn about our approach\nOne-to-one, start to finish\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409605055838",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 844,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Contact Black Swan\nTalk to Black Swan directly\nCall or WhatsApp us anytime\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780515183",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 984,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Buy Property in Dubai",
+        "Asset type": "Lead form",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 4:50 PM",
+        "Item ID": "424492800514",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 985,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Contact Black Swan\nTalk to Black Swan directly\nCall or WhatsApp us anytime\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409707882370",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 994,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "About Us\nLearn about our approach\nOne-to-one, start to finish\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409604659994",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1058,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Contact Black Swan\nTalk to Black Swan directly\nCall or WhatsApp us anytime\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409707766480",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1059,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "About Us\nLearn about our approach\nOne-to-one, start to finish\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409604732576",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1251,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "https://tpc.googlesyndication.com/simgad/3231803287890817386",
+        "Asset type": "Business logo",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 23, 2026, 3:23 PM",
+        "Item ID": "409031914620",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1260,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Dubai Property Investment\nExplore Dubai investment options\nSpeak to a consultant today\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780532985",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1261,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Dubai Property Investment\nExplore Dubai investment options\nSpeak to a consultant today\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780595892",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1335,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "About Us\nLearn about our approach\nOne-to-one, start to finish\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780690248",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1336,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Contact Black Swan\nTalk to Black Swan directly\nCall or WhatsApp us anytime\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409780597860",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    },
+    {
+      "source_record": 1397,
+      "configuration": {
+        "Asset status": "Paused",
+        "Asset": "Buy Property\nExplore buyer opportunities\nSpeak to a consultant today\nhttps://lplife.blackswanrealestate.ae/",
+        "Asset type": "Sitelink",
+        "Level": "Account",
+        "Status": "Paused",
+        "Status reason": "Paused",
+        "Added by": "Advertiser",
+        "Last updated": "Oct 22, 2026, 5:37 PM",
+        "Item ID": "409707873865",
+        "Campaign ID": "0",
+        "Ad group ID": "0",
+        "Policy details": "",
+        "Campaign": " --",
+        "Ad group": " --"
+      }
+    }
+  ],
+  "v2_associations": [
+    {
+      "source_record": 16,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Buying Plans",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612479",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 25,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning To Buy In 1-6 Months",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612485",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 43,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Send an enquiry or speak with our team on WhatsApp about your property requirements.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612521",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 44,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Buy A Property In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612527",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 47,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Off-Plan Buyer Enquiries",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612488",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 49,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Resale Buyer Enquiries",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612533",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 51,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Your Dubai Property Search",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612449",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 52,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Your Dubai Property Search",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612449",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 53,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Off-Plan Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612473",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 82,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Buying Within 1-6 Months",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612536",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 91,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning to buy off-plan in Dubai within 1-6 months? Share your budget and preferences.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612512",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 96,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Buying Off-Plan In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612476",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 103,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Resale Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612524",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 123,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Home Search",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612530",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 139,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share your preferred area, property type and funding plans with Black Swan Real Estate.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612557",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 141,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Black Swan Real Estate",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409315717100",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 145,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Black Swan Real Estate",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409315717100",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 152,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start a Dubai resale property enquiry. Our team can discuss your buying requirements.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612560",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 181,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Property Plans",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612428",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 182,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Landlord Enquiries",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612659",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 185,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start A Landlord Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612674",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 192,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Enquire About Resale Homes",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612551",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 197,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Choose the service you need and contact our team through our website or WhatsApp.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612470",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 202,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning To Sell In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612443",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 246,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start A Seller Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612623",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 247,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Selling Plans",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612617",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 258,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us About Your Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612620",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 260,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us What You Need",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409493495874",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 262,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Property Enquiries",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612422",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 263,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Property Letting",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612677",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 264,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Owners Seeking To Let",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612683",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 295,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Your Dubai Property Search",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612449",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 299,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Submit a seller enquiry as an owner or authorised representative. Share property details.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612653",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 301,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Sell Your Dubai Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409493502051",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 303,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us About Your Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612620",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 337,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Black Swan Real Estate",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409315717100",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 349,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Looking to let a Dubai property? Share its location, property type and available date.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612689",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 353,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Explore your next steps for off-plan, resale or rental property in Dubai.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612467",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 357,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Rental Needs",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612584",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 359,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan Real Estate about your Dubai home search. Availability needs checking.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612608",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 363,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Enquire About Dubai Rentals",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612587",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 401,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Black Swan Real Estate",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409315717100",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 404,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Black Swan Real Estate",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409315717100",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 408,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak With Black Swan",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612425",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 409,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning to sell a Dubai property? Tell us its location, property type and your timeline.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612647",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 416,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Your Dubai Rental Search",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612581",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 417,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Need To Move Immediately",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612572",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 418,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Need to rent in Dubai immediately? Share your budget, preferred area and move-in date.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612602",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 419,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Rental Enquiries",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612569",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 422,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning Your Move In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612593",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 423,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start A Rental Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612596",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 452,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Rental Target",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612680",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 454,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us Your Selling Timeline",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612638",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 455,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us Its Available Date",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612671",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 461,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning To Sell In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612443",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 464,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan Real Estate to discuss your property and rental expectations.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612692",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 526,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share Your Rental Budget",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612578",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 528,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Black Swan Real Estate",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "409315717100",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 556,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell us your preferred area, property type and funding plans to discuss your search.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612515",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 560,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share Your Property Budget",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612482",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 571,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us Your Preferred Area",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612506",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 599,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Your Letting Plans",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612665",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 605,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share Your Sale Expectations",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612626",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 610,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak With Our Property Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612455",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 618,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us Your Preferred Area",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612506",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 643,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share Your Property Details",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612668",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 653,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Let Your Dubai Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612446",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 659,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak About Your Dubai Home",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612641",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 679,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Explore Your Resale Options",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612542",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 682,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact our team through the website or WhatsApp to discuss your next property purchase.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612563",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 686,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell us your preferred home type and bedrooms to discuss your rental requirements.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612605",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 688,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Our Rental Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612599",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 689,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us Your Preferred Area",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612506",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 691,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Find Your Next Steps",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612590",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 692,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak With Our Property Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612455",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 740,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Looking To Rent In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612440",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 741,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan Real Estate for Dubai property buying, renting, selling or letting.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612461",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 743,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Property Seller Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612614",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 786,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share your property needs, budget and timeline. Our team can discuss your enquiry.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612464",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 789,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612644",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 790,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Buying Property In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612431",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 792,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Your Next Step In Selling",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612629",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 797,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612644",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 798,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning To Let Your Home",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612662",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 799,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Your Next Step In Letting",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612686",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 827,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak With Our Property Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612455",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 828,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak With Our Property Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612455",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 877,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Dubai Resale Homes",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612437",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 884,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Explore Off-Plan Options",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612434",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 885,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Let Your Dubai Property",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612446",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 899,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan Real Estate to discuss your property and sale expectations.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612650",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 901,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak With Our Property Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612455",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 952,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Choose Your Property Service",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612458",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 953,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Dubai Home Seller Support",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612632",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 954,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Speak with our team through the website or WhatsApp about your Dubai property sale.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612656",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 956,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start A Property Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612452",
+        "Campaign ID": "24378494098",
+        "Ad group ID": "204397706114",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+        "Ad group": "Black Swan Brand"
+      }
+    },
+    {
+      "source_record": 1033,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Property Selling Enquiries",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612635",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706394",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Sellers"
+      }
+    },
+    {
+      "source_record": 1034,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Submit a landlord enquiry as an owner or authorised representative of the property.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612695",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 1035,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Use our website or WhatsApp to discuss letting your Dubai property with our team.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612698",
+        "Campaign ID": "24367388382",
+        "Ad group ID": "204397706554",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+        "Ad group": "Dubai Landlords"
+      }
+    },
+    {
+      "source_record": 1040,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Discuss Areas And Developers",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612494",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1106,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start Your Property Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612509",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 1110,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Enquire About Off-Plan Homes",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612500",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1111,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Plan Your Next Property Buy",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612503",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1168,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Start Your Property Enquiry",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612509",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1169,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Planning A Dubai Home Purchase",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612545",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 1170,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Buying a resale property in Dubai within 1-6 months? Tell us your budget and preferences.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612554",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 1177,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Contact Black Swan Real Estate about your Dubai off-plan property buying plans.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612518",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1221,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Share Your Buying Budget",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612539",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 1222,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Plan Your Dubai Property Buy",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612548",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706314",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Resale Buyers"
+      }
+    },
+    {
+      "source_record": 1224,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Explore Dubai Property Plans",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612491",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1233,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Talk To Our Property Team",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612497",
+        "Campaign ID": "24372566774",
+        "Ad group ID": "204397706154",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+        "Ad group": "Dubai Off-Plan Buyers"
+      }
+    },
+    {
+      "source_record": 1365,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Rent A Home In Dubai",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612566",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 1368,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Tell Us Your Move-In Date",
+        "Asset type": "Headline",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612575",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    },
+    {
+      "source_record": 1369,
+      "configuration": {
+        "Asset status": "Enabled",
+        "Asset": "Send your rental enquiry through our website or speak with our team on WhatsApp.",
+        "Asset type": "Description",
+        "Level": "Ad",
+        "Status": "Not eligible",
+        "Status reason": " --; --; --",
+        "Added by": "Advertiser",
+        "Last updated": " --",
+        "Item ID": "431673612611",
+        "Campaign ID": "24378494092",
+        "Ad group ID": "204397706354",
+        "Policy details": "",
+        "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+        "Ad group": "Dubai Immediate Rentals"
+      }
+    }
+  ]
+}

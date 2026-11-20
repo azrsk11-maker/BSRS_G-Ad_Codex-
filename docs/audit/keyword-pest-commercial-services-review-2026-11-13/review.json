@@ -1,0 +1,2264 @@
+{
+  "schema": "bsre-pest-commercial-services-semantic-review-v1",
+  "reviewed_on": "2026-11-13",
+  "source_pins": {
+    "service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392",
+    "capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea"
+  },
+  "source_directory": "docs/audit/keyword-service-installation-2026-11-13",
+  "raw_source_sha256": "4dda5a60cfbb680edff4d2b6c17319f55afb41055968052bb18e6b3d883f5078",
+  "reviewer": {
+    "name": "Codex AI lead",
+    "kind": "AI_SEMANTIC_REVIEW",
+    "all_complete_literals_read": true,
+    "independent_second_review": false,
+    "human_approval": false
+  },
+  "limits": {
+    "research_proposal_only": true,
+    "lexical_selection_is_not_intent_proof": true,
+    "provider_identity_verified": false,
+    "metrics_used_for_intent": false,
+    "current_library_membership_checked": false,
+    "compatibility_checked": false,
+    "within_source_aliases_checked": false,
+    "protected_intent_checked": false,
+    "independent_exclusion_approval": false,
+    "library_rows_added": 0,
+    "live_bindings_added": 0,
+    "deployed": 0,
+    "source_metrics_modified": false
+  },
+  "selection": {
+    "cohort_pattern": "(?:(?:\\b(?:wasps?|hornets?)\\b)|(?:\\b(?:fleas?|ticks?)\\b)|(?:\\bfumigat)|(?:\\b(?:rodents?|mice|rats?)\\b)|(?:\\b(?:algae|algaecide|backwash)\\b)|(?:\\btermite\\b.*\\binspect|\\binspect.*\\btermite\\b)|(?:\\b(?:exterminator|extermination)\\b.*\\b(?:cost|price|quote)\\b|\\b(?:cost|price|quote)\\b.*\\b(?:exterminator|extermination)\\b))|(?:\\b(?:commercial|industrial|emergency|same day|24 hour)\\b)",
+    "prior_review_pins": {
+      "docs/audit/keyword-septic-grease-review-2026-11-13/review.json": "5d8c1d8af6ccff0a0c0f40faff8f899e2f6bd56e372959c4083220662581f028",
+      "docs/audit/keyword-trade-services-review-2026-11-13/review.json": "597a03ccdbc92ae5a58b429981b0dafbc7749676730e2db5d697926076ebdd60"
+    },
+    "flags": "IGNORECASE",
+    "source_records": 6053,
+    "selected_records": 169,
+    "remaining_outside_cohort": 5884,
+    "source_order_preserved": true,
+    "quota_cutoff": false
+  },
+  "decisions": [
+    {
+      "selected_ordinal": 1,
+      "source_ordinal": 70,
+      "source_line": 73,
+      "original_literal": "bed bug exterminator cost",
+      "normalized_literal": "bed bug exterminator cost",
+      "literal_utf8_sha256": "2d49a00e1a58133aded8cc7c7125b347e19b714f1acfcd7c830558b6a99f8340",
+      "complete_public_values_sha256": "d5e5c8009821d27f3591250d7322e0080fe1797eb83556712adb6baa5e09b3af",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 2,
+      "source_ordinal": 121,
+      "source_line": 124,
+      "original_literal": "cockroach exterminator cost",
+      "normalized_literal": "cockroach exterminator cost",
+      "literal_utf8_sha256": "3f0bfe0c78074f9e6b65924c02c1a868f52e717d6399285066bcd33b09def28a",
+      "complete_public_values_sha256": "fc60c3a00181b25335832d8fb181f554764339572131aba7e3924c7670412732",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 3,
+      "source_ordinal": 135,
+      "source_line": 138,
+      "original_literal": "roach exterminator cost",
+      "normalized_literal": "roach exterminator cost",
+      "literal_utf8_sha256": "b22528de15ec93defcd6e1d9ce02bf0987274afb5dd04e56d49d41bf3abdb6b3",
+      "complete_public_values_sha256": "70fe497eccd9028d833ed5b7fce18fc678de0ff3eea938105c1500a9fb5acce5",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 4,
+      "source_ordinal": 147,
+      "source_line": 150,
+      "original_literal": "termite exterminator cost",
+      "normalized_literal": "termite exterminator cost",
+      "literal_utf8_sha256": "31983a7a141e66b7d632930bff22d25b3cd5fe72bd539f4ab13de65dd4a5baeb",
+      "complete_public_values_sha256": "79a07e3d185b727154e2a7a0f3fddb34f613ac878ee095140ed99d577f6f5d6a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 5,
+      "source_ordinal": 179,
+      "source_line": 182,
+      "original_literal": "emergency sprinkler repair",
+      "normalized_literal": "emergency sprinkler repair",
+      "literal_utf8_sha256": "994418f8f25011d3f2ee760cab9b175ad953e287cda358cf706b1a2e0cf388a6",
+      "complete_public_values_sha256": "69c3b7e11a51e923738e11be661743c143b63bffd0b6dc5a9b4119a13e7794d1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 6,
+      "source_ordinal": 184,
+      "source_line": 187,
+      "original_literal": "termite fumigation",
+      "normalized_literal": "termite fumigation",
+      "literal_utf8_sha256": "e3d4ce3b4937ae6b8fd2d2353c4d389c96f8f7e6d024a78b74ddabb0523b3cb8",
+      "complete_public_values_sha256": "d0aa48fbbe5cbb066792849386cda2bbc4e3f164937a45b55ea936ba3bcafc38",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 7,
+      "source_ordinal": 219,
+      "source_line": 222,
+      "original_literal": "termite fumigation cost",
+      "normalized_literal": "termite fumigation cost",
+      "literal_utf8_sha256": "b68c7062f8d317814cec3bd1637979152786c1e73f17da4c19735f48e2c7965e",
+      "complete_public_values_sha256": "e94a54a931a0fbf17f30c51f136a91fc09a8670bd83b25942b196db1c6c11c70",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 8,
+      "source_ordinal": 227,
+      "source_line": 230,
+      "original_literal": "house fumigation",
+      "normalized_literal": "house fumigation",
+      "literal_utf8_sha256": "d4ec72a8c893bda967c424dc30785e5bfafd02c480d8879d478510dd6f5df244",
+      "complete_public_values_sha256": "1d48c28c516bc44580e4ab4c34861fd6edd0f119188bcc909f18675c7c7a3222",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 9,
+      "source_ordinal": 232,
+      "source_line": 235,
+      "original_literal": "house fumigation cost",
+      "normalized_literal": "house fumigation cost",
+      "literal_utf8_sha256": "6bb8527cdc802d165c4d59edc4c17996de53c56bd85608a452ca03b523794861",
+      "complete_public_values_sha256": "474c4cfa46d18cb611301329d98d4e0c28749aaef510405cceac8280eb12659d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 10,
+      "source_ordinal": 253,
+      "source_line": 256,
+      "original_literal": "bed bug exterminator cost near me",
+      "normalized_literal": "bed bug exterminator cost near me",
+      "literal_utf8_sha256": "d3c34cbfcbd7dc999e7d4820230fd36f14eeea18774a3b69c7499ccfac254260",
+      "complete_public_values_sha256": "ecbcfe9330e111dece5be53f9294cd7d8971e2f3c0409e69c60c5c3e990f0ed9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 11,
+      "source_ordinal": 278,
+      "source_line": 281,
+      "original_literal": "tent fumigation cost",
+      "normalized_literal": "tent fumigation cost",
+      "literal_utf8_sha256": "ca8519228b8220b001296ab5e71dc872459629f26430dbc6e6643f5dcc5c523f",
+      "complete_public_values_sha256": "7c7d28a687c68b5c17f96113a284755fb5400e80b9d216c7866046676ee1f9ec",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 12,
+      "source_ordinal": 289,
+      "source_line": 292,
+      "original_literal": "bug exterminator cost",
+      "normalized_literal": "bug exterminator cost",
+      "literal_utf8_sha256": "83b97e14921787377d98f06f2631de7729134b22ecd29a56f2ae435c07336d8a",
+      "complete_public_values_sha256": "f882fe171049e2217b438e12faf90529a7dc63985febc5d3e7612600a1d864e1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 13,
+      "source_ordinal": 323,
+      "source_line": 326,
+      "original_literal": "emergency sprinkler repair near me",
+      "normalized_literal": "emergency sprinkler repair near me",
+      "literal_utf8_sha256": "474d71ac337364d16c2028fae52622f985beffaeb3288aff5b87be73af2b6cd3",
+      "complete_public_values_sha256": "982fa701c3598e934a4d6ea7e0091f3b28bcc093b35b701f182156b5d54ad54d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 14,
+      "source_ordinal": 348,
+      "source_line": 351,
+      "original_literal": "termite fumigation near me",
+      "normalized_literal": "termite fumigation near me",
+      "literal_utf8_sha256": "a61bd751bf823bb7d087a179ef55798847f0ef36e57029b12a12fb05d684fa37",
+      "complete_public_values_sha256": "84747b00524efd2fc170b110b97342355d7b60d744aebae67b96d4bb5599300d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 15,
+      "source_ordinal": 431,
+      "source_line": 434,
+      "original_literal": "local termite inspection",
+      "normalized_literal": "local termite inspection",
+      "literal_utf8_sha256": "70eef6b85b81d9734a6d460a8e3991370a79b936901f3ff07feececc2c7069ee",
+      "complete_public_values_sha256": "bab5abf933b9306d69495eefc0172270ac0f6a22e054e00339a306e1a0d3601a",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 16,
+      "source_ordinal": 439,
+      "source_line": 442,
+      "original_literal": "home fumigation cost",
+      "normalized_literal": "home fumigation cost",
+      "literal_utf8_sha256": "67d9266f14f4c051ce2c249a61260c4c2d7f37887f741a418a46ac1d7d586eec",
+      "complete_public_values_sha256": "d1dbb8aab3681ea7392d274da162f31b302cc1e7eb97c1a97d5f026b4e15d1dc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 17,
+      "source_ordinal": 448,
+      "source_line": 451,
+      "original_literal": "roach fumigation near me",
+      "normalized_literal": "roach fumigation near me",
+      "literal_utf8_sha256": "436c8c24ea3bacd8523f2a730d894c7f6414b9e309be91a0929d8b26e68db788",
+      "complete_public_values_sha256": "56d42a979d00ae1c72b6e7aefe8b37234520336a9d9c88c97e6608e241d19440",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 18,
+      "source_ordinal": 456,
+      "source_line": 459,
+      "original_literal": "fumigation tent",
+      "normalized_literal": "fumigation tent",
+      "literal_utf8_sha256": "6fe68761236899d30ae79869c528d1e3da44b97179d88338d439fca782008bc1",
+      "complete_public_values_sha256": "f2d527c29cd1834293a5489576afb4c850d6a35e29f1f15cdd78cbe4d7826a94",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 19,
+      "source_ordinal": 461,
+      "source_line": 464,
+      "original_literal": "termite inspection and treatment",
+      "normalized_literal": "termite inspection and treatment",
+      "literal_utf8_sha256": "ed310c63d3c10a246b41a8435eaa75a90a313bfb1c8b49f782cc4cc293d5dd49",
+      "complete_public_values_sha256": "030faec039d950836c39d72b55414c96d6a4b48a171bfc50349bdddffa2f698d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 20,
+      "source_ordinal": 505,
+      "source_line": 508,
+      "original_literal": "cockroach fumigation",
+      "normalized_literal": "cockroach fumigation",
+      "literal_utf8_sha256": "ad918baa280132755d0b2805b3d7b1ef2ba36ac8ff062bcc993b7d7d27073615",
+      "complete_public_values_sha256": "6072510d3502267be98cd95fbc911b2e4256cb116d7980e51e7a2d33004c52d7",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 21,
+      "source_ordinal": 510,
+      "source_line": 513,
+      "original_literal": "tent fumigation near me",
+      "normalized_literal": "tent fumigation near me",
+      "literal_utf8_sha256": "a1297b6db998388f71fb1a9ac14227e66dd9203488967c171b2688116b947218",
+      "complete_public_values_sha256": "602a9bab9c6621ff34dc10ed7b341086f83e6d8222d4f16dd56f1bbf7034bf0e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 22,
+      "source_ordinal": 515,
+      "source_line": 518,
+      "original_literal": "commercial security camera installation near me",
+      "normalized_literal": "commercial security camera installation near me",
+      "literal_utf8_sha256": "32be36c9a48bdaa452100b0e8ee72394688c436cce7b1e1b418396589dbc75e9",
+      "complete_public_values_sha256": "dc70b52bfdd2c0eba98fc80bbbda9a7d7a51a773bc4b2fdcef7e5871c858acd6",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 23,
+      "source_ordinal": 555,
+      "source_line": 558,
+      "original_literal": "cockroach fumigation near me",
+      "normalized_literal": "cockroach fumigation near me",
+      "literal_utf8_sha256": "fe51307d82b3cdefdc00d305e812dde5dfdc13d6f6fb29d0dc82657875ec75be",
+      "complete_public_values_sha256": "b8e47723bdaf9d35f7f7d524094d57cbeeffe498dd1fedf9a15f0eb9301da65a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 24,
+      "source_ordinal": 564,
+      "source_line": 567,
+      "original_literal": "average cost of exterminator for roaches",
+      "normalized_literal": "average cost of exterminator for roaches",
+      "literal_utf8_sha256": "9cb276bbb429acc6930a009a89613b96a9a6b61ca02a2d07b6003b4c8710b2bd",
+      "complete_public_values_sha256": "04fb124911c38762bdcff365640d134cabdecc1e1c2dde9c1c4c76d4c76b19e7",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 25,
+      "source_ordinal": 583,
+      "source_line": 586,
+      "original_literal": "cockroach fumigation cost",
+      "normalized_literal": "cockroach fumigation cost",
+      "literal_utf8_sha256": "3a08534e5afe845c7c1a2dc68c74e775166c8a53214547fde3684dbdb9d82ba2",
+      "complete_public_values_sha256": "6acb0cf38cf0625cfe510e41d80846fb6de90a264c3bba7a922218b3a72f6420",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 26,
+      "source_ordinal": 635,
+      "source_line": 638,
+      "original_literal": "commercial vent cleaning",
+      "normalized_literal": "commercial vent cleaning",
+      "literal_utf8_sha256": "9e16498631a84f1164ac759792f2f198fb582e115202f60876469dbc86eb0168",
+      "complete_public_values_sha256": "268254bdf8787957abec4a8ce9560b1e6967c62c48c2a0ed542c775d6cb5fd41",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 27,
+      "source_ordinal": 653,
+      "source_line": 656,
+      "original_literal": "roach fumigation cost",
+      "normalized_literal": "roach fumigation cost",
+      "literal_utf8_sha256": "25da53b222a3b1dfd84b41a200c52bc5598cc279e887880a9b1791449fc811fb",
+      "complete_public_values_sha256": "b90681787b3ae9f2122771be849d41d8f1623c0cca3b31a8fbc06eddc515f4fe",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 28,
+      "source_ordinal": 678,
+      "source_line": 681,
+      "original_literal": "best termite inspection company",
+      "normalized_literal": "best termite inspection company",
+      "literal_utf8_sha256": "89792e9f9cbd21cfe4b725ddb09eab573a38e7a70c09a76d331cdf1ed465ea2b",
+      "complete_public_values_sha256": "7a2d73d855bafc522e490bf7e4bc68655d51448c7808ffb829523cae56fa9069",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 29,
+      "source_ordinal": 680,
+      "source_line": 683,
+      "original_literal": "pest control termite inspection",
+      "normalized_literal": "pest control termite inspection",
+      "literal_utf8_sha256": "c51b196df10bc5df0ceb1ef31a882c6656064bcf53ae6c22bf204172b9960833",
+      "complete_public_values_sha256": "5b7f53b495ee67b5ecb47eb22334debcb0acc4cc94fe315b9bfdf3d76abadc6f",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 30,
+      "source_ordinal": 695,
+      "source_line": 698,
+      "original_literal": "commercial security camera installation",
+      "normalized_literal": "commercial security camera installation",
+      "literal_utf8_sha256": "7e038eeace61e8129abbdac51291b172b831e9e4f42cbaaf1dc8efa36b7b9ddb",
+      "complete_public_values_sha256": "798c2cc8058c2a4c8f4da49465642f6a7d0b6073c992df8615023f362a75602a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 31,
+      "source_ordinal": 703,
+      "source_line": 706,
+      "original_literal": "german cockroach extermination cost",
+      "normalized_literal": "german cockroach extermination cost",
+      "literal_utf8_sha256": "c365636f50c7cacfed6ed3da006d20a9ab81029a78c962e863cacfbf19001e63",
+      "complete_public_values_sha256": "6ab4f174c07f11a2599dda2d72105d76e39eda3ce19214b8736a1723e50ea706",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 32,
+      "source_ordinal": 704,
+      "source_line": 707,
+      "original_literal": "24 hour bed bug exterminator near me",
+      "normalized_literal": "24 hour bed bug exterminator near me",
+      "literal_utf8_sha256": "39ec98bc80e48e44c34197c0e8ccd12d3866b9796ff126c14c42120cfeb54ff6",
+      "complete_public_values_sha256": "70ddcc15579fcaa7fe85ee3f2c0a307f90c8e69e33ccc611dc3ede5642ff5ddf",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 33,
+      "source_ordinal": 727,
+      "source_line": 730,
+      "original_literal": "bed bug exterminator near me cost",
+      "normalized_literal": "bed bug exterminator near me cost",
+      "literal_utf8_sha256": "f631523356b581ef5adc5401f8683b3e9c5024cee23590e20059c946574959d9",
+      "complete_public_values_sha256": "1c103d245ff280eaeaea97ac26646c62f0b1468652a44a2b5717725b41eafa36",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 34,
+      "source_ordinal": 741,
+      "source_line": 744,
+      "original_literal": "roach exterminator cost near me",
+      "normalized_literal": "roach exterminator cost near me",
+      "literal_utf8_sha256": "cad00f32ecd6b73c5af8891ebeb8843508a5cb1ab8c8345867c84cdc56a80173",
+      "complete_public_values_sha256": "e6dac7032b2409202251501e76bb7bebd2ab20772195ab59afc43c45350a1adf",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 35,
+      "source_ordinal": 765,
+      "source_line": 768,
+      "original_literal": "best termite inspection near me",
+      "normalized_literal": "best termite inspection near me",
+      "literal_utf8_sha256": "c34aab0b30b25a73f762d81835132f12664da7a1a7ef9bc9617832ef901929de",
+      "complete_public_values_sha256": "5ccb067dc9eca05f0de86a5ba185f447db76e1a1734c5dce2fcc8b4bd142d7f4",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 36,
+      "source_ordinal": 769,
+      "source_line": 772,
+      "original_literal": "24 hour sprinkler repair near me",
+      "normalized_literal": "24 hour sprinkler repair near me",
+      "literal_utf8_sha256": "41811b8b0ad5103772768cf29a14e15056c35e29d5d7445b09bd14d3f9513b3a",
+      "complete_public_values_sha256": "8383eed1e5c9d751a23d30e4af7a2e06054c8347b503ec7f676f9bb35cb76d49",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 37,
+      "source_ordinal": 837,
+      "source_line": 840,
+      "original_literal": "bug exterminator near me cost",
+      "normalized_literal": "bug exterminator near me cost",
+      "literal_utf8_sha256": "8c3fc2076ce8497a2fb5e237411a3b3c67652317da0a2c06c62aee293a2641b7",
+      "complete_public_values_sha256": "fe8799c1ec2080a6b1a33386083c292b9af57a652d8f8eb73a45562e57d65895",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 38,
+      "source_ordinal": 847,
+      "source_line": 850,
+      "original_literal": "pest control and termite inspection",
+      "normalized_literal": "pest control and termite inspection",
+      "literal_utf8_sha256": "b403d671ba13eda4aeb0766b97f088624cd28b21edb7802837cd339134ee9313",
+      "complete_public_values_sha256": "11a9f32b9c560a8f390b4061618390ad8850589b601576632ae7ae52c2b62308",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 39,
+      "source_ordinal": 873,
+      "source_line": 876,
+      "original_literal": "house tent fumigation cost",
+      "normalized_literal": "house tent fumigation cost",
+      "literal_utf8_sha256": "70d15888f1c8c9ef04299149f9dfae380d1795c2ad0117b7f1f4d7e28f50a046",
+      "complete_public_values_sha256": "83215a9ca415d9017c18ed1f243f60e833342b28ae88df22dd707a404ce2a94b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 40,
+      "source_ordinal": 985,
+      "source_line": 988,
+      "original_literal": "emergency termite treatment",
+      "normalized_literal": "emergency termite treatment",
+      "literal_utf8_sha256": "237f733a75e88e8e90836ff4c97d32a6ee98c14e2c74e87b52cac2abf514543e",
+      "complete_public_values_sha256": "f6bcabfc884beec2bd2a7d7bf214dfa1274c3e1f3c4b0c6592dca17e9b8c60b1",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 41,
+      "source_ordinal": 1036,
+      "source_line": 1039,
+      "original_literal": "termite inspection and treatment cost",
+      "normalized_literal": "termite inspection and treatment cost",
+      "literal_utf8_sha256": "b2082c2ff77adddec24cc251a4ffdb543435acb6318051ed96f2798f7513f684",
+      "complete_public_values_sha256": "a791822c5df81243ea7a5f98c0157d60994b5239deb98dbc35d1d255df6b1968",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 42,
+      "source_ordinal": 1037,
+      "source_line": 1040,
+      "original_literal": "commercial security camera installation cost",
+      "normalized_literal": "commercial security camera installation cost",
+      "literal_utf8_sha256": "c259dbcb1a0b3cf36008c87171e62283e63da8f68cb5c72c4721d94bd1d511a3",
+      "complete_public_values_sha256": "31021040109a57fad6eaa9aeababce14c037539e43c36b0089469c566a631d6c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 43,
+      "source_ordinal": 1040,
+      "source_line": 1043,
+      "original_literal": "roach and mice exterminator",
+      "normalized_literal": "roach and mice exterminator",
+      "literal_utf8_sha256": "4f88d80a5b9b0de877178f8d6952f2fdd55f63bd279a27088505c383ccb66e39",
+      "complete_public_values_sha256": "ce6bb5e0f188d4a92b0e92963b7ee497f282fb47550a114937650cce696a5c8d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 44,
+      "source_ordinal": 1062,
+      "source_line": 1065,
+      "original_literal": "mice and roach exterminator",
+      "normalized_literal": "mice and roach exterminator",
+      "literal_utf8_sha256": "2b5482bb34eaeebbb077b13ca17b0ed36ad49e1674cdde2b2239fbfb27d5368f",
+      "complete_public_values_sha256": "b71eb3f3ebad348060798f5ab742a3cd4b9ebba45e1126729e0011d8d850cd7a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 45,
+      "source_ordinal": 1145,
+      "source_line": 1148,
+      "original_literal": "commercial hvac cleaning",
+      "normalized_literal": "commercial hvac cleaning",
+      "literal_utf8_sha256": "2d892080761a4274af2695f197c622fa81bb5ed9b74c566a51457c97457f0e77",
+      "complete_public_values_sha256": "d497c57356e3196401145204bbeda474feef8bbee625256ffae9ead7334f9f95",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 46,
+      "source_ordinal": 1169,
+      "source_line": 1172,
+      "original_literal": "rat and roach exterminator",
+      "normalized_literal": "rat and roach exterminator",
+      "literal_utf8_sha256": "fadaddc53db17592a1611cfe0ab241d497e0567e23a3b85df4b7846768484e4f",
+      "complete_public_values_sha256": "5722e63aafa267567af997974543dacfb804de7fdc70344d97faf75e9f667d4d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 47,
+      "source_ordinal": 1176,
+      "source_line": 1179,
+      "original_literal": "house fumigation tent",
+      "normalized_literal": "house fumigation tent",
+      "literal_utf8_sha256": "a0e3d919b834874383be9ecf137cb00f9c02940e935ec481318f4b9f3b0f42fb",
+      "complete_public_values_sha256": "47e2ad2bd63303d134410f46a8194f5f2a8d684b79e0782b64979286a6323653",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 48,
+      "source_ordinal": 1207,
+      "source_line": 1210,
+      "original_literal": "commercial vent cleaning near me",
+      "normalized_literal": "commercial vent cleaning near me",
+      "literal_utf8_sha256": "1341dbb7f12ff65027d0c3e5990832e41bd7d262cea021a4d3c7273e39e065d2",
+      "complete_public_values_sha256": "a0373665bce80c17c0df60e4eb4c1ffe478825d45162d9f0e279267653d55e3d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 49,
+      "source_ordinal": 1257,
+      "source_line": 1260,
+      "original_literal": "termite fumigation companies near me",
+      "normalized_literal": "termite fumigation companies near me",
+      "literal_utf8_sha256": "7dbcd6cc18c5aa0adf5ad1765742deb2508a6c2cdf1ce216e3e49820e1ec62fd",
+      "complete_public_values_sha256": "38521af7b765b928004463b118815583f06f05ae4de8340739c4ecd320b64342",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 50,
+      "source_ordinal": 1290,
+      "source_line": 1293,
+      "original_literal": "whole house fumigation",
+      "normalized_literal": "whole house fumigation",
+      "literal_utf8_sha256": "1f8a9522ea199a198eeb928abb1c346fe4b65fed78c4ec15f326379f335c6c6b",
+      "complete_public_values_sha256": "fc41e4b29031d52ae84d5cc341d1644b03e9c5272bd514297e8871116ebfce8f",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 51,
+      "source_ordinal": 1312,
+      "source_line": 1315,
+      "original_literal": "sprinkler emergency repair",
+      "normalized_literal": "sprinkler emergency repair",
+      "literal_utf8_sha256": "f32d7683e0808aab16a74d8ecfcc5c2faa3bc5ae4ca11044a1f47011bf4fd3e5",
+      "complete_public_values_sha256": "4b4b1d72dd58269086d93026efebd9a31e98e91b115ab747da0abc9cf35ecd40",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 52,
+      "source_ordinal": 1313,
+      "source_line": 1316,
+      "original_literal": "cockroach exterminator near me cost",
+      "normalized_literal": "cockroach exterminator near me cost",
+      "literal_utf8_sha256": "5e91e2d3d1fdffe455cdea85674e7011917a16b12163bed2fa233f30173912fe",
+      "complete_public_values_sha256": "7a01412611cfd1fa55700778abf3004c9cb9b6d2c71ef392a1e395fc9bcb0d4b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 53,
+      "source_ordinal": 1339,
+      "source_line": 1342,
+      "original_literal": "commercial pool cleaning companies near me",
+      "normalized_literal": "commercial pool cleaning companies near me",
+      "literal_utf8_sha256": "9fc5e9024a06da276a633f945ec496627b1edcde4a35814234dc88ea5e3132df",
+      "complete_public_values_sha256": "caefcae345054f8535ffa4f8c394d65e2ff5c74bc5de1a25377caaefd7d9cc2b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 54,
+      "source_ordinal": 1347,
+      "source_line": 1350,
+      "original_literal": "emergency bed bug removal",
+      "normalized_literal": "emergency bed bug removal",
+      "literal_utf8_sha256": "a854019c7db50fe8658a2c27ce978b6465c47fdb6d3bdb3f3898666842c69e88",
+      "complete_public_values_sha256": "7074bd319677f087bec95d2b09299c6b86d2fdd87956d26cf2e09721e3a8c9d7",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 55,
+      "source_ordinal": 1355,
+      "source_line": 1358,
+      "original_literal": "whole house fumigation cost",
+      "normalized_literal": "whole house fumigation cost",
+      "literal_utf8_sha256": "9549a64139a79b032d3aa076f5b224adab52c71ac502c36c4b66c735c3eee1b9",
+      "complete_public_values_sha256": "bf8fbbecaadfb4ddcafc51a40c3b3300ada9a53ce73ee5dbadee299f4c454d1f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 56,
+      "source_ordinal": 1368,
+      "source_line": 1371,
+      "original_literal": "cockroach exterminator price",
+      "normalized_literal": "cockroach exterminator price",
+      "literal_utf8_sha256": "640f4a056ffe16eae638aa7311e6d33faa00ba5f12ec425d4d4a837abbdcb4a3",
+      "complete_public_values_sha256": "16e93701fdea1e1de86730c04117a1624d851340a75a41502ebd24f3c7b97afc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 57,
+      "source_ordinal": 1377,
+      "source_line": 1380,
+      "original_literal": "commercial pool cleaning",
+      "normalized_literal": "commercial pool cleaning",
+      "literal_utf8_sha256": "46ed3612663d0b7aae14f009a08d19b37a68709f634583ed570a36b7c2889931",
+      "complete_public_values_sha256": "8891e0f1e31d4b0e7f98dac32cdf6866cc968ece5594959031d038eb321b6619",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 58,
+      "source_ordinal": 1386,
+      "source_line": 1389,
+      "original_literal": "exterminator for mice and roaches",
+      "normalized_literal": "exterminator for mice and roaches",
+      "literal_utf8_sha256": "77bd86862d8fe19bceaacf9238e43af11a481dc24d1cea9e0124ff1d1fffeea0",
+      "complete_public_values_sha256": "e829ecac7a00acee88c9ae24999b3a16bf4eea893ab0b60a8e1cb5519cf864d5",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 59,
+      "source_ordinal": 1393,
+      "source_line": 1396,
+      "original_literal": "emergency sprinkler system repair",
+      "normalized_literal": "emergency sprinkler system repair",
+      "literal_utf8_sha256": "447470371af028011473f04518f96c5e187f2e821a4774f5969762ffb6e196c9",
+      "complete_public_values_sha256": "59766b495a8d5d799dc1bede69111fed28ca92431931c00284ac51d77ee4eaaa",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 60,
+      "source_ordinal": 1394,
+      "source_line": 1397,
+      "original_literal": "commercial security cameras installation near me",
+      "normalized_literal": "commercial security cameras installation near me",
+      "literal_utf8_sha256": "9c8cead18e2bb3bb4a2c00f455cbf5815d41a86c4eaa1130dfae048def8bdffb",
+      "complete_public_values_sha256": "1aff4c2683eb5b324919915e5a99e8cdb53293d3d03ca824f8a1c3f86ef345d9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 61,
+      "source_ordinal": 1461,
+      "source_line": 1464,
+      "original_literal": "24 hour sprinkler repair",
+      "normalized_literal": "24 hour sprinkler repair",
+      "literal_utf8_sha256": "ad31a80251c34a1ddbd484532bb3ef1898a3861152e041e19c6be29af9828ebb",
+      "complete_public_values_sha256": "205821b6ea631319d0a9ab66da801e8ca986698c0f10aee1315b8650ee656f8e",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 62,
+      "source_ordinal": 1476,
+      "source_line": 1479,
+      "original_literal": "commercial termite treatment",
+      "normalized_literal": "commercial termite treatment",
+      "literal_utf8_sha256": "6bf8c079bf045b16da1ee0af26cd503177d5a85c1ba052ec14fe76a9eeae098a",
+      "complete_public_values_sha256": "ef9c14b1b27b0adb3a4173c5e48517467eef0159d49f190c3bbe76f325d24270",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 63,
+      "source_ordinal": 1503,
+      "source_line": 1506,
+      "original_literal": "commercial cctv installation",
+      "normalized_literal": "commercial cctv installation",
+      "literal_utf8_sha256": "fa91970fb003fad16df649634678757966399af2404ad78ce74c3cc47183865f",
+      "complete_public_values_sha256": "b7a8ae6c7c64d6a6d544e2b9f584eed6574845ca8e216caa3851675c38addbc5",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 64,
+      "source_ordinal": 1522,
+      "source_line": 1525,
+      "original_literal": "flea and bed bug exterminator",
+      "normalized_literal": "flea and bed bug exterminator",
+      "literal_utf8_sha256": "f2248d2499edb35bd0dd5699f16864c96bcd52ef9bb990521e0b8d317606c41d",
+      "complete_public_values_sha256": "876eb30ed9f50718f4ddaee1736b4bf4cb356ebbd2ac05334d2a6566535ab499",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 65,
+      "source_ordinal": 1527,
+      "source_line": 1530,
+      "original_literal": "termite inspection and treatment near me",
+      "normalized_literal": "termite inspection and treatment near me",
+      "literal_utf8_sha256": "f3451036b2154301a6297365a6cf09c04ac148944321a57e9570c490c3581727",
+      "complete_public_values_sha256": "770f698dc927793bd7294cf2c78834bb2a6be303b5ce9ec3df0b91477a4c93a9",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 66,
+      "source_ordinal": 1589,
+      "source_line": 1592,
+      "original_literal": "commercial bed bug treatment",
+      "normalized_literal": "commercial bed bug treatment",
+      "literal_utf8_sha256": "a8307db65901c70616b21b2d9c74cb1ea9ab6866e7547ed4a7c2c9b9c3a31018",
+      "complete_public_values_sha256": "6aa676213be36313248fd9c8fb80f06d5cbcfb7768696d446173f37f93056717",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 67,
+      "source_ordinal": 1682,
+      "source_line": 1685,
+      "original_literal": "commercial security camera system installation",
+      "normalized_literal": "commercial security camera system installation",
+      "literal_utf8_sha256": "82b1ded143d440e470999d167e3720ac54a3ea47245e7e3206700314f2a02f89",
+      "complete_public_values_sha256": "b6b93a840c68ffacd055defc7673b4a907388b06d96701fc9edbc1270fc82523",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 68,
+      "source_ordinal": 1787,
+      "source_line": 1790,
+      "original_literal": "flea and roach exterminator",
+      "normalized_literal": "flea and roach exterminator",
+      "literal_utf8_sha256": "08d61d320dd8861165d0e0f9b6c3aabd8ac92fc67867ba6c1681746eccefb06f",
+      "complete_public_values_sha256": "74f2652a3134d07cb9452507fdd482bab43cbe81e11cb142494ac162ab5ab3ec",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 69,
+      "source_ordinal": 1794,
+      "source_line": 1797,
+      "original_literal": "average cost of bed bug exterminator",
+      "normalized_literal": "average cost of bed bug exterminator",
+      "literal_utf8_sha256": "2ec5248c9a1c7f74824af1fbe16b1602842dd55f99ba2d43c051968be8614d4e",
+      "complete_public_values_sha256": "1691c84201e89d0f6fdab94be53fde146a7e51429fa73c971a323156fe1c93f1",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 70,
+      "source_ordinal": 1857,
+      "source_line": 1860,
+      "original_literal": "flick termite inspection cost",
+      "normalized_literal": "flick termite inspection cost",
+      "literal_utf8_sha256": "42d68971f6c3e9b146ba44cde27cab14ca160bfaaa792b6112d8277dbbe293d0",
+      "complete_public_values_sha256": "202c13f9f9d435ed1158b59148095bb1e50c4a87bcb07e84c47899e6124046d8",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 71,
+      "source_ordinal": 1874,
+      "source_line": 1877,
+      "original_literal": "vikane fumigation",
+      "normalized_literal": "vikane fumigation",
+      "literal_utf8_sha256": "b09e8db3f279875a1b60aad276299c400544d93c058266691676060e3535f0ba",
+      "complete_public_values_sha256": "db2e07f628f138e855b70dfb96696ccfe8dc88e5227f1231a17bec51d5c6c16a",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 72,
+      "source_ordinal": 1952,
+      "source_line": 1955,
+      "original_literal": "termite fumigation without tenting",
+      "normalized_literal": "termite fumigation without tenting",
+      "literal_utf8_sha256": "4089795c544d87d59560980e72d0f7b832e09affb5c31c6205db76ed2ad816f4",
+      "complete_public_values_sha256": "05b9377c513dd31998fa8afa06ff701cca1c862af05b37c2e2d7fc1b20aa478b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 73,
+      "source_ordinal": 1977,
+      "source_line": 1980,
+      "original_literal": "emergency termite control",
+      "normalized_literal": "emergency termite control",
+      "literal_utf8_sha256": "bcc75d8a5e00c5d5afb0cbb59a63a54697956134693817922194a42223888fb8",
+      "complete_public_values_sha256": "26b032767e1dce195a1b29110d702e3778c1dfa9e5b2af773c2301bcfe805391",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 74,
+      "source_ordinal": 2058,
+      "source_line": 2061,
+      "original_literal": "bed bugs professional extermination cost",
+      "normalized_literal": "bed bugs professional extermination cost",
+      "literal_utf8_sha256": "661db2db1c9a5354831048a5e61870c61ed9813746009d768ac3242f629e3f9e",
+      "complete_public_values_sha256": "3ea1a4e3ddb4e528efb29e59d55b07d947c817b1459417871b93733cf8cb06b9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 75,
+      "source_ordinal": 2062,
+      "source_line": 2065,
+      "original_literal": "average price for bed bug extermination",
+      "normalized_literal": "average price for bed bug extermination",
+      "literal_utf8_sha256": "872561ff880b3ec8aad56e3ce45cc78de22587ea8d7274529c35e48e7646ef22",
+      "complete_public_values_sha256": "6e1a0d8205282aba610a2966ad037653e7a3b4f80660b53cc682a4ba9ba6d1ef",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 76,
+      "source_ordinal": 2074,
+      "source_line": 2077,
+      "original_literal": "vikane fumigation cost",
+      "normalized_literal": "vikane fumigation cost",
+      "literal_utf8_sha256": "cd783944fb4f253eb74b47bb4cc649db80d293c156565e29b9d6ba0c6adb785e",
+      "complete_public_values_sha256": "ea46445c94b7e3fbe07a231a3c048dc8ef9a692fda23141e1a2c148e6c09e08a",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 77,
+      "source_ordinal": 2130,
+      "source_line": 2133,
+      "original_literal": "termite fumigation companies",
+      "normalized_literal": "termite fumigation companies",
+      "literal_utf8_sha256": "f34f91cf8c5c970edbd78f5b15a1246eeb4cbf7b6637f31df6a44f3c73e73570",
+      "complete_public_values_sha256": "8ecfa3969f65ba02ef13fa9e2aa073ce73fd9aabda4f73970fb4139e8289ad7f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 78,
+      "source_ordinal": 2138,
+      "source_line": 2141,
+      "original_literal": "commercial fat trap",
+      "normalized_literal": "commercial fat trap",
+      "literal_utf8_sha256": "39de2b31aa94fab904ce27e3851491bd506ed7448db89690eaf7bf19491269b5",
+      "complete_public_values_sha256": "5599ebe80d7e3f52306e46c3a97dd26ea0291b232c82a61a61822efae96252c0",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 79,
+      "source_ordinal": 2153,
+      "source_line": 2156,
+      "original_literal": "24 hour bed bug exterminator",
+      "normalized_literal": "24 hour bed bug exterminator",
+      "literal_utf8_sha256": "9eb2797b6e69f68aabd6778f4c57883aed43f23ebe6d8e061c93ae952d276815",
+      "complete_public_values_sha256": "7c5c50f6e34143d7fc490b638bb89744fe45e67a25f493c5e49805acf6a40aec",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 80,
+      "source_ordinal": 2194,
+      "source_line": 2197,
+      "original_literal": "best termite inspection",
+      "normalized_literal": "best termite inspection",
+      "literal_utf8_sha256": "355efa49de9e38b88345772e7f7fc469028d38f68ea85d23cc62d8af1722a6fb",
+      "complete_public_values_sha256": "9ef5bf29cb81a84347a2b5f445af5356357998b693d5446703dc34540f4a1792",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 81,
+      "source_ordinal": 2249,
+      "source_line": 2252,
+      "original_literal": "commercial pool cleaning companies",
+      "normalized_literal": "commercial pool cleaning companies",
+      "literal_utf8_sha256": "80d26cbf8f10eca8de29b771d5f44abaeceea93fc0b1e0a6c66c7cf14ff7aa70",
+      "complete_public_values_sha256": "dc14a006c5b9905711b983da3fcb67fa5a01599be2bdcb4e3696dd4767248286",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 82,
+      "source_ordinal": 2253,
+      "source_line": 2256,
+      "original_literal": "bed bug exterminator heat treatment cost",
+      "normalized_literal": "bed bug exterminator heat treatment cost",
+      "literal_utf8_sha256": "4d02ce132893673d7ee16d9f1533c02ba370e683cdd0719f2f73f9135e903aa7",
+      "complete_public_values_sha256": "c688c10861ef5bda48d2a6fdee41e35fefefceccf5cbc653974e2d9b029fe6fe",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 83,
+      "source_ordinal": 2274,
+      "source_line": 2277,
+      "original_literal": "non fumigation termite control",
+      "normalized_literal": "non fumigation termite control",
+      "literal_utf8_sha256": "574fd1e7a599414de6fa9de7056c3bbc587dbb30141a2407fef300eaf24c1267",
+      "complete_public_values_sha256": "7126f416774d56d25da7edd3d6c7a7e1bfc87974fb1f8cf843fff89e33a5b1e1",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 84,
+      "source_ordinal": 2277,
+      "source_line": 2280,
+      "original_literal": "non toxic termite fumigation",
+      "normalized_literal": "non toxic termite fumigation",
+      "literal_utf8_sha256": "e2271332e0e3ab1cab3cf75675436ff557ef5a6f6a863d3819d43d785d344b53",
+      "complete_public_values_sha256": "db576eff4c2b6b851a9b68c1f5678405862958b440714c9d93d2a4acc314ecb6",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 85,
+      "source_ordinal": 2349,
+      "source_line": 2352,
+      "original_literal": "commercial cctv installation cost",
+      "normalized_literal": "commercial cctv installation cost",
+      "literal_utf8_sha256": "c4af9cc95353cdcb15250e0e2d1378a1bd0974c129d62e3daf1c0b9365718e71",
+      "complete_public_values_sha256": "4a4440242bc65dc822d6a395467f3c4db29b3cb5e89abdcd8a50909d0d8a4daf",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 86,
+      "source_ordinal": 2361,
+      "source_line": 2364,
+      "original_literal": "commercial smoke detector installation",
+      "normalized_literal": "commercial smoke detector installation",
+      "literal_utf8_sha256": "e54746cb5249cef38d8c0131afc14e0c802d7968883466b58de89a2e4ecab1c9",
+      "complete_public_values_sha256": "c35756c8a5454becfe52b90814923c2d1f5d33a3e38109e99ae5eafb16768fe9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 87,
+      "source_ordinal": 2406,
+      "source_line": 2409,
+      "original_literal": "best termite fumigation company",
+      "normalized_literal": "best termite fumigation company",
+      "literal_utf8_sha256": "4041fdac544b997684a8058a32db9086a4484d118ed8364cffa5bad4e51b124f",
+      "complete_public_values_sha256": "17e46858cc6c1b03b5bbc7bbf300bab41d7d6f1b6e6b9d4d7a8ec13f5cfa6e94",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 88,
+      "source_ordinal": 2408,
+      "source_line": 2411,
+      "original_literal": "orange fumigation",
+      "normalized_literal": "orange fumigation",
+      "literal_utf8_sha256": "2d0d1866371553c00520ae7848e28faea04037f31e5f7f20c66db69a34715a6f",
+      "complete_public_values_sha256": "115273c00e274e332059299977952782284aa35235a1aeee1a2d0e9e61a295b3",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 89,
+      "source_ordinal": 2414,
+      "source_line": 2417,
+      "original_literal": "professional fumigation for roaches",
+      "normalized_literal": "professional fumigation for roaches",
+      "literal_utf8_sha256": "267de491f86438a81ef43f8926d009937e6624199bacff03ab1a539a0971f8fd",
+      "complete_public_values_sha256": "0c71cd12b42232f624f6d1d609ae9da2d8424fee8770173cb006fea418f895c2",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 90,
+      "source_ordinal": 2495,
+      "source_line": 2498,
+      "original_literal": "tent fumigation for rats",
+      "normalized_literal": "tent fumigation for rats",
+      "literal_utf8_sha256": "58ccebd2c72934a5ac0e1af7f9c3f647dd7c8c4459dfdf442e25c9061752bd77",
+      "complete_public_values_sha256": "83e2e0a15e9085d7fa586c2005dac960521c991863a31b65cff6e2001329d17c",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 91,
+      "source_ordinal": 2500,
+      "source_line": 2503,
+      "original_literal": "tent fumigation for termites",
+      "normalized_literal": "tent fumigation for termites",
+      "literal_utf8_sha256": "481e3a2853b4853f015e9f9b341407a1c1ca7bc0b55e8e4bf4b7d6df300ec174",
+      "complete_public_values_sha256": "57b827619cedcc5587869675c1b12e3bbf382d6abf6e56c616aab0daf7559210",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 92,
+      "source_ordinal": 2501,
+      "source_line": 2504,
+      "original_literal": "commercial pool cleaners near me",
+      "normalized_literal": "commercial pool cleaners near me",
+      "literal_utf8_sha256": "7ebc3eccca49886e6a5c737ce4853fcac35936a4ab43ac74192025683d7d9a22",
+      "complete_public_values_sha256": "d90506391725d359d411aaefbbe1d7067cecdf9c3d19bc0c9b1ee41c4698f145",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 93,
+      "source_ordinal": 2503,
+      "source_line": 2506,
+      "original_literal": "rat and cockroach pest control",
+      "normalized_literal": "rat and cockroach pest control",
+      "literal_utf8_sha256": "dabd430604754aaebebad8f8e8453e33dbdb1fd0045d3c2cbd3349efa6dfd8a6",
+      "complete_public_values_sha256": "a2d55dcecd5ba8dd8465e6ed1b12548ca7eb244a538d67260b773000f3feb8f0",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 94,
+      "source_ordinal": 2511,
+      "source_line": 2514,
+      "original_literal": "termite inspection treatment",
+      "normalized_literal": "termite inspection treatment",
+      "literal_utf8_sha256": "ccf2fc0fd627dc877722596d7939f0c34789a0a0b1681c7c26d3cc7aa689cbcd",
+      "complete_public_values_sha256": "4a3feb3f70ddaf963d52343fa4d6bf7508436017ab47eef49b41f01c17b4db2d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 95,
+      "source_ordinal": 2543,
+      "source_line": 2546,
+      "original_literal": "cost for cockroach exterminator",
+      "normalized_literal": "cost for cockroach exterminator",
+      "literal_utf8_sha256": "2b6f6aeea82ca06b8b109b645b76c8ecfb19f5c3f5fe75ce117663cd46959b89",
+      "complete_public_values_sha256": "ea88c35a758ce012922394e15c503408d2f5372d8210814b4cc78d4e3133cdf9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 96,
+      "source_ordinal": 2556,
+      "source_line": 2559,
+      "original_literal": "commercial cctv system cost",
+      "normalized_literal": "commercial cctv system cost",
+      "literal_utf8_sha256": "fa81b0dccb8cc2c2cc38ab150e7d7c750bbf54034dfdb9caae06b38d984ffab0",
+      "complete_public_values_sha256": "a8fe1a813591e451425effe805d254e4cb6d6e2b2a29c72c06c51914f736179b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 97,
+      "source_ordinal": 2562,
+      "source_line": 2565,
+      "original_literal": "emergency cctv installation",
+      "normalized_literal": "emergency cctv installation",
+      "literal_utf8_sha256": "d257046681e1c8741245b7765a81667f1e80a3f444a70de53b060173a0e4e1e3",
+      "complete_public_values_sha256": "8b526adfdd3bf6682b14a4c2bf3a4e43b0c626e5adeef663a1a8be8d6bfec19f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 98,
+      "source_ordinal": 2604,
+      "source_line": 2607,
+      "original_literal": "average cost for cockroach extermination",
+      "normalized_literal": "average cost for cockroach extermination",
+      "literal_utf8_sha256": "0ee44d8b4876fb35f1e470b5666d859f69c050c3f912aa6cd249a82acc0f4184",
+      "complete_public_values_sha256": "cf01d0733528024072df77f43d72df6ccd565376e15e5c15dd81bfa4e7af854d",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 99,
+      "source_ordinal": 2645,
+      "source_line": 2648,
+      "original_literal": "termite treatment fumigation",
+      "normalized_literal": "termite treatment fumigation",
+      "literal_utf8_sha256": "8b302b7cab9f66e7d695d042d088d9961f93f8c02b86cb5b8a9dc74dd848c873",
+      "complete_public_values_sha256": "ed755de11f9cead130377036bfa312b798394a2f7fdf6d7dfed608aaa833553b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 100,
+      "source_ordinal": 2737,
+      "source_line": 2740,
+      "original_literal": "fumigation without tenting",
+      "normalized_literal": "fumigation without tenting",
+      "literal_utf8_sha256": "13b0c329182371f2ddc3602e98b6c6aab8aff89ae57802e71d0fd24297750a96",
+      "complete_public_values_sha256": "63ff71640fec06d1c60b04f1ad56aa4d8ad4539f7d649fe0bbe7f4186caad87f",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 101,
+      "source_ordinal": 2756,
+      "source_line": 2759,
+      "original_literal": "average cost of bug extermination",
+      "normalized_literal": "average cost of bug extermination",
+      "literal_utf8_sha256": "1b914f322b8bc9aff86a230ad12d9373698959d2e2cc2fe2b312abc6f4640ea2",
+      "complete_public_values_sha256": "b956b57bd7b23295f589c4d98e2a494d1950302b298700734d0f5a97027984be",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 102,
+      "source_ordinal": 2765,
+      "source_line": 2768,
+      "original_literal": "average cost of termite fumigation",
+      "normalized_literal": "average cost of termite fumigation",
+      "literal_utf8_sha256": "75219ed314073838a9f9b32c49fabf8c9f770c2b9fecbb057da8a9ba6577f5c1",
+      "complete_public_values_sha256": "83e8f5ca5a37c7f914a902fc6e20970b630d7dc442f08a302fa0d67c7b60d4aa",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 103,
+      "source_ordinal": 2777,
+      "source_line": 2780,
+      "original_literal": "flea and bed bug treatment",
+      "normalized_literal": "flea and bed bug treatment",
+      "literal_utf8_sha256": "c938ad318bad638509fa5bd78869ebd90bbff6e9e917c44bfc5e0963a6aa57fc",
+      "complete_public_values_sha256": "cd7588c94a64e486abcfd36456471a4bc02a49f622887de586651bb68f2dad2c",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 104,
+      "source_ordinal": 2789,
+      "source_line": 2792,
+      "original_literal": "no tent fumigation",
+      "normalized_literal": "no tent fumigation",
+      "literal_utf8_sha256": "9e85624cf0242440ca89b93be0c1a1e7e43af50f3437c6b6856d78d69bed85e4",
+      "complete_public_values_sha256": "cc73bcf2a18f14a75f38bd69166939e4a0ed67c484aad5a4582c2f047817ac3c",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 105,
+      "source_ordinal": 2816,
+      "source_line": 2819,
+      "original_literal": "industrial bed bug treatment",
+      "normalized_literal": "industrial bed bug treatment",
+      "literal_utf8_sha256": "b8a79fae67bbe7bb627fca3447c050f32824c407b89bec15e59a78b6f2e7066b",
+      "complete_public_values_sha256": "6b14c4d663b5fad45c18f39a61916bf95c73e0267b6ae85222d4604b025feedc",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 106,
+      "source_ordinal": 2817,
+      "source_line": 2820,
+      "original_literal": "cockroaches fumigation prices",
+      "normalized_literal": "cockroaches fumigation prices",
+      "literal_utf8_sha256": "977806378f5abcac6c51a9aa6f0e04127426a7e21f03897cf74dd68c26d98e8d",
+      "complete_public_values_sha256": "01fd28e16c62680fe7a3544fab361a91820ad47a54da4968fc97ec301846c874",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 107,
+      "source_ordinal": 2870,
+      "source_line": 2873,
+      "original_literal": "german cockroach fumigation",
+      "normalized_literal": "german cockroach fumigation",
+      "literal_utf8_sha256": "af4cd35ac3602ebe1aa757a3b4d00e0212ba469c07facbb55c2347bb27ecadab",
+      "complete_public_values_sha256": "03a6b00d813e8b365cf4ad25a2c8baea05919847902fa3bde76e5d9a4767706e",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 108,
+      "source_ordinal": 2911,
+      "source_line": 2914,
+      "original_literal": "average cost of cockroach extermination",
+      "normalized_literal": "average cost of cockroach extermination",
+      "literal_utf8_sha256": "ad287fb3283e1e187f5ab5859a97f15e4a35150fb6d7121cb3361871bfe77ac1",
+      "complete_public_values_sha256": "5a27d5575b6ee61ad97211f9e282f7b0420f1b9b7cc6c4b654ab3ca826cbd1fc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 109,
+      "source_ordinal": 2925,
+      "source_line": 2928,
+      "original_literal": "drywood termite fumigation cost",
+      "normalized_literal": "drywood termite fumigation cost",
+      "literal_utf8_sha256": "ca8afce24556b30155b30659c0406631b70bada38938a566607e07e71b2743ab",
+      "complete_public_values_sha256": "cfa4e94e7b0b10fe8dc1c930c7ab6d876ccc1cef1f959ae3fa8466d8b7a24cad",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 110,
+      "source_ordinal": 2952,
+      "source_line": 2955,
+      "original_literal": "orange termite inspection",
+      "normalized_literal": "orange termite inspection",
+      "literal_utf8_sha256": "75af3285f2d467d4714ba14f63d02e4ee0543d97457b66340f84f823865f9f64",
+      "complete_public_values_sha256": "346642a296ecc68b7d2988520f658349634f02f19e9cdf29e2f01df02406ef8f",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 111,
+      "source_ordinal": 2963,
+      "source_line": 2966,
+      "original_literal": "house fumigation tent prices",
+      "normalized_literal": "house fumigation tent prices",
+      "literal_utf8_sha256": "15bdc900c60c0e6e3f8b502769465f6b4a1e8fe8d09530d6aafdd8b65e894288",
+      "complete_public_values_sha256": "897d6c8ed90c8d933d1dd13692d38dc83940d49ec2941edae86175b1a7006da6",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 112,
+      "source_ordinal": 3004,
+      "source_line": 3007,
+      "original_literal": "tent fumigation specialists",
+      "normalized_literal": "tent fumigation specialists",
+      "literal_utf8_sha256": "54f555fd96121c1cdc78af1bb013c2a1856ea8ceab02e1f7ee95463716ddaeaa",
+      "complete_public_values_sha256": "d16442a7baa86848f2f05e6019055e7b914a20e4abb2f3865f6af83502dcfa57",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 113,
+      "source_ordinal": 3023,
+      "source_line": 3026,
+      "original_literal": "termite fumigation price",
+      "normalized_literal": "termite fumigation price",
+      "literal_utf8_sha256": "094ddb8477be99a4d16be4709f41a8017b62fe734779c7ade66bc8909caca4bd",
+      "complete_public_values_sha256": "7c2d3a3a8b94adb0b634c07f2b140a5739100891c49e3194919b21673a25a636",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 114,
+      "source_ordinal": 3115,
+      "source_line": 3118,
+      "original_literal": "bed bug bites extermination cost",
+      "normalized_literal": "bed bug bites extermination cost",
+      "literal_utf8_sha256": "c82a3f28d96cfc7e7405315ff5ea644b7ec05766138b90bf3426b8a3f8d8e6a7",
+      "complete_public_values_sha256": "0531628bcb65f730894d12ca41f786999bac306fd7ac138d7b53680907e07a3b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "MEDICAL_OR_AMBIGUOUS_SYMPTOM"
+      ]
+    },
+    {
+      "selected_ordinal": 115,
+      "source_ordinal": 3126,
+      "source_line": 3129,
+      "original_literal": "termite inspection new construction",
+      "normalized_literal": "termite inspection new construction",
+      "literal_utf8_sha256": "76c0047ce0f5efcdbc93fef2e1289a51ede30269afa5c4b6ed3c10c6810d708c",
+      "complete_public_values_sha256": "07f9c9c27a2b25feb48243a36993808a76bab64e5790f6ba4e695b94dfbaba0d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 116,
+      "source_ordinal": 3131,
+      "source_line": 3134,
+      "original_literal": "pest control for rats and cockroaches",
+      "normalized_literal": "pest control for rats and cockroaches",
+      "literal_utf8_sha256": "05c95c3da11ceda5d31cfb86c6328b266755d638868d49d18de4c85c2f557771",
+      "complete_public_values_sha256": "b144473b9f0b90380c74a2c7734f58d50b2a38c78a199914cac11be33e30b6e6",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 117,
+      "source_ordinal": 3176,
+      "source_line": 3179,
+      "original_literal": "fumigation tent price",
+      "normalized_literal": "fumigation tent price",
+      "literal_utf8_sha256": "b4a16399dd729fad9770a123379c2cf05ff8b81b7ec58932cf423a88401b1229",
+      "complete_public_values_sha256": "6c154c8ddbc3b82d4418ff9866ea6ef6f3d2abe6b7f8608fe845defe10d396d2",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 118,
+      "source_ordinal": 3219,
+      "source_line": 3222,
+      "original_literal": "flea and bed bug killer",
+      "normalized_literal": "flea and bed bug killer",
+      "literal_utf8_sha256": "a2a2e171f549d3f7b1b84c75b08d04643cb150086b6386f0fa408ed99445868c",
+      "complete_public_values_sha256": "89188133afd0e7b6c83f666ef9427f26cb110d6d0cd4fe64e7d0584b465cb113",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 119,
+      "source_ordinal": 3222,
+      "source_line": 3225,
+      "original_literal": "home pest bed bug and flea killer",
+      "normalized_literal": "home pest bed bug and flea killer",
+      "literal_utf8_sha256": "56f4532987e2346f7c02e2e60dc3b2990d153a3f0ceef661fb7713cf782edea6",
+      "complete_public_values_sha256": "7d2e5b8c0d88234871aa12e2953edd533a51c79972b8b5ad2e135dade5f12117",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 120,
+      "source_ordinal": 3252,
+      "source_line": 3255,
+      "original_literal": "exterminator for roaches and mice",
+      "normalized_literal": "exterminator for roaches and mice",
+      "literal_utf8_sha256": "f08ea445338b8a80402caefff33a7c3993444cf683c8f35f4275b9de5ca99a2e",
+      "complete_public_values_sha256": "0e4fb79b8f6ad7d9e4e048caadd4054b2b42d5b1034fd35dee6b6b0a6d7d95f7",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 121,
+      "source_ordinal": 3367,
+      "source_line": 3370,
+      "original_literal": "average cost for exterminator for bed bugs",
+      "normalized_literal": "average cost for exterminator for bed bugs",
+      "literal_utf8_sha256": "44b0d6a5872310338df0a7307e3059b2f9a29cbab3b5a2d657b3c8ea779a7978",
+      "complete_public_values_sha256": "d7c87b3b455de1365f687e28d62add55394622b211f5141a87028d6692262184",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 122,
+      "source_ordinal": 3392,
+      "source_line": 3395,
+      "original_literal": "price for cockroach exterminator",
+      "normalized_literal": "price for cockroach exterminator",
+      "literal_utf8_sha256": "bb56fc0035e49278db024bd11ec0b9db9c56c3dfa668496abf635112d5e49241",
+      "complete_public_values_sha256": "c55a3cab1a9e951ebf009aba5cf37b77a0a959a8c1201dca5c9c98cd5ef8736f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 123,
+      "source_ordinal": 3394,
+      "source_line": 3397,
+      "original_literal": "average cost for exterminator for roaches",
+      "normalized_literal": "average cost for exterminator for roaches",
+      "literal_utf8_sha256": "af87bf707886383f2cbf5e405d186fd090aff3359cdf15da5a3274a81ae19fd2",
+      "complete_public_values_sha256": "14e83546320e07789cd616992dbb1543deaf763c46a5456966d5b00814f30b88",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 124,
+      "source_ordinal": 3415,
+      "source_line": 3418,
+      "original_literal": "house fumigation for roaches cost",
+      "normalized_literal": "house fumigation for roaches cost",
+      "literal_utf8_sha256": "edf193ae267468c99664ad45ad9355cb588bfaaeb186544727896e2271290681",
+      "complete_public_values_sha256": "a6aeed1e5c343f2f08f238b8c184a90f8808f5990119562c93614fff11164b6b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 125,
+      "source_ordinal": 3460,
+      "source_line": 3463,
+      "original_literal": "commercial sprinkler repair",
+      "normalized_literal": "commercial sprinkler repair",
+      "literal_utf8_sha256": "06ed14fe35ea13752938ade568e43cfa64a1e9654f5f2f000adbf41c0310a40c",
+      "complete_public_values_sha256": "f05f47d6fc6493b5bb32cc7c66214278cc25b04ef81b4054e7d504bf8f52de84",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 126,
+      "source_ordinal": 3547,
+      "source_line": 3550,
+      "original_literal": "average cost of termite extermination",
+      "normalized_literal": "average cost of termite extermination",
+      "literal_utf8_sha256": "cafc9bd60f252fb5d814ad97cd6aaa266903dc9bf11032f3afd9793a35a039f8",
+      "complete_public_values_sha256": "67eaa405785f3c9a8354051661ed952c868dcf0d83a159adad481a938c587615",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 127,
+      "source_ordinal": 3548,
+      "source_line": 3551,
+      "original_literal": "average cost for tent fumigation",
+      "normalized_literal": "average cost for tent fumigation",
+      "literal_utf8_sha256": "3a432094580c8bc32857d436b252107df1e8fea2d470f84e2edd5ae8dcda5faa",
+      "complete_public_values_sha256": "10dbc251a00dfea4dee9294d98a3a04299d9f74bb29f8f73f67d22152303ebab",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 128,
+      "source_ordinal": 3551,
+      "source_line": 3554,
+      "original_literal": "commercial swimming pool cleaners",
+      "normalized_literal": "commercial swimming pool cleaners",
+      "literal_utf8_sha256": "4965428c067d4eeaa6b899721c9f739f131908d1dde8f3bb896587c3ee36a59f",
+      "complete_public_values_sha256": "30268129f94dce1eab0b89ff8f1e7401f242d4f25895bab71769719c92cb1abd",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 129,
+      "source_ordinal": 3567,
+      "source_line": 3570,
+      "original_literal": "industrial cctv installation",
+      "normalized_literal": "industrial cctv installation",
+      "literal_utf8_sha256": "765528032a8173d7b62b03371e6c8cb44acb7db87ee7267a85ef532bbb05f38c",
+      "complete_public_values_sha256": "4f1fcc4031297b77b98fa39eac6ddf8be13cd256b6745fa2b0c6f54b9d3dc774",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 130,
+      "source_ordinal": 3568,
+      "source_line": 3571,
+      "original_literal": "commercial swimming pool maintenance contract",
+      "normalized_literal": "commercial swimming pool maintenance contract",
+      "literal_utf8_sha256": "729d4be9229925a1ecc29ba70295db72e4e74df9c06abbe7fa2d42abd7df3034",
+      "complete_public_values_sha256": "082fd24ae5fdc959e7afef0d86aa8954624e03be3e1ecd2f0aa70140b4986e6a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 131,
+      "source_ordinal": 3603,
+      "source_line": 3606,
+      "original_literal": "termite treatment tent fumigation",
+      "normalized_literal": "termite treatment tent fumigation",
+      "literal_utf8_sha256": "d0e9f3c3544a6e83702d6664e563a13ef5276cc1994c23422e0aa276b9393c26",
+      "complete_public_values_sha256": "3dbf101cf630d9f45f1e1ccb0b4b62776312765681fe70f8668e1c613c477d1e",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 132,
+      "source_ordinal": 3655,
+      "source_line": 3658,
+      "original_literal": "estimated cost for bed bug extermination",
+      "normalized_literal": "estimated cost for bed bug extermination",
+      "literal_utf8_sha256": "ac3c5bbc8fc9aac08da1920d3180f0e7a174a2fa5fb0de2f28c887a1f23b8108",
+      "complete_public_values_sha256": "114f2d7570f85a777f82c5c2b6e45a9545c5a94c63e005aff7e9e91334d9024f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 133,
+      "source_ordinal": 3702,
+      "source_line": 3705,
+      "original_literal": "commercial cctv camera installation",
+      "normalized_literal": "commercial cctv camera installation",
+      "literal_utf8_sha256": "5402c5f81ac3f2cc1e35d0529d166f1a3191b5a9077407e556a79e5a1ff0a63b",
+      "complete_public_values_sha256": "1f629893d91f9e9885f0488e6772b3070c86e91a540248fb8d71874314f5bb0a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 134,
+      "source_ordinal": 3704,
+      "source_line": 3707,
+      "original_literal": "exterminator for cockroaches cost",
+      "normalized_literal": "exterminator for cockroaches cost",
+      "literal_utf8_sha256": "fbf8c1db3b9016c5b43f1e171a39fdb5cef9892e55d650f5651fbb5fe7580194",
+      "complete_public_values_sha256": "93eaf8597e8893f8c38ecab49eeb8a59cc6e9d2a6ccfc0b6fe84242767b7709f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 135,
+      "source_ordinal": 3753,
+      "source_line": 3756,
+      "original_literal": "cost of professional roach extermination",
+      "normalized_literal": "cost of professional roach extermination",
+      "literal_utf8_sha256": "5247a244d47b9062eb8caf64ccaa5637d29cc76658e185fe5c782ecc5df036dc",
+      "complete_public_values_sha256": "d7e769ee6c3f0955ac0c9cfc203cf8dbcc78d3d3363914491ec9c4314cce0b1b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 136,
+      "source_ordinal": 3769,
+      "source_line": 3772,
+      "original_literal": "commercial swimming pool maintenance",
+      "normalized_literal": "commercial swimming pool maintenance",
+      "literal_utf8_sha256": "a875fc741efcb8829d174722b1ebd6f697ea397b9090c3927e9002f0605d7468",
+      "complete_public_values_sha256": "b6a7effb237fb642d57586e56e10a4d59ada26879037c7090fddd296eb78313e",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 137,
+      "source_ordinal": 3770,
+      "source_line": 3773,
+      "original_literal": "best bed bug and flea killer",
+      "normalized_literal": "best bed bug and flea killer",
+      "literal_utf8_sha256": "fc040c2112065cc2cfad0a0e15b4c1445abf465e5bbccb875a46f654f8493242",
+      "complete_public_values_sha256": "0fea4eb87818de910c796ace3dcab794739f1d1e45356aff9636992c7931b65b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 138,
+      "source_ordinal": 3857,
+      "source_line": 3860,
+      "original_literal": "drywood termite fumigation",
+      "normalized_literal": "drywood termite fumigation",
+      "literal_utf8_sha256": "b6ce2df1b3b3505b04bf5b0703e9495d978044c28047c4a074fd05af3dad8ee7",
+      "complete_public_values_sha256": "271a83f9f61a0773241820fe857c91044cd29dc23723ea950bbf7f895886b879",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 139,
+      "source_ordinal": 3898,
+      "source_line": 3901,
+      "original_literal": "industrial termite killer",
+      "normalized_literal": "industrial termite killer",
+      "literal_utf8_sha256": "9d4490e397991afe22314b0934f7753b42b7d5e9ece5c5b442600e8dcb06a757",
+      "complete_public_values_sha256": "46c4764330df384c8beff8af4080afc0e1af1570e4241efac671efe963a2cace",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 140,
+      "source_ordinal": 3954,
+      "source_line": 3957,
+      "original_literal": "commercial termite control",
+      "normalized_literal": "commercial termite control",
+      "literal_utf8_sha256": "d65239fd04dc23c3a3015db443778ff051bbdb84510c83fc3a71dbe8fa2065f1",
+      "complete_public_values_sha256": "2154f435a49762d600e3e2830060444c103ff4702106067ed003c9c559633fd3",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 141,
+      "source_ordinal": 4014,
+      "source_line": 4017,
+      "original_literal": "get rid of bed bugs and fleas",
+      "normalized_literal": "get rid of bed bugs and fleas",
+      "literal_utf8_sha256": "3f602b8fcc05f1ce635c2f7dcd6553b4cac5984cb6c137c479c31ab66cc9ff28",
+      "complete_public_values_sha256": "c3363e3d2c803a9515b4a4d5d76e64b83dba62f66b7591232f8f0ff5f31ca30f",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 142,
+      "source_ordinal": 4068,
+      "source_line": 4071,
+      "original_literal": "bora care commercial",
+      "normalized_literal": "bora care commercial",
+      "literal_utf8_sha256": "636a903bb5bef0ae574c3e7e919cf5d65a45fb61f819e694c28d75b6b2698cea",
+      "complete_public_values_sha256": "c898a018d36957d1e931cad542407437516d477eaa3951e0c14873a04cb0a78d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 143,
+      "source_ordinal": 4193,
+      "source_line": 4196,
+      "original_literal": "fumigation tent house",
+      "normalized_literal": "fumigation tent house",
+      "literal_utf8_sha256": "48f94be3e730f28a554f33f685a70e4b9796513aa873a0fc49df3351d126a309",
+      "complete_public_values_sha256": "c3adef424c8781040354f796a62792159867eb30067d371226075938cacfddd6",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 144,
+      "source_ordinal": 4263,
+      "source_line": 4266,
+      "original_literal": "algae pool cleaning",
+      "normalized_literal": "algae pool cleaning",
+      "literal_utf8_sha256": "6e4d0f7a8a33b664c81c44ad45b6f096b573bf70094d1f83e96e7ccc6d54f39f",
+      "complete_public_values_sha256": "32c33584d086d7dda75f12148bc22d9665a540f915ffd68b42e9036d2df71169",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 145,
+      "source_ordinal": 4276,
+      "source_line": 4279,
+      "original_literal": "anay exterminator price",
+      "normalized_literal": "anay exterminator price",
+      "literal_utf8_sha256": "a8092d63a3d145a686edd90d55b980ae5708b3119a5e12ef1e40f00a0a8767e7",
+      "complete_public_values_sha256": "070c7fd8188b78054823eec0e199445a138ca997cfb02ec2ca2d39e3f4fa7715",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 146,
+      "source_ordinal": 4318,
+      "source_line": 4321,
+      "original_literal": "average cost of an exterminator for roaches",
+      "normalized_literal": "average cost of an exterminator for roaches",
+      "literal_utf8_sha256": "6bae2d777dc4a441ad8da4cb742cc2f6bf14dff3de843fe57931c07431499ad6",
+      "complete_public_values_sha256": "0196c572a65458e56acc366d704d81b3f633e538e254721d5b035dc6761ca819",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 147,
+      "source_ordinal": 4346,
+      "source_line": 4349,
+      "original_literal": "bed bug flea killer",
+      "normalized_literal": "bed bug flea killer",
+      "literal_utf8_sha256": "396dd0de586d1043372173e19ef1ec2e1a543c2a2a157aa1cf15269fa6af8194",
+      "complete_public_values_sha256": "302e7e6fd8e48cb61c347a05f0be1cbcf29c576c150cc63b0ebef63f64a04524",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 148,
+      "source_ordinal": 4347,
+      "source_line": 4350,
+      "original_literal": "bed bug flea treatment",
+      "normalized_literal": "bed bug flea treatment",
+      "literal_utf8_sha256": "b9626dc46963fce45c85f587301b7a77be99b7aad321632cfefb4f52827df1eb",
+      "complete_public_values_sha256": "2b36156dc15653e1cf8f0bfd8e572c055cc076895a91922db4535194435bc2d9",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 149,
+      "source_ordinal": 4370,
+      "source_line": 4373,
+      "original_literal": "bedbugs exterminator cost",
+      "normalized_literal": "bedbugs exterminator cost",
+      "literal_utf8_sha256": "1e78e6405f5511230c14ce2e4567f479f00534fe74ab398eb0d50e4110fbf29e",
+      "complete_public_values_sha256": "cafbe0ee53d971f4b085476cef96ee07a94cde115f5b2b22ddcc8aea6a03bd78",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 150,
+      "source_ordinal": 4379,
+      "source_line": 4382,
+      "original_literal": "best commercial pool cleaners",
+      "normalized_literal": "best commercial pool cleaners",
+      "literal_utf8_sha256": "db95519abdd42878d8001ff35e57b4cd93684c68098d82fde89600c987e651a0",
+      "complete_public_values_sha256": "0969bd31e1a7ab1ac354aba548eb2c467c9979a4f0f4445a4429d5a1e65ed4f6",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 151,
+      "source_ordinal": 4409,
+      "source_line": 4412,
+      "original_literal": "best way to get rid of bed bugs and fleas",
+      "normalized_literal": "best way to get rid of bed bugs and fleas",
+      "literal_utf8_sha256": "d66f770fda3a9a2334a20092c48f3a3bfaa47651e1b0028180062b5bd970f025",
+      "complete_public_values_sha256": "ba83cefe7634e05cf0ffe052cfa24e24ca4efd287f056d2391905795bd8d8147",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 152,
+      "source_ordinal": 4578,
+      "source_line": 4581,
+      "original_literal": "clean green algae from pool",
+      "normalized_literal": "clean green algae from pool",
+      "literal_utf8_sha256": "99a98abd994cf9cf71fb91c2f2b95cde5cf221332636df89b173eb7562dad787",
+      "complete_public_values_sha256": "b9b42e4f53ad78ce6c0226be3ad190cb30289d2eddca5354ba78316fb12cee77",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 153,
+      "source_ordinal": 4597,
+      "source_line": 4600,
+      "original_literal": "cleaning algae from bottom of pool",
+      "normalized_literal": "cleaning algae from bottom of pool",
+      "literal_utf8_sha256": "0fc924f917906a4dbc6f6b75b6a40796b88807cf2bdd2b5d3fa8ec09d9bb199b",
+      "complete_public_values_sha256": "a165370396e518c0e0c878dd14957101e6a3bf1671b99a8b878bef741c9f7299",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 154,
+      "source_ordinal": 4626,
+      "source_line": 4629,
+      "original_literal": "cockroach fumigation services",
+      "normalized_literal": "cockroach fumigation services",
+      "literal_utf8_sha256": "18a8b3859b6dc4a4c5fce683faa2d23b1d1f22272dcf61fc75d7285ad00acd35",
+      "complete_public_values_sha256": "7628e44008c5971a6a69e4ebc03ec937b6655327c38ee33e01a41fe26598c41b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 155,
+      "source_ordinal": 4630,
+      "source_line": 4633,
+      "original_literal": "commercial bed bug control",
+      "normalized_literal": "commercial bed bug control",
+      "literal_utf8_sha256": "ce39e40a009b42941a745ca5397afbc47b632560740ab5faaef5d29fe94e1659",
+      "complete_public_values_sha256": "953fe3b50c5f0dcc8a76bd5c7e3430d14ddd67f054ac986c86b1701e06834337",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 156,
+      "source_ordinal": 4631,
+      "source_line": 4634,
+      "original_literal": "commercial bed bug removal",
+      "normalized_literal": "commercial bed bug removal",
+      "literal_utf8_sha256": "98ccc7d36090439756556b16228aadd81a7ab5a04f3586ab9c709db837a617e7",
+      "complete_public_values_sha256": "adc8dcfbc0bbbc2c7dbef73e4b7034aeafb6196c425a73555929d78583257447",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 157,
+      "source_ordinal": 4632,
+      "source_line": 4635,
+      "original_literal": "commercial cockroach control",
+      "normalized_literal": "commercial cockroach control",
+      "literal_utf8_sha256": "0647eb7fce74598a37d189353a8704b6c1ac6dc5e3ca1b496a3af4e60202a143",
+      "complete_public_values_sha256": "cde0a2bbb02d3bd0ea68bba040f8844c0eb75599e2f1696d92ef0c0ccfecdc50",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 158,
+      "source_ordinal": 4635,
+      "source_line": 4638,
+      "original_literal": "commercial pool care",
+      "normalized_literal": "commercial pool care",
+      "literal_utf8_sha256": "d5dc57349ed5429808e23f6abcd1c6ff4b3f79c5cb08fa79b842e147cc6c0191",
+      "complete_public_values_sha256": "9dbe926e24b0be3920e4ee6a558155c3bec975d6ab00887a6478f4cf8b8fc435",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 159,
+      "source_ordinal": 4801,
+      "source_line": 4804,
+      "original_literal": "emergency bed bug treatment",
+      "normalized_literal": "emergency bed bug treatment",
+      "literal_utf8_sha256": "a84665028c15dba542304a49d40046fa174186b58428737c3f0d3dd6667357dd",
+      "complete_public_values_sha256": "4b7c55ed2ec62e660663778d6d2f0034ec4d7d121683b1667af48f5f4ffe632c",
+      "decision": "HOLD",
+      "reason_codes": [
+        "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "selected_ordinal": 160,
+      "source_ordinal": 4810,
+      "source_line": 4813,
+      "original_literal": "exterminator for bed bugs and fleas",
+      "normalized_literal": "exterminator for bed bugs and fleas",
+      "literal_utf8_sha256": "683f259b4775dba4d48422e4f4c3b805928fbd7c9b9ded7e79c11537e6402876",
+      "complete_public_values_sha256": "a69c51b71020d032b317507d8cf3b14ac135feda2491937b9d3acc24c6725614",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 161,
+      "source_ordinal": 5244,
+      "source_line": 5247,
+      "original_literal": "keeping algae out of pool",
+      "normalized_literal": "keeping algae out of pool",
+      "literal_utf8_sha256": "dbbc49c7cef99fefafccfcaf83d5de0e6730047563a1de8fbf933a18bb42bd00",
+      "complete_public_values_sha256": "676433cfa57476f6aef48cc58928662167ca9cc5694c46f687a9fdee9c94a692",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 162,
+      "source_ordinal": 5249,
+      "source_line": 5252,
+      "original_literal": "kill bed bugs and fleas",
+      "normalized_literal": "kill bed bugs and fleas",
+      "literal_utf8_sha256": "387e96819a789499411341af0e4c3a44e5a02fd8c2a4ae751ea7ddd10554617f",
+      "complete_public_values_sha256": "18ce4a3bbc49e54523db9b4f4a87817860e6d77e98d6afb88383b396cd81ee4d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 163,
+      "source_ordinal": 5250,
+      "source_line": 5253,
+      "original_literal": "kill fleas and bed bugs",
+      "normalized_literal": "kill fleas and bed bugs",
+      "literal_utf8_sha256": "712a1395401f06faea807648a67006b6e33f3417348d2b76676d45561050fb7b",
+      "complete_public_values_sha256": "57830fe355edb0c7d2afc637f0126a164bbd912ed565acd27e634ec71d67b4df",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 164,
+      "source_ordinal": 5364,
+      "source_line": 5367,
+      "original_literal": "no cockroach fumigator",
+      "normalized_literal": "no cockroach fumigator",
+      "literal_utf8_sha256": "7eb8981b25bae03c526951b86bdee0a94586553f96ea0b54219ed545716fee3f",
+      "complete_public_values_sha256": "cd0ca3d986a2997c4586ebdb6617b5fa13edec5265c08ecbdca54215b02ce1f9",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 165,
+      "source_ordinal": 5470,
+      "source_line": 5473,
+      "original_literal": "professional roach extermination cost",
+      "normalized_literal": "professional roach extermination cost",
+      "literal_utf8_sha256": "1f2bba2b7e418ca5184b6021aac4b04f12c24645cbb7c5b50b21fad7b715bc71",
+      "complete_public_values_sha256": "bea0c306707a698cbf702654a054135aa053ec5f465a87d460b52b16a8c1dd38",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 166,
+      "source_ordinal": 5911,
+      "source_line": 5914,
+      "original_literal": "termite control termite treatment inspection",
+      "normalized_literal": "termite control termite treatment inspection",
+      "literal_utf8_sha256": "5df3962cef6a10efd34bfa64b4fa82583dbf9f5d3e1ea736938e69528cdb347d",
+      "complete_public_values_sha256": "15c4640cd4a66ee76990d522be63bb2c1e22ce6f913440e09b4875e0def7c688",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 167,
+      "source_ordinal": 5913,
+      "source_line": 5916,
+      "original_literal": "termite fumigation cost wild wild pest control",
+      "normalized_literal": "termite fumigation cost wild wild pest control",
+      "literal_utf8_sha256": "cf8ed7de72eeb8eb076869225789dff45987862a463ee0ac3262f261841ac972",
+      "complete_public_values_sha256": "4e42d69786bab9a0348d443b47f52e1254ce63b16de99ea52d26dd86dc26b97d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "UNVERIFIED_VENDOR_OR_LANGUAGE"
+      ]
+    },
+    {
+      "selected_ordinal": 168,
+      "source_ordinal": 5931,
+      "source_line": 5934,
+      "original_literal": "termite treatment cost termite inspection near me",
+      "normalized_literal": "termite treatment cost termite inspection near me",
+      "literal_utf8_sha256": "01c941ba1f07089c505c5912ebb69ee9026b7e6c88f34f7c3965ec3f74878648",
+      "complete_public_values_sha256": "36569417dd3305e6a8aaa679dd3bfefbc7aaee4d3b4d866dbcbfe7c50688a5c1",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    },
+    {
+      "selected_ordinal": 169,
+      "source_ordinal": 5946,
+      "source_line": 5949,
+      "original_literal": "termite treatment termite inspection near me",
+      "normalized_literal": "termite treatment termite inspection near me",
+      "literal_utf8_sha256": "3d7fe1cc8630e30a36236e8bb97703641022efae34447f484bae1f3ab6147817",
+      "complete_public_values_sha256": "3cf2dc1460d41b48d7d56d9e50bb39d28f76c5a8a290852d4207e06b1a112fa7",
+      "decision": "HOLD",
+      "reason_codes": [
+        "INSPECTION_OR_PROPERTY_CONDITION"
+      ]
+    }
+  ],
+  "decision_counts": {
+    "PROPOSE_FULL_EXACT_RESEARCH": 87,
+    "HOLD": 82
+  },
+  "reason_counts": {
+    "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH": 87,
+    "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED": 33,
+    "INSPECTION_OR_PROPERTY_CONDITION": 16,
+    "PRODUCT_OR_DIY_PURPOSE": 25,
+    "UNVERIFIED_VENDOR_OR_LANGUAGE": 7,
+    "MEDICAL_OR_AMBIGUOUS_SYMPTOM": 1
+  },
+  "reason_definitions": {
+    "EXPLICIT_PEST_COMMERCIAL_OR_URGENT_SERVICE_RESEARCH": "Explicit exterminator/extermination or contractor installation/repair/contract, named-provider search not inferred; process-price or near-me service demand only. Research exact full queries; no universal service token.",
+    "INSPECTION_OR_PROPERTY_CONDITION": "Retain inspection and property-condition searches; potential buyer due diligence and professional verification remain unresolved.",
+    "PRODUCT_OR_DIY_PURPOSE": "Retain equipment, chemicals, cleaners, methods and DIY terms; professional service-only purpose is unresolved.",
+    "UNVERIFIED_VENDOR_OR_LANGUAGE": "No named vendor, product identity or uncertain language meaning inferred.",
+    "SERVICE_ONLY_PURPOSE_NOT_ESTABLISHED": "Bare procedure, treatment, removal, maintenance or control terms do not alone establish a professional service request.",
+    "MEDICAL_OR_AMBIGUOUS_SYMPTOM": "Symptom/medical purpose not resolved; do not classify as incompatible service demand."
+  }
+}

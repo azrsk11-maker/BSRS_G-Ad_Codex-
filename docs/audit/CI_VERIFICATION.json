@@ -1,0 +1,16 @@
+{
+  "verified_on": "2026-11-07",
+  "scope": "OFFLINE_FOUNDATION_NOT_PRODUCTION_ACCEPTANCE",
+  "first_run": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42344500019",
+  "commit": "91765b66fab340cc9cf42a4c75bfc82da4e41b94",
+  "conclusion": "success",
+  "jobs": [
+    {"name":"offline-validation","conclusion":"success","job_id":128319191641},
+    {"name":"native-wordpress-check","conclusion":"success","job_id":128319191479,"php_runtime":"8.5.4","php_files_linted":2,"isolated_behavior_checks":17,"wordpress_writes":0}
+  ],
+  "local_behavior_tests_passed":96,
+  "source_integrity_checks_passed":52,
+  "release_authorized":false,
+  "followup": "Final PR head must independently have both successful required checks. The first-run receipt does not certify later commits.",
+  "optimization": "PHP checks are delegated to the mandatory separate CI job by default, avoiding duplicate PHP execution in offline-validation; --require-php remains available locally."
+}

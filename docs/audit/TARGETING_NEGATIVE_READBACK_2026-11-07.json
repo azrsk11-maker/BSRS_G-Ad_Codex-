@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "status": "READ_ONLY_OBSERVATION_NOT_RELEASE_ACCEPTANCE",
+  "observed_at_utc_interval": ["2026-11-07T07:18:55Z", "2026-11-07T07:28:10Z"],
+  "account_id": "573-038-4686",
+  "production_changes": 0,
+  "production_authorized": false,
+  "method": "Authenticated campaign Settings > Locations > Location options, shared negative-list inventory/detail, and the account campaign/ad-group negative-keyword table. Opened settings panels were cancelled without saving. Downloaded CSVs were read locally; no exclusions were applied, removed or edited.",
+  "targeting": {
+    "campaigns_verified_in_this_readback": [
+      {"id": "24378494092", "role": "Tenants"},
+      {"id": "24367388382", "role": "Owners"},
+      {"id": "24378494098", "role": "Brand"}
+    ],
+    "location_selected": "United Arab Emirates",
+    "include_selected": "Presence: People in or regularly in your included locations",
+    "presence_or_interest_selected": false,
+    "buyers_prior_verification": "ADS_MEASUREMENT_READBACK_2026-11-07.json#/buyers_settings_sample",
+    "all_four_presence_options_now_observed": true,
+    "language": "UNRESOLVED",
+    "language_limit": "The aggregate Settings table shows a dash. The inspected individual settings panels did not expose a language selector. Neither correct English targeting nor an unset/all-language value can be inferred. Keyword Planner language is a separate research setting."
+  },
+  "source_exports": [
+    {
+      "reference": "Negative keyword report.csv",
+      "source_page": "https://ads.google.com/aw/keywords/negative",
+      "period_display": "All time",
+      "bytes": 102196,
+      "sha256": "8bd6ca8b21ca9b320222dd457a031e748e07f34ea8fffc8b4977dec00cb6de7d",
+      "rows": 1191,
+      "keyword_rows": 1185,
+      "list_attachment_rows": 6,
+      "campaign_level_rows": 474,
+      "ad_group_level_rows": 717,
+      "retention": "Full export kept outside the public repository; only the relevant configuration projection and aggregate counts are recorded here."
+    },
+    {
+      "reference": "Negative keyword details report (1).csv",
+      "source_page": "https://ads.google.com/aw/negativekeywordlistdetails?sharedSetId=12245807308",
+      "period_display": "All time",
+      "bytes": 509,
+      "sha256": "a247b475bf0d1ec13b68d689f053b9a4ba35e4cc47d96ce19dee6ee5cc5a7129",
+      "rows": 29,
+      "retention": "Original downloaded export kept outside the public repository. Its complete keyword/match projection is below."
+    }
+  ],
+  "shared_list": {
+    "inventory_lists_observed": 1,
+    "id": "12245807308",
+    "name": "BSRE – Job & Renter Negatives",
+    "keyword_count": 29,
+    "match_type_for_all": "BROAD",
+    "keywords_in_export_order": ["hiring", "living in", "sobha", "company", "cheap", "studio", "vacancy", "bugatti", "real estate websites", "career", "resume", "careers", "accommodation", "walk in interview", "hercules tower", "vacancies", "cv", "realtor", "danube", "near me", "azizi", "emaar", "recruitment", "companies", "ellington", "samana", "staff", "binghatti", "housing listings"],
+    "attached_campaigns": [
+      {"id": "24271196121", "name": "BSRE | Search | Dubai Buyers"},
+      {"id": "24271198545", "name": "BSRE | Search | International Investors"},
+      {"id": "24150698534", "name": "BSRE | Search | Germany | Overseas Buyers"},
+      {"id": "24155555722", "name": "BSRE | Search | Saudi Arabia | Overseas Buyers"},
+      {"id": "24271199472", "name": "BSRE | Search | Landlords & Sellers"},
+      {"id": "24155034442", "name": "BSRE | Search | Dubai | Leads"}
+    ],
+    "campaign_id_provenance": "Exact unique campaign-name join to CAMPAIGN_STATUS_BASELINE_2026-11-07.json; this export itself contains names, not campaign IDs.",
+    "attached_to_v2_campaigns_in_this_account_export": false,
+    "risk_assessment": "Research inference: developer/brand names and property-intent terms such as studio, near me and accommodation warrant protected-intent review before any future reuse. This is not proof of lost traffic or incorrect historical intent. Do not copy this legacy list wholesale or reactivate its old campaigns."
+  },
+  "v2_direct_negatives": {
+    "total_rows": 19,
+    "level": "Campaign",
+    "common_to_all_four": {
+      "match_type": "Phrase match",
+      "texts_without_export_wrappers": ["real estate internship", "real estate salary", "real estate agent jobs", "real estate jobs"]
+    },
+    "brand_only_additions": {
+      "match_type": "Exact match",
+      "texts_without_export_wrappers": ["black swan ballet", "black swan movie", "black swan film"]
+    },
+    "counts_by_campaign": [
+      {"id": "24372566774", "name": "BSRE_V2_SEARCH_BUYERS_UAE_EN", "count": 4},
+      {"id": "24367388382", "name": "BSRE_V2_SEARCH_OWNERS_UAE_EN", "count": 4},
+      {"id": "24378494092", "name": "BSRE_V2_SEARCH_TENANTS_UAE_EN", "count": 4},
+      {"id": "24378494098", "name": "BSRE_V2_SEARCH_BRAND_UAE_EN", "count": 7}
+    ],
+    "list_attachment_rows": 0,
+    "ad_group_level_rows": 0,
+    "qualification": "Observed existing configuration, not an approval of semantic coverage or a newly researched negative master. The historical 27 draft placements and this current 19-row configuration are different artifacts; neither is silently substituted for the other."
+  },
+  "still_unverified": [
+    "Live campaign language targeting.",
+    "Account-level negatives, manager-account controls and external writers outside the inspected campaign/ad-group and local shared-list surfaces.",
+    "Complete genuine protected-query corpus, intended scope and current semantic suitability of exclusions.",
+    "All website, consent, conversion, operational and separate production release gates."
+  ]
+}

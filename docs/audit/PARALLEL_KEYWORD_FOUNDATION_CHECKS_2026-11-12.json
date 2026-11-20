@@ -1,0 +1,177 @@
+{
+  "observed_on_dubai": "2026-11-12",
+  "scope": "OFFLINE_COMPLETE_FOUNDATION_AND_MEASURED_KEYWORD_EXECUTION_NOT_PRODUCTION_ACCEPTANCE",
+  "implementation_commit": "1ac1758785eb7860ccd3a6ee4ed14522d97484a8",
+  "implementation_tree": "ed56076476959b77f546c4af9b7f3ea95452ea66",
+  "foundation_passed": true,
+  "checks_passed": 109,
+  "checks_failed": 0,
+  "checks_not_executed": [],
+  "required_php": true,
+  "foundation_seconds": 653.412605,
+  "private_raw_report_sha256": "6474ee7a07d0a5685221355e23e381914372592d6045983d3f49da0c0c85ff02",
+  "keyword_execution": {
+    "workers": 2,
+    "aggregate_bound_seconds": 300,
+    "subprocess_seconds": 218.221639,
+    "timeout_margin_seconds": 81.778361,
+    "summary": {
+      "discovered_modules": 34,
+      "completed_modules": 34,
+      "discovered": 437,
+      "started": 437,
+      "finished": 437,
+      "skipped": 2,
+      "coverage_verified": true,
+      "timed_out": false,
+      "passed": true
+    },
+    "independent_standard_discovery_equals_every_started_and_finished_id": true,
+    "expected_ids_sha256": "9b284bb40145c34d87943355130407b71369c318a54b5c5f13b5b578bb290777",
+    "retained_full_evidence_sha256": "bd599a32173fdaa4d12b97eb7b8d69dee63aa31ad681b0aafc0ce12dfa2ac9eb",
+    "retained_full_evidence_bytes": 275446,
+    "full_receipt_retained_locally_not_bundled": true,
+    "source_body_or_acceptance_cache": false,
+    "checks_omitted_or_timeout_raised": false
+  },
+  "python_suites": {
+    "keyword-entertainment-clipboard-guards": {
+      "total": 8,
+      "skipped": 0,
+      "suite_seconds": 0.086,
+      "subprocess_seconds": 0.390578
+    },
+    "native-wordpress-behavior": {
+      "total": 8,
+      "skipped": 0,
+      "suite_seconds": 0.102,
+      "subprocess_seconds": 0.473502
+    },
+    "efficiency-behavior": {
+      "total": 90,
+      "skipped": 3,
+      "suite_seconds": 27.443,
+      "subprocess_seconds": 28.037006
+    },
+    "qualification-history-behavior": {
+      "total": 42,
+      "skipped": 0,
+      "suite_seconds": 9.95,
+      "subprocess_seconds": 10.409532
+    },
+    "qualified-export-source-behavior": {
+      "total": 26,
+      "skipped": 0,
+      "suite_seconds": 1.606,
+      "subprocess_seconds": 1.976657
+    },
+    "github-governance-behavior": {
+      "total": 13,
+      "skipped": 0,
+      "suite_seconds": 0.012,
+      "subprocess_seconds": 0.429211
+    },
+    "content-evidence-behavior": {
+      "total": 24,
+      "skipped": 0,
+      "suite_seconds": 0.508,
+      "subprocess_seconds": 0.812633
+    },
+    "creative-validation-behavior": {
+      "total": 35,
+      "skipped": 0,
+      "suite_seconds": 0.094,
+      "subprocess_seconds": 0.411809
+    },
+    "release-control-behavior": {
+      "total": 77,
+      "skipped": 1,
+      "suite_seconds": 41.601,
+      "subprocess_seconds": 42.100424
+    },
+    "staging-lab-behavior": {
+      "total": 18,
+      "skipped": 1,
+      "suite_seconds": 1.633,
+      "subprocess_seconds": 2.034211
+    }
+  },
+  "isolated_php_checks": 28,
+  "all_isolated_php_checks_passed": true,
+  "platform_limits": {
+    "local_expiry_journal": {
+      "tests": 22,
+      "suites": 0,
+      "pass": 5,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 17,
+      "todo": 0,
+      "duration_ms": 303.606
+    },
+    "linux_native_process_cleanup": "NOT_EXECUTED_ON_WINDOWS; capability skip retained",
+    "posix_abrupt_supervisor_death": "NOT_GUARANTEED; timeout cleanup has group containment",
+    "real_wordpress_db_http_current_source_github_ci_human_or_live_acceptance": false
+  },
+  "measured_comparison": {
+    "retained_serial_failed_run": "MERGE_ALIAS_FOUNDATION_TIMEOUT_2026-11-12.json",
+    "serial_same_437_case_scope": true,
+    "serial_bound_seconds": 300,
+    "serial_subprocess_seconds": 300.032659,
+    "serial_progress_cases": 429,
+    "serial_complete": false,
+    "parallel_complete_cases": 437,
+    "parallel_seconds": 218.221639,
+    "failed_serial_full_foundation_seconds": 563.217085,
+    "current_full_foundation_seconds": 653.412605,
+    "same_full_workload": false,
+    "host_conditions_controlled": false,
+    "whole_foundation_speedup_claimed": false,
+    "numeric_causal_token_api_or_billing_savings_claimed": false,
+    "interpretation": "More complete verified keyword coverage within the unchanged deadline; total Foundation elapsed increased and is not a speedup."
+  },
+  "slowest_measured_subprocesses": [
+    {
+      "check": "keyword-system-behavior",
+      "seconds": 218.221639
+    },
+    {
+      "check": "keyword-negative-research-composition",
+      "seconds": 93.716509
+    },
+    {
+      "check": "keyword-vendor-review-reconciliation",
+      "seconds": 65.796537
+    },
+    {
+      "check": "release-control-behavior",
+      "seconds": 42.100424
+    },
+    {
+      "check": "keyword-role-review-reconciliation",
+      "seconds": 41.025575
+    },
+    {
+      "check": "efficiency-behavior",
+      "seconds": 28.037006
+    },
+    {
+      "check": "keyword-gap-review-reconciliation",
+      "seconds": 27.004552
+    }
+  ],
+  "source_byte_repair": "SOURCE_BYTE_PRESERVATION_2026-11-12.json",
+  "source_pins_changed": false,
+  "research_counts": {
+    "negative": 10955,
+    "negative_target": 14000,
+    "negative_deficit": 3045,
+    "positive_admission": 0,
+    "exclusion_approved": 0,
+    "deployed": 0
+  },
+  "production_changed": false,
+  "ads_changed": false,
+  "release_authorized": false,
+  "full_goal_complete": false
+}

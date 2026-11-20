@@ -1,0 +1,16 @@
+# Buyer off-plan Planner evidence projection
+
+The immutable [source](source.json) records **six complete ten-cell Keyword Planner rows: one supplied seed and five provider-generated ideas**, with pagination `1 - 6 of 6`. Its capture targets United Arab Emirates / English / Google and displays the historical window **Nov 2025 – Oct 2026**. The [projection](projection.json) binds the original file, row ordinal, JSON pointer, full ten-cell row and row SHA256. This task read the saved source and did not recapture its browser evidence.
+
+All original and normalized literals are retained. Historical estimate ranges, percentage changes, competition labels, impression-share dashes and top-of-page bid strings remain verbatim. Exact volume, actual CPC, observed queries, company performance and forecasts remain null. No range midpoint, bid-to-CPC conversion or aggregate demand is inferred.
+
+**Six source rows are not six novel canonical keywords.** The raw-pinned historical intake contains 41 unreviewed canonical candidates and 82 exact/phrase placement occurrences. Their references reconcile, and the existing owner-service packet points to that same source. There are zero exact historical canonical hits among these six literals. Ordinal 1 requires lexical variant review against `LEGACY-POS-0008`, whose source wording differs by the preposition “in”. Ordinals 4 and 6 have the same buyer semantics with or without “in”; retain both source rows and their different metric strings without counting two canonical additions. Other external semantic relationships remain unknown. The novel canonical count is undetermined, with zero confirmed additions. Historical placements remain provenance, not extra distinct phrases.
+
+Every complete source phrase supports only a preliminary off-plan property-buyer research interpretation. The sole service proposal is off-plan buyer advisory pending actual business evidence; no campaign, ad group, page, Google ID or actual destination is assigned. Dubai Creek Harbour and townhouse wording supplies no business coverage, inventory, availability, authority or mandate evidence. The five existing subject-bound positive reviews, factual service acceptance, rights, language, claims, destination/function/consent evidence and applicable release approvals remain outstanding.
+
+**Admission review: 0. Admitted: 0. Approved/deployed: 0. Current reviewed positive master: 0.** No exclusion is proposed. No source, historical intake, current master, keyword module, campaign, plan, budget, serving state or private lead record was changed. No browser action, Add Keywords action, test suite, full negative composition or commit was performed.
+
+Source SHA256: `1a310b01460daa461c78b3ecdb19f5069cb74217187d01d608b513af5a128bfb` (3,160 bytes).
+Projection SHA256: `358099562b49c2765921d3b38f19d54914fb47abdd24cc61e497793b7c55eb92` (23164 bytes).
+
+Bounded generation/comparison time: 0.013133 seconds. Checks cover the immutable source hash, all six ordinals/row kinds, all ten cells, displayed metadata, six unique exact source literals, 41/82 historical source counts and placement references, packet-to-source binding, empty positive master, explicit variant attention and zero authority boundaries. Hash consistency authenticates retained local bytes only; it does not complete business or regulatory reviews.

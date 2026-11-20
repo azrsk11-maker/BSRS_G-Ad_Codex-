@@ -1,0 +1,42 @@
+{
+  "scope": "CURRENT_COMPOSED_REVIEWED_NEGATIVE_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "as_of": "2026-11-11",
+  "input_rows": 8035,
+  "distinct_nonblank_phrases": 8035,
+  "reviewed_eligible_rows": 8035,
+  "excluded_rows": 0,
+  "approved_exclusion_rows": 0,
+  "target": 14000,
+  "deficit": 5965,
+  "exact_target_pass": false,
+  "structural_pass": true,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "positive_library_coverage_verified": false,
+  "protected_queries_indexed": 13905,
+  "base_eligible_rows": 7186,
+  "historical_rows_preserved": 7188,
+  "held_historical_rows": 2,
+  "new_rows": 849,
+  "cohorts": [
+    {
+      "key": "role-artifacts-20261111",
+      "rows": 849
+    }
+  ],
+  "computed_conflicts": 0,
+  "source_occurrences_retained_in_current_records": 8042,
+  "approval_hold_counts": {
+    "exclusion approval missing; fail closed": 8035,
+    "independent exclusion approver required": 8035,
+    "exclusion approval: missing/invalid evidence dates": 8035,
+    "exclusion approval: dependency evidence dates invalid": 8035,
+    "verified Real Estate account scope binding missing": 8035,
+    "scope bindings: missing/invalid evidence dates": 8035,
+    "verified platform campaign binding missing for BSRE-C0301": 8035
+  },
+  "human_review_verified": false,
+  "live_campaign_mapping_verified": false,
+  "historical_records_rewritten": false,
+  "release_authorized": false
+}

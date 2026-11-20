@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "basis": "Master section6 permits evidence-based research rebalancing. Add10reviewed unrelated-product records and transfer10research slots from employment; other targets and14000total unchanged.",
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false,
+  "review_ref": "docs/audit/keyword-negative-gap-admission-2026-11-11/review.json",
+  "review_sha256": "a3bb5d2980e195102b60a662216a8d38e9979b8178e307aa37601e3e3711a5b7",
+  "previous_allocation_ref": "docs/audit/keyword-negative-study-goods-admission-2026-11-11/research-pool-allocation.json",
+  "before": {
+    "EMPLOYMENT": 6433,
+    "ACADEMIC": 2000,
+    "SOFTWARE": 1000,
+    "MEDIA": 1000,
+    "SERVICE": 1000,
+    "UNRELATED_PRODUCT": 1567,
+    "NAVIGATION": 1000
+  },
+  "after": {
+    "EMPLOYMENT": 6423,
+    "ACADEMIC": 2000,
+    "SOFTWARE": 1000,
+    "MEDIA": 1000,
+    "SERVICE": 1000,
+    "UNRELATED_PRODUCT": 1577,
+    "NAVIGATION": 1000
+  },
+  "admitted": {
+    "EMPLOYMENT": 2946,
+    "ACADEMIC": 1104,
+    "SOFTWARE": 708,
+    "MEDIA": 387,
+    "SERVICE": 466,
+    "UNRELATED_PRODUCT": 1577,
+    "NAVIGATION": 0
+  },
+  "remaining": {
+    "EMPLOYMENT": 3477,
+    "ACADEMIC": 896,
+    "SOFTWARE": 292,
+    "MEDIA": 613,
+    "SERVICE": 534,
+    "UNRELATED_PRODUCT": 0,
+    "NAVIGATION": 1000
+  },
+  "total_target": 14000,
+  "total_admitted": 7188,
+  "total_remaining": 6812
+}

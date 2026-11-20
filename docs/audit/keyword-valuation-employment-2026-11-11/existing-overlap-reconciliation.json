@@ -1,0 +1,516 @@
+{
+  "schema": "bsre-valuation-existing-overlap-semantic-reconciliation-v1",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "scope": "APPEND_ONLY_SEMANTIC_RECONCILIATION_NOT_ADMISSION_OR_ACCEPTANCE_CACHE",
+  "source_pins_sha256": {
+    "docs/audit/keyword-valuation-employment-2026-11-11/semantic-review.json": "f76d38225613c010a84ce7f95ecd8e84b09153f56bfbff469d70329af03760e1",
+    "docs/audit/keyword-valuation-employment-2026-11-11/membership-snapshot.json": "15ab02cbc6eca0ad5791f8b1b01a2823d41a975b3be32cfc0041b8b61ba090e4",
+    "docs/audit/keyword-valuation-employment-2026-11-11/valuation-employment.json": "7be9d5d16a1413cf738b49e8bb92adcdb75e4c02b86bd7e61c940640d7f9371b",
+    "docs/audit/keyword-valuation-employment-2026-11-11/capture.json": "9408a2be59c1858152c770d82e833e18a87a6e89b25e927284ad93ef27ecfb76",
+    "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json": "d55c2ba4f03fe8f91cc49477f938cd0eae0ac638b1667709de422ab540404449",
+    "docs/audit/keyword-vendor-operations-commercial-2026-11-11/workbench.json": "10cd054e471948b21db06203cec7293145396a2f9019796b0a8228eac0c39701",
+    "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4"
+  },
+  "raw_provider_source_sha256": "975f115b15cc294160048f13a4d4d17086a84ace7b3aae781bc9664da06e8807",
+  "baseline_corpus_snapshot": {
+    "source_head": "38a0a2d649e36adf6a4fc6cadb66de721e126afb",
+    "reconstruction_seconds": 35.16238500000327,
+    "eligible": 10199,
+    "archived": 18,
+    "protected": 15499,
+    "records_sha256": "b20fba8212b228c99fa07a3f7b4cedaf754e5062aaf4e7fc6f4148e8a68778aa",
+    "archived_sha256": "c4cd30d084e43f23da6e30e8dbdc2a471cd65a3155f529b6acf46124fecb4b4b",
+    "protected_sha256": "aad1c67e49b63cc3159bbbfabce0896c94b1bec763c959e8a7e9210c89869fc2"
+  },
+  "method": "Read every one of the16complete existing-eligible preliminary HOLD literals, the actual original semantic workbench entries and immutable Master section6; retain all original bodies and dispositions. Parent freshly reconstructed baseline membership; this reviewer did not reconstruct individual current record bodies or IDs.",
+  "intended_scope": {
+    "campaign_key": "BSRE-C0301",
+    "landing_page_id": "BSRE-LP0301",
+    "family_code": "RNT",
+    "actual_google_campaign_id": null,
+    "actual_url": null,
+    "match_proposal": "EXACT",
+    "risk_proposal": "HIGH",
+    "approval_state": "PENDING"
+  },
+  "master_basis": {
+    "section": "6. The 14,000-negative research programme",
+    "salary_only_research_explicit": true,
+    "narrow_exact_salary_example": "broker salary",
+    "generic_salary_protected": true
+  },
+  "counts": {
+    "existing_overlaps_semantically_reconciled": 16,
+    "salary_only": 15,
+    "existing_job_literal_with_new_held_spacing_alias": 1,
+    "new_research_admissions": 0,
+    "archive_changes": 0,
+    "accepted_new_source_occurrences": 0,
+    "approvals": 0,
+    "deployments": 0
+  },
+  "held_new_alias": {
+    "source_ordinal": 394,
+    "source_line": 397,
+    "original_text": "housebuilder quantity surveyor jobs",
+    "disposition": "HOLD",
+    "distinct_concepts_verified": false
+  },
+  "rows": [
+    {
+      "source_ordinal": 17,
+      "source_line": 20,
+      "original_text": "real estate appraiser salary",
+      "normalized_text": "real estate appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "1504ea7dc40b10601c182e35156e3e6090c1dd9ff2660445dcacce21907d935b",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-25abbfd156492a3580e0e6c7ef473466102455adf87d7e53f68328fa5d9f8f6e",
+        "row_sha256": "85da8b514f5167b981c4954d16bdf8d410fd546de3dcc6b34ee03a93afa77d0a",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 16
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 103,
+      "source_line": 106,
+      "original_text": "home appraiser salary",
+      "normalized_text": "home appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "358f2673e7a9d0fbd0db132bfc30bef0a74a2786bf662f1d0f7c837688945d69",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-3234e8e96e2ada0488f673fca8789d33c232586a68113fd470d5f786e1873d4a",
+        "row_sha256": "01989f4d1239300fed8ca0204ee3ebc49651261c28c036cf2dca462e82ce6208",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 85
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 232,
+      "source_line": 235,
+      "original_text": "certified real estate appraiser salary",
+      "normalized_text": "certified real estate appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "e159eb21fb2bd34b994289fb0bf2b9df4948055a9256be01604c5799e8a08701",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-8a9f2277fad4c79a16c8e3ba1032e29f1249ea8a793895b87ce0930350f00167",
+        "row_sha256": "32ee0571bac58c9d04bea7254bdec1a9b78bd6ef1f6085430bbfad35fbc58a2a",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 363
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 234,
+      "source_line": 237,
+      "original_text": "certified residential appraiser salary",
+      "normalized_text": "certified residential appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "161c8e7a7fbe2ac5c0c5d122cdcb7e14e3c6c67dfbf2bc3af419b3943508e1f9",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-2c316fd937bd271e821abdbea089cb1671077dec4213999ef4ae75246862f733",
+        "row_sha256": "52ac7e2987a40838470c67933192c0307bab25e1eef1091011183cd70f9f6760",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 364
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 255,
+      "source_line": 258,
+      "original_text": "commercial property appraiser salary",
+      "normalized_text": "commercial property appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "5548f1e3feb303f754d091ac529a85254752b30747aa2f257678ca48e7434322",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-7cc8b665a805d0e2d671c17f5ff29e148cfe0ad010b3a40174eee181b357859c",
+        "row_sha256": "fd5cf17c2467db9adb62c194a461cf5b6536d2e6efe4365bdbd42f30026b846e",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 390
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 259,
+      "source_line": 262,
+      "original_text": "commercial real estate appraiser trainee salary",
+      "normalized_text": "commercial real estate appraiser trainee salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "fd4cd7c2db45191a2225785abcdc6324e0bea428c063138966069c4d6c79be79",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-d89198116778484562c028faa2aa5ad035a20045078ecd4c4b4898cc65884447",
+        "row_sha256": "e5f53318c14dbe9139a01558ffd46cb22e624e95ae31bfbbeeb9b42fedaf4848",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 405
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 298,
+      "source_line": 301,
+      "original_text": "county property appraiser salary",
+      "normalized_text": "county property appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "f12b999551e2ff62050e6db93490184afc65b6ba90cad593377c0dec31df57b4",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-66401ea0e0fbb4473d82e1435a219ee4a0a92e250868617ab9989147147a0308",
+        "row_sha256": "e8b839770af808571efcca71fc9c93e1e5975f9990cdf0688b1be78575f73a77",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 469
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 383,
+      "source_line": 386,
+      "original_text": "home appraisal job salary",
+      "normalized_text": "home appraisal job salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "7ee32ac22ac3d092fb0e341ada8565c2d12467280d0f55f75edfa07fb57e3662",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-1d4bd73f4969da48a12318641b3d12de3b8fdcf406bee79e47e8ee4783cdaeb1",
+        "row_sha256": "ca5279590b912a5349d40c58ef8c624c720e3d7407955a321a3e529ffa7ea8a6",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 602
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_EMPLOYMENT_APPLICATION_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 393,
+      "source_line": 396,
+      "original_text": "house builder quantity surveyor jobs",
+      "normalized_text": "house builder quantity surveyor jobs",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "POSSIBLE_WORDING_VARIANT_NOT_DISTINCT_CONCEPT_VERIFIED",
+      "preliminary_row_sha256": "06cb367ba9f0ad77dde6a56068c6053f9364357e7fea4544c4d846625fde0099",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-vendor-operations-commercial-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-4547b5308026bfbf84303c41af75f82fd82cbad184db9c43a39dd634ef3fdb61",
+        "row_sha256": "03728e60e7450d507a5f496a2642d13e13408f44193bb63e5be632dcec106520",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-PROPERTY-OPERATIONS-EMPLOYMENT",
+            "source_line": 515
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_EMPLOYMENT_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "KEEP_PRIOR_FULL_LITERAL_HOLD_NEW_SPACING_ALIAS",
+      "rationale": "The complete observed literal asks for a quantity-surveyor job with a house builder, not a property enquiry. The prior full literal can remain one existing research record while the newly observed housebuilder spacing alias remains held. No claim of two distinct Google concepts or authorization to count the alias is made.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 504,
+      "source_line": 507,
+      "original_text": "licensed real estate appraiser salary",
+      "normalized_text": "licensed real estate appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "b3618529ca0b17a255709c0307ede71021826c7b2ad3201e58e14a8296f0ba6b",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-f95965ed0d5433339b6fe5af20eb5094bb6b9d075796340e01dc2ed3899ba49c",
+        "row_sha256": "56af082647e164fc5e99bbbcc552a859be587e6c3e5d2e471a1f21d12d23d840",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 735
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 506,
+      "source_line": 509,
+      "original_text": "licensed residential appraiser salary",
+      "normalized_text": "licensed residential appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "d92e22d66daebe400c414ef8aa37c05aa10779a36ea08c3c362c393523ea14af",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-cf27729256f79fda1c4c68250a90ccb2511a0fbff057b72b4c9dca86eb8ca1db",
+        "row_sha256": "e753adff08ecb65c0c24d8bfcb053250482d10cb5bc1cc3075eff3fb867f5784",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 739
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 590,
+      "source_line": 593,
+      "original_text": "part time real estate appraiser salary",
+      "normalized_text": "part time real estate appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "48733db3e0942a2e675f34c69164733435c6c8691cdcf0f6abc5fadfe53266f0",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-ed652a7d2d309c5f5463f64263f61f33a0a315bc08ad87008a62fddf5fbe2f7b",
+        "row_sha256": "0bdc4563d66653bdefdeecbb5ea5228ff331b2bf6fe4e0e79073634119f916a9",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 805
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 594,
+      "source_line": 597,
+      "original_text": "personal property appraiser salary",
+      "normalized_text": "personal property appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "640088791dcb76c55abe473b7449e9c357dfcd1797662761f35311773885bbb4",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-9504e5f60ca59f7cf2dcdd6e92a972af7ea67d8c8b57f9fdde655e585491f1ba",
+        "row_sha256": "1a683f100ac542551997b6e30cb01a9c87f96653a0be2aa5f906f52f5ca3bce4",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 816
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 610,
+      "source_line": 613,
+      "original_text": "property assessor salary",
+      "normalized_text": "property assessor salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "71a63cfe8be1df89fad1673f808508db4228e096ea4e3869861e107daf5b6ca2",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-be8256734240964934f0fe3a1cc6b1fef9a4739b0dd9a14d00f65b69b05b8259",
+        "row_sha256": "a84ea9a2d0d07ca2d94d49987b408893c6aa44931f6834fee88a296327210464",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 847
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 710,
+      "source_line": 713,
+      "original_text": "real estate appraiser salary by state",
+      "normalized_text": "real estate appraiser salary by state",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "f9e4e0e54a65736d4edf587536de1e7e3cd23228082d51dc9897d8b29d874833",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-190f4b83caca31a45a726a7432331ca8e29dee4054d66edcdf2b128f06b83b49",
+        "row_sha256": "7568b7220a518d0c368e407b2503473a20cfdcffd6a50b836df05dc828d29977",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 1101
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    },
+    {
+      "source_ordinal": 741,
+      "source_line": 744,
+      "original_text": "residential appraiser salary",
+      "normalized_text": "residential appraiser salary",
+      "original_preliminary_disposition": "HOLD",
+      "original_preliminary_reason": "OCCUPATIONAL_SALARY_RESEARCH_REQUIRES_SEPARATE_NARROW_REVIEW",
+      "preliminary_row_sha256": "8fc6d99a07bbaf953e96a07c1e52a5c6b61096b17d0e51dadf06a2a76c605620",
+      "prior_semantic_workbench": {
+        "path": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+        "queue_id": "INTERNAL-2483f298286b173b00af8ac70854c9be85bbe34d54d0ab73c4f14d6684a5dc22",
+        "row_sha256": "0bd1359dfaaa7bf2b9f39617b4849b1d4972732c9706569db7c624745a33d523",
+        "source_refs": [
+          {
+            "batch": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+            "source_line": 1544
+          }
+        ],
+        "disposition": "NEGATIVE_EXACT_REVIEW",
+        "intent": "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+      },
+      "resolution": "RETAIN_EXISTING_RESEARCH_ONLY_NO_NEW_ADMISSION",
+      "resolution_kind": "FULL_OCCUPATIONAL_SALARY_RESEARCH",
+      "rationale": "The complete observed literal requests compensation for an identified appraiser/assessor occupation. It does not request premises, inventory, affordability advice or housing based on income. Master section6 expressly includes salary-only employment research and prefers narrow exact treatment for broker salary. Preserve the existing full-literal EXACT/HIGH/PENDING research record only; never exclude salary or role words globally.",
+      "new_source_occurrence_accepted": false,
+      "prior_record_body_or_id_independently_revalidated": false
+    }
+  ],
+  "required_future_protected_counterexamples": [
+    "mortgage affordability based on salary",
+    "office for recruitment company",
+    "apartment near my new job",
+    "staff accommodation"
+  ],
+  "controls": {
+    "original_preliminary_review_unchanged": true,
+    "historical_semantic_hold_constraints_unchanged": true,
+    "current_library_changed": false,
+    "approval_granted": false,
+    "production_authorized": false,
+    "all_ads_remain_paused": true,
+    "fresh_complete_baseline_required_before_later_admission": true
+  },
+  "limits": [
+    "Semantic resolution recommends no archival on the sixteen examined complete literals; it is not executable admission or record rewriting.",
+    "Current record bodies, IDs and all existing source occurrences must be freshly checked before any later composed admission. The dated corpus digests are provenance of a parent diagnostic, not a live acceptance cache.",
+    "The preliminary 421 HOLD rows remain unchanged and inspectable. This document resolves only these16existing-overlap semantic questions; other new holds and protected phrases stay held.",
+    "No employer identity, salary amount, recruitment availability, affiliation, service coverage or Google concept-equivalence certificate is asserted.",
+    "Any later deployment requires verified campaign scope, current protected-intent checks, owner approval and separate live authorization."
+  ]
+}

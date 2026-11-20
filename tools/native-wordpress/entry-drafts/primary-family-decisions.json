@@ -1,0 +1,64 @@
+{
+  "schema": "bsre-option-a-primary-family-decisions-v1",
+  "scope": "OWNER_APPROVED_DRAFT_CLASSIFICATION_ONLY",
+  "recorded_on_dubai": "2026-11-11",
+  "decision_origin": "DIRECT_CODEX_USER_REPLY_TRANSCRIBED_BY_EXECUTION_AGENT",
+  "decision_reference": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/1#issuecomment-6784254659",
+  "independently_authored_github_owner_comment_claimed": false,
+  "historical_campaign_evidence": "docs/audit/LIVE_READBACK_2026-11-07.json",
+  "historical_campaign_observation_date": "2026-11-07",
+  "decisions": [
+    {
+      "campaign_name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+      "historically_observed_google_campaign_id": "24372566774",
+      "primary_family_code": "OFP",
+      "secondary_family_codes_preserved": ["RDY"],
+      "draft_fragment": "tools/native-wordpress/entry-drafts/buyers.html",
+      "existing_enquiry_links_preserved": ["/enquire/off-plan/", "/enquire/resale/"],
+      "planning_slot_campaign_key": null,
+      "planning_slot_page_id": null,
+      "designated_entry_url": null,
+      "cms_page_id": null
+    },
+    {
+      "campaign_name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+      "historically_observed_google_campaign_id": "24367388382",
+      "primary_family_code": "SEL",
+      "secondary_family_codes_preserved": ["LND"],
+      "draft_fragment": "tools/native-wordpress/entry-drafts/owners.html",
+      "existing_enquiry_links_preserved": ["/enquire/sell/", "/enquire/let/"],
+      "planning_slot_campaign_key": null,
+      "planning_slot_page_id": null,
+      "designated_entry_url": null,
+      "cms_page_id": null
+    }
+  ],
+  "controls": {
+    "four_campaign_plan_preserved": true,
+    "secondary_services_preserved": true,
+    "tenants_or_brand_reclassified": false,
+    "planning_registry_modified": false,
+    "budget_change_authorized": false,
+    "publication_authorized": false,
+    "tracking_change_authorized": false,
+    "ads_change_or_activation_authorized": false,
+    "advertising_expenditure_authorized": false
+  },
+  "remaining": [
+    "Review exact individual planning-slot, page and CMS route assignments without changing the 360 allocation",
+    "Complete D1 and historical 300-to-360 crosswalk evidence",
+    "Receive genuine dated service/inventory/rights evidence, supported coverage and Amit's per-draft factual sign-offs for issue 2",
+    "Pass all full-library, operational, tracking, consent and independent-review gates before separate release authorization"
+  ],
+  "readiness_update": {
+    "reviewed_on_dubai": "2026-11-13",
+    "scope": "EXISTING_DECISION_RECONCILIATION_NOT_NEW_APPROVAL",
+    "decision_reference": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/2#issuecomment-6784444312",
+    "resolved_since_family_decision": [
+      "Amit nominated for factual sign-off and content updates",
+      "Owner-only Marketing evidence folder created; no new sharing"
+    ],
+    "superseded_historical_remaining_item": "Receive qualified factual-reviewer, content-update-owner and private evidence-location details for issue 2",
+    "business_evidence_or_publication_approval_inferred": false
+  }
+}

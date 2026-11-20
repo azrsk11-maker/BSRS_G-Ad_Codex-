@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "scope": "SINGLE_LOCAL_BEFORE_AFTER_SUBPROCESS_OBSERVATION_NOT_RELEASE_OR_TOKEN_USAGE",
+  "date_dubai": "2026-11-11",
+  "platform": "win32",
+  "python": "3.12.14",
+  "before_source": {
+    "file": "tools/keyword-system/keyword_audit.py",
+    "public_commit": "0c2a0c42371154a8a319adc559500b6c9ab93664",
+    "sha256": "614f90fd9ee58d44bec0d433069ccc6f81d3d88633180e05935db8df7fbb05e7"
+  },
+  "after_source": {
+    "file": "tools/keyword-system/keyword_audit.py",
+    "sha256": "0cbbc8965ed891208066887eeaca0b011092efa6668af161bab3a2feb76454d9"
+  },
+  "unchanged_input_sha256": {
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/verify_triage.py": "bf73d277cc00f710a3a429a413938d6b5a3e2336954607695214647b3465911f",
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/proposals.json": "91e67eccf83dda044425ebc4ddce60d0a52a9823a088ad1dc9f1e610095ac689",
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json": "ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4",
+    "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/protection-screen.json": "e61ff996dd4bf240ff41d9d34b5f65af3251dc03d8e794d7bc9aeb9999b36ef1",
+    "docs/audit/keyword-review-coverage-2026-11-11/verify_coverage.py": "e6a5b1960bb10fe7d6fe009f795746793acdf74d091eda7148a8dd150cf4c333",
+    "docs/audit/keyword-review-coverage-2026-11-11/report.json": "104dae77af8f2e4758bb4a62916a65b34465b5aebfc32978031186520416b554"
+  },
+  "all_bound_inputs_byte_equal": true,
+  "method": "Read timings from already-executed required Foundation subprocess receipts; no duplicated baseline/probe runs, acceptance caching or test filtering.",
+  "probes": [
+    {
+      "check": "keyword-abu-sharjah-triage",
+      "before_seconds": 33.382833,
+      "after_seconds": 4.871281,
+      "observed_reduction_percent": 85.408
+    },
+    {
+      "check": "keyword-observed-review-reconciliation",
+      "before_seconds": 38.562353,
+      "after_seconds": 6.921639,
+      "observed_reduction_percent": 82.051
+    }
+  ],
+  "foundation_observation": {
+    "same_checklist_count": 84,
+    "before_seconds": 146.091538,
+    "after_seconds": 81.457086,
+    "both_all_passed": true,
+    "additional_regressions_after": 6,
+    "controlled_whole_suite_speedup_claimed": false
+  },
+  "cache": {
+    "content": "immutable token tuple and frozenset only",
+    "max_entries": 4096,
+    "max_input_characters": 512,
+    "larger_or_nonstandard_inputs": "uncached original validation path",
+    "persistent_storage": false,
+    "approval_or_acceptance_results_cached": false
+  },
+  "verification": {
+    "all_frozen_workbench_and_screen_reproductions_passed": true,
+    "combined_reconciliation_unchanged": true,
+    "six_boundary_regressions_passed": true,
+    "master_rows_added": 0,
+    "production_changes": false,
+    "deployment_authorized": false
+  },
+  "limits": [
+    "One sequential local pair, not a median or multi-machine benchmark. CPU scheduling and filesystem warmth are not controlled.",
+    "The two probes retain identical hashed inputs and exact pinned outputs. The full suite adds six tests within the same 84 named checks; its total timings are descriptive.",
+    "No HTTP/API, whole-task, token, billing, Ads performance or production-readiness improvement is inferred."
+  ]
+}

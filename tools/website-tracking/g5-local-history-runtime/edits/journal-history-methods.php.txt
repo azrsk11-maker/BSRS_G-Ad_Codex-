@@ -1,0 +1,24 @@
+    /** Purpose-specific local observation; the enclosing journal retains lease ownership. */
+    public function localHistoryCheckpoint(\BSRE\ClosedRetention\LeaseBoundWpdb $db, RuntimePolicy $policy, CanonicalCaptureProducer $producer, \BSRE\ActualRetention\HistoryLocalV1\BorrowedHistoryContext $context): array
+    {
+        if ($db!==$this->db || $policy!==$this->policy || $producer!==$this->receiverProducer) RuntimePolicy::fail('G39_JOURNAL_COMPOSITION_CONFLICT');
+        $this->assertCurrentLease();
+        if ($this->scalar('SELECT @@session.in_transaction')!=='1' || $this->scalar('SELECT @@session.tx_read_only')!=='1'
+            || $this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ') RuntimePolicy::fail('G39_READ_ONLY_SNAPSHOT_REQUIRED');
+        $this->schema();$row=$this->raw();if($row===null)RuntimePolicy::fail('G5_JOURNAL_MISSING');
+        $context->assertCurrent();try{$anchor=$this->custody->current();}finally{$context->assertCurrent();}
+        if($anchor!==['revision'=>(int)$row['revision'],'hash'=>$row['body_hash']])RuntimePolicy::fail('G5_CURRENT_ANCHOR_MISMATCH');
+        $context->assertCurrent();try{$s=$this->custody->open($row['body'],(int)$row['revision']);}finally{$context->assertCurrent();}
+        if(array_keys($s)!==['schema_version','closures','jobs','incomplete','expired_unresolved','admission_floor']||$s['schema_version']!==1||!is_array($s['closures'])||!is_array($s['jobs'])||!is_bool($s['incomplete'])||!is_int($s['expired_unresolved'])||$s['expired_unresolved']<0||count($s['closures'])>1000||count($s['jobs'])>1000)RuntimePolicy::fail('G5_JOURNAL_INVALID');
+        if($s['admission_floor']!==null)RuntimePolicy::hash($s['admission_floor']);
+        $context->assertCurrent();try{$after=$this->custody->current();}finally{$context->assertCurrent();}
+        if($after!==$anchor)RuntimePolicy::fail('G5_CURRENT_ANCHOR_MISMATCH');
+        return ['scope'=>$policy->scope(),'anchor'=>$anchor,'cipher_sha256'=>$row['body_hash'],
+            'incomplete'=>$s['incomplete'],'admission_floor'=>$s['admission_floor']];
+    }
+    /** A failed rollback must retain custody; it is never permission to release a live transaction. */
+    public function quarantineLocalHistoryRead(\BSRE\ClosedRetention\LeaseBoundWpdb $db): void
+    {
+        if ($db!==$this->db) RuntimePolicy::fail('G39_JOURNAL_COMPOSITION_CONFLICT');
+        $this->localHistoryUncertain=true;
+    }

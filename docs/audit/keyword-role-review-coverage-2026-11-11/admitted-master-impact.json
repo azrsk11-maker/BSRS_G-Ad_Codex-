@@ -1,0 +1,44 @@
+{
+  "scope": "LATEST_PROTECTION_SCREEN_OF_HISTORICAL_MASTER_NOT_NEW_ADMISSION",
+  "historical_input_rows": 7188,
+  "latest_review_eligible_rows": 7186,
+  "latest_deficit": 6814,
+  "protected_queries": 13881,
+  "latest_excluded_rows": 2,
+  "latest_approval_hold_counts": {
+    "exclusion approval missing; fail closed": 7188,
+    "independent exclusion approver required": 7188,
+    "exclusion approval: missing/invalid evidence dates": 7188,
+    "exclusion approval: dependency evidence dates invalid": 7188,
+    "verified Real Estate account scope binding missing": 7188,
+    "scope bindings: missing/invalid evidence dates": 7188,
+    "verified platform campaign binding missing for BSRE-C0301": 7188
+  },
+  "protected_conflicts": [
+    {
+      "negative_id": "BSRE-N-6aca2db3ab4aea0e99abf196",
+      "protected_query_id": "BSRE-Q-6aca2db3ab4aea0e99abf196",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    },
+    {
+      "negative_id": "BSRE-N-b3a57f9f688da3ce09a8aee3",
+      "protected_query_id": "BSRE-Q-b3a57f9f688da3ce09a8aee3",
+      "affected_campaign_keys": [
+        "BSRE-C0301"
+      ],
+      "result": "CONFLICT_HOLD"
+    }
+  ],
+  "approved_exclusion_rows": 0,
+  "historical_master_sha256": "b94b35103a62a7e78e8142797a6f146c23abbacfde080b5bfdde5530773ae29b",
+  "latest_coverage_sha256": "7b7ac5aa4d8dd65dafe80fd6a1409a0edddb7eecd12c88a44b442646ac2e6c4c",
+  "historical_rows_rewritten": false,
+  "admission_held": true,
+  "master_additions": 0,
+  "independent_review_verified": false,
+  "positive_library_coverage_verified": false,
+  "deployment_authorized": false
+}

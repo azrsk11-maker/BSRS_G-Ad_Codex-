@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "tests_run": 22,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "elapsed_seconds": 4.87971,
+  "private_raw_public_cells_verified": 14805,
+  "capture_tamper_probes": 12,
+  "fresh_generation_and_saved_verification_seconds": 1.313635,
+  "expected_keyword_cases": 744,
+  "expected_keyword_modules": 54,
+  "original_keyword_deadline_seconds": 300,
+  "shared_foundation_changed": false,
+  "exact_head_ci_required": true,
+  "deployment_authorized": false
+}

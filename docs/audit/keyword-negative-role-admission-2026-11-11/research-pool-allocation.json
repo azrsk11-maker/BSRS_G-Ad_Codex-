@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "previous_allocation_ref": "docs/audit/keyword-negative-gap-admission-2026-11-11/research-pool-allocation.json",
+  "previous_allocation_sha256": "94d313beb04085fc2c734f11080da1562509a0332234bfc7264291a1b5f32173",
+  "basis": "Keep existing targets; deduct two latest-held historical employment records; add only the newly reviewed cohort.",
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false,
+  "targets": {
+    "EMPLOYMENT": 6423,
+    "ACADEMIC": 2000,
+    "SOFTWARE": 1000,
+    "MEDIA": 1000,
+    "SERVICE": 1000,
+    "UNRELATED_PRODUCT": 1577,
+    "NAVIGATION": 1000
+  },
+  "held_deduction": {
+    "EMPLOYMENT": 2
+  },
+  "new_rows": {
+    "ACADEMIC": 522,
+    "EMPLOYMENT": 196,
+    "MEDIA": 114,
+    "SOFTWARE": 17
+  },
+  "admitted": {
+    "EMPLOYMENT": 3140,
+    "ACADEMIC": 1626,
+    "SOFTWARE": 725,
+    "MEDIA": 501,
+    "SERVICE": 466,
+    "UNRELATED_PRODUCT": 1577,
+    "NAVIGATION": 0
+  },
+  "remaining": {
+    "EMPLOYMENT": 3283,
+    "ACADEMIC": 374,
+    "SOFTWARE": 275,
+    "MEDIA": 499,
+    "SERVICE": 534,
+    "UNRELATED_PRODUCT": 0,
+    "NAVIGATION": 1000
+  },
+  "total_target": 14000,
+  "total_admitted": 8035,
+  "total_remaining": 5965
+}

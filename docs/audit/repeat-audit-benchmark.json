@@ -1,0 +1,21 @@
+{
+  "fixture": "real exact-thread JSONL, fixed time window, 8 MiB tail",
+  "cold": {
+    "cache_hit": false,
+    "source_log_bytes_read_this_run": 8388609,
+    "elapsed_seconds": 0.33356,
+    "cache_written": true,
+    "source_stable_during_run": true
+  },
+  "warm": {
+    "cache_hit": true,
+    "source_log_bytes_read_this_run": 0,
+    "elapsed_seconds": 0.004558,
+    "cache_written": false,
+    "source_stable_during_run": true
+  },
+  "report_identical": true,
+  "compact_report_bytes": 3749,
+  "http_api_calls": "not observable",
+  "overall_productivity_gain": "not measured"
+}

@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "scope": "RESEARCH_PLAN_ONLY_NOT_BUDGET_OR_EXCLUSION_APPROVAL",
+  "requirements_ref": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+  "previous_allocation_ref": "docs/audit/keyword-negative-ofqual-animal-care-admission-2026-11-12/research-pool-allocation.json",
+  "previous_allocation_sha256": "d90761c35213bc5dddf9ff327f729e02a306072b0081de2ad60893b9f56d84db",
+  "targets": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "before": {
+    "ACADEMIC": 2000,
+    "EMPLOYMENT": 5061,
+    "MEDIA": 1000,
+    "NAVIGATION": 1000,
+    "SERVICE": 1000,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "target_transfer": null,
+  "new_rows": {
+    "NAVIGATION": 170
+  },
+  "admitted": {
+    "ACADEMIC": 1990,
+    "EMPLOYMENT": 4078,
+    "MEDIA": 804,
+    "NAVIGATION": 879,
+    "SERVICE": 466,
+    "SOFTWARE": 2362,
+    "UNRELATED_PRODUCT": 1577
+  },
+  "remaining": {
+    "ACADEMIC": 10,
+    "EMPLOYMENT": 983,
+    "MEDIA": 196,
+    "NAVIGATION": 121,
+    "SERVICE": 534,
+    "SOFTWARE": 0,
+    "UNRELATED_PRODUCT": 0
+  },
+  "total_target": 14000,
+  "total_admitted": 12156,
+  "total_remaining": 1844,
+  "owner_approval_claimed": false,
+  "media_budget_changed": false,
+  "exclusion_approval_granted": false
+}

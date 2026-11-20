@@ -1,0 +1,14 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "command": "jcodemunch Python 3.12 venv -B -m unittest discover -s tools/efficiency -p test_*.py",
+  "elapsed_seconds": 16.825,
+  "tests": 42,
+  "passed": 40,
+  "skipped": 2,
+  "failed": 0,
+  "scope": "offline efficiency utilities only",
+  "production_changed": false,
+  "ads_serving": false,
+  "token_usage": "unavailable",
+  "api_calls": "unavailable"
+}

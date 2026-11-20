@@ -1,0 +1,13 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "runtime": "jcodemunch Python 3.12 venv",
+  "suite": "tools/native-wordpress test_*.py",
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "elapsed_seconds": 0.056,
+  "scope": "offline native-page manifest/planning contracts",
+  "production_changed": false,
+  "ads_serving": false,
+  "publication_authorized": false
+}

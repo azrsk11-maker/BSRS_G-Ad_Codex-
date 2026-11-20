@@ -1,0 +1,278 @@
+{
+  "schema": "bsre-g021-source-bound-triage-acceptance-v1",
+  "goal": "G021",
+  "status": "VERIFIED_TRIAGE_ONLY",
+  "decision_at_utc": "2026-11-18T10:50:37.971517+00:00",
+  "cohort": {
+    "candidates": 41,
+    "placements": 82,
+    "HOLD": 41,
+    "ADMIT": 0,
+    "REJECT": 0
+  },
+  "rows": [
+    {
+      "candidate_id": "LEGACY-POS-0001",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0002",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0003",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0004",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0005",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0006",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0007",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0008",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0009",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0010",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0011",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0012",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0013",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0014",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0015",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0016",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0017",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0018",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0019",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0020",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0021",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0022",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0023",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0024",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0025",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0026",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0027",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0028",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0029",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0030",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0031",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0032",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0033",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0034",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0035",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0036",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0037",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0038",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0039",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0040",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    },
+    {
+      "candidate_id": "LEGACY-POS-0041",
+      "decision": "HOLD",
+      "admitted": false,
+      "source_placement_count": 2
+    }
+  ],
+  "source_context_join_errors": 0,
+  "current_full_cohort_decisions": true,
+  "private_triage_sha256": "89268621f9f094a916109c8655048daaa964a9572ff27dd5a029342d2067b5e1",
+  "integrity_checks_passed": 13,
+  "missing_binding_or_research_fields_per_candidate": 17,
+  "purpose_reviews_NOT_REVIEWED": 205,
+  "new_keyword_admissions": 0,
+  "new_business_approvals": 0,
+  "supplementary_occurrences": {
+    "total": 8,
+    "literal_links": 2,
+    "unresolved": 6
+  },
+  "authority": "AI source/context HOLD triage only; no independent human or five-purpose admission review.",
+  "downstream": "G022 discovery, G023 full14000positive master, G024 mappings and G025 full approval remain required.",
+  "production_authority": false,
+  "Ads_authority": false
+}

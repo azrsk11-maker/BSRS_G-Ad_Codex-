@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "selected_intents": [
+    "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH",
+    "EXPLICIT_EMPLOYMENT_APPLICATION_RESEARCH",
+    "EXPLICIT_INTERNSHIP_RESEARCH",
+    "EXPLICIT_SALARY_OR_WAGE_RESEARCH"
+  ],
+  "selected_rows": 1178,
+  "source_kind": "official_reference",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "EXPLICIT_INTERNSHIP_RESEARCH": "The full source literal requests intern work or an internship. This conflicts with the planned residential tenant-brief purpose; no employer, opening, program availability, compensation or eligibility is asserted.",
+    "EXPLICIT_EMPLOYMENT_APPLICATION_RESEARCH": "The full literal expressly asks for a job/career or explicit entry-job/trainee/position interview preparation. General client interviews, professional roles and due-diligence queries stay held.",
+    "EXPLICIT_SALARY_OR_WAGE_RESEARCH": "The complete phrase is salary/wage research. Owner/investment/development income, service rates and generic pay remain held. HIGH risk is retained; no salary amount, employer identity, protected characteristic or housing eligibility is asserted.",
+    "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH": "The full literal requests application-document examples/format/no-experience material or resume-writing services, not a tenant brief. Generic CV/profiles and realtor-resume-for-clients remain held; no applicant or qualification is asserted."
+  },
+  "variant_review": {
+    "token_bag_groups": 65,
+    "phrases_in_groups": 137,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "subject_sha256": "7486ded351dd5764cac2a065d6dd9a83b5b690ecf77a341a14837c67e9f88006"
+}

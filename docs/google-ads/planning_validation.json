@@ -1,0 +1,261 @@
+{
+  "status": "PASS",
+  "scope": "PLANNING_PACKAGE_ONLY_NOT_LIVE_RELEASE",
+  "checks": [
+    {
+      "check": "360 planned pairs",
+      "passed": true,
+      "observed": 360
+    },
+    {
+      "check": "Unique campaign_key",
+      "passed": true,
+      "observed": 360
+    },
+    {
+      "check": "Unique landing_page_id",
+      "passed": true,
+      "observed": 360
+    },
+    {
+      "check": "Unique proposed_path",
+      "passed": true,
+      "observed": 360
+    },
+    {
+      "check": "No fabricated live IDs or actual URLs",
+      "passed": true,
+      "observed": "All unknown"
+    },
+    {
+      "check": "Every pair held and unapproved",
+      "passed": true,
+      "observed": "Held"
+    },
+    {
+      "check": "All proposed routes in /lp/",
+      "passed": true,
+      "observed": "Route pattern only"
+    },
+    {
+      "check": "Family counts reconcile",
+      "passed": true,
+      "observed": {
+        "DEV": 30,
+        "COM": 40,
+        "PRJ": 50,
+        "OFP": 30,
+        "LUX": 20,
+        "RDY": 20,
+        "ROI": 20,
+        "CML": 20,
+        "INT": 30,
+        "PRC": 20,
+        "CMP": 20,
+        "RNT": 20,
+        "CLS": 15,
+        "SEL": 15,
+        "LND": 10
+      }
+    },
+    {
+      "check": "360 allocated page slots",
+      "passed": true,
+      "observed": 360
+    },
+    {
+      "check": "14,000 positive research target",
+      "passed": true,
+      "observed": 14000
+    },
+    {
+      "check": "14,000 negative research target",
+      "passed": true,
+      "observed": 14000
+    },
+    {
+      "check": "70 intent signals",
+      "passed": true,
+      "observed": 70
+    },
+    {
+      "check": "Seven property destinations",
+      "passed": true,
+      "observed": [
+        "Dubai",
+        "Abu Dhabi",
+        "Sharjah",
+        "Ajman",
+        "Ras Al Khaimah",
+        "Fujairah",
+        "Umm Al Quwain"
+      ]
+    },
+    {
+      "check": "No CRM/Zoho writes",
+      "passed": true,
+      "observed": "Disabled"
+    },
+    {
+      "check": "Required lead email",
+      "passed": true,
+      "observed": "marketing@blackswanrealestate.ae"
+    },
+    {
+      "check": "Required lead subject",
+      "passed": true,
+      "observed": "G-Ad | [Campaign] | [Lead Name] | [Lead ID]"
+    },
+    {
+      "check": "Production approvals false",
+      "passed": true,
+      "observed": "Unapproved"
+    },
+    {
+      "check": "Real Estate budget not invented",
+      "passed": true,
+      "observed": "Unknown"
+    },
+    {
+      "check": "Unlisted but accessible",
+      "passed": true,
+      "observed": "Noindex is not access control"
+    },
+    {
+      "check": "URL expansion disabled",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "10800 research cells only",
+      "passed": true,
+      "observed": 10800
+    },
+    {
+      "check": "Explicit keyword-library noncompletion",
+      "passed": true,
+      "observed": "Disclosed"
+    },
+    {
+      "check": "Markdown fences balanced",
+      "passed": true,
+      "observed": 40
+    },
+    {
+      "check": "No empty writing-block placeholders",
+      "passed": true,
+      "observed": "None"
+    },
+    {
+      "check": "24 numbered master sections",
+      "passed": true,
+      "observed": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+      ]
+    },
+    {
+      "check": "Native main-site pages required",
+      "passed": true,
+      "observed": true
+    },
+    {
+      "check": "No independent landing sites",
+      "passed": true,
+      "observed": "Forbidden"
+    },
+    {
+      "check": "360 native page bindings remain unknown",
+      "passed": true,
+      "observed": 360
+    },
+    {
+      "check": "Real tracking IDs not invented",
+      "passed": true,
+      "observed": "Unknown"
+    },
+    {
+      "check": "No new GA4 property per campaign",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "Public-site attribution continuity required",
+      "passed": true,
+      "observed": true
+    },
+    {
+      "check": "Enquiry not gated by consent or click ID",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "Privacy and deduplication rules present",
+      "passed": true,
+      "observed": true
+    },
+    {
+      "check": "23 canonical event mappings",
+      "passed": true,
+      "observed": 23
+    },
+    {
+      "check": "32 live test designs not executed",
+      "passed": true,
+      "observed": 32
+    },
+    {
+      "check": "No live tracking verified claim",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "Illustrative headlines <= 30 characters",
+      "passed": true,
+      "observed": [
+        28,
+        24,
+        27,
+        24,
+        26,
+        25,
+        28
+      ]
+    },
+    {
+      "check": "Illustrative descriptions <= 90 characters",
+      "passed": true,
+      "observed": [
+        88,
+        85
+      ]
+    }
+  ],
+  "errors": [],
+  "actual_completed_positive_keyword_master_rows": 0,
+  "actual_completed_negative_keyword_master_rows": 0,
+  "live_campaigns_created": 0,
+  "live_pages_created": 0
+}

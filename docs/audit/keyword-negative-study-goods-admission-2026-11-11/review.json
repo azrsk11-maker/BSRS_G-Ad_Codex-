@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "cohort_key": "study-goods-20261111",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selection": {
+    "docs/audit/keyword-developer-employment-2026-11-11/workbench.json": [
+      "EXPLICIT_OCCUPATIONAL_TRAINING_RESEARCH"
+    ],
+    "docs/audit/keyword-employment-education-2026-11-10/workbench.json": [
+      "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "SOURCE_LINKED_PROVIDER_EDUCATION"
+    ],
+    "docs/audit/keyword-triage-2026-11-08/workbench.json": [
+      "EXPLICIT_NON_PROPERTY_GOODS_OR_SHOPPING",
+      "EXPLICIT_UNRELATED_GOODS_OR_SHOPPING",
+      "NON_PROPERTY_GOODS",
+      "NON_PROPERTY_GOODS_OR_SHOPPING",
+      "UNRELATED_GOODS",
+      "UNRELATED_GOODS_OR_VEHICLE",
+      "UNRELATED_RETAIL_SHOPPING"
+    ]
+  },
+  "capture_pins": {
+    "docs/audit/keyword-developer-employment-2026-11-11/capture.json": "a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f",
+    "docs/audit/keyword-discovery-2026-11-08/capture.json": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+    "docs/audit/keyword-employment-education-2026-11-10/capture.json": "8129d8f27594257e58d35e112dd1f12ba6566e238f8b544ab66e82af08a00e3f"
+  },
+  "pool_rows": 290,
+  "selected_rows": 259,
+  "existing_cohort_overlaps": 0,
+  "held_phrases": {
+    "3 day shopping sale dubai": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "bpo real estate training": "Unexpanded CE/CPD/BPO wording lacks enough explicit scope to distinguish occupational study from other property research; do not infer acronym meaning.",
+    "broker educational sales & training": "Named-company-only or domain-spacing wording remains navigation/variant ambiguity despite dated preliminary provider-category context; no affiliation, course availability or additional research count.",
+    "broker educational sales and training": "Named-company-only or domain-spacing wording remains navigation/variant ambiguity despite dated preliminary provider-category context; no affiliation, course availability or additional research count.",
+    "ce for real estate agents": "Unexpanded CE/CPD/BPO wording lacks enough explicit scope to distinguish occupational study from other property research; do not infer acronym meaning.",
+    "cpd for real estate brokers": "Unexpanded CE/CPD/BPO wording lacks enough explicit scope to distinguish occupational study from other property research; do not infer acronym meaning.",
+    "cpd real estate broker 2021": "Unexpanded CE/CPD/BPO wording lacks enough explicit scope to distinguish occupational study from other property research; do not infer acronym meaning.",
+    "dubai international shopping online": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai sale shopping": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping festival 90 sale": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping festival brands on sale": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping festival online sale": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping festival sale": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping mall online": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping online websites": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai shopping sales 2022": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai super sale 2021 online shopping": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "dubai super sale 2022 online shopping": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion.",
+    "education for real estate broker": "Generic education/credential wording can be provider due diligence rather than explicit career entry or study; retain possible genuine brokerage selection intent.",
+    "estate agency and property management course": "Existing cross-review disagreement and prior property-learning protection remain unresolved; no automatic adjudication.",
+    "oqood training course registration dubai": "Generic course or Oqood-registration training may support owner/investor learning or legitimate registration due diligence; professional-only scope is unverified.",
+    "real estate agent degree needed": "Generic education/credential wording can be provider due diligence rather than explicit career entry or study; retain possible genuine brokerage selection intent.",
+    "real estate agent education": "Generic education/credential wording can be provider due diligence rather than explicit career entry or study; retain possible genuine brokerage selection intent.",
+    "real estate agent education requirement": "Generic education/credential wording can be provider due diligence rather than explicit career entry or study; retain possible genuine brokerage selection intent.",
+    "real estate agent licence course": "Regional spelling-only variant of an existing full license-course literal; preserve source without claiming another valuable matching concept.",
+    "real estate agent schooling needed": "Generic education/credential wording can be provider due diligence rather than explicit career entry or study; retain possible genuine brokerage selection intent.",
+    "real estate bpo training": "Unexpanded CE/CPD/BPO wording lacks enough explicit scope to distinguish occupational study from other property research; do not infer acronym meaning.",
+    "real estate broker education": "Generic education/credential wording can be provider due diligence rather than explicit career entry or study; retain possible genuine brokerage selection intent.",
+    "real estate course in person": "Generic course or Oqood-registration training may support owner/investor learning or legitimate registration due diligence; professional-only scope is unverified.",
+    "ryan serhant com course": "Named-company-only or domain-spacing wording remains navigation/variant ambiguity despite dated preliminary provider-category context; no affiliation, course availability or additional research count.",
+    "shopping sale in dubai 2022": "Generic shopping/sale/festival/mall wording does not establish a specific unrelated good; preserve possible property-shopping or area/amenity research. No blanket shopping, event, year or sale exclusion."
+  },
+  "intent_counts": {
+    "EXPLICIT_OCCUPATIONAL_TRAINING_RESEARCH": 2,
+    "PROFESSIONAL_LEARNING_OR_ENTRY": 188,
+    "SOURCE_LINKED_PROVIDER_EDUCATION": 11,
+    "EXPLICIT_UNRELATED_GOODS_OR_SHOPPING": 12,
+    "NON_PROPERTY_GOODS_OR_SHOPPING": 5,
+    "UNRELATED_GOODS_OR_VEHICLE": 6,
+    "EXPLICIT_NON_PROPERTY_GOODS_OR_SHOPPING": 16,
+    "UNRELATED_GOODS": 10,
+    "UNRELATED_RETAIL_SHOPPING": 5,
+    "NON_PROPERTY_GOODS": 4
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "EXPLICIT_NON_PROPERTY_GOODS_OR_SHOPPING": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "EXPLICIT_UNRELATED_GOODS_OR_SHOPPING": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "NON_PROPERTY_GOODS": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "NON_PROPERTY_GOODS_OR_SHOPPING": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "UNRELATED_GOODS": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "UNRELATED_GOODS_OR_VEHICLE": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "UNRELATED_RETAIL_SHOPPING": "Read each complete literal. Selected texts expressly request identifiable unrelated goods, retail product purchase/sale or product-specific shopping, rather than a residential tenant brief. Generic shopping/festival/mall/sale language stays held for possible property/amenity research. Gold, electronics, vehicles, furniture and other product strings are provider text only; no current stock, vendor identity/affiliation, price, investment advice, asset right or property inventory is asserted. Never convert buy/sale, shopping, place, price, duration or product tokens into generic exclusions.",
+    "PROFESSIONAL_LEARNING_OR_ENTRY": "Read all202complete preliminary literals in this intent.188selected full texts explicitly ask for occupational classes/courses/training/exam preparation, continuing education or entry into a named professional role. Generic education/credential/provider due diligence, unexpanded CE/CPD/BPO, owner-registration learning and spelling-only ambiguity stay held. Prior estate-agency/property-management learning conflict is preserved. Overseas place/regulator/historical year/accreditation strings are not current legal rules, actual course availability, approvals or demographic facts; no rule is transferred to UAE services.",
+    "SOURCE_LINKED_PROVIDER_EDUCATION": "Read all14complete named-provider literals and the dated10November ENTITY_REVIEW.md.11selected full course/exam-learning requests have source-linked professional-education context; the two company-name-only and one domain-spacing cases stay held. Sell It and PrepAgent observations support a category inference, not individual user purpose, current course availability, price, accreditation, vendor endorsement or Black Swan affiliation. No provider is contacted or software connected. On11November the two official Sell It/PrepAgent pages corroborated only the course/exam-learning category; no price, accreditation, current availability or endorsement is adopted.",
+    "EXPLICIT_OCCUPATIONAL_TRAINING_RESEARCH": "Read all3complete source literals. Selected administrative-assistant and analyst training name specific occupational roles. The generic real-estate course in person remains held for possible owner/investor education; no professional-only purpose is invented."
+  },
+  "variant_review": {
+    "token_bag_groups": 6,
+    "phrases_in_groups": 12,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "All290pool literals and6token-bag groups/12selected phrases reviewed;259selected/31held, including one prior protected disagreement. Earlier428raw remaining proposals include139prior protections;289fresh literals led to this pool plus the retained protected case. Dated10November provider context remains history; official-page category observations on11November are bounded at PRIMARY_CONTEXT.md SHA256 c14e549c5d2c83b5e0868ed04f7cdc368cf6fcd738a19bee853863960727eab9, not current price/availability/approval claims. ENTITY_REVIEW.md SHA256 72703422ad2a894dd7f803db7fe60858b185df1c6f4e90d3e2871f5d4af7606d. User-supplied seed hypotheses returned as provider rows are not independently observed search terms or measured demand. Preserve all actual source references, strings, unknown metrics and previous holds. Same unbound RNTplanning purpose; no actualURL/GoogleID, inventory, full-positive/platform acceptance or release authority.",
+  "subject_sha256": "bb2dbac637439deb89a93255ff14ac79cda7eae41c35c3de663e773e5bd408ba",
+  "coverage_reports": [
+    {
+      "file": "docs/audit/keyword-review-coverage-2026-11-11/report.json",
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    }
+  ]
+}

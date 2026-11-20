@@ -1,0 +1,17 @@
+{
+  "scope": "OFFLINE_PROTOTYPES_AND_BOUNDED_PUBLIC_HTTP_AUDIT",
+  "date": "2026-11-07",
+  "local_tests": {
+    "passed": 45,
+    "failed": 0,
+    "node_runner_elapsed_ms": 237.4159,
+    "suites": {"public_audit": 5, "tracking_evidence": 8, "tracking_contract": 16, "commercial_reporting": 16},
+    "limitation": "Windows denied synthetic symlink creation; output-guard direct-path and hardlink subcases passed. Symlink resolution is implemented but its subcase was not executed here."
+  },
+  "public_http_audit": {"requests": 12, "initial_nine_request_elapsed_ms": 4664, "executed_page_javascript": false, "submitted_forms": false},
+  "source_acceptance_gates": {"total": 32, "passed": 0, "partial_http_evidence": 9},
+  "production_changes": 0,
+  "production_synthetic_conversions": 0,
+  "actual_financial_records_read": 0,
+  "release_authorized": false
+}

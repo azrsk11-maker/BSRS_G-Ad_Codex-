@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "scope": "ISOLATED_EXISTING_CLOSURE_AMENDMENT_CANDIDATE",
+  "date_dubai": "2026-11-12",
+  "preceding_reviewed_commit": "e5b4578ca470c53f275e36630305f1e96299ab31",
+  "preceding_remote_green_head": "552ce27a4514cfba544309d9c9c49512b5c1c661",
+  "source_sha256": {
+    "tools/closed-enquiry-retention/Workflow.php": "9f8b8358737da66c6d07664e01a4db03cd5a55d8b75fba8e01de47e32e9efba4",
+    "tools/closed-enquiry-retention/LabAdapters.php": "3dce96e12ad08afa3bfc09cdff592384f517a587d5677a2f12b7d1d5e14d22f3",
+    "tools/closed-enquiry-retention/native-test.php": "75184d9993f80bc761d4f38e0f7625c3340efb863e8a945c2a5fb6b86f86a57d",
+    "tools/owner-mail-review/OwnerMailReview.php": "7d71f05be8e390ea9a0018a21c226f09c61bd327bc3077d1933cdc4426d74320",
+    "tools/owner-mail-review/OwnerClosure.php": "9186e0c508fd206d387c1aa6fcb37933bba00a206e28b6c6fa7f7dd7c07ce5ce",
+    "tools/owner-mail-review/test_owner_closure.php": "a31b860da40f8ca8abb64de36c8e2338e24d9846567d4107deeeddc0f09ec3ba",
+    "tools/owner-mail-review/WordPress.php": "ec65136bfd4ddded2ed436fafb8434b87ab97a2f035f9edd263d912a3e371df2",
+    "tools/owner-mail-review/native-test.php": "25474666a2b20d068d2bf96bfbf597dcd4bdcbd67322089dc74e0fb401980be7",
+    "tools/efficiency/test_foundation_php_isolation.py": "7f3f762255f31e3cac92abe0bd172f971a2433029fc5d4ce987edb8f30ce49cb",
+    "tools/check_repository.py": "daa7cf01b7aa66f70bc130fdeaeb080e4bc4c06c428b56d892a3a24a4094d8e8"
+  },
+  "executed_focused_checks": [
+    {
+      "name": "owner_closure_isolated",
+      "passed": true,
+      "elapsed_seconds": 0.074019,
+      "stdout_sha256": "1f702072e9a35d3cf015a78cb1dd8705edc0a038501218dcc9c9a4344eca7522",
+      "checks": 54
+    },
+    {
+      "name": "php_isolation_guards",
+      "passed": true,
+      "elapsed_seconds": 0.219604,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": 4
+    }
+  ],
+  "retained_baseline_results": {
+    "retention_pure": 45,
+    "owner_mail_review_pure": 49,
+    "actual_source_no_copy_php_assertions": 39,
+    "no_copy_seconds": 4.350716
+  },
+  "native_acceptance": {
+    "status": "PENDING_CURRENT_HEAD_CI",
+    "new_declared_checks": 17,
+    "sender_retirement_safety": "SYNTHETIC_TRUSTED_CALLBACK_ONLY",
+    "real_wordpress_auth_and_mariadb_executed": false,
+    "selected_harness_uses_real_wordpress_and_mariadb": true
+  },
+  "approval_boundaries": {
+    "specific_nominated_owner_session": true,
+    "purpose_nonce_and_stored_exact_plan": true,
+    "fifteen_minute_first_approval": true,
+    "durable_intent_before_lease_required_cas": true,
+    "thirty_day_duplicate_cache_use_limit": true,
+    "explicit_expired_cache_maintenance_required": true,
+    "amendment_never_grants_purge": true,
+    "recent_closure_not_due_for_retirement": true,
+    "default_real_safety_readback_unverified": true
+  },
+  "preserved": [
+    "original_intake_and_outcome_identities",
+    "original_acceptance_time_and_mail_bindings",
+    "signed_wire_v1",
+    "Intake26",
+    "Outcome40",
+    "immutable_fixtures_and_source_pins",
+    "existing_privacy_headers_and_network_isolation"
+  ],
+  "retained_failures": [
+    {
+      "phase": "isolation_guard_regression",
+      "cause": "one old count assertion still expected28 rather than added31PHP checks",
+      "resolved": "expected complete selected set updated; all4guards passed"
+    },
+    {
+      "phase": "restricted_new_php_test",
+      "cause": "production-host fixture attempted proc_open, which restricted PHP correctly disables",
+      "resolved": "same-process synthetic host/environment guards; all54checks passed; no skipped test or relaxed isolation"
+    }
+  ],
+  "remaining_gates": [
+    "initial_authoritative_closure_source_collection",
+    "authenticated_sender_fence_and_retirement_intent_readback",
+    "no_mail_owner_retirement_coordinator",
+    "real_provider_custody_and_recovery",
+    "independent_human_review",
+    "business_staff_finance_keyword_and_live_release_gates"
+  ],
+  "production_authorized": false,
+  "ads_changes": false,
+  "new_route_or_hook_or_permission": false
+}

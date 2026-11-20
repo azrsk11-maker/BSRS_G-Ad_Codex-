@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "scope": "LOCAL_EQUAL_WORK_JOIN_PHASE_ONLY",
+  "source_occurrences": 3195,
+  "external_literal_forms": 47,
+  "methods": 5,
+  "samples_per_strategy": 3,
+  "all_join_results_equal": true,
+  "measured_seconds": {
+    "cartesian": [
+      2.787753,
+      2.774078,
+      2.712945
+    ],
+    "indexed": [
+      0.014601,
+      0.024874,
+      0.031489
+    ]
+  },
+  "median_baseline_seconds": 2.774078,
+  "median_indexed_seconds": 0.024874,
+  "median_elapsed_reduction_percent": 99.103,
+  "includes_index_construction": true,
+  "excludes_shared_normalization_and_source_verification": true,
+  "whole_workflow_speedup_claimed": false,
+  "billed_tokens_and_cost": null,
+  "deployment_authorized": false
+}

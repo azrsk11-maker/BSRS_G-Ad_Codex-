@@ -1,0 +1,33 @@
+{
+  "scope": "AI_REVIEWED_SEPTIC_GREASE_RESEARCH_NOT_SEARCH_DEMAND",
+  "full_source_groups": 6053,
+  "cohort_groups": 914,
+  "semantic_proposed_groups": 444,
+  "semantic_hold_groups": 470,
+  "selected_groups": 418,
+  "held_groups": 496,
+  "outside_semantic_cohort": 5139,
+  "all_source_groups_compared": 6053,
+  "external_key_comparisons": 24212,
+  "within_source_key_comparisons": 24212,
+  "cohort_external_key_comparisons": 3656,
+  "cohort_within_source_key_comparisons": 3656,
+  "additional_variant_holds": 26,
+  "additional_protected_queries": 496,
+  "existing_held_protection_occurrences": 0,
+  "text_compatibility_classifications": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 914
+  },
+  "independent_review_claimed": false,
+  "source_pins": {
+    "docs/audit/keyword-service-installation-2026-11-13/service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392",
+    "docs/audit/keyword-service-installation-2026-11-13/capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea",
+    "docs/audit/keyword-septic-grease-review-2026-11-13/review.json": "5d8c1d8af6ccff0a0c0f40faff8f899e2f6bd56e372959c4083220662581f028"
+  },
+  "record_bodies_sha256": "5bca044a204e311304eaac42cc3a623486a3161b81a8189dc143ca094b2cce61",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}

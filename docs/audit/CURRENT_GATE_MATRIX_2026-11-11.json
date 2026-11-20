@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "scope": "BSRE_REAL_ESTATE_ACCOUNT_573-038-4686",
+  "release_authorized": false,
+  "production_changed": false,
+  "ads_serving": false,
+  "gates": [
+    {"id":"ads_pause","status":"PASS","evidence":["ADS_PAUSE_READBACK_2026-11-11.json","ADS_NEW_CAMPAIGNS_READBACK_2026-11-11.json"]},
+    {"id":"budget_and_campaign_controls","status":"PARTIAL","evidence":["../../config/release_controls.json","../../tools/release-control/validate_release_controls.py","ADS_NEW_CAMPAIGNS_READBACK_2026-11-11.json"],"note":"Four paused budgets and Maximize Clicks observed; full per-campaign targeting, CPC, goals, inherited assets and automation acceptance remains open. Config is the intended policy, not a complete live settings readback."},
+    {"id":"native_service_destinations","status":"PARTIAL","evidence":["NATIVE_ENQUIRY_DESTINATION_READBACK_2026-11-11.json","NATIVE_ENQUIRY_FORM_CONTRACT_READBACK_2026-11-11.json"],"note":"HTTP and HTML contracts observed; runtime receiver acceptance remains open."},
+    {"id":"form_contract_validation","status":"PASS","evidence":["../../tools/website-tracking/validate_form_contract.mjs","../../tools/website-tracking/validate_form_contract.test.mjs"],"note":"Offline contract validation only."},
+    {"id":"360_page_planning","status":"PARTIAL","evidence":["../google-ads/planned_campaign_page_registry.json"],"note":"360 planned slots; deployed URLs and CMS bindings are not established."},
+    {"id":"positive_keyword_library","status":"OPEN","evidence":["../PROGRESS.md"],"note":"Full reviewed 14,000 library not proven."},
+    {"id":"negative_keyword_library","status":"OPEN","evidence":["keyword-negative-followup-admission-2026-11-11/library-report.json","keyword-negative-followup-admission-2026-11-11/README.md"],"note":"10,199 researched records; 3,801 deficit. Complete 14,000 library, independent exclusion review and platform protected-intent acceptance remain open."},
+    {"id":"consent_tracking_runtime","status":"OPEN","evidence":["../google-ads/Website_Tracking_Addendum_v3.md"],"note":"Browser/runtime, payload, deduplication and live identifiers remain unverified."},
+    {"id":"staff_rehearsal_and_capacity","status":"OPEN","evidence":["STAFF_REHEARSAL_GATE_READBACK_2026-11-11.json","STAFF_REHEARSAL_WORKSHEET.md"],"note":"Owner reported completion, but no retrievable rehearsal, timing or workload evidence was found."},
+    {"id":"business_evidence_and_brand","status":"OPEN","evidence":["CONTENT_EVIDENCE_STATUS_2026-11-11.json"],"note":"Inventory, mandates, rights and dated factual sign-offs are absent."},
+    {"id":"restricted_qualified_imports","status":"OPEN","evidence":["../decisions/OWNER_DECISIONS.md"],"note":"No genuine eligible import/reconciliation evidence."},
+    {"id":"retention_and_recovery_live","status":"OPEN","evidence":["../PROGRESS.md"],"note":"Offline/native synthetic evidence does not establish provider or production acceptance."},
+    {"id":"github_delivery_review","status":"OPEN","evidence":["https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8"],"note":"PR remains unmerged; newer local commits are not uploaded and independent review is pending."},
+    {"id":"production_release","status":"HOLD","evidence":["../decisions/OWNER_DECISIONS.md"],"note":"Separate authorization is required for publication, live tracking, Ads activation and spend."}
+  ]
+}

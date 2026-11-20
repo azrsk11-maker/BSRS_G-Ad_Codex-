@@ -1,0 +1,583 @@
+{
+  "schema": "bsre-primary-project-corroboration-v1",
+  "classification": "PUBLIC_CLAIM_RESEARCH_NOT_VERIFIED_INVENTORY",
+  "as_of": "2026-11-19",
+  "state": "HOLD",
+  "source_baseline": {
+    "commit": "df241ad26305cfad79a5888ee5a712e08c7cc3c3",
+    "tree": "ac5a2a3c5eb93ff0a844391919fe38cc7fd1ce49",
+    "preparation_changes_Source": false,
+    "baseline_is_not_acceptance_of_these_claims": true
+  },
+  "scope": {
+    "preserved_existing_publisher_records": 6,
+    "developer_publication_views": 6,
+    "analysis_cases_not_canonicals": 3,
+    "quality_questions_not_confirmed_errors": 4,
+    "prior_discovery_receipt": "docs/audit/PRIMARY_PROJECT_DISCOVERY_2026-11-18.json",
+    "prior_discovery_six_subjects_not_replaced": true,
+    "existing_record_overlap_with_prior_discovery": [
+      "listing-25910"
+    ],
+    "no_global_intent_or_novelty_comparison_performed": true
+  },
+  "frozen_private_provenance": {
+    "freeze_pin": {
+      "bytes": 496,
+      "sha256": "69fb3a20325681f04b8e4ad6a21c1ef126cc75683561af7aae969e3f9551c812"
+    },
+    "manifest_pin": {
+      "bytes": 1710,
+      "sha256": "95544e248025a16ca6a91930f4053cf1cfffbe9c33b3cf34d37a0be1b5cf08d1"
+    },
+    "selected_record_packet_pin": {
+      "bytes": 21821,
+      "sha256": "12c438806307dbcc471bb5af65b42161efe1644c51b758fab248e9b909a06b2d"
+    },
+    "developer_source_metadata_pin": {
+      "bytes": 11064,
+      "sha256": "c9cade3c0cfa41f381de51800bc2b6eb6097d873599dd0c6cfec3b2a38f6e4b5"
+    },
+    "reconciliation_pin": {
+      "bytes": 4952,
+      "sha256": "e0fb9475acc1c5233f1de8d84574e13a429a6733d36eb27732e19d2b654339b9"
+    },
+    "quality_question_pin": {
+      "bytes": 1172,
+      "sha256": "19e5f0d7d46732e29a64de98163d26a4b5672600701097cc484771f240d5963f"
+    },
+    "hashes_identify_private_provenance_only": true,
+    "private_artifacts_not_uploaded": true
+  },
+  "held_publisher_records": [
+    {
+      "source_id": "listing-25945",
+      "publisher_record_id": "25945",
+      "title_as_published": "SAMANA BARARI AVENUE",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/samana-barari-avenue/",
+      "state": "HOLD",
+      "published_claims_not_accepted": {
+        "area": "Majan",
+        "type": "Office",
+        "size": 914.72,
+        "handover": "Q2 2028"
+      },
+      "size_unit_or_area_scope_not_accepted": true,
+      "publisher_record_json_sha256": "b68515685ccf6532b31917d5791abd832182036143eae441c34874cfd93c8544",
+      "normalized": false,
+      "merged": false
+    },
+    {
+      "source_id": "listing-26081",
+      "publisher_record_id": "26081",
+      "title_as_published": "Samana Business Park – Majan",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/samana-business-park-2/",
+      "state": "HOLD",
+      "published_claims_not_accepted": {
+        "area": "Majan",
+        "type": "Office",
+        "size": 742.71,
+        "handover": "Q2 2028"
+      },
+      "size_unit_or_area_scope_not_accepted": true,
+      "publisher_record_json_sha256": "a876388d8e734df94d9be5df793a8e005a913ac773d2263366ea646e24525681",
+      "normalized": false,
+      "merged": false
+    },
+    {
+      "source_id": "listing-25914",
+      "publisher_record_id": "25914",
+      "title_as_published": "Samana Business Park",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/samana-business-park/",
+      "state": "HOLD",
+      "published_claims_not_accepted": {
+        "area": "Majan",
+        "type": "Office",
+        "size": 828.4,
+        "handover": "Q2 2028"
+      },
+      "size_unit_or_area_scope_not_accepted": true,
+      "publisher_record_json_sha256": "ae9b1efa4bdc288b1adcb8d8451fe40ec3a67359243c460ee2685c4455923871",
+      "normalized": false,
+      "merged": false
+    },
+    {
+      "source_id": "listing-25887",
+      "publisher_record_id": "25887",
+      "title_as_published": "Binghatti Tila",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/binghatti-tila/",
+      "state": "HOLD",
+      "published_claims_not_accepted": {
+        "area": "Academic City",
+        "type": "Villa",
+        "size": 18000000,
+        "handover": "2028"
+      },
+      "size_unit_or_area_scope_not_accepted": true,
+      "publisher_record_json_sha256": "8c091640ee438016eb92684a65fe3ecabe88cf2c4fa5e17077ee77f02ed68388",
+      "normalized": false,
+      "merged": false
+    },
+    {
+      "source_id": "listing-25868",
+      "publisher_record_id": "25868",
+      "title_as_published": "Tilal Binghatti by Binghatti Developers",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/tilal-binghatti/",
+      "state": "HOLD",
+      "published_claims_not_accepted": {
+        "area": "Dubai",
+        "type": "Villa",
+        "size": 1657,
+        "handover": "2028"
+      },
+      "size_unit_or_area_scope_not_accepted": true,
+      "publisher_record_json_sha256": "a9604ff3156be72f502fc3d6bced7e393a410e13cd7f080c94e8e892920706bc",
+      "normalized": false,
+      "merged": false
+    },
+    {
+      "source_id": "listing-25910",
+      "publisher_record_id": "25910",
+      "title_as_published": "Tilal Binghatti — Binghatti’s",
+      "primary_publication_url": "https://blackswanrealestate.ae/property/tilal-binghatti-binghattis/",
+      "state": "HOLD",
+      "published_claims_not_accepted": {
+        "area": "Dubai",
+        "type": "Villa",
+        "size": 17000000,
+        "handover": "2028"
+      },
+      "size_unit_or_area_scope_not_accepted": true,
+      "publisher_record_json_sha256": "7dcb0e1e95126ecb245ae88ef3ecaeabf2e3ff8f8cab459dcaf49eafca2de2dc",
+      "normalized": false,
+      "merged": false
+    }
+  ],
+  "developer_publications": [
+    {
+      "source_id": "O01",
+      "url": "https://www.samanadevelopers.com/projects/samana-barari-avenue",
+      "publisher_kind": "DEVELOPER_PUBLICATION_NOT_GOVERNMENT_OR_BROKER_OFFER_AUTHORITY",
+      "document_title_as_returned_by_search_service": "SAMANA Barari Avenue — Offices & Retail for Sale, Majan, Dubai",
+      "observed_H1": {
+        "text": "SAMANA Barari Avenue",
+        "tool_line": 122
+      },
+      "H1_not_exposed_in_returned_view": false,
+      "representation_format": "HTML_TOOL_EXTRACT",
+      "captured_at_utc": "2026-11-19T05:02:46+00:00",
+      "publication_or_document_version_date": null,
+      "bounded_excerpts": [
+        {
+          "text": "offices and retail spaces",
+          "text_utf8_sha256": "3593949bb4df938a6950a785cea563ba17595917f3db41b76b0df6b4a950b38c",
+          "tool_line": 133
+        },
+        {
+          "text": "scheduled for handover in Q2, 2028.",
+          "text_utf8_sha256": "9b5aabec4f9fe624e9b5dd47e0149cc9be3ccfb5601cf5b3304de4be17e02a2a",
+          "tool_line": 284
+        }
+      ],
+      "archived_search_service_receipt_pin": {
+        "bytes": 30602,
+        "sha256": "ea8a7d308407b9b180fd4f984ebcb4134c7aad715c88fa1d0c6daddcb1b6c914"
+      },
+      "extracted_section_utf8_pin": {
+        "bytes": 8114,
+        "sha256": "2179b53c8b32dda401cb9e7b1178e5e8579f268ee690d337dac8059d6fe05100"
+      },
+      "original_HTTP_HTML_PDF_bytes_sha256": null,
+      "representation_hash_is_not_document_byte_hash": true,
+      "bibliographic_title_and_excerpt_word_count": 24,
+      "business_factual_acceptance": false
+    },
+    {
+      "source_id": "O02",
+      "url": "https://www.samanadevelopers.com/projects/samana-business-park",
+      "publisher_kind": "DEVELOPER_PUBLICATION_NOT_GOVERNMENT_OR_BROKER_OFFER_AUTHORITY",
+      "document_title_as_returned_by_search_service": "SAMANA Business Park — Commercial Property in Majan Dubai",
+      "observed_H1": {
+        "text": "SAMANA Business Park",
+        "tool_line": 122
+      },
+      "H1_not_exposed_in_returned_view": false,
+      "representation_format": "HTML_TOOL_EXTRACT",
+      "captured_at_utc": "2026-11-19T05:02:46+00:00",
+      "publication_or_document_version_date": null,
+      "bounded_excerpts": [
+        {
+          "text": "Q3, 2028.",
+          "text_utf8_sha256": "698f05c0ba5e977a5c3b163842debf56be44100f9b2dd07d9e4cb92d6376905f",
+          "tool_line": 275
+        },
+        {
+          "text": "commercial offices and retail units",
+          "text_utf8_sha256": "b3934caafae3521742de645c8908d63d243c02a4acaa607ab0a99ba631545290",
+          "tool_line": 278
+        }
+      ],
+      "archived_search_service_receipt_pin": {
+        "bytes": 21671,
+        "sha256": "0a36017ed1bf8bc3fe723dc2560fe04794609b019ce05555dde4359f8c4c1719"
+      },
+      "extracted_section_utf8_pin": {
+        "bytes": 10432,
+        "sha256": "9b4de8f2e8ee87cddb2202d8bbd790a84a59813b9d64c04c4ea7e512ccd789a2"
+      },
+      "original_HTTP_HTML_PDF_bytes_sha256": null,
+      "representation_hash_is_not_document_byte_hash": true,
+      "bibliographic_title_and_excerpt_word_count": 19,
+      "business_factual_acceptance": false
+    },
+    {
+      "source_id": "O03",
+      "url": "https://www.samanadevelopers.com/storage/project-assets/assets/2026/01/28/09/47/6979a2f85f447.pdf",
+      "publisher_kind": "DEVELOPER_PUBLICATION_NOT_GOVERNMENT_OR_BROKER_OFFER_AUTHORITY",
+      "document_title_as_returned_by_search_service": "SAMANA BUSINESS PARK FACTSHEET",
+      "observed_H1": null,
+      "H1_not_exposed_in_returned_view": true,
+      "representation_format": "PDF_TOOL_EXTRACT",
+      "captured_at_utc": "2026-11-19T05:02:46+00:00",
+      "publication_or_document_version_date": null,
+      "bounded_excerpts": [
+        {
+          "text": "SAMANA BUSINESS PARK",
+          "text_utf8_sha256": "3632cc727e8db4e8287c8d46cc1f9f55e67aff879e155834ef3c6cf38048cc2f",
+          "tool_line": 0
+        },
+        {
+          "text": "modern workspaces, dynamic retail outlets, and leisure experiences",
+          "text_utf8_sha256": "c47e39b766fd9e0e0e3b1062113a5c9d1e6f22a938f89367e0699f65078fb455",
+          "tool_line": 7
+        },
+        {
+          "text": "A mix of residential and commercial options",
+          "text_utf8_sha256": "a0d2977fe554bf31d24d4ab52c10a121fab686306b91cb80ae07cb45379ae4d7",
+          "tool_line": 31
+        }
+      ],
+      "archived_search_service_receipt_pin": {
+        "bytes": 21671,
+        "sha256": "0a36017ed1bf8bc3fe723dc2560fe04794609b019ce05555dde4359f8c4c1719"
+      },
+      "extracted_section_utf8_pin": {
+        "bytes": 3103,
+        "sha256": "6458ca3daf5e78afcfcfd411daf5459d8e3fab9dc4ba4e63dbe311955da77abd"
+      },
+      "original_HTTP_HTML_PDF_bytes_sha256": null,
+      "representation_hash_is_not_document_byte_hash": true,
+      "bibliographic_title_and_excerpt_word_count": 22,
+      "business_factual_acceptance": false
+    },
+    {
+      "source_id": "O04",
+      "url": "https://www.binghatti.com/en/new-releases",
+      "publisher_kind": "DEVELOPER_PUBLICATION_NOT_GOVERNMENT_OR_BROKER_OFFER_AUTHORITY",
+      "document_title_as_returned_by_search_service": "Binghatti New Releases: Discover Our Latest Projects",
+      "observed_H1": null,
+      "H1_not_exposed_in_returned_view": true,
+      "representation_format": "HTML_TOOL_EXTRACT",
+      "captured_at_utc": "2026-11-19T05:02:46+00:00",
+      "publication_or_document_version_date": null,
+      "bounded_excerpts": [
+        {
+          "text": "Tilal Binghatti",
+          "text_utf8_sha256": "8c9e5fcbaf880e70b9154cde68549e995ea51e041e86503834e7a63d7875a14b",
+          "tool_line": 46
+        }
+      ],
+      "archived_search_service_receipt_pin": {
+        "bytes": 30602,
+        "sha256": "ea8a7d308407b9b180fd4f984ebcb4134c7aad715c88fa1d0c6daddcb1b6c914"
+      },
+      "extracted_section_utf8_pin": {
+        "bytes": 2938,
+        "sha256": "b3a2fcdfd5b9924f81c0c83485d73c2625eaa809404f60993f1fc391b1cbdc31"
+      },
+      "original_HTTP_HTML_PDF_bytes_sha256": null,
+      "representation_hash_is_not_document_byte_hash": true,
+      "bibliographic_title_and_excerpt_word_count": 9,
+      "business_factual_acceptance": false
+    },
+    {
+      "source_id": "O05",
+      "url": "https://www.binghatti.com/en/projects/tilal-binghatti",
+      "publisher_kind": "DEVELOPER_PUBLICATION_NOT_GOVERNMENT_OR_BROKER_OFFER_AUTHORITY",
+      "document_title_as_returned_by_search_service": "Tilal Binghatti | Binghatti’s First-Ever Villa Community in Dubai",
+      "observed_H1": null,
+      "H1_not_exposed_in_returned_view": true,
+      "representation_format": "HTML_TOOL_EXTRACT",
+      "captured_at_utc": "2026-11-19T05:02:46+00:00",
+      "publication_or_document_version_date": null,
+      "bounded_excerpts": [
+        {
+          "text": "over 10 million square feet",
+          "text_utf8_sha256": "f983f4fc44204a2aa83bf75657b063f1ee74ced5d5a5c512d1d38af4393c03d2",
+          "tool_line": 34
+        },
+        {
+          "text": "first-ever master-planned community",
+          "text_utf8_sha256": "7e1c22a235c1f85a07d313a484f3a635dcff14df6619f01062053f62e14f0630",
+          "tool_line": 34
+        },
+        {
+          "text": "Strategically positioned in Academic City",
+          "text_utf8_sha256": "4eb0b1802168a4aca5c43b2121f486cd6a1d7e0f3caa0c15fb9b9dcb5389147a",
+          "tool_line": 35
+        }
+      ],
+      "archived_search_service_receipt_pin": {
+        "bytes": 21671,
+        "sha256": "0a36017ed1bf8bc3fe723dc2560fe04794609b019ce05555dde4359f8c4c1719"
+      },
+      "extracted_section_utf8_pin": {
+        "bytes": 6974,
+        "sha256": "126dde6d55765c646d19ac1b12380a111a80ac45903176c1b07c4e546c6967bc"
+      },
+      "original_HTTP_HTML_PDF_bytes_sha256": null,
+      "representation_hash_is_not_document_byte_hash": true,
+      "bibliographic_title_and_excerpt_word_count": 22,
+      "business_factual_acceptance": false
+    },
+    {
+      "source_id": "O06",
+      "url": "https://www.binghatti.com/en/pr/9m-2026-financial-results",
+      "publisher_kind": "DEVELOPER_PUBLICATION_NOT_GOVERNMENT_OR_BROKER_OFFER_AUTHORITY",
+      "document_title_as_returned_by_search_service": "Binghatti 9M 2026 Results: Net Profit Up 65% to AED 4.4B",
+      "observed_H1": null,
+      "H1_not_exposed_in_returned_view": true,
+      "representation_format": "HTML_TOOL_EXTRACT",
+      "captured_at_utc": "2026-11-19T05:02:46+00:00",
+      "publication_or_document_version_date": null,
+      "bounded_excerpts": [
+        {
+          "text": "our first villa community, Tilal Binghatti",
+          "text_utf8_sha256": "ab3dcedbd2df205e53b467fb80810a8f9ee0ed4d8ab11802623121bfcde03f7c",
+          "tool_line": 109
+        }
+      ],
+      "archived_search_service_receipt_pin": {
+        "bytes": 30602,
+        "sha256": "ea8a7d308407b9b180fd4f984ebcb4134c7aad715c88fa1d0c6daddcb1b6c914"
+      },
+      "extracted_section_utf8_pin": {
+        "bytes": 2575,
+        "sha256": "7f11fcd6cc456f4ce00c910ed93eba6c5180edecb24763fe144cf2de11b0cf01"
+      },
+      "original_HTTP_HTML_PDF_bytes_sha256": null,
+      "representation_hash_is_not_document_byte_hash": true,
+      "bibliographic_title_and_excerpt_word_count": 17,
+      "business_factual_acceptance": false
+    }
+  ],
+  "held_cases": [
+    {
+      "Black_Swan_offer_rights_verified": false,
+      "accepted_handover_date": null,
+      "ad_group_key": null,
+      "admission_authorized": false,
+      "approved_alias_merge": false,
+      "approved_canonical_id": null,
+      "business_error_confirmed": null,
+      "campaign_key": null,
+      "case_id": "BARARI_AVENUE",
+      "current_availability": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_volume": null,
+      "current_yield": null,
+      "developer_source_ids": [
+        "O01"
+      ],
+      "findings": [
+        "Developer publication corroborates the named commercial project and Majan context; its published Q2 2028 schedule aligns with the broker label only as a claim.",
+        "The developer page presents different instalment schedules in the front payment panel and FAQ. Conditions/version/plan identity require clarification; no plan is adopted.",
+        "The specific broker office, size, asking price, availability and Black Swan mandate remain unverified."
+      ],
+      "inventory_verified": false,
+      "landing_page_id": null,
+      "publisher_source_ids": [
+        "listing-25945"
+      ],
+      "rights_or_permits_verified": false,
+      "status": "HOLD"
+    },
+    {
+      "Black_Swan_offer_rights_verified": false,
+      "accepted_handover_date": null,
+      "ad_group_key": null,
+      "admission_authorized": false,
+      "approved_alias_merge": false,
+      "approved_canonical_id": null,
+      "business_error_confirmed": null,
+      "campaign_key": null,
+      "case_id": "BUSINESS_PARK",
+      "current_availability": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_volume": null,
+      "current_yield": null,
+      "developer_source_ids": [
+        "O02",
+        "O03"
+      ],
+      "findings": [
+        "Developer page and factsheet corroborate a commercial project with office/retail components in Majan, not either exact offered unit.",
+        "Broker records retain separate published Retail G11 and Retail G04 labels and distinct sizes; both structured type fields say Office. No unit type is corrected or records merged.",
+        "Both broker schedule labels say Q2 2028; the developer page anticipates Q3 2028. Capture/version differences may matter; no current handover is selected.",
+        "The factsheet community-amenity wording includes residential/commercial options; its scope cannot identify either unit or establish residential inventory."
+      ],
+      "inventory_verified": false,
+      "landing_page_id": null,
+      "publisher_source_ids": [
+        "listing-26081",
+        "listing-25914"
+      ],
+      "rights_or_permits_verified": false,
+      "status": "HOLD"
+    },
+    {
+      "Black_Swan_offer_rights_verified": false,
+      "accepted_handover_date": null,
+      "ad_group_key": null,
+      "admission_authorized": false,
+      "approved_alias_merge": false,
+      "approved_canonical_id": null,
+      "business_error_confirmed": null,
+      "campaign_key": null,
+      "case_id": "TILA_VS_TILAL",
+      "current_availability": null,
+      "current_cpc": null,
+      "current_price": null,
+      "current_volume": null,
+      "current_yield": null,
+      "developer_source_ids": [
+        "O04",
+        "O05",
+        "O06"
+      ],
+      "findings": [
+        "Official project/release/press publications use Tilal Binghatti and describe a villa community. The broker Tila record itself uses Binghatti Tilal in its excerpt.",
+        "Academic City in the official description aligns with the Tila record area, but no official identifier or unit evidence binds the broker record to the developer project.",
+        "The developer describes more than 10 million square feet; broker values of 17 and 18 million have unresolved scale/phase/area scope. A lower bound does not mathematically refute either value.",
+        "No explicit Tila alias statement was observed in the captured passages. That is a bounded observation, not proof that the alias never exists; original names remain unnormalized and unmerged."
+      ],
+      "inventory_verified": false,
+      "landing_page_id": null,
+      "publisher_source_ids": [
+        "listing-25887",
+        "listing-25868",
+        "listing-25910"
+      ],
+      "rights_or_permits_verified": false,
+      "status": "HOLD"
+    }
+  ],
+  "quality_questions": [
+    {
+      "case_id": "BARARI_AVENUE",
+      "code": "DIFFERENT_DEVELOPER_PAYMENT_SCHEDULE_PRESENTATIONS",
+      "confirmed_error": null,
+      "source_id": "O01",
+      "tool_line_ranges": [
+        [
+          149,
+          165
+        ],
+        [
+          263,
+          281
+        ]
+      ]
+    },
+    {
+      "case_id": "BUSINESS_PARK",
+      "code": "PUBLISHER_UNIT_TYPE_VS_EXCERPT_LABEL",
+      "confirmed_error": null,
+      "publisher_source_ids": [
+        "listing-26081",
+        "listing-25914"
+      ]
+    },
+    {
+      "accepted_date": null,
+      "broker_claim": "Q2 2028",
+      "case_id": "BUSINESS_PARK",
+      "code": "DIFFERENT_PUBLISHED_HANDOVER_CLAIMS",
+      "developer_anticipated_claim": "Q3 2028",
+      "source_id": "O02",
+      "tool_lines": [
+        275
+      ]
+    },
+    {
+      "approved_merge": false,
+      "case_id": "TILA_VS_TILAL",
+      "code": "UNPROVED_ALIAS_AND_NON_EQUIVALENT_AREA_SCOPE",
+      "confirmed_error": null,
+      "source_id": "O05",
+      "tool_lines": [
+        34,
+        35
+      ]
+    }
+  ],
+  "interpretation_limits": {
+    "source_date_is_not_publication_or_inventory_freshness": true,
+    "tool_archival_time_is_not_original_fetch_or_publication_time": true,
+    "all_hashes_of_search_service_material_are_representation_hashes_not_HTTP_HTML_or_PDF_bytes": true,
+    "H1_null_means_not_exposed_not_absent_from_original": true,
+    "PDF_heading_is_not_HTML_H1": true,
+    "payment_panel_and_FAQ_are_distinct_presentations_with_unconfirmed_conditions_versions_and_plan_identity": true,
+    "payment_plan_accepted": null,
+    "Q2_2028_and_Q3_2028_are_published_schedule_claims_not_an_accepted_current_date": true,
+    "Business_Park_G11_and_G04_remain_separate_unit_source_aliases": true,
+    "developer_mixed_use_or_community_text_does_not_resolve_exact_unit_type": true,
+    "Tila_and_Tilal_have_no_approved_alias_merge": true,
+    "over_10_million_square_feet_is_a_lower_bound_not_a_refutation_of_17_or_18_million": true,
+    "Tila_absence_is_limited_to_selected_captured_passages_not_global": true,
+    "published_source_financial_or_marketing_metrics_not_adopted": true,
+    "developer_publication_does_not_establish_Black_Swan_offer_rights_or_regulatory_asset_licensing_rights": true,
+    "confirmed_business_errors": null,
+    "global_canonical_novelty": null,
+    "raw_HTML_PDF_fulltext_and_private_locations_omitted": true
+  },
+  "authority": {
+    "Git_writes": 0,
+    "Source_writes": 0,
+    "all_HOLD": true,
+    "approved_alias_merges": 0,
+    "business_facts_accepted": false,
+    "confirmed_new_canonical_intents": null,
+    "developer_publication_is_business_offer_rights": false,
+    "export_authorized": false,
+    "keyword_admissions": 0,
+    "keyword_variants_generated": 0,
+    "production_authorized": false,
+    "provider_writes": 0,
+    "publication_authorized": false,
+    "regulatory_or_asset_rights_accepted": false,
+    "approved_canonical_ids": 0,
+    "availability": null,
+    "price": null,
+    "accepted_handover_date": null,
+    "metrics": {
+      "volume": null,
+      "cpc": null,
+      "yield": null
+    },
+    "campaign_page_map": null,
+    "production_changed": false,
+    "Ads_changed": false,
+    "whole_G022_complete": false,
+    "whole_goals_completed": 0
+  },
+  "positive_admissions_added": 0,
+  "keyword_variants_generated": 0,
+  "approved_alias_merges": 0,
+  "approved_canonicals": 0,
+  "whole_G022_complete": false,
+  "production_changed": false,
+  "Ads_changed": false
+}

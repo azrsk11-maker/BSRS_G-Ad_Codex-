@@ -1,0 +1,122 @@
+{
+  "version": "3.0",
+  "date": "2026-11-06",
+  "company": "BlackSwan Real Estate",
+  "domain": "blackswanrealestate.ae",
+  "mode": "DESIGN_AND_SHADOW",
+  "timezone": "Asia/Dubai",
+  "currency": "AED",
+  "scope": {
+    "property_destinations": [
+      "Dubai",
+      "Abu Dhabi",
+      "Sharjah",
+      "Ajman",
+      "Ras Al Khaimah",
+      "Fujairah",
+      "Umm Al Quwain"
+    ],
+    "roles": [
+      "buyer",
+      "investor",
+      "tenant",
+      "seller",
+      "landlord",
+      "commercial_occupier",
+      "authorized_partner"
+    ],
+    "segments": [
+      "residential_offplan",
+      "residential_ready_secondary",
+      "residential_rental",
+      "commercial_offplan",
+      "commercial_ready",
+      "commercial_leasing",
+      "seller_supply",
+      "landlord_supply"
+    ]
+  },
+  "targets": {
+    "positive_unique_phrases": 14000,
+    "negative_unique_phrases": 14000,
+    "planned_campaign_page_pairs": 360,
+    "research_intent_labels_per_page": 30,
+    "concept_evaluation_cells": 10800,
+    "positive_signals": 70
+  },
+  "counting": {
+    "master_key": "NFKC_casefold_collapsed_whitespace(text); match wrappers excluded",
+    "match_types_counted_as_separate_unique_phrases": false,
+    "placements_reported_separately": true,
+    "rejected_or_blank_rows_count_toward_targets": false,
+    "language_labels_alone_cannot_create_uniqueness": true
+  },
+  "landing_pages": {
+    "base_path": "/lp/",
+    "dedicated_per_campaign": true,
+    "noindex": true,
+    "normal_navigation": false,
+    "public_sitemap": false,
+    "site_search": false,
+    "crawler_access": true,
+    "password_required": false,
+    "require_gclid_to_open": false,
+    "final_url_expansion": false,
+    "internal_utm_retagging": false,
+    "native_main_site_pages_required": true,
+    "standalone_site_deployments_allowed": false,
+    "shared_main_site_tracking_required": true,
+    "page_form_cta_identifiers_required": true,
+    "public_site_attribution_continuity_required": true,
+    "sitewide_noindex_for_campaigns_allowed": false
+  },
+  "integrations": {
+    "crm_sync": false,
+    "zoho_writes": false,
+    "primary_lead_email": "marketing@blackswanrealestate.ae",
+    "email_subject": "G-Ad | [Campaign] | [Lead Name] | [Lead ID]",
+    "google_sheet_id": null,
+    "durable_backend": true,
+    "offline_feedback": "SEPARATE_APPROVAL_REQUIRED"
+  },
+  "approvals": {
+    "real_estate_ads_account_id": null,
+    "monthly_budget_aed": null,
+    "daily_average_budget_aed": null,
+    "cash_risk_limit_aed": null,
+    "production_writes": false,
+    "website_publication": false,
+    "ad_activation": false,
+    "audience_upload": false
+  },
+  "initial_launch": {
+    "suggested_campaign_range": [
+      15,
+      25
+    ],
+    "automatic_launch_from_count": false,
+    "search_only": true,
+    "search_partners_default": false,
+    "broad_match_default": false,
+    "ai_max_matching_default": false,
+    "pmax_default": false
+  },
+  "source_status": "Version-2 dossier-based plan retained; version-3 owner amendment adds native Hostinger main-site pages and full CTA/conversion instrumentation. No live site, CMS, tracking account or real IDs inspected or configured.",
+  "website": {
+    "hosting_provider_owner_stated": "Hostinger",
+    "canonical_domain_verification": "SOURCE_REQUIRED",
+    "hostinger_site_id": null,
+    "cms_or_framework": null,
+    "existing_main_website_required": true,
+    "same_cms_or_application_required": true,
+    "same_admin_deployment_workflow_required": true,
+    "new_independent_landing_sites_allowed": false,
+    "new_domains_or_subdomains_allowed": false,
+    "external_page_iframes_allowed": false,
+    "cms_migration_without_approval_allowed": false,
+    "page_limit_and_instrumentation_capability_check_required": true,
+    "hostinger_and_admin_access_status": "NOT_INSPECTED",
+    "backup_and_rollback_required": true
+  },
+  "tracking_contract_file": "website_tracking_contract.json"
+}

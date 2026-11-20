@@ -1,0 +1,220 @@
+{
+  "schema": "ofqual-public-primary-resolution-supplement-v1",
+  "captured_on": "2026-11-11",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "status": "SUPPLEMENT_ONLY_NO_HOLD_CHANGES_NO_ADMISSION",
+  "bound_review_files": [
+    {
+      "path": "docs/audit/keyword-ofqual-admission-review-2026-11-11/independent-review.json",
+      "sha256": "115dad89e56f9ebf2cc0d37a67468bc6d59b585a5abb36ab79264bb9a9fd31d7"
+    },
+    {
+      "path": "docs/audit/keyword-ofqual-admission-review-2026-11-11/independent-review.md",
+      "sha256": "3e9e9d9c585aeff649cb2525d01003d8d26dd9b76ba582e76dc7ba4dcf3ce272"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "docs/audit/keyword-ofqual-discovery-2026-11-11/qualifications.json",
+      "sha256": "2869cab8a06a76fa113ef430b28d09c53a324b72555cd0b3b36d3bdf82de4ccc",
+      "bytes": 199481
+    },
+    {
+      "path": "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.json",
+      "sha256": "d187bb0f469a97924bcb98bc8d64949bbba6f305d23a45c0ce9edc09abf50d24",
+      "bytes": 434630
+    },
+    {
+      "path": "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.md",
+      "sha256": "96fcffd5e22b8c731f04d957e8c3bb41ceba851b4c4d4d5f4a205b82aa3285bb",
+      "bytes": 6232
+    }
+  ],
+  "hypothetical_scope_only": {
+    "planning_purpose": "RNT_RESIDENTIAL_RENTAL_ENQUIRY",
+    "campaign_key": "BSRE-C0301",
+    "page_id": "BSRE-LP0301",
+    "actual_google_campaign_id": null,
+    "actual_destination_url": null,
+    "scope_bound_for_admission": false,
+    "hypothetical_match_type": "EXACT",
+    "hypothetical_risk": "HIGH",
+    "hypothetical_review_status": "PENDING"
+  },
+  "research": {
+    "search_query_count": 4,
+    "search_tool_calls": 1,
+    "targeted_primary_read_count": 8,
+    "primary_open_click_tool_calls": 3,
+    "queries": [
+      "site.abbeqa.co.uk \"603/7089/0\" \"600/0988/3\"",
+      "site.abbeqa.co.uk \"603/7092/0\" \"600/1002/2\"",
+      "site.sqa.org.uk \"603/3689/4\" conveyancing ST1312",
+      "site.cih.org \"600/3806/8\" \"600/2138/X\""
+    ],
+    "read_urls": [
+      "https://www.abbeqa.co.uk/",
+      "https://www.cih.org/",
+      "https://www.sqa.org.uk/files_ccc/SpecificationforLevel4EndPointAssessmentforConveyancingTechnician.pdf",
+      "https://skillsengland.education.gov.uk/apprenticeships/st1312-v1-0",
+      "https://www.abbeqa.co.uk/property/",
+      "https://www.cih.org/education/qualifications/",
+      "https://skillsengland.education.gov.uk/apprenticeships/st1312-v2-0",
+      "https://www.abbeqa.co.uk/property/abbe-level-3-diploma-in-professional-residential-property-letting-and-management/"
+    ],
+    "method": "Public web search followed by official issuer and Skills England pages/documents only. Search results from nonprimary domains were discarded; none was opened or relied upon.",
+    "capture_mode": "Web-tool parsed page/document evidence, not an archived byte-for-byte network capture. No remote body hash is claimed.",
+    "search_limitations": "Two exact qualification numbers per query produced little relevant indexing for ABBE/CIH. Search budget was exhausted, then official sites were followed. No further query or read beyond requested bounds."
+  },
+  "summary": {
+    "held_groups_researched": 4,
+    "holds_resolved": 0,
+    "holds_remaining": 4,
+    "source_only_proposed_groups_unchanged": 58,
+    "source_only_proposed_occurrences_unchanged": 67,
+    "research_master": 10610,
+    "additions": 0,
+    "positive_admissions": 0,
+    "approved": 0,
+    "deployed": 0
+  },
+  "authority": {
+    "human_review": false,
+    "admission_authorized": false,
+    "full_variant_clearance": false,
+    "current_membership_checked": false,
+    "current_api_composition_run": false,
+    "full_suite_run": false,
+    "official_course_availability_claimed": false,
+    "uae_recognition_claimed": false,
+    "metrics_claimed": false,
+    "actual_google_id_url_mapping_approved": false,
+    "auth_or_contact_used": false,
+    "production_or_ads_changed": false
+  },
+  "groups": [
+    {
+      "group_id": "OFQUAL-TITLE-069",
+      "original_proposed_literal_title": "ABBE Level 3 Diploma in Professional Residential Property Letting and Management",
+      "literal_titles": [
+        "ABBE Level 3 Diploma in Professional Residential Property Letting and Management"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/7089/0",
+          "source_record_ordinal": 26332,
+          "source_line_start": 26333,
+          "source_line_end": 26333,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "claim": {
+        "claim_id": "PUB-069",
+        "group_id": "OFQUAL-TITLE-069",
+        "primary_urls": [
+          "https://www.abbeqa.co.uk/property/",
+          "https://www.abbeqa.co.uk/property/abbe-level-3-diploma-in-professional-residential-property-letting-and-management/"
+        ],
+        "source_locations": "ABBE property catalog lines 55-57; qualification detail lines 45-49 and 66-79",
+        "observed_fact": "ABBE official detail associates exact title with reference 603/7089/0 and describes an occupational-competence qualification for residential lettings/property-management roles.",
+        "inference": "Academic/professional qualification intent is reinforced. A current title/detail page is not evidence that Professional adds new learning outcomes compared with 600/0988/3 or 500/9472/5.",
+        "missing_resolution": "Old and new specifications or official explicit replacement/content mapping were not obtained in the bounded reads.",
+        "reviewed_disposition": "HOLD",
+        "hold_resolved": false
+      }
+    },
+    {
+      "group_id": "OFQUAL-TITLE-070",
+      "original_proposed_literal_title": "ABBE Level 3 Diploma in Professional Sale of Residential Property",
+      "literal_titles": [
+        "ABBE Level 3 Diploma in Professional Sale of Residential Property"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/7092/0",
+          "source_record_ordinal": 26333,
+          "source_line_start": 26334,
+          "source_line_end": 26334,
+          "literal_title_index": 0,
+          "published_status": "Available to learners"
+        }
+      ],
+      "claim": {
+        "claim_id": "PUB-070",
+        "group_id": "OFQUAL-TITLE-070",
+        "primary_urls": [
+          "https://www.abbeqa.co.uk/property/"
+        ],
+        "source_locations": "ABBE property catalog lines 59-64",
+        "observed_fact": "The official property catalog lists the complete Professional Sale of Residential Property diploma title.",
+        "inference": "This is corroboration of the title only; the catalog does not establish curriculum distinction or wording continuity from 600/1002/2 or 500/9471/3.",
+        "missing_resolution": "A qualification-number-bound old/new specification comparison or official replacement statement remains missing. The number binding here remains the pinned Ofqual projection, not this catalog page.",
+        "reviewed_disposition": "HOLD",
+        "hold_resolved": false
+      }
+    },
+    {
+      "group_id": "OFQUAL-TITLE-122",
+      "original_proposed_literal_title": "SQA Level 4 End Point Assessment for Conveyancing Technician",
+      "literal_titles": [
+        "SQA Level 4 End Point Assessment for Conveyancing Technician"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "603/3689/4",
+          "source_record_ordinal": 27326,
+          "source_line_start": 27327,
+          "source_line_end": 27327,
+          "literal_title_index": 0,
+          "published_status": "No longer available to new learners"
+        }
+      ],
+      "claim": {
+        "claim_id": "PUB-122",
+        "group_id": "OFQUAL-TITLE-122",
+        "primary_urls": [
+          "https://www.sqa.org.uk/files_ccc/SpecificationforLevel4EndPointAssessmentforConveyancingTechnician.pdf",
+          "https://skillsengland.education.gov.uk/apprenticeships/st1312-v1-0",
+          "https://skillsengland.education.gov.uk/apprenticeships/st1312-v2-0"
+        ],
+        "source_locations": "SQA specification pages 1-4, publication November 2018/version01; Skills England version log and options marker",
+        "observed_fact": "The SQA specification expressly binds 603/3689/4 to Conveyancing Technician EPA, with a scenario test and showcase/professional discussion. Skills England ST1312 pages identify an apprenticeship with options, log version1 approved from 2024-01-03 and version2 assessment-plan revision from 2026-06-08.",
+        "inference": "There are dated assessment details for the old numbered qualification and a later versioned options-based standard. This does not prove that qualification 610/5147/0 is equivalent to, replaces, or is substantively different from 603/3689/4.",
+        "missing_resolution": "The retrieved Skills England core occupational-standard/EPA sections display Content loading rather than route detail; no explicit old-standard-to-ST1312 conveyancing-route mapping or numbered new assessment specification was obtained. SQA component detail points to a secure system, which was not accessed.",
+        "reviewed_disposition": "HOLD",
+        "hold_resolved": false
+      }
+    },
+    {
+      "group_id": "OFQUAL-TITLE-170",
+      "original_proposed_literal_title": "CIH Level 4 Certificate For the Housing Profession (QCF)",
+      "literal_titles": [
+        "CIH Level 4 Certificate For the Housing Profession (QCF)"
+      ],
+      "source_occurrences": [
+        {
+          "qualification_number": "600/3806/8",
+          "source_record_ordinal": 29038,
+          "source_line_start": 29039,
+          "source_line_end": 29039,
+          "literal_title_index": 0,
+          "published_status": "No longer awarded"
+        }
+      ],
+      "claim": {
+        "claim_id": "PUB-170",
+        "group_id": "OFQUAL-TITLE-170",
+        "primary_urls": [
+          "https://www.cih.org/education/qualifications/"
+        ],
+        "source_locations": "CIH current catalog Level4/5 section lines283-310",
+        "observed_fact": "The official catalog describes a Level4 Certificate in Housing and its general management focus. The retrieved page does not supply a historical 600/3806/8-to-600/2138/X learning-outcome/title comparison.",
+        "inference": "A current course catalog cannot resolve whether historical Housing Profession and Housing Practice QCF titles had distinct scope.",
+        "missing_resolution": "Historical exact-number-bound specifications, unit/credit matrices or an official title-history/replacement statement remain missing. This is a bounded retrieved-page limitation, not a claim that such evidence does not exist.",
+        "reviewed_disposition": "HOLD",
+        "hold_resolved": false
+      }
+    }
+  ]
+}

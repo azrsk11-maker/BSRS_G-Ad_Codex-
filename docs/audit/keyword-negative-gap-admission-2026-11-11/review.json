@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEWED_PLANNING_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "cohort_key": "gap-20261111",
+  "reviewer": "Codex AI semantic review; independent human review pending",
+  "reviewer_kind": "CODEX_AI_NOT_HUMAN",
+  "reviewed_on": "2026-11-11",
+  "valid_until": "2026-12-11",
+  "validity_basis": "LOCAL_30_DAY_REVIEW_DEADLINE_NOT_GOOGLE_EXPIRY_OR_FRESHNESS_GUARANTEE",
+  "campaign_key": "BSRE-C0301",
+  "landing_page_id": "BSRE-LP0301",
+  "source_selection": {
+    "docs/audit/keyword-gap-research-2026-11-11/workbench.json": [
+      "EXPLICIT_APPLIANCE_LOCK_OR_PEST_PRODUCT_RESEARCH",
+      "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH",
+      "EXPLICIT_EMPLOYMENT_RESEARCH",
+      "EXPLICIT_GRAPHIC_STOCK_OR_GAME_ASSET_RESEARCH",
+      "EXPLICIT_INTERNSHIP_RESEARCH",
+      "EXPLICIT_OCCUPATIONAL_ENTRY_RESEARCH",
+      "EXPLICIT_REPAIR_OR_TRADE_SERVICE_RESEARCH",
+      "EXPLICIT_ROLE_VACANCY_RESEARCH",
+      "EXPLICIT_SALARY_OR_WAGE_RESEARCH",
+      "EXPLICIT_WEBSITE_SOFTWARE_OR_DESIGN_ARTIFACT_RESEARCH"
+    ]
+  },
+  "capture_pins": {
+    "docs/audit/keyword-gap-research-2026-11-11/capture.json": "5ccdbf45f7d9b4408792a9f241e5d9f8b90f1e612620a3770c6c3e03881dc3f9"
+  },
+  "pool_rows": 2062,
+  "selected_rows": 1992,
+  "existing_cohort_overlaps": 65,
+  "held_phrases": {
+    "ac repair dubai ac maintenance dubai ac service dubai": "Concatenated repeated trade/city phrases require wording review; do not inflate the research count.",
+    "ac repair service cleaning maintenance company dubai technician": "Concatenated trade/service/role wording requires review; no additional research count.",
+    "ac services al barsha ac maintenance services dubai": "Concatenated locality/trade phrases require wording review; no additional research count.",
+    "job facility": "Two-word wording does not establish an occupation or employment opening; preserve possible place/venue meaning.",
+    "realestate clip art": "Unspaced realestate variant; preserve source without claiming an additional valuable research row."
+  },
+  "intent_counts": {
+    "EXPLICIT_WEBSITE_SOFTWARE_OR_DESIGN_ARTIFACT_RESEARCH": 358,
+    "EXPLICIT_GRAPHIC_STOCK_OR_GAME_ASSET_RESEARCH": 367,
+    "EXPLICIT_REPAIR_OR_TRADE_SERVICE_RESEARCH": 424,
+    "EXPLICIT_EMPLOYMENT_RESEARCH": 780,
+    "EXPLICIT_ROLE_VACANCY_RESEARCH": 17,
+    "EXPLICIT_APPLIANCE_LOCK_OR_PEST_PRODUCT_RESEARCH": 10,
+    "EXPLICIT_OCCUPATIONAL_ENTRY_RESEARCH": 8,
+    "EXPLICIT_SALARY_OR_WAGE_RESEARCH": 25,
+    "EXPLICIT_INTERNSHIP_RESEARCH": 2,
+    "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH": 1
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "semantic_rationale": {
+    "EXPLICIT_EMPLOYMENT_RESEARCH": "Each full literal explicitly requests jobs/careers/employment/recruitment. Generic client hiring, role duties, profiles, provider navigation and job facility stay held. No vacancy, employer relationship, worker eligibility or demographic exclusion is asserted.",
+    "EXPLICIT_ROLE_VACANCY_RESEARCH": "The full literal combines an occupational title with vacancy wording. Generic property vacancies and unidentified company-only vacancy strings remain held. No current opening or employer relationship is asserted.",
+    "EXPLICIT_INTERNSHIP_RESEARCH": "Explicit internship requests; actual openings, employer relationships, eligibility and program availability remain unverified. Agreeing previously admitted overlaps are not counted again.",
+    "EXPLICIT_OCCUPATIONAL_ENTRY_RESEARCH": "Explicit becoming/working-as or work-for career intent. Generic role/service opportunities remain held; no occupation entitlement, training availability or licensing rule is verified.",
+    "EXPLICIT_SALARY_OR_WAGE_RESEARCH": "Explicit salary/wage research, not a rental brief. No actual compensation amount, employer, fee or financing fact is asserted. Generic income/affordability/commission are never exclusions.",
+    "EXPLICIT_APPLICATION_DOCUMENT_RESEARCH": "The selected literal expressly requests an application resume sample. Generic professional resumes/profiles remain protected; no applicant or qualification is verified.",
+    "EXPLICIT_WEBSITE_SOFTWARE_OR_DESIGN_ARTIFACT_RESEARCH": "Explicit template/source-code/editor add-on or qualified website-theme/design artifact requests. WordPress/WooCommerce/Elementor official pages support category context only. Five ThemeForest navigation false positives were corrected before admission; bare names including WooCommerce for real estate remain held. No price/version/licence/compatibility/download legality/affiliation is asserted.",
+    "EXPLICIT_GRAPHIC_STOCK_OR_GAME_ASSET_RESEARCH": "Explicit clip art/SVG/stock footage-video/logo sample or game-asset artifacts, not property brochures, inventory or premises for a media business. No image rights or lawful download is established; the unspaced realestate variant remains held.",
+    "EXPLICIT_REPAIR_OR_TRADE_SERVICE_RESEARCH": "Specific full repair/technical-trade requests, not a tenant property brief. General property-maintenance coordination, regulatory/provider due diligence, condition-only terms, business-for-sale intent and concatenated wording remain held. No contractor, price, approval, delivery or unsupported service is asserted; never exclude generic repair/maintenance/place/nationality tokens.",
+    "EXPLICIT_APPLIANCE_LOCK_OR_PEST_PRODUCT_RESEARCH": "Explicit unrelated appliance, lock-shop or pest-product literals. No stock, seller identity, efficacy, price or product approval is asserted. Only full exact requests are reviewed, not generic product, place, price or shopping exclusions."
+  },
+  "variant_review": {
+    "token_bag_groups": 84,
+    "phrases_in_groups": 185,
+    "method": "MANUAL_AI_WORDING_REVIEW_NOT_PLATFORM_CERTIFICATE",
+    "google_equivalence_verified": false,
+    "counts_distinct_concepts": false
+  },
+  "source_identity_limits": "All3084complete source literals and85initial token-bag groups/187candidate phrases read. Five platform-navigation corrections precede the final84groups/185selected variants. Of2062draft exact proposals,65existing overlaps add no rows;5wording/variant holds leave1992new records. All1022preliminary holds,21cross-review disagreements and five global draft/protection collisions persist. Prior5196master bytes remain unchanged as a prefix. Official category context is not approval or individual query intent; PRIMARY_CONTEXT.md SHA256 9dca253a49753534e0fdab4ce5e7297bd4022f0c15206f9893bb87ef36385ef3. Actual provider rows/strings are not observed searches, demand, served metrics, property stock, asset rights or regulatory approval. Same unbound RNTplanning scope only; no actualURL/GoogleID, other359slots, V2/D1 binding, full-positive or Google matching acceptance. Sixty-five new agreeing capture occurrences remain in capture/reconciliation evidence; earlier master rows are not rewritten.",
+  "subject_sha256": "bc7017ced017c8eb6c8f31c2c4d11bca9c18fc7fcc4e58b92506dac672d6e0f0",
+  "coverage_reports": [
+    {
+      "file": "docs/audit/keyword-review-coverage-2026-11-11/report.json",
+      "sha256": "a17b8e8cb1ca777379d6cf099ddcf04cccffe4fb91126c960c7c1529ec4b1d99"
+    },
+    {
+      "file": "docs/audit/keyword-gap-review-coverage-2026-11-11/report.json",
+      "sha256": "2e002befa838eff66cfa042dece08471f7bca2c3355f35c8e3b34f9b8ad7d649"
+    }
+  ]
+}

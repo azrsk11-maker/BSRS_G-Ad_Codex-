@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "AI_RESEARCH_ONLY",
+  "reviewed_contexts": 12,
+  "reviewed_literal_occurrences": 34,
+  "independent_approvals": 0,
+  "positive_admissions": 0,
+  "production_authorized": false,
+  "artifacts": [
+    {
+      "path": "semantic-review-supplement.json",
+      "sha256": "4db32b66a8200d45bb63a6e8aef43714827d87959d44ace739de9f3d88e54418",
+      "original_private_artifact_sha256": "3e8f64a72d5cacce047386467026d37ea58ef080b2a803737a202507a61a033a",
+      "contexts": 6,
+      "literals": 19
+    },
+    {
+      "path": "semantic-review-contexts-008-013.json",
+      "sha256": "b7795b204418ed0ea1a69f802d0f2cbcceaec475afab961bb88cbedf78d7d388",
+      "original_private_artifact_sha256": "425c0b4710adddd5cbe7824cb5d24525100d99bd43cef9f17b6cba6cdee6305b",
+      "contexts": 6,
+      "literals": 15
+    }
+  ]
+}

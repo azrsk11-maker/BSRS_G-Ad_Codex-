@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "production_synthetic_conversions": 0,
+  "production_changes_performed": false,
+  "notes": "HTTP inventory is partial evidence only. No complete live acceptance test is passed by this artifact.",
+  "tests": [
+    {
+      "test_id": "WT-001",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-002",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-003",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-004",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-005",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-006",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-007",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-008",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-009",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-010",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-011",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-012",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-013",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-014",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-015",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-016",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-017",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-018",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-019",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-020",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-021",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-022",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-023",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-024",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-025",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-026",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-027",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-028",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-029",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-030",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-031",
+      "status": "PARTIAL",
+      "evidence_ref": "public-audit-2026-11-07.json",
+      "reviewer": "Codex Phase 0 HTTP audit",
+      "observed_at_utc": "2026-11-07T05:23:51.510Z",
+      "method": "PUBLIC_HTTP_GET"
+    },
+    {
+      "test_id": "WT-032",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    }
+  ]
+}

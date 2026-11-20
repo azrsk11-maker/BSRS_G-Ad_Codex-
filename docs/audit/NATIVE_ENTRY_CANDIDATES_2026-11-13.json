@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "scope": "PUBLIC_WORDPRESS_IDENTITIES_NOT_CAMPAIGN_BINDING_OR_RELEASE",
+  "observed_at_utc": "2026-11-13T04:03:59.550438+00:00",
+  "source_url": "https://blackswanrealestate.ae/wp-json/wp/v2/pages?include=26750,26751,26752,26753,26754,26755&per_page=6&_fields=id,link,parent,status,type",
+  "http_status": 200,
+  "redirect_followed": false,
+  "raw_response_sha256": "504b40442d438714844a6c9986fc7d1b3f721cb2d69e351220fc35597bb37c04",
+  "raw_response_bytes": 716,
+  "pages": [
+    {
+      "id": 26750,
+      "status": "publish",
+      "type": "page",
+      "link": "https://blackswanrealestate.ae/enquire/",
+      "parent": 0
+    },
+    {
+      "id": 26751,
+      "status": "publish",
+      "type": "page",
+      "link": "https://blackswanrealestate.ae/enquire/off-plan/",
+      "parent": 26750
+    },
+    {
+      "id": 26752,
+      "status": "publish",
+      "type": "page",
+      "link": "https://blackswanrealestate.ae/enquire/resale/",
+      "parent": 26750
+    },
+    {
+      "id": 26753,
+      "status": "publish",
+      "type": "page",
+      "link": "https://blackswanrealestate.ae/enquire/rent/",
+      "parent": 26750
+    },
+    {
+      "id": 26754,
+      "status": "publish",
+      "type": "page",
+      "link": "https://blackswanrealestate.ae/enquire/sell/",
+      "parent": 26750
+    },
+    {
+      "id": 26755,
+      "status": "publish",
+      "type": "page",
+      "link": "https://blackswanrealestate.ae/enquire/let/",
+      "parent": 26750
+    }
+  ],
+  "controls": {
+    "public_native_identities_verified": true,
+    "internal_campaign_ownership_verified": false,
+    "path_availability_for_new_pages_verified": false,
+    "consent_or_conversion_acceptance_verified": false,
+    "enquiries_submitted": 0,
+    "production_writes": 0,
+    "ads_changes": 0,
+    "release_authorized": false
+  }
+}

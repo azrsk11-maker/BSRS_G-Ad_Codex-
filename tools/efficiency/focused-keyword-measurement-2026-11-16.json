@@ -1,0 +1,48 @@
+{
+  "schema": "bsre-private-verified-fixture-reuse-comparison-v1",
+  "scope": "TWO_MODULE_SEQUENTIAL_LOCAL_PAIR_NOT_CI_OR_PRODUCTION_ACCEPTANCE",
+  "status": "VERIFIED_OBSERVED_LOCAL_REDUCTION",
+  "original_cases_per_arm": 39,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "source_files": 479,
+  "source_bytes": 192321608,
+  "snapshot_manifest_sha256": "86d7c8eb33ee479ff4cb39c1a11f482473d8222b71b9a9438ccf80304f449bdb",
+  "source_manifest_sha256": "898a15b45bd9554f7e387eb809e0b1978bb24bd043ff4d978aefd0881016a71b",
+  "baseline_end_to_end_child_seconds": 457.568885,
+  "optimized_including_fresh_fixture_end_to_end_child_seconds": 309.975662,
+  "observed_reduction_seconds": 147.593223,
+  "observed_reduction_percent": 32.255957,
+  "limitations": [
+    "One ordered local pair, baseline first. OS/filesystem warmth, CPU load and available RAM were uncontrolled; no causal or median estimate.",
+    "Both arms use the same frozen private input/runtime/date and unchanged39 original tests/current-stage logic, with identical per-case deepcopy isolation.",
+    "Metric is sum of sequential complete child wall times, including fresh fixture creation, typed decode, deepcopies, tests, guards, startup and child teardown. Common copy/preflight and small parent coordinator overhead are outside this metric.",
+    "The successful typed fixture-only change is the intentional optimization. Baseline driver and baseline execution projection/dependencies remain unchanged; baseline/optimized code lineage is recorded explicitly.",
+    "Fresh history is reconstructed once for optimized workers, not anew in each worker. No current test result or authority/approval is cached. Numeric-string coercion/heuristic repair and pickle are not used.",
+    "This is two representative modules under sequential local execution, not56module Foundation or four-worker ARM CI. Parallel CI critical-path benefit is unmeasured; do not change CI scheduler or skip required checks on this evidence.",
+    "No token, billing, provider, whole-task or production-performance saving is claimed. Failed development work is retained separately.",
+    "Any shared Foundation integration requires complete tools/efficiency validation including PHP-isolation/timeout fixtures and all mandatory acceptance."
+  ],
+  "runtime": {
+    "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "platform": "win32",
+    "machine": "AMD64",
+    "runtime_sha256": "87be3b494376559069bc4f2c732dd6dc47945d55f9ca6cf51cdb3e39a6c462ee"
+  },
+  "phase_seconds": {
+    "invocation:worker:baseline:test_pest_commercial_services_admission": 224.476017,
+    "invocation:worker:baseline:test_pool_sprinkler_admission": 233.092868,
+    "typed_invocation:prepare:None": 145.748966,
+    "typed_invocation:worker:test_pest_commercial_services_admission": 76.664744,
+    "typed_invocation:worker:test_pool_sprinkler_admission": 87.561952
+  },
+  "initial_resources": {
+    "cpu_count": 12,
+    "memory_available_bytes": 2514878464
+  },
+  "failed_plain_json_diagnostic_seconds": 162.041904,
+  "portable_entry_measured_again": false,
+  "portable_entry_scope": "Same fresh-builder/FRESH_BASE/current-stage/case-isolation semantics; CLI/pinning/containment packaging validated separately without another expensive original-history run."
+}

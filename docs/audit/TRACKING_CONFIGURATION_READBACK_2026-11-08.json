@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "scope": "READ_ONLY_CONFIGURATION_NOT_RUNTIME_ACCEPTANCE",
+  "observed_at_utc": "2026-11-08T12:03:15.603480+00:00",
+  "account_id": "573-038-4686",
+  "production_changes_performed": false,
+  "production_test_conversions_sent": 0,
+  "ads": {
+    "current_ui_banner": "None of your ads are running",
+    "full_campaign_status_budget_reaudit": false,
+    "action_filter": "Status: All",
+    "action_rows_read": 9,
+    "actions": [
+      {
+        "name": "Submit lead form (Page load https://lplife.blackswanrealestate.ae/thank-you/thank-you/)",
+        "action_id": null,
+        "source": "Website",
+        "tracking_status": "Needs attention",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "30 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "Lead form - Submit",
+        "action_id": null,
+        "source": "Google hosted",
+        "tracking_status": "No recent conversions",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "1 day",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "BSRE Accepted Enquiry (Secondary)",
+        "action_id": "7873290954",
+        "source": "Website",
+        "tracking_status": "Inactive",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "90 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "accepted_enquiry",
+        "action_id": "7859602954",
+        "source": "Website",
+        "tracking_status": "Inactive",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "90 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "Calls from ads",
+        "action_id": null,
+        "source": "Call from Ads",
+        "tracking_status": "No recent conversions",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "30 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "WhatsApp click \u00e2\u20ac\u201c lplife",
+        "action_id": null,
+        "source": "Website",
+        "tracking_status": "Needs attention",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "90 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "Android installs (all other apps)",
+        "action_id": null,
+        "source": "Mobile App (Google Play)",
+        "tracking_status": "No recent conversions",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "30 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "Conversation started",
+        "action_id": null,
+        "source": "Google hosted",
+        "tracking_status": "No recent conversions",
+        "optimization": "Secondary",
+        "count": "One",
+        "click_through_window": "30 days",
+        "included_in_account_level_goals": "No"
+      },
+      {
+        "name": "qualified_lead",
+        "action_id": "7878013428",
+        "source": "Website (Import from clicks)",
+        "tracking_status": "Inactive",
+        "optimization": "Primary",
+        "count": "One",
+        "click_through_window": "90 days",
+        "included_in_account_level_goals": "No"
+      }
+    ],
+    "accepted_enquiry_candidates": [
+      {
+        "action_id": "7859602954",
+        "name": "accepted_enquiry",
+        "conversion_id": "18394393537",
+        "conversion_label": "4aaqCIqM4KMdEMHXkMNE",
+        "source_display": "lplife.blackswanrealestate.ae Manual event",
+        "enhanced_conversions": "Not configured",
+        "attribution": "Data-driven; Google paid channels",
+        "generated_snippet_has_transaction_id": false
+      },
+      {
+        "action_id": "7873290954",
+        "name": "BSRE Accepted Enquiry (Secondary)",
+        "conversion_id": "18394393537",
+        "conversion_label": "jLZgCMrFo6odEMHXkMNE",
+        "source_display": "lplife.blackswanrealestate.ae Manual event",
+        "enhanced_conversions": "Not configured",
+        "attribution": "Data-driven; Google paid channels",
+        "generated_snippet_has_transaction_id": null
+      }
+    ],
+    "accepted_destination_selected": false,
+    "qualified_lead": {
+      "action_id": "7878013428",
+      "source": "Import from clicks",
+      "connection_error_display": "This conversion action isn\u2019t receiving data because there aren\u2019t any associated connections. Connect a data source to begin recording conversions",
+      "supported_restricted_scheduling_verified": false
+    },
+    "goals_summary": {
+      "denominator_displayed_campaigns": 17,
+      "qualified_lead_assigned_campaigns": 0,
+      "qualified_primary_action_count": 1,
+      "qualified_goal_status": "Misconfigured",
+      "submit_lead_forms_primary_action_count": 0,
+      "v2_campaign_goal_membership_verified": false,
+      "custom_goals_audited": false
+    },
+    "count_one_is_destination_deduplication_proof": false,
+    "both_accepted_actions_firing_observed": false,
+    "all_action_ids_verified": false
+  },
+  "gtm": {
+    "container_id": "GTM-NW8WXKRF",
+    "container_numeric_id": "267608465",
+    "published_version": 1,
+    "published_name": "Empty Container",
+    "published_date": "2026-10-19",
+    "published_tags": 0,
+    "published_triggers": 0,
+    "published_variables": 0,
+    "workspace_added": 2,
+    "workspace_modified": 0,
+    "workspace_deleted": 0,
+    "unpublished_bootstrap": {
+      "name": "BSRE | Reviewed local runtime bootstrap",
+      "tag_id": "4",
+      "type": "Custom HTML",
+      "behavior": "Calls window.BSREGoogleRuntime.activate() only if present and callable",
+      "firing_option": "Once per page",
+      "additional_consent_checks": "No additional consent required",
+      "trigger_name": "BSRE | Runtime pageview",
+      "trigger_id": "3",
+      "trigger_type": "Page View",
+      "trigger_scope": "All Page Views",
+      "runtime_permission_and_route_guards_verified": false
+    },
+    "workspace_saved": false,
+    "preview_started": false,
+    "published": false
+  },
+  "ga4": {
+    "property_id": "559502861",
+    "property_name": "Black Swan Real Estate | Owned Funnels",
+    "stream_id": "16159906474",
+    "stream_name": "BSRE Owned Funnels and Content",
+    "stream_url": "https://blackswanrealestate.ae",
+    "measurement_id": "G-W01P9W3NWE",
+    "enhanced_measurement": false,
+    "google_signals": false,
+    "user_provided_data_collection": false,
+    "granular_location_device_collection": false,
+    "connected_site_tags": 0,
+    "email_redaction": true,
+    "url_query_parameter_redaction": false,
+    "interface_warning": "Data collection is not active; no data received in past 48 hours",
+    "runtime_payload_acceptance": "NOT_EXECUTED",
+    "personalization_settings_reaudited": false
+  },
+  "wordpress": {
+    "current_admin_session": "EXPIRED_LOGIN_REQUIRED",
+    "measurement_switches_read": false,
+    "configured_ads_destination_read": false,
+    "installed_runtime_source_currently_verified": false,
+    "prior_fixture_source_comparison_date": "2026-11-07",
+    "historical_readback": {
+      "date": "2026-11-07",
+      "master_enabled": false,
+      "analytics_enabled": false,
+      "advertising_enabled": false,
+      "ads_destination": "AW-18394393537/jLZgCMrFo6odEMHXkMNE",
+      "resolved_candidate_action_id": "7873290954",
+      "currently_reverified": false,
+      "evidence": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/5#issuecomment-6708434090",
+      "automatic_replacement_authorized": false
+    }
+  },
+  "private_evidence": {
+    "accepted_details": {
+      "sha256": "9984fa69c5f82379a1fbc02452ab4adbd3bc3e4949d53aae11fa775e1f34dd83",
+      "bytes": 6996,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "accepted_snippet": {
+      "sha256": "4c0657b1d90ed7b314e3749c64ecb503fb06bcc80cfe22f09641d8c0767d09b8",
+      "bytes": 9855,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "action_inventory_first": {
+      "sha256": "7c4a6a947bdcbe147ec5d07194e1d583aec21adc553f3ab489d2eecc7f8bc691",
+      "bytes": 10693,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "action_inventory_lower": {
+      "sha256": "8ed9d312db1769775319a1ea22b82a97d935b995d7c12f892fb3fa1bf1a81995",
+      "bytes": 13418,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "bsre_accepted_details": {
+      "sha256": "e87c744fccece6dfe9cef17c547c134811b1c34e19d59507448bf2b7932ef1c6",
+      "bytes": 7571,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "bsre_accepted_gtm": {
+      "sha256": "037668c7c1e76ff4955f787538703d47290fe01ad9f5f8765bb7c462f0de7fd6",
+      "bytes": 9115,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "ga4_collection": {
+      "sha256": "80500ff9cfd716fb3371537a1b101c149735d09c2cf3072dbfadae1f3d3ad47f",
+      "bytes": 9949,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "ga4_stream": {
+      "sha256": "eb29fa83259aa123c0ad92d58bf893413e6c01bce72bec5dc4cd509d0700c4c2",
+      "bytes": 9712,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "goals_summary": {
+      "sha256": "250309caee4095ee56382407894bb7ebe3fa13d15fd3957d9d457dffcad8d293",
+      "bytes": 8300,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "gtm_bootstrap_draft": {
+      "sha256": "352d78b0718cfa18e65fa10f9f34798e08d3eaf2f2c2e4e7d14f83e02001e199",
+      "bytes": 5767,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "gtm_published": {
+      "sha256": "f62639914801d0481cced49777febd6cc9b5b6844ebbb66c4856e03f77d09d51",
+      "bytes": 3746,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "gtm_trigger_draft": {
+      "sha256": "4f23f947438c672506cf4977cf6f8d278ad9aa1873f4010da3ba0de4b7fc9556",
+      "bytes": 6652,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "gtm_workspace": {
+      "sha256": "6f81b933466fa2545fd6c90dab61ddf75871dc1c14fa8988d665877b22cd3dff",
+      "bytes": 4065,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "qualified_details": {
+      "sha256": "5e6b79fcea231ae6c4805af0415516763361b2516245b991c604a6f25acec8da",
+      "bytes": 6765,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    },
+    "wordpress_session_expired": {
+      "sha256": "60477b55238905a5b3a69671d2861738247a01155f50165173b2f333abfce41f",
+      "bytes": 1320,
+      "committed": false,
+      "type": "PRIVATE_AUTHENTICATED_UI_RECEIPT"
+    }
+  },
+  "not_verified": [
+    "Installed runtime current source and destination wiring",
+    "One destination per accepted receipt",
+    "Supported native destination deduplication and retry behavior",
+    "GA4 accepted-event mapping and absence of duplicate Ads import",
+    "Live payload privacy and consent lifecycle",
+    "Restricted scheduled Data Manager connection",
+    "Staff qualification and historical first-ever reconciliation",
+    "Actual call/conversation/booking/transaction/commission producers",
+    "Production release acceptance and authorization"
+  ],
+  "release_authorized": false
+}

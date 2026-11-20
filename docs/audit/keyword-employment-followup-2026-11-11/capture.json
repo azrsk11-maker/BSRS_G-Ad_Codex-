@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "employment-followup.json",
+      "batch_id": "KP-20261111-EMPLOYMENT-FOLLOWUP",
+      "sha256": "860733d2098bef9447b2ffd36fb2246a7380873a22e2ef0dbe9c6028960d84fe",
+      "bytes": 399992,
+      "records": 444,
+      "distinct_normalized": 444,
+      "source_bytes": 70960,
+      "source_sha256": "88eea9c5229ac494a372e22fbc1ecdf1cb299a3c5bb783f38d1c07bb10e19ab8"
+    }
+  ],
+  "totals": {
+    "export_rows": 444,
+    "distinct_normalized_phrases": 444,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}

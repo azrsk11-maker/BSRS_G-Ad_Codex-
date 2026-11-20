@@ -1,0 +1,1718 @@
+{
+  "version": 1,
+  "scope": "PROVISIONAL_UNSCOPED_LEXICAL_SCREEN",
+  "basis": "CONSERVATIVE_LEXICAL_ONLY_NOT_PLATFORM_MATCHING",
+  "additional_queries": 3587,
+  "protected_queries": 3627,
+  "exact_negative_tests": [
+    {
+      "negative": "72 hour frec approved pre licensing course for brokers",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "75 hour broker prelicensing course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "agent real estate schools",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "apply for dubai property consultant job",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "apply for real estate internship dubai",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "be a real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "become a real estate agent for free",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best 60 hour post license real estate broker course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best real estate agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best real estate agent courses online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best real estate agent training programs",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best real estate broker exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best real estate training for new agents",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "best training for real estate agents",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "bpo real estate training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker continuing education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker course online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker course real estate",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker courses near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker crash course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker educational sales & training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker educational sales and training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker exam crash course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker exam prep course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker in charge course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker license classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker license classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker license online courses",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker license training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker management course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker online classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker post license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker pre license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker prelicensing course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker real estate classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker renewal continuing education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker responsibility course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker training courses",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "broker training exam",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "brokerage classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "brokerage training programs",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "business broking course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ce for real estate agents",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "certified training for real estate brokers",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes for brokers license",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes for mortgage broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes for real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes needed to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes to become real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "classes to take to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "commercial brokerage administrator jobs dubai",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "commercial real estate agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "commercial real estate agent training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "commercial real estate broker training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "commercial sales and leasing consultant job dubai",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "continuing education for real estate brokers",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "course broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "courses ryan serhant",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "courses to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "courses to take to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "cpd for real estate brokers",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "cpd real estate broker 2021",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "cpd seminar for real estate brokers 2021",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "customs broker courses",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "degree needed to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "degree to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "dubai broker training course registration",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "dubai leasing consultant job application",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "dubai real estate broker exam preparation course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "education for real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "education needed to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "estate agency and property management course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "estate agency courses",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "estate agency training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "estate agency training course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "estate agent courses near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "estate agent courses online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "free real estate agent classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "free real estate agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "georgia broker license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "georgia broker pre license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "house agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "housing agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "i want to be a real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "learn to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "learn to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "license to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "licensed real estate agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "maine designated broker course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "managing broker classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage broker classes online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage broker continuing education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage broker exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage broker license classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage broker license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage broker pre licensing course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage license classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "mortgage license classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "new real estate agent training programs",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "off plan sales specialist vacancy dubai",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online broker classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online classes for real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online classes to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online courses for real estate agents",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online courses to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online mortgage license classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "online real estate broker classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "oqood training course registration dubai",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "pre license mortgage broker class",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "pre licensing mortgage broker training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "prep agent real estate course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "prep agent real estate exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "prep agent real estate practice exam",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "preparation for real estate license exam",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "property agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "property agent license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "property agent training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "property broker course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "property estate agent courses",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "property sales agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "provisional broker pre licensing course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "qualifications needed to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "qualifications needed to be an estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "qualifications to be a real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "qualifications to be real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "qualifications to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent certificate course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent classes cost",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent classes online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent coaching programs",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent continuing education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent continuing education classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent continuing education courses",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent course cost",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent course near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent course online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent course price",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent crash course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent degree needed",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent education and training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent education requirement",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent free course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent free training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent lessons",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent licence course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent license classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent license classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent license online course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent license training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent pre license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent representative course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent schooling needed",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent training course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent training near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent training online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agent training programs",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate agents rep course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate bpo training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker continuing education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker course near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker course online",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker courses near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker crash course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker exam crash course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker exam prep course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker license classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker license classes near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker license online course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker license training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker pre license course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker pre licensing education",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker prep course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate broker training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate closing agent training",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate conveyancer job application dubai",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate exam prep agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate sales agent classes",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate sales agent course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "real estate training for new agents",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "realtor license class",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "realtor license class near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "realtor license course near me",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "reca mortgage broker course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "requirement to be a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "rera broker certification course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "rera certified training for real estate brokers",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ryan serhant com course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ryan serhant course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ryan serhant course cost",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ryan serhant online course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ryan serhant real estate course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "ryan serhant sales course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "sales training for real estate agents",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "schools to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "sell it like serhant the course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "sell like serhant course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "serhant course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "serhant real estate course",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "steps to be a real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "study to become a real estate agent",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "to be a real estate broker",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "training agents real estate",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    },
+    {
+      "negative": "washington managing broker exam prep",
+      "hypothetical_match_type": "EXACT",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "scope_approved": false
+    }
+  ],
+  "unsafe_generic_tests": [
+    {
+      "attempted_generic": "broker",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [
+        "broker post license",
+        "broker pre license",
+        "online broker license",
+        "qualification for real estate broker",
+        "real estate broker bls",
+        "real estate broker certification",
+        "real estate broker degree",
+        "real estate broker license online",
+        "real estate broker pre licensing",
+        "real estate broker prep",
+        "real estate broker programs",
+        "real estate broker study",
+        "real estate online broker"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "agent",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [
+        "bls real estate agent",
+        "education of a real estate agent",
+        "estate agent certificate",
+        "estate agent qualification",
+        "estate agent qualifications online",
+        "landlord agent dubai",
+        "property agent certificate",
+        "property agent qualification",
+        "real estate agent bachelor degree",
+        "real estate agent certification",
+        "real estate agent certification online",
+        "real estate agent degree",
+        "real estate agent degree online",
+        "real estate agent in training",
+        "real estate agent license online",
+        "real estate agent prep",
+        "real estate agent programs",
+        "real estate agent programs near me",
+        "real estate agent qualification",
+        "real estate agent seminars near me",
+        "real estate agent study",
+        "real estate agent training provided"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "course",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [
+        "30 hour post license course"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "free",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [
+        "1 bhk chiller free dubai",
+        "1 bhk for rent in dubai airport free zone",
+        "apartments for rent near jebel ali free zone",
+        "apartments near jebel ali free zone",
+        "chiller free 1 bhk in bur dubai",
+        "chiller free 2 bhk flats in al nahda dubai",
+        "chiller free apartments for rent in dubai",
+        "chiller free apartments in al qusais",
+        "chiller free apartments in bur dubai",
+        "chiller free apartments in dubai",
+        "chiller free apartments in dubai al nahda",
+        "chiller free apartments in dubai for rent",
+        "chiller free apartments in dubai sports city",
+        "chiller free apartments in impz",
+        "chiller free flats in al nahda dubai",
+        "chiller free studio for rent in discovery gardens",
+        "chiller free studio for rent in dubai",
+        "chiller free studio in discovery gardens",
+        "chiller free studio in dubai",
+        "chiller free villas dubai",
+        "dubai airport free zone office rent",
+        "dubai free zone office rent",
+        "dubai free zone warehouse for rent",
+        "studio for rent in discovery gardens chiller free",
+        "studio in discovery gardens chiller free",
+        "studio room for rent in dubai airport free zone",
+        "villa for rent in dubai airport free zone",
+        "warehouse for rent in jebel ali free zone"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "mortgage",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "job",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "school",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "training",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 3627,
+      "lexical_conflicts": [
+        "real estate agencies that offer training",
+        "real estate agent in training",
+        "real estate agent training provided"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    }
+  ],
+  "exact_conflict_count": 0,
+  "positive_library_coverage_verified": false,
+  "scope_verified": false,
+  "deployment_authorized": false,
+  "master_additions": 0,
+  "source_bindings": {
+    "prior_workbench_sha256": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477",
+    "capture_manifest_sha256": "8129d8f27594257e58d35e112dd1f12ba6566e238f8b544ab66e82af08a00e3f",
+    "entity_review_sha256": "72703422ad2a894dd7f803db7fe60858b185df1c6f4e90d3e2871f5d4af7606d"
+  }
+}

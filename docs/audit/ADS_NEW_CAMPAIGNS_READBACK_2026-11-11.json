@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "account_id": "573-038-4686",
+  "account_login": "marketing@blackswanrealestate.ae",
+  "surface": "Google Ads Campaigns",
+  "read_only": true,
+  "banner": "None of your ads are running - Your campaigns and ad groups are paused or removed.",
+  "account_total_budget_readback": "AED0.00/day",
+  "new_campaigns": [
+    {"name": "BSRE_V2_SEARCH_OWNERS_UAE_EN", "google_campaign_id": "24367388382", "status": "Paused", "budget_per_day_aed": 400, "campaign_type": "Search", "bid_strategy": "Maximize clicks"},
+    {"name": "BSRE_V2_SEARCH_BUYERS_UAE_EN", "google_campaign_id": "24372566774", "status": "Paused", "budget_per_day_aed": 1200, "campaign_type": "Search", "bid_strategy": "Maximize clicks"},
+    {"name": "BSRE_V2_SEARCH_TENANTS_UAE_EN", "google_campaign_id": "24378494092", "status": "Paused", "budget_per_day_aed": 300, "campaign_type": "Search", "bid_strategy": "Maximize clicks"},
+    {"name": "BSRE_V2_SEARCH_BRAND_UAE_EN", "google_campaign_id": "24378494098", "status": "Paused", "budget_per_day_aed": 100, "campaign_type": "Search", "bid_strategy": "Maximize clicks"}
+  ],
+  "aggregate_observed_budget_per_day_aed": 2000,
+  "changes_made": false,
+  "activation_authorized": false,
+  "evidence_limit": "Readback covers the four named rows and account serving banner; it does not prove landing-page, conversion, Brand approval, staff, consent or import gates."
+}

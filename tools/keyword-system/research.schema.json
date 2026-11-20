@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bsre:keyword-research:1.0",
+  "title": "Black Swan offline keyword research interchange",
+  "type": "object",
+  "required": ["version", "kind", "records", "sources", "campaign_context", "protected_queries"],
+  "properties": {
+    "version": {"const": "1.0"},
+    "kind": {"enum": ["positive", "negative"]},
+    "records": {"type": "array", "items": {"$ref": "#/$defs/common"}},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+    "campaign_context": {"type": "array", "items": {"$ref": "#/$defs/campaign_context"}},
+    "protected_queries": {"type": "array", "items": {"$ref": "#/$defs/protected_query"}},
+    "scope_bindings": {"$ref": "#/$defs/scope_bindings"}
+  },
+  "allOf": [
+    {"if": {"properties": {"kind": {"const": "positive"}}}, "then": {"properties": {"records": {"items": {"$ref": "#/$defs/positive"}}}}},
+    {"if": {"properties": {"kind": {"const": "negative"}}}, "then": {"properties": {"records": {"items": {"$ref": "#/$defs/negative"}}}}}
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "date": {"type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/text"}, "uniqueItems": true},
+    "services": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["residential_offplan", "residential_ready_secondary", "residential_rental", "commercial_offplan", "commercial_ready", "commercial_leasing", "seller_supply", "landlord_supply"]}},
+    "source": {
+      "type": "object", "required": ["source_id", "kind", "approved_for_research", "evidence_ref", "observed_on", "valid_until"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/text"}, "kind": {"enum": ["first_party_observed", "authorized_partner_observed", "official_reference", "research_hypothesis"]},
+        "approved_for_research": {"type": "boolean"}, "evidence_ref": {"$ref": "#/$defs/text"},
+        "observed_on": {"$ref": "#/$defs/date"}, "valid_until": {"$ref": "#/$defs/date"}
+      }
+    },
+    "common": {
+      "type": "object",
+      "required": ["keyword_id", "original_text", "language", "match_type", "source_id", "source_reference", "evidence_ref", "review_state", "reviewer", "reviewed_on", "valid_until", "volume", "cpc"],
+      "properties": {
+        "keyword_id": {"$ref": "#/$defs/text"}, "original_text": {"$ref": "#/$defs/text"}, "language": {"$ref": "#/$defs/text"},
+        "match_type": {"enum": ["EXACT", "PHRASE", "BROAD"]}, "source_id": {"$ref": "#/$defs/text"},
+        "source_reference": {"$ref": "#/$defs/text"}, "evidence_ref": {"$ref": "#/$defs/text"},
+        "review_state": {"enum": ["CANDIDATE", "REVIEWED", "HELD", "REJECTED"]},
+        "reviewer": {"type": ["string", "null"]}, "reviewed_on": {"type": ["string", "null"]}, "valid_until": {"type": ["string", "null"]},
+        "volume": {"type": ["number", "null"], "minimum": 0}, "cpc": {"type": ["number", "null"], "minimum": 0},
+        "metric_evidence": {"type": "object"}
+      }
+    },
+    "positive": {
+      "allOf": [{"$ref": "#/$defs/common"}],
+      "description": "Master sections 4, 5, 9 and 10 admission evidence. Families/signals/emirates/segments are read from immutable source JSON and checked against artifact_manifest. Intent tier and transaction intent remain reviewed text because the Master supplies no controlled vocabulary. Property destination is an explicit list of one or more source-defined emirates, separate from audience origin. No field creates deployment permission.",
+      "required": ["primary_campaign_key", "ad_group_key", "landing_page_id", "family_code", "signal_ids", "property_destination", "audience_origin", "property_segment", "transaction_intent", "intent_tier", "admission_reviews"],
+      "properties": {
+        "primary_campaign_key": {"$ref": "#/$defs/text"}, "ad_group_key": {"$ref": "#/$defs/text"}, "landing_page_id": {"$ref": "#/$defs/text"},
+        "family_code": {"$ref": "#/$defs/text"},
+        "signal_ids": {"allOf": [{"$ref": "#/$defs/strings"}], "minItems": 1},
+        "property_destination": {"allOf": [{"$ref": "#/$defs/strings"}], "minItems": 1},
+        "audience_origin": {"$ref": "#/$defs/text"}, "property_segment": {"$ref": "#/$defs/text"},
+        "transaction_intent": {"$ref": "#/$defs/text"}, "intent_tier": {"$ref": "#/$defs/text"},
+        "admission_reviews": {
+          "type": "object", "additionalProperties": false,
+          "required": ["inventory_service", "language", "landing_page", "claims", "intent_geography"],
+          "properties": {
+            "inventory_service": {"allOf": [{"$ref": "#/$defs/admission_review"}], "required": ["offer_basis"], "properties": {"offer_basis": {"enum": ["verified_inventory", "advisory_offer", "owner_mandate_service"]}}},
+            "language": {"allOf": [{"$ref": "#/$defs/admission_review"}], "required": ["ad_page_sales_supported"], "properties": {"ad_page_sales_supported": {"const": true}}},
+            "landing_page": {"$ref": "#/$defs/admission_review"}, "claims": {"$ref": "#/$defs/admission_review"}, "intent_geography": {"$ref": "#/$defs/admission_review"}
+          }
+        }
+      }
+    },
+    "admission_review": {
+      "description": "Independent source/reference authenticity is still required. References/reviewers/identities must contain meaningful single-line text with no control/format characters or punctuation-only content; runtime applies this to legacy positive research evidence too. subject_sha256 binds the exact record (excluding admission_reviews), campaign, campaign context, selected research/review sources and source-contract digests. Factual admission reviews cannot use research_hypothesis evidence. Dated review must not predate supporting evidence.",
+      "type": "object",
+      "required": ["status", "reviewer", "evidence_ref", "source_id", "reviewed_on", "valid_until", "subject_sha256"],
+      "properties": {"status": {"const": "PASS"}, "reviewer": {"$ref": "#/$defs/text"}, "evidence_ref": {"$ref": "#/$defs/text"},
+        "source_id": {"$ref": "#/$defs/text"}, "reviewed_on": {"$ref": "#/$defs/date"}, "valid_until": {"$ref": "#/$defs/date"},
+        "subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "negative": {
+      "allOf": [{"$ref": "#/$defs/common"}],
+      "required": ["negative_id", "normalized_text", "source_type", "observed_query", "observation_date", "reason_code", "service_applicability", "eligible_campaigns", "ineligible_campaigns", "scope_type", "scope_target", "risk_level", "protected_query_conflicts", "estimated_lost_coverage", "approval_state", "approval_reference", "approval_reviewer", "approved_on", "deployed_resource_ids", "deployed_at", "rollback_reference"],
+      "properties": {
+        "negative_id": {"$ref": "#/$defs/text"}, "normalized_text": {"$ref": "#/$defs/text"}, "source_type": {"$ref": "#/$defs/text"},
+        "observed_query": {"type": ["string", "null"]}, "observation_date": {"type": ["string", "null"]}, "reason_code": {"$ref": "#/$defs/text"},
+        "service_applicability": {"$ref": "#/$defs/services"}, "eligible_campaigns": {"allOf": [{"$ref": "#/$defs/strings"}], "minItems": 1},
+        "ineligible_campaigns": {"$ref": "#/$defs/strings"}, "scope_type": {"enum": ["ACCOUNT", "SHARED_LIST", "CAMPAIGN", "AD_GROUP"]},
+        "scope_target": {"type": "object"}, "risk_level": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "protected_query_conflicts": {"$ref": "#/$defs/strings"}, "estimated_lost_coverage": {"type": ["string", "number", "null"]},
+        "approval_state": {"enum": ["PENDING", "APPROVED", "REJECTED"]}, "approval_reference": {"type": ["string", "null"]},
+        "approval_reviewer": {"type": ["string", "null"]}, "approved_on": {"type": ["string", "null"]},
+        "deployed_resource_ids": {"type": "array", "maxItems": 0}, "deployed_at": {"type": "null"}, "rollback_reference": {"type": ["string", "null"]}
+      }
+    },
+    "campaign_context": {
+      "type": "object", "required": ["campaign_key", "services", "evidence_ref", "reviewed_on", "valid_until"],
+      "properties": {"campaign_key": {"$ref": "#/$defs/text"}, "services": {"$ref": "#/$defs/services"}, "evidence_ref": {"$ref": "#/$defs/text"}, "reviewed_on": {"$ref": "#/$defs/date"}, "valid_until": {"$ref": "#/$defs/date"}}
+    },
+    "scope_bindings": {
+      "type": "object", "required": ["account_id", "evidence_ref", "verified_on", "valid_until", "campaigns", "shared_lists"],
+      "properties": {
+        "account_id": {"enum": ["5730384686", "573-038-4686"]}, "evidence_ref": {"$ref": "#/$defs/text"},
+        "verified_on": {"$ref": "#/$defs/date"}, "valid_until": {"$ref": "#/$defs/date"},
+        "campaigns": {"type": "object", "additionalProperties": {
+          "type": "object", "required": ["google_campaign_id", "evidence_ref"],
+          "properties": {"google_campaign_id": {"type": "string", "pattern": "^\\d+$"}, "evidence_ref": {"$ref": "#/$defs/text"},
+            "ad_groups": {"type": "object", "additionalProperties": {"type": "object", "required": ["google_ad_group_id", "evidence_ref"],
+              "properties": {"google_ad_group_id": {"type": "string", "pattern": "^\\d+$"}, "evidence_ref": {"$ref": "#/$defs/text"}}}}
+          }
+        }},
+        "shared_lists": {"type": "object", "additionalProperties": {"type": "object", "required": ["google_shared_list_id", "evidence_ref", "campaign_keys"],
+          "properties": {"google_shared_list_id": {"type": "string", "pattern": "^\\d+$"}, "evidence_ref": {"$ref": "#/$defs/text"}, "campaign_keys": {"$ref": "#/$defs/strings"}}}}
+      }
+    },
+    "protected_query": {
+      "type": "object", "required": ["query_id", "text", "campaign_keys", "services", "must_serve", "evidence_ref", "reviewed_on", "valid_until"],
+      "properties": {"query_id": {"$ref": "#/$defs/text"}, "text": {"$ref": "#/$defs/text"}, "campaign_keys": {"allOf": [{"$ref": "#/$defs/strings"}], "minItems": 1}, "services": {"$ref": "#/$defs/services"}, "must_serve": {"const": true}, "evidence_ref": {"$ref": "#/$defs/text"}, "reviewed_on": {"$ref": "#/$defs/date"}, "valid_until": {"$ref": "#/$defs/date"}}
+    }
+  }
+}

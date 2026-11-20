@@ -1,0 +1,77 @@
+{
+  "scope": "LITERAL_PLACE_MENTIONS_ONLY_NOT_INTENT_OR_SERVICE_COVERAGE",
+  "aliases": {
+    "Dubai": [
+      "dubai"
+    ],
+    "Abu Dhabi": [
+      "abu dhabi",
+      "abudhabi"
+    ],
+    "Sharjah": [
+      "sharjah"
+    ],
+    "Ajman": [
+      "ajman"
+    ],
+    "Ras Al Khaimah": [
+      "ras al khaimah",
+      "ras al khaima",
+      "ras alkhaimah",
+      "rasalkhaimah"
+    ],
+    "Fujairah": [
+      "fujairah"
+    ],
+    "Umm Al Quwain": [
+      "umm al quwain",
+      "ummul quwain"
+    ]
+  },
+  "before_source_distinct": 11188,
+  "after_source_distinct": 13447,
+  "counts": [
+    {
+      "place": "Dubai",
+      "before": 6796,
+      "after": 6799
+    },
+    {
+      "place": "Abu Dhabi",
+      "before": 12,
+      "after": 740
+    },
+    {
+      "place": "Sharjah",
+      "before": 10,
+      "after": 1010
+    },
+    {
+      "place": "Ajman",
+      "before": 465,
+      "after": 467
+    },
+    {
+      "place": "Ras Al Khaimah",
+      "before": 99,
+      "after": 99
+    },
+    {
+      "place": "Fujairah",
+      "before": 63,
+      "after": 63
+    },
+    {
+      "place": "Umm Al Quwain",
+      "before": 53,
+      "after": 53
+    }
+  ],
+  "counts_nonexclusive": true,
+  "ambiguous_acronyms_rak_uaq_assigned": false,
+  "unmatched_means_place_absent": false,
+  "searcher_location_inferred": false,
+  "demand_or_inventory_verified": false,
+  "service_scope_approved": false,
+  "admission_authorized": false
+}

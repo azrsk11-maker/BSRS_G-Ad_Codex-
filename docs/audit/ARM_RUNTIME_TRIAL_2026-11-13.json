@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-13",
+  "scope": "REVERSIBLE_STANDARD_RUNNER_TRIAL_NOT_RELEASE_ACCEPTANCE",
+  "status": "FIRST_ARM_FULL_COVERAGE_WITH_TEST_ORDER_FAILURE_FOLLOWUP_PENDING",
+  "repository": {
+    "name": "azrsk11-maker/BSRS_G-Ad_Codex-",
+    "visibility_live_verified": "public",
+    "private": false,
+    "verification": "read-only GitHub repository API"
+  },
+  "official_runner_reference": "https://docs.github.com/en/actions/reference/runners/github-hosted-runners",
+  "documented_public_runner": {
+    "label": "ubuntu-24.04-arm",
+    "cpu_count": 4,
+    "architecture": "arm64",
+    "billing_basis": "Standard hosted runners are free and unlimited for public repositories; no larger runner, hosting purchase or billing-setting change",
+    "documented_memory": "16 GB"
+  },
+  "baseline": {
+    "local_source": "577980d574a7bda751085141173c2345a758752c",
+    "feature": "21088a37f89b8988f2ff55e91c9aa1f80213c0b0",
+    "foundation_job": 131520862109,
+    "requested_runner_label": "ubuntu-latest",
+    "whole_job_seconds": 496,
+    "keyword_seconds_before_timeout": 300.048184,
+    "keyword_required_cases": 559,
+    "keyword_finished_cases": 535,
+    "keyword_modules": 44,
+    "combined_acceptance": false
+  },
+  "profile": {
+    "source_head": "577980d574a7bda751085141173c2345a758752c",
+    "seconds": 181.327031,
+    "includes_profiler_overhead": true,
+    "deepcopy_cumulative_seconds": 38.560235,
+    "shared_append_copy_cumulative_seconds": 19.3849342,
+    "other_large_costs": [
+      "canonical encoding",
+      "full audit"
+    ]
+  },
+  "change": {
+    "job": "offline-validation",
+    "requested_runner_label": "ubuntu-24.04-arm",
+    "python_major_minor": "3.12",
+    "actual_host_bootstrap": "tools/efficiency/runner_observation.py",
+    "new_actions_or_dependencies": [],
+    "token_permissions_unchanged": true,
+    "native_and_isolated_wordpress_jobs_unchanged": true,
+    "keyword_source_algorithms_unchanged": true,
+    "original_300s_keyword_bound_unchanged": true,
+    "process_and_resource_controls_unchanged": true,
+    "cross_invocation_body_hash_or_verdict_cache": false,
+    "withdrawn_copy_prototype_integrated": false
+  },
+  "local_checks": {
+    "phase": "COMPLETED",
+    "expected_cases": 115,
+    "keyword_cases_unchanged": 559,
+    "keyword_modules_unchanged": 44,
+    "keyword_deadline_unchanged": 300,
+    "production_or_ads_changed": false,
+    "passed": true,
+    "tests_run": 115,
+    "failures": 0,
+    "errors": 0,
+    "skips": 3,
+    "elapsed_seconds": 18.05341,
+    "failed_names": [],
+    "error_names": []
+  },
+  "trial_success_requires": [
+    "actual Linux/aarch64 Python3.12 public-repository startup observation",
+    "all559keyword cases/44modules,zero skips,complete ordered coverage within300s",
+    "allthree exact-head required CI checks pass",
+    "original source pins and complete current body SHA unchanged"
+  ],
+  "expected_speedup": "UNPROVEN; measure actual completion and headroom; do not assume ARM is faster",
+  "comparison_limits": "The runtime label, architecture and image differ. Cloud-host load is uncontrolled; a completed trial is operational evidence, not a causal speedup estimate.",
+  "rollback": "Revert the Foundation runner/bootstrap changes through an ordinary feature PR commit. Preserve the failing baseline and every acceptance gate.",
+  "production_or_ads_changed": false,
+  "independent_human_review_claimed": false,
+  "release_authorized": false,
+  "actual_startup": {
+    "head": "5aecdf0d3b8786bfdc85671a30c29102d9b653c4",
+    "job": 131545637113,
+    "source": "AUTHENTICATED_NATIVE_JOB_LOG",
+    "observation": {
+      "machine": "aarch64",
+      "python_version": "3.12.16",
+      "release_authorized": false,
+      "repository": "azrsk11-maker/BSRS_G-Ad_Codex-",
+      "repository_visibility": "public",
+      "requested_runner_label": "ubuntu-24.04-arm",
+      "schema": "bsre-ci-runtime-observation-v1",
+      "scope": "STARTUP_OBSERVATION_NOT_RELEASE_ACCEPTANCE",
+      "source_body_hash_or_verdict_cache": false,
+      "startup_worker_selection": {
+        "cpu_count": 4,
+        "maximum_workers": 4,
+        "memory_available_bytes": 15385915392,
+        "memory_per_worker_bytes": 2147483648,
+        "mode": "auto",
+        "selected_workers": 4
+      },
+      "system": "Linux"
+    }
+  },
+  "first_arm_result": {
+    "head": "5aecdf0d3b8786bfdc85671a30c29102d9b653c4",
+    "job": 131545637113,
+    "whole_foundation_job_seconds": 347,
+    "keyword_check_seconds": 169.343477,
+    "keyword_summary": {
+      "discovered_modules": 44,
+      "completed_modules": 44,
+      "discovered": 559,
+      "started": 559,
+      "finished": 559,
+      "skipped": 0,
+      "coverage_verified": true,
+      "timed_out": false,
+      "passed": false
+    },
+    "failed_module": "test_supplemental_batch_validator",
+    "failed_case": "test_manifest_hash_tamper_fails_closed",
+    "other_required_jobs": "NativePHP PASS12s; isolatedWordPress PASS75s",
+    "combined_acceptance": false
+  },
+  "followup": {
+    "root_cause": "The test selected the first JSON file other than capture.json. Unspecified filesystem order could select semantic-review-preview.json, whose extra batch_id is not the manifest-pinned batch body.",
+    "test_change": "Select the source_files manifest entry, preserve JSON semantics while appending a raw newline, and require the exact BATCH_HASH_BINDING error under forced preview-first and source-first discovery.",
+    "validator_changed": false,
+    "source_and_keyword_counts_changed": false,
+    "original_failure_reproduced": {
+      "scope": "OLD_TEST_REPRODUCER_NOT_ACCEPTANCE",
+      "expected_original_failure_reproduced": true,
+      "tests_run": 1,
+      "failures": 1,
+      "errors": 0,
+      "seconds": 0.028308,
+      "forced_order": "semantic-review-preview first",
+      "validator_changed": false
+    },
+    "focused_real_worker": {
+      "scope": "FOCUSED_REAL_WORKER_EVENT_AND_TAMPER_REGRESSION_NOT_FULL_CI",
+      "exit": 0,
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.375458,
+      "directory_orders_checked": [
+        "preview-first",
+        "manifest-source-first"
+      ],
+      "validator_unchanged": true,
+      "coverage_verified": true,
+      "harness_note": "Tests and coverage succeeded; a post-check assertion expected a mapping rather than the actual boolean. Durable receipt was reconciled without rerunning tests.",
+      "unchanged_validator_sha256": "128873cb65021c41955be72e5d3bdcdcb48b887ad6ff5ed7b3f3ded520207709"
+    },
+    "full_current_head_ci": "PENDING"
+  }
+}

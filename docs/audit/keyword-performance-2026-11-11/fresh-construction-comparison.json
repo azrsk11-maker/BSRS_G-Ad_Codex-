@@ -1,0 +1,61 @@
+{
+  "scope": "ABBA_FRESH_FROZEN_VENDOR_CONSTRUCTION_NOT_RELEASE_ACCEPTANCE",
+  "all_outcomes_equal": true,
+  "runs": [
+    {
+      "source_commit": "da98cd30b411598757c93de6d42dd8f54f997662",
+      "elapsed_seconds": 34.242357,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 1,
+      "version": "before"
+    },
+    {
+      "source_commit": "84478914e4bd0afd2eddccedf9a9895d19cadcd6",
+      "elapsed_seconds": 31.155629,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 2,
+      "version": "after"
+    },
+    {
+      "source_commit": "84478914e4bd0afd2eddccedf9a9895d19cadcd6",
+      "elapsed_seconds": 30.101845,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 3,
+      "version": "after"
+    },
+    {
+      "source_commit": "da98cd30b411598757c93de6d42dd8f54f997662",
+      "elapsed_seconds": 34.984474,
+      "whole_data_sha256": "2e4b0ca98bc61013c4c8a13070b338c0fe64463a9dbfb355d031557a29e2aa85",
+      "whole_data_bytes": 22731210,
+      "records": 10014,
+      "archives": 12,
+      "protections": 15309,
+      "ordinal": 4,
+      "version": "before"
+    }
+  ],
+  "before_median_seconds": 34.6134155,
+  "after_median_seconds": 30.628737,
+  "observed_ratio": 1.130096076113096,
+  "observed_difference_seconds": 3.984678500000001,
+  "python_hash_seed": "0",
+  "timeout_each_seconds": 120,
+  "source_reconstruction_calls": 4,
+  "no_accepted_result_or_source_read_cache": true,
+  "limitations": "Two runs per revision in separate source worktrees; fixed hash seed, ABBA order. OS caches, host load, thermal state and filesystem latency remain uncontrolled. Timings exclude imports and final diagnostic fingerprinting. No whole-Foundation, billing, token or API saving established.",
+  "production_changed": false,
+  "advertising_changed": false
+}

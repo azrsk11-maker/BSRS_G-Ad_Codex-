@@ -1,0 +1,86 @@
+{
+  "schema": "bsre-autonomous-dependency-frontier-v1",
+  "as_of": "2026-11-20",
+  "classification": "BOUNDED_PREPARATION_GATES_HELD",
+  "inspection_basis": {
+    "head": "b49ba284891ab2a7843820ef8fa6def26388d816",
+    "tree": "25dc3d18d7c7958e6dedfbafd8333c7e90dd79ee",
+    "clean": true,
+    "Source_writes_during_inspection": 0
+  },
+  "goal_states": {
+    "verified": 6,
+    "blocked": 7,
+    "preparation_only_running": 9,
+    "pending": 78,
+    "whole_goals_closed_by_this_batch": 0
+  },
+  "dependency_ready_incomplete": [
+    "G003",
+    "G006",
+    "G007",
+    "G011",
+    "G022",
+    "G027",
+    "G051"
+  ],
+  "dependency_ready_engineering_goals": [],
+  "current_engineering_result": "The selected delivery, deduplication and contact contracts had no new reproducible deficiency. Unchanged exact-head native acceptance was reused; no speculative patch or duplicate test run.",
+  "prior_engineering_acceptance": {
+    "head": "b49ba284891ab2a7843820ef8fa6def26388d816",
+    "CI_checks_passed": 4,
+    "complete_native_JSON_documents": 460,
+    "current_source_bindings": 238,
+    "historical_source_assertions": 186,
+    "historical_candidate_assertions": 17,
+    "scope": "Prior exact revision only; future commit acceptance requires applicable checks."
+  },
+  "GitHub_readback": {
+    "observed_at_utc": "2026-11-20T14:44:35.821400+00:00",
+    "api_reads": 3,
+    "PR": 8,
+    "head": "b49ba284891ab2a7843820ef8fa6def26388d816",
+    "base": "f239701e47873f6dea7e6336d59cbe0dd6c15053",
+    "state": "open",
+    "merged": false,
+    "reviews": 0,
+    "new_issue_comments_after_prior_cutoff": 0,
+    "bounded_comment_filter_complete": true
+  },
+  "Marketing_evidence_delta": {
+    "provider_reads": 3,
+    "new_matching_artifacts": 0,
+    "scope": "Known evidence-request thread, approved evidence-folder direct children and bounded new Amit/topic mail. This is not a universal absence claim.",
+    "unblocks_G006": false,
+    "unblocks_G011": false,
+    "unblocks_G051": false,
+    "reported_completed_rehearsal_disproved": false,
+    "capacity_300_per_day": "UNVERIFIED_ESTIMATE"
+  },
+  "research_preparation": {
+    "G022": "Official-source corroboration and exclusions are recorded separately; no demand, new subject, keyword admission or Black Swan regulatory permission inferred.",
+    "G027": "Eight additional held EXACT Buyers proposals. Full coverage, matching assurance, G028 and G029 remain incomplete.",
+    "approval_or_application": false
+  },
+  "outstanding_gates": [
+    "independent human PR review",
+    "actual staff desktop/phone and measured capacity evidence",
+    "assigned-record access denial evidence",
+    "authoritative history coverage/version/custody",
+    "dated exact-version factual and applicable rights/permit review",
+    "both complete reviewed 14000-row keyword libraries",
+    "genuine browser/provider conversion and deduplication acceptance",
+    "separate production configuration, publication and release authorization"
+  ],
+  "authority": {
+    "production_changed": false,
+    "Ads_changed": false,
+    "all_advertising_must_remain_paused": true,
+    "old_campaigns_may_resume": false,
+    "full_goal_complete": false,
+    "permissions_expanded": false,
+    "human_or_provider_acceptance_inferred": false,
+    "historical_leads_replayed": false
+  },
+  "interpretation": "The dependency frontier is not a claim that all 94 remaining goals are permanently blocked. G022/G027 can advance only through additional traceable research; later work unlocks through verified prerequisites. No fabrication or gate waiver."
+}

@@ -1,0 +1,3629 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-10",
+  "proposals": [
+    {
+      "text": "30 hour post license course",
+      "disposition": "HOLD",
+      "intent": "PROFESSION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Post-license course wording omits the licensed profession. The source experiment cannot substitute for that missing literal role context.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "course",
+        "license"
+      ]
+    },
+    {
+      "text": "72 hour frec approved pre licensing course for brokers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "75 hour broker prelicensing course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "agent real estate schools",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "apply for dubai property consultant job",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "apply for real estate internship dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "be a real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "become a real estate agent for free",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best 60 hour post license real estate broker course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best real estate agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best real estate agent courses online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best real estate agent training programs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best real estate broker exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best real estate training for new agents",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "best training for real estate agents",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "bls real estate agent",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "bpo real estate training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker continuing education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker course online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker course real estate",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker courses near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker crash course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker educational sales & training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker educational sales and training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker exam crash course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker exam prep course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker in charge course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker license classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker license classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker license online courses",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker license training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker management course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker online classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker post license",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "license"
+      ]
+    },
+    {
+      "text": "broker post license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker pre license",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "license"
+      ]
+    },
+    {
+      "text": "broker pre license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker prelicensing course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker real estate classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker renewal continuing education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker responsibility course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker training courses",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "broker training exam",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "brokerage classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "brokerage training programs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "business broking course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ce for real estate agents",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "certificate iv in property services business broking",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "certificate"
+      ]
+    },
+    {
+      "text": "certified training for real estate brokers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes for brokers license",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes for mortgage broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes for real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes needed to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes to become real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "classes to take to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "commercial brokerage administrator jobs dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "commercial real estate agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "commercial real estate agent training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "commercial real estate broker training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "commercial sales and leasing consultant job dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "continuing education for real estate brokers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "course broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "courses ryan serhant",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "courses to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "courses to take to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "cpd for real estate brokers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "cpd real estate broker 2021",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "cpd seminar for real estate brokers 2021",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "customs broker courses",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "degree needed to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "degree to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai broker training course registration",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai leasing consultant job application",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "dubai real estate broker exam preparation course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "education for real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "education needed to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "education of a real estate agent",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "estate agency and property management course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agency courses",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agency degree",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "degree"
+      ]
+    },
+    {
+      "text": "estate agency training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agency training course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent certificate",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "certificate"
+      ]
+    },
+    {
+      "text": "estate agent courses near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent courses online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "estate agent qualification",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "qualification"
+      ]
+    },
+    {
+      "text": "estate agent qualifications online",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "online",
+        "qualifications"
+      ]
+    },
+    {
+      "text": "free real estate agent classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "free real estate agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "georgia broker license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "georgia broker pre license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "house agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "housing agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "i want to be a real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "learn to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "learn to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "license to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "licensed real estate agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "maine designated broker course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "managing broker classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage broker classes online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage broker continuing education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage broker exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage broker license classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage broker license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage broker pre licensing course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage license classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "mortgage license classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "new real estate agent training programs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "off plan sales specialist vacancy dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online broker classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online broker license",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "online",
+        "license"
+      ]
+    },
+    {
+      "text": "online classes for real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online classes to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online courses for real estate agents",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online courses to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online mortgage license classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "online real estate broker classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "oqood training course registration dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "pre license mortgage broker class",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "pre licensing mortgage broker training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "prep agent real estate course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "prep agent real estate exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "prep agent real estate practice exam",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "preparation for real estate license exam",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property agent certificate",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "certificate"
+      ]
+    },
+    {
+      "text": "property agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property agent license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property agent qualification",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "qualification"
+      ]
+    },
+    {
+      "text": "property agent training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property broker course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property estate agent courses",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "property sales agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "provisional broker pre licensing course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "qualification for real estate broker",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "qualification",
+        "real estate"
+      ]
+    },
+    {
+      "text": "qualifications needed to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "qualifications needed to be an estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "qualifications to be a real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "qualifications to be real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "qualifications to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agencies that offer training",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "training",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent bachelor degree",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "degree",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent certificate course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent certification",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "certification",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent certification online",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "online",
+        "certification",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent classes cost",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent classes online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent coaching programs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent continuing education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent continuing education classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent continuing education courses",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent course cost",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent course near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent course online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent course price",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent crash course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent degree",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "degree",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent degree needed",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent degree online",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "online",
+        "degree",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent education and training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent education requirement",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent free course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent free training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent in training",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "training",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent lessons",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent licence course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent license classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent license classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent license online",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "online",
+        "license",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent license online course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent license training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent pre license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent prep",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent programs",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent programs near me",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent qualification",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "qualification",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent representative course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent schooling needed",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent seminars near me",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent study",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agent training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent training course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent training near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent training online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent training programs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agent training provided",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agent",
+        "training",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate agents rep course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate agents representative certificate",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "agents",
+        "certificate",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate bpo training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker bls",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker certification",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "certification",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker continuing education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker course near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker course online",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker courses near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker crash course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker degree",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "degree",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker exam crash course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker exam prep course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker license classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker license classes near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker license online",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "online",
+        "license",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker license online course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker license training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker pre license course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker pre licensing",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "licensing",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker pre licensing education",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker prep",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker prep course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate broker programs",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker study",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Fragment, program, study, seminar, acronym or provider-training wording leaves the role or service purpose unresolved. Discovery batch membership is insufficient to exclude possible property intent.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate broker training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate brokers can be licensed real estate",
+      "disposition": "HOLD",
+      "intent": "CREDENTIAL_OR_QUALIFICATION_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Credential, degree, qualification or licensing wording alone leaves obtaining it versus checking a professional unresolved. Preserve until role and service intent are reviewed; no credential rule is inferred.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "brokers",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate closing agent training",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate conveyancer job application dubai",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "EXPLICIT_EMPLOYMENT_APPLICATION",
+      "possible_services": [],
+      "reason": "Literal job, vacancy, internship or application request. Full-phrase EXACT proposal only; actual campaign applicability and independent risk/protected-intent review are not approved.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate exam prep agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate online broker",
+      "disposition": "HOLD",
+      "intent": "ROLE_OR_SERVICE_UNRESOLVED",
+      "possible_services": [],
+      "reason": "Possible property-brokerage service intent. Preserve the query and generic broker/online wording; property role, asset and actual service mapping still need business evidence.",
+      "negative_scope_proposal": null,
+      "protect_against_generic": [
+        "broker",
+        "online",
+        "real estate"
+      ]
+    },
+    {
+      "text": "real estate sales agent classes",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate sales agent course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "real estate training for new agents",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "realtor license class",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "realtor license class near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "realtor license course near me",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "reca mortgage broker course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "requirement to be a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "rera broker certification course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "rera certified training for real estate brokers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ryan serhant com course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ryan serhant course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ryan serhant course cost",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ryan serhant online course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ryan serhant real estate course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "ryan serhant sales course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sales training for real estate agents",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "schools to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sell it like serhant the course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "sell like serhant course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "serhant course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "serhant real estate course",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "SOURCE_LINKED_PROVIDER_EDUCATION",
+      "possible_services": [],
+      "reason": "Professional-course proposal; see ENTITY_REVIEW.md; scope/approval unverified.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "steps to be a real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "study to become a real estate agent",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "to be a real estate broker",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "training agents real estate",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    },
+    {
+      "text": "washington managing broker exam prep",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "intent": "PROFESSIONAL_LEARNING_OR_ENTRY",
+      "possible_services": [],
+      "reason": "Explicit professional course, class, exam preparation, training or entry-to-profession wording. Full-phrase EXACT proposal only; no course existence, certification, legal requirement or campaign applicability is asserted.",
+      "negative_scope_proposal": {
+        "type": "CAMPAIGN",
+        "campaign_keys": [],
+        "approved": false,
+        "match_type": "EXACT"
+      },
+      "protect_against_generic": []
+    }
+  ]
+}

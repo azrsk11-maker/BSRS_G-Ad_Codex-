@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "status": "READ_ONLY_OBSERVATION_NOT_RELEASE_ACCEPTANCE",
+  "observed_at_utc_interval": ["2026-11-07T06:53:44Z", "2026-11-07T07:02:03Z"],
+  "account_id": "573-038-4686",
+  "account_name": "Black Swan Real Estate",
+  "production_changes": 0,
+  "production_authorized": false,
+  "method": "Authenticated Google Ads UI: campaign Settings table, individual Maximize Clicks reports, account Rules/Scripts/Solutions, account Auto-apply Manage tab, and Brand Ads table. No setting was changed or saved.",
+  "shared_settings_for_all_four_v2_campaigns": {
+    "campaign_ids": ["24367388382", "24372566774", "24378494092", "24378494098"],
+    "campaign_status": "Paused",
+    "ad_group_status_summary": "All ad groups are paused",
+    "keyword_status_summary": "All keywords are paused",
+    "campaign_type": "Search",
+    "bid_strategy": "Maximize clicks",
+    "networks_display": "Google search",
+    "ad_rotation": "Optimize: Prefer best performing ads",
+    "campaign_start_date": "2026-10-19",
+    "end_date_display": "—",
+    "language_display": "—",
+    "language_verification": "UNRESOLVED_DO_NOT_INFER_ENGLISH_OR_ALL_LANGUAGES",
+    "location_display": "United Arab Emirates",
+    "location_presence_option_for_all_four": "NOT_VERIFIED_BY_THIS_TABLE",
+    "ad_schedule_display": "All days, 10:00 AM - 7:00 PM",
+    "account_timezone_display": "GMT+04:00 Gulf Standard Time",
+    "active_bid_adjustments_display": "None",
+    "devices_display": "All",
+    "automatically_created_assets": "Off",
+    "broad_match_setting": "Off",
+    "text_customization": "Off",
+    "final_url_expansion": "Off",
+    "ai_max": "Off",
+    "target_cpc_column_display": "—",
+    "target_cpc_caveat": "The Target CPC column is not evidence that the Maximize Clicks maximum bid limit is unset. Individual strategy settings are recorded below."
+  },
+  "maximum_cpc_bid_limits": [
+    {"campaign_id": "24367388382", "role": "Owners", "limit_enabled": true, "aed": 20, "source": "Current individual strategy Settings panel"},
+    {"campaign_id": "24378494092", "role": "Tenants", "limit_enabled": true, "aed": 20, "source": "Current individual strategy Settings panel"},
+    {"campaign_id": "24378494098", "role": "Brand", "limit_enabled": true, "aed": 5, "source": "Current individual strategy Settings panel"},
+    {"campaign_id": "24372566774", "role": "Buyers", "limit_enabled": true, "aed": 20, "source": "ADS_MEASUREMENT_READBACK_2026-11-07.json#/buyers_settings_sample", "source_observation_ended_utc": "2026-11-07T06:43:43Z"}
+  ],
+  "automation": {
+    "account_rules": {"entries": 0, "ui_message": "You don't have any entries yet"},
+    "account_scripts": {"entries": 0, "ui_message": "You don't have any scripts yet"},
+    "account_solutions": {"entries": 0, "ui_message": "You don't have any solutions yet"},
+    "auto_apply": {
+      "scope": "Account-wide recommendations > Auto-apply settings > Manage",
+      "maintain_your_ads_selected": 0,
+      "maintain_your_ads_available": 7,
+      "grow_your_business_selected": 0,
+      "grow_your_business_available": 14
+    },
+    "limitations": "This verifies the visible account surfaces, not absence of manager-account automation, external API writers or every inherited control. No permissions or automation settings changed."
+  },
+  "brand_ad": {
+    "campaign_id": "24378494098",
+    "ad_group_id": "204397706114",
+    "ad_group_name": "Black Swan Brand",
+    "ad_id": "828621612889",
+    "ad_type": "Responsive search ad",
+    "ad_status": "Paused",
+    "status_detail": "Ad group paused, Campaign is paused",
+    "ad_strength_display": "Pending",
+    "policy_details_display": "Approved",
+    "auto_applied_ad_suggestion": "No",
+    "final_url": "https://blackswanrealestate.ae/enquire/",
+    "table_scope": "Brand campaign; Ad status All; 1 - 1 of 1",
+    "gate_result": "GOOGLE_AD_POLICY_APPROVAL_OBSERVED_ONLY",
+    "limits": "Platform ad-policy approval is distinct from business/editorial approval, site readiness, ad strength, staff capacity and release authorization. All four-campaign launch gates still apply."
+  },
+  "still_unverified": [
+    "English language targeting: table shows a dash for all four; do not infer an unset or correct value.",
+    "Presence-only targeting for Owners, Tenants and Brand; Buyers was verified in the preceding readback.",
+    "All inherited negative lists, assets, account-level or manager-level control sources and external writers.",
+    "Complete campaign/page/CTA mapping, conversion runtime acceptance and separate production release gates."
+  ]
+}

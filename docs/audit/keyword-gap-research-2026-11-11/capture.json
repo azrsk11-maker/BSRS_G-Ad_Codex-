@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "property-support-employment.json",
+      "batch_id": "KP-20261111-PROPERTY-SUPPORT-EMPLOYMENT",
+      "sha256": "18ead17ffd1a2f6bc9203c0dc2eb46b35239a99a0fd83b783e61695851438f63",
+      "bytes": 1582006,
+      "records": 1764,
+      "distinct_normalized": 1764,
+      "source_bytes": 300732,
+      "source_sha256": "f8bf522f1b8f8dbd123c533d27535b54c50e5629f738e7efcce144aab4c7fba7"
+    },
+    {
+      "file": "digital-assets-software.json",
+      "batch_id": "KP-20261111-DIGITAL-ASSETS-SOFTWARE",
+      "sha256": "60d0f44806b8003710ccc4d6231452d96c1392dfb8c2f24812a39f31e63f7f36",
+      "bytes": 747920,
+      "records": 837,
+      "distinct_normalized": 837,
+      "source_bytes": 141430,
+      "source_sha256": "909483ee50c0929cf81b5807fc5c6a49d091fb774431e5b7c96a83eda96850c9"
+    },
+    {
+      "file": "repair-trade-services.json",
+      "batch_id": "KP-20261111-REPAIR-TRADE-SERVICES",
+      "sha256": "242faace7f5d76b35cba7775031f8b5acfa1abe8d114353c1085a240a27984a8",
+      "bytes": 438943,
+      "records": 483,
+      "distinct_normalized": 483,
+      "source_bytes": 99664,
+      "source_sha256": "a9b4d7bfb311efba699c8f27199b19b1c535daab7ec07ed2b4b7756ba5ef3c60"
+    }
+  ],
+  "totals": {
+    "export_rows": 3084,
+    "distinct_normalized_phrases": 3084,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Thirty authored input hypotheses across employment, digital assets/software and repair trades; provider expansions remain unreviewed.",
+    "No pool or intent classification, exclusion scope, demand aggregation, independent approval or master admission is inherited.",
+    "Repair input retained two preceding tokens transiently. Removed and verified before adding the missing two; only the final exact ten-seed 483-row result was exported.",
+    "Each completed export row count matches the stable final UI count; intermediate query counts are not capture evidence.",
+    "Five account-specific columns are omitted in full; original exports and account/settings screenshots remain private."
+  ]
+}

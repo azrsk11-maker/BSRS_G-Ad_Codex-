@@ -1,0 +1,112 @@
+{
+  "version": 2,
+  "scope": "FRESH_COMPLETE_OFFLINE_RESEARCH_ADMISSION_CANDIDATE_NOT_RELEASE_ACCEPTANCE",
+  "date_dubai": "2026-11-12",
+  "python_version": "3.12.14",
+  "superseded_scope_diagnostic": {
+    "receipt_sha256": "0c8a59e84fd7f56282250135f69b8cdb3e5788a198ba6a01d45607b5954a2051",
+    "review_sha256": "3aaa6490ecb3cf96ebb4db07a02f1a89519d6aca5f3f2da965b769baefa192ec",
+    "output_pins": {
+      "index.json": "7d90aa6f4a8206beeb8a2541bc3bfcd4d42874a31666cd1d8317a973ca9960ee",
+      "cohort-report.json": "6c14e350fb6e56db1983589e049631723c5c5c46267ba8e827e06c22bf579ae3",
+      "library-report.json": "55ebf0a4c11961bebc4e3a25681bfdbe264ae528f462fb9b42cfd18da17b4df0",
+      "research-pool-allocation.json": "9a05d86b547cff58350e68c130aff002a7b7f068bda0cd7cb842ef75e76c5ae3"
+    },
+    "complete_inputs_sha256": "e6a9193e1013b4dd6799b52c70ff7a75e48ddde5899107264d4a2b8e90a468ab",
+    "reason": "Independent static review found only207proposed groups received all four external joins, despite all517claim. New run actually joins every517group, including310preheld, against everycurrent/archive/protected map and within-source map. Earlier result is not reused to accept corrected source."
+  },
+  "fresh_base": {
+    "public_entrypoint": "current_negative_library.reconstruct_apprenticeship_snapshot",
+    "complete_inputs_sha256": "4db6a3a93ac0b7f4015cb2e329898b5446aa947586e2880b98b02537941373ac",
+    "measured_seconds": 63.935617,
+    "records": 10963,
+    "archives": 18,
+    "protections": 16383,
+    "sources": 24,
+    "serialized_baseline_or_acceptance_cache_used": false
+  },
+  "review_generation": {
+    "measured_seconds": 0.966875,
+    "semantic_proposals": 207,
+    "selected_after_complete_current_archive_protected_and_all_source_checks": 207,
+    "all_source_groups_compared": 517,
+    "external_key_comparisons": 2068,
+    "within_source_key_comparisons": 2068,
+    "all_source_conflict_groups": 0,
+    "preheld_source_conflict_groups": 0,
+    "additional_variant_hold_groups": 0,
+    "already_protected_hold_groups": 0
+  },
+  "actual_complete_generic_audited_generation": {
+    "measured_seconds": 5.172985,
+    "base_unchanged": true,
+    "new_rows": 207,
+    "new_exact_occurrences": 214,
+    "new_protections": 310,
+    "records": 11170,
+    "archives": 18,
+    "protections": 16693,
+    "sources": 25,
+    "retained_exact_source_occurrences": 11383,
+    "complete_inputs_sha256": "4b3106190c37a47deaefdd391e9dfded0554c9a91b381c6d3a62424b54c80587",
+    "computed_conflicts": 0,
+    "excluded_rows": 0,
+    "approved_exclusion_rows": 0
+  },
+  "focused_tests": {
+    "cases": 12,
+    "failures": 0,
+    "errors": 0,
+    "measured_seconds": 32.629857,
+    "scope": "Actual newly reconstructed complete base reused only in this ephemeral generating process. Includes explicit preheld protected/archive/current external aliases and executed517/2068join counters, real generic-audit malformed protection, source/body/order/authority guards and saved full-output audits."
+  },
+  "retained_public_freshness_guard": {
+    "cases": 1,
+    "public_entrypoints": 14,
+    "unittest_reported_seconds": 0.273,
+    "passed": true,
+    "behavior_unchanged_by_this_repair": true
+  },
+  "academic_allocation": {
+    "target": 2000,
+    "admitted": 1883,
+    "remaining": 117,
+    "target_transfer": null,
+    "total_target": 14000,
+    "total_admitted": 11170,
+    "total_deficit": 2830,
+    "media_budget_changed": false
+  },
+  "code_bindings": [
+    {
+      "file": "tools/keyword-system/ofqual_occupational_admission.py",
+      "sha256": "4e3840b019fb94e7fa441af318f4dc48c13302901618783e2eaca735181f173c",
+      "bytes": 28448
+    },
+    {
+      "file": "tools/keyword-system/test_ofqual_occupational_admission.py",
+      "sha256": "72631013f3e0ecbad1521ec7693158aafa540e7f688d46939e79d4488d3d508d",
+      "bytes": 13591
+    },
+    {
+      "file": "tools/keyword-system/current_negative_library.py",
+      "sha256": "fa700f3a6a93bf6c429a0a8c95d8416cef6a8002668153b54ad96940aabfecd7",
+      "bytes": 29870
+    },
+    {
+      "file": "tools/keyword-system/test_entertainment_admission.py",
+      "sha256": "dfac1cf66ec065e3a6b2458bba3af42e4d917408f2d04f0c1151fe8899fc8fdd",
+      "bytes": 9708
+    }
+  ],
+  "current_source_combined_foundation": "PENDING_ROOT_INTEGRATION",
+  "current_source_ci_native": "PENDING",
+  "independent_human_approval": false,
+  "positive_admissions": 0,
+  "exclusion_approvals": 0,
+  "deployments": 0,
+  "production_changed": false,
+  "ads_changed": false,
+  "all_advertising_remains_paused": true,
+  "full_goal_complete": false
+}

@@ -1,0 +1,229 @@
+{
+  "scope": "SINGLE_FRESH_FROZEN_VENDOR_CONSTRUCTION_PROFILE_NOT_ACCEPTANCE",
+  "profiled_elapsed_seconds": 54.333898,
+  "records": 10014,
+  "protected_queries": 15309,
+  "top_cumulative": [
+    {
+      "module": "current_negative_library.py",
+      "line": 396,
+      "function": "reconstruct_vendor_snapshot",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.037985,
+      "cumulative_seconds": 54.332954
+    },
+    {
+      "module": "current_negative_library.py",
+      "line": 246,
+      "function": "reconstruct_reviewed_baseline",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.001361,
+      "cumulative_seconds": 44.869549
+    },
+    {
+      "module": "current_negative_library.py",
+      "line": 170,
+      "function": "reconstruct_registered",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.018559,
+      "cumulative_seconds": 38.175973
+    },
+    {
+      "module": "negative_library.py",
+      "line": 149,
+      "function": "reconstruct_current",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.007973,
+      "cumulative_seconds": 32.052403
+    },
+    {
+      "module": "negative_library.py",
+      "line": 137,
+      "function": "current_state",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.00471,
+      "cumulative_seconds": 29.959997
+    },
+    {
+      "module": "negative_library.py",
+      "line": 113,
+      "function": "verified_history",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.02675,
+      "cumulative_seconds": 24.092564
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 375,
+      "function": "audit",
+      "primitive_calls": 14,
+      "total_calls": 14,
+      "self_seconds": 10.299453,
+      "cumulative_seconds": 23.200948
+    },
+    {
+      "module": "negative_library.py",
+      "line": 81,
+      "function": "reconstruct",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.043403,
+      "cumulative_seconds": 20.561641
+    },
+    {
+      "module": "negative_admission.py",
+      "line": 48,
+      "function": "canonical",
+      "primitive_calls": 587700,
+      "total_calls": 587700,
+      "self_seconds": 0.852695,
+      "cumulative_seconds": 9.87308
+    },
+    {
+      "module": "negative_library.py",
+      "line": 66,
+      "function": "compose",
+      "primitive_calls": 10,
+      "total_calls": 10,
+      "self_seconds": 0.055221,
+      "cumulative_seconds": 9.243093
+    },
+    {
+      "module": "negative_library.py",
+      "line": 53,
+      "function": "merge_unique",
+      "primitive_calls": 40,
+      "total_calls": 40,
+      "self_seconds": 0.562101,
+      "cumulative_seconds": 8.72249
+    },
+    {
+      "module": "negative_reviewed_cohort.py",
+      "line": 227,
+      "function": "_verify_reconstructed",
+      "primitive_calls": 7,
+      "total_calls": 7,
+      "self_seconds": 0.025852,
+      "cumulative_seconds": 7.960992
+    },
+    {
+      "module": "negative_admission.py",
+      "line": 53,
+      "function": "pinned",
+      "primitive_calls": 212,
+      "total_calls": 212,
+      "self_seconds": 2.570202,
+      "cumulative_seconds": 7.690926
+    },
+    {
+      "module": "negative_reviewed_cohort.py",
+      "line": 120,
+      "function": "reconstruct",
+      "primitive_calls": 7,
+      "total_calls": 7,
+      "self_seconds": 0.597706,
+      "cumulative_seconds": 7.563769
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 46,
+      "function": "parse_json_bytes",
+      "primitive_calls": 245,
+      "total_calls": 245,
+      "self_seconds": 0.039077,
+      "cumulative_seconds": 5.960205
+    },
+    {
+      "module": "current_negative_library.py",
+      "line": 281,
+      "function": "extend_reviewed_base",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.013372,
+      "cumulative_seconds": 5.866125
+    },
+    {
+      "module": "negative_library.py",
+      "line": 23,
+      "function": "latest_protection",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.019418,
+      "cumulative_seconds": 5.788016
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 65,
+      "function": "tokens",
+      "primitive_calls": 535023,
+      "total_calls": 535023,
+      "self_seconds": 0.613775,
+      "cumulative_seconds": 5.076354
+    }
+  ],
+  "lexical_functions": [
+    {
+      "module": "keyword_audit.py",
+      "line": 375,
+      "function": "audit",
+      "primitive_calls": 14,
+      "total_calls": 14,
+      "self_seconds": 10.299453,
+      "cumulative_seconds": 23.200948
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 65,
+      "function": "tokens",
+      "primitive_calls": 535023,
+      "total_calls": 535023,
+      "self_seconds": 0.613775,
+      "cumulative_seconds": 5.076354
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 86,
+      "function": "negative_matches",
+      "primitive_calls": 2226,
+      "total_calls": 2226,
+      "self_seconds": 0.003839,
+      "cumulative_seconds": 0.016425
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 55,
+      "function": "normalize",
+      "primitive_calls": 690266,
+      "total_calls": 690266,
+      "self_seconds": 2.124367,
+      "cumulative_seconds": 2.124367
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 70,
+      "function": "_cached_lexical_form",
+      "primitive_calls": 524,
+      "total_calls": 524,
+      "self_seconds": 0.00107,
+      "cumulative_seconds": 0.00607
+    },
+    {
+      "module": "keyword_audit.py",
+      "line": 76,
+      "function": "_lexical_form",
+      "primitive_calls": 4452,
+      "total_calls": 4452,
+      "self_seconds": 0.006515,
+      "cumulative_seconds": 0.012586
+    }
+  ],
+  "profiling_overhead_uncontrolled": true,
+  "production_changed": false,
+  "advertising_changed": false
+}

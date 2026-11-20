@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "scope": "PROVISIONAL_UNSCOPED_LEXICAL_SCREEN",
+  "basis": "CONSERVATIVE_LEXICAL_ONLY_NOT_PLATFORM_MATCHING",
+  "additional_queries": 0,
+  "protected_queries": 30,
+  "exact_negative_tests": [],
+  "unsafe_generic_tests": [
+    {
+      "attempted_generic": "mortgage",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "buy property dubai with mortgage",
+        "mortgage pre approval dubai",
+        "mortgage registration dubai",
+        "mortgage registration in dubai"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "registration",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "mortgage registration dubai",
+        "mortgage registration in dubai",
+        "property registration fees dubai"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "fees",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "property registration fees dubai",
+        "property transfer fees dubai"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "price",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "2 bhk flat price in dubai",
+        "average house price dubai",
+        "buy a house in dubai price",
+        "dubai home price",
+        "dubai house for sale low price",
+        "dubai house sale price",
+        "dubai houses for sale price",
+        "dubai mansion price",
+        "dubai palm house price",
+        "dubai villa price in indian rupees",
+        "palm jumeirah house price",
+        "palm jumeirah house price in inr",
+        "price of a house in dubai",
+        "price of home in dubai"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "low price",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "dubai house for sale low price"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "down payment",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "buy apartment in dubai without down payment"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "indian rupees",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "dubai villa price in indian rupees"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    },
+    {
+      "attempted_generic": "inr",
+      "hypothetical_match_type": "BROAD",
+      "protected_queries_tested": 30,
+      "lexical_conflicts": [
+        "palm jumeirah house price in inr"
+      ],
+      "legitimate_exclusion": false,
+      "scope_approved": false
+    }
+  ],
+  "exact_conflict_count": 0,
+  "positive_library_coverage_verified": false,
+  "scope_verified": false,
+  "deployment_authorized": false,
+  "master_additions": 0
+}

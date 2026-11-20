@@ -1,0 +1,60 @@
+    /** Bound the whole physical control-id domain under the parent's read-only snapshot. */
+    public function observeBorrowedControlInventory(): array {
+        $this->guard();
+        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$this->db->custodyIsActive())Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');
+        $this->historyBorrowed=true;$this->transaction=true;
+        try{
+            $this->lease();$this->schema();
+            $rows=$this->rows("SELECT id FROM {$this->table} ORDER BY BINARY id LIMIT 257",257);
+            $count=Guard::uint($this->scalar("SELECT COUNT(*) FROM {$this->table}"));
+            if($count>256||count($rows)!==$count)Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');
+            $ids=[];$seen=[];
+            foreach($rows as $row){
+                if(array_keys($row)!==['id']||!is_string($row['id'])||preg_match('/^[a-f0-9]{2}$/D',$row['id'])!==1||isset($seen[$row['id']]))Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');
+                $seen[$row['id']]=true;$ids[]=$row['id'];
+            }
+            $sorted=$ids;sort($sorted,SORT_STRING);if($ids!==$sorted)Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');
+            $this->lease();return$ids;
+        }finally{$this->historyBorrowed=false;$this->transaction=false;}
+    }
+    /** Read-only borrow only: never GET_LOCK, RELEASE_LOCK, begin/endCustody or a callback. */
+    public function observeBorrowedHistory(): array {
+        $this->guard();
+        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$this->db->custodyIsActive())Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');
+        $id=$this->db->custodyConnectionId();
+        if($id===null||$this->scalar('SELECT CONNECTION_ID()')!==$id||
+            $this->scalar($this->db->prepare('SELECT IS_USED_LOCK(%s)',$this->lock))!==$id||
+            $this->scalar('SELECT @@session.in_transaction')!=='1'||$this->scalar('SELECT @@session.tx_read_only')!=='1'||
+            $this->scalar('SELECT @@session.tx_isolation')!=='REPEATABLE-READ')Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');
+        $this->historyBorrowed=true;$this->transaction=true;
+        try {
+            $this->schema();$row=$this->raw(false);$proof=null;
+            if($row===null){
+                $claims=$this->proofs->request('preference-anchor','CURRENT',[],$proof);Guard::keys($claims,['anchor']);
+                if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);
+                if($claims['anchor']!==Custody::zero())Guard::fail('G39_PREFERENCE_ABSENT_ANCHOR_CONFLICT');
+                $anchor=$claims['anchor'];$observation='ZERO_ANCHOR_AND_PHYSICAL_ABSENCE';$body=null;$floor=0;
+            }else{
+                // Preserve the existing schema/READY/audit/crypto/algebra/current-anchor checks.
+                $current=$this->current(false);
+                $claims=$this->proofs->request('preference-anchor','CURRENT',[],$proof);Guard::keys($claims,['anchor']);
+                if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);
+                if($claims['anchor']!==$current['anchor']||$row['after']!==$current['anchor'])Guard::fail('PREFERENCE_INDEPENDENT_ANCHOR_MISMATCH');
+                $anchor=$current['anchor'];$observation='ANCHORED_LEDGER';$body=$row['body_hash'];$floor=$current['ledger']['floor']['generation'];
+            }
+            $this->lease();
+            return ['partition'=>$this->policy->partition,'scope'=>$this->policy->scope(),'observation'=>$observation,
+                'anchor'=>$anchor,'body_sha256'=>$body,'floor_generation'=>$floor,'proofs'=>[$proof]];
+        }finally{$this->historyBorrowed=false;$this->transaction=false;}
+    }
+    /** A final current-anchor challenge detects changes observed during the bounded aggregate read. */
+    public function recheckBorrowedHistory(array $expected): array {
+        $this->guard();
+        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$this->db->custodyIsActive())Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');
+        $this->historyBorrowed=true;$this->transaction=true;
+        try{
+            $this->lease();$proof=null;$claims=$this->proofs->request('preference-anchor','CURRENT',[],$proof);Guard::keys($claims,['anchor']);
+            if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);
+            if($claims['anchor']!==$expected)Guard::fail('G39_PREFERENCE_ANCHOR_CHANGED');$this->lease();return $proof;
+        }finally{$this->historyBorrowed=false;$this->transaction=false;}
+    }

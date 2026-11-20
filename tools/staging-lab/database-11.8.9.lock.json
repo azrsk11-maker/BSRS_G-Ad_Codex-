@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "repository": "https://archive.mariadb.org/mariadb-11.8.9/repo/debian/",
+  "fingerprint": "177F4010FE56CA3336300305F1656F24C74CD1D8",
+  "metadata": {
+    "key": {
+      "url": "https://mariadb.org/mariadb_release_signing_key.pgp",
+      "sha256": "00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    },
+    "release": {
+      "url": "https://archive.mariadb.org/mariadb-11.8.9/repo/debian/dists/bookworm/Release",
+      "sha256": "1ae015d5a1442636989e5a78c1234e6d9b8b6cdea3954ada874bcf00daea5e0d"
+    },
+    "signature": {
+      "url": "https://archive.mariadb.org/mariadb-11.8.9/repo/debian/dists/bookworm/Release.gpg",
+      "sha256": "e8d6ae2d64d4974cdf4cc89c9f614a6b658b961dfddfbd129859635eeb494734"
+    },
+    "index": {
+      "url": "https://archive.mariadb.org/mariadb-11.8.9/repo/debian/dists/bookworm/main/binary-amd64/Packages.gz",
+      "sha256": "59637f8361ed361cd2311b900db9feb25130547807d3d74ad7d7c516d1daf6a4"
+    }
+  },
+  "packages": [
+    {
+      "Package": "galera-4",
+      "Version": "26.4.27-deb12",
+      "Architecture": "amd64",
+      "Depends": "libc6 (>= 2.34), libgcc-s1 (>= 3.0), libssl3 (>= 3.0.0), libstdc++6 (>= 11)",
+      "Filename": "pool/main/g/galera-4/galera-4_26.4.27-deb12_amd64.deb",
+      "Size": "11862156",
+      "SHA256": "91794d151f995e680926225816406cc7bb694cef72fc1e1218071a34bca4e4ba"
+    },
+    {
+      "Package": "libmariadb3",
+      "Version": "1:11.8.9+maria~deb12",
+      "Architecture": "amd64",
+      "Depends": "mariadb-common, libc6 (>= 2.34), libssl3 (>= 3.0.0), zlib1g (>= 1:1.1.4)",
+      "Filename": "pool/main/m/mariadb/libmariadb3_11.8.9+maria~deb12_amd64.deb",
+      "Size": "156812",
+      "SHA256": "58ad80ddb35e4dc4310668180cfd16e3b93002c2e8c1731766feb0e538123cf8"
+    },
+    {
+      "Package": "mariadb-client",
+      "Version": "1:11.8.9+maria~deb12",
+      "Architecture": "amd64",
+      "Depends": "debianutils (>= 1.6), libconfig-inifiles-perl, mariadb-client-core (>= 1:11.8.9+maria~deb12), mariadb-common, perl:any, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libpcre2-posix3 (>= 10.34), libssl3 (>= 3.0.0), libstdc++6 (>= 12), zlib1g (>= 1:1.2.0)",
+      "Filename": "pool/main/m/mariadb/mariadb-client_11.8.9+maria~deb12_amd64.deb",
+      "Size": "3017944",
+      "SHA256": "d73db1f7ad4b9384b7b33266c093eb46ad4df9735628c1bba5879d47bc1e2759"
+    },
+    {
+      "Package": "mariadb-client-core",
+      "Version": "1:11.8.9+maria~deb12",
+      "Architecture": "amd64",
+      "Depends": "libmariadb3 (>= 10.5.4), mariadb-common (>= 1:11.8.9+maria~deb12), libc6 (>= 2.34), libedit2 (>= 2.11-20080614-0), libgcc-s1 (>= 3.0), libncurses6 (>= 6), libssl3 (>= 3.0.0), libstdc++6 (>= 4.1.1), libtinfo6 (>= 6), zlib1g (>= 1:1.1.4)",
+      "Filename": "pool/main/m/mariadb/mariadb-client-core_11.8.9+maria~deb12_amd64.deb",
+      "Size": "940392",
+      "SHA256": "6dfa24c1253de19813ab2029704afc0624389de4bcc0ffc8923f0a79f988459e"
+    },
+    {
+      "Package": "mariadb-common",
+      "Version": "1:11.8.9+maria~deb12",
+      "Architecture": "all",
+      "Depends": "mysql-common (>= 5.6.25)",
+      "Filename": "pool/main/m/mariadb/mariadb-common_11.8.9+maria~deb12_all.deb",
+      "Size": "4184",
+      "SHA256": "8e305390bfb1ef546e4a87eebccc43e7ad87e972cf15e37384d0b7baeddc29ad"
+    },
+    {
+      "Package": "mariadb-server",
+      "Version": "1:11.8.9+maria~deb12",
+      "Architecture": "amd64",
+      "Depends": "galera-4 (>= 26.4), gawk, iproute2, libdbi-perl, lsof, mariadb-client (>= 1:11.8.9+maria~deb12), mariadb-server-core (>= 1:11.8.9+maria~deb12), passwd, perl (>= 5.6), procps, psmisc, rsync, socat, debconf (>= 0.5) | debconf-2.0, perl:any, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libpam0g (>= 0.99.7.1), libssl3 (>= 3.0.0), libstdc++6 (>= 11), zlib1g (>= 1:1.1.4)",
+      "Filename": "pool/main/m/mariadb/mariadb-server_11.8.9+maria~deb12_amd64.deb",
+      "Size": "3520028",
+      "SHA256": "398b668fc32032d7125bee9c22c3dece37278df1233c5ec02db5c1808fd3ee7b"
+    },
+    {
+      "Package": "mariadb-server-core",
+      "Version": "1:11.8.9+maria~deb12",
+      "Architecture": "amd64",
+      "Depends": "mariadb-common (>= 1:11.8.9+maria~deb12), libaio1 (>= 0.3.93), libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libgcc-s1 (>= 3.0), libpcre2-8-0 (>= 10.22), libssl3 (>= 3.0.0), libstdc++6 (>= 12), libsystemd0 (>= 227), liburing2 (>= 2.3), zlib1g (>= 1:1.2.0)",
+      "Filename": "pool/main/m/mariadb/mariadb-server-core_11.8.9+maria~deb12_amd64.deb",
+      "Size": "7496620",
+      "SHA256": "4cb2b6829a5731a01ed92d571a3fff353529c6ae7e71e88e32cdfbab7bd1540c"
+    }
+  ]
+}

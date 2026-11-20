@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "status": "READ_ONLY_OBSERVATION_NOT_RELEASE_ACCEPTANCE",
+  "observed_date_utc": "2026-11-07",
+  "observed_at_utc_interval": ["2026-11-07T07:40:21Z", "2026-11-07T07:56:56Z"],
+  "account_id": "573-038-4686",
+  "account_name": "Black Swan Real Estate",
+  "method": "Authenticated account Settings, six V2 Ads in the native table and its configuration-only CSV, and individual Campaign URL options panels. Setting panels were cancelled without saving. Report filters and columns were adjusted for inspection; no live serving configuration changed.",
+  "production_changes": 0,
+  "production_authorized": false,
+  "account_settings": {
+    "source_page": "https://ads.google.com/aw/settings/account",
+    "negative_keywords_summary": "None",
+    "account_negative_gap_result": "NO_ACCOUNT_LEVEL_NEGATIVES_SHOWN_BY_ACCOUNT_SETTINGS",
+    "auto_tagging": {"checkbox": "Tag the URL that people click through from my ad", "checked": true},
+    "tracking_template": "",
+    "final_url_suffix": "",
+    "call_reporting": {"on_selected": true, "off_selected": false},
+    "call_recording": {"on_selected": false, "off_selected": false, "result": "UNRESOLVED_DO_NOT_INFER_DISABLED"},
+    "call_details_forwarding": {"on_selected": false, "off_selected": false, "result": "UNRESOLVED_DO_NOT_INFER_DISABLED"},
+    "call_analytics_provider": {"display": "Select a provider", "control_disabled": true},
+    "limits": "Call reporting being selected is not proof of a connected call, attribution, recording consent, provider support or conversion acceptance. The unchecked recording/forwarding choices were not changed. No call logs, recordings, prospect responses or credentials were accessed."
+  },
+  "ad_export": {
+    "reference": "Ad report (1).csv",
+    "source_page": "https://ads.google.com/aw/ads",
+    "bytes": 7420,
+    "sha256": "3483ed43a0bc4527ea34131fe3410527edcd122a9474f3ed836d2ef9f6852110",
+    "report_date_preamble": "October 31, 2026 - November 6, 2026",
+    "date_limit": "Date-selector metadata only; this is a current configuration readback, not campaign performance or proof that the configuration was unchanged for that entire period.",
+    "filters": ["Ad status: Enabled, Paused", "Campaign name contains BSRE_V2_SEARCH_"],
+    "visible_row_count": 6,
+    "parsed_record_count": 6,
+    "duplicate_headers": {
+      "names": ["Tracking template", "Final URL suffix", "Custom parameter"],
+      "validation": "The Google CSV repeats these column names. Independent review compared both occurrences for every retained ad and confirmed identical values before accepting the single-value projection; a generic dictionary parse alone is insufficient."
+    },
+    "retention": "Original downloaded CSV remains outside the public repository. Only configuration metadata is projected here; headline/description copy is separately represented by asset-audit-2026-11-07/capture.json."
+  },
+  "common_fields_verified_for_all_six_ads": {
+    "Ad status": "Paused",
+    "Status": "Paused",
+    "Status reasons": "paused; ad group paused; campaign paused",
+    "Ad strength": "Pending",
+    "Ad type": "Responsive search ad",
+    "Policy approval status": "Approved",
+    "Policy details": "",
+    "Auto-applied ad suggestion": "No",
+    "Mobile final URL": "",
+    "Tracking template": " --",
+    "Final URL suffix": " --",
+    "Custom parameter": "",
+    "export_placeholder_note": "Empty strings and the literal space-plus-double-dash placeholders are preserved. The UI Policy details column displays Approved; the CSV stores that result under Policy approval status, while Policy details is empty. Ad strength Pending is a separate field."
+  },
+  "ads_in_export_order": [
+    {"source_record": 1, "Campaign ID": "24367388382", "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN", "Ad group ID": "204397706554", "Ad group": "Dubai Landlords", "Ad ID": "828621612904", "Final URL": "https://blackswanrealestate.ae/enquire/let/"},
+    {"source_record": 2, "Campaign ID": "24372566774", "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN", "Ad group ID": "204397706154", "Ad group": "Dubai Off-Plan Buyers", "Ad ID": "828621612892", "Final URL": "https://blackswanrealestate.ae/enquire/off-plan/"},
+    {"source_record": 3, "Campaign ID": "24372566774", "Campaign": "BSRE_V2_SEARCH_BUYERS_UAE_EN", "Ad group ID": "204397706314", "Ad group": "Dubai Resale Buyers", "Ad ID": "828621612895", "Final URL": "https://blackswanrealestate.ae/enquire/resale/"},
+    {"source_record": 4, "Campaign ID": "24378494092", "Campaign": "BSRE_V2_SEARCH_TENANTS_UAE_EN", "Ad group ID": "204397706354", "Ad group": "Dubai Immediate Rentals", "Ad ID": "828621612898", "Final URL": "https://blackswanrealestate.ae/enquire/rent/"},
+    {"source_record": 5, "Campaign ID": "24367388382", "Campaign": "BSRE_V2_SEARCH_OWNERS_UAE_EN", "Ad group ID": "204397706394", "Ad group": "Dubai Sellers", "Ad ID": "828621612901", "Final URL": "https://blackswanrealestate.ae/enquire/sell/"},
+    {"source_record": 6, "Campaign ID": "24378494098", "Campaign": "BSRE_V2_SEARCH_BRAND_UAE_EN", "Ad group ID": "204397706114", "Ad group": "Black Swan Brand", "Ad ID": "828621612889", "Final URL": "https://blackswanrealestate.ae/enquire/"}
+  ],
+  "campaign_url_options": {
+    "campaign_ids_verified_individually": ["24372566774", "24367388382", "24378494092", "24378494098"],
+    "tracking_template": "",
+    "final_url_suffix": "",
+    "first_custom_parameter_name": "",
+    "first_custom_parameter_value": "",
+    "additional_custom_parameter_rows_observed": 0,
+    "method": "Read the visible text-field values in each Campaign URL options panel; cancelled without saving."
+  },
+  "ad_group_url_overrides": {
+    "status": "NO_V2_OVERRIDE_VALUE_SHOWN_IN_EXPORTED_FIELDS",
+    "reference": "Ad group report.csv",
+    "bytes": 6887,
+    "sha256": "900f5842e224360101dea8887d783051ec94a593e651679cb096015d54402714",
+    "report_date_preamble": "October 31, 2026 - November 6, 2026",
+    "source_rows": 39,
+    "v2_rows": 6,
+    "view_scope": "All campaigns; removed the pre-existing ad-group-name report filter before export. No ad group was edited.",
+    "ad_group_ids_in_export_order": ["204397706154", "204397706554", "204397706314", "204397706394", "204397706354", "204397706114"],
+    "identity_join": "Each ID joins uniquely to the campaign/ad-group identity in ads_in_export_order above.",
+    "common_exported_fields_for_six_v2_groups": {
+      "Ad group status": "Paused",
+      "Status": "Paused",
+      "Status reasons": "ad group paused; campaign paused; unknown",
+      "Ad group type": "Standard",
+      "Final URL suffix": " --",
+      "Tracking template": " --",
+      "Custom parameter": "",
+      "Active bid adj": " --",
+      "Ad rotation": " --",
+      "Brand Inclusions": "[]",
+      "Locations of interest": "[]"
+    },
+    "limits": "Literal placeholders and the unknown status-reason token are preserved. They are not converted into invented settings, explanations or numeric zeroes. This export does not inspect keyword-level overrides, effective redirect chains or measurement payloads. The 33 other groups remain outside this public projection."
+  },
+  "interpretation": [
+    "All six current V2 ads have observed platform policy approval, not merely Brand. Policy approval does not establish inventory truth, business sign-off, data permission, website readiness or release authorization.",
+    "Four campaigns currently use six existing destinations. This preserves the prior five-funnel-plus-hub configuration; it does not resolve the new dedicated-entry architecture or initial cohort decision in issue #1.",
+    "Auto-tagging is enabled and account/campaign/ad-group/ad-level URL observations are recorded. These do not prove end-to-end GCLID capture, permission, campaign/page/CTA attribution, redirects, receiver delivery, deduplication or an eligible genuine conversion.",
+    "No phone, WhatsApp, booking, qualification, transaction or collected-commission outcome was manufactured or submitted."
+  ],
+  "remaining_limits": [
+    "Live campaign language remains unresolved.",
+    "Keyword-level URL overrides and current effective redirects require separate evidence; the recorded account/campaign/ad-group/ad fields alone do not prove every URL parameter is absent.",
+    "Manager/external writers remain outside this account-surface audit.",
+    "Paused account assets, including legacy sitelinks and hosted lead form, must not be enabled by implication. Provider ownership, approved routing, content rights and runtime acceptance remain open.",
+    "All owner decisions, independent PR review and separate production release authorization still apply."
+  ]
+}

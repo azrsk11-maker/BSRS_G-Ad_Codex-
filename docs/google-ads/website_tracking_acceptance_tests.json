@@ -1,0 +1,263 @@
+{
+  "version": "3.0",
+  "scope": "LIVE_TEST_DESIGN_ONLY",
+  "execution_status": "NOT_EXECUTED",
+  "tests": [
+    {
+      "test_id": "WT-001",
+      "name": "main_site_identity",
+      "acceptance": "Verify company, main domain and selected Hostinger site",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-002",
+      "name": "native_page_ownership",
+      "acceptance": "Every page has a main-site CMS record or native application route",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-003",
+      "name": "stack_capability",
+      "acceptance": "CMS supports page volume, paths, noindex and success instrumentation",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-004",
+      "name": "backup_rollback",
+      "acceptance": "Supported export/backup and rollback verified",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-005",
+      "name": "unlisted",
+      "acceptance": "Campaign routes excluded from menus, directories, search and sitemap",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-006",
+      "name": "page_noindex",
+      "acceptance": "Campaign-page noindex present, public website indexing not disabled",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-007",
+      "name": "crawler_access",
+      "acceptance": "Noindex and ad review remain crawlable",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-008",
+      "name": "direct_access",
+      "acceptance": "Page opens without ad tokens, login or special referrer",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-009",
+      "name": "tag_ownership",
+      "acceptance": "Actual company GTM/GA4/Ads identifiers read from authorized accounts",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-010",
+      "name": "tag_duplicates",
+      "acceptance": "CMS/theme/plugin/builder/GTM do not install duplicate destination tags",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-011",
+      "name": "normal_page_views",
+      "acceptance": "One page view per actual navigation",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-012",
+      "name": "cta_identity",
+      "acceptance": "Every configured CTA has stable ID, placement and correct destination",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-013",
+      "name": "specialized_clicks",
+      "acceptance": "Call/WhatsApp/email clicks are diagnostic and not double-counted",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-014",
+      "name": "form_acceptance",
+      "acceptance": "Only server-confirmed durable enquiry produces the lead event",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-015",
+      "name": "form_validation",
+      "acceptance": "Invalid/rejected submissions do not produce accepted-lead conversions",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-016",
+      "name": "deduplication",
+      "acceptance": "Double-click, reload, retry and multiple transports do not duplicate conversions",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-017",
+      "name": "main_site_continuation",
+      "acceptance": "Campaign page to public page to enquiry preserves permitted acquisition context",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-018",
+      "name": "redirect_attribution",
+      "acceptance": "Relevant click parameters survive actual redirect chain",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-019",
+      "name": "missing_attribution",
+      "acceptance": "No click ID or unknown source still permits a valid enquiry",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-020",
+      "name": "consent_granted",
+      "acceptance": "Approved event behavior after granted consent",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-021",
+      "name": "consent_denied",
+      "acceptance": "Tags obey denied consent and enquiry remains functional",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-022",
+      "name": "consent_withdrawn",
+      "acceptance": "Future collection responds correctly to consent withdrawal",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-023",
+      "name": "pii_exclusion",
+      "acceptance": "No personal contact details or free text in analytics payloads/URLs",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-024",
+      "name": "email_delivery",
+      "acceptance": "Accepted enquiry and attribution reach approved inbox once logically",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-025",
+      "name": "sheet_delivery",
+      "acceptance": "Same lead ID and attribution reach approved Sheet without duplicate rows",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-026",
+      "name": "outage_recovery",
+      "acceptance": "Delivery failure retries with visible exception and no lost lead",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-027",
+      "name": "phone_message_evidence",
+      "acceptance": "Actual call/message outcomes only claimed from supported evidence",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-028",
+      "name": "mobile_navigation",
+      "acceptance": "Mobile CTA, form, consent and main-site navigation work",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-029",
+      "name": "staging_isolation",
+      "acceptance": "Synthetic tests do not train production bidding or inflate revenue",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-030",
+      "name": "existing_pages",
+      "acceptance": "Public main-site forms and existing tracking journeys still work",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-031",
+      "name": "native_release_evidence",
+      "acceptance": "Published URLs, native IDs, tag version and reviewer evidence recorded",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    },
+    {
+      "test_id": "WT-032",
+      "name": "rollback_readback",
+      "acceptance": "Authorized deployment can be read back and safely rolled back",
+      "status": "NOT_EXECUTED",
+      "evidence_ref": null,
+      "reviewer": null
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "Owner-supplied historical validation code reused for local read-only audit",
+  "sources": [
+    {
+      "original_relative_path": "work/v2-implementation/outcomes/qualification_tools.py",
+      "original_sha256": "61c7e4b53ba3c93b20b9c5a636ae8a3ccfdb5637768e9aa33b2a17ac6c6fc693",
+      "derived_relative_path": "qualification_core.py",
+      "derived_sha256": "ff1bf64d1f76e9ce8c209feac98ea182b81f57693d618a78529416f88a261ded",
+      "derivation": "Remove write/export CLI and unused CLI imports; retain _inspect business core; expose reporting-only wrapper with optional existing source review."
+    },
+    {
+      "original_relative_path": "work/v2-implementation/outcomes/qualification_sources.py",
+      "original_sha256": "678d50f2b622d8bb16a5a3d10f03ce419d0558d8790d893b4b275bdca248fbcd",
+      "derived_relative_path": "qualification_sources.py",
+      "derived_sha256": "678d50f2b622d8bb16a5a3d10f03ce419d0558d8790d893b4b275bdca248fbcd",
+      "derivation": "Byte-for-byte preserved source."
+    },
+    {
+      "original_relative_path": "work/v2-implementation/outcomes/schema/outcome-register-schema.json",
+      "original_sha256": "bf477cc0cc4a161775abd702777898c6046d5dfcf0f2ae0e86fe078a3a63d9df",
+      "derived_relative_path": "schema/outcome-register-schema.json",
+      "derived_sha256": "bf477cc0cc4a161775abd702777898c6046d5dfcf0f2ae0e86fe078a3a63d9df",
+      "derivation": "Byte-for-byte preserved source."
+    }
+  ],
+  "private_native_producer_copied": false,
+  "network_or_upload_entrypoint": false
+}

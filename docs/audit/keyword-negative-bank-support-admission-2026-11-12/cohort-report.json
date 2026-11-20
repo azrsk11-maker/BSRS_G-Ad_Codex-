@@ -1,0 +1,36 @@
+{
+  "scope": "AI_REVIEWED_BANK_CUSTOMER_HELP_RESEARCH_NOT_SEARCH_DEMAND",
+  "full_source_groups": 3481,
+  "cohort_groups": 690,
+  "semantic_proposed_groups": 487,
+  "semantic_hold_groups": 203,
+  "selected_groups": 361,
+  "held_groups": 329,
+  "previous_credential_cohort": 803,
+  "outside_both_semantic_cohorts": 1988,
+  "all_source_groups_compared": 3481,
+  "external_key_comparisons": 13924,
+  "within_source_key_comparisons": 13924,
+  "cohort_external_key_comparisons": 2760,
+  "cohort_within_source_key_comparisons": 2760,
+  "additional_variant_holds": 126,
+  "additional_protected_queries": 329,
+  "existing_held_protection_occurrences": 0,
+  "text_compatibility_classifications": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 690
+  },
+  "independent_review_claimed": false,
+  "source_pins": {
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/bank-access-navigation.json": "822129ae18676ee62700c0726dcc11179c1bb7293636f031d7f3908e6fc879ea",
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/capture.json": "a3d6fe2f1c2caa5c905651d4f8955a338118a6380d5a7e6251b17c82767f3c99",
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-a.json": "89df3708b481a29d8c0d94ba068e99046e7f388ce2780cbc8e49af7d66dbbe6a",
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-b.json": "4f8489d14c2b0233ce8db8c920a886eabc57baead6161d99864547bfab45fecb",
+    "docs/audit/keyword-bank-support-review-2026-11-12/review.json": "cc3a3d36d564bb577cc1b8b2015e3600e5d8daaecd2fa3b30a80246f7ffca89d"
+  },
+  "record_bodies_sha256": "628c4b888bf739cbace69b9c50979369a08348d24f8a0c0343d4167594ac08e3",
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}

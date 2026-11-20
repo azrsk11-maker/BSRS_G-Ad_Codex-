@@ -1,0 +1,97 @@
+{
+  "scope": "FOCUSED_OWNER_RESEARCH_DEVELOPMENT_NOT_RELEASE",
+  "passed": true,
+  "tests_run": 16,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "measured_seconds": 4.034097,
+  "source_occurrences": 147,
+  "all_public_cells": 3087,
+  "diagnostic_trial": {
+    "accepted": false,
+    "state": "INTERRUPTED_TEST_PROCESS_CONFIRMED_EXIT_1",
+    "observed_running_lower_bound_seconds": 10.0095326,
+    "complete_duration_unavailable": true,
+    "cause": "The comparison oracle recomputed lexical transforms for every external form, row and method.",
+    "correction": "Compute keys once per complete input within this test invocation; retain every pairwise comparison.",
+    "lexical_transform_calls_before": 2901045,
+    "lexical_transform_calls_after": 3947,
+    "not_a_measured_equal_work_speedup": true
+  },
+  "authority": {
+    "positive_admissions_added": 0,
+    "negative_proposals_added": 0,
+    "independent_approvals_added": 0,
+    "deployments_added": 0,
+    "production_changed": false
+  },
+  "source_capture": {
+    "capture": {
+      "passed": true,
+      "scope": "PRIVATE_RAW_EQUIVALENCE",
+      "raw_batches_verified": [
+        "owner-services"
+      ],
+      "export_rows": 147,
+      "distinct_phrases": 147,
+      "reviewed_positive": 0,
+      "reviewed_negative": 0,
+      "approved_positive": 0,
+      "approved_negative": 0,
+      "deployed": 0,
+      "deployment_authorized": false,
+      "source_date_header": "November 1, 2025 - October 31, 2026",
+      "source_bytes": 24210,
+      "source_sha256": "c0ccc1d5ef196db4ed2f466a564f441c20270a0f95650e8c1545b5bbb8b94c0d",
+      "public_columns": 21,
+      "excluded_account_specific_columns": 5,
+      "dependency_pins_verified": 3,
+      "exact_seed_rows": 10,
+      "all_source_occurrences_retained": true,
+      "semantic_review_complete": false,
+      "current_library_membership_verified": false
+    },
+    "tamper_diagnostic": {
+      "passed": true,
+      "in_memory_mutations_rejected": 12,
+      "checks": [
+        "NUMERIC_PUBLIC_CELL",
+        "DROPPED_SOURCE_OCCURRENCE",
+        "SOURCE_LINE_DRIFT",
+        "ACCOUNT_SPECIFIC_CELL_REINTRODUCED",
+        "AUTHORITY_FLIP",
+        "BOOLEAN_REPLACED_BY_NUMBER",
+        "SEED_CHANGED",
+        "PERIOD_DRIFT",
+        "SOURCE_HASH_DRIFT",
+        "UI_COUNT_DERIVED_OR_CHANGED",
+        "SOURCE_ORDER_REVERSED",
+        "ALTERED_METRIC_STRING_PIN"
+      ],
+      "scope": "PUBLIC_SOURCE_DIAGNOSTIC_NOT_SEMANTIC_REVIEW_OR_ADMISSION"
+    },
+    "public_pins": {
+      "owner-services.json": "0c4ed2af3a80d3521267fc9ba683925499d4fcef9c20dea4b279110994317f75",
+      "capture.json": "a3c1a001ef0e3f37591718b7102bd156b94fd0bc43de8821cdf64d5d7184e403"
+    },
+    "verifier_sha256": "0ea8946de36a4c3a1ea0971868fa2e0dbe99f3760527baaac91743171c70a927",
+    "manual_sha256": "5c4e3105ec920634ce5a5436e9d39b7a3cecff2961d83d3423eb7703a1078ee6",
+    "manual_category_counts": {
+      "SELLER_HYPOTHESIS": 4,
+      "LANDLORD_HYPOTHESIS": 4,
+      "BUYER_RESEARCH_OTHER_ROLE": 53,
+      "MANAGEMENT_PRODUCER_HOLD": 17,
+      "SHORT_STAY_PRODUCER_HOLD": 11,
+      "SOFTWARE_OR_TOOL_HOLD": 5,
+      "VALUATION_EVIDENCE_HOLD": 20,
+      "PROVIDER_OR_PORTAL_CONTEXT_HOLD": 21,
+      "AGENCY_OR_LIST_SCOPE_HOLD": 5,
+      "SELLER_BUYER_AMBIGUITY_HOLD": 2,
+      "TENURE_OR_DISTRESS_HOLD": 2,
+      "MAINTENANCE_PRODUCER_HOLD": 2,
+      "DISPUTE_SERVICE_HOLD": 1
+    },
+    "private_cells_verified": 3087
+  }
+}

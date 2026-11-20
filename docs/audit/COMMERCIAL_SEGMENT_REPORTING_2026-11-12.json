@@ -1,0 +1,91 @@
+{
+  "observed_on_dubai": "2026-11-12",
+  "scope": "OFFLINE_SYNTHETIC_SEGMENT_REPORTING_NOT_FINANCE_OR_PRODUCTION_ACCEPTANCE",
+  "requirement": "Master Plan v3 section 16: separate economics for six acquisition segments",
+  "files_sha256": {
+    "tools/website-tracking/commercial-system/report.mjs": "a237eeaad4aa7858fa00756dec408c79b6068bbe9524b98dde6086c25e83d032",
+    "tools/website-tracking/commercial-system/segments.mjs": "0761213aef3202b32186faec4b64dfc3acf1e9f3e38b4212d8dbb78b547145ae",
+    "tools/website-tracking/commercial-system/segments.test.mjs": "a23fc2a3f7bf17d581bda0caf37116bf78e47f9bacac4079aef2d1d6f39f32e9",
+    "tools/website-tracking/commercial-system/README.md": "bb0276e8b875b7911dba100dc2157eac21dd4280268b35ec72674d6e96edb0ee"
+  },
+  "implemented": {
+    "optional_entrypoints": [
+      "commercialReportBySegment",
+      "commercialReportFromHistoryBySegment"
+    ],
+    "segments": [
+      "residential_purchase",
+      "offplan",
+      "residential_rental",
+      "commercial_purchase",
+      "commercial_lease",
+      "owner_mandate_acquisition"
+    ],
+    "base_row_schemas_totals_deduplication_and_rounding_preserved": true,
+    "classification": "Explicit private export; canonical JSON hashes bind the entire finance input and classification document, finance source, policy approval and report window.",
+    "approval": "Separate explicit classification approval reference and document hash; caller assertions are not independent authentication.",
+    "freshness": "Explicit UTC evaluation clock, inclusive review and exclusive expiry, retaining supported microsecond precision.",
+    "reconciliation": "Six segment groups and source-class/original-attribution breakdowns reconcile to original base rows; existing integer allocation and rounding are reused.",
+    "fail_held": [
+      "missing classification",
+      "unknown or conflicting classification",
+      "missing evidence reference",
+      "unapproved or changed classification hash",
+      "stale or future review",
+      "finance input/source/policy/window mismatch",
+      "incomplete entity coverage",
+      "mixed or unreviewed coarse qualification bucket"
+    ],
+    "mapping": "No invented campaign-to-segment or native-to-planning campaign crosswalk; ADS_UNMAPPED original-attribution ratios remain null.",
+    "privacy": "Aggregate output excludes classification join identifiers and raw evidence. No network, Google upload or production-write path added."
+  },
+  "verification": {
+    "provenance": "Execution-lead-reported completed tool results retained in the execution record; this documentation pass did not reread raw test receipts or rerun tests. Current file hashes are recorded above for review.",
+    "node": {
+      "command": "node --test tools/website-tracking/commercial-system/report.test.mjs tools/website-tracking/commercial-system/segments.test.mjs",
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0,
+      "tap_seconds": 2.0160908,
+      "wall_seconds": 2.9861083
+    },
+    "existing_python_commercial_history_integration": {
+      "passed": 15,
+      "seconds": 10.143,
+      "terminal_exit_code": 0,
+      "scope": "Existing real pinned Python history-audit integration using temporary synthetic records; not company transaction data."
+    },
+    "independent_static_review": "No blocker found; confirmed ADS_UNMAPPED ratio correction and its regression coverage. Reviewer did not rerun unchanged tests or read actual finance data.",
+    "full_foundation_rerun_for_this_change": false,
+    "current_head_github_ci_acceptance": false,
+    "native_wordpress_or_live_acceptance": false
+  },
+  "open_gates": {
+    "finance_issue": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3",
+    "finance_issue_status": "OPEN",
+    "required": [
+      "Owner/Finance approval of actual accounting treatment and allocation definitions",
+      "Genuine private finance records and supported complete source history",
+      "Evidence-backed entity classifications and protected approval custody",
+      "Approved segment economics and cash-risk authority",
+      "Separately reviewed finer-grain history integration before splitting mixed coarse buckets"
+    ],
+    "not_implemented_or_inferred": [
+      "Allowable CAC/CPQL policy",
+      "Mature conversion probability estimates",
+      "Automatic budget allocation or Ads changes",
+      "Provider reconciliation",
+      "Genuine conversion import",
+      "Production release authorization"
+    ]
+  },
+  "boundaries": {
+    "actual_financial_records_read_or_changed": false,
+    "production_changes": false,
+    "ads_changes_or_spending": false,
+    "workbook_sharing_changed": false,
+    "zoho_or_crm_sync_added": false,
+    "source_upload_or_pr_acceptance_claimed": false
+  },
+  "full_goal_complete": false
+}

@@ -1,0 +1,183 @@
+{
+  "report": {
+    "schema": "codex-sanitized-metrics-summary-v1",
+    "window": {
+      "since": "2026-11-03T00:00:00+00:00",
+      "until": "2026-11-07T05:21:26.520000+00:00"
+    },
+    "coverage": {
+      "input_files": 1,
+      "snapshot_bytes": 38750178,
+      "logical_bytes_read": 8388609,
+      "prefix_bytes_omitted": 30361570,
+      "window_records": 526,
+      "malformed_json": 0,
+      "oversize_lines_skipped": 0,
+      "partial_final_line_skipped": 0,
+      "partial_initial_line_skipped": 1,
+      "tail_limited_files": 1
+    },
+    "tool_calls": 59,
+    "output_volume": {
+      "paired_calls": 59,
+      "text_characters": 352331,
+      "utf8_bytes": 353076,
+      "calls_over_6000_characters": 17,
+      "calls_over_6000_utf8_bytes": 17,
+      "calls_with_utf8_escapes": 0,
+      "largest_output_utf8_bytes": 58919
+    },
+    "top_five_tools": [
+      {
+        "tool": "mcp__cua_repl.js",
+        "calls": 33,
+        "call_to_output_latency": {
+          "count": 33,
+          "sum_seconds": 98.194,
+          "median_seconds": 0.912,
+          "p95_nearest_rank_seconds": 10.518,
+          "max_seconds": 28.21
+        }
+      },
+      {
+        "tool": "exec",
+        "calls": 13,
+        "call_to_output_latency": {
+          "count": 13,
+          "sum_seconds": 33.123,
+          "median_seconds": 1.876,
+          "p95_nearest_rank_seconds": 7.329,
+          "max_seconds": 7.329
+        }
+      },
+      {
+        "tool": "collaboration.followup_task",
+        "calls": 3,
+        "call_to_output_latency": {
+          "count": 3,
+          "sum_seconds": 0.438,
+          "median_seconds": 0.135,
+          "p95_nearest_rank_seconds": 0.169,
+          "max_seconds": 0.169
+        }
+      },
+      {
+        "tool": "collaboration.send_message",
+        "calls": 3,
+        "call_to_output_latency": {
+          "count": 3,
+          "sum_seconds": 0.444,
+          "median_seconds": 0.121,
+          "p95_nearest_rank_seconds": 0.224,
+          "max_seconds": 0.224
+        }
+      },
+      {
+        "tool": "collaboration.spawn_agent",
+        "calls": 3,
+        "call_to_output_latency": {
+          "count": 3,
+          "sum_seconds": 4.289,
+          "median_seconds": 1.433,
+          "p95_nearest_rank_seconds": 1.528,
+          "max_seconds": 1.528
+        }
+      }
+    ],
+    "shell": {
+      "literal_commands": 12,
+      "unresolved_static_invocations": 0,
+      "single_shell_outer_call_latency_proxy": {
+        "count": 8,
+        "sum_seconds": 16.458,
+        "median_seconds": 1.783,
+        "p95_nearest_rank_seconds": 4.064,
+        "max_seconds": 4.064
+      },
+      "exact_repeat_groups": 0,
+      "extra_exact_repeated_calls": 0
+    },
+    "extra_exact_repeated_tool_payloads": 0,
+    "lexical_marker_calls_not_confirmed_failures": {
+      "nonzero_exit_lexical": 1,
+      "timeout": 3,
+      "stale_or_unattached": 2,
+      "truncation": 1
+    },
+    "usage": {
+      "unique_response_id_records": 68,
+      "reported_per_response_usage_sum": {
+        "input_tokens": 11619619,
+        "cached_input_tokens": 11244800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 18087,
+        "reasoning_output_tokens": 10102,
+        "total_tokens": 11637706
+      },
+      "cached_input_fraction": 0.96774
+    },
+    "limits": [
+      "Concurrent latency sums are not elapsed time or CPU time; shell timing is an outer-call proxy.",
+      "Tail scans omit a prefix: requested time-window completeness is not established. Missing activity is not zero activity. Logical bytes consumed exclude unmeasured buffered/OS read-ahead.",
+      "Output volume uses the last recorded output per paired call; invalid Unicode is counted with backslash escapes and flagged. Required documentation is not automatically waste.",
+      "Repeated arguments and lexical markers are review candidates, not proof of waste or failure.",
+      "Usage is reported per-response evidence, not billing; cumulative snapshots are not added. Use --details for full sanitized evidence."
+    ],
+    "slowest_calls": [
+      {
+        "tool": "mcp__cua_repl.js",
+        "timestamp": "2026-11-07T04:44:04.199000+00:00",
+        "seconds": 28.21,
+        "ref": "7025406e7d50765d",
+        "markers": []
+      },
+      {
+        "tool": "mcp__cua_repl.js",
+        "timestamp": "2026-11-07T05:20:45.177000+00:00",
+        "seconds": 10.518,
+        "ref": "ae5039148fd19afa",
+        "markers": [
+          "timeout"
+        ]
+      },
+      {
+        "tool": "mcp__cua_repl.js",
+        "timestamp": "2026-11-03T10:23:44.326000+00:00",
+        "seconds": 9.536,
+        "ref": "e84799c5dbf5170e",
+        "markers": []
+      },
+      {
+        "tool": "exec",
+        "timestamp": "2026-11-07T04:43:40.005000+00:00",
+        "seconds": 7.329,
+        "ref": "ebf66c3e63421723",
+        "markers": [
+          "timeout"
+        ]
+      },
+      {
+        "tool": "mcp__cua_repl.js",
+        "timestamp": "2026-11-07T05:21:00.566000+00:00",
+        "seconds": 7.037,
+        "ref": "53efc9206501ca4b",
+        "markers": []
+      }
+    ],
+    "command_category_occurrences": {
+      "search": 3,
+      "read": 9,
+      "inventory": 3,
+      "other": 1
+    },
+    "most_repeated_command_groups": [],
+    "most_repeated_tool_groups": []
+  },
+  "run": {
+    "cache_hit": false,
+    "source_log_bytes_read_this_run": 8388609,
+    "elapsed_seconds": 0.33356,
+    "cache_written": true,
+    "source_stable_during_run": true
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-13",
+  "source_files": [
+    {
+      "file": "buyer-property.json",
+      "batch_id": "BSRE-KP-BUYER-PROPERTY-20261113-01",
+      "sha256": "2876c299228dff45b764a0b85f43ac9de316153dae846c372ebcea889ddbff89",
+      "bytes": 2889912,
+      "records": 3195,
+      "distinct_normalized": 3195,
+      "source_bytes": 499976,
+      "source_sha256": "f06d958075c490e865691fbc433418d6b1f623300048ac4c53815a1e14b6e1a9"
+    }
+  ],
+  "totals": {
+    "export_rows": 3195,
+    "distinct_normalized_phrases": 3195,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}

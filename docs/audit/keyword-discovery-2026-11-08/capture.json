@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-08",
+  "source_files": [
+    {
+      "file": "buyers.json",
+      "batch_id": "KP-DISC-20261108-BUYERS",
+      "sha256": "2c742c953164e44038032c828808769e4b4db3f5b713e689a7edee79df1dbf36",
+      "bytes": 3016097,
+      "records": 3326,
+      "distinct_normalized": 3326,
+      "source_bytes": 696496,
+      "source_sha256": "a83eb80c8bda9e06a5011aaf4fff2b19f596c587c19254bc773d776f6b48cf86"
+    },
+    {
+      "file": "tenants.json",
+      "batch_id": "KP-DISC-20261108-TENANTS",
+      "sha256": "72f757844e324a6bc0c01e89e3bdb21559b1ad13b503210ca5f83f6c71a13b33",
+      "bytes": 4007317,
+      "records": 4415,
+      "distinct_normalized": 4415,
+      "source_bytes": 932286,
+      "source_sha256": "d2405a13288ce7c33fe9b7c6bbc27b77135804b341796f0886c926628cab5a8f"
+    },
+    {
+      "file": "owners.json",
+      "batch_id": "KP-DISC-20261108-OWNERS",
+      "sha256": "d89d9ee30ab0b02d2525d6833af1d92a545b48157ce65e2dc6e4bffac376f681",
+      "bytes": 316379,
+      "records": 345,
+      "distinct_normalized": 345,
+      "source_bytes": 75792,
+      "source_sha256": "eb1c27f886df489ebe1da05aa13f9463bee3ed9bfa7d1be5acf6ec74f309dbe7"
+    },
+    {
+      "file": "commercial.json",
+      "batch_id": "KP-DISC-20261108-COMMERCIAL",
+      "sha256": "0e0976a1dd40288917cdbac847ed4c2c553ab3a28bc7c9cf36c2f635fb63478f",
+      "bytes": 627017,
+      "records": 692,
+      "distinct_normalized": 692,
+      "source_bytes": 140390,
+      "source_sha256": "6a04ebde7e5ee0201ef7d44f1412b8bfb64fcab05d4fdbcb95dc863e6e5c3e70"
+    }
+  ],
+  "totals": {
+    "export_rows": 8778,
+    "distinct_normalized_phrases": 7705,
+    "repeated_occurrences_across_batches": 1073,
+    "overlap_groups": 1038
+  },
+  "normalization": "NFKC, one matching match-wrapper stripped, casefold, collapsed whitespace; same as keyword_audit.normalize",
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Raw private exports excluded. Five account-specific columns removed in full.",
+    "All metric labels and remaining string cells preserved; blanks are null. No metric sums, CPC reinterpretation, grouping inference or forecast.",
+    "Ideas remain semantically unassessed; may include competitors, irrelevant intent or excluded Business Setup topics. No automatic positive/negative admission or scope assignment.",
+    "Corrected commercial692-row capture included; intermediate mixed771-result query not exported or counted.",
+    "Research-only views; no keyword added to a serving campaign, no campaign created/modified or spending committed.",
+    "Issue1 remains open; research independently authorized, cohort and mappings still pending."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "kind": "negative",
+  "as_of": "2026-11-07",
+  "scope": "OFFLINE_RESEARCH_ONLY",
+  "input_rows": 0,
+  "distinct_nonblank_phrases": 0,
+  "reviewed_eligible_rows": 0,
+  "excluded_rows": 0,
+  "approved_exclusion_rows": 0,
+  "target": 14000,
+  "deficit": 14000,
+  "excess": 0,
+  "exact_target_pass": false,
+  "structural_pass": true,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "positive_library_coverage_verified": false,
+  "protected_corpus_status": "PARTIAL_DECLARED_CORPUS_NOT_EXHAUSTIVE_OR_POSITIVE_MASTER_RECONCILED",
+  "protected_queries_indexed": 0,
+  "lexical_comparisons_executed": 0,
+  "global_errors": [],
+  "records": [],
+  "protected_conflicts": [],
+  "matching_limit": "Conservative lexical simulator; not Google close-variant/platform acceptance or proof corpus is complete",
+  "input_sha256": {
+    "records": {
+      "filename": "negative.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "sources": {
+      "filename": "sources.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "campaigns": {
+      "filename": "planned_campaign_page_registry.json",
+      "sha256": "4cb1101bd54e687674938a368a73e6eacd3cee5a4743d2046f2d8bc6abef7b65"
+    },
+    "campaign_context": {
+      "filename": "campaign_context.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "protected_queries": {
+      "filename": "protected_queries.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  }
+}

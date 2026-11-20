@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "employment-lifecycle.json",
+      "batch_id": "KP-20261111-EMPLOYMENT-LIFECYCLE",
+      "sha256": "ff63d459628f60eb7bf3b64b7ee881d57e7f8abacb734c15d7f7e597b5a12b7e",
+      "bytes": 1515158,
+      "records": 1686,
+      "distinct_normalized": 1686,
+      "source_bytes": 288074,
+      "source_sha256": "d0a5737c7ef412879d193ebc9e3c15f3f889388755942d573586f6c119842166"
+    }
+  ],
+  "totals": {
+    "export_rows": 1686,
+    "distinct_normalized_phrases": 1686,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Four authored internship, CV, interview and salary hypotheses follow Master section6.",
+    "All seeds have separate exact rows. No current job opening, employer identity, affiliation, compensation amount, entitlement or served query is inferred.",
+    "Provider capture stays unreviewed; separate annotation does not admit masters or approve exclusions."
+  ]
+}

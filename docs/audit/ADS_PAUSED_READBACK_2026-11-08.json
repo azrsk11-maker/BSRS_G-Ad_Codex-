@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "scope": "READ_ONLY_CAMPAIGN_STATUS_AND_BUDGET_NOT_RELEASE_ACCEPTANCE",
+  "observed_date_dubai": "2026-11-08",
+  "account_id": "573-038-4686",
+  "campaign_rows": 20,
+  "status_counts": {
+    "paused": 17,
+    "removed": 3,
+    "enabled": 0
+  },
+  "v2_campaigns": [
+    {
+      "campaign_id": "24372566774",
+      "name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+      "status": "PAUSED",
+      "average_daily_budget_aed": "1200.00",
+      "bid_strategy_display": "Maximize clicks"
+    },
+    {
+      "campaign_id": "24367388382",
+      "name": "BSRE_V2_SEARCH_OWNERS_UAE_EN",
+      "status": "PAUSED",
+      "average_daily_budget_aed": "400.00",
+      "bid_strategy_display": "Maximize clicks"
+    },
+    {
+      "campaign_id": "24378494092",
+      "name": "BSRE_V2_SEARCH_TENANTS_UAE_EN",
+      "status": "PAUSED",
+      "average_daily_budget_aed": "300.00",
+      "bid_strategy_display": "Maximize clicks"
+    },
+    {
+      "campaign_id": "24378494098",
+      "name": "BSRE_V2_SEARCH_BRAND_UAE_EN",
+      "status": "PAUSED",
+      "average_daily_budget_aed": "100.00",
+      "bid_strategy_display": "Maximize clicks"
+    }
+  ],
+  "v2_aggregate_average_daily_budget_aed": "2000.00",
+  "budget_is_hard_daily_ceiling": false,
+  "ui_banner": "None of your ads are running",
+  "view_date_range": "Nov 1 - 7, 2026 (metrics not copied or used as performance evidence)",
+  "account_timezone_display": "(GMT+04:00) Gulf Standard Time",
+  "private_native_evidence_sha256": "04a3abf48bc3be1a395a047486f05cb1c7aff3cef41646e1bad99467697a59a3",
+  "audit_mutated_campaigns": false,
+  "release_authorized": false,
+  "not_verified": [
+    "CPC limits and bid adjustments",
+    "current policy approval and child configurations",
+    "automation",
+    "live tracking/conversion acceptance",
+    "staff capacity and release gates"
+  ],
+  "notes": [
+    "All20currentcampaignrowstatuseswereobserved; onlyfourallowlistedV2budgetsreported.",
+    "Status is current UI readback; no serving/spend/production change was made by this audit.",
+    "Original lead workbook remains private; Business Setup excluded."
+  ]
+}

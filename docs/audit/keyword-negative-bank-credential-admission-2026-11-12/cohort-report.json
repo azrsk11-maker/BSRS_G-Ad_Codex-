@@ -1,0 +1,44 @@
+{
+  "scope": "AI_REVIEWED_BANK_CREDENTIAL_RECOVERY_RESEARCH_NOT_SEARCH_DEMAND",
+  "full_source_groups": 3481,
+  "full_source_occurrences": 3481,
+  "cohort_groups": 803,
+  "semantic_proposed_groups": 626,
+  "semantic_hold_groups": 177,
+  "strict_recovery_batch_holds": 26,
+  "compatible_recovery_proposed_groups": 600,
+  "selected_groups": 348,
+  "all_source_groups_compared": 3481,
+  "cohort_groups_compared": 803,
+  "external_key_comparisons": 13924,
+  "within_source_key_comparisons": 13924,
+  "cohort_external_key_comparisons": 3212,
+  "cohort_within_source_key_comparisons": 3212,
+  "noncohort_groups": 2678,
+  "noncohort_state": "UNASSESSED_NOT_ADMITTED",
+  "retained_new_occurrences": 348,
+  "held_groups": 455,
+  "additional_protected_queries": 455,
+  "existing_held_protection_occurrences": 0,
+  "additional_variant_hold_groups": 252,
+  "text_compatibility_classifications": {
+    "NO_KNOWN_INCOMPATIBILITY_DETECTED": 803
+  },
+  "record_bodies_sha256": "5bcc9b5477b5a899c87a17ffc758b951c1b33f129ce94d5dc37850707250f19c",
+  "source_pins": {
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/bank-access-navigation.json": "822129ae18676ee62700c0726dcc11179c1bb7293636f031d7f3908e6fc879ea",
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/capture.json": "a3d6fe2f1c2caa5c905651d4f8955a338118a6380d5a7e6251b17c82767f3c99",
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-a.json": "89df3708b481a29d8c0d94ba068e99046e7f388ce2780cbc8e49af7d66dbbe6a",
+    "docs/audit/keyword-bank-access-navigation-2026-11-12/credential-review-b.json": "4f8489d14c2b0233ce8db8c920a886eabc57baead6161d99864547bfab45fecb"
+  },
+  "review": {
+    "file": "docs/audit/keyword-negative-bank-credential-admission-2026-11-12/review.json",
+    "sha256": "f607d84650e6ddbd59027870c27df615590ec6c3f2b117da0e957f1b3bcb9210"
+  },
+  "search_demand_verified": false,
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}

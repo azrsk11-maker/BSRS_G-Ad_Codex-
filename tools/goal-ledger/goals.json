@@ -1,0 +1,1514 @@
+{
+  "canonical_plan_sha256": "169fb3c9e27560a327810b31a5973c7a2515ba7149cc0fc55023fdc9b481bad6",
+  "definition_ref": "docs/EXECUTION_BACKLOG_100.md",
+  "evidence": {
+    "c6-bounded-baseline": {
+      "goals": [],
+      "kind": "native_ci",
+      "ref": "docs/CURRENT_STATE.md"
+    },
+    "full-negative-library-unapproved": {
+      "goals": [
+        "G029"
+      ],
+      "kind": "blocker",
+      "ref": "docs/CURRENT_STATE.md"
+    },
+    "full-positive-library-unapproved": {
+      "goals": [
+        "G025"
+      ],
+      "kind": "blocker",
+      "ref": "docs/CURRENT_STATE.md"
+    },
+    "g39-local-33-pass": {
+      "goals": [
+        "G001",
+        "G002"
+      ],
+      "kind": "local_test",
+      "ref": "docs/CURRENT_STATE.md"
+    },
+    "independent-review-missing": {
+      "goals": [
+        "G003"
+      ],
+      "kind": "blocker",
+      "ref": "docs/CURRENT_STATE.md"
+    },
+    "marketing-identity-unverified": {
+      "goals": [
+        "G005"
+      ],
+      "kind": "blocker",
+      "ref": "docs/CURRENT_STATE.md"
+    },
+    "g39-integration-running": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G001"
+      ]
+    },
+    "preparing-g002": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G002"
+      ]
+    },
+    "preparing-g021": {
+      "kind": "local_test",
+      "ref": "tools/keyword-system/POSITIVE_SERVICE_PACKET_V2.md",
+      "goals": [
+        "G021"
+      ]
+    },
+    "preparing-g033": {
+      "kind": "observation",
+      "ref": "docs/audit/PUBLIC_CONTACT_MATRIX_2026-11-17.json",
+      "goals": [
+        "G033"
+      ]
+    },
+    "accepted112-g001": {
+      "kind": "goal_acceptance",
+      "ref": "docs/audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json",
+      "goals": [
+        "G001"
+      ]
+    },
+    "accepted112-g002": {
+      "kind": "native_ci",
+      "ref": "docs/audit/BOUNDED_ENGINEERING_ACCEPTANCE_2026-11-17.json",
+      "goals": [
+        "G002"
+      ]
+    },
+    "preparing-g070-strict-json": {
+      "kind": "local_test",
+      "ref": "tools/release-control/test_validate_release_controls.py",
+      "goals": [
+        "G070"
+      ]
+    },
+    "preparing-g095-private-content": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G095"
+      ]
+    },
+    "marketing-identity-20261118": {
+      "kind": "identity_verification",
+      "ref": "docs/audit/MARKETING_CONNECTION_ACCEPTANCE_2026-11-18.json",
+      "goals": [
+        "G005"
+      ]
+    },
+    "evidence-discovery-g006": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G006"
+      ]
+    },
+    "evidence-discovery-g011": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G011"
+      ]
+    },
+    "evidence-gap-g006": {
+      "kind": "blocker",
+      "ref": "docs/audit/EVIDENCE_DISCOVERY_2026-11-18.json",
+      "goals": [
+        "G006"
+      ]
+    },
+    "evidence-gap-g011": {
+      "kind": "blocker",
+      "ref": "docs/audit/EVIDENCE_DISCOVERY_2026-11-18.json",
+      "goals": [
+        "G011"
+      ]
+    },
+    "g021-full-cohort-triage-20261118": {
+      "kind": "goal_acceptance",
+      "ref": "docs/audit/CANDIDATE_TRIAGE_2026-11-18.json",
+      "goals": [
+        "G021"
+      ]
+    },
+    "g026-research-evidence-20261118": {
+      "kind": "goal_acceptance",
+      "ref": "docs/audit/NEGATIVE_RESEARCH_ACCEPTANCE_2026-11-18.json",
+      "goals": [
+        "G026"
+      ]
+    },
+    "g007-unassigned-denial-missing": {
+      "kind": "blocker",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G007"
+      ]
+    },
+    "current-discovery-g010": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G010"
+      ]
+    },
+    "current-discovery-g022": {
+      "kind": "observation",
+      "ref": "docs/PROGRESS.md",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g010-source-identity-audit-20261118": {
+      "kind": "goal_acceptance",
+      "ref": "docs/audit/SOURCE_IDENTITY_AUDIT_2026-11-18.json",
+      "goals": [
+        "G010"
+      ]
+    },
+    "bounded-preparation-g022": {
+      "kind": "local_test",
+      "ref": "docs/audit/KEYWORD_PREPARATION_2026-11-18.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "bounded-preparation-g027": {
+      "kind": "local_test",
+      "ref": "docs/audit/KEYWORD_PREPARATION_2026-11-18.json",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g051-dated-review-missing": {
+      "kind": "blocker",
+      "ref": "docs/audit/FACTUAL_REVIEW_GAP_2026-11-18.json",
+      "goals": [
+        "G051"
+      ]
+    },
+    "current-safety-fix-preparation-20261118": {
+      "kind": "local_test",
+      "ref": "docs/audit/CURRENT_SAFETY_FIX_PREPARATION_2026-11-18.json",
+      "goals": [
+        "G035",
+        "G036",
+        "G046",
+        "G055"
+      ]
+    },
+    "primary-project-discovery-20261118": {
+      "kind": "local_test",
+      "ref": "docs/audit/PRIMARY_PROJECT_DISCOVERY_2026-11-18.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "df-native-engineering-20261118": {
+      "kind": "native_ci",
+      "ref": "docs/audit/CURRENT_NATIVE_ENGINEERING_ACCEPTANCE_2026-11-18.json",
+      "goals": []
+    },
+    "g011-register-preparation-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/CURRENT_REGISTER_OBSERVATION_2026-11-19.json",
+      "goals": [
+        "G011"
+      ]
+    },
+    "g022-developer-corroboration-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/PRIMARY_PROJECT_CORROBORATION_2026-11-19.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g027-csv-parser-parity-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_CSV_PARSER_PARITY_2026-11-19.json",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g027-bounded-scope-20261119": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_SCOPE_TRANCHE_2026-11-19.md",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g022-official-corroboration-20261120": {
+      "kind": "local_test",
+      "ref": "docs/audit/DLD_POSITIVE_DISCOVERY_2026-11-20.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g027-bounded-scope-20261120": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_SCOPE_TRANCHE_2026-11-20.md",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g022-developer-catalogue-20261120-1800": {
+      "kind": "local_test",
+      "ref": "docs/audit/developer-catalogue-2026-11-20/DEVELOPER_CATALOGUE_2026-11-20.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g027-complete-clipart-family-20261120-1800": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_CLIPART_FAMILY_2026-11-20.json",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g027-published-match-guidance-20261120-1800": {
+      "kind": "local_test",
+      "ref": "docs/audit/CURRENT_NEGATIVE_MATCH_GUIDANCE_2026-11-20.json",
+      "goals": [
+        "G027"
+      ]
+    }
+  },
+  "goals": [
+    {
+      "depends_on": [],
+      "evidence_refs": [
+        "accepted112-g001"
+      ],
+      "id": "G001",
+      "launch_gate": "prelaunch",
+      "status": "verified"
+    },
+    {
+      "depends_on": [
+        "G001"
+      ],
+      "evidence_refs": [
+        "accepted112-g002"
+      ],
+      "id": "G002",
+      "launch_gate": "prelaunch",
+      "status": "verified"
+    },
+    {
+      "depends_on": [
+        "G002"
+      ],
+      "evidence_refs": [
+        "independent-review-missing"
+      ],
+      "id": "G003",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G003"
+      ],
+      "evidence_refs": [],
+      "id": "G004",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [],
+      "evidence_refs": [
+        "marketing-identity-20261118"
+      ],
+      "id": "G005",
+      "launch_gate": "prelaunch",
+      "status": "verified"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "evidence-gap-g006"
+      ],
+      "id": "G006",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "g007-unassigned-denial-missing"
+      ],
+      "id": "G007",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G006",
+        "G007"
+      ],
+      "evidence_refs": [],
+      "id": "G008",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G007",
+        "G008"
+      ],
+      "evidence_refs": [],
+      "id": "G009",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "g010-source-identity-audit-20261118"
+      ],
+      "id": "G010",
+      "launch_gate": "conditional",
+      "status": "verified"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "evidence-gap-g011",
+        "g011-register-preparation-20261119"
+      ],
+      "id": "G011",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G011"
+      ],
+      "evidence_refs": [],
+      "id": "G012",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G002",
+        "G011",
+        "G012"
+      ],
+      "evidence_refs": [],
+      "id": "G013",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G011",
+        "G013"
+      ],
+      "evidence_refs": [],
+      "id": "G014",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G005",
+        "G011"
+      ],
+      "evidence_refs": [],
+      "id": "G015",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G012",
+        "G015"
+      ],
+      "evidence_refs": [],
+      "id": "G016",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G012",
+        "G015"
+      ],
+      "evidence_refs": [],
+      "id": "G017",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G012",
+        "G015"
+      ],
+      "evidence_refs": [],
+      "id": "G018",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G015",
+        "G016",
+        "G017",
+        "G018"
+      ],
+      "evidence_refs": [],
+      "id": "G019",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G002",
+        "G019"
+      ],
+      "evidence_refs": [],
+      "id": "G020",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "g021-full-cohort-triage-20261118"
+      ],
+      "id": "G021",
+      "launch_gate": "prelaunch",
+      "status": "verified"
+    },
+    {
+      "depends_on": [
+        "G021"
+      ],
+      "evidence_refs": [
+        "bounded-preparation-g022",
+        "primary-project-discovery-20261118",
+        "g022-developer-corroboration-20261119",
+        "g022-official-corroboration-20261120",
+        "g022-developer-catalogue-20261120-1800"
+      ],
+      "id": "G022",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G022"
+      ],
+      "evidence_refs": [],
+      "id": "G023",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G023"
+      ],
+      "evidence_refs": [],
+      "id": "G024",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G024"
+      ],
+      "evidence_refs": [
+        "full-positive-library-unapproved"
+      ],
+      "id": "G025",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "g026-research-evidence-20261118"
+      ],
+      "id": "G026",
+      "launch_gate": "prelaunch",
+      "status": "verified"
+    },
+    {
+      "depends_on": [
+        "G026"
+      ],
+      "evidence_refs": [
+        "bounded-preparation-g027",
+        "g027-csv-parser-parity-20261119",
+        "g027-bounded-scope-20261119",
+        "g027-bounded-scope-20261120",
+        "g027-complete-clipart-family-20261120-1800",
+        "g027-published-match-guidance-20261120-1800"
+      ],
+      "id": "G027",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G024",
+        "G027"
+      ],
+      "evidence_refs": [],
+      "id": "G028",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G026",
+        "G027",
+        "G028"
+      ],
+      "evidence_refs": [
+        "full-negative-library-unapproved"
+      ],
+      "id": "G029",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G025",
+        "G029"
+      ],
+      "evidence_refs": [],
+      "id": "G030",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G071"
+      ],
+      "evidence_refs": [],
+      "id": "G031",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G031"
+      ],
+      "evidence_refs": [],
+      "id": "G032",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G055",
+        "G071"
+      ],
+      "evidence_refs": [
+        "preparing-g033"
+      ],
+      "id": "G033",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G071"
+      ],
+      "evidence_refs": [],
+      "id": "G034",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G031",
+        "G034"
+      ],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
+      "id": "G035",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G002",
+        "G032",
+        "G034",
+        "G035"
+      ],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
+      "id": "G036",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G034",
+        "G055",
+        "G071"
+      ],
+      "evidence_refs": [],
+      "id": "G037",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G033",
+        "G034"
+      ],
+      "evidence_refs": [],
+      "id": "G038",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G005",
+        "G071"
+      ],
+      "evidence_refs": [],
+      "id": "G039",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G005",
+        "G039"
+      ],
+      "evidence_refs": [],
+      "id": "G040",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G007",
+        "G039",
+        "G040"
+      ],
+      "evidence_refs": [],
+      "id": "G041",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G008",
+        "G009",
+        "G041"
+      ],
+      "evidence_refs": [],
+      "id": "G042",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G014",
+        "G041",
+        "G042"
+      ],
+      "evidence_refs": [],
+      "id": "G043",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G041",
+        "G042"
+      ],
+      "evidence_refs": [],
+      "id": "G044",
+      "launch_gate": "conditional",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G041",
+        "G042"
+      ],
+      "evidence_refs": [],
+      "id": "G045",
+      "launch_gate": "conditional",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G013",
+        "G014",
+        "G019",
+        "G043"
+      ],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
+      "id": "G046",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G046"
+      ],
+      "evidence_refs": [],
+      "id": "G047",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G046",
+        "G047"
+      ],
+      "evidence_refs": [],
+      "id": "G048",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G045"
+      ],
+      "evidence_refs": [],
+      "id": "G049",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G008"
+      ],
+      "evidence_refs": [],
+      "id": "G050",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G005"
+      ],
+      "evidence_refs": [
+        "g051-dated-review-missing"
+      ],
+      "id": "G051",
+      "launch_gate": "prelaunch",
+      "status": "blocked"
+    },
+    {
+      "depends_on": [
+        "G051"
+      ],
+      "evidence_refs": [],
+      "id": "G052",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G051"
+      ],
+      "evidence_refs": [],
+      "id": "G053",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G051",
+        "G052"
+      ],
+      "evidence_refs": [],
+      "id": "G054",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G051"
+      ],
+      "evidence_refs": [
+        "current-safety-fix-preparation-20261118"
+      ],
+      "id": "G055",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G010",
+        "G055"
+      ],
+      "evidence_refs": [],
+      "id": "G056",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G051",
+        "G052",
+        "G053",
+        "G054",
+        "G055",
+        "G056"
+      ],
+      "evidence_refs": [],
+      "id": "G057",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G055",
+        "G057"
+      ],
+      "evidence_refs": [],
+      "id": "G058",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G051",
+        "G057"
+      ],
+      "evidence_refs": [],
+      "id": "G059",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G058"
+      ],
+      "evidence_refs": [],
+      "id": "G060",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G030",
+        "G055"
+      ],
+      "evidence_refs": [],
+      "id": "G061",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G050"
+      ],
+      "evidence_refs": [],
+      "id": "G062",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G051"
+      ],
+      "evidence_refs": [],
+      "id": "G063",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G008",
+        "G009"
+      ],
+      "evidence_refs": [],
+      "id": "G064",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G055",
+        "G063"
+      ],
+      "evidence_refs": [],
+      "id": "G065",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G053",
+        "G054",
+        "G057",
+        "G061"
+      ],
+      "evidence_refs": [],
+      "id": "G066",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G055",
+        "G061"
+      ],
+      "evidence_refs": [],
+      "id": "G067",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G031",
+        "G066",
+        "G067"
+      ],
+      "evidence_refs": [],
+      "id": "G068",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G032",
+        "G043",
+        "G050"
+      ],
+      "evidence_refs": [],
+      "id": "G069",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G030",
+        "G061",
+        "G062",
+        "G063",
+        "G064",
+        "G065",
+        "G066",
+        "G067",
+        "G068",
+        "G069"
+      ],
+      "evidence_refs": [
+        "preparing-g070-strict-json"
+      ],
+      "id": "G070",
+      "launch_gate": "prelaunch",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G001",
+        "G055",
+        "G057"
+      ],
+      "evidence_refs": [],
+      "id": "G071",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G071",
+        "G019"
+      ],
+      "evidence_refs": [],
+      "id": "G072",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G055",
+        "G071"
+      ],
+      "evidence_refs": [],
+      "id": "G073",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G057",
+        "G058",
+        "G071"
+      ],
+      "evidence_refs": [],
+      "id": "G074",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G058",
+        "G060",
+        "G074"
+      ],
+      "evidence_refs": [],
+      "id": "G075",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G039",
+        "G040",
+        "G074"
+      ],
+      "evidence_refs": [],
+      "id": "G076",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G037",
+        "G073",
+        "G074"
+      ],
+      "evidence_refs": [],
+      "id": "G077",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G074",
+        "G075"
+      ],
+      "evidence_refs": [],
+      "id": "G078",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G020",
+        "G034",
+        "G035",
+        "G073",
+        "G074",
+        "G075",
+        "G076",
+        "G077",
+        "G078"
+      ],
+      "evidence_refs": [],
+      "id": "G079",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G025",
+        "G029",
+        "G030",
+        "G070",
+        "G072",
+        "G079"
+      ],
+      "evidence_refs": [],
+      "id": "G080",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G003",
+        "G080"
+      ],
+      "evidence_refs": [],
+      "id": "G081",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G081"
+      ],
+      "evidence_refs": [],
+      "id": "G082",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G082"
+      ],
+      "evidence_refs": [],
+      "id": "G083",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G032",
+        "G035",
+        "G080",
+        "G081"
+      ],
+      "evidence_refs": [],
+      "id": "G084",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G083",
+        "G084"
+      ],
+      "evidence_refs": [],
+      "id": "G085",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G033",
+        "G034",
+        "G035",
+        "G036",
+        "G037",
+        "G038",
+        "G039",
+        "G040",
+        "G079",
+        "G083",
+        "G085"
+      ],
+      "evidence_refs": [],
+      "id": "G086",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G006",
+        "G008",
+        "G009",
+        "G065",
+        "G070",
+        "G086"
+      ],
+      "evidence_refs": [],
+      "id": "G087",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G025",
+        "G029",
+        "G046",
+        "G047",
+        "G050",
+        "G070",
+        "G081",
+        "G087"
+      ],
+      "evidence_refs": [],
+      "id": "G088",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G088"
+      ],
+      "evidence_refs": [],
+      "id": "G089",
+      "launch_gate": "prelaunch",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G086",
+        "G089"
+      ],
+      "evidence_refs": [],
+      "id": "G090",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G009",
+        "G050",
+        "G090"
+      ],
+      "evidence_refs": [],
+      "id": "G091",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G049",
+        "G050",
+        "G091"
+      ],
+      "evidence_refs": [],
+      "id": "G092",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G050",
+        "G092"
+      ],
+      "evidence_refs": [],
+      "id": "G093",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G055",
+        "G059",
+        "G079",
+        "G093"
+      ],
+      "evidence_refs": [],
+      "id": "G094",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G053",
+        "G056",
+        "G059"
+      ],
+      "evidence_refs": [
+        "preparing-g095-private-content"
+      ],
+      "id": "G095",
+      "launch_gate": "later",
+      "status": "running",
+      "preparation_only": true
+    },
+    {
+      "depends_on": [
+        "G024",
+        "G051",
+        "G056"
+      ],
+      "evidence_refs": [],
+      "id": "G096",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G010",
+        "G056"
+      ],
+      "evidence_refs": [],
+      "id": "G097",
+      "launch_gate": "later",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G012",
+        "G014",
+        "G043",
+        "G051",
+        "G053",
+        "G093",
+        "G095"
+      ],
+      "evidence_refs": [],
+      "id": "G098",
+      "launch_gate": "conditional",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G008",
+        "G054",
+        "G093",
+        "G094"
+      ],
+      "evidence_refs": [],
+      "id": "G099",
+      "launch_gate": "conditional",
+      "status": "pending"
+    },
+    {
+      "depends_on": [
+        "G001",
+        "G002",
+        "G003",
+        "G004",
+        "G005",
+        "G006",
+        "G007",
+        "G008",
+        "G009",
+        "G010",
+        "G011",
+        "G012",
+        "G013",
+        "G014",
+        "G015",
+        "G016",
+        "G017",
+        "G018",
+        "G019",
+        "G020",
+        "G021",
+        "G022",
+        "G023",
+        "G024",
+        "G025",
+        "G026",
+        "G027",
+        "G028",
+        "G029",
+        "G030",
+        "G031",
+        "G032",
+        "G033",
+        "G034",
+        "G035",
+        "G036",
+        "G037",
+        "G038",
+        "G039",
+        "G040",
+        "G041",
+        "G042",
+        "G043",
+        "G044",
+        "G045",
+        "G046",
+        "G047",
+        "G048",
+        "G049",
+        "G050",
+        "G051",
+        "G052",
+        "G053",
+        "G054",
+        "G055",
+        "G056",
+        "G057",
+        "G058",
+        "G059",
+        "G060",
+        "G061",
+        "G062",
+        "G063",
+        "G064",
+        "G065",
+        "G066",
+        "G067",
+        "G068",
+        "G069",
+        "G070",
+        "G071",
+        "G072",
+        "G073",
+        "G074",
+        "G075",
+        "G076",
+        "G077",
+        "G078",
+        "G079",
+        "G080",
+        "G081",
+        "G082",
+        "G083",
+        "G084",
+        "G085",
+        "G086",
+        "G087",
+        "G088",
+        "G089",
+        "G090",
+        "G091",
+        "G092",
+        "G093",
+        "G094",
+        "G095",
+        "G096",
+        "G097",
+        "G098",
+        "G099"
+      ],
+      "evidence_refs": [],
+      "id": "G100",
+      "launch_gate": "later",
+      "status": "pending"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot": {
+    "ads": "paused",
+    "as_of": "2026-11-19",
+    "baseline": "bounded_engineering_accepted_at_1123575e",
+    "connected_identity": "Marketing_explicitly_selected_BSS_preserved",
+    "context_refs": [
+      "c6-bounded-baseline",
+      "accepted112-g001",
+      "accepted112-g002",
+      "df-native-engineering-20261118"
+    ],
+    "g39_native_ci_integration": "accepted_at_1123575e",
+    "independent_pr_reviews": 0,
+    "marketing_identity_verified": true,
+    "negative_full_library_approved": false,
+    "positive_full_library_approved": false,
+    "production": "unchanged",
+    "accepted_at_head": "1123575ed9d495eea5a19fd2cb4b6d8fead5720c",
+    "current_head_ci_not_inferred": true,
+    "g39_observer_local_tests_passed": 43,
+    "g39_materializer_local_tests_passed": 19,
+    "g39_combined_local_tests_passed": 62,
+    "g39_native_checks_per_profile": 43
+  }
+}

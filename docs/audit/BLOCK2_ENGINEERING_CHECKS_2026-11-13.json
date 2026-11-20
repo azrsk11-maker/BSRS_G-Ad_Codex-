@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-13",
+  "scope": "Local development checks; not browser/provider/staff/release acceptance",
+  "changes": [
+    "Remove certificate-validation exceptions from both optional browser harnesses; require supplied TLS material and normal pre-browser validation",
+    "Reject unknown/contact outcome-extract fields using unchanged Outcome40 schema before eligibility holds or private queue mutation",
+    "Extend immutable wire-v1 receiver tests across all five roles with exact Intake26/receipt/simulated-mail identity and five-send batch cap"
+  ],
+  "candidate_sha256": {
+    "tools/qualified-export-source/source_queue.py": "efc094cd32b60702fa65ba53f11a5d079ba5713f25bed86c2b3346547ba65392",
+    "tools/qualified-export-source/test_role_permission_matrix.py": "a86fc95c73c4ed346fc34998bfb718ffb4ba39508f6d2d0c408780ba8ae9ac5b",
+    "tools/staging-lab/browser_tls_checks.py": "1eb4a757505352ee89a659724edf3d77bb4f691da0a9f7f9640b9274a4c1cf3c",
+    "tools/staging-lab/consent-browser-probe.py": "549109f8ab2ad88bc5ce9072ba8bfac8a44e1067878528e4ed614c219c94c00f",
+    "tools/staging-lab/README.md": "572c5e6174e7a86bc9dd65ded3c8cab802b308e5e2c2753157e40b988b5e3730",
+    "tools/staging-lab/receiver.test.mjs": "0527c8d2259b15460136b4d12db8fcb35017a0c5da7bac948cef3f128e5496a8",
+    "tools/staging-lab/trusted_loopback_tls.py": "3968311a5801c8a158fde93ab9adb2af68d8e730d46e8eb7cc4ca92aae4160c6",
+    "tools/website-tracking/tracking-system/browser-cta-acceptance.mjs": "33e601fc950ce2d89cec62da5ea6b60e8f152e45e5f66feb1d53ac7a4131137d",
+    "tools/website-tracking/tracking-system/trusted-loopback-tls.mjs": "679a587ed516de7d285075ef91c39fa394319cff3771d82ad7daa0f81db28cca"
+  },
+  "checks": {
+    "integrated_foundation_diagnostic": {
+      "kind": "foundation",
+      "elapsed_seconds": 600.016,
+      "returncode": null,
+      "timed_out": true,
+      "production_changes": false,
+      "accepted": false,
+      "note": "600-second local wrapper deadline; no final report; no remaining checker process. Original repository thresholds unchanged. Exact-head remote CI remains required."
+    },
+    "explicit_optional_tls": {
+      "kind": "tls",
+      "elapsed_seconds": 7.39,
+      "returncode": 0,
+      "timed_out": false,
+      "production_changes": false,
+      "test_groups": 5,
+      "skips": 0,
+      "browser_started": false
+    },
+    "qualified_source": {
+      "kind": "qualification",
+      "elapsed_seconds": 2.781,
+      "returncode": 0,
+      "timed_out": false,
+      "production_changes": false,
+      "test_methods": 32,
+      "skips": 0,
+      "location": "Actual source checkout"
+    },
+    "wire_v1_receiver": {
+      "kind": "receiver",
+      "elapsed_seconds": 0.297,
+      "returncode": 0,
+      "timed_out": false,
+      "production_changes": false,
+      "test_methods": 13,
+      "skips": 0,
+      "google_services": "Capability-only VM doubles; not real Sheet/mail"
+    }
+  },
+  "immutable_receiver_sha256": "6669cb28e5267a49e061427b736cdbdbad87bee6cbb946e99483d9439f61fa38",
+  "contracts_preserved": [
+    "signed-wire-v1",
+    "Intake26",
+    "Outcome40",
+    "private Sheet/email architecture",
+    "UPLOAD_PROHIBITED"
+  ],
+  "live_access": {
+    "wordpress_authenticated_readback": false,
+    "fresh_admin_redirects_to_login": true,
+    "transient_browser_dns_error_resolved_after_os_dns_diagnosis": true
+  },
+  "unmet": [
+    "Trusted-TLS sandboxed actual browser acceptance",
+    "Authenticated installed WordPress source and receiver binding compatibility",
+    "Real receipt/Sheet/email/provider identity and durable recovery",
+    "Restricted staff access and measured evidence of owner-reported completed 4 November rehearsal",
+    "Authoritative first-ever qualification history and genuine provider-backed outcomes",
+    "Supported restricted genuine GCLID scheduled imports",
+    "Complete consent/retention/recovery operational acceptance",
+    "Independent human review and separate production/release authorization"
+  ],
+  "production_changed": false,
+  "ads_changed": false,
+  "advertising_paused": true,
+  "merged": false,
+  "release_authorized": false,
+  "performance_claim": "Measured test durations only; token/cost/throughput improvements not established",
+  "required_remote_exact_head_checks": "PENDING publication and CI"
+}

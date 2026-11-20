@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "generated_at_utc": "2026-11-07T05:45:42.921Z",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 15181,
+      "sha256": "008415f99bcd785c9e226f7a6df8bf92456f39875269e5549da595ae9026682b"
+    },
+    {
+      "path": "commercial-system/README.md",
+      "bytes": 4378,
+      "sha256": "813a54d7715be708501deb527b1cc523a9b8e5401b01964772588b8762879ed8"
+    },
+    {
+      "path": "commercial-system/blocked-report-example.json",
+      "bytes": 943,
+      "sha256": "63b64c85327071680ef136ea5653b039482360abd08e48620ad8507659cb298d"
+    },
+    {
+      "path": "commercial-system/report.mjs",
+      "bytes": 12564,
+      "sha256": "51d5fce1c1ea84777df59d1cecc10541e46e6050049e1bf2f72d13d7551aa0e2"
+    },
+    {
+      "path": "commercial-system/report.test.mjs",
+      "bytes": 9675,
+      "sha256": "6d480309fb638b28b13cd07023b6e33cec85cc464c68974ce41bcbcffbe3bc03"
+    },
+    {
+      "path": "public-audit-2026-11-07.json",
+      "bytes": 17186,
+      "sha256": "a5d3a26c4d896663f29c19e7ca40acac18587727ca8e00ebec10bb5b8e63078e"
+    },
+    {
+      "path": "public_audit.mjs",
+      "bytes": 10638,
+      "sha256": "58f9f8142c43bc6472104d90ccfc98d399437bd71103f145719177b4396b9b46"
+    },
+    {
+      "path": "public_audit.test.mjs",
+      "bytes": 3048,
+      "sha256": "49e0743c0b224fb2c6a938f8bfe1e2c6a95f38177c0b079e305a040f294e9195"
+    },
+    {
+      "path": "sitemap-followup-2026-11-07.json",
+      "bytes": 1283,
+      "sha256": "b6033edb045a4ea6800ae4736ae9062827395139f89b0163e47f54e60baccdf0"
+    },
+    {
+      "path": "tracking-evidence-2026-11-07.json",
+      "bytes": 5356,
+      "sha256": "6e1495f7720ef25a4c9ab1b3115f74a8d27f6a246285f7538eb4bb0b1426e791"
+    },
+    {
+      "path": "tracking-system/README.md",
+      "bytes": 5602,
+      "sha256": "9a4bab431365b62bc462b4957a6f546517f593b9448dad9b38b2db0b91f103f6"
+    },
+    {
+      "path": "tracking-system/contract.mjs",
+      "bytes": 12428,
+      "sha256": "418635f7c04375b7c2cfe44eed21258b196fe39918d3d1dfd88e9a9b6950c2c2"
+    },
+    {
+      "path": "tracking-system/contract.test.mjs",
+      "bytes": 8577,
+      "sha256": "ad6ebd9f6c7033bbf49eec5b98a5396d4d2539e70e5d7bbc5061d5eb18277ece"
+    },
+    {
+      "path": "tracking-validation-2026-11-07.json",
+      "bytes": 746,
+      "sha256": "8f30b30eac87a6e0e433627ecfea840d8fdf8b9539f5ca18b41985dacdcad102"
+    },
+    {
+      "path": "validate_tracking_evidence.mjs",
+      "bytes": 7321,
+      "sha256": "2df3b596a825a5a311022094ffdcf8954f37c474ee839edca758f2f47a764f4e"
+    },
+    {
+      "path": "validate_tracking_evidence.test.mjs",
+      "bytes": 5719,
+      "sha256": "44b193fbab9038f0afaa399efc33ca372d3f363591689a3d12457872781496d9"
+    },
+    {
+      "path": "verification-summary.json",
+      "bytes": 857,
+      "sha256": "f682d36749d2f5a30317fae9313c484ce556c96bb10e50de9a9eb407ba71677d"
+    }
+  ]
+}

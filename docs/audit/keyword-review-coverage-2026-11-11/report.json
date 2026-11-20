@@ -1,0 +1,778 @@
+{
+  "version": 1,
+  "scope": "PRELIMINARY_SOURCE_REVIEW_RECONCILIATION_ONLY",
+  "capture_batches": 17,
+  "review_documents": 11,
+  "source_occurrences": 18530,
+  "distinct_source_phrases": 17422,
+  "repeated_source_occurrences": 1108,
+  "review_assessment_instances": 17454,
+  "review_instances_by_disposition": {
+    "HOLD": 7776,
+    "NEGATIVE_EXACT_REVIEW": 5370,
+    "POSITIVE_REVIEW": 4308,
+    "UNASSESSED": 0
+  },
+  "canonical_disposition_counts": {
+    "DISAGREEMENT_HOLD": 20,
+    "HOLD": 7749,
+    "NEGATIVE_EXACT_REVIEW": 5361,
+    "NO_STRUCTURED_REVIEW": 0,
+    "POSITIVE_REVIEW": 4292,
+    "UNASSESSED": 0
+  },
+  "unreviewed_batches": [],
+  "all_phrases_have_preliminary_assessments": true,
+  "cross_review_overlap_phrases": [
+    {
+      "normalized_text": "2 bhk flat price in dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_rental",
+            "residential_ready_secondary",
+            "residential_offplan"
+          ]
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "annual car lease dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-exclusions-2026-11-10/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "buy a house in dubai price",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_ready_secondary",
+            "residential_offplan"
+          ]
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "buy apartment in dubai without down payment",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "buying a property in dubai process",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "buying off plan property in dubai process",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai home price",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai house for sale low price",
+      "source_occurrences": 3,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai house sale price",
+      "source_occurrences": 3,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai letting agents",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai mansion price",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai palm house price",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "dubai villa price in indian rupees",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "estate agency and property management course",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-employment-education-2026-11-10/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-occupational-education-2026-11-11/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary",
+            "seller_supply",
+            "landlord_supply",
+            "commercial_ready",
+            "commercial_leasing"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "flat for sale in sharjah al nahda",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        },
+        {
+          "review_file": "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "freehold villa for sale in sharjah",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        },
+        {
+          "review_file": "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "freelance real estate agent dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-broad-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "high paying real estate jobs",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "long term lease dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-exclusions-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "palm jumeirah house price",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "palm jumeirah house price in inr",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "part time real estate agent dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-broad-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "paying jobs in real estate",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "price of a house in dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "price of home in dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "property buying process in dubai",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-triage-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-property-readiness-2026-11-11/workbench.json",
+          "disposition": "POSITIVE_REVIEW",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "real estate agent bachelor degree",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-employment-education-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-occupational-education-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "real estate agent degree online",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-employment-education-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-occupational-education-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "real estate broker degree",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-employment-education-2026-11-10/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-occupational-education-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": false,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "salaried real estate agent jobs",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "salaried real estate jobs",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-developer-employment-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        },
+        {
+          "review_file": "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json",
+          "disposition": "NEGATIVE_EXACT_REVIEW",
+          "possible_services": []
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    },
+    {
+      "normalized_text": "sharjah freehold property for sale",
+      "source_occurrences": 2,
+      "review_assessments": [
+        {
+          "review_file": "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        },
+        {
+          "review_file": "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json",
+          "disposition": "HOLD",
+          "possible_services": [
+            "residential_offplan",
+            "residential_ready_secondary"
+          ]
+        }
+      ],
+      "dispositions_agree": true,
+      "classification_or_approval_inherited": false
+    }
+  ],
+  "provisional_exact_screen": {
+    "draft_negative_literals": 5365,
+    "protected_literals": 12081,
+    "authored_test_cases_excluded_from_source_counts": 20,
+    "conflicts": [
+      {
+        "negative": "estate agency and property management course",
+        "protected_queries": [
+          "estate agency and property management course"
+        ]
+      },
+      {
+        "negative": "real estate agent bachelor degree",
+        "protected_queries": [
+          "real estate agent bachelor degree"
+        ]
+      },
+      {
+        "negative": "real estate agent degree online",
+        "protected_queries": [
+          "real estate agent degree online"
+        ]
+      },
+      {
+        "negative": "real estate broker degree",
+        "protected_queries": [
+          "real estate broker degree"
+        ]
+      }
+    ],
+    "google_matching_verified": false,
+    "actual_scope_verified": false,
+    "full_approved_positive_library_coverage": false
+  },
+  "master_rows_added": 0,
+  "independent_review_verified": false,
+  "admission_authorized": false,
+  "deployment_authorized": false,
+  "source_bindings": {
+    "capture_manifests_sha256": {
+      "docs/audit/keyword-discovery-2026-11-08/capture.json": "4217d078fa72c1b5244548fb0adba51106a5f1e26cdc0c335079216b306a9268",
+      "docs/audit/keyword-discovery-supply-2026-11-08/capture.json": "279b71e166ecbb3806af143549a99f559ac7846ffa9396497f266b871a2012a7",
+      "docs/audit/keyword-employment-education-2026-11-10/capture.json": "8129d8f27594257e58d35e112dd1f12ba6566e238f8b544ab66e82af08a00e3f",
+      "docs/audit/keyword-employment-broad-2026-11-10/capture.json": "bdc847f3c9759eb166d2bb89122ac365ce414127200463ce0b423a9628eef864",
+      "docs/audit/keyword-exclusions-2026-11-10/capture.json": "1c47ca4c73590f0d5755b7520a08a6d2cd804295d2af58314bab4ad268804fc4",
+      "docs/audit/keyword-property-readiness-2026-11-11/capture.json": "81a1c496372d528668f42dc1056d67d29911a3951bee23ac0dc2ae878522539f",
+      "docs/audit/keyword-northern-emirates-2026-11-11/capture.json": "55fb083ab6f73b57ed7ae18815b64eed22f6c8e2c4caec173bef6405b7b04a83",
+      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/capture.json": "719d1bcdce7620740266046ed24705b6c05fdf521cdb67e9be3b6a014023f62d",
+      "docs/audit/keyword-developer-employment-2026-11-11/capture.json": "a89397314f9565d5f2e0027c8d19a7b6b55b9f738f1c5272f275d2716ecdc06f",
+      "docs/audit/keyword-occupational-education-2026-11-11/capture.json": "1e30f171310155e76229d35922e951aed2965def632af757f3c8d30386eb6217",
+      "docs/audit/keyword-employment-lifecycle-2026-11-11/capture.json": "94dfa8a6fe28a0ed76b865a5a230c4404a5bc8c25ecfa0cd9fae6f6311fa78c1"
+    },
+    "capture_files_sha256": {
+      "docs/audit/keyword-discovery-2026-11-08/buyers.json": "2c742c953164e44038032c828808769e4b4db3f5b713e689a7edee79df1dbf36",
+      "docs/audit/keyword-discovery-2026-11-08/tenants.json": "72f757844e324a6bc0c01e89e3bdb21559b1ad13b503210ca5f83f6c71a13b33",
+      "docs/audit/keyword-discovery-2026-11-08/owners.json": "d89d9ee30ab0b02d2525d6833af1d92a545b48157ce65e2dc6e4bffac376f681",
+      "docs/audit/keyword-discovery-2026-11-08/commercial.json": "0e0976a1dd40288917cdbac847ed4c2c553ab3a28bc7c9cf36c2f635fb63478f",
+      "docs/audit/keyword-discovery-supply-2026-11-08/sellers.json": "ad59fa643c50af4b2e03782428979a841e64ed17557f8e376280fe57f151781e",
+      "docs/audit/keyword-discovery-supply-2026-11-08/landlords.json": "a1c5ab276d12b76541508ad00587a9d2c3f0ddd01b75c7be63c842bfe3690c11",
+      "docs/audit/keyword-employment-education-2026-11-10/employment.json": "34848eca2c291995570ba381850fac8ddbeac5f7878ff09777d879f228efa532",
+      "docs/audit/keyword-employment-education-2026-11-10/education-specific.json": "fcc4f35fe10a04d9ab11da4d7d6674e6779881c81b3b16690c4d9f8740f3f969",
+      "docs/audit/keyword-employment-education-2026-11-10/education-broader.json": "231b7029722f786705a3eaa14c658f657b3b38179deca37e862d9afc259002de",
+      "docs/audit/keyword-employment-broad-2026-11-10/employment-broad.json": "489754ba9986842d61704c9cfb56a378b596d79ce2782972eac4dd53b0628b8b",
+      "docs/audit/keyword-exclusions-2026-11-10/software-services-products.json": "23c440857a175a0674332b037d8acfedd550c2d060300cbad5b14a48acd5edaa",
+      "docs/audit/keyword-property-readiness-2026-11-11/property-readiness.json": "979aa29d3836d84ea40306c78b4423acb28d45f3c9099a12c18f7215664eb198",
+      "docs/audit/keyword-northern-emirates-2026-11-11/northern-emirates.json": "c290895884a00f5da71b985afd53eb465ed0c21e7cf38d43dec950beca8cb53e",
+      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/abu-dhabi-sharjah.json": "eed2da3518d48a82fffb1ac3ab3b2706e6b32902bc313653c328685e13bcf095",
+      "docs/audit/keyword-developer-employment-2026-11-11/developer-employment.json": "3779c708adbe0aae5cbe3f9ee51d1f3a11d334cb976041c05fe0af77e00af1cd",
+      "docs/audit/keyword-occupational-education-2026-11-11/occupational-education.json": "da46ec51edf53f71c5fe08521853b31ba716f8034bf6b312488ee6a59f6992b1",
+      "docs/audit/keyword-employment-lifecycle-2026-11-11/employment-lifecycle.json": "ff63d459628f60eb7bf3b64b7ee881d57e7f8abacb734c15d7f7e597b5a12b7e"
+    },
+    "review_workbenches_sha256": {
+      "docs/audit/keyword-triage-2026-11-08/workbench.json": "1a687839b595c7b56cd7bbc150e31fb735eb1dfdaabe094b5e097b4323c7f477",
+      "docs/audit/keyword-discovery-supply-2026-11-08/workbench.json": "b7118852ef5592db4501f28ae14201dc7715bca5f1ca5bf8036d66e6b5fb9cc2",
+      "docs/audit/keyword-employment-education-2026-11-10/workbench.json": "b22f03d89237aa4467b2e7d9cc8a74c36882cdee104cabb85d55f8150e6f139a",
+      "docs/audit/keyword-employment-broad-2026-11-10/workbench.json": "c93745c44b95b530b8c4dbcd1ac6f7e4b7b04cdd8eabfacaaf9a6578b1fa2002",
+      "docs/audit/keyword-exclusions-2026-11-10/workbench.json": "585ea863a978e63537b440b5eb6feaedaf236d07f05878d19c7f7ce267ef4a58",
+      "docs/audit/keyword-property-readiness-2026-11-11/workbench.json": "835894b843b9c80e27468cf0ddfa1ab5104a227dca6841f7e18126523294ea4d",
+      "docs/audit/keyword-northern-emirates-2026-11-11/workbench.json": "eb0035f901825002009107ff05f81e2ca1c9671b54f99eafeeed0af1a12d6ed3",
+      "docs/audit/keyword-abu-dhabi-sharjah-2026-11-11/workbench.json": "ba1fa77c48953f73f0bce0bf4a1124b8991afa636ea775945a611d288e4ce2b4",
+      "docs/audit/keyword-developer-employment-2026-11-11/workbench.json": "a7cb70063367d08f4518e42aaf7f230ae8c872f111a1eaa0069e76dc088b3a99",
+      "docs/audit/keyword-occupational-education-2026-11-11/workbench.json": "4487755de36391aa59f5bdb06d8bb72edb3c48a8f46ca2a89a6d733248daa1b0",
+      "docs/audit/keyword-employment-lifecycle-2026-11-11/workbench.json": "d55c2ba4f03fe8f91cc49477f938cd0eae0ac638b1667709de422ab540404449"
+    },
+    "authored_protection_cases": {
+      "file": "docs/audit/keyword-exclusions-2026-11-10/protected-cases.json",
+      "sha256": "ebc12f690c48a846b21d0f43cda3fe0e860e597f8f63215fe13abffebd85bf43"
+    },
+    "master_source": {
+      "file": "docs/google-ads/BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+      "sha256": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4"
+    },
+    "original_capture_verifier_sha256": "d57fbe7f95d74270f0880a63d59e1776afd3e3c68a8cfd154ca399cd9ff63cee"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "target": 14000,
+  "actual_keyword_rows_in_this_file": 0,
+  "pools": [
+    {
+      "pool_id": "NEG-EMP",
+      "name": "Employment, applications and job research",
+      "research_target": 7000,
+      "rule": "Broker/developer/agency roles; internships; walk-ins; CVs; interviews; salaries; application-only searches. Exclude full employment intent, not generic job, salary, vacancy or career words."
+    },
+    {
+      "pool_id": "NEG-EDU",
+      "name": "Courses, examinations and academic work",
+      "research_target": 2000,
+      "rule": "Broker exam preparation, course fees, assignments, thesis-only searches. Preserve genuine buyer guides, floor plans, due diligence and school-location demand."
+    },
+    {
+      "pool_id": "NEG-SW",
+      "name": "Software, website and unrelated vendor procurement",
+      "research_target": 1000,
+      "rule": "Buying real-estate CRM software, website themes, source code and listing plugins. Protect technology companies seeking premises."
+    },
+    {
+      "pool_id": "NEG-MEDIA",
+      "name": "Stock media, games and content-only downloads",
+      "research_target": 1000,
+      "rule": "Wallpaper packs, stock photos, game assets and entertainment-only searches. Protect property brochures and floor-plan requests."
+    },
+    {
+      "pool_id": "NEG-SVC",
+      "name": "Contractor, repair and unrelated service requests",
+      "research_target": 1000,
+      "rule": "Plumbing, repairs, materials and contractor hiring where not a brokerage request. Protect investors buying renovation opportunities and occupiers seeking suitable premises."
+    },
+    {
+      "pool_id": "NEG-PRODUCT",
+      "name": "Non-property products and unrelated rentals",
+      "research_target": 1000,
+      "rule": "Vehicles, tools, costume rentals and other clearly different products. Do not exclude rental, rent, lease or commercial as global tokens."
+    },
+    {
+      "pool_id": "NEG-NAV",
+      "name": "Unserved navigation, support and observed irrelevant queries",
+      "research_target": 1000,
+      "rule": "Login/password and support-only requests or other observed incompatible queries. Exact and narrow scopes; protect complaints leading to broker switching and genuine owner/tenant requests."
+    }
+  ]
+}

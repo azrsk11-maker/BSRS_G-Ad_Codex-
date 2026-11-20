@@ -1,0 +1,33 @@
+{
+  "scope": "SOURCE_AND_LEAD_REVIEW_DEVELOPMENT_CHECKS_NOT_ADMISSION_OR_RELEASE",
+  "observed_on_dubai": "2026-11-13",
+  "source": {
+    "private_raw_equivalence_passed": true,
+    "rows": 6053,
+    "distinct_phrases": 6053,
+    "public_columns": 21,
+    "account_specific_columns_excluded": 5,
+    "monthly_estimate_columns": 12,
+    "exact_original_seed_rows": 10,
+    "in_memory_tamper_cases_rejected": 12,
+    "measured_seconds": 1.626128
+  },
+  "semantic_review": {
+    "complete_literals_read": 914,
+    "full_exact_research_proposals": 444,
+    "held": 470,
+    "noncohort_records_intent_unreviewed": 5139,
+    "in_memory_tamper_cases_rejected": 16,
+    "measured_seconds": 0.552068,
+    "independent_human_review": false
+  },
+  "current_membership_acceptance": "PASS_FRESH_COMPLETE_13025_ROW_SNAPSHOT_AND_ALL_6053_SOURCE_PEERS",
+  "master_rows_added": 0,
+  "exclusion_approvals": 0,
+  "deployed": 0,
+  "production_changed": false,
+  "ads_changed": false,
+  "release_authorized": false,
+  "independent_membership_cli_seconds": 107.853372,
+  "membership_tamper_cases_rejected": 14
+}

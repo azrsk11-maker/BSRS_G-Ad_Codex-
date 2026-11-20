@@ -1,0 +1,649 @@
+{
+  "schema": "bsre-pool-sprinkler-semantic-review-v1",
+  "reviewed_on": "2026-11-13",
+  "source_pins": {
+    "service-installation.json": "91b8edcdcc6b8ab216c89ba2b1c9674ced8bcaf2be93d9f3ffe47795c1c75392",
+    "capture.json": "3e6f99d8cce615ab77549c2e33b1edce93605f78e7fb4b034fb9e9440e6f12ea"
+  },
+  "source_directory": "docs/audit/keyword-service-installation-2026-11-13",
+  "raw_source_sha256": "4dda5a60cfbb680edff4d2b6c17319f55afb41055968052bb18e6b3d883f5078",
+  "reviewer": {
+    "name": "Codex AI lead",
+    "kind": "AI_SEMANTIC_REVIEW",
+    "all_complete_literals_read": true,
+    "independent_second_review": false,
+    "human_approval": false
+  },
+  "limits": {
+    "research_proposal_only": true,
+    "lexical_selection_is_not_intent_proof": true,
+    "provider_identity_verified": false,
+    "metrics_used_for_intent": false,
+    "current_library_membership_checked": false,
+    "compatibility_checked": false,
+    "within_source_aliases_checked": false,
+    "protected_intent_checked": false,
+    "independent_exclusion_approval": false,
+    "library_rows_added": 0,
+    "live_bindings_added": 0,
+    "deployed": 0,
+    "source_metrics_modified": false
+  },
+  "selection": {
+    "cohort_pattern": "(?:\\bsprinkler\\b.*\\bbackflow\\b|\\bbackflow\\b.*\\bsprinkler\\b)|(?:\\bprofessional\\b.*\\bpool\\b.*\\bclean)|(?:\\bpool\\b.*\\bcleaning\\b.*\\b(?:companies|company)\\b)|(?:\\b(?:bedbug|bed bug)\\b.*\\b(?:steam|heat)\\b.*\\b(?:services|company|companies)\\b)|(?:\\b(?:timer|controller)\\b.*\\brepair|\\brepair\\b.*\\b(?:timer|controller)\\b)|(?:\\b(?:freez\\w*|froz\\w*|frost\\w*|winteriz\\w*)\\b)|(?:\\b(?:burst\\w*|broken pipes?)\\b)|(?:\\bpool\\b.*\\bdrain\\b.*\\bclean|\\bclean\\w*\\b.*\\bpool\\b.*\\bdrain\\b)|(?:\\bpool\\b.*\\bvacuum\\w*\\b.*\\bservice\\b)",
+    "prior_review_pins": {
+      "docs/audit/keyword-septic-grease-review-2026-11-13/review.json": "5d8c1d8af6ccff0a0c0f40faff8f899e2f6bd56e372959c4083220662581f028",
+      "docs/audit/keyword-trade-services-review-2026-11-13/review.json": "597a03ccdbc92ae5a58b429981b0dafbc7749676730e2db5d697926076ebdd60",
+      "docs/audit/keyword-pest-commercial-services-review-2026-11-13/review.json": "704457d2646095a1c46aee54faac8becb4d99bc353fa27129ba174b54e82ca90"
+    },
+    "flags": "IGNORECASE",
+    "source_records": 6053,
+    "selected_records": 45,
+    "remaining_outside_cohort": 6008,
+    "source_order_preserved": true,
+    "quota_cutoff": false
+  },
+  "decisions": [
+    {
+      "selected_ordinal": 1,
+      "source_ordinal": 124,
+      "source_line": 127,
+      "original_literal": "pool cleaning companies near me",
+      "normalized_literal": "pool cleaning companies near me",
+      "literal_utf8_sha256": "d3471cc40924ca750093c64699ea9d11ab5083709ed1adae8acb0ced2c56b86c",
+      "complete_public_values_sha256": "1ca825f6e9850d8c88d3026a0ca18647bfba84637e66afd1e6dad0a7a81bb59f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 2,
+      "source_ordinal": 249,
+      "source_line": 252,
+      "original_literal": "pool cleaning companies",
+      "normalized_literal": "pool cleaning companies",
+      "literal_utf8_sha256": "fde305f082b06f10e61b3433e37eb4fa3aff771d25128c5ab6ca4fc0521e8bc7",
+      "complete_public_values_sha256": "09454ffae04b3fe88f98ac623d556a68f033f76a3eec00d9a4a0f3edfd86d76c",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 3,
+      "source_ordinal": 587,
+      "source_line": 590,
+      "original_literal": "professional pool cleaning service",
+      "normalized_literal": "professional pool cleaning service",
+      "literal_utf8_sha256": "4c6090a441ee9a3e87b091b96b5263b38a9b5a6f77654168a699d64a4b38bcbf",
+      "complete_public_values_sha256": "553a7dd070c73ef49d066b778defe1ffdf18c07ba3b136f6edfc143918bb6104",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 4,
+      "source_ordinal": 988,
+      "source_line": 991,
+      "original_literal": "local pool cleaning companies",
+      "normalized_literal": "local pool cleaning companies",
+      "literal_utf8_sha256": "33010e50799ffa8dc57a7c030975c5b30e02fcbf74b17541f93be1011d22e811",
+      "complete_public_values_sha256": "1e5aa87d8c970d9493b109b6ed7bf46483f647e148f0ba4694278c9617686824",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 5,
+      "source_ordinal": 1269,
+      "source_line": 1272,
+      "original_literal": "professional pool cleaning",
+      "normalized_literal": "professional pool cleaning",
+      "literal_utf8_sha256": "b55afd423cea9f00e3aabe4e62ded3ef5c63484dfd50900ea670518164004549",
+      "complete_public_values_sha256": "847ae6b58e4212508cd04ddf6debbec6a054f75edb5c697f3e0fea74c0130e94",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 6,
+      "source_ordinal": 1537,
+      "source_line": 1540,
+      "original_literal": "swimming pool cleaning companies near me",
+      "normalized_literal": "swimming pool cleaning companies near me",
+      "literal_utf8_sha256": "cc254433da4544cf1a30dadf2a6ca0c31ff28ae4cc6145a1e055264e9706d8c0",
+      "complete_public_values_sha256": "b951d01641eca18aaad581ef5d1013c4b7f91e8d3561e30564d61c1e39fc7fb4",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 7,
+      "source_ordinal": 1808,
+      "source_line": 1811,
+      "original_literal": "pool drain cleaning service",
+      "normalized_literal": "pool drain cleaning service",
+      "literal_utf8_sha256": "106cdb442226d4575903e5b2f3a51ceddbc6035944b115f8534f19cbbbe771b6",
+      "complete_public_values_sha256": "a2ddbe1f3a616b13290f2786a25b4029ac09ded3ab534f59077ad07a89565fab",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 8,
+      "source_ordinal": 1847,
+      "source_line": 1850,
+      "original_literal": "swimming pool cleaning company",
+      "normalized_literal": "swimming pool cleaning company",
+      "literal_utf8_sha256": "b5f7b304ee55695846a2ff4f6deaf38854838388b54a0f4a6195128d40e70286",
+      "complete_public_values_sha256": "1f7f2761b005024ffe6ac3baf562fd38a12a691fc9ae1c776ee6a24d41a5b635",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 9,
+      "source_ordinal": 1901,
+      "source_line": 1904,
+      "original_literal": "pool drain and clean service",
+      "normalized_literal": "pool drain and clean service",
+      "literal_utf8_sha256": "0528d357d8410acc9664f1960689d1893c50a35cc39c3c3bc6d0348ad6ff5993",
+      "complete_public_values_sha256": "84618c32acbe92b11443b61d0cbf5a2e6028f02c530bcc34d1e12199466fd14f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 10,
+      "source_ordinal": 2012,
+      "source_line": 2015,
+      "original_literal": "above ground pool cleaning company",
+      "normalized_literal": "above ground pool cleaning company",
+      "literal_utf8_sha256": "6a34854269feec6b6d02341b57a599e905c4206b7c0be742f11c96bd383afd4b",
+      "complete_public_values_sha256": "0ff5f087c435e2d7a36969ae246886881478717f4df1a823b9169c06fb9a2e94",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 11,
+      "source_ordinal": 2016,
+      "source_line": 2019,
+      "original_literal": "pool vacuuming service near me",
+      "normalized_literal": "pool vacuuming service near me",
+      "literal_utf8_sha256": "b03051142b140b40204adc66463cc2ad4bf8d7124f27c7c962e6ab9a20f3ab07",
+      "complete_public_values_sha256": "1977b13e86268aa2a8734bca13d07dd4310df8914ef9734bdb453e5ed7627802",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 12,
+      "source_ordinal": 2134,
+      "source_line": 2137,
+      "original_literal": "sprinkler timer repair near me",
+      "normalized_literal": "sprinkler timer repair near me",
+      "literal_utf8_sha256": "5382baa4896784b8f314b7eada44c7a35c9f641975e3be530dec08e36c98a3a6",
+      "complete_public_values_sha256": "f5a7b090bfbdc0d33642e8e18cd61f3ebdd1d7987c471c1943161f46ac03cf26",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 13,
+      "source_ordinal": 2216,
+      "source_line": 2219,
+      "original_literal": "sprinkler pipe burst repair cost",
+      "normalized_literal": "sprinkler pipe burst repair cost",
+      "literal_utf8_sha256": "07290c2796f192b49198c291108b9629bdf6e011e22ab238c47770bb1e5323b4",
+      "complete_public_values_sha256": "782d424332278024ade12f8bd5644f848ca16e5aeab800710dff697f0280baff",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 14,
+      "source_ordinal": 2388,
+      "source_line": 2391,
+      "original_literal": "sprinkler backflow preventer repair",
+      "normalized_literal": "sprinkler backflow preventer repair",
+      "literal_utf8_sha256": "12993961205c6a6460fd2773192d8df315b3811ff7326267bd1d7df7385f6edd",
+      "complete_public_values_sha256": "d0e651e47698498f393ed05f08b797802b0cebdd2f1470ef92aa400e4bc2b5b0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 15,
+      "source_ordinal": 2400,
+      "source_line": 2403,
+      "original_literal": "sprinkler backflow repair",
+      "normalized_literal": "sprinkler backflow repair",
+      "literal_utf8_sha256": "90bd492855f4c8734ccad42024cbd164316775f4d091872f7e7bfa056eda19d8",
+      "complete_public_values_sha256": "227a0172070dcce2d78ca93c5d4b1add107ac4555276cb6f76f5abcd6012ac3b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 16,
+      "source_ordinal": 2454,
+      "source_line": 2457,
+      "original_literal": "pool tile cleaning companies",
+      "normalized_literal": "pool tile cleaning companies",
+      "literal_utf8_sha256": "45895a1904f3eb9b6b2bc47c2d012d556b9e2bf2fd033d522d23e7c34eadfce6",
+      "complete_public_values_sha256": "d4bb54fc0aa6e495f39a6211457dbec1bd84e9d3851f6ea70d30665e083fda8a",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 17,
+      "source_ordinal": 2941,
+      "source_line": 2944,
+      "original_literal": "sprinkler controller repair",
+      "normalized_literal": "sprinkler controller repair",
+      "literal_utf8_sha256": "2b0e590f4b68291d8d8c7387358b141ce88d4a68c25c55f88d413ef50b820f32",
+      "complete_public_values_sha256": "5a065356901e740779cb10cd58ea3b9bc244e3b3fe68c02ed76da02373c6f8dd",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 18,
+      "source_ordinal": 2992,
+      "source_line": 2995,
+      "original_literal": "sprinkler backflow preventer replacement cost",
+      "normalized_literal": "sprinkler backflow preventer replacement cost",
+      "literal_utf8_sha256": "41c501941279ca573e2f1bed4cfd60bc3475c380d52fd94007e1aae115fd8c54",
+      "complete_public_values_sha256": "c59aa454a840f307117a94461899a22b7022fd961094c20130795fbd7ea6ef07",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 19,
+      "source_ordinal": 3017,
+      "source_line": 3020,
+      "original_literal": "professional swimming pool cleaners",
+      "normalized_literal": "professional swimming pool cleaners",
+      "literal_utf8_sha256": "50fcd3cd50e5c24dc18c168c0e09ec6427dc8bbf3f1a5ef3be70a90638a833fa",
+      "complete_public_values_sha256": "dbb5b3ede3b2569cc1c648d76257f566e7089f2555f37956540bbf3426ddcc5c",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 20,
+      "source_ordinal": 3031,
+      "source_line": 3034,
+      "original_literal": "sprinkler timer repair",
+      "normalized_literal": "sprinkler timer repair",
+      "literal_utf8_sha256": "cf37014043f02c0d2c51cf7445de145d8c51642670e3d450f6c6824545e8af19",
+      "complete_public_values_sha256": "a0c6d022f3c9a5f3dfd6f3a91273749246a28666f058120c0b741018b79561e8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 21,
+      "source_ordinal": 3226,
+      "source_line": 3229,
+      "original_literal": "sprinkler pipe burst repair",
+      "normalized_literal": "sprinkler pipe burst repair",
+      "literal_utf8_sha256": "d2d7cdf8f8dde11fe3284f7c84e744ae885df8b00214288a2e129192e7e9438d",
+      "complete_public_values_sha256": "f6c795722c257b0ef1421d6337ea8a7618b0a54c075f67991a60a06b1fc5cc7b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 22,
+      "source_ordinal": 3431,
+      "source_line": 3434,
+      "original_literal": "sprinkler backflow valve repair",
+      "normalized_literal": "sprinkler backflow valve repair",
+      "literal_utf8_sha256": "1e91fc955e83db5830e9f1ffbd408f264202971269e68c3a7d99f3b0615cde43",
+      "complete_public_values_sha256": "e93b9a3360abddb6e95aba8ab39554859cb6d815bfc2cd6a9902c4902fc9f4ed",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 23,
+      "source_ordinal": 3540,
+      "source_line": 3543,
+      "original_literal": "sprinkler backflow preventer replacement",
+      "normalized_literal": "sprinkler backflow preventer replacement",
+      "literal_utf8_sha256": "be7b90ae9ab9e6bb3b16863f6b2805c1c4f39f686e2a307478f139f1bac8506c",
+      "complete_public_values_sha256": "05568225b90010ae5f5ce2fb4e68891b70e142b98fbc39f044679dcf9aecf931",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 24,
+      "source_ordinal": 3848,
+      "source_line": 3851,
+      "original_literal": "rain bird controller repair",
+      "normalized_literal": "rain bird controller repair",
+      "literal_utf8_sha256": "769721f5d53ab3448579e179f1332893c27c9de85e2654e0fa2ec2b6338ea892",
+      "complete_public_values_sha256": "5dffbe0dc03c994c21ff36a7d41fad2405287ec91be334670abc305a2aba38b4",
+      "decision": "HOLD",
+      "reason_codes": [
+        "EQUIPMENT_OR_LANGUAGE_MEANING_UNVERIFIED"
+      ]
+    },
+    {
+      "selected_ordinal": 25,
+      "source_ordinal": 3852,
+      "source_line": 3855,
+      "original_literal": "sprinkler backflow replacement",
+      "normalized_literal": "sprinkler backflow replacement",
+      "literal_utf8_sha256": "9e33774202a121fb77738b0bad0bbd2772fb3bc8fe55de7d9a71e3f1e11061ce",
+      "complete_public_values_sha256": "d45b0a55a2cb18406bc564a223358a4e89fc4d4e8b0d2a7f067f9c2b8d647186",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 26,
+      "source_ordinal": 3858,
+      "source_line": 3861,
+      "original_literal": "above ground pool cleaning company near me",
+      "normalized_literal": "above ground pool cleaning company near me",
+      "literal_utf8_sha256": "007c20273e44e5fd3d3aa988eb33a6adc62523e2583d2422c0f253c4b8b32ac6",
+      "complete_public_values_sha256": "717ef169e81a0355e470096d2765e47e808f2d397ec38e3d0ace7b19a5ef40d8",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 27,
+      "source_ordinal": 4202,
+      "source_line": 4205,
+      "original_literal": "professional pool cleaning service near me",
+      "normalized_literal": "professional pool cleaning service near me",
+      "literal_utf8_sha256": "36869902573078a1d2665a5d24f544ad434c0394400da3d1339bfeee50ccde76",
+      "complete_public_values_sha256": "e85c97aefea5aaccd3ad91cdcaed1e8c511871a69cda30c8fc792ad00d24bb68",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 28,
+      "source_ordinal": 4326,
+      "source_line": 4329,
+      "original_literal": "backflow preventer sprinkler system leaking",
+      "normalized_literal": "backflow preventer sprinkler system leaking",
+      "literal_utf8_sha256": "51f2560c40676c0b7289e22704f64759909b98de77c8e397596e4ceb23d49827",
+      "complete_public_values_sha256": "36299b5cdb3b9070e4d981bb0715ff2b3948f6da933627f7b6686de7c4ac1dea",
+      "decision": "HOLD",
+      "reason_codes": [
+        "CONDITION_ONLY"
+      ]
+    },
+    {
+      "selected_ordinal": 29,
+      "source_ordinal": 4327,
+      "source_line": 4330,
+      "original_literal": "backflow sprinkler repair",
+      "normalized_literal": "backflow sprinkler repair",
+      "literal_utf8_sha256": "fa1f5e7b57c572c38559fbd0b4ce8b2bf10b67355d81c7c7e84bfa3891839875",
+      "complete_public_values_sha256": "5b98a223a75f00bcbb8322ae8ee265d1368f1e7f977a747f4bcf137523088dbc",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 30,
+      "source_ordinal": 4441,
+      "source_line": 4444,
+      "original_literal": "broken pipe sprinkler system",
+      "normalized_literal": "broken pipe sprinkler system",
+      "literal_utf8_sha256": "a301fc88c7f7f1b6d1b8e8f037da514e40cbffc68fefc45466ff66f80d9f61b8",
+      "complete_public_values_sha256": "c578344a5431dde0a7a3227ae8a0c2c371afc285fde1b0bf3227bcd939b1eb23",
+      "decision": "HOLD",
+      "reason_codes": [
+        "CONDITION_ONLY"
+      ]
+    },
+    {
+      "selected_ordinal": 31,
+      "source_ordinal": 4669,
+      "source_line": 4672,
+      "original_literal": "cost to repair frozen sprinkler system",
+      "normalized_literal": "cost to repair frozen sprinkler system",
+      "literal_utf8_sha256": "d5eddf703784934e2b92bc3f6f686722f54f18893dd48ebdbdf894dfa2243c5f",
+      "complete_public_values_sha256": "9e2a7a013cfaea6bd9b13f12ee0994d69ba69f9117220e5ad3fc6661b16c8ac0",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 32,
+      "source_ordinal": 4898,
+      "source_line": 4901,
+      "original_literal": "fix sprinkler system broken pipe",
+      "normalized_literal": "fix sprinkler system broken pipe",
+      "literal_utf8_sha256": "facc50857d60ff487637308a25f3fbbf90a6539638d2a688acd7f16d03dcd258",
+      "complete_public_values_sha256": "a88879dd0072c6d52a311f9c3c390f81e54a3f7dab922bac9ff8333bff2c886a",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 33,
+      "source_ordinal": 5261,
+      "source_line": 5264,
+      "original_literal": "lawn sprinkler backflow preventer repair",
+      "normalized_literal": "lawn sprinkler backflow preventer repair",
+      "literal_utf8_sha256": "370f17838ad8c71125730c5b6b281610100e33931a6dac19c3a35bff3bd982e8",
+      "complete_public_values_sha256": "89ce03283bc03a2923bf8d43d607fdbc031d4181aaa1e70f19f5ae15c50e1706",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 34,
+      "source_ordinal": 5387,
+      "source_line": 5390,
+      "original_literal": "orbit sprinkler timer repair",
+      "normalized_literal": "orbit sprinkler timer repair",
+      "literal_utf8_sha256": "55996dc0a70f0b1216364d10dcab27b65f38316b7c56b25bb5ff14eaf34af23c",
+      "complete_public_values_sha256": "c3d2b992ac7f1101538c8f316af804ab67f699bd161e1901e0021d53da1f2900",
+      "decision": "HOLD",
+      "reason_codes": [
+        "EQUIPMENT_OR_LANGUAGE_MEANING_UNVERIFIED"
+      ]
+    },
+    {
+      "selected_ordinal": 35,
+      "source_ordinal": 5520,
+      "source_line": 5523,
+      "original_literal": "repair backflow preventer sprinkler system",
+      "normalized_literal": "repair backflow preventer sprinkler system",
+      "literal_utf8_sha256": "56be2c9612f84ea331a51c953c70975a71604e0a73b0b4a67abf8eec6b41d1ef",
+      "complete_public_values_sha256": "c30953ac29abd132813bb3a2b12b6a38149e0ca9857e0b5aed3055a7e6299a1b",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 36,
+      "source_ordinal": 5571,
+      "source_line": 5574,
+      "original_literal": "repairing sprinkler backflow preventer",
+      "normalized_literal": "repairing sprinkler backflow preventer",
+      "literal_utf8_sha256": "7a2d9f277f61e106d2c782d82b6cfc3b2ef650be9dc5628e7aa3843e9a9903d9",
+      "complete_public_values_sha256": "82e74b326719e6d2ef74fc87213f50226066d1974dcdc3f61f5d8431564cb3e7",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 37,
+      "source_ordinal": 5582,
+      "source_line": 5585,
+      "original_literal": "replacing backflow preventer sprinkler system",
+      "normalized_literal": "replacing backflow preventer sprinkler system",
+      "literal_utf8_sha256": "ed3465e92498d670a9f291858aae8ad77c8831402666926de70df6d8790b9315",
+      "complete_public_values_sha256": "4402bfc9a2c9129c69bca5479111fd68e578100fe107e4ed9c8adc2246fdac9b",
+      "decision": "HOLD",
+      "reason_codes": [
+        "PRODUCT_OR_DIY_PURPOSE"
+      ]
+    },
+    {
+      "selected_ordinal": 38,
+      "source_ordinal": 5752,
+      "source_line": 5755,
+      "original_literal": "sprinkler backflow preventer broken",
+      "normalized_literal": "sprinkler backflow preventer broken",
+      "literal_utf8_sha256": "950710f4bfd87cbcf3237a025716c522f7bf2e50445984226b908aa7dc257313",
+      "complete_public_values_sha256": "72627b5eca5c0df5d0f8b322271d68c2fbcd2a7f550252b0ddfbfeb8438da3f2",
+      "decision": "HOLD",
+      "reason_codes": [
+        "CONDITION_ONLY"
+      ]
+    },
+    {
+      "selected_ordinal": 39,
+      "source_ordinal": 5754,
+      "source_line": 5757,
+      "original_literal": "sprinkler broken pipe",
+      "normalized_literal": "sprinkler broken pipe",
+      "literal_utf8_sha256": "713ec9046245b8ad1713c043ea6e28d9222a0b94dd9eae4f49f62158a2636f99",
+      "complete_public_values_sha256": "37bac080ef6b0ebca6b34dba0faa5a5dbf423d604a62d9cbefd2a939c79b19e9",
+      "decision": "HOLD",
+      "reason_codes": [
+        "CONDITION_ONLY"
+      ]
+    },
+    {
+      "selected_ordinal": 40,
+      "source_ordinal": 5780,
+      "source_line": 5783,
+      "original_literal": "sprinkler repair broken pipe",
+      "normalized_literal": "sprinkler repair broken pipe",
+      "literal_utf8_sha256": "9898b08a33c4ef0080c7654262292f2b2e729077031c9e36525cec5931872807",
+      "complete_public_values_sha256": "006d550a3995b47ebfe1b159b746fb709158d79020cab0958040dd84ab2709dd",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 41,
+      "source_ordinal": 5788,
+      "source_line": 5791,
+      "original_literal": "sprinkler system backflow preventer repair",
+      "normalized_literal": "sprinkler system backflow preventer repair",
+      "literal_utf8_sha256": "e9d148963238aafe17e24efaa51d61e0c29529d2e153e9fe5315c9b1104ebf9c",
+      "complete_public_values_sha256": "c899a848805838dbf32b7dd45f51c9cde989dd216cac2d10086f6bd99ec1ced9",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 42,
+      "source_ordinal": 5789,
+      "source_line": 5792,
+      "original_literal": "sprinkler system backflow repair",
+      "normalized_literal": "sprinkler system backflow repair",
+      "literal_utf8_sha256": "e43126ee3e43cc064ef6d1864a388482688bd548cfc462fbc984ddc39908521d",
+      "complete_public_values_sha256": "0df4150b7fb151130714a53075ec2ea11efd7ea5ac2af16ea20aaa08d868bf10",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 43,
+      "source_ordinal": 5790,
+      "source_line": 5793,
+      "original_literal": "sprinkler system backflow valve repair",
+      "normalized_literal": "sprinkler system backflow valve repair",
+      "literal_utf8_sha256": "91e93b6282f7df87a506240618b9cbd7771ff04892cb7955c11414bc8ca12d51",
+      "complete_public_values_sha256": "d16315c9f8b478d5a29844e54eac9e52ed359bd52ed0bf9acb7c8cf553b0d337",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    },
+    {
+      "selected_ordinal": 44,
+      "source_ordinal": 5792,
+      "source_line": 5795,
+      "original_literal": "sprinkler system broken pipe",
+      "normalized_literal": "sprinkler system broken pipe",
+      "literal_utf8_sha256": "b124fbcc481045f5391b757cbe44392e773b54ab75e41ada4e22a32d887c6435",
+      "complete_public_values_sha256": "d9eaba99bae34afe1e432f52942f0920f195d68e211a96d147c16c15656c917d",
+      "decision": "HOLD",
+      "reason_codes": [
+        "CONDITION_ONLY"
+      ]
+    },
+    {
+      "selected_ordinal": 45,
+      "source_ordinal": 5794,
+      "source_line": 5797,
+      "original_literal": "sprinkler system controller repair",
+      "normalized_literal": "sprinkler system controller repair",
+      "literal_utf8_sha256": "11dab07065f1aa61c1961008b89bc5a8bac3e651e4e59853d9ad8bbd59135e53",
+      "complete_public_values_sha256": "f426c4e0a2280650ce0bf6f6e72259ef920f6f8a661fab19bbc386f31e0e817f",
+      "decision": "PROPOSE_FULL_EXACT_RESEARCH",
+      "reason_codes": [
+        "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH"
+      ]
+    }
+  ],
+  "decision_counts": {
+    "PROPOSE_FULL_EXACT_RESEARCH": 31,
+    "HOLD": 14
+  },
+  "reason_counts": {
+    "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH": 31,
+    "PRODUCT_OR_DIY_PURPOSE": 7,
+    "EQUIPMENT_OR_LANGUAGE_MEANING_UNVERIFIED": 2,
+    "CONDITION_ONLY": 5
+  },
+  "reason_definitions": {
+    "EXPLICIT_POOL_OR_SPRINKLER_PROFESSIONAL_SERVICE_RESEARCH": "Explicit full-query company/professional/cleaning-service, repair or repair-price request; no generic object or property word proposed.",
+    "PRODUCT_OR_DIY_PURPOSE": "Retain equipment, replacement and DIY ambiguity; professional service-only purpose is unresolved.",
+    "CONDITION_ONLY": "Retain condition-only and broken/leaking component queries; service intent is not established.",
+    "EQUIPMENT_OR_LANGUAGE_MEANING_UNVERIFIED": "Retain uncertain named equipment/language meaning; do not infer a vendor identity."
+  }
+}

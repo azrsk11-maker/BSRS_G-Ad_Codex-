@@ -1,0 +1,84 @@
+{
+  "version": "3.0",
+  "date": "2026-11-06",
+  "scope": "PLANNING_SPECIFICATION_ONLY_NOT_LIVE_DEPLOYMENT",
+  "changes": [
+    "Native campaign pages within existing Hostinger-managed main website",
+    "Shared website tracking with page/form/CTA identities",
+    "23 event definitions and 32 unexecuted runtime acceptance tests",
+    "360 planned page bindings explicitly marked native main-site pages"
+  ],
+  "validation_scope": "38 planning-structure checks passed; no live runtime test executed",
+  "artifacts": [
+    {
+      "path": "BlackSwan_Real_Estate_Algorithmic_Master_Plan_v3.md",
+      "bytes": 92437,
+      "sha256": "8b0f7eafc4572c6ba7421b891285e9a324e96d53ca2507b58ef6d0e540efd7a4"
+    },
+    {
+      "path": "Codex_Execution_Brief.md",
+      "bytes": 5150,
+      "sha256": "3b94d9e2acab5a267036c7104ce0ca6334a933ff49d653332338764307011a71"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1449,
+      "sha256": "7f35e2231f65f9ebbdf1c06bd96c78084f849593bcd747ff05599016aa470df8"
+    },
+    {
+      "path": "Website_Tracking_Addendum_v3.md",
+      "bytes": 16522,
+      "sha256": "dbf55d930673fcb33f17d28b9076149a001d79d83a495947975e0eba3520574a"
+    },
+    {
+      "path": "company_config.json",
+      "bytes": 3924,
+      "sha256": "7312ac7d9b4f2bb648c8ad3c6107ae502e47004b110fa6a18cbe8eaf31f18e88"
+    },
+    {
+      "path": "negative_research_plan.json",
+      "bytes": 2259,
+      "sha256": "d55d692fb0a3dc37e24649ac4f4550164152bf10bfa6bca5c79d7faf2b8f61b1"
+    },
+    {
+      "path": "page_family_allocation.json",
+      "bytes": 3105,
+      "sha256": "4bc29e0c4c5460391bcf2506876ce6e306b344c963a9f07717db79aef911deb4"
+    },
+    {
+      "path": "planned_campaign_page_registry.json",
+      "bytes": 354143,
+      "sha256": "4cb1101bd54e687674938a368a73e6eacd3cee5a4743d2046f2d8bc6abef7b65"
+    },
+    {
+      "path": "planning_validation.json",
+      "bytes": 5333,
+      "sha256": "e5cc13925f57235029ac375cbfdc03ae71ec2bb1b5ec492337aa69b70cd057c8"
+    },
+    {
+      "path": "positive_intent_taxonomy.json",
+      "bytes": 19741,
+      "sha256": "0a9f96ad27d7673cca4a4c778501038b55292510c2d6c4e9f1bb4aee67bcc5af"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 5765,
+      "sha256": "c040bedd152239d392900ea4c56df78887f4d2bd2d280ce38ffc673a429264fa"
+    },
+    {
+      "path": "validate_planning_package.py",
+      "bytes": 8319,
+      "sha256": "fd221e3bc843d5b91dc5cbc03715327f2c81a63ecbc10faa1dc1c589d94b9fc2"
+    },
+    {
+      "path": "website_tracking_acceptance_tests.json",
+      "bytes": 7881,
+      "sha256": "97f181d92f2401e6fa7bc4ee0e2551d65bb542ae68ab7c07a58da571d5c77cab"
+    },
+    {
+      "path": "website_tracking_contract.json",
+      "bytes": 10224,
+      "sha256": "981cce6c4a656a6c999d0aecc501c1136e59ff38fb5b2db1495900413417c26f"
+    }
+  ]
+}

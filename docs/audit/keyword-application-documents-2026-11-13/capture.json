@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-13",
+  "source_files": [
+    {
+      "file": "application-documents.json",
+      "batch_id": "BSRE-KP-APPLICATIONS-20261113-01",
+      "sha256": "308e98c6a5836459cf572e7ff8d4e063b06cdd1881170f245f17b0f6b8bbb587",
+      "bytes": 3949534,
+      "records": 4356,
+      "distinct_normalized": 4356,
+      "source_bytes": 665460,
+      "source_sha256": "840561b4e04958a8c911bf0bf89fb941377c81d284284260d30b26fc940a3fa5"
+    }
+  ],
+  "totals": {
+    "export_rows": 4356,
+    "distinct_normalized_phrases": 4356,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}

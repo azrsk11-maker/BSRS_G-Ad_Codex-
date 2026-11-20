@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "scope": "OFFLINE_RESEARCH_ACCEPTANCE_NOT_ACTUAL_EXCLUSION_SCOPE_OR_POSITIVE_ADMISSION",
+  "full_fresh_generation": {
+    "status": "PASSED_FRESH_COMPLETE_HISTORY_AND_ALL_SOURCE_SCREEN",
+    "current_api": "current_negative_library.reconstruct",
+    "source_occurrences": 3195,
+    "complete_negative_records_required": 14000,
+    "production_or_ads_changed": false,
+    "fresh_complete_history_seconds": 130.827423,
+    "all_occurrence_screen_seconds": 0.622345,
+    "counts": {
+      "current_potential_conflict_rows": 0,
+      "current_potential_conflict_records": 0,
+      "archived_overlap_rows": 0,
+      "source_occurrences_screened": 3195,
+      "positive_admissions_added": 0,
+      "negative_changes": 0,
+      "approvals_added": 0,
+      "deployed_added": 0
+    },
+    "report_sha256": "6db250807797e7e9e14efffcd2f823fb1d45fa817c14764658cd9f4527767e49",
+    "report_bytes": 2438712,
+    "current_match_types": {
+      "EXACT": 14000
+    },
+    "total_elapsed_seconds": 131.50464
+  },
+  "focused_new_tests": {
+    "passed": true,
+    "cases": 29,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "focused_elapsed_seconds": 9.758403,
+    "generation_and_tests_elapsed_seconds": 11.47134,
+    "intent_review_sha256": "484e1389b36736e9b6bdc3036ae316869fee041cad02b4e78d14b424ad9d9d06",
+    "intent_review_bytes": 425826,
+    "full_current_history_generation_verified_separately": true,
+    "ci_does_not_repeat_this_new_full_history_replay": true
+  },
+  "full_goal_complete": false,
+  "production_or_ads_changed": false,
+  "release_authorized": false
+}

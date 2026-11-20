@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "scope": "LATEST_REVIEW_HOLD_OVERLAY_NOT_AD_SERVING_STATUS",
+  "registered_index": {
+    "file": "tools/keyword-system/data/negative-research-index.json",
+    "sha256": "ff04733c369954f66d562dc14a263bf40b58c7b14877332767f309472cb5e525"
+  },
+  "latest_coverage": {
+    "file": "docs/audit/keyword-vendor-review-coverage-2026-11-11/report.json",
+    "sha256": "42d02347ba05fccc0f636bec212b36acd80491f2becb2575c9aecbef33672210"
+  },
+  "counts": {
+    "registered": 8035,
+    "eligible": 8025,
+    "additional_held": 10,
+    "total_archived": 12
+  },
+  "additional_held_keyword_ids": [
+    "BSRE-N-a96f27020bbc0540dd31f467",
+    "BSRE-N-0ec681b8c77dcb0000e5cd3c",
+    "BSRE-N-fa449b6f863d3d8af2a52ad7",
+    "BSRE-N-c1bffcb810942a0525287b93",
+    "BSRE-N-c54abee1cf8e5bf205ac3a51",
+    "BSRE-N-d64f96f3b579f747456aba43",
+    "BSRE-N-0f999277df4de92ff9c9bdb4",
+    "BSRE-N-eedb0a2395d80027127afd4f",
+    "BSRE-N-c51fafffee373aa696132d2f",
+    "BSRE-N-99aaebdac8783c6362563e3f"
+  ],
+  "prior_archived_keyword_ids": [
+    "BSRE-N-6aca2db3ab4aea0e99abf196",
+    "BSRE-N-b3a57f9f688da3ce09a8aee3"
+  ],
+  "research_only": true,
+  "independent_review_verified": false,
+  "deployment_authorized": false,
+  "historical_records_rewritten": false
+}

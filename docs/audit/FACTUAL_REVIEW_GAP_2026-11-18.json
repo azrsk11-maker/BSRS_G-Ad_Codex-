@@ -1,0 +1,20 @@
+{
+  "schema": "bsre-g051-factual-review-gap-v1",
+  "goal": "G051",
+  "status": "BLOCKED_DATED_FACTUAL_REVIEW",
+  "date": "2026-11-18",
+  "inspected_versions": {
+    "campaign_candidates": 4,
+    "guide_candidates_with_previously_approved_private_insertions": 2
+  },
+  "specific_property_offer_made": false,
+  "unit_inventory_prices_required_for_current_inspected_claims": false,
+  "existing_exact_private_insertion_approvals_preserved": true,
+  "READY_004": "WITHDRAWN_PRESERVED",
+  "Amit_factual_review_bound_to_each_current_version": false,
+  "required_input": "Amit's dated decision for each exact subject/version, supporting source references and refresh/withdrawal trigger. Rights/mandates/permits apply only to selected claims/assets that require them.",
+  "property_evidence_inferred_from_UAE_service_coverage": false,
+  "publication_authority": false,
+  "production_changed": false,
+  "Ads_changed": false
+}

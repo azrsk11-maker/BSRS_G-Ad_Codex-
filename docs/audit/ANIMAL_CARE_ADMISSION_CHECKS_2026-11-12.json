@@ -1,0 +1,88 @@
+{
+  "schema": "bsre-animal-care-admission-checks-v1",
+  "observed_on_dubai": "2026-11-12",
+  "scope": "OFFLINE_RESEARCH_NOT_EXCLUSION_OR_RELEASE_APPROVAL",
+  "passed": true,
+  "tests_run": 27,
+  "new_animal_cases": 13,
+  "retained_support_cases": 13,
+  "guarded_public_entrypoints": 22,
+  "times": {
+    "wording_source_seconds": 0.62366,
+    "fresh_base_seconds": 81.71221,
+    "fresh_review_seconds": 0.924249,
+    "generation_seconds": 4.165514,
+    "focused_seconds": 30.994018,
+    "total_seconds": 124.459268
+  },
+  "private_wording_verification": {
+    "passed": true,
+    "raw_sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+    "complete_source_records": 53175,
+    "wording_occurrences_verified": 2,
+    "source_titles_repaired": false
+  },
+  "base_sha256": "bbb5968ad7a28f8a7e8d036a979c0d08455dee97860fd1aa6b0dca159f713171",
+  "review_pin": "870a60fbcfa14da5b4612fefc59b4ff797287d19a83d65bf7748fbce8a031292",
+  "output_pins": {
+    "index.json": "aab0fb37cf7aa15d34bb3d90f74ef15122cc4251bbef4fd2cdf00a4724b85a29",
+    "cohort-report.json": "4641cf0f5c08bc7d7277892b383431139f999ca391bd44f7a8caf9e78e2b03e1",
+    "library-report.json": "9e49f3a1341392411926b17a307c055a80f2a29dc362e4c38a88e0090fb93b45",
+    "research-pool-allocation.json": "d90761c35213bc5dddf9ff327f729e02a306072b0081de2ad60893b9f56d84db"
+  },
+  "complete_inputs_sha256": "ea897a269a001239ab9d2ef1a75f9640909c1a55f66c6c8e5e40ec98623c3765",
+  "research_summary": {
+    "scope": "CURRENT_RESEARCH_AFTER_ANIMAL_CARE_APPEND_ONLY_REVIEW",
+    "as_of": "2026-11-12",
+    "input_rows": 11986,
+    "distinct_nonblank_phrases": 11986,
+    "reviewed_eligible_rows": 11986,
+    "excluded_rows": 0,
+    "approved_exclusion_rows": 0,
+    "target": 14000,
+    "deficit": 2014,
+    "exact_target_pass": false,
+    "structural_pass": true,
+    "deployment_export_allowed": false,
+    "production_writes_available": false,
+    "positive_library_coverage_verified": false,
+    "protected_queries_indexed": 17634,
+    "computed_conflicts": 0,
+    "prior_rows": 11885,
+    "new_rows": 101,
+    "archived_original_rows": 18,
+    "source_occurrences_retained_in_current_records": 12199,
+    "new_exact_provenance_occurrences": 101,
+    "new_proposal_holds": 112,
+    "historical_records_rewritten": false,
+    "human_review_verified": false,
+    "live_campaign_mapping_verified": false,
+    "release_authorized": false
+  },
+  "files": {
+    "tools/keyword-system/ofqual_animal_care_admission.py": {
+      "sha256": "41e08b991106a6ca3a7b89b9223f8187549c835ba347cb38ce368d36568e6208",
+      "bytes": 27409
+    },
+    "tools/keyword-system/test_ofqual_animal_care_admission.py": {
+      "sha256": "08ad0f11537c229f67bab5f9d89e384b5f5052e94d2ebcb85a512f1518fa56d5",
+      "bytes": 9190
+    },
+    "tools/keyword-system/current_negative_library.py": {
+      "sha256": "adb9972eaeda545601a41e570ae3d9ff41a8d030c40858a6763c5ae7ebadc99f",
+      "bytes": 32595
+    },
+    "tools/keyword-system/test_bank_support_admission.py": {
+      "sha256": "3ab0e4dfa443d153b8bf4c948fec256b5b53d83915307fbbdd93531e22fc6fff",
+      "bytes": 8940
+    },
+    "tools/keyword-system/test_entertainment_admission.py": {
+      "sha256": "8559ee99060a3dc3f869e8054e23be69dac0fb8a8f7bfd97be4bed937fa3e547",
+      "bytes": 10108
+    }
+  },
+  "independent_ai_or_human_approval_claimed": false,
+  "current_source_ci": "PENDING",
+  "production_or_ads_changed": false,
+  "release_authorized": false
+}

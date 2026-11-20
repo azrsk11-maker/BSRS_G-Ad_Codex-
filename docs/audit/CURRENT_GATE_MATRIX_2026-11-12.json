@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-12",
+  "scope": "Verified paused live account plus source/native candidates; live release unproven",
+  "release_authorized": false,
+  "production_changed": false,
+  "ads_serving": false,
+  "gates": [
+    {
+      "id": "ads_pause",
+      "status": "PASS",
+      "evidence": [
+        "docs/audit/LIVE_PROVIDER_INTERFACE_AUDIT_2026-11-12.json"
+      ],
+      "note": "Read-only account573-038-4686:20records/17Paused/3Removed/0Enabled and account-wide not-running banner at recorded observation. No status changes."
+    },
+    {
+      "id": "budget_and_campaign_controls",
+      "status": "PARTIAL",
+      "evidence": [
+        "../../config/release_controls.json",
+        "../../tools/release-control/validate_release_controls.py",
+        "ADS_NEW_CAMPAIGNS_READBACK_2026-11-11.json",
+        "docs/audit/LIVE_PROVIDER_INTERFACE_AUDIT_2026-11-12.json"
+      ],
+      "note": "Four new approved IDs remainPaused at1200/400/300/100 = AED2000aggregateaverage/day beforeVAT, not a hard ceiling. FullCPC/targeting/assets/goals/schedule/destination acceptance remains required; no settings change."
+    },
+    {
+      "id": "native_service_destinations",
+      "status": "PARTIAL",
+      "evidence": [
+        "NATIVE_ENQUIRY_DESTINATION_READBACK_2026-11-11.json",
+        "NATIVE_ENQUIRY_FORM_CONTRACT_READBACK_2026-11-11.json"
+      ],
+      "note": "HTTP and HTML contracts observed; runtime receiver acceptance remains open."
+    },
+    {
+      "id": "form_contract_validation",
+      "status": "PASS",
+      "evidence": [
+        "../../tools/website-tracking/validate_form_contract.mjs",
+        "../../tools/website-tracking/validate_form_contract.test.mjs"
+      ],
+      "note": "PASS is scoped to documented source/native role/field contracts only. Genuine browser receipt/email/delivery/payload acceptance is separate and remains open."
+    },
+    {
+      "id": "360_page_planning",
+      "status": "PARTIAL",
+      "evidence": [
+        "../google-ads/planned_campaign_page_registry.json"
+      ],
+      "note": "360 planned slots; deployed URLs and CMS bindings are not established."
+    },
+    {
+      "id": "positive_keyword_library",
+      "status": "OPEN",
+      "evidence": [
+        "../PROGRESS.md"
+      ],
+      "note": "Reviewed/admitted positive master0/14000. Existing historical/Planner candidate research is not business or publication admission. Genuine subject-bound service/geography/language/page/claims/intent review remains required."
+    },
+    {
+      "id": "negative_keyword_library",
+      "status": "OPEN",
+      "evidence": [
+        "keyword-negative-followup-admission-2026-11-11/library-report.json",
+        "keyword-negative-followup-admission-2026-11-11/README.md",
+        "docs/audit/APPRENTICESHIP_ADMISSION_CHECKS_2026-11-12.json"
+      ],
+      "note": "Researched10963/14000; deficit3037. Independent exclusion approval/deployment0. Both full reviewed libraries required; no pilot exception. Source/protection/allocation provenance remains distinct from approval."
+    },
+    {
+      "id": "consent_tracking_runtime",
+      "status": "OPEN",
+      "evidence": [
+        "../google-ads/Website_Tracking_Addendum_v3.md"
+      ],
+      "note": "Browser/runtime, payload, deduplication and live identifiers remain unverified."
+    },
+    {
+      "id": "staff_rehearsal_and_capacity",
+      "status": "OPEN",
+      "evidence": [
+        "STAFF_REHEARSAL_GATE_READBACK_2026-11-11.json",
+        "STAFF_REHEARSAL_WORKSHEET.md"
+      ],
+      "note": "Owner reports4Novrehearsal completed; actual timing/workload/capacity evidence remains unverified in scoped audit. Amitonly10–19Dubai/30mincontact, no deputy;300/day is estimate,150uniquequalified/day unproven. No claim rehearsal neveroccurred."
+    },
+    {
+      "id": "business_evidence_and_brand",
+      "status": "OPEN",
+      "evidence": [
+        "CONTENT_EVIDENCE_STATUS_2026-11-11.json",
+        "docs/audit/LIVE_PROVIDER_INTERFACE_AUDIT_2026-11-12.json"
+      ],
+      "note": "Amit factual/update nomination and private Marketing evidence folder are recorded. Fresh folder view has0items. Dated inventory/availability/prices, mandates/rights/coverage, draft-bound sign-offs and Brand approval remain unverified."
+    },
+    {
+      "id": "restricted_qualified_imports",
+      "status": "OPEN",
+      "evidence": [
+        "../decisions/OWNER_DECISIONS.md"
+      ],
+      "note": "No genuine eligible import/reconciliation evidence."
+    },
+    {
+      "id": "retention_and_recovery_live",
+      "status": "OPEN",
+      "evidence": [
+        "../PROGRESS.md",
+        "docs/audit/INITIAL_CLOSURE_COLLECTION_CHECKS_2026-11-12.json",
+        "docs/audit/LIVE_PROVIDER_INTERFACE_AUDIT_2026-11-12.json"
+      ],
+      "note": "Owner collection/amendment/retirement and synthetic native recovery exist. Actual capture SQL provider candidate is undercurrent review/CI; genuine closure/mailbox/producer/intent/restore custody remainunverified. Originalstage/link canrecreateafterdelete; no durableabsence/productionclaim. MonthlyownerMarketing-onlydeletion/12monthpolicies/30dayencryptedowner-onlyrecovery retained."
+    },
+    {
+      "id": "github_delivery_review",
+      "status": "PARTIAL",
+      "evidence": [
+        "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6823638404",
+        "docs/GOVERNANCE.md"
+      ],
+      "note": "Baseline32937cb exactly matches817reviewedfiles and6pins, all3same-headCIpassed. New capture-provider candidate requires its own delivery/currentCI. Mainunmerged; a different eligible independenthumanreviewer is stillrequired. Read-onlyGitclientnotrepaired; ownerbrowserdeliveryaddsnoaccess."
+    },
+    {
+      "id": "production_release",
+      "status": "HOLD",
+      "evidence": [
+        "../decisions/OWNER_DECISIONS.md"
+      ],
+      "note": "HOLD. Source/native CI or merge doesnot authorize publication/live tags/Adssettings/activation/spend. Require all business/runtime/provider gates plus separate explicit release authority. Productionunchanged/Adsnotactivated."
+    }
+  ]
+}

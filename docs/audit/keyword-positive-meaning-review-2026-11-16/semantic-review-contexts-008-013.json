@@ -1,0 +1,400 @@
+{
+  "all_selected_component_literals_and_peers_read": true,
+  "approval_granted": false,
+  "business_fact_claims_added": 0,
+  "canonical_merges_approved": 0,
+  "deployment_authorized": false,
+  "literal_review_basis": [
+    {
+      "component_id": "BUYER-COMP-008",
+      "external_literals": [],
+      "held_source_peer_ordinals": [],
+      "source_literals": [
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "d549a4ec395fa0e9ea2a2ef9299b74814415819a5eb6ac3c182043e906fd4aa2",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "dubai property for sale",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 15,
+          "source_ordinal": 12
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "260f032c981025ab5a496b4ef400e42117243ec9ec11dfe74f6a8bde88fd4a14",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "dubai properties for sale",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 20,
+          "source_ordinal": 17
+        }
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-009",
+      "external_literals": [],
+      "held_source_peer_ordinals": [],
+      "source_literals": [
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "0588785e9f711b96f504a0c16975eaf37b195d526b6c0e46d7d9034d5539d89a",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "houses for sale in dubai",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 16,
+          "source_ordinal": 13
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "1f213d4e4c2f307259b836b9f90816b90d809c111dc958e44ec2e86d38d11870",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "dubai for sale house",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 440,
+          "source_ordinal": 437
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "677819056c6178bcb493e7eebae92e183a2ed446df4530b82305d5b80e99ea0a",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "for sale house dubai",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 1528,
+          "source_ordinal": 1525
+        }
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-010",
+      "external_literals": [],
+      "held_source_peer_ordinals": [],
+      "source_literals": [
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "0522a970dc6852108de2132a8625a54c0bb17148d8ea2ad596d7154b455e5efd",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "buy house in dubai",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 18,
+          "source_ordinal": 15
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "c3f8edf1f3a76aa3797d20d09f15363e971f6ea81597082b27c577220c60698b",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "house in dubai buy",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 628,
+          "source_ordinal": 625
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "0bcc9fc58d77d4bbc3c9b402fd77744b7f57c545a2d22413c6c303d5bc0f535c",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "house dubai buy",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 677,
+          "source_ordinal": 674
+        }
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-011",
+      "external_literals": [],
+      "held_source_peer_ordinals": [],
+      "source_literals": [
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "271fe0eec36e1e5b5bd4c959b307dce0a88bf1bd797a80aca6deb2ffe369ec27",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "damac hills 2 villa for sale",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 23,
+          "source_ordinal": 20
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "a271bdb7af137555005f2f73468de5dd5e4e0b1005b3f77f62dadf089451dcb6",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "villa for sale in damac hills 2",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 229,
+          "source_ordinal": 226
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "3f18da627dee7a0147be78779a7470d4fa89278153b7a3615e99169a40e8244b",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "villa for sale damac hills 2",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 699,
+          "source_ordinal": 696
+        }
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-012",
+      "external_literals": [],
+      "held_source_peer_ordinals": [],
+      "source_literals": [
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "64800339e62ec2dd606cfc4b80578599b1332f73991b2a355995dbdf32328cdc",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "dubai marina apartments for sale",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 26,
+          "source_ordinal": 23
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "869d219d1509f8017abad7b8eb2c0226fbdebdaf2c07894a29de523673eeec7e",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "dubai marina flats for sale",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 281,
+          "source_ordinal": 278
+        }
+      ]
+    },
+    {
+      "component_id": "BUYER-COMP-013",
+      "external_literals": [],
+      "held_source_peer_ordinals": [],
+      "source_literals": [
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "e3829f314376f905ae8a06053bcf11a4a1efd3480a8f2dbbb9662c0d384de11f",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "cheap houses for sale in dubai",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 27,
+          "source_ordinal": 24
+        },
+        {
+          "actual_cpc": null,
+          "actual_volume": null,
+          "admitted": false,
+          "approved": false,
+          "business_evidence_verified": false,
+          "complete_public_values_sha256": "2d5dcf6792c825a0a699486364fd26a88e426de2c6ffbcaba02257be366ef6c1",
+          "deployed": false,
+          "five_subject_bound_reviews_complete": false,
+          "original_literal": "houses in dubai for sale cheap",
+          "retained_preliminary_decision": "CONDITIONAL_PROPERTY_BUYER_RESEARCH",
+          "source_line": 698,
+          "source_ordinal": 695
+        }
+      ]
+    }
+  ],
+  "original_preparation_scope": "PRIVATE_CONTEXTS_008_013_SUPPLEMENT_NOT_COMPLETE_REPLACEMENT_OR_ADMISSION",
+  "owner_mapping_interpretation": "Buyers primary OFP preserves secondary RDY and both service routes; hold is exact page/context/factual review, not an off-plan word requirement.",
+  "positive_admissions_added": 0,
+  "prior_six_contexts_rereviewed": false,
+  "reviewed_components": [
+    {
+      "buyer_ordinals": [
+        12,
+        17
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-008",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Preserve the generic property scope and the singular/plural originals. Further family/asset interpretation and actual buyer page/context are needed; neither wording alone proves the same inventory or a new semantic canonical.",
+      "review_note": "Read Dubai property for sale and Dubai properties for sale in full. Both express broad purchase discovery in Dubai. The singular/plural change does not establish the number of units sought, a common actual property, or a portfolio request. Property remains an unspecified asset class. No ready/off-plan stage, owner instruction, price or availability is supplied.",
+      "source_ordinals": [
+        12,
+        17
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        13,
+        437,
+        1525
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-009",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Keep the complete house asset wording, plural distinction and Dubai destination. No bedroom, community, condition, possession or development stage is stated; exact subject and reviewed ad-group/page context remain required.",
+      "review_note": "Read houses for sale in Dubai, Dubai for sale house and for sale house Dubai in full. All support house-purchase discovery in Dubai; reordered wording does not turn a buyer discovery search into an instruction to sell the searcher's own house. Houses versus house does not prove one identical unit or multiple-unit intent. House must not be silently narrowed to villa, townhouse or apartment.",
+      "source_ordinals": [
+        13,
+        437,
+        1525
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        15,
+        625,
+        674
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-010",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Generic house purchase research is compatible with Buyers, whose primary OFP classification preserves secondary RDY service context. Missing off-plan wording is not a blanket hold; do not choose a subtype or exact ownership mapping without its reviewed context and five subject-bound reviews.",
+      "review_note": "Read buy house in Dubai, house in Dubai buy and house Dubai buy in full. All explicitly request a Dubai house purchase. Word order and the in preposition do not alter the broad purchase task. None states whether the house is ready, resale or off-plan, or names an actual property, price, condition or number of units.",
+      "source_ordinals": [
+        15,
+        625,
+        674
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        20,
+        226,
+        696
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-011",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "The wording is compatible as a named-location villa purchase context. Actual entity/phase identity, usable inventory or lawful advisory offer, rights, readiness/hand-over status, claims and exact native-page ownership remain unverified. No developer affiliation, current stock or canonical entity equivalence is asserted.",
+      "review_note": "Read Damac Hills 2 villa for sale, villa for sale in Damac Hills 2 and villa for sale Damac Hills 2 in full. Every form retains the full Damac Hills 2 label and a villa-for-sale purchase task. The 2 is attached to the repeated named-location wording; it is not evidence of two bedrooms, two villas, a price or a unit count. Do not drop it or silently merge with Damac Hills without 2.",
+      "source_ordinals": [
+        20,
+        226,
+        696
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        23,
+        278
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-012",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Preserve the complete location and plural asset wording. No actual building, property, price, possession or ready/off-plan state is supplied. Subject/business evidence and the correct buyer ad-group/page context remain pending; no semantic merge or live mapping is approved.",
+      "review_note": "Read Dubai Marina apartments for sale and Dubai Marina flats for sale in full. Both retain the complete Dubai Marina location wording and an apartment/flat purchase-discovery task. Flat/apartment vocabulary is compatible at the generic asset-description level; it does not identify the same tower, layout, quantity or actual units. Do not reduce Dubai Marina to an unspecified marina.",
+      "source_ordinals": [
+        23,
+        278
+      ],
+      "subject_identity_verified": false
+    },
+    {
+      "buyer_ordinals": [
+        24,
+        695
+      ],
+      "canonical_merge_approved": false,
+      "component_id": "BUYER-COMP-013",
+      "decision": "REVIEWED_SURFACE_INTENT_VARIANTS_PENDING_SUBJECT",
+      "external_references": [],
+      "independent_approval": false,
+      "positive_admission_granted": false,
+      "rationale": "Retain affordability demand and the house asset wording. Do not make cheap an exclusion, drop it while merging with unrestricted house searches, or advertise a low-price promise without dated evidence. Actual budget interpretation, truthful offer, subject and buyer page/context remain unresolved.",
+      "review_note": "Read cheap houses for sale in Dubai and houses in Dubai for sale cheap in full. Both preserve an affordability constraint within a Dubai house-purchase task. Cheap is relative wording, not a verified price ceiling, below-market claim, financial qualification or poor-lead verdict. The reordered adjective does not remove that constraint.",
+      "source_ordinals": [
+        24,
+        695
+      ],
+      "subject_identity_verified": false
+    }
+  ],
+  "reviewed_on_dubai": "2026-11-16",
+  "reviewer": "Codex AI wording research; not independent human or owner approval",
+  "row_schema": "Existing buyer canonical review reviewed_components rows and decision vocabulary; partial supplement only.",
+  "schema_version": 1,
+  "scope": "SHARED_AI_RESEARCH_SUPPLEMENT_NOT_APPROVAL_MERGE_OR_ADMISSION",
+  "selected_contexts": 6,
+  "selected_source_literals": 15,
+  "source_pins": {
+    "docs/audit/keyword-buyer-canonical-review-2026-11-13/candidates.json": "1e73e554543e27c70fadcd386ee33dea7c70057f345358f8b9ea8f57e85c7230",
+    "docs/audit/keyword-buyer-canonical-review-2026-11-13/review.json": "e49efc10088d3d20fc12f188c96086035d80bc0abf3b7956ae2be2ab151095ac",
+    "docs/audit/keyword-buyer-complete-intent-review-2026-11-13/review.json": "e0f89ea7c1d63bddcc12365b3bf434ec73f668ecd780a451934e05f7ad51df6d"
+  },
+  "subject_identity_verified": false
+}

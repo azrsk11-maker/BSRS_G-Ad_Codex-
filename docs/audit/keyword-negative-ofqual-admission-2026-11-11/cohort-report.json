@@ -1,0 +1,27 @@
+{
+  "scope": "AI_REVIEWED_OFFICIAL_QUALIFICATION_TITLES_NOT_SEARCH_DEMAND",
+  "source_groups": 311,
+  "source_occurrences": 338,
+  "selected_groups": 42,
+  "retained_new_occurrences": 50,
+  "held_groups": 269,
+  "held_occurrences": 288,
+  "record_bodies_sha256": "41c18eee75ea91806c2cc35838833754d23a51589fd02a6f4ecb2fd4c46b5023",
+  "source_pins": {
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/capture.json": "40563540ed29d76e03e2bea8be1a46aca960d888c138fcc2f9ac2f54dec2e9f7",
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/qualifications.json": "2869cab8a06a76fa113ef430b28d09c53a324b72555cd0b3b36d3bdf82de4ccc",
+    "docs/audit/keyword-ofqual-discovery-2026-11-11/semantic-review.json": "d187bb0f469a97924bcb98bc8d64949bbba6f305d23a45c0ce9edc09abf50d24",
+    "docs/audit/keyword-ofqual-admission-review-2026-11-11/independent-review.json": "115dad89e56f9ebf2cc0d37a67468bc6d59b585a5abb36ab79264bb9a9fd31d7",
+    "docs/audit/keyword-ofqual-admission-review-2026-11-11/resolution-evidence.json": "a53e829885284c1dd99df7025f50dc57a2c2cf2a659517f34dba5b5d84c33c67"
+  },
+  "review": {
+    "file": "docs/audit/keyword-negative-ofqual-admission-2026-11-11/review.json",
+    "sha256": "ab1bfc9dfc73927c487e0d6abef78ec50472cb801773d6d94912ffc59f2c94b0"
+  },
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false,
+  "search_demand_verified": false
+}

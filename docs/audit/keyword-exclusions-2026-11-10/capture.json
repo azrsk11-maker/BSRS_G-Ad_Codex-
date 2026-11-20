@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-10",
+  "source_files": [
+    {
+      "file": "software-services-products.json",
+      "batch_id": "KP-20261110-SOFTWARE-SERVICES-PRODUCTS",
+      "sha256": "23c440857a175a0674332b037d8acfedd550c2d060300cbad5b14a48acd5edaa",
+      "bytes": 2109610,
+      "records": 2343,
+      "distinct_normalized": 2343,
+      "source_bytes": 453036,
+      "source_sha256": "efb7bb416e1f9b0d4eb7c8ea9be1330a040b8b0ac6d890b3835742efe28a7cb6"
+    }
+  ],
+  "totals": {
+    "export_rows": 2343,
+    "distinct_normalized_phrases": 2343,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Six authored hypotheses spanning four Master Plan exclusion pools; all returned separately.",
+    "Additional provider ideas are not served queries, demand proof, semantic review or safe exclusions.",
+    "Mixed-source pool membership is not an individual-phrase classification. No metric aggregation or approval inheritance."
+  ]
+}

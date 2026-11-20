@@ -1,0 +1,13 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "runtime": "jcodemunch Python 3.12 venv",
+  "suite": "tools/github-governance test_*.py",
+  "tests": 13,
+  "passed": 13,
+  "failed": 0,
+  "elapsed_seconds": 0.007,
+  "scope": "offline branch/protection/decision-register contracts",
+  "github_write_performed": false,
+  "production_changed": false,
+  "ads_serving": false
+}

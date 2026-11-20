@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "source_occurrences": 147,
+  "all_complete_literals_read": true,
+  "reviewer": "Lead AI — preliminary wording only, not independent human approval",
+  "reviewed_on_dubai": "2026-11-13",
+  "cohorts": [
+    [
+      1,
+      147
+    ]
+  ],
+  "categories": {
+    "SELLER_HYPOTHESIS": {
+      "ordinals": [
+        1,
+        2,
+        142,
+        143
+      ],
+      "reason": "The inspected wording requests selling/listing help. A seller-intent hypothesis only; verify actual service, property, authority, mandate, permission and factual scope before admission."
+    },
+    "LANDLORD_HYPOTHESIS": {
+      "ordinals": [
+        144,
+        145,
+        146,
+        147
+      ],
+      "reason": "The inspected wording requests letting/tenant-finding or landlord help. Keep separate from tenant demand and property-management provision; verify genuine service and authority before admission."
+    },
+    "BUYER_RESEARCH_OTHER_ROLE": {
+      "ordinals": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        32,
+        33,
+        36,
+        38,
+        40,
+        42,
+        44,
+        45,
+        49,
+        51,
+        53,
+        56,
+        57,
+        58,
+        61,
+        62,
+        64,
+        65,
+        66,
+        68,
+        71,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        81,
+        89,
+        102,
+        105,
+        108,
+        124,
+        125
+      ],
+      "reason": "Premises for-sale wording is a buyer-research hypothesis, not proof that the searcher owns a property. Preserve asset, locality, readiness, budget and price constraints; no actual inventory, price or family binding is asserted."
+    },
+    "MANAGEMENT_PRODUCER_HOLD": {
+      "ordinals": [
+        4,
+        11,
+        34,
+        37,
+        43,
+        46,
+        48,
+        52,
+        55,
+        72,
+        83,
+        84,
+        88,
+        111,
+        120,
+        126,
+        132
+      ],
+      "reason": "Management, asset/building management, contracts or manage-my-property wording needs an actual authorized producer and supported scope. It does not establish a simple letting service or an operational capability; retain community/name ambiguity."
+    },
+    "SHORT_STAY_PRODUCER_HOLD": {
+      "ordinals": [
+        12,
+        20,
+        21,
+        22,
+        25,
+        30,
+        47,
+        59,
+        63,
+        99,
+        116
+      ],
+      "reason": "Holiday/short-term/Airbnb management needs an actual licensed service/provider, mandate and supported business case. Do not silently admit it as ordinary long-term letting or exclude it automatically."
+    },
+    "SOFTWARE_OR_TOOL_HOLD": {
+      "ordinals": [
+        31,
+        67,
+        69,
+        91,
+        133
+      ],
+      "reason": "The phrase asks for real-estate/property-management software or tools. No product/provider is confirmed; retain for scope review rather than turning it into a property enquiry or automatic negative."
+    },
+    "VALUATION_EVIDENCE_HOLD": {
+      "ordinals": [
+        3,
+        35,
+        70,
+        73,
+        85,
+        90,
+        104,
+        112,
+        117,
+        118,
+        123,
+        127,
+        128,
+        129,
+        134,
+        136,
+        137,
+        138,
+        140,
+        141
+      ],
+      "reason": "Value/valuation/estimate wording needs verified service, method, purpose, qualified reviewer and any applicable authorization. No professional valuation, calculator, price or asset is invented."
+    },
+    "PROVIDER_OR_PORTAL_CONTEXT_HOLD": {
+      "ordinals": [
+        39,
+        54,
+        60,
+        87,
+        92,
+        98,
+        100,
+        101,
+        106,
+        107,
+        109,
+        110,
+        113,
+        114,
+        115,
+        119,
+        121,
+        122,
+        130,
+        131,
+        139
+      ],
+      "reason": "The literal contains a named provider, developer-service or portal context. Navigation, comparison and brokerage fit remain unresolved; no brand-wide exclusion, affiliation or right to use a name follows."
+    },
+    "AGENCY_OR_LIST_SCOPE_HOLD": {
+      "ordinals": [
+        41,
+        50,
+        93,
+        95,
+        135
+      ],
+      "reason": "Generic realtor/agency or property/developer-list wording leaves role, list purpose or actual inventory unclear. No seller ownership, purchased list, named service or inventory is inferred."
+    },
+    "SELLER_BUYER_AMBIGUITY_HOLD": {
+      "ordinals": [
+        80,
+        103
+      ],
+      "reason": "For-sell/to-sell wording can describe available premises or an owner request. Keep the full phrase unresolved instead of forcing buyer or seller intent from the token sell."
+    },
+    "TENURE_OR_DISTRESS_HOLD": {
+      "ordinals": [
+        82,
+        86
+      ],
+      "reason": "Freehold or distress-sale constraints need dated subject, legal/commercial and inventory evidence. Preserve purchase demand without claiming tenure, urgency or eligibility."
+    },
+    "MAINTENANCE_PRODUCER_HOLD": {
+      "ordinals": [
+        94,
+        96
+      ],
+      "reason": "Property maintenance is a separate operational service requiring a real provider and approved scope. Do not turn it into landlord letting, a confirmed capability or an automatic negative."
+    },
+    "DISPUTE_SERVICE_HOLD": {
+      "ordinals": [
+        97
+      ],
+      "reason": "A rental dispute is not an ordinary immediate rental or letting requirement. Qualified service/legal scope is unresolved; no legal advice, provider or automatic exclusion is created."
+    }
+  },
+  "admission_authorized": false,
+  "independent_approval": false,
+  "negative_proposals_created": 0,
+  "deployment_authorized": false,
+  "source_public_sha256": "0c4ed2af3a80d3521267fc9ba683925499d4fcef9c20dea4b279110994317f75"
+}

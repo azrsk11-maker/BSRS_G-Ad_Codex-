@@ -1,0 +1,312 @@
+{
+  "schema": "bsre-positive-service-intake-workorder-v1",
+  "evidence_intake_only": true,
+  "scope": "TWO_EXISTING_CANONICAL_SEEDS_NOT_MASTER_OR_LAUNCH_COHORT",
+  "source": {
+    "path": "tools/keyword-system/staging/historical-intake.json",
+    "raw_sha256": "2fb4fc05496184628c6cab7e900f4bf4c62426e0a84f8c8f9c73302f3f76308e",
+    "archive_sha256": "08a689590b812cd7eac46baf8a5e1fe23f2ced94168d8982012498e003c84794",
+    "canonical_candidates": 41,
+    "historical_placements": 82,
+    "freshness_verified": false
+  },
+  "source_contract_sha256": {
+    "artifact_manifest.json": "77aa89c51efe259b623da287f412bd04124d5a82e1c17f0a8311a4f6eb345609",
+    "company_config.json": "7312ac7d9b4f2bb648c8ad3c6107ae502e47004b110fa6a18cbe8eaf31f18e88",
+    "page_family_allocation.json": "4bc29e0c4c5460391bcf2506876ce6e306b344c963a9f07717db79aef911deb4",
+    "positive_intent_taxonomy.json": "0a9f96ad27d7673cca4a4c778501038b55292510c2d6c4e9f1bb4aee67bcc5af"
+  },
+  "ownership_decision_ref": "docs/decisions/OWNER_DECISIONS.md#dec-02-factual-ownership-and-private-evidence-location--11-november-2026-dubai",
+  "nominated_factual_reviewer_and_update_owner": "Amit",
+  "private_evidence_location_reference": "BSRE-EVIDENCE-ROOT-20261111",
+  "review_semantics": {
+    "admission_function": "keyword_audit.validate_positive_admission",
+    "subject_function": "keyword_audit.positive_admission_subject",
+    "content_function": "content_evidence.evaluate_content_evidence",
+    "completed_review_requires": [
+      "PASS",
+      "named reviewer",
+      "dated non-hypothesis source",
+      "freshness window",
+      "exact subject hash"
+    ],
+    "language_extra_field": "ad_page_sales_supported=true",
+    "service_offer_basis_options": [
+      "advisory_offer",
+      "owner_mandate_service",
+      "verified_inventory"
+    ],
+    "specific_inventory_required_for_generic_service": false
+  },
+  "rows": [
+    {
+      "candidate_id": "LEGACY-POS-0030",
+      "original_text": "sell my property dubai",
+      "source_candidate_sha256": "a30eb9d4b7fc680bb9cb3becd1934f98219ba8a0909f152556e4900db4c74bef",
+      "historical_occurrences": [
+        {
+          "placement_id": "LEGACY-PLACEMENT-0059",
+          "placement_sha256": "c1aad633b46d75e09fff062fd19abdfd550327fa21f95ee8dae602a1aba3a699",
+          "keyword_source_locator": {
+            "member": "black-swan-implementation/campaigns/keywords.csv",
+            "record_ordinal": 59,
+            "start_line": 60,
+            "end_line": 60
+          },
+          "metadata_source_locator": {
+            "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+            "record_ordinal": 59,
+            "start_line": 60,
+            "end_line": 60
+          },
+          "historical_match_type": "Exact"
+        },
+        {
+          "placement_id": "LEGACY-PLACEMENT-0060",
+          "placement_sha256": "d874d45a4a524058a669e788562b7652a6e61d2eac8bb9a9afb979af8ebad11f",
+          "keyword_source_locator": {
+            "member": "black-swan-implementation/campaigns/keywords.csv",
+            "record_ordinal": 60,
+            "start_line": 61,
+            "end_line": 61
+          },
+          "metadata_source_locator": {
+            "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+            "record_ordinal": 60,
+            "start_line": 61,
+            "end_line": 61
+          },
+          "historical_match_type": "Phrase"
+        }
+      ],
+      "status": "HELD_MISSING_BUSINESS_EVIDENCE_AND_BINDINGS",
+      "binding_overlay_required": {
+        "primary_campaign_key": null,
+        "ad_group_key": null,
+        "landing_page_id": null,
+        "family_code": null,
+        "signal_ids": null,
+        "property_destination": null,
+        "audience_origin": null,
+        "language": null,
+        "property_segment": null,
+        "transaction_intent": null,
+        "intent_tier": null,
+        "actual_landing_url": null,
+        "actual_google_campaign_id": null,
+        "context_evidence_ref": null,
+        "context_reviewed_on": null,
+        "context_valid_until": null,
+        "research_source_observed_on": null,
+        "volume": null,
+        "cpc": null
+      },
+      "admission_reviews_required": {
+        "claims": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Exact proposed ad/page claims with dated evidence and asset rights where relevant"
+          ]
+        },
+        "intent_geography": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Reviewed owner-service intent, family/signals, destination emirates, audience origin and supported segment"
+          ]
+        },
+        "inventory_service": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Dated evidence of the actual lawful advisory or owner-mandate service and supported property scope",
+            "Applicable authority, mandates and permit requirements; no individual property claim without its evidence"
+          ]
+        },
+        "landing_page": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Reviewed campaign/ad-group/page binding and actual native WordPress destination",
+            "Versioned page content and relevant functional, consent and CTA acceptance evidence"
+          ]
+        },
+        "language": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Verified language support across the exact ad, page and staff sales workflow"
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": "LEGACY-POS-0036",
+      "original_text": "rent out my property dubai",
+      "source_candidate_sha256": "0c07eb18318e75301a297b889a653cc3fd5e440d8cbbd8e111354f56f77790cf",
+      "historical_occurrences": [
+        {
+          "placement_id": "LEGACY-PLACEMENT-0071",
+          "placement_sha256": "bbafaec63b5bac2b8bf1560fd6473cbabe6f5ed54abad6b03e4ebb1cda4849b7",
+          "keyword_source_locator": {
+            "member": "black-swan-implementation/campaigns/keywords.csv",
+            "record_ordinal": 71,
+            "start_line": 72,
+            "end_line": 72
+          },
+          "metadata_source_locator": {
+            "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+            "record_ordinal": 71,
+            "start_line": 72,
+            "end_line": 72
+          },
+          "historical_match_type": "Exact"
+        },
+        {
+          "placement_id": "LEGACY-PLACEMENT-0072",
+          "placement_sha256": "af5498915bee2bd273872a122dcd0d24615578cb235ada5c1fffd6d1e589bbab",
+          "keyword_source_locator": {
+            "member": "black-swan-implementation/campaigns/keywords.csv",
+            "record_ordinal": 72,
+            "start_line": 73,
+            "end_line": 73
+          },
+          "metadata_source_locator": {
+            "member": "black-swan-implementation/campaigns/keyword-metadata.csv",
+            "record_ordinal": 72,
+            "start_line": 73,
+            "end_line": 73
+          },
+          "historical_match_type": "Phrase"
+        }
+      ],
+      "status": "HELD_MISSING_BUSINESS_EVIDENCE_AND_BINDINGS",
+      "binding_overlay_required": {
+        "primary_campaign_key": null,
+        "ad_group_key": null,
+        "landing_page_id": null,
+        "family_code": null,
+        "signal_ids": null,
+        "property_destination": null,
+        "audience_origin": null,
+        "language": null,
+        "property_segment": null,
+        "transaction_intent": null,
+        "intent_tier": null,
+        "actual_landing_url": null,
+        "actual_google_campaign_id": null,
+        "context_evidence_ref": null,
+        "context_reviewed_on": null,
+        "context_valid_until": null,
+        "research_source_observed_on": null,
+        "volume": null,
+        "cpc": null
+      },
+      "admission_reviews_required": {
+        "claims": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Exact proposed ad/page claims with dated evidence and asset rights where relevant"
+          ]
+        },
+        "intent_geography": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Reviewed owner-service intent, family/signals, destination emirates, audience origin and supported segment"
+          ]
+        },
+        "inventory_service": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Dated evidence of the actual lawful advisory or owner-mandate service and supported property scope",
+            "Applicable authority, mandates and permit requirements; no individual property claim without its evidence"
+          ]
+        },
+        "landing_page": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Reviewed campaign/ad-group/page binding and actual native WordPress destination",
+            "Versioned page content and relevant functional, consent and CTA acceptance evidence"
+          ]
+        },
+        "language": {
+          "status": "NOT_REVIEWED",
+          "reviewer": null,
+          "evidence_ref": null,
+          "source_id": null,
+          "reviewed_on": null,
+          "valid_until": null,
+          "subject_sha256": null,
+          "required_evidence": [
+            "Verified language support across the exact ad, page and staff sales workflow"
+          ]
+        }
+      }
+    }
+  ],
+  "counts": {
+    "selected_canonical_seeds": 2,
+    "historical_occurrences": 4,
+    "reviewed_positive_contribution": 0,
+    "approved_contribution": 0,
+    "deployed_contribution": 0
+  },
+  "deployment_export_allowed": false,
+  "production_authorization": false,
+  "limits": [
+    "Source consistency does not authenticate business evidence, reviewer credentials or regulatory compliance",
+    "Historical campaigns, match placements and proposed URLs do not assign current 360/V2/live ownership",
+    "Nominating Amit grants no folder/workbook permission and approves no claim or page",
+    "Complete real reviews through the existing admission contract; this generated workorder is not an editable approval document"
+  ]
+}

@@ -1,0 +1,83 @@
+    /** A typed borrow has no callback, lock acquisition, release, commit or mutation authority. */
+    private function historyEnter(\BSRE\ActualRetention\HistoryLocalV1\BorrowedHistoryContext $context): void {
+        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$context->boundTo($this->db,$this->policy->base))Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');
+        $this->historyBorrowed=true;$this->transaction=true;
+        try{$context->assertCurrent($this->policy);}catch(\Throwable $e){$this->historyBorrowed=false;$this->transaction=false;throw$e;}
+    }
+    private function historyLeave(): void {$this->historyBorrowed=false;$this->transaction=false;}
+    private function historyRows(string $sql,int $limit): array {
+        if(!$this->historyReadBlock||!$this->historyBorrowed||!$this->transaction||$this->authorization!==null||preg_match('/^(SELECT|SHOW) /D',$sql)!==1)Guard::fail('G39_TYPED_PHYSICAL_READ_REQUIRED');
+        $this->db->last_error='';$rows=$this->db->get_results($sql,ARRAY_A);
+        if($this->db->last_error!==''||!is_array($rows)||count($rows)>$limit)Guard::fail('PREFERENCE_SQL_UNAVAILABLE');return$rows;
+    }
+    private function historyScalar(string $sql): string {
+        $rows=$this->historyRows($sql,1);
+        if(count($rows)!==1||count($rows[0])!==1)Guard::fail('PREFERENCE_SQL_UNAVAILABLE');$value=array_values($rows[0])[0];
+        if(!is_string($value)&&!is_int($value))Guard::fail('PREFERENCE_SQL_UNAVAILABLE');return(string)$value;
+    }
+    /** All SQL in this bounded block is internal SELECT/SHOW; no key or signed-service callback occurs. */
+    public function readAllBorrowedPhysicalHistory(\BSRE\ActualRetention\HistoryLocalV1\BorrowedHistoryContext $context): array {
+        $this->historyEnter($context);
+        try{
+            if($this->policy->partition!=='00')Guard::fail('G39_PHYSICAL_READER_SCOPE_REQUIRED');
+            $this->historyMetadataVisibility([$this->table,$this->audit],$context);
+            $context->assertCurrent($this->policy);$this->historyReadBlock=true;
+            try{
+                $this->historySchema();
+                $stats=$this->historyRows("SELECT COUNT(*) AS row_count,COALESCE(SUM(OCTET_LENGTH(body)),0) AS body_bytes,COALESCE(MAX(OCTET_LENGTH(body)),0) AS max_body_bytes FROM {$this->table}",1);
+                if(count($stats)!==1||array_keys($stats[0])!==['row_count','body_bytes','max_body_bytes'])Guard::fail('G39_PHYSICAL_CONTROL_COUNT_INVALID');
+                $count=Guard::uint($stats[0]['row_count']);$bytes=Guard::uint($stats[0]['body_bytes']);$largest=Guard::uint($stats[0]['max_body_bytes']);
+                if($count>256||$largest>1500000||$bytes>384000000)Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');
+                $rows=$this->historyRows("SELECT * FROM {$this->table} ORDER BY BINARY id LIMIT 257",257);
+                if(count($rows)!==$count)Guard::fail('G39_PHYSICAL_CONTROL_COUNT_INVALID');
+                $inventory=[];$byId=[];$operations=[];$actualBytes=0;
+                foreach($rows as $row){
+                    if(array_keys($row)!==['id','operation_revision','body_hash','body','status','operation_id','before_anchor','after_anchor']||!is_string($row['id'])||preg_match('/^[a-f0-9]{2}$/D',$row['id'])!==1||isset($byId[$row['id']]))Guard::fail('G39_PREFERENCE_CONTROL_DOMAIN_INVALID');
+                    if(!is_string($row['body'])||strlen($row['body'])>1500000||!is_string($row['body_hash'])||hash('sha256',$row['body'])!==$row['body_hash'])Guard::fail('PREFERENCE_CONTROL_INVALID');
+                    Guard::hash($row['operation_id']);if(isset($operations[$row['operation_id']]))Guard::fail('G39_PHYSICAL_AUDIT_COVERAGE_INVALID');
+                    $operations[$row['operation_id']]=true;$actualBytes+=strlen($row['body']);$inventory[]=$row['id'];$byId[$row['id']]=$row;
+                }
+                $sorted=$inventory;sort($sorted,SORT_STRING);if($inventory!==$sorted||$actualBytes!==$bytes)Guard::fail('G39_PHYSICAL_CONTROL_COUNT_INVALID');
+                $audit=[];
+                if($operations!==[]){
+                    $ids=array_keys($operations);$slots=implode(',',array_fill(0,count($ids),'%s'));
+                    $where=$this->db->prepare(" WHERE operation_id IN ({$slots})",...$ids);
+                    $auditCount=Guard::uint($this->historyScalar("SELECT COUNT(*) FROM {$this->audit}".$where));
+                    $auditRows=$this->historyRows("SELECT * FROM {$this->audit}".$where.' ORDER BY BINARY operation_id LIMIT 257',257);
+                    if($auditCount!==count($ids)||count($auditRows)!==$auditCount)Guard::fail('G39_PHYSICAL_AUDIT_COVERAGE_INVALID');
+                    foreach($auditRows as $row){
+                        if(array_keys($row)!==['operation_id','action','plan_hash','actor','applied_at','affected_rows','confirmed']||!is_string($row['operation_id'])||!isset($operations[$row['operation_id']])||isset($audit[$row['operation_id']]))Guard::fail('G39_PHYSICAL_AUDIT_COVERAGE_INVALID');
+                        $audit[$row['operation_id']]=$row;
+                    }
+                }
+                $this->historySchema();
+            }finally{$this->historyReadBlock=false;}
+            $context->assertCurrent($this->policy);
+            $this->historyMetadataVisibility([$this->table,$this->audit],$context);$context->assertCurrent($this->policy);
+            return ['base_scope'=>$this->policy->base->scope(),'connection_id'=>$context->connectionId(),'inventory'=>$inventory,'rows'=>$byId,'audit'=>$audit];
+        }finally{$this->historyReadBlock=false;$this->historyLeave();}
+    }
+    /** Authenticate captured bytes only after the callback-free SQL block has ended. */
+    public function authenticateBorrowedPhysicalHistory(array $row,array $audit,\BSRE\ActualRetention\HistoryLocalV1\BorrowedHistoryContext $context): array {
+        $this->historyEnter($context);
+        try{
+            $r=$this->historyRaw($row,$audit,$context);
+            if($r['status']!=='READY')Guard::fail('PREFERENCE_PENDING_ANCHOR_RECONCILIATION_REQUIRED');
+            $ledger=Algebra::validate($r['state']['ledger']);
+            if(Custody::next($r['before'],$ledger,$r['body_hash'])!==$r['after'])Guard::fail('PREFERENCE_LEDGER_ANCHOR_MISMATCH');
+            $context->assertCurrent($this->policy);
+            return ['partition'=>$this->policy->partition,'scope'=>$this->policy->scope(),'observation'=>'ANCHORED_LEDGER','anchor'=>$r['after'],'body_sha256'=>$r['body_hash'],'floor_generation'=>$ledger['floor']['generation'],'proofs'=>[]];
+        }finally{$this->historyLeave();}
+    }
+    /** Exact existing per-partition CURRENT protocol, independently challenged on each call. */
+    public function currentBorrowedPhysicalAnchor(array $expected,\BSRE\ActualRetention\HistoryLocalV1\BorrowedHistoryContext $context): array {
+        // The fixed signed-read method performs the first fresh guard before its transport callback.
+        if($this->leased||$this->historyBorrowed||$this->transaction||$this->authorization!==null||!$context->boundTo($this->db,$this->policy->base))Guard::fail('G39_BORROWED_CUSTODY_REQUIRED');
+        $this->historyBorrowed=true;$this->transaction=true;
+        try{
+            $proof=null;$claims=$this->proofs->historyCurrent($context,$proof);Guard::keys($claims,['anchor']);
+            if(!is_array($claims['anchor']))Guard::fail('PREFERENCE_ANCHOR_INVALID');Custody::anchor($claims['anchor']);
+            if($claims['anchor']!==$expected)Guard::fail($expected===Custody::zero()?'G39_PREFERENCE_ABSENT_ANCHOR_CONFLICT':'G39_PREFERENCE_ANCHOR_CHANGED');
+            return $proof;
+        }finally{$this->historyLeave();}
+    }

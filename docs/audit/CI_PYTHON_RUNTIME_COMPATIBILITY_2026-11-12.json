@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-12",
+  "scope": "CI_RUNTIME_REPRODUCIBILITY_FIX_WITH_FOCUSED_LOCAL_CHECKS_NOT_FULL_CI_ACCEPTANCE",
+  "preserved_failures": {
+    "earlier_delivery": "OWNER_BROWSER_SOURCE_DELIVERY_2026-11-12.json retains the earlier e319bc9 required-CI failure.",
+    "diagnostic_head": "6ec2fe727b488708551f1f040b48a1e163c6de16",
+    "diagnostic_job_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/43176191622/job/131040898426?pr=8",
+    "private_failure_receipt_sha256": "13dd09fcdae1a707aa5c9e4e3d00290c30438de34c407e8fb627bd4bcd656068",
+    "ci_runtime_evidence": "Python 3.14 library paths in retained traceback; no exact patch version claimed here.",
+    "composition": {
+      "check": "keyword-negative-research-composition",
+      "exit": 1,
+      "elapsed_seconds": 14.133229,
+      "result": "CURRENT_RESEARCH_LIBRARY_HELD"
+    },
+    "keyword": {
+      "check": "keyword-system-behavior",
+      "exit": 1,
+      "elapsed_seconds": 40.603485,
+      "summary": {
+        "completed_modules": 34,
+        "coverage_verified": false,
+        "discovered": 437,
+        "discovered_modules": 34,
+        "finished": 425,
+        "passed": false,
+        "skipped": 0,
+        "started": 425,
+        "timed_out": false
+      },
+      "incomplete_module": "test_ofqual_admission",
+      "setup_error": "OFQUAL_REVIEW_BINDINGS_CHANGED",
+      "unstarted_cases": 12,
+      "timeout": false
+    },
+    "efficiency": {
+      "check": "efficiency-behavior",
+      "exit": 1,
+      "subprocess_seconds": 4.116034,
+      "cases_run": 90,
+      "suite_seconds": 3.91,
+      "errors": 2,
+      "skipped": 2,
+      "error": "Mock glob() rejected the case_sensitive keyword forwarded by Python 3.14 Path.rglob()."
+    },
+    "same_head_native_jobs": "Execution lead verified isolated-native-wordpress and native-wordpress-check successful; this does not replace the failed offline-validation requirement.",
+    "failed_results_preserved": true
+  },
+  "root_causes": {
+    "review_binding": {
+      "implementation": "ofqual_admission.implementation_binding hashes default ast.dump(FunctionDef, include_attributes=False) for normalize, tokens and negative_matches.",
+      "reviewed_runtime_verified": "3.12.14",
+      "mechanism": "Python 3.13 introduced show_empty=False and omission of optional empty list fields by default. The stored review hashes include the Python 3.12 representation; default AST dump output is not a portable canonical serialization.",
+      "local_original_hashes": {
+        "normalize": "5c71e58fb1d9c11f92db2b1d90a95bfeaa65575dbbb10790ee8cdd2d35eb971b",
+        "tokens": "0ab49db2be49c7cef3bed9ccc84fa12e03d6fd2506a690734f50c7803b3aa1e1",
+        "negative_matches": "0bbe5bb9241ce358946fc727a217106e1733bf0259d69ca40cd4766fb4d9f664"
+      },
+      "all_three_original_review_hashes_match_locally": true,
+      "actual_python314_hashes_recomputed_in_this_documentation_pass": false,
+      "original_review_or_source_pins_changed": false
+    },
+    "mock_delegation": {
+      "mechanism": "The isolation-test mock accepted only (path, pattern), while newer pathlib rglob forwards keyword options to glob. It also needs to preserve the actual recursive **/*.php walk rather than substitute synthetic Python paths.",
+      "correction": "Forward keyword arguments to the actual glob/rglob functions and retain actual PHP traversal; regression compares all delegated commands and 28 PHP invocations."
+    }
+  },
+  "applied_candidate": {
+    "workflow": ".github/workflows/validate.yml",
+    "official_action": "actions/setup-python",
+    "action_version_reference": "v6.0.0",
+    "action_commit": "e797f83bcb11b83ae66e0230d6156d7c80228e7c",
+    "official_action_verification": "Execution lead verified the official tag via ls-remote and reviewed official action.yml.",
+    "python_version_request": "3.12",
+    "preflight": "Before expensive checks, reject a non-3.12 interpreter, read the original review using its existing immutable REVIEW_PIN, recompute the existing implementation binding and require exact equality. Print the resolved full Python version and existing function hashes.",
+    "security_and_reproducibility": "Select the latest available 3.12 patch, retaining a fail-closed original-binding check. Only local 3.12.14 has been verified here; a newly resolved patch is not accepted until its actual current-head CI passes.",
+    "unsupported_runtime": "Python 3.13+ is not silently accepted or skipped; the explicit runtime/binding preflight must fail.",
+    "check_selections_or_timeouts_changed": false,
+    "tests_skipped_or_review_pins_resealed": false,
+    "php_isolation_commands_preserved": true
+  },
+  "verification": {
+    "local_binding_preflight": {
+      "python_version": "3.12.14",
+      "original_review_binding": "PASS",
+      "function_ast_sha256": {
+        "normalize": "5c71e58fb1d9c11f92db2b1d90a95bfeaa65575dbbb10790ee8cdd2d35eb971b",
+        "tokens": "0ab49db2be49c7cef3bed9ccc84fa12e03d6fd2506a690734f50c7803b3aa1e1",
+        "negative_matches": "0bbe5bb9241ce358946fc727a217106e1733bf0259d69ca40cd4766fb4d9f664"
+      },
+      "elapsed_seconds": 0.222007,
+      "inline_blocks_compiled": 2,
+      "acceptance_rerun": false
+    },
+    "private_preflight_receipt_sha256": "049961e34bccde88a56f107698099623d47a1512ccc6c7076f89023bf1824477",
+    "focused_mock_regression": {
+      "passed": 4,
+      "failed": 0,
+      "seconds": 0.14,
+      "evidence_basis": "Execution-lead-reported completed focused run; no raw receipt reread in this documentation pass."
+    },
+    "efficiency_cases_after_regression": 91,
+    "efficiency_cases_91_full_suite_executed_for_candidate": false,
+    "full_foundation_rerun_for_candidate": false,
+    "new_candidate_ci": "PENDING_NOT_VERIFIED",
+    "native_browser_http_or_live_acceptance": false
+  },
+  "primary_sources": [
+    {
+      "title": "Python 3.14 ast.dump documentation",
+      "url": "https://docs.python.org/3.14/library/ast.html#ast.dump",
+      "supports": "Default omission of optional empty lists; show_empty option introduced in 3.13."
+    },
+    {
+      "title": "Python 3.13 ast.dump documentation",
+      "url": "https://docs.python.org/3.13/library/ast.html#ast.dump",
+      "supports": "Default show_empty=False and its version introduction."
+    },
+    {
+      "title": "Official setup-python v6 action",
+      "url": "https://github.com/actions/setup-python/tree/e797f83bcb11b83ae66e0230d6156d7c80228e7c",
+      "supports": "Pinned official runtime-selection action; exact tag/action verification was performed by the execution lead."
+    }
+  ],
+  "limits": [
+    "This document does not claim that every Python 3.12 patch has already passed.",
+    "Runtime selection and a focused mock fix do not establish full combined CI acceptance.",
+    "Previously failed heads remain failed; later successful checks must be tied to their exact new source head.",
+    "No portable AST canonicalization, review repinning or weakened admission was introduced.",
+    "No production, live tracking, financial-record, access, Ads or expenditure change."
+  ],
+  "full_goal_complete": false
+}

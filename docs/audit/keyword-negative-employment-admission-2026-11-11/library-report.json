@@ -1,0 +1,42 @@
+{
+  "scope": "COMPOSED_AI_REVIEWED_NEGATIVE_RESEARCH_NOT_EXCLUSION_APPROVAL",
+  "as_of": "2026-11-11",
+  "input_rows": 2113,
+  "distinct_nonblank_phrases": 2113,
+  "reviewed_eligible_rows": 2113,
+  "excluded_rows": 0,
+  "approved_exclusion_rows": 0,
+  "target": 14000,
+  "deficit": 11887,
+  "exact_target_pass": false,
+  "structural_pass": true,
+  "deployment_export_allowed": false,
+  "production_writes_available": false,
+  "positive_library_coverage_verified": false,
+  "protected_queries_indexed": 12086,
+  "cohorts": [
+    {
+      "review": "docs/audit/keyword-negative-admission-2026-11-11/review.json",
+      "research_rows": 1178
+    },
+    {
+      "review": "docs/audit/keyword-negative-employment-admission-2026-11-11/review.json",
+      "research_rows": 935
+    }
+  ],
+  "source_occurrences_retained": 2117,
+  "computed_conflicts": 0,
+  "approval_hold_counts": {
+    "exclusion approval missing; fail closed": 2113,
+    "independent exclusion approver required": 2113,
+    "exclusion approval: missing/invalid evidence dates": 2113,
+    "exclusion approval: dependency evidence dates invalid": 2113,
+    "verified Real Estate account scope binding missing": 2113,
+    "scope bindings: missing/invalid evidence dates": 2113,
+    "verified platform campaign binding missing for BSRE-C0301": 2113
+  },
+  "source_capture_count": 4,
+  "human_review_verified": false,
+  "live_campaign_mapping_verified": false,
+  "authored_cases_outside_research_counts": 20
+}

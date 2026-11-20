@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "supporting-property-employment.json",
+      "batch_id": "KP-20261111-SUPPORTING-PROPERTY-EMPLOYMENT",
+      "sha256": "8ddc6cd209183668cf92bd92d5cb29e82d1b1a020506e1a26ba4fc6e7368336a",
+      "bytes": 153518,
+      "records": 168,
+      "distinct_normalized": 168,
+      "source_bytes": 29740,
+      "source_sha256": "075ba9f3f10884daea685b7259e52d44605bb68fd2970a19dd9ee2744cfb3c62"
+    },
+    {
+      "file": "occupational-exam-practice.json",
+      "batch_id": "KP-20261111-OCCUPATIONAL-EXAM-PRACTICE",
+      "sha256": "c161ceaaf01efcb25fdae88819f7b6c789e2cfca68dc5292e49aad2c8a412339",
+      "bytes": 752565,
+      "records": 835,
+      "distinct_normalized": 835,
+      "source_bytes": 134312,
+      "source_sha256": "8b5be387802ce443379d5817589559c4594c74c1b24aefa67cca3ff4fed71992"
+    },
+    {
+      "file": "property-marketing-assets.json",
+      "batch_id": "KP-20261111-PROPERTY-MARKETING-ASSETS",
+      "sha256": "06048046a7395c0f4c13d93bc4684a654c44a87bb8a7c3b4862817fae2b1e14a",
+      "bytes": 477069,
+      "records": 531,
+      "distinct_normalized": 531,
+      "source_bytes": 91104,
+      "source_sha256": "dc4a57aa9186ddf2cb57d93c3e41f2fb8ec85ac75a259d641d2a2b90c35ab20d"
+    },
+    {
+      "file": "property-employment-applications.json",
+      "batch_id": "KP-20261111-PROPERTY-EMPLOYMENT-APPLICATIONS",
+      "sha256": "9a7603e12902c0c2ab55d58168ffa689d26f98f8fddd139121854c4751410e81",
+      "bytes": 167661,
+      "records": 183,
+      "distinct_normalized": 183,
+      "source_bytes": 34224,
+      "source_sha256": "60f6e04a694ccb1356d79a7bb21fe0942176692198c40cf53a6d4b81cf931514"
+    }
+  ],
+  "totals": {
+    "export_rows": 1717,
+    "distinct_normalized_phrases": 1717,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}

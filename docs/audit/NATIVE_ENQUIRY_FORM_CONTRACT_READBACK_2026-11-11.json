@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "observed_on_dubai": "2026-11-11",
+  "origin": "https://blackswanrealestate.ae",
+  "read_only": true,
+  "pages": [
+    {"path": "/enquire/off-plan/", "method": "post", "action": "#", "fields": ["name", "phone", "country", "email", "area", "budget", "property_type", "timeline", "funding", "property_details", "website", "contact_consent", "marketing_consent"]},
+    {"path": "/enquire/resale/", "method": "post", "action": "#", "fields": ["name", "phone", "country", "email", "area", "budget", "property_type", "timeline", "funding", "property_details", "website", "contact_consent", "marketing_consent"]},
+    {"path": "/enquire/sell/", "method": "post", "action": "#", "fields": ["name", "phone", "country", "email", "area", "property_type", "timeline", "authority", "property_details", "website", "contact_consent", "marketing_consent"]},
+    {"path": "/enquire/let/", "method": "post", "action": "#", "fields": ["name", "phone", "country", "email", "area", "property_type", "timeline", "authority", "property_details", "website", "contact_consent", "marketing_consent"]},
+    {"path": "/enquire/rent/", "method": "post", "action": "#", "fields": ["name", "phone", "country", "email", "area", "budget", "property_type", "timeline", "property_details", "website", "contact_consent", "marketing_consent"]}
+  ],
+  "positive_observation": "Every service form exposes separate contact_consent and marketing_consent fields; seller/landlord forms expose authority; buyer/rent forms expose budget or funding as applicable.",
+  "changes_made": false,
+  "evidence_limit": "HTML contract only. JavaScript receiver, CSRF/signature, validation, retry, deduplication, routing, tracking and acceptance remain unverified."
+}

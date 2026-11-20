@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "tests": 15,
+  "failures": 0,
+  "errors": 0,
+  "timings": {
+    "fresh_complete_base_for_missing_tests": 62.945588,
+    "extension_recomputed": 3.150969,
+    "focused_tests": 16.134128
+  },
+  "total_seconds": 89.175883,
+  "current_rows": 11524,
+  "new_rows": 348,
+  "deficit": 2476,
+  "protections": 17193,
+  "sources": 27,
+  "archives": 18,
+  "review_sha256": "f607d84650e6ddbd59027870c27df615590ec6c3f2b117da0e957f1b3bcb9210",
+  "output_pins": {
+    "index.json": "67434034ca5aa49ea7edcc7fb8652bf17bc559af7393c6a4279c322342475737",
+    "cohort-report.json": "6228a82433804a240364a7eaa6fca99dac3139b139be6d175b01155a25e7d350",
+    "library-report.json": "80e63619807bc6c4831daba9d3aff5f8afa375f2745a22b7d202258520f7a27b",
+    "research-pool-allocation.json": "5320bb346a4864a98fe508d98afbe43540202826fcadcbdb1e27eafdfa30b154"
+  },
+  "complete_inputs_sha256": "1dca63fa6758184bca46527e9c474b6cca5eccf7fe6670d9c64894b7701c9e33",
+  "serialized_base_used": false,
+  "production_changed": false,
+  "ads_changed": false,
+  "version": 1,
+  "date_dubai": "2026-11-12",
+  "scope": "FRESH_COMPLETE_OFFLINE_RESEARCH_ADMISSION_NOT_RELEASE_ACCEPTANCE",
+  "python_version": "3.12.14",
+  "code_bindings": [
+    {
+      "path": "tools/keyword-system/bank_credential_admission.py",
+      "bytes": 36683,
+      "sha256": "60d9dd2c8be19a7bca7049175ff2fbcf84ee39a5ca7d2c482b022f6c7a31f576"
+    },
+    {
+      "path": "tools/keyword-system/test_bank_credential_admission.py",
+      "bytes": 11330,
+      "sha256": "348d846503c6e030cbb518ee6e3dfa063a36bb6bb12097e72ec749c30c9ded8f"
+    },
+    {
+      "path": "tools/keyword-system/current_negative_library.py",
+      "bytes": 31264,
+      "sha256": "e264269bd25b727550bf9c50b70fd78f7f543fd20aa32e75903c1438fbb2c6d7"
+    },
+    {
+      "path": "tools/keyword-system/test_entertainment_admission.py",
+      "bytes": 9916,
+      "sha256": "3346083731f2d65af9817ec13c3069020b8e7d2ca8329297e350e9b9fc01042c"
+    }
+  ],
+  "independent_source_and_literal_review_complete": true,
+  "bank_adapter_final_independent_ai_review_claimed": false,
+  "lead_review_and_focused_contract_tests": true,
+  "initial_runner_failure": {
+    "code": "INCORRECT_TEST_CLASS_NAME",
+    "generation_and_saved_reconciliation_completed": true,
+    "focused_suite_not_started": true,
+    "initial_durations_unavailable": true,
+    "subsequent_missing_tests_pass": true
+  },
+  "research_not_distinct_concepts": true,
+  "reviewed_cohort": 803,
+  "semantic_proposals": 626,
+  "semantic_holds": 177,
+  "temporary_recovery_batch_holds": 26,
+  "all_source_groups_compared": 3481,
+  "external_key_comparisons": 13924,
+  "within_source_key_comparisons": 13924,
+  "noncohort_source_groups": 2678,
+  "noncohort_unassessed_and_unadmitted": true,
+  "existing_sources_archives_bodies_preserved": true,
+  "exclusion_approvals": 0,
+  "deployments": 0,
+  "current_source_foundation_and_native_ci": "PENDING",
+  "human_review_required": true,
+  "release_authorized": false,
+  "full_goal_complete": false,
+  "final_delegated_adapter_review_available": false
+}

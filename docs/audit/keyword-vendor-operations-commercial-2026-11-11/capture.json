@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "management-software.json",
+      "batch_id": "KP-20261111-MANAGEMENT-SOFTWARE",
+      "sha256": "ec726b055bde9fbd33e7d55015c84700aefbac0ef2634462634f84a7c4154063",
+      "bytes": 2548324,
+      "records": 2846,
+      "distinct_normalized": 2846,
+      "source_bytes": 489594,
+      "source_sha256": "ca6d0ec14fffe94e750684cbb0a8779d1cc2b5a8a0445012217d754ca3cd0ad7"
+    },
+    {
+      "file": "property-operations-employment.json",
+      "batch_id": "KP-20261111-PROPERTY-OPERATIONS-EMPLOYMENT",
+      "sha256": "466a47fac06312ade996e9c9596f512775da3b726f87876aaf7bbe778a4210cc",
+      "bytes": 716818,
+      "records": 798,
+      "distinct_normalized": 798,
+      "source_bytes": 134534,
+      "source_sha256": "f5bd0e583c142cdc3aa385da30234aeebc886e7d46b939e87ff34374055ecbad"
+    },
+    {
+      "file": "commercial-industrial-property.json",
+      "batch_id": "KP-20261111-COMMERCIAL-INDUSTRIAL-PROPERTY",
+      "sha256": "90d655d2ca4a600d7cfccee255efcb791f8c2a5ca37ab7129d8810c5253a30e5",
+      "bytes": 119462,
+      "records": 128,
+      "distinct_normalized": 128,
+      "source_bytes": 29328,
+      "source_sha256": "4ff002193eb5a73ce8fb58c1ecaaec4b2ae142549f7fe113a293f6dedb880f1a"
+    }
+  ],
+  "totals": {
+    "export_rows": 3772,
+    "distinct_normalized_phrases": 3772,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  }
+}

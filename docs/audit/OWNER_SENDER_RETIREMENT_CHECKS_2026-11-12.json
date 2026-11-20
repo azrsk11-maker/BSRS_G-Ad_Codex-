@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "date_dubai": "2026-11-12",
+  "scope": "ISOLATED_OWNER_SENDER_RETIREMENT_CANDIDATE",
+  "preceding_reviewed_commit": "b4556a62db0e7c0ab1a0ddf9b0f2f70770edce04",
+  "preceding_remote_green_head": "92560cbd13bd0660c3372506f4fe0e7518487c0d",
+  "code_sha256": {
+    "tools/check_repository.py": "625b0cf328363da70d54172a61835f191bcda42b2b8c40268793e375c9041a80",
+    "tools/closed-enquiry-retention/LabAdapters.php": "bd8be826989492934a4027d81a2987ba2085e0d1d0912366cb82d0c514460136",
+    "tools/closed-enquiry-retention/NoMailCopy.php": "25864e2a07fba073fcc68922a68050571aca7e3d4a2160be72a0f2ce56a49e82",
+    "tools/closed-enquiry-retention/Workflow.php": "9d2ac5e0e760408071c0f0af2f2447a6c026ad4ee5bc8f525a352f54e7c13b3d",
+    "tools/closed-enquiry-retention/native-test.php": "45b3c6d0cc447b594cbe962a0e3a7dba49188bc89ba36b26f37d5180040062da",
+    "tools/closed-enquiry-retention/receiver-fence/bridge.mjs": "3faa2903105b4822599112e35a370be1992d30d2a31763bd2c84e3a86f0d4081",
+    "tools/closed-enquiry-retention/receiver-fence/candidate.test.mjs": "092fefa16444d5f37241e4f0f0f81bd825b86d048eb39d41fc21276967862d65",
+    "tools/closed-enquiry-retention/receiver-fence/lab.mjs": "2d363c8d7b4ae3bc29ec4c5b488bc8bc46f691fc17563584b165debf4c9ef9da",
+    "tools/closed-enquiry-retention/receiver-fence/runtime.gs": "7b3305d65dc291f5f54c9ef5b30db29b9bdb9767ae063fccc9513390d1c24eb7",
+    "tools/closed-enquiry-retention/test_no_mail_copy.php": "a7cfa57fdb676d2d90b6fd9f53044e1e48ed8aa70dc95cd40f8de7c5e2ef3ceb",
+    "tools/efficiency/test_foundation_php_isolation.py": "8e90172effa9ef926b06c093074a109590c46003e53dd3bde4008af0b9e2371d",
+    "tools/owner-mail-review/WordPress.php": "37131ab2a143f3113c585c7edd1a5ca2b97461389838246c570eb8d94ba276c2",
+    "tools/owner-mail-review/native-test.php": "f39573835dcbf4ef6713ff3ad8d25ae2dbf50aba67d223f21c5bd1a2ae008bdb",
+    "tools/staging-lab/entrypoint.sh": "7d2f50378bf37c542a6c2deab3514e811515b1e3701b0a1e5935b64ffad4dd26",
+    "tools/closed-enquiry-retention/LeaseBoundWpdb.php": "a358c8f28a6186ce5bc452aa699c93ddd96fb71b58528f1e21acc9e42b854b58",
+    "tools/closed-enquiry-retention/ReceiverPipe.php": "e8a37eb2e95e42f2fc2c329ae17c3faef4367c2cebfe9e6a50f5ee89014fda5a",
+    "tools/closed-enquiry-retention/RetirementIntent.php": "8d3c5d0b6bf1f3f4be316dbdffdcadb653e0e691e823ba7746961d5f68e1f349",
+    "tools/closed-enquiry-retention/RetirementJournal.php": "d8b26bbeabb9875f5205cf2d2d025954d78917c8e7c3367d9f59eb4f50d34bb3",
+    "tools/owner-mail-review/OwnerRetirement.php": "846b279f640ae30474847be78671ced5e4ba6a7df441edc5c6c5eb80e0f879bc",
+    "tools/owner-mail-review/retirement-native.php": "77456af62ccbd309fe6f921bd0a2a87658c5597d423c64d6d8f2c87bd75886b8",
+    "tools/owner-mail-review/test_owner_retirement.php": "bc719af651608c89624ed4bc7f9872c064860fc9dc8d6c8acb21665a2b33586b"
+  },
+  "focused_final_results": [
+    {
+      "name": "retirement",
+      "checks": 60,
+      "passed": true,
+      "elapsed_seconds": 0.140587
+    },
+    {
+      "name": "retention",
+      "checks": 45,
+      "passed": true,
+      "elapsed_seconds": 0.086254
+    },
+    {
+      "name": "no_copy",
+      "checks": 39,
+      "passed": true,
+      "elapsed_seconds": 1.807653
+    },
+    {
+      "name": "php_guards",
+      "checks": 4,
+      "passed": true,
+      "elapsed_seconds": 0.226779
+    }
+  ],
+  "additional_current_results": {
+    "actual_source_node_tests": 22,
+    "node_seconds": 0.362455,
+    "closure_amendment_checks": 54,
+    "owner_mail_checks": 49,
+    "local_native_execution": false
+  },
+  "native_acceptance": {
+    "status": "PENDING_CURRENT_HEAD_CI",
+    "word_press_identity_and_mariadb_and_source_pipe_selected": true,
+    "cross_process_global_custody_probe_selected": true,
+    "actual_connection_kill_reconnect_probe_selected": true,
+    "google_mailbox_runtime_intent_custody_services": "SYNTHETIC_DOUBLES_ONLY",
+    "ordinary_website_database_connection_modified": false
+  },
+  "independent_review": {
+    "controller": "No remaining P1/P2 in inspected frozen controller",
+    "global_race": "Namespace custody lease spans source/write/scrub, with actual separate-process interleaving probe selected and execution pending",
+    "connection_loss": "Dedicated lease-bound connection blocks both reconnect APIs, pins driver identity and checks actual server lock owners; separate-process native KILL probe selected, execution pending",
+    "reviewed_connection_guard_sha256": "a358c8f28a6186ce5bc452aa699c93ddd96fb71b58528f1e21acc9e42b854b58",
+    "human_pr_review": "STILL_REQUIRED"
+  },
+  "invariants": [
+    "existing authoritative due closure only",
+    "target changes revision and email status only",
+    "complete inventory and normalized receiver fingerprint bound",
+    "authoritative typed intent before all source calls",
+    "positive inspection never infers clearance from missing rows/fences",
+    "signed owner intent and first-fence deadline under actual source ScriptLock",
+    "strict RETIRED physical proof before own-intent-only CAS",
+    "fixed fifteen-minute creation and thirty-day recovery windows",
+    "recovery after UI pruning and lost acknowledgements",
+    "expiry scrubs only intent and preserves closure/fence",
+    "persistent nonidentifying uncertainty remains a barrier with no auto reset",
+    "no purge grant or provider cleanup authority"
+  ],
+  "php_selection": {
+    "complete_checks": 35,
+    "lints": 24,
+    "previous_complete_checks": 31,
+    "removed_checks": 0,
+    "timeout_changes": false,
+    "isolation_relaxed": false
+  },
+  "remaining": [
+    "initial genuine source collection",
+    "authenticated real mailbox/owner-intent/runtime/custody/provider adapters",
+    "native current-source CI acceptance",
+    "independent human review",
+    "business/keyword/staff/finance/browser/live release gates"
+  ],
+  "production_authorized": false,
+  "ads_changed": false,
+  "permissions_changed": false,
+  "live_provider_or_google_calls": 0
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "bsre-bounded-engineering-acceptance-v1",
+  "accepted_at_head": "1123575ed9d495eea5a19fd2cb4b6d8fead5720c",
+  "accepted_tree": "06e63176f5ae8bff2d76ef8a40a3eb00c04da3fc",
+  "scope": "G001 integration and G002 exact-revision bounded synthetic native acceptance only",
+  "not_current_head_ci_receipt": true,
+  "progress_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/pull/8#issuecomment-6944782573",
+  "run_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44055843528",
+  "native_job_id": 133944883538,
+  "checks": {
+    "offline-validation": "success",
+    "native-wordpress-check": "success",
+    "isolated-native-wordpress": "success",
+    "goal-ledger-check": "success"
+  },
+  "profiles": [
+    "10.11.19-MariaDB-0+deb12u1",
+    "11.8.9-MariaDB-deb12"
+  ],
+  "raw_log": {
+    "bytes": 971497,
+    "sha256": "f4214e4c1af25ed2f9e56df17459cf633200c01b052aa255a7042f9ba1f63bf3"
+  },
+  "actual_audit_sha256": "64a5b09eb87734a17b6626824c7f9444c6a26f163903e653bc773a5a1c97a149",
+  "independent_agent_review_sha256": "71939d356438efc40644774a969b871f1211b456083d532c979386a32184c6f3",
+  "complete_json_documents": 458,
+  "retained_predecessor_documents": 454,
+  "source_bindings": 218,
+  "predecessor_source_bindings": 186,
+  "g39_checks_per_profile": [
+    43,
+    43
+  ],
+  "g39_isolation_assertions_per_profile": [
+    9,
+    9
+  ],
+  "original_g39_cases_retained_in_relative_order": 35,
+  "all_predecessor_assertions_retained": true,
+  "host_marker_cases": 10,
+  "runtime_manifest_sha256": "e3b69f721aafeda0242982b35ce96b8b2b61f9f92df54c34f9cd4362593e2fde",
+  "measured_native_job_seconds": 1327,
+  "human_review": false,
+  "provider_or_whole_business_history_acceptance": false,
+  "production_authority": false,
+  "ads_authority": false,
+  "limits": [
+    "Local observation is a veto, never whole-business history or export authority.",
+    "Later relevant runtime, materializer or pin changes require fresh acceptance.",
+    "This immutable revision receipt never asserts that a later head passed CI.",
+    "Independent human review, genuine source/service evidence and separate release authority remain required."
+  ]
+}

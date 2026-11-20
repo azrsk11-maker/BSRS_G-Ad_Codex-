@@ -1,0 +1,95 @@
+{
+  "observed_on_dubai": "2026-11-11",
+  "source_commit": "d65162623c807faa95f9b85181a701b7d2744451",
+  "source_tree": "3150d7a6f1e943a743de7a622ffbc8d6160d00f7",
+  "scope": "OFFLINE_FOUNDATION_NOT_PRODUCTION_ACCEPTANCE",
+  "passed": true,
+  "checks_passed": 79,
+  "checks_failed": 0,
+  "checks_not_executed": [
+    "native-php-runtime"
+  ],
+  "elapsed_seconds": 542.50605,
+  "suites": {
+    "keyword-system-behavior": {
+      "passed": true,
+      "total": 351,
+      "skipped": 2,
+      "suite_seconds": 274.005,
+      "subprocess_seconds": 275.250875
+    },
+    "efficiency-behavior": {
+      "passed": true,
+      "total": 54,
+      "skipped": 2,
+      "suite_seconds": 14.553,
+      "subprocess_seconds": 14.838521
+    },
+    "tracking-and-commercial-behavior": {
+      "passed": true,
+      "total": null,
+      "skipped": 0,
+      "suite_seconds": null,
+      "subprocess_seconds": 1.417196
+    }
+  },
+  "slowest_subprocess_checks": [
+    {
+      "check": "keyword-system-behavior",
+      "elapsed_seconds": 275.250875
+    },
+    {
+      "check": "keyword-vendor-review-reconciliation",
+      "elapsed_seconds": 52.925888
+    },
+    {
+      "check": "keyword-negative-research-composition",
+      "elapsed_seconds": 42.603521
+    },
+    {
+      "check": "keyword-role-review-reconciliation",
+      "elapsed_seconds": 34.185954
+    },
+    {
+      "check": "release-control-behavior",
+      "elapsed_seconds": 32.221177
+    }
+  ],
+  "additional_focused_checks": {
+    "positive_service_packet_cases": 8,
+    "positive_parent_seconds": 0.066,
+    "positive_independent_seconds": 0.041,
+    "bounded_json_reader_cases": 12,
+    "bounded_reader_parent_seconds": 0.037,
+    "actual_source_rows_and_membership_labels_checked": 865,
+    "semantic_reconciliation_source_pins_checked": 7,
+    "existing_semantic_reconciliations_checked": 16,
+    "private_raw_equivalence": true,
+    "capture_tamper_rejections": 3
+  },
+  "new_capture": {
+    "rows": 865,
+    "distinct": 865,
+    "source_bytes": 140248,
+    "source_sha256": "975f115b15cc294160048f13a4d4d17086a84ace7b3aae781bc9664da06e8807",
+    "new_unprotected_source_phrases": 811,
+    "preliminary_novel_employment_proposals": 414,
+    "new_master_admission": 0,
+    "new_approved": 0,
+    "new_deployed": 0
+  },
+  "current_negative_research": 10199,
+  "current_negative_deficit": 3801,
+  "approved_exclusion_rows": 0,
+  "deployed_rows": 0,
+  "full_suite_speedup_claimed": false,
+  "previous_dated_foundation_seconds": 474.68733,
+  "timing_comparison_limit": "Different source state and uncontrolled host load; current run is slower, not a controlled regression attribution",
+  "inspection_measurement": "tools/efficiency/json-inspection-2026-11-11.json",
+  "api_calls_and_token_usage": "Per-change underlying provider API calls and token/billing savings unavailable",
+  "live_acceptance_verified": false,
+  "release_authorized": false,
+  "production_changed": false,
+  "advertising_paused": true,
+  "full_goal_complete": false
+}

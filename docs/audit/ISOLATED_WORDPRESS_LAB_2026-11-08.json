@@ -1,0 +1,79 @@
+{
+  "schema": "bsre-isolated-wordpress-lab-receipt-v1",
+  "observed_date_dubai": "2026-11-08",
+  "scope": "DISPOSABLE_CLI_LAB_NOT_PRODUCTION_ACCEPTANCE",
+  "commit": "d76727ce4fafa74303761bb15d129ff7a2542460",
+  "run_url": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/42451749708",
+  "job_id": 128642259605,
+  "job_seconds": 35,
+  "image_id": "sha256:f78f14786726615691789af9239a20c91ae70fabf050ef64540aa107ef541948",
+  "docker_readback": {
+    "network": "none",
+    "read_only_root": true,
+    "user": "mysql",
+    "cap_drop": [
+      "ALL"
+    ],
+    "security": [
+      "no-new-privileges"
+    ],
+    "host_binds": null,
+    "mounts": []
+  },
+  "receipts": [
+    {
+      "phase": "pre_wordpress_isolation",
+      "status": "PASS",
+      "checks": {
+        "non_root": true,
+        "loopback_only": true,
+        "no_ipv4_routes": true,
+        "no_capabilities": true,
+        "no_new_privileges": true,
+        "no_docker_socket": true,
+        "readonly_application": true,
+        "tmpfs_available": true,
+        "loopback_listener": true,
+        "positive_loopback_control": true,
+        "positive_loopback_transfer": true,
+        "smtp_denied": true,
+        "https_socket_denied": true,
+        "ipv6_socket_denied": true,
+        "http_stream_denied": true,
+        "dns_probe_socket": true,
+        "dns_transport_denied": true,
+        "curl_denied": true,
+        "no_scheduler_or_mail_daemon": true
+      },
+      "wordpress_started": false
+    },
+    {
+      "phase": "native_wordpress",
+      "status": "PASS",
+      "wordpress": "7.1.4",
+      "php": "8.2.35",
+      "database": "10.11.19-MariaDB-0+deb12u1",
+      "checks": {
+        "synthetic_origin_rejected": true,
+        "real_wp_draft_plan": true,
+        "missing_parent_held": true,
+        "apply_denied": true,
+        "post_count_unchanged": true,
+        "preview_zero_sql_writes": true,
+        "cron_disabled": true,
+        "http_policy_blocks_external": true
+      },
+      "synthetic_database_only": true,
+      "production_acceptance": false
+    }
+  ],
+  "warnings": [
+    "MariaDB could not retrieve a MAC address in network-none namespace",
+    "ABSPATH already defined in initial synthetic config; guarded in follow-up revision"
+  ],
+  "production_changes": false,
+  "hostinger_compatibility_accepted": false,
+  "staff_and_conversion_accepted": false,
+  "independent_human_review_accepted": false,
+  "raw_logs_or_private_data_included": false
+}

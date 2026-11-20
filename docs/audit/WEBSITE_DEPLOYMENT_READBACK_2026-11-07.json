@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "status": "READ_ONLY_OBSERVATION_NOT_RELEASE_ACCEPTANCE",
+  "observed_date_utc": "2026-11-07",
+  "compiled_at_utc": "2026-11-07T12:48:18.646067+00:00",
+  "site": "https://blackswanrealestate.ae",
+  "method": "Authenticated WordPress/Hostinger UI. Browser tool was removed mid-audit; supported Windows Computer Use resumed from returned Chrome window. No hidden browser state or private configuration was extracted.",
+  "access": {
+    "wordpress_admin": "VERIFIED",
+    "hostinger_main_site_dashboard": "VERIFIED",
+    "installed_plugin_source_viewer": "VERIFIED_PARTIAL_VISIBLE_SOURCE",
+    "staging_use_authorized": false
+  },
+  "website": {
+    "wordpress_footer_version": "7.1.4",
+    "php_version_display": "8.2.35 (Supports 64bit values)",
+    "web_server": "LiteSpeed",
+    "php_sapi": "litespeed",
+    "php_max_input_variables": "5000",
+    "php_time_limit_seconds": "480",
+    "php_memory_limit": "1024M"
+  },
+  "plugin_inventory": {
+    "plugins_screen_counts": {
+      "all": 28,
+      "active": 23,
+      "inactive": 5
+    },
+    "site_health_counts": {
+      "active": 23,
+      "inactive": 4,
+      "must_use": 1
+    },
+    "count_discrepancy": "Different native screens show inactive 5 versus 4; grouping/current-state difference is unresolved. Do not infer a plugin was changed.",
+    "selected_plugins": [
+      {
+        "name": "Black Swan Real Estate Enquiry Drafts",
+        "version": "0.2.12",
+        "active": true,
+        "evidence": "Deactivate link; visible entry-point header and PLUGIN_VERSION agree."
+      },
+      {
+        "name": "Black Swan Real Estate Enquiry Server Configuration",
+        "version": "0.1.0",
+        "active": true,
+        "evidence": "Deactivate link; description says fixed private JSON reader."
+      },
+      {
+        "name": "BSRE CRM",
+        "version": "2.16.1",
+        "active": true,
+        "evidence": "Deactivate link. Its descriptive claims about lead capture do not prove actual connections or routing."
+      },
+      {
+        "name": "Hostinger Smart Auto Updates",
+        "version": "1.0.10",
+        "active": false,
+        "evidence": "Activate link."
+      },
+      {
+        "name": "Hostinger Smart Auto Updates",
+        "version": "1.0.9",
+        "active": false,
+        "evidence": "Activate link."
+      }
+    ],
+    "dashboard_notices": [
+      "HubSpot plugin is not connected.",
+      "MLS On The Fly RF credentials are missing.",
+      "MonsterInsights asks to connect the website."
+    ],
+    "limits": "No CRM records, prospect submissions, mailbox contents, credentials, private configuration or plugin connection secrets read. No provider connection inferred from presence."
+  },
+  "installed_source": {
+    "visible_file": "bsre-enquiries/bsre-enquiries.php",
+    "visible_version": "0.2.12",
+    "requires_php_header": "8.1",
+    "visible_includes": [
+      "includes/protocol.php",
+      "includes/measurement.php",
+      "includes/consent.php",
+      "includes/consent-export.php",
+      "includes/measurement-settings.php",
+      "includes/measurement-runtime.php",
+      "includes/enquiry-seo.php"
+    ],
+    "visible_consent_bridge": "Purpose defaults denied; preference_days 180; same-origin HTTPS endpoint checks visible.",
+    "complete_file_hash_comparison": "NOT_EXECUTED",
+    "limits": "Code editor exposes a visible fragment, not a byte-complete source export. No Update File action performed."
+  },
+  "hostinger": {
+    "plan_display": "Cloud Enterprise",
+    "selected_site": "blackswanrealestate.ae",
+    "staging": {
+      "heading": "Create staging environment",
+      "action_available": "Create staging",
+      "existing_environment_listed": false,
+      "created": false,
+      "isolation_acceptance": "NOT_EXECUTED",
+      "owner_decision": "https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/9"
+    },
+    "backups": {
+      "automated_frequency": "Daily",
+      "latest_display": "2026-11-07 08:37",
+      "display_timezone": "UNSPECIFIED_DO_NOT_CONVERT",
+      "next_display": "2026-11-08",
+      "manual_creation_limit_display": "Once every 24 hours",
+      "restore_options": [
+        "Website backup",
+        "Files backup",
+        "Database backup"
+      ],
+      "website_scope_description": "A website backup includes your website and database.",
+      "exclusion_notice": "Backup plugin archives, cache, and database export files are excluded.",
+      "date_range": "NOT_VERIFIED",
+      "encryption_access_retention": "NOT_VERIFIED",
+      "restore_rehearsal": "NOT_EXECUTED",
+      "created_downloaded_or_restored": false
+    }
+  },
+  "ci_followup": {
+    "production_php_minor": "8.2",
+    "production_patch_parity": "NOT_PROVEN_BY_MINOR_VERSION_TEST",
+    "existing_runner_runtime_check_preserved": true,
+    "setup_action_commit": "ec406be512d7077f68eed36e63f4d91bc006edc4",
+    "setup_action_tag": "2.35.4",
+    "primary_reference": "https://github.com/shivammathur/setup-php/tree/ec406be512d7077f68eed36e63f4d91bc006edc4",
+    "purpose": "Run the existing isolated native harness on the observed production minor as well as the CI runner runtime. This does not test the installed website or plugin."
+  },
+  "private_evidence": [
+    {
+      "evidence_name": "wordpress-plugins-native.txt",
+      "sha256": "803555a25a0b7cddf039c321790d2610bd7e2d2cac95dbc75397f249c76e488a",
+      "bytes": 50770,
+      "availability": "PRIVATE_NATIVE_UI_CAPTURE_NOT_UPLOADED"
+    },
+    {
+      "evidence_name": "hostinger-staging-native.txt",
+      "sha256": "5548117faf01de0091276284fe4c737793406b1fc9eab75e0a298116c9b6fd4c",
+      "bytes": 25055,
+      "availability": "PRIVATE_NATIVE_UI_CAPTURE_NOT_UPLOADED"
+    },
+    {
+      "evidence_name": "hostinger-backups-native.txt",
+      "sha256": "911a988db1f3d58420fded5fa0c286b96df85bd8c240e2ca7a99787d84526e22",
+      "bytes": 25962,
+      "availability": "PRIVATE_NATIVE_UI_CAPTURE_NOT_UPLOADED"
+    },
+    {
+      "evidence_name": "hostinger-restore-options-native.txt",
+      "sha256": "ecd21c82d8a588bc7f7118f54394173a472fdf24cfd19b0d4ccee0848ef227e2",
+      "bytes": 25667,
+      "availability": "PRIVATE_NATIVE_UI_CAPTURE_NOT_UPLOADED"
+    },
+    {
+      "evidence_name": "installed-entrypoint-native.txt",
+      "sha256": "89e9d06615d74757064f993ae56114781dbea08c0ebfeab28cef7350241150a6",
+      "bytes": 59388,
+      "availability": "PRIVATE_NATIVE_UI_CAPTURE_NOT_UPLOADED"
+    },
+    {
+      "evidence_name": "wordpress-server-native.txt",
+      "sha256": "e12856d85e6613a0e31d16db40d1527980fc2d3dfde1387eca2cbaa78fac6a87",
+      "bytes": 54205,
+      "availability": "PRIVATE_NATIVE_UI_CAPTURE_NOT_UPLOADED"
+    }
+  ],
+  "production_changes": 0,
+  "production_authorized": false,
+  "next_gates": [
+    "Resolve issue9 before creating/using staging; verify isolation before copying anything.",
+    "Confirm installed source byte completeness and compare reviewed target versions.",
+    "Audit pre-existing BSRE CRM routing ownership without changing it or introducing CRM synchronization.",
+    "Verify backup access/retention and scoped restore without overwriting accepted records.",
+    "Independent PR review and separate production authorization remain required."
+  ]
+}

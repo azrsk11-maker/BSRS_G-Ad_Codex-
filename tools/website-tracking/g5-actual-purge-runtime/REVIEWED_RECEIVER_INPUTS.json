@@ -1,0 +1,46 @@
+{
+  "build-candidate.mjs": {
+    "sha256": "aac9168e26e8ef2c7823974b3d84e2368f0d868cbbd089bed03361bb535cebfe",
+    "bytes": 3829
+  },
+  "runtime/control.gs": {
+    "sha256": "fc5f868054d7ac7a02747ba0c514ef3c04df1536a271c908ab00a81b360284b6",
+    "bytes": 12557
+  },
+  "runtime/no-copy.gs": {
+    "sha256": "c1c247fb7e583082c22f19ae805b980c16ceb0bd2cbe432eaf3806e536eb1857",
+    "bytes": 25368
+  },
+  "candidate/plugin/includes/candidate/receiver/ReceiverContracts.php": {
+    "sha256": "ed3ad716bdb0a926ea516cb132ccde86565ca6bdc37f9228b54a811157d94d63",
+    "bytes": 14351
+  },
+  "candidate/plugin/includes/candidate/receiver/NoMailCopyAlgebra.php": {
+    "sha256": "06d7f35a19c8287ad268547825898291a99fd5fe317aaf19067dceba083d28ef",
+    "bytes": 8333
+  },
+  "candidate/plugin/includes/candidate/receiver/ActualRetirementPort.php": {
+    "sha256": "5c14ce6e6fa148e0b43e5703f85b801c9aa560e09659dd45a375e4dd9f5d04ef",
+    "bytes": 3741
+  },
+  "candidate/plugin/includes/candidate/receiver/ReceiverOperationalEvidence.php": {
+    "sha256": "399e5569b580d5706255345dc0e5cd46fb851b5c98d8e5f1247dc5aa841bb157",
+    "bytes": 6226
+  },
+  "candidate/plugin/includes/candidate/receiver/ActualReceiverWorkflow.php": {
+    "sha256": "7d8231bd5cb74a31eee5903187786e81720ea6866d584145e5c80c80688dabbf",
+    "bytes": 5604
+  },
+  "candidate/plugin/includes/candidate/closed-enquiry-retention/ActualReceiverJournal.php": {
+    "sha256": "b6a4a8b011e6215237360637eabe6db38ae46494a184e6fb335041169f9344f9",
+    "bytes": 25682
+  },
+  "tests/control-fixture.mjs": {
+    "sha256": "dc80ae75838dd6755049d0571b702b18013f5a355779854dc7e3480d7d79f0b5",
+    "bytes": 13952
+  },
+  "tests/native-bridge.mjs": {
+    "sha256": "c9dbcea2abf9058478bca62d3360577bc0546b613597c336cc61c29ca5911a6d",
+    "bytes": 3258
+  }
+}

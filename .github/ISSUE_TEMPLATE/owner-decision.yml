@@ -1,0 +1,33 @@
+name: Owner decision
+description: A scoped judgment required from the Real Estate owner
+title: "[Owner decision] "
+labels: [owner-decision-required]
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: Background and verified evidence
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options and commercial / technical implications
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommended action
+    validations:
+      required: true
+  - type: textarea
+    id: approval
+    attributes:
+      label: Exact decision required and actions it does NOT authorize
+    validations:
+      required: true
+  - type: textarea
+    id: independent
+    attributes:
+      label: Independent work continuing while awaiting the decision

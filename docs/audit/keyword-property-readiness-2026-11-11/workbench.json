@@ -1,0 +1,1406 @@
+{
+  "version": 1,
+  "scope": "CODEX_PRELIMINARY_TRIAGE",
+  "proposed_on": "2026-11-11",
+  "sources": {
+    "KP-20261111-PROPERTY-READINESS": {
+      "file": "docs/audit/keyword-property-readiness-2026-11-11/property-readiness.json",
+      "sha256": "979aa29d3836d84ea40306c78b4423acb28d45f3c9099a12c18f7215664eb198"
+    }
+  },
+  "queue": [
+    {
+      "queue_id": "INTERNAL-febcc3f3e8b23688228d2a5c56c6cd8ba2aa53820572b21854aad3e5bad36b77",
+      "normalized_text": "2 bhk flat price in dubai",
+      "original_forms": [
+        "2 bhk flat price in dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 11
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "2 bhk flat price in dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "2 bhk flat price in dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-f0a350db8c04e2cb3fa8cf895191ac9cc867d79297fa9691055e539c279c9c2a",
+      "normalized_text": "average house price dubai",
+      "original_forms": [
+        "average house price dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 21
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "average house price dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "average house price dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-0de94f6f75fecbdef7e825304452f1f4a48aca980202c4c4caba91236f65d232",
+      "normalized_text": "buy a house in dubai price",
+      "original_forms": [
+        "buy a house in dubai price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 13
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "buy a house in dubai price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "buy a house in dubai price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-585c40abb23ed7e04214e0a92c8a3dff3146cb28ae549d2222092191f59b64a8",
+      "normalized_text": "buy apartment in dubai without down payment",
+      "original_forms": [
+        "buy apartment in dubai without down payment"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 7
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "buy apartment in dubai without down payment",
+        "disposition": "HOLD",
+        "intent": "UNVERIFIED_ZERO_DOWN_PAYMENT_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit property-buying intent is protected, but a zero-down-payment premise needs a real, compliant, source-dated feasible offer and suitability review. None is established; do not promise financing or blanket-exclude affordability.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "buy apartment in dubai without down payment"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-5695e9d0d1a3de24299dbde29ab49afa2f13e4903536de347c6f8b05b22d4f71",
+      "normalized_text": "buy property dubai with mortgage",
+      "original_forms": [
+        "buy property dubai with mortgage"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 33
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "buy property dubai with mortgage",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "buy property dubai with mortgage"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-56ad135a08f35ca59b91e87ebf1b06fea37b8512a3d22836ee22c3aed4d303ad",
+      "normalized_text": "buying a property in dubai process",
+      "original_forms": [
+        "buying a property in dubai process"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 16
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "buying a property in dubai process",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "buying a property in dubai process"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-396b121d5b5a1ad04c771ef0545e9062d0faa9095a9a29ad8f85f927fe4e2004",
+      "normalized_text": "buying off plan property in dubai process",
+      "original_forms": [
+        "buying off plan property in dubai process"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 19
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "buying off plan property in dubai process",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "buying off plan property in dubai process"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-181338c89128b27010620db17ab3fbc771165dd64b7b0b500641467c972a2bee",
+      "normalized_text": "buying property in dubai process",
+      "original_forms": [
+        "buying property in dubai process"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 5
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "buying property in dubai process",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "buying property in dubai process"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-c7910db7991b23ad72898c6d91087fe2ad631ddcc871e8bf20ca9850b22e087c",
+      "normalized_text": "dubai home price",
+      "original_forms": [
+        "dubai home price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 9
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai home price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai home price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-b5a2af820a07c87462718591afae361f220f95cbf8fb6b5e326f15496c91815c",
+      "normalized_text": "dubai house for sale low price",
+      "original_forms": [
+        "dubai house for sale low price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 12
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai house for sale low price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai house for sale low price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-4fd4d88b9d82ebc3c1b239b11185cfb7bcc27f5cf58869540e2da65cfe547b20",
+      "normalized_text": "dubai house sale price",
+      "original_forms": [
+        "dubai house sale price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 15
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai house sale price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai house sale price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-60979bca67c404694f26ca0b1fd787246ef87005159f71b9c202a2c00763775b",
+      "normalized_text": "dubai houses for sale price",
+      "original_forms": [
+        "dubai houses for sale price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 27
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai houses for sale price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai houses for sale price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-b0a2f1a1b0a710286612348c22e697e76b9567b5a29ccf3d142b6ef235b32562",
+      "normalized_text": "dubai mansion price",
+      "original_forms": [
+        "dubai mansion price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 18
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai mansion price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai mansion price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-45410ce7c5c5b40d05541a6e1f34bebfcf0f0bcd6b6384c5ad49a7f4245d809c",
+      "normalized_text": "dubai palm house price",
+      "original_forms": [
+        "dubai palm house price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 23
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai palm house price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "COMMUNITY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "A named-community home-price search is potential property comparison intent. Current stock, listing rights, valuations, community facts and the specific native destination remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai palm house price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-2992aaa410fb2776a89307a2eccf192179b087ba4408853226a35c2ab93adc82",
+      "normalized_text": "dubai property buying costs",
+      "original_forms": [
+        "dubai property buying costs"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 30
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai property buying costs",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai property buying costs"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-68733a451d25dbbbd9245427a9c7bfa2b69fdf850e34ee9a4b65327a2e2f8bbd",
+      "normalized_text": "dubai property buying guide",
+      "original_forms": [
+        "dubai property buying guide"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 25
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai property buying guide",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai property buying guide"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-d92c455e4215e0a22e2cd3baa8d9815ad69fb99ff77115773988f0524f4e8d0e",
+      "normalized_text": "dubai property title deed",
+      "original_forms": [
+        "dubai property title deed"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 32
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "dubai property title deed",
+        "disposition": "HOLD",
+        "intent": "TITLE_DEED_OFFICIAL_SERVICE_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "A title-deed query may seek verification or an official record, not brokerage. No government affiliation, access to title data or official service is established; retain and protect the ambiguous property intent.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai property title deed"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-4f864a5d882f3def0c01153d3d6f452c9fece3bd524be7ac100d0ef974375d8f",
+      "normalized_text": "dubai villa price in indian rupees",
+      "original_forms": [
+        "dubai villa price in indian rupees"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 14
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "dubai villa price in indian rupees",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_CURRENCY_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Dubai property-price wording in INR can express purchase comparison. It proves neither user nationality/location nor a conversion rate, legal/tax claim or approved India campaign; no targeting or jurisdiction-guide publication is authorized.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "dubai villa price in indian rupees"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-c8620260aa4450e2ac165f829e608080fb280db28dc66168215c782388732608",
+      "normalized_text": "house prices dubai",
+      "original_forms": [
+        "house prices dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 10
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "house prices dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "house prices dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-7b10c55e26bdc9342a74b707c49af6c3858a02c58c75d2deb0275920a70ccc41",
+      "normalized_text": "mortgage pre approval dubai",
+      "original_forms": [
+        "mortgage pre approval dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 6
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "mortgage pre approval dubai",
+        "disposition": "HOLD",
+        "intent": "DIRECT_FINANCE_OR_REGISTRATION_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Standalone mortgage pre-approval/registration may seek a lender or official transaction service. Those are not verified direct Black Swan services. Retain possible property readiness without a negative or financing/registration offer.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "mortgage pre approval dubai"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-a166067d1a818870ae4b37e928744428f3619c10007e013dd14967ef30a1ab78",
+      "normalized_text": "mortgage registration dubai",
+      "original_forms": [
+        "mortgage registration dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 31
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "mortgage registration dubai",
+        "disposition": "HOLD",
+        "intent": "DIRECT_FINANCE_OR_REGISTRATION_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Standalone mortgage pre-approval/registration may seek a lender or official transaction service. Those are not verified direct Black Swan services. Retain possible property readiness without a negative or financing/registration offer.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "mortgage registration dubai"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-6ee29b575a2a23206b9b6a2032dcdcc9d8a5e0b16f5c2227d356a0071ccce551",
+      "normalized_text": "mortgage registration in dubai",
+      "original_forms": [
+        "mortgage registration in dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 28
+        }
+      ],
+      "disposition": "HOLD",
+      "assessment": {
+        "text": "mortgage registration in dubai",
+        "disposition": "HOLD",
+        "intent": "DIRECT_FINANCE_OR_REGISTRATION_HOLD",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Standalone mortgage pre-approval/registration may seek a lender or official transaction service. Those are not verified direct Black Swan services. Retain possible property readiness without a negative or financing/registration offer.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "mortgage registration in dubai"
+        ]
+      },
+      "admission_gates": null
+    },
+    {
+      "queue_id": "INTERNAL-0d1290028ebbdb811b5ed2c66d4a2f9892e75c1e286b210b282bce7a3d3a46a0",
+      "normalized_text": "palm jumeirah house price",
+      "original_forms": [
+        "palm jumeirah house price"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 8
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "palm jumeirah house price",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "COMMUNITY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "A named-community home-price search is potential property comparison intent. Current stock, listing rights, valuations, community facts and the specific native destination remain unverified.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "palm jumeirah house price"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-012acdbc0bd97f48dccdac091618fb81a4b9e2b846febb347d80ff1b2d1808cc",
+      "normalized_text": "palm jumeirah house price in inr",
+      "original_forms": [
+        "palm jumeirah house price in inr"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 26
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "palm jumeirah house price in inr",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_CURRENCY_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Dubai property-price wording in INR can express purchase comparison. It proves neither user nationality/location nor a conversion rate, legal/tax claim or approved India campaign; no targeting or jurisdiction-guide publication is authorized.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "palm jumeirah house price in inr"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-5caddea9812264c51c5abb5db4eda3c8b9eb56dc940f2a1000aad476ed266567",
+      "normalized_text": "price of a house in dubai",
+      "original_forms": [
+        "price of a house in dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 20
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "price of a house in dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "price of a house in dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-2a02506a6e7611ff6e6e2608de82d65ba0edbd37fbebeb9193882ec7543b1099",
+      "normalized_text": "price of home in dubai",
+      "original_forms": [
+        "price of home in dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 24
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "price of home in dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "price of home in dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-3d530483c429ede2827f8cec93d2b455f48de5d065442eb458b873273a2b8650",
+      "normalized_text": "property buying process in dubai",
+      "original_forms": [
+        "property buying process in dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 22
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "property buying process in dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "property buying process in dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-da33471514f773dc0e71ebe8782e3b5c732dcd053fc7b07c21c3468f1c066b62",
+      "normalized_text": "property registration fees dubai",
+      "original_forms": [
+        "property registration fees dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 29
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "property registration fees dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "property registration fees dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-97deb5d0a0c1f6c14b0fe24dfe0cfc88eb7b170914b6973c671046fd4c6d8808",
+      "normalized_text": "property transfer fees dubai",
+      "original_forms": [
+        "property transfer fees dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 4
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "property transfer fees dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PROCESS_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Explicit purchase/cost/transaction-readiness wording can support brokerage research under the Master process family. Property type, legal/fee facts, financing suitability, owner scope and destination need independent evidence; no lender or registration service is asserted.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "property transfer fees dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    },
+    {
+      "queue_id": "INTERNAL-b6697ebf4881dcc7e3706b858c75513c6e0c42f587783e2f8ba80cc02ab04053",
+      "normalized_text": "real estate prices dubai",
+      "original_forms": [
+        "real estate prices dubai"
+      ],
+      "source_refs": [
+        {
+          "batch": "KP-20261111-PROPERTY-READINESS",
+          "source_line": 17
+        }
+      ],
+      "disposition": "POSITIVE_REVIEW",
+      "assessment": {
+        "text": "real estate prices dubai",
+        "disposition": "POSITIVE_REVIEW",
+        "intent": "PROPERTY_PRICE_RESEARCH_CANDIDATE",
+        "possible_services": [
+          "residential_offplan",
+          "residential_ready_secondary"
+        ],
+        "reason": "Property-specific price, budget or affordability research may precede a genuine purchase; low price is not an exclusion. This is conditional upstream intent, with no price, stock, immediate buying intention or commercial approval inferred.",
+        "negative_scope_proposal": null,
+        "protect_against_generic": [
+          "real estate prices dubai"
+        ]
+      },
+      "admission_gates": {
+        "claims": "NOT_VERIFIED",
+        "intent_geography": "NOT_VERIFIED",
+        "inventory_service": "NOT_VERIFIED",
+        "landing_page": "NOT_VERIFIED",
+        "language": "NOT_VERIFIED"
+      }
+    }
+  ],
+  "summary": {
+    "unique_phrases": 30,
+    "source_occurrences": 30,
+    "dispositions": {
+      "HOLD": 5,
+      "NEGATIVE_EXACT_REVIEW": 0,
+      "POSITIVE_REVIEW": 25,
+      "UNASSESSED": 0
+    },
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0,
+    "master_additions": 0
+  },
+  "controls": {
+    "reviewed": false,
+    "approved": false,
+    "deployed": false,
+    "master_additions": 0,
+    "deployment_authorized": false,
+    "live_campaign_changes": false
+  },
+  "diagnostics": {
+    "basis": "CONSERVATIVE_LEXICAL_ONLY_NOT_PLATFORM_MATCHING",
+    "scope_verified": false,
+    "protected_phrases": [
+      "2 bhk flat price in dubai",
+      "average house price dubai",
+      "buy a house in dubai price",
+      "buy apartment in dubai without down payment",
+      "buy property dubai with mortgage",
+      "buying a property in dubai process",
+      "buying off plan property in dubai process",
+      "buying property in dubai process",
+      "dubai home price",
+      "dubai house for sale low price",
+      "dubai house sale price",
+      "dubai houses for sale price",
+      "dubai mansion price",
+      "dubai palm house price",
+      "dubai property buying costs",
+      "dubai property buying guide",
+      "dubai property title deed",
+      "dubai villa price in indian rupees",
+      "house prices dubai",
+      "mortgage pre approval dubai",
+      "mortgage registration dubai",
+      "mortgage registration in dubai",
+      "palm jumeirah house price",
+      "palm jumeirah house price in inr",
+      "price of a house in dubai",
+      "price of home in dubai",
+      "property buying process in dubai",
+      "property registration fees dubai",
+      "property transfer fees dubai",
+      "real estate prices dubai"
+    ],
+    "exact_negative_tests": [],
+    "unsafe_generic_tests": [
+      {
+        "attempted_generic": "2 bhk flat price in dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "2 bhk flat price in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "average house price dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "average house price dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "buy a house in dubai price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buy a house in dubai price"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "buy apartment in dubai without down payment",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buy apartment in dubai without down payment"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "buy property dubai with mortgage",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buy property dubai with mortgage"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "buying a property in dubai process",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buying a property in dubai process"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "buying off plan property in dubai process",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buying off plan property in dubai process"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "buying property in dubai process",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buying a property in dubai process",
+          "buying off plan property in dubai process",
+          "buying property in dubai process",
+          "property buying process in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai home price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai home price",
+          "price of home in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai house for sale low price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai house for sale low price"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai house sale price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai house for sale low price",
+          "dubai house sale price"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai houses for sale price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai houses for sale price"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai mansion price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai mansion price"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai palm house price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai palm house price"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai property buying costs",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai property buying costs"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai property buying guide",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai property buying guide"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai property title deed",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai property title deed"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "dubai villa price in indian rupees",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "dubai villa price in indian rupees"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "house prices dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "house prices dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "mortgage pre approval dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "mortgage pre approval dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "mortgage registration dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "mortgage registration dubai",
+          "mortgage registration in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "mortgage registration in dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "mortgage registration in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "palm jumeirah house price",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "palm jumeirah house price",
+          "palm jumeirah house price in inr"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "palm jumeirah house price in inr",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "palm jumeirah house price in inr"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "price of a house in dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "price of a house in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "price of home in dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "price of home in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "property buying process in dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "buying a property in dubai process",
+          "buying off plan property in dubai process",
+          "buying property in dubai process",
+          "property buying process in dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "property registration fees dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "property registration fees dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "property transfer fees dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "property transfer fees dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      },
+      {
+        "attempted_generic": "real estate prices dubai",
+        "hypothetical_match_type": "BROAD",
+        "protected_phrases_tested": 30,
+        "protected_lexical_collisions": [
+          "real estate prices dubai"
+        ],
+        "legitimate_exclusion": false,
+        "scope_approved": false
+      }
+    ]
+  }
+}

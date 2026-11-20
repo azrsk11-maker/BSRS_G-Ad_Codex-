@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-11",
+  "source_files": [
+    {
+      "file": "developer-employment.json",
+      "batch_id": "KP-20261111-DEVELOPER-EMPLOYMENT",
+      "sha256": "3779c708adbe0aae5cbe3f9ee51d1f3a11d334cb976041c05fe0af77e00af1cd",
+      "bytes": 827787,
+      "records": 925,
+      "distinct_normalized": 925,
+      "source_bytes": 159318,
+      "source_sha256": "311fac44e3606e961521f697c4fa163c80e2ee8ef01af544e40a492660129eb0"
+    }
+  ],
+  "totals": {
+    "export_rows": 925,
+    "distinct_normalized_phrases": 925,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": [
+    "Four authored employment hypotheses follow Master section6 and dated primary developer careers vocabulary.",
+    "All four seeds have separate exact rows. No Black Swan vacancy, affiliation, property inventory, job availability or actual served query is inferred.",
+    "Capture provenance stays unreviewed; separate preliminary interpretation is not scope approval or admission."
+  ]
+}

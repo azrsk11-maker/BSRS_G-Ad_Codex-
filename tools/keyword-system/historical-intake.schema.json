@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bsre:historical-keyword-intake:1.0",
+  "title": "Unapproved historical keyword staging intake",
+  "type": "object",
+  "required": ["schema_version", "intake_date", "source", "scope", "new_360_mapping_assigned", "deployment_export_allowed", "counts", "placements", "candidates"],
+  "properties": {
+    "schema_version": {"const": "bsre-historical-keyword-intake-v1"},
+    "intake_date": {"type": "string", "format": "date"},
+    "scope": {"const": "UNAPPROVED_HISTORICAL_RESEARCH_INTAKE_NOT_LIVE_STATE"},
+    "new_360_mapping_assigned": {"const": false},
+    "deployment_export_allowed": {"const": false},
+    "source": {
+      "type": "object",
+      "required": ["archive_basename", "archive_sha256", "source_classification", "freshness_verified", "selected_members", "duplicate_copy_byte_identical"],
+      "properties": {
+        "archive_basename": {"const": "black-swan-no-crm-implementation.zip"},
+        "archive_sha256": {"const": "08a689590b812cd7eac46baf8a5e1fe23f2ced94168d8982012498e003c84794"},
+        "source_classification": {"const": "OWNER_SUPPLIED_HISTORICAL_DRAFT_NOT_CURRENT_ACCOUNT_EVIDENCE"},
+        "freshness_verified": {"const": false}, "duplicate_copy_byte_identical": {"const": true},
+        "selected_members": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["member", "sha256", "bytes"],
+          "properties": {"member": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bytes": {"type": "integer", "minimum": 1}}}}
+      }
+    },
+    "counts": {
+      "type": "object", "required": ["historical_placements", "distinct_unreviewed_candidates", "reviewed_positive_rows", "approved_rows", "deployed_rows_from_this_intake", "reviewed_positive_target", "reviewed_positive_deficit"],
+      "properties": {"historical_placements": {"const": 82}, "distinct_unreviewed_candidates": {"const": 41},
+        "reviewed_positive_rows": {"const": 0}, "approved_rows": {"const": 0}, "deployed_rows_from_this_intake": {"const": 0},
+        "reviewed_positive_target": {"const": 14000}, "reviewed_positive_deficit": {"const": 14000}}
+    },
+    "placements": {"type": "array", "minItems": 82, "maxItems": 82, "items": {"$ref": "#/$defs/placement"}},
+    "candidates": {"type": "array", "minItems": 41, "maxItems": 41, "items": {"$ref": "#/$defs/candidate"}}
+  },
+  "$defs": {
+    "locator": {"type": "object", "required": ["member", "record_ordinal", "start_line", "end_line"],
+      "properties": {"member": {"type": "string"}, "record_ordinal": {"type": "integer", "minimum": 1, "maximum": 82},
+        "start_line": {"type": "integer", "minimum": 2}, "end_line": {"type": "integer", "minimum": 2}}},
+    "placement": {
+      "type": "object", "required": ["placement_id", "keyword_source_locator", "metadata_source_locator", "original_keyword_fields", "original_metadata_fields"],
+      "properties": {"placement_id": {"type": "string", "pattern": "^LEGACY-PLACEMENT-[0-9]{4}$"},
+        "keyword_source_locator": {"$ref": "#/$defs/locator"}, "metadata_source_locator": {"$ref": "#/$defs/locator"},
+        "original_keyword_fields": {"type": "object", "required": ["Campaign", "Campaign status", "Ad group", "Ad group status", "Keyword", "Criterion Type", "Status"],
+          "properties": {"Campaign": {"type": "string"}, "Campaign status": {"const": "Paused"}, "Ad group": {"type": "string"}, "Ad group status": {"const": "Paused"},
+            "Keyword": {"type": "string", "minLength": 1}, "Criterion Type": {"enum": ["Exact", "Phrase"]}, "Status": {"const": "Paused"}}, "additionalProperties": false},
+        "original_metadata_fields": {"type": "object", "required": ["Campaign", "Ad group", "Keyword", "Match type", "Role", "Proposed final URL", "Readiness", "Reason", "Live-account evidence"],
+          "properties": {"Campaign": {"type": "string"}, "Ad group": {"type": "string"}, "Keyword": {"type": "string"}, "Match type": {"enum": ["Exact", "Phrase"]},
+            "Role": {"type": "string"}, "Proposed final URL": {"type": "string"}, "Readiness": {"type": "string"}, "Reason": {"type": "string"}, "Live-account evidence": {"const": "NOT VERIFIED"}}, "additionalProperties": false}}
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["candidate_id", "original_text", "original_text_variants", "normalized_text", "placement_ids", "match_types_seen", "source_id", "source_kind", "review_state", "approval_state", "mapping_status", "language", "reviewer", "reviewed_on", "valid_until", "source_observed_on", "volume", "cpc", "primary_campaign_key", "ad_group_key", "landing_page_id", "approval_reference"],
+      "properties": {"candidate_id": {"type": "string", "pattern": "^LEGACY-POS-[0-9]{4}$"},
+        "original_text": {"type": "string", "minLength": 1}, "original_text_variants": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "normalized_text": {"type": "string", "minLength": 1}, "placement_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^LEGACY-PLACEMENT-[0-9]{4}$"}},
+        "match_types_seen": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["EXACT", "PHRASE"]}},
+        "source_id": {"const": "HISTORICAL-DRAFT-ZIP"}, "source_kind": {"const": "historical_draft_archive"},
+        "review_state": {"const": "CANDIDATE"}, "approval_state": {"const": "PENDING"}, "mapping_status": {"const": "OWNER_REVIEW_REQUIRED"},
+        "language": {"type": "null"}, "reviewer": {"type": "null"}, "reviewed_on": {"type": "null"}, "valid_until": {"type": "null"},
+        "source_observed_on": {"type": "null"}, "volume": {"type": "null"}, "cpc": {"type": "null"},
+        "primary_campaign_key": {"type": "null"}, "ad_group_key": {"type": "null"}, "landing_page_id": {"type": "null"}, "approval_reference": {"type": "null"}},
+      "additionalProperties": false
+    }
+  }
+}

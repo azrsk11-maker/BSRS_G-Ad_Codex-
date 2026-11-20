@@ -1,0 +1,30 @@
+{
+  "scope": "AI_REVIEWED_OCCUPATIONAL_QUALIFICATION_TITLES_NOT_SEARCH_DEMAND",
+  "source_groups": 517,
+  "source_occurrences": 524,
+  "precheck_candidate_groups": 296,
+  "peer_proposed_groups": 207,
+  "selected_groups": 207,
+  "retained_new_occurrences": 214,
+  "held_groups": 310,
+  "held_occurrences": 310,
+  "additional_protected_queries": 310,
+  "existing_held_protection_occurrences": 0,
+  "additional_variant_hold_groups": 0,
+  "record_bodies_sha256": "5e629165730109585789ca5fe9aa5b52bac3b959c69cee9634ee628e5311a4bb",
+  "source_pins": {
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/qualifications.json": "8cdd1a1e0475857b1fc7473734756da9bb20b2229890c61d639ee41ed6dac91c",
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/capture.json": "85c9a3ed815c72a8bfc3966fdaa016aec64063e43c4dd352e59e5504fa61530e",
+    "docs/audit/keyword-ofqual-occupational-2026-11-12/semantic-decisions.json": "5f7aeb754ae4d8feccd2024847fef9b625d1bf6be94bc903900b59239627c7ee"
+  },
+  "review": {
+    "file": "docs/audit/keyword-negative-ofqual-occupational-admission-2026-11-12/review.json",
+    "sha256": "71309898f85a5dac4f820126aaa312f7e0afc8572450e55c1f9a395d53737dea"
+  },
+  "search_demand_verified": false,
+  "human_review_verified": false,
+  "exclusion_approval_granted": false,
+  "live_binding_verified": false,
+  "production_authorized": false,
+  "google_platform_validation_performed": false
+}

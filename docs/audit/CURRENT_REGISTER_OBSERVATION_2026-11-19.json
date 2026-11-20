@@ -1,0 +1,74 @@
+{
+  "schema": "bsre-bounded-current-register-observation-v1",
+  "classification": "CURRENT_BOUNDED_NONCONTACT_PREPARATION_NOT_HISTORY_ACCEPTANCE",
+  "observed_at_utc": "2026-11-19T05:17:19.986Z",
+  "source_kind": "existing authorized private Marketing registers; source identity retained privately",
+  "provider_read_count": 5,
+  "bounded_scope": {
+    "initial_data_positions_per_register": 100,
+    "first_beyond_bound_sentinel_positions_per_register": 1,
+    "uninspected_allocated_positions_after_sentinel_per_register": 898,
+    "initial_intake_fields": [
+      "lead_id",
+      "accepted_at_utc",
+      "qualification_status",
+      "qualified_at_utc"
+    ],
+    "initial_outcome_fields": [
+      "outcome_id",
+      "lead_id",
+      "canonical_lead_id",
+      "stage",
+      "occurred_at_utc",
+      "recorded_at_utc",
+      "recorded_by",
+      "qualification_status",
+      "is_test",
+      "source_evidence_reference"
+    ],
+    "additional_intake_field": "lead_status",
+    "additional_lead_state_positions": 101,
+    "contacts_payloads_notes_attribution_ids_financial_fields_excluded": true
+  },
+  "observations": {
+    "nonblank_intake_IDs_in_selected_positions": 12,
+    "duplicate_intake_IDs_in_selected_positions": 0,
+    "lead_status_enum_counts_in_later_bounded_read": {
+      "TEST_EXCLUDED": 12
+    },
+    "qualification_status_enum_counts_in_initial_read": {
+      "UNREVIEWED": 12
+    },
+    "qualification_timestamps_in_selected_positions": 0,
+    "outcome_IDs_in_selected_positions": 0,
+    "selected_outcome_decision_time_reviewer_evidence_cells_nonblank": 0,
+    "selected_first_beyond_bound_sentinels_nonblank": 0,
+    "dedicated_intake_test_boolean_header_present": false,
+    "historical_local_QA_ID_set_overlap": 12
+  },
+  "classification_limits": {
+    "test_excluded_lead_state_is_observed_not_inferred_from_contacts": true,
+    "test_excluded_lead_state_is_not_qualification": true,
+    "later_lead_states_joined_to_earlier_IDs_by_row_index_nonatomically": true,
+    "metadata_properties_unchanged_before_after_initial_read": true,
+    "metadata_stability_does_not_prove_atomic_data_revision": true,
+    "historical_ID_overlap_is_not_current_QA_attestation_or_authoritative_workbook_custody": true,
+    "genuine_lead_count": null,
+    "global_record_counts_or_completeness_verified": false,
+    "source_universe_or_business_ledger_version_verified": false
+  },
+  "authority": {
+    "G011_complete": false,
+    "G014_complete": false,
+    "source_or_provider_enrollment": false,
+    "qualification_or_export_authorized": false,
+    "production_or_Ads_changed": false,
+    "provider_writes": 0
+  },
+  "local_integrity_checks": {
+    "passed": 18,
+    "failed": 0,
+    "private_integrity_receipt_sha256": "7cf5eb8217abdb503565d6c9e34b519fb98ff80ddcc11d09db2c9c02d2c61943"
+  },
+  "independent_review": "Root technical peer review passed on frozen connector representations and bounded claims; no human, business-history or release acceptance inferred"
+}

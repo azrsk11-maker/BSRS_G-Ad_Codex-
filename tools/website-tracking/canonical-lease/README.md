@@ -1,0 +1,19 @@
+# Canonical lease candidate
+
+**G35 is held, default OFF and separate from the unchanged G34/G5/V2 candidates.** It implements the common-connection/code guard dependency, not either missing operational retention port. No installer, production publication, provider credentials, action authority, recovery service or advertising activation is supplied.
+
+WordPress's [database bootstrap](https://developer.wordpress.org/reference/functions/require_wp_db/) loads `wp-content/db.php` before constructing its default global database object. The pinned 7.1.4 source was independently checked. The explicit `BSRE_CANONICAL_LEASE_ENABLED === true` candidate creates the original `LeaseBoundWpdb` as that **first** global object. It never replaces a previously created object or supplies a second connection to G2. Default OFF returns before domain includes; malformed flags, preexisting objects/classes/bindings, query logging, altered code and redirected paths fail closed. No prefix, options, repository or user checks occur before core initializes them.
+
+The deterministic builder emits 58 site files: G34's42 plus the13 unchanged partial G5 members, a class-only producer, a55-member source manifest and the drop-in. Only one reversible class include changes the existing main member. The drop-in binds the manifest and producer hashes before loading the original declaration-only lease dependencies. The producer accepts only the canonical connection, verifies actual source/reflection paths, rechecks G2 schema/store identity and G3 final route/admission readback, and allows a transaction only under the actual same-connection G5 named custody lock. This code guard grants no owner, receiver, mailbox or backup authority.
+
+This site inventory is a separate engineering profile. It does not silently amend the67-member held contact composition contract or admit its two absent operational ports. Contact-specific composition must derive a fresh manifest from its actual final files and receive its own integration acceptance. File hashes/reflection are not resident-opcode attestation, served-script convergence or platform/provider proof.
+
+The query guard permits only WordPress's [core placeholder-unescape callback](https://developer.wordpress.org/reference/classes/wpdb/placeholder_escape/) on the exact canonical object, at priority zero with one argument. The inherited methods bind to the pinned 7.1.4 core file hash/reflection path. Extra or foreign callbacks, wrong priority/argument shape and global observers remain held; the guard does not remove or repair callbacks. Test fixtures clean up only callbacks they explicitly created.
+
+## Verification scope
+
+The additive lab runs eight SHORTINIT core-bootstrap modes, then two full route/custody modes under both existing isolated database profiles. SHORTINIT proves the first-object seam and refusal behavior before plugin autoload; it does not prove whole-site default-OFF equivalence. Full modes preserve the accepted G3 enquiry/queue/identity assertions and add the actual producer/common G2/G3/G5 connection, guard rejection and real connection-loss quarantine checks. Synthetic witnesses, keys, authority and clock derivatives remain test services, never runtime providers or historical prospect evidence.
+
+All previous entrypoint commands and isolation/resource controls remain. Native execution must come from the exact-head completed CI receipts, with GitHub's synthetic merge tree distinguished from and verified equal to the requested feature tree. Source/grammar/Node checks alone are not native acceptance.
+
+Deployment still requires an audit of existing `db.php`, earlier `advanced-cache.php`, content/plugin directory mappings, opcode/cache behavior, installed code and provider conflicts. Never overwrite or chain an unreviewed existing drop-in, change production configuration, or treat this candidate as authorization. Production stays unchanged; Ads stay paused.

@@ -1,0 +1,106 @@
+{
+  "controls": {
+    "approved_exclusions": 0,
+    "competition": null,
+    "cpc": null,
+    "current_library_membership_verified": false,
+    "deployment_authorized": false,
+    "deployments": 0,
+    "duplicate_and_variant_clearance": false,
+    "existing_evidence_changed": false,
+    "independent_review_complete": false,
+    "live_campaign_changes": false,
+    "metrics_status": "NOT_OBSERVED_UNKNOWN",
+    "production_changed": false,
+    "protected_query_and_scope_clearance": false,
+    "published_titles_are_observed_queries": false,
+    "raw_source_committed": false,
+    "registry_changed": false,
+    "research_master_rows_added": 0,
+    "semantic_review_complete": false,
+    "source_status_is_local_delivery_or_recognition": false,
+    "source_supply_only": true,
+    "volume": null
+  },
+  "dependencies": [
+    {
+      "file": "tools/keyword-system/keyword_audit.py",
+      "sha256": "ef6ce0535c8ce5cd83f50e169d26328cd763a236cfcbee4919f927c6fd8cd8d6"
+    },
+    {
+      "file": "tools/keyword-system/ofqual_discovery.py",
+      "sha256": "0c6e1ca3c8109237d98ea173c0b460d4e5b95d5f78f16a25c72836ed2041ebd2"
+    },
+    {
+      "file": "tools/keyword-system/keyword_text_compatibility.py",
+      "sha256": "723988151adfeae8f2a6efeb073a399451eefcbfe1d3f8c311e0e168fd56763f"
+    }
+  ],
+  "extractor": {
+    "file": "extract.py",
+    "sha256": "88aad542fba54547531d030f791ce4edf0f3c088ca098444421f01812764b712"
+  },
+  "licence": {
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+    "name": "Open Government Licence v3.0, except where otherwise stated",
+    "notice_url": "https://find-a-qualification.services.ofqual.gov.uk/find-regulated-qualifications",
+    "third_party_exceptions_preserved": true,
+    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "original_capture": {
+    "file": "docs/audit/keyword-ofqual-discovery-2026-11-11/capture.json",
+    "sha256": "40563540ed29d76e03e2bea8be1a46aca960d888c138fcc2f9ac2f54dec2e9f7"
+  },
+  "original_source": {
+    "bytes": 23984795,
+    "capture_date_utc": "2026-11-11",
+    "http_date": "2026-11-11T15:26:50Z",
+    "http_last_modified": "2026-11-11T02:16:08Z",
+    "records": 53175,
+    "sha256": "ec3d5f789e14dd07fcc8a46b61e46a5d4f103ac84b6a6fd3330fcc94211409d5",
+    "url": "https://downloads.find-a-qualification.services.ofqual.gov.uk/extracts/Qualifications.csv"
+  },
+  "private_source_path_published": false,
+  "projection": {
+    "bytes": 107831,
+    "file": "qualifications.json",
+    "records": 51,
+    "sha256": "00daad3657a0ea8d2407c50dd2478ac7099355c53d33fadbbd92598c2eac09fa",
+    "summary": {
+      "admissible_candidate_count": null,
+      "all_source_topic_occurrences": 94,
+      "all_source_topic_status_counts": {
+        "Available to learners": 51,
+        "No longer available to new learners": 8,
+        "No longer awarded": 35,
+        "Not yet available to learners": 0
+      },
+      "already_projected_occurrences_omitted": 0,
+      "current_library_novel_candidate_count": null,
+      "distinctness_limit": "Normalized-title grouping only; route, provider-prefix, alias, concept and Google matching equivalence remain unreviewed.",
+      "duplicate_normalized_groups": [],
+      "length_or_word_count_held_occurrences": 24,
+      "no_known_incompatibility_distinct_normalized_titles": 19,
+      "outside_selected_source_status_occurrences": 43,
+      "over_10_whitespace_words_occurrences": 24,
+      "over_80_characters_occurrences": 13,
+      "precheck_candidate_distinct_normalized_titles": 27,
+      "precheck_candidate_occurrences": 27,
+      "prior_projection_ordinal_overlap_count": 0,
+      "retained_distinct_normalized_titles": 51,
+      "retained_source_occurrences": 51,
+      "text_compatibility_classification_occurrences": {
+        "DOCUMENTED_INCOMPATIBILITY_DETECTED": 21,
+        "NO_KNOWN_INCOMPATIBILITY_DETECTED": 19,
+        "REQUIRES_REVIEW": 11
+      },
+      "text_compatibility_reason_occurrences_overlap": {
+        "DOCUMENTED_CHARACTER_LIMIT_EXCEEDED": 13,
+        "DOCUMENTED_INVALID_SYMBOLS": 13,
+        "WHITESPACE_WORD_LIMIT_REQUIRES_REVIEW": 24
+      }
+    }
+  },
+  "scope": "PINNED_PUBLIC_VETERINARY_SOURCE_EXTRACTION_NOT_RESEARCH_ADMISSION",
+  "version": 1
+}

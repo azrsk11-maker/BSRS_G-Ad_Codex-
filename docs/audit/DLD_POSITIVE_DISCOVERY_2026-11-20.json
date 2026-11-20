@@ -1,0 +1,322 @@
+{
+  "schema": "bsre-g022-dld-bounded-discovery-v1",
+  "as_of": "2026-11-20",
+  "classification": "FIRST_PARTY_PROCESS_EVIDENCE_AND_EXISTING_COMMERCIAL_CONTEXT_CORROBORATION_ONLY",
+  "capture_scope": {
+    "unique_successfully_represented_source_urls": 2,
+    "source_domain": "dubailand.gov.ae",
+    "source_material": "Saved connector text representations, not original HTTP bodies or PDF bytes.",
+    "faq_total_reported_lines": 2843,
+    "faq_questions_assessed": 33,
+    "whole_faq_reviewed": false,
+    "pdf_reported_pages": 20,
+    "pdf_pages_visually_verified": 0,
+    "original_pdf_sha256": null,
+    "capture_date": "2026-11-20",
+    "exact_http_capture_timestamp": null,
+    "capture_date_basis": "Root-provided fresh capture; connector describes the pages as crawled today.",
+    "search_snippets_used_as_subjects": 0,
+    "operator_authored_query_text_used_as_subjects": 0,
+    "duplicate_url_variants_counted_as_sources": 0
+  },
+  "sources": [
+    {
+      "source_id": "DLD-FAQ",
+      "url": "https://dubailand.gov.ae/en/frequently-asked-questions/",
+      "publication_date": null,
+      "capture_date": "2026-11-20",
+      "representation_refs": [
+        "open.private.json",
+        "find.private.json"
+      ],
+      "connector_refs": [
+        "turn10view0",
+        "turn11view0"
+      ],
+      "scope": "Only saved displayed windows; question line references are extraction coordinates, not a complete FAQ inventory."
+    },
+    {
+      "source_id": "DLD-GUIDE-2024",
+      "url": "https://dubailand.gov.ae/media/i31iv1n0/real_estate_brokerage_practice_guide_2024.pdf",
+      "publication_date": "2024-11",
+      "publication_date_basis": {
+        "pdf_page_one_based": 1,
+        "connector_page_index": 0,
+        "line": 0,
+        "document_identifies_second_edition_2024": true
+      },
+      "capture_date": "2026-11-20",
+      "representation_refs": [
+        "open.private.json",
+        "find.private.json"
+      ],
+      "connector_refs": [
+        "turn10view2",
+        "turn11view2"
+      ],
+      "scope": "Text extraction says 20 pages; contract definitions are on PDF page 7 (one based) / connector P6. No PDF binary or visual page audit was captured."
+    }
+  ],
+  "minimal_source_excerpts": [
+    {
+      "source_id": "DLD-FAQ",
+      "line": 1934,
+      "quote": "Is the mortgagor entitled to transact the mortgaged property?"
+    },
+    {
+      "source_id": "DLD-FAQ",
+      "line": 1983,
+      "quote": "Can properties be sold in auctions?"
+    },
+    {
+      "source_id": "DLD-GUIDE-2024",
+      "pdf_page_one_based": 7,
+      "connector_page_index": 6,
+      "lines": [
+        52,
+        53
+      ],
+      "quote": "agreement to market a property"
+    },
+    {
+      "source_id": "DLD-GUIDE-2024",
+      "pdf_page_one_based": 7,
+      "connector_page_index": 6,
+      "lines": [
+        54,
+        55
+      ],
+      "quote": "agreement of desire to purchase a property"
+    }
+  ],
+  "faq_exclusion_groups": [
+    {
+      "id": "FAQ-PROCESS-01",
+      "topic": "Escrow, development status, registration and complaints",
+      "lines": [
+        54,
+        60,
+        66,
+        71,
+        76,
+        81,
+        90,
+        191,
+        196,
+        201,
+        214,
+        219
+      ],
+      "captured_question_count": 12,
+      "source_id": "DLD-FAQ",
+      "state": "EXCLUDED_FROM_NEW_COMMERCIAL_DISCOVERY",
+      "reason": "Regulatory or administrative questions do not establish a distinct brokerage offer or observed customer search demand."
+    },
+    {
+      "id": "FAQ-PROCESS-02",
+      "topic": "Mortgage eligibility, administration and disposition constraints",
+      "lines": [
+        205,
+        209,
+        1899,
+        1907,
+        1913,
+        1918,
+        1923,
+        1929,
+        1934,
+        1939,
+        1945
+      ],
+      "captured_question_count": 11,
+      "source_id": "DLD-FAQ",
+      "state": "EXCLUDED_FROM_NEW_COMMERCIAL_DISCOVERY",
+      "reason": "Regulatory or administrative questions do not establish a distinct brokerage offer or observed customer search demand."
+    },
+    {
+      "id": "FAQ-PROCESS-03",
+      "topic": "Granted-land transaction restrictions",
+      "lines": [
+        1861
+      ],
+      "captured_question_count": 1,
+      "source_id": "DLD-FAQ",
+      "state": "EXCLUDED_FROM_NEW_COMMERCIAL_DISCOVERY",
+      "reason": "Regulatory or administrative questions do not establish a distinct brokerage offer or observed customer search demand."
+    },
+    {
+      "id": "FAQ-PROCESS-04",
+      "topic": "Warehouse sale registration charges",
+      "lines": [
+        1950,
+        1956
+      ],
+      "captured_question_count": 2,
+      "source_id": "DLD-FAQ",
+      "state": "EXCLUDED_FROM_NEW_COMMERCIAL_DISCOVERY",
+      "reason": "Regulatory or administrative questions do not establish a distinct brokerage offer or observed customer search demand."
+    },
+    {
+      "id": "FAQ-PROCESS-05",
+      "topic": "Registration-trustee services and logistics",
+      "lines": [
+        1961,
+        1967,
+        1973,
+        1978
+      ],
+      "captured_question_count": 4,
+      "source_id": "DLD-FAQ",
+      "state": "EXCLUDED_FROM_NEW_COMMERCIAL_DISCOVERY",
+      "reason": "Regulatory or administrative questions do not establish a distinct brokerage offer or observed customer search demand."
+    },
+    {
+      "id": "FAQ-PROCESS-06",
+      "topic": "Auction permissions and documentation",
+      "lines": [
+        1983,
+        1991,
+        1996
+      ],
+      "captured_question_count": 3,
+      "source_id": "DLD-FAQ",
+      "state": "EXCLUDED_FROM_NEW_COMMERCIAL_DISCOVERY",
+      "reason": "Regulatory or administrative questions do not establish a distinct brokerage offer or observed customer search demand."
+    }
+  ],
+  "brokerage_contract_assessments": [
+    {
+      "id": "CONTRACT-A",
+      "source_id": "DLD-GUIDE-2024",
+      "pdf_page_one_based": 7,
+      "connector_page_index": 6,
+      "lines": [
+        52,
+        53
+      ],
+      "subject": "Seller engages a brokerage to market a property",
+      "potential_owned_service_families": [
+        "sell"
+      ],
+      "state": "CORROBORATES_EXISTING_COMMERCIAL_CONTEXT_NOT_NEW_DISCOVERY",
+      "bounded_comparison_refs": [
+        "LEGACY-POS-0030",
+        "LEGACY-POS-0033",
+        "SIG-056",
+        "SIG-066"
+      ],
+      "finding": "The source describes seller/broker marketing. Broad seller disposal and selling-agent contexts already exist in the named held catalogue; no distinct property, constraint or new service is established."
+    },
+    {
+      "id": "CONTRACT-B",
+      "source_id": "DLD-GUIDE-2024",
+      "pdf_page_one_based": 7,
+      "connector_page_index": 6,
+      "lines": [
+        54,
+        55
+      ],
+      "subject": "Buyer engages a broker for a property purchase",
+      "potential_owned_service_families": [
+        "off-plan",
+        "resale"
+      ],
+      "transaction_stage": null,
+      "state": "CORROBORATES_EXISTING_COMMERCIAL_CONTEXT_NOT_NEW_DISCOVERY",
+      "bounded_comparison_refs": [
+        "LEGACY-POS-0006",
+        "LEGACY-POS-0014",
+        "SIG-066"
+      ],
+      "finding": "Buyer/broker purchasing is a broad existing context. The definition identifies no transaction stage, project, customer query, additional service or distinct candidate."
+    },
+    {
+      "id": "CONTRACT-F",
+      "source_id": "DLD-GUIDE-2024",
+      "pdf_page_one_based": 7,
+      "connector_page_index": 6,
+      "lines": [
+        56,
+        57
+      ],
+      "subject": "Seller/buyer sale agreement",
+      "potential_owned_service_families": [],
+      "state": "EXCLUDED_PROCESS_ONLY",
+      "bounded_comparison_refs": [],
+      "finding": "A sale-agreement definition does not evidence a separate demand subject or a Black Swan brokerage service."
+    }
+  ],
+  "failed_endpoint": {
+    "url": "https://dubailand.gov.ae/en/eservices/name-of-services/",
+    "logical_failures": 2,
+    "observations": [
+      {
+        "representation": "open.private.json",
+        "connector_ref": "turn10view1",
+        "failure": "404 Not Found"
+      },
+      {
+        "representation": "find.private.json",
+        "connector_ref": "turn11view1",
+        "failure": "non-retryable error"
+      }
+    ],
+    "retried_during_assessment": false,
+    "search_snippet_admitted": false,
+    "usable_content_captured": false,
+    "failure_scope": "Connector-reported capture failures only; no claim that the website or endpoint is globally unavailable. Search snippet content was not verified as direct source content."
+  },
+  "bounded_comparison": {
+    "historical_held_candidates": 41,
+    "historical_placements": 82,
+    "illustrative_taxonomy_signals": 70,
+    "prior_public_held_project_subjects": 6,
+    "prior_corroboration_case_groups": 3,
+    "positive_master_rows": 0,
+    "comparison_method": "Selected broad commercial concepts compared with the named public held catalogue and illustrative taxonomy; named project tranches were checked for context only.",
+    "comprehensive_semantic_crosswalk_performed": false,
+    "global_canonical_novelty": null,
+    "canonical_alias_merge_approved": false,
+    "limits": "Generic seller/buyer overlap is sufficient to withhold a new-subject claim here; no exhaustive equivalence or novelty determination is made. Illustrative taxonomy rows are not demand evidence."
+  },
+  "new_positive_intent_subjects": [],
+  "counts": {
+    "assessed_source_units": 36,
+    "captured_faq_questions_excluded_from_discovery": 33,
+    "brokerage_contract_definitions_assessed": 3,
+    "existing_commercial_contexts_corroborated": 2,
+    "contract_definitions_process_only": 1,
+    "source_units_not_counted_as_new_discovery": 36,
+    "new_discovery_subjects": 0,
+    "new_keyword_candidates": 0,
+    "generated_keyword_variants": 0,
+    "admissions": 0,
+    "approved_canonicals": 0,
+    "approved_alias_merges": 0,
+    "failed_source_endpoints": 1,
+    "retained_logical_failures": 2
+  },
+  "unestablished": {
+    "current_search_volume": null,
+    "current_cpc": null,
+    "customer_query_frequency": null,
+    "current_inventory": null,
+    "current_price": null,
+    "Black_Swan_service_or_mandate_confirmation": null,
+    "rights_or_permits": null,
+    "campaign_key": null,
+    "ad_group_key": null,
+    "landing_page_id": null
+  },
+  "authority": {
+    "all_existing_holds_retained": true,
+    "admission_authorized": false,
+    "export_authorized": false,
+    "publication_authorized": false,
+    "deployment_authorized": false,
+    "whole_G022_complete": false,
+    "production_changed": false,
+    "Ads_changed": false
+  },
+  "interpretation": "Two first-party documents add bounded source context. They establish no genuinely new commercial discovery, search demand, current inventory or Black Swan service commitment. The 2024 guide date is not a 2026 legal-validity or inventory attestation."
+}

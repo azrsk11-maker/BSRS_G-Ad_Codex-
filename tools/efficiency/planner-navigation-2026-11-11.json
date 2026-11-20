@@ -1,0 +1,139 @@
+{
+  "scope": "OBSERVED_WORKFLOW_OPTIMIZATION_NOT_RELEASE_OR_TOKEN_CERTIFICATE",
+  "navigation": {
+    "scope": "PAIRED_EXISTING_SESSION_UI_NAVIGATION_NOT_NETWORK_OR_WHOLE_TASK_BENCHMARK",
+    "observed_day_dubai": "2026-11-11",
+    "path": "/aw/keywordplanner/home",
+    "baseline": {
+      "scope": "SINGLE_AUTHENTICATED_NAVIGATION_SAMPLE_NOT_WHOLE_TASK_BENCHMARK",
+      "path": "/aw/keywordplanner/home",
+      "api_calls": 15,
+      "api_elapsed_ms": 12146,
+      "samples": [
+        {
+          "name": "new_tab",
+          "elapsed_ms": 200
+        },
+        {
+          "name": "official_entry",
+          "elapsed_ms": 3625
+        },
+        {
+          "name": "entry_state",
+          "elapsed_ms": 480
+        },
+        {
+          "name": "sign_in_link",
+          "elapsed_ms": 1910
+        },
+        {
+          "name": "signed_in_state",
+          "elapsed_ms": 851
+        },
+        {
+          "name": "account_state",
+          "elapsed_ms": 278
+        },
+        {
+          "name": "blocker_visibility",
+          "elapsed_ms": 53
+        },
+        {
+          "name": "tools",
+          "elapsed_ms": 1035
+        },
+        {
+          "name": "tools_state",
+          "elapsed_ms": 197
+        },
+        {
+          "name": "planning",
+          "elapsed_ms": 814
+        },
+        {
+          "name": "planning_state",
+          "elapsed_ms": 363
+        },
+        {
+          "name": "keyword_planner",
+          "elapsed_ms": 869
+        },
+        {
+          "name": "planner_loading_state",
+          "elapsed_ms": 1255
+        },
+        {
+          "name": "planner_ready_state",
+          "elapsed_ms": 213
+        },
+        {
+          "name": "observed_planner_url",
+          "elapsed_ms": 3
+        }
+      ],
+      "account_verified": true
+    },
+    "observed_direct": {
+      "api_calls": 6,
+      "api_elapsed_ms": 1202,
+      "samples": [
+        {
+          "name": "new_tab",
+          "elapsed_ms": 194
+        },
+        {
+          "name": "observed_planner_entry",
+          "elapsed_ms": 475
+        },
+        {
+          "name": "initial_state",
+          "elapsed_ms": 100
+        },
+        {
+          "name": "ready_state",
+          "elapsed_ms": 189
+        },
+        {
+          "name": "blocker_visibility",
+          "elapsed_ms": 234
+        },
+        {
+          "name": "current_url",
+          "elapsed_ms": 10
+        }
+      ],
+      "account_verified": true,
+      "planner_ready": true,
+      "visible_blocker": false
+    },
+    "limits": [
+      "one sequential existing-session pair; cache warmness differs",
+      "summed awaited browser calls exclude model/reasoning gaps and unobserved network requests",
+      "does not establish whole-task time, token, billing or conversion improvement"
+    ],
+    "query_values_and_full_url_excluded": true,
+    "production_changes": false,
+    "ads_changes": false
+  },
+  "inspection_display": {
+    "source_sha256": "a352bbe48c5fe6065c721b8f055f7c6d22a16adf2fa19d8840a839bfc41fd748",
+    "source_rows": 2262,
+    "display_aliases_only": {
+      "AD": "abu dhabi",
+      "SH": "sharjah",
+      "FR": "for rent",
+      "FS": "for sale"
+    },
+    "source_keyword_utf8_bytes": 76269,
+    "display_keyword_utf8_bytes": 58296,
+    "keyword_text_byte_reduction": 17973,
+    "all_rows_exact_roundtrip": true,
+    "original_source_strings_changed": false,
+    "counts_exclude_row_labels_and_legend": true,
+    "token_savings_measured": false
+  },
+  "provider_tokens": null,
+  "network_request_counts": null,
+  "billing_savings": null,
+  "release_authorized": false
+}

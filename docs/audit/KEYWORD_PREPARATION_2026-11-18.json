@@ -1,0 +1,31 @@
+{
+  "schema": "bsre-bounded-keyword-preparation-v1",
+  "date": "2026-11-18",
+  "G022": {
+    "whole_goal_verified": false,
+    "reviewed_generic_seller_query_identities": 6,
+    "historical_placements": 7,
+    "actual_new_source_identities": 0,
+    "new_keyword_admissions": 0,
+    "semantic_novelty_verified": false,
+    "current_disposal_contexts": 1,
+    "integrity_checks_passed": 80,
+    "scope": "Finite private structured privacy/context pass only; not full historical privacy clearance or six new intents."
+  },
+  "G027": {
+    "whole_goal_verified": false,
+    "campaign_specific_EXACT_proposals": 25,
+    "input_hashes_verified": 33,
+    "preparation_checks_passed": 61,
+    "existing_holds_preserved": 20,
+    "remaining_research_rows_without_this_proposal": 13975,
+    "canonical_campaign_ownership_verified": false,
+    "provider_matching_parity_verified": false,
+    "historical_lexical_matcher_modified": false,
+    "scope": "Private proposal only, separate from C0301/LP0301 planning crosswalk and current live ownership. No Ads export or approvals."
+  },
+  "research_scope_note": "Saved negative research metadata is bound to the C0301/LP0301 planning context; all-cohort live applicability remains unverified.",
+  "independent_human_approval": false,
+  "production_authority": false,
+  "Ads_authority": false
+}

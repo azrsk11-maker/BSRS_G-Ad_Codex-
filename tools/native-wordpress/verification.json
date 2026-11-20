@@ -1,0 +1,18 @@
+{
+  "schema": "bsre-native-planning-verification-v1",
+  "date_utc": "2026-11-07",
+  "python_tests": {
+    "run": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 0.040898
+  },
+  "php_lint_and_runtime": "PENDING_CI_NO_VERIFIED_LOCAL_RUNTIME",
+  "wordpress_calls": 0,
+  "wordpress_writes": 0,
+  "publication": false,
+  "saved_manifest_matches_recompile": true,
+  "planned_pairs": 360,
+  "families": 15
+}

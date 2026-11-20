@@ -1,0 +1,4020 @@
+{
+  "version": 1,
+  "scope": "AI_REVIEW_PREVIEW_NOT_ADMISSION",
+  "reviewer": "Codex AI lexical pre-screen; independent human review pending",
+  "reviewed_on": "2026-11-11",
+  "source_batch": "BSRE-KP-EMP-20261111-02",
+  "source_projection_sha256": "124f99b2f16fdc42759eeb134eb30b7eef1d43647dcd739d6b4149fef751762d",
+  "counts": {
+    "rows": 444,
+    "negative_exact_review": 58,
+    "hold": 386,
+    "positive_review": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "controls": {
+    "campaign_mapping_verified": false,
+    "scope_approval_granted": false,
+    "human_review_verified": false,
+    "production_authorized": false
+  },
+  "records": [
+    {
+      "source_line": 4,
+      "keyword": "estate caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 5,
+      "keyword": "property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 6,
+      "keyword": "housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 7,
+      "keyword": "tenancy officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 8,
+      "keyword": "lettings negotiator jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 9,
+      "keyword": "property management assistant jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 10,
+      "keyword": "housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 11,
+      "keyword": "facilities supervisor jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 12,
+      "keyword": "assistant property manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 13,
+      "keyword": "property management assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 14,
+      "keyword": "property caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 15,
+      "keyword": "housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 16,
+      "keyword": "property caretaker jobs with housing",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 17,
+      "keyword": "house caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 18,
+      "keyword": "live on site property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 19,
+      "keyword": "house caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 20,
+      "keyword": "sanctuary housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 21,
+      "keyword": "assistant property manager jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 22,
+      "keyword": "live in property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 23,
+      "keyword": "property caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 24,
+      "keyword": "remote property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 25,
+      "keyword": "housing association jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 26,
+      "keyword": "live in property caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 27,
+      "keyword": "homestead caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 28,
+      "keyword": "hyde housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 29,
+      "keyword": "private estate caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 30,
+      "keyword": "choice housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 31,
+      "keyword": "house care taker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 32,
+      "keyword": "housing officer jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 33,
+      "keyword": "housing support officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 34,
+      "keyword": "facilities supervisor",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 35,
+      "keyword": "property management virtual assistant jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 36,
+      "keyword": "property management administrative assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 37,
+      "keyword": "sovereign housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 38,
+      "keyword": "trainee lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 39,
+      "keyword": "notting hill genesis housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 40,
+      "keyword": "remote assistant property manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 41,
+      "keyword": "land caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 42,
+      "keyword": "farm caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 43,
+      "keyword": "building maintenance supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 44,
+      "keyword": "assistant property officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 45,
+      "keyword": "housing association recruitment agencies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 46,
+      "keyword": "live in property caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 47,
+      "keyword": "housing management jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 48,
+      "keyword": "live in farm caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 49,
+      "keyword": "apartment caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 50,
+      "keyword": "rural property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 51,
+      "keyword": "apartment caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 52,
+      "keyword": "caretaker homes near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 53,
+      "keyword": "housing association vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 54,
+      "keyword": "administrative assistant for property management company",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 55,
+      "keyword": "administrative assistant for property management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 56,
+      "keyword": "assistant building manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 57,
+      "keyword": "estate caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 58,
+      "keyword": "a2 dominion careers",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 59,
+      "keyword": "accord housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 60,
+      "keyword": "administrative assistant in property management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 61,
+      "keyword": "administrative assistant property management jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 62,
+      "keyword": "agudas israel housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 63,
+      "keyword": "aldwyck housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 64,
+      "keyword": "almond housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 65,
+      "keyword": "apartment assistant manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 66,
+      "keyword": "apartment assistant manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 67,
+      "keyword": "apartment assistant manager jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 68,
+      "keyword": "apprentice housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 69,
+      "keyword": "asb housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 70,
+      "keyword": "asra housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 71,
+      "keyword": "assistant apartment manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 72,
+      "keyword": "assistant building manager job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 73,
+      "keyword": "assistant commercial property manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 74,
+      "keyword": "assistant condominium manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 75,
+      "keyword": "assistant director housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 76,
+      "keyword": "assistant estate manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 77,
+      "keyword": "assistant estate manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 78,
+      "keyword": "assistant general manager property management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 79,
+      "keyword": "assistant housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 80,
+      "keyword": "assistant land development manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 81,
+      "keyword": "assistant leasing manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 82,
+      "keyword": "assistant leasing manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 83,
+      "keyword": "assistant lettings manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 84,
+      "keyword": "assistant lettings manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 85,
+      "keyword": "assistant manager apartment complex",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 86,
+      "keyword": "assistant manager estate",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 87,
+      "keyword": "assistant manager property",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 88,
+      "keyword": "assistant manager property management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 89,
+      "keyword": "assistant manager property management jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 90,
+      "keyword": "assistant manager real estate",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 91,
+      "keyword": "assistant property",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 92,
+      "keyword": "assistant property administrator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 93,
+      "keyword": "assistant property development manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 94,
+      "keyword": "assistant property development manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 95,
+      "keyword": "assistant property jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 96,
+      "keyword": "assistant property manager career",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 97,
+      "keyword": "assistant property manager commercial real estate",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 98,
+      "keyword": "assistant property manager near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 99,
+      "keyword": "assistant property manager part time",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 100,
+      "keyword": "assistant property manager position",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 101,
+      "keyword": "assistant property manager positions near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 102,
+      "keyword": "assistant property officer mtr",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 103,
+      "keyword": "assistant real estate manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 104,
+      "keyword": "assistant resident manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 105,
+      "keyword": "assisted living supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 106,
+      "keyword": "associate property manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 107,
+      "keyword": "associate property manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 108,
+      "keyword": "asst property manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 109,
+      "keyword": "become a housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 110,
+      "keyword": "berkeley scott housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 111,
+      "keyword": "berwickshire housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 112,
+      "keyword": "board member vacancies housing association",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 113,
+      "keyword": "building and grounds supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 114,
+      "keyword": "building and grounds supervisor jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 115,
+      "keyword": "building maintenance superintendent jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 116,
+      "keyword": "building maintenance supervisor job",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 117,
+      "keyword": "building operations supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 118,
+      "keyword": "bungalow caretaker job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 119,
+      "keyword": "car park supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 120,
+      "keyword": "caretaker house sitter jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 121,
+      "keyword": "castle rock edinvar jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 122,
+      "keyword": "castles and coasts housing association vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 123,
+      "keyword": "catalyst housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 124,
+      "keyword": "catalyst housing careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 125,
+      "keyword": "catalyst housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 126,
+      "keyword": "cattle station caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 127,
+      "keyword": "cattle station caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 128,
+      "keyword": "chief housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 129,
+      "keyword": "choice housing careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 130,
+      "keyword": "choices housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 131,
+      "keyword": "clarion housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 132,
+      "keyword": "clean room supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 133,
+      "keyword": "cloch housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 134,
+      "keyword": "clwyd alyn housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 135,
+      "keyword": "clwyd alyn housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 136,
+      "keyword": "clwyd alyn job vacancies",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 137,
+      "keyword": "clwyd alyn jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 138,
+      "keyword": "clyde valley housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 139,
+      "keyword": "clydesdale housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 140,
+      "keyword": "clúid housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 141,
+      "keyword": "clúid housing vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 142,
+      "keyword": "commercial assistant property manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 143,
+      "keyword": "commercial assistant property manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 144,
+      "keyword": "commercial property manager assistant jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 145,
+      "keyword": "cotman housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 146,
+      "keyword": "council housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 147,
+      "keyword": "council housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 148,
+      "keyword": "council tax and benefits officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 149,
+      "keyword": "couple property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 150,
+      "keyword": "deputy estate manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 151,
+      "keyword": "derwent living jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 152,
+      "keyword": "east midlands housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 153,
+      "keyword": "east thames housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 154,
+      "keyword": "empty homes officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 155,
+      "keyword": "empty property officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 156,
+      "keyword": "estate caretaker couple",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 157,
+      "keyword": "estate caretaker job description",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 158,
+      "keyword": "estate caretaker jobs couples",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 159,
+      "keyword": "estate caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 160,
+      "keyword": "estate caretaker positions",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 161,
+      "keyword": "estate caretaker vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 162,
+      "keyword": "estate management assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 163,
+      "keyword": "estate property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 164,
+      "keyword": "executive assistant property management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 165,
+      "keyword": "facilities maintenance supervisor",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 166,
+      "keyword": "facilities maintenance supervisor jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 167,
+      "keyword": "facilities management supervisor jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 168,
+      "keyword": "facilities operations supervisor",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 169,
+      "keyword": "facilities supervisor jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 170,
+      "keyword": "facility caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 171,
+      "keyword": "facility supervisor meaning",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 172,
+      "keyword": "family housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 173,
+      "keyword": "family mosaic jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 174,
+      "keyword": "farm caretaker job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 175,
+      "keyword": "farm caretaker needed",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 176,
+      "keyword": "farm caretaker positions",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 177,
+      "keyword": "farm caretaker wanted",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 178,
+      "keyword": "farm house caretaker job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 179,
+      "keyword": "field maintenance supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 180,
+      "keyword": "finance jobs in housing associations",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 181,
+      "keyword": "flat caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 182,
+      "keyword": "fm supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 183,
+      "keyword": "fm supervisor jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 184,
+      "keyword": "game room supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 185,
+      "keyword": "genesis housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 186,
+      "keyword": "gha housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 187,
+      "keyword": "glasgow housing association vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 188,
+      "keyword": "glebe housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 189,
+      "keyword": "graduate housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 190,
+      "keyword": "graduate lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 191,
+      "keyword": "grounds supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 192,
+      "keyword": "guest house caretaker job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 193,
+      "keyword": "historic house caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 194,
+      "keyword": "holiday home caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 195,
+      "keyword": "home loan consultant jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 196,
+      "keyword": "home loan executive jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 197,
+      "keyword": "home ownership officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 198,
+      "keyword": "home sales officer work",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 199,
+      "keyword": "home security guard job",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 200,
+      "keyword": "home support officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 201,
+      "keyword": "homeless prevention officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 202,
+      "keyword": "homelessness officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 203,
+      "keyword": "homelessness prevention officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 204,
+      "keyword": "horse farm caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 205,
+      "keyword": "hospital maintenance supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 206,
+      "keyword": "hospital maintenance supervisor jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 207,
+      "keyword": "hotel maintenance supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 208,
+      "keyword": "house caretaker hiring",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 209,
+      "keyword": "house caretakers wanted",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 210,
+      "keyword": "house caretaking opportunities",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 211,
+      "keyword": "housing allocations officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 212,
+      "keyword": "housing assessment officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 213,
+      "keyword": "housing association accountant jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 214,
+      "keyword": "housing association board jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 215,
+      "keyword": "housing association board member jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 216,
+      "keyword": "housing association board vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 217,
+      "keyword": "housing association careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 218,
+      "keyword": "housing association development jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 219,
+      "keyword": "housing association director jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 220,
+      "keyword": "housing association electrician jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 221,
+      "keyword": "housing association it jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 222,
+      "keyword": "housing association job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 223,
+      "keyword": "housing association jobs greater manchester",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 224,
+      "keyword": "housing association legal jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 225,
+      "keyword": "housing association maintenance jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 226,
+      "keyword": "housing association manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 227,
+      "keyword": "housing association non executive director jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 228,
+      "keyword": "housing association plumbing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 229,
+      "keyword": "housing association recruitment",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 230,
+      "keyword": "housing association sales jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 231,
+      "keyword": "housing association solicitor jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 232,
+      "keyword": "housing association surveyor jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 233,
+      "keyword": "housing association work",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 234,
+      "keyword": "housing benefit appeals officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 235,
+      "keyword": "housing benefit assessment officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 236,
+      "keyword": "housing benefit officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 237,
+      "keyword": "housing complaints officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 238,
+      "keyword": "housing compliance officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 239,
+      "keyword": "housing development officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 240,
+      "keyword": "housing enforcement officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 241,
+      "keyword": "housing group jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 242,
+      "keyword": "housing income officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 243,
+      "keyword": "housing industry association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 244,
+      "keyword": "housing liaison officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 245,
+      "keyword": "housing management officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 246,
+      "keyword": "housing needs officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 247,
+      "keyword": "housing officer assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 248,
+      "keyword": "housing officer bradford",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 249,
+      "keyword": "housing officer careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 250,
+      "keyword": "housing officer council jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 251,
+      "keyword": "housing officer job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 252,
+      "keyword": "housing officer jobs council",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 253,
+      "keyword": "housing officer jobs east midlands",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 254,
+      "keyword": "housing officer jobs south east",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 255,
+      "keyword": "housing officer jobs south yorkshire",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 256,
+      "keyword": "housing officer jobs sussex",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 257,
+      "keyword": "housing officer jobs wirral",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 258,
+      "keyword": "housing officer near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 259,
+      "keyword": "housing officer notting hill genesis",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 260,
+      "keyword": "housing officer part time jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 261,
+      "keyword": "housing officer roles",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 262,
+      "keyword": "housing officer trainee",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 263,
+      "keyword": "housing officer training jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 264,
+      "keyword": "housing officer vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 265,
+      "keyword": "housing officer volunteer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 266,
+      "keyword": "housing options officer job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 267,
+      "keyword": "housing options officer vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 268,
+      "keyword": "housing policy officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 269,
+      "keyword": "housing project officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 270,
+      "keyword": "housing project officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 271,
+      "keyword": "housing review officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 272,
+      "keyword": "housing services officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 273,
+      "keyword": "housing society job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 274,
+      "keyword": "housing solutions officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 275,
+      "keyword": "housing solutions officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 276,
+      "keyword": "housing technical officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 277,
+      "keyword": "housing technical officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 278,
+      "keyword": "housing trust jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 279,
+      "keyword": "hyde housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 280,
+      "keyword": "hyde housing careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 281,
+      "keyword": "hyde housing job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 282,
+      "keyword": "hyde housing recruitment",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 283,
+      "keyword": "indeed housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 284,
+      "keyword": "irwell valley homes jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 285,
+      "keyword": "irwell valley housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 286,
+      "keyword": "irwell valley housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 287,
+      "keyword": "irwell valley jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 288,
+      "keyword": "islington and shoreditch housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 289,
+      "keyword": "jobs at l&q",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 290,
+      "keyword": "jobs at yorkshire housing",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 291,
+      "keyword": "jobs property management assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 292,
+      "keyword": "junior lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 293,
+      "keyword": "junior lettings negotiator jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 294,
+      "keyword": "key housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 295,
+      "keyword": "l&q housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 296,
+      "keyword": "l&q housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 297,
+      "keyword": "l&q housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 298,
+      "keyword": "l&q living jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 299,
+      "keyword": "l&q part time jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 300,
+      "keyword": "l&q support worker jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 301,
+      "keyword": "land caretaker jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 302,
+      "keyword": "leasehold officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 303,
+      "keyword": "letting negotiator jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 304,
+      "keyword": "lettings consultant jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 305,
+      "keyword": "lettings negotiator jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 306,
+      "keyword": "live in estate caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 307,
+      "keyword": "live in estate caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 308,
+      "keyword": "live in house caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 309,
+      "keyword": "live in property caretaker positions",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 310,
+      "keyword": "live on site caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 311,
+      "keyword": "london & quadrant jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 312,
+      "keyword": "london and quadrant housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 313,
+      "keyword": "long term property caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 314,
+      "keyword": "looking for house caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 315,
+      "keyword": "luxury property caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 316,
+      "keyword": "manufacturing plant supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 317,
+      "keyword": "metro community housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 318,
+      "keyword": "metropolitan housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 319,
+      "keyword": "metropolitan housing trust jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 320,
+      "keyword": "metropolitan thames valley housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 321,
+      "keyword": "mhclg jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 322,
+      "keyword": "mom housing officer job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 323,
+      "keyword": "mosscare housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 324,
+      "keyword": "mrf supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 325,
+      "keyword": "mrf supervisor jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 326,
+      "keyword": "neighbourhood housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 327,
+      "keyword": "neighbourhood housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 328,
+      "keyword": "new homes sales assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 329,
+      "keyword": "nhg housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 330,
+      "keyword": "non executive director jobs housing association",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 331,
+      "keyword": "non executive vacancies housing associations",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 332,
+      "keyword": "nursing home maintenance supervisor jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 333,
+      "keyword": "off season resort property caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 334,
+      "keyword": "office assistant property management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 335,
+      "keyword": "on site assistant property manager",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 336,
+      "keyword": "on site caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 337,
+      "keyword": "orbit housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 338,
+      "keyword": "paint shop supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 339,
+      "keyword": "parks maintenance supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 340,
+      "keyword": "part time assistant property manager jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 341,
+      "keyword": "part time housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 342,
+      "keyword": "part time housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 343,
+      "keyword": "part time lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 344,
+      "keyword": "part time property manager assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 345,
+      "keyword": "peabody housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 346,
+      "keyword": "peabody trust jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 347,
+      "keyword": "peabody trust vacancies",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 348,
+      "keyword": "php housing officers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 349,
+      "keyword": "poplar harca housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 350,
+      "keyword": "poplar harca jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 351,
+      "keyword": "private estate caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 352,
+      "keyword": "private home guard jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 353,
+      "keyword": "private property caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 354,
+      "keyword": "private sector housing officer job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 355,
+      "keyword": "project manager housing association",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 356,
+      "keyword": "property admin assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 357,
+      "keyword": "property care takers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 358,
+      "keyword": "property caretaker couple jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 359,
+      "keyword": "property caretaker jobs abroad",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 360,
+      "keyword": "property caretaker near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 361,
+      "keyword": "property caretaker needed",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 362,
+      "keyword": "property caretaker position",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 363,
+      "keyword": "property caretaker real estate",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 364,
+      "keyword": "property caretaker wanted",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 365,
+      "keyword": "property maintenance assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 366,
+      "keyword": "property management admin assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 367,
+      "keyword": "property management administrative assistant jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 368,
+      "keyword": "property management assistant jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 369,
+      "keyword": "property management office assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 370,
+      "keyword": "property manager assistant jobs near me",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 371,
+      "keyword": "property manager associate",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 372,
+      "keyword": "public housing safety officers nt jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 373,
+      "keyword": "real estate caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 374,
+      "keyword": "real estate caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 375,
+      "keyword": "real estate management assistant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 376,
+      "keyword": "real estate officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 377,
+      "keyword": "remote property caretaker",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 378,
+      "keyword": "rendering plant supervisor jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 379,
+      "keyword": "residence life coordinator jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 380,
+      "keyword": "residence officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 381,
+      "keyword": "retirement living officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 382,
+      "keyword": "rural property caretakers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 383,
+      "keyword": "sales and letting negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 384,
+      "keyword": "sales lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 385,
+      "keyword": "sanctuary housing association job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 386,
+      "keyword": "sanctuary housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 387,
+      "keyword": "sanctuary housing association vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 388,
+      "keyword": "sanctuary housing careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 389,
+      "keyword": "sanctuary housing job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 390,
+      "keyword": "sanctuary housing jobs ely",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 391,
+      "keyword": "sanctuary housing maintenance jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 392,
+      "keyword": "sanctuary housing recruitment",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 393,
+      "keyword": "sanctuary housing vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 394,
+      "keyword": "senior housing officer job",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 395,
+      "keyword": "senior housing options officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 396,
+      "keyword": "senior letting negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 397,
+      "keyword": "senior lettings negotiator jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 398,
+      "keyword": "sheltered housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 399,
+      "keyword": "sheltered housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 400,
+      "keyword": "social housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 401,
+      "keyword": "soha housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 402,
+      "keyword": "south yorkshire housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 403,
+      "keyword": "south yorkshire housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 404,
+      "keyword": "southdown housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 405,
+      "keyword": "sovereign housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 406,
+      "keyword": "sovereign housing careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 407,
+      "keyword": "sovereign housing job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 408,
+      "keyword": "sovereign housing vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 409,
+      "keyword": "stonewater housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 410,
+      "keyword": "stonewater housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 411,
+      "keyword": "stonham housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 412,
+      "keyword": "supervisor facilities management",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 413,
+      "keyword": "supported housing officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 414,
+      "keyword": "tchc special constable jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 415,
+      "keyword": "temporary housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 416,
+      "keyword": "tenancy support officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 417,
+      "keyword": "tenancy sustainment officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 418,
+      "keyword": "tenancy sustainment officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 419,
+      "keyword": "tenant engagement officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 420,
+      "keyword": "tenant liaison officer",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 421,
+      "keyword": "tenant liaison officer jobs",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 422,
+      "keyword": "tenant liaison officer vacancies",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 423,
+      "keyword": "thames valley housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 424,
+      "keyword": "tollcross housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 425,
+      "keyword": "torus housing officers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 426,
+      "keyword": "trainee housing officer jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 427,
+      "keyword": "trainee letting negotiator jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 428,
+      "keyword": "trainee lettings",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 429,
+      "keyword": "trainee lettings agent",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 430,
+      "keyword": "trainee lettings consultant",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 431,
+      "keyword": "trainee lettings jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 432,
+      "keyword": "trainee sales and lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 433,
+      "keyword": "trident housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 434,
+      "keyword": "trust housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 435,
+      "keyword": "trust housing association vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 436,
+      "keyword": "vacation home caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 437,
+      "keyword": "villa caretaker jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 438,
+      "keyword": "vivid housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 439,
+      "keyword": "weekend lettings negotiator",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 440,
+      "keyword": "work center supervisor",
+      "disposition": "NEGATIVE_EXACT_REVIEW",
+      "reason": "Explicit employment intent without a property-service marker; requires scope and independent human review.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 441,
+      "keyword": "working for sanctuary housing",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 442,
+      "keyword": "wulvern housing jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 443,
+      "keyword": "york housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 444,
+      "keyword": "yorkshire housing association jobs",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 445,
+      "keyword": "yorkshire housing careers",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 446,
+      "keyword": "yorkshire housing job vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    },
+    {
+      "source_line": 447,
+      "keyword": "yorkshire housing vacancies",
+      "disposition": "HOLD",
+      "reason": "Employment or property/housing wording may overlap protected intent or service context; do not infer exclusion.",
+      "possible_services": [],
+      "scope_proposal": null,
+      "human_review_required": true
+    }
+  ]
+}

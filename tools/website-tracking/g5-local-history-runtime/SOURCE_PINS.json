@@ -1,0 +1,110 @@
+{
+  "schema": "bsre-g39-local-history-source-pins-v1",
+  "accepted_head": "c6fab35e579fb942c28c0ae6d91a81f5c0be8cef",
+  "files": {
+    "tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/closed-enquiry-retention/ActualReceiverJournal.php": {
+      "sha256": "b6a4a8b011e6215237360637eabe6db38ae46494a184e6fb335041169f9344f9",
+      "bytes": 25682
+    },
+    "tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeJournal.php": {
+      "sha256": "ee605ea6ce19f65fd30bd9eae6f6538ede84abd697f98c6cda1310a96db0b984",
+      "bytes": 26552
+    },
+    "tools/website-tracking/g5-actual-purge-runtime/code/ActualPurgeEngine.php": {
+      "sha256": "cca80dec6c744069a16c209182849f0fa3efea3195c44634952eac224a53bb40",
+      "bytes": 37636
+    },
+    "tools/closed-enquiry-retention/Workflow.php": {
+      "sha256": "5e9c7d4b0816f83b6349d08051a8dac552faa5af44a877966d2e042a635cb8f7",
+      "bytes": 39154
+    },
+    "tools/closed-enquiry-retention/LeaseBoundWpdb.php": {
+      "sha256": "a358c8f28a6186ce5bc452aa699c93ddd96fb71b58528f1e21acc9e42b854b58",
+      "bytes": 2535
+    },
+    "tools/website-tracking/canonical-lease/CanonicalCaptureProducer.template.php": {
+      "sha256": "99b6ea65a51f86ca8f832064d10b75c5dd2f177f6f90b096e5e877c2749932c8",
+      "bytes": 21361
+    },
+    "tools/website-tracking/g5-runtime-ports/candidate/plugin/includes/candidate/runtime/G5Contracts.php": {
+      "sha256": "bef6f67cc995d4ad5a273d54de7c1c7e6953a88fb33a962bfb6d29e4c574af26",
+      "bytes": 5734
+    },
+    "tools/website-tracking/g5-runtime-ports/candidate/plugin/includes/candidate/recovery/ActualRecoveryCustody.php": {
+      "sha256": "32b232c7f476c8c8ab9477b8b775836cd7d26bdacb65a2fec30a330436fea2ec",
+      "bytes": 5852
+    },
+    "tools/qualified-export-source/source_queue.py": {
+      "sha256": "efc094cd32b60702fa65ba53f11a5d079ba5713f25bed86c2b3346547ba65392",
+      "bytes": 29937
+    },
+    "tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/ActualPreferenceRetention.php": {
+      "sha256": "740ed6eccef5e8cb4edccb2f7c948c4b4a6ca0bfbf8f9acca7d96bb02a4a1094",
+      "bytes": 14720
+    },
+    "tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAlgebra.php": {
+      "sha256": "d06553be8d606dbb41cc552d2066cf9d9358e46d7f11e913ba6e0edbc8ff6d91",
+      "bytes": 12837
+    },
+    "tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceAtomicStore.php": {
+      "sha256": "a22097e3d4c2547b02c7bfd76550e373ab29d0d329f7289e341f582c2253e4da",
+      "bytes": 36454
+    },
+    "tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceContracts.php": {
+      "sha256": "1fa788e74dea911900181b6e15c66e2b177235dc82cb7da9d6524cab71d93008",
+      "bytes": 19296
+    },
+    "tools/website-tracking/g5-preference-runtime/candidate/plugin/includes/candidate/retention/PreferenceCustody.php": {
+      "sha256": "64c9b832569a5fe43ab28f4b482cba4fe6d567f7bbcf3977fb0b2eba942c3ff4",
+      "bytes": 10786
+    },
+    "tools/website-tracking/g5-receiver-runtime/build-candidate.mjs": {
+      "sha256": "aac9168e26e8ef2c7823974b3d84e2368f0d868cbbd089bed03361bb535cebfe",
+      "bytes": 3829
+    },
+    "tools/website-tracking/g5-receiver-runtime/runtime/control.gs": {
+      "sha256": "fc5f868054d7ac7a02747ba0c514ef3c04df1536a271c908ab00a81b360284b6",
+      "bytes": 12557
+    },
+    "tools/website-tracking/g5-receiver-runtime/runtime/no-copy.gs": {
+      "sha256": "c1c247fb7e583082c22f19ae805b980c16ceb0bd2cbe432eaf3806e536eb1857",
+      "bytes": 25368
+    },
+    "tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ReceiverContracts.php": {
+      "sha256": "ed3ad716bdb0a926ea516cb132ccde86565ca6bdc37f9228b54a811157d94d63",
+      "bytes": 14351
+    },
+    "tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/NoMailCopyAlgebra.php": {
+      "sha256": "06d7f35a19c8287ad268547825898291a99fd5fe317aaf19067dceba083d28ef",
+      "bytes": 8333
+    },
+    "tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ActualRetirementPort.php": {
+      "sha256": "5c14ce6e6fa148e0b43e5703f85b801c9aa560e09659dd45a375e4dd9f5d04ef",
+      "bytes": 3741
+    },
+    "tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ReceiverOperationalEvidence.php": {
+      "sha256": "399e5569b580d5706255345dc0e5cd46fb851b5c98d8e5f1247dc5aa841bb157",
+      "bytes": 6226
+    },
+    "tools/website-tracking/g5-receiver-runtime/candidate/plugin/includes/candidate/receiver/ActualReceiverWorkflow.php": {
+      "sha256": "7d8231bd5cb74a31eee5903187786e81720ea6866d584145e5c80c80688dabbf",
+      "bytes": 5604
+    },
+    "tools/website-tracking/g5-receiver-runtime/tests/control-fixture.mjs": {
+      "sha256": "dc80ae75838dd6755049d0571b702b18013f5a355779854dc7e3480d7d79f0b5",
+      "bytes": 13952
+    },
+    "tools/website-tracking/g5-receiver-runtime/tests/native-bridge.mjs": {
+      "sha256": "c9dbcea2abf9058478bca62d3360577bc0546b613597c336cc61c29ca5911a6d",
+      "bytes": 3258
+    },
+    "tools/website-tracking/g5-receiver-runtime/tests/receiver-runtime-native.php": {
+      "sha256": "cad4718a78f229ebecb376575cf78166c1cfb8e2ab0c76109fcee56ad3ec97c9",
+      "bytes": 19932
+    },
+    "tools/website-tracking/g5-actual-purge-runtime/tests/foreign-capture-snapshot.php": {
+      "sha256": "e499aecf0b50351a8f295e98a9111a1c39080abc615690643d56b20ddb0f2e95",
+      "bytes": 6632
+    }
+  }
+}

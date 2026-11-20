@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "scope": "AUTHENTIC_UNREVIEWED_DISCOVERY_ONLY",
+  "account_id": "573-038-4686",
+  "capture_date_dubai": "2026-11-12",
+  "source_files": [
+    {
+      "file": "bank-access-navigation.json",
+      "batch_id": "BSRE-KP-BANK-NAV-20261112-01",
+      "sha256": "822129ae18676ee62700c0726dcc11179c1bb7293636f031d7f3908e6fc879ea",
+      "bytes": 3119365,
+      "records": 3481,
+      "distinct_normalized": 3481,
+      "source_bytes": 464600,
+      "source_sha256": "2893a10b0bc281451e62049540b1227a0b82a7f4de69ac365bd4ed489d298c2e"
+    }
+  ],
+  "totals": {
+    "export_rows": 3481,
+    "distinct_normalized_phrases": 3481,
+    "repeated_occurrences": 0,
+    "duplicate_phrase_groups": 0,
+    "cross_batch_overlap_groups": 0
+  },
+  "master_contribution": {
+    "reviewed_positive": 0,
+    "reviewed_negative": 0,
+    "approved_positive": 0,
+    "approved_negative": 0,
+    "deployed": 0
+  },
+  "notes": {
+    "source_supply_only": true,
+    "all_complete_public_cells_and_source_order_retained": true,
+    "source_record_ordinal": "One-based index in source_projection.records; exact physical source_line retained.",
+    "source_basename_is_generic_public_alias": true,
+    "public_raw_source_url": "https://ads.google.com/aw/keywordplanner/",
+    "private_ui_context_and_raw_evidence_retained_outside_public_source": true,
+    "query_submission": "Seed chips committed with Enter; one query. Later Get results locator matched no control because results were already loaded; no repeated query.",
+    "ui_pagination": "1 - 10 of 3,481",
+    "ui_idea_count_independently_observed": 3481,
+    "account_not_running_banner_observed": true,
+    "provider_period_from_actual_export": "November 1, 2025 - October 31, 2026",
+    "metric_strings_are_unaggregated_historical_provider_estimates": true,
+    "served_search_or_actual_performance_claimed": false,
+    "semantic_review_complete": false,
+    "current_library_membership_verified": false,
+    "production_or_exclusion_authorization": false,
+    "keywords_added_to_plan": false,
+    "campaign_settings_status_budgets_or_permissions_changed": false
+  }
+}

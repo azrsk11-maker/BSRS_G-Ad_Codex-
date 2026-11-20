@@ -1,0 +1,300 @@
+{
+  "version": "3.0",
+  "status": "SPECIFICATION_ONLY_NOT_IMPLEMENTED",
+  "company": "BlackSwan Real Estate",
+  "site_scope": "EXISTING_MAIN_SITE_AND_NATIVE_CAMPAIGN_PAGES",
+  "verified_ids": {
+    "gtm_container_id": null,
+    "gtm_published_version": null,
+    "ga4_property_id": null,
+    "ga4_web_stream_id": null,
+    "ga4_measurement_id": null,
+    "google_ads_customer_id": null,
+    "google_ads_conversion_account_id": null,
+    "google_ads_conversion_id": null,
+    "conversion_action_labels": {},
+    "google_sheet_id": null
+  },
+  "installation": {
+    "audit_existing_tags_first": true,
+    "default_one_company_gtm_web_container": true,
+    "default_shared_ga4_web_stream": true,
+    "new_tracking_property_per_campaign": false,
+    "one_installation_path_per_tag": true,
+    "verified_ids_only": true,
+    "production_placeholder_ids_allowed": false
+  },
+  "page_context": [
+    "campaign_key",
+    "landing_page_id",
+    "page_version",
+    "page_family",
+    "property_destination",
+    "property_segment",
+    "transaction_intent",
+    "language",
+    "property_id",
+    "project_id"
+  ],
+  "cta_context": [
+    "cta_id",
+    "cta_type",
+    "cta_position",
+    "form_id",
+    "destination_key"
+  ],
+  "attribution": {
+    "preserve_when_available_and_permitted": [
+      "gclid",
+      "gbraid",
+      "wbraid",
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_id",
+      "utm_term",
+      "utm_content",
+      "google_campaign_id",
+      "ad_group_id",
+      "creative_id"
+    ],
+    "persist_first_and_latest_permitted_touch_separately": true,
+    "rehydrate_context_each_page": true,
+    "cover_public_site_forms": true,
+    "internal_utm_retagging": false,
+    "unknown_values_fabricated": false,
+    "exact_person_level_search_query_claim": false,
+    "consent_or_click_id_required_to_enquire": false
+  },
+  "privacy": {
+    "pii_in_ga4_or_urls": false,
+    "raw_form_text_in_events": false,
+    "consent_signals": [
+      "analytics_storage",
+      "ad_storage",
+      "ad_user_data",
+      "ad_personalization"
+    ],
+    "consent_mode_choice": "REVIEW_REQUIRED",
+    "enhanced_conversions": "SEPARATE_APPROVAL_REQUIRED",
+    "secrets_in_repository": false
+  },
+  "deduplication": {
+    "server_acceptance_before_lead_event": true,
+    "durable_lead_id_required": true,
+    "one_ads_route_per_business_event": true,
+    "generic_and_specialized_cta_counts_summed": false,
+    "custom_event_id_assumed_universal_dedup": false,
+    "supported_conversion_identifier_mapping": "CONFIGURATION_REQUIRED"
+  },
+  "events": [
+    {
+      "operational_event": "page_view",
+      "proposed_ga4_event": "page_view",
+      "definition": "Actual navigation, one view",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "cta_click",
+      "proposed_ga4_event": "cta_click",
+      "definition": "Ordinary CTA only; specialized clicks not counted twice",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "phone_click",
+      "proposed_ga4_event": "phone_click",
+      "definition": "Dial action, not an answered call",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "whatsapp_click",
+      "proposed_ga4_event": "whatsapp_click",
+      "definition": "Outbound action, not a message",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "email_click",
+      "proposed_ga4_event": "email_click",
+      "definition": "Email action, not a sent email",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "form_start",
+      "proposed_ga4_event": "form_start",
+      "definition": "Form interaction",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "form_error",
+      "proposed_ga4_event": "form_error",
+      "definition": "Sanitized error category, no entered content",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "form_accepted",
+      "proposed_ga4_event": "generate_lead",
+      "definition": "Durably accepted enquiry only",
+      "bidding_treatment": "candidate_primary_requires_goal_approval",
+      "evidence_source": "server_confirmed",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "brochure_download",
+      "proposed_ga4_event": "brochure_download",
+      "definition": "Confirmed interaction; not proof of reading",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser_or_response",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "floorplan_view",
+      "proposed_ga4_event": "floorplan_view",
+      "definition": "Document interaction, not proof of reading",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "calculator_complete",
+      "proposed_ga4_event": "calculator_complete",
+      "definition": "Valid calculation",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "comparison_complete",
+      "proposed_ga4_event": "comparison_complete",
+      "definition": "Valid comparison",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "property_view",
+      "proposed_ga4_event": "property_view",
+      "definition": "Property context viewed",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "viewing_request",
+      "proposed_ga4_event": "viewing_request",
+      "definition": "Request, not confirmed booking",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "server_confirmed",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "viewing_booked",
+      "proposed_ga4_event": "viewing_booked",
+      "definition": "Verified booking",
+      "bidding_treatment": "intermediate_requires_goal_approval",
+      "evidence_source": "booking_or_authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "viewing_attended",
+      "proposed_ga4_event": "viewing_attended",
+      "definition": "Verified attendance",
+      "bidding_treatment": "intermediate_requires_goal_approval",
+      "evidence_source": "authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "lp_to_main_site",
+      "proposed_ga4_event": "lp_to_main_site",
+      "definition": "Internal continuation, preserve original source",
+      "bidding_treatment": "diagnostic",
+      "evidence_source": "browser",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "conversation_verified",
+      "proposed_ga4_event": null,
+      "definition": "Actual conversation evidence",
+      "bidding_treatment": "operational_approval_required",
+      "evidence_source": "provider_or_authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "qualified_lead",
+      "proposed_ga4_event": null,
+      "definition": "Accepted role-specific qualification",
+      "bidding_treatment": "preferred_when_reliable_separate_approval",
+      "evidence_source": "authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "mandate_signed",
+      "proposed_ga4_event": null,
+      "definition": "Valid owner mandate",
+      "bidding_treatment": "supply_side_outcome_separate_approval",
+      "evidence_source": "authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "offer_submitted",
+      "proposed_ga4_event": null,
+      "definition": "Evidenced offer",
+      "bidding_treatment": "operational",
+      "evidence_source": "authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "transaction_closed",
+      "proposed_ga4_event": null,
+      "definition": "Contractual transaction",
+      "bidding_treatment": "commercial_outcome_separate_approval",
+      "evidence_source": "authorized_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    },
+    {
+      "operational_event": "commission_collected",
+      "proposed_ga4_event": null,
+      "definition": "Finance-reconciled collection",
+      "bidding_treatment": "financial_outcome_separate_approval",
+      "evidence_source": "finance_ledger",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "test_status": "NOT_EXECUTED"
+    }
+  ],
+  "live_verified": false
+}

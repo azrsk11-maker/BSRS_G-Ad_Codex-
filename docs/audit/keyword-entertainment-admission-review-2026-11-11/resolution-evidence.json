@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "scope": "INDEPENDENT_AI_DELTA_FOR_24_ADDITIONAL_HOLDS_ONLY",
+  "review_date_dubai": "2026-11-11",
+  "base_review_file": "review.json",
+  "base_review_sha256": "c96f199aae33de35356c26930d331e1225e37065bb7ae5a78e31d509ae1ef5ce",
+  "source_raw_sha256": "3c2c8b015097200e3648f2f9d04c467ec6d447d4ea187d5cabd4be030bedb3ac",
+  "projection_sha256": "a3d8882f5edc61e40c482772723596caaf050a0d7a792e5fe4991be64b14e74f",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://store.steampowered.com/app/613100/House_Flipper/",
+      "read_date": "2026-11-11",
+      "bounded_paraphrase": "Official game page lists pets, garden and luxury extensions; the bundle also names Garden Flipper. Used only for game/content identity."
+    },
+    {
+      "id": "S2",
+      "url": "https://store.steampowered.com/dlc/613100?l=english",
+      "read_date": "2026-11-11",
+      "bounded_paraphrase": "Official downloadable-content catalogue corroborates the same pets, garden and luxury game extensions and Garden Flipper naming."
+    }
+  ],
+  "limits": "These readings establish named entertainment context only. They certify no requested device/VR compatibility, actual feature, current price/free availability, download legality, search demand, Google equivalence or campaign applicability. Read dates are observation dates, not release or availability claims.",
+  "counts": {
+    "prior_extra_holds_reviewed": 24,
+    "resolved_to_conditional_exact": 9,
+    "remain_held": 15,
+    "prior_294_proposals_changed": 0,
+    "original_200_holds_reopened_or_promoted": 0
+  },
+  "conditional_partition_if_delta_adopted": {
+    "proposed_exact": 303,
+    "held": 215,
+    "unassessed": 0
+  },
+  "resolutions": [
+    {
+      "ordinal": 46,
+      "decision": "HOLD",
+      "reason_code": "UNVERIFIED_YEAR_OR_EDITION",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 59,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "Official pets game-extension identity resolves the prior missing-content mapping; download wording is entertainment intent.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 60,
+      "decision": "HOLD",
+      "reason_code": "SIMULATION_OR_CLIENT_TOOL_AMBIGUITY",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 61,
+      "decision": "HOLD",
+      "reason_code": "SIMULATION_OR_CLIENT_TOOL_AMBIGUITY",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 62,
+      "decision": "HOLD",
+      "reason_code": "SIMULATION_OR_CLIENT_TOOL_AMBIGUITY",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 108,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "The official garden extension also uses Garden Flipper naming; PC is a requested device, not proven support.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 166,
+      "decision": "HOLD",
+      "reason_code": "UNVERIFIED_YEAR_OR_EDITION",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 188,
+      "decision": "HOLD",
+      "reason_code": "VENDOR_ENTITY_UNRESOLVED",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 194,
+      "decision": "HOLD",
+      "reason_code": "UNRESOLVED_NAMED_CONTENT_DOWNLOAD",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 201,
+      "decision": "HOLD",
+      "reason_code": "CONTROLLER_MEANING_UNRESOLVED",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 213,
+      "decision": "HOLD",
+      "reason_code": "UNVERIFIED_YEAR_OR_EDITION",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 229,
+      "decision": "HOLD",
+      "reason_code": "VENDOR_ENTITY_UNRESOLVED",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 302,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "Official garden game-extension identity resolves the prior content ambiguity in this download request.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 314,
+      "decision": "HOLD",
+      "reason_code": "DESIGN_TOOL_OR_GAME_UNRESOLVED",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 335,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "Official luxury game-extension identity resolves the prior content ambiguity in this download request.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 385,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "Official pets game-extension identity resolves this separately ordered download request.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 386,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "The named game extension is corroborated; free is a request qualifier, not a claim of availability.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 388,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "The corroborated game-extension request retains its observed word order; no free-availability claim.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 392,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "The named game extension is corroborated; PC qualifies the request without certifying device compatibility.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 395,
+      "decision": "PROPOSE_EXACT",
+      "reason_code": "CORROBORATED_NAMED_GAME_CONTENT_REQUEST",
+      "rationale": "The corroborated game-extension identity makes this an entertainment request; VR compatibility remains unverified.",
+      "evidence_sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "ordinal": 399,
+      "decision": "HOLD",
+      "reason_code": "VENDOR_ENTITY_UNRESOLVED",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 407,
+      "decision": "HOLD",
+      "reason_code": "ACRONYM_OR_HARDWARE_MEANING_UNRESOLVED",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 415,
+      "decision": "HOLD",
+      "reason_code": "SIMULATION_OR_CLIENT_TOOL_AMBIGUITY",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    },
+    {
+      "ordinal": 418,
+      "decision": "HOLD",
+      "reason_code": "SIMULATION_OR_CLIENT_TOOL_AMBIGUITY",
+      "rationale": "Retain the pinned prior reason; named-DLC identity does not resolve this separate ambiguity."
+    }
+  ],
+  "authority": {
+    "master_contribution": 0,
+    "approved_contribution": 0,
+    "deployed_contribution": 0,
+    "admission_authorized": false,
+    "human_approval_verified": false,
+    "actual_campaign_bindings": [],
+    "production_changed": false
+  }
+}
