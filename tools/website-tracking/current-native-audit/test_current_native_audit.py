@@ -86,13 +86,43 @@ class CurrentAuditTest(unittest.TestCase):
 
     def test_all_declared_current_source_inverses_are_exact(self):
         restored=audit.source_deltas(self.source,self.scope)
-        self.assertEqual(len(restored),11)
+        self.assertEqual(len(restored),13)
         self.assertIn("tools/staging-lab/g38/native/g2-retirement-races.php",restored)
         for row in self.scope['source_deltas']:
             self.assertEqual(audit.pin(restored[row['path']]),row['before'])
         composer=self.scope['composer'];raw=audit.read(self.source/composer['path'])
         with self.assertRaisesRegex(ValueError,'DELTA_PIN'):
             audit.restore_delta(raw+b'\n',composer)
+
+    def test_ci_deadline_inverses_preserve_the_frozen_budget_profile_test(self):
+        paths={'tools/staging-lab/install-db-profile.mjs','tools/staging-lab/database-profile.test.mjs'}
+        recovery=self.scope['ci_dependency_acquisition_recovery']
+        self.assertEqual(set(recovery['paths']),paths)
+        self.assertFalse(recovery['historical_auditor_or_freeze_changed'])
+        rows={row['path']:row for row in self.scope['source_deltas'] if row['path'] in paths}
+        self.assertEqual(set(rows),paths)
+        for path,row in rows.items():
+            raw=audit.read(self.source/path)
+            restored=audit.restore_delta(raw,row)
+            self.assertEqual(audit.pin(raw),row['after'])
+            self.assertEqual(audit.pin(restored),row['before'])
+        profile_test='tools/staging-lab/database-profile.test.mjs'
+        self.assertEqual(rows[profile_test]['before'],self.frozen['budget_scalar_source_pins'][profile_test])
+
+    def test_ci_deadline_inverses_reject_byte_or_inverse_edit_drift(self):
+        paths={'tools/staging-lab/install-db-profile.mjs','tools/staging-lab/database-profile.test.mjs'}
+        for row in self.scope['source_deltas']:
+            if row['path'] not in paths:continue
+            raw=audit.read(self.source/row['path'])
+            with self.subTest(path=row['path'],case='unreviewed-current-byte'):
+                with self.assertRaisesRegex(ValueError,'DELTA_PIN'):audit.restore_delta(raw+b'\n',row)
+            malformed=deepcopy(row);malformed['inverse_edits']=malformed['inverse_edits'][1:]
+            with self.subTest(path=row['path'],case='missing-inverse-edit'):
+                with self.assertRaisesRegex(ValueError,'DELTA_INVERSE'):audit.restore_delta(raw,malformed)
+            anchor=row['inverse_edits'][0]['before'].encode('utf-8')
+            duplicate=raw+anchor;malformed=deepcopy(row);malformed['after']=audit.pin(duplicate)
+            with self.subTest(path=row['path'],case='duplicate-inverse-anchor'):
+                with self.assertRaisesRegex(ValueError,'DELTA_EXACT_ONCE'):audit.restore_delta(duplicate,malformed)
 
     def test_current_context_then_original_four_ci_inverses_preserve_all186_source_assertions(self):
         restored=audit.source_deltas(self.source,self.scope)

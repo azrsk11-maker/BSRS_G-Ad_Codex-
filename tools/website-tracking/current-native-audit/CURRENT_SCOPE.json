@@ -316,6 +316,60 @@
           "after": "function g38wait(G38Child $child,string $operation,string $lock): array {"
         }
       ]
+    },
+    {
+      "path": "tools/staging-lab/install-db-profile.mjs",
+      "before": {
+        "bytes": 7401,
+        "sha256": "3130821249dfdac46eb96328360a556062c8ec970d11c95717f251732c3de986"
+      },
+      "after": {
+        "bytes": 7667,
+        "sha256": "168bbbb0fe6e2146335bbd8ae1eef92951c5f7ccb98bdcae5029c107d0bb6bc3"
+      },
+      "inverse_edits": [
+        {
+          "before": "  run: (file, args, capture = false, timeout = 120000) => execFileSync(file, args, {\n    encoding: 'utf8', timeout, maxBuffer: 4 * 1024 * 1024,\n",
+          "after": "  run: (file, args, capture = false) => execFileSync(file, args, {\n    encoding: 'utf8', timeout: 120000, maxBuffer: 4 * 1024 * 1024,\n"
+        },
+        {
+          "before": "        // One finite allowance per pinned package; metadata retains its 60s cap.\n        const seconds = size === undefined ? 60\n          : Math.min(180, Math.max(60, Math.ceil(Number(size) / (64 * 1024)) + 15));\n",
+          "after": ""
+        },
+        {
+          "before": "          '--tlsv1.2', '--connect-timeout', '15', '--max-time', String(seconds),\n          '--max-filesize', String(size ?? 4 * 1024 * 1024), url, '--output', destination], false, seconds * 1000 + 5000);\n",
+          "after": "          '--tlsv1.2', '--connect-timeout', '15', '--max-time', '60',\n          '--max-filesize', String(size ?? 4 * 1024 * 1024), url, '--output', destination]);\n"
+        }
+      ]
+    },
+    {
+      "path": "tools/staging-lab/database-profile.test.mjs",
+      "before": {
+        "bytes": 9170,
+        "sha256": "94c37c666f46eba1aecdae4a23c040ac118d8268ed47d746cb574ac9a5c06aa2"
+      },
+      "after": {
+        "bytes": 12280,
+        "sha256": "50472c2950f6213c6dd980cf0894f6fb093035b2e9f4fc9c3968a813d2b53a74"
+      },
+      "inverse_edits": [
+        {
+          "before": "function fixture(failure, {largePackage = false} = {}) {\n",
+          "after": "function fixture(failure) {\n"
+        },
+        {
+          "before": "    const bytes = largePackage && p.Package === 'galera-4'\n      ? Buffer.alloc(Number(p.Size), 0x61) : Buffer.from(`synthetic-deb-${p.Package}`);\n",
+          "after": "    const bytes = Buffer.from(`synthetic-deb-${p.Package}`);\n"
+        },
+        {
+          "before": "    run(file, args, capture, timeout) {\n      calls.push(timeout === undefined ? [file, args, capture] : [file, args, capture, timeout]);\n",
+          "after": "    run(file, args, capture) {\n      calls.push([file, args, capture]);\n"
+        },
+        {
+          "before": "\ntest('finite package allowance covers a simulated 140s transfer without relaxing acquisition guards', () => {\n  const f = fixture(undefined, {largePackage: true}), run = f.io.run;\n  f.io.run = (file, args, capture, timeout) => {\n    if (file === 'curl' && args.includes(f.lock.repository + f.lock.packages[0].Filename)) {\n      assert.equal(args[args.indexOf('--max-time') + 1], '180');\n      assert.equal(timeout, 185000);\n      assert.ok(Number(args[args.indexOf('--max-time') + 1]) >= 140);\n      assert.ok(timeout > 140000); // Pure simulated transfer; no sleep or network.\n    }\n    return run(file, args, capture, timeout);\n  };\n  install('mariadb-11.8.9', f.lock, f.io);\n  const curls = f.calls.filter(c => c[0] === 'curl');\n  assert.equal(curls.length, 11); // Four metadata and seven packages, once each.\n  assert.equal(new Set(curls.map(c => c[1][c[1].indexOf('--output') - 1])).size, 11);\n  for (const call of curls) {\n    const args = call[1], seconds = Number(args[args.indexOf('--max-time') + 1]);\n    assert.ok(Number.isFinite(seconds) && seconds >= 60 && seconds <= 180);\n    assert.equal(call[3], seconds * 1000 + 5000);\n    assert.equal(args[args.indexOf('--connect-timeout') + 1], '15');\n    assert.equal(args[args.indexOf('--proto') + 1], '=https');\n    assert.equal(args[args.indexOf('--proto-redir') + 1], '=https');\n    assert.ok(args.includes('--fail') && args.includes('--location') && args.includes('--tlsv1.2'));\n    assert.ok(!args.includes('--retry') && !args.includes('--insecure'));\n  }\n  for (const call of curls.slice(0, 4)) {\n    assert.equal(call[1][call[1].indexOf('--max-time') + 1], '60');\n    assert.equal(call[1][call[1].indexOf('--max-filesize') + 1], String(4 * 1024 * 1024));\n  }\n  const large = curls.find(c => c[1].includes(f.lock.repository + f.lock.packages[0].Filename));\n  assert.equal(large[1][large[1].indexOf('--max-filesize') + 1], f.lock.packages[0].Size);\n  assert.equal(f.files.get('/opt/lab-build/database-profile').toString(), 'mariadb-11.8.9\\n');\n});\n\ntest('package timeout propagates once and cleans up without vendor install or baked profile', () => {\n  const f = fixture(undefined, {largePackage: true}), run = f.io.run;\n  f.io.run = (file, args, capture, timeout) => {\n    const result = run(file, args, capture, timeout);\n    if (file === 'curl' && args.includes(f.lock.repository + f.lock.packages[0].Filename)) {\n      throw Object.assign(new Error('synthetic curl timeout'), {status: 28});\n    }\n    return result;\n  };\n  assert.throws(() => install('mariadb-11.8.9', f.lock, f.io), /synthetic curl timeout/);\n  assert.equal(f.calls.filter(c => c[0] === 'curl' && c[1].includes(f.lock.repository + f.lock.packages[0].Filename)).length, 1);\n  assert.equal(f.calls.some(c => c[0] === 'apt-get' && c[1].some(a => a.endsWith('.deb'))), false);\n  assert.equal(f.files.has('/opt/lab-build/database-profile'), false);\n  assert.equal(f.calls.at(-1)[0], 'cleanup');\n});\n",
+          "after": ""
+        }
+      ]
     }
   ],
   "new_source_files": [
@@ -428,5 +482,26 @@
   "receiver": {
     "bytes": 50830,
     "sha256": "00b62f1edc8996ab4f566a80155715a85f741bc5d68e7a0a54c94fc4ef2cbdc5"
+  },
+  "ci_dependency_acquisition_recovery": {
+    "scope": "EXACT_CURRENT_SOURCE_INVERSES_NOT_HISTORICAL_GUARD_RELAXATION",
+    "previous_scope_sha256": "b0f4f09db09ccc1b30bbe463e484078f25f3a986f0c22a82116b1e01e2243f3d",
+    "before_revision": "f4c2c15e96a8488711b1dfb898add89e8080aeb9",
+    "paths": [
+      "tools/staging-lab/install-db-profile.mjs",
+      "tools/staging-lab/database-profile.test.mjs"
+    ],
+    "package_curl_seconds_min_max": [
+      60,
+      180
+    ],
+    "process_slack_seconds": 5,
+    "metadata_curl_seconds": 60,
+    "other_process_seconds": 120,
+    "workflow_minutes": 30,
+    "new_download_retries": 0,
+    "historical_auditor_or_freeze_changed": false,
+    "native_executed": false,
+    "genuine_provider_human_release_accepted": false
   }
 }
