@@ -246,6 +246,20 @@
       "goals": [
         "G027"
       ]
+    },
+    "g022-official-corroboration-20261120": {
+      "kind": "local_test",
+      "ref": "docs/audit/DLD_POSITIVE_DISCOVERY_2026-11-20.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g027-bounded-scope-20261120": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_SCOPE_TRANCHE_2026-11-20.md",
+      "goals": [
+        "G027"
+      ]
     }
   },
   "goals": [
@@ -473,7 +487,8 @@
       "evidence_refs": [
         "bounded-preparation-g022",
         "primary-project-discovery-20261118",
-        "g022-developer-corroboration-20261119"
+        "g022-developer-corroboration-20261119",
+        "g022-official-corroboration-20261120"
       ],
       "id": "G022",
       "launch_gate": "prelaunch",
@@ -527,7 +542,8 @@
       "evidence_refs": [
         "bounded-preparation-g027",
         "g027-csv-parser-parity-20261119",
-        "g027-bounded-scope-20261119"
+        "g027-bounded-scope-20261119",
+        "g027-bounded-scope-20261120"
       ],
       "id": "G027",
       "launch_gate": "prelaunch",

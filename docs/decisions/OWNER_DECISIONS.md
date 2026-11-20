@@ -1,5 +1,9 @@
 # Owner decisions
 
+## Continued dependency-ordered preparation — 20 November 2026
+
+The owner renewed the instruction to resume from the latest handover, complete unblocked goals in dependency order, parallelize independent work and update GitHub with verified results and blockers while keeping production unchanged and Ads paused. This preserves every existing acceptance gate and supplies no independent reviewer, missing business evidence, library approval, provider event, sharing change, publication, live configuration, activation or spending authority. The existing no-independent-reviewer answer is retained without repeating the question. Unchanged verified work may be reused within its original scope.
+
 ## Continued autonomous preparation - 19 November 2026
 
 The owner renewed the instruction to continue the remaining 94 goals autonomously, keep production unchanged and Ads paused, and request only essential missing inputs or approvals. This authorizes independent reversible preparation, public-source research, verification and repository delivery within the existing writer and privacy boundaries. It supplies no new business facts, source-universe/version acceptance, property or content rights, human PR review, exclusion approval, live provider event, export, merge, publication, activation or spending authority. Both full reviewed 14,000-row keyword libraries and all original release gates remain required. The previously reported absence of an independent human reviewer remains unresolved; it is not asked again by this continuation.

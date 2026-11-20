@@ -1,5 +1,15 @@
 ## Current strict intake and frozen-review preservation — 19 November 2026
 
+## Dependency frontier and held research — 20 November 2026
+
+The [bounded dependency audit](audit/AUTONOMOUS_FRONTIER_2026-11-20.json) found seven incomplete goals with verified prerequisites: five remain held for human/staff/access/history/factual evidence, while G022/G027 permit research. The selected delivery, deduplication and contact inspection found no new reproducible deficiency; unchanged engineering acceptance at `b49ba284` was reused within its exact revision scope. GitHub readback found the same open/unmerged PR with no reviews or new issue comments; three successful Marketing reads recovered no new matching evidence. Neither absence check disproves the reported completed rehearsal.
+
+[G027's new tranche](audit/NEGATIVE_SCOPE_TRANCHE_2026-11-20.md) adds eight held EXACT scope proposals only for the saved Buyers campaign. Across the three tranches, 42 existing research literals have proposals and one distinct applicability hold remains. The 120 authored protected cases/960 local comparisons, 48 lexical probes and 32 offline campaign predicates are bounded evidence, with a separate independent review. They establish no Google matching equivalence, full scope coverage, G028 clearance, G029 approval or application.
+
+[Official DLD research](audit/DLD_POSITIVE_DISCOVERY_2026-11-20.json) assessed 33 captured FAQ question units and three contract definitions. Two existing commercial contexts were corroborated; zero new subjects, keywords or admissions were established. Legal/process units are excluded from new commercial discovery. The 2024 guide issue date remains separate from the 2026 capture, source hashes identify connector representations, and the endpoint capture failures are not a claim of a website-wide outage. Global novelty, demand, business permissions and current legal acceptance are unproved.
+
+Six goals remain verified and 94 incomplete (seven blocked, nine preparation-only, 78 pending). Both complete reviewed 14,000-row libraries, factual/rights review, staff/history/custody, genuine browser/provider conversion evidence, independent human review and separate release authorization remain required. This batch changes held research and documentation only; the native website package, current keyword IO, frozen core and all runtime/workflow code are unchanged. All required checks at the successor revision remain pending until exact-head results are recorded; dated proof is not relabelled as current. Production unchanged; Ads paused.
+
 ## Native metadata sampling correction — 19 November 2026
 
 The corrected keyword revision `2f28c0c` passed full offline validation in 7m53s plus the native configuration and goal-ledger checks, but its isolated native trial failed the G38 `choose_rollback` real-wait observation on MariaDB 11.8.9 after 12m39s. Five earlier G38 cases passed. The original apply exception was masked; those missing observations cannot be recovered and the exact failed interleaving is unproved.
