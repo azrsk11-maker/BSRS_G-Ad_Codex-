@@ -64,8 +64,8 @@ export function verifyIndex(release, compressed, packages) {
 }
 
 const defaultIO = {
-  run: (file, args, capture = false) => execFileSync(file, args, {
-    encoding: 'utf8', timeout: 120000, maxBuffer: 4 * 1024 * 1024,
+  run: (file, args, capture = false, timeout = 120000) => execFileSync(file, args, {
+    encoding: 'utf8', timeout, maxBuffer: 4 * 1024 * 1024,
     stdio: capture ? ['ignore', 'pipe', 'pipe'] : 'inherit',
   }),
   read: readFileSync, write: writeFileSync,
@@ -88,9 +88,12 @@ export function install(profile, lock, io = defaultIO) {
     try {
       function fetch(url, digest, name, size) {
         const destination = join(dir, name);
+        // One finite allowance per pinned package; metadata retains its 60s cap.
+        const seconds = size === undefined ? 60
+          : Math.min(180, Math.max(60, Math.ceil(Number(size) / (64 * 1024)) + 15));
         io.run('curl', ['--fail', '--location', '--proto', '=https', '--proto-redir', '=https',
-          '--tlsv1.2', '--connect-timeout', '15', '--max-time', '60',
-          '--max-filesize', String(size ?? 4 * 1024 * 1024), url, '--output', destination]);
+          '--tlsv1.2', '--connect-timeout', '15', '--max-time', String(seconds),
+          '--max-filesize', String(size ?? 4 * 1024 * 1024), url, '--output', destination], false, seconds * 1000 + 5000);
         const bytes = io.read(destination);
         requireTrue(sha256(bytes) === digest && (size === undefined || bytes.length === Number(size)),
           'Acquired dependency checksum/size mismatch');

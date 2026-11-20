@@ -8,10 +8,11 @@ import {assertServerVersion, checkServer} from './database-profile.mjs';
 
 const original = JSON.parse(readFileSync(new URL('./database-11.8.9.lock.json', import.meta.url), 'utf8'));
 const sha = value => createHash('sha256').update(value).digest('hex');
-function fixture(failure) {
+function fixture(failure, {largePackage = false} = {}) {
   const lock = structuredClone(original), artifacts = new Map(), files = new Map(), calls = [];
   for (const p of lock.packages) {
-    const bytes = Buffer.from(`synthetic-deb-${p.Package}`);
+    const bytes = largePackage && p.Package === 'galera-4'
+      ? Buffer.alloc(Number(p.Size), 0x61) : Buffer.from(`synthetic-deb-${p.Package}`);
     p.SHA256 = sha(bytes); p.Size = String(bytes.length);
     artifacts.set(lock.repository + p.Filename, bytes);
   }
@@ -22,8 +23,8 @@ function fixture(failure) {
     item.sha256 = sha(bytes[name]); artifacts.set(item.url, bytes[name]);
   }
   const io = {
-    run(file, args, capture) {
-      calls.push([file, args, capture]);
+    run(file, args, capture, timeout) {
+      calls.push(timeout === undefined ? [file, args, capture] : [file, args, capture, timeout]);
       if (file === 'curl') {
         assert.ok(args.includes('--fail') && args.includes('--tlsv1.2'));
         assert.equal(args[args.indexOf('--proto') + 1], '=https');
@@ -141,4 +142,54 @@ test('both profiles retain the complete lab and identical required isolation con
   assert.ok(entry.indexOf('node /opt/lab/database-profile.mjs') > entry.indexOf('until mariadb-admin'));
   assert.ok(entry.indexOf('node /opt/lab/database-profile.mjs') < entry.indexOf('CREATE DATABASE'));
   assert.ok(entry.indexOf('CREATE DATABASE') < entry.indexOf('/opt/lab/native.php'));
+});
+
+test('finite package allowance covers a simulated 140s transfer without relaxing acquisition guards', () => {
+  const f = fixture(undefined, {largePackage: true}), run = f.io.run;
+  f.io.run = (file, args, capture, timeout) => {
+    if (file === 'curl' && args.includes(f.lock.repository + f.lock.packages[0].Filename)) {
+      assert.equal(args[args.indexOf('--max-time') + 1], '180');
+      assert.equal(timeout, 185000);
+      assert.ok(Number(args[args.indexOf('--max-time') + 1]) >= 140);
+      assert.ok(timeout > 140000); // Pure simulated transfer; no sleep or network.
+    }
+    return run(file, args, capture, timeout);
+  };
+  install('mariadb-11.8.9', f.lock, f.io);
+  const curls = f.calls.filter(c => c[0] === 'curl');
+  assert.equal(curls.length, 11); // Four metadata and seven packages, once each.
+  assert.equal(new Set(curls.map(c => c[1][c[1].indexOf('--output') - 1])).size, 11);
+  for (const call of curls) {
+    const args = call[1], seconds = Number(args[args.indexOf('--max-time') + 1]);
+    assert.ok(Number.isFinite(seconds) && seconds >= 60 && seconds <= 180);
+    assert.equal(call[3], seconds * 1000 + 5000);
+    assert.equal(args[args.indexOf('--connect-timeout') + 1], '15');
+    assert.equal(args[args.indexOf('--proto') + 1], '=https');
+    assert.equal(args[args.indexOf('--proto-redir') + 1], '=https');
+    assert.ok(args.includes('--fail') && args.includes('--location') && args.includes('--tlsv1.2'));
+    assert.ok(!args.includes('--retry') && !args.includes('--insecure'));
+  }
+  for (const call of curls.slice(0, 4)) {
+    assert.equal(call[1][call[1].indexOf('--max-time') + 1], '60');
+    assert.equal(call[1][call[1].indexOf('--max-filesize') + 1], String(4 * 1024 * 1024));
+  }
+  const large = curls.find(c => c[1].includes(f.lock.repository + f.lock.packages[0].Filename));
+  assert.equal(large[1][large[1].indexOf('--max-filesize') + 1], f.lock.packages[0].Size);
+  assert.equal(f.files.get('/opt/lab-build/database-profile').toString(), 'mariadb-11.8.9\n');
+});
+
+test('package timeout propagates once and cleans up without vendor install or baked profile', () => {
+  const f = fixture(undefined, {largePackage: true}), run = f.io.run;
+  f.io.run = (file, args, capture, timeout) => {
+    const result = run(file, args, capture, timeout);
+    if (file === 'curl' && args.includes(f.lock.repository + f.lock.packages[0].Filename)) {
+      throw Object.assign(new Error('synthetic curl timeout'), {status: 28});
+    }
+    return result;
+  };
+  assert.throws(() => install('mariadb-11.8.9', f.lock, f.io), /synthetic curl timeout/);
+  assert.equal(f.calls.filter(c => c[0] === 'curl' && c[1].includes(f.lock.repository + f.lock.packages[0].Filename)).length, 1);
+  assert.equal(f.calls.some(c => c[0] === 'apt-get' && c[1].some(a => a.endsWith('.deb'))), false);
+  assert.equal(f.files.has('/opt/lab-build/database-profile'), false);
+  assert.equal(f.calls.at(-1)[0], 'cleanup');
 });

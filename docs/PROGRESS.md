@@ -1,5 +1,13 @@
 ## Current strict intake and frozen-review preservation — 19 November 2026
 
+## Isolated-lab dependency deadline recovery — 20 November 2026
+
+The two native jobs at `f4c2c15e` stopped before MariaDB 11.8.9 runtime assertions because the same pinned Galera download exceeded curl's 60-second limit: [first attempt](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44792766611/job/136484441621) and [single targeted retry](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44792766611/job/136491486239). The preserved transfers received 5,082,215 and 9,906,951 of 11,862,156 bytes. The command's separate 120-second parent deadline also made increasing curl alone insufficient. No third unchanged retry was made.
+
+Only build-time package acquisition and its focused fixture tests change: locked packages receive `min(180, max(60, ceil(bytes/65536)+15))` seconds, with five seconds of parent-process slack. Metadata retains 60 seconds; other commands retain their 120-second process limit. There are no added retries or caches. HTTPS/redirect restrictions, exact hashes and sizes, signed-index/key/version validation, cleanup, isolation and the 30-minute job cap remain unchanged. All 17 actual Source fake-command tests passed; no real download was used for local verification.
+
+Relative to accepted `f1fc4a29`, the successor contains the eight prior held research/documentation/evidence-reference paths plus these two isolated-lab files. Fresh four-check CI and actual raw-log acceptance are required for the new head. Earlier failed jobs and prior successful native receipts retain their original revision scopes. Six goals remain verified and 94 incomplete; no research admission, exclusion approval/application, human approval, genuine conversion acceptance or release gate is inferred. Production is unchanged and Ads remain paused.
+
 ## Complete clipart family and developer catalogue — 20 November 2026, later continuation
 
 The [complete defined clipart-family assessment](audit/NEGATIVE_CLIPART_FAMILY_2026-11-20.md) accounts for 353 distinct source literals: 352 current identities and one source-only ineligible hold. The current identities partition into eight preserved prior proposals, 311 new held Buyers-only EXACT proposals and 33 new applicability holds. Across the scope tranches, 353 research literals have proposals and 34 individually identified current-ID holds remain; 13,613 IDs are not individually covered by those items. The older 20 aggregate held groups remain separate evidence. The unrelated equality of two 353 counts does not merge their universes. No negative is approved or applied.
