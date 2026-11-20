@@ -260,6 +260,27 @@
       "goals": [
         "G027"
       ]
+    },
+    "g022-developer-catalogue-20261120-1800": {
+      "kind": "local_test",
+      "ref": "docs/audit/developer-catalogue-2026-11-20/DEVELOPER_CATALOGUE_2026-11-20.json",
+      "goals": [
+        "G022"
+      ]
+    },
+    "g027-complete-clipart-family-20261120-1800": {
+      "kind": "local_test",
+      "ref": "docs/audit/NEGATIVE_CLIPART_FAMILY_2026-11-20.json",
+      "goals": [
+        "G027"
+      ]
+    },
+    "g027-published-match-guidance-20261120-1800": {
+      "kind": "local_test",
+      "ref": "docs/audit/CURRENT_NEGATIVE_MATCH_GUIDANCE_2026-11-20.json",
+      "goals": [
+        "G027"
+      ]
     }
   },
   "goals": [
@@ -488,7 +509,8 @@
         "bounded-preparation-g022",
         "primary-project-discovery-20261118",
         "g022-developer-corroboration-20261119",
-        "g022-official-corroboration-20261120"
+        "g022-official-corroboration-20261120",
+        "g022-developer-catalogue-20261120-1800"
       ],
       "id": "G022",
       "launch_gate": "prelaunch",
@@ -543,7 +565,9 @@
         "bounded-preparation-g027",
         "g027-csv-parser-parity-20261119",
         "g027-bounded-scope-20261119",
-        "g027-bounded-scope-20261120"
+        "g027-bounded-scope-20261120",
+        "g027-complete-clipart-family-20261120-1800",
+        "g027-published-match-guidance-20261120-1800"
       ],
       "id": "G027",
       "launch_gate": "prelaunch",

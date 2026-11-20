@@ -1,0 +1,57 @@
+{
+  "schema": "bsre-current-published-negative-behavior-v1",
+  "captured_at_utc": "2026-11-20T18:06:54.170415+00:00",
+  "as_of": "2026-11-20",
+  "classification": "PUBLISHED_GUIDANCE_REFRESH_NOT_PROVIDER_ENGINE_ACCEPTANCE",
+  "source": {
+    "url": "https://support.google.com/google-ads/answer/2453972?hl=en",
+    "publisher": "Google Ads Help",
+    "evidence_coordinates": [
+      "L36",
+      "L39",
+      "L71-L73"
+    ],
+    "publication_or_revision_date": null,
+    "capture_date_is_not_publication_date": true
+  },
+  "documented_search_rules": {
+    "negative_exact": "Base query must contain the same ordered terms without additional words; published automatic case and misspelling handling also applies.",
+    "case_and_misspellings": "Google documents automatic handling; this does not disclose its matching algorithm or prove the local matcher reproduces it.",
+    "synonyms_and_number_variants": "Published guidance requires separate synonym and singular/plural exclusions when desired; none are generated here.",
+    "account_level": "An account-level list can affect eligible Search and Shopping inventory globally; that scope is not adopted."
+  },
+  "local_matching_assurance": {
+    "status": "INCOMPLETE",
+    "matcher": "Existing frozen lexical approximation; no code change.",
+    "automatic_misspelling_equivalence": "UNKNOWN_NOT_SIMULATED",
+    "local_zero_conflict_implies_provider_zero_conflict": false,
+    "current_provider_query_or_ownership_readback": false
+  },
+  "application_policy": {
+    "scope": "Saved Buyers campaign only for separately reviewed held EXACT proposals. No account-wide list or inferred ad-group ownership.",
+    "proposals_are_approved": false,
+    "applied": false,
+    "complete_G027": false,
+    "G028_complete": false,
+    "G029_complete": false,
+    "both_full_reviewed_libraries_still_required": true
+  },
+  "capture_provenance": {
+    "bytes": 16150,
+    "sha256": "e0db846d110c4535099ba42a6b6dd4a42fe2ce6492ddf554bd5d8c33eed96e58",
+    "hash_scope": "UTF8 JSON-encoded complete native web-tool text representation, not original Google HTTP bytes; retained privately.",
+    "raw_capture_published": false
+  },
+  "checks": {
+    "official_url_grounded": true,
+    "automatic_case_and_misspelling_rule_present": true,
+    "exact_same_order_no_extra_words_present": true,
+    "singular_plural_and_synonym_rule_present": true,
+    "account_scope_global_effect_present": true,
+    "no_local_engine_equivalence_claim": true
+  },
+  "production_changed": false,
+  "Ads_changed": false,
+  "permissions_changed": false,
+  "new_variants_or_admissions": 0
+}
