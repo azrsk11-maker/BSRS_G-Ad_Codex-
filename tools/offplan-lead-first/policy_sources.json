@@ -1,0 +1,175 @@
+{
+  "schema": "bsre-offplan-public-policy-verification-v1",
+  "checked_on": "2026-11-21",
+  "scope": "Public official-source research only; no provider, account, website or Source mutation",
+  "owner_scope_received_from_coordinator": {
+    "service": "off-plan property buyers only",
+    "countries": [
+      "United Arab Emirates",
+      "Germany",
+      "France",
+      "Taiwan"
+    ],
+    "aggregate_average_daily_budget_aed": 2500,
+    "mandarin_team_support_confirmed": true,
+    "russia": "eligibility investigated separately; not an activation-ready geography"
+  },
+  "sources": [
+    {
+      "id": "GOOGLE-RSA-01",
+      "title": "About responsive search ads",
+      "url": "https://support.google.com/google-ads/answer/7684791?hl=en",
+      "publisher": "Google Ads Help",
+      "source_date": null,
+      "source_date_note": "No explicit publication/update date observed; checked on the date above",
+      "section": "How it works; Create a responsive search ad",
+      "verified": {
+        "headline_limit_units": 30,
+        "description_limit_units": 90,
+        "path_limit_units_each": 15,
+        "double_width_character_units": 2,
+        "double_width_examples": [
+          "Chinese",
+          "Japanese",
+          "Korean"
+        ],
+        "headline_assets_min": 3,
+        "headline_assets_max": 15,
+        "description_assets_min": 2,
+        "description_assets_max": 4
+      },
+      "derived_not_quoted": "An entirely double-width headline can contain at most 15 characters; an entirely double-width description at most 45. Mixed text requires a weighted count, not raw character length.",
+      "limits": "No platform validation or linguistic certification performed; exact mixed Unicode treatment and final acceptance must be checked in the native ad editor."
+    },
+    {
+      "id": "GOOGLE-RSA-02",
+      "title": "Create responsive search ads",
+      "url": "https://developers.google.com/google-ads/api/docs/responsive-search-ads/create-responsive-search-ads",
+      "publisher": "Google for Developers",
+      "source_date": null,
+      "section": "Requirements and limits",
+      "verified": "At least 3 and at most 15 unique headlines, at least 2 and at most 4 unique descriptions, at least one final URL; headline30/description90/path15 limits corroborated."
+    },
+    {
+      "id": "GOOGLE-LANG-01",
+      "title": "Codes and formats",
+      "url": "https://developers.google.com/google-ads/api/data/codes-formats?hl=en",
+      "publisher": "Google for Developers",
+      "source_date": null,
+      "section": "Languages",
+      "language_criteria": [
+        {
+          "name": "English",
+          "language_code": "en",
+          "criterion_id": 1000
+        },
+        {
+          "name": "German",
+          "language_code": "de",
+          "criterion_id": 1001
+        },
+        {
+          "name": "French",
+          "language_code": "fr",
+          "criterion_id": 1002
+        },
+        {
+          "name": "Chinese (traditional)",
+          "language_code": "zh_TW",
+          "criterion_id": 1018
+        },
+        {
+          "name": "Russian",
+          "language_code": "ru",
+          "criterion_id": 1031
+        }
+      ],
+      "limits": "These are language criteria, not country geo target IDs, audience-language guarantees, or activation permission. No country geo IDs were researched or invented."
+    },
+    {
+      "id": "GOOGLE-LOCALE-01",
+      "title": "Tell Google about localized versions of your page",
+      "url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "publisher": "Google Search Central",
+      "source_date": "2026-09-21",
+      "source_date_kind": "Last updated UTC",
+      "section": "Supported language and region codes",
+      "verified": "Google maps zh-TW for users in Taiwan to Chinese-Traditional; zh-Hant explicitly denotes Traditional Chinese.",
+      "limits": "Search locale annotation supports localization design; it is not Ads policy approval or evidence of brokerage authority."
+    },
+    {
+      "id": "GOOGLE-RUSSIA-01",
+      "title": "Other restricted businesses",
+      "url": "https://support.google.com/adspolicy/answer/6368711?hl=en",
+      "publisher": "Google Advertising Policies Help",
+      "source_date": null,
+      "section": "Regional restrictions",
+      "verified": "Google pauses ads serving users located in Russia and pauses ads on Google properties and networks globally for advertisers based in Russia.",
+      "limits": "No lifting date was stated. Russian-language support is distinct from Russia geography; this does not prohibit Russian language in an otherwise eligible geography."
+    },
+    {
+      "id": "GOOGLE-HOUSING-01",
+      "title": "Housing in personalized advertising",
+      "url": "https://support.google.com/adspolicy/answer/16701755?hl=en",
+      "publisher": "Google Advertising Policies Help",
+      "source_date": null,
+      "section": "Targeting guidelines for Access to opportunities categories",
+      "verified": "The specified housing targeting restrictions cover the US and Canada and prohibit targeting using gender, age, parental status, marital status and ZIP codes there.",
+      "limits": "This particular policy does not establish a Germany, France or Taiwan ban or legal clearance. No inference is made that all other targeting is acceptable."
+    },
+    {
+      "id": "GOOGLE-EEA-01",
+      "title": "Resources to help you get ready for privacy and regulatory changes for traffic in the European Economic Area",
+      "url": "https://support.google.com/google-ads/answer/14625550?hl=en-en",
+      "publisher": "Google Ads Help",
+      "source_date": null,
+      "verified": "For applicable tags or SDKs sending data to Google, EEA users' personal-data consent and consent signals are required for the described measurement, personalization and remarketing use cases; this also covers Analytics data used in Ads.",
+      "limits": "Germany and France are within this EEA context. This source does not certify any existing consent implementation."
+    },
+    {
+      "id": "GOOGLE-LEGAL-01",
+      "title": "Update to the legal requirements policy (September 2026)",
+      "url": "https://support.google.com/adspolicy/answer/17597473?hl=en-GB",
+      "publisher": "Google Advertising Policies Help",
+      "source_date": "2026-09-22",
+      "source_date_kind": "Posted",
+      "verified": "Advertisers must comply with local laws in locations their ads target as well as Google policies."
+    },
+    {
+      "id": "TW-MOI-OVERSEAS-01",
+      "title": "不動產經紀業從事國外不動產仲介或代銷業務規範",
+      "english_title_for_reference": "Guidelines for real estate brokers conducting foreign-property brokerage or agency sales",
+      "url": "https://ws.moi.gov.tw/001/Upload/OldFile/news_file/%E9%99%84%E4%BB%B61%20%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD%E5%BE%9E%E4%BA%8B%E5%9C%8B%E5%A4%96%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BB%B2%E4%BB%8B%E6%88%96%E4%BB%A3%E9%8A%B7%E6%A5%AD%E5%8B%99%E8%A6%8F%E7%AF%84.pdf",
+      "publisher": "Taiwan Ministry of the Interior",
+      "source_date": "2016-12-05",
+      "source_date_kind": "Issuance corroborated by Ministry business report; not an asserted last amendment date",
+      "issuance_date_source_url": "https://ws.moi.gov.tw/001/Upload/OldFile/moi_note_file/tcc_file_699.pdf",
+      "section": "Section2, marketing and advertising, PDF page2",
+      "verified": "For the brokers covered by the guidance: sales authorization before advertising; Chinese ads identifying the broker and signed by a broker; substantiation for numerical claims; a prominent overseas-property investment risk warning; for presales, developer operating permission and development approval documents with Chinese translations.",
+      "applicability_to_bsre_uae_to_taiwan": "UNVERIFIED",
+      "limits": "Public guideline text was verified, but territorial applicability, required operating arrangement, compliance of any BSRE ad and current legal authorization were not determined. Do not infer a mandatory local partner, licence exemption, or launch clearance from this research."
+    },
+    {
+      "id": "TW-MOJ-BROKER-01",
+      "title": "不動產經紀業管理條例",
+      "english_title_for_reference": "Real Estate Broking Management Act",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=D0060066",
+      "publisher": "Taiwan Ministry of Justice Laws and Regulations Database",
+      "source_date": "2021-01-27",
+      "source_date_kind": "Amendment date displayed by current official statute page",
+      "section": "Article5",
+      "verified": "Covered brokerage operators require authority permission and registration; foreign-property brokerage or agency sales are limited to company-form registration.",
+      "applicability_to_bsre_uae_to_taiwan": "UNVERIFIED",
+      "limits": "This is a bounded statute reading, not legal advice, a territorial-scope determination or evidence of BSRE permission."
+    }
+  ],
+  "acceptance": {
+    "official_public_source_research_completed": true,
+    "native_ads_length_validation_completed": false,
+    "certified_human_linguistic_review_completed": false,
+    "bsre_country_legal_eligibility_established": false,
+    "production_or_activation_approval_claimed": false,
+    "country_geo_ids_claimed": false,
+    "lead_volume_forecast_or_guarantee_claimed": false
+  }
+}

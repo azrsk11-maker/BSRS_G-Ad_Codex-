@@ -1,0 +1,62 @@
+{
+  "schema": "bsre-offplan-review-bundle-v1",
+  "scope": "OFFLINE_DRAFTS_NOT_LIVE_ACCEPTANCE",
+  "inputs": {
+    "launch.json": {
+      "bytes": 5998,
+      "sha256": "187b22a930fa366cf5e8662bcbc3990ff48bf6ad708cb072ab912dba7e0bf29c"
+    },
+    "copy.json": {
+      "bytes": 12090,
+      "sha256": "8c2796da05959279e46f90034bfbdc7f5fc88ed630d436836eb5ac0dca0e46b2"
+    },
+    "keywords.json": {
+      "bytes": 15913,
+      "sha256": "f5b6d5efa4f80c91b7d3ecd2e3f35989f2afd0fbcb35509b0d4fa259a55a2eaa"
+    },
+    "policy_sources.json": {
+      "bytes": 9411,
+      "sha256": "a3a636f7aade714272c04da07f7a22ba38acef777e42d47dbffa35b0156aeffe"
+    }
+  },
+  "outputs": {
+    "activation-review.json": {
+      "bytes": 5609,
+      "sha256": "e485d06925361727a8a18bc7b06efbb0a30f0baaabfa00e1f17bb44aa576a5fb"
+    },
+    "keyword-review.csv": {
+      "bytes": 9524,
+      "sha256": "f8ba27fb43303fec242688f6b1e5ba723b14159d0468c89692b5b053053d23fb"
+    },
+    "native-pages.json": {
+      "bytes": 3334,
+      "sha256": "4eaf5040aea97f4e33628c0a817471784198b0cccb90da047bc104cdbe9487c2"
+    },
+    "off-plan-dubai-de.html": {
+      "bytes": 2313,
+      "sha256": "9b21abde7c85ff7f89f7354760e2eab03680c3de69aeb76a795f7c3173b31b33"
+    },
+    "off-plan-dubai-fr.html": {
+      "bytes": 2397,
+      "sha256": "c0359592872e6b9c4c122153b93a6c7d5782c96be0c6c1b62ea47e15bb244c0d"
+    },
+    "off-plan-dubai-zh-tw.html": {
+      "bytes": 2043,
+      "sha256": "31c918b55c84d26eb51fcff2e081fb231b227b2734d77fd652dc953181367a91"
+    },
+    "rsa-review.csv": {
+      "bytes": 4686,
+      "sha256": "ed94862cd7712585c4d5d29eede2395c3069fdb7630d0920667abafdda61f01e"
+    }
+  },
+  "counts": {
+    "localized_pages": 3,
+    "distinct_authored_keyword_strings": 46,
+    "proposed_match_placements": 92,
+    "localized_RSA_assets": 57,
+    "new_live_campaigns": 0,
+    "published_pages": 0
+  },
+  "production_ads_mail_or_sheet_writes": 0,
+  "full_14000_library_admissions_added": 0
+}

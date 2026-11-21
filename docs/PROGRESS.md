@@ -1,5 +1,13 @@
 ## Current strict intake and frozen-review preservation — 19 November 2026
 
+## Immediate lead-generation priority — 21 November 2026
+
+The owner now requests off-plan buyers only:345 new enquiries/day target, AED2,500 aggregate average/day across UAE/Germany/France/Taiwan. Resale and all other campaign types stay paused. The full libraries and qualified-outcome optimization are deferred behind this focused launch, with the broader roadmap preserved. [Recorded instructions](decisions/OWNER_DECISIONS.md#lead-first-off-plan-scope--21-november-2026); [issue14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14).
+
+[The implemented offline country package](../tools/offplan-lead-first/README.md) produces3native WordPress draft-page blocks,46authored localized strings/92proposed placements and57RSA assets. Its17focused checks and deterministic output verification pass. The first form step is explicitly the existing English funnel; full form localization has not been installed. These are not observed query-demand evidence or14,000-master admissions. No new page, ad, campaign or serving budget has been created/applied.
+
+The current access blocker is the unavailable local-browser connection plus existing native safety stop. Working live intake, appropriate consent/privacy, country/page/ad eligibility and actual identity/budget readback remain essential. Taiwan applicability is unresolved; Russia geography is excluded. Earlier engineering/native receipts below retain only their exact revision scope. No production change or Ads activation is claimed by this source update.
+
 ## Isolated-lab dependency deadline recovery — 20 November 2026
 
 The two native jobs at `f4c2c15e` stopped before MariaDB 11.8.9 runtime assertions because the same pinned Galera download exceeded curl's 60-second limit: [first attempt](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44792766611/job/136484441621) and [single targeted retry](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/actions/runs/44792766611/job/136491486239). The preserved transfers received 5,082,215 and 9,906,951 of 11,862,156 bytes. The command's separate 120-second parent deadline also made increasing curl alone insufficient. No third unchanged retry was made.
