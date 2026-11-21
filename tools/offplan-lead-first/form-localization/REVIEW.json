@@ -1,0 +1,68 @@
+{
+  "status": "PASS_PRIVATE_PREPARATION_ONLY",
+  "reviewed_at_utc": "2026-11-21T05:36:36.106266+00:00",
+  "scope": "Independent static contract review and focused offline probes; no Source, Git, browser or external writes",
+  "candidate_sha256": {
+    "BASE_MANIFEST.json": "3e797e18f653f94feae1cc69236cdc0bdc12bf87e60766999148f71f439bb40a",
+    "compile_form.py": "a96849ef61ab02b201297fa0c7722df4c794c7f0acc26c1c6f748ac27b51e086",
+    "README.md": "9c631176b1edf5abc097fa6d9b88d9376de2dbd430f52c13490e0ac0c6dc19b2",
+    "test_form_localization.py": "f81226f5ed67eaa0623f3c8ec35d3c038bbd33ddf70b3e28e63611af71c83029",
+    "translations.json": "37077c6777f64505c6b6512fab99fec8a4177885572016f7ac63a79348d47b17"
+  },
+  "generated_sha256": {
+    "de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "de-DE/form.html": "53370a8d1db9a4940e4487d9ecb8647fb12bef90d3edac35f7a6c74d7bca7acd",
+    "de-DE/lead.js": "d0caae9e45f3d2ab96b5c8aee00f3af44b7c6f1ab99282704c660291fac5697c",
+    "de-DE/template-strings.json": "9c8915d81c7232df7c5aa34e330b5a12b5f84689269cc5ffc3bcd4f0cd4c58d8",
+    "fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "fr-FR/form.html": "88b8b39e3a282042fe6dea67195508ef357a13f479e0e8465561661d3041c626",
+    "fr-FR/lead.js": "e00ace0a2d81a8918afc256060b8f8fc22627f16c67d10f2ab098f5282e05159",
+    "fr-FR/template-strings.json": "d62c39d630e63a1ad9c09175738bcdae71db6d7d6037902d9857b16b6941eca7",
+    "MANIFEST.json": "15aef21f7777c53272391c7473c7325645a14cbda5a3aec55e7472aab3869c20",
+    "zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "zh-Hant-TW/form.html": "322654eb0b6569cbffb3f10f1a6cfbd1add1ccfb240da6acfde21b1936eeee95",
+    "zh-Hant-TW/lead.js": "48ce5f4a4d9dd9d0af4688143ede5bcc59e37b0ea0a4976f44f4b182156078fa",
+    "zh-Hant-TW/template-strings.json": "7753531afcaa426e001552477f11441f24ca19f2033d7133695a5247318d37b0"
+  },
+  "resolved_findings": [
+    {
+      "surface": "compile_form.py CONSENT / translations.json consent.unavailable",
+      "finding": "Context-unavailable measurement status was omitted and remained English",
+      "resolution": "Added exact failure string, all three translations and coverage test; independently exercised context-failure and failed-save paths in fake DOM"
+    },
+    {
+      "surface": "translations.json html.month_1 French",
+      "finding": "Within one month was narrowed to in one month",
+      "resolution": "Changed Dans un mois to D’ici un mois"
+    },
+    {
+      "surface": "compile_form.py localize_form preview guard",
+      "finding": "Disabled submit alone can be enabled by existing lead.init on a host",
+      "resolution": "Added enclosing disabled fieldset and translated legend; every original form-control attribute and option value remains unchanged"
+    }
+  ],
+  "findings_remaining_within_private_preparation_scope": [],
+  "acceptance_boundaries": [
+    "Source fixture bytes and signed wire-v1 producers remain unchanged; exact inverse checks cover translated asset copies only",
+    "Owned PHP privacy/preview/live/held messages and canonical asset registration remain English/unmodified; inert template metadata does not install them",
+    "Native reportValidity constraint popups remain browser controlled",
+    "Locale routes, CMS IDs, privacy-document translation, current approved contact readback and renderer/asset selection remain unbound",
+    "Historical 5677 contact regex survives unchanged in derived lead.js; no contact link/number is present in form fragment and deployment stays held",
+    "Competent language review and Taiwan applicability remain pending; agent review does not replace independent human review",
+    "No native runtime, provider delivery, production form journey, campaign or Ads activation acceptance is claimed"
+  ],
+  "source_writes": false,
+  "external_writes": false,
+  "production_changes": false,
+  "schema": "bsre-offline-localization-review-v1",
+  "review_kind": "Independent agent engineering review; not human approval or competent-language/legal acceptance",
+  "validation": {
+    "candidate_unit_tests_passed": 21,
+    "candidate_unit_tests_measured_seconds": 0.341,
+    "deterministic_inventory_check": "PASS_13_FILES_85_STRINGS_PER_LOCALE",
+    "independent_targeted_probes": 34,
+    "independent_probe_measured_seconds": 1.540923,
+    "real_network_calls": 0
+  },
+  "evidence_limit": "Original independent diagnostic scripts/logs retained privately; portable code/fixtures and21tests are committed.34probes are a measured review result, not an added requiredCI suite or native/provider acceptance."
+}

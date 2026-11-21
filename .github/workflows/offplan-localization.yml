@@ -1,0 +1,32 @@
+name: Off-plan localized draft checks
+on:
+  pull_request:
+    branches: [main, 'codex/**']
+    paths:
+      - '.github/workflows/offplan-localization.yml'
+      - 'tools/offplan-lead-first/**'
+      - 'tools/staging-lab/fixtures/bsre-enquiries/**'
+permissions:
+  contents: read
+concurrency:
+  group: offplan-localization-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  offplan-localization-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify localized copy and inert draft artifacts
+        run: |
+          python3 -B -m unittest discover -s tools/offplan-lead-first -p test_compile.py -v
+          python3 -B tools/offplan-lead-first/compile.py --verify
+      - name: Verify guarded localized form text candidates
+        env:
+          BSRE_FORM_SOURCE_ROOT: ${{ github.workspace }}
+        run: |
+          python3 -B -m unittest discover -s tools/offplan-lead-first/form-localization -p test_form_localization.py -v
+          python3 -B tools/offplan-lead-first/form-localization/compile_form.py --source-root "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/bsre-form-localization"
+          python3 -B tools/offplan-lead-first/form-localization/compile_form.py --source-root "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/bsre-form-localization" --check

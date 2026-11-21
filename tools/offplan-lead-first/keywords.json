@@ -1,0 +1,633 @@
+{
+  "schema": "bsre-offplan-localized-keywords-v1",
+  "status": "AUTHORED_LOCALIZATION_DRAFT_NOT_OBSERVED_QUERIES",
+  "count_as_14000_canonical_admissions": false,
+  "positive_candidates": [
+    {
+      "draft_id": "de-draft-01",
+      "country_code": "DE",
+      "text": "off plan immobilien dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-02",
+      "country_code": "DE",
+      "text": "wohnung vom plan dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-03",
+      "country_code": "DE",
+      "text": "villa vom plan dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-04",
+      "country_code": "DE",
+      "text": "townhouse vom plan dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-05",
+      "country_code": "DE",
+      "text": "off plan wohnimmobilie dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-06",
+      "country_code": "DE",
+      "text": "immobilie im bau dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-07",
+      "country_code": "DE",
+      "text": "wohnung im bau dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-08",
+      "country_code": "DE",
+      "text": "villa im bau dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-09",
+      "country_code": "DE",
+      "text": "townhouse im bau dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-10",
+      "country_code": "DE",
+      "text": "off plan immobilien dubai vom bauträger",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-11",
+      "country_code": "DE",
+      "text": "off plan wohnung dubai vom bauträger",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-12",
+      "country_code": "DE",
+      "text": "off plan villa dubai vom bauträger",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-13",
+      "country_code": "DE",
+      "text": "off plan townhouse dubai vom bauträger",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-14",
+      "country_code": "DE",
+      "text": "off plan neubauprojekt dubai kaufen",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-15",
+      "country_code": "DE",
+      "text": "off plan immobilien dubai makler",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "de-draft-16",
+      "country_code": "DE",
+      "text": "off plan kauf dubai anfrage",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-01",
+      "country_code": "FR",
+      "text": "acheter immobilier sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-02",
+      "country_code": "FR",
+      "text": "acheter appartement sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-03",
+      "country_code": "FR",
+      "text": "acheter villa sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-04",
+      "country_code": "FR",
+      "text": "acheter maison de ville sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-05",
+      "country_code": "FR",
+      "text": "acheter logement sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-06",
+      "country_code": "FR",
+      "text": "acheter bien en construction dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-07",
+      "country_code": "FR",
+      "text": "acheter appartement en construction dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-08",
+      "country_code": "FR",
+      "text": "acheter villa en construction dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-09",
+      "country_code": "FR",
+      "text": "acheter maison de ville en construction dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-10",
+      "country_code": "FR",
+      "text": "achat sur plan dubaï promoteur",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-11",
+      "country_code": "FR",
+      "text": "appartement sur plan dubaï promoteur",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-12",
+      "country_code": "FR",
+      "text": "villa sur plan dubaï promoteur",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-13",
+      "country_code": "FR",
+      "text": "maison de ville sur plan dubaï promoteur",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-14",
+      "country_code": "FR",
+      "text": "acheter programme neuf sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-15",
+      "country_code": "FR",
+      "text": "agence immobilière achat sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "fr-draft-16",
+      "country_code": "FR",
+      "text": "demande achat sur plan dubaï",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-001",
+      "country_code": "TW",
+      "text": "杜拜預售公寓",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-002",
+      "country_code": "TW",
+      "text": "杜拜新推預售建案",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-003",
+      "country_code": "TW",
+      "text": "杜拜預售連棟別墅",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-004",
+      "country_code": "TW",
+      "text": "杜拜預售公寓出售",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-005",
+      "country_code": "TW",
+      "text": "杜拜預售別墅",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-006",
+      "country_code": "TW",
+      "text": "杜拜預售建案比較",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-007",
+      "country_code": "TW",
+      "text": "杜拜即將完工預售公寓購買",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-008",
+      "country_code": "TW",
+      "text": "杜拜自住預售屋購買",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-009",
+      "country_code": "TW",
+      "text": "杜拜投資預售屋購買",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-010",
+      "country_code": "TW",
+      "text": "杜拜預售屋中文諮詢",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-011",
+      "country_code": "TW",
+      "text": "阿聯預售屋購買",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-012",
+      "country_code": "TW",
+      "text": "阿聯新推住宅建案比較",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-013",
+      "country_code": "TW",
+      "text": "杜拜預售屋購買諮詢",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "TW-OFP-DRAFT-014",
+      "country_code": "TW",
+      "text": "杜拜預售公寓購買諮詢",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    }
+  ],
+  "negative_proposals": [
+    {
+      "draft_id": "TW-NEG-DRAFT-001",
+      "country_code": "TW",
+      "text": "杜拜房仲徵才",
+      "match_type": "EXACT",
+      "status": "PROPOSED_ONLY_NOT_APPROVED_OR_APPLIED"
+    },
+    {
+      "draft_id": "TW-NEG-DRAFT-002",
+      "country_code": "TW",
+      "text": "杜拜房仲薪水",
+      "match_type": "EXACT",
+      "status": "PROPOSED_ONLY_NOT_APPROVED_OR_APPLIED"
+    },
+    {
+      "draft_id": "TW-NEG-DRAFT-003",
+      "country_code": "TW",
+      "text": "杜拜房地產實習",
+      "match_type": "EXACT",
+      "status": "PROPOSED_ONLY_NOT_APPROVED_OR_APPLIED"
+    }
+  ],
+  "english_context": [
+    "docs/audit/asset-audit-2026-11-07/capture.json",
+    "tools/staging-lab/fixtures/bsre-enquiries/templates/source/off-plan.html",
+    "docs/audit/keyword-buyer-offplan-planner-2026-11-12/source.json"
+  ]
+}

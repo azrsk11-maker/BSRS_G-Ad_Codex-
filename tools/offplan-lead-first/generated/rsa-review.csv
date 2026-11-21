@@ -1,0 +1,58 @@
+Country,Locale,Asset type,Text,Weighted units,State
+DE,de-DE,headlines,Off-Plan-Immobilien in Dubai,28,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Dubai: Immobilien vom Plan,26,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Wohnung in Dubai vom Plan,25,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Villen in Dubai vom Plan,24,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Townhouses in Dubai vom Plan,28,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Off-Plan-Kauf in Dubai,22,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Kaufwünsche besprechen,22,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Ihre Wunschlage in Dubai,24,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Kaufbudget mitteilen,20,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Ihre Off-Plan-Anfrage,21,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Mit dem Team sprechen,21,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Bauträger in Dubai besprechen,29,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Kaufzeitpunkt besprechen,24,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Ihre Pläne für Dubai,20,DRAFT_NOT_UPLOADED
+DE,de-DE,headlines,Black Swan Real Estate,22,DRAFT_NOT_UPLOADED
+DE,de-DE,descriptions,Planen Sie einen Off-Plan-Kauf in Dubai? Teilen Sie uns Budget und Wunschlage mit.,82,DRAFT_NOT_UPLOADED
+DE,de-DE,descriptions,Für Ihren Kauf vom Plan: Nennen Sie Immobilientyp und gewünschten Kaufzeitpunkt.,80,DRAFT_NOT_UPLOADED
+DE,de-DE,descriptions,Senden Sie Ihre Anfrage oder sprechen Sie per WhatsApp mit dem Immobilienteam.,78,DRAFT_NOT_UPLOADED
+DE,de-DE,descriptions,Besprechen Sie Ihre Kaufpläne für Dubai. Projektdetails sind vorab zu bestätigen.,81,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Immobilier sur plan à Dubaï,27,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Acheter sur plan à Dubaï,24,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Appartement sur plan à Dubaï,28,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Villas sur plan à Dubaï,23,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Maisons sur plan à Dubaï,24,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Votre achat sur plan,20,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Parlons de votre achat,22,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Votre quartier à Dubaï,22,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Indiquez votre budget,21,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Votre demande sur plan,22,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Contactez notre équipe,22,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Discutons des promoteurs,24,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Précisez votre calendrier,25,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Vos projets à Dubaï,19,DRAFT_NOT_UPLOADED
+FR,fr-FR,headlines,Black Swan Real Estate,22,DRAFT_NOT_UPLOADED
+FR,fr-FR,descriptions,Un achat sur plan à Dubaï en projet ? Indiquez votre budget et vos préférences.,79,DRAFT_NOT_UPLOADED
+FR,fr-FR,descriptions,"Précisez le type de bien, les quartiers souhaités et votre calendrier d’achat.",78,DRAFT_NOT_UPLOADED
+FR,fr-FR,descriptions,Envoyez votre demande ou échangez avec notre équipe sur WhatsApp.,65,DRAFT_NOT_UPLOADED
+FR,fr-FR,descriptions,Discutez de votre achat sur plan. Les informations du projet restent à confirmer.,81,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,討論您的購屋計畫,16,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,預計1至6個月內購屋,18,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,預售物業買方洽詢,16,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,尋找您的杜拜預售物業,20,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,杜拜預售物業,12,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,購買杜拜預售物業,16,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,Black Swan Real Estate,22,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,分享您的購屋預算,16,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,告訴我們您的偏好地區,20,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,討論地區與建商,14,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,洽詢預售住宅,12,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,規劃下一次購屋,14,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,開始您的購屋洽詢,16,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,探索杜拜購屋計畫,16,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,headlines,與我們的物業團隊洽談,20,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,descriptions,送出購屋需求，或使用 WhatsApp 與團隊討論您的杜拜預售物業購買計畫。,66,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,descriptions,預計1至6個月內購買杜拜預售物業？分享您的購屋預算與偏好，從需求開始討論。,72,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,descriptions,告訴我們您偏好的地區、物業類型與資金規劃，一起討論您的預售物業購屋需求。,72,DRAFT_NOT_UPLOADED
+TW,zh-Hant-TW,descriptions,聯絡 Black Swan Real Estate，洽詢您的杜拜預售物業購買計畫。,59,DRAFT_NOT_UPLOADED

@@ -1,4 +1,16 @@
-# Current engineering state — 20 November 2026
+# Current engineering state — 21 November 2026
+
+## Immediate lead-generation priority — 21 November 2026
+
+The owner now requests off-plan buyers only:345 new enquiries/day target, AED2,500 aggregate average/day across UAE/Germany/France/Taiwan. Resale and all other campaign types stay paused. The full libraries and qualified-outcome optimization are deferred behind this focused launch, with the broader roadmap preserved. [Recorded instructions](decisions/OWNER_DECISIONS.md#lead-first-off-plan-scope--21-november-2026); [issue14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14).
+
+[The implemented offline country package](../tools/offplan-lead-first/README.md) produces3native WordPress draft-page blocks,46authored localized strings/92proposed placements and57RSA assets. Its17focused checks and deterministic output verification pass. The first form step is explicitly the existing English funnel; full form localization has not been installed. These are not observed query-demand evidence or14,000-master admissions. No new page, ad, campaign or serving budget has been created/applied.
+
+The current access blocker is the unavailable local-browser connection plus existing native safety stop. Working live intake, appropriate consent/privacy, country/page/ad eligibility and actual identity/budget readback remain essential. Taiwan applicability is unresolved; Russia geography is excluded. Earlier engineering/native receipts below retain only their exact revision scope. No production change or Ads activation is claimed by this source update.
+
+### Offline form-localization follow-up — 21 November 2026
+
+The [pure form-text tooling](../tools/offplan-lead-first/form-localization/README.md) now supplies85 German/French/Traditional-Chinese strings per locale, a disabled form-only preview, text-only lead/consent client variants and inert PHP-template strings. Twenty-one focused tests and34 independent offline probes passed; missing consent error text, French timeline meaning and a preview safeguard were corrected. All seven pinned fixture files remain byte-identical. There is no locale route/asset installation or production journey acceptance. Browser recheck after the owner enabled local use still returned zero browsers and “Local browser access is unavailable for this chat”; an explicit @Chrome connection handoff is pending. The [four-market catalog reference](../tools/offplan-lead-first/country-target-reference.json) verifies global targeting IDs without applying them. Account573-038-4686, off-plan-only scope andAED2,500 aggregate average/day are unchanged; production and Ads were not modified.
 
 ## Isolated-lab dependency deadline recovery — 20 November 2026
 

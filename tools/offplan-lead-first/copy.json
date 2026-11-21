@@ -1,0 +1,252 @@
+{
+  "schema": "bsre-offplan-page-copy-v1",
+  "status": "CUSTOMER_COPY_DRAFT_NOT_PUBLISHED",
+  "pages": [
+    {
+      "country_code": "DE",
+      "locale": "de-DE",
+      "title": "Ihr Off-Plan-Kauf in Dubai beginnt mit Ihren Wünschen",
+      "intro": [
+        "Sie planen, eine Immobilie in Dubai vor ihrer Fertigstellung zu kaufen? Teilen Sie uns Ihr Gesamtbudget, Ihre bevorzugten Lagen und Ihren geplanten Kaufzeitpunkt mit. Besprechen Sie anschließend mit dem Team, welche Projektdetails vor einer Entscheidung zu klären sind."
+      ],
+      "sections": [
+        {
+          "heading": "Ihre Pläne stehen am Anfang",
+          "paragraphs": [
+            "Nennen Sie uns den gewünschten Immobilientyp, Ihre bevorzugten Gegenden in Dubai und Ihren Zeitrahmen. Falls Sie bereits einen bevorzugten Übergabetermin haben, können Sie ihn ergänzen."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Ihr Weg zur Kaufentscheidung",
+          "paragraphs": [],
+          "bullets": [
+            "Kaufziel beschreiben — Suchen Sie ein künftiges Zuhause oder planen Sie einen Immobilienkauf als Anlage? Teilen Sie uns Ihre Vorstellungen mit.",
+            "Wünsche konkretisieren — Geben Sie Ihr Gesamtbudget, Ihre bevorzugten Lagen und Ihren geplanten Kaufzeitpunkt an.",
+            "Projektdetails prüfen — Lassen Sie Verfügbarkeit, Zahlungsbedingungen, Informationen zur Fertigstellung und Kaufunterlagen vor Ihrer Entscheidung bestätigen."
+          ]
+        },
+        {
+          "heading": "Kann ich anfragen, ohne bereits ein Projekt ausgewählt zu haben?",
+          "paragraphs": [
+            "Ja. Nennen Sie als Ausgangspunkt Ihre bevorzugten Lagen, den Immobilientyp und Ihr Budget. Einzelne Projekte und deren Verfügbarkeit müssen vor einer Empfehlung überprüft werden."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Sind hier Preise oder Übergabetermine zugesichert?",
+          "paragraphs": [
+            "Diese Seite bietet keine bestimmte Einheit und kein bestimmtes Projekt an. Preise, Zahlungsbedingungen und Angaben zur Übergabe müssen anhand aktueller Projektinformationen überprüft werden."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Gilt meine Anfrage automatisch als qualifizierte Kaufanfrage?",
+          "paragraphs": [
+            "Nein. Ihre Angaben beschreiben Ihre derzeitigen Wünsche. Das Team muss die Eignung und Kaufbereitschaft anschließend bestätigen."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Projektdetails bestätigen",
+          "paragraphs": [
+            "Auf dieser Seite wird keine bestimmte Immobilie, kein Preis und keine Verfügbarkeit angeboten. Projektdetails, Verfügbarkeit und nächste Schritte müssen direkt bestätigt werden."
+          ],
+          "bullets": []
+        }
+      ],
+      "cta_label": "Meinen Off-Plan-Kauf besprechen",
+      "form_step_notice": "Das Anfrageformular öffnet sich auf Englisch. Bitte nennen Sie uns Ihre bevorzugte Sprache.",
+      "rsa": {
+        "headlines": [
+          "Off-Plan-Immobilien in Dubai",
+          "Dubai: Immobilien vom Plan",
+          "Wohnung in Dubai vom Plan",
+          "Villen in Dubai vom Plan",
+          "Townhouses in Dubai vom Plan",
+          "Off-Plan-Kauf in Dubai",
+          "Kaufwünsche besprechen",
+          "Ihre Wunschlage in Dubai",
+          "Kaufbudget mitteilen",
+          "Ihre Off-Plan-Anfrage",
+          "Mit dem Team sprechen",
+          "Bauträger in Dubai besprechen",
+          "Kaufzeitpunkt besprechen",
+          "Ihre Pläne für Dubai",
+          "Black Swan Real Estate"
+        ],
+        "descriptions": [
+          "Planen Sie einen Off-Plan-Kauf in Dubai? Teilen Sie uns Budget und Wunschlage mit.",
+          "Für Ihren Kauf vom Plan: Nennen Sie Immobilientyp und gewünschten Kaufzeitpunkt.",
+          "Senden Sie Ihre Anfrage oder sprechen Sie per WhatsApp mit dem Immobilienteam.",
+          "Besprechen Sie Ihre Kaufpläne für Dubai. Projektdetails sind vorab zu bestätigen."
+        ]
+      }
+    },
+    {
+      "country_code": "FR",
+      "locale": "fr-FR",
+      "title": "Votre achat sur plan à Dubaï commence par vos besoins",
+      "intro": [
+        "Vous envisagez d’acheter un bien à Dubaï avant sa livraison ? Indiquez votre budget total, les quartiers souhaités et votre calendrier d’achat. Échangez ensuite avec l’équipe sur les informations du projet à vérifier avant de prendre une décision."
+      ],
+      "sections": [
+        {
+          "heading": "Vos besoins d’abord",
+          "paragraphs": [
+            "Précisez le type de bien recherché, vos quartiers préférés à Dubaï et votre calendrier d’achat. Vous pouvez ajouter la période de livraison souhaitée si vous la connaissez déjà."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Les étapes de votre achat",
+          "paragraphs": [],
+          "bullets": [
+            "Définir votre projet d’achat — Recherchez-vous un futur logement ou envisagez-vous un achat à titre d’investissement ? Faites-nous part de vos besoins.",
+            "Préciser vos critères — Indiquez votre budget total, les quartiers souhaités et votre calendrier d’achat.",
+            "Vérifier les informations du projet — Faites confirmer la disponibilité, les conditions de paiement, les informations sur l’achèvement et les documents d’achat avant de vous décider."
+          ]
+        },
+        {
+          "heading": "Puis-je envoyer une demande sans avoir choisi de projet ?",
+          "paragraphs": [
+            "Oui. Indiquez d’abord vos quartiers préférés, le type de bien et votre budget. Les informations et la disponibilité de chaque projet doivent être vérifiées avant toute recommandation."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Les prix ou les dates de livraison sont-ils garantis ici ?",
+          "paragraphs": [
+            "Cette page ne propose ni lot ni projet précis. Les prix, les conditions de paiement et les informations sur la livraison doivent être vérifiés à partir des informations actuelles du projet."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Ma demande devient-elle automatiquement une demande d’acheteur qualifiée ?",
+          "paragraphs": [
+            "Non. Vos réponses décrivent vos besoins actuels. L’équipe doit ensuite confirmer l’adéquation du projet et votre degré de préparation à l’achat."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Confirmer les informations du projet",
+          "paragraphs": [
+            "Cette page ne présente aucun bien précis, aucun prix ni aucune disponibilité. Les informations du projet, la disponibilité et les prochaines étapes doivent être confirmées directement."
+          ],
+          "bullets": []
+        }
+      ],
+      "cta_label": "Discuter de mon achat sur plan",
+      "form_step_notice": "Le formulaire de demande s’ouvre en anglais. Indiquez-nous votre langue préférée.",
+      "rsa": {
+        "headlines": [
+          "Immobilier sur plan à Dubaï",
+          "Acheter sur plan à Dubaï",
+          "Appartement sur plan à Dubaï",
+          "Villas sur plan à Dubaï",
+          "Maisons sur plan à Dubaï",
+          "Votre achat sur plan",
+          "Parlons de votre achat",
+          "Votre quartier à Dubaï",
+          "Indiquez votre budget",
+          "Votre demande sur plan",
+          "Contactez notre équipe",
+          "Discutons des promoteurs",
+          "Précisez votre calendrier",
+          "Vos projets à Dubaï",
+          "Black Swan Real Estate"
+        ],
+        "descriptions": [
+          "Un achat sur plan à Dubaï en projet ? Indiquez votre budget et vos préférences.",
+          "Précisez le type de bien, les quartiers souhaités et votre calendrier d’achat.",
+          "Envoyez votre demande ou échangez avec notre équipe sur WhatsApp.",
+          "Discutez de votre achat sur plan. Les informations du projet restent à confirmer."
+        ]
+      }
+    },
+    {
+      "country_code": "TW",
+      "locale": "zh-Hant-TW",
+      "title": "杜拜預售物業購屋諮詢｜Black Swan Real Estate",
+      "intro": [
+        "自住與投資，各有不同的考量。告訴 Black Swan Real Estate 您想購買的物業類型、考慮的地區及預計購買時間，從您的需求開始討論。",
+        "本頁所稱的預售物業（off-plan），是指尚未完工、供買方洽詢購買的物業。各建案的實際狀況與購買條件，須個別確認。"
+      ],
+      "sections": [
+        {
+          "heading": "先談您的計畫",
+          "paragraphs": [
+            "請分享您的購屋總預算、偏好地區與預計購買時間。若已有交屋時間或資金規劃，也可以一併說明。"
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "購買前，先釐清重要細節",
+          "paragraphs": [
+            "從您的需求開始，再討論個別建案。"
+          ],
+          "bullets": [
+            "確認購屋目的：告訴我們您計畫自住、投資，或仍在評估。",
+            "整理實際偏好：分享您的購屋總預算、偏好地區與預計購買時間。",
+            "確認建案資料：作決定前，逐項確認可售狀態、付款條件、完工資訊與購買文件。"
+          ]
+        },
+        {
+          "heading": "還沒選定建案，也可以洽詢嗎？",
+          "paragraphs": [
+            "可以。您可先提供偏好地區、物業類型與購屋預算。討論個別建案前，仍須確認當時的建案資料及可售狀態。"
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "本頁是否保證售價、付款條件或交屋日期？",
+          "paragraphs": [
+            "本頁未刊登特定單位或建案。售價、付款條件與交屋資訊，須依當時可核實的建案資料個別確認。"
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "送出表單就代表完成買方資格確認嗎？",
+          "paragraphs": [
+            "您填寫的資料用於表達目前的購屋需求。是否符合個別物業的條件及購買準備狀況，仍須由團隊另行確認。"
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "物業資料須個別確認",
+          "paragraphs": [
+            "本頁提供購屋需求洽詢，未刊登特定建案、單位、售價或可售狀態。物業資料及後續安排須另行確認。"
+          ],
+          "bullets": []
+        }
+      ],
+      "cta_label": "洽詢杜拜預售物業",
+      "form_step_notice": "洽詢表單將以英文開啟；您可以使用繁體中文填寫購屋需求。",
+      "rsa": {
+        "headlines": [
+          "討論您的購屋計畫",
+          "預計1至6個月內購屋",
+          "預售物業買方洽詢",
+          "尋找您的杜拜預售物業",
+          "杜拜預售物業",
+          "購買杜拜預售物業",
+          "Black Swan Real Estate",
+          "分享您的購屋預算",
+          "告訴我們您的偏好地區",
+          "討論地區與建商",
+          "洽詢預售住宅",
+          "規劃下一次購屋",
+          "開始您的購屋洽詢",
+          "探索杜拜購屋計畫",
+          "與我們的物業團隊洽談"
+        ],
+        "descriptions": [
+          "送出購屋需求，或使用 WhatsApp 與團隊討論您的杜拜預售物業購買計畫。",
+          "預計1至6個月內購買杜拜預售物業？分享您的購屋預算與偏好，從需求開始討論。",
+          "告訴我們您偏好的地區、物業類型與資金規劃，一起討論您的預售物業購屋需求。",
+          "聯絡 Black Swan Real Estate，洽詢您的杜拜預售物業購買計畫。"
+        ]
+      }
+    }
+  ]
+}
