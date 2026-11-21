@@ -1,0 +1,16 @@
+{
+  "base_sha256": {
+    "tools/staging-lab/fixtures/bsre-enquiries/assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "tools/staging-lab/fixtures/bsre-enquiries/assets/lead.js": "3d469cccef9891702ba1462e29f17ba3135261fff23ea2a40c052aa6afb99154",
+    "tools/staging-lab/fixtures/bsre-enquiries/assets/wordpress.js": "dd85e87e930e449136887af826e91aefffa9af429b39fe30c610621b101cef18",
+    "tools/staging-lab/fixtures/bsre-enquiries/includes/parent-isolation.php": "3ba85b2417056b7dd2352c59ecc4f7347865ef33f3178f73459f03abb7268df9",
+    "tools/staging-lab/fixtures/bsre-enquiries/includes/presentation.php": "3d899989bebb8771ba7047f17c9d77760558078f3bf83f7f4b1c14d4408deecb",
+    "tools/staging-lab/fixtures/bsre-enquiries/templates/page.php": "9e29a3a16179223eec4b8c241eb6bae2bc2ed19d036c46ae33c5b3e1a22eb3ce",
+    "tools/staging-lab/fixtures/bsre-enquiries/templates/source/off-plan.html": "1781dc87c8c54e8a08bcd1563156e5bcc076d497cd3ee22574f15440d8116d27"
+  },
+  "integration": "HELD_NO_LOCALE_ROUTE_OR_ASSET_RESOLVER",
+  "schema": "bsre-offplan-form-base-v1",
+  "source_head": "854fa07032709856c33a418f81ac8f385a863c59",
+  "source_kind": "IMMUTABLE_STAGING_FIXTURE_NOT_INSTALLED_RUNTIME",
+  "source_tree": "738f32887c610260b614b95b3f0470ac35683a90"
+}

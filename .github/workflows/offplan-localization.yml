@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/offplan-localization.yml'
       - 'tools/offplan-lead-first/**'
+      - 'tools/staging-lab/fixtures/bsre-enquiries/**'
 permissions:
   contents: read
 concurrency:
@@ -22,3 +23,10 @@ jobs:
         run: |
           python3 -B -m unittest discover -s tools/offplan-lead-first -p test_compile.py -v
           python3 -B tools/offplan-lead-first/compile.py --verify
+      - name: Verify guarded localized form text candidates
+        env:
+          BSRE_FORM_SOURCE_ROOT: ${{ github.workspace }}
+        run: |
+          python3 -B -m unittest discover -s tools/offplan-lead-first/form-localization -p test_form_localization.py -v
+          python3 -B tools/offplan-lead-first/form-localization/compile_form.py --source-root "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/bsre-form-localization"
+          python3 -B tools/offplan-lead-first/form-localization/compile_form.py --source-root "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/bsre-form-localization" --check
