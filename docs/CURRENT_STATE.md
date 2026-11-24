@@ -1,3 +1,5 @@
+Owner language decision,24November: the owner will arrange German/French coverage. The answer is recorded; coverage is not yet confirmed and both markets remainPaused. No new budget redistribution or partial release is inferred; the five configured pools still totalAED2,500average/day.
+
 ## Current off-plan readiness - 24 November 2026, 10:58 UTC
 
 [The live-readiness summary](../tools/offplan-lead-first/LIVE_READINESS_2026-11-24.json) separates current authenticated observations from private offline proposals. WordPress dashboard access is verified. Nine Plugin File Editor member hashes/sizes match historical 0.2.12 members; this is editor-text identity, not fresh raw-host, opcache or served-asset proof. The installed lead client has approved contact +971506878663 and no old 5677 matcher, so this observation requires no contact rewrite. All optional measurement controls remain OFF.

@@ -373,5 +373,20 @@
     },
     "scoped_CI_test_target": 74,
     "prior_five_frame_plus_four_composed_tests": "Separate preserved same-candidate offline behavior proof; not live destination acceptance"
+  },
+  "owner_language_decision": {
+    "owner_answer": "I will arrange language coverage",
+    "languages": [
+      "German",
+      "French"
+    ],
+    "coverage_confirmed": false,
+    "markets_held": [
+      "DE",
+      "FR"
+    ],
+    "new_budget_reallocation_authorized": false,
+    "original_aggregate_average_daily_budget_AED": 2500,
+    "additional_campaign_activation": false
   }
 }
