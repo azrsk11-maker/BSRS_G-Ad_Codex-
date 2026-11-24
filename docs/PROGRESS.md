@@ -1,3 +1,9 @@
+## Five-market off-plan scope —24November2026
+
+The owner added India to UAE/Germany/France/Taiwan within the unchangedAED2,500aggregate average daily budget, keeping all other campaigns paused. India is prepared in English only as an operator assumption matching existing English intake; no Hindi coverage is inferred. The proposed initial split is UAE1,000/DE350/FR300/IN500/TW350. This is preparation, not an owner-selected ratio, performance forecast or applied budget.
+
+Four native country-page drafts,62authored phrases/124placements and76RSA assets are now represented in the offline compiler. The prior non-English form candidates are uninstalled. Live Chrome access is restored:24November account573-038-4686 readback found17Paused/3Removed/0Enabled; Buyers/off-plan/resale remain paused,SearchPartners/Display/AIMaxoff,CPC20. The public English form loads with approved contact8663 and assets marked0.2.12; no delivery or conversion acceptance is inferred. The connected WordPress admin route still redirects toLogIn after the reported readiness, so installed-byte/locale integration remains unverified. No live Ads/site change is claimed here. The full14,000libraries/qualification intelligence remain deferred; human review, Taiwan applicability and genuine release gates are preserved.
+
 ## Current strict intake and frozen-review preservation — 19 November 2026
 
 ## Immediate lead-generation priority — 21 November 2026

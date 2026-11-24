@@ -20,9 +20,9 @@ class OffplanReviewTest(unittest.TestCase):
         first=c.compile_bundle(self.data,self.pins)
         self.assertEqual(first,c.compile_bundle(self.data,self.pins))
         manifest=json.loads(first['MANIFEST.json'])
-        self.assertEqual(len(first),8)
+        self.assertEqual(len(first),9)
         self.assertNotIn('MANIFEST.json',manifest['outputs'])
-        self.assertEqual(manifest['counts']['proposed_match_placements'],92)
+        self.assertEqual(manifest['counts']['proposed_match_placements'],124)
         for name,pin in manifest['outputs'].items():self.assertEqual(c.pin(first[name]),pin)
 
     def test_actual_native_pages_are_drafts_without_live_ids_or_external_sites(self):
@@ -38,13 +38,13 @@ class OffplanReviewTest(unittest.TestCase):
             self.assertNotIn('<script',body);self.assertNotIn('<form',body)
             self.assertFalse(page['localized_form_installed'])
 
-    def test_actual_csv_has_92_placements_without_canonical_or_performance_claims(self):
+    def test_actual_csv_has_124_placements_without_canonical_or_performance_claims(self):
         output=c.compile_bundle(self.data,self.pins)
         rows=list(csv.DictReader(io.StringIO(output['keyword-review.csv'].decode())))
-        self.assertEqual(len(rows),92)
+        self.assertEqual(len(rows),124)
         self.assertEqual({r['Proposed match type'] for r in rows},{'EXACT','PHRASE'})
         self.assertEqual({r['State'] for r in rows},{'AUTHORED_DRAFT_NOT_ADMITTED_OR_UPLOADED'})
-        self.assertEqual(len(list(csv.DictReader(io.StringIO(output['rsa-review.csv'].decode())))),57)
+        self.assertEqual(len(list(csv.DictReader(io.StringIO(output['rsa-review.csv'].decode())))),76)
 
     def test_chinese_double_width_boundary_and_latin_accents(self):
         self.assertEqual(c.units('杜'*15),30)
@@ -129,6 +129,59 @@ class OffplanReviewTest(unittest.TestCase):
             data=copy.deepcopy(self.data)
             data['launch.json']['markets'][2][field]=data['launch.json']['markets'][1][field]
             with self.subTest(field=field),self.assertRaisesRegex(ValueError,'Duplicate'):c.validate(data)
+
+    def test_india_is_explicit_english_country_page_and_budget_member(self):
+        launch,pages,keywords=c.validate(self.data)
+        india=next(m for m in launch['markets'] if m['country_code']=='IN')
+        self.assertEqual((india['locale'],india['language_criterion_id'],india['daily_average_budget_aed']),('en-IN',1000,500))
+        self.assertEqual(launch['india_additional_languages_confirmed'],[])
+        page=next(p for p in pages if p['country_code']=='IN')
+        self.assertIn('English',page['form_step_notice'])
+        self.assertEqual(len([r for r in keywords['positive_candidates'] if r['country_code']=='IN']),16)
+        data=copy.deepcopy(self.data)
+        next(m for m in data['launch.json']['markets'] if m['country_code']=='IN')['language_criterion_id']=1023
+        with self.assertRaisesRegex(ValueError,'language criterion'):c.validate(data)
+
+    def test_owner_added_india_cannot_silently_fall_back_to_four_markets(self):
+        data=copy.deepcopy(self.data)
+        data['launch.json']['markets']=[m for m in data['launch.json']['markets'] if m['country_code']!='IN']
+        data['launch.json']['markets'][0]['daily_average_budget_aed']+=500
+        with self.assertRaisesRegex(ValueError,'country set'):c.validate(data)
+
+    def test_keyword_country_scope_cannot_be_reallocated_while_preserving_global_count(self):
+        data=copy.deepcopy(self.data)
+        row=next(r for r in data['keywords.json']['positive_candidates'] if r['country_code']=='DE')
+        row['country_code']='IN'
+        with self.assertRaisesRegex(ValueError,'per-country authored keyword cohort'):c.validate(data)
+
+    def test_native_campaign_batch_matches_five_market_budget_and_pause_scope(self):
+        context=json.loads((OWN/'native-paused/CONTEXT.json').read_text(encoding='utf-8'))
+        raw=(OWN/'native-paused/five-market-campaigns-paused.csv').read_bytes()
+        self.assertEqual(context['account_id'],'573-038-4686')
+        self.assertEqual(c.pin(raw)['sha256'],context['csv_sha256'])
+        reader=csv.DictReader(io.StringIO(raw.decode('utf-8-sig')))
+        self.assertEqual(reader.fieldnames,context['exact_headers'])
+        rows=list(reader);self.assertEqual(len(rows),5)
+        self.assertEqual({r['Row Type'] for r in rows},{'Campaign'})
+        self.assertEqual({r['Campaign status'] for r in rows},{'Paused'})
+        expected={m['campaign_name']:m['daily_average_budget_aed'] for m in self.data['launch.json']['markets']}
+        self.assertEqual({r['Campaign']:int(r['Budget']) for r in rows},expected)
+        self.assertEqual(sum(int(r['Budget']) for r in rows),2500)
+
+    def test_native_campaign_batch_edits_only_retained_budget_and_creates_paused_shells(self):
+        rows=list(csv.DictReader(io.StringIO((OWN/'native-paused/five-market-campaigns-paused.csv').read_text(encoding='utf-8-sig'))))
+        edits=[r for r in rows if r['Action']=='Edit'];adds=[r for r in rows if r['Action']=='Add']
+        self.assertEqual((len(edits),len(adds)),(1,4))
+        self.assertEqual(edits[0]['Campaign ID'],'24372566774')
+        self.assertEqual({k for k,v in edits[0].items() if v},{'Row Type','Action','Campaign status','Campaign ID','Campaign','Budget'})
+        self.assertTrue(all(r['Campaign ID']=='' and r['Networks']=='Google search' and r['Bid strategy type']=='Maximize clicks' and r['EU political ads']=='No' for r in adds))
+        self.assertEqual({r['Campaign']:(r['Language'],r['Location']) for r in adds},{
+            'BSRE_OFFPLAN_SEARCH_DE_DE':('de','Germany'),
+            'BSRE_OFFPLAN_SEARCH_FR_FR':('fr','France'),
+            'BSRE_OFFPLAN_SEARCH_IN_EN':('en','India'),
+            'BSRE_OFFPLAN_SEARCH_TW_ZH_TW':('zh_tw','Taiwan')})
+        self.assertTrue(all(r['Max CPC Bid Limit for Target IS']=='' for r in rows))
+        self.assertNotIn('Final URL',rows[0])
 
     def test_loader_rejects_duplicate_keys_and_overflow_before_use(self):
         with tempfile.TemporaryDirectory() as folder:

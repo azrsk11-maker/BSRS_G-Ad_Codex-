@@ -1,0 +1,6 @@
+﻿Row Type,Action,Campaign status,Campaign ID,Campaign,Campaign type,Networks,Budget,Delivery method,Budget type,Bid strategy type,Bid strategy,Campaign start date,Campaign end date,Language,Location,Exclusion,Devices,Label,Target CPA,Target ROAS,Display URL option,Website description,Target Impression Share,Max CPC Bid Limit for Target IS,Location Goal for Target IS,Tracking template,Final URL suffix,Custom parameter,Inventory type,Campaign subtype,Video ad formats,EU political ads
+Campaign,Edit,Paused,24372566774,BSRE_V2_SEARCH_BUYERS_UAE_EN,,,1000,,,,,,,,,,,,,,,,,,,,,,,,,
+Campaign,Add,Paused,,BSRE_OFFPLAN_SEARCH_DE_DE,Search,Google search,350,Standard,Daily,Maximize clicks,,,,de,Germany,,,,,,,,,,,,,,,,,No
+Campaign,Add,Paused,,BSRE_OFFPLAN_SEARCH_FR_FR,Search,Google search,300,Standard,Daily,Maximize clicks,,,,fr,France,,,,,,,,,,,,,,,,,No
+Campaign,Add,Paused,,BSRE_OFFPLAN_SEARCH_IN_EN,Search,Google search,500,Standard,Daily,Maximize clicks,,,,en,India,,,,,,,,,,,,,,,,,No
+Campaign,Add,Paused,,BSRE_OFFPLAN_SEARCH_TW_ZH_TW,Search,Google search,350,Standard,Daily,Maximize clicks,,,,zh_tw,Taiwan,,,,,,,,,,,,,,,,,No

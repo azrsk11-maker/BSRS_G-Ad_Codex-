@@ -1,0 +1,9 @@
+# Five-market paused campaign batch
+
+This is a provider-native campaign CSV, separate from the keyword/RSA review CSVs. It changes only the retained UAE Buyers campaign budget toAED1,000 while keeping itPaused, and adds distinct Paused off-plan campaign shells for Germany350/France300/India500/Taiwan350. The five proposed average daily pools totalAED2,500. No old service/legacy campaign or resale group is enabled. The owner authorized this off-plan five-market scope; country weights are an operator proposal without invented economics.
+
+Google native Preview returned5successful changes/0errors on24November2026. The downloaded result preserved all five Paused statuses and marked every row `# OK`. [Context](CONTEXT.json) binds exact33headers, input/output hashes and the account. Preview is not application, launch, platform/legal approval, language review or functioning destinations. No ads, keywords, lead records, contact data or final URLs are in this batch.
+
+Only use the batch in account573-038-4686 after reviewing the exact current preview. This is a one-shot Add/Edit batch: after Apply, reconcile the provider result and actual campaign IDs before any further upload. Do not replay it or the historical generators. All four new Campaign IDs are deliberately blank before creation. Preserve the original reviewed bytes as evidence after application rather than editing them into a replay file.
+
+`Max CPC Bid Limit for Target IS` remains blank: that field does not set the Maximize Clicks cap. Before serving, verify/set CPC20, geographic presence, AI Maxoff, GoogleSearchonly, positive adjustments0 and daily10:00–19:00Dubai coverage; resolve actual native pages, consent/privacy/contact/delivery and all applicable release gates. Original resale group204397706314 and every non-offplan/legacy campaign remain paused; Removed stays removed. No Source merge or greenCI itself authorizes activation.

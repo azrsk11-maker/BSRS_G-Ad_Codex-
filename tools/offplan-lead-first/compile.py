@@ -12,7 +12,8 @@ import unicodedata
 
 OWN = Path(__file__).resolve().parent
 INPUTS = ('launch.json', 'copy.json', 'keywords.json', 'policy_sources.json')
-MARKETS = {'AE': ('en-AE', 1000), 'DE': ('de-DE', 1001), 'FR': ('fr-FR', 1002), 'TW': ('zh-Hant-TW', 1018)}
+MARKETS = {'AE': ('en-AE', 1000), 'DE': ('de-DE', 1001), 'FR': ('fr-FR', 1002), 'IN': ('en-IN', 1000), 'TW': ('zh-Hant-TW', 1018)}
+KEYWORD_COUNTS = {'DE': 16, 'FR': 16, 'IN': 16, 'TW': 14}
 ORIGIN = 'https://blackswanrealestate.ae'
 FUNNEL = '/enquire/off-plan/'
 PAGE_KEYS = {'country_code', 'locale', 'title', 'intro', 'sections', 'cta_label', 'form_step_notice', 'rsa'}
@@ -83,9 +84,9 @@ def validate(data):
     action = launch['accepted_conversion_policy']
     need(action['action_id'] == '7873290954' and action['optimization'] == 'SECONDARY' and action['count'] == 'ONE' and action['fallback_value_aed'] == 0 and action['duplicate_ga4_import'] is False, 'Accepted-action policy changed')
     markets = launch['markets']
-    need(len(markets) == 4 and {m['country_code'] for m in markets} == set(MARKETS), 'Wrong country set')
+    need(len(markets) == len(MARKETS) and {m['country_code'] for m in markets} == set(MARKETS), 'Wrong country set')
     need(sum(m['daily_average_budget_aed'] for m in markets) == 2500, 'Budget sum')
-    need(len({m['campaign_name'] for m in markets}) == 4, 'Duplicate campaign proposal name')
+    need(len({m['campaign_name'] for m in markets}) == len(MARKETS), 'Duplicate campaign proposal name')
     slugs = [m['proposed_slug'] for m in markets if m['country_code'] != 'AE']
     need(len(slugs) == len(set(slugs)), 'Duplicate proposed page slug')
     for market in markets:
@@ -105,7 +106,7 @@ def validate(data):
             need(all(market[k] is None for k in ['campaign_id', 'offplan_ad_group_id', 'ad_id', 'last_observed_final_url']), 'Invented new live ID/URL')
             need(re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*', market['proposed_slug']) is not None, 'Unsafe proposed slug')
     pages = copy['pages']
-    need(len(pages) == 3 and {p['country_code'] for p in pages} == {'DE', 'FR', 'TW'}, 'Wrong localized pages')
+    need(len(pages) == len(KEYWORD_COUNTS) and {p['country_code'] for p in pages} == set(KEYWORD_COUNTS), 'Wrong localized pages')
     for page in pages:
         need(set(page) == PAGE_KEYS, 'Unexpected customer page fields')
         need(page['locale'] == MARKETS[page['country_code']][0], 'Page language mismatch')
@@ -119,17 +120,19 @@ def validate(data):
                 need(units(text) <= limit, 'RSA weighted length')
     need(keywords['count_as_14000_canonical_admissions'] is False, 'Research admission inflation')
     seen = set()
+    country_counts = {country: 0 for country in KEYWORD_COUNTS}
     for row in keywords['positive_candidates']:
         single_line(row['draft_id'])
         single_line(row['text'])
         country = row['country_code']
-        need(country in ('DE', 'FR', 'TW'), 'Keyword country')
+        need(country in KEYWORD_COUNTS, 'Keyword country')
         key = country, unicodedata.normalize('NFC', row['text']).casefold()
         need(key not in seen, 'Duplicate localized keyword')
         seen.add(key)
+        country_counts[country] += 1
         need(row['match_types'] == ['EXACT', 'PHRASE'], 'Unreviewed match expansion')
         need(row['canonical_keyword_id'] is None and row['google_resource_id'] is None and row['admitted'] is False and row['observed_search_demand'] is None, 'Invented keyword admission/metrics/ID')
-    need(len(seen) == 46, 'Unexpected reviewed keyword cohort')
+    need(country_counts == KEYWORD_COUNTS, 'Wrong per-country authored keyword cohort')
     return launch, pages, keywords
 
 
@@ -202,7 +205,7 @@ def compile_bundle(data, pins):
         'qualified_imports_or_CRM_required_for_this_lead_first_launch':False,'live_account_or_site_changes_performed':False})
     outputs['MANIFEST.json'] = json_bytes({'schema':'bsre-offplan-review-bundle-v1','scope':'OFFLINE_DRAFTS_NOT_LIVE_ACCEPTANCE',
         'inputs':pins,'outputs':{name:pin(raw) for name,raw in sorted(outputs.items())},
-        'counts':{'localized_pages':3,'distinct_authored_keyword_strings':46,'proposed_match_placements':len(keyword_rows),
+        'counts':{'localized_pages':len(pages),'distinct_authored_keyword_strings':len(keywords['positive_candidates']),'proposed_match_placements':len(keyword_rows),
                   'localized_RSA_assets':len(ads),'new_live_campaigns':0,'published_pages':0},
         'production_ads_mail_or_sheet_writes':0,'full_14000_library_admissions_added':0})
     return outputs
@@ -226,8 +229,9 @@ def main():
         need(not path.is_symlink(), 'Output member symlink')
         if args.write: path.write_bytes(raw)
         else: need(path.is_file() and path.read_bytes() == raw, 'Generated output drift: ' + name)
+    counts = json.loads(outputs['MANIFEST.json'])['counts']
     print(json.dumps({'status':'WROTE_OFFLINE_DRAFTS' if args.write else 'VERIFIED_OFFLINE_DRAFTS',
-        'files':len(outputs),'localized_pages':3,'keyword_strings':46,'match_placements':92,'RSA_assets':57,
+        'files':len(outputs),'localized_pages':counts['localized_pages'],'keyword_strings':counts['distinct_authored_keyword_strings'],'match_placements':counts['proposed_match_placements'],'RSA_assets':counts['localized_RSA_assets'],
         'live_or_production_mutations':0}))
 
 

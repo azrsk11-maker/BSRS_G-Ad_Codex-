@@ -165,6 +165,88 @@
       }
     },
     {
+      "country_code": "IN",
+      "locale": "en-IN",
+      "title": "Planning a Dubai Off-Plan Purchase from India?",
+      "intro": [
+        "Based in India and considering an off-plan property purchase in Dubai? Share your preferred property type, locations, total budget and purchase timeline with Black Swan Real Estate. Use your enquiry to explain what you want to buy and which project details you need to understand."
+      ],
+      "sections": [
+        {
+          "heading": "Start with your plans for Dubai",
+          "paragraphs": [
+            "Tell us whether you are considering a future home or a property purchase as an investment. If you have a preferred area, property type or handover timeframe, include it in your enquiry."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "What to include in your enquiry",
+          "paragraphs": [],
+          "bullets": [
+            "Your preferred property type and areas in Dubai.",
+            "Your total purchase budget, including the currency you are using.",
+            "Your intended purchase timeline and any preferred handover timeframe.",
+            "The questions you want to discuss before making a purchase decision."
+          ]
+        },
+        {
+          "heading": "Enquiring from India",
+          "paragraphs": [
+            "Please state that you are enquiring from India and use English for this initial enquiry. The next step is the existing English enquiry form."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Do I need to choose a project first?",
+          "paragraphs": [
+            "You can begin by describing your purchase plans. Any project discussed later needs current confirmation of its details and availability before you make a decision."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Check the details before deciding",
+          "paragraphs": [
+            "This page does not offer a specific property or quote a price. Confirm project information, availability, payment terms, handover details and purchase documents directly before deciding."
+          ],
+          "bullets": []
+        },
+        {
+          "heading": "Describe your current purchase plans",
+          "paragraphs": [
+            "Submitting an enquiry describes your current requirements. It does not reserve a property or confirm your eligibility to buy. Your requirements and next steps still need to be discussed."
+          ],
+          "bullets": []
+        }
+      ],
+      "cta_label": "Discuss My Dubai Off-Plan Plans",
+      "form_step_notice": "The next step is the existing English enquiry form. Please complete your initial enquiry in English.",
+      "rsa": {
+        "headlines": [
+          "Dubai Off-Plan Property",
+          "Buy Off-Plan in Dubai",
+          "Enquiring From India?",
+          "Plan Your Dubai Purchase",
+          "Dubai Off-Plan Apartments",
+          "Dubai Off-Plan Villas",
+          "Dubai Off-Plan Townhouses",
+          "Share Your Purchase Plans",
+          "Your Dubai Property Budget",
+          "Discuss Your Preferred Area",
+          "Your Off-Plan Enquiry",
+          "English Enquiry Form",
+          "Discuss Project Details",
+          "Your Dubai Buying Timeline",
+          "Black Swan Real Estate"
+        ],
+        "descriptions": [
+          "Enquiring from India? Share your Dubai off-plan purchase plans in English.",
+          "Tell us your preferred Dubai areas, property type, total budget and purchase timeline.",
+          "Begin with the existing English enquiry form to describe your off-plan requirements.",
+          "Discuss your Dubai purchase plans. Project details and availability need confirmation."
+        ]
+      }
+    },
+    {
       "country_code": "TW",
       "locale": "zh-Hant-TW",
       "title": "杜拜預售物業購屋諮詢｜Black Swan Real Estate",

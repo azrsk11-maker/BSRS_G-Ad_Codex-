@@ -1,0 +1,52 @@
+{
+  "schema": "bsre-five-market-india-engineering-review-v1",
+  "date": "2026-11-24",
+  "status": "PASS_OFFLINE_SCOPE_AND_RETAINED_NATIVE_PREVIEW_ONLY",
+  "review_kind": "Independent engineering agent review; not human, competent-language, legal or launch approval",
+  "private_diagnostic_receipt_sha256": "a79c0b72a8eea842ed865656bbf4dab99f45bcdbd7b0198921a7f8bc790e606a",
+  "scope_preservation_checks": {
+    "passed": 42,
+    "total": 42
+  },
+  "independent_native_CSV_checks": {
+    "passed": 17,
+    "total": 17
+  },
+  "native_followup_checks": {
+    "passed": 9,
+    "total": 9
+  },
+  "source_unit_tests": 22,
+  "unchanged_form_unit_tests_reused_locally": 21,
+  "existing_three_non_English_HTML_bytes_unchanged": true,
+  "five_form_candidate_pins_unchanged": true,
+  "seven_immutable_fixture_pins_unchanged": true,
+  "resolved_findings": [
+    "Current five-country names and single budget key aligned",
+    "Historical browser blocker dated and new24November readback distinguished",
+    "Five-market catalog references includeIndia2356",
+    "Native CSV guard now binds each campaign to its exact language/location pair"
+  ],
+  "native_preview_only": {
+    "changes": 5,
+    "successful": 5,
+    "errors": 0,
+    "all_five_rows_Paused": true,
+    "all_downloaded_result_rows_OK": true,
+    "original_CSV_sha256": "007a3d85ac9210e9e12005239af4c69e98ad37b428b3784c79f6c1562b1a7d0f",
+    "downloaded_RESULTS_sha256": "889f13d3e2554d181dd84efbd705229d61e8f8e14efac56ff29d6af64c83b87a",
+    "applied_at_review": false
+  },
+  "country_scope": [
+    "AE",
+    "DE",
+    "FR",
+    "IN",
+    "TW"
+  ],
+  "aggregate_average_daily_budget_aed": 2500,
+  "competent_translations_or_Taiwan_approval_inferred": false,
+  "live_intake_delivery_or_conversion_accepted": false,
+  "WordPress_authenticated": false,
+  "production_or_campaign_mutation_during_review": false
+}

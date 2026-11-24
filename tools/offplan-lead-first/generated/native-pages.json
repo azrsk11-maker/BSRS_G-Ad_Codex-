@@ -51,6 +51,30 @@
       "planning_note": "Supplemental country proposal; no canonical registry identity assigned or overwritten."
     },
     {
+      "country_code": "IN",
+      "locale": "en-IN",
+      "title": "Planning a Dubai Off-Plan Purchase from India?",
+      "proposed_slug": "off-plan-dubai-india",
+      "proposed_path": "/off-plan-dubai-india/",
+      "post_type": "page",
+      "requested_status": "draft",
+      "content_file": "off-plan-dubai-india.html",
+      "content_pin": {
+        "bytes": 2076,
+        "sha256": "7dcb30dfa5852d1e33a845f56206a38526958a8ce9241f59f6a768d948f18b3c"
+      },
+      "actual_cms_id": null,
+      "actual_live_url": null,
+      "created": false,
+      "published": false,
+      "document_language_hreflang_canonical_noindex_readback": "PENDING_NATIVE_CMS",
+      "form_language": "EXISTING_ENGLISH_FORM_WITH_LOCALIZED_STEP_NOTICE",
+      "localized_form_installed": false,
+      "form_delivery_and_consent_acceptance": "PENDING_LIVE_VERIFICATION",
+      "planning_360_identity": null,
+      "planning_note": "Supplemental country proposal; no canonical registry identity assigned or overwritten."
+    },
+    {
       "country_code": "TW",
       "locale": "zh-Hant-TW",
       "title": "杜拜預售物業購屋諮詢｜Black Swan Real Estate",

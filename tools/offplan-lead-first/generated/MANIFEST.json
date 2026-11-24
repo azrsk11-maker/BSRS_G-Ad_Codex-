@@ -3,34 +3,34 @@
   "scope": "OFFLINE_DRAFTS_NOT_LIVE_ACCEPTANCE",
   "inputs": {
     "launch.json": {
-      "bytes": 5998,
-      "sha256": "187b22a930fa366cf5e8662bcbc3990ff48bf6ad708cb072ab912dba7e0bf29c"
+      "bytes": 7173,
+      "sha256": "769706bc890068200056e7bebcef6038b960289de362a36aeee11ffa43a87c45"
     },
     "copy.json": {
-      "bytes": 12090,
-      "sha256": "8c2796da05959279e46f90034bfbdc7f5fc88ed630d436836eb5ac0dca0e46b2"
+      "bytes": 15876,
+      "sha256": "eef24a1b7232e952de0c827f88b73d9e21c3e0de33a86dbf83107f10aa5fe673"
     },
     "keywords.json": {
-      "bytes": 15913,
-      "sha256": "f5b6d5efa4f80c91b7d3ecd2e3f35989f2afd0fbcb35509b0d4fa259a55a2eaa"
+      "bytes": 21119,
+      "sha256": "f8dd086473a09cbc89f5ddc584bce6db03af121ca157be1931e6a74a37fca065"
     },
     "policy_sources.json": {
-      "bytes": 9411,
-      "sha256": "a3a636f7aade714272c04da07f7a22ba38acef777e42d47dbffa35b0156aeffe"
+      "bytes": 9710,
+      "sha256": "6bc1437e8b639325b99c72e9b32223316a343245b90c403e4d5c9367fb561631"
     }
   },
   "outputs": {
     "activation-review.json": {
-      "bytes": 5609,
-      "sha256": "e485d06925361727a8a18bc7b06efbb0a30f0baaabfa00e1f17bb44aa576a5fb"
+      "bytes": 6643,
+      "sha256": "ac3b111b7f9bfba662cbc3934020998787a706903cf33423ea164a668168f2ed"
     },
     "keyword-review.csv": {
-      "bytes": 9524,
-      "sha256": "f8ba27fb43303fec242688f6b1e5ba723b14159d0468c89692b5b053053d23fb"
+      "bytes": 12848,
+      "sha256": "2d139ab9d48e4cf4d29ef0927a1382d64519a8d3c41b0a54efa6c44d2c18a943"
     },
     "native-pages.json": {
-      "bytes": 3334,
-      "sha256": "4eaf5040aea97f4e33628c0a817471784198b0cccb90da047bc104cdbe9487c2"
+      "bytes": 4349,
+      "sha256": "f889c1545f1459e62cd4bec61557b9e93f82cf6031491f74b370dc182a9f43ae"
     },
     "off-plan-dubai-de.html": {
       "bytes": 2313,
@@ -40,20 +40,24 @@
       "bytes": 2397,
       "sha256": "c0359592872e6b9c4c122153b93a6c7d5782c96be0c6c1b62ea47e15bb244c0d"
     },
+    "off-plan-dubai-india.html": {
+      "bytes": 2076,
+      "sha256": "7dcb30dfa5852d1e33a845f56206a38526958a8ce9241f59f6a768d948f18b3c"
+    },
     "off-plan-dubai-zh-tw.html": {
       "bytes": 2043,
       "sha256": "31c918b55c84d26eb51fcff2e081fb231b227b2734d77fd652dc953181367a91"
     },
     "rsa-review.csv": {
-      "bytes": 4686,
-      "sha256": "ed94862cd7712585c4d5d29eede2395c3069fdb7630d0920667abafdda61f01e"
+      "bytes": 6178,
+      "sha256": "e19cc2a0c9ec76f77fb93a991e5950bb3018a4793c830d2a7bd40dfe0d0e3585"
     }
   },
   "counts": {
-    "localized_pages": 3,
-    "distinct_authored_keyword_strings": 46,
-    "proposed_match_placements": 92,
-    "localized_RSA_assets": 57,
+    "localized_pages": 4,
+    "distinct_authored_keyword_strings": 62,
+    "proposed_match_placements": 124,
+    "localized_RSA_assets": 76,
     "new_live_campaigns": 0,
     "published_pages": 0
   },

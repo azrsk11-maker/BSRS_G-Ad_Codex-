@@ -40,6 +40,15 @@
       "Status": "Active"
     },
     {
+      "Criteria ID": "2356",
+      "Name": "India",
+      "Canonical Name": "India",
+      "Parent ID": "",
+      "Country Code": "IN",
+      "Target Type": "Country",
+      "Status": "Active"
+    },
+    {
       "Criteria ID": "2158",
       "Name": "Taiwan",
       "Canonical Name": "Taiwan",
@@ -53,11 +62,14 @@
     "AE",
     "DE",
     "FR",
+    "IN",
     "TW"
   ],
   "account_acceptance_checked": false,
   "campaign_binding_applied": false,
   "country_legal_or_platform_eligibility_inferred": false,
   "Russia_selected": false,
-  "verification_method": "One official catalog download, retained archive and CSV SHA256, exact name/ISO/type/blank-parent selection; no API or account mutation."
+  "verification_method": "One official catalog download, retained archive and CSV SHA256, exact name/ISO/type/blank-parent selection; no API or account mutation.",
+  "India_entry_extracted_on": "2026-11-24",
+  "India_evidence": "Same SHA256-verified6October2026 official catalog downloaded21November; cached parse only, no new account or policy acceptance."
 }

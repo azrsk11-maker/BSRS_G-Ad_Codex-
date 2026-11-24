@@ -8,11 +8,21 @@
       "United Arab Emirates",
       "Germany",
       "France",
+      "India",
       "Taiwan"
     ],
     "aggregate_average_daily_budget_aed": 2500,
     "mandarin_team_support_confirmed": true,
-    "russia": "eligibility investigated separately; not an activation-ready geography"
+    "russia": "eligibility investigated separately; not an activation-ready geography",
+    "latest_owner_instruction_date": "2026-11-24",
+    "latest_confirmed_country_codes": [
+      "AE",
+      "DE",
+      "FR",
+      "IN",
+      "TW"
+    ],
+    "India_language_preparation": "English; operator assumption based on existing English intake, no Hindi coverage inferred"
   },
   "sources": [
     {

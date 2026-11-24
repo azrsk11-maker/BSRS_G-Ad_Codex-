@@ -600,6 +600,214 @@
       "google_resource_id": null,
       "admitted": false,
       "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-01",
+      "country_code": "IN",
+      "text": "buy off plan property in dubai from india",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-02",
+      "country_code": "IN",
+      "text": "buy dubai off plan apartment from india",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-03",
+      "country_code": "IN",
+      "text": "buy dubai off plan villa from india",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-04",
+      "country_code": "IN",
+      "text": "buy dubai off plan townhouse from india",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-05",
+      "country_code": "IN",
+      "text": "buy off plan property in dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-06",
+      "country_code": "IN",
+      "text": "dubai off plan apartments for sale",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-07",
+      "country_code": "IN",
+      "text": "dubai off plan villas for sale",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-08",
+      "country_code": "IN",
+      "text": "dubai off plan townhouses for sale",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-09",
+      "country_code": "IN",
+      "text": "buy off plan studio in dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-10",
+      "country_code": "IN",
+      "text": "buy off plan one bedroom apartment dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-11",
+      "country_code": "IN",
+      "text": "buy off plan two bedroom apartment dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-12",
+      "country_code": "IN",
+      "text": "buy off plan three bedroom apartment dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-13",
+      "country_code": "IN",
+      "text": "buy off plan penthouse in dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-14",
+      "country_code": "IN",
+      "text": "buy off plan family home in dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-15",
+      "country_code": "IN",
+      "text": "buy off plan investment property dubai",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
+    },
+    {
+      "draft_id": "in-draft-16",
+      "country_code": "IN",
+      "text": "purchase dubai off plan property",
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "canonical_keyword_id": null,
+      "google_resource_id": null,
+      "admitted": false,
+      "observed_search_demand": null
     }
   ],
   "negative_proposals": [
