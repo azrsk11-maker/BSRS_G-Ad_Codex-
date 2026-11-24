@@ -1,0 +1,377 @@
+{
+  "schema": "bsre-offplan-live-readiness-summary-v1",
+  "as_of_utc": "2026-11-24T11:18:40.902966+00:00",
+  "status": "HELD_NOT_LAUNCH_READY",
+  "source_head_before_documentation_update": "16daa4dc646d6b70b69ec657140274e79c906ca1",
+  "provenance": "Sanitized summaries of authenticated operator readbacks and scoped private offline reviews; no raw logs or private identifiers are included.",
+  "scope": {
+    "intent": "OFF_PLAN_BUYERS_ONLY",
+    "countries": [
+      "AE",
+      "DE",
+      "FR",
+      "IN",
+      "TW"
+    ],
+    "aggregate_average_daily_budget_AED": 2500,
+    "daily_enquiry_target": 345,
+    "daily_enquiry_target_proven": false,
+    "India_form_language": "English",
+    "all_other_campaigns": "Paused or Removed"
+  },
+  "WordPress": {
+    "dashboard_verified": true,
+    "dashboard_observed_at_utc": "2026-11-24T10:40:21.015384+00:00",
+    "plugin": "bsre-enquiries",
+    "version_header": "0.2.12",
+    "editor_observed_at_utc": "2026-11-24T10:48:04.736703+00:00",
+    "editor_representation": "Authenticated WordPress Plugin File Editor DOM textarea value, UTF-8 encoding; pure SHA-256 known abc vector passed",
+    "representation_limit": "Editor text, not a fresh raw server-file download, opcache proof or browser-served asset proof",
+    "editor_members_compared": 9,
+    "all_nine_match_historical_0_2_12_member_hashes_and_sizes": true,
+    "editor_members": [
+      {
+        "path": "assets/lead.js",
+        "bytes": 26591,
+        "sha256": "c42a6a68cdab20a700f9fe06a306a32903080fa1ac58b87fc8e8f26ce3f25f16",
+        "matches_historical_member": true
+      },
+      {
+        "path": "assets/google-measurement.js",
+        "bytes": 6239,
+        "sha256": "2e87c3c715d74e09b459d02d706f72008b2edcfd73d0401bd6bfcbee64e9b837",
+        "matches_historical_member": true
+      },
+      {
+        "path": "assets/google-runtime.js",
+        "bytes": 10071,
+        "sha256": "459ab031d0bb3e0f079fdce5d2de36d266748f0c57f361c262e8ed5c03bfed4d",
+        "matches_historical_member": true
+      },
+      {
+        "path": "includes/measurement-runtime.php",
+        "bytes": 10209,
+        "sha256": "547ab366515214f0f15359e986e659d5c69ae05580903a2c023cc08277121a37",
+        "matches_historical_member": true
+      },
+      {
+        "path": "includes/parent-isolation.php",
+        "bytes": 11617,
+        "sha256": "c2f4cf27245cd663bc71d25075ce5ee7740b6397e9437b2bb5909ac0a96703bd",
+        "matches_historical_member": true
+      },
+      {
+        "path": "includes/presentation.php",
+        "bytes": 2362,
+        "sha256": "3d899989bebb8771ba7047f17c9d77760558078f3bf83f7f4b1c14d4408deecb",
+        "matches_historical_member": true
+      },
+      {
+        "path": "templates/page.php",
+        "bytes": 2400,
+        "sha256": "9e29a3a16179223eec4b8c241eb6bae2bc2ed19d036c46ae33c5b3e1a22eb3ce",
+        "matches_historical_member": true
+      },
+      {
+        "path": "templates/hub.php",
+        "bytes": 1788,
+        "sha256": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+        "matches_historical_member": true
+      },
+      {
+        "path": "includes/measurement-settings.php",
+        "bytes": 5170,
+        "sha256": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+        "matches_historical_member": true
+      }
+    ],
+    "contact": {
+      "approved_number": "+971506878663",
+      "approved8663_present": true,
+      "old5677_absent": true,
+      "rewrite_required_by_current_observation": false
+    },
+    "optional_measurement": {
+      "master": false,
+      "analytics": false,
+      "advertising": false
+    },
+    "configuration_readiness_is_not_intake_or_delivery_acceptance": true,
+    "code_saved_during_audit": false,
+    "fresh_raw_host_opcache_and_public_served_asset_identity_proven": false
+  },
+  "Ads": {
+    "previous_full_inventory_reference": "tools/offplan-lead-first/native-paused/APPLIED.json",
+    "previous_full_inventory": {
+      "date": "2026-11-24",
+      "total": 24,
+      "Paused": 21,
+      "Removed": 3,
+      "Enabled": 0
+    },
+    "five_paused_budget_pools_AED": {
+      "AE": 1000,
+      "DE": 350,
+      "FR": 300,
+      "IN": 500,
+      "TW": 350
+    },
+    "budgets_applied_once": true,
+    "original_Add_batch_must_not_be_replayed": true,
+    "current_safeguards_observed_at_utc": "2026-11-24T10:58:48.970707+00:00",
+    "current_rows_verified": 4,
+    "current_rows": [
+      {
+        "country": "IN",
+        "status": "Paused",
+        "average_daily_budget_AED": 500,
+        "Maximize_Clicks_max_CPC_AED": 20,
+        "CPC_saved_and_reopened": true,
+        "presence_saved_and_reopened": true,
+        "presence": "People in or regularly in included locations",
+        "search_partners": false,
+        "display": false,
+        "AI_Max": false,
+        "target": "India country"
+      },
+      {
+        "country": "FR",
+        "status": "Paused",
+        "average_daily_budget_AED": 300,
+        "Maximize_Clicks_max_CPC_AED": 20,
+        "CPC_saved_and_reopened": true,
+        "presence_saved_and_reopened": true,
+        "presence": "People in or regularly in included locations",
+        "search_partners": false,
+        "display": false,
+        "AI_Max": false,
+        "target": "France country"
+      },
+      {
+        "country": "DE",
+        "status": "Paused",
+        "average_daily_budget_AED": 350,
+        "Maximize_Clicks_max_CPC_AED": 20,
+        "CPC_saved_and_reopened": true,
+        "presence_saved_and_reopened": true,
+        "presence": "People in or regularly in included locations",
+        "search_partners": false,
+        "display": false,
+        "AI_Max": false,
+        "target": "Germany country"
+      },
+      {
+        "country": "TW",
+        "status": "Paused",
+        "average_daily_budget_AED": 350,
+        "Maximize_Clicks_max_CPC_AED": 20,
+        "CPC_saved_and_reopened": true,
+        "presence_saved_and_reopened": true,
+        "presence": "People in or regularly in included locations",
+        "search_partners": false,
+        "display": false,
+        "AI_Max": false,
+        "target": "Taiwan region"
+      }
+    ],
+    "UAE_scope": "Prior baseline already confirmed CPC20; current budget1000 unchanged this audit",
+    "new_enable_actions": 0,
+    "full_account_final_release_readback_required": true,
+    "remaining_settings_or_children": [
+      "language live readback",
+      "daily10-19Dubai schedule",
+      "positive bid adjustments",
+      "native campaign children and URLs",
+      "inherited assets and exclusions",
+      "full account final release readback"
+    ],
+    "post_safeguard_full_inventory": {
+      "observed_at_utc": "2026-11-24T11:10:53.351401+00:00",
+      "all24_unique_ids_verified": true,
+      "inventory": {
+        "total": 24,
+        "Paused": 21,
+        "Removed": 3,
+        "Enabled": 0
+      },
+      "none_running_banner": true,
+      "no_campaign_activation": true,
+      "pre_activation_release_acceptance": false
+    }
+  },
+  "GTM": {
+    "observed_at_utc": "2026-11-24T10:58:48.970707+00:00",
+    "published_version": 1,
+    "published_name": "Empty Container",
+    "published_on": "2026-10-19",
+    "published_tags": 0,
+    "published_triggers": 0,
+    "published_builtin_variables": 5,
+    "workspace_changes_unpublished": 2,
+    "readback_saved_or_published": false,
+    "unpublished_bootstrap_can_activate_current_live_container": false,
+    "publication_and_accepted_activation_path_required": true,
+    "queue_candidate_cannot_repair_missing_activation": true
+  },
+  "private_queue_candidate": {
+    "status": "OFFLINE_PROPOSAL_NOT_INSTALLED",
+    "source_builder": "tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs",
+    "preimage_sha256": "2e87c3c715d74e09b459d02d706f72008b2edcfd73d0401bd6bfcbee64e9b837",
+    "candidate_sha256": "d861b0df762b2b703f4b567305fc9e9f96113fcd3ddfdd82b4b5fc8545aeadfb",
+    "candidate_bytes": 7313,
+    "accepted_events_only": true,
+    "maximum_entries_per_purpose": 32,
+    "same_frame_expiry_ms": 30000,
+    "existing_frame_delivery_tests": {
+      "source": "tools/website-tracking/tracking-system/frame-delivery-candidate.test.mjs",
+      "passed": 5,
+      "scope": "Source and VM; no provider SDK or native browser acceptance"
+    },
+    "additional_trace_tests": {
+      "source": "tools/website-tracking/tracking-system/composed-delivery.test.mjs",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Derived retention/admission/contact client, not byte-exact installed lead.js",
+      "no_vendor_SDK_or_network": true
+    },
+    "existing_five_repeated_during_additional_four": false,
+    "installed": false,
+    "cache_version_change_required": true,
+    "fresh_public_asset_readback_required": true,
+    "current_native_acceptance_required": true,
+    "provider_delivery_or_dedup_accepted": false
+  },
+  "localization": {
+    "country_blocks": 4,
+    "authored_keyword_phrases": 62,
+    "proposed_match_placements": 124,
+    "RSA_assets": 76,
+    "country_blocks_installed": false,
+    "translated_form_locales": [
+      "de-DE",
+      "fr-FR",
+      "zh-Hant-TW"
+    ],
+    "strings_per_locale": 85,
+    "translated_forms_installed": false,
+    "protocol_preserving_locale_query": {
+      "status": "DESIGN_PROPOSAL_NOT_IMPLEMENTED",
+      "existing_path": "/enquire/off-plan/",
+      "proposed_query_key": "bsre_locale",
+      "preserve_signed_wire_v1_and_canonical_intake_path": true
+    },
+    "remaining": [
+      "native page identities and document language",
+      "installed-byte-derived renderer and assets",
+      "actual locale privacy notices",
+      "competent copy and staff-language coverage",
+      "native and genuine intake acceptance"
+    ]
+  },
+  "release_gates_held": [
+    "independent human review and source protection",
+    "Taiwan country applicability and provider acceptance",
+    "competent copy and operational staff-language coverage",
+    "native page locale privacy integration",
+    "remaining campaign language schedule bid-adjustment children URL inherited-asset and exclusion readbacks",
+    "reviewed GTM publication and accepted activation path",
+    "cache version delta and fresh served asset identity",
+    "current native runtime acceptance",
+    "genuine live intake consent refusal withdrawal exclusion delivery and dedup evidence",
+    "full account final release readback",
+    "privacy notice disclosure and approved consent-evidence retention implementation matched to actual behavior"
+  ],
+  "unchanged_boundaries": {
+    "website_or_tracking_deployed_by_this_update": false,
+    "runtime_code_or_fixtures_changed": false,
+    "new_native_proof_claimed": false,
+    "synthetic_production_conversion_or_old_lead_replay": false,
+    "full_goal_complete": false
+  },
+  "references": [
+    "tools/offplan-lead-first/native-paused/APPLIED.json",
+    "tools/offplan-lead-first/form-localization/README.md",
+    "tools/offplan-lead-first/country-target-reference.json",
+    "tools/offplan-lead-first/policy_sources.json",
+    "docs/audit/PUBLIC_CONTACT_SCRIPT_READBACK_2026-11-17.json",
+    "tools/website-tracking/tracking-system/build-frame-delivery-candidate.mjs",
+    "tools/website-tracking/tracking-system/frame-delivery-candidate.test.mjs",
+    "tools/website-tracking/tracking-system/composed-delivery.test.mjs",
+    "https://developers.google.com/google-ads/api/data/geotargets",
+    "https://www.google.com/about/company/user-consent-policy/",
+    "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060066",
+    "https://www.ftc.gov.tw/internet/main/doc/docDetail.aspx?docid=282&mid=1357&uid=170",
+    "https://www.google.com/about/company/user-consent-policy-help/",
+    "https://business.safety.google/privacy/",
+    "tools/offplan-lead-first/measurement-release/README.md",
+    "tools/offplan-lead-first/installed-localization/README.md",
+    "tools/offplan-lead-first/privacy-addendum/README.md"
+  ],
+  "accepted_enquiry_action": {
+    "action_id": "7873290954",
+    "name": "BSRE Accepted Enquiry (Secondary)",
+    "source": "Website",
+    "optimization": "Secondary",
+    "count": "One conversion",
+    "value": "Use different values; AED0 fallback",
+    "enhanced_conversions": "Not configured",
+    "native_snippet_send_to": "AW-18394393537/jLZgCMrFo6odEMHXkMNE",
+    "matches_WordPress_destination": true,
+    "diagnostic": "Error: Conversion has never received data",
+    "settings_saved": false,
+    "conversions_sent": 0,
+    "destination_deduplication_or_delivery_accepted": false
+  },
+  "privacy_notice_readback": {
+    "url": "https://blackswanrealestate.ae/property-enquiry-privacy-notice/",
+    "effective": "19 October 2026",
+    "manual_monthly_12_months_after_closure": true,
+    "180_day_choice_expiry_explained_in_notice": false,
+    "non_enquiry_choice_12month_retention_explained": false,
+    "observed_google_business_data_disclosure_links": [],
+    "page_changed": false,
+    "required_disclosure_target": "https://business.safety.google/privacy/"
+  },
+  "served_asset_readback": {
+    "direct_asset_navigation": "ERR_BLOCKED_BY_CLIENT",
+    "fresh_served_bytes_verified": false,
+    "bypass_attempted": false
+  },
+  "required_local_foundation_check": {
+    "status": "INCOMPLETE_DEADLINE",
+    "deadline_seconds": 600,
+    "Python": "3.12.14",
+    "full_report_available": false,
+    "unchanged_retry_performed": false,
+    "scope": "Full offline foundation command, unrelated legacy modules included; not a current-head pass. Scoped CI remains separately required."
+  },
+  "review_only_tooling": {
+    "measurement_release": {
+      "path": "tools/offplan-lead-first/measurement-release/README.md",
+      "focused_tests": 10,
+      "changed_proposed_members": 2,
+      "full_raw_inventory_members": 30,
+      "rollback_exact": true,
+      "install_operation_exposed": false,
+      "ready_to_install": false
+    },
+    "installed_preimage_localization": {
+      "path": "tools/offplan-lead-first/installed-localization/README.md",
+      "focused_tests": 21,
+      "current_editor_bound_inputs": 3,
+      "generated_inert_files": 16,
+      "JS_syntax_checks": 6,
+      "exact_text_inverses": 9,
+      "live_PHP_integration_implemented": false,
+      "ready_to_deploy": false
+    },
+    "privacy_addendum": {
+      "path": "tools/offplan-lead-first/privacy-addendum/README.md",
+      "language": "English review draft",
+      "translated_or_published": false
+    },
+    "scoped_CI_test_target": 74,
+    "prior_five_frame_plus_four_composed_tests": "Separate preserved same-candidate offline behavior proof; not live destination acceptance"
+  }
+}

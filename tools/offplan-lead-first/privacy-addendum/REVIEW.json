@@ -1,0 +1,23 @@
+{
+  "status": "UNPUBLISHED_REVIEW_DRAFT",
+  "scope": "Proposed English addendum to existing notice, not a replacement policy or legal approval",
+  "approved_business_fact_bindings": [
+    "separate optional analytics and admeasurement",
+    "personalization denied",
+    "preference validity180days",
+    "nonenquiry choice evidence12months afterchoice",
+    "monthly closed-enquiry/Marketingmail review12months afterclosure",
+    "Marketingprivacycontact"
+  ],
+  "Google_disclosure_source": "https://www.google.com/about/company/user-consent-policy-help/",
+  "Google_link_target_verified": "https://business.safety.google/privacy/",
+  "deployment_gate": "Do not publish until the actual preference/withdrawal/retention implementation and disclosure placement are accepted. This draft does not assert they are deployed.",
+  "remaining": [
+    "privacy/factualreview",
+    "DE/FR/TraditionalChinese translation and competent language review",
+    "native placement on notice/consent link",
+    "actual retention deletion and withdrawal acceptance"
+  ],
+  "code_or_policy_published": false,
+  "sha256": "14d16e50da914f2dcbaceddfa4ab93ae2bdc7a0cb38bede40f76213920352b90"
+}
