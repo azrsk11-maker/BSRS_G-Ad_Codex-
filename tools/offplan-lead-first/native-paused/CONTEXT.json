@@ -61,10 +61,11 @@
     "downloaded_results_bytes": 1159,
     "results_all_OK": true
   },
-  "campaign_changes_applied": false,
+  "campaign_changes_applied": true,
   "campaigns_enabled": 0,
   "native_preview_is_not_release_or_country_eligibility": true,
-  "new_campaign_IDs_bound": false,
+  "new_campaign_IDs_bound": true,
   "actual_cpc_cap_presence_AI_Max_and_schedule_readback_required": true,
-  "replay_policy": "ONE_SHOT_REVIEWED_BATCH. After Apply, reconcile execution result and actual campaign IDs before any further upload. Never replay this Add batch or old imports blindly."
+  "replay_policy": "ALREADY APPLIED24November2026. Never replay this Add batch. Reconcile APPLIED.json and actual IDs before any separately reviewed edits.",
+  "post_apply_readback_file": "APPLIED.json"
 }

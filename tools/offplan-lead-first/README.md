@@ -49,3 +49,7 @@ The package now contains4country-page drafts,62authored phrases/124exact-or-phra
 [The provider-native paused campaign batch](native-paused/README.md) is a distinct reviewed artifact. Its current Google preview accepted5changes/0errors without applying them; all five status values remainPaused and totalAED2,500average/day. It is not the review-only keyword/RSA CSV format, a replay, an activation or native runtime acceptance.
 
 [The five-market review receipt](INDIA_REVIEW.json) records42preservation checks,17independent CSV checks and9native follow-up checks. Source22unit tests passed; new country-language guards were rechecked separately. These engineering results preserve all live/human/country acceptance boundaries.
+
+## Live paused construction —24November2026
+
+After43current-headCItests passed and nativePreview accepted5/5changes, the reviewed batch was applied once. [Live readback](native-paused/APPLIED.json) now binds UAE24372566774/AED1000,DE24546407422/AED350,FR24546407401/AED300,IN24540258368/AED500,TW24546407404/AED350. All five remainPaused; the account has21Paused/3Removed/0Enabled. This created four empty campaign shells and changed the UAE paused budget; new country settings, child entities and actual destinations remain unfinished. No site/tracking change or activation occurred. Never replay the Add batch. The compiler retains inert proposed IDs separately; APPLIED.json is the actual dated identity map.

@@ -1,3 +1,7 @@
+## Live paused construction recorded —24November2026
+
+The [actual Google Ads readback](../tools/offplan-lead-first/native-paused/APPLIED.json) confirms four new paused off-plan country shells plus the retained UAE campaign, with five average daily pools totalingAED2,500. All other campaigns remainPaused orRemoved; account24total/21Paused/3Removed/0Enabled. NativePreview5/5passed; oneApply was reconciled after an initially stale20-row table with no repeated upload/apply. The original Add batch is alreadyapplied and must not be replayed. New settings/children/URLs, authenticated WordPress installed-byte integration and genuine release checks remain unfinished. The specific WordPress handoff tab still has an empty username/password login form; credentials were not read or entered. No website/tracking/activation change occurred.
+
 ## Five-market off-plan scope —24November2026
 
 The owner added India to UAE/Germany/France/Taiwan within the unchangedAED2,500aggregate average daily budget, keeping all other campaigns paused. India is prepared in English only as an operator assumption matching existing English intake; no Hindi coverage is inferred. The proposed initial split is UAE1,000/DE350/FR300/IN500/TW350. This is preparation, not an owner-selected ratio, performance forecast or applied budget.

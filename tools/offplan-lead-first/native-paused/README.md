@@ -1,5 +1,7 @@
 # Five-market paused campaign batch
 
+**Already applied24November2026. Do not upload this Add batch again.** [Actual IDs/statuses/budgets](APPLIED.json) record all five poolsPaused atAED2,500total average/day. The full account readback is24campaigns:21Paused/3Removed/0Enabled. New campaign settings, children and destinations remain unfinished.
+
 This is a provider-native campaign CSV, separate from the keyword/RSA review CSVs. It changes only the retained UAE Buyers campaign budget toAED1,000 while keeping itPaused, and adds distinct Paused off-plan campaign shells for Germany350/France300/India500/Taiwan350. The five proposed average daily pools totalAED2,500. No old service/legacy campaign or resale group is enabled. The owner authorized this off-plan five-market scope; country weights are an operator proposal without invented economics.
 
 Google native Preview returned5successful changes/0errors on24November2026. The downloaded result preserved all five Paused statuses and marked every row `# OK`. [Context](CONTEXT.json) binds exact33headers, input/output hashes and the account. Preview is not application, launch, platform/legal approval, language review or functioning destinations. No ads, keywords, lead records, contact data or final URLs are in this batch.
