@@ -1,5 +1,9 @@
 # Owner decisions
 
+## Off-plan publication and conditional launch — 25 November 2026
+
+The owner renewed approval to publish off-plan pages on the existing Real Estate website and launch eligible off-plan campaigns in account 573-038-4686 after verifying the forms, lead delivery and conversion tracking. The five prepared budgets share AED2,500 average per day. All other campaigns remain paused or removed. The owner asked to retry Chrome. Publication still uses the native shared form and verified intake route. The approval does not supply new business evidence, staff coverage, an independent PR review or permission to change the release checks.
+
 ## Continued dependency-ordered preparation — 20 November 2026
 
 The owner renewed the instruction to resume from the latest handover, complete unblocked goals in dependency order, parallelize independent work and update GitHub with verified results and blockers while keeping production unchanged and Ads paused. This preserves every existing acceptance gate and supplies no independent reviewer, missing business evidence, library approval, provider event, sharing change, publication, live configuration, activation or spending authority. The existing no-independent-reviewer answer is retained without repeating the question. Unchanged verified work may be reused within its original scope.

@@ -1,3 +1,11 @@
+## Off-plan publication preflight — 25 November 2026
+
+Chrome reconnected to account 573-038-4686 and confirmed that no ads were running. The public English form returned HTTP 200. All 13 fields and 15 select options matched the retained reference, and the call and WhatsApp links matched the approved number. The WordPress admin session had expired. Chrome was left on the sign-in prompt for the owner.
+
+The live GTM container remained empty with two unpublished workspace changes. Forty-eight isolated form and measurement checks passed. A bounded Marketing mailbox search found no recent off-plan receipt to reconcile against the private intake register. An earlier controlled receipt verified the receiver path in October. Current live delivery and conversion tracking remain unverified.
+
+Added a pure PHP selector for the existing protected off-plan page, with automated behavior cases in the scoped localization workflow. The selector still needs renderer, consent, asset and privacy bindings. Separate country routes need verified WordPress page IDs. No production pages or campaign settings changed.
+
 ## Shared property enquiry design — 25 November 2026
 
 The owner requested all existing service landing pages in the same design and required English by default alongside regional keywords in every market and campaign. The [service review package](../tools/offplan-lead-first/service-localization/README.md) includes 414 previews and 7,800 exact and phrase keyword placements across 35 markets. All 345 form previews match their existing service field and option contracts. Only off-plan is in launch scope. The resale, rental, seller, landlord and brand work is prepared for review.

@@ -34,6 +34,8 @@ The new tests cover installed-versus-old-contact bytes, source/catalog drift, au
 
 ## Deployment remains rejected
 
-No native PHP hook, asset allowlist change, page creation, privacy translation or live renderer is installed or produced. The form's disabled preview fieldset remains intact. The signed wire, stored option values, canonical intake path, recipient/transport, receipt/dedup ownership, eligibility/QA and consent logic stay outside the text edits; no new PHP/CSP behavior is claimed. The separate consent panel still needs an explicit language binding, and current URL validators require actual fixed query-free privacy destinations.
+`offplan-locale.php` provides a review-only PHP selector for the existing registered off-plan page. It requires the protected renderer's validated page binding before it reads the exact request target. Its output is a fixed locale, with English as the default. The isolated PHP cases check this boundary with no WordPress bootstrap or network access. Run them with `php offplan-locale.test.php` from this directory.
+
+Native renderer wiring, asset allowlist changes, page creation and privacy translations remain open. The form's disabled preview fieldset remains intact. The signed wire, stored option values, canonical intake path, recipient/transport, receipt/dedup ownership, eligibility/QA and consent logic stay outside the text edits. The separate consent panel still needs an explicit language binding, and current URL validators require actual fixed query-free privacy destinations.
 
 Actual native page/locale/asset/privacy/document-language integration, served-byte and cache verification, competent copy/staff-language and human review, current native/genuine intake/consent/delivery/dedup acceptance and Taiwan applicability remain gates. The bounded candidate is not legal approval, inventory evidence, launch permission or provider acceptance. Root owns Source integration and any later live action.
