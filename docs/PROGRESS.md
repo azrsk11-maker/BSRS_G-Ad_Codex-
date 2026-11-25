@@ -1,3 +1,7 @@
+## Off-plan localization package — 25 November 2026
+
+Built and verified 69 offline landing-page previews from 22 source-bound language packs, with English first in all 35 markets. The review CSV covers all 24 source intents per variant and contains 3,266 exact and phrase placements after consolidating duplicate literals. The catalogue retains all 62 previous localized keyword candidates. Bangladesh and Pakistan are represented as geographic exclusions. See the [package and release status](../tools/offplan-lead-first/global-localization/README.md).
+
 Owner language decision,24November: the owner will arrange German/French coverage. The answer is recorded; coverage is not yet confirmed and both markets remainPaused. No new budget redistribution or partial release is inferred; the five configured pools still totalAED2,500average/day.
 
 ## Current off-plan readiness - 24 November 2026, 10:58 UTC

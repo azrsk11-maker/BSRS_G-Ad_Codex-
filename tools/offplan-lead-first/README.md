@@ -1,5 +1,10 @@
 # Off-plan lead-first country package
 
+## Expanded market localization — 25 November 2026
+
+The [35-market package](global-localization/README.md) adds English defaults and local-language reviews without revising the dated five-market campaign records below. Generate the preview index and review CSVs using that package.
+
+
 Owner scope: [issue 14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14), 21 November 2026, extended by the owner on24November to include India. Target 345 new enquiries/day; **AED2,500 aggregate average/day before VAT** across UAE, Germany, France, India and Taiwan. No lead-volume or cost forecast is invented. Russia geography is excluded under current Google restrictions.
 
 The operator's initial test allocation was applied once on24November: UAE1,000 / Germany350 / France300 / India500 / Taiwan350. It is not observed market economics. Current four-country readback verifies Maximize Clicks/CPC20 and Presence saved/reopened, Search Partners/Display/AI Max OFF; the UAE CPC20 baseline is earlier evidence. Daily10:00-19:00 Dubai schedule readback remains pending. No budget may be multiplied by country or increased to meet the target without further authorization.

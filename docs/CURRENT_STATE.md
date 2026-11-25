@@ -1,3 +1,9 @@
+## Off-plan localization for 35 markets — 25 November 2026
+
+The owner approved English as the default in every market alongside the agreed local languages. The catalogue builds 69 landing-page previews, including 35 English defaults, and keyword drafts for 24 source intents per variant. Bangladesh and Pakistan are geographic exclusions in the review plan. The five recorded paused budgets total AED2,500 average per day. Read the [localization package](../tools/offplan-lead-first/global-localization/README.md) for review files, language support and remaining gates.
+
+The pages and keyword drafts await publishing and campaign integration. German and French response coverage is being arranged. Swahili, Nepali and Sinhala are website review variants because Google does not list them as supported ad languages. The 24 November WordPress, measurement and campaign readbacks below are dated evidence.
+
 Owner language decision,24November: the owner will arrange German/French coverage. The answer is recorded; coverage is not yet confirmed and both markets remainPaused. No new budget redistribution or partial release is inferred; the five configured pools still totalAED2,500average/day.
 
 ## Current off-plan readiness - 24 November 2026, 10:58 UTC

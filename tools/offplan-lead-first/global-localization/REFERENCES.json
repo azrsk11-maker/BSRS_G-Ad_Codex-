@@ -1,0 +1,403 @@
+{
+  "checked_date_dubai": "2026-11-25",
+  "geo_catalog": {
+    "source": "https://developers.google.com/google-ads/api/data/geotargets",
+    "version": "2026-10-06",
+    "retrieved_on_dubai": "2026-11-21",
+    "archive_sha256": "90172fb3c7c7bc9967f24d0ced519e6422041501d99550a8cbd3ed6d9f0f85ee",
+    "criteria": {
+      "AT": {
+        "id": 2040,
+        "name": "Austria",
+        "type": "Country",
+        "status": "Active"
+      },
+      "BH": {
+        "id": 2048,
+        "name": "Bahrain",
+        "type": "Country",
+        "status": "Active"
+      },
+      "BD": {
+        "id": 2050,
+        "name": "Bangladesh",
+        "type": "Country",
+        "status": "Active"
+      },
+      "BE": {
+        "id": 2056,
+        "name": "Belgium",
+        "type": "Country",
+        "status": "Active"
+      },
+      "CA": {
+        "id": 2124,
+        "name": "Canada",
+        "type": "Country",
+        "status": "Active"
+      },
+      "LK": {
+        "id": 2144,
+        "name": "Sri Lanka",
+        "type": "Country",
+        "status": "Active"
+      },
+      "CN": {
+        "id": 2156,
+        "name": "China",
+        "type": "Country",
+        "status": "Active"
+      },
+      "TW": {
+        "id": 2158,
+        "name": "Taiwan",
+        "type": "Region",
+        "status": "Active"
+      },
+      "FR": {
+        "id": 2250,
+        "name": "France",
+        "type": "Country",
+        "status": "Active"
+      },
+      "DE": {
+        "id": 2276,
+        "name": "Germany",
+        "type": "Country",
+        "status": "Active"
+      },
+      "HK": {
+        "id": 2344,
+        "name": "Hong Kong",
+        "type": "Region",
+        "status": "Active"
+      },
+      "IN": {
+        "id": 2356,
+        "name": "India",
+        "type": "Country",
+        "status": "Active"
+      },
+      "ID": {
+        "id": 2360,
+        "name": "Indonesia",
+        "type": "Country",
+        "status": "Active"
+      },
+      "IE": {
+        "id": 2372,
+        "name": "Ireland",
+        "type": "Country",
+        "status": "Active"
+      },
+      "JP": {
+        "id": 2392,
+        "name": "Japan",
+        "type": "Country",
+        "status": "Active"
+      },
+      "KE": {
+        "id": 2404,
+        "name": "Kenya",
+        "type": "Country",
+        "status": "Active"
+      },
+      "KR": {
+        "id": 2410,
+        "name": "South Korea",
+        "type": "Country",
+        "status": "Active"
+      },
+      "KW": {
+        "id": 2414,
+        "name": "Kuwait",
+        "type": "Country",
+        "status": "Active"
+      },
+      "MY": {
+        "id": 2458,
+        "name": "Malaysia",
+        "type": "Country",
+        "status": "Active"
+      },
+      "OM": {
+        "id": 2512,
+        "name": "Oman",
+        "type": "Country",
+        "status": "Active"
+      },
+      "NP": {
+        "id": 2524,
+        "name": "Nepal",
+        "type": "Country",
+        "status": "Active"
+      },
+      "NL": {
+        "id": 2528,
+        "name": "Netherlands",
+        "type": "Country",
+        "status": "Active"
+      },
+      "NG": {
+        "id": 2566,
+        "name": "Nigeria",
+        "type": "Country",
+        "status": "Active"
+      },
+      "PK": {
+        "id": 2586,
+        "name": "Pakistan",
+        "type": "Country",
+        "status": "Active"
+      },
+      "PH": {
+        "id": 2608,
+        "name": "Philippines",
+        "type": "Country",
+        "status": "Active"
+      },
+      "QA": {
+        "id": 2634,
+        "name": "Qatar",
+        "type": "Country",
+        "status": "Active"
+      },
+      "SA": {
+        "id": 2682,
+        "name": "Saudi Arabia",
+        "type": "Country",
+        "status": "Active"
+      },
+      "SG": {
+        "id": 2702,
+        "name": "Singapore",
+        "type": "Country",
+        "status": "Active"
+      },
+      "VN": {
+        "id": 2704,
+        "name": "Vietnam",
+        "type": "Country",
+        "status": "Active"
+      },
+      "ZA": {
+        "id": 2710,
+        "name": "South Africa",
+        "type": "Country",
+        "status": "Active"
+      },
+      "CH": {
+        "id": 2756,
+        "name": "Switzerland",
+        "type": "Country",
+        "status": "Active"
+      },
+      "TH": {
+        "id": 2764,
+        "name": "Thailand",
+        "type": "Country",
+        "status": "Active"
+      },
+      "AE": {
+        "id": 2784,
+        "name": "United Arab Emirates",
+        "type": "Country",
+        "status": "Active"
+      },
+      "TR": {
+        "id": 2792,
+        "name": "Turkiye",
+        "type": "Country",
+        "status": "Active"
+      },
+      "EG": {
+        "id": 2818,
+        "name": "Egypt",
+        "type": "Country",
+        "status": "Active"
+      },
+      "GB": {
+        "id": 2826,
+        "name": "United Kingdom",
+        "type": "Country",
+        "status": "Active"
+      },
+      "US": {
+        "id": 2840,
+        "name": "United States",
+        "type": "Country",
+        "status": "Active"
+      }
+    }
+  },
+  "language_catalog": {
+    "source": "https://developers.google.com/google-ads/api/data/codes-formats#languages",
+    "supported_ad_languages": "https://support.google.com/google-ads/answer/6333734?hl=en",
+    "criteria": {
+      "en": {
+        "google_code": "en",
+        "criterion_reference": 1000
+      },
+      "ar": {
+        "google_code": "ar",
+        "criterion_reference": 1019
+      },
+      "de": {
+        "google_code": "de",
+        "criterion_reference": 1001
+      },
+      "fr": {
+        "google_code": "fr",
+        "criterion_reference": 1002
+      },
+      "nl": {
+        "google_code": "nl",
+        "criterion_reference": 1010
+      },
+      "it": {
+        "google_code": "it",
+        "criterion_reference": 1004
+      },
+      "tr": {
+        "google_code": "tr",
+        "criterion_reference": 1037
+      },
+      "id": {
+        "google_code": "id",
+        "criterion_reference": 1025
+      },
+      "zh-Hans": {
+        "google_code": "zh_CN",
+        "criterion_reference": 1017
+      },
+      "zh-Hant-HK": {
+        "google_code": "zh_TW",
+        "criterion_reference": 1018
+      },
+      "zh-Hant-TW": {
+        "google_code": "zh_TW",
+        "criterion_reference": 1018
+      },
+      "hi": {
+        "google_code": "hi",
+        "criterion_reference": 1023
+      },
+      "ja": {
+        "google_code": "ja",
+        "criterion_reference": 1005
+      },
+      "ko": {
+        "google_code": "ko",
+        "criterion_reference": 1012
+      },
+      "ms": {
+        "google_code": "ms",
+        "criterion_reference": 1102
+      },
+      "fil": {
+        "google_code": "tl",
+        "criterion_reference": 1042
+      },
+      "ta": {
+        "google_code": "ta",
+        "criterion_reference": 1130
+      },
+      "th": {
+        "google_code": "th",
+        "criterion_reference": 1044
+      },
+      "vi": {
+        "google_code": "vi",
+        "criterion_reference": 1040
+      },
+      "ne": {
+        "google_code": null,
+        "criterion_reference": null
+      },
+      "si": {
+        "google_code": null,
+        "criterion_reference": null
+      },
+      "sw": {
+        "google_code": null,
+        "criterion_reference": null
+      }
+    },
+    "search_language_matching": "https://developers.google.com/google-ads/api/docs/targeting/criteria#language_targeting_criteria",
+    "notes": "Catalog IDs are reference data. Current Search API documentation says matching uses creative and landing-page language with user preferences. English default is defined in the review package as the primary content variant. Language controls and serving must be verified in the actual account."
+  },
+  "keyword_constraints": "https://developers.google.com/google-ads/api/docs/targeting/criteria#keyword_criteria_constraints_and_valid_characters",
+  "housing_targeting_us_ca": "https://support.google.com/adspolicy/answer/16701755?hl=en",
+  "eea_tracking": "https://www.google.com/about/company/user-consent-policy-help/",
+  "existing_uae_keywords": {
+    "path": "docs/audit/KEYWORD_URL_READBACK_2026-11-07.json",
+    "sha256": "e9ee1f72a6f5d47603732803a331c158c7924d17e8d2517eb975380b71ab0d4a",
+    "observed_date": "2026-11-07",
+    "records": [
+      {
+        "intent_id": "uae-existing.01",
+        "english": "dubai new launch property",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.02",
+        "english": "off plan villas dubai",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.03",
+        "english": "off plan property dubai",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.04",
+        "english": "off plan apartments dubai",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.05",
+        "english": "dubai off plan homes",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.06",
+        "english": "buy off plan apartment dubai",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.07",
+        "english": "off plan homes for sale dubai",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      },
+      {
+        "intent_id": "uae-existing.08",
+        "english": "buy off plan property dubai",
+        "saved_match_types": [
+          "EXACT",
+          "PHRASE"
+        ]
+      }
+    ]
+  }
+}
