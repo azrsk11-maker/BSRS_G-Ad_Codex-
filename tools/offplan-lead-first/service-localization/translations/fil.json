@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Bumili ng resale na property sa Dubai",
+    "rent": "Maghanap ng mauupahang property sa Dubai",
+    "sell": "Ibenta ang iyong property sa Dubai",
+    "let": "Ipaupa ang iyong property sa Dubai",
+    "hub": "Mga tanong tungkol sa property sa Dubai"
+  },
+  "page_intros": {
+    "resale": "Sabihin sa amin kung anong mga lugar at uri ng property sa Dubai ang tinitingnan mo, magkano ang kabuuang badyet mo at kailan mo balak bumili. Tiyakin ang availability at mga detalye ng pagbili bago magpasya.",
+    "rent": "Ibahagi ang gusto mong mga lugar at uri ng property, ang taunang badyet mo sa upa at kung kailan mo kailangang lumipat. Tiyakin ang availability at mga kondisyon ng pag-upa bago sumang-ayon.",
+    "sell": "Sabihin sa amin ang tungkol sa iyong property, kung awtorisado kang kumatawan sa may-ari at kung kailan mo gustong magbenta. Susuriin ng team ang mga detalye kasama mo.",
+    "let": "Sabihin sa amin ang tungkol sa iyong property, kung awtorisado kang kumatawan sa may-ari at kung kailan ito puwedeng paupahan. Susuriin ng team ang plano mo sa pagpapaupa.",
+    "hub": "Piliin ang uri ng tanong tungkol sa property na tumutugma sa mga plano mo."
+  },
+  "extra_form": {
+    "ready": "Kailangang sagutan ang mga field na may *.",
+    "property_area": "Komunidad / lugar ng property *",
+    "annual_budget": "Taunang badyet sa upa (AED) *",
+    "annual_budget_help": "Ilagay ang halaga para sa isang taon. Walang minimum na badyet sa form.",
+    "rent_timing": "Kailan mo kailangang lumipat? *",
+    "rent_now": "Agad / lilipat na ngayon",
+    "month_30": "Sa loob ng 30 araw",
+    "rent_later": "Sa ibang petsa / tumitingin pa",
+    "sale_timing": "Kailan mo gustong magbenta",
+    "sale_now": "Sa lalong madaling panahon",
+    "sale_90": "Sa loob ng 3 buwan",
+    "sale_later": "Sa ibang petsa / pinag-uusapan pa ang mga opsyon",
+    "let_timing": "Kailan inaasahang puwede nang paupahan",
+    "let_now": "Bakante / puwede nang pag-usapan",
+    "let_30": "Inaasahang puwede sa loob ng 30 araw",
+    "let_later": "Sa ibang petsa / pag-uusapan pa ang petsa",
+    "authority": "Awtorisasyon mo *",
+    "owner": "Ako ang may-ari ng property",
+    "representative": "Awtorisado ako ng may-ari ng property",
+    "property_details": "Mga detalye ng property *",
+    "letting_details": "Mga detalye ng property at pagpapaupa *",
+    "resale_other": "Iba pang kailangan sa property",
+    "rent_other": "Iba pang kailangan sa pag-upa",
+    "property_hint": "Gusali o komunidad, bilang ng mga silid-tulugan, tinatayang laki at kung may nakatira."
+  },
+  "keyword_intents": {
+    "resale": [
+      "bumili ng resale apartment sa dubai",
+      "bumili ng resale property sa dubai",
+      "resale na bahay na ibinebenta sa dubai",
+      "resale na property sa dubai",
+      "property sa secondary market ng dubai",
+      "mga resale apartment sa dubai",
+      "mga resale na bahay sa dubai",
+      "resale na property na ibinebenta sa dubai",
+      "mga resale na villa sa dubai"
+    ],
+    "rent": [
+      "mga mauupahang apartment sa dubai",
+      "mga bahay na paupahan sa dubai",
+      "mga mauupahang property sa dubai",
+      "property na paupahan sa dubai",
+      "mauupahang apartment na malilipatan agad sa dubai",
+      "umupa ng apartment sa dubai",
+      "umupa ng villa sa dubai",
+      "mga villa na paupahan sa dubai"
+    ],
+    "sell": [
+      "ahente sa pagbebenta ng property sa dubai",
+      "ilista ang property na ibebenta sa dubai",
+      "ibenta ang apartment ko sa dubai",
+      "ibenta ang bahay ko sa dubai",
+      "ibenta ang property ko sa dubai",
+      "ibenta ang villa ko sa dubai"
+    ],
+    "let": [
+      "magpaupa ng property ko sa dubai",
+      "ahente sa pagpapaupa ng property sa dubai",
+      "ilista ang property na ipapaupa sa dubai",
+      "ipaupa ang apartment ko sa dubai",
+      "ipaupa ang property ko sa dubai",
+      "ipaupa ang villa ko sa dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

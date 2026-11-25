@@ -49,3 +49,8 @@ jobs:
           python3 -B tools/offplan-lead-first/global-localization/compile_review.py --out "$RUNNER_TEMP/bsre-global-market-review"
           python3 -B tools/offplan-lead-first/global-localization/compile_review.py --out "$RUNNER_TEMP/bsre-global-market-review" --verify
           python3 -B tools/offplan-lead-first/global-localization/check_review.py "$RUNNER_TEMP/bsre-global-market-review"
+      - name: Verify shared design, enquiry field mappings and launch separation
+        run: |
+          python3 -B tools/offplan-lead-first/service-localization/compile_review.py --out "$RUNNER_TEMP/bsre-service-market-review"
+          python3 -B tools/offplan-lead-first/service-localization/compile_review.py --out "$RUNNER_TEMP/bsre-service-market-review" --verify
+          python3 -B tools/offplan-lead-first/service-localization/check_review.py "$RUNNER_TEMP/bsre-service-market-review"

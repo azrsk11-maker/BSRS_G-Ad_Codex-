@@ -2,6 +2,8 @@
 
 ## Expanded market localization — 25 November 2026
 
+The [shared service review](service-localization/README.md) adds resale, rental, seller, landlord and hub drafts on the same enquiry design. It includes mandatory English keyword coverage and selected regional languages for every market and service. Only off-plan is in launch scope.
+
 The [35-market package](global-localization/README.md) adds English defaults and local-language reviews without revising the dated five-market campaign records below. Generate the preview index and review CSVs using that package.
 
 

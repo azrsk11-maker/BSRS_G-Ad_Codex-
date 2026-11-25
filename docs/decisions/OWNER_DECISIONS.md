@@ -227,3 +227,7 @@ Owner answer to the scoped language question: **"I will arrange language coverag
 ## Global off-plan languages and geographic exclusions — 25 November 2026
 
 The owner identified 35 off-plan target markets, excluded Bangladesh and Pakistan, and approved the recommended language mix with English as the default in each campaign. Review the complete [market and locale list](../../tools/offplan-lead-first/global-localization/MARKETS.json). The English default is the primary content variant for each market. Native campaign acceptance and actual Search language matching remain to be checked. The five paused budget pools still total AED2,500 average per day. A split for the additional markets was not specified. This decision authorizes localization drafts and leaves the prior activation conditions in place.
+
+## Shared design, all service drafts and off-plan-only launch — 25 November 2026
+
+The owner requested consistent layout and field mapping for all existing property enquiries, including off-plan and secondary market. The [review catalogue](../../tools/offplan-lead-first/service-localization/README.md) covers the five registered service funnels and the brand hub. English is mandatory and the primary content in every market and service, alongside the approved regional language keywords. Release scope remains off-plan only, after the existing verification gates. The other services and brand are prepared as drafts for review. The 35-market scope and Bangladesh and Pakistan exclusions remain as recorded above.

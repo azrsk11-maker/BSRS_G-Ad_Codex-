@@ -163,6 +163,44 @@ def doc(title, locale, direction, body):
     ).encode("utf-8")
 
 
+def language_navigation(market, locale):
+    links = []
+    for variant in market["locales"]:
+        label = LANGUAGE_NAMES[language_of(variant)]
+        current = ' aria-current="page"' if variant == locale else ""
+        links.append(f'<a href="{variant}.html" lang="{variant}" hreflang="{variant}"{current}>{esc(label)}</a>')
+    return "".join(links)
+
+
+def render_enquiry_shell(market, locale, direction, strings, copy, extras="", nav_extra=""):
+    """Render the same language bar, hero, contact actions, form and consent region for every enquiry."""
+    t = lambda key: esc(strings[key])
+    form_notice = f'<p>{t("page.form_notice")}</p>' if strings["page.form_notice"] else ""
+    preferences = (
+        f'<details class="preferences"><summary>{t("consent.toggle")}</summary>'
+        f'<p>{t("consent.intro")}</p>'
+        + "".join(
+            f'<label><input type="checkbox" disabled> {t(f"consent.{purpose}")} '
+            f'<span>{t(f"consent.{purpose}_description")}</span></label>' for purpose in ("analytics", "ads")
+        )
+        + f'<p>{t("consent.separation")}</p>'
+        f'<p>{t("consent.duration")}</p><p><a href="{LIVE_PRIVACY}">{t("consent.privacy")}</a></p>'
+        f'<button disabled>{t("consent.reject")}</button> <button disabled>{t("consent.save")}</button></details>'
+    )
+    body = (
+        f'<header><strong>Black Swan Real Estate</strong><nav>{language_navigation(market, locale)}{nav_extra}</nav></header>'
+        f'<main><p class="note">{t("page.preview_notice")}</p><p>{t("page.eyebrow")}</p>'
+        f'<h1>{t("page.title")}</h1><p>{t("page.intro")}</p><div class="actions">'
+        f'<a href="{copy["cta_url"]}">{t("page.contact_cta")}</a>'
+        f'<a href="{CALL}">{t("page.call_cta")}</a><a href="{WHATSAPP}">{t("page.whatsapp_cta")}</a></div>'
+        f'{extras}<h2>{t("page.details_title")}</h2><ul>{copy["bullets"]}</ul>{copy.get("details", "")}'
+        f'{form_notice}{copy["form"]}'
+        f'<p>{t("page.privacy_notice")} <a href="{LIVE_PRIVACY}">{t("template.privacy_link")}</a></p>'
+        f'{preferences}</main>'
+    )
+    return doc(strings["page.title"], locale, direction, body)
+
+
 def render_page(market, locale, pack, fixture, form_compiler):
     strings = pack["strings"].copy()
     if pack["language_code"] == "en":
@@ -170,11 +208,6 @@ def render_page(market, locale, pack, fixture, form_compiler):
         strings["page.form_notice"] = "The link above opens the live enquiry form. The form below is a disabled preview."
         strings["page.privacy_notice"] = "Read the live privacy notice for the enquiry form."
     t = lambda key: esc(strings[key])
-    links = []
-    for variant in market["locales"]:
-        label = LANGUAGE_NAMES[language_of(variant)]
-        current = ' aria-current="page"' if variant == locale else ""
-        links.append(f'<a href="{variant}.html" lang="{variant}" hreflang="{variant}"{current}>{esc(label)}</a>')
     raw_form = form_compiler.localize_form(fixture, strings, locale)
     # Keep the actual labels and control constraints, but present the draft as static markup.
     review_form, count = re.subn(r'<form\b[^>]*>', '<div aria-labelledby="form-title">', raw_form)
@@ -186,30 +219,10 @@ def render_page(market, locale, pack, fixture, form_compiler):
         f'<details><summary>{t(f"page.faq_{topic}_q")}</summary><p>{t(f"page.faq_{topic}_a")}</p></details>'
         for topic in ("project", "price", "qualification")
     )
-    preference_options = "".join(
-        f'<label><input type="checkbox" disabled> {t(f"consent.{purpose}")} '
-        f'<span>{t(f"consent.{purpose}_description")}</span></label>' for purpose in ("analytics", "ads")
-    )
-    preferences = (
-        f'<details class="preferences"><summary>{t("consent.toggle")}</summary>'
-        f'<p>{t("consent.intro")}</p>{preference_options}<p>{t("consent.separation")}</p>'
-        f'<p>{t("consent.duration")}</p><p><a href="{LIVE_PRIVACY}">{t("consent.privacy")}</a></p>'
-        f'<button disabled>{t("consent.reject")}</button> <button disabled>{t("consent.save")}</button></details>'
-    )
-    body = (
-        f'<header><strong>Black Swan Real Estate</strong><nav>{"".join(links)}</nav></header>'
-        f'<main><p class="note">{t("page.preview_notice")}</p><p>{t("page.eyebrow")}</p>'
-        f'<h1>{t("page.title")}</h1><p>{t("page.intro")}</p><div class="actions">'
-        f'<a href="{LIVE_ENGLISH_FORM}">{t("page.contact_cta")}</a>'
-        f'<a href="{CALL}">{t("page.call_cta")}</a><a href="{WHATSAPP}">{t("page.whatsapp_cta")}</a></div>'
-        f'<h2>{t("page.plans_title")}</h2><p>{t("page.plans_body")}</p>'
-        f'<h2>{t("page.details_title")}</h2><ul>{bullets}</ul>'
-        f'<h2>{t("page.steps_title")}</h2><ol>{steps}</ol>{faqs}'
-        f'<p>{t("page.form_notice")}</p>{review_form}'
-        f'<p>{t("page.privacy_notice")} <a href="{LIVE_PRIVACY}">{t("template.privacy_link")}</a></p>'
-        f'{preferences}</main>'
-    )
-    return doc(strings["page.title"], locale, pack["direction"], body)
+    copy = {"cta_url": LIVE_ENGLISH_FORM, "bullets": bullets, "form": review_form,
+            "details": f'<h2>{t("page.steps_title")}</h2><ol>{steps}</ol>{faqs}'}
+    extras = f'<h2>{t("page.plans_title")}</h2><p>{t("page.plans_body")}</p>'
+    return render_enquiry_shell(market, locale, pack["direction"], strings, copy, extras)
 
 
 def normalize_keyword(value):

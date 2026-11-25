@@ -1,3 +1,7 @@
+## Shared property enquiry design — 25 November 2026
+
+The owner requested all existing service landing pages in the same design and required English by default alongside regional keywords in every market and campaign. The [service review package](../tools/offplan-lead-first/service-localization/README.md) includes 414 previews and 7,800 exact and phrase keyword placements across 35 markets. All 345 form previews match their existing service field and option contracts. Only off-plan is in launch scope. The resale, rental, seller, landlord and brand work is prepared for review.
+
 ## Off-plan localization package — 25 November 2026
 
 Built and verified 69 offline landing-page previews from 22 source-bound language packs, with English first in all 35 markets. The review CSV covers all 24 source intents per variant and contains 3,266 exact and phrase placements after consolidating duplicate literals. The catalogue retains all 62 previous localized keyword candidates. Bangladesh and Pakistan are represented as geographic exclusions. See the [package and release status](../tools/offplan-lead-first/global-localization/README.md).

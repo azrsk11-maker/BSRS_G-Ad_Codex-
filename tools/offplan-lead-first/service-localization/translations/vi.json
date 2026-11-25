@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Mua bất động sản chuyển nhượng tại Dubai",
+    "rent": "Tìm bất động sản cho thuê tại Dubai",
+    "sell": "Bán bất động sản của bạn tại Dubai",
+    "let": "Cho thuê bất động sản của bạn tại Dubai",
+    "hub": "Yêu cầu tư vấn bất động sản Dubai"
+  },
+  "page_intros": {
+    "resale": "Hãy cho chúng tôi biết khu vực và loại bất động sản bạn đang cân nhắc tại Dubai, tổng ngân sách và thời điểm dự định mua. Hãy xác nhận tình trạng còn bán và thông tin giao dịch trước khi quyết định.",
+    "rent": "Hãy cho chúng tôi biết khu vực và loại bất động sản bạn muốn thuê, ngân sách thuê hằng năm và thời điểm cần chuyển vào. Hãy xác nhận tình trạng còn cho thuê và các điều khoản thuê trước khi cam kết.",
+    "sell": "Hãy cho chúng tôi biết thông tin về bất động sản, thẩm quyền đại diện chủ sở hữu của bạn và thời điểm bạn muốn bán. Đội ngũ của chúng tôi sẽ cùng bạn xem xét thông tin chi tiết.",
+    "let": "Hãy cho chúng tôi biết thông tin về bất động sản, thẩm quyền đại diện chủ sở hữu của bạn và thời điểm có thể cho thuê. Đội ngũ của chúng tôi sẽ xem xét kế hoạch cho thuê của bạn.",
+    "hub": "Chọn loại yêu cầu tư vấn bất động sản phù hợp với kế hoạch của bạn."
+  },
+  "extra_form": {
+    "ready": "Các trường có dấu * là bắt buộc.",
+    "property_area": "Khu dân cư / khu vực của bất động sản *",
+    "annual_budget": "Ngân sách thuê hằng năm (AED) *",
+    "annual_budget_help": "Nhập số tiền thuê cho một năm. Biểu mẫu không quy định ngân sách tối thiểu.",
+    "rent_timing": "Bạn cần chuyển vào khi nào? *",
+    "rent_now": "Ngay / cần chuyển vào ngay",
+    "month_30": "Trong vòng 30 ngày",
+    "rent_later": "Sau này / đang tìm hiểu",
+    "sale_timing": "Thời điểm muốn bán",
+    "sale_now": "Sớm nhất có thể",
+    "sale_90": "Trong vòng 3 tháng",
+    "sale_later": "Sau này / đang thảo luận các phương án",
+    "let_timing": "Thời điểm dự kiến có thể cho thuê",
+    "let_now": "Đang trống / có thể trao đổi ngay",
+    "let_30": "Dự kiến trong vòng 30 ngày",
+    "let_later": "Sau này / sẽ trao đổi về ngày cụ thể",
+    "authority": "Thẩm quyền của bạn *",
+    "owner": "Tôi là chủ sở hữu bất động sản",
+    "representative": "Tôi được chủ sở hữu bất động sản ủy quyền",
+    "property_details": "Thông tin chi tiết về bất động sản *",
+    "letting_details": "Thông tin chi tiết về bất động sản và việc cho thuê *",
+    "resale_other": "Yêu cầu khác về bất động sản",
+    "rent_other": "Yêu cầu thuê khác",
+    "property_hint": "Tòa nhà hoặc khu dân cư, số phòng ngủ, diện tích ước tính và tình trạng đang có người ở hay để trống."
+  },
+  "keyword_intents": {
+    "resale": [
+      "mua lại căn hộ dubai",
+      "mua bất động sản chuyển nhượng dubai",
+      "nhà chuyển nhượng đang bán dubai",
+      "bất động sản chuyển nhượng dubai",
+      "bất động sản thứ cấp dubai",
+      "căn hộ chuyển nhượng dubai",
+      "nhà chuyển nhượng dubai",
+      "bất động sản chuyển nhượng đang bán dubai",
+      "biệt thự chuyển nhượng dubai"
+    ],
+    "rent": [
+      "căn hộ cho thuê dubai",
+      "nhà cho thuê dubai",
+      "bất động sản cho thuê tại dubai",
+      "bất động sản cho thuê dubai",
+      "căn hộ cho thuê vào ở ngay dubai",
+      "thuê căn hộ dubai",
+      "thuê biệt thự dubai",
+      "biệt thự cho thuê dubai"
+    ],
+    "sell": [
+      "môi giới bán bất động sản dubai",
+      "đăng bán bất động sản dubai",
+      "bán căn hộ của tôi tại dubai",
+      "bán nhà của tôi tại dubai",
+      "bán bất động sản của tôi tại dubai",
+      "bán biệt thự của tôi tại dubai"
+    ],
+    "let": [
+      "cho thuê bất động sản của tôi ở dubai",
+      "môi giới cho thuê bất động sản dubai",
+      "đăng cho thuê bất động sản dubai",
+      "cho thuê căn hộ của tôi tại dubai",
+      "cho thuê bất động sản của tôi tại dubai",
+      "cho thuê biệt thự của tôi tại dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}
