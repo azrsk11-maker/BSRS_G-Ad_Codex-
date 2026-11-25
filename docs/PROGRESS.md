@@ -1,3 +1,11 @@
+## Native off-plan release preparation — 25 November 2026
+
+WordPress access was restored. The English off-plan form is already published. One India English page was saved as a native draft, and its preview displayed the copy and the canonical enquiry link. The draft still needs protected form binding before publication as a campaign page.
+
+Private offline review combined locale rendering, the India alias and off-plan-only conversion scope. Exact candidate and rollback byte reconciliation passed. Twenty PHP grammar checks, three changed JavaScript syntax checks and six focused India client/measurement tests passed. Current host, native runtime, live lead routing and Google conversion acceptance remain open. The current live tracking switches remain off. No test enquiry or Google conversion was sent.
+
+The fresh campaign table showed 21 paused, three removed and zero enabled. The five prepared average daily budgets still total AED2,500. No new page was published and no Ads settings changed.
+
 ## Off-plan publication preflight — 25 November 2026
 
 Chrome reconnected to account 573-038-4686 and confirmed that no ads were running. The public English form returned HTTP 200. All 13 fields and 15 select options matched the retained reference, and the call and WhatsApp links matched the approved number. The WordPress admin session had expired. Chrome was left on the sign-in prompt for the owner.
