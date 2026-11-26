@@ -1,3 +1,9 @@
+## Live delivery test and native review — 26 November 2026
+
+Ran the single owner-approved labelled TEST through the canonical first-party intake. The server returned `measurement_eligible:false`, and no conversion code ran. The exact accepted lead and event identifiers matched one private Sheet row. Its scheduled outbox marked the notification sent on the first attempt at 19:05 Dubai. The exact Marketing mailbox searches found no matching message as of 19:11 Dubai. Email receipt remains open. No resend occurred.
+
+The private release candidate now has 49 forward members and 30 retained rollback members. Real PHP CLI lint and fixture execution passed, including guarded locale sources, the India page binding, six renderer cases with WordPress doubles and the scoped measurement endpoint. Two exact-composition client checks passed. The website host, real browser and GTM acceptance remain open. No production files or pages were published and no campaigns were enabled.
+
 ## Native off-plan release preparation — 25 November 2026
 
 WordPress access was restored. The English off-plan form is already published. One India English page was saved as a native draft, and its preview displayed the copy and the canonical enquiry link. The draft still needs protected form binding before publication as a campaign page.

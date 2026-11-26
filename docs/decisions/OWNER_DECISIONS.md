@@ -1,5 +1,9 @@
 # Owner decisions
 
+## One live delivery test without measurement — 26 November 2026
+
+The owner approved a single clearly labelled TEST off-plan enquiry to reconcile the Lead Sheet and Marketing email. The test must send no conversion. The existing release instruction still limits activation to verified off-plan campaigns in account 573-038-4686 at AED2,500 aggregate average per day. All other campaigns remain paused or removed.
+
 ## Off-plan publication and conditional launch — 25 November 2026
 
 The owner renewed approval to publish off-plan pages on the existing Real Estate website and launch eligible off-plan campaigns in account 573-038-4686 after verifying the forms, lead delivery and conversion tracking. The five prepared budgets share AED2,500 average per day. All other campaigns remain paused or removed. The owner asked to retry Chrome. Publication still uses the native shared form and verified intake route. The approval does not supply new business evidence, staff coverage, an independent PR review or permission to change the release checks.
