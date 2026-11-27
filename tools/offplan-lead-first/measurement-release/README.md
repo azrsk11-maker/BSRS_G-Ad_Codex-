@@ -119,3 +119,13 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 The exact prototype was checked with two tabs using the same synthetic WordPress session. With the baseline, the second tab's frame stayed active through the first tab's withdrawal acknowledgement. With the new consent asset, the frame was gone at the 610 ms observation while the first-party POST still waited. The message only invalidates the sibling context and carries no choice or identifier. The sibling must reload the page or confirm its own choice before enabling measurement again. In the fixture, neither build attempted a lead POST or delivered a vendor request.
 
 Further review must resolve overlapping grant and withdrawal writes and delayed pending-state reads. The stored 180-day expiry is tied to a two-hour browser session and the prototype cannot restore the choice after session expiry. A browser without the peer signal falls back to the pending cookie and server lease checks. The test covers Chrome with the signal available. German notice approval, deployed cache and Hostinger checks, provider acceptance and other locales are separate release gates.
+
+## Ordered German consent and session renewal
+
+The `german-ordered-consent` profile is a four-file delta against the preceding 53-member private prototype. The route compares a signed, scoped expected revision under the existing InnoDB row lock before granting measurement. Withdrawals may proceed with a stale revision. Pending reads suspend measurement without writing preference state. Each tab clears only its own pending marker after acknowledgement. An acknowledged choice sets an opaque, signed, HttpOnly preference cookie that restores the choice when the temporary transport session renews. Both features use the existing schema and remain off by default.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/german-advertising-PRIVATE-REVIEW.zip /private/german-ordered-PRIVATE-REVIEW.zip --profile german-ordered-consent
+```
+
+Real local Chrome and WordPress confirmed the stale grant's HTTP 409, overlapping marker acknowledgements, and renewed session restoration of a grant and a refusal. A separate two-connection MariaDB fixture observed the exact waiting lock pair and verified preserved withdrawal history after a fresh grant. Focused browser-script checks cover the storage-event fallback and restored-page denial. The fixtures used synthetic records and did not submit an enquiry or transmit to Google. The inherited live and independent review gates still apply to this candidate.

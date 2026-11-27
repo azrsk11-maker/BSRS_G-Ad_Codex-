@@ -54,6 +54,22 @@ class PrivateReviewComposerTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "overlapping"):
             apply_edits(b"abcdef", edits)
 
+    def test_ordered_profile_checks_exact_modified_member_and_retains_count(self):
+        originals = {f"part-{n:02d}.js": f"// {n}\r\n".encode() for n in range(53)}
+        base = archive_bytes(originals)
+        member = "part-00.js"
+        modified = {**originals, member: b"// new\r\n"}
+        review = {
+            "scope": "OFFPLAN_GERMAN_ORDERED_CONSENT_REVIEW_ONLY", "base_archive_sha256": digest(base),
+            "base_member_count": 53, "candidate_member_count": 53,
+            "candidate_members": {name: digest(body) for name, body in modified.items()},
+            "changes": {member: {"before": digest(originals[member]), "edits": [{"offset": 3, "remove": 1, "lines": ["new"]}]}},
+        }
+        self.assertEqual(compose(base, review, "german-ordered-consent"), archive_bytes(modified))
+        review["changes"][member]["edits"][0]["offset"] = 0
+        with self.assertRaisesRegex(ValueError, "does not match the tested byte inventory"):
+            compose(base, review, "german-ordered-consent")
+
     def test_base_tamper_rejects_before_zip_parsing(self):
         with self.assertRaisesRegex(ValueError, "not the pinned"):
             compose(self.base + b"invalid", self.review)
