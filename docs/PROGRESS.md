@@ -1,3 +1,9 @@
+## Canonical UAE provider receipt reconciliation · 28 November 2026
+
+The offline checker separates exact WordPress, GTM and Google Ads configuration from the later reconciliation of a genuine paid click, signed enquiry receipt and single attributed Ads action. It rejects the recorded delivery TEST, replays, duplicate and alternate actions, and mismatched identifiers or timestamps. The existing private R5 records return HOLD. All 31 focused tests passed. [Provider evidence review](../tools/offplan-lead-first/measurement-release/README.md#canonical-uae-provider-evidence-review)
+
+This comes with no provider or deployment permission. Actual original provider observations and independent acceptance remain open.
+
 ## Integrated off-plan review branch - 28 November 2026
 
 This branch joins the canonical query validation, regional privacy drafts, Arabic and Hindi native intake, and route-preserving recovery work against the same base. The individual experiments and their evidence remain independently scoped. The branch prepares an exact review package. Production publication and Ads activation require the current hosted, privacy, market, operational and provider evidence and the separate release decision.
