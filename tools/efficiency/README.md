@@ -1,5 +1,16 @@
 # Efficiency audit — 7 November 2026
 
+## Date-specific keyword fixture trials — 28 November 2026
+
+Two owned Windows Python 3.12.14 trials at `c6425cc0569bd4daab9bcfe0a5aeccca1348f011` preserved discovery of 59 modules and all 792 original case IDs. Each trial rebuilt the preceding history at the tests' fixed review date, compared every stage's pinned saved documents, and supplied detached inputs through the original fixture hooks. Apprenticeship retained its original extension through the base-only hook. Each original class recorded its own ordered cases and verdict. The isolated bytecode directories stayed empty.
+
+| Fixed review date | Original modules | Passed cases | Owned process wall time |
+| --- | ---: | ---: | ---: |
+| 12 November, Apprenticeship through Animal Care | 6 | 76 | 209.230 s |
+| 13 November, Bank Channel through Pool and Sprinkler | 6 | 99 | 226.786 s |
+
+Both trials had zero skips. The latter reproduced complete corpus SHA-256 `1dd9cd9a93f5cb78695846be7cf0767864c8d5bb20e94ab4a731a71f07ba27ae`. Their observed serial times sum to 436.015 seconds before the remaining 617 cases. The 617 include 73 in four legacy negative-library modules that explicitly assert fresh reconstruction, and 544 in 43 other modules. Parallel full-suite timing and memory headroom need independent verification before introducing either group into the default scheduler.
+
 ## Current negative research composition — 28 November 2026
 
 The current composition check uses the verified valuation state and builds each of the following 14 stages once. Each original builder still checks its input, sources, chronology, retained prefix and protected queries. All four saved documents for each stage must match their pins before handing the generated state to the next builder. The saved indexes bind the complete input fingerprints. The standalone reference and its checks of caller-supplied state remain available. A changed source fingerprint selects the reference path.

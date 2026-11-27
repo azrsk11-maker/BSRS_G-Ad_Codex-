@@ -1,3 +1,7 @@
+## Keyword suite fixture trials — 28 November 2026
+
+Fresh date-specific history supported 175 original cases across twelve suites with zero skips. The 76-case group ran in 209.230 seconds and the 99-case group ran in 226.786 seconds. Their 436.015-second serial total is already above the 300-second aggregate gate. All 792 case identities remain discoverable. The default Foundation suite and actual multi-worker acceptance remain open. [Evidence scope and remaining cases](../tools/efficiency/README.md#date-specific-keyword-fixture-trials--28-november-2026)
+
 ## Negative research composition gate — 28 November 2026
 
 The existing 120-second Foundation composition check passed locally in 117.278 seconds. The new entry point builds each of the 14 reviewed stages once, compares all pinned stage documents before handoff, and retains the original verifier for changed source bytes or a separate checkout. The independent comparison matched the complete input fingerprint and final report for 14,000 research rows, 19,115 protections and zero computed conflicts. The full efficiency group passed 164 tests with three platform skips. Full Foundation, exclusion applicability and approval remain separate gates. [Method and measured headroom](../tools/efficiency/README.md#current-negative-research-composition--28-november-2026)
