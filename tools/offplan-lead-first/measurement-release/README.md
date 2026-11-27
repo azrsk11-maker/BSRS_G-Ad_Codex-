@@ -334,3 +334,15 @@ python -B tools/offplan-lead-first/measurement-release/check_gtm_publication.py 
 ```
 
 The checker matches the version ID, exact reviewed bootstrap and its one page-view trigger. The current empty version, the draft export and a version with changed content all hold. A match checks the saved content against the recorded live version. Verify the observation's source separately and collect delivery and attribution evidence independently.
+
+## Canonical UAE provider evidence review
+
+Use `check_provider_receipt.py` with privately held projections and SHA-256 pins supplied by the reviewer. The configuration projection binds the exact `0.2.24` r2 package and canonical WordPress page, the owned GTM live export and pinned original capture, and the approved Secondary Ads action. Configuration alone returns `HOLD`. The dated R5 report also returns `HOLD`.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/check_provider_receipt.py CONFIG CONFIG_SHA256 --gtm-export LIVE_EXPORT --gtm-observation LIVE_OBSERVATION --gtm-capture ORIGINAL_CAPTURE
+```
+
+For separately authorized review of a genuine event, add `--paid-receipt PAID --paid-sha256 PAID_SHA256 --excluded-test-capture ORIGINAL_DELIVERY_TEST_RECEIPT`. The [projection fields](check_provider_receipt.py) bind the exact UAE off-plan ad, a signed intake receipt and one attributed conversion on the approved native action. Use exact UTC timestamps and SHA-256 digests of the original case-sensitive click identifier and Ads transaction ID across the reviewed observations. Keep the original evidence private. The checker reads the pinned TEST receipt locally to exclude its transaction even if the paid projection mislabels it. Missing evidence or provenance, replay and a scope mismatch return `HOLD`.
+
+An evidence match returns the matched projection hashes. Verify live status, the feasibility of obtaining the necessary provider observations and source authenticity separately. Retain the independently verified originals and use only observations that actually correlate the click, receipt and provider event. Every result carries `launch_ready: false` and `activation_authorized: false`.
