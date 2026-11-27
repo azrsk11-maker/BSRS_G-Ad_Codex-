@@ -1,3 +1,9 @@
+## German capture consent evidence and release preflight — 27 November 2026
+
+The [capture lineage successor](../tools/offplan-lead-first/measurement-release/README.md#original-consent-receipt-on-a-german-capture) binds a new German capture to the actual consent receipt under InnoDB locks. The existing planner classified the submitted choice and withdrawal history as protected and recognized two overdue rows for an independent unsubmitted choice. A stale choice or missing history could not stage optional evidence. Same-body and changed-body behavior and country retry ownership passed on the exact 53-member setup. Production retention and advertising acceptance remain held.
+
+An eight-check private release preflight also reproduced the prior exact ordered-consent archive and bound its local receipts to the retained rollback, WordPress and paused Ads evidence. Its launch-readiness command returned six open gates. The previous single TEST was verified for delivery with measurement excluded. This audit used dated saved evidence.
+
 ## Ordered consent and session renewal — 27 November 2026
 
 The [ordered German consent review profile](../tools/offplan-lead-first/measurement-release/README.md#ordered-german-consent-and-session-renewal) reproduces the exact 53-member successor. The local browser fixture passed 24 Chrome and eight fixture checks for peer retirement, stale grant rejection, overlapping withdrawal acknowledgements and confirmed preferences across temporary session renewal. The separate native MariaDB fixture observed the stale transaction waiting on the withdrawal's row and verified rejection without history changes. Fifty-three package hashes matched the reviewed manifest. Three additional script checks verified fallback and page restoration behavior. Local fixtures sent no enquiries or Google events. Live Hostinger, provider attribution, approved disclosures and independent review remain open.

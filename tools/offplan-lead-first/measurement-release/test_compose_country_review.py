@@ -66,6 +66,10 @@ class PrivateReviewComposerTest(unittest.TestCase):
             "changes": {member: {"before": digest(originals[member]), "edits": [{"offset": 3, "remove": 1, "lines": ["new"]}]}},
         }
         self.assertEqual(compose(base, review, "german-ordered-consent"), archive_bytes(modified))
+        with self.assertRaisesRegex(ValueError, "not the pinned"):
+            compose(base, review, "german-capture-lineage")
+        lineage = {**review, "scope": "OFFPLAN_GERMAN_CAPTURE_LINEAGE_REVIEW_ONLY"}
+        self.assertEqual(compose(base, lineage, "german-capture-lineage"), archive_bytes(modified))
         review["changes"][member]["edits"][0]["offset"] = 0
         with self.assertRaisesRegex(ValueError, "does not match the tested byte inventory"):
             compose(base, review, "german-ordered-consent")

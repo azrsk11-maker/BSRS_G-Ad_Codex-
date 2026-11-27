@@ -129,3 +129,13 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 ```
 
 Real local Chrome and WordPress confirmed the stale grant's HTTP 409, overlapping marker acknowledgements, and renewed session restoration of a grant and a refusal. A separate two-connection MariaDB fixture observed the exact waiting lock pair and verified preserved withdrawal history after a fresh grant. Focused browser-script checks cover the storage-event fallback and restored-page denial. The fixtures used synthetic records and did not submit an enquiry or transmit to Google. The inherited live and independent review gates still apply to this candidate.
+
+## Original consent receipt on a German capture
+
+The `german-capture-lineage` profile preserves the original consent receipt on a new German capture. The store checks the current grant and original history under lock before recording optional evidence. The route still uses the immutable request ID and exact body hash for retry reconciliation. Its notice and route identify eligible German captures. Older staged retries can recover the accepted receipt through that alias. A previously stored opaque retry marker cannot grant measurement or attest original consent history.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/german-ordered-PRIVATE-REVIEW.zip /private/german-lineage-PRIVATE-REVIEW.zip --profile german-capture-lineage
+```
+
+The isolated InnoDB check passed actual staging, receipt linkage, old-choice and missing-history denial, same-body replay and cross-route rejection. The existing retention planner protected the submitted capture and its withdrawal history while identifying two overdue rows for a separate unsubmitted choice. The fixture used synthetic rows and a preview only. It supplies current storage compatibility for the candidate, with production retention and provider acceptance still subject to their release gates.
