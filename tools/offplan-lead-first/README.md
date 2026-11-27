@@ -82,3 +82,6 @@ Get-Content -LiteralPath $privatePair -Encoding utf8 | python -B tools/keyword-s
 ```
 
 The reviewer preserves word-internal marks and reports a hold for ambiguous unsegmented Han text. The output contains a local verdict and explicit provider and deployment status fields. The frozen matcher and corpus keep their existing identity. Verify applicability and exact scope separately. The eight existing UAE Buyers proposals still require review because their saved campaign scope reaches the paused Resale Buyers child. [Google negative matching](https://support.google.com/google-ads/answer/2453972?hl=en) · [Google exclusion scope](https://support.google.com/google-ads/answer/6238816?hl=en)
+## Read-only Ads account settings verification
+
+Use `check_ads_settings_readback.py CAPTURE.json SHA256` to compare a private, complete Ads Settings capture with the five prepared campaign IDs and their per-campaign allocations. For subsequent prelaunch readbacks, supply `--reference BASELINE.json --reference-sha256 SHA256` to detect identity and status drift across all 24 paused or removed campaigns. The checker records displayed schedule and language separately and keeps readiness at `HOLD`. Campaign detail, effective inherited settings, assets and the proposed serving children require dedicated readbacks.

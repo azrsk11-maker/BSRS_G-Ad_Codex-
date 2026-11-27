@@ -1,3 +1,9 @@
+## Complete paused-account readback and exact tracking replay — 27 November 2026
+
+The authenticated Ads Settings grid displayed 24 distinct campaign IDs, with 21 paused and three removed. The five exact off-plan pools still total AED2,500 average daily. The visible networks are Google Search only, AI Max and expansion are off, and the grid shows no positive bid adjustments. UAE matches the `10:00–19:00` Dubai plan. The four international shells have no ad groups and show an all-day schedule. The five language cells are unreported. A [read-only checker](../tools/offplan-lead-first/check_ads_settings_readback.py) binds the capture and can compare the exact paused and removed roster later. No live changes occurred.
+
+The exact 53-member `0.2.18` review also passed 11 native fixture gates, four Chrome observations and three CSP checks. The isolated native form attempted one synthetic receipt, produced one inert Analytics and one inert Ads command, and suppressed the duplicate. Withdrawal retired both runtime frames. Vendor transmissions were zero. Actual provider and Hostinger acceptance remain open.
+
 ## Off-plan attribution continuity and CTA diagnostics — 27 November 2026
 
 The [0.2.18 review](../tools/offplan-lead-first/measurement-release/README.md#attribution-continuity-and-cta-diagnostics) reconciles seven changed members against the pinned 53-member predecessor. Five actual client scripts passed seven isolated navigation and consent scenarios apiece. Clean internal navigation now retains the latest permitted analytics touch. The independently verified opaque-frame runtime mapped the phone diagnostic to `phone_click` and retained `whatsapp_click`. Fourteen Chrome check groups passed with zero vendor transmissions or lead submissions. The previously approved delivery TEST remains excluded from measurement.
