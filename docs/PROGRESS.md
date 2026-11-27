@@ -1,3 +1,7 @@
+## Separate country consent-choice token — 27 November 2026
+
+The [0.2.20 review](../tools/offplan-lead-first/measurement-release/README.md#country-consent-choice-token-review) separates intake and consent-choice CSRF tokens while preserving the signed form body. Twelve native CGI requests and 31 checks verified the wrong-purpose denials, route binding, valid grant, disabled measurement and one preserved local signed TEST receipt. Eleven focused PHP checks covered page, session and expiry. No provider requests reached Google. The package remains a private review prior to hosted acceptance and recovery verification.
+
 ## English country Ads measurement candidate — 27 November 2026
 
 The [0.2.19 review](../tools/offplan-lead-first/measurement-release/README.md#english-country-ads-measurement-review) adds route-bound Ads measurement for the English Germany, France and Taiwan destinations. Nine changes reproduce the exact 53-member package. Browser-script checks verified separate consent panels, default denial and no alias writes to the shared click-history store. Turning off a previously consented route's deployment binding blocked its measurement and preserved a signed synthetic intake in the native fixture. Real locale consent, paid-click attribution, provider verification and release recovery remain open.
