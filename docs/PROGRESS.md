@@ -1,3 +1,11 @@
+## Canonical measurement isolation and cache rehearsal — 27 November 2026
+
+The [owned off-plan frame review](../tools/offplan-lead-first/measurement-release/README.md#owned-off-plan-frames-and-cache-version-rehearsal) extends the measured German boundary to the canonical page's Analytics and Ads frames. Chrome verified distinct purpose leases, blocked access to form and cookie data, preserved the permitted synthetic click only in the Ads URL, and captured query-free measurement commands. Duplicate submission emitted no extra request or command. Withdrawal retired both frames. No data reached a vendor during the 66.920-second run.
+
+A distinct native WordPress rehearsal changed exactly two bytes on the separately tested German base to make version `0.2.16`. Six cache keys moved to the new version and returned to the old key on exact downgrade. Held application data and the other 52 members stayed byte-identical. A wrong archive was refused before installation. This result covers the version-only artifact in the local fixture.
+
+The positive provenance guard verified 14 historical Planner references for eight held UAE placements. Of 3,266 held localized placements, 272 had wording matches without market-scope evidence and 2,986 had no exact match in the named captures. The guard kept all of them out of admission, approval and deployment. No new evidence of local demand was inferred.
+
 ## Chrome delivery, native rollback and staffing sensitivity — 27 November 2026
 
 The [isolated German frame review](../tools/offplan-lead-first/measurement-release/README.md#isolated-german-measurement-frame) passed Chrome and local WordPress checks with the exact 53-member archive. The inert script observed an opaque origin, denied reads of the form, parent and frame cookies, and an absent bootstrap configuration. The parent performed the scoped lease renewal. One synthetic accepted receipt emitted one allowlisted, query-free local conversion command, and withdrawal removed the frame. External sends were zero. Live Google behavior in this frame remains unverified.

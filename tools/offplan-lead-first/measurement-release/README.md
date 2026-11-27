@@ -149,3 +149,16 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 ```
 
 The review profile affects German advertising only. The live Google script behavior and conversion acceptance inside an opaque frame need separate evidence. Current Hostinger file identity, disclosure, independent review and deployment approval remain release gates.
+
+## Owned off-plan frames and cache version rehearsal
+
+The `owned-opaque-frame` profile applies a separate four-member change to the German isolated-frame base. The canonical off-plan page uses an opaque frame and a dedicated message port for each allowed purpose. The parent validates the measurement fields before dispatch. A verified click identifier enters only the Ads frame URL under advertising consent. The Analytics frame URL, page location, and outgoing command payloads exclude it. The bound India path retains the existing canonical reporting identity. Unbound and unrelated paths hold measurement.
+
+The `isolated-cache-version` profile changes the two version digits on the German isolated-frame base. The native WordPress rehearsal changed all six rendered asset keys from `0.2.15` to `0.2.16` and restored them on downgrade. The 52 other members and held application state matched exactly. The cache version and broader frame profiles are separately tested artifacts.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/german-isolated-PRIVATE-REVIEW.zip /private/owned-frames-PRIVATE-REVIEW.zip --profile owned-opaque-frame
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/german-isolated-PRIVATE-REVIEW.zip /private/cache-version-PRIVATE-REVIEW.zip --profile isolated-cache-version
+```
+
+Chrome and local WordPress tested the exact owned-frame candidate. Both purposes obtained first-party leases through the parent, and both inert scripts were blocked from the parent form and browser cookies. Chrome recorded one Analytics page view, one Analytics lead event and one Ads conversion command for a single fresh signed synthetic receipt. A repeated submit produced no new lead or measurement command. Withdrawal removed both frames. Live Google behavior, Hostinger cache and installed-file evidence, and approval remain release gates.

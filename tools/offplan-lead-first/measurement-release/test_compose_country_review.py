@@ -74,6 +74,12 @@ class PrivateReviewComposerTest(unittest.TestCase):
             compose(base, lineage, "german-isolated-frame")
         isolated = {**review, "scope": "OFFPLAN_GERMAN_ISOLATED_FRAME_REVIEW_ONLY"}
         self.assertEqual(compose(base, isolated, "german-isolated-frame"), archive_bytes(modified))
+        for profile, scope in (("owned-opaque-frame", "OFFPLAN_OWNED_OPAQUE_FRAME_REVIEW_ONLY"),
+                               ("isolated-cache-version", "OFFPLAN_ISOLATED_CACHE_VERSION_REVIEW_ONLY")):
+            with self.subTest(profile=profile):
+                with self.assertRaisesRegex(ValueError, "not the pinned"):
+                    compose(base, isolated, profile)
+                self.assertEqual(compose(base, {**review, "scope": scope}, profile), archive_bytes(modified))
         review["changes"][member]["edits"][0]["offset"] = 0
         with self.assertRaisesRegex(ValueError, "does not match the tested byte inventory"):
             compose(base, review, "german-ordered-consent")
