@@ -1,10 +1,11 @@
 """Complete unittest modules in contained processes, under one 300s bound.
 
-No test verdict, source check, fixture or acceptance result is reused. Whole
-modules retain ordinary unittest class fixtures/order. Discovery remains dynamic.
+Whole modules retain unittest order and independent verdicts. A pinned pair
+may share freshly verified history under single-worker scheduling.
 """
 import argparse
 from collections import Counter, deque
+from contextlib import nullcontext, redirect_stderr, redirect_stdout
 import hashlib
 import json
 import math
@@ -16,6 +17,7 @@ import time
 import unittest
 
 from owned_process import GATE, ContainmentError, run_owned
+from keyword_history_reuse import BANK_MODULE, BANK_SAVED_CASE_ID, FRONT_MODULE, pair_sources_match, reuse_bank_history
 from keyword_progress import Progress, read_diagnostic
 from keyword_resources import select as select_workers
 
@@ -173,19 +175,24 @@ class ObservedResult(unittest.TextTestResult):
         super().addSubTest(test, subtest, err)
 
 
-def worker(folder, module, event_path, receipt_path):
+def worker(folder, module, event_path, receipt_path, *, bank_history=None):
+    begin = time.perf_counter()
     sys.path.insert(0, str(folder))
     loader = unittest.TestLoader()
     suite = loader.loadTestsFromName(module)
     discovered = [test.id() for test in flatten(suite)]
-    with event_path.open("wb") as events:
+    context = nullcontext(False)
+    if bank_history is not None and discovered == bank_history[1]:
+        context = reuse_bank_history(folder, *bank_history)
+    with context as reused, event_path.open("wb") as events:
         runner = unittest.TextTestRunner(stream=sys.stderr, verbosity=1,
                     resultclass=lambda *a, **k: ObservedResult(*a, events=events, **k))
         result = runner.run(suite)
     receipt = {"discovered": discovered, "successful": result.wasSuccessful() and not loader.errors,
                "tests_run": result.testsRun, "failures": len(result.failures), "errors": len(result.errors),
                "skipped": len(result.skipped), "expected_failures": len(result.expectedFailures),
-               "unexpected_successes": len(result.unexpectedSuccesses)}
+               "unexpected_successes": len(result.unexpectedSuccesses),
+               "elapsed_seconds": round(time.perf_counter() - begin, 6), "history_reused": reused}
     receipt_path.write_bytes(encoded(receipt) + b"\n")
     return 0 if receipt["successful"] else 1
 
@@ -198,7 +205,7 @@ def read_bounded(path):
     return value
 
 
-def collect(module, expected, process, paths):
+def collect(module, expected, returncode, paths):
     stdout, stderr = (read_bounded(paths[key]) for key in ("stdout", "stderr"))
     events = []
     receipt = {}
@@ -213,14 +220,85 @@ def collect(module, expected, process, paths):
         successful = not any(receipt[key] for key in ("failures", "errors", "unexpected_successes"))
         consistent = consistent and type(receipt.get("successful")) is bool and receipt["successful"] == successful
         complete = coverage and consistent and type(receipt["tests_run"]) is int and receipt["tests_run"] == len(expected)
-        passed = complete and process.returncode == 0 and successful
+        passed = complete and returncode == 0 and successful
     except (OSError, ValueError, KeyError, TypeError):
         coverage = complete = passed = False
-    return {"module": module, "expected": expected, "events": events, "receipt": receipt,
-            "exit": process.returncode, "coverage_verified": coverage, "complete": complete, "passed": passed,
+    return {"module": module, "expected": expected, "events": events,
+            "receipt": receipt if isinstance(receipt, dict) else {},
+            "exit": returncode, "coverage_verified": coverage, "complete": complete, "passed": passed,
             "stdout_sha256": hashlib.sha256(stdout).hexdigest(),
             "stderr_sha256": hashlib.sha256(stderr).hexdigest(),
             "output_tail": (stdout + stderr)[-1800:].decode("utf-8", errors="replace")}
+
+
+def job_paths(base, module):
+    return {key: base / f"{module}.{key}" for key in ("stdout", "stderr", "events", "receipt", "started")}
+
+
+HISTORY_PAIR = (BANK_MODULE, FRONT_MODULE)
+
+
+def bank_history_verified(bank):
+    return (bank["passed"] and BANK_SAVED_CASE_ID in bank["expected"]
+            and bank["receipt"]["skipped"] == bank["receipt"]["expected_failures"] == 0)
+
+
+def history_pair_member(folder, base, module, *, bank_history=None):
+    paths = job_paths(base, module)
+    with paths["stdout"].open("w", encoding="utf-8") as stdout, paths["stderr"].open("w", encoding="utf-8") as stderr:
+        with redirect_stdout(stdout), redirect_stderr(stderr):
+            paths["started"].write_bytes(encoded(time.perf_counter()))
+            return worker(folder, module, paths["events"], paths["receipt"], bank_history=bank_history)
+
+
+def history_pair_worker(folder, base):
+    expected = json.loads(read_bounded(base / "expected.json"))
+    if not isinstance(expected, dict) or set(expected) != set(HISTORY_PAIR) or not pair_sources_match(folder):
+        raise ValueError("History pair inputs changed before startup")
+    bank_paths = job_paths(base, BANK_MODULE)
+    bank_exit = history_pair_member(folder, base, BANK_MODULE)
+    bank = collect(BANK_MODULE, expected[BANK_MODULE], bank_exit, bank_paths)
+    front_exit = history_pair_member(folder, base, FRONT_MODULE,
+        bank_history=(bank_history_verified(bank), expected[FRONT_MODULE]))
+    (base / "finished.json").write_bytes(encoded(dict(zip(HISTORY_PAIR, (bank_exit, front_exit)))))
+    return int(bool(bank_exit or front_exit))
+
+
+def scheduled_jobs(folder, expected, workers):
+    order = sorted(expected, key=lambda name:
+                   (SLOW_MODULES.index(name) if name in SLOW_MODULES else len(SLOW_MODULES), name))
+    if (workers == 1 and folder == ROOT / "tools/keyword-system"
+            and all(name in expected for name in HISTORY_PAIR) and pair_sources_match(folder)):
+        return deque([HISTORY_PAIR, *((name,) for name in order if name not in HISTORY_PAIR)])
+    return deque((name,) for name in order)
+
+
+def collect_job(base, members, expected, returncode, elapsed):
+    exit_codes = dict.fromkeys(members, returncode)
+    if len(members) > 1:
+        try:
+            exits = json.loads(read_bounded(base / "finished.json"))
+            if (not isinstance(exits, dict) or set(exits) != set(members)
+                    or any(type(code) is not int or code not in (0, 1) for code in exits.values())
+                    or returncode != int(any(exits.values()))):
+                raise ValueError("Incomplete history pair")
+            exit_codes = exits
+        except (OSError, ValueError, TypeError):
+            exit_codes = dict.fromkeys(members, returncode or -1)
+    results = {}
+    for name in members:
+        paths = job_paths(base, name)
+        result = collect(name, expected[name], exit_codes[name], paths)
+        member_elapsed = result["receipt"].get("elapsed_seconds")
+        result["elapsed_seconds"] = member_elapsed if (
+            members == HISTORY_PAIR and type(member_elapsed) in (int, float) and 0 <= member_elapsed <= elapsed
+        ) else elapsed
+        results[name] = result
+    if members == HISTORY_PAIR:
+        front = results[FRONT_MODULE]
+        if front["receipt"].get("history_reused") is True and not bank_history_verified(results[BANK_MODULE]):
+            front["passed"] = False
+    return results
 
 
 def checkpoint(progress, expected, active, results, starts, *, force=False, status='RUNNING'):
@@ -239,8 +317,18 @@ def checkpoint(progress, expected, active, results, starts, *, force=False, stat
             elapsed = result['elapsed_seconds']
         elif module in active:
             state = 'ACTIVE'
-            elapsed = round(now - starts[module], 6)
-            path = active[module][1]['events']
+            paths = active[module]
+            start = starts[module]
+            if paths.get('paired'):
+                try:
+                    observed = json.loads(read_bounded(paths['started']))
+                    if type(observed) not in (int, float) or not start <= observed <= now:
+                        raise ValueError("Invalid member start")
+                    start = observed
+                except (OSError, ValueError, TypeError):
+                    state = 'PENDING'
+            elapsed = round(now - start, 6) if state == 'ACTIVE' else 0
+            path = paths['events']
             try:
                 # Ignore a partially written final JSONL record; no verdict is read.
                 body = read_bounded(path) if path.is_file() else b''
@@ -254,6 +342,14 @@ def checkpoint(progress, expected, active, results, starts, *, force=False, stat
                             events.append(event)
                     except (ValueError, AttributeError):
                         pass
+            if paths.get('paired') and state == 'ACTIVE':
+                try:
+                    observed = json.loads(read_bounded(paths['receipt'])).get('elapsed_seconds')
+                    if type(observed) in (int, float) and 0 <= observed <= elapsed:
+                        elapsed = observed
+                        state = 'COMPLETE' if sum(e['event'] == 'finish' for e in events) == len(expected[module]) else 'INCOMPLETE'
+                except (OSError, ValueError, TypeError, AttributeError):
+                    pass
         rows.append({'module': module, 'state': state, 'expected': len(expected[module]),
                      'started': sum(e.get('event') == 'start' for e in events),
                      'finished': sum(e.get('event') == 'finish' for e in events),
@@ -271,8 +367,8 @@ def run_modules(folder, deadline, workers='auto'):
     workers=resources['selected_workers']
     folder = Path(folder).resolve(strict=True)
     expected = discover(folder)
-    pending = deque(sorted(expected,key=lambda n:(SLOW_MODULES.index(n) if n in SLOW_MODULES else len(SLOW_MODULES),n)))
-    active, results = {}, {}
+    pending = scheduled_jobs(folder, expected, workers)
+    jobs, active, results = {}, {}, {}
     starts = {}
     try:
         progress = Progress(ROOT)
@@ -284,40 +380,58 @@ def run_modules(folder, deadline, workers='auto'):
     timed_out = False
     with tempfile.TemporaryDirectory(prefix="keyword-modules-") as temporary:
         try:
-            while pending or active:
+            while pending or jobs:
                 if time.monotonic() >= deadline:
                     timed_out = True
                     break
-                while pending and len(active) < workers and time.monotonic() < deadline:
-                    module = pending.popleft()
+                while pending and len(jobs) < workers and time.monotonic() < deadline:
+                    members = pending.popleft()
+                    module = members[0]
                     base = Path(temporary) / str(len(results) + len(active))
-                    paths = {key: base.with_suffix("." + key) for key in ("stdout", "stderr", "events", "receipt")}
+                    base.mkdir()
+                    paths = job_paths(base, module)
+                    command = [sys.executable, "-B", str(Path(__file__).resolve()), "--suite", str(folder)]
+                    if members == HISTORY_PAIR:
+                        (base / "expected.json").write_bytes(encoded({name: expected[name] for name in members}))
+                        command.extend(("--history-pair", str(base)))
+                        for name in members:
+                            member_paths = job_paths(base, name)
+                            member_paths["stdout"].touch()
+                            member_paths["stderr"].touch()
+                        paths = job_paths(base, "pair")
+                    else:
+                        command.extend(("--worker", module, "--events", str(paths["events"]),
+                                        "--receipt", str(paths["receipt"])))
+                    now = time.perf_counter()
                     with paths["stdout"].open("wb") as stdout, paths["stderr"].open("wb") as stderr:
-                        process = subprocess.Popen([sys.executable, "-B", str(Path(__file__).resolve()),
-                            "--suite", str(folder), "--worker", module, "--events", str(paths["events"]),
-                            "--receipt", str(paths["receipt"])], cwd=ROOT, stdin=subprocess.DEVNULL,
+                        process = subprocess.Popen(command, cwd=ROOT, stdin=subprocess.DEVNULL,
                             stdout=stdout, stderr=stderr, close_fds=True)
-                    active[module] = (process, paths)
-                    starts[module] = time.perf_counter()
+                    jobs[base] = (process, members)
+                    for name in members:
+                        active[name] = job_paths(base, name)
+                        active[name]["paired"] = members == HISTORY_PAIR
+                        starts[name] = now
                     checkpoint(progress, expected, active, results, starts, force=True)
-                for module, (process, paths) in list(active.items()):
+                for base, (process, members) in list(jobs.items()):
                     if process.poll() is not None:
-                        results[module] = collect(module, expected[module], process, paths)
-                        results[module]['elapsed_seconds'] = round(time.perf_counter() - starts[module], 6)
-                        del active[module]
+                        elapsed = round(time.perf_counter() - starts[members[0]], 6)
+                        results.update(collect_job(base, members, expected, process.returncode, elapsed))
+                        for name in members:
+                            del active[name]
+                        del jobs[base]
                         checkpoint(progress, expected, active, results, starts, force=True)
                 checkpoint(progress, expected, active, results, starts)
-                if pending or active:
+                if pending or jobs:
                     time.sleep(min(0.02, max(0, deadline - time.monotonic())))
         finally:
-            for process, _ in active.values():
+            for process, _ in jobs.values():
                 if process.poll() is None:
                     process.kill()
-            for process, _ in active.values():
+            for process, _ in jobs.values():
                 process.wait(timeout=5)
-            for module, (process, paths) in active.items():
-                results[module] = collect(module, expected[module], process, paths)
-                results[module]['elapsed_seconds'] = round(time.perf_counter() - starts[module], 6)
+            for base, (process, members) in jobs.items():
+                elapsed = round(time.perf_counter() - starts[members[0]], 6)
+                results.update(collect_job(base, members, expected, process.returncode, elapsed))
             checkpoint(progress, expected, {}, results, starts, force=True,
                        status='TIMED_OUT' if timed_out else 'FINISHED')
     ids = [identity for values in expected.values() for identity in values]
@@ -343,6 +457,8 @@ def public_report(report):
         metadata = {key: item[key] for key in
                     ("module", "exit", "coverage_verified", "complete", "passed", "stdout_sha256", "stderr_sha256")}
         metadata['elapsed_seconds'] = item.get('elapsed_seconds')
+        if item["receipt"].get("history_reused") is True:
+            metadata["history_reused"] = True
         metadata.update(expected=len(item["expected"]), started=sum(e.get("event") == "start" for e in events),
                         finished=len(finishes), outcomes=dict(Counter(e["status"] for e in finishes)),
                         skipped=sum(e.get("skipped", 0) for e in finishes),
@@ -379,12 +495,15 @@ def main(argv=None):
     parser.add_argument("--suite", type=Path, default=ROOT / "tools/keyword-system")
     parser.add_argument("--supervised", action="store_true")
     parser.add_argument("--worker")
+    parser.add_argument("--history-pair", type=Path, help=argparse.SUPPRESS)
     parser.add_argument('--workers',choices=('auto','1','2','3','4'),default='auto')
     parser.add_argument("--events", type=Path)
     parser.add_argument("--receipt", type=Path)
     args = parser.parse_args(argv)
     if args.worker:
         return worker(args.suite, args.worker, args.events, args.receipt)
+    if args.history_pair:
+        return history_pair_worker(args.suite, args.history_pair)
     if not args.supervised:
         try:
             completed = run_owned([sys.executable, "-B", str(Path(__file__).resolve()), "--supervised",

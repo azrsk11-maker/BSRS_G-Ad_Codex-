@@ -1,3 +1,7 @@
+## Default single-worker keyword scheduling — 28 November 2026
+
+The contained scheduler now reuses verified bank history for the front-office tests when one worker is selected and the exact source pins match. Each suite runs and reports its own cases. The parent rejects a reused result if the bank receipt fails validation. The reviewed integration ran all 28 pair cases in 141.684588 seconds, with zero skips, and confirmed unchanged discovery of 59 modules and 792 cases. The complete efficiency group ran 163 tests with 160 passes and three platform skips. The required full Foundation run remains open, including the separately timed negative composition gate. [Verification and scope](../tools/efficiency/README.md#default-single-worker-keyword-scheduling--28-november-2026)
+
 ## Verified keyword history reuse — 27 November 2026
 
 The 28 unchanged bank and front-office cases passed in both arms, with matching original case IDs, verified intermediate histories and saved report digests. The private same-process reuse ran in 124.482015 seconds versus 236.472123 seconds for the original separate history setup, a measured 111.990108-second reduction in this ordered local comparison. The existing pest/pool profile's single documentation pin was refreshed and its 479-file `--inspect` passed. Full Foundation still requires all 792 current keyword cases under the existing checks. [Method and limits](../tools/efficiency/README.md#fresh-bank-and-front-office-test-histories--27-november-2026)
