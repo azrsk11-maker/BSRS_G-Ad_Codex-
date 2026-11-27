@@ -9,3 +9,7 @@ Google native Preview returned5successful changes/0errors on24November2026. The 
 Only use the batch in account573-038-4686 after reviewing the exact current preview. This is a one-shot Add/Edit batch: after Apply, reconcile the provider result and actual campaign IDs before any further upload. Do not replay it or the historical generators. All four new Campaign IDs are deliberately blank before creation. Preserve the original reviewed bytes as evidence after application rather than editing them into a replay file.
 
 `Max CPC Bid Limit for Target IS` remains blank: that field does not set the Maximize Clicks cap. Before serving, verify/set CPC20, geographic presence, AI Maxoff, GoogleSearchonly, positive adjustments0 and daily10:00–19:00Dubai coverage; resolve actual native pages, consent/privacy/contact/delivery and all applicable release gates. Original resale group204397706314 and every non-offplan/legacy campaign remain paused; Removed stays removed. No Source merge or greenCI itself authorizes activation.
+
+## UAE child prelaunch verification
+
+Run `python -B tools/offplan-lead-first/check_uae_readback.py /path/to/private-readback.json` on a fresh, reconciled `bsre.offplan.uae-child-readback.v1` projection. It compares all enabled and paused UAE off-plan keyword rows and the single RSA to the pinned review evidence, checks the explicit resale pause, and screens the observed direct, account-level and shared exclusions. A match validates the saved scope. Fresh browser evidence, independent review, and the wider release gates still control activation.

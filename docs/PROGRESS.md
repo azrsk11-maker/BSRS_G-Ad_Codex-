@@ -1,3 +1,13 @@
+## UAE child reconciliation and private international review — 27 November 2026
+
+The live Real Estate Ads view matched all 16 paused UAE off-plan keyword IDs, texts and match types to the pinned prior readback. The single paused RSA still uses the canonical off-plan URL. Google shows its policy as Approved and ad strength as Pending. Four direct campaign negatives produced zero local matches in 64 comparisons. Account-level negatives were empty, and the sole visible shared list applied to six legacy campaigns outside the off-plan release. The reusable prelaunch verifier checks the saved evidence and rejects resale scope, incomplete keyword rows, foreign destinations and conflicting exclusions. All 29 local draft checks passed, including the seven new checks.
+
+The four international child manifests bind eight locales, 382 draft keyword placements and 76 retained RSA assets to the existing paused parents. English remains required. Germany, France and Taiwan still lack English RSA drafts. All provider child IDs and final URLs remain unset. Nine focused review tests passed. The private packet is for review and carries no import payload.
+
+An isolated WordPress 7.1.5 and Chrome test passed six checks of the exact plugin. Advertising-only permission preserved the synthetic click and opened one scoped runtime frame. The native runtime and lease returned HTTP 200. Withdrawal removed the frame, cleared attribution and returned all optional purposes to off. The fixture sent no leads or provider events. A separate private InnoDB upgrade and rollback test passed preflight, but the local host lacks a database or container runtime for that test. Live conversion processing and native InnoDB parity remain open.
+
+Production files, campaign settings and advertising stayed unchanged. The five configured pools remain paused at AED2,500 average per day in aggregate.
+
 ## Five-route browser proof and live ad-group inventory — 27 November 2026
 
 The exact review package passed 65 local HTTPS and Chrome checks on WordPress 7.1.5 across UAE English, India English, German, French and Taiwan Traditional Chinese. Each page and both context routes returned HTTP 200. The same 13 fields, 15 option values, constraints and canonical intake route were preserved. Unknown consent kept optional measurement off, and the fixture sent no leads or provider events. The live host, other language variants and granted measurement remain open.

@@ -21,7 +21,7 @@ jobs:
           persist-credentials: false
       - name: Verify localized copy and inert draft artifacts
         run: |
-          python3 -B -m unittest discover -s tools/offplan-lead-first -p test_compile.py -v
+          python3 -B -m unittest discover -s tools/offplan-lead-first -p 'test_*.py' -v
           python3 -B tools/offplan-lead-first/compile.py --verify
       - name: Verify guarded localized form text candidates
         env:
