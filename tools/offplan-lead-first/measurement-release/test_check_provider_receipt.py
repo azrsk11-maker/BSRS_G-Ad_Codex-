@@ -125,6 +125,34 @@ class ProviderReceiptTests(unittest.TestCase):
         self.paid["paid_click"]["source_evidence_sha256"] = self.paid["provider"]["source_evidence_sha256"]
         self.assertTrue(self.review()["paid_attribution_evidence_matched"])
 
+    def test_aggregate_report_cannot_supply_a_transaction_row(self):
+        self.paid["provider"]["provenance"] = checker.AGGREGATE_PROVENANCE
+        result = self.review()
+        self.assert_held(result, configured=True)
+        self.assertEqual(result["reason"], checker.AGGREGATE_HOLD)
+        self.assertNotIn("paid_sha256", result)
+
+    def test_pinned_aggregate_scope_is_recognized_as_hold_only(self):
+        aggregate = {
+            "schema": checker.AGGREGATE_SCHEMA,
+            "aggregate": {**{key: self.paid["provider"][key] for key in
+                             ("account", "action_id", "observed_at_utc", "source_evidence_sha256")},
+                          "provenance": checker.AGGREGATE_PROVENANCE},
+        }
+        result = self.review(paid=aggregate, with_exclusion=False)
+        self.assert_held(result, configured=True)
+        self.assertFalse(result["provider_independently_checked"])
+        self.assertEqual(result["reason"], checker.AGGREGATE_HOLD)
+        self.assertEqual(result["aggregate_report_projection_sha256"], sha256(self.paid_path.read_bytes()).hexdigest())
+        self.assertNotIn("paid_sha256", result)
+        for field, invalid in (("action_id", "7859602954"), ("transaction_id_sha256", "a" * 64)):
+            with self.subTest(field=field):
+                modified = aggregate | {"aggregate": aggregate["aggregate"] | {field: invalid}}
+                result = self.review(paid=modified)
+                self.assert_held(result, configured=True)
+                self.assertNotIn("aggregate_report_projection_sha256", result)
+        self.assertNotIn("aggregate_report_projection_sha256", self.review(paid=aggregate, bad_paid_pin=True))
+
     def test_dated_r5_schema_and_invalid_pins_stay_held(self):
         pin = put_json(self.config_path, {"schema": "bsre.private.offplan-current-release-preflight.v5", "status": "HOLD"})
         self.assert_held(checker.review(self.config_path, pin))

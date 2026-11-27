@@ -2,7 +2,7 @@
 
 The offline checker separates exact WordPress, GTM and Google Ads configuration from the later reconciliation of a genuine paid click, signed enquiry receipt and single attributed Ads action. It rejects the recorded delivery TEST, replays, duplicate and alternate actions, and mismatched identifiers or timestamps. The existing private R5 records return HOLD. All 31 focused tests passed. [Provider evidence review](../tools/offplan-lead-first/measurement-release/README.md#canonical-uae-provider-evidence-review)
 
-This comes with no provider or deployment permission. Actual original provider observations and independent acceptance remain open.
+The report review distinguishes a paid click, a browser transaction request and Ads action aggregates. A pinned aggregate report can be recorded on HOLD. It leaves transaction-level attribution and deduplication unverified. An aggregate projected as an exact paid transaction is rejected. All 11 focused receipt tests passed. Actual correlated provider evidence and independent acceptance remain open.
 
 ## Integrated off-plan review branch - 28 November 2026
 

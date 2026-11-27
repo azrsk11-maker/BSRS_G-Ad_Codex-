@@ -13,6 +13,9 @@ from check_gtm_publication import verify_publication
 
 CONFIG_SCHEMA = "bsre.offplan.provider-configuration.v1"
 PAID_SCHEMA = "bsre.offplan.genuine-paid-receipt.v1"
+AGGREGATE_SCHEMA = "bsre.offplan.ads-action-aggregate.v1"
+AGGREGATE_PROVENANCE = "AUTHENTICATED_GOOGLE_ADS_AGGREGATE_ACTION_REPORT"
+AGGREGATE_HOLD = "Ads aggregate action reporting cannot establish transaction-level attribution or deduplication"
 LAUNCH = Path(__file__).resolve().parents[1] / "launch.json"
 FORWARD_SHA256 = "a059b35048a667097efb58d99f7c0143813e49e9f1f0bd4a41674dc1039c1131"
 DESTINATION_SHA256 = "41a6bcda74817721ca274095fec574e7a588d0a9e4ba983d2c03f00ecf6a04c0"
@@ -108,6 +111,7 @@ def verify_paid(data, configuration_sha256, scope, configured_at, live_version, 
     require(data["schema"] == PAID_SCHEMA and data["configuration_sha256"] == configuration_sha256,
             "Paid evidence does not bind the reviewed configuration")
     click, receipt, provider = (data[key] for key in ("paid_click", "receipt", "provider"))
+    require(not isinstance(provider, dict) or provider.get("provenance") != AGGREGATE_PROVENANCE, AGGREGATE_HOLD)
     click_keys = {"account", "campaign_id", "ad_group_id", "ad_id", "url"}
     click_link = {"click_id_kind", "click_id_sha256"}
     click_observed = observe(click, click_keys | click_link | {"clicked_at_utc"},
@@ -160,8 +164,17 @@ def review(configuration, configuration_sha256, *, gtm_export=None, gtm_observat
         configured_at, live_version = verify_configuration(config, scope, now, gtm_export, gtm_observation, gtm_capture)
         result.update(configuration_evidence_matched=True, configuration_sha256=configuration_sha256)
         require(paid_receipt is not None and paid_sha256 is not None, "Genuine paid receipt evidence is unavailable")
-        require(excluded_test_capture is not None, "The pinned delivery TEST capture is required for exclusion")
         paid = pinned(paid_receipt, paid_sha256, "Paid evidence")
+        if paid.get("schema") == AGGREGATE_SCHEMA:
+            fields(paid, {"schema", "configuration_sha256", "aggregate"}, "aggregate action report")
+            aggregate = paid["aggregate"]
+            observe(aggregate, {"account", "action_id"}, AGGREGATE_PROVENANCE, now)
+            require(paid["configuration_sha256"] == configuration_sha256
+                    and all(aggregate[key] == scope[key] for key in ("account", "action_id")),
+                    "Aggregate report is outside the reviewed Ads account, action or configuration")
+            result.update(aggregate_report_projection_sha256=paid_sha256, reason=AGGREGATE_HOLD)
+            return result
+        require(excluded_test_capture is not None, "The pinned delivery TEST capture is required for exclusion")
         excluded = excluded_transaction(excluded_test_capture)
         verify_paid(paid, configuration_sha256, scope, configured_at, live_version, excluded, now)
     except (OSError, KeyError, TypeError, ValueError) as error:
