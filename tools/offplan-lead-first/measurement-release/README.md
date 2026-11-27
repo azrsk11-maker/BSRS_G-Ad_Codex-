@@ -173,4 +173,20 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 
 Local WordPress verified all installed members across the upgrade from the retained `0.2.12` archive and the exact rollback. Six canonical asset keys rotated and reverted, and scoped synthetic intake data and page settings retained their digests. Wrong-package and installed-byte drift controls stopped before installation. Actual Hostinger file identity, published consent, provider behavior, and independent review remain release gates.
 
-Two exact-package Chrome runs requested all seven expected `0.2.16` asset keys. At least one real local lease response crossed the five-second browser deadline in each run. The affected frame retired and the runs stopped before submitting a synthetic enquiry. A warm-worker preflight received both lease responses in 2.007 and 4.203 seconds. Its four-second headroom check held the browser run. Complete browser intake and measurement verification on the combined artifact remains open.
+Two initial exact-package Chrome runs requested all seven expected `0.2.16` asset keys. At least one local lease response crossed the five-second browser deadline in each run. The affected frame retired and the runs stopped before submitting a synthetic enquiry. A single warm worker returned both leases in 2.007 and 4.203 seconds. Its four-second headroom check held that browser run.
+
+Using separate purpose-specific native fixture workers resolved the local contention. The exact combined archive passed all 11 checks and four browser observations in the cleanup-verified run. Actual browser leases took 2.402 and 2.423 seconds under the unchanged five-second timeout. Chrome verified one signed synthetic receipt, no duplicate, an inert measurement command for each eligible purpose, and retirement of both frames on withdrawal. No request reached a vendor.
+
+## GTM bootstrap CSP nonce review
+
+The authenticated owned-funnel container still publishes an empty version. Its sole pending Custom HTML tag checks for the guarded local activation method and invokes it from an inline script. The `0.2.16` frame policy allows the external container but prevents its inline bootstrap from running. The existing external-stub fixture invokes the method directly and therefore covers a different activation path.
+
+The `gtm-nonce-0217` profile generates a fresh cryptographic nonce per authorized runtime response and carries it into the first-party script element and its dynamic GTM loader. The parent page policy and response scope are unchanged. The opaque frame retains its existing restrictions, inline attributes stay denied, and the policy does not introduce `unsafe-inline` or `unsafe-eval`. [Google CSP integration guidance](https://developers.google.com/tag-platform/security/guides/csp).
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/combined-0216-PRIVATE-REVIEW.zip /private/gtm-nonce-0217-PRIVATE-REVIEW.zip --profile gtm-nonce-0217
+```
+
+The review reproduces 53 members at SHA-256 `4e62a282828eef4748394b33f211277a59e901135c7c4800e42f7ec02a7edfd3`, with changes to the runtime PHP and JavaScript plus the cache version. In the focused Chrome fixture, the exact `0.2.16` render blocked three inline calls. The exact `0.2.17` render accepted all four calls with a matching nonce and blocked calls with wrong or absent nonces. Six authorized responses had unique nonces and no frame could access the parent DOM or cookies. The 25 baseline and 46 successor checks used synthetic authorization and inert GTM and gtag resources. Live GTM publication and execution, actual Ads acceptance, and Hostinger release checks remain open.
+
+The separate native WordPress and Chrome trial exercised both canonical purposes with a local provider stub that injected the browser-visible guarded inline bootstrap. All 11 inherited fixture checks, four browser observations and three native CSP checks passed. The runtime, loader and inline element matched each response nonce. Both purpose leases completed inside the unchanged browser deadline. One signed receipt emitted one inert command per allowed purpose, the duplicate emitted none, and withdrawal removed both frames. The fixture used synthetic records and blocked external traffic.
