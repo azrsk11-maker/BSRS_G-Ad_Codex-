@@ -8,6 +8,8 @@ The 24 November run reached its 600-second deadline without a final report. A ti
 
 A 14-second controlled cutoff of the current Foundation command retained 34 journal rows and 16 completed-check observations. The final started check was `keyword-abu-sharjah-triage`. No full report or `run_finished` record was produced. The complete efficiency suite ran 154 tests in 24.287 seconds with 151 passes and three environment skips.
 
+The full local run at `77ad1e10c349940a2ba6b703cd31aa3851c09437` used `--require-php` and PHP 8.2.36 with the opt-in journal. It wrote its final report after 634.263498 seconds and passed 140 of 143 checks. Negative composition and keyword behavior hit their existing 120- and 300-second limits. The latter recorded 28 of 792 finished cases before timeout. The efficiency suite's Windows Git initialization error was reproduced after an environment-patching test. Mocking the observation module's environment lookup avoids modifying inherited Git configuration. With the fix, normal standalone efficiency discovery passed 151 tests, with three platform skips, in 27.087 seconds. Full Foundation acceptance remains open.
+
 An alternating local comparison removed three repeated JSON decodes for the real 259-record study-goods cohort while preserving raw pin checks. It decoded 10,402,898 fewer bytes, and all four outputs and audited reports matched. The two elapsed medians were 0.619 seconds before and 0.626 seconds after. The candidate was withdrawn because this comparison did not demonstrate a wall-time benefit. The existing keyword code and pins were restored.
 
 ## Current ARM result and follow-up — 13 November 2026

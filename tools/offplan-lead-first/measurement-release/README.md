@@ -255,6 +255,8 @@ This review still requires the applicable consent disclosure and hosted acceptan
 
 ## Country consent-choice token review
 
+The exact forward package also passed 43 local checks over 11 disposable WordPress CGI requests for French and Traditional Chinese. Both forms retained the canonical 13-field and 15-option contracts and produced one signed local TEST receipt per locale. Their optional measurement routes stayed unavailable with the separate English companion Ads choices enabled. The 65.616-second fixture sent no data outside the local mock. Human copy approval, published WordPress bindings and actual provider behavior remain open.
+
 ```text
 python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/country-ads-0219-r2-PRIVATE-REVIEW.zip /private/country-choice-0220-PRIVATE-REVIEW.zip --profile country-choice-csrf-0220
 ```

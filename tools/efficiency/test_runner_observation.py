@@ -5,6 +5,7 @@ import io
 import json
 from pathlib import Path
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -68,7 +69,8 @@ class RunnerObservationTests(unittest.TestCase):
 
     def test_rejected_cli_does_not_print_event_or_private_path(self):
         output=io.StringIO()
-        with patch.dict(observation.os.environ,{'GITHUB_EVENT_PATH':'DO_NOT_PRINT_THIS_PATH'}),\
+        environment=SimpleNamespace(environ={'GITHUB_EVENT_PATH':'DO_NOT_PRINT_THIS_PATH'})
+        with patch.object(observation,'os',environment),\
              patch.object(observation,'read_event',side_effect=ValueError('DO_NOT_PRINT_THIS_EXCEPTION')),\
              contextlib.redirect_stdout(output):
             self.assertEqual(observation.main(),1)
@@ -77,7 +79,8 @@ class RunnerObservationTests(unittest.TestCase):
 
     def test_cli_collects_actual_probe_values_instead_of_using_the_requested_label(self):
         output=io.StringIO()
-        with patch.dict(observation.os.environ,{'GITHUB_EVENT_PATH':'fixture'}),\
+        environment=SimpleNamespace(environ={'GITHUB_EVENT_PATH':'fixture'})
+        with patch.object(observation,'os',environment),\
              patch.object(observation,'read_event',return_value={'repository':self.repo}),\
              patch.object(observation.platform,'system',return_value='Linux'),\
              patch.object(observation.platform,'machine',return_value='x86_64'),\
