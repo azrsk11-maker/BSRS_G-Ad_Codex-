@@ -162,3 +162,15 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 ```
 
 Chrome and local WordPress tested the exact owned-frame candidate. Both purposes obtained first-party leases through the parent, and both inert scripts were blocked from the parent form and browser cookies. Chrome recorded one Analytics page view, one Analytics lead event and one Ads conversion command for a single fresh signed synthetic receipt. A repeated submit produced no new lead or measurement command. Withdrawal removed both frames. Live Google behavior, Hostinger cache and installed-file evidence, and approval remain release gates.
+
+## Combined off-plan review and rollback
+
+The `owned-combined-0216` profile applies the two previously rehearsed version bytes to the exact 53-member owned-frame archive. The other 52 members retain their verified hashes. The resulting SHA-256 is `8d248292812b04bc5faf69cbd0f0a2db69e02e1cf71bab5e98e279031894b466`.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/owned-frames-PRIVATE-REVIEW.zip /private/combined-0216-PRIVATE-REVIEW.zip --profile owned-combined-0216
+```
+
+Local WordPress verified all installed members across the upgrade from the retained `0.2.12` archive and the exact rollback. Six canonical asset keys rotated and reverted, and scoped synthetic intake data and page settings retained their digests. Wrong-package and installed-byte drift controls stopped before installation. Actual Hostinger file identity, published consent, provider behavior, and independent review remain release gates.
+
+Two exact-package Chrome runs requested all seven expected `0.2.16` asset keys. At least one real local lease response crossed the five-second browser deadline in each run. The affected frame retired and the runs stopped before submitting a synthetic enquiry. A warm-worker preflight received both lease responses in 2.007 and 4.203 seconds. Its four-second headroom check held the browser run. Complete browser intake and measurement verification on the combined artifact remains open.
