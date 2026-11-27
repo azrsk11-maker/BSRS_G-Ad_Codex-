@@ -1,3 +1,7 @@
+## Negative research composition gate — 28 November 2026
+
+The existing 120-second Foundation composition check passed locally in 117.278 seconds. The new entry point builds each of the 14 reviewed stages once, compares all pinned stage documents before handoff, and retains the original verifier for changed source bytes or a separate checkout. The independent comparison matched the complete input fingerprint and final report for 14,000 research rows, 19,115 protections and zero computed conflicts. The full efficiency group passed 164 tests with three platform skips. Full Foundation, exclusion applicability and approval remain separate gates. [Method and measured headroom](../tools/efficiency/README.md#current-negative-research-composition--28-november-2026)
+
 ## Default single-worker keyword scheduling — 28 November 2026
 
 The contained scheduler now reuses verified bank history for the front-office tests when one worker is selected and the exact source pins match. Each suite runs and reports its own cases. The parent rejects a reused result if the bank receipt fails validation. The reviewed integration ran all 28 pair cases in 141.684588 seconds, with zero skips, and confirmed unchanged discovery of 59 modules and 792 cases. The complete efficiency group ran 163 tests with 160 passes and three platform skips. The required full Foundation run remains open, including the separately timed negative composition gate. [Verification and scope](../tools/efficiency/README.md#default-single-worker-keyword-scheduling--28-november-2026)

@@ -300,8 +300,9 @@ def run_checks(require_php=False, *, progress=None):
                                           str(ROOT / "docs/google-ads/planned_campaign_page_registry.json")])
     run("release-controls-budget-safety", [sys.executable, "-B", str(ROOT / "tools/release-control/validate_release_controls.py"),
                                             str(ROOT / "config/release_controls.json")])
-    # The current driver verifies the entire historical base before extensions.
-    run("keyword-negative-research-composition", [sys.executable, "-B", str(ROOT / "tools/keyword-system/current_negative_library.py")])
+    # Build each verified stage once for the reviewed composition.
+    run("keyword-negative-research-composition", [sys.executable, "-B", str(
+        ROOT / "tools/keyword-system/current_negative_composition.py")])
     run("keyword-triage-source-coverage", [sys.executable, "-B", str(ROOT / "docs/audit/keyword-triage-2026-11-08/verify_workbench.py")])
     run("historical-search-term-count-audit", [sys.executable, "-B", str(ROOT / "docs/audit/search-terms-2026-11-08/verify_audit.py")])
     run("private-query-triage-count-integrity", [sys.executable, "-B", str(ROOT / "docs/audit/private-query-triage-counts-2026-11-08/verify_counts.py")])

@@ -1,5 +1,11 @@
 # Efficiency audit — 7 November 2026
 
+## Current negative research composition — 28 November 2026
+
+The current composition check uses the verified valuation state and builds each of the following 14 stages once. Each original builder still checks its input, sources, chronology, retained prefix and protected queries. All four saved documents for each stage must match their pins before handing the generated state to the next builder. The saved indexes bind the complete input fingerprints. The standalone reference and its checks of caller-supplied state remain available. A changed source fingerprint selects the reference path.
+
+The instrumented full reference took 171.689 seconds, with 75.110 seconds in canonical serialization. The fresh build and saved-document comparison took 97.234 seconds in a separate run and produced the same complete input fingerprint and final report, covering 14,000 rows, 19,115 protections and zero computed conflicts. The named Foundation check passed in 117.278 seconds under its existing 120-second deadline. That run had 2.722 seconds of headroom. Full Foundation still requires its other checks, including the 792-case keyword suite.
+
 ## Default single-worker keyword scheduling — 28 November 2026
 
 When the normal scheduler selects one worker, it runs the two measured suites consecutively in one owned process if their source pins match. The saved bank-output check and every other bank case must pass before the front-office suite can use a detached copy of the freshly verified history. The front-office suite still loads its reviewed sources and runs each original case. Each suite retains separate events, timing, output, and a verdict. The parent validates both receipts and the pair process outcome.
