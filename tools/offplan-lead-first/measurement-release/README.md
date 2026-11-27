@@ -97,3 +97,13 @@ python -B pack_plugin_review.py --review $privateComposedReview --preimage-recei
 The retained receipt supplies archive provenance. A fresh deployed file comparison and the native release gates still govern any use of the review pair.
 
 All snapshots, real audits, private bindings and paths, generated bundles, receipts and independent review artifacts remain private. Required Source checks, native acceptance, human review and concrete publication authorization are not supplied by these tools.
+
+## Reproduce the country transport review archive
+
+`COUNTRY_TRANSPORT_REVIEW.json` contains the checked byte edits and expected 51-member inventory. It omits the retained base package. From Source, run the composer on the exact previously reviewed private 0.2.15 forward ZIP and use a new output path outside Source.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/base.zip /private/country-transport-PRIVATE-REVIEW.zip
+```
+
+The composer checks the base archive and changed preimage hashes, then matches every output member to the native test receipt. The reproduced ZIP matched a separately assembled private archive. The transport flag defaults off. Preserve both rollback packages and obtain a distinct release version, current Hostinger file identity, independent review and deployment approval before use.
