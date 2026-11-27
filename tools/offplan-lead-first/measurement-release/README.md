@@ -107,3 +107,15 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 ```
 
 The composer checks the base archive and changed preimage hashes, then matches every output member to the native test receipt. The reproduced ZIP matched a separately assembled private archive. The transport flag defaults off. Preserve both rollback packages and obtain a distinct release version, current Hostinger file identity, independent review and deployment approval before use.
+
+## German advertising consent prototype
+
+`GERMAN_ADVERTISING_REVIEW.json` applies a second exact review to the 51-member transport archive. The result has 53 members, with 12 changed or added files. It retains default-off route flags and has no installed page binding or credential material. Use the explicit profile and a private output path.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/country-transport-PRIVATE-REVIEW.zip /private/german-advertising-PRIVATE-REVIEW.zip --profile german-advertising
+```
+
+The exact prototype was checked with two tabs using the same synthetic WordPress session. With the baseline, the second tab's frame stayed active through the first tab's withdrawal acknowledgement. With the new consent asset, the frame was gone at the 610 ms observation while the first-party POST still waited. The message only invalidates the sibling context and carries no choice or identifier. The sibling must reload the page or confirm its own choice before enabling measurement again. In the fixture, neither build attempted a lead POST or delivered a vendor request.
+
+Further review must resolve overlapping grant and withdrawal writes and delayed pending-state reads. The stored 180-day expiry is tied to a two-hour browser session and the prototype cannot restore the choice after session expiry. A browser without the peer signal falls back to the pending cookie and server lease checks. The test covers Chrome with the signal available. German notice approval, deployed cache and Hostinger checks, provider acceptance and other locales are separate release gates.

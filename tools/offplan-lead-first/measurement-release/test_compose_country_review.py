@@ -31,6 +31,24 @@ class PrivateReviewComposerTest(unittest.TestCase):
         review = [{"offset": len("日本\r\n".encode()), "remove": 4, "lines": ["été"]}]
         self.assertEqual(apply_edits(original, review), "日本\r\nété\n".encode())
 
+    def test_german_profile_pins_its_own_base_count_and_scope(self):
+        base = compose(self.base, self.review)
+        final = {**self.final, "choice.php": b"<?php exit;\n", "choice.js": b"/* review */\n"}
+        review = {
+            "scope": "OFFPLAN_GERMAN_ADVERTISING_REVIEW_ONLY", "base_archive_sha256": digest(base),
+            "base_member_count": 51, "candidate_member_count": 53,
+            "candidate_members": {name: digest(body) for name, body in final.items()},
+            "changes": {name: {"before": None, "edits": [{"offset": 0, "remove": 0, "lines": [final[name].decode()]}]}
+                        for name in ("choice.php", "choice.js")},
+        }
+        with self.assertRaisesRegex(ValueError, "not the pinned"):
+            compose(base, review)
+        with ZipFile(BytesIO(compose(base, review, "german-advertising"))) as output:
+            self.assertEqual({name: output.read(f"{PLUGIN}/{name}") for name in final}, final)
+        review["base_member_count"] = 49
+        with self.assertRaisesRegex(ValueError, "Wrong baseline member count"):
+            compose(base, review, "german-advertising")
+
     def test_overlapping_changes_reject(self):
         edits = [{"offset": 1, "remove": 2, "lines": []}, {"offset": 2, "remove": 0, "lines": ["x"]}]
         with self.assertRaisesRegex(ValueError, "overlapping"):

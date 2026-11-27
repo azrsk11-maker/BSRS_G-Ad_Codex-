@@ -1,4 +1,4 @@
-"""Reproduce the tested country transport from its retained private review ZIP."""
+"""Reproduce an exact country prototype from its retained private review ZIP."""
 
 from argparse import ArgumentParser
 from io import BytesIO
@@ -11,8 +11,11 @@ from pack_plugin_review import HASH, PLUGIN, archive_bytes, digest, read_json, v
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE.parents[2]
-REVIEW = HERE / "COUNTRY_TRANSPORT_REVIEW.json"
 MAX_MEMBER_BYTES = 1024 * 1024
+PROFILES = {
+    "transport": ("COUNTRY_TRANSPORT_REVIEW.json", "OFFPLAN_COUNTRY_TRANSPORT_REVIEW_ONLY", 49, 51),
+    "german-advertising": ("GERMAN_ADVERTISING_REVIEW.json", "OFFPLAN_GERMAN_ADVERTISING_REVIEW_ONLY", 51, 53),
+}
 
 
 def apply_edits(previous, edits):
@@ -37,11 +40,12 @@ def apply_edits(previous, edits):
     return bytes(result)
 
 
-def compose(base, review):
-    if review["scope"] != "OFFPLAN_COUNTRY_TRANSPORT_REVIEW_ONLY" or digest(base) != review["base_archive_sha256"]:
+def compose(base, review, profile="transport"):
+    _, scope, base_count, result_count = PROFILES[profile]
+    if review["scope"] != scope or digest(base) != review["base_archive_sha256"]:
         raise ValueError("Input is not the pinned private forward review ZIP")
     approved = review["candidate_members"]
-    if (len(approved) != review["candidate_member_count"] or len(approved) != 51
+    if (len(approved) != review["candidate_member_count"] or len(approved) != result_count
         or len({name.casefold() for name in approved}) != len(approved)
         or any(not valid_member(name) or not HASH.fullmatch(sha) for name, sha in approved.items())):
         raise ValueError("Invalid reviewed country inventory")
@@ -49,7 +53,7 @@ def compose(base, review):
     files = {}
     prefix = PLUGIN + "/"
     with ZipFile(BytesIO(base)) as archive:
-        if len(archive.infolist()) != review["base_member_count"] or len(archive.infolist()) != 49:
+        if len(archive.infolist()) != review["base_member_count"] or len(archive.infolist()) != base_count:
             raise ValueError("Wrong baseline member count")
         for member in archive.infolist():
             path = member.filename.removeprefix(prefix)
@@ -73,6 +77,7 @@ def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("base_zip", type=Path)
     parser.add_argument("output_zip", type=Path)
+    parser.add_argument("--profile", choices=PROFILES, default="transport")
     args = parser.parse_args()
     try:
         out = args.output_zip.resolve()
@@ -82,13 +87,14 @@ def main():
             base = stream.read(MAX_MEMBER_BYTES + 1)
         if len(base) > MAX_MEMBER_BYTES:
             raise ValueError("Baseline ZIP outside review bounds")
-        result = compose(base, read_json(REVIEW))
+        metadata, _, _, member_count = PROFILES[args.profile]
+        result = compose(base, read_json(HERE / metadata), args.profile)
         with out.open("xb") as stream:
             stream.write(result)
     except (OSError, ValueError, KeyError, TypeError, BadZipFile) as error:
         print(json.dumps({"status": "HOLD", "reason": str(error)}))
         return 1
-    print(json.dumps({"status": "MATCHED_TESTED_PRIVATE_REVIEW", "members": 51, "sha256": digest(result),
+    print(json.dumps({"status": "MATCHED_TESTED_PRIVATE_REVIEW", "members": member_count, "sha256": digest(result),
                       "ready_to_install": False}))
     return 0
 
