@@ -1,3 +1,13 @@
+## Live pause verification, archive review and negative corpus — 27 November 2026
+
+The authenticated Ads table for 573-038-4686 contained 24 distinct campaigns, with 21 paused, three removed and zero enabled. The five prepared pools reconcile to AED2,500 average per day. A fresh WordPress Enquiries reload showed the published English off-plan page and the master, Analytics and Ads measurement switches off. The site reported WordPress 7.1.5 and the active enquiry plugin 0.2.12.
+
+The source archive tool built and verified a 49-member `0.2.15` review ZIP and its 30-member `0.2.12` rollback. The exact bytes round-tripped through both archives. Reconciliation rejected an altered file hash, an extra member, an unrelated baseline and unsafe paths. Fresh Hostinger access is required to verify the installed files against the retained rollback. No account settings or website files changed.
+
+The exact plugin passed seven query and template cases in real local WordPress 7.1.4 using synthetic SQLite fixtures. These covered the verified India editor preview, anonymous hold, synthetic publication, language fallback and resale measurement denial. WordPress accepted both ZIPs through its native unpack and package inspection, and byte comparisons passed on all extracted members. Hostinger HTTP, caching, the production database and actual Google processing still require their own verification.
+
+The retained negative research master rebuilt with the recorded SHA-256. All 14,000 original and normalized phrases are distinct, with 14,213 provenance occurrences across 35 source registrations. Every row still has a pending review and zero deployment fields. The 58 retained commercial lexical overlaps all fall in the existing review-hold category. Scope, protected-intent and approval decisions still govern use of exclusions.
+
 ## Mailbox reconciliation and browser transport — 27 November 2026
 
 The approved 26 November TEST is verified end to end. The single Marketing Inbox message matches both receipt IDs from the accepted WordPress response and the one private Sheet row. The message timestamp matches the first recorded outbox send. The delayed lookup reconciles yesterday’s missing search result. No resend or conversion occurred.

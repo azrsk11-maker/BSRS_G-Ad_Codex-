@@ -85,4 +85,15 @@ python -B check_chrome_transport.py --chrome $chromePath --candidate $privateCom
 
 Use the local Python environment with `cryptography` and an existing Windows Chrome executable. Choose a new private receipt path. The test fixture verifies the asset hash in the review manifest. Actual Hostinger headers, the deployed runtime and Google processing need live evidence.
 
+## Private archive and rollback review
+
+`pack_plugin_review.py` pairs the full 49-file `0.2.15` candidate with the 30-file retained `0.2.12` rollback. It verifies the SHA-256 of every member against the review and retained file receipt. Both archives use the existing `bsre-enquiries/` root. Reconciliation reads every archived member after packaging. `--check` compares the existing output against the current reviewed inputs without writing it.
+
+```powershell
+python -B pack_plugin_review.py --review $privateComposedReview --preimage-receipt $retainedFileReceipt --out $privateArchiveDirectory
+python -B pack_plugin_review.py --review $privateComposedReview --preimage-receipt $retainedFileReceipt --out $privateArchiveDirectory --check
+```
+
+The retained receipt supplies archive provenance. A fresh deployed file comparison and the native release gates still govern any use of the review pair.
+
 All snapshots, real audits, private bindings and paths, generated bundles, receipts and independent review artifacts remain private. Required Source checks, native acceptance, human review and concrete publication authorization are not supplied by these tools.

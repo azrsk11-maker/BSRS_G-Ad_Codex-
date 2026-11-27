@@ -1,5 +1,7 @@
 ## Off-plan test delivery and Chrome transport — 27 November 2026
 
+The latest live readback confirms 21 paused, three removed and zero enabled campaigns and five prepared budgets totaling AED2,500 average per day. The active WordPress 0.2.12 intake and optional measurement controls are unchanged. The private forward and rollback ZIPs passed WordPress package inspection and seven native renderer cases in a synthetic local WordPress environment. The detailed current scope is in [the release and research entry](PROGRESS.md#live-pause-verification-archive-review-and-negative-corpus--27-november-2026).
+
 The single authorized TEST is reconciled across WordPress, one Lead Sheet row and one Marketing Inbox message. The test was measurement-ineligible and no conversion was transmitted. Seven local Chrome frame checks passed against the exact review candidate. See [the current verification entry](PROGRESS.md#mailbox-reconciliation-and-browser-transport--27-november-2026). Deployed WordPress and Google conversion verification remain open. The India page remains a draft. No production publication or Ads activation occurred.
 
 ## Shared property enquiry design — 25 November 2026
