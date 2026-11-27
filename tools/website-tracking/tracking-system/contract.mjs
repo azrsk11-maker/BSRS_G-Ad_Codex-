@@ -11,7 +11,8 @@ const EVIDENCE_SOURCES={form_accepted:['server_confirmed'],viewing_request:['ser
   conversation_verified:['provider_or_authorized_ledger'],qualified_lead:['authorized_ledger'],
   mandate_signed:['authorized_ledger'],offer_submitted:['authorized_ledger'],transaction_closed:['authorized_ledger'],
   commission_collected:['finance_ledger']};
-const OFFLINE_EVENTS=new Set(['conversation_verified','qualified_lead','mandate_signed','offer_submitted','transaction_closed','commission_collected']);
+const OFFLINE_EVENTS=new Set(['viewing_booked','viewing_attended','conversation_verified','qualified_lead',
+  'mandate_signed','offer_submitted','transaction_closed','commission_collected']);
 const SPECIAL_CTA={phone:'phone_click',whatsapp:'whatsapp_click',email:'email_click'};
 const SERVICE_PATHS=new Map([
   ['off_plan','/enquire/off-plan/'],['resale','/enquire/resale/'],['tenant','/enquire/rent/'],

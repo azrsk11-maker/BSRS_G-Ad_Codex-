@@ -14,10 +14,13 @@ function fixture() {
       generic_and_specialized_cta_counts_summed:false,custom_event_id_assumed_universal_dedup:false},
     events:[...['cta_click','phone_click','whatsapp_click','email_click'].map(operational_event => ({operational_event,bidding_treatment:'diagnostic'})),
       {operational_event:'form_accepted',proposed_ga4_event:'generate_lead',evidence_source:'server_confirmed'},
-      ...['conversation_verified','qualified_lead','mandate_signed','offer_submitted','transaction_closed','commission_collected','viewing_booked','viewing_attended']
+      {operational_event:'viewing_request',proposed_ga4_event:'viewing_request',bidding_treatment:'diagnostic',evidence_source:'server_confirmed'},
+      ...['viewing_booked','viewing_attended'].map(operational_event=>({operational_event,proposed_ga4_event:operational_event,
+        bidding_treatment:'intermediate_requires_goal_approval',evidence_source:operational_event==='viewing_booked'?
+          'booking_or_authorized_ledger':'authorized_ledger'})),
+      ...['conversation_verified','qualified_lead','mandate_signed','offer_submitted','transaction_closed','commission_collected']
         .map(operational_event=>({operational_event,evidence_source:operational_event==='commission_collected'?'finance_ledger':
-          operational_event==='conversation_verified'?'provider_or_authorized_ledger':operational_event==='viewing_booked'?
-            'booking_or_authorized_ledger':'authorized_ledger'}))]},
+          operational_event==='conversation_verified'?'provider_or_authorized_ledger':'authorized_ledger'}))]},
     acceptance:{tests:Array.from({length:32},(_,i)=>({test_id:`WT-${String(i+1).padStart(3,'0')}`,status:'NOT_EXECUTED',evidence_ref:null,reviewer:null}))}};
 }
 function evidenceOf(acceptance) {
@@ -42,6 +45,28 @@ test('browser click cannot establish financial or qualification outcome', () => 
   assert.equal(validateTracking(contract,acceptance).valid,false);
   delete contract.events.find(e=>e.operational_event==='commission_collected').evidence_source;
   assert.equal(validateTracking(contract,acceptance).valid,false);
+});
+test('viewing request must exist and be server-confirmed', () => {
+  const {contract,acceptance}=fixture();
+  const request=contract.events.find(e=>e.operational_event==='viewing_request');
+  request.evidence_source='browser';
+  const browserRequest=validateTracking(contract,acceptance).valid;
+  contract.events=contract.events.filter(e=>e!==request);
+  assert.deepEqual([browserRequest,validateTracking(contract,acceptance).valid],[false,false]);
+});
+test('viewing events cannot be collapsed, aliased from a click, or promoted for bidding', () => {
+  const results=[
+    ['viewing_request',{proposed_ga4_event:'viewing_booked'}],
+    ['viewing_attended',{proposed_ga4_event:'viewing_request'}],
+    ['cta_click',{proposed_ga4_event:'viewing_booked'}],
+    ['viewing_request',{bidding_treatment:'primary'}],
+    ['viewing_booked',{bidding_treatment:'primary'}]
+  ].map(([event,changes])=>{
+    const {contract,acceptance}=fixture();
+    Object.assign(contract.events.find(e=>e.operational_event===event),changes);
+    return validateTracking(contract,acceptance).valid;
+  });
+  assert.deepEqual(results,[false,false,false,false,false]);
 });
 test('missing acceptance and duplicate IDs fail', () => {
   const {contract,acceptance}=fixture();acceptance.tests[1].test_id=acceptance.tests[0].test_id;

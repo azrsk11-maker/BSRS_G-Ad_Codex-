@@ -178,6 +178,36 @@ test('clicks never establish calls, bookings, transactions or collected commissi
     assert.throws(()=>normalizeEvent(event,registry),/AUTHORITATIVE_OUTCOME/);
   }
 });
+test('server-confirmed viewing request stays diagnostic and separate from booking',()=>{
+  const event={...raw(),event:'viewing_request',receipt:undefined};
+  const opts=options();
+  const result=prepareDestinations(event,opts);
+  assert.equal(result.normalized_event,'viewing_request');
+  assert.deepEqual(result.output.map(row=>[row.destination,row.payload.event_name]),[['ga4','viewing_request']]);
+  assert.equal(prepareDestinations(event,opts).output[0].status,'duplicate_suppressed');
+  assert.equal(prepareDestinations(event,options({consent:{...consent,analytics:false}})).output.length,0);
+});
+
+test('neither click nor captured request evidence establishes booking or attendance',()=>{
+  for(const event of ['viewing_booked','viewing_attended']){
+    for(const source of ['browser','server_confirmed']){
+      const candidate={...raw(),event,receipt:undefined,evidence:{source,verified:true,reference:'qa-viewing-request'}};
+      assert.throws(()=>prepareDestinations(candidate,options()),/AUTHORITATIVE_OUTCOME_EVIDENCE_REQUIRED/);
+    }
+  }
+});
+
+for(const [event,source] of [['viewing_booked','booking_or_authorized_ledger'],['viewing_attended','authorized_ledger']]){
+  test(event+' cannot prepare a web destination from an evidence label',()=>{
+    const candidate={...raw(),event,receipt:undefined,evidence:{source,verified:true,reference:'qa-labelled-viewing'}};
+    const opts=options();
+    opts.ledger.reserveBatch=()=>assert.fail('held outcomes must not reserve web dispatch');
+    assert.deepEqual(prepareDestinations(candidate,opts),{
+      normalized_event:event,output:[],withheld:['REVIEWED_OFFLINE_ADAPTER_REQUIRED'],network_calls:0
+    });
+  });
+}
+
 test('operational outcome with evidence remains held for reviewed offline adapter',()=>{
   const event={...raw(),event:'commission_collected',receipt:undefined,evidence:{source:'finance_ledger',verified:true,reference:'qa-finance-record'}};
   assert.deepEqual(prepareDestinations(event,options()).withheld,['REVIEWED_OFFLINE_ADAPTER_REQUIRED']);
