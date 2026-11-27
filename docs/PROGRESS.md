@@ -1,3 +1,9 @@
+## Commercial exposure and worktree memory — 27 November 2026
+
+The [standard Search exposure calculator](../tools/website-tracking/commercial-system/README.md#standard-search-budget-exposure) reconciles the historical AED2,000 and prepared off-plan AED2,500 average daily pools. Under the unchanged full-month model, those imply AED60,800 and AED76,000 monthly media exposure before VAT. Nine focused tests passed. Finance-approved ceilings and cash exposure still require [DEC-03](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3); G050 remains open. No account setting or financial record changed.
+
+Three paired Windows runs on the same clean 1,419-file reference returned identical worktree reports and byte digests. Median Python peak working set fell from 429,727,744 to 86,126,592 bytes. Git subprocesses increased from five to eleven on that reference. The timing samples did not establish a wall-time benefit. The full local efficiency group returned 150 passes and three environment skips. The Windows test invocation preserved the inherited Git process environment without a persistent configuration change.
+
 ## Current strict intake and frozen-review preservation — 19 November 2026
 
 ## Isolated-lab dependency deadline recovery — 20 November 2026

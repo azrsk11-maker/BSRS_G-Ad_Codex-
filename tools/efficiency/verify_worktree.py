@@ -1,7 +1,7 @@
 """Compare working files with one pinned Git commit without changing either.
 
-One cat-file batch replaces a Git process per file. Contents are compared as raw
-bytes, including line endings. Reports contain relative paths and counts only.
+Bounded cat-file batches replace a Git process per file. Contents are compared
+as raw bytes, including line endings. Reports contain relative paths and counts.
 """
 import argparse
 import hashlib
@@ -11,10 +11,12 @@ from pathlib import Path
 import re
 import stat
 import subprocess
+import time
 
 
 MAX_BLOB_BYTES = 64 * 1024 * 1024
 MAX_BATCH_BYTES = 256 * 1024 * 1024
+BATCH_PAYLOAD_BYTES = 32 * 1024 * 1024
 MAX_FILES = 100_000
 GIT_TIMEOUT_SECONDS = 120
 OBJECT_ID = re.compile(rb"[0-9a-f]{40}(?:[0-9a-f]{24})?\Z")
@@ -24,11 +26,14 @@ class VerificationError(ValueError):
     """Verification could not establish a complete byte comparison."""
 
 
-def git(root, *args, input_bytes=None):
+def git(root, *args, input_bytes=None, timeout=None):
+    budget = GIT_TIMEOUT_SECONDS if timeout is None else min(timeout, GIT_TIMEOUT_SECONDS)
+    if budget <= 0:
+        raise VerificationError("Git could not finish verification.")
     try:
         result = subprocess.run(
             ["git", *args], cwd=root, input=input_bytes, capture_output=True,
-            timeout=GIT_TIMEOUT_SECONDS, check=False,
+            timeout=budget, check=False,
         )
     except (OSError, subprocess.TimeoutExpired) as error:
         raise VerificationError("Git could not finish verification.") from error
@@ -93,6 +98,21 @@ def batch_hashes(data, objects):
     return hashes
 
 
+def object_batches(objects):
+    """Limit buffered payloads. Blobs over the target get their own batch."""
+    batch = {}
+    payload_bytes = 0
+    for object_id, size in objects.items():
+        if batch and payload_bytes + size > BATCH_PAYLOAD_BYTES:
+            yield batch
+            batch = {}
+            payload_bytes = 0
+        batch[object_id] = size
+        payload_bytes += size
+    if batch:
+        yield batch
+
+
 def local_hash(root, name):
     path = root / os.fsdecode(name)
     relative = Path(os.fsdecode(name))
@@ -139,9 +159,11 @@ def compare(root, ref):
     if sum(objects.values()) > MAX_BATCH_BYTES:
         raise VerificationError("Git batch exceeds the verification size limit.")
     hashes = {}
-    if objects:
-        requests = b"".join(object_id + b"\n" for object_id in objects)
-        hashes = batch_hashes(git(root, "cat-file", "--batch", input_bytes=requests), objects)
+    deadline = time.monotonic() + GIT_TIMEOUT_SECONDS
+    for batch in object_batches(objects):
+        requests = b"".join(object_id + b"\n" for object_id in batch)
+        hashes.update(batch_hashes(git(root, "cat-file", "--batch", input_bytes=requests,
+                                      timeout=deadline - time.monotonic()), batch))
     different = [name for name in shared if local_hash(root, name) != hashes[remote[name][0]]]
     return {
         "ref": ref, "commit": commit, "local_files": len(local), "remote_files": len(remote),

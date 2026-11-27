@@ -44,6 +44,41 @@ class WorktreeVerificationTests(unittest.TestCase):
         self.assertEqual(sum(call[:2] == ("cat-file", "--batch") for call in calls), 1)
         self.assertEqual(len(calls), 5)
 
+    def test_split_batches_preserve_full_report_and_fetch_each_blob_once(self):
+        (self.root / "duplicate.txt").write_bytes((self.root / "plain.txt").read_bytes())
+        self.git("add", "duplicate.txt")
+        self.git("commit", "-qm", "Synthetic duplicate blob")
+        expected = verifier.compare(self.root, "HEAD")
+        original = verifier.git
+        batches = []
+
+        def observed(root, *args, **kwargs):
+            if args[:2] == ("cat-file", "--batch"):
+                batches.append(kwargs["input_bytes"].splitlines())
+            return original(root, *args, **kwargs)
+
+        # The 16-byte blob exceeds this test target and needs its own batch.
+        with patch.object(verifier, "BATCH_PAYLOAD_BYTES", 12), patch.object(verifier, "git", side_effect=observed):
+            self.assertEqual(verifier.compare(self.root, "HEAD"), expected)
+        self.assertEqual([len(batch) for batch in batches], [1, 1])
+        self.assertNotEqual(batches[0], batches[1])
+
+    def test_split_batches_share_the_original_timeout(self):
+        original = verifier.subprocess.run
+        budgets = []
+
+        def observed(args, **kwargs):
+            if args[1:3] == ["cat-file", "--batch"]:
+                budgets.append(kwargs["timeout"])
+            return original(args, **kwargs)
+
+        with patch.object(verifier, "BATCH_PAYLOAD_BYTES", 12), patch.object(verifier, "time") as clock:
+            clock.monotonic.side_effect = [100, 101, 100 + verifier.GIT_TIMEOUT_SECONDS]
+            with patch.object(verifier.subprocess, "run", side_effect=observed):
+                with self.assertRaisesRegex(verifier.VerificationError, "could not finish"):
+                    verifier.compare(self.root, "HEAD")
+        self.assertEqual(budgets, [verifier.GIT_TIMEOUT_SECONDS - 1])
+
     def test_line_endings_are_not_normalized(self):
         (self.root / "plain.txt").write_bytes(b"original\nbytes\n")
         self.assertEqual(verifier.compare(self.root, "HEAD")["different"], ["plain.txt"])

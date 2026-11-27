@@ -1,5 +1,11 @@
 # Offline commercial report prototype
 
+## Standard Search budget exposure
+
+`media_exposure.py` reconciles distinct shared budgets in integer AED fils. For a full unchanged month it models standard Search daily and monthly media exposure excluding VAT. Finance-authorized ceilings and verified cash exposure are separate inputs. Partial or changed months need actual budget and billing history. Unknown comparisons remain `UNKNOWN`, and the calculation supplies no release authorization. [Google Ads spending limits](https://support.google.com/google-ads/answer/10486637?hl=en), [budget changes](https://support.google.com/google-ads/answer/10487143?hl=en), [Finance decision DEC-03](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3).
+
+Run `python -B -m unittest discover -s tools/website-tracking/commercial-system -p test_media_exposure.py` from Source.
+
 `report.mjs` implements a small, dependency-free calculation over a **verified, sanitized export supplied by the owner**, without reading any real business record or making network calls. No finance policy is assumed to have been approved. It returns `BLOCKED` and `metrics: null` if a policy decision or required source completeness is missing. A successful calculation remains an offline result requiring finance reconciliation.
 
 The module checks explicit input assertions; it does not authenticate their author, prove ledger completeness or inspect the GitHub decision register. A production caller must establish those facts and resolve the policy approval reference before supplying `verified`/`approved` flags. Test fixtures are not approvals or verified business records.
