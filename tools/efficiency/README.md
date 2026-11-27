@@ -1,5 +1,15 @@
 # Efficiency audit — 7 November 2026
 
+## Optional Foundation progress journal — 27 November 2026
+
+Use `python -B tools/check_repository.py --progress-output test-output/foundation-progress-NEW.jsonl` to keep a flushed local record of check names, elapsed time and outcomes. Choose a new file for each run. The final report still controls acceptance. An interrupted run can retain finished-check observations without a `run_finished` record. The commands, order and per-check timeouts are the same with the journal enabled.
+
+The 24 November run reached its 600-second deadline without a final report. A time-correlated keyword journal shows its first active module for 180.476 seconds with no case started. The 18 November run separately hit 120 seconds in negative research composition and 300 seconds in keyword behavior. Use the progress journal to locate future incomplete checks before scheduling another full run.
+
+A 14-second controlled cutoff of the current Foundation command retained 34 journal rows and 16 completed-check observations. The final started check was `keyword-abu-sharjah-triage`. No full report or `run_finished` record was produced. The complete efficiency suite ran 154 tests in 24.287 seconds with 151 passes and three environment skips.
+
+An alternating local comparison removed three repeated JSON decodes for the real 259-record study-goods cohort while preserving raw pin checks. It decoded 10,402,898 fewer bytes, and all four outputs and audited reports matched. The two elapsed medians were 0.619 seconds before and 0.626 seconds after. The candidate was withdrawn because this comparison did not demonstrate a wall-time benefit. The existing keyword code and pins were restored.
+
 ## Current ARM result and follow-up — 13 November 2026
 
 Actual ARM execution completed all559keyword cases/44modules in169.343477s,zero skips,complete ordered coverage and no timeout under the original300s bound. Full acceptance was false because a filesystem-order-dependent tamper test targeted the preview. The follow-up selects the manifest-pinned source and requires an exact byte-hash rejection under both discovery orders; validator/data and case counts stay unchanged. The focused real reporting worker passes allthree cases. [Actual runtime, limits, root cause and current-CI requirement](../../docs/audit/ARM_RUNTIME_TRIAL_2026-11-13.json). Cloud hosts/images differ; no causal speedup percentage or passing combined CI is inferred from the first failed ARM run.

@@ -1,5 +1,6 @@
 """Run bounded offline foundation acceptance; never contact production or deploy."""
 import argparse
+from contextlib import nullcontext
 import importlib.util
 import json
 import math
@@ -190,19 +191,53 @@ def module(name, path):
     return result
 
 
-def run_checks(require_php=False):
+def write_progress(journal, event, elapsed_seconds, *, check=None, status=None):
+    row = {"event": event, "elapsed_seconds": elapsed_seconds}
+    if check is not None:
+        row["check"] = check
+    if status is not None:
+        row["status"] = status
+    journal.write(json.dumps(row) + "\n")
+    journal.flush()
+
+
+def check_status(passed):
+    return "PASS" if passed is True else "NOT_EXECUTED" if passed is None else "FAIL"
+
+
+def run_checks(require_php=False, *, progress=None):
     started = time.perf_counter()
     results = []
+    if progress is not None:
+        write_progress(progress, "run_started", 0.0)
+
+    def progress_event(event, name, *, status=None):
+        if progress is not None:
+            write_progress(progress, event, round(time.perf_counter() - started, 6), check=name, status=status)
+
+    def append(check, progress_name=None):
+        results.append(check)
+        if progress is not None:
+            details = check["details"]
+            timed_out = isinstance(details, dict) and details.get("timed_out") is True
+            status = "TIMEOUT" if timed_out else check_status(check["passed"])
+            progress_event("check_finished", progress_name or check["check"], status=status)
+
     def record(name, passed, details):
-        results.append({"check": name, "passed": bool(passed), "details": details})
-    def run(name, args, cwd=ROOT, *, owned_tree=False):
-        results.append(execute_check(name, args, cwd, owned_tree=owned_tree))
+        append({"check": name, "passed": bool(passed), "details": details})
+
+    def run(name, args, cwd=ROOT, *, owned_tree=False, progress_name=None):
+        progress_event("check_started", progress_name or name)
+        append(execute_check(name, args, cwd, owned_tree=owned_tree), progress_name)
+
     specdir = ROOT / "docs/google-ads"
+    progress_event("check_started", "entire-source-integrity")
     audit = module("spec_audit", ROOT / "tools/audit_specification.py")
     with tempfile.TemporaryDirectory() as temp:
         report = audit.audit(specdir, Path(temp))
         record("entire-source-integrity", report["status"] == "PASS",
                {k: report[k] for k in ("files_read", "registry_rows_fully_checked", "upstream_check_count", "additional_check_count")})
+    progress_event("check_started", "native-page-manifest-build")
     native = module("native_manifest", ROOT / "tools/native-wordpress/compile_native_manifest.py")
     compiled = native.compile_manifest(json.loads((specdir/"planned_campaign_page_registry.json").read_text(encoding="utf-8-sig")),
                                        json.loads((specdir/"page_family_allocation.json").read_text(encoding="utf-8-sig")))
@@ -314,7 +349,7 @@ def run_checks(require_php=False):
     if require_php and php:
         php_prefix = php_command_prefix(php)
         for path in sorted((ROOT/"tools/native-wordpress").rglob("*.php")):
-            run("php-lint-" + path.name, [*php_prefix, "-l", str(path)])
+            run("php-lint-" + path.name, [*php_prefix, "-l", str(path)], progress_name="php-lint-native-wordpress")
         run("linkage-reconciliation-behavior", [*php_prefix, str(ROOT/"tools/consent-retention/linkage.test.php")])
         run("retirement-ledger-compaction-behavior", [*php_prefix, str(ROOT/"tools/consent-retention/compaction.test.php")])
         run("per-choice-retention-planning", [*php_prefix, str(ROOT/"tools/consent-retention/per-choice/test_per_choice.php")])
@@ -328,7 +363,7 @@ def run_checks(require_php=False):
         run("native-wordpress-isolated-behavior", [*php_prefix, str(ROOT/"tools/native-wordpress/tests/native-draft-preview-test.php")])
         run("property-decision-shortcode-behavior", [*php_prefix, str(ROOT/"tools/property-decision-tools/php.test.php")])
         for path in sorted((ROOT/"tools/owner-mail-review").glob("*.php")):
-            run("php-lint-owner-mail-" + path.name, [*php_prefix, "-l", str(path)])
+            run("php-lint-owner-mail-" + path.name, [*php_prefix, "-l", str(path)], progress_name="php-lint-owner-mail")
         run("owner-mail-review-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_mail_review.php")])
         run("owner-closure-amendment-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_closure.php")])
         run("owner-sender-retirement-behavior", [*php_prefix, str(ROOT/"tools/owner-mail-review/test_owner_retirement.php")])
@@ -343,36 +378,58 @@ def run_checks(require_php=False):
     elif require_php:
         record("php-runtime-required", False, "PHP runtime unavailable")
     else:
-        results.append({"check":"native-php-runtime", "passed":None, "details":"Delegated to mandatory native-wordpress-check CI job; use --require-php to run here"})
+        append({"check":"native-php-runtime", "passed":None, "details":"Delegated to mandatory native-wordpress-check CI job; use --require-php to run here"})
+    progress_event("check_started", "public-file-hygiene")
+    hygiene_passed = True
     for path in ROOT.rglob("*"):
         if not path.is_file() or any(part in (".git", "__pycache__", "test-output", ".cache") for part in path.parts):
             continue
         relative = path.relative_to(ROOT).as_posix()
         if path.suffix in (".pem", ".key", ".sqlite", ".jsonl") or path.name == ".env":
-            record("public-file-hygiene", False, relative)
+            results.append({"check": "public-file-hygiene", "passed": False, "details": relative})
+            hygiene_passed = False
+    progress_event("check_finished", "public-file-hygiene", status=check_status(hygiene_passed))
     workflow = (ROOT/".github/workflows/validate.yml").read_text(encoding="utf-8")
     record("ci-has-no-production-secret-or-deployer", not any(s in workflow for s in ("secrets.", "pull_request_target", "workflow_dispatch", "environment:", "contents: write")), "validation-only workflow")
     return {"scope":"OFFLINE_FOUNDATION_NOT_PRODUCTION_ACCEPTANCE", "passed":all(r["passed"] is not False for r in results),
             "release_authorized":False, "elapsed_seconds":round(time.perf_counter()-started, 6), "checks":results}
 
 
-if __name__ == "__main__":
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--require-php", action="store_true")
     parser.add_argument("--output", type=Path, default=ROOT/"test-output/foundation-checks.json")
-    args = parser.parse_args()
+    parser.add_argument("--progress-output", type=Path, metavar="FILE",
+                        help="Write flushed progress records to a new JSONL file in ignored test-output/")
+    args = parser.parse_args(argv)
+    output_root = (ROOT/"test-output").resolve()
     destination = args.output.resolve()
-    if not destination.is_relative_to((ROOT/"test-output").resolve()):
+    if not destination.is_relative_to(output_root):
         parser.error("Output must stay inside ignored test-output/; source overwrite is forbidden")
-    try:
-        result = run_checks(args.require_php)
-    except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
-        result = {"passed":False, "release_authorized":False, "error_type":type(exc).__name__, "error":str(exc)}
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
+    journal = None
+    if args.progress_output is not None:
+        progress_destination = args.progress_output.resolve()
+        if (not progress_destination.is_relative_to(output_root)
+                or progress_destination.is_relative_to(destination)
+                or destination.is_relative_to(progress_destination)):
+            parser.error("Progress output must be a separate file inside ignored test-output/")
+        try:
+            progress_destination.parent.mkdir(parents=True, exist_ok=True)
+            journal = progress_destination.open("x", encoding="utf-8", newline="\n")
+        except OSError:
+            parser.error("Progress output must be a new writable file")
+    with journal if journal is not None else nullcontext():
+        try:
+            result = run_checks(args.require_php, progress=journal)
+        except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
+            result = {"passed":False, "release_authorized":False, "error_type":type(exc).__name__, "error":str(exc)}
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
+        if journal is not None and "checks" in result:
+            write_progress(journal, "run_finished", result["elapsed_seconds"], status=check_status(result["passed"]))
     print(json.dumps({k:v for k,v in result.items() if k != "checks"}))
     for check in result.get("checks", []):
-        print(("PASS" if check["passed"] is True else "NOT_EXECUTED" if check["passed"] is None else "FAIL") + " " + check["check"])
+        print(check_status(check["passed"]) + " " + check["check"])
         summary = public_test_summary(check)
         if summary is not None:
             print("TEST_SUMMARY " + json.dumps(summary, sort_keys=True))
@@ -382,4 +439,8 @@ if __name__ == "__main__":
             timings=check['details'].get('keyword_module_timings')
             if keyword_summary.get('status')=='OBSERVED' and timings is not None:
                 print('KEYWORD_MODULE_TIMINGS '+json.dumps(timings,sort_keys=True))
-    raise SystemExit(0 if result["passed"] else 1)
+    return 0 if result["passed"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

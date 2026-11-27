@@ -1,3 +1,7 @@
+## Foundation interruption diagnostics — 27 November 2026
+
+The [optional Foundation progress journal](../tools/efficiency/README.md#optional-foundation-progress-journal--27-november-2026) flushes sanitized outcomes during the existing check sequence. A controlled 14-second cutoff retained 34 events, including 16 completed checks and the next started check, without recording aggregate acceptance. The complete efficiency suite ran 154 tests with three environment skips. A compared keyword parsing change produced identical records and reports but showed no wall-time improvement, so the original code and pins were restored. The full current Foundation result remains unverified.
+
 ## Five-market Ads activation scope checks — 27 November 2026
 
 The [activation scope checker](../tools/offplan-lead-first/native-paused/README.md#five-market-activation-scope-readback) checks staged, serving and rollback observations against the complete frozen roster, each of the five AED2,500 average daily budget allocations, and the exact selected off-plan group IDs. It checks visible Search settings and the UAE resale pause. Each later stage must use the recorded scope and reference hashes, preventing a narrower rollback from omitting an earlier market. The checker reports the enabled parents' configured amount separately from the five allocated amounts.

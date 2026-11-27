@@ -4,6 +4,7 @@ import io
 import json
 from pathlib import Path
 import subprocess
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -87,6 +88,7 @@ class FoundationTimeoutTests(unittest.TestCase):
         audit = SimpleNamespace(audit=lambda *args: {"status": "PASS", "files_read": 15,
             "registry_rows_fully_checked": 360, "upstream_check_count": 38, "additional_check_count": 14})
         native = SimpleNamespace(compile_manifest=lambda *args: manifest)
+        journal = io.StringIO()
         def read_text(path, *args, **kwargs):
             return json.dumps(manifest) if path.name == "native-page-manifest.json" else "{}"
         def child(args, **kwargs):
@@ -101,7 +103,7 @@ class FoundationTimeoutTests(unittest.TestCase):
                 patch.object(CHECKER.shutil, "which", side_effect=lambda name: "synthetic-node" if name == "node" else None), \
                 patch.object(CHECKER.subprocess, "run", side_effect=child), \
                 patch.object(CHECKER, "module", side_effect=[audit, native, owned]):
-            result = CHECKER.run_checks()
+            result = CHECKER.run_checks(progress=journal)
         checks = {check["check"]: check for check in result["checks"]}
         self.assertTrue(checks["keyword-research-capture-consistency"]["passed"])
         self.assertFalse(checks["keyword-system-behavior"]["passed"])
@@ -113,6 +115,21 @@ class FoundationTimeoutTests(unittest.TestCase):
                          ["keyword-system-behavior"])
         self.assertFalse(result["passed"])
         self.assertFalse(result["release_authorized"])
+        events = [json.loads(line) for line in journal.getvalue().splitlines()]
+        self.assertEqual(events[0], {"event": "run_started", "elapsed_seconds": 0.0})
+        outcomes = {event["check"]: event["status"] for event in events if event["event"] == "check_finished"}
+        self.assertEqual(outcomes["entire-source-integrity"], "PASS")
+        self.assertEqual(outcomes["keyword-system-behavior"], "TIMEOUT")
+        self.assertEqual(outcomes["native-php-runtime"], "NOT_EXECUTED")
+        self.assertEqual(outcomes["public-file-hygiene"], "PASS")
+        for check in ("entire-source-integrity", "native-page-manifest-build", "keyword-system-behavior",
+                      "efficiency-behavior", "public-file-hygiene"):
+            self.assertEqual([event["event"] for event in events if event.get("check") == check],
+                             ["check_started", "check_finished"])
+        for event in events:
+            self.assertLessEqual(set(event), {"event", "elapsed_seconds", "check", "status"})
+        self.assertNotIn("synthetic partial progress", journal.getvalue())
+        self.assertNotIn("run_finished", journal.getvalue())
 
     def test_owned_keyword_path_keeps_300s_bound_and_fail_closed_start(self):
         owned = SimpleNamespace(run_owned=unittest.mock.Mock(side_effect=OSError("synthetic containment unavailable")))
@@ -145,6 +162,80 @@ class FoundationTimeoutTests(unittest.TestCase):
             self.assertEqual(result["passed"], expected)
             self.assertEqual(result["details"]["keyword_evidence_status"],
                              "COMPLETE" if expected else "INCOMPLETE_OR_INVALID")
+
+
+class FoundationProgressCliTests(unittest.TestCase):
+    def test_journal_exists_during_run_and_terminal_follows_written_aggregate(self):
+        write_text = Path.write_text
+        for passed in (True, False):
+            with self.subTest(passed=passed), TemporaryDirectory() as temp:
+                root = Path(temp)
+                progress_path = root / "test-output/progress.jsonl"
+                report_path = root / "test-output/foundation-checks.json"
+                result = {"passed": passed, "release_authorized": False, "elapsed_seconds": 4.2, "checks": []}
+
+                def run(require_php, *, progress):
+                    self.assertFalse(require_php)
+                    CHECKER.write_progress(progress, "run_started", 0.0)
+                    self.assertEqual(json.loads(progress_path.read_text(encoding="utf-8"))["event"], "run_started")
+                    return result
+
+                def write_report(path, *args, **kwargs):
+                    self.assertEqual(path, report_path.resolve())
+                    self.assertNotIn("run_finished", progress_path.read_text(encoding="utf-8"))
+                    return write_text(path, *args, **kwargs)
+
+                with patch.object(CHECKER, "ROOT", root), patch.object(CHECKER, "run_checks", side_effect=run), \
+                        patch.object(Path, "write_text", autospec=True, side_effect=write_report), \
+                        patch("sys.stdout", new_callable=io.StringIO):
+                    self.assertEqual(CHECKER.main(["--progress-output", str(progress_path)]), 0 if passed else 1)
+                self.assertEqual(json.loads(report_path.read_text(encoding="utf-8")), result)
+                finished = json.loads(progress_path.read_text(encoding="utf-8").splitlines()[-1])
+                self.assertEqual(finished, {"event": "run_finished", "elapsed_seconds": 4.2,
+                                            "status": "PASS" if passed else "FAIL"})
+
+    def test_incomplete_aggregate_has_no_terminal_marker(self):
+        for failure, propagated in ((ValueError("PRIVATE_EXCEPTION"), False), (KeyboardInterrupt(), True)):
+            with self.subTest(failure=type(failure).__name__), TemporaryDirectory() as temp:
+                root = Path(temp)
+                progress_path = root / "test-output/progress.jsonl"
+                report_path = root / "test-output/foundation-checks.json"
+
+                def run(require_php, *, progress):
+                    CHECKER.write_progress(progress, "run_started", 0.0)
+                    CHECKER.write_progress(progress, "check_started", 1.0, check="synthetic")
+                    raise failure
+
+                with patch.object(CHECKER, "ROOT", root), patch.object(CHECKER, "run_checks", side_effect=run), \
+                        patch("sys.stdout", new_callable=io.StringIO):
+                    if propagated:
+                        with self.assertRaises(KeyboardInterrupt):
+                            CHECKER.main(["--progress-output", str(progress_path)])
+                    else:
+                        self.assertEqual(CHECKER.main(["--progress-output", str(progress_path)]), 1)
+                data = progress_path.read_text(encoding="utf-8")
+                self.assertEqual([json.loads(line)["event"] for line in data.splitlines()],
+                                 ["run_started", "check_started"])
+                self.assertNotIn("PRIVATE_EXCEPTION", data)
+                self.assertEqual(report_path.exists(), not propagated)
+
+    def test_progress_path_validation_does_not_start_checks_or_overwrite_files(self):
+        with TemporaryDirectory() as temp:
+            root = Path(temp)
+            output = root / "test-output"
+            output.mkdir()
+            existing = output / "existing.jsonl"
+            existing.write_bytes(b"ORIGINAL")
+            for path in (existing, output, output / "foundation-checks.json",
+                         output / "foundation-checks.json/child.jsonl", root / "outside.jsonl"):
+                with self.subTest(path=path.name), patch.object(CHECKER, "ROOT", root), \
+                        patch.object(CHECKER, "run_checks") as run, patch("sys.stderr", new_callable=io.StringIO):
+                    with self.assertRaises(SystemExit) as failure:
+                        CHECKER.main(["--progress-output", str(path)])
+                    self.assertEqual(failure.exception.code, 2)
+                    run.assert_not_called()
+            self.assertEqual(existing.read_bytes(), b"ORIGINAL")
+            self.assertFalse((root / "outside.jsonl").exists())
 
 
 if __name__ == "__main__":
