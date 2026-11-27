@@ -1,3 +1,7 @@
+## Faster exact worktree verification — 27 November 2026
+
+The worktree verifier now streams pinned Git blobs through one `cat-file` process. It retains bounded read chunks, the existing byte limits and a shared completion deadline. The benchmark checks the complete report and digest maps. Three paired Windows trials on the same 1,328-file checkout and 1,327 unique blobs reproduced all outputs. Git subprocesses fell from 11 to 5 in every pair. Median comparison time fell from 9.734 to 6.891 seconds, a 29.2 percent reduction in this workload. The measurements cover the repository check itself. Overall Codex latency, cost and token usage were outside the benchmark.
+
 ## Commercial exposure and worktree memory — 27 November 2026
 
 The [standard Search exposure calculator](../tools/website-tracking/commercial-system/README.md#standard-search-budget-exposure) reconciles the historical AED2,000 and prepared off-plan AED2,500 average daily pools. Under the unchanged full-month model, those imply AED60,800 and AED76,000 monthly media exposure before VAT. Nine focused tests passed. Finance-approved ceilings and cash exposure still require [DEC-03](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3); G050 remains open. No account setting or financial record changed.

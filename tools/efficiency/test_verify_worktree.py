@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -32,52 +33,34 @@ class WorktreeVerificationTests(unittest.TestCase):
         return subprocess.check_output(["git", *args], cwd=self.root, input=input_bytes, stderr=subprocess.DEVNULL)
 
     def test_exact_raw_bytes_and_single_batch(self):
-        original = verifier.git
+        original = subprocess.Popen
         calls = []
-        def observed(root, *args, **kwargs):
-            calls.append(args)
-            return original(root, *args, **kwargs)
-        with patch.object(verifier, "git", side_effect=observed):
+        def observed(args, **kwargs):
+            calls.append(args[1:])
+            return original(args, **kwargs)
+        with patch.object(subprocess, "Popen", side_effect=observed):
             result = verifier.compare(self.root, "HEAD")
         self.assertEqual(result["byte_equal"], 2)
         self.assertEqual(result["different"], [])
-        self.assertEqual(sum(call[:2] == ("cat-file", "--batch") for call in calls), 1)
+        self.assertEqual(calls.count(["cat-file", "--batch"]), 1)
         self.assertEqual(len(calls), 5)
 
-    def test_split_batches_preserve_full_report_and_fetch_each_blob_once(self):
+    def test_stream_preserves_full_report_and_fetches_each_blob_once(self):
         (self.root / "duplicate.txt").write_bytes((self.root / "plain.txt").read_bytes())
         self.git("add", "duplicate.txt")
         self.git("commit", "-qm", "Synthetic duplicate blob")
         expected = verifier.compare(self.root, "HEAD")
-        original = verifier.git
+        original = verifier.git_blob_hashes
         batches = []
 
-        def observed(root, *args, **kwargs):
-            if args[:2] == ("cat-file", "--batch"):
-                batches.append(kwargs["input_bytes"].splitlines())
-            return original(root, *args, **kwargs)
+        def observed(root, objects):
+            batches.append(list(objects))
+            return original(root, objects)
 
-        # The 16-byte blob exceeds this test target and needs its own batch.
-        with patch.object(verifier, "BATCH_PAYLOAD_BYTES", 12), patch.object(verifier, "git", side_effect=observed):
+        with patch.object(verifier, "HASH_CHUNK_BYTES", 4), patch.object(verifier, "git_blob_hashes", side_effect=observed):
             self.assertEqual(verifier.compare(self.root, "HEAD"), expected)
-        self.assertEqual([len(batch) for batch in batches], [1, 1])
-        self.assertNotEqual(batches[0], batches[1])
-
-    def test_split_batches_share_the_original_timeout(self):
-        original = verifier.subprocess.run
-        budgets = []
-
-        def observed(args, **kwargs):
-            if args[1:3] == ["cat-file", "--batch"]:
-                budgets.append(kwargs["timeout"])
-            return original(args, **kwargs)
-
-        with patch.object(verifier, "BATCH_PAYLOAD_BYTES", 12), patch.object(verifier, "time") as clock:
-            clock.monotonic.side_effect = [100, 101, 100 + verifier.GIT_TIMEOUT_SECONDS]
-            with patch.object(verifier.subprocess, "run", side_effect=observed):
-                with self.assertRaisesRegex(verifier.VerificationError, "could not finish"):
-                    verifier.compare(self.root, "HEAD")
-        self.assertEqual(budgets, [verifier.GIT_TIMEOUT_SECONDS - 1])
+        self.assertEqual([len(batch) for batch in batches], [2])
+        self.assertEqual(len(set(batches[0])), 2)
 
     def test_line_endings_are_not_normalized(self):
         (self.root / "plain.txt").write_bytes(b"original\nbytes\n")
@@ -173,16 +156,31 @@ class GitBatchFramingTests(unittest.TestCase):
         self.data = self.object_id + b" blob " + str(len(self.payload)).encode() + b"\n" + self.payload + b"\n"
 
     def test_binary_body_uses_declared_size(self):
-        self.assertEqual(verifier.batch_hashes(self.data, self.objects), {
+        self.assertEqual(verifier.batch_hashes(io.BytesIO(self.data), self.objects), {
             self.object_id: hashlib.sha256(self.payload).digest()})
+
+    def test_timeout_kills_and_reaps_the_stalled_stream_child(self):
+        original = subprocess.Popen
+        children = []
+
+        def stalled(args, **kwargs):
+            child = original([sys.executable, "-B", "-c", "import time; time.sleep(15)"], **kwargs)
+            children.append(child)
+            return child
+
+        with patch.object(subprocess, "Popen", side_effect=stalled), patch.object(verifier, "GIT_TIMEOUT_SECONDS", 0.5):
+            with self.assertRaisesRegex(verifier.VerificationError, "could not finish"):
+                verifier.git_blob_hashes(Path.cwd(), self.objects)
+        self.assertEqual(len(children), 1)
+        self.assertIsNotNone(children[0].returncode)
 
     def test_missing_truncated_wrong_or_extra_data_is_rejected(self):
         variants = [b"", self.data[:-1], self.data[:-3], self.data + b"extra",
                     self.data.replace(b" blob ", b" tree ", 1),
-                    self.data.replace(self.object_id, b"b" * 40, 1)]
+                    self.data.replace(self.object_id, b"b" * 40, 1), b" " * 128 + self.data]
         for data in variants:
             with self.subTest(data_length=len(data)), self.assertRaises(verifier.VerificationError):
-                verifier.batch_hashes(data, self.objects)
+                verifier.batch_hashes(io.BytesIO(data), self.objects)
 
     def test_nul_listing_must_be_complete(self):
         with self.assertRaises(verifier.VerificationError):

@@ -1,9 +1,10 @@
 """Compare working files with one pinned Git commit without changing either.
 
-Bounded cat-file batches replace a Git process per file. Contents are compared
+One streamed cat-file batch supplies the committed blobs. Contents are compared
 as raw bytes, including line endings. Reports contain relative paths and counts.
 """
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import os
@@ -16,7 +17,7 @@ import time
 
 MAX_BLOB_BYTES = 64 * 1024 * 1024
 MAX_BATCH_BYTES = 256 * 1024 * 1024
-BATCH_PAYLOAD_BYTES = 32 * 1024 * 1024
+HASH_CHUNK_BYTES = 1024 * 1024
 MAX_FILES = 100_000
 GIT_TIMEOUT_SECONDS = 120
 OBJECT_ID = re.compile(rb"[0-9a-f]{40}(?:[0-9a-f]{24})?\Z")
@@ -75,42 +76,66 @@ def tree_records(data):
     return records
 
 
-def batch_hashes(data, objects):
+def batch_hashes(stream, objects):
     """Validate cat-file framing before hashing the exact payload bytes."""
     hashes = {}
-    offset = 0
-    view = memoryview(data)
     for expected_id, expected_size in objects.items():
-        newline = data.find(b"\n", offset, offset + 128)
-        if newline < 0:
+        header = stream.readline(128)
+        if not header.endswith(b"\n"):
             raise VerificationError("Incomplete Git batch header.")
-        fields = data[offset:newline].split()
-        if fields != [expected_id, b"blob", str(expected_size).encode("ascii")]:
+        if header.split() != [expected_id, b"blob", str(expected_size).encode("ascii")]:
             raise VerificationError("Unexpected Git batch object.")
-        start = newline + 1
-        end = start + expected_size
-        if end >= len(data) or data[end:end + 1] != b"\n":
+        digest = hashlib.sha256()
+        remaining = expected_size
+        while remaining:
+            chunk = stream.read(min(remaining, HASH_CHUNK_BYTES))
+            if not chunk:
+                raise VerificationError("Incomplete Git batch body.")
+            remaining -= len(chunk)
+            digest.update(chunk)
+        if stream.read(1) != b"\n":
             raise VerificationError("Incomplete Git batch body.")
-        hashes[expected_id] = hashlib.sha256(view[start:end]).digest()
-        offset = end + 1
-    if offset != len(data):
+        hashes[expected_id] = digest.digest()
+    if stream.read(1):
         raise VerificationError("Unexpected trailing Git batch data.")
     return hashes
 
 
-def object_batches(objects):
-    """Limit buffered payloads. Blobs over the target get their own batch."""
-    batch = {}
-    payload_bytes = 0
-    for object_id, size in objects.items():
-        if batch and payload_bytes + size > BATCH_PAYLOAD_BYTES:
-            yield batch
-            batch = {}
-            payload_bytes = 0
-        batch[object_id] = size
-        payload_bytes += size
-    if batch:
-        yield batch
+def feed_requests(pipe, objects):
+    with pipe:
+        pipe.write(b"".join(object_id + b"\n" for object_id in objects))
+
+
+def remaining_time(deadline):
+    budget = deadline - time.monotonic()
+    if budget <= 0:
+        raise VerificationError("Git could not finish verification.")
+    return budget
+
+
+def git_blob_hashes(root, objects):
+    """Drain both pipes independently under one deadline with bounded payload memory."""
+    if not objects:
+        return {}
+    deadline = time.monotonic() + GIT_TIMEOUT_SECONDS
+    command = ["git", "cat-file", "--batch"]
+    try:
+        with subprocess.Popen(command, cwd=root, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                              stderr=subprocess.DEVNULL) as process:
+            with ThreadPoolExecutor(max_workers=2) as workers:
+                try:
+                    writer = workers.submit(feed_requests, process.stdin, objects)
+                    reader = workers.submit(batch_hashes, process.stdout, objects)
+                    hashes = reader.result(timeout=remaining_time(deadline))
+                    if process.wait(timeout=remaining_time(deadline)):
+                        raise VerificationError("Git rejected a verification command.")
+                    writer.result(timeout=remaining_time(deadline))
+                    return hashes
+                finally:
+                    if process.poll() is None:
+                        process.kill()
+    except (OSError, TimeoutError, subprocess.TimeoutExpired) as error:
+        raise VerificationError("Git could not finish verification.") from error
 
 
 def local_hash(root, name):
@@ -158,12 +183,7 @@ def compare(root, ref):
         objects[object_id] = size
     if sum(objects.values()) > MAX_BATCH_BYTES:
         raise VerificationError("Git batch exceeds the verification size limit.")
-    hashes = {}
-    deadline = time.monotonic() + GIT_TIMEOUT_SECONDS
-    for batch in object_batches(objects):
-        requests = b"".join(object_id + b"\n" for object_id in batch)
-        hashes.update(batch_hashes(git(root, "cat-file", "--batch", input_bytes=requests,
-                                      timeout=deadline - time.monotonic()), batch))
+    hashes = git_blob_hashes(root, objects)
     different = [name for name in shared if local_hash(root, name) != hashes[remote[name][0]]]
     return {
         "ref": ref, "commit": commit, "local_files": len(local), "remote_files": len(remote),
