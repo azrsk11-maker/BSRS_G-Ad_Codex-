@@ -59,7 +59,9 @@ jobs:
           node --test tools/offplan-lead-first/measurement-release/build-review-bundle.test.mjs
           python3 -B -m unittest discover -s tools/offplan-lead-first/measurement-release -p 'test_*.py' -v
       - name: Verify unpublished privacy draft inventory
-        run: python3 -B tools/offplan-lead-first/privacy-addendum/verify_drafts.py
+        run: |
+          python3 -B tools/offplan-lead-first/privacy-addendum/verify_drafts.py
+          python3 -B tools/offplan-lead-first/privacy-addendum/test_preview_placement.py
       - name: Verify Planner parsing and multilingual negative review
         working-directory: tools/keyword-system
         run: python3 -B -m unittest test_planner_discovery test_keyword_audit test_negative_review_match -v
