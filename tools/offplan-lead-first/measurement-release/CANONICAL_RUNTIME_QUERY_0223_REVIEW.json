@@ -1,0 +1,122 @@
+{
+  "scope": "OFFPLAN_CANONICAL_RUNTIME_QUERY_0223_REVIEW_ONLY",
+  "base_archive_sha256": "b7d9dedcdd7bf8c5f716824d0629bb7dc8ff6b70326c19006b5b65459100a2c0",
+  "base_member_count": 53,
+  "candidate_member_count": 53,
+  "candidate_members": {
+    "assets/assets.css": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+    "assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "assets/consent.css": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+    "assets/country-advertising-consent.js": "c1a1c5c1030a3c6d5874adccbed49fc5c7f19fecfba684bb70ea9c93129f4832",
+    "assets/de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "assets/de-DE/lead.js": "ce2b24c130fcfe22dac481e10e0facffb4960e092350aa4c561ed38fef01927d",
+    "assets/en-IN/lead.js": "73829d0e009b91a732abe09a8e253880169bb570914f141da508400393a40941",
+    "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "assets/fr-FR/lead.js": "e2c8f2e2f19b6f5cbb564acb1ed1598160f123b28ed4b1d1ac52137023332ab5",
+    "assets/google-measurement.js": "57abdda0d74465a12c8c538893b84539c551c5d8fdabe34008c040ccfd4399a3",
+    "assets/google-runtime.js": "55551391bd9619ed1d1c30189da8a143f76a52a5e725eabce0c1f034d5d08e15",
+    "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+    "assets/lead.js": "2f23fbcf576cda279b6ac7825ca1d34369a26ec27a45eda758654cc094342c72",
+    "assets/wordpress.js": "9de3fb930c1f865425c7ba28f63c693e4d1122ca15dec4bd5c2c1e98b72030d4",
+    "assets/zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "assets/zh-Hant-TW/lead.js": "e816e2b98d6c0ac71c91d3d375a38373f77e84a8c1d40158623c306021bc8f02",
+    "bsre-enquiries.php": "cf52f4fbfb2c1b5cf2abd14f614d7b2c4e57152b8b769358aa81a8563347a3ff",
+    "includes/admin.php": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+    "includes/cli.php": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+    "includes/consent-export.php": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+    "includes/consent-store.php": "12d7da50d2811a637ef24f9d8b1da620550fb8f0f7d6afa4e883c97a0bcc340f",
+    "includes/consent.php": "dd882c372f76241d3d6dda7f9346e197f4f621e3421aff41c89881db426903af",
+    "includes/drafts.php": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+    "includes/enquiry-seo.php": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+    "includes/measurement-runtime.php": "a389fc3608087c2e8d5522b6b9846e84dd7942c72ab55d1955308ee51cdcb5f6",
+    "includes/measurement-settings.php": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+    "includes/measurement.php": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+    "includes/offplan-country-advertising.php": "26261e88c7e629be454f1025369d06abce1c6dfde498cfcb5ad8dee2bdbe8125",
+    "includes/offplan-country-pages.php": "79f0e50e77e4d8fdee323e09286f577b2edc0388c2f06c35aaf58baa03c6c822",
+    "includes/offplan-country-transport.php": "8badc1aac666aee6449361f9b7ff8d1708683581d3349a2f0952d726d9d3dc05",
+    "includes/offplan-india-measurement.php": "87930937ad53233bf3e14a6d3f2736c159019338f434f116c868aea1b70ec544",
+    "includes/offplan-india.php": "7d07b8f43e7bef18ef3ae6691fb3b3d3265409f52ea9a6f43bc0ec32fe955c43",
+    "includes/offplan-locale.php": "7468641661300006611d866693680a091ab0c49495dbb7ca5a62a648d7f8fb84",
+    "includes/offplan-protected-source.php": "412b9f1bbbb5835b0b4f6473e5cf77682a34532e0dd06273dfcab4a9e7e2f9b9",
+    "includes/offplan-variant.php": "41cd92c762b6786775e3699ac82b00b6fcad07db5e76d8481c78fa443e06fb3b",
+    "includes/parent-isolation.php": "ac2731ed3a83238aafd1c984e9eee5bed7f6c426465ad7f212914f56650915d8",
+    "includes/presentation.php": "a32c0bdbe77b475f5267c148456b0789e328ea85541ddfc4e7c4fff677cc785a",
+    "includes/protocol.php": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+    "templates/hub.php": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+    "templates/offplan-locales/de-DE.json": "694438a751e1e89bd7e29c7d8a3ad799871537b47349c3b2ccee646f874d3d98",
+    "templates/offplan-locales/fr-FR.json": "d6879221be9d926f5188f1261bf7c523a08a24d5c16273eb93e6c172d41a3178",
+    "templates/offplan-locales/zh-Hant-TW.json": "064b158471b1527f25b002edd9625df868cf8496b4eab2b51d3ed6a8b113e56c",
+    "templates/page.php": "f54e908bdf3a0527bb921e9ca558cc906701c7124cf3ff836dc584d39e67827e",
+    "templates/source/hub.html": "4a20726a828e72b581d4e717dfee31d2f9b62c3d3f7a49a87199b5e5472ab6ff",
+    "templates/source/let.html": "f10999b657d5f15c27e29a891361f6efc936766bd612fcdfcde14f6c9b18c08e",
+    "templates/source/off-plan.de-DE.php": "308b2a88870fa01f4669db10e5f9e2011b965d19f423aae36c9d3b87d5b39866",
+    "templates/source/off-plan.en-IN.php": "d6cf490f79e18260964df21953e1f89c628f2d48938f165bbcd6ce5910b95f6d",
+    "templates/source/off-plan.fr-FR.php": "5e6eccdbda763841ec7a13abd88de55c37ac308830e42aa0aa60d08dafe6407d",
+    "templates/source/off-plan.html": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+    "templates/source/off-plan.zh-Hant-TW.php": "040b59a4728e458616d75c5e129461d336575a5778ada86f4e024316cd1b3a5c",
+    "templates/source/rent.html": "e33e28ce93b742b757de41899e68841e3b3425dc28b0a5955486372aec49e947",
+    "templates/source/resale.html": "7419cbd288b4b9331e231afde6709eb26487f417f1e9732334774cb500de3172",
+    "templates/source/sell.html": "529d786aafa48cd85a66e05ca43f9997c48c90318051131fc3842efdc4bc50a0"
+  },
+  "changes": {
+    "bsre-enquiries.php": {
+      "before": "e4bf16a2a49a8faf3213559e0d5b0f76fa04ce4a8562ed2129544abcc0070f8a",
+      "edits": [
+        {
+          "offset": 179,
+          "remove": 18,
+          "lines": [
+            " * Version: 0.2.23"
+          ]
+        },
+        {
+          "offset": 306,
+          "remove": 32,
+          "lines": [
+            "const PLUGIN_VERSION = '0.2.23';"
+          ]
+        }
+      ]
+    },
+    "includes/measurement-runtime.php": {
+      "before": "e0e71d516e61d9377d7f98e3668a3aafb02fca3e7f0e2d029512d05db141bdc0",
+      "edits": [
+        {
+          "offset": 1065,
+          "remove": 59,
+          "lines": [
+            "function measurement_runtime_query(array $params, string $raw_query): ?array {"
+          ]
+        },
+        {
+          "offset": 1730,
+          "remove": 21,
+          "lines": [
+            "    // PHP's parsed query silently collapses repeated fields. Match the raw\n",
+            "    // representation to the validated intent before acquiring a runtime lease.\n",
+            "    if (strlen($raw_query) > 4096) return null;\n",
+            "    $fields = explode('&', $raw_query);\n",
+            "    if (count($fields) !== count($params)) return null;\n",
+            "    $seen = [];\n",
+            "    foreach ($fields as $field) {\n",
+            "        $pair = explode('=', $field, 2);\n",
+            "        if (count($pair) !== 2) return null;\n",
+            "        [$key, $encoded] = $pair;\n",
+            "        if (isset($seen[$key]) || !array_key_exists($key, $params) || rawurldecode($encoded) !== $params[$key]) return null;\n",
+            "        $seen[$key] = true;\n",
+            "    }\n",
+            "    return $params;\n",
+            "}"
+          ]
+        },
+        {
+          "offset": 7614,
+          "remove": 70,
+          "lines": [
+            "    $params = measurement_runtime_query($request->get_query_params(), (string) ($_SERVER['QUERY_STRING'] ?? ''));"
+          ]
+        }
+      ]
+    }
+  }
+}
