@@ -532,6 +532,14 @@ def validate(packet, root, *, now=None, checkout_head=None, checkout_clean=False
                      all(type(capacity.get(key)) is int and capacity[key] == 0
                          for key in ("missing_first_attempt_count", "late_first_attempt_count")),
                      "PEAK_FIRST_CONTACT_EVIDENCE_WITHIN_30_MINUTES_REQUIRED")
+                timing_ref = capacity.get("timing_summary")
+                timing = record_json(timing_ref) if timing_ref is not None else None
+                timing_counts = {"peak_first_contact_sample_count", "peak_first_contact_max_seconds",
+                                 "missing_first_attempt_count", "late_first_attempt_count"}
+                need(isinstance(timing, dict) and set(timing) == timing_counts | {"within_target_for_supplied_sample"}
+                     and timing["within_target_for_supplied_sample"] is True
+                     and all(type(timing[key]) is int and timing[key] == capacity.get(key) for key in timing_counts),
+                     "REVIEWED_PEAK_FIRST_CONTACT_MUST_MATCH_TIMING_SUMMARY")
         review = packet["review"]
         need(isinstance(review, dict) and review.get("commit") == commit and review.get("repository") == REPO and match(LOGIN, review.get("approver")) and review.get("approver", "").lower() != proposal["pusher"].lower() and review.get("state") == "APPROVED", "INDEPENDENT_EXACT_HEAD_REVIEW_REQUIRED")
         reviewed = instant(review.get("reviewed_at_utc"))

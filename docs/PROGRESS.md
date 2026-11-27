@@ -1,3 +1,9 @@
+## UAE release and staff evidence checks — 27 November 2026
+
+The [UAE scope checker](../tools/offplan-lead-first/native-paused/README.md) compares the full campaign inventory and exact Buyers child statuses at staging, enablement and rollback. Resale must be explicitly paused in each stage. The two archived child readbacks returned `HOLD` because they lack the complete all-status parent view. The [GTM publication checker](../tools/offplan-lead-first/measurement-release/README.md#published-gtm-export-readback) matches a pinned live-version observation to the exact reviewed bootstrap export. The saved empty version returned `HOLD`.
+
+The [staff activation packet](audit/STAFF_REHEARSAL_WORKSHEET.md) now binds the first-contact timing counts and maximum to the sanitized calculator output. Actual rehearsal evidence, the owner-reviewed representative sample and acceptance remain open. No production publication, Ads changes, enquiry or conversion were made.
+
 ## Paid-click attribution and live release readback — 27 November 2026
 
 The authenticated WordPress plugin list still reports `0.2.12`. The dedicated Tag Manager Versions screen shows its empty version 1 as live. A script-free HTTP HEAD check returned 200 for the canonical English off-plan path and 404 for the four English review destinations in Germany, France, India and Taiwan. The open Real Estate Ads view reported that no ads are running. No pages, tags, campaign settings or budgets changed, and the already reconciled TEST was left untouched.

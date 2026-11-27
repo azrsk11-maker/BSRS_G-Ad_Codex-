@@ -172,7 +172,7 @@ def check_draft_entities(tags, triggers, capture):
             "custom HTML differs from the guarded reviewed bootstrap")
 
 
-def check_export(export, capture, *, draft):
+def check_export(export, capture, *, draft, published_version_id=None):
     check_fields(export, {"exportFormatVersion", "exportTime", "containerVersion"})
     require(type(export["exportFormatVersion"]) is int and export["exportFormatVersion"] == 2,
             "unsupported GTM export format")
@@ -188,7 +188,11 @@ def check_export(export, capture, *, draft):
     }, EMPTY_COLLECTIONS | {"name", "description", "deleted", "tag", "trigger"})
     check_identity(version, capture)
     check_fingerprint(version)
-    version_id = DRAFT_EXPORT_VERSION_ID if draft else LIVE_VERSION_ID
+    if published_version_id is not None:
+        require(not draft and isinstance(published_version_id, str)
+                and re.fullmatch(r"(?:[2-9]|[1-9][0-9]+)", published_version_id),
+                "published bootstrap must have a real version after the empty rollback version")
+    version_id = published_version_id or (DRAFT_EXPORT_VERSION_ID if draft else LIVE_VERSION_ID)
     account_id = capture["account_id"]
     container_id = capture["container_id"]
     path = f"accounts/{account_id}/containers/{container_id}"
@@ -197,7 +201,9 @@ def check_export(export, capture, *, draft):
     require(version["containerVersionId"] == version_id and version["path"] == version_path
             and version["tagManagerUrl"] == f"{ui}/versions/{version_path}?apiLink=version",
             "unexpected GTM export version identity")
-    require(version.get("name") == (None if draft else "Empty Container")
+    valid_name = (isinstance(version.get("name", ""), str) if published_version_id is not None
+                  else version.get("name") == (None if draft else "Empty Container"))
+    require(valid_name
             and version.get("deleted", False) is False
             and isinstance(version.get("description", ""), str),
             "unexpected GTM export version metadata")
@@ -206,20 +212,25 @@ def check_export(export, capture, *, draft):
     require(all(version.get(key, []) == [] for key in EMPTY_COLLECTIONS), "unexpected GTM objects")
     tags = version.get("tag", [])
     triggers = version.get("trigger", [])
-    if draft:
+    if draft or published_version_id is not None:
         check_draft_entities(tags, triggers, capture)
     else:
         require(tags == [] and triggers == [], "rollback contains tags or triggers")
     return {"tags": len(tags), "triggers": len(triggers), "built_in_variables": len(BUILT_INS)}
 
 
-def verify_exports(live_path, draft_path, candidate_zip, checkpoint, checkpoint_sha256):
+def read_capture(checkpoint, checkpoint_sha256):
     capture, capture_sha256 = read_json(checkpoint)
     require(capture_sha256 == checkpoint_sha256.lower(), "capture checkpoint SHA-256 mismatch")
     require(capture.keys() == CAPTURE_FIELDS and capture["scope"] == CAPTURE_SCOPE
             and capture["public_id"] == PUBLIC_ID and numeric_id(capture["account_id"])
             and numeric_id(capture["container_id"]) and capture["live_version_id"] == LIVE_VERSION_ID
             and capture["draft_workspace_id"] == DRAFT_WORKSPACE_ID, "unexpected capture checkpoint")
+    return capture, capture_sha256
+
+
+def verify_exports(live_path, draft_path, candidate_zip, checkpoint, checkpoint_sha256):
+    capture, capture_sha256 = read_capture(checkpoint, checkpoint_sha256)
     with candidate_zip.open("rb") as stream:
         candidate_sha256 = file_digest(stream, "sha256").hexdigest()
     require(candidate_sha256 == capture["candidate_zip_sha256"] == CANDIDATE_SHA256,

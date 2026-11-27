@@ -288,3 +288,13 @@ Use forward `0.2.20` for the country Ads review and recovery `0.2.22` r3 for the
 Retain one accepted-enquiry destination and an immutable receipt transaction ID. Verify that any proposed design keeps full URLs, form data and click identifiers out of unrelated payloads, preserves existing decisions on retries, and honors refusal, withdrawal and QA exclusions. Before activation, inspect the rendered page, current GTM inventory, eligible route, consented request fields and the configured Ads action. A synthetic fixture may inspect local behavior with vendor traffic blocked. Record genuine Ads-side attribution and deduplication from an eligible real receipt and its Google diagnostic, separately from the prelaunch configuration checks. The approved delivery TEST remains excluded.
 
 Google's multi-source website conversion beta is an option to assess separately. A click ID can satisfy its attribution-identifier requirement without contact matching. Verify eligibility for the exact action and require explicit approval for this transport, a revised disclosure and a plan to avoid browser/server duplication before implementing it. Current release artifacts retain the native action policy. [Google multi-source conversion requirements](https://support.google.com/google-ads/answer/16542291?hl=en) · [API transaction handling](https://developers.google.com/data-manager/api/devguides/events/google-ads/online/send-events#how-google-handles-multi-source-data)
+
+## Published GTM export readback
+
+After authorized publication, record the live version shown in the owned container's Versions screen and export that exact version. In a private observation JSON, record `scope` as `BSRE_OFFPLAN_GTM_VERSIONS_LIVE_READBACK`, the original `account_id`, `container_id` and `public_id`, `observed_at_utc` as `YYYY-MM-DDTHH:MM:SSZ`, `live_version_id`, and `live_export_sha256`. Pin the observation and the original native export capture separately. [Google Tag Manager version documentation](https://support.google.com/tagmanager/answer/6107163?hl=en)
+
+```text
+python -B tools/offplan-lead-first/measurement-release/check_gtm_publication.py LIVE_EXPORT LIVE_OBSERVATION OBSERVATION_SHA256 ORIGINAL_CAPTURE ORIGINAL_CAPTURE_SHA256
+```
+
+The checker matches the version ID, exact reviewed bootstrap and its one page-view trigger. The current empty version, the draft export and a version with changed content all hold. A match checks the saved content against the recorded live version. Verify the observation's source separately and collect delivery and attribution evidence independently.

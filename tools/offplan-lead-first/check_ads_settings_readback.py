@@ -12,6 +12,7 @@ import re
 HERE = Path(__file__).resolve().parent
 MAX_BYTES = 96 * 1024
 FORMAT = "Chrome UI, Campaigns > Settings, Campaign status All, 1–24 of 24"
+CAPTURE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S UTC"
 SCHEDULES = {"10:00-19:00 daily": "All days, 10:00 AM - 7:00 PM"}
 DISABLED = ("auto_created_assets", "broad_match", "text_customization", "final_url_expansion", "ai_max")
 
@@ -28,16 +29,24 @@ def pinned_capture(path, expected):
     return json.loads(data)
 
 
-def roster(capture, account_id):
-    require(capture["account_id"] == account_id and capture["no_ads_running"] is True, "Account identity or serving mismatch")
+def roster(capture, account_id, *, enabled_campaign_id=None):
+    require(capture["account_id"] == account_id and isinstance(capture["no_ads_running"], bool),
+            "Account identity or serving mismatch")
+    if enabled_campaign_id is None:
+        require(capture["no_ads_running"] is True, "Account identity or serving mismatch")
     require(capture["capture"] == FORMAT, "Expected a complete unfiltered settings view")
-    datetime.strptime(capture["captured_at_utc"], "%Y-%m-%d %H:%M:%S UTC")
+    datetime.strptime(capture["captured_at_utc"], CAPTURE_TIME_FORMAT)
     rows = capture["campaigns"]
     require(isinstance(rows, list) and len(rows) == 24, "Incomplete campaign roster")
     by_id = {row["campaign_id"]: row for row in rows}
     require(len(by_id) == 24 and all(re.fullmatch(r"\d{10,12}", key) for key in by_id), "Invalid or duplicate campaign IDs")
     counts = Counter(row["campaign_state"] for row in rows)
-    require(counts == {"Paused": 21, "Removed": 3} and counts == capture["observed_campaign_states"], "Paused or removed state drift")
+    expected = {"Paused": 21, "Removed": 3}
+    if enabled_campaign_id is not None:
+        expected.update(Paused=20, Enabled=1)
+        require(enabled_campaign_id in by_id and by_id[enabled_campaign_id]["campaign_state"] == "Enabled",
+                "Intended campaign is not enabled")
+    require(counts == expected and counts == capture["observed_campaign_states"], "Paused or removed state drift")
     return by_id
 
 

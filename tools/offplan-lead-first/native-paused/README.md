@@ -13,3 +13,11 @@ Only use the batch in account573-038-4686 after reviewing the exact current prev
 ## UAE child prelaunch verification
 
 Run `python -B tools/offplan-lead-first/check_uae_readback.py /path/to/private-readback.json` on a fresh, reconciled `bsre.offplan.uae-child-readback.v1` projection. It compares all enabled and paused UAE off-plan keyword rows and the single RSA to the pinned review evidence, checks the explicit resale pause, and screens the observed direct, account-level and shared exclusions. A match validates the saved scope. Fresh browser evidence, independent review, and the wider release gates still control activation.
+
+For an authorized UAE release, pin fresh all-campaign and exact-parent all-status ad-group readbacks at each stage. The child capture uses `bsre.offplan.uae-all-ad-group-readback.v1`, with the account, UTC time, `campaign_or_ad_group_changes` false, provider `view_total`, and `ad_groups` rows containing `campaign_id`, `ad_group_id` and `explicit_status`. Its `view` records the exact `campaign_id`, `ad_group_statuses` as `["Enabled", "Paused", "Removed"]`, and empty `other_filters`. Use the complete frozen paused settings capture as the reference.
+
+```text
+python -B tools/offplan-lead-first/check_uae_activation_scope.py staged CAMPAIGNS CAMPAIGNS_SHA256 CHILDREN CHILDREN_SHA256 --reference PAUSED_REFERENCE --reference-sha256 REFERENCE_SHA256 --not-before "YYYY-MM-DD HH:MM:SS UTC"
+```
+
+`staged` checks the paused parent and enabled off-plan group. `enabled` checks the single enabled parent and off-plan group. If scope deviates during an authorized release, pause the UAE parent first and confirm containment. `rollback` also validates restoration of the off-plan group to Paused. All three stages require the resale group explicitly Paused and exact remaining campaign identities and statuses. Save captures within the applicable stage window. This check confirms entity scope. Separate readbacks cover individual ads, keywords, budgets, settings and live serving.
