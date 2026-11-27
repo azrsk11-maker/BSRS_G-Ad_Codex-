@@ -1,7 +1,15 @@
 """Verify the review-only paused Search schedule workflow."""
 
+from contextlib import redirect_stdout
 from copy import deepcopy
+from datetime import datetime, timezone
+from hashlib import sha256
+from io import StringIO
+import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest import TestCase
+from unittest.mock import patch
 
 import check_staffed_schedules as check
 import test_ads_settings_readback as grid_fixture
@@ -14,6 +22,11 @@ class StaffedSchedulesTest(TestCase):
         self.grid = fixture.capture
         self.reference = deepcopy(self.grid)
         self.grid_pin = "a" * 64
+        self.reference_pin = "d" * 64
+        self.reference["captured_at_utc"] = "2026-11-26 17:40:19 UTC"
+        self.evidence = {"detail_sha256": "e" * 64, "original_source_sha256": "f" * 64,
+                         "not_before_utc": "2026-11-27 17:38:00 UTC"}
+        self.now = datetime(2026, 11, 27, 17, 44, tzinfo=timezone.utc)
         self.full_week = [{"day": day, "start": "10:00", "end": "19:00", "bid_adjustment_percent": 0}
                           for day in check.DAYS]
 
@@ -21,12 +34,15 @@ class StaffedSchedulesTest(TestCase):
         return {
             "format": check.DETAIL_FORMAT, "account_id": self.grid["account_id"],
             "account_time_zone": "Asia/Dubai", "settings_sha256": self.grid_pin,
+            "readback_sources": dict(check.SOURCES), "original_source_sha256": self.evidence["original_source_sha256"],
+            "captured_at_utc": "2026-11-27 17:41:00 UTC",
             "campaigns": [{"campaign_id": row["campaign_id"], "schedule": deepcopy(self.full_week)}
                           for row in self.grid["campaigns"][:5]],
         }
 
     def report(self, detail=None):
-        return check.build(self.grid, self.reference, self.grid_pin, detail)
+        return check.build(self.grid, self.reference, self.grid_pin, self.reference_pin,
+                           detail=detail, evidence=self.evidence if detail else None, now=self.now)
 
     def test_distinguishes_cached_summary_from_uncovered_hours(self):
         report = self.report()
@@ -47,15 +63,32 @@ class StaffedSchedulesTest(TestCase):
         self.assertEqual({row["state"] for row in report["campaigns"]}, {"EXACT_WEEK_MATCHED"})
         self.assertEqual(report["launch_readiness"], "HOLD")
         self.assertFalse(report["launch_authorized"])
+        self.assertEqual(report["reference_sha256"], self.reference_pin)
+        self.assertEqual(report["weekly_detail_evidence"],
+                         self.evidence | {"captured_at_utc": details["captured_at_utc"]})
 
     def test_rejects_wrong_account_time_zone_or_capture(self):
         for key, value in (("account_id", "000-000-0000"), ("account_time_zone", "Europe/Berlin"),
-                           ("settings_sha256", "b" * 64)):
+                           ("settings_sha256", "b" * 64), ("readback_sources", {}),
+                           ("original_source_sha256", "a" * 64)):
             with self.subTest(key=key):
                 detail = self.detail()
                 detail[key] = value
                 with self.assertRaisesRegex(ValueError, "Detail account"):
                     self.report(detail)
+
+    def test_rejects_stale_or_future_details(self):
+        for date in ("2026-11-26 17:41:00 UTC", "2026-11-27 17:39:00 UTC", "2026-11-27 17:45:00 UTC"):
+            with self.subTest(date=date):
+                detail = self.detail()
+                detail["captured_at_utc"] = date
+                with self.assertRaisesRegex(ValueError, "verification window"):
+                    self.report(detail)
+
+    def test_rejects_a_window_preceding_the_frozen_reference(self):
+        self.evidence["not_before_utc"] = self.reference["captured_at_utc"]
+        with self.assertRaisesRegex(ValueError, "verification window"):
+            self.report(self.detail())
 
     def test_rejects_duplicate_or_unowned_campaign(self):
         for campaign_id in (self.grid["campaigns"][1]["campaign_id"], self.grid["campaigns"][-1]["campaign_id"]):
@@ -87,3 +120,31 @@ class StaffedSchedulesTest(TestCase):
         self.grid["campaigns"][-1]["campaign_id"] = "9999999999"
         with self.assertRaisesRegex(ValueError, "frozen roster"):
             self.report()
+
+    def test_cli_rejects_original_readback_byte_drift(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+
+            def save(name, raw):
+                path = root / name
+                path.write_bytes(raw)
+                return [str(path), sha256(raw).hexdigest()]
+
+            grid = save("grid.json", json.dumps(self.grid).encode())
+            reference = save("reference.json", json.dumps(self.reference).encode())
+            original = save("original.txt", b"synthetic account zone and seven-day review")
+            detail = self.detail()
+            detail["settings_sha256"] = grid[1]
+            detail["original_source_sha256"] = original[1]
+            detail_path, detail_pin = save("detail.json", json.dumps(detail).encode())
+            args = ["check_staffed_schedules.py", *grid, "--reference", reference[0],
+                    "--reference-sha256", reference[1], "--detail", detail_path, "--detail-sha256", detail_pin,
+                    "--original-detail", original[0], "--original-detail-sha256", original[1],
+                    "--not-before-utc", self.evidence["not_before_utc"]]
+            with patch("sys.argv", args), redirect_stdout(StringIO()) as output:
+                self.assertEqual(check.main(), 0)
+            self.assertEqual(json.loads(output.getvalue())["weekly_detail_evidence"]["detail_sha256"], detail_pin)
+            Path(original[0]).write_bytes(b"changed")
+            with patch("sys.argv", args), redirect_stdout(StringIO()) as output:
+                self.assertEqual(check.main(), 1)
+            self.assertIn("SHA-256 mismatch", json.loads(output.getvalue())["reason"])

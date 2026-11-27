@@ -1,6 +1,6 @@
 ## Staffed off-plan schedule reconciliation · 28 November 2026
 
-The staffed schedule checker compared the pinned all-status grid against the five prepared Search parents at AED2,500 aggregate average per day. UAE's dated grid showed 10:00–19:00, while Germany, France, India and Taiwan showed all-day. The exact-detail checker verifies the observed Dubai account zone, seven daily rows and zero bid adjustments before accepting schedule parity. All 60 scoped off-plan tests passed. [Review command](../tools/offplan-lead-first/README.md#staffed-schedule-reconciliation)
+The staffed schedule checker compared the pinned all-status grid against the five prepared Search parents at AED2,500 aggregate average per day. UAE's dated grid showed 10:00–19:00, while Germany, France, India and Taiwan showed all-day. The exact-detail checker binds the original readback, observed Dubai account zone and fresh verification window before accepting seven daily rows with zero bid adjustments. All 63 scoped off-plan tests passed. [Review command](../tools/offplan-lead-first/README.md#staffed-schedule-reconciliation)
 
 Fresh authenticated details and separate authorization for any required Ads changes are still open. No Ads setting or status changed.
 

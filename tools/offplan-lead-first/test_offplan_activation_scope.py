@@ -103,6 +103,7 @@ class OffplanActivationScopeTest(TestCase):
                 self.assertIs(result["scope_match"], True)
                 self.assertIs(result["launch_authorized"], False)
                 self.assertIs(result["actual_serving_verified"], False)
+                self.assertIs(result["staffed_weekly_schedule_verified"], False)
                 self.assertEqual(result["campaigns_compared"], 24)
                 self.assertEqual(result["selected_markets"], ["AE", "DE"])
                 self.assertEqual(result["uae_resale_ad_group_state"], "Paused")
