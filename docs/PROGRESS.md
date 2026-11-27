@@ -1,3 +1,9 @@
+## Canonical off-plan runtime query validation · 28 November 2026
+
+An isolated WordPress comparison reproduced three ambiguous canonical queries that the exact `0.2.20` runtime accepted after PHP collapsed the input. The exact `0.2.23` review rejected all three with an inert response, preserved supported unique click values, and kept the tested regional route click-free. Baseline passed 13 assertions across five requests, review passed 38 across 18, and the 58 measurement-release tests passed. The native comparison took 109.472 seconds and sent zero leads or vendor requests. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#canonical-runtime-query-review-0223)
+
+The review adds no conversion source. Hosted acceptance, independent review, consent disclosures, real provider attribution and market readiness remain open.
+
 ## Keyword suite fixture trials — 28 November 2026
 
 Fresh date-specific history supported 175 original cases across twelve suites with zero skips. The 76-case group ran in 209.230 seconds and the 99-case group ran in 226.786 seconds. Their 436.015-second serial total is already above the 300-second aggregate gate. All 792 case identities remain discoverable. The default Foundation suite and actual multi-worker acceptance remain open. [Evidence scope and remaining cases](../tools/efficiency/README.md#date-specific-keyword-fixture-trials--28-november-2026)

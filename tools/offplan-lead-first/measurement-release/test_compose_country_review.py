@@ -82,7 +82,8 @@ class PrivateReviewComposerTest(unittest.TestCase):
                                ("english-country-ads-0219", "OFFPLAN_ENGLISH_COUNTRY_ADS_0219_REVIEW_ONLY"),
                                ("country-choice-csrf-0220", "OFFPLAN_COUNTRY_CHOICE_CSRF_0220_REVIEW_ONLY"),
                                ("english-country-recovery-0221", "OFFPLAN_ENGLISH_COUNTRY_RECOVERY_0221_REVIEW_ONLY"),
-                               ("english-recovery-concurrency-0222", "OFFPLAN_ENGLISH_RECOVERY_CONCURRENCY_0222_REVIEW_ONLY")):
+                               ("english-recovery-concurrency-0222", "OFFPLAN_ENGLISH_RECOVERY_CONCURRENCY_0222_REVIEW_ONLY"),
+                               ("canonical-runtime-query-0223", "OFFPLAN_CANONICAL_RUNTIME_QUERY_0223_REVIEW_ONLY")):
             with self.subTest(profile=profile):
                 with self.assertRaisesRegex(ValueError, "not the pinned"):
                     compose(base, isolated, profile)
