@@ -1,3 +1,9 @@
+## Combined off-plan release evidence check — 27 November 2026
+
+One [offline verification command](../tools/offplan-lead-first/measurement-release/README.md#combined-0217-evidence-check) now binds the exact `0.2.17` and `0.2.12` archives, native browser and rollback results, exported GTM draft and recovery version, direct REST and HTTPS retry proofs, reconciled delivery-only TEST and five-market hold. It reproduced the reviewed archive and reconciled 13 private inputs in 0.349 seconds. All 46 scoped tests passed, including 12 new tests. Requiring launch readiness returned `HOLD` and exit code 3. Authenticated Hostinger bytes and live acceptance remain open.
+
+The exact native loopback HTTPS retry run passed 25 assertions and 17 certificate-verified TLS requests across upgrade and rollback in 101.625 seconds. Eleven signed attempts produced six durable synthetic records. The exact retries retained their IDs and changed bodies were rejected before relay. All local listeners and workers exited. No requests reached the live site or receiver.
+
 ## Installed plugin recovery comparison — 27 November 2026
 
 The [offline Hostinger preimage check](../tools/offplan-lead-first/measurement-release/README.md#installed-hostinger-plugin-comparison) verifies a scoped plugin download against all 30 exact retained rollback members. It validates both input hashes and rejects path, roster and byte drift without extracting files or reading unexpected members. Ten new tests and 24 existing measurement tests passed. A separate repack of the exact retained reference matched all 30 files in 0.041 seconds. The live Hostinger tab still requires account sign-in for the original capture.
