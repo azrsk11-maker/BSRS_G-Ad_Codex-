@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import argparse
 from calendar import monthrange
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -26,9 +26,11 @@ if str(HISTORY) not in sys.path:
     sys.path.insert(0, str(HISTORY))
 from audit_history import (KNOWN_EXCLUSIONS, MAX_ROWS, AuditInputError,
                            audit_history, read_bounded, validate_envelope)
-from qualification_core import _inspect, strict_json, strict_json_bytes, when
+from qualification_core import (QUALIFIED_ADS_ACTION_ID, QUALIFIED_ADS_ACTION_NAME,
+                                _inspect, schema_errors, strict_json, strict_json_bytes, when)
 
-OUTCOME_FIELDS = frozenset(strict_json(HISTORY / "schema/outcome-register-schema.json")["properties"])
+OUTCOME_SCHEMA = strict_json(HISTORY / "schema/outcome-register-schema.json")
+OUTCOME_FIELDS = frozenset(OUTCOME_SCHEMA["properties"])
 
 SCHEMA = "bsre-private-qualified-queue-v1"
 ARTIFACT = "PRIVATE_QUALIFIED_OWNER_REVIEW_QUEUE_NOT_GOOGLE_SOURCE"
@@ -40,6 +42,7 @@ REVIEW_FIELDS = {"schema", "fixture_only", "ledger_sha256", "purpose_sha256", "b
 RETENTION_FIELDS = {"outcome_id", "closed_at_utc", "retention_due_at_utc",
                     "review_verified", "evidence_reference"}
 INPUT_NAMES = ("ledger", "purpose", "binding", "retention", "review")
+SUBMITTED_STATES = ("EXPORTED", "PENDING_RESULT", "IMPORTED")
 
 
 class SourceError(ValueError):
@@ -92,6 +95,30 @@ def private_path(value, *, existing=False):
     require(resolved.parent.is_dir(), "PRIVATE_PARENT_REQUIRED")
     require(not existing or resolved.is_file(), "PRIVATE_FILE_REQUIRED")
     return resolved
+
+
+def conversion_identity_collisions(outcomes, previews, test_leads):
+    """Find distinct outcome IDs that share one qualified conversion identity."""
+    identities = defaultdict(set)
+    for oid, row in outcomes.items():
+        if oid not in previews:
+            # A prior submission in the retained ledger can collide even if
+            # its outcome is no longer the person's first eligible preview.
+            if (row.get("export_state") not in SUBMITTED_STATES or row.get("stage") != "qualified_prospect" or
+                    row.get("conversion_name") != QUALIFIED_ADS_ACTION_NAME or
+                    row.get("conversion_action_id") != QUALIFIED_ADS_ACTION_ID or row.get("click_id_type") != "GCLID" or
+                    schema_errors(row, OUTCOME_SCHEMA) or
+                    {row["lead_id"], row["canonical_lead_id"]} & test_leads or
+                    re.fullmatch(r"[A-Za-z0-9._~-]{1,256}", row["click_id"]) is None):
+                continue
+        # Normalize the instant for comparison only. Keep the exact source
+        # timestamp and GCLID bytes in every private review payload.
+        occurred = row["occurred_at_utc"]
+        fraction = re.search(r"[.,]([0-9]+)Z$", occurred)
+        extra_precision = fraction[1][6:].rstrip("0") if fraction else ""
+        identity = (row["click_id"], row["conversion_name"], utc(occurred), extra_precision)
+        identities[identity].add(oid)
+    return {oid for group in identities.values() if len(group) > 1 for oid in group if oid in previews}
 
 
 class Snapshot:
@@ -196,6 +223,8 @@ class Snapshot:
         withdrawn_leads = {p["lead_id"] for p in purposes if p["withdrawn_at_utc"] is not None}
         withdrawn_people = {person for person, leads in person_leads.items() if leads & withdrawn_leads}
         previews = {row["outcome_id"]: row for row in preview["rows"]}
+        test_leads = {row["lead_id"] for row in data["intake"] if row["is_test"] is True}
+        collisions = conversion_identity_collisions(original, previews, test_leads)
         withheld = {row["outcome_id"]: row["codes"] for row in report["export_held"]}
         candidates = {}
         for chosen in selection:
@@ -205,6 +234,8 @@ class Snapshot:
             private_preview = previews.get(oid)
             if private_preview is None and not withheld.get(oid):
                 holds.append("QUALIFICATION_PREVIEW_NOT_ELIGIBLE")
+            if oid in collisions:
+                holds.append("QUALIFIED_CONVERSION_IDENTITY_COLLISION")
             permission = [p for p in purposes if p["lead_id"] == row["lead_id"]]
             latest = max(permission, key=lambda p: when(p["observed_at_utc"]), default=None)
             original_permission = bool(latest and any(
@@ -235,7 +266,7 @@ class Snapshot:
             if retire_at <= now:
                 holds.append("RETENTION_OR_PERMISSION_EXPIRED")
             payload = None
-            if private_preview is not None and not withdrawn and original_permission:
+            if private_preview is not None and oid not in collisions and not withdrawn and original_permission:
                 # This deliberately uses original Outcome40 time, including
                 # fractional seconds. The legacy preview formats whole seconds.
                 payload = {"outcome_id": oid, "lead_id": row["lead_id"],

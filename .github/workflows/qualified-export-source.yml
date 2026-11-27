@@ -1,0 +1,25 @@
+name: Qualified export source checks
+on:
+  pull_request:
+    branches: [main, 'codex/**']
+    paths:
+      - '.github/workflows/qualified-export-source.yml'
+      - 'tools/qualified-export-source/**'
+      - 'tools/qualification-history/**'
+permissions:
+  contents: read
+concurrency:
+  group: qualified-export-source-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  synthetic-qualification-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify private review queue and qualification history
+        run: |
+          python3 -B -m unittest discover -s tools/qualified-export-source -p 'test_*.py' -v
+          python3 -B -m unittest discover -s tools/qualification-history -p 'test_*.py' -v
