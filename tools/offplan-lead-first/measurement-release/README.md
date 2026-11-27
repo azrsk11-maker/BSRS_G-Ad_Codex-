@@ -270,3 +270,13 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 The 53-member `0.2.21` recovery review reproduces SHA-256 `6425cbb8b88ca2ad7191927bfcae9ceb484a651f1fd56d08b7286ff60259f7f0`. It is an intake-only alternative for the three new English country measurement routes, with a distinct asset cache version. Matching recovery requests reuse the original route, UUID, body fingerprint and consent decision. Already linked receipts return directly from the existing WordPress capture. A staged receipt may complete through the idempotent receiver. Recovered enquiries deny optional measurement and retain their original receipt IDs.
 
 The disposable native WordPress trial upgraded through `0.2.19` r2, `0.2.20` and the `0.2.21` recovery review. The 106 checks across 42 requests included pre-commit failure, lost acknowledgement after commit, repeated accepted replies and sibling-route and token denial. No external request was sent. Six exact browser-script retry cases also passed in simulation. Concurrent staged retries may still both reach the receiver, and a late failure can reset delivery-pending state. Hosted recovery and independent release approval remain open.
+
+## Concurrent English country recovery review
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/country-recovery-0221-PRIVATE-REVIEW.zip /private/country-recovery-0222-r3-PRIVATE-REVIEW.zip --profile english-recovery-concurrency-0222
+```
+
+The `0.2.22` r3 review reproduces SHA-256 `a873a5c67af5d2155328391ff9f3d01147ced1373ae6f521bffbe27caf54ca30`. For a staged English recovery record, one database session takes a nonblocking lock named for the selected database, capture table and UUID. Inside the lock the plugin rereads and validates the original capture. A busy valid request keeps the browser's existing same-ID retry response. Clean accepted receipts still return locally. The matching receipt link and pending-state update are each limited atomically to the owning session and eligible row state. Non-recovery calls cannot relay a recovery capture.
+
+The coordination scope is a common database server with active sessions. Receiver idempotency still covers uncertainty when a connection drops after HTTP dispatch begins. Verify the hosted lock domain and recovery cutover before deployment. [MariaDB named locks](https://mariadb.com/docs/server/reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock)

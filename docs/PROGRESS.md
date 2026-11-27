@@ -1,3 +1,7 @@
+## Concurrent English recovery candidate — 27 November 2026
+
+The [0.2.22 r3 review](../tools/offplan-lead-first/measurement-release/README.md#concurrent-english-country-recovery-review) reproduces the 53-member archive. The staged English retry takes a nonblocking lock tied to the capture UUID. An independent MariaDB session observed lock ownership while the first request waited for the local receiver. The same-ID contender preserved its retry and made no receiver call. The separate UUID progressed, and the linked receipt returned locally on replay. Receipt and pending updates each check ownership in the same statement. The hosted lock domain, recovery cutover and release approval remain open.
+
 ## Native recovery for staged English enquiries — 27 November 2026
 
 The [0.2.21 recovery review](../tools/offplan-lead-first/measurement-release/README.md#english-country-intake-recovery-review) reproduced a 53-member intake-only archive. Native WordPress passed 106 checks across 42 requests in 121.630 seconds, including exact package changes from `0.2.19` r2 through `0.2.20` and restoration of three staged receipt identities. Each original request produced one durable synthetic receipt. Repeating an accepted request produced zero additional receiver calls. Six exact browser-script retry cases passed in simulation. The concurrent staged retry race and live Hostinger acceptance remain open.
