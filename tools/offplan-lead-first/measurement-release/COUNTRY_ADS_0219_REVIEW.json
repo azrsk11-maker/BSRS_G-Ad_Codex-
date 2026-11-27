@@ -14,7 +14,7 @@
     "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
     "assets/fr-FR/lead.js": "e2c8f2e2f19b6f5cbb564acb1ed1598160f123b28ed4b1d1ac52137023332ab5",
     "assets/google-measurement.js": "57abdda0d74465a12c8c538893b84539c551c5d8fdabe34008c040ccfd4399a3",
-    "assets/google-runtime.js": "f3b3171a68edff20a93d4918a6e18b14de594671d5ec2e61b42a60beca60909d",
+    "assets/google-runtime.js": "55551391bd9619ed1d1c30189da8a143f76a52a5e725eabce0c1f034d5d08e15",
     "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
     "assets/lead.js": "2f23fbcf576cda279b6ac7825ca1d34369a26ec27a45eda758654cc094342c72",
     "assets/wordpress.js": "4899c4942bc021d6b46913cf4409990cfd4715471269363d28461c5a8550395f",
@@ -177,6 +177,15 @@
           "remove": 96,
           "lines": [
             "  const country = ['/off-plan-dubai-de-de/', '/off-plan-dubai-en-de/', '/off-plan-dubai-en-fr/', '/off-plan-dubai-en-tw/'].includes(config?.country_path) ? config.country_path : '';\n"
+          ]
+        },
+        {
+          "offset": 1183,
+          "remove": 339,
+          "lines": [
+            "  const locale = country === '/off-plan-dubai-de-de/' ? 'de' : country.slice('/off-plan-dubai-'.length, -1).replace('-', '_');\n",
+            "  const advertisingPrefix = country ? 'bsre_enq_' + locale + '_offplan_ads' : 'bsre_enq_ads';\n",
+            "  if (analytics ? (!/^G-[A-Z0-9]+$/.test(config.measurement_id || '') || config.ads_send_to !== '' || config.cookie_prefix !== 'bsre_enq_analytics') : (!/^AW-[0-9]+\\/[A-Za-z0-9_-]+$/.test(config.ads_send_to || '') || config.measurement_id !== '' || config.cookie_prefix !== advertisingPrefix)) return;\n"
           ]
         },
         {
