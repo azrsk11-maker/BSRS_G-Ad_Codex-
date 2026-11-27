@@ -1,7 +1,7 @@
 name: Commercial and worktree verification
 on:
   pull_request:
-    branches: [main, 'codex/phase0-audit-foundation']
+    branches: [main, 'codex/phase0-audit-foundation', 'codex/goal-verification-20261127']
     paths:
       - '.github/workflows/goal-verification.yml'
       - 'tools/efficiency/**'
