@@ -315,6 +315,8 @@ Existing package versions ignore the new map. Before any removal or downgrade of
 
 ## Route-preserving intake recovery 0.2.25
 
+The `0.2.25` version remains scoped to recovery from its reviewed forward package. The French and Traditional Chinese accepted-repeat improvement has a separate forward profile below.
+
 The held `regional-recovery-0225` profile preserves the two new Arabic and Hindi forms, exact assets, CMS assumptions and separate page map from `0.2.24` revision 2. It keeps both forms intake-only. Their original pending requests use the existing signed, idempotent receiver. A linked receipt returns locally on an exact repeat.
 
 The recovery package disables optional advertising on the three English aliases using the existing scope, and carries the r3 lock and linked-receipt code for granted pending captures. It also accepts an acknowledged refusal from the earlier browser when the retained intake capture matches the original body and the alias-derived receipt key. Recovery creates no new capture from a stale decision and restores no optional consent. Germany's local-language choice still uses the dedicated token. The release retains the strict canonical query validator.
@@ -334,3 +336,13 @@ python -B tools/offplan-lead-first/measurement-release/check_gtm_publication.py 
 ```
 
 The checker matches the version ID, exact reviewed bootstrap and its one page-view trigger. The current empty version, the draft export and a version with changed content all hold. A match checks the saved content against the recorded live version. Verify the observation's source separately and collect delivery and attribution evidence independently.
+
+## French and Traditional Chinese intake repeat 0.2.26
+
+The `regional-replay-0226` profile changes the exact `0.2.24` r2 entrypoint version and country transport. After the existing route, request-body and capture checks, French and Traditional Chinese intake can return the original accepted IDs locally when the receipt is fully linked and `delivery_pending` is explicitly clear. The private receiver still handles unlinked or uncertain delivery. Both paths keep optional measurement denied.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py BASE_0224_R2_ZIP OUTPUT_ZIP --profile regional-replay-0226
+```
+
+The review archive has 59 members and SHA-256 `d48af0e98eaed162500cdf90ed498daa7751c6b75af4470b63facb2ab192c384`. It preserves the existing locale and CMS bindings. The `0.2.25` recovery profile would use the receiver again for these two repeats. Qualify an exact recovery path for `0.2.26` before hosted deployment.

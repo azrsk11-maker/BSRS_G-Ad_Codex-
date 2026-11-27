@@ -1,3 +1,9 @@
+## French and Traditional Chinese intake repeat · 28 November 2026
+
+Exact forward `0.2.24` r2 returned stable receipts on both localized paths but relayed exact repeats to the receiver. The retained receiver implementation deduplicated the synthetic attempts. The held `0.2.26` profile returns fully linked acceptance locally for these two intake-only routes, with the existing signed relay available for pending delivery. A stock WordPress upgrade from the exact prior archive kept both accepted rows and responses unchanged and returned each repeat with zero new relay calls. All 37 isolated upgrade checks passed. [Reproducible review profile](../tools/offplan-lead-first/measurement-release/README.md#french-and-traditional-chinese-intake-repeat-0226)
+
+Exact recovery qualification for this successor and hosted release remain open. The previously approved production TEST remains excluded from measurement.
+
 ## Integrated off-plan review branch - 28 November 2026
 
 This branch joins the canonical query validation, regional privacy drafts, Arabic and Hindi native intake, and route-preserving recovery work against the same base. The individual experiments and their evidence remain independently scoped. The branch prepares an exact review package. Production publication and Ads activation require the current hosted, privacy, market, operational and provider evidence and the separate release decision.
