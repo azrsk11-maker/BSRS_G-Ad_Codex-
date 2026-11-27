@@ -313,6 +313,18 @@ Use base SHA-256 `2e2be65e1274d1b6ed0d9175c27f12cde38b543d2d5ac1515992df8f9c8391
 
 Existing package versions ignore the new map. Before any removal or downgrade of the new routes, reconcile pending receipt IDs and confirm an approved route-preserving recovery version or a verified drain. Actual CMS assignment, language and privacy review, operator coverage, hosted cutover, Google attribution and Ads readiness remain separate gates.
 
+## Route-preserving intake recovery 0.2.25
+
+The held `regional-recovery-0225` profile preserves the two new Arabic and Hindi forms, exact assets, CMS assumptions and separate page map from `0.2.24` revision 2. It keeps both forms intake-only. Their original pending requests use the existing signed, idempotent receiver. A linked receipt returns locally on an exact repeat.
+
+The recovery package disables optional advertising on the three English aliases using the existing scope, and carries the r3 lock and linked-receipt code for granted pending captures. It also accepts an acknowledged refusal from the earlier browser when the retained intake capture matches the original body and the alias-derived receipt key. Recovery creates no new capture from a stale decision and restores no optional consent. Germany's local-language choice still uses the dedicated token. The release retains the strict canonical query validator.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py BASE_0224_R2_ZIP OUTPUT_ZIP --profile regional-recovery-0225
+```
+
+The recovery profile uses forward SHA-256 `a059b35048a667097efb58d99f7c0143813e49e9f1f0bd4a41674dc1039c1131` and reproduces 59 members with SHA-256 `8c1c726ffd8d17133ac6be00eaf7da099f52da54578e05dc3b96e89a2bd2b2eb`. The installed version advances to `0.2.25` through native replacement, preserving the database schema. The granted-capture lock still depends on a single hosted database lock domain. Ordinary intake keeps the receiver's idempotency contract. Validate the production preimage, lock domain and exact installed digest under the independent review and change authorization before considering a live switch.
+
 ## Published GTM export readback
 
 After authorized publication, record the live version shown in the owned container's Versions screen and export that exact version. In a private observation JSON, record `scope` as `BSRE_OFFPLAN_GTM_VERSIONS_LIVE_READBACK`, the original `account_id`, `container_id` and `public_id`, `observed_at_utc` as `YYYY-MM-DDTHH:MM:SSZ`, `live_version_id`, and `live_export_sha256`. Pin the observation and the original native export capture separately. [Google Tag Manager version documentation](https://support.google.com/tagmanager/answer/6107163?hl=en)
