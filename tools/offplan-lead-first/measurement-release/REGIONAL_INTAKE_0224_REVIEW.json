@@ -1,0 +1,554 @@
+{
+  "scope": "OFFPLAN_REGIONAL_INTAKE_0224_REVIEW_ONLY",
+  "base_archive_sha256": "2e2be65e1274d1b6ed0d9175c27f12cde38b543d2d5ac1515992df8f9c8391a1",
+  "base_member_count": 53,
+  "candidate_member_count": 59,
+  "candidate_members": {
+    "assets/ar-AE/lead.js": "81ef3ba2322e37a257994d5aa0f60c3e8b867ba80181f6b6ecd9cbfc2a863f32",
+    "assets/assets.css": "c31c60f01ef46fc19086dd76a6c6a823ba71b4e6ed4e95faa774db1fe68db975",
+    "assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "assets/consent.css": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+    "assets/country-advertising-consent.js": "c1a1c5c1030a3c6d5874adccbed49fc5c7f19fecfba684bb70ea9c93129f4832",
+    "assets/de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "assets/de-DE/lead.js": "ce2b24c130fcfe22dac481e10e0facffb4960e092350aa4c561ed38fef01927d",
+    "assets/en-IN/lead.js": "73829d0e009b91a732abe09a8e253880169bb570914f141da508400393a40941",
+    "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "assets/fr-FR/lead.js": "e2c8f2e2f19b6f5cbb564acb1ed1598160f123b28ed4b1d1ac52137023332ab5",
+    "assets/google-measurement.js": "57abdda0d74465a12c8c538893b84539c551c5d8fdabe34008c040ccfd4399a3",
+    "assets/google-runtime.js": "55551391bd9619ed1d1c30189da8a143f76a52a5e725eabce0c1f034d5d08e15",
+    "assets/hi-IN/lead.js": "1371c9932e6be7ae59da4bed297f05dfd831691c80a3ca7600ed241219010f03",
+    "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+    "assets/lead.js": "2f23fbcf576cda279b6ac7825ca1d34369a26ec27a45eda758654cc094342c72",
+    "assets/wordpress.js": "9de3fb930c1f865425c7ba28f63c693e4d1122ca15dec4bd5c2c1e98b72030d4",
+    "assets/zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "assets/zh-Hant-TW/lead.js": "e816e2b98d6c0ac71c91d3d375a38373f77e84a8c1d40158623c306021bc8f02",
+    "bsre-enquiries.php": "44e2737be659f2c40d1af0fd8bea4d9b2c5809390d3ba19eb0fece36f9975986",
+    "includes/admin.php": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+    "includes/cli.php": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+    "includes/consent-export.php": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+    "includes/consent-store.php": "12d7da50d2811a637ef24f9d8b1da620550fb8f0f7d6afa4e883c97a0bcc340f",
+    "includes/consent.php": "dd882c372f76241d3d6dda7f9346e197f4f621e3421aff41c89881db426903af",
+    "includes/drafts.php": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+    "includes/enquiry-seo.php": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+    "includes/measurement-runtime.php": "a389fc3608087c2e8d5522b6b9846e84dd7942c72ab55d1955308ee51cdcb5f6",
+    "includes/measurement-settings.php": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+    "includes/measurement.php": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+    "includes/offplan-country-advertising.php": "26261e88c7e629be454f1025369d06abce1c6dfde498cfcb5ad8dee2bdbe8125",
+    "includes/offplan-country-pages.php": "429fcd78308d0def2c4ac53e5e6a40b2550a8d3cfbebabf0b6bb53a655173590",
+    "includes/offplan-country-transport.php": "8badc1aac666aee6449361f9b7ff8d1708683581d3349a2f0952d726d9d3dc05",
+    "includes/offplan-india-measurement.php": "87930937ad53233bf3e14a6d3f2736c159019338f434f116c868aea1b70ec544",
+    "includes/offplan-india.php": "7d07b8f43e7bef18ef3ae6691fb3b3d3265409f52ea9a6f43bc0ec32fe955c43",
+    "includes/offplan-locale.php": "7468641661300006611d866693680a091ab0c49495dbb7ca5a62a648d7f8fb84",
+    "includes/offplan-protected-source.php": "1ad335ed46e3b18c3cfbd8d8089ee4b7ee185a5bab6b43718b52f92258261274",
+    "includes/offplan-variant.php": "7b81c14f1070b0bddff568d5a305df091a7cf76c35ebab7d0efd60188ebdbcbe",
+    "includes/parent-isolation.php": "da7fb03d64b55ab6396a10ae0d39c9cfd768a1871ec1ef1be781b13fb925694a",
+    "includes/presentation.php": "a32c0bdbe77b475f5267c148456b0789e328ea85541ddfc4e7c4fff677cc785a",
+    "includes/protocol.php": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+    "templates/hub.php": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+    "templates/offplan-locales/ar-AE.json": "3c78c4bb394685b817c0e8687192353b9ebd4e984feff71a27655ba1a8fad865",
+    "templates/offplan-locales/de-DE.json": "694438a751e1e89bd7e29c7d8a3ad799871537b47349c3b2ccee646f874d3d98",
+    "templates/offplan-locales/fr-FR.json": "d6879221be9d926f5188f1261bf7c523a08a24d5c16273eb93e6c172d41a3178",
+    "templates/offplan-locales/hi-IN.json": "e5db72d8ccdde6497f12f348ac4ee25d3c746f04ebd6e5eb6e00c21c022d5584",
+    "templates/offplan-locales/zh-Hant-TW.json": "064b158471b1527f25b002edd9625df868cf8496b4eab2b51d3ed6a8b113e56c",
+    "templates/page.php": "f54e908bdf3a0527bb921e9ca558cc906701c7124cf3ff836dc584d39e67827e",
+    "templates/source/hub.html": "4a20726a828e72b581d4e717dfee31d2f9b62c3d3f7a49a87199b5e5472ab6ff",
+    "templates/source/let.html": "f10999b657d5f15c27e29a891361f6efc936766bd612fcdfcde14f6c9b18c08e",
+    "templates/source/off-plan.ar-AE.php": "9b29713a86694804bba7cc490690bf774ee16a403a359193200c5030dab44779",
+    "templates/source/off-plan.de-DE.php": "308b2a88870fa01f4669db10e5f9e2011b965d19f423aae36c9d3b87d5b39866",
+    "templates/source/off-plan.en-IN.php": "d6cf490f79e18260964df21953e1f89c628f2d48938f165bbcd6ce5910b95f6d",
+    "templates/source/off-plan.fr-FR.php": "5e6eccdbda763841ec7a13abd88de55c37ac308830e42aa0aa60d08dafe6407d",
+    "templates/source/off-plan.hi-IN.php": "16edfbb0adaa69cbe9407cfd30d161f602f26d2ddf70964a561ae3bfd4c22882",
+    "templates/source/off-plan.html": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+    "templates/source/off-plan.zh-Hant-TW.php": "040b59a4728e458616d75c5e129461d336575a5778ada86f4e024316cd1b3a5c",
+    "templates/source/rent.html": "e33e28ce93b742b757de41899e68841e3b3425dc28b0a5955486372aec49e947",
+    "templates/source/resale.html": "7419cbd288b4b9331e231afde6709eb26487f417f1e9732334774cb500de3172",
+    "templates/source/sell.html": "529d786aafa48cd85a66e05ca43f9997c48c90318051131fc3842efdc4bc50a0"
+  },
+  "changes": {
+    "assets/ar-AE/lead.js": {
+      "before": "2f23fbcf576cda279b6ac7825ca1d34369a26ec27a45eda758654cc094342c72",
+      "edits": [
+        {
+          "offset": 17882,
+          "remove": 226,
+          "lines": [
+            "        showStatus(status, \"معاينة غير منشورة. لم يُرسل استفسارك. هذه المسودة لا تحفظ بياناتك ولا ترسلها. يمكنك التواصل مع Black Swan Real Estate باستخدام روابط الهاتف أو واتساب.\", 'notice');\n"
+          ]
+        },
+        {
+          "offset": 18212,
+          "remove": 129,
+          "lines": [
+            "        showStatus(status, \"تحقق من البيانات المطلوبة ومن موافقتك على التواصل قبل الإرسال.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 18387,
+          "remove": 135,
+          "lines": [
+            "        showStatus(status, \"تعذّر علينا قبول هذا الاستفسار. يرجى التواصل عبر الهاتف أو واتساب.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 18589,
+          "remove": 150,
+          "lines": [
+            "        showStatus(status, \"تعذّر على هذا المتصفح إعداد استفسار آمن. يرجى التواصل عبر الهاتف أو واتساب.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 19854,
+          "remove": 298,
+          "lines": [
+            "        showStatus(status, \"لم يتأكد بعد استلام استفسارك السابق. تغيّرت بعض البيانات، لذلك لم تُرسل مرة أخرى. أعد إدخال البيانات الأصلية لإعادة محاولة إرسال الطلب نفسه، أو تواصل معنا هاتفيًا أو عبر واتساب للتحقق منه. هذا يمنع تكرار الاستفسار.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 20263,
+          "remove": 304,
+          "lines": [
+            "        showStatus(status, \"لم يتأكد بعد استلام استفسارك السابق، وقد تغيّرت موافقتك على التحليلات. احترامًا لاختيارك الحالي، لا يمكن إعادة إرسال هذا الطلب مع بيانات الإحالة الأصلية. يرجى التواصل هاتفيًا أو عبر واتساب للتحقق من الاستفسار السابق.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 20689,
+          "remove": 240,
+          "lines": [
+            "        showStatus(status, \"لم يتأكد بعد استلام استفسارك السابق، وقد تغيّرت موافقتك على قياس أداء الإعلانات. يرجى التواصل هاتفيًا أو عبر واتساب للتحقق من ذلك الاستفسار قبل إرسال طلب آخر.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 21718,
+          "remove": 161,
+          "lines": [
+            "      pending = true; button.disabled = true; button.textContent = \"جارٍ إرسال الاستفسار…\";\n",
+            "      showStatus(status, \"جارٍ إرسال استفسارك بأمان…\", 'notice');\n"
+          ]
+        },
+        {
+          "offset": 22576,
+          "remove": 250,
+          "lines": [
+            "            showStatus(status, \"رفضت الخدمة هذه البيانات قبل قبول الاستفسار. راجع الحقول المطلوبة والموافقة ثم أعد الإرسال. ستحصل على رقم مرجعي جديد في المحاولة التالية بعد تصحيح البيانات.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 22920,
+          "remove": 226,
+          "lines": [
+            "            showStatus(status, \"تعذّر على الخدمة مطابقة الرقم المرجعي مع الطلب. لم تُرسل بياناتك مجددًا برقم مرجعي جديد. يرجى التواصل هاتفيًا أو عبر واتساب للتحقق من الاستفسار.\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 23606,
+          "remove": 314,
+          "lines": [
+            "        button.textContent = \"تم استلام الاستفسار\"; button.dataset.complete = 'true';\n",
+            "        showStatus(status, \"تم استلام استفسارك. الرقم المرجعي: ⁦\" + result.lead_id + \"⁩. يمكن الآن لفريق Black Swan Real Estate مراجعة طلبك. لا يؤكد هذا الإشعار توفر عقار أو أهليتك للشراء.\", 'success');\n"
+          ]
+        },
+        {
+          "offset": 24597,
+          "remove": 227,
+          "lines": [
+            "        showStatus(status, \"لم نتمكن من تأكيد الاستلام. ربما لم يُقبل استفسارك. حاول مرة أخرى باستخدام الرقم المرجعي نفسه لتجنّب تكرار الاستفسار، أو تواصل معنا هاتفيًا أو عبر واتساب.\", 'error');\n"
+          ]
+        }
+      ],
+      "derived_from": "assets/lead.js"
+    },
+    "assets/assets.css": {
+      "before": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+      "edits": [
+        {
+          "offset": 11954,
+          "remove": 0,
+          "lines": [
+            "\n",
+            "/* Directional adjustments for the Arabic intake variant. */\n",
+            "html[dir=\"rtl\"] .skip{left:auto;right:16px}\n",
+            "html[dir=\"rtl\"] .honeypot{left:auto!important;right:0!important;clip-path:inset(50%)}\n",
+            "html[dir=\"rtl\"] .intent-panel:after{right:auto;left:-60px;transform:rotate(28deg)}\n",
+            "html[dir=\"rtl\"] select{padding-left:24px;padding-right:12px}\n",
+            "html[dir=\"rtl\"] .submit{text-align:start}\n",
+            "html[dir=\"rtl\"] .status{border-left:0;border-right:3px solid var(--gold)}\n",
+            "html[dir=\"rtl\"] .status[data-state=\"success\"]{border-right-color:#38794f}\n",
+            "html[dir=\"rtl\"] .status[data-state=\"error\"]{border-right-color:#a85243}\n"
+          ]
+        }
+      ]
+    },
+    "assets/hi-IN/lead.js": {
+      "before": "2f23fbcf576cda279b6ac7825ca1d34369a26ec27a45eda758654cc094342c72",
+      "edits": [
+        {
+          "offset": 17882,
+          "remove": 226,
+          "lines": [
+            "        showStatus(status, \"अप्रकाशित पूर्वावलोकन। आपकी पूछताछ भेजी नहीं गई है। यह ड्राफ़्ट आपकी जानकारी सहेजता या भेजता नहीं है। आप फ़ोन या WhatsApp लिंक के ज़रिए Black Swan Real Estate से संपर्क कर सकते हैं।\", 'notice');\n"
+          ]
+        },
+        {
+          "offset": 18212,
+          "remove": 129,
+          "lines": [
+            "        showStatus(status, \"सबमिट करने से पहले पूछताछ के ज़रूरी फ़ील्ड और संपर्क की सहमति जाँच लें।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 18387,
+          "remove": 135,
+          "lines": [
+            "        showStatus(status, \"हम यह पूछताछ स्वीकार नहीं कर सके। कृपया फ़ोन या WhatsApp से संपर्क करें।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 18589,
+          "remove": 150,
+          "lines": [
+            "        showStatus(status, \"यह ब्राउज़र पूछताछ को सुरक्षित ढंग से भेजने की तैयारी नहीं कर सका। कृपया फ़ोन या WhatsApp से संपर्क करें।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 19854,
+          "remove": 298,
+          "lines": [
+            "        showStatus(status, \"पिछली बार भेजी गई पूछताछ मिलने की अभी पुष्टि नहीं हुई है। कुछ जानकारी बदल गई है, इसलिए उसे दोबारा नहीं भेजा गया। वही अनुरोध फिर भेजने के लिए पिछली जानकारी बहाल करें या उसकी स्थिति जानने के लिए फ़ोन या WhatsApp से संपर्क करें। इससे पूछताछ दो बार दर्ज होने से बचती है।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 20263,
+          "remove": 304,
+          "lines": [
+            "        showStatus(status, \"पिछली बार भेजी गई पूछताछ मिलने की अभी पुष्टि नहीं हुई है और एनालिटिक्स के लिए आपकी सहमति बदल गई है। आपके मौजूदा चयन का सम्मान करते हुए, इस अनुरोध को उसके मूल स्रोत की जानकारी के साथ फिर से नहीं भेजा जा सकता। पिछली पूछताछ की स्थिति जानने के लिए कृपया फ़ोन या WhatsApp से संपर्क करें।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 20689,
+          "remove": 240,
+          "lines": [
+            "        showStatus(status, \"पिछली बार भेजी गई पूछताछ मिलने की अभी पुष्टि नहीं हुई है और विज्ञापन मापन की आपकी अनुमति बदल गई है। दूसरी पूछताछ भेजने से पहले पहली पूछताछ की स्थिति जानने के लिए कृपया फ़ोन या WhatsApp से संपर्क करें।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 21718,
+          "remove": 161,
+          "lines": [
+            "      pending = true; button.disabled = true; button.textContent = \"पूछताछ भेजी जा रही है…\";\n",
+            "      showStatus(status, \"आपकी पूछताछ सुरक्षित ढंग से भेजी जा रही है…\", 'notice');\n"
+          ]
+        },
+        {
+          "offset": 22576,
+          "remove": 250,
+          "lines": [
+            "            showStatus(status, \"सेवा ने इन विवरणों को अस्वीकार कर दिया, इसलिए पूछताछ स्वीकार नहीं की गई। ज़रूरी फ़ील्ड और सहमति जाँचकर फिर सबमिट करें। सुधारी गई जानकारी के साथ अगली कोशिश को नया संदर्भ नंबर मिलेगा।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 22920,
+          "remove": 226,
+          "lines": [
+            "            showStatus(status, \"सेवा इस अनुरोध का संदर्भ नंबर मिला नहीं सकी। आपकी जानकारी नए संदर्भ नंबर से दोबारा नहीं भेजी गई है। पूछताछ की स्थिति जानने के लिए कृपया फ़ोन या WhatsApp से संपर्क करें।\", 'error'); return;\n"
+          ]
+        },
+        {
+          "offset": 23606,
+          "remove": 314,
+          "lines": [
+            "        button.textContent = \"पूछताछ मिल गई है\"; button.dataset.complete = 'true';\n",
+            "        showStatus(status, \"आपकी पूछताछ मिल गई है। संदर्भ नंबर: \" + result.lead_id + \"। Black Swan Real Estate अब आपके अनुरोध की समीक्षा कर सकता है। यह पावती संपत्ति की उपलब्धता या आपकी पात्रता की पुष्टि नहीं करती।\", 'success');\n"
+          ]
+        },
+        {
+          "offset": 24597,
+          "remove": 227,
+          "lines": [
+            "        showStatus(status, \"हम पूछताछ मिलने की पुष्टि नहीं कर पाए। हो सकता है आपकी पूछताछ स्वीकार न हुई हो। फिर कोशिश करें। दोबारा दर्ज होने से बचाने के लिए वही संदर्भ नंबर इस्तेमाल होगा। आप फ़ोन या WhatsApp से भी संपर्क कर सकते हैं।\", 'error');\n"
+          ]
+        }
+      ],
+      "derived_from": "assets/lead.js"
+    },
+    "bsre-enquiries.php": {
+      "before": "cf52f4fbfb2c1b5cf2abd14f614d7b2c4e57152b8b769358aa81a8563347a3ff",
+      "edits": [
+        {
+          "offset": 179,
+          "remove": 19,
+          "lines": [
+            " * Version: 0.2.24\n"
+          ]
+        },
+        {
+          "offset": 306,
+          "remove": 33,
+          "lines": [
+            "const PLUGIN_VERSION = '0.2.24';\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-country-pages.php": {
+      "before": "79f0e50e77e4d8fdee323e09286f577b2edc0388c2f06c35aaf58baa03c6c822",
+      "edits": [
+        {
+          "offset": 340,
+          "remove": 0,
+          "lines": [
+            "    '/off-plan-dubai-ar-ae/' => 'ar-AE', '/off-plan-dubai-hi-in/' => 'hi-IN',\n",
+            "];\n",
+            "\n",
+            "const OFFPLAN_REGIONAL_INTAKE_PATHS = [\n",
+            "    '/off-plan-dubai-ar-ae/' => true, '/off-plan-dubai-hi-in/' => true,\n"
+          ]
+        },
+        {
+          "offset": 389,
+          "remove": 154,
+          "lines": [
+            "    $legacy = offplan_country_validate_page_ids(\n",
+            "        get_option('bsre_offplan_country_page_ids_v1', []),\n",
+            "        array_diff_key(OFFPLAN_COUNTRY_PATHS, OFFPLAN_REGIONAL_INTAKE_PATHS)\n",
+            "    );\n",
+            "    if ($legacy === null) return [];\n",
+            "    // Older packages can ignore this separate option and keep their legacy map valid.\n",
+            "    $regional = offplan_country_validate_page_ids(\n",
+            "        get_option('bsre_offplan_regional_intake_page_ids_v1', []), OFFPLAN_REGIONAL_INTAKE_PATHS, $legacy\n",
+            "    );\n",
+            "    return $legacy + ($regional ?? []);\n",
+            "}\n",
+            "\n",
+            "function offplan_country_validate_page_ids($stored, array $scope, array $existing = []): ?array {\n",
+            "    if (!is_array($stored) || count($stored) > count($scope)) return null;\n"
+          ]
+        },
+        {
+          "offset": 653,
+          "remove": 184,
+          "lines": [
+            "        if (!isset($scope[$path]) || !$id || in_array($id, [26750, 26751, 26752, 26753, 26754, 26755, 26865], true)\n",
+            "            || in_array($id, $ids, true) || in_array($id, $existing, true)) return null;\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-protected-source.php": {
+      "before": "412b9f1bbbb5835b0b4f6473e5cf77682a34532e0dd06273dfcab4a9e7e2f9b9",
+      "edits": [
+        {
+          "offset": 240,
+          "remove": 142,
+          "lines": [
+            "    if (!in_array($member, ['off-plan.de-DE.php', 'off-plan.en-IN.php', 'off-plan.fr-FR.php', 'off-plan.zh-Hant-TW.php', 'off-plan.ar-AE.php', 'off-plan.hi-IN.php'], true)) return null;\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-variant.php": {
+      "before": "41cd92c762b6786775e3699ac82b00b6fcad07db5e76d8481c78fa443e06fb3b",
+      "edits": [
+        {
+          "offset": 533,
+          "remove": 0,
+          "lines": [
+            "        'ar-AE' => ['ar-AE/lead.js', 'consent-bridge.js', 'off-plan.ar-AE.php', 'ar-AE.json'],\n",
+            "        'hi-IN' => ['hi-IN/lead.js', 'consent-bridge.js', 'off-plan.hi-IN.php', 'hi-IN.json'],\n"
+          ]
+        }
+      ]
+    },
+    "includes/parent-isolation.php": {
+      "before": "ac2731ed3a83238aafd1c984e9eee5bed7f6c426465ad7f212914f56650915d8",
+      "edits": [
+        {
+          "offset": 3175,
+          "remove": 338,
+          "lines": [
+            "    if (!in_array($asset, ['assets.css','consent.css','hub.css','consent-bridge.js','country-advertising-consent.js','wordpress.js','lead.js','google-measurement.js','de-DE/lead.js','de-DE/consent-bridge.js','fr-FR/lead.js','fr-FR/consent-bridge.js','zh-Hant-TW/lead.js','zh-Hant-TW/consent-bridge.js','en-IN/lead.js','ar-AE/lead.js','hi-IN/lead.js'], true)) return '';\n"
+          ]
+        }
+      ]
+    },
+    "templates/offplan-locales/ar-AE.json": {
+      "before": null,
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "{\n",
+            "  \"live_note\": \"صفحة استفسارات Black Swan Real Estate\",\n",
+            "  \"preview\": \"معاينة مسودة مصرح بها. لا يمكن لهذا النموذج إرسال البيانات أو بدء القياس.\",\n",
+            "  \"preview_legend\": \"معاينة مسودة غير قابلة للإرسال\",\n",
+            "  \"privacy_after\": \" قبل الإرسال.\",\n",
+            "  \"privacy_before\": \"يرجى قراءة \",\n",
+            "  \"privacy_link\": \"إشعار الخصوصية\",\n",
+            "  \"privacy_notice\": \"إشعار الخصوصية الحالي باللغة الإنجليزية. ترجمة معلومات الخصوصية بانتظار المراجعة.\",\n",
+            "  \"unavailable\": \"نموذج الاستفسار غير متاح مؤقتًا.\"\n",
+            "}\n"
+          ]
+        }
+      ]
+    },
+    "templates/offplan-locales/hi-IN.json": {
+      "before": null,
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "{\n",
+            "  \"live_note\": \"सेवा की पूछताछ का पेज · Black Swan Real Estate\",\n",
+            "  \"preview\": \"अधिकृत ड्राफ़्ट का पूर्वावलोकन। यह फ़ॉर्म डेटा नहीं भेज सकता और मापन शुरू नहीं कर सकता।\",\n",
+            "  \"preview_legend\": \"बिना भेजे गए ड्राफ़्ट का पूर्वावलोकन\",\n",
+            "  \"privacy_after\": \" पढ़ें।\",\n",
+            "  \"privacy_before\": \"सबमिट करने से पहले \",\n",
+            "  \"privacy_link\": \"गोपनीयता सूचना\",\n",
+            "  \"privacy_notice\": \"वर्तमान गोपनीयता सूचना अंग्रेज़ी में है। इसके अनुवाद की समीक्षा अभी बाकी है।\",\n",
+            "  \"unavailable\": \"यह पूछताछ फ़ॉर्म फ़िलहाल उपलब्ध नहीं है।\"\n",
+            "}\n"
+          ]
+        }
+      ]
+    },
+    "templates/source/off-plan.ar-AE.php": {
+      "before": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "<?php\n",
+            "if (!defined('ABSPATH')) { http_response_code(404); exit; }\n",
+            "?>\n"
+          ]
+        },
+        {
+          "offset": 16,
+          "remove": 17,
+          "lines": [
+            "<html lang=\"ar-AE\" dir=\"rtl\">\n"
+          ]
+        },
+        {
+          "offset": 224,
+          "remove": 276,
+          "lines": [
+            "<title>لنتحدث عن شراء عقار على المخطط في دبي | Black Swan Real Estate</title>\n",
+            "<meta name=\"description\" content=\"هل تفكر في شراء عقار في دبي قبل اكتمال بنائه؟ أخبر Black Swan Real Estate بنوع العقار الذي تبحث عنه، والمناطق التي تفضّلها في دبي، وميزانيتك الإجمالية، والموعد الذي تخطط فيه للشراء.\">\n"
+          ]
+        },
+        {
+          "offset": 560,
+          "remove": 247,
+          "lines": [
+            "<a class=\"skip\" lang=\"en\" dir=\"ltr\" href=\"#main\">Skip to content</a>\n",
+            "<div class=\"preview\" role=\"note\">مسودة ترجمة غير منشورة. لا يمكن لهذه الصفحة إرسال استفسار أو بدء القياس.</div>\n"
+          ]
+        },
+        {
+          "offset": 826,
+          "remove": 2779,
+          "lines": [
+            "<header class=\"header\" lang=\"en\" dir=\"ltr\"><a class=\"brand\" href=\"https://blackswanrealestate.ae/\" aria-label=\"Black Swan Real Estate official website\"><strong>BLACK SWAN</strong><span>Real Estate</span></a><div class=\"header-actions\"><a class=\"wa-top\" href=\"https://wa.me/971506878663?text=Hello%20Black%20Swan%20Real%20Estate.%20I%20would%20like%20to%20discuss%20a%20Dubai%20off-plan%20purchase.%20Page%20reference%3A%20%2Fenquire%2Foff-plan%2F\" target=\"_blank\" rel=\"noopener noreferrer\" data-bsre-contact=\"whatsapp\" data-cta-location=\"header\">WhatsApp enquiry ↗</a><a class=\"header-call\" href=\"tel:+971506878663\" data-bsre-contact=\"telephone\" data-cta-location=\"header\"><span class=\"call-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"m5 3 4 1 1 5-3 2c2 4 3 5 7 7l2-3 5 1 1 4c-1 3-6 2-10 0C6 17 2 11 2 7c0-2 1-4 3-4Z\"/></svg></span><span><small>Speak with Black Swan</small>+971 50 687 8663</span></a></div></header>\n",
+            "<main id=\"main\"><section class=\"hero\" aria-labelledby=\"hero-title\"><div class=\"hero-copy\">\n",
+            "<p class=\"eyebrow\">للمهتمين بشراء عقارات على المخطط في دبي</p>\n",
+            "<h1 id=\"hero-title\">لنتحدث عن شراء عقار على المخطط في دبي</h1>\n",
+            "<p class=\"lead\">هل تفكر في شراء عقار في دبي قبل اكتمال بنائه؟ أخبر Black Swan Real Estate بنوع العقار الذي تبحث عنه، والمناطق التي تفضّلها في دبي، وميزانيتك الإجمالية، والموعد الذي تخطط فيه للشراء.</p>\n",
+            "<a class=\"hero-link\" href=\"#enquiry\">ناقش معي شراء عقار على المخطط</a>\n",
+            "<a href=\"/enquire/off-plan/\" hreflang=\"en\" lang=\"en\" dir=\"ltr\">English</a>\n",
+            "<div class=\"intent-panel\"><h2>ابدأ بخططك</h2><p>أخبرنا ما إذا كنت تبحث عن منزل للسكن مستقبلًا أو تفكر في شراء عقار للاستثمار. اذكر موعد التسليم الذي تفضّله وأي أسئلة ترغب في مناقشتها.</p></div>\n",
+            "</div>\n",
+            "<div class=\"form-card\" id=\"enquiry\" lang=\"ar-AE\"><p class=\"form-kicker\">استفسار عن شراء عقار على المخطط في دبي</p><h2 id=\"form-title\">أخبرنا عن العقار الذي تخطط لشرائه</h2><p class=\"form-intro\">هذا النموذج لمن يخططون للشراء. يراجع فريقنا متطلباتك.</p><p class=\"required-note\">الحقول التي تحمل علامة * إلزامية. لا يفرض هذا النموذج حدًا أدنى للميزانية.</p>\n"
+          ]
+        },
+        {
+          "offset": 3915,
+          "remove": 7238,
+          "lines": [
+            "<div class=\"field-grid\"><div class=\"field\"><label for=\"name\">الاسم الكامل *</label><input id=\"name\" name=\"name\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required placeholder=\"اسمك\"></div><div class=\"field\"><label for=\"phone\">رقم الهاتف *</label><input id=\"phone\" name=\"phone\" type=\"tel\" maxlength=\"35\" autocomplete=\"off\" required inputmode=\"tel\" pattern=\"[+0-9() .-]{7,35}\" aria-describedby=\"phone-hint\" placeholder=\"أدرج رمز الاتصال الدولي\"><span class=\"hint\" id=\"phone-hint\">أدخل رقمًا يستطيع الفريق التواصل معك من خلاله.</span></div><div class=\"field\"><label for=\"country\">بلد الإقامة *</label><input id=\"country\" name=\"country\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required placeholder=\"البلد الذي تقيم فيه حاليًا\"></div><div class=\"field\"><label for=\"email\">البريد الإلكتروني <span class=\"optional\">(اختياري)</span></label><input id=\"email\" name=\"email\" type=\"email\" maxlength=\"254\" autocomplete=\"off\" placeholder=\"إذا كنت تفضّل البريد الإلكتروني\"></div><div class=\"field\"><label for=\"area\">المناطق المفضلة في دبي *</label><input id=\"area\" name=\"area\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required placeholder=\"الحي أو المنطقة\"></div><div class=\"field\"><label for=\"budget\">الميزانية الإجمالية للشراء (AED) *</label><input id=\"budget\" name=\"budget\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required inputmode=\"decimal\" aria-describedby=\"budget-hint\" placeholder=\"ميزانيتك التقريبية\"><span class=\"hint\" id=\"budget-hint\">اذكر ميزانية العقار كاملة بما فيها الدفعة الأولى. لا يُفترض حد أدنى للميزانية.</span></div><div class=\"field\"><label for=\"property_type\">نوع العقار *</label><select id=\"property_type\" name=\"property_type\" required><option value=\"\">اختر أحد الخيارات</option><option value=\"Apartment\">شقة</option><option value=\"Townhouse\">تاون هاوس</option><option value=\"Villa\">فيلا</option><option value=\"Other / to discuss\">نوع آخر / للمناقشة</option></select></div><div class=\"field\"><label for=\"timeline\">متى تخطط للشراء؟ *</label><select id=\"timeline\" name=\"timeline\" required><option value=\"\">اختر أحد الخيارات</option><option value=\"Within 1 month\">خلال شهر واحد</option><option value=\"In 1–3 months\">خلال شهر إلى 3 أشهر</option><option value=\"In 3–6 months\">خلال 3 إلى 6 أشهر</option><option value=\"More than 6 months / exploring\">بعد أكثر من 6 أشهر / ما زلت أستكشف الخيارات</option></select></div></div><details class=\"details\"><summary>أضف تفضيلات أخرى (اختياري)</summary><div class=\"details-content field-grid\"><div class=\"field\"><label for=\"funding\">وضع التمويل <span class=\"optional\">(اختياري)</span></label><select id=\"funding\" name=\"funding\"><option value=\"\">اختر أحد الخيارات</option><option value=\"Cash / own funds\">نقدًا / أموال خاصة</option><option value=\"Mortgage arranged\">التمويل العقاري مرتب مسبقًا</option><option value=\"Mortgage to be arranged\">أحتاج إلى ترتيب تمويل عقاري</option><option value=\"To discuss\">للمناقشة</option></select></div><div class=\"field full\"><label for=\"property_details\">موعد التسليم المفضل / متطلبات أخرى <span class=\"optional\">(اختياري)</span></label><textarea id=\"property_details\" name=\"property_details\" maxlength=\"1500\" placeholder=\"اذكر عدد غرف النوم المفضّل، أو توقيت التسليم، أو أي متطلبات أخرى.\"></textarea></div></div></details>\n",
+            "<div class=\"honeypot\" aria-hidden=\"true\"><label for=\"website\">اترك هذا الحقل فارغًا</label><input id=\"website\" name=\"website\" type=\"text\" tabindex=\"-1\" autocomplete=\"off\"></div>\n",
+            "<div class=\"consent-block\"><label class=\"check-label\" for=\"contact_consent\"><input id=\"contact_consent\" name=\"contact_consent\" type=\"checkbox\" required><span>أطلب من Black Swan Real Estate التواصل معي بشأن هذا الاستفسار عبر الهاتف أو واتساب أو البريد الإلكتروني. *</span></label><label class=\"check-label\" for=\"marketing_consent\"><input id=\"marketing_consent\" name=\"marketing_consent\" type=\"checkbox\"><span>أرغب أيضًا في تلقي أخبار العقارات وعروضها من Black Swan Real Estate. <span class=\"optional\">(اختياري)</span></span></label></div>\n",
+            "<button class=\"submit\" type=\"submit\" disabled>ناقش معي شراء عقار على المخطط<span aria-hidden=\"true\">→</span></button><p class=\"purpose\">التواصل بشأن الاستفسار وتلقي المواد التسويقية الاختيارية خياران منفصلان. يرجى عدم إدراج وثائق الهوية أو أي معلومات مالية حساسة.</p><p class=\"status\" data-bsre-status role=\"status\" aria-live=\"polite\" hidden></p><noscript><p class=\"noscript\">يتطلب إرسال النموذج تشغيل JavaScript واتصالًا بالخدمة. يرجى استخدام خيارات التواصل الموثقة على هذا الموقع.</p></noscript></form></div>\n",
+            "</section>\n",
+            "<section class=\"steps-section\" aria-labelledby=\"steps-title\"><div class=\"steps-heading\"><h2 id=\"steps-title\">ما المعلومات التي ينبغي ذكرها في استفسارك؟</h2><ul><li>نوع العقار والمناطق التي تفضّلها في دبي.</li><li>ميزانية الشراء كاملة بما فيها الدفعة الأولى. تُذكر المبالغ في النموذج بالدرهم الإماراتي (AED).</li><li>موعد الشراء الذي تخطط له وموعد التسليم الذي تفضّله إن وُجد.</li><li>بلد إقامتك والأسئلة التي ترغب في مناقشتها.</li></ul><h2>راجع التفاصيل قبل اتخاذ القرار</h2><ol><li>اذكر متطلباتك وميزانيتك الإجمالية.</li><li>ناقش مع الفريق معلومات المشاريع التي قد تناسب متطلباتك.</li><li>تحقق من التوفر وشروط الدفع ومعلومات اكتمال المشروع ومستندات الشراء قبل اتخاذ القرار.</li></ol></div></section>\n",
+            "<section class=\"faq-section\"><details><summary>هل أحتاج إلى اختيار مشروع أولًا؟</summary><p>لا. ابدأ بتحديد متطلباتك. تحقق من تفاصيل المشروع والتوفر قبل اتخاذ القرار.</p></details><details><summary>هل الأسعار أو مواعيد التسليم مضمونة هنا؟</summary><p>لا. لا تعرض هذه الصفحة عقارًا أو سعرًا محددًا ولا تؤكد توفر أي عقار. تحقق من التفاصيل الحالية مباشرةً.</p></details><details><summary>هل يؤكد الاستفسار أهليتي للشراء؟</summary><p>لا. على الفريق مراجعة متطلباتك ونيتك في الشراء. لا يحجز الاستفسار عقارًا ولا يؤكد أهليتك للشراء.</p></details></section></main>\n",
+            "<footer class=\"footer\" lang=\"en\" dir=\"ltr\"><p>Black Swan Real Estate · Dubai property enquiries</p><div class=\"footer-links\"><a href=\"https://blackswanrealestate.ae/contact/\">Contact details</a><a href=\"mailto:marketing@blackswanrealestate.ae\">marketing@blackswanrealestate.ae</a></div></footer></div>\n",
+            "<div class=\"sticky-call\" lang=\"en\" dir=\"ltr\"><a href=\"tel:+971506878663\" data-bsre-contact=\"telephone\" data-cta-location=\"sticky\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"m5 3 4 1 1 5-3 2c2 4 3 5 7 7l2-3 5 1 1 4c-1 3-6 2-10 0C6 17 2 11 2 7c0-2 1-4 3-4Z\"/></svg>Call Black Swan</a><a class=\"sticky-whatsapp\" href=\"https://wa.me/971506878663?text=Hello%20Black%20Swan%20Real%20Estate.%20I%20would%20like%20to%20discuss%20a%20Dubai%20off-plan%20purchase.%20Page%20reference%3A%20%2Fenquire%2Foff-plan%2F\" target=\"_blank\" rel=\"noopener noreferrer\" data-bsre-contact=\"whatsapp\" data-cta-location=\"sticky\">WhatsApp ↗</a></div>\n"
+          ]
+        }
+      ],
+      "derived_from": "templates/source/off-plan.html"
+    },
+    "templates/source/off-plan.hi-IN.php": {
+      "before": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "<?php\n",
+            "if (!defined('ABSPATH')) { http_response_code(404); exit; }\n",
+            "?>\n"
+          ]
+        },
+        {
+          "offset": 16,
+          "remove": 17,
+          "lines": [
+            "<html lang=\"hi-IN\" dir=\"ltr\">\n"
+          ]
+        },
+        {
+          "offset": 224,
+          "remove": 276,
+          "lines": [
+            "<title>दुबई में निर्माणाधीन संपत्ति खरीदने की योजना पर बात करें | Black Swan Real Estate</title>\n",
+            "<meta name=\"description\" content=\"दुबई में कोई संपत्ति बनकर तैयार होने से पहले खरीदने पर विचार कर रहे हैं? Black Swan Real Estate को बताएं कि आपको किस तरह की संपत्ति चाहिए, दुबई में कौन से इलाके पसंद हैं, कुल बजट कितना है और आप कब खरीदना चाहते हैं।\">\n"
+          ]
+        },
+        {
+          "offset": 560,
+          "remove": 247,
+          "lines": [
+            "<a class=\"skip\" lang=\"en\" dir=\"ltr\" href=\"#main\">Skip to content</a>\n",
+            "<div class=\"preview\" role=\"note\">अनुवाद का अप्रकाशित ड्राफ़्ट। यह पेज पूछताछ नहीं भेज सकता और मापन शुरू नहीं कर सकता।</div>\n"
+          ]
+        },
+        {
+          "offset": 826,
+          "remove": 2779,
+          "lines": [
+            "<header class=\"header\" lang=\"en\" dir=\"ltr\"><a class=\"brand\" href=\"https://blackswanrealestate.ae/\" aria-label=\"Black Swan Real Estate official website\"><strong>BLACK SWAN</strong><span>Real Estate</span></a><div class=\"header-actions\"><a class=\"wa-top\" href=\"https://wa.me/971506878663?text=Hello%20Black%20Swan%20Real%20Estate.%20I%20would%20like%20to%20discuss%20a%20Dubai%20off-plan%20purchase.%20Page%20reference%3A%20%2Fenquire%2Foff-plan%2F\" target=\"_blank\" rel=\"noopener noreferrer\" data-bsre-contact=\"whatsapp\" data-cta-location=\"header\">WhatsApp enquiry ↗</a><a class=\"header-call\" href=\"tel:+971506878663\" data-bsre-contact=\"telephone\" data-cta-location=\"header\"><span class=\"call-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"m5 3 4 1 1 5-3 2c2 4 3 5 7 7l2-3 5 1 1 4c-1 3-6 2-10 0C6 17 2 11 2 7c0-2 1-4 3-4Z\"/></svg></span><span><small>Speak with Black Swan</small>+971 50 687 8663</span></a></div></header>\n",
+            "<main id=\"main\"><section class=\"hero\" aria-labelledby=\"hero-title\"><div class=\"hero-copy\">\n",
+            "<p class=\"eyebrow\">दुबई की निर्माणाधीन संपत्ति के खरीदार</p>\n",
+            "<h1 id=\"hero-title\">दुबई में निर्माणाधीन संपत्ति खरीदने की योजना पर बात करें</h1>\n",
+            "<p class=\"lead\">दुबई में कोई संपत्ति बनकर तैयार होने से पहले खरीदने पर विचार कर रहे हैं? Black Swan Real Estate को बताएं कि आपको किस तरह की संपत्ति चाहिए, दुबई में कौन से इलाके पसंद हैं, कुल बजट कितना है और आप कब खरीदना चाहते हैं।</p>\n",
+            "<a class=\"hero-link\" href=\"#enquiry\">निर्माणाधीन संपत्ति खरीदने के बारे में बात करें</a>\n",
+            "<a href=\"/enquire/off-plan/\" hreflang=\"en\" lang=\"en\" dir=\"ltr\">English</a>\n",
+            "<div class=\"intent-panel\"><h2>अपनी खरीद की योजना से शुरुआत करें</h2><p>बताएं कि आप भविष्य में रहने के लिए घर देख रहे हैं या निवेश के लिए संपत्ति खरीदना चाहते हैं। संपत्ति का कब्ज़ा मिलने का कोई पसंदीदा समय हो या कोई सवाल हो तो वह भी बताएं।</p></div>\n",
+            "</div>\n",
+            "<div class=\"form-card\" id=\"enquiry\" lang=\"hi-IN\"><p class=\"form-kicker\">दुबई की निर्माणाधीन संपत्ति के बारे में पूछताछ</p><h2 id=\"form-title\">अपनी अगली खरीद की योजना हमें बताएं</h2><p class=\"form-intro\">यह फ़ॉर्म उन खरीदारों के लिए है जो संपत्ति खरीदने की योजना बना रहे हैं। हमारी टीम आपकी ज़रूरतों की समीक्षा करेगी।</p><p class=\"required-note\">* वाले फ़ील्ड भरना ज़रूरी है। इस फ़ॉर्म में कोई न्यूनतम बजट तय नहीं है।</p>\n"
+          ]
+        },
+        {
+          "offset": 3915,
+          "remove": 7238,
+          "lines": [
+            "<div class=\"field-grid\"><div class=\"field\"><label for=\"name\">पूरा नाम *</label><input id=\"name\" name=\"name\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required placeholder=\"आपका नाम\"></div><div class=\"field\"><label for=\"phone\">फ़ोन नंबर *</label><input id=\"phone\" name=\"phone\" type=\"tel\" maxlength=\"35\" autocomplete=\"off\" required inputmode=\"tel\" pattern=\"[+0-9() .-]{7,35}\" aria-describedby=\"phone-hint\" placeholder=\"देश का कोड शामिल करें\"><span class=\"hint\" id=\"phone-hint\">वह नंबर दें जिस पर हमारी टीम आपसे संपर्क कर सके।</span></div><div class=\"field\"><label for=\"country\">निवास का देश *</label><input id=\"country\" name=\"country\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required placeholder=\"वह देश जहाँ आप अभी रहते हैं\"></div><div class=\"field\"><label for=\"email\">ईमेल पता<span class=\"optional\">(वैकल्पिक)</span></label><input id=\"email\" name=\"email\" type=\"email\" maxlength=\"254\" autocomplete=\"off\" placeholder=\"अगर ईमेल से संपर्क पसंद है\"></div><div class=\"field\"><label for=\"area\">दुबई में पसंदीदा इलाके *</label><input id=\"area\" name=\"area\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required placeholder=\"रिहायशी समुदाय या इलाका\"></div><div class=\"field\"><label for=\"budget\">खरीद का कुल बजट (AED) *</label><input id=\"budget\" name=\"budget\" type=\"text\" maxlength=\"200\" autocomplete=\"off\" required inputmode=\"decimal\" aria-describedby=\"budget-hint\" placeholder=\"आपका अनुमानित बजट\"><span class=\"hint\" id=\"budget-hint\">संपत्ति खरीदने का पूरा बजट बताएं, सिर्फ़ जमा राशि नहीं। कोई न्यूनतम बजट तय नहीं है।</span></div><div class=\"field\"><label for=\"property_type\">संपत्ति का प्रकार *</label><select id=\"property_type\" name=\"property_type\" required><option value=\"\">कृपया चुनें</option><option value=\"Apartment\">अपार्टमेंट</option><option value=\"Townhouse\">टाउनहाउस</option><option value=\"Villa\">विला</option><option value=\"Other / to discuss\">अन्य / बात करना चाहते हैं</option></select></div><div class=\"field\"><label for=\"timeline\">आप कब खरीदना चाहते हैं? *</label><select id=\"timeline\" name=\"timeline\" required><option value=\"\">कृपया चुनें</option><option value=\"Within 1 month\">1 महीने के भीतर</option><option value=\"In 1–3 months\">1–3 महीनों में</option><option value=\"In 3–6 months\">3–6 महीनों में</option><option value=\"More than 6 months / exploring\">6 महीने बाद / अभी विकल्प देख रहे हैं</option></select></div></div><details class=\"details\"><summary>अपनी अन्य पसंद बताएं (वैकल्पिक)</summary><div class=\"details-content field-grid\"><div class=\"field\"><label for=\"funding\">खरीद के लिए धन की व्यवस्था<span class=\"optional\">(वैकल्पिक)</span></label><select id=\"funding\" name=\"funding\"><option value=\"\">कृपया चुनें</option><option value=\"Cash / own funds\">नकद / अपने पैसे</option><option value=\"Mortgage arranged\">होम लोन की व्यवस्था है</option><option value=\"Mortgage to be arranged\">होम लोन की व्यवस्था करनी है</option><option value=\"To discuss\">इस पर बात करना चाहते हैं</option></select></div><div class=\"field full\"><label for=\"property_details\">संपत्ति का कब्ज़ा मिलने का पसंदीदा समय / अन्य ज़रूरतें<span class=\"optional\">(वैकल्पिक)</span></label><textarea id=\"property_details\" name=\"property_details\" maxlength=\"1500\" placeholder=\"बताएं कि कितने बेडरूम चाहिए, कब कब्ज़ा पाना चाहते हैं, या आपकी अन्य ज़रूरतें क्या हैं।\"></textarea></div></div></details>\n",
+            "<div class=\"honeypot\" aria-hidden=\"true\"><label for=\"website\">इस फ़ील्ड को खाली छोड़ दें</label><input id=\"website\" name=\"website\" type=\"text\" tabindex=\"-1\" autocomplete=\"off\"></div>\n",
+            "<div class=\"consent-block\"><label class=\"check-label\" for=\"contact_consent\"><input id=\"contact_consent\" name=\"contact_consent\" type=\"checkbox\" required><span>मेरा अनुरोध है कि Black Swan Real Estate इस पूछताछ के बारे में फ़ोन, WhatsApp या ईमेल से मुझसे संपर्क करे। *</span></label><label class=\"check-label\" for=\"marketing_consent\"><input id=\"marketing_consent\" name=\"marketing_consent\" type=\"checkbox\"><span>मुझे Black Swan Real Estate से संपत्ति से जुड़ी ख़बरें और ऑफ़र भी चाहिए।<span class=\"optional\">(वैकल्पिक)</span></span></label></div>\n",
+            "<button class=\"submit\" type=\"submit\" disabled>निर्माणाधीन संपत्ति खरीदने के बारे में बात करें<span aria-hidden=\"true\">→</span></button><p class=\"purpose\">इस पूछताछ के लिए संपर्क की सहमति और प्रचार संदेश पाने की सहमति अलग-अलग हैं। पहचान दस्तावेज़ या संवेदनशील वित्तीय जानकारी शामिल न करें।</p><p class=\"status\" data-bsre-status role=\"status\" aria-live=\"polite\" hidden></p><noscript><p class=\"noscript\">JavaScript और कनेक्ट की गई सेवा के बिना इस फ़ॉर्म से पूछताछ नहीं भेजी जा सकती। कृपया इस वेबसाइट पर दिए गए सत्यापित संपर्क विकल्प इस्तेमाल करें।</p></noscript></form></div>\n",
+            "</section>\n",
+            "<section class=\"steps-section\" aria-labelledby=\"steps-title\"><div class=\"steps-heading\"><h2 id=\"steps-title\">पूछताछ में क्या शामिल करें</h2><ul><li>संपत्ति का पसंदीदा प्रकार और दुबई में पसंदीदा इलाके।</li><li>खरीद का कुल बजट, सिर्फ़ जमा राशि नहीं। फ़ॉर्म में रकम AED में भरें।</li><li>आप कब खरीदना चाहते हैं और संपत्ति का कब्ज़ा कब तक पाना चाहते हैं।</li><li>आपके निवास का देश और वे सवाल जिन पर आप बात करना चाहते हैं।</li></ul><h2>फ़ैसला करने से पहले जानकारी जाँचें</h2><ol><li>अपनी ज़रूरतें और खरीद का कुल बजट बताएं।</li><li>टीम के साथ उपयुक्त परियोजनाओं की जानकारी पर बात करें।</li><li>फ़ैसला करने से पहले उपलब्धता, भुगतान की शर्तों, निर्माण पूरा होने की जानकारी और खरीद के दस्तावेज़ों की पुष्टि करें।</li></ol></div></section>\n",
+            "<section class=\"faq-section\"><details><summary>क्या मुझे पहले कोई परियोजना चुननी होगी?</summary><p>नहीं। पहले अपनी ज़रूरतें बताएं। फ़ैसला करने से पहले परियोजना का विवरण और उपलब्धता जाँचना ज़रूरी है।</p></details><details><summary>क्या यहाँ कीमतों या कब्ज़ा मिलने की तारीख़ों की गारंटी है?</summary><p>नहीं। इस पेज पर किसी ख़ास संपत्ति, कीमत या उपलब्धता का प्रस्ताव नहीं है। मौजूदा जानकारी की सीधे पुष्टि करें।</p></details><details><summary>क्या पूछताछ करने से मेरी खरीदार के रूप में पात्रता की पुष्टि होती है?</summary><p>नहीं। टीम को आपकी ज़रूरतों और खरीद के इरादे की समीक्षा करनी होगी। पूछताछ करने से कोई संपत्ति आरक्षित नहीं होती और खरीद की पात्रता की पुष्टि भी नहीं होती।</p></details></section></main>\n",
+            "<footer class=\"footer\" lang=\"en\" dir=\"ltr\"><p>Black Swan Real Estate · Dubai property enquiries</p><div class=\"footer-links\"><a href=\"https://blackswanrealestate.ae/contact/\">Contact details</a><a href=\"mailto:marketing@blackswanrealestate.ae\">marketing@blackswanrealestate.ae</a></div></footer></div>\n",
+            "<div class=\"sticky-call\" lang=\"en\" dir=\"ltr\"><a href=\"tel:+971506878663\" data-bsre-contact=\"telephone\" data-cta-location=\"sticky\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"m5 3 4 1 1 5-3 2c2 4 3 5 7 7l2-3 5 1 1 4c-1 3-6 2-10 0C6 17 2 11 2 7c0-2 1-4 3-4Z\"/></svg>Call Black Swan</a><a class=\"sticky-whatsapp\" href=\"https://wa.me/971506878663?text=Hello%20Black%20Swan%20Real%20Estate.%20I%20would%20like%20to%20discuss%20a%20Dubai%20off-plan%20purchase.%20Page%20reference%3A%20%2Fenquire%2Foff-plan%2F\" target=\"_blank\" rel=\"noopener noreferrer\" data-bsre-contact=\"whatsapp\" data-cta-location=\"sticky\">WhatsApp ↗</a></div>\n"
+          ]
+        }
+      ],
+      "derived_from": "templates/source/off-plan.html"
+    }
+  }
+}

@@ -1,3 +1,9 @@
+## Arabic and Hindi native off-plan forms · 28 November 2026
+
+The exact 59-member `0.2.24` revision 2 review adds both planned locale-specific native forms. It preserves the default English service page, 13 fields, 15 option values, the contact destinations, and signed intake. In disposable WordPress, 51 checks across 15 requests verified the two routes, their bindings, route-specific tokens and one local signed receipt per locale, with optional measurement off. Chromium passed 24 checks at 375px and 1280px, including the corrected RTL layout. All 59 focused release-tool tests passed. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#arabic-and-hindi-native-intake-review-0224)
+
+Actual CMS assignments, language and privacy review, route-preserving recovery, operating coverage and Ads measurement remain open.
+
 ## Canonical off-plan runtime query validation · 28 November 2026
 
 An isolated WordPress comparison reproduced three ambiguous canonical queries that the exact `0.2.20` runtime accepted after PHP collapsed the input. The exact `0.2.23` review rejected all three with an inert response, preserved supported unique click values, and kept the tested regional route click-free. Baseline passed 13 assertions across five requests, review passed 38 across 18, and the 58 measurement-release tests passed. The native comparison took 109.472 seconds and sent zero leads or vendor requests. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#canonical-runtime-query-review-0223)
