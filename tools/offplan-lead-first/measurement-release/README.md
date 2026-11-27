@@ -228,3 +228,11 @@ python -B tools/offplan-lead-first/measurement-release/check_offplan_release_evi
 ```
 
 The receipt records existing offline verification and a separate launch `HOLD`. `--require-launch-ready` exits 3 on this offline-only scope. The tool cannot establish present provider state, authenticate the source of a Hostinger file, or imply live approval. The private capture and underlying exports stay on the authorized workspace.
+
+## Attribution continuity and CTA diagnostics
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/gtm-nonce-0217-PRIVATE-REVIEW.zip /private/attribution-0218-PRIVATE-REVIEW.zip --profile attribution-continuity-0218
+```
+
+The 53-member `0.2.18` review reproduces SHA-256 `be8a76ba2a9cb3dfbfcad37767a5d72c06c9ea632597a6a83c9ef9b00f849be3`. The five enquiry clients retain the latest permitted analytics touch across clean internal navigation and accept explicit inbound replacements. Existing advertising click continuity and purpose-specific browser storage remain in place. Seven scenarios ran against each actual client in a simulated page. Independently scoped Chrome checks verified the exact LF-preserving runtime member. The terminal Analytics adapter sends `phone_click` and `whatsapp_click` diagnostics with the existing consent and payload restrictions. The 14 check groups sent zero vendor requests and zero lead or Ads conversion submissions. This archive remains for review. Independent-purpose attribution through the full signed intake, actual provider acceptance, and the Hostinger release gates remain open.
