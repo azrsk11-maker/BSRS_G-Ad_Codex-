@@ -1,3 +1,7 @@
+## English country Ads measurement candidate — 27 November 2026
+
+The [0.2.19 review](../tools/offplan-lead-first/measurement-release/README.md#english-country-ads-measurement-review) adds route-bound Ads measurement for the English Germany, France and Taiwan destinations. Nine changes reproduce the exact 53-member package. Browser-script checks verified separate consent panels, default denial and no alias writes to the shared click-history store. Turning off a previously consented route's deployment binding blocked its measurement and preserved a signed synthetic intake in the native fixture. Real locale consent, paid-click attribution, provider verification and release recovery remain open.
+
 ## Exact off-plan rollback and native English prerequisites — 27 November 2026
 
 The [updated release checker](../tools/offplan-lead-first/measurement-release/README.md#combined-0218-evidence-check) bound 18 inputs in 0.103 seconds. It verified the current package's native measurement, attribution and cross-version retry evidence while retaining the predecessor's exact evidence separately. The exact 0.2.12→0.2.18→0.2.12 Chrome trial passed seven gates in 90.291 seconds. Four lead requests yielded two durable synthetic receipts with unchanged identities and zero external transmissions.

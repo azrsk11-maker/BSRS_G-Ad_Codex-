@@ -242,3 +242,13 @@ The 53-member `0.2.18` review reproduces SHA-256 `be8a76ba2a9cb3dfbfcad37767a5d7
 The release checker accepts a complete successor group in the pinned 0.2.17 manifest format. Add `successor_archive`, `successor_browser`, `successor_attribution` and `successor_retry` together. It recomposes the exact 53-member archive, compares the actual served assets, and checks 11 native measurement gates, 14 native navigation gates and seven cross-version retry gates. Only the exact successor evidence changes the reported candidate identity. Earlier exported GTM bootstrap and direct REST and TLS observations retain their 0.2.17 identity.
 
 The latest native Chrome rehearsal kept the form open through exact `0.2.12 → 0.2.18 → 0.2.12` replacements. Four lead requests produced two durable synthetic receipts and preserved the original IDs. Both request pairs started with a lost acknowledgement and completed with an unchanged retry. Twelve archived form assets matched. Optional measurement stayed denied and no vendor requests were sent. The verified local inputs still return `HOLD` for live release.
+
+## English country Ads measurement review
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/attribution-0218-PRIVATE-REVIEW.zip /private/country-ads-0219-PRIVATE-REVIEW.zip --profile english-country-ads-0219
+```
+
+The 53-member `0.2.19` review reproduces SHA-256 `aa3b511f4d281abe5d5d869b39a00dc1b3d1bc81ed5c7d0ccf9e16c78a257b1b`. The English Germany, France and Taiwan routes can request advertising measurement only with an exact path-to-published-page-ID binding, the route transport and master Ads switch, plus a current route-specific grant. The German route retains its existing consent namespace. India retains its separate native binding. The scoped Ads frame receives the fixed clean route and an opaque accepted receipt. The route flow leaves Analytics off and excludes click IDs and raw referrers. The tested client aliases leave canonical click history untouched.
+
+This review still requires the applicable consent disclosure and hosted acceptance, purpose-bound choice CSRF review, independently verified provider behavior, and a recovery test for a newly staged positive choice. A downgrade to `0.2.18` lacks the new English capture notices. The existing full-replacement proof applies to the `0.2.18` inputs. It cannot certify rollback after `0.2.19` English capture activation. The country Ads receipt remains distinct from verified paid-click attribution.
