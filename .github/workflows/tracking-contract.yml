@@ -1,0 +1,23 @@
+name: Tracking contract checks
+on:
+  pull_request:
+    branches: [main, 'codex/**']
+    paths:
+      - '.github/workflows/tracking-contract.yml'
+      - 'tools/website-tracking/tracking-system/**'
+      - 'tools/website-tracking/validate_tracking_evidence*.mjs'
+permissions:
+  contents: read
+jobs:
+  tracking-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Check event mapping and evidence admission
+        run: >-
+          node --test --test-reporter=tap
+          tools/website-tracking/tracking-system/contract.test.mjs
+          tools/website-tracking/validate_tracking_evidence.test.mjs
