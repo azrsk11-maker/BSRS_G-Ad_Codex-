@@ -139,3 +139,13 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 ```
 
 The isolated InnoDB check passed actual staging, receipt linkage, old-choice and missing-history denial, same-body replay and cross-route rejection. The existing retention planner protected the submitted capture and its withdrawal history while identifying two overdue rows for a separate unsubmitted choice. The fixture used synthetic rows and a preview only. It supplies current storage compatibility for the candidate, with production retention and provider acceptance still subject to their release gates.
+
+## Isolated German measurement frame
+
+The `german-isolated-frame` profile uses an opaque-origin frame on the German page. The parent grants a dedicated message port only to the expected frame. The frame uses the port to request its lease from the fixed first-party status endpoint. The parent keeps the rotating lease token and aborts outstanding renewals on withdrawal. The child policy denies first-party connections and removes the bootstrap configuration before loading measurement scripts. The frame keeps the existing purpose and receipt validation. [HTML sandbox semantics](https://html.spec.whatwg.org/multipage/iframe-embed-object.html) · [Content Security Policy](https://www.w3.org/TR/CSP3/).
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/german-lineage-PRIVATE-REVIEW.zip /private/german-isolated-PRIVATE-REVIEW.zip --profile german-isolated-frame
+```
+
+The review profile affects German advertising only. The live Google script behavior and conversion acceptance inside an opaque frame need separate evidence. Current Hostinger file identity, disclosure, independent review and deployment approval remain release gates.
