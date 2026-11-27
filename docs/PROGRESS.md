@@ -1,3 +1,9 @@
+## Exact off-plan rollback and native English prerequisites — 27 November 2026
+
+The [updated release checker](../tools/offplan-lead-first/measurement-release/README.md#combined-0218-evidence-check) bound 18 inputs in 0.103 seconds. It verified the current package's native measurement, attribution and cross-version retry evidence while retaining the predecessor's exact evidence separately. The exact 0.2.12→0.2.18→0.2.12 Chrome trial passed seven gates in 90.291 seconds. Four lead requests yielded two durable synthetic receipts with unchanged identities and zero external transmissions.
+
+Germany, France and Taiwan's three proposed English routes each rendered the existing native form when bound to a disposable CMS page, and returned inert HTTP 503 after the bindings were removed. Forty checks passed in 66.353 seconds. Native headings and opening wording differ from the held previews. The live destination review must bind the actual copy, canonical URL, CMS ID and complete locale-specific conversion behavior. The live release remains held.
+
 ## Search language delivery and UAE campaign detail — 27 November 2026
 
 Google removed manual Search campaign language criteria in September 2026. The five blank language cells and the UAE detail view are consistent with that change. The active review now requires exact English ads, keywords and native destinations in every market, plus reviewed regional equivalents. The older campaign-only CSV remains historical evidence. The generated review still contains four draft native pages, 124 proposed keyword placements and 76 RSA assets. Thirty-five scoped checks passed. [Google Ads language criteria](https://developers.google.com/google-ads/api/docs/targeting/criteria#language_targeting_criteria)

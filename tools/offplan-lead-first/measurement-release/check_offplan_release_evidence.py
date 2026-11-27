@@ -1,4 +1,4 @@
-"""Reconcile the private 0.2.17 release evidence in one offline readback."""
+"""Reconcile the private off-plan release evidence in one offline readback."""
 
 from argparse import ArgumentParser
 from io import BytesIO
@@ -21,6 +21,10 @@ PARENT_IDS = {"AE": "24372566774", "DE": "24546407422", "FR": "24546407401",
 REQUIRED = {"candidate", "predecessor", "rollback", "gtm_live", "gtm_draft", "gtm_capture",
             "browser", "exported_bootstrap", "native_installer", "native_retry", "https_retry",
             "chrome_retry", "saved_scope", "market_review"}
+SUCCESSOR = {"successor_archive", "successor_browser", "successor_attribution", "successor_retry"}
+SUCCESSOR_PROFILE = "attribution-continuity-0218"
+SUCCESSOR_PROFILE_SHA = "4b26f421bca7f5b2c8a67905d01254a7962b56986aeb309bb574aef9768f62f6"
+SUCCESSOR_SHA = "be8a76ba2a9cb3dfbfcad37767a5d72c06c9ea632597a6a83c9ef9b00f849be3"
 FORM_ASSETS = ("assets/assets.css", "assets/consent.css", "assets/consent-bridge.js",
                "assets/wordpress.js", "assets/lead.js", "assets/google-measurement.js")
 
@@ -36,8 +40,9 @@ def evidence_paths(workspace, capture, capture_sha256):
     require(set(manifest) == {"scope", "files"} and manifest["scope"] == SCOPE,
             "Unexpected release evidence scope")
     entries = manifest["files"]
-    require(isinstance(entries, dict) and REQUIRED <= entries.keys() <= REQUIRED | {"host_export"},
+    require(isinstance(entries, dict) and REQUIRED <= entries.keys() <= REQUIRED | SUCCESSOR | {"host_export"},
             "Unexpected release evidence roster")
+    require(not (entries.keys() & SUCCESSOR) or SUCCESSOR <= entries.keys(), "Incomplete successor evidence roster")
     workspace = workspace.resolve(strict=True)
     entries_by_key = {}
     locations = set()
@@ -110,7 +115,12 @@ def check_https_retry(retries):
             "Loopback HTTPS retry verification changed")
 
 
-def check_chrome_retry(retries, rollback, candidate):
+def asset_hashes(archive_bytes, assets):
+    with ZipFile(BytesIO(archive_bytes)) as archive:
+        return {asset: digest(archive.read("bsre-enquiries/" + asset)) for asset in assets}
+
+
+def check_chrome_retry(retries, rollback, candidate, *, version="0.2.17", candidate_hash=CANDIDATE_SHA256):
     require(retries["status"] == "PASS" and retries["driver_exit"] == 0
             and all_checks_pass(retries["checks"], 7) and len(retries["phases"]) == 6
             and all(retries[key] is True for key in ("fixture_removed", "chrome_stopped", "proxy_closed", "tls_closed"))
@@ -118,21 +128,18 @@ def check_chrome_retry(retries, rollback, candidate):
             "Cross-version Chrome receipt or cleanup changed")
     transitions = [(step["old_version"], step["installed_version"], step["sha256"], step["members"])
                    for step in retries["transitions"]]
-    require(transitions == [("0.2.12", "0.2.17", CANDIDATE_SHA256, 53),
-                            ("0.2.17", "0.2.12", ROLLBACK_SHA256, 30)],
+    require(transitions == [("0.2.12", version, candidate_hash, 53),
+                            (version, "0.2.12", ROLLBACK_SHA256, 30)],
             "Cross-version Chrome archive binding changed")
     requests = retries["requests"]
     lead_posts = [(request["backend_release"], request["status"]) for request in requests
                   if request["method"] == "POST" and request["route"] == "/wp-json/bsre/v1/lead"]
-    require(lead_posts == [("0.2.12", 503), ("0.2.17", 200), ("0.2.17", 503), ("0.2.12", 200)]
+    require(lead_posts == [("0.2.12", 503), (version, 200), (version, 503), ("0.2.12", 200)]
             and len(requests) == 10 and all(request["release"] == request["backend_release"]
                                            and request["mail_count"] == "0" for request in requests),
             "Cross-version Chrome lead request sequence changed")
-    expected = {}
-    for version, archive_bytes in (("0.2.12", rollback), ("0.2.17", candidate)):
-        with ZipFile(BytesIO(archive_bytes)) as archive:
-            for asset in FORM_ASSETS:
-                expected[version, asset] = digest(archive.read("bsre-enquiries/" + asset))
+    expected = {("0.2.12", asset): checksum for asset, checksum in asset_hashes(rollback, FORM_ASSETS).items()}
+    expected.update({(version, asset): checksum for asset, checksum in asset_hashes(candidate, FORM_ASSETS).items()})
     observed = {(row["release"], row["asset"]): row["sha256"] for row in retries["assets"]}
     require(len(retries["assets"]) == len(expected) and observed == expected,
             "Cross-version Chrome form assets do not match their archives")
@@ -151,6 +158,50 @@ def check_saved_scope(saved, review):
             and counts["markets"] == 5 and counts["prepared_average_daily_aed"] == 2500
             and counts["new_destinations_accepted"] == counts["operational_coverage_gates_closed"] == 0
             and counts["new_keyword_admissions"] == 0, "Frozen market review acceptance changed")
+
+
+def check_successor_browser(browser, candidate):
+    require(browser["status"] == "PASS" and browser["driver_exit"] == 0
+            and browser["package_sha256"] == SUCCESSOR_SHA and browser["manifest_sha256"] == SUCCESSOR_PROFILE_SHA
+            and browser["candidate_members"] == 53 and browser["vendor_transmissions"] == 0
+            and all_checks_pass(browser["checks"], 11)
+            and browser["served_asset_digests"] == asset_hashes(candidate, (*FORM_ASSETS, "assets/google-runtime.js")),
+            "Successor native browser release or served assets changed")
+    rows = browser["browser_observations"]
+    observed = {row["name"]: row["value"] for row in rows}
+    receipt = observed["one_receipt_command_per_purpose_and_duplicate_blocked"]
+    withdrawal = observed["withdrawal_retires_both_opaque_frames"]
+    require(len(rows) == len(observed) == 4 and observed["one_query_free_analytics_page_view"] is True
+            and receipt["receiptNames"] == ["conversion", "generate_lead"] and receipt["count"] == 3
+            and all(receipt[key] is True for key in ("accepted", "eligible", "matchedReceipt", "allowlistedQueryFreeCommands"))
+            and withdrawal["framesAbsent"] is True and withdrawal["noExtraCommand"] is True,
+            "Successor browser receipt or consent behavior changed")
+
+
+def check_successor_attribution(attribution, candidate):
+    require(attribution["status"] == "VERIFIED_LOCAL_CONTINUATION" and attribution["driver_exit"] == 0
+            and attribution["release"] == "0.2.18" and attribution["preparation"]["sha256"] == SUCCESSOR_SHA
+            and attribution["preparation"]["members"] == 53 and attribution["external_transmissions"] == 0
+            and all(attribution[key] is True for key in ("fixture_removed", "chrome_stopped", "proxy_closed", "tls_closed"))
+            and len(attribution["requests"]) == 18 and len(attribution["phases"]) == 9
+            and all_checks_pass(attribution["checks"], 14), "Successor attribution receipt or cleanup changed")
+    observed = attribution["assets"]
+    expected = asset_hashes(candidate, (*FORM_ASSETS, "assets/hub.css"))
+    require({row["asset"] for row in observed} == expected.keys()
+            and all(row["release"] == "0.2.18" and row["sha256"] == expected[row["asset"]] for row in observed),
+            "Successor navigation assets don't match the archive")
+
+
+def check_successor(entries, predecessor, rollback):
+    profile = pinned_json((Path(__file__).with_name("ATTRIBUTION_CONTINUITY_0218_REVIEW.json"), SUCCESSOR_PROFILE_SHA))
+    candidate = read_pinned_zip(*entries["successor_archive"])
+    require(entries["successor_archive"][1] == SUCCESSOR_SHA and compose(predecessor, profile, SUCCESSOR_PROFILE) == candidate,
+            "Successor archive doesn't match the private review profile")
+    check_successor_browser(pinned_json(entries["successor_browser"]), candidate)
+    check_successor_attribution(pinned_json(entries["successor_attribution"]), candidate)
+    check_chrome_retry(pinned_json(entries["successor_retry"]), rollback, candidate, version="0.2.18", candidate_hash=SUCCESSOR_SHA)
+    return {"candidate_sha256": SUCCESSOR_SHA, "version": "0.2.18", "archive_members": 53,
+            "native_browser": 11, "native_attribution": 14, "cross_version_chrome_retry": 7}
 
 
 def verify(workspace, capture, capture_sha256):
@@ -175,7 +226,7 @@ def verify(workspace, capture, capture_sha256):
     check_saved_scope(pinned_json(entries["saved_scope"]), pinned_json(entries["market_review"]))
     host_capture = entries.get("host_export")
     host = verify_host_export(host_capture[0], entries["rollback"][0], host_capture[1]) if host_capture else None
-    return {
+    report = {
         "status": "OFFLINE_RELEASE_EVIDENCE_VERIFIED",
         "launch_status": "HOLD",
         "launch_authorized": False,
@@ -190,6 +241,11 @@ def verify(workspace, capture, capture_sha256):
         "saved_launch_scope": {"paused_markets": 5, "aggregate_average_daily_aed": 2500, "test_conversion": False},
         "live_acceptance": "Separate scoped provider, review, privacy, destination and operating evidence required",
     }
+    if SUCCESSOR <= entries.keys():
+        report["successor"] = check_successor(entries, candidate, rollback)
+        report["predecessor_evidence_candidate_sha256"] = report["candidate_sha256"]
+        report["candidate_sha256"] = report["successor"]["candidate_sha256"]
+    return report
 
 
 def main():

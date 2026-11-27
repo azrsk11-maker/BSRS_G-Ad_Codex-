@@ -43,26 +43,26 @@ MARKETS = {"status": "HOLD", "account": release.ACCOUNT, "summary": {
     "operational_coverage_gates_closed": 0, "new_keyword_admissions": 0}}
 
 
-def chrome_fixture():
+def chrome_fixture(version="0.2.17", candidate_hash=release.CANDIDATE_SHA256):
     assets, archives = [], []
-    for version in ("0.2.12", "0.2.17"):
+    for release_version in ("0.2.12", version):
         target = BytesIO()
         with ZipFile(target, "w") as archive:
             for name in release.FORM_ASSETS:
-                body = f"Synthetic {version} {name}".encode()
+                body = f"Synthetic {release_version} {name}".encode()
                 archive.writestr("bsre-enquiries/" + name, body)
-                assets.append({"release": version, "asset": name, "sha256": release.digest(body)})
+                assets.append({"release": release_version, "asset": name, "sha256": release.digest(body)})
         archives.append(target.getvalue())
-    requests = [{"method": "POST", "route": "/wp-json/bsre/v1/lead", "release": version,
-                 "backend_release": version, "status": status, "mail_count": "0"} for version, status in
-                (("0.2.12", 503), ("0.2.17", 200), ("0.2.17", 503), ("0.2.12", 200))]
+    requests = [{"method": "POST", "route": "/wp-json/bsre/v1/lead", "release": release_version,
+                 "backend_release": release_version, "status": status, "mail_count": "0"} for release_version, status in
+                (("0.2.12", 503), (version, 200), (version, 503), ("0.2.12", 200))]
     requests += [requests[0] | {"method": "GET", "route": "/enquire/off-plan/", "status": 200}] * 6
     receipt = {"status": "PASS", "driver_exit": 0, "checks": passes(7), "phases": [{}] * 6,
                "fixture_removed": True, "chrome_stopped": True, "proxy_closed": True, "tls_closed": True,
                "external_transmissions": 0, "network_errors": [], "unserved_local_paths": [],
-               "transitions": [{"old_version": "0.2.12", "installed_version": "0.2.17", "members": 53,
-                                "sha256": release.CANDIDATE_SHA256},
-                               {"old_version": "0.2.17", "installed_version": "0.2.12", "members": 30,
+               "transitions": [{"old_version": "0.2.12", "installed_version": version, "members": 53,
+                                "sha256": candidate_hash},
+                               {"old_version": version, "installed_version": "0.2.12", "members": 30,
                                 "sha256": release.ROLLBACK_SHA256}],
                "assets": assets, "requests": requests}
     return receipt, *archives
@@ -115,6 +115,12 @@ class LocalEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "request sequence"):
             release.check_chrome_retry(receipt, old, new)
 
+    def test_successor_requires_its_own_rollback_receipt(self):
+        receipt, old, new = chrome_fixture("0.2.18", release.SUCCESSOR_SHA)
+        release.check_chrome_retry(receipt, old, new, version="0.2.18", candidate_hash=release.SUCCESSOR_SHA)
+        with self.assertRaisesRegex(ValueError, "archive binding"):
+            release.check_chrome_retry(receipt, old, new)
+
     def test_saved_delivery_and_media_scope_remain_held(self):
         release.check_saved_scope(SAVED_SCOPE, MARKETS)
         for field, value in (("average_daily_aed", 2501), ("locally_bound_action", "unapproved"),
@@ -128,6 +134,48 @@ class LocalEvidenceTests(unittest.TestCase):
         review = MARKETS | {"summary": MARKETS["summary"] | {"operational_coverage_gates_closed": 1}}
         with self.assertRaisesRegex(ValueError, "market review"):
             release.check_saved_scope(SAVED_SCOPE, review)
+
+
+class SuccessorEvidenceTests(unittest.TestCase):
+    def setUp(self):
+        target = BytesIO()
+        with ZipFile(target, "w") as archive:
+            for name in (*release.FORM_ASSETS, "assets/google-runtime.js", "assets/hub.css"):
+                archive.writestr("bsre-enquiries/" + name, name.encode())
+        self.archive = target.getvalue()
+
+    def test_successor_browser_checks_runtime_bytes_and_receipt_count(self):
+        browser = BROWSER | {"package_sha256": release.SUCCESSOR_SHA, "manifest_sha256": release.SUCCESSOR_PROFILE_SHA,
+                             "served_asset_digests": release.asset_hashes(self.archive, (*release.FORM_ASSETS, "assets/google-runtime.js")),
+                             "browser_observations": [
+                                 {"name": "opaque_probes_from_both_vendor_stubs", "value": []},
+                                 {"name": "one_query_free_analytics_page_view", "value": True},
+                                 {"name": "one_receipt_command_per_purpose_and_duplicate_blocked", "value": {
+                                     "receiptNames": ["conversion", "generate_lead"], "count": 3, "accepted": True,
+                                     "eligible": True, "matchedReceipt": True, "allowlistedQueryFreeCommands": True}},
+                                 {"name": "withdrawal_retires_both_opaque_frames", "value": {
+                                     "framesAbsent": True, "noExtraCommand": True}}]}
+        release.check_successor_browser(browser, self.archive)
+        changed = browser | {"served_asset_digests": browser["served_asset_digests"] | {"assets/lead.js": "different"}}
+        with self.assertRaisesRegex(ValueError, "served assets"):
+            release.check_successor_browser(changed, self.archive)
+        browser["browser_observations"][2]["value"]["count"] = 4
+        with self.assertRaisesRegex(ValueError, "receipt or consent"):
+            release.check_successor_browser(browser, self.archive)
+
+    def test_successor_navigation_rejects_altered_served_assets_or_vendor_traffic(self):
+        assets = release.asset_hashes(self.archive, (*release.FORM_ASSETS, "assets/hub.css"))
+        attribution = {"status": "VERIFIED_LOCAL_CONTINUATION", "driver_exit": 0, "release": "0.2.18",
+                       "preparation": {"sha256": release.SUCCESSOR_SHA, "members": 53}, "external_transmissions": 0,
+                       "fixture_removed": True, "chrome_stopped": True, "proxy_closed": True, "tls_closed": True,
+                       "requests": [{}] * 18, "phases": [{}] * 9, "checks": passes(14),
+                       "assets": [{"release": "0.2.18", "asset": path, "sha256": value} for path, value in assets.items()]}
+        release.check_successor_attribution(attribution, self.archive)
+        with self.assertRaisesRegex(ValueError, "receipt or cleanup"):
+            release.check_successor_attribution(attribution | {"external_transmissions": 1}, self.archive)
+        attribution["assets"][0]["release"] = "0.2.17"
+        with self.assertRaisesRegex(ValueError, "navigation assets"):
+            release.check_successor_attribution(attribution, self.archive)
 
 
 class CapturePinsTests(unittest.TestCase):
@@ -156,6 +204,16 @@ class CapturePinsTests(unittest.TestCase):
                 self.entries["market_review"]["path"] = bad_path
                 with self.assertRaises(ValueError):
                     release.evidence_paths(self.workspace, self.manifest, self.capture())
+
+    def test_successor_receipts_must_be_complete(self):
+        for key in release.SUCCESSOR:
+            self.entries[key] = {"path": f"{key}.json", "sha256": "a" * 64}
+            (self.workspace / self.entries[key]["path"]).write_bytes(b"{}")
+        self.assertEqual(set(release.evidence_paths(self.workspace, self.manifest, self.capture())),
+                         release.REQUIRED | release.SUCCESSOR)
+        del self.entries["successor_retry"]
+        with self.assertRaisesRegex(ValueError, "Incomplete successor"):
+            release.evidence_paths(self.workspace, self.manifest, self.capture())
 
     def test_json_pin_prevents_receipt_substitution(self):
         path = self.workspace / "browser.json"
