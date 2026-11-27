@@ -1,5 +1,13 @@
 # Offline commercial report prototype
 
+## Weekly viewing outcomes
+
+`withWeeklyViewingReport` adds a viewing section to an existing commercial report for the same Dubai week. It preserves the Finance and qualification results. Booking and attendance count by their own occurrence times. An exact retry folds into the original event, and cancellations and no-shows retain the historical booking without contributing an attendance. Only an authorized ledger can substantiate attendance in the current contract.
+
+The caller must authenticate the evidence custodian, review coverage and provide the approved source manifest separately from the exact sanitized extract bytes. Required coverage includes the predecessor booking for each terminal event. The local code verifies the byte digest, approved period, timestamps and lifecycle consistency. Missing or unresolved evidence leaves both business metrics unknown. Fixture totals are illustrative. G044 still needs an actual reviewed source and trusted caller integration.
+
+Run `node --test tools/website-tracking/commercial-system/weekly-viewings.test.mjs` from the repository root.
+
 ## Standard Search budget exposure
 
 `media_exposure.py` reconciles distinct shared budgets in integer AED fils. For a full unchanged month it models standard Search daily and monthly media exposure excluding VAT. Finance-authorized ceilings and verified cash exposure are separate inputs. Partial or changed months need actual budget and billing history. Unknown comparisons remain `UNKNOWN`, and the calculation supplies no release authorization. [Google Ads spending limits](https://support.google.com/google-ads/answer/10486637?hl=en), [budget changes](https://support.google.com/google-ads/answer/10487143?hl=en), [Finance decision DEC-03](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3).
