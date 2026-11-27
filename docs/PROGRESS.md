@@ -1,3 +1,7 @@
+## Verified keyword history reuse — 27 November 2026
+
+The 28 unchanged bank and front-office cases passed in both arms, with matching original case IDs, verified intermediate histories and saved report digests. The private same-process reuse ran in 124.482015 seconds versus 236.472123 seconds for the original separate history setup, a measured 111.990108-second reduction in this ordered local comparison. The existing pest/pool profile's single documentation pin was refreshed and its 479-file `--inspect` passed. Full Foundation still requires all 792 current keyword cases under the existing checks. [Method and limits](../tools/efficiency/README.md#fresh-bank-and-front-office-test-histories--27-november-2026)
+
 ## Finished local Foundation run and Windows test fix — 27 November 2026
 
 The complete local Foundation run at `77ad1e10c349940a2ba6b703cd31aa3851c09437` used PHP 8.2.36 and passed 140 of 143 checks in 634.263498 seconds. The report retains both keyword timeouts under the original limits and a Windows Git initialization failure in the efficiency suite. A disposable Git probe reproduced the error after a runner-observation test changed the process environment. The corrected tests keep environment changes local to the observation module. Normal standalone efficiency discovery then passed 151 tests with three platform skips. Full Foundation was run once. [Timing and verification details](../tools/efficiency/README.md#optional-foundation-progress-journal--27-november-2026)

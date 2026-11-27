@@ -49,7 +49,7 @@ MODULES = {'test_pest_commercial_services_admission': ('PestCommercialServicesAd
            'test_pool_sprinkler_admission': ('PoolSprinklerAdmissionTests', 20)}
 SCHEMA = 'bsre-focused-keyword-fixture-v1'
 ATTEMPT = 1
-PROFILE_SHA256 = 'fe5ba4eb528aa1792caae3fdcbb08f3eef44b4e8c109479e8769714c2a71ed29'
+PROFILE_SHA256 = 'd30077c011a1d16f9f5c448ad5b1f081b64ddf339adbc911a0d708fd7a4fb118'
 
 
 class Hold(ValueError):

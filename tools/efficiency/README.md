@@ -1,5 +1,13 @@
 # Efficiency audit — 7 November 2026
 
+## Fresh bank and front-office test histories — 27 November 2026
+
+An ordered Windows Python 3.12.14 comparison ran the same 28 original bank-channel and front-office cases at `cbdf8ee032e8327b6a8a84f10ca371ef35d53779`. The bank class ran its original saved-output validation. The second arm passed a detached copy of that verified bank state through the front-office class's existing `FRESH_BASE` hook. Both arms ran each class's original tests and checked the saved front-office report. Case ID, Ofqual base, bank state, front-office state and report digests matched.
+
+Elapsed time was 236.472123 seconds for separate history setup and 124.482015 for the tested reuse. This pair observed 111.990108 seconds saved (47.36%) for these two suites. CPU time was 230.734375 and 121.265625 seconds. The baseline preceded the candidate. This covers 28 of 792 discovered cases and establishes no timing estimate for the remaining cases or aggregate Foundation.
+
+The existing pest/pool profile's documentation pin now matches the tracked keyword README at `cbdf8ee`. Its other 478 pins, 39 case identities and source/runtime checks are unchanged. `--inspect` completed with `READY` across all 479 files. The bank/front comparison remains a separate local experiment. The default Foundation commands, full coverage requirement and time limits remain in place.
+
 ## Optional Foundation progress journal — 27 November 2026
 
 Use `python -B tools/check_repository.py --progress-output test-output/foundation-progress-NEW.jsonl` to keep a flushed local record of check names, elapsed time and outcomes. Choose a new file for each run. The final report still controls acceptance. An interrupted run can retain finished-check observations without a `run_finished` record. The commands, order and per-check timeouts are the same with the journal enabled.
