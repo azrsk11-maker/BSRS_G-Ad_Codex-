@@ -137,6 +137,7 @@ def verify(stage, current, children, reference, scope, not_before, *, scope_sha2
         "configured_daily_budget_aed": configured_budget,
         "enabled_daily_budget_aed": sum(row["average_daily_budget_AED"] for row in pools.values() if row["id"] in enabled),
         "uae_resale_ad_group_state": "Paused", "actual_serving_verified": False,
+        "staffed_weekly_schedule_verified": False,
     }
 
 
