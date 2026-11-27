@@ -1,3 +1,9 @@
+## Five-market Ads activation scope checks — 27 November 2026
+
+The [activation scope checker](../tools/offplan-lead-first/native-paused/README.md#five-market-activation-scope-readback) checks staged, serving and rollback observations against the complete frozen roster, each of the five AED2,500 average daily budget allocations, and the exact selected off-plan group IDs. It checks visible Search settings and the UAE resale pause. Each later stage must use the recorded scope and reference hashes, preventing a narrower rollback from omitting an earlier market. The checker reports the enabled parents' configured amount separately from the five allocated amounts.
+
+The latest authenticated UAE settings panel showed AED1,000 average per day, Paused, Maximize Clicks and Account-default with no goals added. The All-status selector listed off-plan and resale. Computer Use stopped before the complete ad-group table, leaving the fresh group-ID and explicit-status readback open. No campaign settings were saved. The checker supports release verification while eligibility and authorization are established separately.
+
 ## Public UAE asset and Ads attribution readback — 27 November 2026
 
 The published English off-plan page returned HTTP 200. Its 13 form fields and 15 option values match the retained template. All six declared public asset bodies match the exact `0.2.12` rollback members by length and SHA-256. Four asset requests were CDN hits and two were misses. All six advertised a seven-day cache life. The initial response blocks frames and references no Google tag. This public check supports the six asset identities. Hostinger raw PHP, opcache, database and complete rollback acceptance remain separate checks.

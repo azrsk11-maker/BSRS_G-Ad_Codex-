@@ -22,17 +22,27 @@ def require(condition, message):
         raise ValueError(message)
 
 
+def unique_fields(pairs):
+    fields = dict(pairs)
+    require(len(fields) == len(pairs), "Duplicate capture field")
+    return fields
+
+
 def pinned_capture(path, expected):
     with path.open("rb") as stream:
         data = stream.read(MAX_BYTES + 1)
     require(len(data) <= MAX_BYTES and sha256(data).hexdigest() == expected.lower(), "Capture size or SHA-256 mismatch")
-    return json.loads(data)
+    return json.loads(data, object_pairs_hook=unique_fields)
 
 
-def roster(capture, account_id, *, enabled_campaign_id=None):
+def roster(capture, account_id, *, enabled_campaign_id=None, enabled_campaign_ids=None):
+    require(enabled_campaign_id is None or enabled_campaign_ids is None, "Conflicting enabled campaign inputs")
+    enabled_ids = set(enabled_campaign_ids) if enabled_campaign_ids is not None else set()
+    if enabled_campaign_id is not None:
+        enabled_ids.add(enabled_campaign_id)
     require(capture["account_id"] == account_id and isinstance(capture["no_ads_running"], bool),
             "Account identity or serving mismatch")
-    if enabled_campaign_id is None:
+    if not enabled_ids:
         require(capture["no_ads_running"] is True, "Account identity or serving mismatch")
     require(capture["capture"] == FORMAT, "Expected a complete unfiltered settings view")
     datetime.strptime(capture["captured_at_utc"], CAPTURE_TIME_FORMAT)
@@ -42,39 +52,62 @@ def roster(capture, account_id, *, enabled_campaign_id=None):
     require(len(by_id) == 24 and all(re.fullmatch(r"\d{10,12}", key) for key in by_id), "Invalid or duplicate campaign IDs")
     counts = Counter(row["campaign_state"] for row in rows)
     expected = {"Paused": 21, "Removed": 3}
-    if enabled_campaign_id is not None:
-        expected.update(Paused=20, Enabled=1)
-        require(enabled_campaign_id in by_id and by_id[enabled_campaign_id]["campaign_state"] == "Enabled",
+    if enabled_ids:
+        expected.update(Paused=21 - len(enabled_ids), Enabled=len(enabled_ids))
+        require(all(key in by_id and by_id[key]["campaign_state"] == "Enabled" for key in enabled_ids),
                 "Intended campaign is not enabled")
     require(counts == expected and counts == capture["observed_campaign_states"], "Paused or removed state drift")
     return by_id
 
 
+def read_plan():
+    return (json.loads((HERE / "launch.json").read_bytes()),
+            json.loads((HERE / "native-paused/APPLIED.json").read_bytes()))
+
+
+def check_applied_pools(ids, plan, applied):
+    markets = {row["country_code"]: row for row in plan["markets"]}
+    approved = {row["country"]: row for row in applied["campaigns"]}
+    require(applied["account_id"] == plan["account_id"] and len(plan["markets"]) == len(markets) == 5
+            and len(applied["campaigns"]) == len(approved) == len({row["id"] for row in approved.values()}) == 5
+            and approved.keys() == markets.keys(), "Incomplete or incorrect off-plan pool identities")
+    aggregate = 0
+    for country, pool in approved.items():
+        goal = markets[country]
+        row = ids[pool["id"]]
+        allocation = pool["average_daily_budget_AED"]
+        require(type(allocation) is int and allocation == goal["daily_average_budget_aed"]
+                and row["daily_amount_display"] == f"AED{allocation:,.2f}/day", f"{country} allocation differs")
+        require(row["campaign_name"] == pool["name"] == goal["campaign_name"] and pool["status"] == "Paused"
+                and goal["campaign_id"] in (None, pool["id"]), f"{country} identity or state differs")
+        aggregate += allocation
+    require(aggregate == plan["aggregate_average_daily_budget_aed"] ==
+            applied["aggregate_offplan_average_daily_budget_AED"] == 2500, "Incomplete or incorrect off-plan allocation")
+    return approved, aggregate
+
+
+def check_visible_search_settings(row, goal):
+    require((row["campaign_type"], row["bidding_strategy"], row["networks"], row["location_display"],
+             row["positive_bid_adjustment_display"]) == ("Search", "Maximize clicks", "Google search", goal["country_name"], "None")
+            and all(row[key] == "Off" for key in DISABLED), f"{goal['country_code']} visible Search settings differ")
+
+
 def verify(capture, reference=None):
-    plan = json.loads((HERE / "launch.json").read_bytes())
-    applied = json.loads((HERE / "native-paused/APPLIED.json").read_bytes())
+    plan, applied = read_plan()
     account = plan["account_id"]
     ids = roster(capture, account)
     if reference is not None:
         saved = roster(reference, account)
         require({key: r["campaign_state"] for key, r in ids.items()} ==
                 {key: r["campaign_state"] for key, r in saved.items()}, "Campaign identity or status differs from the frozen roster")
+    approved_pools, aggregate = check_applied_pools(ids, plan, applied)
     observed = {}
-    aggregate = 0
     markets = {row["country_code"]: row for row in plan["markets"]}
-    for approved in applied["campaigns"]:
-        country = approved["country"]
+    for country, approved in approved_pools.items():
         goal = markets[country]
         row = ids[approved["id"]]
-        allocation = approved["average_daily_budget_AED"]
-        require(allocation == goal["daily_average_budget_aed"] and row["daily_amount_display"] == f"AED{allocation:,.2f}/day",
-                f"{country} allocation differs")
-        require(row["campaign_name"] == approved["name"] and row["campaign_state"] == "Paused",
-                f"{country} identity or state differs")
-        require((row["campaign_type"], row["bidding_strategy"], row["networks"], row["location_display"],
-                 row["positive_bid_adjustment_display"]) == ("Search", "Maximize clicks", "Google search", goal["country_name"], "None")
-                and all(row[key] == "Off" for key in DISABLED), f"{country} visible Search settings differ")
-        aggregate += allocation
+        require(row["campaign_state"] == "Paused", f"{country} identity or state differs")
+        check_visible_search_settings(row, goal)
         observed[country] = {
             "campaign_id": approved["id"],
             "children_missing_in_status": "Campaign has no ad groups" in row["serving_status_display"],
@@ -82,8 +115,6 @@ def verify(capture, reference=None):
             "schedule_display": row["schedule_display"],
             "schedule_matches_plan": row["schedule_display"] == SCHEDULES[goal["schedule"]],
         }
-    require(set(observed) == set(markets) and aggregate == plan["aggregate_average_daily_budget_aed"] == 2500,
-            "Incomplete or incorrect off-plan allocation")
     return {"status": "MATCHED_PAUSED_SETTINGS_CAPTURE", "launch_readiness": "HOLD", "launch_authorized": False,
             "account_id": account, "average_daily_budget_aed": aggregate, "campaigns": len(ids),
             "compared_to_frozen_roster": reference is not None, "markets": observed,

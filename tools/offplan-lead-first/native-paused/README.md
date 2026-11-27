@@ -21,3 +21,15 @@ python -B tools/offplan-lead-first/check_uae_activation_scope.py staged CAMPAIGN
 ```
 
 `staged` checks the paused parent and enabled off-plan group. `enabled` checks the single enabled parent and off-plan group. If scope deviates during an authorized release, pause the UAE parent first and confirm containment. `rollback` also validates restoration of the off-plan group to Paused. All three stages require the resale group explicitly Paused and exact remaining campaign identities and statuses. Save captures within the applicable stage window. This check confirms entity scope. Separate readbacks cover individual ads, keywords, budgets, settings and live serving.
+
+## Five-market activation scope readback
+
+The reviewed scope file uses schema `bsre.offplan.activation-scope.v1`, the exact `account_id`, and a `markets` object keyed by the market codes eligible for that run. Each selected entry records its `campaign_id` and list of `offplan_ad_group_ids`. Verify these identities against the approved review before using them. Supply the full UAE child capture described above for every run. Use the same capture fields with schema `bsre.offplan.all-ad-group-readback.v1` for other selected markets. Keep raw captures and file hashes private.
+
+```text
+python -B tools/offplan-lead-first/check_offplan_activation_scope.py staged CAMPAIGNS CAMPAIGNS_SHA256 --reference PAUSED_REFERENCE --reference-sha256 REFERENCE_SHA256 --scope REVIEWED_SCOPE --scope-sha256 SCOPE_SHA256 --children AE UAE_CHILDREN UAE_SHA256 --not-before "YYYY-MM-DD HH:MM:SS UTC"
+```
+
+Repeat `--children MARKET FILE SHA256` for each other selected market. Save the `staged` match receipt and use `--prior FILE --prior-sha256 SHA256` for `serving`. Use the staged or serving receipt to verify `rollback`. Keep the same scope and reference pins and start the new observation window after the previous capture. Pause affected parents promptly when containment is needed, then capture rollback evidence.
+
+The verifier compares the complete account roster, the five fixed budget amounts, visible Search settings and exact enabled group scope. Its enabled daily total describes the configured amounts of the enabled parents. Action-time approvals, budget resource identities, ad and keyword review, native page and tracking acceptance, staff capacity, and actual serving use separate evidence.
