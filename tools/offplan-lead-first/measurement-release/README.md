@@ -202,3 +202,15 @@ python -B tools/offplan-lead-first/measurement-release/check_gtm_exports.py /pri
 The offline verifier checks the three input hashes, one owned container, both inventories and the exact guarded bootstrap bytes. It rejects a drifted draft or rollback artifact. The test suite constructs synthetic exports. Publication decisions require current authenticated provider readback and separate approval. GTM version 1 is retained as the starting recovery reference for this container. Google GTM version history provides the provider-side restoration path. [Google GTM version and publication guidance](https://support.google.com/tagmanager/answer/6107163?hl=en-gb).
 
 The local browser rehearsal also executed the exact exported inline body against the reviewed plugin archives. `0.2.16` blocked all three attempts. `0.2.17` passed all four valid-nonce cases and blocked the missing and wrong nonce. The baseline ran 25 checks in 2.046 seconds and the successor ran 46 in 2.663 seconds. The browser used inert Google scripts and sent nothing to a vendor.
+
+## Installed Hostinger plugin comparison
+
+An authenticated capture is limited to the `bsre-enquiries` plugin directory on the Real Estate site. Use the folder's **Download as ZIP** function where available. Record the selected site, exact folder, capture time, size and SHA-256 before comparison. Keep the download and provenance private. [Hostinger File Manager guidance](https://www.hostinger.com/support/4548688-basic-actions-in-the-file-manager-in-hostinger/).
+
+```text
+python -B tools/offplan-lead-first/measurement-release/check_hostinger_preimage.py /private/hostinger-bsre-enquiries.zip /private/bsre-enquiries-0.2.12-rollback.zip --export-sha256 CAPTURE_SHA256
+```
+
+The comparison accepts the exact 30-member roster in a ZIP containing the plugin folder or its direct contents. The retained rollback remains pinned. Container metadata such as ZIP compression and directory entries may differ. Each matching file must retain its original bytes. The verifier rejects unrelated, missing, altered, encrypted, oversized, duplicate or symbolic-link entries. It checks the complete roster before reading member data and never extracts files. Its result covers the two local inputs. Hostinger capture provenance, live provider state and change approval remain separate.
+
+Ten synthetic tests and a separate repack of the exact retained rollback passed. The repack exercised all 30 members and took 0.041 seconds. Authenticated Hostinger bytes remain pending.

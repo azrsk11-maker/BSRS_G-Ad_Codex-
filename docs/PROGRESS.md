@@ -1,3 +1,7 @@
+## Installed plugin recovery comparison — 27 November 2026
+
+The [offline Hostinger preimage check](../tools/offplan-lead-first/measurement-release/README.md#installed-hostinger-plugin-comparison) verifies a scoped plugin download against all 30 exact retained rollback members. It validates both input hashes and rejects path, roster and byte drift without extracting files or reading unexpected members. Ten new tests and 24 existing measurement tests passed. A separate repack of the exact retained reference matched all 30 files in 0.041 seconds. The live Hostinger tab still requires account sign-in for the original capture.
+
 ## Owned-funnel GTM release and recovery evidence — 27 November 2026
 
 The authenticated export selector captured 5 of 5 objects in live GTM version 1 and 7 of 7 in Default Workspace 2. Version 1 retains the five default built-ins. The draft adds precisely the existing guarded Custom HTML bootstrap and its Page View trigger. The [offline export verifier](../tools/offplan-lead-first/measurement-release/README.md#captured-gtm-draft-and-recovery-version) matched both full exports to the capture and exact `0.2.17` review archive. Sixteen synthetic verifier tests and eight composer tests passed. The provider exports remain private.
