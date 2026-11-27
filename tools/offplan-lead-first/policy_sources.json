@@ -94,7 +94,16 @@
           "criterion_id": 1031
         }
       ],
-      "limits": "These are language criteria, not country geo target IDs, audience-language guarantees, or activation permission. No country geo IDs were researched or invented."
+      "limits": "These historical language codes are reference data. Manual criteria are unavailable for Search campaigns under GOOGLE-LANG-02. No country geo IDs were researched or invented."
+    },
+    {
+      "id": "GOOGLE-LANG-02",
+      "title": "Google Ads language targeting changes starting September 2026",
+      "url": "https://developers.google.com/ads/blog/posts/2026/08/google-ads-language-targeting-changes",
+      "publisher": "Google for Developers",
+      "source_date": "2026-08-13",
+      "section": "Search campaigns",
+      "verified": "The campaign-level language setting was removed from Search campaigns in late September 2026. Existing criteria may still appear in API queries but do not control delivery. Match signals include ad and destination language and user language preferences."
     },
     {
       "id": "GOOGLE-LOCALE-01",

@@ -1,3 +1,9 @@
+## Search language delivery and UAE campaign detail — 27 November 2026
+
+Google removed manual Search campaign language criteria in September 2026. The five blank language cells and the UAE detail view are consistent with that change. The active review now requires exact English ads, keywords and native destinations in every market, plus reviewed regional equivalents. The older campaign-only CSV remains historical evidence. The generated review still contains four draft native pages, 124 proposed keyword placements and 76 RSA assets. Thirty-five scoped checks passed. [Google Ads language criteria](https://developers.google.com/google-ads/api/docs/targeting/criteria#language_targeting_criteria)
+
+The paused UAE Buyers detail confirmed United Arab Emirates presence only and a checked AED20.00 Maximize Clicks bid limit. Both panels were closed through Cancel. The scope remains held for reviewed serving content, staffing, provider conversion acceptance and Hostinger release evidence.
+
 ## Complete paused-account readback and exact tracking replay — 27 November 2026
 
 The authenticated Ads Settings grid displayed 24 distinct campaign IDs, with 21 paused and three removed. The five exact off-plan pools still total AED2,500 average daily. The visible networks are Google Search only, AI Max and expansion are off, and the grid shows no positive bid adjustments. UAE matches the `10:00–19:00` Dubai plan. The four international shells have no ad groups and show an all-day schedule. The five language cells are unreported. A [read-only checker](../tools/offplan-lead-first/check_ads_settings_readback.py) binds the capture and can compare the exact paused and removed roster later. No live changes occurred.

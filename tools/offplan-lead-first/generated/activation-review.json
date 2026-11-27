@@ -26,7 +26,6 @@
       "country_code": "AE",
       "country_name": "United Arab Emirates",
       "locale": "en-AE",
-      "language_criterion_id": 1000,
       "daily_average_budget_aed": 1000,
       "proposed_slug": null,
       "campaign_name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
@@ -57,7 +56,6 @@
       "country_code": "DE",
       "country_name": "Germany",
       "locale": "de-DE",
-      "language_criterion_id": 1001,
       "daily_average_budget_aed": 350,
       "proposed_slug": "off-plan-dubai-de",
       "campaign_name": "BSRE_OFFPLAN_SEARCH_DE_DE",
@@ -88,7 +86,6 @@
       "country_code": "FR",
       "country_name": "France",
       "locale": "fr-FR",
-      "language_criterion_id": 1002,
       "daily_average_budget_aed": 300,
       "proposed_slug": "off-plan-dubai-fr",
       "campaign_name": "BSRE_OFFPLAN_SEARCH_FR_FR",
@@ -119,7 +116,6 @@
       "country_code": "IN",
       "country_name": "India",
       "locale": "en-IN",
-      "language_criterion_id": 1000,
       "daily_average_budget_aed": 500,
       "proposed_slug": "off-plan-dubai-india",
       "campaign_name": "BSRE_OFFPLAN_SEARCH_IN_EN",
@@ -150,7 +146,6 @@
       "country_code": "TW",
       "country_name": "Taiwan",
       "locale": "zh-Hant-TW",
-      "language_criterion_id": 1018,
       "daily_average_budget_aed": 350,
       "proposed_slug": "off-plan-dubai-zh-tw",
       "campaign_name": "BSRE_OFFPLAN_SEARCH_TW_ZH_TW",
@@ -164,8 +159,16 @@
       "proposed_budget_is_operator_allocation_not_performance_forecast": true
     }
   ],
+  "search_language_policy": {
+    "matching": "AUTOMATIC_AD_AND_LANDING_PAGE_LANGUAGE",
+    "campaign_language_criteria_supported": false,
+    "primary_content_language": "en",
+    "match_rsas_keywords_and_destinations_by_locale": true,
+    "regional_content_requires_review": true
+  },
   "mandatory_before_enable": [
-    "Fresh account/campaign/geo/language/budget readback",
+    "Fresh account/campaign/geo/budget readback",
+    "Bind the approved English RSA, keywords and native destination in every market, plus each approved regional variant",
     "Pause resale ad group 204397706314 and keep all non-offplan/legacy campaigns paused",
     "Publish only reviewed native pages after checking route collisions and actual CMS language/SEO bindings",
     "Verify actual enquiry delivery and applicable consent/privacy; optional measurement remains denied until permitted",

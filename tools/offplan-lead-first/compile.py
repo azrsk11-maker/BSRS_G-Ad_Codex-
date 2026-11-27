@@ -12,7 +12,7 @@ import unicodedata
 
 OWN = Path(__file__).resolve().parent
 INPUTS = ('launch.json', 'copy.json', 'keywords.json', 'policy_sources.json')
-MARKETS = {'AE': ('en-AE', 1000), 'DE': ('de-DE', 1001), 'FR': ('fr-FR', 1002), 'IN': ('en-IN', 1000), 'TW': ('zh-Hant-TW', 1018)}
+MARKETS = {'AE': 'en-AE', 'DE': 'de-DE', 'FR': 'fr-FR', 'IN': 'en-IN', 'TW': 'zh-Hant-TW'}
 KEYWORD_COUNTS = {'DE': 16, 'FR': 16, 'IN': 16, 'TW': 14}
 ORIGIN = 'https://blackswanrealestate.ae'
 FUNNEL = '/enquire/off-plan/'
@@ -78,6 +78,12 @@ def validate(data):
     need(type(launch['aggregate_average_daily_budget_aed']) is int and launch['aggregate_average_daily_budget_aed'] == 2500, 'Wrong aggregate budget')
     need(launch['daily_enquiry_target'] == 345 and launch['target_is_not_guaranteed'] is True, 'Unapproved target/guarantee')
     need(launch['english_funnel_path'] == FUNNEL, 'Unreviewed enquiry route')
+    language = launch['search_language_policy']
+    need(language['matching'] == 'AUTOMATIC_AD_AND_LANDING_PAGE_LANGUAGE'
+         and language['campaign_language_criteria_supported'] is False
+         and language['primary_content_language'] == 'en'
+         and language['match_rsas_keywords_and_destinations_by_locale'] is True
+         and language['regional_content_requires_review'] is True, 'Search language delivery policy changed')
     need(launch['russia_geography_status'] == 'DO_NOT_ACTIVATE_GOOGLE_REGIONAL_RESTRICTION', 'Russia activation')
     need(launch['resale_ad_group_keep_paused'] == '204397706314', 'Resale exclusion lost')
     need(set(launch['non_offplan_campaigns_keep_paused']) == {'24367388382', '24378494092', '24378494098'} and launch['all_other_legacy_campaigns_keep_paused'] is True, 'Non-offplan exclusion lost')
@@ -91,7 +97,8 @@ def validate(data):
     need(len(slugs) == len(set(slugs)), 'Duplicate proposed page slug')
     for market in markets:
         country = market['country_code']
-        need((market['locale'], market['language_criterion_id']) == MARKETS[country], 'Wrong language criterion')
+        need('language_criterion_id' not in market, 'Search campaign language criteria are unsupported')
+        need(market['locale'] == MARKETS[country], 'Wrong reviewed copy locale')
         need(type(market['daily_average_budget_aed']) is int and market['daily_average_budget_aed'] > 0, 'Invalid country budget')
         need(market['max_cpc_aed'] == 20 and market['positive_bid_adjustments'] == 0 and market['bidding_label'] == 'Maximize clicks', 'Bid policy changed')
         need(market['networks'] == ['GOOGLE_SEARCH'] and all(market[k] is False for k in ['search_partners', 'display_expansion', 'ai_max']), 'Network expansion')
@@ -109,7 +116,7 @@ def validate(data):
     need(len(pages) == len(KEYWORD_COUNTS) and {p['country_code'] for p in pages} == set(KEYWORD_COUNTS), 'Wrong localized pages')
     for page in pages:
         need(set(page) == PAGE_KEYS, 'Unexpected customer page fields')
-        need(page['locale'] == MARKETS[page['country_code']][0], 'Page language mismatch')
+        need(page['locale'] == MARKETS[page['country_code']], 'Page language mismatch')
         need(bool(page['form_step_notice']), 'English-form disclosure missing')
         need(len(page['rsa']['headlines']) == 15 and len(page['rsa']['descriptions']) == 4, 'RSA asset counts')
         for key, limit in [('headlines', 30), ('descriptions', 90)]:
@@ -187,7 +194,7 @@ def compile_bundle(data, pins):
             ads.extend([page['country_code'], page['locale'], kind, text, units(text), 'DRAFT_NOT_UPLOADED'] for text in page['rsa'][kind])
     for row in keywords['positive_candidates']:
         for match in row['match_types']:
-            keyword_rows.append([row['draft_id'], row['country_code'], MARKETS[row['country_code']][0], row['text'], match, 'AUTHORED_DRAFT_NOT_ADMITTED_OR_UPLOADED'])
+            keyword_rows.append([row['draft_id'], row['country_code'], MARKETS[row['country_code']], row['text'], match, 'AUTHORED_DRAFT_NOT_ADMITTED_OR_UPLOADED'])
     outputs['native-pages.json'] = json_bytes({'schema':'bsre-native-wordpress-country-drafts-v1', 'site_origin':ORIGIN, 'pages':native,
         'publishing_or_import_api':None, 'note':'Use the existing native WordPress editor; this compiler never loads a synthetic writer or WordPress.'})
     outputs['keyword-review.csv'] = csv_bytes(['Draft ID','Country','Locale','Keyword','Proposed match type','State'], keyword_rows)
@@ -195,8 +202,10 @@ def compile_bundle(data, pins):
     outputs['activation-review.json'] = json_bytes({'schema':'bsre-offplan-activation-review-v1','account_id':launch['account_id'],
         'intent':launch['intent'],'aggregate_average_daily_budget_aed':2500,'daily_enquiry_target':345,
         'target_media_cost_per_enquiry_arithmetic_aed':round(2500/345,2),'performance_forecast':None,
-        'ready_for_live_mutation':False,'campaigns':launch['markets'],
-        'mandatory_before_enable':['Fresh account/campaign/geo/language/budget readback','Pause resale ad group 204397706314 and keep all non-offplan/legacy campaigns paused',
+        'ready_for_live_mutation':False,'campaigns':launch['markets'],'search_language_policy':launch['search_language_policy'],
+        'mandatory_before_enable':['Fresh account/campaign/geo/budget readback',
+            'Bind the approved English RSA, keywords and native destination in every market, plus each approved regional variant',
+            'Pause resale ad group 204397706314 and keep all non-offplan/legacy campaigns paused',
             'Publish only reviewed native pages after checking route collisions and actual CMS language/SEO bindings',
             'Verify actual enquiry delivery and applicable consent/privacy; optional measurement remains denied until permitted',
             'Verify factual/country eligibility and platform approval; Taiwan applicability is unresolved',

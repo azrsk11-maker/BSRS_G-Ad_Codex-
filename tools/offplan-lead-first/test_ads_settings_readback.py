@@ -37,6 +37,9 @@ class AdsSettingsReadbackTest(TestCase):
         self.assertEqual(result["average_daily_budget_aed"], 2500)
         self.assertEqual([k for k, row in result["markets"].items() if row["schedule_matches_plan"]], ["AE"])
         self.assertTrue(all(row["language_display"] == "—" for row in result["markets"].values()))
+        self.assertEqual(result["search_language_policy"]["primary_content_language"], "en")
+        self.assertIn("approved_rsa_keywords_and_destination_by_locale", result["requires_separate_readback"])
+        self.assertNotIn("language_criteria", result["requires_separate_readback"])
         self.assertEqual(result["launch_readiness"], "HOLD")
         self.assertIs(result["launch_authorized"], False)
 

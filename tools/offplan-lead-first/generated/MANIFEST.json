@@ -3,8 +3,8 @@
   "scope": "OFFLINE_DRAFTS_NOT_LIVE_ACCEPTANCE",
   "inputs": {
     "launch.json": {
-      "bytes": 7173,
-      "sha256": "769706bc890068200056e7bebcef6038b960289de362a36aeee11ffa43a87c45"
+      "bytes": 7275,
+      "sha256": "3293d33cbcdf5f914a9998490a6f66f3efecbbb60ad6872c4cb55e21cf21587c"
     },
     "copy.json": {
       "bytes": 15876,
@@ -15,14 +15,14 @@
       "sha256": "f8dd086473a09cbc89f5ddc584bce6db03af121ca157be1931e6a74a37fca065"
     },
     "policy_sources.json": {
-      "bytes": 9710,
-      "sha256": "6bc1437e8b639325b99c72e9b32223316a343245b90c403e4d5c9367fb561631"
+      "bytes": 10344,
+      "sha256": "0d2a651bbf180cc16f0d086451df45e0a2ac6e9b104062ede80c117794e44640"
     }
   },
   "outputs": {
     "activation-review.json": {
-      "bytes": 6643,
-      "sha256": "ac3b111b7f9bfba662cbc3934020998787a706903cf33423ea164a668168f2ed"
+      "bytes": 6859,
+      "sha256": "cec29de846f5bb1966ed8f29bbba11e53e1565bdb7045d08642d6baac7de7626"
     },
     "keyword-review.csv": {
       "bytes": 12848,

@@ -62,11 +62,21 @@ class OffplanReviewTest(unittest.TestCase):
             else:data['launch.json']['markets'][0]['daily_average_budget_aed']=True
             with self.subTest(change=change),self.assertRaises(ValueError):c.validate(data)
 
-    def test_russia_or_wrong_country_language_is_not_silently_activated(self):
+    def test_russia_or_wrong_copy_locale_is_rejected(self):
         data=copy.deepcopy(self.data);data['launch.json']['markets'][1]['country_code']='RU'
         with self.assertRaisesRegex(ValueError,'country set'):c.validate(data)
-        data=copy.deepcopy(self.data);data['launch.json']['markets'][3]['language_criterion_id']=1017
-        with self.assertRaisesRegex(ValueError,'language criterion'):c.validate(data)
+        data=copy.deepcopy(self.data);data['launch.json']['markets'][1]['locale']='fr-FR'
+        with self.assertRaisesRegex(ValueError,'reviewed copy locale'):c.validate(data)
+
+    def test_search_review_requires_english_content_without_manual_criteria(self):
+        output=json.loads(c.compile_bundle(self.data,self.pins)['activation-review.json'])
+        self.assertEqual(output['search_language_policy']['primary_content_language'],'en')
+        self.assertFalse(output['search_language_policy']['campaign_language_criteria_supported'])
+        self.assertTrue(all('language_criterion_id' not in row for row in output['campaigns']))
+        data=copy.deepcopy(self.data);data['launch.json']['markets'][1]['language_criterion_id']=1001
+        with self.assertRaisesRegex(ValueError,'criteria are unsupported'):c.validate(data)
+        data=copy.deepcopy(self.data);data['launch.json']['search_language_policy']['primary_content_language']='de'
+        with self.assertRaisesRegex(ValueError,'delivery policy changed'):c.validate(data)
 
     def test_retained_real_estate_ids_and_resale_pause_are_required(self):
         for field in ['campaign_id','offplan_ad_group_id','ad_id']:
@@ -133,14 +143,14 @@ class OffplanReviewTest(unittest.TestCase):
     def test_india_is_explicit_english_country_page_and_budget_member(self):
         launch,pages,keywords=c.validate(self.data)
         india=next(m for m in launch['markets'] if m['country_code']=='IN')
-        self.assertEqual((india['locale'],india['language_criterion_id'],india['daily_average_budget_aed']),('en-IN',1000,500))
+        self.assertEqual((india['locale'],india['daily_average_budget_aed']),('en-IN',500))
         self.assertEqual(launch['india_additional_languages_confirmed'],[])
         page=next(p for p in pages if p['country_code']=='IN')
         self.assertIn('English',page['form_step_notice'])
         self.assertEqual(len([r for r in keywords['positive_candidates'] if r['country_code']=='IN']),16)
         data=copy.deepcopy(self.data)
-        next(m for m in data['launch.json']['markets'] if m['country_code']=='IN')['language_criterion_id']=1023
-        with self.assertRaisesRegex(ValueError,'language criterion'):c.validate(data)
+        next(m for m in data['launch.json']['markets'] if m['country_code']=='IN')['locale']='hi-IN'
+        with self.assertRaisesRegex(ValueError,'reviewed copy locale'):c.validate(data)
 
     def test_owner_added_india_cannot_silently_fall_back_to_four_markets(self):
         data=copy.deepcopy(self.data)

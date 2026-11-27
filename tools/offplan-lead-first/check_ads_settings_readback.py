@@ -78,7 +78,8 @@ def verify(capture, reference=None):
     return {"status": "MATCHED_PAUSED_SETTINGS_CAPTURE", "launch_readiness": "HOLD", "launch_authorized": False,
             "account_id": account, "average_daily_budget_aed": aggregate, "campaigns": len(ids),
             "compared_to_frozen_roster": reference is not None, "markets": observed,
-            "requires_separate_readback": ["language_criteria", "budget_resources", "location_option", "bid_cap",
+            "search_language_policy": plan["search_language_policy"],
+            "requires_separate_readback": ["approved_rsa_keywords_and_destination_by_locale", "budget_resources", "location_option", "bid_cap",
                                           "effective_assets_negatives_and_automation", "serving_children_and_destinations"]}
 
 
