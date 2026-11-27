@@ -1,3 +1,11 @@
+## Browser retry and multilingual off-plan research — 27 November 2026
+
+An isolated Chrome form preserved its request body and original receipt across both exact native plugin replacements. Two acknowledgement faults and two same-form retries generated exactly four lead POSTs and two durable synthetic records. Seven checks passed in 118.202 seconds. External transmissions were zero. The combined preflight now checks 14 artifacts in 0.253 seconds and returns `HOLD` for live release.
+
+The Germany German native Planner export matched four existing seed phrases to eight held placements. One historical average estimate was populated, three were empty, and all bid and monthly series cells were empty. The report returned zero new ideas. The private research record retains the observed market, language and search network.
+
+The five-market exclusion screen found zero local collisions in the tested scopes and identified eight held UAE proposals with campaign-wide scope that also reaches the paused resale child. The opt-in reviewer preserves Indic combining marks and gives ambiguous Han text an explicit hold. The replay checked 2,868 placement pairs and preserved the frozen 14,000-record source digest. Provider matching and exclusion approval remain open.
+
 ## Combined off-plan release evidence check — 27 November 2026
 
 One [offline verification command](../tools/offplan-lead-first/measurement-release/README.md#combined-0217-evidence-check) now binds the exact `0.2.17` and `0.2.12` archives, native browser and rollback results, exported GTM draft and recovery version, direct REST and HTTPS retry proofs, reconciled delivery-only TEST and five-market hold. It reproduced the reviewed archive and reconciled 13 private inputs in 0.349 seconds. All 46 scoped tests passed, including 12 new tests. Requiring launch readiness returned `HOLD` and exit code 3. Authenticated Hostinger bytes and live acceptance remain open.

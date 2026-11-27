@@ -1,11 +1,12 @@
 from copy import deepcopy
-from io import StringIO
+from io import BytesIO, StringIO
 import json
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
+from zipfile import ZipFile
 
 import check_offplan_release_evidence as release
 
@@ -42,6 +43,31 @@ MARKETS = {"status": "HOLD", "account": release.ACCOUNT, "summary": {
     "operational_coverage_gates_closed": 0, "new_keyword_admissions": 0}}
 
 
+def chrome_fixture():
+    assets, archives = [], []
+    for version in ("0.2.12", "0.2.17"):
+        target = BytesIO()
+        with ZipFile(target, "w") as archive:
+            for name in release.FORM_ASSETS:
+                body = f"Synthetic {version} {name}".encode()
+                archive.writestr("bsre-enquiries/" + name, body)
+                assets.append({"release": version, "asset": name, "sha256": release.digest(body)})
+        archives.append(target.getvalue())
+    requests = [{"method": "POST", "route": "/wp-json/bsre/v1/lead", "release": version,
+                 "backend_release": version, "status": status, "mail_count": "0"} for version, status in
+                (("0.2.12", 503), ("0.2.17", 200), ("0.2.17", 503), ("0.2.12", 200))]
+    requests += [requests[0] | {"method": "GET", "route": "/enquire/off-plan/", "status": 200}] * 6
+    receipt = {"status": "PASS", "driver_exit": 0, "checks": passes(7), "phases": [{}] * 6,
+               "fixture_removed": True, "chrome_stopped": True, "proxy_closed": True, "tls_closed": True,
+               "external_transmissions": 0, "network_errors": [], "unserved_local_paths": [],
+               "transitions": [{"old_version": "0.2.12", "installed_version": "0.2.17", "members": 53,
+                                "sha256": release.CANDIDATE_SHA256},
+                               {"old_version": "0.2.17", "installed_version": "0.2.12", "members": 30,
+                                "sha256": release.ROLLBACK_SHA256}],
+               "assets": assets, "requests": requests}
+    return receipt, *archives
+
+
 class LocalEvidenceTests(unittest.TestCase):
     def test_verified_proofs_keep_their_local_scope(self):
         release.check_local_verification(BROWSER, EXPORTED, INSTALLER, RETRY)
@@ -76,6 +102,18 @@ class LocalEvidenceTests(unittest.TestCase):
                        {"transport": RETRY["transport"]}):
             with self.subTest(fields=fields), self.assertRaisesRegex(ValueError, "HTTPS retry"):
                 release.check_https_retry(HTTPS_RETRY | fields)
+
+    def test_chrome_retry_binds_both_archive_assets(self):
+        receipt, old, new = chrome_fixture()
+        release.check_chrome_retry(receipt, old, new)
+        with self.assertRaisesRegex(ValueError, "assets"):
+            release.check_chrome_retry(receipt, old, old)
+
+    def test_chrome_retry_rejects_an_additional_lead_post(self):
+        receipt, old, new = chrome_fixture()
+        receipt["requests"].append(receipt["requests"][0])
+        with self.assertRaisesRegex(ValueError, "request sequence"):
+            release.check_chrome_retry(receipt, old, new)
 
     def test_saved_delivery_and_media_scope_remain_held(self):
         release.check_saved_scope(SAVED_SCOPE, MARKETS)

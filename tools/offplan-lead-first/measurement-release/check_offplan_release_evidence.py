@@ -1,9 +1,10 @@
 """Reconcile the private 0.2.17 release evidence in one offline readback."""
 
 from argparse import ArgumentParser
+from io import BytesIO
 import json
 from pathlib import Path, PurePosixPath
-from zipfile import BadZipFile
+from zipfile import BadZipFile, ZipFile
 
 from check_gtm_exports import BOOTSTRAP, CANDIDATE_SHA256, read_json, verify_exports
 from check_hostinger_preimage import HASH, ROLLBACK_SHA256, digest, read_pinned_zip, verify as verify_host_export
@@ -19,7 +20,9 @@ PARENT_IDS = {"AE": "24372566774", "DE": "24546407422", "FR": "24546407401",
               "IN": "24540258368", "TW": "24546407404"}
 REQUIRED = {"candidate", "predecessor", "rollback", "gtm_live", "gtm_draft", "gtm_capture",
             "browser", "exported_bootstrap", "native_installer", "native_retry", "https_retry",
-            "saved_scope", "market_review"}
+            "chrome_retry", "saved_scope", "market_review"}
+FORM_ASSETS = ("assets/assets.css", "assets/consent.css", "assets/consent-bridge.js",
+               "assets/wordpress.js", "assets/lead.js", "assets/google-measurement.js")
 
 
 def require(condition, message):
@@ -107,6 +110,34 @@ def check_https_retry(retries):
             "Loopback HTTPS retry verification changed")
 
 
+def check_chrome_retry(retries, rollback, candidate):
+    require(retries["status"] == "PASS" and retries["driver_exit"] == 0
+            and all_checks_pass(retries["checks"], 7) and len(retries["phases"]) == 6
+            and all(retries[key] is True for key in ("fixture_removed", "chrome_stopped", "proxy_closed", "tls_closed"))
+            and retries["external_transmissions"] == 0 and retries["network_errors"] == retries["unserved_local_paths"] == [],
+            "Cross-version Chrome receipt or cleanup changed")
+    transitions = [(step["old_version"], step["installed_version"], step["sha256"], step["members"])
+                   for step in retries["transitions"]]
+    require(transitions == [("0.2.12", "0.2.17", CANDIDATE_SHA256, 53),
+                            ("0.2.17", "0.2.12", ROLLBACK_SHA256, 30)],
+            "Cross-version Chrome archive binding changed")
+    requests = retries["requests"]
+    lead_posts = [(request["backend_release"], request["status"]) for request in requests
+                  if request["method"] == "POST" and request["route"] == "/wp-json/bsre/v1/lead"]
+    require(lead_posts == [("0.2.12", 503), ("0.2.17", 200), ("0.2.17", 503), ("0.2.12", 200)]
+            and len(requests) == 10 and all(request["release"] == request["backend_release"]
+                                           and request["mail_count"] == "0" for request in requests),
+            "Cross-version Chrome lead request sequence changed")
+    expected = {}
+    for version, archive_bytes in (("0.2.12", rollback), ("0.2.17", candidate)):
+        with ZipFile(BytesIO(archive_bytes)) as archive:
+            for asset in FORM_ASSETS:
+                expected[version, asset] = digest(archive.read("bsre-enquiries/" + asset))
+    observed = {(row["release"], row["asset"]): row["sha256"] for row in retries["assets"]}
+    require(len(retries["assets"]) == len(expected) and observed == expected,
+            "Cross-version Chrome form assets do not match their archives")
+
+
 def check_saved_scope(saved, review):
     ads, test = saved["ads"], saved["test"]
     counts = review["summary"]
@@ -128,7 +159,7 @@ def verify(workspace, capture, capture_sha256):
     profile = pinned_json((profile_file, PROFILE_SHA256))
     base = read_pinned_zip(*entries["predecessor"])
     candidate = read_pinned_zip(*entries["candidate"])
-    read_pinned_zip(*entries["rollback"])
+    rollback = read_pinned_zip(*entries["rollback"])
     require(entries["predecessor"][1] == PREDECESSOR_SHA256 and entries["candidate"][1] == CANDIDATE_SHA256
             and entries["rollback"][1] == ROLLBACK_SHA256
             and compose(base, profile, PROFILE) == candidate,
@@ -140,6 +171,7 @@ def verify(workspace, capture, capture_sha256):
     check_local_verification(*(pinned_json(entries[key]) for key in
                                ("browser", "exported_bootstrap", "native_installer", "native_retry")))
     check_https_retry(pinned_json(entries["https_retry"]))
+    check_chrome_retry(pinned_json(entries["chrome_retry"]), rollback, candidate)
     check_saved_scope(pinned_json(entries["saved_scope"]), pinned_json(entries["market_review"]))
     host_capture = entries.get("host_export")
     host = verify_host_export(host_capture[0], entries["rollback"][0], host_capture[1]) if host_capture else None
@@ -152,7 +184,7 @@ def verify(workspace, capture, capture_sha256):
         "candidate_sha256": CANDIDATE_SHA256,
         "rollback_sha256": ROLLBACK_SHA256,
         "verified_local_checks": {"native_browser": 11, "exact_export_bootstrap": 46, "direct_rest_retry": 25,
-                                  "loopback_https_retry": 25},
+                                  "loopback_https_retry": 25, "cross_version_chrome_retry": 7},
         "gtm_exports": {"draft_tags": tags["draft"]["tags"], "rollback_tags": tags["rollback"]["tags"]},
         "hostinger_capture_comparison": host,
         "saved_launch_scope": {"paused_markets": 5, "aggregate_average_daily_aed": 2500, "test_conversion": False},

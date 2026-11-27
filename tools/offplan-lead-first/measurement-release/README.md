@@ -217,9 +217,11 @@ Ten synthetic tests and a separate repack of the exact retained rollback passed.
 
 ## Combined 0.2.17 evidence check
 
-The `OFFPLAN_0217_PRIVATE_EVIDENCE` capture lists the relative path and SHA-256 of each private input. `check_offplan_release_evidence.py` recomposes the exact release archive and reconciles the rollback, native WordPress and Chrome, exported GTM bootstrap, direct REST and loopback HTTPS retries, saved TEST, and five-market hold receipts. The path checks confine private inputs to the named workspace. The optional `host_export` entry also runs the complete installed-plugin comparison against the pinned rollback.
+The `OFFPLAN_0217_PRIVATE_EVIDENCE` capture lists the relative path and SHA-256 of each private input. `check_offplan_release_evidence.py` recomposes the exact release archive and reconciles the rollback, native WordPress and Chrome, exported GTM bootstrap, direct REST and loopback HTTPS retries, Chrome retries across both replacements, saved TEST, and five-market hold receipts. The path checks confine private inputs to the named workspace. The optional `host_export` entry also runs the complete installed-plugin comparison against the pinned rollback.
 
 The loopback run verified 17 TLS 1.3 requests and 25 checks across exact `0.2.12 → 0.2.17 → 0.2.12` native replacements. The local receiver recorded six synthetic receipts from eleven signed attempts. The exact retries preserved IDs, both changed bodies were rejected before relay, and measurement remained denied. All fixture processes exited and external transmissions were zero. Chrome execution across a hosting deployment and live receiver acceptance remain outside that run.
+
+The separate loopback Chrome run kept the same native enquiry document open during each replacement. Seven assertions passed in six browser phases. Exactly four lead POSTs exercised both acknowledgement faults and retries. Both retries preserved the body, request ID and receipt. The verifier hashes all twelve served form assets against their two archived versions. Reloading or reopening a pending form and actual production deployment remain additional observations.
 
 ```text
 python -B tools/offplan-lead-first/measurement-release/check_offplan_release_evidence.py --workspace PRIVATE_WORKSPACE --capture PRIVATE_CAPTURE.json --capture-sha256 TRUSTED_CAPTURE_SHA256

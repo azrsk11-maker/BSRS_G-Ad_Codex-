@@ -70,3 +70,15 @@ The package now contains4country-page drafts,62authored phrases/124exact-or-phra
 ## Live paused construction —24November2026
 
 After scoped CI at16daa4dc passed43tests and nativePreview accepted5/5changes, the reviewed batch was applied once. [Live readback](native-paused/APPLIED.json) now binds UAE24372566774/AED1000,DE24546407422/AED350,FR24546407401/AED300,IN24540258368/AED500,TW24546407404/AED350. All five remainPaused; the account has21Paused/3Removed/0Enabled. This created four empty campaign shells and changed the UAE paused budget; the later four-country CPC20/Presence/network/AI Max readback is recorded in `LIVE_READINESS_2026-11-24.json`. Languages, schedules, positive adjustments, child entities, actual destinations, inherited assets and exclusions remain unfinished. No site/tracking change or activation occurred. Never replay the Add batch. The compiler retains inert proposed IDs separately; APPLIED.json is the actual dated identity map.
+
+## Planner provenance and localized exclusion review
+
+Use the existing native Planner export parser for private UTF-16 exports. Bind the selected market, language and search network to separate observed acquisition evidence. Join supplied seeds to their exact held placements. Historical estimates retain their original scope and empty cells. The German capture supplied four seed rows for eight held placements and zero related ideas. Live bids, admission and deployment have separate evidence and approval requirements. [Google Keyword Planner metrics](https://support.google.com/google-ads/answer/3022575?hl=en)
+
+The opt-in reviewer reads two UTF-8 lines from stdin, with the exact negative literal first and the query second. In PowerShell, supply the two lines from an approved private file.
+
+```powershell
+Get-Content -LiteralPath $privatePair -Encoding utf8 | python -B tools/keyword-system/negative_review_match.py PHRASE
+```
+
+The reviewer preserves word-internal marks and reports a hold for ambiguous unsegmented Han text. The output contains a local verdict and explicit provider and deployment status fields. The frozen matcher and corpus keep their existing identity. Verify applicability and exact scope separately. The eight existing UAE Buyers proposals still require review because their saved campaign scope reaches the paused Resale Buyers child. [Google negative matching](https://support.google.com/google-ads/answer/2453972?hl=en) · [Google exclusion scope](https://support.google.com/google-ads/answer/6238816?hl=en)
