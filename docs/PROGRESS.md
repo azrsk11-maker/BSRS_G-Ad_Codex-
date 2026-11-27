@@ -1,3 +1,29 @@
+## Integrated off-plan review branch - 28 November 2026
+
+This branch joins the canonical query validation, regional privacy drafts, Arabic and Hindi native intake, and route-preserving recovery work against the same base. The individual experiments and their evidence remain independently scoped. The branch prepares an exact review package. Production publication and Ads activation require the current hosted, privacy, market, operational and provider evidence and the separate release decision.
+
+## Route-preserving off-plan recovery · 28 November 2026
+
+The exact 59-member `0.2.25` review passed three isolated native cutovers from `0.2.24` revision 2. Arabic and Hindi passed 66 checks for both receiver failure points, stable linked receipts and fresh intake. The French-English refusal passed 25 checks for an existing, route-bound intake capture, with a new stale-decision request denied. The granted French-English Chrome run passed 28 checks for the original document, actual named-pipe MariaDB lock and one durable receipt. All 59 release-tool tests passed. The fixtures sent zero external transmissions. [Reproducible recovery profile](../tools/offplan-lead-first/measurement-release/README.md#route-preserving-intake-recovery-0225)
+
+Hosted lock domain, exact installed preimage, independent release review and live destination evidence remain open.
+
+## Arabic and Hindi native off-plan forms · 28 November 2026
+
+The exact 59-member `0.2.24` revision 2 review adds both planned locale-specific native forms. It preserves the default English service page, 13 fields, 15 option values, the contact destinations, and signed intake. In disposable WordPress, 51 checks across 15 requests verified the two routes, their bindings, route-specific tokens and one local signed receipt per locale, with optional measurement off. Chromium passed 24 checks at 375px and 1280px, including the corrected RTL layout. All 59 focused release-tool tests passed. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#arabic-and-hindi-native-intake-review-0224)
+
+Actual CMS assignments, language and privacy review, route-preserving recovery, operating coverage and Ads measurement remain open.
+
+## Canonical off-plan runtime query validation · 28 November 2026
+
+An isolated WordPress comparison reproduced three ambiguous canonical queries that the exact `0.2.20` runtime accepted after PHP collapsed the input. The exact `0.2.23` review rejected all three with an inert response, preserved supported unique click values, and kept the tested regional route click-free. Baseline passed 13 assertions across five requests, review passed 38 across 18, and the 58 measurement-release tests passed. The native comparison took 109.472 seconds and sent zero leads or vendor requests. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#canonical-runtime-query-review-0223)
+
+The review adds no conversion source. Hosted acceptance, independent review, consent disclosures, real provider attribution and market readiness remain open.
+
+## Regional off-plan privacy addenda · 28 November 2026
+
+Added review drafts in Arabic, German, French, Hindi and Taiwan Traditional Chinese. The source English fragment and the approved 180-day and 12-month periods carry over. The locale checker verifies all six exact versions, markup, reference links and numeric periods in the off-plan workflow. Competent language review, privacy sign-off, deployed consent and retention evidence, and native placement remain release gates. [Drafts and verification](../tools/offplan-lead-first/privacy-addendum/README.md)
+
 ## Keyword suite fixture trials — 28 November 2026
 
 Fresh date-specific history supported 175 original cases across twelve suites with zero skips. The 76-case group ran in 209.230 seconds and the 99-case group ran in 226.786 seconds. Their 436.015-second serial total is already above the 300-second aggregate gate. All 792 case identities remain discoverable. The default Foundation suite and actual multi-worker acceptance remain open. [Evidence scope and remaining cases](../tools/efficiency/README.md#date-specific-keyword-fixture-trials--28-november-2026)

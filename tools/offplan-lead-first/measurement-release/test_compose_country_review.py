@@ -31,6 +31,23 @@ class PrivateReviewComposerTest(unittest.TestCase):
         review = [{"offset": len("日本\r\n".encode()), "remove": 4, "lines": ["été"]}]
         self.assertEqual(apply_edits(original, review), "日本\r\nété\n".encode())
 
+    def test_derived_member_uses_the_pinned_original_bytes(self):
+        source = "fixture/part-00.js"
+        original = self.final[source]
+        changed = b"// changed\r\n"
+        self.review["changes"] = {
+            source: {"before": digest(original), "edits": [{"offset": 0, "remove": len(original), "lines": [changed.decode()]}]},
+            **self.review["changes"],
+        }
+        self.review["changes"]["new.js"] = {"derived_from": source, "before": digest(original), "edits": []}
+        self.review["candidate_members"].update({source: digest(changed), "new.js": digest(original)})
+        with ZipFile(BytesIO(compose(self.base, self.review))) as output:
+            self.assertEqual(output.read(f"{PLUGIN}/new.js"), original)
+            self.assertEqual(output.read(f"{PLUGIN}/{source}"), changed)
+        self.review["changes"]["new.js"]["derived_from"] = "new.php"
+        with self.assertRaisesRegex(ValueError, "original source"):
+            compose(self.base, self.review)
+
     def test_german_profile_pins_its_own_base_count_and_scope(self):
         base = compose(self.base, self.review)
         final = {**self.final, "choice.php": b"<?php exit;\n", "choice.js": b"/* review */\n"}
@@ -82,7 +99,8 @@ class PrivateReviewComposerTest(unittest.TestCase):
                                ("english-country-ads-0219", "OFFPLAN_ENGLISH_COUNTRY_ADS_0219_REVIEW_ONLY"),
                                ("country-choice-csrf-0220", "OFFPLAN_COUNTRY_CHOICE_CSRF_0220_REVIEW_ONLY"),
                                ("english-country-recovery-0221", "OFFPLAN_ENGLISH_COUNTRY_RECOVERY_0221_REVIEW_ONLY"),
-                               ("english-recovery-concurrency-0222", "OFFPLAN_ENGLISH_RECOVERY_CONCURRENCY_0222_REVIEW_ONLY")):
+                               ("english-recovery-concurrency-0222", "OFFPLAN_ENGLISH_RECOVERY_CONCURRENCY_0222_REVIEW_ONLY"),
+                               ("canonical-runtime-query-0223", "OFFPLAN_CANONICAL_RUNTIME_QUERY_0223_REVIEW_ONLY")):
             with self.subTest(profile=profile):
                 with self.assertRaisesRegex(ValueError, "not the pinned"):
                     compose(base, isolated, profile)

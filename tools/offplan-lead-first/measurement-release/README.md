@@ -291,6 +291,40 @@ Retain one accepted-enquiry destination and an immutable receipt transaction ID.
 
 Google's multi-source website conversion beta is an option to assess separately. A click ID can satisfy its attribution-identifier requirement without contact matching. Verify eligibility for the exact action and require explicit approval for this transport, a revised disclosure and a plan to avoid browser/server duplication before implementing it. Current release artifacts retain the native action policy. [Google multi-source conversion requirements](https://support.google.com/google-ads/answer/16542291?hl=en) · [API transaction handling](https://developers.google.com/data-manager/api/devguides/events/google-ads/online/send-events#how-google-handles-multi-source-data)
 
+Google ignores an uploaded click ID when the transaction already matches a browser event in the same action. An unmatched event uses its supplied identifier for an attribution attempt. The same-action transaction ID therefore handles duplicate receipts, while paid attribution requires evidence from the selected producer. The beta requires a manually coded website tag with an active transaction ID. Its account-specific eligibility and data governance remain separate release checks. [Google multi-source event handling](https://support.google.com/google-ads/answer/16542291?hl=en#zippy=%2Chow-google-handles-your-uploaded-conversion-data) · [Google beta FAQ](https://support.google.com/google-ads/answer/17111689?hl=en)
+
+### Canonical runtime query review 0.2.23
+
+The held `canonical-runtime-query-0223` profile matches the original query with WordPress's parsed values before issuing a runtime lease. Repeated names and raw fields that the PHP parser collapses now fail closed. Unique supported click identifiers retain their exact decoded values. The profile changes the two version declarations and `includes/measurement-runtime.php` in the pinned `0.2.20` forward archive. Regional measurement stays click-free and the signed intake, consent and recovery contracts retain their existing shapes.
+
+Reproduce the 53-member private review with `compose_country_review.py BASE_ZIP OUTPUT_ZIP --profile canonical-runtime-query-0223`. Use the original `0.2.20` base SHA-256 `b7d9dedcdd7bf8c5f716824d0629bb7dc8ff6b70326c19006b5b65459100a2c0`. The resulting SHA-256 is `2e2be65e1274d1b6ed0d9175c27f12cde38b543d2d5ac1515992df8f9c8391a1`. Version-specific hosted readback, independent review and live Google attribution remain open.
+
+## Arabic and Hindi native intake review 0.2.24
+
+The held `regional-intake-0224` profile gives the two planned routes, `/off-plan-dubai-ar-ae/` and `/off-plan-dubai-hi-in/`, the native off-plan form and signed intake. English remains the canonical service page. Both variants keep the same field names and option values, verified phone and WhatsApp destinations, and a link to English. Arabic uses right-to-left layout with direction-aware controls. Revision 2 clips the spam-trap control in place within the RTL document to prevent horizontal overflow.
+
+The original country map stays in `bsre_offplan_country_page_ids_v1`. The two new paths use the separate `bsre_offplan_regional_intake_page_ids_v1` option. Exact assigned CMS IDs, matching top-level slugs and published status are required for intake. Review builds and tests use disposable assignments. Both new routes keep optional Google measurement off and forward the canonical signed lead contract with empty attribution.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py BASE_0223_ZIP OUTPUT_ZIP --profile regional-intake-0224
+```
+
+Use base SHA-256 `2e2be65e1274d1b6ed0d9175c27f12cde38b543d2d5ac1515992df8f9c8391a1`. The 59-member revision 2 has SHA-256 `a059b35048a667097efb58d99f7c0143813e49e9f1f0bd4a41674dc1039c1131`. The composer derives the new assets from original pinned members so changed files elsewhere in the same recipe cannot alter their preimages.
+
+Existing package versions ignore the new map. Before any removal or downgrade of the new routes, reconcile pending receipt IDs and confirm an approved route-preserving recovery version or a verified drain. Actual CMS assignment, language and privacy review, operator coverage, hosted cutover, Google attribution and Ads readiness remain separate gates.
+
+## Route-preserving intake recovery 0.2.25
+
+The held `regional-recovery-0225` profile preserves the two new Arabic and Hindi forms, exact assets, CMS assumptions and separate page map from `0.2.24` revision 2. It keeps both forms intake-only. Their original pending requests use the existing signed, idempotent receiver. A linked receipt returns locally on an exact repeat.
+
+The recovery package disables optional advertising on the three English aliases using the existing scope, and carries the r3 lock and linked-receipt code for granted pending captures. It also accepts an acknowledged refusal from the earlier browser when the retained intake capture matches the original body and the alias-derived receipt key. Recovery creates no new capture from a stale decision and restores no optional consent. Germany's local-language choice still uses the dedicated token. The release retains the strict canonical query validator.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py BASE_0224_R2_ZIP OUTPUT_ZIP --profile regional-recovery-0225
+```
+
+The recovery profile uses forward SHA-256 `a059b35048a667097efb58d99f7c0143813e49e9f1f0bd4a41674dc1039c1131` and reproduces 59 members with SHA-256 `8c1c726ffd8d17133ac6be00eaf7da099f52da54578e05dc3b96e89a2bd2b2eb`. The installed version advances to `0.2.25` through native replacement, preserving the database schema. The granted-capture lock still depends on a single hosted database lock domain. Ordinary intake keeps the receiver's idempotency contract. Validate the production preimage, lock domain and exact installed digest under the independent review and change authorization before considering a live switch.
+
 ## Published GTM export readback
 
 After authorized publication, record the live version shown in the owned container's Versions screen and export that exact version. In a private observation JSON, record `scope` as `BSRE_OFFPLAN_GTM_VERSIONS_LIVE_READBACK`, the original `account_id`, `container_id` and `public_id`, `observed_at_utc` as `YYYY-MM-DDTHH:MM:SSZ`, `live_version_id`, and `live_export_sha256`. Pin the observation and the original native export capture separately. [Google Tag Manager version documentation](https://support.google.com/tagmanager/answer/6107163?hl=en)
