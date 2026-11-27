@@ -2,7 +2,11 @@
 
 The [capture lineage successor](../tools/offplan-lead-first/measurement-release/README.md#original-consent-receipt-on-a-german-capture) binds a new German capture to the actual consent receipt under InnoDB locks. The existing planner classified the submitted choice and withdrawal history as protected and recognized two overdue rows for an independent unsubmitted choice. A stale choice or missing history could not stage optional evidence. Same-body and changed-body behavior and country retry ownership passed on the exact 53-member setup. Production retention and advertising acceptance remain held.
 
+The exact successor passed 12 native WordPress HTTPS checks with a local receiver that verified the existing signed wire. While the receiver held its first acknowledgement, the prior granted choice was withdrawn and a fresh grant committed. The delayed acknowledgement linked the original receipt and excluded measurement. The byte-exact replay retained one event ID, and a fresh enquiry under the new choice passed the local eligibility check. The mock retained two deduplicated records. External provider acceptance remains open.
+
 An eight-check private release preflight also reproduced the prior exact ordered-consent archive and bound its local receipts to the retained rollback, WordPress and paused Ads evidence. Its launch-readiness command returned six open gates. The previous single TEST was verified for delivery with measurement excluded. This audit used dated saved evidence.
+
+The complete 14,000-row negative research corpus was also reconstructed and matched its frozen digest. The lexical screen found zero matches in seven defined cohorts, including the saved UAE off-plan terms and 5,033 held positive candidates. Controls reproduced the 58 known commercial matches and agreed with 336,000 direct matcher evaluations. Live provider matching, binding for the rental planning scope, and approval remain open.
 
 ## Ordered consent and session renewal — 27 November 2026
 
