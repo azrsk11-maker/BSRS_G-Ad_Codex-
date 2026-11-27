@@ -1,3 +1,7 @@
+## Regional off-plan privacy addenda · 28 November 2026
+
+Added review drafts in Arabic, German, French, Hindi and Taiwan Traditional Chinese. The source English fragment and the approved 180-day and 12-month periods carry over. The locale checker verifies all six exact versions, markup, reference links and numeric periods in the off-plan workflow. Competent language review, privacy sign-off, deployed consent and retention evidence, and native placement remain release gates. [Drafts and verification](../tools/offplan-lead-first/privacy-addendum/README.md)
+
 ## Keyword suite fixture trials — 28 November 2026
 
 Fresh date-specific history supported 175 original cases across twelve suites with zero skips. The 76-case group ran in 209.230 seconds and the 99-case group ran in 226.786 seconds. Their 436.015-second serial total is already above the 300-second aggregate gate. All 792 case identities remain discoverable. The default Foundation suite and actual multi-worker acceptance remain open. [Evidence scope and remaining cases](../tools/efficiency/README.md#date-specific-keyword-fixture-trials--28-november-2026)

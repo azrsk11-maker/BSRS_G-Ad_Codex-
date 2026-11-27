@@ -1,6 +1,6 @@
 {
   "status": "UNPUBLISHED_REVIEW_DRAFT",
-  "scope": "Proposed English addendum to existing notice, not a replacement policy or legal approval",
+  "scope": "Proposed English and regional addenda for the existing property enquiry notice",
   "approved_business_fact_bindings": [
     "separate optional analytics and admeasurement",
     "personalization denied",
@@ -14,10 +14,32 @@
   "deployment_gate": "Do not publish until the actual preference/withdrawal/retention implementation and disclosure placement are accepted. This draft does not assert they are deployed.",
   "remaining": [
     "privacy/factualreview",
-    "DE/FR/TraditionalChinese translation and competent language review",
+    "competent language and privacy review of each exact translated draft",
     "native placement on notice/consent link",
     "actual retention deletion and withdrawal acceptance"
   ],
   "code_or_policy_published": false,
-  "sha256": "14d16e50da914f2dcbaceddfa4ab93ae2bdc7a0cb38bede40f76213920352b90"
+  "sha256": "14d16e50da914f2dcbaceddfa4ab93ae2bdc7a0cb38bede40f76213920352b90",
+  "translations": {
+    "ar-AE": {
+      "status": "PENDING_HUMAN_LANGUAGE_AND_PRIVACY_REVIEW",
+      "sha256": "4dd8a3d6651aefdc7585ead8a3e227c94fd5f803fac3904d5d4eb3865b0f51a5"
+    },
+    "de-DE": {
+      "status": "PENDING_HUMAN_LANGUAGE_AND_PRIVACY_REVIEW",
+      "sha256": "fec56db14d32079094a29ed0c634c680cce8a7b421ca65fa51c571229d186ed0"
+    },
+    "fr-FR": {
+      "status": "PENDING_HUMAN_LANGUAGE_AND_PRIVACY_REVIEW",
+      "sha256": "e86bf5d54a1297770547e5d11ac40c547dd10b1acd2188583e83b6c19018d7e3"
+    },
+    "hi-IN": {
+      "status": "PENDING_HUMAN_LANGUAGE_AND_PRIVACY_REVIEW",
+      "sha256": "b009c8f55a1df9713e278f57b3541c6d033c5f9c5ba3bf298aaba78e1e6cf1b5"
+    },
+    "zh-Hant-TW": {
+      "status": "PENDING_HUMAN_LANGUAGE_AND_PRIVACY_REVIEW",
+      "sha256": "e9c8603731fb1b5e119b3f2dacd493eece1ef6b8d7241661e4e4148678d317e9"
+    }
+  }
 }
