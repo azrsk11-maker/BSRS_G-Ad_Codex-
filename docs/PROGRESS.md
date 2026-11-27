@@ -1,3 +1,9 @@
+## Route-preserving off-plan recovery · 28 November 2026
+
+The exact 59-member `0.2.25` review passed three isolated native cutovers from `0.2.24` revision 2. Arabic and Hindi passed 66 checks for both receiver failure points, stable linked receipts and fresh intake. The French-English refusal passed 25 checks for an existing, route-bound intake capture, with a new stale-decision request denied. The granted French-English Chrome run passed 28 checks for the original document, actual named-pipe MariaDB lock and one durable receipt. All 59 release-tool tests passed. The fixtures sent zero external transmissions. [Reproducible recovery profile](../tools/offplan-lead-first/measurement-release/README.md#route-preserving-intake-recovery-0225)
+
+Hosted lock domain, exact installed preimage, independent release review and live destination evidence remain open.
+
 ## Arabic and Hindi native off-plan forms · 28 November 2026
 
 The exact 59-member `0.2.24` revision 2 review adds both planned locale-specific native forms. It preserves the default English service page, 13 fields, 15 option values, the contact destinations, and signed intake. In disposable WordPress, 51 checks across 15 requests verified the two routes, their bindings, route-specific tokens and one local signed receipt per locale, with optional measurement off. Chromium passed 24 checks at 375px and 1280px, including the corrected RTL layout. All 59 focused release-tool tests passed. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#arabic-and-hindi-native-intake-review-0224)
