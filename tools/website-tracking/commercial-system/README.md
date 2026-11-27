@@ -124,10 +124,16 @@ Each of the six rows contains actual classified media spend, collected net reven
 
 `commercialReportFromHistoryBySegment(financeInput, policy, historyOptions, classification)` runs the same pinned history audit and passes its receipt to this branch. Its document must bind that exact aggregate, evaluation clock and source; an earlier receipt from unchanged inputs at that exact clock has deterministic fields but still requires the current execution's branded receipt. For a single execution in a controlled application, use `readQualificationHistory()` from `history-bridge.mjs`, build the audited input, resolve its actual external classification approval, and call `commercialReportBySegment()` while that exact clock/review remains valid. Cloned or handwritten audit objects still fail existing branding checks. Neither path changes advertising permission or conversion-import eligibility.
 
-Run the two local Node suites from the repository root:
+Run the local Node suites from the repository root.
 
 ```text
-node --test tools/website-tracking/commercial-system/report.test.mjs tools/website-tracking/commercial-system/segments.test.mjs
+node --test tools/website-tracking/commercial-system/report.test.mjs tools/website-tracking/commercial-system/segments.test.mjs tools/website-tracking/commercial-system/collection-postings.test.mjs
 ```
 
 The new tests use independently calculated synthetic amounts in all six segments, buyer/seller rounding and duplicate suppression, negative refunds, exact input/approval binding, source separation, unknown/conflicting classification holds, unchanged base output and rejected contact fields. A real pinned Python audit test uses temporary synthetic files only. Set `BSRE_TEST_PYTHON` to an existing trusted executable if `python` is unavailable; missing Python is an explicit capability skip, never native acceptance. Review references, finance treatment and amounts in tests are synthetic and are not company decisions or results.
+
+## Reviewed collection posting identities
+
+Use `reconcileCollectionPostings(input, crosswalk, reviewedHash)` before offline reporting when Finance can verify that multiple recorded export IDs refer to the same accounting posting. The crosswalk uses schema `bsre-finance-posting-crosswalk-v1`, the `finance_input_sha256` from `segmentFinanceInputHash(input)`, and an `entries` list of `record_id` and `posting_ref` pairs. Obtain the reviewed crosswalk hash separately. The comparable local hash is `collectionPostingCrosswalkHash(crosswalk)`.
+
+The adapter returns a new reporting input and anonymous counts. It rejects missing and unused mappings, changed input or crosswalk hashes, and inconsistent economic fields within a posting. Each distinct verified posting retains its own identifier even if two installments have the same amount and date. Pass the reconciled input to the existing report with the independently approved finance policy. The existing report still validates row structure, dates, amounts, and attribution. Finance retains responsibility for evidence custody, correct posting identities and approval.

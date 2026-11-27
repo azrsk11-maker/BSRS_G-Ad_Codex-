@@ -5,7 +5,7 @@ on:
     paths:
       - '.github/workflows/goal-verification.yml'
       - 'tools/efficiency/**'
-      - 'tools/website-tracking/commercial-system/*media_exposure.py'
+      - 'tools/website-tracking/commercial-system/**'
 permissions:
   contents: read
 concurrency:
@@ -21,5 +21,7 @@ jobs:
           persist-credentials: false
       - name: Verify commercial exposure boundaries
         run: python3 -B -m unittest discover -s tools/website-tracking/commercial-system -p test_media_exposure.py
+      - name: Verify commercial reporting and finance posting reconciliation
+        run: BSRE_TEST_PYTHON="$(command -v python3)" node --test tools/website-tracking/commercial-system/*.test.mjs
       - name: Verify the complete efficiency test group
         run: python3 -B -m unittest discover -s tools/efficiency -p 'test_*.py'

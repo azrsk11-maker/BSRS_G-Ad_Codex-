@@ -1,3 +1,7 @@
+## Finance posting reconciliation — 27 November 2026
+
+The [optional offline posting adapter](../tools/website-tracking/commercial-system/README.md#reviewed-collection-posting-identities) binds a Finance-reviewed crosswalk to the complete sanitized input and an independently provided crosswalk hash. The baseline report suppressed same-ID replays. A replay with a new export ID overstated synthetic November net commission by AED950. The fixture removed the proven alias and preserved two distinct same-date, same-value installments. Reconciled close dates, installments, later refunds and allocation agree across Dubai month windows and their union. Actual Finance records, approved treatments and canonical posting evidence remain outstanding.
+
 ## Faster exact worktree verification — 27 November 2026
 
 The worktree verifier now streams pinned Git blobs through one `cat-file` process. It retains bounded read chunks, the existing byte limits and a shared completion deadline. The benchmark checks the complete report and digest maps. Three paired Windows trials on the same 1,328-file checkout and 1,327 unique blobs reproduced all outputs. Git subprocesses fell from 11 to 5 in every pair. Median comparison time fell from 9.734 to 6.891 seconds, a 29.2 percent reduction in this workload. The measurements cover the repository check itself. Overall Codex latency, cost and token usage were outside the benchmark.
