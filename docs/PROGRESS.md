@@ -1,3 +1,7 @@
+## Integrated off-plan review branch - 28 November 2026
+
+This branch joins the canonical query validation, regional privacy drafts, Arabic and Hindi native intake, and route-preserving recovery work against the same base. The individual experiments and their evidence remain independently scoped. The branch prepares an exact review package. Production publication and Ads activation require the current hosted, privacy, market, operational and provider evidence and the separate release decision.
+
 ## Route-preserving off-plan recovery · 28 November 2026
 
 The exact 59-member `0.2.25` review passed three isolated native cutovers from `0.2.24` revision 2. Arabic and Hindi passed 66 checks for both receiver failure points, stable linked receipts and fresh intake. The French-English refusal passed 25 checks for an existing, route-bound intake capture, with a new stale-decision request denied. The granted French-English Chrome run passed 28 checks for the original document, actual named-pipe MariaDB lock and one durable receipt. All 59 release-tool tests passed. The fixtures sent zero external transmissions. [Reproducible recovery profile](../tools/offplan-lead-first/measurement-release/README.md#route-preserving-intake-recovery-0225)
@@ -15,6 +19,10 @@ Actual CMS assignments, language and privacy review, route-preserving recovery, 
 An isolated WordPress comparison reproduced three ambiguous canonical queries that the exact `0.2.20` runtime accepted after PHP collapsed the input. The exact `0.2.23` review rejected all three with an inert response, preserved supported unique click values, and kept the tested regional route click-free. Baseline passed 13 assertions across five requests, review passed 38 across 18, and the 58 measurement-release tests passed. The native comparison took 109.472 seconds and sent zero leads or vendor requests. [Reproducible review](../tools/offplan-lead-first/measurement-release/README.md#canonical-runtime-query-review-0223)
 
 The review adds no conversion source. Hosted acceptance, independent review, consent disclosures, real provider attribution and market readiness remain open.
+
+## Regional off-plan privacy addenda · 28 November 2026
+
+Added review drafts in Arabic, German, French, Hindi and Taiwan Traditional Chinese. The source English fragment and the approved 180-day and 12-month periods carry over. The locale checker verifies all six exact versions, markup, reference links and numeric periods in the off-plan workflow. Competent language review, privacy sign-off, deployed consent and retention evidence, and native placement remain release gates. [Drafts and verification](../tools/offplan-lead-first/privacy-addendum/README.md)
 
 ## Keyword suite fixture trials — 28 November 2026
 
