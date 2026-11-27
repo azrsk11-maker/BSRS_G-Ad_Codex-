@@ -1,7 +1,15 @@
 # Unpublished privacy addendum review copy
 
-`NOTICE_ADDENDUM.en.html` is proposed English customer copy for the existing enquiry notice, not a replacement privacy policy or a deployed page. `REVIEW.json` binds the adopted business periods and current official Google disclosure link. No new location, legal basis, transfer safeguard, DPO, certification or active deletion capability is invented.
+`NOTICE_ADDENDUM.en.html` is the primary English review copy for the existing enquiry notice. Five regional drafts follow it for the current off-plan markets. The [review manifest](REVIEW.json) pins all six fragments and records pending language and privacy review.
 
-Do not publish until the actual consent, withdrawal and preference-evidence retention behavior supports the text, the existing monthly enquiry/mail review is operationally verified, and privacy/factual review approves placement. German, French and Traditional Chinese translations and competent review remain pending. The Google data-use link must be prominent in the consent disclosure or the first layer of the linked policy. Existing live notice, business routing and original workbook remain unchanged.
+| Market | Regional review draft |
+| --- | --- |
+| UAE | [Arabic](NOTICE_ADDENDUM.ar-AE.html) |
+| Germany | [German](NOTICE_ADDENDUM.de-DE.html) |
+| France | [French](NOTICE_ADDENDUM.fr-FR.html) |
+| India | [Hindi](NOTICE_ADDENDUM.hi-IN.html) |
+| Taiwan | [Traditional Chinese](NOTICE_ADDENDUM.zh-Hant-TW.html) |
 
-Sources: [Google disclosure guidance](https://www.google.com/about/company/user-consent-policy-help/) and [Google Business Data Responsibility](https://business.safety.google/privacy/), checked24November2026. This draft is not legal or launch clearance.
+From the repository root, run `python3 -B tools/offplan-lead-first/privacy-addendum/verify_drafts.py`. The check verifies draft hashes, language and heading markup, the Arabic reading direction, both link targets and the numeric retention periods. Reviewers should use the exact pinned bytes, check the user-facing control label and verify the translated meaning and local disclosure placement.
+
+Publication requires verified consent, withdrawal and retention behavior, operational monthly review of enquiries and matching Marketing email copies, and approval of the exact wording and placement. Use one reviewed fragment per localized notice page so its heading ID is unique. The Google data-use link belongs in the consent disclosure or the first layer of the linked policy. [Google disclosure guidance](https://www.google.com/about/company/user-consent-policy-help/) · [Google Business Data Responsibility](https://business.safety.google/privacy/)
