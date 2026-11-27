@@ -1,3 +1,7 @@
+## Off-plan test delivery and Chrome transport — 27 November 2026
+
+The single authorized TEST is reconciled across WordPress, one Lead Sheet row and one Marketing Inbox message. The test was measurement-ineligible and no conversion was transmitted. Seven local Chrome frame checks passed against the exact review candidate. See [the current verification entry](PROGRESS.md#mailbox-reconciliation-and-browser-transport--27-november-2026). Deployed WordPress and Google conversion verification remain open. The India page remains a draft. No production publication or Ads activation occurred.
+
 ## Shared property enquiry design — 25 November 2026
 
 The owner requested all existing service landing pages in the same design and required English by default alongside regional keywords in every market and campaign. The [service review package](../tools/offplan-lead-first/service-localization/README.md) includes 414 previews and 7,800 exact and phrase keyword placements across 35 markets. All 345 form previews match their existing service field and option contracts. Only off-plan is in launch scope. The resale, rental, seller, landlord and brand work is prepared for review.

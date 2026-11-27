@@ -1,3 +1,9 @@
+## Mailbox reconciliation and browser transport — 27 November 2026
+
+The approved 26 November TEST is verified end to end. The single Marketing Inbox message matches both receipt IDs from the accepted WordPress response and the one private Sheet row. The message timestamp matches the first recorded outbox send. The delayed lookup reconciles yesterday’s missing search result. No resend or conversion occurred.
+
+Seven cases passed in an isolated Chrome profile against the exact reviewed parent tracking script. The canonical, German-language and bound India routes received origin-only referrers and same-origin iframe fetch metadata. Refusal, a resale route and an unbound India route opened no optional frame. A negative control without the iframe’s origin policy failed the header check. This exercises a local HTTPS fixture. Hostinger response headers, a deployed GTM container and a genuine Google conversion remain separate evidence. No live changes were applied.
+
 ## Live delivery test and native review — 26 November 2026
 
 Ran the single owner-approved labelled TEST through the canonical first-party intake. The server returned `measurement_eligible:false`, and no conversion code ran. The exact accepted lead and event identifiers matched one private Sheet row. Its scheduled outbox marked the notification sent on the first attempt at 19:05 Dubai. The exact Marketing mailbox searches found no matching message as of 19:11 Dubai. Email receipt remains open. No resend occurred.

@@ -75,4 +75,14 @@ node --test $testFile
 
 Tests cover deterministic construction, the exact two-byte version delta, mixed-newline preservation, full preimage and inverse checks, partial-pair refusal, evidence drift and duplicate-cohort rejection, bundle/rollback/manifest tampering, explicit output boundaries, unchanged input fixtures and bounded CLI failure. Existing five frame and four composed behavior results are reused separately; this test file does not rerun them.
 
-Only `build-review-bundle.mjs`, `build-review-bundle.test.mjs` and this README are candidates for Source review. All snapshots, real audits, private bindings/paths, generated bundles, receipts and independent-review artifacts remain private. Required Source checks, native acceptance, human review and concrete publication authorization are not supplied by this tool.
+## Chrome frame transport
+
+The optional local check runs the exact composed parent asset in a new headless Chrome profile on loopback HTTPS. It uses a disposable certificate pinned only in that invocation, a local header observer, and a synthetic runtime frame. The fixture uses no production credentials, form submissions, click identifiers or vendor SDKs. It verifies origin-only referrer and same-origin iframe headers, refusal, route isolation, the India marker, and the missing-referrer negative control. [Chrome Headless documentation](https://developer.chrome.com/docs/automation-and-testing/headless).
+
+```powershell
+python -B check_chrome_transport.py --chrome $chromePath --candidate $privateComposedReview --out $newPrivateReceipt
+```
+
+Use the local Python environment with `cryptography` and an existing Windows Chrome executable. Choose a new private receipt path. The test fixture verifies the asset hash in the review manifest. Actual Hostinger headers, the deployed runtime and Google processing need live evidence.
+
+All snapshots, real audits, private bindings and paths, generated bundles, receipts and independent review artifacts remain private. Required Source checks, native acceptance, human review and concrete publication authorization are not supplied by these tools.
