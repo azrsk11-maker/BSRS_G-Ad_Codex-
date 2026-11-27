@@ -260,3 +260,13 @@ python -B tools/offplan-lead-first/measurement-release/compose_country_review.py
 ```
 
 The 53-member `0.2.20` review reproduces SHA-256 `b7d9dedcdd7bf8c5f716824d0629bb7dc8ff6b70326c19006b5b65459100a2c0`. The existing country context supplies `ad_choice_csrf_token` only when advertising configuration and the exact route binding are eligible. The separate choice token is bound to the session, purpose, native route, page and notice. Its minimum age is two seconds and its lifetime is two hours. The form keeps its existing intake token, UUID and body. A missing or malformed choice token keeps optional measurement off. Five changed members passed syntax checks, and 11 focused PHP checks covered scope and expiry. The exact browser scripts consumed the new field in a simulated context-to-choice flow. An independent native fixture passed 31 checks, including both wrong-purpose denials and preserved signed TEST intake with measurement excluded. Provider transmissions were zero.
+
+## English country intake recovery review
+
+```text
+python -B tools/offplan-lead-first/measurement-release/compose_country_review.py /private/attribution-0218-r2-PRIVATE-REVIEW.zip /private/country-recovery-0221-PRIVATE-REVIEW.zip --profile english-country-recovery-0221
+```
+
+The 53-member `0.2.21` recovery review reproduces SHA-256 `6425cbb8b88ca2ad7191927bfcae9ceb484a651f1fd56d08b7286ff60259f7f0`. It is an intake-only alternative for the three new English country measurement routes, with a distinct asset cache version. Matching recovery requests reuse the original route, UUID, body fingerprint and consent decision. Already linked receipts return directly from the existing WordPress capture. A staged receipt may complete through the idempotent receiver. Recovered enquiries deny optional measurement and retain their original receipt IDs.
+
+The disposable native WordPress trial upgraded through `0.2.19` r2, `0.2.20` and the `0.2.21` recovery review. The 106 checks across 42 requests included pre-commit failure, lost acknowledgement after commit, repeated accepted replies and sibling-route and token denial. No external request was sent. Six exact browser-script retry cases also passed in simulation. Concurrent staged retries may still both reach the receiver, and a late failure can reset delivery-pending state. Hosted recovery and independent release approval remain open.

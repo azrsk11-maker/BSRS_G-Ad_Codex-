@@ -1,3 +1,7 @@
+## Native recovery for staged English enquiries — 27 November 2026
+
+The [0.2.21 recovery review](../tools/offplan-lead-first/measurement-release/README.md#english-country-intake-recovery-review) reproduced a 53-member intake-only archive. Native WordPress passed 106 checks across 42 requests in 121.630 seconds, including exact package changes from `0.2.19` r2 through `0.2.20` and restoration of three staged receipt identities. Each original request produced one durable synthetic receipt. Repeating an accepted request produced zero additional receiver calls. Six exact browser-script retry cases passed in simulation. The concurrent staged retry race and live Hostinger acceptance remain open.
+
 ## Separate country consent-choice token — 27 November 2026
 
 The [0.2.20 review](../tools/offplan-lead-first/measurement-release/README.md#country-consent-choice-token-review) separates intake and consent-choice CSRF tokens while preserving the signed form body. Twelve native CGI requests and 31 checks verified the wrong-purpose denials, route binding, valid grant, disabled measurement and one preserved local signed TEST receipt. Eleven focused PHP checks covered page, session and expiry. No provider requests reached Google. The package remains a private review prior to hosted acceptance and recovery verification.

@@ -80,7 +80,8 @@ class PrivateReviewComposerTest(unittest.TestCase):
                                ("gtm-nonce-0217", "OFFPLAN_GTM_BOOTSTRAP_NONCE_0217_REVIEW_ONLY"),
                                ("attribution-continuity-0218", "OFFPLAN_ATTRIBUTION_CONTINUITY_0218_REVIEW_ONLY"),
                                ("english-country-ads-0219", "OFFPLAN_ENGLISH_COUNTRY_ADS_0219_REVIEW_ONLY"),
-                               ("country-choice-csrf-0220", "OFFPLAN_COUNTRY_CHOICE_CSRF_0220_REVIEW_ONLY")):
+                               ("country-choice-csrf-0220", "OFFPLAN_COUNTRY_CHOICE_CSRF_0220_REVIEW_ONLY"),
+                               ("english-country-recovery-0221", "OFFPLAN_ENGLISH_COUNTRY_RECOVERY_0221_REVIEW_ONLY")):
             with self.subTest(profile=profile):
                 with self.assertRaisesRegex(ValueError, "not the pinned"):
                     compose(base, isolated, profile)
