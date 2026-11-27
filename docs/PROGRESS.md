@@ -1,3 +1,9 @@
+## Owned-funnel GTM release and recovery evidence — 27 November 2026
+
+The authenticated export selector captured 5 of 5 objects in live GTM version 1 and 7 of 7 in Default Workspace 2. Version 1 retains the five default built-ins. The draft adds precisely the existing guarded Custom HTML bootstrap and its Page View trigger. The [offline export verifier](../tools/offplan-lead-first/measurement-release/README.md#captured-gtm-draft-and-recovery-version) matched both full exports to the capture and exact `0.2.17` review archive. Sixteen synthetic verifier tests and eight composer tests passed. The provider exports remain private.
+
+Chrome executed the original exported inline bytes against the two exact review archives over loopback. The `0.2.16` frame policy blocked the three activation attempts. The `0.2.17` frame passed four valid cases and denied both the wrong nonce and the missing nonce. The baseline passed 25 checks in 2.046 seconds. The successor passed 46 checks in 2.663 seconds. External transmission, provider changes and publication were zero. Live release acceptance remains open.
+
 ## GTM bootstrap compatibility and positive research — 27 November 2026
 
 The authenticated owned-funnel GTM container still publishes an empty version. The sole pending tag is the inline runtime bootstrap with a Page View trigger. Google Ads still reports the approved accepted-enquiry action as misconfigured and has never received a tag ping or attribution data. The `0.2.17` review adds a fresh CSP nonce to the isolated frame and propagates it to the dynamic loader. This changes only the cache version and the runtime's PHP and JavaScript. The [exact composer](../tools/offplan-lead-first/measurement-release/README.md#gtm-bootstrap-csp-nonce-review) reproduced the package and all eight focused composer tests passed.

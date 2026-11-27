@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p "$BSRE_MEASUREMENT_TEST_OUTPUT"
           node --test tools/offplan-lead-first/measurement-release/build-review-bundle.test.mjs
-          python3 -B -m unittest discover -s tools/offplan-lead-first/measurement-release -p test_compose_country_review.py -v
+          python3 -B -m unittest discover -s tools/offplan-lead-first/measurement-release -p 'test_*.py' -v
       - name: Verify 35-market landing pages and keyword review package
         run: |
           python3 -B tools/offplan-lead-first/global-localization/compile_review.py --out "$RUNNER_TEMP/bsre-global-market-review"
