@@ -69,10 +69,27 @@ def compare_per_file(root, ref, remote_hashes):
     }
 
 
+class CountedBatchStream:
+    def __init__(self, stream):
+        self.stream = stream
+        self.bytes_read = 0
+
+    def read(self, size):
+        data = self.stream.read(size)
+        self.bytes_read += len(data)
+        return data
+
+    def readline(self, size):
+        data = self.stream.readline(size)
+        self.bytes_read += len(data)
+        return data
+
+
 def observed_run(root, ref, method, deadline):
     calls = []
     local_hashes, remote_hashes, tree = {}, {}, {}
     original_git, original_local, original_batch = verifier.git, verifier.local_hash, verifier.batch_hashes
+    original_git_blobs = verifier.git_blob_hashes
 
     def observed_git(directory, *args, **kwargs):
         if time.perf_counter() >= deadline:
@@ -91,13 +108,24 @@ def observed_run(root, ref, method, deadline):
         local_hashes[name] = value
         return value
 
-    def observed_batch(data, objects):
-        values = original_batch(data, objects)
+    def observed_git_blobs(directory, objects):
+        remaining = deadline - time.perf_counter()
+        if remaining <= 0:
+            raise BenchmarkError("Benchmark elapsed-time budget reached.")
+        with patch.object(verifier, "GIT_TIMEOUT_SECONDS", min(verifier.GIT_TIMEOUT_SECONDS, remaining)):
+            return original_git_blobs(directory, objects)
+
+    def observed_batch(stream, objects):
+        counted = CountedBatchStream(stream)
+        values = original_batch(counted, objects)
+        calls.append({"command": "cat-file", "stdout_bytes": counted.bytes_read})
         remote_hashes.update(values)
         return values
 
     tick = time.perf_counter()
-    with patch.object(verifier, "git", observed_git), patch.object(verifier, "local_hash", observed_local), patch.object(verifier, "batch_hashes", observed_batch):
+    with (patch.object(verifier, "git", observed_git), patch.object(verifier, "local_hash", observed_local),
+          patch.object(verifier, "git_blob_hashes", observed_git_blobs),
+          patch.object(verifier, "batch_hashes", observed_batch)):
         report = (verifier.compare(root, ref) if method == "existing_batch" else
                   compare_per_file(root, ref, remote_hashes))
     elapsed = time.perf_counter() - tick

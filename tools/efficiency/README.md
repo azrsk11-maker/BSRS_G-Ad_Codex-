@@ -97,7 +97,7 @@ Continue using one browser writer, bounded discovery, independent agents with se
 
 ## Pinned working tree verification
 
-`verify_worktree.py` compares current file bytes with one pinned Git commit using a single `cat-file --batch` process. It preserves the prior comparison report fields, includes untracked nonignored files and reports missing, unexpected and changed paths. It validates NUL-delimited names and binary framing, bounds input sizes, checks for local changes while reading, and rejects symlinks, junctions and submodules that require separate verification. It performs no fetch or write.
+`verify_worktree.py` compares current file bytes with one pinned Git commit using a streamed `cat-file --batch` call. It includes untracked nonignored files and reports missing, unexpected and changed paths. It validates NUL-delimited names and binary framing, bounds input sizes, checks for local changes while reading, and rejects symlinks, junctions and submodules that require separate verification. It performs no fetch or write.
 
 From the repository root, fetch the authorized branch when a refresh is needed, then run the comparison.
 
@@ -111,9 +111,9 @@ Exit0 means exact equality. Exit1 means reported differences. Exit2 means verifi
 
 The [controlled comparison](../../docs/audit/worktree-verifier-benchmark-2026-11-08.json) used identical local bytes and the same reference. Both implementations reported the same four unpublished files and two modified files among245local/241remote paths. The existing per-file implementation took32.4701715seconds and the final batch implementation2.1997987seconds. This single ordered pair measured a14.76xratio and30.27seconds less elapsed time. The legacy run came first and may have warmed the filesystem cache. It establishes this task's measured result only; total token, provider API and whole-project gains are unmeasured.
 
-The nonempty batch comparison uses five Git processes independent of shared-file count. The original algorithm launches one `git show` per shared file plus three discovery/ref calls. These process counts follow the executed algorithms; they are not provider API counts.
+The verifier uses four Git processes to locate both file sets and pin the commit, plus one `cat-file` process when there are shared blobs. It hashes committed payloads in chunks of at most 1 MiB under a single 120-second Git timeout. The 64 MiB limit per blob and the 256 MiB limit on total unique blob payload still apply.
 
-The focused suite has16cases. Fourteen passed and two Windows capability cases were skipped. Junction detection and resolved-path escape checks ran through mocks because the attempted real junction fixture was blocked by tool policy. Linux CI must exercise newline filenames and supported symlink creation. Independent review verified the final containment fix.
+Fourteen of the original 16 focused cases passed and two Windows capability cases were skipped. Junction detection and resolved-path escape checks ran through mocks because the attempted real junction fixture was blocked by tool policy. Linux CI must exercise newline filenames and supported symlink creation. Independent review verified the final containment fix. The suite also checks report equivalence, blob deduplication and cleanup of a stalled batch process.
 
 ## Controlled remeasurement of existing Git batching
 

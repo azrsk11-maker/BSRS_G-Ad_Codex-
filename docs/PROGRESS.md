@@ -1,3 +1,17 @@
+## Finance posting reconciliation — 27 November 2026
+
+The [optional offline posting adapter](../tools/website-tracking/commercial-system/README.md#reviewed-collection-posting-identities) binds a Finance-reviewed crosswalk to the complete sanitized input and an independently provided crosswalk hash. The baseline report suppressed same-ID replays. A replay with a new export ID overstated synthetic November net commission by AED950. The fixture removed the proven alias and preserved two distinct same-date, same-value installments. Reconciled close dates, installments, later refunds and allocation agree across Dubai month windows and their union. Actual Finance records, approved treatments and canonical posting evidence remain outstanding.
+
+## Faster exact worktree verification — 27 November 2026
+
+The worktree verifier now streams pinned Git blobs through one `cat-file` process. It retains bounded read chunks, the existing byte limits and a shared completion deadline. The benchmark checks the complete report and digest maps. Three paired Windows trials on the same 1,328-file checkout and 1,327 unique blobs reproduced all outputs. Git subprocesses fell from 11 to 5 in every pair. Median comparison time fell from 9.734 to 6.891 seconds, a 29.2 percent reduction in this workload. The measurements cover the repository check itself. Overall Codex latency, cost and token usage were outside the benchmark.
+
+## Commercial exposure and worktree memory — 27 November 2026
+
+The [standard Search exposure calculator](../tools/website-tracking/commercial-system/README.md#standard-search-budget-exposure) reconciles the historical AED2,000 and prepared off-plan AED2,500 average daily pools. Under the unchanged full-month model, those imply AED60,800 and AED76,000 monthly media exposure before VAT. Nine focused tests passed. Finance-approved ceilings and cash exposure still require [DEC-03](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/3); G050 remains open. No account setting or financial record changed.
+
+Three paired Windows runs on the same clean 1,419-file reference returned identical worktree reports and byte digests. Median Python peak working set fell from 429,727,744 to 86,126,592 bytes. Git subprocesses increased from five to eleven on that reference. The timing samples did not establish a wall-time benefit. The full local efficiency group returned 150 passes and three environment skips. The Windows test invocation preserved the inherited Git process environment without a persistent configuration change.
+
 ## Current strict intake and frozen-review preservation — 19 November 2026
 
 ## Isolated-lab dependency deadline recovery — 20 November 2026
