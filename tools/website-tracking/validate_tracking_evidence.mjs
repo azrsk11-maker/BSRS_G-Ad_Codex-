@@ -9,6 +9,11 @@ const METHODS = new Set(['NATIVE_ACCOUNT_READBACK', 'NATIVE_BROWSER_NETWORK', 'C
 const CLICK_EVENTS = ['cta_click','phone_click','whatsapp_click','email_click'];
 const OUTCOMES = ['conversation_verified','qualified_lead','mandate_signed','offer_submitted',
   'transaction_closed','commission_collected','viewing_booked','viewing_attended'];
+const VIEWING_POLICY = [
+  ['viewing_request','diagnostic'],
+  ['viewing_booked','intermediate_requires_goal_approval'],
+  ['viewing_attended','intermediate_requires_goal_approval']
+];
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const date = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(value) && Number.isFinite(Date.parse(value));
 
@@ -55,6 +60,13 @@ export function validateTracking(contract, acceptance, evidence = null) {
   const accepted = events.find(e => e.operational_event === 'form_accepted');
   require(accepted?.proposed_ga4_event === 'generate_lead' && accepted?.evidence_source === 'server_confirmed',
     'Accepted enquiry requires server-confirmed generate_lead mapping.');
+  for (const [name, biddingTreatment] of VIEWING_POLICY) {
+    const event = events.find(e => e.operational_event === name);
+    require(event?.proposed_ga4_event === name && events.filter(e => e.proposed_ga4_event === name).length === 1 &&
+      event?.bidding_treatment === biddingTreatment, `${name} requires its own GA4 mapping and ${biddingTreatment} treatment.`);
+  }
+  require(events.find(e => e.operational_event === 'viewing_request')?.evidence_source === 'server_confirmed',
+    'Viewing request requires server-confirmed capture.');
   for (const name of OUTCOMES) {
     const event = events.find(e => e.operational_event === name);
     const expected = name === 'commission_collected' ? 'finance_ledger' : name === 'conversation_verified' ?
