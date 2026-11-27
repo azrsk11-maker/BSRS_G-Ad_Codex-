@@ -334,3 +334,23 @@ python -B tools/offplan-lead-first/measurement-release/check_gtm_publication.py 
 ```
 
 The checker matches the version ID, exact reviewed bootstrap and its one page-view trigger. The current empty version, the draft export and a version with changed content all hold. A match checks the saved content against the recorded live version. Verify the observation's source separately and collect delivery and attribution evidence independently.
+
+## Canonical UAE provider evidence review
+
+Use `check_provider_receipt.py` with privately held projections and SHA-256 pins supplied by the reviewer. The configuration projection binds the exact `0.2.24` r2 package and canonical WordPress page, the owned GTM live export and pinned original capture, and the approved Secondary Ads action. Configuration alone returns `HOLD`. The dated R5 report also returns `HOLD`.
+
+```text
+python -B tools/offplan-lead-first/measurement-release/check_provider_receipt.py CONFIG CONFIG_SHA256 --gtm-export LIVE_EXPORT --gtm-observation LIVE_OBSERVATION --gtm-capture ORIGINAL_CAPTURE
+```
+
+For separately authorized review of a genuine event, add `--paid-receipt PAID --paid-sha256 PAID_SHA256 --excluded-test-capture ORIGINAL_DELIVERY_TEST_RECEIPT`. The [projection fields](check_provider_receipt.py) bind the exact UAE off-plan ad, a signed intake receipt and one attributed conversion on the approved native action. Use exact UTC timestamps and SHA-256 digests of the original case-sensitive click identifier and Ads transaction ID across the reviewed observations. Keep the original evidence private. The checker reads the pinned TEST receipt locally to exclude its transaction even if the paid projection mislabels it. Missing evidence or provenance, replay and a scope mismatch return `HOLD`.
+
+The three observations support different parts of the evidence review.
+
+- Google Ads API v26 `click_view.gclid` supports the click observation. It supplies a click identifier in the click reporting resource. [Click view field reference](https://developers.google.com/google-ads/api/fields/v26/click_view)
+- The browser transaction ID and its network `oid` parameter are send-side evidence that can be compared with the signed receipt. Google says transaction IDs are used to suppress duplicate conversions and are unavailable in Google Ads reports. [Google Ads transaction ID guidance](https://support.google.com/google-ads/answer/6386790)
+- Google Ads conversion reporting exposes aggregate metrics segmented by conversion action. Those metrics support action-level observation. One conversion in the aggregate and a matching browser transaction ID leave receipt-level attribution and deduplication unverified. [Google Ads API conversion reporting](https://developers.google.com/google-ads/api/docs/conversions/reporting)
+
+An ordinary aggregate report presented as the per-event provider observation returns `HOLD`. To record a separately pinned aggregate-only projection, use the same `--paid-receipt` and `--paid-sha256` options with schema `bsre.offplan.ads-action-aggregate.v1`. Supply `configuration_sha256` and an `aggregate` object with `account`, `action_id`, `observed_at_utc`, `source_evidence_sha256` and provenance `AUTHENTICATED_GOOGLE_ADS_AGGREGATE_ACTION_REPORT`. The result records the projection digest, leaves paid attribution unmatched and exits with `HOLD`.
+
+An exact paid evidence match requires independently verified originals that correlate the click, receipt and attributed provider event. Availability of a suitable transaction-level provider record remains open. Every result carries `launch_ready: false` and `activation_authorized: false`.
