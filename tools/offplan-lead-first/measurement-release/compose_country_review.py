@@ -28,6 +28,7 @@ PROFILES = {
     "english-country-recovery-0221": ("COUNTRY_RECOVERY_0221_REVIEW.json", "OFFPLAN_ENGLISH_COUNTRY_RECOVERY_0221_REVIEW_ONLY", 53, 53),
     "english-recovery-concurrency-0222": ("COUNTRY_RECOVERY_CONCURRENCY_0222_REVIEW.json", "OFFPLAN_ENGLISH_RECOVERY_CONCURRENCY_0222_REVIEW_ONLY", 53, 53),
     "canonical-runtime-query-0223": ("CANONICAL_RUNTIME_QUERY_0223_REVIEW.json", "OFFPLAN_CANONICAL_RUNTIME_QUERY_0223_REVIEW_ONLY", 53, 53),
+    "regional-intake-0224": ("REGIONAL_INTAKE_0224_REVIEW.json", "OFFPLAN_REGIONAL_INTAKE_0224_REVIEW_ONLY", 53, 59),
 }
 
 
@@ -75,8 +76,12 @@ def compose(base, review, profile="transport"):
                 raise ValueError("Invalid baseline member")
             files[path] = archive.read(member)
 
+    originals = files.copy()
     for path, change in review["changes"].items():
-        previous = files.get(path)
+        source = change.get("derived_from", path)
+        if "derived_from" in change and (path in originals or not isinstance(source, str) or source not in originals):
+            raise ValueError("Derived member must use an original source and a new destination")
+        previous = originals.get(source)
         expected = digest(previous) if previous is not None else None
         if path not in approved or expected != change["before"]:
             raise ValueError("Change identity does not match its preimage")
