@@ -42,6 +42,8 @@ jobs:
           php -l tools/offplan-lead-first/installed-localization/offplan-locale.php
           php -l tools/offplan-lead-first/installed-localization/offplan-locale.test.php
           php tools/offplan-lead-first/installed-localization/offplan-locale.test.php
+          php -l tools/offplan-lead-first/installed-localization/offplan-country-pages.php
+          php tools/offplan-lead-first/installed-localization/offplan-country-pages.test.php
       - name: Verify review-only measurement patch and rollback guards
         env:
           BSRE_SOURCE_ROOT: ${{ github.workspace }}

@@ -1,3 +1,15 @@
+## Country previews, local conversion receipt and restore boundary — 27 November 2026
+
+Drafted a shared English RSA set for the existing Germany, France and Taiwan parents. It contains 15 headlines and four descriptions bound to retained first-party wording. Eight draft checks passed. Final URLs and provider child IDs are unset. Local-language companions and the existing factual, staffing and provider holds remain in the review.
+
+The protected country-page component passed 18 native WordPress 7.1.5 scenarios and nine focused policy checks. All six authorized editor previews rendered. All six public requests and the missing-binding and wrong-ID cases returned a held response. Canonical off-plan, India and resale retained their expected native renderers. The original render trial exposed separate intake-path and measurement-eligibility gaps in public country aliases. The component keeps all six aliases in editor preview pending an end-to-end solution.
+
+The exact 0.2.15 local conversion fixture passed ten checks. A fictional native form reached a HMAC-verifying in-process mock. Its accepted event, linked SQLite capture and single local conversion command used the same transaction ID. Repeating submit on the completed page added zero requests or commands. This uses isolated vendor-loader substitutes and supplies no evidence of provider processing or across-session replay behavior.
+
+The real consent evidence export refused unauthorized clients and redacted expired or withdrawn evidence in the current synthetic database. An older synthetic snapshot without the later withdrawal made its original click evidence eligible again. The encrypted backup helper verified the archive and expiry and did not authorize restore. Require reconciliation of the current consent and deletion evidence before a restored site or export can reopen.
+
+Production pages and campaign settings stayed unchanged. The off-plan cohort remains paused at the existing AED2,500 aggregate average daily configuration.
+
 ## UAE child reconciliation and private international review — 27 November 2026
 
 The live Real Estate Ads view matched all 16 paused UAE off-plan keyword IDs, texts and match types to the pinned prior readback. The single paused RSA still uses the canonical off-plan URL. Google shows its policy as Approved and ad strength as Pending. Four direct campaign negatives produced zero local matches in 64 comparisons. Account-level negatives were empty, and the sole visible shared list applied to six legacy campaigns outside the off-plan release. The reusable prelaunch verifier checks the saved evidence and rejects resale scope, incomplete keyword rows, foreign destinations and conflicting exclusions. All 29 local draft checks passed, including the seven new checks.
