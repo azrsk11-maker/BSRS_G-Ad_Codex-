@@ -1,3 +1,13 @@
+## Five-route browser proof and live ad-group inventory — 27 November 2026
+
+The exact review package passed 65 local HTTPS and Chrome checks on WordPress 7.1.5 across UAE English, India English, German, French and Taiwan Traditional Chinese. Each page and both context routes returned HTTP 200. The same 13 fields, 15 option values, constraints and canonical intake route were preserved. Unknown consent kept optional measurement off, and the fixture sent no leads or provider events. The live host, other language variants and granted measurement remain open.
+
+The native WordPress 7.1.5 ZIP installation, upgrade and rollback matched 30, 49 and 30 members. All five shared English routes passed at each stage, and the disposable SQLite database preserved its synthetic accepted receipt and consent and rate data. Existing WordPress.org update observers were isolated from the offline regression. Production file identity, InnoDB and deployment acceptance remain open.
+
+The authenticated Real Estate Ads view reconciled 39 distinct ad-group IDs to all 39 displayed rows. Both children under the UAE Buyers parent are explicitly paused. Only its off-plan child is in the launch scope. The DE, FR, IN and TW campaign shells showed no children in this view. Build and review their paused children after verified destinations and eligible copy are available. The existing five-pool allocation remains AED2,500 average per day, and Ads shows no ads running.
+
+The 11 held UAE and Taiwan exclusions produced zero lexical matches across 3,900 scoped comparisons against retained and draft off-plan terms. All 17 matcher tests passed. The result leaves current inherited exclusions, matching in Google Ads and the full approval gate open. The worktree metadata speed trial returned identical digests for 1,328 files, but its changed step slowed from a 2.344s to a 2.582s median. The existing verifier stays in place.
+
 ## Off-plan release hold and native verification — 27 November 2026
 
 Reused the one approved labelled TEST and matched one intake row and one Marketing Inbox message to its two exact receipt IDs. The test was ineligible for measurement. No new submission, email resend or conversion occurred. The latest Chrome readback confirmed no ads running in account 573-038-4686. The approved accepted-enquiry action `7873290954` remains Secondary, Count One and AED0 fallback. Google reported `Conversion has never received data`.
