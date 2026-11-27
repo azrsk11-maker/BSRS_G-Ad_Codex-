@@ -65,6 +65,13 @@ class NoticePlacementTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "captured static article"):
                     self.compose()
 
+    def test_refuses_markup_hidden_from_the_xml_tree(self):
+        for token in ("<!-- comment -->", "<?review unsafe ?>", "<![CDATA[<p>Different HTML</p>]]>"):
+            with self.subTest(token=token):
+                self.page["content"]["rendered"] = self.original.replace("</article>", token + "</article>")
+                with self.assertRaisesRegex(ValueError, "markup declarations"):
+                    self.compose()
+
 
 if __name__ == "__main__":
     unittest.main()

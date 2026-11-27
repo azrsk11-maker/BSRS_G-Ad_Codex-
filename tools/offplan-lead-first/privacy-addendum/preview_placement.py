@@ -26,6 +26,7 @@ def preview(capture, expected_sha256, folder=HERE):
     require(set(content) == {"rendered", "protected"} and content["protected"] is False,
             "public rendered content is required")
     original = content["rendered"].encode("utf-8")
+    require(b"<!" not in original and b"<?" not in original, "notice contains markup declarations")
     root = ElementTree.fromstring(original)
     require(root.tag == "article" and root.get("class") == "bsre-enquiry-privacy", "notice wrapper differs")
     require(sum(node.tag == "h2" and node.text == "Your choices" for node in root) == 1

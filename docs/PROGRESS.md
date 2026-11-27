@@ -1,6 +1,6 @@
 ## English enquiry notice placement · 28 November 2026
 
-The public WordPress Pages readback confirmed published page `26761` and its existing “Your choices” heading. The offline composer places the exact English measurement addendum before that heading and preserves every byte of the surrounding rendered notice. Seven focused tests cover placement, capture and identity drift, wrong input scope, missing or repeated headings, duplicate disclosures and active markup. All six privacy drafts continue to verify. [Placement tool](../tools/offplan-lead-first/privacy-addendum/README.md#review-english-placement)
+The public WordPress Pages readback confirmed published page `26761` and its existing “Your choices” heading. The offline composer places the exact English measurement addendum before that heading and preserves every byte of the surrounding rendered notice. Eight focused tests cover placement, capture and identity drift, wrong input scope, missing or repeated headings, duplicate disclosures, active markup and declarations omitted by the XML parser. All six privacy drafts continue to verify. [Placement tool](../tools/offplan-lead-first/privacy-addendum/README.md#review-english-placement)
 
 The preview stays in review. The current editable WordPress page and rollback revision, exact placement approval, localized notice bindings, operational privacy acceptance and hosted release remain open.
 
