@@ -1,3 +1,13 @@
+## Off-plan release hold and native verification — 27 November 2026
+
+Reused the one approved labelled TEST and matched one intake row and one Marketing Inbox message to its two exact receipt IDs. The test was ineligible for measurement. No new submission, email resend or conversion occurred. The latest Chrome readback confirmed no ads running in account 573-038-4686. The approved accepted-enquiry action `7873290954` remains Secondary, Count One and AED0 fallback. Google reported `Conversion has never received data`.
+
+The exact review package passed seven rendering cases on official WordPress 7.1.5 with SQLite. WordPress unpacked and inspected both ZIPs, and all 49 forward and 30 rollback members matched. The separate isolated WordPress 7.1.4 Chrome fixture passed all 13 checks after normal plugin activation created the test schemas. The India form and both no-choice context routes returned HTTP 200. Optional purposes stayed off and no lead or conversion left the fixture.
+
+The existing English form still serves plugin 0.2.12. The public notice still lacks the reviewed preference-expiry disclosure and Google business data link. Hostinger remains at sign-in, so the exact installed-file and rollback verification remains open. Production conversion delivery, market readiness and independent review are unresolved. No off-plan page was newly published, no live settings changed, and the five prepared pools totaling AED2,500 average per day stayed paused.
+
+The separate commercial research pass verified 705 retained source rows and bound 320 conditional candidates to source evidence. All remain on hold and no positive keywords were admitted. Recent scoped Marketing checks recovered no new rehearsal results, and demonstrated staff capacity remains open.
+
 ## Live pause verification, archive review and negative corpus — 27 November 2026
 
 The authenticated Ads table for 573-038-4686 contained 24 distinct campaigns, with 21 paused, three removed and zero enabled. The five prepared pools reconcile to AED2,500 average per day. A fresh WordPress Enquiries reload showed the published English off-plan page and the master, Analytics and Ads measurement switches off. The site reported WordPress 7.1.5 and the active enquiry plugin 0.2.12.
