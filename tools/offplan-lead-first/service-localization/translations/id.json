@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Beli properti sekunder di Dubai",
+    "rent": "Cari properti untuk disewa di Dubai",
+    "sell": "Jual properti Anda di Dubai",
+    "let": "Sewakan properti Anda di Dubai",
+    "hub": "Pertanyaan seputar properti Dubai"
+  },
+  "page_intros": {
+    "resale": "Beri tahu kami kawasan dan jenis properti yang Anda pertimbangkan di Dubai, total anggaran Anda, dan kapan Anda berencana membeli. Pastikan ketersediaan dan detail pembelian sebelum memutuskan.",
+    "rent": "Sampaikan kawasan dan jenis properti yang Anda inginkan, anggaran sewa tahunan, dan kapan Anda perlu pindah. Pastikan ketersediaan dan ketentuan sewa sebelum menyetujuinya.",
+    "sell": "Beri tahu kami tentang properti Anda, kewenangan Anda untuk mewakili pemilik, dan kapan Anda ingin menjualnya. Tim kami akan membahas detailnya bersama Anda.",
+    "let": "Beri tahu kami tentang properti Anda, kewenangan Anda untuk mewakili pemilik, dan kapan properti tersedia. Tim kami akan meninjau rencana penyewaan Anda.",
+    "hub": "Pilih jenis pertanyaan properti yang sesuai dengan rencana Anda."
+  },
+  "extra_form": {
+    "ready": "Kolom bertanda * wajib diisi.",
+    "property_area": "Kompleks / kawasan properti *",
+    "annual_budget": "Anggaran sewa tahunan (AED) *",
+    "annual_budget_help": "Masukkan jumlah untuk satu tahun. Formulir ini tidak menetapkan anggaran minimum.",
+    "rent_timing": "Kapan Anda perlu pindah? *",
+    "rent_now": "Segera / pindah sekarang",
+    "month_30": "Dalam 30 hari",
+    "rent_later": "Nanti / masih mencari",
+    "sale_timing": "Target waktu penjualan",
+    "sale_now": "Sesegera mungkin",
+    "sale_90": "Dalam 3 bulan",
+    "sale_later": "Nanti / masih membahas pilihan",
+    "let_timing": "Perkiraan waktu properti tersedia",
+    "let_now": "Kosong / siap dibahas sekarang",
+    "let_30": "Diperkirakan dalam 30 hari",
+    "let_later": "Nanti / tanggal akan dibahas",
+    "authority": "Kewenangan Anda *",
+    "owner": "Saya pemilik properti",
+    "representative": "Saya diberi kuasa oleh pemilik properti",
+    "property_details": "Detail properti *",
+    "letting_details": "Detail properti dan penyewaan *",
+    "resale_other": "Kebutuhan properti lainnya",
+    "rent_other": "Kebutuhan sewa lainnya",
+    "property_hint": "Gedung atau kompleks, jumlah kamar tidur, perkiraan luas, dan status hunian."
+  },
+  "keyword_intents": {
+    "resale": [
+      "beli apartemen sekunder dubai",
+      "beli properti sekunder dubai",
+      "rumah sekunder dijual di dubai",
+      "properti sekunder dubai",
+      "properti pasar sekunder dubai",
+      "apartemen sekunder dubai",
+      "rumah sekunder dubai",
+      "properti sekunder dijual di dubai",
+      "vila sekunder dubai"
+    ],
+    "rent": [
+      "apartemen disewakan di dubai",
+      "rumah disewakan di dubai",
+      "properti sewaan dubai",
+      "properti disewakan di dubai",
+      "apartemen siap huni disewakan di dubai",
+      "sewa apartemen dubai",
+      "sewa vila dubai",
+      "vila disewakan di dubai"
+    ],
+    "sell": [
+      "agen jual properti dubai",
+      "pasang iklan jual properti dubai",
+      "jual apartemen saya di dubai",
+      "jual rumah saya di dubai",
+      "jual properti saya di dubai",
+      "jual vila saya di dubai"
+    ],
+    "let": [
+      "sewakan properti saya dubai",
+      "agen penyewaan properti dubai",
+      "pasang iklan sewa properti dubai",
+      "sewakan apartemen saya di dubai",
+      "sewakan properti saya di dubai",
+      "sewakan vila saya di dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

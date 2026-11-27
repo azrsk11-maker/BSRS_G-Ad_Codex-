@@ -9,7 +9,6 @@ import sys
 import tempfile
 import threading
 import time
-from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
 
@@ -132,7 +131,7 @@ class Cases(unittest.TestCase):
         receipt = {"discovered": [identity], "successful": True, "tests_run": 1,
                    "failures": 0, "errors": 0, "skipped": 0, "expected_failures": 0, "unexpected_successes": 0}
         paths["receipt"].write_bytes(runner.encoded(receipt))
-        result = runner.collect("test_synthetic", [identity], SimpleNamespace(returncode=0), paths)
+        result = runner.collect("test_synthetic", [identity], 0, paths)
         self.assertFalse(result["complete"])
         self.assertFalse(result["passed"])
 
@@ -143,6 +142,63 @@ class Cases(unittest.TestCase):
                                ("unexpected_success", {"unexpected_successes": 2})):
             with self.subTest(status=status):
                 self.assertFalse(runner.consistent_outcome({"status": status, **zero, **counts}))
+
+    def test_history_pair_scheduling_requires_one_worker_and_canonical_sources(self):
+        bank, front = runner.HISTORY_PAIR
+        expected = {front: ["front"], bank: ["bank"], "test_other": ["other"]}
+        canonical = runner.ROOT / "tools/keyword-system"
+        separate = [(front,), (bank,), ("test_other",)]
+        with patch.object(runner, "pair_sources_match", return_value=True):
+            self.assertEqual(list(runner.scheduled_jobs(canonical, expected, 1)),
+                             [(bank, front), ("test_other",)])
+            self.assertEqual(list(runner.scheduled_jobs(canonical, expected, 2)), separate)
+            self.assertEqual(list(runner.scheduled_jobs(self.folder, expected, 1)), separate)
+        with patch.object(runner, "pair_sources_match", return_value=False):
+            self.assertEqual(list(runner.scheduled_jobs(canonical, expected, 1)), separate)
+
+    def test_pair_terminal_evidence_preserves_independent_outcomes(self):
+        members = runner.HISTORY_PAIR
+        expected = {name: [f"{name}.Cases.test_one"] for name in members}
+        for index, name in enumerate(members):
+            paths = runner.job_paths(self.folder, name)
+            for key in ("stdout", "stderr"):
+                paths[key].write_bytes(b"")
+            identity = expected[name][0]
+            counts = dict.fromkeys(runner.COUNTS, 0)
+            counts["failures"] = index
+            events = [{"event": "start", "id": identity},
+                      {"event": "finish", "id": identity, "status": ("passed", "failure")[index], **counts}]
+            paths["events"].write_bytes(b"\n".join(map(runner.encoded, events)))
+            paths["receipt"].write_bytes(runner.encoded({
+                "discovered": [identity], "successful": not index, "tests_run": 1, **counts,
+            }))
+
+        terminal = self.folder / "finished.json"
+        terminal.write_bytes(runner.encoded(dict(zip(members, (0, 1)))))
+        results = runner.collect_job(self.folder, members, expected, 1, 1.0)
+        self.assertTrue(results[members[0]]["passed"])
+        self.assertTrue(results[members[1]]["complete"])
+        self.assertFalse(results[members[1]]["passed"])
+
+        for malformed in (list(members), {members[0]: 0}, dict.fromkeys(members, 0)):
+            terminal.write_bytes(runner.encoded(malformed))
+            results = runner.collect_job(self.folder, members, expected, 1, 1.0)
+            self.assertFalse(any(row["passed"] for row in results.values()))
+        terminal.unlink()
+        results = runner.collect_job(self.folder, members, expected, 0, 1.0)
+        self.assertFalse(any(row["passed"] for row in results.values()))
+
+    def test_reused_front_cannot_pass_without_verified_bank_receipt(self):
+        bank, front = runner.HISTORY_PAIR
+        expected = {bank: [runner.BANK_SAVED_CASE_ID], front: [f"{front}.Cases.test_one"]}
+        (self.folder / "finished.json").write_bytes(runner.encoded(dict.fromkeys(expected, 0)))
+        results = [
+            {"passed": False, "expected": expected[bank], "receipt": {}},
+            {"passed": True, "expected": expected[front], "receipt": {"history_reused": True}},
+        ]
+        with patch.object(runner, "collect", side_effect=results):
+            readback = runner.collect_job(self.folder, runner.HISTORY_PAIR, expected, 0, 1.0)
+        self.assertFalse(readback[front]["passed"])
 
     def test_full_identity_receipts_are_unique_ignored_files_with_bound_digests(self):
         report = {"modules": [], "summary": {"passed": False}}

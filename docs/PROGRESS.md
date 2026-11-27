@@ -1,4 +1,318 @@
-## Current strict intake and frozen-review preservation — 19 November 2026
+## Keyword suite fixture trials — 28 November 2026
+
+Fresh date-specific history supported 175 original cases across twelve suites with zero skips. The 76-case group ran in 209.230 seconds and the 99-case group ran in 226.786 seconds. Their 436.015-second serial total is already above the 300-second aggregate gate. All 792 case identities remain discoverable. The default Foundation suite and actual multi-worker acceptance remain open. [Evidence scope and remaining cases](../tools/efficiency/README.md#date-specific-keyword-fixture-trials--28-november-2026)
+
+## Negative research composition gate — 28 November 2026
+
+The existing 120-second Foundation composition check passed locally in 117.278 seconds. The new entry point builds each of the 14 reviewed stages once, compares all pinned stage documents before handoff, and retains the original verifier for changed source bytes or a separate checkout. The independent comparison matched the complete input fingerprint and final report for 14,000 research rows, 19,115 protections and zero computed conflicts. The full efficiency group passed 164 tests with three platform skips. Full Foundation, exclusion applicability and approval remain separate gates. [Method and measured headroom](../tools/efficiency/README.md#current-negative-research-composition--28-november-2026)
+
+## Default single-worker keyword scheduling — 28 November 2026
+
+The contained scheduler now reuses verified bank history for the front-office tests when one worker is selected and the exact source pins match. Each suite runs and reports its own cases. The parent rejects a reused result if the bank receipt fails validation. The reviewed integration ran all 28 pair cases in 141.684588 seconds, with zero skips, and confirmed unchanged discovery of 59 modules and 792 cases. The complete efficiency group ran 163 tests with 160 passes and three platform skips. The required full Foundation run remains open, including the separately timed negative composition gate. [Verification and scope](../tools/efficiency/README.md#default-single-worker-keyword-scheduling--28-november-2026)
+
+## Verified keyword history reuse — 27 November 2026
+
+The 28 unchanged bank and front-office cases passed in both arms, with matching original case IDs, verified intermediate histories and saved report digests. The private same-process reuse ran in 124.482015 seconds versus 236.472123 seconds for the original separate history setup, a measured 111.990108-second reduction in this ordered local comparison. The existing pest/pool profile's single documentation pin was refreshed and its 479-file `--inspect` passed. Full Foundation still requires all 792 current keyword cases under the existing checks. [Method and limits](../tools/efficiency/README.md#fresh-bank-and-front-office-test-histories--27-november-2026)
+
+## Finished local Foundation run and Windows test fix — 27 November 2026
+
+The complete local Foundation run at `77ad1e10c349940a2ba6b703cd31aa3851c09437` used PHP 8.2.36 and passed 140 of 143 checks in 634.263498 seconds. The report retains both keyword timeouts under the original limits and a Windows Git initialization failure in the efficiency suite. A disposable Git probe reproduced the error after a runner-observation test changed the process environment. The corrected tests keep environment changes local to the observation module. Normal standalone efficiency discovery then passed 151 tests with three platform skips. Full Foundation was run once. [Timing and verification details](../tools/efficiency/README.md#optional-foundation-progress-journal--27-november-2026)
+
+The exact `0.2.20` French and Traditional Chinese forward forms passed 43 checks over 11 disposable WordPress CGI requests in 65.616 seconds. Each retained all 13 form fields, 15 option values, localized assets and one signed local TEST receipt. Optional measurement stayed off on both localized routes with their English companion choices configured. No vendor activity occurred. The first fixture attempt stopped during cold startup; the verified trial used a higher local CGI startup bound and unchanged archive bytes and assertions. [Scope and remaining acceptance](../tools/offplan-lead-first/measurement-release/README.md#country-consent-choice-token-review)
+
+## Foundation interruption diagnostics — 27 November 2026
+
+The [optional Foundation progress journal](../tools/efficiency/README.md#optional-foundation-progress-journal--27-november-2026) flushes sanitized outcomes during the existing check sequence. A controlled 14-second cutoff retained 34 events, including 16 completed checks and the next started check, without recording aggregate acceptance. The complete efficiency suite ran 154 tests with three environment skips. A compared keyword parsing change produced identical records and reports but showed no wall-time improvement, so the original code and pins were restored. The full current Foundation result remains unverified.
+
+## Five-market Ads activation scope checks — 27 November 2026
+
+The [activation scope checker](../tools/offplan-lead-first/native-paused/README.md#five-market-activation-scope-readback) checks staged, serving and rollback observations against the complete frozen roster, each of the five AED2,500 average daily budget allocations, and the exact selected off-plan group IDs. It checks visible Search settings and the UAE resale pause. Each later stage must use the recorded scope and reference hashes, preventing a narrower rollback from omitting an earlier market. The checker reports the enabled parents' configured amount separately from the five allocated amounts.
+
+The latest authenticated UAE settings panel showed AED1,000 average per day, Paused, Maximize Clicks and Account-default with no goals added. The All-status selector listed off-plan and resale. Computer Use stopped before the complete ad-group table, leaving the fresh group-ID and explicit-status readback open. No campaign settings were saved. The checker supports release verification while eligibility and authorization are established separately.
+
+## Public UAE asset and Ads attribution readback — 27 November 2026
+
+The published English off-plan page returned HTTP 200. Its 13 form fields and 15 option values match the retained template. All six declared public asset bodies match the exact `0.2.12` rollback members by length and SHA-256. Four asset requests were CDN hits and two were misses. All six advertised a seven-day cache life. The initial response blocks frames and references no Google tag. This public check supports the six asset identities. Hostinger raw PHP, opcache, database and complete rollback acceptance remain separate checks.
+
+Real Estate auto-tagging is enabled. A script-free request with Google's documented synthetic marker returned HTTP 200 directly at the canonical off-plan route. The marker stayed in the request URL and was absent from the response body. The approved action `7873290954` remains Website, Secondary, Count One and AED0 fallback. Its current Tag Manager ID and label hash match the pinned WordPress destination. The manual event still shows the `lplife` source label and Google reports it has never received data. The additional data-source beta control is visible. Its availability does not establish a supported single-producer replacement. No data source was connected, no event was sent, and no production settings changed. [Google auto-tagging](https://support.google.com/google-ads/answer/3095550?hl=en) · [Redirect diagnostic](https://support.google.com/analytics/answer/13367418?hl=en) · [Data-source beta requirements](https://support.google.com/google-ads/answer/17111689?hl=en)
+
+## UAE release and staff evidence checks — 27 November 2026
+
+The [UAE scope checker](../tools/offplan-lead-first/native-paused/README.md) compares the full campaign inventory and exact Buyers child statuses at staging, enablement and rollback. Resale must be explicitly paused in each stage. The two archived child readbacks returned `HOLD` because they lack the complete all-status parent view. The [GTM publication checker](../tools/offplan-lead-first/measurement-release/README.md#published-gtm-export-readback) matches a pinned live-version observation to the exact reviewed bootstrap export. The saved empty version returned `HOLD`.
+
+The [staff activation packet](audit/STAFF_REHEARSAL_WORKSHEET.md) now binds the first-contact timing counts and maximum to the sanitized calculator output. Actual rehearsal evidence, the owner-reviewed representative sample and acceptance remain open. No production publication, Ads changes, enquiry or conversion were made.
+
+## Paid-click attribution and live release readback — 27 November 2026
+
+The authenticated WordPress plugin list still reports `0.2.12`. The dedicated Tag Manager Versions screen shows its empty version 1 as live. A script-free HTTP HEAD check returned 200 for the canonical English off-plan path and 404 for the four English review destinations in Germany, France, India and Taiwan. The open Real Estate Ads view reported that no ads are running. No pages, tags, campaign settings or budgets changed, and the already reconciled TEST was left untouched.
+
+The exact forward `0.2.20` archive passed 43 native assertions across 22 disposable WordPress requests with no lead or provider transmission. The four consented country routes accepted the clean iframe query and denied a query containing click IDs. The canonical runtime accepted each allowlisted identifier independently with the canonical Ads grant. The new Chrome storage observation was incomplete. The earlier exact `0.2.17` Chrome proof remains the browser evidence for opaque-origin isolation. Paid-click matching needs a supported capture and transport design, reviewed disclosures and genuine Google-side evidence. [Attribution boundary](../tools/offplan-lead-first/measurement-release/README.md#paid-click-attribution-boundary)
+
+## Concurrent English recovery candidate — 27 November 2026
+
+The [0.2.22 r3 review](../tools/offplan-lead-first/measurement-release/README.md#concurrent-english-country-recovery-review) reproduces the 53-member archive. The staged English retry takes a nonblocking lock tied to the capture UUID. An independent MariaDB session observed lock ownership while the first request waited for the local receiver. The same-ID contender preserved its retry and made no receiver call. The separate UUID progressed, and the linked receipt returned locally on replay. Receipt and pending updates each check ownership in the same statement. The hosted lock domain, recovery cutover and release approval remain open.
+
+## Native recovery for staged English enquiries — 27 November 2026
+
+The [0.2.21 recovery review](../tools/offplan-lead-first/measurement-release/README.md#english-country-intake-recovery-review) reproduced a 53-member intake-only archive. Native WordPress passed 106 checks across 42 requests in 121.630 seconds, including exact package changes from `0.2.19` r2 through `0.2.20` and restoration of three staged receipt identities. Each original request produced one durable synthetic receipt. Repeating an accepted request produced zero additional receiver calls. Six exact browser-script retry cases passed in simulation. The concurrent staged retry race and live Hostinger acceptance remain open.
+
+## Separate country consent-choice token — 27 November 2026
+
+The [0.2.20 review](../tools/offplan-lead-first/measurement-release/README.md#country-consent-choice-token-review) separates intake and consent-choice CSRF tokens while preserving the signed form body. Twelve native CGI requests and 31 checks verified the wrong-purpose denials, route binding, valid grant, disabled measurement and one preserved local signed TEST receipt. Eleven focused PHP checks covered page, session and expiry. No provider requests reached Google. The package remains a private review prior to hosted acceptance and recovery verification.
+
+## English country Ads measurement candidate — 27 November 2026
+
+The [0.2.19 review](../tools/offplan-lead-first/measurement-release/README.md#english-country-ads-measurement-review) adds route-bound Ads measurement for the English Germany, France and Taiwan destinations. Nine changes reproduce the exact 53-member package. Browser-script checks verified separate consent panels, default denial and no alias writes to the shared click-history store. Turning off a previously consented route's deployment binding blocked its measurement and preserved a signed synthetic intake in the native fixture. Real locale consent, paid-click attribution, provider verification and release recovery remain open.
+
+## Exact off-plan rollback and native English prerequisites — 27 November 2026
+
+The [updated release checker](../tools/offplan-lead-first/measurement-release/README.md#combined-0218-evidence-check) bound 18 inputs in 0.103 seconds. It verified the current package's native measurement, attribution and cross-version retry evidence while retaining the predecessor's exact evidence separately. The exact 0.2.12→0.2.18→0.2.12 Chrome trial passed seven gates in 90.291 seconds. Four lead requests yielded two durable synthetic receipts with unchanged identities and zero external transmissions.
+
+Germany, France and Taiwan's three proposed English routes each rendered the existing native form when bound to a disposable CMS page, and returned inert HTTP 503 after the bindings were removed. Forty checks passed in 66.353 seconds. Native headings and opening wording differ from the held previews. The live destination review must bind the actual copy, canonical URL, CMS ID and complete locale-specific conversion behavior. The live release remains held.
+
+## Search language delivery and UAE campaign detail — 27 November 2026
+
+Google removed manual Search campaign language criteria in September 2026. The five blank language cells and the UAE detail view are consistent with that change. The active review now requires exact English ads, keywords and native destinations in every market, plus reviewed regional equivalents. The older campaign-only CSV remains historical evidence. The generated review still contains four draft native pages, 124 proposed keyword placements and 76 RSA assets. Thirty-five scoped checks passed. [Google Ads language criteria](https://developers.google.com/google-ads/api/docs/targeting/criteria#language_targeting_criteria)
+
+The paused UAE Buyers detail confirmed United Arab Emirates presence only and a checked AED20.00 Maximize Clicks bid limit. Both panels were closed through Cancel. The scope remains held for reviewed serving content, staffing, provider conversion acceptance and Hostinger release evidence.
+
+## Complete paused-account readback and exact tracking replay — 27 November 2026
+
+The authenticated Ads Settings grid displayed 24 distinct campaign IDs, with 21 paused and three removed. The five exact off-plan pools still total AED2,500 average daily. The visible networks are Google Search only, AI Max and expansion are off, and the grid shows no positive bid adjustments. UAE matches the `10:00–19:00` Dubai plan. The four international shells have no ad groups and show an all-day schedule. The five language cells are unreported. A [read-only checker](../tools/offplan-lead-first/check_ads_settings_readback.py) binds the capture and can compare the exact paused and removed roster later. No live changes occurred.
+
+The exact 53-member `0.2.18` review also passed 11 native fixture gates, four Chrome observations and three CSP checks. The isolated native form attempted one synthetic receipt, produced one inert Analytics and one inert Ads command, and suppressed the duplicate. Withdrawal retired both runtime frames. Vendor transmissions were zero. Actual provider and Hostinger acceptance remain open.
+
+## Off-plan attribution continuity and CTA diagnostics — 27 November 2026
+
+The [0.2.18 review](../tools/offplan-lead-first/measurement-release/README.md#attribution-continuity-and-cta-diagnostics) reconciles seven changed members against the pinned 53-member predecessor. Five actual client scripts passed seven isolated navigation and consent scenarios apiece. Clean internal navigation now retains the latest permitted analytics touch. The independently verified opaque-frame runtime mapped the phone diagnostic to `phone_click` and retained `whatsapp_click`. Fourteen Chrome check groups passed with zero vendor transmissions or lead submissions. The previously approved delivery TEST remains excluded from measurement.
+
+## Browser retry and multilingual off-plan research — 27 November 2026
+
+An isolated Chrome form preserved its request body and original receipt across both exact native plugin replacements. Two acknowledgement faults and two same-form retries generated exactly four lead POSTs and two durable synthetic records. Seven checks passed in 118.202 seconds. External transmissions were zero. The combined preflight now checks 14 artifacts in 0.253 seconds and returns `HOLD` for live release.
+
+The Germany German native Planner export matched four existing seed phrases to eight held placements. One historical average estimate was populated, three were empty, and all bid and monthly series cells were empty. The report returned zero new ideas. The private research record retains the observed market, language and search network.
+
+The five-market exclusion screen found zero local collisions in the tested scopes and identified eight held UAE proposals with campaign-wide scope that also reaches the paused resale child. The opt-in reviewer preserves Indic combining marks and gives ambiguous Han text an explicit hold. The replay checked 2,868 placement pairs and preserved the frozen 14,000-record source digest. Provider matching and exclusion approval remain open.
+
+## Combined off-plan release evidence check — 27 November 2026
+
+One [offline verification command](../tools/offplan-lead-first/measurement-release/README.md#combined-0217-evidence-check) now binds the exact `0.2.17` and `0.2.12` archives, native browser and rollback results, exported GTM draft and recovery version, direct REST and HTTPS retry proofs, reconciled delivery-only TEST and five-market hold. It reproduced the reviewed archive and reconciled 13 private inputs in 0.349 seconds. All 46 scoped tests passed, including 12 new tests. Requiring launch readiness returned `HOLD` and exit code 3. Authenticated Hostinger bytes and live acceptance remain open.
+
+The exact native loopback HTTPS retry run passed 25 assertions and 17 certificate-verified TLS requests across upgrade and rollback in 101.625 seconds. Eleven signed attempts produced six durable synthetic records. The exact retries retained their IDs and changed bodies were rejected before relay. All local listeners and workers exited. No requests reached the live site or receiver.
+
+## Installed plugin recovery comparison — 27 November 2026
+
+The [offline Hostinger preimage check](../tools/offplan-lead-first/measurement-release/README.md#installed-hostinger-plugin-comparison) verifies a scoped plugin download against all 30 exact retained rollback members. It validates both input hashes and rejects path, roster and byte drift without extracting files or reading unexpected members. Ten new tests and 24 existing measurement tests passed. A separate repack of the exact retained reference matched all 30 files in 0.041 seconds. The live Hostinger tab still requires account sign-in for the original capture.
+
+## Owned-funnel GTM release and recovery evidence — 27 November 2026
+
+The authenticated export selector captured 5 of 5 objects in live GTM version 1 and 7 of 7 in Default Workspace 2. Version 1 retains the five default built-ins. The draft adds precisely the existing guarded Custom HTML bootstrap and its Page View trigger. The [offline export verifier](../tools/offplan-lead-first/measurement-release/README.md#captured-gtm-draft-and-recovery-version) matched both full exports to the capture and exact `0.2.17` review archive. Sixteen synthetic verifier tests and eight composer tests passed. The provider exports remain private.
+
+Chrome executed the original exported inline bytes against the two exact review archives over loopback. The `0.2.16` frame policy blocked the three activation attempts. The `0.2.17` frame passed four valid cases and denied both the wrong nonce and the missing nonce. The baseline passed 25 checks in 2.046 seconds. The successor passed 46 checks in 2.663 seconds. External transmission, provider changes and publication were zero. Live release acceptance remains open.
+
+## GTM bootstrap compatibility and positive research — 27 November 2026
+
+The authenticated owned-funnel GTM container still publishes an empty version. The sole pending tag is the inline runtime bootstrap with a Page View trigger. Google Ads still reports the approved accepted-enquiry action as misconfigured and has never received a tag ping or attribution data. The `0.2.17` review adds a fresh CSP nonce to the isolated frame and propagates it to the dynamic loader. This changes only the cache version and the runtime's PHP and JavaScript. The [exact composer](../tools/offplan-lead-first/measurement-release/README.md#gtm-bootstrap-csp-nonce-review) reproduced the package and all eight focused composer tests passed.
+
+In Chrome, the exact `0.2.16` frame policy blocked the inline activation in three cases. The `0.2.17` change allowed it in four correctly nonced cases and rejected both missing and wrong nonces. All six successor renders issued distinct nonces. Browser policy continued to deny access to the parent document and cookies. The focused fixture exercised the exact PHP render and JavaScript with synthetic authorization and zero vendor transmissions.
+
+The exact `0.2.17` archive then passed the full native WordPress and Chrome flow. Both opaque frames matched the response, runtime, GTM loader and inline bootstrap nonce. The signed receipt generated one inert command per eligible purpose and the duplicate generated none. Withdrawal retired both frames at the 37 ms observation. All 53 installed members and seven asset keys matched. The 80.223-second isolated run captured zero vendor transmissions and removed its fixture.
+
+The exact `0.2.16` archive also passed the full native Chrome flow with separate purpose-specific fixture workers. Both signed leases arrived within the unchanged five-second deadline. One synthetic signed intake and one inert command per permitted purpose passed, the duplicate emitted no additional command and withdrawal retired both frames. This proves the local HTTP and browser path with inert vendor scripts. Provider publication and actual acceptance remain open.
+
+The retained October Search terms comparison verified 59 historical identities across 74 occurrences. It isolated 43 prior positive hypotheses outside the earlier seller sample with no exact match in the named input cohorts. Two explicit off-plan context holds stayed held. No new queries were acquired or admitted. Five focused checks reproduced the private receipt. Indexed comparison had a median of 2.3 ms against 103.2 ms for repeated scans across seven paired trials, with identical results and file I/O excluded.
+
+## Combined off-plan review and native staging rehearsal — 27 November 2026
+
+The [combined 0.2.16 profile](../tools/offplan-lead-first/measurement-release/README.md#combined-off-plan-review-and-rollback) reproduced the exact 53-member candidate. A native local WordPress 7.1.5 upgrade and rollback matched every installed byte in 68.405 seconds. Six shared asset keys rotated and reverted. The wrong archive and one altered installed file were rejected before the installer ran. A read-only HTTPS check of the public canonical form returned 200 and matched the six served `0.2.12` asset hashes to the retained rollback package. Measurement remains off on that page. Two exact-package Chrome runs confirmed the cache keys and reached the five-second lease deadline before intake. The warm preflight missed the test's headroom threshold, leaving combined browser intake acceptance open. Complete Hostinger file readback and live release acceptance remain open.
+
+A separate disposable native staging exercise bound ten off-plan locale previews to the existing planning and form contracts. Twenty-one WordPress checks verified creation and exact readback of an inert German draft. Update, publish, unmanaged-route and duplicate-ownership cases were refused. The recorded public UAE route and India draft kept their holds. Five manifest and eight compiler tests passed. Live page identities and publication approval remain separate.
+
+## Canonical measurement isolation and cache rehearsal — 27 November 2026
+
+The [owned off-plan frame review](../tools/offplan-lead-first/measurement-release/README.md#owned-off-plan-frames-and-cache-version-rehearsal) extends the measured German boundary to the canonical page's Analytics and Ads frames. Chrome verified distinct purpose leases, blocked access to form and cookie data, preserved the permitted synthetic click only in the Ads URL, and captured query-free measurement commands. Duplicate submission emitted no extra request or command. Withdrawal retired both frames. No data reached a vendor during the 66.920-second run.
+
+A distinct native WordPress rehearsal changed exactly two bytes on the separately tested German base to make version `0.2.16`. Six cache keys moved to the new version and returned to the old key on exact downgrade. Held application data and the other 52 members stayed byte-identical. A wrong archive was refused before installation. This result covers the version-only artifact in the local fixture.
+
+The positive provenance guard verified 14 historical Planner references for eight held UAE placements. Of 3,266 held localized placements, 272 had wording matches without market-scope evidence and 2,986 had no exact match in the named captures. The guard kept all of them out of admission, approval and deployment. No new evidence of local demand was inferred.
+
+## Chrome delivery, native rollback and staffing sensitivity — 27 November 2026
+
+The [isolated German frame review](../tools/offplan-lead-first/measurement-release/README.md#isolated-german-measurement-frame) passed Chrome and local WordPress checks with the exact 53-member archive. The inert script observed an opaque origin, denied reads of the form, parent and frame cookies, and an absent bootstrap configuration. The parent performed the scoped lease renewal. One synthetic accepted receipt emitted one allowlisted, query-free local conversion command, and withdrawal removed the frame. External sends were zero. Live Google behavior in this frame remains unverified.
+
+The exact German lineage candidate passed the local Chrome receipt test with an HMAC-verifying receiver and inert provider stubs. The original delivery and retry across withdrawal and regrant preserved one event ID and emitted zero measurement commands. A fresh accepted receipt emitted one query-free inert command with its linked event ID. The separate native installer rehearsal verified every byte through the 30→53→53→51→30 sequence and kept the synthetic receipt and withdrawal stable. A wrong archive and installed one-file drift both failed before the installer. Earlier rollback packages still need retry compatibility assessment, and actual Hostinger and Google acceptance remain open.
+
+The staff rehearsal calculators distinguished daily completion from response time in the synthetic workload replay. Two scenarios each completed 300 items with no closing backlog. The opening burst produced 279 late first attempts while the spread scenario had none. A separate 345-per-day sensitivity left 42 pending after two days. Actual workload records and rehearsal acceptance remain independently required.
+
+## German capture consent evidence and release preflight — 27 November 2026
+
+The [capture lineage successor](../tools/offplan-lead-first/measurement-release/README.md#original-consent-receipt-on-a-german-capture) binds a new German capture to the actual consent receipt under InnoDB locks. The existing planner classified the submitted choice and withdrawal history as protected and recognized two overdue rows for an independent unsubmitted choice. A stale choice or missing history could not stage optional evidence. Same-body and changed-body behavior and country retry ownership passed on the exact 53-member setup. Production retention and advertising acceptance remain held.
+
+The exact successor passed 12 native WordPress HTTPS checks with a local receiver that verified the existing signed wire. While the receiver held its first acknowledgement, the prior granted choice was withdrawn and a fresh grant committed. The delayed acknowledgement linked the original receipt and excluded measurement. The byte-exact replay retained one event ID, and a fresh enquiry under the new choice passed the local eligibility check. The mock retained two deduplicated records. External provider acceptance remains open.
+
+An eight-check private release preflight also reproduced the prior exact ordered-consent archive and bound its local receipts to the retained rollback, WordPress and paused Ads evidence. Its launch-readiness command returned six open gates. The previous single TEST was verified for delivery with measurement excluded. This audit used dated saved evidence.
+
+The complete 14,000-row negative research corpus was also reconstructed and matched its frozen digest. The lexical screen found zero matches in seven defined cohorts, including the saved UAE off-plan terms and 5,033 held positive candidates. Controls reproduced the 58 known commercial matches and agreed with 336,000 direct matcher evaluations. Live provider matching, binding for the rental planning scope, and approval remain open.
+
+## Ordered consent and session renewal — 27 November 2026
+
+The [ordered German consent review profile](../tools/offplan-lead-first/measurement-release/README.md#ordered-german-consent-and-session-renewal) reproduces the exact 53-member successor. The local browser fixture passed 24 Chrome and eight fixture checks for peer retirement, stale grant rejection, overlapping withdrawal acknowledgements and confirmed preferences across temporary session renewal. The separate native MariaDB fixture observed the stale transaction waiting on the withdrawal's row and verified rejection without history changes. Fifty-three package hashes matched the reviewed manifest. Three additional script checks verified fallback and page restoration behavior. Local fixtures sent no enquiries or Google events. Live Hostinger, provider attribution, approved disclosures and independent review remain open.
+
+## Paused campaign construction and native route reconciliation — 27 November 2026
+
+The private construction audit joins the saved five off-plan campaign pools totaling AED2,500 average per day with seven English and local-language RSA review slots, 336 exact or phrase review placements, and 46 separately held Hindi placements. The saved UAE off-plan child has 16 paused keywords and one paused RSA. The four international parents had no children in the saved account view. The original German, French and Taiwan campaign rows omitted English. Their current language settings need fresh provider readback. Staff and country-policy decisions, verified final destinations, and provider preview remain open. Eight tests passed. The audit produced no Ads upload or live changes.
+
+The separate route audit reproduced all 360 native planning tuples across 15 families and verified the file hashes and paths of all 414 localized previews. The two registries have zero exact path overlaps, and the planning registry has zero campaign or CMS bindings. The saved UAE RSA points to the existing `/enquire/off-plan/`. Four older international draft slugs differ from the locally tested variants. Reconcile native ownership and slot mapping before creating duplicates or assigning a final URL. Ten checks passed. The 360 planning identities, private previews, and live destinations retain their separate acceptance scopes.
+
+The [German advertising review composer](../tools/offplan-lead-first/measurement-release/README.md#german-advertising-consent-prototype) now reproduces the exact 53-member test candidate. The baseline retained a sibling measurement frame after withdrawal. With the revised asset, the sibling frame retired before the server acknowledgement in real local WordPress and Chrome. Seven composer checks and exact ZIP comparison passed. Native tests used synthetic consent records, zero lead POSTs and blocked vendor traffic. Overlapping server choice writes, other browsers, approved German disclosures and live tracking remain open.
+
+## German opt-in prototype, native InnoDB, and restore quarantine — 27 November 2026
+
+The private 53-member German consent prototype passed eight Chrome checks and 15 native route and lease checks. Explicit advertising permission opened the scoped frame and produced one inert local conversion command for the accepted receipt ID. Its page path was query-free and its signed lead body stayed canonical without optional attribution. Refusal held the runtime. Withdrawal removed the frame and invalidated its lease. Exact replay kept the receipt with measurement denied. Both switches default off. Human review, other country measurement, Hostinger and Google acceptance remain open. No provider request was sent.
+
+Both exact 51- and 53-member packages passed stock WordPress 7.1.5 installation and activation against native MariaDB 10.11.19. Each fresh fixture created four InnoDB tables and passed the rate threshold, receipt link, identical retry, changed-body rejection and revocation across regrant. TCP stayed disabled, each instance stopped cleanly and the plugin inventories remained exact. The 13.422s and 39.718s runs used separate local databases. The German browser proof used SQLite. Hostinger engine identity, native upgrade and rollback, concurrency and live conversion processing remain open.
+
+The positive research crosswalk verified 30 retained Planner captures, 31,150 occurrences and 5,033 distinct normalized property-intent candidates. Three focused checks passed. The review identified 1,187 mixed dispositions, including 577 rental phrases that still need rental evidence. The reviewed corpus remains at least 8,967 distinct phrases short before admission. Positive master admissions remain zero.
+
+A restore quarantine outside the cloned WordPress tree passed 15 native checks in 57.658 seconds. Thirteen unreconciled or invalid-proof cases returned 503 before ordinary plugins loaded, covering public forms, lead REST, measurement and admin export. Two independently signed valid controls allowed the reconciled fixture's form and export. The export retained withdrawal redaction, and protected tables remained identical. Production still needs independent ledger and operator custody and verified gateway and cache quarantine.
+
+## Reproducible country review package and localized form verification — 27 November 2026
+
+The Source composer reproduced the exact tested 51-member country transport ZIP from the retained 49-member private review archive. The output matched the independently assembled forward ZIP byte for byte. Six composer regressions passed. The two independently verified rollback ZIPs preserve the 49-member pre-country review and the 30-member retained production baseline. WordPress PclZip read all three exact archives, and the country transport was held with its flag absent or false. The package is a private review artifact. The distinct release version, deployed-byte verification and approvals remain open.
+
+Ten real WordPress 7.1.5 and Chrome checks verified all six native country routes, including the protected response headers, 13 form fields, 15 option values and measurement-denied contexts. The French and Taiwan Traditional Chinese forms each returned one localized local receipt. The signed canonical wire contained no optional attribution. The two captured rows retained measurement denial. No vendor or production traffic occurred.
+
+The Germany, France and India reviews narrowed the evidence needed for brokerage and consumer-advertising applicability. France's English-only draft remains in review pending the French-language analysis for the exact offshore offer. Germany and France also need the applicable Google data-use disclosure and consent signals before covered measurement. These conditions are recorded in the existing issue. [Issue #14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14) · [Loi Toubon, Article 2](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006421210) · [Google EU user consent policy](https://www.google.com/about/company/user-consent-policy/)
+
+## Cross-request receipt reconciliation, restore guard and Taiwan scope — 27 November 2026
+
+The exact WordPress 7.1.5 and 0.2.15 intake ran five local requests against the retained Apps Script receiver implementation with an in-memory Sheet. A dropped acknowledgement occurred after the receiver committed its row. The equivalent retries reconciled the original receipt through a single receiver row and one accepted native sidecar. A new browser session received the same receipt with measurement denied. A changed body with the same request ID returned 409 before the receiver. After withdrawal, all effective purposes were false. The technical eligibility flag stayed true, and the browser still requires purpose permission. No mail, provider event or production request occurred.
+
+A restore-only export guard passed 14 native WordPress checks. An authenticated current ledger suppressed withdrawn evidence and deletion tombstones in the restored synthetic snapshot. Twelve invalid proofs returned no download. The stored rows stayed unchanged. Production still requires an independent ledger authority, replay protection and enforced quarantine across all affected routes.
+
+The private alias transport candidate passed the six native country contexts and the cross-route token and payload rejection cases. In a real isolated German Chrome submission, WordPress sent a canonical signed intake body with optional attribution absent. Repeating those exact bytes through a fresh canonical context with advertising permission reconciled the same receipt and left its denied-only capture unchanged. The browser run passed nine checks. This is an intake and measurement-denial proof for the review candidate. Publication and Google conversion acceptance remain held.
+
+The Taiwan applicability review found that covered overseas brokerage ads require Chinese creative and specified disclosures. The English draft stays in review while the exact advertiser, payer and follow-up model receive a written applicability determination. The existing owner-decision issue now records the conditional creative and licensing gate. [Issue #14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14) · [Taipei Land Administration official reprint](https://w3.land.gov.taipei/Query/Law/MonLaw/PDF/105/10512.pdf) · [Google Taiwan terms](https://support.google.com/adspolicy/answer/54818)
+
+## Country previews, local conversion receipt and restore boundary — 27 November 2026
+
+Drafted a shared English RSA set for the existing Germany, France and Taiwan parents. It contains 15 headlines and four descriptions bound to retained first-party wording. Eight draft checks passed. Final URLs and provider child IDs are unset. Local-language companions and the existing factual, staffing and provider holds remain in the review.
+
+The protected country-page component passed 18 native WordPress 7.1.5 scenarios and nine focused policy checks. All six authorized editor previews rendered. All six public requests and the missing-binding and wrong-ID cases returned a held response. Canonical off-plan, India and resale retained their expected native renderers. The original render trial exposed separate intake-path and measurement-eligibility gaps in public country aliases. The component keeps all six aliases in editor preview pending an end-to-end solution.
+
+The exact 0.2.15 local conversion fixture passed ten checks. A fictional native form reached a HMAC-verifying in-process mock. Its accepted event, linked SQLite capture and single local conversion command used the same transaction ID. Repeating submit on the completed page added zero requests or commands. This uses isolated vendor-loader substitutes and supplies no evidence of provider processing or across-session replay behavior.
+
+The real consent evidence export refused unauthorized clients and redacted expired or withdrawn evidence in the current synthetic database. An older synthetic snapshot without the later withdrawal made its original click evidence eligible again. The encrypted backup helper verified the archive and expiry and did not authorize restore. Require reconciliation of the current consent and deletion evidence before a restored site or export can reopen.
+
+Production pages and campaign settings stayed unchanged. The off-plan cohort remains paused at the existing AED2,500 aggregate average daily configuration.
+
+## UAE child reconciliation and private international review — 27 November 2026
+
+The live Real Estate Ads view matched all 16 paused UAE off-plan keyword IDs, texts and match types to the pinned prior readback. The single paused RSA still uses the canonical off-plan URL. Google shows its policy as Approved and ad strength as Pending. Four direct campaign negatives produced zero local matches in 64 comparisons. Account-level negatives were empty, and the sole visible shared list applied to six legacy campaigns outside the off-plan release. The reusable prelaunch verifier checks the saved evidence and rejects resale scope, incomplete keyword rows, foreign destinations and conflicting exclusions. All 29 local draft checks passed, including the seven new checks.
+
+The four international child manifests bind eight locales, 382 draft keyword placements and 76 retained RSA assets to the existing paused parents. English remains required. Germany, France and Taiwan still lack English RSA drafts. All provider child IDs and final URLs remain unset. Nine focused review tests passed. The private packet is for review and carries no import payload.
+
+An isolated WordPress 7.1.5 and Chrome test passed six checks of the exact plugin. Advertising-only permission preserved the synthetic click and opened one scoped runtime frame. The native runtime and lease returned HTTP 200. Withdrawal removed the frame, cleared attribution and returned all optional purposes to off. The fixture sent no leads or provider events. A separate private InnoDB upgrade and rollback test passed preflight, but the local host lacks a database or container runtime for that test. Live conversion processing and native InnoDB parity remain open.
+
+Production files, campaign settings and advertising stayed unchanged. The five configured pools remain paused at AED2,500 average per day in aggregate.
+
+## Five-route browser proof and live ad-group inventory — 27 November 2026
+
+The exact review package passed 65 local HTTPS and Chrome checks on WordPress 7.1.5 across UAE English, India English, German, French and Taiwan Traditional Chinese. Each page and both context routes returned HTTP 200. The same 13 fields, 15 option values, constraints and canonical intake route were preserved. Unknown consent kept optional measurement off, and the fixture sent no leads or provider events. The live host, other language variants and granted measurement remain open.
+
+The native WordPress 7.1.5 ZIP installation, upgrade and rollback matched 30, 49 and 30 members. All five shared English routes passed at each stage, and the disposable SQLite database preserved its synthetic accepted receipt and consent and rate data. Existing WordPress.org update observers were isolated from the offline regression. Production file identity, InnoDB and deployment acceptance remain open.
+
+The authenticated Real Estate Ads view reconciled 39 distinct ad-group IDs to all 39 displayed rows. Both children under the UAE Buyers parent are explicitly paused. Only its off-plan child is in the launch scope. The DE, FR, IN and TW campaign shells showed no children in this view. Build and review their paused children after verified destinations and eligible copy are available. The existing five-pool allocation remains AED2,500 average per day, and Ads shows no ads running.
+
+The 11 held UAE and Taiwan exclusions produced zero lexical matches across 3,900 scoped comparisons against retained and draft off-plan terms. All 17 matcher tests passed. The result leaves current inherited exclusions, matching in Google Ads and the full approval gate open. The worktree metadata speed trial returned identical digests for 1,328 files, but its changed step slowed from a 2.344s to a 2.582s median. The existing verifier stays in place.
+
+## Off-plan release hold and native verification — 27 November 2026
+
+Reused the one approved labelled TEST and matched one intake row and one Marketing Inbox message to its two exact receipt IDs. The test was ineligible for measurement. No new submission, email resend or conversion occurred. The latest Chrome readback confirmed no ads running in account 573-038-4686. The approved accepted-enquiry action `7873290954` remains Secondary, Count One and AED0 fallback. Google reported `Conversion has never received data`.
+
+The exact review package passed seven rendering cases on official WordPress 7.1.5 with SQLite. WordPress unpacked and inspected both ZIPs, and all 49 forward and 30 rollback members matched. The separate isolated WordPress 7.1.4 Chrome fixture passed all 13 checks after normal plugin activation created the test schemas. The India form and both no-choice context routes returned HTTP 200. Optional purposes stayed off and no lead or conversion left the fixture.
+
+The existing English form still serves plugin 0.2.12. The public notice still lacks the reviewed preference-expiry disclosure and Google business data link. Hostinger remains at sign-in, so the exact installed-file and rollback verification remains open. Production conversion delivery, market readiness and independent review are unresolved. No off-plan page was newly published, no live settings changed, and the five prepared pools totaling AED2,500 average per day stayed paused.
+
+The separate commercial research pass verified 705 retained source rows and bound 320 conditional candidates to source evidence. All remain on hold and no positive keywords were admitted. Recent scoped Marketing checks recovered no new rehearsal results, and demonstrated staff capacity remains open.
+
+## Live pause verification, archive review and negative corpus — 27 November 2026
+
+The authenticated Ads table for 573-038-4686 contained 24 distinct campaigns, with 21 paused, three removed and zero enabled. The five prepared pools reconcile to AED2,500 average per day. A fresh WordPress Enquiries reload showed the published English off-plan page and the master, Analytics and Ads measurement switches off. The site reported WordPress 7.1.5 and the active enquiry plugin 0.2.12.
+
+The source archive tool built and verified a 49-member `0.2.15` review ZIP and its 30-member `0.2.12` rollback. The exact bytes round-tripped through both archives. Reconciliation rejected an altered file hash, an extra member, an unrelated baseline and unsafe paths. Fresh Hostinger access is required to verify the installed files against the retained rollback. No account settings or website files changed.
+
+The exact plugin passed seven query and template cases in real local WordPress 7.1.4 using synthetic SQLite fixtures. These covered the verified India editor preview, anonymous hold, synthetic publication, language fallback and resale measurement denial. WordPress accepted both ZIPs through its native unpack and package inspection, and byte comparisons passed on all extracted members. Hostinger HTTP, caching, the production database and actual Google processing still require their own verification.
+
+The retained negative research master rebuilt with the recorded SHA-256. All 14,000 original and normalized phrases are distinct, with 14,213 provenance occurrences across 35 source registrations. Every row still has a pending review and zero deployment fields. The 58 retained commercial lexical overlaps all fall in the existing review-hold category. Scope, protected-intent and approval decisions still govern use of exclusions.
+
+## Mailbox reconciliation and browser transport — 27 November 2026
+
+The approved 26 November TEST is verified end to end. The single Marketing Inbox message matches both receipt IDs from the accepted WordPress response and the one private Sheet row. The message timestamp matches the first recorded outbox send. The delayed lookup reconciles yesterday’s missing search result. No resend or conversion occurred.
+
+Seven cases passed in an isolated Chrome profile against the exact reviewed parent tracking script. The canonical, German-language and bound India routes received origin-only referrers and same-origin iframe fetch metadata. Refusal, a resale route and an unbound India route opened no optional frame. A negative control without the iframe’s origin policy failed the header check. This exercises a local HTTPS fixture. Hostinger response headers, a deployed GTM container and a genuine Google conversion remain separate evidence. No live changes were applied.
+
+## Live delivery test and native review — 26 November 2026
+
+Ran the single owner-approved labelled TEST through the canonical first-party intake. The server returned `measurement_eligible:false`, and no conversion code ran. The exact accepted lead and event identifiers matched one private Sheet row. Its scheduled outbox marked the notification sent on the first attempt at 19:05 Dubai. The exact Marketing mailbox searches found no matching message as of 19:11 Dubai. Email receipt remains open. No resend occurred.
+
+The private release candidate now has 49 forward members and 30 retained rollback members. Real PHP CLI lint and fixture execution passed, including guarded locale sources, the India page binding, six renderer cases with WordPress doubles and the scoped measurement endpoint. Two exact-composition client checks passed. The website host, real browser and GTM acceptance remain open. No production files or pages were published and no campaigns were enabled.
+
+## Native off-plan release preparation — 25 November 2026
+
+WordPress access was restored. The English off-plan form is already published. One India English page was saved as a native draft, and its preview displayed the copy and the canonical enquiry link. The draft still needs protected form binding before publication as a campaign page.
+
+Private offline review combined locale rendering, the India alias and off-plan-only conversion scope. Exact candidate and rollback byte reconciliation passed. Twenty PHP grammar checks, three changed JavaScript syntax checks and six focused India client/measurement tests passed. Current host, native runtime, live lead routing and Google conversion acceptance remain open. The current live tracking switches remain off. No test enquiry or Google conversion was sent.
+
+The fresh campaign table showed 21 paused, three removed and zero enabled. The five prepared average daily budgets still total AED2,500. No new page was published and no Ads settings changed.
+
+## Off-plan publication preflight — 25 November 2026
+
+Chrome reconnected to account 573-038-4686 and confirmed that no ads were running. The public English form returned HTTP 200. All 13 fields and 15 select options matched the retained reference, and the call and WhatsApp links matched the approved number. The WordPress admin session had expired. Chrome was left on the sign-in prompt for the owner.
+
+The live GTM container remained empty with two unpublished workspace changes. Forty-eight isolated form and measurement checks passed. A bounded Marketing mailbox search found no recent off-plan receipt to reconcile against the private intake register. An earlier controlled receipt verified the receiver path in October. Current live delivery and conversion tracking remain unverified.
+
+Added a pure PHP selector for the existing protected off-plan page, with automated behavior cases in the scoped localization workflow. The selector still needs renderer, consent, asset and privacy bindings. Separate country routes need verified WordPress page IDs. No production pages or campaign settings changed.
+
+## Shared property enquiry design — 25 November 2026
+
+The owner requested all existing service landing pages in the same design and required English by default alongside regional keywords in every market and campaign. The [service review package](../tools/offplan-lead-first/service-localization/README.md) includes 414 previews and 7,800 exact and phrase keyword placements across 35 markets. All 345 form previews match their existing service field and option contracts. Only off-plan is in launch scope. The resale, rental, seller, landlord and brand work is prepared for review.
+
+## Off-plan localization package — 25 November 2026
+
+Built and verified 69 offline landing-page previews from 22 source-bound language packs, with English first in all 35 markets. The review CSV covers all 24 source intents per variant and contains 3,266 exact and phrase placements after consolidating duplicate literals. The catalogue retains all 62 previous localized keyword candidates. Bangladesh and Pakistan are represented as geographic exclusions. See the [package and release status](../tools/offplan-lead-first/global-localization/README.md).
+
+Owner language decision,24November: the owner will arrange German/French coverage. The answer is recorded; coverage is not yet confirmed and both markets remainPaused. No new budget redistribution or partial release is inferred; the five configured pools still totalAED2,500average/day.
+
+## Current off-plan readiness - 24 November 2026, 10:58 UTC
+
+[The live-readiness summary](../tools/offplan-lead-first/LIVE_READINESS_2026-11-24.json) separates current authenticated observations from private offline proposals. WordPress dashboard access is verified. Nine Plugin File Editor member hashes/sizes match historical 0.2.12 members; this is editor-text identity, not fresh raw-host, opcache or served-asset proof. The installed lead client has approved contact +971506878663 and no old 5677 matcher, so this observation requires no contact rewrite. All optional measurement controls remain OFF.
+
+The [earlier full account readback](../tools/offplan-lead-first/native-paused/APPLIED.json) recorded 24 campaigns / 21 Paused / 3 Removed / 0 Enabled and five applied average daily pools totaling AED2,500: UAE1,000 / DE350 / FR300 / IN500 / TW350. The original Add batch was applied once and must not be replayed. Current readback verified the four new country rows: CPC20 and geographic Presence were saved and reopened; Search Partners, Display and AI Max are OFF. India, France and Germany target their countries; Taiwan targets the intended Region. This four-row check does not replace a final full-account readback. Languages, daily10-19Dubai schedule, positive adjustments, paused child entities, final URLs, inherited assets and exclusions remain unfinished.
+
+The current published GTM version1 is "Empty Container": 0tags, 0triggers and 5built-in variables; two workspace changes remain unpublished. The private bounded frame-queue candidate has five existing plus four additional focused Source/VM test passes, is NOT installed, and cannot fix missing GTM activation. Cache-version delta, fresh served-asset readback, reviewed GTM publication/activation and current native acceptance remain required. No new source-runtime or native proof is claimed by this documentation update.
+
+Four country copy blocks / 62authored phrases / 124placements / 76RSA assets and three 85-string form locale candidates remain uninstalled. The presentation-only locale-query approach on the existing `/enquire/off-plan/` route is a proposal, not an implementation. India uses English. The 345daily enquiry target is unproven. Human/source review, Taiwan applicability, competent copy and staff-language coverage, privacy integration and genuine live intake/consent/delivery/dedup gates remain held. Website/tracking deployment and activation have not occurred in this phase; all Ads remain Paused or Removed.
+
+The later post-safeguard full account readback again verified all24unique IDs:21Paused/3Removed/0Enabled and five off-plan pools totalingAED2,500. Native action7873290954 is Secondary/CountOne/AED0fallback; its exact event-snippet destination matches WordPress, but Google reports that it has never received data. No synthetic conversion was sent. The published privacy notice still lacks the approved choice-retention detail and the required Google data-use disclosure link. Direct served-script navigation was blocked by the client; no bypass or fresh served-byte acceptance is claimed. The required local full foundation run reached its600-second bound without a complete report; no unchanged retry was made. The separate scopedCI and existing runtime receipts retain their exact scopes.
+
+The new review-only measurement patch/rollback and installed-preimage localization tools pass10and21focused checks respectively; nine prior same-candidate frame/composed checks remain separate. All9translated artifacts reverse exactly; native PHP hooks, actual privacy destinations and installation are not implemented. ScopedCI covers74tests; seePR15for its current-head result. An English privacy addendum is also held for implementation/review. See[the readiness summary](../tools/offplan-lead-first/LIVE_READINESS_2026-11-24.json).
+
+The dated entries below preserve their historical scope; current access, budgets, campaign safeguards and publication status are stated above.
+
+## Historical strict intake and frozen-review preservation — 19 November 2026
+
+## Immediate lead-generation priority — 21 November 2026
+
+The owner now requests off-plan buyers only:345 new enquiries/day target, AED2,500 aggregate average/day across UAE/Germany/France/Taiwan. Resale and all other campaign types stay paused. The full libraries and qualified-outcome optimization are deferred behind this focused launch, with the broader roadmap preserved. [Recorded instructions](decisions/OWNER_DECISIONS.md#lead-first-off-plan-scope--21-november-2026); [issue14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14).
+
+[The implemented offline country package](../tools/offplan-lead-first/README.md) produces3native WordPress draft-page blocks,46authored localized strings/92proposed placements and57RSA assets. Its17focused checks and deterministic output verification pass. The first form step is explicitly the existing English funnel; full form localization has not been installed. These are not observed query-demand evidence or14,000-master admissions. No new page, ad, campaign or serving budget has been created/applied.
+
+At the 21 November snapshot, the access blocker was the unavailable local-browser connection plus the existing native safety stop. Working live intake, appropriate consent/privacy, country/page/ad eligibility and actual identity/budget readback remain essential. Taiwan applicability is unresolved; Russia geography is excluded. Earlier engineering/native receipts below retain only their exact revision scope. No production change or Ads activation is claimed by this source update.
+
+### Offline form-localization follow-up — 21 November 2026
+
+The [pure form-text tooling](../tools/offplan-lead-first/form-localization/README.md) now supplies85 German/French/Traditional-Chinese strings per locale, a disabled form-only preview, text-only lead/consent client variants and inert PHP-template strings. Twenty-one focused tests and34 independent offline probes passed; missing consent error text, French timeline meaning and a preview safeguard were corrected. All seven pinned fixture files remain byte-identical. There is no locale route/asset installation or production journey acceptance. At that 21 November recheck, browser access still returned zero browsers and “Local browser access is unavailable for this chat”; an explicit @Chrome connection handoff was then pending. The [four-market catalog reference](../tools/offplan-lead-first/country-target-reference.json) verifies global targeting IDs without applying them. Account573-038-4686, off-plan-only scope andAED2,500 aggregate average/day are unchanged; production and Ads were not modified.
 
 ## Isolated-lab dependency deadline recovery — 20 November 2026
 

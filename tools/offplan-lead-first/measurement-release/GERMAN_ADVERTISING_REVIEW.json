@@ -1,0 +1,755 @@
+{
+  "scope": "OFFPLAN_GERMAN_ADVERTISING_REVIEW_ONLY",
+  "base_archive_sha256": "bf48fbc6f3cdd20038f92cfc84a74fbdaf03804a5eacff7ae1bb4b6cd75602ec",
+  "base_member_count": 51,
+  "candidate_member_count": 53,
+  "candidate_members": {
+    "assets/assets.css": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+    "assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "assets/consent.css": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+    "assets/country-advertising-consent.js": "3adc3195fb25273ea2bebc6278f4741b39f3fe70289119d64ac1ff9d901acfdf",
+    "assets/de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "assets/de-DE/lead.js": "2c1ed72b76071146960eeba02430ec40daf2d61cdcf53f5aa0f77303037a26b7",
+    "assets/en-IN/lead.js": "d62bc7868a1dc7ca4cac826bfe8fab4b9f91230fe8a086c9e1bafcb2f9e6b6eb",
+    "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "assets/fr-FR/lead.js": "07a62984c4266f6b03d2ee000b94f675fcd749a9d5865381a8489e4dd8ed8848",
+    "assets/google-measurement.js": "3ac024dc8cf03df9eac7c15a470108b30cd7b530fb573bccd2f706f8bde3ca12",
+    "assets/google-runtime.js": "6b6ec8a38d7f5ef37f371216153b997c32138f424d2c1da987ebbaf6e41972c7",
+    "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+    "assets/lead.js": "ad99834cd638bef4aa3cc9d177d19ab0731294ca3c8f395dde644a6af6cee30e",
+    "assets/wordpress.js": "4899c4942bc021d6b46913cf4409990cfd4715471269363d28461c5a8550395f",
+    "assets/zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "assets/zh-Hant-TW/lead.js": "2bd468442b826fe0e66908502d31eacf4a62dbfa91feb48e8f3eb4eca0c00585",
+    "bsre-enquiries.php": "1cd4a5244ab504c871cf1da7f3375c45856d51adbe917e6af10baa432d9a2bf7",
+    "includes/admin.php": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+    "includes/cli.php": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+    "includes/consent-export.php": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+    "includes/consent-store.php": "cb152907580357dd9681da0b08731eaaa48fc40ae44ed709683e1c236e8a9fe4",
+    "includes/consent.php": "dd882c372f76241d3d6dda7f9346e197f4f621e3421aff41c89881db426903af",
+    "includes/drafts.php": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+    "includes/enquiry-seo.php": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+    "includes/measurement-runtime.php": "0f008848108de9c21f467b8485a71e0e255dd1da4f840b39795f6ce3a8f7ebf9",
+    "includes/measurement-settings.php": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+    "includes/measurement.php": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+    "includes/offplan-country-advertising.php": "190e3eed3e0feb5451f323a12d2957be53c39f945f6fa8d12774b1c52448ddb5",
+    "includes/offplan-country-pages.php": "79f0e50e77e4d8fdee323e09286f577b2edc0388c2f06c35aaf58baa03c6c822",
+    "includes/offplan-country-transport.php": "1575cd7c281b2dd1053c00643e1e63ae44ffd00e788f38326fda4a7a5d3cb033",
+    "includes/offplan-india-measurement.php": "87930937ad53233bf3e14a6d3f2736c159019338f434f116c868aea1b70ec544",
+    "includes/offplan-india.php": "7d07b8f43e7bef18ef3ae6691fb3b3d3265409f52ea9a6f43bc0ec32fe955c43",
+    "includes/offplan-locale.php": "7468641661300006611d866693680a091ab0c49495dbb7ca5a62a648d7f8fb84",
+    "includes/offplan-protected-source.php": "412b9f1bbbb5835b0b4f6473e5cf77682a34532e0dd06273dfcab4a9e7e2f9b9",
+    "includes/offplan-variant.php": "41cd92c762b6786775e3699ac82b00b6fcad07db5e76d8481c78fa443e06fb3b",
+    "includes/parent-isolation.php": "6f261c1c764111cea9b2cb5ee53b55ddc7283ed33a09432a381c7f84aa01e91f",
+    "includes/presentation.php": "a32c0bdbe77b475f5267c148456b0789e328ea85541ddfc4e7c4fff677cc785a",
+    "includes/protocol.php": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+    "templates/hub.php": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+    "templates/offplan-locales/de-DE.json": "694438a751e1e89bd7e29c7d8a3ad799871537b47349c3b2ccee646f874d3d98",
+    "templates/offplan-locales/fr-FR.json": "d6879221be9d926f5188f1261bf7c523a08a24d5c16273eb93e6c172d41a3178",
+    "templates/offplan-locales/zh-Hant-TW.json": "064b158471b1527f25b002edd9625df868cf8496b4eab2b51d3ed6a8b113e56c",
+    "templates/page.php": "f54e908bdf3a0527bb921e9ca558cc906701c7124cf3ff836dc584d39e67827e",
+    "templates/source/hub.html": "4a20726a828e72b581d4e717dfee31d2f9b62c3d3f7a49a87199b5e5472ab6ff",
+    "templates/source/let.html": "f10999b657d5f15c27e29a891361f6efc936766bd612fcdfcde14f6c9b18c08e",
+    "templates/source/off-plan.de-DE.php": "308b2a88870fa01f4669db10e5f9e2011b965d19f423aae36c9d3b87d5b39866",
+    "templates/source/off-plan.en-IN.php": "d6cf490f79e18260964df21953e1f89c628f2d48938f165bbcd6ce5910b95f6d",
+    "templates/source/off-plan.fr-FR.php": "5e6eccdbda763841ec7a13abd88de55c37ac308830e42aa0aa60d08dafe6407d",
+    "templates/source/off-plan.html": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+    "templates/source/off-plan.zh-Hant-TW.php": "040b59a4728e458616d75c5e129461d336575a5778ada86f4e024316cd1b3a5c",
+    "templates/source/rent.html": "e33e28ce93b742b757de41899e68841e3b3425dc28b0a5955486372aec49e947",
+    "templates/source/resale.html": "7419cbd288b4b9331e231afde6709eb26487f417f1e9732334774cb500de3172",
+    "templates/source/sell.html": "529d786aafa48cd85a66e05ca43f9997c48c90318051131fc3842efdc4bc50a0"
+  },
+  "changes": {
+    "assets/country-advertising-consent.js": {
+      "before": null,
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "/* Optional route-scoped first-party preference. No SDK, attribution or contact fields. */\r\n",
+            "(function () {\r\n",
+            "  'use strict';\r\n",
+            "  const config = window.BSREGoogleConfig || {};\r\n",
+            "  const path = '/off-plan-dubai-de-de/';\r\n",
+            "  const pendingCookie = '__Host-bsre_de_offplan_ads_pending';\r\n",
+            "  if (config.country_path !== path || location.pathname !== path || config.enabled !== true) return;\r\n",
+            "  let endpoint, privacy;\r\n",
+            "  try {\r\n",
+            "    endpoint = new URL(config.choice_endpoint);\r\n",
+            "    privacy = new URL(config.country_privacy_url);\r\n",
+            "    if (endpoint.origin !== location.origin || endpoint.pathname !== '/wp-json/bsre/v1/offplan-country/off-plan-dubai-de-de/ad-choice'\r\n",
+            "        || privacy.origin !== location.origin || privacy.pathname !== '/property-enquiry-privacy-notice/'\r\n",
+            "        || endpoint.search || endpoint.hash || privacy.search || privacy.hash) return;\r\n",
+            "  } catch (_) { return; }\r\n",
+            "\r\n",
+            "  const denied = Object.freeze({ analytics:false, ad_measurement:false, personalization:false });\r\n",
+            "  const unknown = Object.freeze({ known:false, acknowledged:false, measurement_eligible:false, preferences:denied,\r\n",
+            "    decision_version:'none', notice_version:config.country_notice_version, preference_expires_at:0, preference_days:180 });\r\n",
+            "  let snapshot = unknown, pending = false;\r\n",
+            "  let peerRevision = 0, peerInvalidated = false;\r\n",
+            "  let choices;\r\n",
+            "  try { choices = new BroadcastChannel('bsre-de-offplan-ads-choice'); } catch (_) { /* Server checks and the pending cookie remain active. */ }\r\n",
+            "\r\n",
+            "  function normalizeSnapshot(value) {\r\n",
+            "    if (!value || value.notice_version !== config.country_notice_version || value.known !== true || value.acknowledged !== true\r\n",
+            "        || !/^[a-f0-9]{32}$/.test(value.decision_version || '') || value.preferences?.analytics !== false\r\n",
+            "        || value.preferences.personalization !== false || typeof value.preferences.ad_measurement !== 'boolean'\r\n",
+            "        || value.preferences.ad_measurement !== value.measurement_eligible || value.preference_days !== 180\r\n",
+            "        || !Number.isInteger(value.preference_expires_at) || value.preference_expires_at <= Math.floor(Date.now()/1000)) return null;\r\n",
+            "    return Object.freeze({...value, preferences:Object.freeze({...value.preferences})});\r\n",
+            "  }\r\n",
+            "  function choicePending() {\r\n",
+            "    return document.cookie.split(';').some(item => item.trim() === pendingCookie+'=1');\r\n",
+            "  }\r\n",
+            "  function allowed() {\r\n",
+            "    try {\r\n",
+            "      return !pending && !peerInvalidated && snapshot.measurement_eligible\r\n",
+            "        && snapshot.preference_expires_at > Math.floor(Date.now()/1000) && !choicePending();\r\n",
+            "    } catch (_) { return false; }\r\n",
+            "  }\r\n",
+            "  function publish(value) {\r\n",
+            "    snapshot = normalizeSnapshot(value) || unknown;\r\n",
+            "    window.BSRELeadConfig.measurementEligible = allowed() === true;\r\n",
+            "    window.dispatchEvent(new CustomEvent('bsre:consent-changed',{detail:{refused:{analytics:true,advertising:!allowed()}}}));\r\n",
+            "  }\r\n",
+            "  function retireAdvertising() {\r\n",
+            "    window.dispatchEvent(new CustomEvent('bsre:consent-will-change',{detail:{analytics:false,advertising:false}}));\r\n",
+            "    publish(null);\r\n",
+            "  }\r\n",
+            "  choices?.addEventListener('message', event => {\r\n",
+            "    if (event.data !== 'invalidate') return;\r\n",
+            "    ++peerRevision;\r\n",
+            "    peerInvalidated = true;\r\n",
+            "    retireAdvertising();\r\n",
+            "  });\r\n",
+            "  window.BSREConsentBridge = Object.freeze({ normalizeSnapshot, getSnapshot:() => snapshot,\r\n",
+            "    permissions:() => ({analytics:false, advertising:allowed() === true}), measurementEligible:() => allowed() === true });\r\n",
+            "  window.addEventListener('bsre:transport-ready', event => {\r\n",
+            "    if (!pending && !peerInvalidated) publish(event.detail?.countryMeasurement);\r\n",
+            "  });\r\n",
+            "\r\n",
+            "  const box = document.createElement('aside');\r\n",
+            "  box.id = 'bsre-country-ads-choice';\r\n",
+            "  box.className = 'bsre-consent-panel';\r\n",
+            "  const title = document.createElement('h2');\r\n",
+            "  title.textContent = 'Optionale Anzeigenmessung';\r\n",
+            "  const detail = document.createElement('p');\r\n",
+            "  detail.textContent = 'Nur mit Ihrer Zustimmung messen wir auf dieser Anfrageseite, ob eine akzeptierte Immobilienanfrage auf unsere Google-Anzeigen zurückgeht. Dazu werden die Seitenadresse ohne Suchparameter und eine zufällige Anfragereferenz verwendet. Sie können den Dienst auch ohne diese Messung nutzen und Ihre Wahl hier widerrufen. ';\r\n",
+            "  const note = document.createElement('a');\r\n",
+            "  note.href = privacy.href;\r\n",
+            "  note.hreflang = 'en';\r\n",
+            "  note.textContent = 'Datenschutzhinweise (Englisch)';\r\n",
+            "  detail.appendChild(note);\r\n",
+            "  const accept = document.createElement('button');\r\n",
+            "  const reject = document.createElement('button');\r\n",
+            "  accept.type = reject.type = 'button';\r\n",
+            "  accept.textContent = 'Anzeigenmessung erlauben';\r\n",
+            "  reject.textContent = 'Ablehnen oder widerrufen';\r\n",
+            "  const status = document.createElement('p');\r\n",
+            "  status.setAttribute('role','status');\r\n",
+            "  box.append(title,detail,accept,reject,status);\r\n",
+            "  document.querySelector('main')?.appendChild(box);\r\n",
+            "  function markPending() {\r\n",
+            "    document.cookie = pendingCookie+'=1; Max-Age=7200; Path=/; Secure; SameSite=Strict';\r\n",
+            "    return choicePending();\r\n",
+            "  }\r\n",
+            "  async function save(grant) {\r\n",
+            "    if (pending || !window.BSRELeadConfig.csrfToken) return;\r\n",
+            "    pending = true;\r\n",
+            "    const startRevision = peerRevision;\r\n",
+            "    retireAdvertising();\r\n",
+            "    accept.disabled = reject.disabled = true;\r\n",
+            "    const controller = new AbortController();\r\n",
+            "    const timer = window.setTimeout(() => controller.abort(), 10000);\r\n",
+            "    let next;\r\n",
+            "    try {\r\n",
+            "      if (!markPending()) throw new Error('Choice could not be marked pending');\r\n",
+            "      // A sibling can stop immediately while the first-party POST is pending.\r\n",
+            "      // The signal carries no choice, subject, receipt, or advertising ID.\r\n",
+            "      try { choices?.postMessage('invalidate'); } catch (_) { /* Fall back to pending cookie and lease checks. */ }\r\n",
+            "      const response = await fetch(endpoint.href,{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,\r\n",
+            "        headers:{'Content-Type':'application/json','X-BSRE-CSRF':window.BSRELeadConfig.csrfToken},\r\n",
+            "        body:JSON.stringify({ad_measurement:grant,notice_version:config.country_notice_version})});\r\n",
+            "      next = await response.json();\r\n",
+            "      if (!response.ok || next.ok !== true || !normalizeSnapshot(next)) throw new Error('Choice could not be confirmed');\r\n",
+            "      if (peerRevision !== startRevision || choicePending()) throw new Error('Choice changed while pending');\r\n",
+            "      peerInvalidated = false;\r\n",
+            "      status.textContent = grant ? 'Anzeigenmessung erlaubt.' : 'Anzeigenmessung abgelehnt.';\r\n",
+            "    } catch (_) {\r\n",
+            "      next = null;\r\n",
+            "      status.textContent = 'Ihre Wahl wurde nicht bestätigt. Auf dieser Seite bleibt die Anzeigenmessung deaktiviert.';\r\n",
+            "    } finally {\r\n",
+            "      window.clearTimeout(timer);\r\n",
+            "      pending = false;\r\n",
+            "      accept.disabled = reject.disabled = false;\r\n",
+            "      publish(next);\r\n",
+            "    }\r\n",
+            "  }\r\n",
+            "  accept.addEventListener('click', event => { if (event.isTrusted) void save(true); });\r\n",
+            "  reject.addEventListener('click', event => { if (event.isTrusted) void save(false); });\r\n",
+            "}());\r\n"
+          ]
+        }
+      ]
+    },
+    "assets/de-DE/lead.js": {
+      "before": "299b7101fd124707589bad1297437056000dd90c3ed5226eabbe739c588046e3",
+      "edits": [
+        {
+          "offset": 4820,
+          "remove": 71,
+          "lines": [
+            "      if (window.BSREWordPress?.countryOffplanPath || !eligible || !permitted) return { first: null, last: null };\n"
+          ]
+        },
+        {
+          "offset": 26094,
+          "remove": 109,
+          "lines": [
+            "      if (window.BSREWordPress?.countryOffplanPath || !measurementEligible() || syntheticForm() || !permissions().advertising) return Object.freeze({});\n"
+          ]
+        }
+      ]
+    },
+    "assets/google-measurement.js": {
+      "before": "ebe8b8327768b5a84ecc54288632129779a8a0f01529b87fc6cbd72632530524",
+      "edits": [
+        {
+          "offset": 324,
+          "remove": 0,
+          "lines": [
+            "  const country = config.country_path === '/off-plan-dubai-de-de/' ? config.country_path : '';\n"
+          ]
+        },
+        {
+          "offset": 395,
+          "remove": 101,
+          "lines": [
+            "    return (country !== '' && current === country) || current === PAGE_PATH || (current === INDIA_PATH && config.offplan_india_bound === true);\n"
+          ]
+        },
+        {
+          "offset": 1403,
+          "remove": 63,
+          "lines": [
+            "  function pagePath() { return ownedPath() ? country || PAGE_PATH : ''; }\n"
+          ]
+        },
+        {
+          "offset": 1675,
+          "remove": 86,
+          "lines": [
+            "    if (country && purpose !== 'advertising') return;\n",
+            "    const prefix = country ? 'bsre_enq_de_offplan_ads_' : purpose === 'analytics' ? 'bsre_enq_analytics_' : 'bsre_enq_ads_';\n"
+          ]
+        },
+        {
+          "offset": 3256,
+          "remove": 37,
+          "lines": [
+            "    if (purpose === 'advertising' && !country) {\n"
+          ]
+        },
+        {
+          "offset": 4868,
+          "remove": 0,
+          "lines": [
+            "    if (country) {\n",
+            "      if (purpose !== 'advertising') return false;\n",
+            "      payload = {...payload, page_path:country};\n",
+            "    }\n"
+          ]
+        },
+        {
+          "offset": 6226,
+          "remove": 282,
+          "lines": [
+            "      state.frame.contentWindow.postMessage({ type: 'bsre-runtime-init', version: VERSION, config_version: config.config_version, purpose: state.purpose, nonce: state.nonce, page_path: pagePath(), referrer_origin: country ? '' : referrerOrigin(), page_view: state.view }, window.location.origin);\n"
+          ]
+        }
+      ]
+    },
+    "assets/google-runtime.js": {
+      "before": "52d63d7e6909f541120615dbef679e8597fc96ff108acba965d1c89383382511",
+      "edits": [
+        {
+          "offset": 306,
+          "remove": 0,
+          "lines": [
+            "  let config;\n",
+            "  try { config = JSON.parse(document.getElementById('bsre-runtime-config').textContent); } catch (_) { return; }\n",
+            "  const country = config?.country_path === '/off-plan-dubai-de-de/' ? config.country_path : '';\n",
+            "  if (config?.country_path !== undefined && (!country || config.purpose !== 'advertising')) return;\n"
+          ]
+        },
+        {
+          "offset": 522,
+          "remove": 0,
+          "lines": [
+            "      if (country) return path === country && parent.BSREGoogleConfig?.country_path === country\n",
+            "        && parent.BSREGoogleConfig.enabled === true && parent.BSREGoogleConfig.runtime_endpoint === location.origin + location.pathname;\n"
+          ]
+        },
+        {
+          "offset": 751,
+          "remove": 127,
+          "lines": []
+        },
+        {
+          "offset": 1296,
+          "remove": 299,
+          "lines": [
+            "  if (analytics ? (!/^G-[A-Z0-9]+$/.test(config.measurement_id || '') || config.ads_send_to !== '' || config.cookie_prefix !== 'bsre_enq_analytics') : (!/^AW-[0-9]+\\/[A-Za-z0-9_-]+$/.test(config.ads_send_to || '') || config.measurement_id !== '' || config.cookie_prefix !== (country ? 'bsre_enq_de_offplan_ads' : 'bsre_enq_ads'))) return;\n"
+          ]
+        },
+        {
+          "offset": 9128,
+          "remove": 263,
+          "lines": [
+            "      if (data.config_version !== config.config_version || typeof data.nonce !== 'string' || !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(data.nonce) || typeof data.page_view !== 'boolean' || data.page_path !== (country || PAGE_PATH)) return;\n"
+          ]
+        }
+      ]
+    },
+    "assets/wordpress.js": {
+      "before": "4a8ce022b29816c6de71854ccf59ecf4570316b9b9c7d4192ff5bcf1852b0f5d",
+      "edits": [
+        {
+          "offset": 1869,
+          "remove": 78,
+          "lines": [
+            "        window.dispatchEvent(new window.CustomEvent('bsre:transport-ready',\n",
+            "          country && window.BSREGoogleConfig?.country_path === config.countryOffplanPath\n",
+            "            ? {detail:{countryMeasurement:result.measurement}} : undefined));\n"
+          ]
+        }
+      ]
+    },
+    "bsre-enquiries.php": {
+      "before": "2cedfbdec416fb5f8e955fb096768e2470c20b1975d9fda16f2a6237140ebd69",
+      "edits": [
+        {
+          "offset": 8617,
+          "remove": 109,
+          "lines": [
+            "function relay_accepted_enquiry(string $raw, array $capture, bool $intake_only = false, ?callable $scoped_link = null): \\WP_REST_Response {\n"
+          ]
+        },
+        {
+          "offset": 9487,
+          "remove": 95,
+          "lines": [
+            "            $body['measurement'] = $scoped_link ? $scoped_link($capture, $body, $raw) : consent_link_accepted($capture, $body, $raw, $intake_only);\n"
+          ]
+        },
+        {
+          "offset": 13188,
+          "remove": 58,
+          "lines": [
+            "require_once __DIR__ . '/includes/parent-isolation.php';\n"
+          ]
+        },
+        {
+          "offset": 13312,
+          "remove": 0,
+          "lines": [
+            "require_once __DIR__ . '/includes/offplan-country-advertising.php';\n"
+          ]
+        }
+      ]
+    },
+    "includes/consent-store.php": {
+      "before": "7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262",
+      "edits": [
+        {
+          "offset": 6414,
+          "remove": 0,
+          "lines": [
+            "            $row['was_already_accepted'] = $row['state'] === 'ACCEPTED';\n"
+          ]
+        }
+      ]
+    },
+    "includes/measurement-runtime.php": {
+      "before": "484f1d16546e1c061a4bab18df0ef821127eb6bc4caec9a064ee98a662f67b78",
+      "edits": [
+        {
+          "offset": 1752,
+          "remove": 122,
+          "lines": [
+            "function measurement_lease_token(string $purpose, string $session, string $version, int $now, string $decision, string $binding = 'off-plan'): string {\n"
+          ]
+        },
+        {
+          "offset": 2159,
+          "remove": 194,
+          "lines": [
+            "    return 'ml1|' . $expires . '|' . hash_hmac('sha256', 'bsre-measurement-lease-v1|' . $binding . '|' . $purpose . '|' . $session . '|' . $version . '|' . $decision . '|' . $expires, wp_salt('auth'));\n"
+          ]
+        },
+        {
+          "offset": 2355,
+          "remove": 135,
+          "lines": [
+            "function measurement_valid_lease(string $token, string $purpose, string $session, string $version, int $now, string $decision, string $binding = 'off-plan'): bool {\n"
+          ]
+        },
+        {
+          "offset": 2636,
+          "remove": 125,
+          "lines": [
+            "    try { return hash_equals(measurement_lease_token($purpose, $session, $version, (int) $m[1] - 120, $decision, $binding), $token); }\n"
+          ]
+        },
+        {
+          "offset": 3612,
+          "remove": 115,
+          "lines": [
+            "function measurement_status(\\WP_REST_Request $request, ?ConsentRepository $repository = null, string $country = ''): \\WP_REST_Response {\n"
+          ]
+        },
+        {
+          "offset": 4847,
+          "remove": 0,
+          "lines": [
+            "        $alias_id = $country === '' ? 0 : offplan_country_ad_id($country);\n",
+            "        if ($country !== '' && (!$alias_id || $choice->purpose !== 'advertising')) return $deny();\n",
+            "        $binding = $alias_id ? $country . '|' . $alias_id : 'off-plan';\n"
+          ]
+        },
+        {
+          "offset": 4918,
+          "remove": 385,
+          "lines": [
+            "        $session = $alias_id ? offplan_country_ad_session() : ($_COOKIE[CONSENT_SESSION_COOKIE] ?? '');\n",
+            "        $alias = $alias_id ? offplan_country_ad_state($country)['snapshot'] : null;\n",
+            "        $decision = $alias_id ? $alias['decision_version'] : measurement_runtime_revision($repository);\n",
+            "        if (!$config['enabled'] || !hash_equals($config['config_version'], $choice->config_version) || !is_string($session) || !measurement_valid_lease($choice->lease_token, $choice->purpose, $session, $choice->config_version, time(), $decision, $binding)) return $deny();\n"
+          ]
+        },
+        {
+          "offset": 5571,
+          "remove": 396,
+          "lines": [
+            "        if ($alias_id ? !$alias['measurement_eligible'] : !measurement_runtime_permission($choice->purpose, $repository)) return $deny();\n",
+            "        return response(200, ['ok' => true, 'version' => '1.0.0', 'enabled' => true, 'purpose' => $choice->purpose, 'config_version' => $config['config_version'], 'lease_token' => measurement_lease_token($choice->purpose, $session, $config['config_version'], time(), $decision, $binding), 'lease_seconds' => 30]);\n"
+          ]
+        },
+        {
+          "offset": 6017,
+          "remove": 116,
+          "lines": [
+            "function measurement_runtime(\\WP_REST_Request $request, ?ConsentRepository $repository = null, string $country = ''): \\WP_REST_Response {\n"
+          ]
+        },
+        {
+          "offset": 7123,
+          "remove": 0,
+          "lines": [
+            "    $alias_id = $country === '' ? 0 : offplan_country_ad_id($country);\n",
+            "    if ($country !== '' && (!$alias_id || $params !== ['purpose' => 'advertising','scope' => 'off-plan']\n",
+            "        || ($_SERVER['QUERY_STRING'] ?? '') !== 'purpose=advertising&scope=off-plan')) return $deny();\n"
+          ]
+        },
+        {
+          "offset": 7237,
+          "remove": 373,
+          "lines": [
+            "    $alias = $alias_id ? offplan_country_ad_state($country)['snapshot'] : null;\n",
+            "    if ($alias_id ? !$alias['measurement_eligible'] : !measurement_runtime_permission($params['purpose'], $repository)) return $deny();\n",
+            "    $session = $alias_id ? offplan_country_ad_session() : ($_COOKIE[CONSENT_SESSION_COOKIE] ?? '');\n",
+            "    $binding = $alias_id ? $country . '|' . $alias_id : 'off-plan';\n",
+            "    $decision = $alias_id ? $alias['decision_version'] : measurement_runtime_revision($repository);\n",
+            "    if ($alias_id) {\n",
+            "        $config['country_path'] = $country;\n",
+            "        $config['cookie_prefix'] = 'bsre_enq_de_offplan_ads';\n",
+            "        $config['status_endpoint'] = offplan_country_ad_endpoint($country, 'ad-status');\n",
+            "        if ($config['status_endpoint'] === '') return $deny();\n",
+            "    }\n",
+            "    try { $config['lease_token'] = measurement_lease_token($params['purpose'], is_string($session) ? $session : '', $config['config_version'], time(), $decision, $binding); $config['lease_seconds'] = 30; }\n"
+          ]
+        },
+        {
+          "offset": 9929,
+          "remove": 179,
+          "lines": [
+            "    if ($served || !($request instanceof \\WP_REST_Request) || !in_array($request->get_route(), ['/bsre/v1/measurement/runtime', '/bsre/v1/offplan-country/off-plan-dubai-de-de/ad-runtime'], true) || !($result instanceof \\WP_REST_Response)) return $served;\n"
+          ]
+        },
+        {
+          "offset": 10318,
+          "remove": 11,
+          "lines": [
+            "}, 100, 3);\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-country-advertising.php": {
+      "before": null,
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "<?php\n",
+            "namespace BSRE\\Enquiries;\n",
+            "if (!defined('ABSPATH')) exit;\n",
+            "\n",
+            "const OFFPLAN_COUNTRY_AD_NOTICE = 'bsre-de-offplan-ads-preview-v1';\n",
+            "const OFFPLAN_COUNTRY_AD_PENDING = '__Host-bsre_de_offplan_ads_pending';\n",
+            "\n",
+            "function offplan_country_ad_binding_id(string $path): int {\n",
+            "    // This private prototype only has a localized German consent disclosure.\n",
+            "    if ($path !== '/off-plan-dubai-de-de/' || !defined('BSRE_OFFPLAN_COUNTRY_ADVERTISING_BINDING')\n",
+            "        || !is_array(BSRE_OFFPLAN_COUNTRY_ADVERTISING_BINDING)) return 0;\n",
+            "    $id = offplan_country_native_page($path);\n",
+            "    if (!$id || BSRE_OFFPLAN_COUNTRY_ADVERTISING_BINDING !== [$path => $id]\n",
+            "        || offplan_country_public_url($path, $id) === '' || !ready()\n",
+            "        || owned_parent_url(privacy_url(), '/property-enquiry-privacy-notice/') === '') return 0;\n",
+            "    return $id;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_id(string $path): int {\n",
+            "    return measurement_eligible() && measurement_public_configuration()['advertising_enabled'] ? offplan_country_ad_binding_id($path) : 0;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_endpoint(string $path, string $phase): string {\n",
+            "    $suffix = offplan_country_rest_suffix($path, $phase);\n",
+            "    return owned_parent_url(rest_url('bsre/v1' . $suffix), '/wp-json/bsre/v1' . $suffix);\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_session(): string {\n",
+            "    $session = $_COOKIE[OFFPLAN_COUNTRY_COOKIE] ?? '';\n",
+            "    return is_string($session) && preg_match('/^[a-f0-9]{64}$/D', $session) ? $session : '';\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_subject(string $path, int $id, string $session): string {\n",
+            "    return hash_hmac('sha256', 'bsre-country-ads-subject-v1|' . $path . '|' . $id . '|' . $session, wp_salt('auth'));\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_snapshot(?array $row): array {\n",
+            "    $off = array_replace(consent_denied_snapshot(), ['notice_version' => OFFPLAN_COUNTRY_AD_NOTICE]);\n",
+            "    if (!$row || $row['notice_version'] !== OFFPLAN_COUNTRY_AD_NOTICE\n",
+            "        || (int) $row['expires_at'] <= time() || (int) $row['uncertain'] !== 0) return $off;\n",
+            "    $grant = (int) $row['ad_measurement'] === 1;\n",
+            "    return array_replace($off, ['preferences' => ['analytics' => false, 'ad_measurement' => $grant, 'personalization' => false],\n",
+            "        'known' => true, 'acknowledged' => true, 'measurement_eligible' => $grant,\n",
+            "        'decision_version' => $row['receipt'], 'preference_expires_at' => (int) $row['expires_at']]);\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_state(string $path, string $session = ''): array {\n",
+            "    $id = offplan_country_ad_id($path);\n",
+            "    $session = $session ?: offplan_country_ad_session();\n",
+            "    $empty = ['row' => null, 'snapshot' => offplan_country_ad_snapshot(null)];\n",
+            "    if (!$id || $session === '') return $empty;\n",
+            "    try {\n",
+            "        $store = consent_repository();\n",
+            "        $subject = offplan_country_ad_subject($path, $id, $session);\n",
+            "        $row = $store->current($subject);\n",
+            "        if (array_key_exists(OFFPLAN_COUNTRY_AD_PENDING, $_COOKIE)) {\n",
+            "            if ($row && (int) $row['ad_measurement'] === 1) {\n",
+            "                $store->choose($subject, ['analytics' => false, 'ad_measurement' => false], OFFPLAN_COUNTRY_AD_NOTICE, time(), true);\n",
+            "            }\n",
+            "            return $empty;\n",
+            "        }\n",
+            "        return ['row' => $row, 'snapshot' => offplan_country_ad_snapshot($row)];\n",
+            "    } catch (\\Throwable $e) { return $empty; }\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_choice(\\WP_REST_Request $request, string $path): \\WP_REST_Response {\n",
+            "    if ($bad = offplan_country_transport_guard($request, $path, 'ad-choice')) return $bad;\n",
+            "    $id = offplan_country_ad_id($path);\n",
+            "    $session = offplan_country_ad_session();\n",
+            "    $token = (string) $request->get_header('x-bsre-csrf');\n",
+            "    if (!$id || !valid_csrf($token, $session, offplan_country_csrf_salt($path), time())) return reply(403, 'CONSENT_CSRF_FAILED');\n",
+            "    if (limited('country-ad-choice:' . $session, 60, 20)) return reply(429, 'RATE_LIMITED', true);\n",
+            "    $raw = $request->get_body();\n",
+            "    try {\n",
+            "        if (strlen($raw) > 512) throw new \\InvalidArgumentException();\n",
+            "        $choice = consent_choice_object($raw);\n",
+            "        $keys = array_keys(get_object_vars($choice)); sort($keys);\n",
+            "        if ($keys !== ['ad_measurement','notice_version'] || !is_bool($choice->ad_measurement)\n",
+            "            || $choice->notice_version !== OFFPLAN_COUNTRY_AD_NOTICE) throw new \\InvalidArgumentException();\n",
+            "    } catch (\\Throwable $e) { return reply(400, 'CONSENT_INVALID'); }\n",
+            "    try {\n",
+            "        $row = consent_repository()->choose(offplan_country_ad_subject($path, $id, $session),\n",
+            "            ['analytics' => false, 'ad_measurement' => $choice->ad_measurement], OFFPLAN_COUNTRY_AD_NOTICE, time());\n",
+            "        if (!consent_set_cookie(OFFPLAN_COUNTRY_AD_PENDING, '', time() - 3600, false)) throw new \\RuntimeException();\n",
+            "        return response(200, ['ok' => true] + offplan_country_ad_snapshot($row));\n",
+            "    } catch (\\Throwable $e) { return reply(503, 'CONSENT_UNAVAILABLE'); }\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_marker(string $path, int $id, string $uuid): string {\n",
+            "    return substr(hash_hmac('sha256', 'bsre-country-ads-receipt-v1|' . $path . '|' . $id . '|' . strtolower($uuid), wp_salt('auth')), 0, 32);\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_stage(string $raw, object $payload, array $state, string $marker): array {\n",
+            "    $result = ['recorded' => false, 'conflict' => false, 'row' => null, 'repository' => null];\n",
+            "    try {\n",
+            "        $store = consent_repository();\n",
+            "        $current = $state['row'];\n",
+            "        $row = $store->stage(['request_id' => strtolower($payload->request_id), 'fingerprint' => hash('sha256', $raw),\n",
+            "            'subject_key' => $current['subject_key'], 'original_revision' => (int) $current['revision'],\n",
+            "            'decision_version' => $marker, 'notice_version' => OFFPLAN_COUNTRY_AD_NOTICE,\n",
+            "            'analytics' => 0, 'ad_measurement' => 1, 'preference_expires_at' => (int) $current['expires_at'],\n",
+            "            'eligible' => 1, 'known' => 1, 'created_at' => time(), 'uncertain' => 0] + consent_capture_clicks($payload, false, time()));\n",
+            "        return ['recorded' => true, 'conflict' => false, 'row' => $row, 'repository' => $store];\n",
+            "    } catch (\\DomainException $e) { $result['conflict'] = true; }\n",
+            "    catch (\\Throwable $e) { /* Intake cannot use an unrecorded positive capture. */ }\n",
+            "    return $result;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_link(array $handle, array $receipt, string $raw, string $path, bool $release): array {\n",
+            "    $off = consent_denied_snapshot();\n",
+            "    try {\n",
+            "        if (!consent_valid_receipt_id($receipt['lead_id'] ?? null, 'BSRE-')\n",
+            "            || !consent_valid_receipt_id($receipt['event_id'] ?? null, 'evt_')) throw new \\RuntimeException();\n",
+            "        $store = $handle['repository'];\n",
+            "        $seed = $handle['row'];\n",
+            "        $row = $store->link($seed['request_id'], $seed['fingerprint'], $receipt['lead_id'], $receipt['event_id']);\n",
+            "        if (!$release || ($row['was_already_accepted'] ?? null) !== false || !measurement_eligible($raw)\n",
+            "            || $row['notice_version'] !== OFFPLAN_COUNTRY_AD_NOTICE || (int) $row['uncertain'] !== 0\n",
+            "            || (int) $row['eligible'] !== 1 || (int) $row['ad_measurement'] !== 1\n",
+            "            || (int) $row['preference_expires_at'] <= time()) return $off;\n",
+            "        $state = offplan_country_ad_state($path);\n",
+            "        if (!$state['snapshot']['measurement_eligible'] || !hash_equals($row['subject_key'], $state['row']['subject_key'])\n",
+            "            || $store->revoked($row['subject_key'], (int) $row['original_revision'], 'ad_measurement')) return $off;\n",
+            "        return $state['snapshot'];\n",
+            "    } catch (\\Throwable $e) { consent_mark_uncertain($handle); return $off; }\n",
+            "}\n",
+            "\n",
+            "function offplan_country_ad_configuration(string $path): array {\n",
+            "    $runtime = offplan_country_ad_endpoint($path, 'ad-runtime');\n",
+            "    $status = offplan_country_ad_endpoint($path, 'ad-status');\n",
+            "    $choice = offplan_country_ad_endpoint($path, 'ad-choice');\n",
+            "    if (!offplan_country_ad_id($path) || $runtime === '' || $status === '' || $choice === '') return owned_parent_google_off();\n",
+            "    return array_replace(measurement_public_configuration(), ['analytics_enabled' => false, 'runtime_endpoint' => $runtime,\n",
+            "        'status_endpoint' => $status, 'choice_endpoint' => $choice, 'country_path' => $path,\n",
+            "        'country_notice_version' => OFFPLAN_COUNTRY_AD_NOTICE, 'country_privacy_url' => owned_parent_url(privacy_url(), '/property-enquiry-privacy-notice/')]);\n",
+            "}\n",
+            "\n",
+            "add_action('rest_api_init', function (): void {\n",
+            "    $path = '/off-plan-dubai-de-de/';\n",
+            "    $routes = [\n",
+            "        'ad-choice' => ['POST', static fn ($request) => offplan_country_ad_choice($request, $path)],\n",
+            "        'ad-runtime' => ['GET', static fn ($request) => measurement_runtime($request, null, $path)],\n",
+            "        'ad-status' => ['POST', static fn ($request) => measurement_status($request, null, $path)],\n",
+            "    ];\n",
+            "    foreach ($routes as $phase => [$method,$callback]) {\n",
+            "        register_rest_route('bsre/v1', offplan_country_rest_suffix($path, $phase),\n",
+            "            ['methods' => $method, 'permission_callback' => '__return_true', 'callback' => $callback]);\n",
+            "    }\n",
+            "});\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-country-transport.php": {
+      "before": "4fa5734256301dd029667cc00a033cdec708309603f27d5ba28f6267387203de",
+      "edits": [
+        {
+          "offset": 1906,
+          "remove": 0,
+          "lines": [
+            "    $snapshot = offplan_country_ad_id($path) ? offplan_country_ad_state($path, $session)['snapshot'] : consent_denied_snapshot();\n"
+          ]
+        },
+        {
+          "offset": 2012,
+          "remove": 137,
+          "lines": [
+            "        'expires_in' => 7200, 'minimum_delay_ms' => 2100, 'measurement_eligible' => $snapshot['measurement_eligible'], 'measurement' => $snapshot]);\n"
+          ]
+        },
+        {
+          "offset": 3226,
+          "remove": 100,
+          "lines": [
+            "    if ((!in_array($decision, ['', 'none'], true) && (!offplan_country_ad_binding_id($path) || !preg_match('/^[a-f0-9]{32}$/D', $decision))) || ($payload->attribution->first ?? null) !== null\n"
+          ]
+        },
+        {
+          "offset": 3731,
+          "remove": 101,
+          "lines": [
+            "    $id = offplan_country_native_page($path);\n",
+            "    $ad_key = offplan_country_ad_marker($path, $id, $payload->request_id);\n",
+            "    $choice = offplan_country_ad_state($path);\n",
+            "    $retry = consent_request_is_retry($request);\n",
+            "    $release = !$retry && $choice['snapshot']['measurement_eligible'] && measurement_eligible($raw)\n",
+            "        && hash_equals($choice['snapshot']['decision_version'], $decision);\n",
+            "    $capture = $release ? offplan_country_ad_stage($raw, $payload, $choice, $ad_key)\n",
+            "        : consent_stage_submission($raw, $retry, null, null, $key);\n",
+            "    if ($release && !$capture['recorded'] && !$capture['conflict']) {\n",
+            "        $release = false;\n",
+            "        $capture = consent_stage_submission($raw, $retry, null, null, $key);\n",
+            "    }\n"
+          ]
+        },
+        {
+          "offset": 4026,
+          "remove": 0,
+          "lines": [
+            "    if (hash_equals($ad_key, (string) ($row['decision_version'] ?? '')) && $row['notice_version'] === OFFPLAN_COUNTRY_AD_NOTICE) {\n",
+            "        return relay_accepted_enquiry($raw, $capture, false,\n",
+            "            static fn ($stored, $receipt, $body) => offplan_country_ad_link($stored, $receipt, $body, $path, $release));\n",
+            "    }\n"
+          ]
+        }
+      ]
+    },
+    "includes/parent-isolation.php": {
+      "before": "76a797bcec3561c5d5e84c03299a401aa25c1c8ee42dfa15a88736bcf40d64ee",
+      "edits": [
+        {
+          "offset": 3175,
+          "remove": 305,
+          "lines": [
+            "    if (!in_array($asset, ['assets.css','consent.css','hub.css','consent-bridge.js','country-advertising-consent.js','wordpress.js','lead.js','google-measurement.js','de-DE/lead.js','de-DE/consent-bridge.js','fr-FR/lead.js','fr-FR/consent-bridge.js','zh-Hant-TW/lead.js','zh-Hant-TW/consent-bridge.js','en-IN/lead.js'], true)) return '';\n"
+          ]
+        },
+        {
+          "offset": 9149,
+          "remove": 0,
+          "lines": [
+            "    if ($interactive && isset($scope['country_alias'])) $google = offplan_country_ad_configuration($scope['path']);\n"
+          ]
+        },
+        {
+          "offset": 10649,
+          "remove": 0,
+          "lines": [
+            "    if (!empty($document['google']['choice_endpoint'])) $connect[] = $document['google']['choice_endpoint'];\n"
+          ]
+        }
+      ]
+    },
+    "includes/presentation.php": {
+      "before": "c712e529d8b636fedcc5c2cf372a74a6c0280bdf99a7cf97ffd80c6e45a0474c",
+      "edits": [
+        {
+          "offset": 1321,
+          "remove": 0,
+          "lines": [
+            "    $country_ads = $country_alias && $full_assets && ($google_override['enabled'] ?? false) === true && isset($google_override['country_path']);\n"
+          ]
+        },
+        {
+          "offset": 1433,
+          "remove": 0,
+          "lines": [
+            "        if ($country_ads) $names = ['country-advertising-consent.js', 'wordpress.js', $locale_files[0] ?? 'lead.js', 'google-measurement.js'];\n"
+          ]
+        },
+        {
+          "offset": 2149,
+          "remove": 124,
+          "lines": [
+            "    $google = (!$country_alias || $country_ads) && $full_assets && is_array($google_override) ? $google_override : owned_parent_google_off();\n"
+          ]
+        }
+      ]
+    }
+  }
+}

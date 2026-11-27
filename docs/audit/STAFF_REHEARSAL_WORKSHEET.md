@@ -28,6 +28,8 @@ For workload arithmetic, run `python -B tools/release-control/staff_timing.py --
 
 Attach the calculator's aggregate JSON output from the owner-reviewed, representative full-load sample as the staff gate's `workload_summary` file reference (`path` and `sha256`). The claimed daily capacity cannot exceed the lowest observed daily completion count in that sample. Keep the aggregate receipt in the private packet workspace. Keep raw dates, counts by day and case records out of the packet. The owner still verifies staffing coverage, representativeness and any backlog concerns.
 
+Attach the `staff_timing.py` first-contact aggregate as `staff_capacity.timing_summary` with `path` and `sha256`. Copy the sample count, maximum staffed seconds, missing count and late count exactly. The activation packet checks the copied values against the pinned aggregate and requires the supplied sample to be within the 30-minute target. A previous packet without the timing reference stays held. The aggregate does not establish that the sample represents an approved launch workload.
+
 ## 4 November rehearsal status
 
 The owner confirmed in Codex that Amit completed the 14:00–15:00 Dubai rehearsal on 4 November and that private evidence is available. The evidence location is pending. The rehearsal is owner-reported complete, with exercise results still to be verified. Representative workload, backlog and first-contact timing evidence are separate from rehearsal completion. The 300 enquiries/day estimate remains unverified and the staff activation gate remains open. [Issue #4](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/4)

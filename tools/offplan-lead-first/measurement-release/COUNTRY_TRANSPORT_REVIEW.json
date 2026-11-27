@@ -1,0 +1,539 @@
+{
+  "scope": "OFFPLAN_COUNTRY_TRANSPORT_REVIEW_ONLY",
+  "base_archive_sha256": "c41d8d0991f6fa84c04fd4ff5343d8f4dcf79091b13e0d6a551c6ca780c426b2",
+  "base_member_count": 49,
+  "candidate_member_count": 51,
+  "candidate_members": {
+    "assets/assets.css": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+    "assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "assets/consent.css": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+    "assets/de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "assets/de-DE/lead.js": "299b7101fd124707589bad1297437056000dd90c3ed5226eabbe739c588046e3",
+    "assets/en-IN/lead.js": "d62bc7868a1dc7ca4cac826bfe8fab4b9f91230fe8a086c9e1bafcb2f9e6b6eb",
+    "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "assets/fr-FR/lead.js": "07a62984c4266f6b03d2ee000b94f675fcd749a9d5865381a8489e4dd8ed8848",
+    "assets/google-measurement.js": "ebe8b8327768b5a84ecc54288632129779a8a0f01529b87fc6cbd72632530524",
+    "assets/google-runtime.js": "52d63d7e6909f541120615dbef679e8597fc96ff108acba965d1c89383382511",
+    "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+    "assets/lead.js": "ad99834cd638bef4aa3cc9d177d19ab0731294ca3c8f395dde644a6af6cee30e",
+    "assets/wordpress.js": "4a8ce022b29816c6de71854ccf59ecf4570316b9b9c7d4192ff5bcf1852b0f5d",
+    "assets/zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "assets/zh-Hant-TW/lead.js": "2bd468442b826fe0e66908502d31eacf4a62dbfa91feb48e8f3eb4eca0c00585",
+    "bsre-enquiries.php": "2cedfbdec416fb5f8e955fb096768e2470c20b1975d9fda16f2a6237140ebd69",
+    "includes/admin.php": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+    "includes/cli.php": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+    "includes/consent-export.php": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+    "includes/consent-store.php": "7ccb7fdf0d88a3d2b1d54832f61c71bfcc025554bebf3927d7f5ce0c72f12262",
+    "includes/consent.php": "dd882c372f76241d3d6dda7f9346e197f4f621e3421aff41c89881db426903af",
+    "includes/drafts.php": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+    "includes/enquiry-seo.php": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+    "includes/measurement-runtime.php": "484f1d16546e1c061a4bab18df0ef821127eb6bc4caec9a064ee98a662f67b78",
+    "includes/measurement-settings.php": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+    "includes/measurement.php": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+    "includes/offplan-country-pages.php": "79f0e50e77e4d8fdee323e09286f577b2edc0388c2f06c35aaf58baa03c6c822",
+    "includes/offplan-country-transport.php": "4fa5734256301dd029667cc00a033cdec708309603f27d5ba28f6267387203de",
+    "includes/offplan-india-measurement.php": "87930937ad53233bf3e14a6d3f2736c159019338f434f116c868aea1b70ec544",
+    "includes/offplan-india.php": "7d07b8f43e7bef18ef3ae6691fb3b3d3265409f52ea9a6f43bc0ec32fe955c43",
+    "includes/offplan-locale.php": "7468641661300006611d866693680a091ab0c49495dbb7ca5a62a648d7f8fb84",
+    "includes/offplan-protected-source.php": "412b9f1bbbb5835b0b4f6473e5cf77682a34532e0dd06273dfcab4a9e7e2f9b9",
+    "includes/offplan-variant.php": "41cd92c762b6786775e3699ac82b00b6fcad07db5e76d8481c78fa443e06fb3b",
+    "includes/parent-isolation.php": "76a797bcec3561c5d5e84c03299a401aa25c1c8ee42dfa15a88736bcf40d64ee",
+    "includes/presentation.php": "c712e529d8b636fedcc5c2cf372a74a6c0280bdf99a7cf97ffd80c6e45a0474c",
+    "includes/protocol.php": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+    "templates/hub.php": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+    "templates/offplan-locales/de-DE.json": "694438a751e1e89bd7e29c7d8a3ad799871537b47349c3b2ccee646f874d3d98",
+    "templates/offplan-locales/fr-FR.json": "d6879221be9d926f5188f1261bf7c523a08a24d5c16273eb93e6c172d41a3178",
+    "templates/offplan-locales/zh-Hant-TW.json": "064b158471b1527f25b002edd9625df868cf8496b4eab2b51d3ed6a8b113e56c",
+    "templates/page.php": "f54e908bdf3a0527bb921e9ca558cc906701c7124cf3ff836dc584d39e67827e",
+    "templates/source/hub.html": "4a20726a828e72b581d4e717dfee31d2f9b62c3d3f7a49a87199b5e5472ab6ff",
+    "templates/source/let.html": "f10999b657d5f15c27e29a891361f6efc936766bd612fcdfcde14f6c9b18c08e",
+    "templates/source/off-plan.de-DE.php": "308b2a88870fa01f4669db10e5f9e2011b965d19f423aae36c9d3b87d5b39866",
+    "templates/source/off-plan.en-IN.php": "d6cf490f79e18260964df21953e1f89c628f2d48938f165bbcd6ce5910b95f6d",
+    "templates/source/off-plan.fr-FR.php": "5e6eccdbda763841ec7a13abd88de55c37ac308830e42aa0aa60d08dafe6407d",
+    "templates/source/off-plan.html": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+    "templates/source/off-plan.zh-Hant-TW.php": "040b59a4728e458616d75c5e129461d336575a5778ada86f4e024316cd1b3a5c",
+    "templates/source/rent.html": "e33e28ce93b742b757de41899e68841e3b3425dc28b0a5955486372aec49e947",
+    "templates/source/resale.html": "7419cbd288b4b9331e231afde6709eb26487f417f1e9732334774cb500de3172",
+    "templates/source/sell.html": "529d786aafa48cd85a66e05ca43f9997c48c90318051131fc3842efdc4bc50a0"
+  },
+  "changes": {
+    "assets/de-DE/lead.js": {
+      "before": "609bc0c8cd58fbb101d137efbf5c63c5b52ad6c7612064a7b2b2606273bbb698",
+      "edits": [
+        {
+          "offset": 16044,
+          "remove": 0,
+          "lines": [
+            "    const countryPath = window.BSREWordPress?.countryOffplanPath;\n",
+            "    const country = countryPath !== undefined;\n",
+            "    if (country && (countryPath !== window.location.pathname || form.dataset.role !== 'off_plan'\n",
+            "        || form.dataset.landingPath !== '/enquire/off-plan/')) return;\n"
+          ]
+        },
+        {
+          "offset": 19142,
+          "remove": 128,
+          "lines": [
+            "        landing_page: sanitizeURL(country ? form.dataset.landingPath : window.location.href),\n",
+            "        attribution: country ? {first: null, last: null} : combinedAttribution(), website: '', started_at: startedAt\n"
+          ]
+        }
+      ]
+    },
+    "assets/fr-FR/lead.js": {
+      "before": "5a81969ed2a3b3cf1e3fa2b13fe3d91522658945ddaf8d63e624ae3f223a575a",
+      "edits": [
+        {
+          "offset": 16044,
+          "remove": 0,
+          "lines": [
+            "    const countryPath = window.BSREWordPress?.countryOffplanPath;\n",
+            "    const country = countryPath !== undefined;\n",
+            "    if (country && (countryPath !== window.location.pathname || form.dataset.role !== 'off_plan'\n",
+            "        || form.dataset.landingPath !== '/enquire/off-plan/')) return;\n"
+          ]
+        },
+        {
+          "offset": 19116,
+          "remove": 128,
+          "lines": [
+            "        landing_page: sanitizeURL(country ? form.dataset.landingPath : window.location.href),\n",
+            "        attribution: country ? {first: null, last: null} : combinedAttribution(), website: '', started_at: startedAt\n"
+          ]
+        }
+      ]
+    },
+    "assets/lead.js": {
+      "before": "c42a6a68cdab20a700f9fe06a306a32903080fa1ac58b87fc8e8f26ce3f25f16",
+      "edits": [
+        {
+          "offset": 16044,
+          "remove": 0,
+          "lines": [
+            "    const countryPath = window.BSREWordPress?.countryOffplanPath;\n",
+            "    const country = countryPath !== undefined;\n",
+            "    if (country && (countryPath !== window.location.pathname || form.dataset.role !== 'off_plan'\n",
+            "        || form.dataset.landingPath !== '/enquire/off-plan/')) return;\n"
+          ]
+        },
+        {
+          "offset": 19064,
+          "remove": 128,
+          "lines": [
+            "        landing_page: sanitizeURL(country ? form.dataset.landingPath : window.location.href),\n",
+            "        attribution: country ? {first: null, last: null} : combinedAttribution(), website: '', started_at: startedAt\n"
+          ]
+        }
+      ]
+    },
+    "assets/wordpress.js": {
+      "before": "dd85e87e930e449136887af826e91aefffa9af429b39fe30c610621b101cef18",
+      "edits": [
+        {
+          "offset": 234,
+          "remove": 0,
+          "lines": [
+            "  const country = config.countryOffplanPath !== undefined;\n",
+            "  if (country && config.countryOffplanPath !== window.location.pathname) return;\n"
+          ]
+        },
+        {
+          "offset": 1541,
+          "remove": 176,
+          "lines": [
+            "        window.BSRELeadConfig = { endpoint: leadEndpoint, csrfToken: result.csrf_token, csrfHeader: 'X-BSRE-CSRF', measurementEligible: !country && result.measurement_eligible === true };\n"
+          ]
+        }
+      ]
+    },
+    "assets/zh-Hant-TW/lead.js": {
+      "before": "0c055579f23f56089375e0a4d720309cf4c71ae05f1010065a7716a5bb0dfcf4",
+      "edits": [
+        {
+          "offset": 16044,
+          "remove": 0,
+          "lines": [
+            "    const countryPath = window.BSREWordPress?.countryOffplanPath;\n",
+            "    const country = countryPath !== undefined;\n",
+            "    if (country && (countryPath !== window.location.pathname || form.dataset.role !== 'off_plan'\n",
+            "        || form.dataset.landingPath !== '/enquire/off-plan/')) return;\n"
+          ]
+        },
+        {
+          "offset": 18996,
+          "remove": 128,
+          "lines": [
+            "        landing_page: sanitizeURL(country ? form.dataset.landingPath : window.location.href),\n",
+            "        attribution: country ? {first: null, last: null} : combinedAttribution(), website: '', started_at: startedAt\n"
+          ]
+        }
+      ]
+    },
+    "bsre-enquiries.php": {
+      "before": "840d5d6a1dddabcf9da208df49c48bf9e86beafd7864df0d75eac4f58dcf6e6b",
+      "edits": [
+        {
+          "offset": 8563,
+          "remove": 0,
+          "lines": [
+            "    return relay_accepted_enquiry($raw, $capture);\n",
+            "}\n",
+            "\n",
+            "function relay_accepted_enquiry(string $raw, array $capture, bool $intake_only = false): \\WP_REST_Response {\n"
+          ]
+        },
+        {
+          "offset": 9324,
+          "remove": 81,
+          "lines": [
+            "            $body['measurement'] = consent_link_accepted($capture, $body, $raw, $intake_only);\n"
+          ]
+        },
+        {
+          "offset": 13069,
+          "remove": 0,
+          "lines": [
+            "require_once __DIR__ . '/includes/offplan-country-transport.php';\n"
+          ]
+        }
+      ]
+    },
+    "includes/consent.php": {
+      "before": "68c36328e2b660b6209320033cc7bc4b2857e4ecbf0261fdc5822d0e0708bead",
+      "edits": [
+        {
+          "offset": 11538,
+          "remove": 142,
+          "lines": [
+            "function consent_stage_submission(string $raw, bool $retry = false, ?ConsentRepository $repository = null, ?string $decision = null, ?string $denied_capture_key = null): array {\n"
+          ]
+        },
+        {
+          "offset": 12045,
+          "remove": 42,
+          "lines": [
+            "        $state = $denied_capture_key === null ? consent_current($store) : ['row' => null, 'snapshot' => consent_denied_snapshot()];\n"
+          ]
+        },
+        {
+          "offset": 12713,
+          "remove": 685,
+          "lines": [
+            "        $version = $denied_capture_key ?? ($known ? $snapshot['decision_version'] : bin2hex(random_bytes(16)));\n",
+            "        $row = $store->stage(['request_id' => strtolower($payload->request_id), 'fingerprint' => hash('sha256', $raw), 'subject_key' => $state['row']['subject_key'] ?? '', 'original_revision' => (int) ($state['row']['revision'] ?? 0), 'decision_version' => $version, 'notice_version' => CONSENT_NOTICE_VERSION, 'analytics' => $known && $snapshot['preferences']['analytics'] ? 1 : 0, 'ad_measurement' => $ad_granted ? 1 : 0, 'preference_expires_at' => $known ? $snapshot['preference_expires_at'] : 0, 'eligible' => $eligible ? 1 : 0, 'known' => $known ? 1 : 0, 'created_at' => time(), 'uncertain' => $retry ? 1 : 0] + $clicks);\n"
+          ]
+        },
+        {
+          "offset": 16556,
+          "remove": 84,
+          "lines": [
+            "function consent_link_accepted(array $handle, array $receipt, string $raw, bool $intake_only = false): array {\n"
+          ]
+        },
+        {
+          "offset": 17062,
+          "remove": 0,
+          "lines": [
+            "        if ($intake_only) return consent_denied_snapshot();\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-country-pages.php": {
+      "before": null,
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "<?php\n",
+            "namespace BSRE\\Enquiries;\n",
+            "if (!defined('ABSPATH')) exit;\n",
+            "\n",
+            "const OFFPLAN_COUNTRY_PATHS = [\n",
+            "    '/off-plan-dubai-en-de/' => 'en-DE', '/off-plan-dubai-de-de/' => 'de-DE',\n",
+            "    '/off-plan-dubai-en-fr/' => 'en-FR', '/off-plan-dubai-fr-fr/' => 'fr-FR',\n",
+            "    '/off-plan-dubai-en-tw/' => 'en-TW', '/off-plan-dubai-zh-hant-tw/' => 'zh-Hant-TW',\n",
+            "];\n",
+            "\n",
+            "function offplan_country_page_ids(): array {\n",
+            "    $stored = get_option('bsre_offplan_country_page_ids_v1', []);\n",
+            "    if (!is_array($stored) || count($stored) > count(OFFPLAN_COUNTRY_PATHS)) return [];\n",
+            "    $ids = [];\n",
+            "    foreach ($stored as $path => $supplied) {\n",
+            "        $id = managed_native_page_id($supplied);\n",
+            "        if (!isset(OFFPLAN_COUNTRY_PATHS[$path]) || !$id || in_array($id, [26750, 26751, 26752, 26753, 26754, 26755, 26865], true)\n",
+            "            || in_array($id, $ids, true)) return [];\n",
+            "        $ids[$path] = $id;\n",
+            "    }\n",
+            "    return $ids;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_request_scope(string $path, string $query): ?array {\n",
+            "    if ($path !== '/' && !isset(OFFPLAN_COUNTRY_PATHS[$path])) return null;\n",
+            "    $preview_only = $path === '/';\n",
+            "    if ($preview_only) {\n",
+            "        if (!preg_match('/\\Apage_id=([1-9][0-9]{0,19})&preview=true\\z/', $query, $match)) return null;\n",
+            "        $path = array_search(managed_native_page_id($match[1]), offplan_country_page_ids(), true);\n",
+            "    }\n",
+            "    if (!is_string($path) || !isset(OFFPLAN_COUNTRY_PATHS[$path])) return null;\n",
+            "    return ['kind' => 'service', 'slug' => 'off-plan', 'path' => $path,\n",
+            "        'country_alias' => OFFPLAN_COUNTRY_PATHS[$path], 'country_preview_only' => $preview_only];\n",
+            "}\n",
+            "\n",
+            "function offplan_country_native_page(string $path): int {\n",
+            "    if (!isset(OFFPLAN_COUNTRY_PATHS[$path])) return 0;\n",
+            "    $ids = offplan_country_page_ids();\n",
+            "    $id = $ids[$path] ?? 0;\n",
+            "    $slug = trim($path, '/');\n",
+            "    if (!$id || get_post_type($id) !== 'page' || get_page_template_slug($id) !== ''\n",
+            "        || !in_array(get_post_field('post_parent', $id, 'raw'), [0, '0'], true)\n",
+            "        || get_post_field('post_password', $id, 'raw') !== ''\n",
+            "        || get_post_field('post_name', $id, 'raw') !== $slug || get_page_uri($id) !== $slug) return 0;\n",
+            "    $paths = live_paths();\n",
+            "    return registered_service_page_id('off-plan') === 26751 && ($paths['off-plan'] ?? null) === '/enquire/off-plan/' ? $id : 0;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_public_url(string $path, int $id): string {\n",
+            "    if (!$id || !defined('BSRE_OFFPLAN_COUNTRY_TRANSPORT_ENABLED') || BSRE_OFFPLAN_COUNTRY_TRANSPORT_ENABLED !== true\n",
+            "        || get_post_status($id) !== 'publish') return '';\n",
+            "    return owned_parent_url(get_permalink($id), $path);\n",
+            "}\n",
+            "\n",
+            "function offplan_country_binding(array $scope, array $held): array {\n",
+            "    $path = $scope['path'];\n",
+            "    $id = offplan_country_native_page($path);\n",
+            "    if (!$id || OFFPLAN_COUNTRY_PATHS[$path] !== $scope['country_alias']\n",
+            "        || !is_page() || managed_native_page_id(get_queried_object_id()) !== $id) return $held;\n",
+            "    if (is_preview()) {\n",
+            "        if (!in_array(get_post_status($id), ['draft', 'publish'], true) || !current_user_can('edit_post', $id)) return $held;\n",
+            "        return ['mode' => 'preview', 'reason' => '', 'scope' => $scope, 'id' => $id, 'canonical' => ''];\n",
+            "    }\n",
+            "    if ($scope['country_preview_only'] ?? false) return $held;\n",
+            "    $url = offplan_country_public_url($path, $id);\n",
+            "    return $url === '' ? $held : ['mode' => 'live', 'reason' => '', 'scope' => $scope, 'id' => $id, 'canonical' => $url];\n",
+            "}\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-country-transport.php": {
+      "before": null,
+      "edits": [
+        {
+          "offset": 0,
+          "remove": 0,
+          "lines": [
+            "<?php\n",
+            "namespace BSRE\\Enquiries;\n",
+            "if (!defined('ABSPATH')) exit;\n",
+            "\n",
+            "const OFFPLAN_COUNTRY_COOKIE = '__Host-bsre_offplan_country_session';\n",
+            "\n",
+            "function offplan_country_rest_suffix(string $path, string $phase): string {\n",
+            "    return '/offplan-country/' . trim($path, '/') . '/' . $phase;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_csrf_salt(string $path): string {\n",
+            "    return hash_hmac('sha256', 'bsre-country-offplan-csrf-v1|' . $path, wp_salt('auth'));\n",
+            "}\n",
+            "\n",
+            "function offplan_country_transport_guard(\\WP_REST_Request $request, string $path, string $phase): ?\\WP_REST_Response {\n",
+            "    if ($request->get_route() !== '/bsre/v1' . offplan_country_rest_suffix($path, $phase)\n",
+            "        || !ready() || offplan_country_public_url($path, offplan_country_native_page($path)) === '') return reply(503, 'NOT_CONFIGURED');\n",
+            "    if (!same_origin_request($request)) return reply(403, 'CSRF_FAILED');\n",
+            "    if (!preg_match('~^application/json(?:\\s*;\\s*charset=utf-8)?$~iD', (string) $request->get_header('content-type'))) return reply(415, 'UNSUPPORTED_MEDIA_TYPE');\n",
+            "    return null;\n",
+            "}\n",
+            "\n",
+            "function offplan_country_context(\\WP_REST_Request $request, string $path): \\WP_REST_Response {\n",
+            "    if ($bad = offplan_country_transport_guard($request, $path, 'context')) return $bad;\n",
+            "    if ($request->get_body() !== '{}') return reply(400, 'INVALID_CONTEXT');\n",
+            "    $ip = client_address();\n",
+            "    if (!$ip || limited('offplan-country-context:' . $ip, 60, 30)) return reply(429, 'RATE_LIMITED', true);\n",
+            "    $session = $_COOKIE[OFFPLAN_COUNTRY_COOKIE] ?? '';\n",
+            "    if (!is_string($session) || !preg_match('/^[a-f0-9]{64}$/D', $session)) {\n",
+            "        try { $session = bin2hex(random_bytes(32)); } catch (\\Throwable $e) { return reply(503, 'NOT_CONFIGURED'); }\n",
+            "    }\n",
+            "    if (headers_sent() || !setcookie(OFFPLAN_COUNTRY_COOKIE, $session, ['expires' => time() + 7200, 'path' => '/', 'secure' => true, 'httponly' => true, 'samesite' => 'Strict'])) return reply(503, 'NOT_CONFIGURED');\n",
+            "    return response(200, ['csrf_token' => csrf_token($session, time(), offplan_country_csrf_salt($path)),\n",
+            "        'expires_in' => 7200, 'minimum_delay_ms' => 2100, 'measurement_eligible' => false, 'measurement' => consent_denied_snapshot()]);\n",
+            "}\n",
+            "\n",
+            "function offplan_country_receive(\\WP_REST_Request $request, string $path): \\WP_REST_Response {\n",
+            "    if ($bad = offplan_country_transport_guard($request, $path, 'lead')) return $bad;\n",
+            "    $raw = $request->get_body();\n",
+            "    if (strlen($raw) > 18000) return reply(413, 'PAYLOAD_TOO_LARGE');\n",
+            "    $session = $_COOKIE[OFFPLAN_COUNTRY_COOKIE] ?? '';\n",
+            "    $token = (string) $request->get_header('x-bsre-csrf');\n",
+            "    if (!is_string($session) || !valid_csrf($token, $session, offplan_country_csrf_salt($path), time())) return reply(403, 'CSRF_FAILED');\n",
+            "    $ip = client_address();\n",
+            "    if (!$ip || limited('submit-minute:' . $ip, 60, 5) || limited('submit-hour:' . $ip, 3600, 30) || limited('submit-session:' . $session, 3600, 20)) return reply(429, 'RATE_LIMITED', true);\n",
+            "    if (!validate_payload($raw, home_url('/'), ['off-plan' => '/enquire/off-plan/'])) return reply(400, 'VALIDATION_FAILED');\n",
+            "    try { $payload = consent_choice_object($raw); } catch (\\Throwable $e) { return reply(400, 'VALIDATION_FAILED'); }\n",
+            "    $decision = (string) $request->get_header('x-bsre-consent-decision');\n",
+            "    if (!in_array($decision, ['', 'none'], true) || ($payload->attribution->first ?? null) !== null\n",
+            "        || ($payload->attribution->last ?? null) !== null) return reply(400, 'VALIDATION_FAILED');\n",
+            "    // Freeze an intake-only request in the same immutable receipt store. This\n",
+            "    // neither reads the visitor preference nor keeps any subject/click data.\n",
+            "    $key = substr(hash_hmac('sha256', 'bsre-offplan-country-receipt-v1|' . $path . '|' . strtolower($payload->request_id), wp_salt('auth')), 0, 32);\n",
+            "    $capture = consent_stage_submission($raw, consent_request_is_retry($request), null, null, $key);\n",
+            "    if ($capture['conflict']) return reply(409, 'REQUEST_ID_CONFLICT');\n",
+            "    if (!$capture['recorded']) return reply(503, 'ACCEPTANCE_UNCERTAIN_RETRY_SAME_ID', true);\n",
+            "    $row = $capture['row'];\n",
+            "    if (!hash_equals($key, (string) ($row['decision_version'] ?? '')) || $row['subject_key'] !== ''\n",
+            "        || (int) $row['known'] !== 0 || (int) $row['eligible'] !== 0) return reply(409, 'REQUEST_ID_CONFLICT');\n",
+            "    return relay_accepted_enquiry($raw, $capture, true);\n",
+            "}\n",
+            "\n",
+            "add_action('rest_api_init', function (): void {\n",
+            "    foreach (OFFPLAN_COUNTRY_PATHS as $path => $locale) {\n",
+            "        register_rest_route('bsre/v1', offplan_country_rest_suffix($path, 'context'), ['methods' => 'POST', 'permission_callback' => '__return_true', 'callback' => static fn ($request) => offplan_country_context($request, $path)]);\n",
+            "        register_rest_route('bsre/v1', offplan_country_rest_suffix($path, 'lead'), ['methods' => 'POST', 'permission_callback' => '__return_true', 'callback' => static fn ($request) => offplan_country_receive($request, $path)]);\n",
+            "    }\n",
+            "});\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-variant.php": {
+      "before": "edfba56c55e48d97bf9ead145a5dabe8c6ed3bb260666b565fb6c1dfb9d4d02b",
+      "edits": [
+        {
+          "offset": 657,
+          "remove": 62,
+          "lines": [
+            "    $locale = $binding['scope']['country_alias'] ?? offplan_presentation_locale($binding, $target);\n"
+          ]
+        }
+      ]
+    },
+    "includes/parent-isolation.php": {
+      "before": "010a9b6da1ffedccd71e7caa642a048e9d867a1a27552f85528e24b1d9384594",
+      "edits": [
+        {
+          "offset": 108,
+          "remove": 0,
+          "lines": [
+            "require_once __DIR__ . '/offplan-country-pages.php';\n"
+          ]
+        },
+        {
+          "offset": 1818,
+          "remove": 0,
+          "lines": [
+            "    $country = offplan_country_request_scope($path, $target[1] ?? '');\n",
+            "    if ($country !== null) return $country;\n"
+          ]
+        },
+        {
+          "offset": 3871,
+          "remove": 0,
+          "lines": [
+            "    if (isset($scope['country_alias'])) return offplan_country_binding($scope, $held);\n"
+          ]
+        },
+        {
+          "offset": 7301,
+          "remove": 219,
+          "lines": [
+            "            $country = isset($scope['country_alias']);\n",
+            "            $context = $country ? offplan_country_rest_suffix($scope['path'], 'context') : '/context';\n",
+            "            $submit = $country ? offplan_country_rest_suffix($scope['path'], 'lead') : '/lead';\n",
+            "            $lead['contextEndpoint'] = owned_parent_url(rest_url('bsre/v1' . $context), '/wp-json/bsre/v1' . $context);\n",
+            "            $lead['leadEndpoint'] = owned_parent_url(rest_url('bsre/v1' . $submit), '/wp-json/bsre/v1' . $submit);\n",
+            "            if ($country) $lead['countryOffplanPath'] = $scope['path'];\n"
+          ]
+        },
+        {
+          "offset": 9591,
+          "remove": 167,
+          "lines": [
+            "    if (!isset($document['binding']['scope']['country_alias'])) {\n",
+            "        foreach (['consent/context', 'consent/update'] as $endpoint) {\n",
+            "            $url = owned_parent_url(rest_url('bsre/v1/' . $endpoint), '/wp-json/bsre/v1/' . $endpoint);\n",
+            "            if ($url !== '') $connect[] = $url;\n",
+            "        }\n",
+            "    }\n",
+            "    foreach (['contextEndpoint', 'leadEndpoint'] as $key) {\n",
+            "        $url = $document['lead'][$key] ?? '';\n"
+          ]
+        },
+        {
+          "offset": 9808,
+          "remove": 76,
+          "lines": []
+        },
+        {
+          "offset": 11707,
+          "remove": 109,
+          "lines": [
+            "    if ($headers_ok) echo render_frontend_scripts([], owned_parent_google_off(), $document['nonce'], false, 'en', false, isset($document['binding']['scope']['country_alias']));\n"
+          ]
+        }
+      ]
+    },
+    "includes/presentation.php": {
+      "before": "72a46647bf811523081d817b913366795f7361f6ab2aaf7b6d23c268795a8cec",
+      "edits": [
+        {
+          "offset": 782,
+          "remove": 205,
+          "lines": [
+            "function render_frontend_scripts(array $lead_config = [], ?array $google_override = null, string $nonce = '', bool $full_assets = false, string $offplan_locale = 'en', bool $india_alias = false, bool $country_alias = false): string {\n"
+          ]
+        },
+        {
+          "offset": 1292,
+          "remove": 25,
+          "lines": [
+            "    if ($country_alias) {\n",
+            "        $names = $full_assets ? ['wordpress.js', $locale_files[0] ?? 'lead.js'] : [];\n",
+            "    } elseif ($locale_files) {\n"
+          ]
+        },
+        {
+          "offset": 2002,
+          "remove": 105,
+          "lines": [
+            "    $google = !$country_alias && $full_assets && is_array($google_override) ? $google_override : owned_parent_google_off();\n"
+          ]
+        },
+        {
+          "offset": 2511,
+          "remove": 59,
+          "lines": [
+            "        . wp_json_encode($country_alias ? [] : tracking_configuration(), $flags)\n"
+          ]
+        }
+      ]
+    },
+    "templates/page.php": {
+      "before": "e2d10f1e68644c309bfdb9de0174301d953ed0aebdb58ac766c9bc4fe6d7dd35",
+      "edits": [
+        {
+          "offset": 1024,
+          "remove": 0,
+          "lines": [
+            "$country_locale = $scope['country_alias'] ?? '';\n",
+            "if ($country_locale !== '' && $variant === null) {\n",
+            "    if (!str_starts_with($country_locale, 'en-')) {\n",
+            "        $document['binding']['reason'] = 'This enquiry form is temporarily unavailable.';\n",
+            "        owned_parent_held($document, true);\n",
+            "        return;\n",
+            "    }\n",
+            "    $html = str_replace('<html lang=\"en\">', '<html lang=\"' . esc_attr($country_locale) . '\">', $html);\n",
+            "}\n"
+          ]
+        },
+        {
+          "offset": 3105,
+          "remove": 204,
+          "lines": [
+            "$html = str_replace('</body>', render_frontend_scripts($document['lead'], $document['google'], $document['nonce'], $document['full_assets'], $variant['locale'] ?? 'en', $india_alias, $country_locale !== '') . '</body>', $html);\n"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Dubai’de ikinci el gayrimenkul satın alın",
+    "rent": "Dubai’de kiralık gayrimenkul bulun",
+    "sell": "Dubai’deki gayrimenkulünüzü satın",
+    "let": "Dubai’deki gayrimenkulünüzü kiraya verin",
+    "hub": "Dubai’de gayrimenkul hakkında bilgi alın"
+  },
+  "page_intros": {
+    "resale": "Dubai’de değerlendirdiğiniz bölgeleri ve gayrimenkul türlerini, toplam bütçenizi ve ne zaman satın almayı planladığınızı belirtin. Karar vermeden önce gayrimenkulün hâlâ satışta olduğunu ve satın alma ayrıntılarını teyit edin.",
+    "rent": "Tercih ettiğiniz bölgeleri ve gayrimenkul türlerini, yıllık kira bütçenizi ve ne zaman taşınmanız gerektiğini belirtin. Taahhütte bulunmadan önce gayrimenkulün müsaitliğini ve kira koşullarını teyit edin.",
+    "sell": "Gayrimenkulünüz hakkında bilgi verin ve mülk sahibi olup olmadığınızı ya da mülk sahibini temsil etme yetkinizi belirtin. Ne zaman satmak istediğinizi de yazın. Ekibimiz ayrıntıları sizinle değerlendirecek.",
+    "let": "Gayrimenkulünüz hakkında bilgi verin ve mülk sahibi olup olmadığınızı ya da mülk sahibini temsil etme yetkinizi belirtin. Gayrimenkulün ne zaman müsait olacağını da yazın. Ekibimiz kiraya verme planınızı inceleyecek.",
+    "hub": "Planınıza uygun gayrimenkul bilgi talebi türünü seçin."
+  },
+  "extra_form": {
+    "ready": "* işaretli alanlar zorunludur.",
+    "property_area": "Gayrimenkulün bulunduğu site veya bölge *",
+    "annual_budget": "Yıllık kira bütçesi (AED) *",
+    "annual_budget_help": "Yıllık tutarı girin. Formda asgari bütçe şartı yoktur.",
+    "rent_timing": "Ne zaman taşınmanız gerekiyor? *",
+    "rent_now": "Hemen / şimdi taşınmam gerekiyor",
+    "month_30": "30 gün içinde",
+    "rent_later": "Daha sonra / seçenekleri araştırıyorum",
+    "sale_timing": "Tercih edilen satış süresi",
+    "sale_now": "İlk uygun zamanda",
+    "sale_90": "3 ay içinde",
+    "sale_later": "Daha sonra / seçenekleri görüşmek istiyorum",
+    "let_timing": "Gayrimenkulün tahmini müsaitlik tarihi",
+    "let_now": "Boş / şimdi görüşülebilir",
+    "let_30": "Tahminen 30 gün içinde",
+    "let_later": "Daha sonra / tarih görüşülecek",
+    "authority": "Yetkiniz *",
+    "owner": "Gayrimenkulün sahibiyim",
+    "representative": "Gayrimenkul sahibi tarafından yetkilendirildim",
+    "property_details": "Gayrimenkul bilgileri *",
+    "letting_details": "Gayrimenkul ve kiraya verme bilgileri *",
+    "resale_other": "Diğer gayrimenkul kriterleri",
+    "rent_other": "Diğer kiralama kriterleri",
+    "property_hint": "Bina veya site, yatak odası sayısı, yaklaşık alan ve kullanım durumu."
+  },
+  "keyword_intents": {
+    "resale": [
+      "Dubai ikinci el daire satın al",
+      "Dubai ikinci el gayrimenkul satın al",
+      "Dubai satılık ikinci el evler",
+      "Dubai ikinci el gayrimenkul",
+      "Dubai ikincil gayrimenkul piyasası",
+      "Dubai ikinci el daireler",
+      "Dubai ikinci el konutlar",
+      "Dubai satılık ikinci el gayrimenkul",
+      "Dubai ikinci el villalar"
+    ],
+    "rent": [
+      "Dubai kiralık daireler",
+      "Dubai kiralık evler",
+      "Dubai kiralık gayrimenkuller",
+      "Dubai kiralık gayrimenkul",
+      "Dubai hemen taşınmaya hazır kiralık daireler",
+      "Dubai daire kirala",
+      "Dubai villa kirala",
+      "Dubai kiralık villalar"
+    ],
+    "sell": [
+      "Dubai gayrimenkul satışı için emlak danışmanı",
+      "Dubai gayrimenkul satış ilanı ver",
+      "Dubai dairemi satmak istiyorum",
+      "Dubai evimi satmak istiyorum",
+      "Dubai gayrimenkulümü satmak istiyorum",
+      "Dubai villamı satmak istiyorum"
+    ],
+    "let": [
+      "Dubai gayrimenkulümü kiraya vermek istiyorum",
+      "Dubai kiralama için emlak danışmanı",
+      "Dubai gayrimenkul kiralama ilanı ver",
+      "Dubai dairemi kiraya vermek istiyorum",
+      "Dubai mülkümü kiraya vermek istiyorum",
+      "Dubai villamı kiraya vermek istiyorum"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

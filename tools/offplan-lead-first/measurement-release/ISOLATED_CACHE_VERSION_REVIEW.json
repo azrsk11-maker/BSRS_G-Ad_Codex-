@@ -1,0 +1,82 @@
+{
+  "scope": "OFFPLAN_ISOLATED_CACHE_VERSION_REVIEW_ONLY",
+  "base_archive_sha256": "a63c28261ea9954b99c7ba36eef411c0bc1d0611f445797813a9a6c9d7dfd69d",
+  "base_member_count": 53,
+  "candidate_member_count": 53,
+  "candidate_members": {
+    "assets/assets.css": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+    "assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "assets/consent.css": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+    "assets/country-advertising-consent.js": "5b77824143019768c28759888cc1cee32c1b6f1ba61b813273ea98a651acaeb0",
+    "assets/de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "assets/de-DE/lead.js": "2c1ed72b76071146960eeba02430ec40daf2d61cdcf53f5aa0f77303037a26b7",
+    "assets/en-IN/lead.js": "d62bc7868a1dc7ca4cac826bfe8fab4b9f91230fe8a086c9e1bafcb2f9e6b6eb",
+    "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "assets/fr-FR/lead.js": "07a62984c4266f6b03d2ee000b94f675fcd749a9d5865381a8489e4dd8ed8848",
+    "assets/google-measurement.js": "6ace2a331d6d60377b412893b9f398190914c773e166ee3e38e92eb09e42a619",
+    "assets/google-runtime.js": "1f0d2b579830792a236266b7afb1dfd694049d036917549ecc2e8148af1eb2ee",
+    "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+    "assets/lead.js": "ad99834cd638bef4aa3cc9d177d19ab0731294ca3c8f395dde644a6af6cee30e",
+    "assets/wordpress.js": "4899c4942bc021d6b46913cf4409990cfd4715471269363d28461c5a8550395f",
+    "assets/zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "assets/zh-Hant-TW/lead.js": "2bd468442b826fe0e66908502d31eacf4a62dbfa91feb48e8f3eb4eca0c00585",
+    "bsre-enquiries.php": "0b6ed0d541381756de6c2505c2af899856ba9100f060af8e29bd543d499377fd",
+    "includes/admin.php": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+    "includes/cli.php": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+    "includes/consent-export.php": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+    "includes/consent-store.php": "12d7da50d2811a637ef24f9d8b1da620550fb8f0f7d6afa4e883c97a0bcc340f",
+    "includes/consent.php": "dd882c372f76241d3d6dda7f9346e197f4f621e3421aff41c89881db426903af",
+    "includes/drafts.php": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+    "includes/enquiry-seo.php": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+    "includes/measurement-runtime.php": "563ae29b6ade134ac71e0691631ff3b905467a6843312d0d8a1bf3a537c2b46a",
+    "includes/measurement-settings.php": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+    "includes/measurement.php": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+    "includes/offplan-country-advertising.php": "d80fdc08db82534a246a2f9d9f695bcab8c9f75ac4b329b86ad5e3969283f2b4",
+    "includes/offplan-country-pages.php": "79f0e50e77e4d8fdee323e09286f577b2edc0388c2f06c35aaf58baa03c6c822",
+    "includes/offplan-country-transport.php": "4141f44e93cf8a0ef73c6aa401876f009e8f104344e4cdc36782f6a7722e17eb",
+    "includes/offplan-india-measurement.php": "87930937ad53233bf3e14a6d3f2736c159019338f434f116c868aea1b70ec544",
+    "includes/offplan-india.php": "7d07b8f43e7bef18ef3ae6691fb3b3d3265409f52ea9a6f43bc0ec32fe955c43",
+    "includes/offplan-locale.php": "7468641661300006611d866693680a091ab0c49495dbb7ca5a62a648d7f8fb84",
+    "includes/offplan-protected-source.php": "412b9f1bbbb5835b0b4f6473e5cf77682a34532e0dd06273dfcab4a9e7e2f9b9",
+    "includes/offplan-variant.php": "41cd92c762b6786775e3699ac82b00b6fcad07db5e76d8481c78fa443e06fb3b",
+    "includes/parent-isolation.php": "3bdf21f86937660e04a1d528b9f900930a31336482f1a09ec7d45588a866a078",
+    "includes/presentation.php": "a32c0bdbe77b475f5267c148456b0789e328ea85541ddfc4e7c4fff677cc785a",
+    "includes/protocol.php": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+    "templates/hub.php": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+    "templates/offplan-locales/de-DE.json": "694438a751e1e89bd7e29c7d8a3ad799871537b47349c3b2ccee646f874d3d98",
+    "templates/offplan-locales/fr-FR.json": "d6879221be9d926f5188f1261bf7c523a08a24d5c16273eb93e6c172d41a3178",
+    "templates/offplan-locales/zh-Hant-TW.json": "064b158471b1527f25b002edd9625df868cf8496b4eab2b51d3ed6a8b113e56c",
+    "templates/page.php": "f54e908bdf3a0527bb921e9ca558cc906701c7124cf3ff836dc584d39e67827e",
+    "templates/source/hub.html": "4a20726a828e72b581d4e717dfee31d2f9b62c3d3f7a49a87199b5e5472ab6ff",
+    "templates/source/let.html": "f10999b657d5f15c27e29a891361f6efc936766bd612fcdfcde14f6c9b18c08e",
+    "templates/source/off-plan.de-DE.php": "308b2a88870fa01f4669db10e5f9e2011b965d19f423aae36c9d3b87d5b39866",
+    "templates/source/off-plan.en-IN.php": "d6cf490f79e18260964df21953e1f89c628f2d48938f165bbcd6ce5910b95f6d",
+    "templates/source/off-plan.fr-FR.php": "5e6eccdbda763841ec7a13abd88de55c37ac308830e42aa0aa60d08dafe6407d",
+    "templates/source/off-plan.html": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+    "templates/source/off-plan.zh-Hant-TW.php": "040b59a4728e458616d75c5e129461d336575a5778ada86f4e024316cd1b3a5c",
+    "templates/source/rent.html": "e33e28ce93b742b757de41899e68841e3b3425dc28b0a5955486372aec49e947",
+    "templates/source/resale.html": "7419cbd288b4b9331e231afde6709eb26487f417f1e9732334774cb500de3172",
+    "templates/source/sell.html": "529d786aafa48cd85a66e05ca43f9997c48c90318051131fc3842efdc4bc50a0"
+  },
+  "changes": {
+    "bsre-enquiries.php": {
+      "before": "1cd4a5244ab504c871cf1da7f3375c45856d51adbe917e6af10baa432d9a2bf7",
+      "edits": [
+        {
+          "offset": 196,
+          "remove": 1,
+          "lines": [
+            "6"
+          ]
+        },
+        {
+          "offset": 335,
+          "remove": 1,
+          "lines": [
+            "6"
+          ]
+        }
+      ]
+    }
+  }
+}

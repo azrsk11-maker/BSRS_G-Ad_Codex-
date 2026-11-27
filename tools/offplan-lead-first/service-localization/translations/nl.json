@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Vastgoed kopen op de secundaire markt in Dubai",
+    "rent": "Vind een huurwoning of ander huurpand in Dubai",
+    "sell": "Verkoop uw vastgoed in Dubai",
+    "let": "Verhuur uw vastgoed in Dubai",
+    "hub": "Vastgoedaanvragen voor Dubai"
+  },
+  "page_intros": {
+    "resale": "Vertel ons welke wijken en soorten vastgoed u in Dubai overweegt, wat uw totale budget is en wanneer u wilt kopen. Controleer de beschikbaarheid en de aankoopdetails voordat u beslist.",
+    "rent": "Geef aan welke wijken en soorten vastgoed uw voorkeur hebben, wat uw jaarlijkse huurbudget is en wanneer u moet verhuizen. Controleer de beschikbaarheid en de huurvoorwaarden voordat u zich vastlegt.",
+    "sell": "Vertel ons over uw vastgoed, of u eigenaar bent of namens de eigenaar mag handelen en wanneer u wilt verkopen. Ons team bespreekt de gegevens met u.",
+    "let": "Vertel ons over uw vastgoed, of u eigenaar bent of namens de eigenaar mag handelen en wanneer het pand beschikbaar is. Ons team bekijkt uw verhuurplannen.",
+    "hub": "Kies de vastgoedaanvraag die bij uw plannen past."
+  },
+  "extra_form": {
+    "ready": "Velden met een * zijn verplicht.",
+    "property_area": "Wooncomplex of wijk waarin het pand ligt *",
+    "annual_budget": "Jaarlijks huurbudget (AED) *",
+    "annual_budget_help": "Vul een jaarbedrag in. Voor dit formulier geldt geen minimumbudget.",
+    "rent_timing": "Wanneer moet u verhuizen? *",
+    "rent_now": "Meteen / nu verhuizen",
+    "month_30": "Binnen 30 dagen",
+    "rent_later": "Later / ik oriënteer me",
+    "sale_timing": "Gewenste verkooptermijn",
+    "sale_now": "Zo snel als haalbaar",
+    "sale_90": "Binnen 3 maanden",
+    "sale_later": "Later / opties bespreken",
+    "let_timing": "Verwachte beschikbaarheid",
+    "let_now": "Leegstaand / nu te bespreken",
+    "let_30": "Naar verwachting binnen 30 dagen",
+    "let_later": "Later / datum in overleg",
+    "authority": "Uw bevoegdheid *",
+    "owner": "Ik ben de eigenaar van het pand",
+    "representative": "Ik ben gemachtigd door de eigenaar van het pand",
+    "property_details": "Gegevens van het pand *",
+    "letting_details": "Gegevens over het pand en de verhuur *",
+    "resale_other": "Overige eisen aan het pand",
+    "rent_other": "Overige wensen voor het huurpand",
+    "property_hint": "Gebouw of wooncomplex, aantal slaapkamers, geschatte oppervlakte en of het pand in gebruik is."
+  },
+  "keyword_intents": {
+    "resale": [
+      "appartement kopen op de secundaire markt in Dubai",
+      "vastgoed kopen op de secundaire markt in Dubai",
+      "woningen te koop op de secundaire markt in Dubai",
+      "doorverkoop vastgoed Dubai",
+      "secundaire vastgoedmarkt Dubai",
+      "appartementen op de secundaire markt in Dubai",
+      "woningen op de secundaire markt in Dubai",
+      "vastgoed te koop op de secundaire markt in Dubai",
+      "villa’s op de secundaire markt in Dubai"
+    ],
+    "rent": [
+      "appartementen te huur in Dubai",
+      "woningen te huur in Dubai",
+      "huurwoningen en huurpanden in Dubai",
+      "vastgoed te huur in Dubai",
+      "direct beschikbare appartementen te huur in Dubai",
+      "appartement huren in Dubai",
+      "villa huren in Dubai",
+      "villa’s te huur in Dubai"
+    ],
+    "sell": [
+      "verkoopmakelaar Dubai",
+      "pand te koop aanbieden in Dubai",
+      "mijn appartement verkopen in Dubai",
+      "mijn woning verkopen in Dubai",
+      "mijn vastgoed verkopen in Dubai",
+      "mijn villa verkopen in Dubai"
+    ],
+    "let": [
+      "mijn pand verhuren in Dubai",
+      "verhuurmakelaar Dubai",
+      "pand te huur aanbieden in Dubai",
+      "mijn appartement verhuren in Dubai",
+      "mijn vastgoed verhuren in Dubai",
+      "mijn villa verhuren in Dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

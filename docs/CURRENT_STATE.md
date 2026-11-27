@@ -1,4 +1,50 @@
-# Current engineering state — 20 November 2026
+## Off-plan test delivery and Chrome transport — 27 November 2026
+
+The latest live readback confirms 21 paused, three removed and zero enabled campaigns and five prepared budgets totaling AED2,500 average per day. The active WordPress 0.2.12 intake and optional measurement controls are unchanged. The private forward and rollback ZIPs passed WordPress package inspection and seven native renderer cases in a synthetic local WordPress environment. The detailed current scope is in [the release and research entry](PROGRESS.md#live-pause-verification-archive-review-and-negative-corpus--27-november-2026).
+
+The single authorized TEST is reconciled across WordPress, one Lead Sheet row and one Marketing Inbox message. The test was measurement-ineligible and no conversion was transmitted. [Current conversion readback](PROGRESS.md#paid-click-attribution-and-live-release-readback--27-november-2026) confirms the installed plugin still reports 0.2.12, the dedicated Tag Manager container is empty, the canonical page responds and the four international English review routes return 404. Paid-click verification and international publication remain held. No production publication or Ads activation occurred.
+
+## Shared property enquiry design — 25 November 2026
+
+The owner requested all existing service landing pages in the same design and required English by default alongside regional keywords in every market and campaign. The [service review package](../tools/offplan-lead-first/service-localization/README.md) includes 414 previews and 7,800 exact and phrase keyword placements across 35 markets. All 345 form previews match their existing service field and option contracts. Only off-plan is in launch scope. The resale, rental, seller, landlord and brand work is prepared for review.
+
+## Off-plan localization for 35 markets — 25 November 2026
+
+The owner approved English as the default in every market alongside the agreed local languages. The catalogue builds 69 landing-page previews, including 35 English defaults, and keyword drafts for 24 source intents per variant. Bangladesh and Pakistan are geographic exclusions in the review plan. The five recorded paused budgets total AED2,500 average per day. Read the [localization package](../tools/offplan-lead-first/global-localization/README.md) for review files, language support and remaining gates.
+
+The pages and keyword drafts await publishing and campaign integration. German and French response coverage is being arranged. Swahili, Nepali and Sinhala are website review variants because Google does not list them as supported ad languages. The 24 November WordPress, measurement and campaign readbacks below are dated evidence.
+
+Owner language decision,24November: the owner will arrange German/French coverage. The answer is recorded; coverage is not yet confirmed and both markets remainPaused. No new budget redistribution or partial release is inferred; the five configured pools still totalAED2,500average/day.
+
+## Current off-plan readiness - 24 November 2026, 10:58 UTC
+
+[The live-readiness summary](../tools/offplan-lead-first/LIVE_READINESS_2026-11-24.json) separates current authenticated observations from private offline proposals. WordPress dashboard access is verified. Nine Plugin File Editor member hashes/sizes match historical 0.2.12 members; this is editor-text identity, not fresh raw-host, opcache or served-asset proof. The installed lead client has approved contact +971506878663 and no old 5677 matcher, so this observation requires no contact rewrite. All optional measurement controls remain OFF.
+
+The [earlier full account readback](../tools/offplan-lead-first/native-paused/APPLIED.json) recorded 24 campaigns / 21 Paused / 3 Removed / 0 Enabled and five applied average daily pools totaling AED2,500: UAE1,000 / DE350 / FR300 / IN500 / TW350. The original Add batch was applied once and must not be replayed. Current readback verified the four new country rows: CPC20 and geographic Presence were saved and reopened; Search Partners, Display and AI Max are OFF. India, France and Germany target their countries; Taiwan targets the intended Region. This four-row check does not replace a final full-account readback. Languages, daily10-19Dubai schedule, positive adjustments, paused child entities, final URLs, inherited assets and exclusions remain unfinished.
+
+The current published GTM version1 is "Empty Container": 0tags, 0triggers and 5built-in variables; two workspace changes remain unpublished. The private bounded frame-queue candidate has five existing plus four additional focused Source/VM test passes, is NOT installed, and cannot fix missing GTM activation. Cache-version delta, fresh served-asset readback, reviewed GTM publication/activation and current native acceptance remain required. No new source-runtime or native proof is claimed by this documentation update.
+
+Four country copy blocks / 62authored phrases / 124placements / 76RSA assets and three 85-string form locale candidates remain uninstalled. The presentation-only locale-query approach on the existing `/enquire/off-plan/` route is a proposal, not an implementation. India uses English. The 345daily enquiry target is unproven. Human/source review, Taiwan applicability, competent copy and staff-language coverage, privacy integration and genuine live intake/consent/delivery/dedup gates remain held. Website/tracking deployment and activation have not occurred in this phase; all Ads remain Paused or Removed.
+
+The later post-safeguard full account readback again verified all24unique IDs:21Paused/3Removed/0Enabled and five off-plan pools totalingAED2,500. Native action7873290954 is Secondary/CountOne/AED0fallback; its exact event-snippet destination matches WordPress, but Google reports that it has never received data. No synthetic conversion was sent. The published privacy notice still lacks the approved choice-retention detail and the required Google data-use disclosure link. Direct served-script navigation was blocked by the client; no bypass or fresh served-byte acceptance is claimed. The required local full foundation run reached its600-second bound without a complete report; no unchanged retry was made. The separate scopedCI and existing runtime receipts retain their exact scopes.
+
+The new review-only measurement patch/rollback and installed-preimage localization tools pass10and21focused checks respectively; nine prior same-candidate frame/composed checks remain separate. All9translated artifacts reverse exactly; native PHP hooks, actual privacy destinations and installation are not implemented. ScopedCI covers74tests; seePR15for its current-head result. An English privacy addendum is also held for implementation/review. See[the readiness summary](../tools/offplan-lead-first/LIVE_READINESS_2026-11-24.json).
+
+The dated entries below preserve their historical scope; current access, budgets, campaign safeguards and publication status are stated above.
+
+# Historical engineering snapshot — 21 November 2026
+
+## Immediate lead-generation priority — 21 November 2026
+
+The owner now requests off-plan buyers only:345 new enquiries/day target, AED2,500 aggregate average/day across UAE/Germany/France/Taiwan. Resale and all other campaign types stay paused. The full libraries and qualified-outcome optimization are deferred behind this focused launch, with the broader roadmap preserved. [Recorded instructions](decisions/OWNER_DECISIONS.md#lead-first-off-plan-scope--21-november-2026); [issue14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14).
+
+[The implemented offline country package](../tools/offplan-lead-first/README.md) produces3native WordPress draft-page blocks,46authored localized strings/92proposed placements and57RSA assets. Its17focused checks and deterministic output verification pass. The first form step is explicitly the existing English funnel; full form localization has not been installed. These are not observed query-demand evidence or14,000-master admissions. No new page, ad, campaign or serving budget has been created/applied.
+
+At the 21 November snapshot, the access blocker was the unavailable local-browser connection plus the existing native safety stop. Working live intake, appropriate consent/privacy, country/page/ad eligibility and actual identity/budget readback remain essential. Taiwan applicability is unresolved; Russia geography is excluded. Earlier engineering/native receipts below retain only their exact revision scope. No production change or Ads activation is claimed by this source update.
+
+### Offline form-localization follow-up — 21 November 2026
+
+The [pure form-text tooling](../tools/offplan-lead-first/form-localization/README.md) now supplies85 German/French/Traditional-Chinese strings per locale, a disabled form-only preview, text-only lead/consent client variants and inert PHP-template strings. Twenty-one focused tests and34 independent offline probes passed; missing consent error text, French timeline meaning and a preview safeguard were corrected. All seven pinned fixture files remain byte-identical. There is no locale route/asset installation or production journey acceptance. At that 21 November recheck, browser access still returned zero browsers and “Local browser access is unavailable for this chat”; an explicit @Chrome connection handoff was then pending. The [four-market catalog reference](../tools/offplan-lead-first/country-target-reference.json) verifies global targeting IDs without applying them. Account573-038-4686, off-plan-only scope andAED2,500 aggregate average/day are unchanged; production and Ads were not modified.
 
 ## Isolated-lab dependency deadline recovery — 20 November 2026
 

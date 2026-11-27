@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Eine Immobilie auf Dubais Zweitmarkt kaufen",
+    "rent": "Eine Mietimmobilie in Dubai finden",
+    "sell": "Ihre Immobilie in Dubai verkaufen",
+    "let": "Ihre Immobilie in Dubai vermieten",
+    "hub": "Immobilienanfragen für Dubai"
+  },
+  "page_intros": {
+    "resale": "Teilen Sie uns mit, welche Lagen und Immobilienarten in Dubai für Sie infrage kommen, wie hoch Ihr Gesamtbudget ist und wann Sie kaufen möchten. Klären Sie vor Ihrer Entscheidung die Verfügbarkeit und die Kaufdetails.",
+    "rent": "Nennen Sie uns Ihre bevorzugten Lagen und Immobilienarten, Ihr jährliches Mietbudget und Ihren gewünschten Einzugstermin. Klären Sie die Verfügbarkeit und die Mietbedingungen, bevor Sie sich festlegen.",
+    "sell": "Beschreiben Sie Ihre Immobilie und teilen Sie uns mit, ob Sie Eigentümer sind oder mit Vollmacht handeln und wann Sie verkaufen möchten. Unser Team bespricht die Angaben mit Ihnen.",
+    "let": "Beschreiben Sie Ihre Immobilie und teilen Sie uns mit, ob Sie Eigentümer sind oder mit Vollmacht handeln und ab wann die Immobilie verfügbar ist. Unser Team prüft Ihr Vermietungsvorhaben.",
+    "hub": "Wählen Sie die Immobilienanfrage aus, die zu Ihrem Vorhaben passt."
+  },
+  "extra_form": {
+    "ready": "Mit * gekennzeichnete Felder sind Pflichtfelder.",
+    "property_area": "Wohnanlage oder Lage der Immobilie *",
+    "annual_budget": "Jährliches Mietbudget (AED) *",
+    "annual_budget_help": "Geben Sie den Jahresbetrag ein. Für das Formular gilt kein Mindestbudget.",
+    "rent_timing": "Wann müssen Sie einziehen? *",
+    "rent_now": "Sofort / Einzug jetzt",
+    "month_30": "Innerhalb von 30 Tagen",
+    "rent_later": "Später / ich informiere mich",
+    "sale_timing": "Gewünschter Verkaufszeitraum",
+    "sale_now": "Zum nächstmöglichen Zeitpunkt",
+    "sale_90": "Innerhalb von 3 Monaten",
+    "sale_later": "Später / Optionen besprechen",
+    "let_timing": "Voraussichtliche Verfügbarkeit",
+    "let_now": "Leerstehend / jetzt besprechbar",
+    "let_30": "Voraussichtlich innerhalb von 30 Tagen",
+    "let_later": "Später / Termin nach Absprache",
+    "authority": "Ihre Berechtigung *",
+    "owner": "Ich bin Eigentümer der Immobilie",
+    "representative": "Ich bin vom Eigentümer der Immobilie bevollmächtigt",
+    "property_details": "Angaben zur Immobilie *",
+    "letting_details": "Angaben zur Immobilie und zur Vermietung *",
+    "resale_other": "Weitere Anforderungen an die Immobilie",
+    "rent_other": "Weitere Anforderungen an das Mietobjekt",
+    "property_hint": "Gebäude oder Wohnanlage, Anzahl der Schlafzimmer, ungefähre Fläche und aktueller Belegungsstatus."
+  },
+  "keyword_intents": {
+    "resale": [
+      "Wohnung auf Dubais Zweitmarkt kaufen",
+      "Immobilie auf Dubais Zweitmarkt kaufen",
+      "Bestandswohnungen und Häuser in Dubai kaufen",
+      "Immobilien aus dem Wiederverkauf Dubai",
+      "Dubai Immobilien Zweitmarkt",
+      "Dubai Wohnungen aus dem Wiederverkauf",
+      "Dubai Wohnimmobilien aus dem Wiederverkauf",
+      "Immobilienangebote auf dem Zweitmarkt in Dubai",
+      "Dubai Villen aus dem Wiederverkauf"
+    ],
+    "rent": [
+      "Wohnungen in Dubai mieten",
+      "Häuser in Dubai zur Miete",
+      "Mietimmobilien in Dubai",
+      "Immobilie in Dubai mieten",
+      "bezugsfertige Wohnungen in Dubai mieten",
+      "Wohnung in Dubai mieten",
+      "Villa in Dubai mieten",
+      "Villen zur Miete in Dubai"
+    ],
+    "sell": [
+      "Makler für Immobilienverkauf in Dubai",
+      "Immobilie in Dubai zum Verkauf anbieten",
+      "meine Wohnung in Dubai verkaufen",
+      "mein Haus in Dubai verkaufen",
+      "meine Immobilie in Dubai verkaufen",
+      "meine Villa in Dubai verkaufen"
+    ],
+    "let": [
+      "meine Immobilie in Dubai vermieten",
+      "Makler für Vermietung in Dubai",
+      "Immobilie in Dubai zur Miete anbieten",
+      "meine Wohnung in Dubai vermieten",
+      "meine Immobilie in Dubai vermieten",
+      "meine Villa in Dubai vermieten"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

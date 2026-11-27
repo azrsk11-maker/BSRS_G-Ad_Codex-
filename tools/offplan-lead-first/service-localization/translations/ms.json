@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Beli hartanah pasaran sekunder di Dubai",
+    "rent": "Cari hartanah untuk disewa di Dubai",
+    "sell": "Jual hartanah anda di Dubai",
+    "let": "Sewakan hartanah anda di Dubai",
+    "hub": "Pertanyaan hartanah Dubai"
+  },
+  "page_intros": {
+    "resale": "Beritahu kami kawasan dan jenis hartanah yang anda pertimbangkan di Dubai, jumlah bajet anda serta bila anda bercadang untuk membeli. Sahkan ketersediaan dan butiran pembelian sebelum membuat keputusan.",
+    "rent": "Nyatakan kawasan dan jenis hartanah pilihan anda, bajet sewa tahunan serta bila anda perlu berpindah. Sahkan ketersediaan dan syarat sewaan sebelum membuat komitmen.",
+    "sell": "Beritahu kami tentang hartanah anda, kuasa anda untuk mewakili pemilik dan bila anda ingin menjualnya. Pasukan kami akan menyemak butiran bersama anda.",
+    "let": "Beritahu kami tentang hartanah anda, kuasa anda untuk mewakili pemilik dan bila hartanah tersedia. Pasukan kami akan menyemak rancangan penyewaan anda.",
+    "hub": "Pilih jenis pertanyaan hartanah yang sepadan dengan rancangan anda."
+  },
+  "extra_form": {
+    "ready": "Ruangan bertanda * wajib diisi.",
+    "property_area": "Komuniti / kawasan hartanah *",
+    "annual_budget": "Bajet sewa tahunan (AED) *",
+    "annual_budget_help": "Masukkan jumlah untuk setahun. Borang ini tidak menetapkan bajet minimum.",
+    "rent_timing": "Bilakah anda perlu berpindah? *",
+    "rent_now": "Segera / pindah sekarang",
+    "month_30": "Dalam 30 hari",
+    "rent_later": "Kemudian / masih meninjau",
+    "sale_timing": "Tempoh jualan yang diingini",
+    "sale_now": "Secepat yang boleh",
+    "sale_90": "Dalam 3 bulan",
+    "sale_later": "Kemudian / masih membincangkan pilihan",
+    "let_timing": "Jangkaan hartanah tersedia",
+    "let_now": "Kosong / boleh dibincangkan sekarang",
+    "let_30": "Dijangka dalam 30 hari",
+    "let_later": "Kemudian / tarikh untuk dibincangkan",
+    "authority": "Kuasa anda *",
+    "owner": "Saya pemilik hartanah",
+    "representative": "Saya diberi kuasa oleh pemilik hartanah",
+    "property_details": "Butiran hartanah *",
+    "letting_details": "Butiran hartanah dan penyewaan *",
+    "resale_other": "Keperluan hartanah lain",
+    "rent_other": "Keperluan sewaan lain",
+    "property_hint": "Bangunan atau komuniti, bilangan bilik tidur, anggaran keluasan dan status penghunian."
+  },
+  "keyword_intents": {
+    "resale": [
+      "beli apartmen subsale dubai",
+      "beli hartanah subsale dubai",
+      "rumah subsale untuk dijual di dubai",
+      "hartanah subsale dubai",
+      "hartanah pasaran sekunder dubai",
+      "apartmen subsale dubai",
+      "rumah subsale dubai",
+      "hartanah subsale untuk dijual dubai",
+      "vila subsale dubai"
+    ],
+    "rent": [
+      "apartmen untuk disewa dubai",
+      "rumah untuk disewa di dubai",
+      "hartanah sewaan dubai",
+      "hartanah untuk disewa di dubai",
+      "apartmen sedia diduduki untuk disewa di dubai",
+      "sewa apartmen dubai",
+      "sewa vila dubai",
+      "vila untuk disewa di dubai"
+    ],
+    "sell": [
+      "ejen jual hartanah dubai",
+      "senaraikan hartanah untuk dijual di dubai",
+      "jual apartmen saya di dubai",
+      "jual rumah saya di dubai",
+      "jual hartanah saya di dubai",
+      "jual vila saya di dubai"
+    ],
+    "let": [
+      "sewakan hartanah saya dubai",
+      "ejen penyewaan hartanah dubai",
+      "senaraikan hartanah untuk disewa di dubai",
+      "sewakan apartmen saya di dubai",
+      "sewakan hartanah saya di dubai",
+      "sewakan vila saya di dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

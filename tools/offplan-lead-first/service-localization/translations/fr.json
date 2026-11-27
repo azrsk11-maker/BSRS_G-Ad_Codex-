@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Acheter un bien immobilier en revente à Dubaï",
+    "rent": "Trouver un bien à louer à Dubaï",
+    "sell": "Vendre votre bien immobilier à Dubaï",
+    "let": "Mettre votre bien en location à Dubaï",
+    "hub": "Demandes immobilières à Dubaï"
+  },
+  "page_intros": {
+    "resale": "Indiquez-nous les quartiers et les types de biens que vous envisagez à Dubaï, votre budget total et la date à laquelle vous comptez acheter. Vérifiez la disponibilité du bien et les modalités d’achat avant de prendre votre décision.",
+    "rent": "Indiquez-nous les quartiers et les types de biens que vous préférez, votre budget annuel de location et la date à laquelle vous devez emménager. Vérifiez la disponibilité et les conditions de location avant de vous engager.",
+    "sell": "Décrivez votre bien, précisez si vous êtes propriétaire ou mandaté par le propriétaire et indiquez quand vous souhaitez vendre. Notre équipe examinera ces informations avec vous.",
+    "let": "Décrivez votre bien, précisez si vous êtes propriétaire ou mandaté par le propriétaire et indiquez quand le bien sera disponible. Notre équipe examinera votre projet de mise en location.",
+    "hub": "Choisissez le type de demande immobilière qui correspond à votre projet."
+  },
+  "extra_form": {
+    "ready": "Les champs marqués d’un * sont obligatoires.",
+    "property_area": "Résidence ou quartier du bien *",
+    "annual_budget": "Budget annuel de location (AED) *",
+    "annual_budget_help": "Indiquez un montant annuel. Le formulaire n’impose aucun budget minimum.",
+    "rent_timing": "Quand devez-vous emménager ? *",
+    "rent_now": "Immédiatement / emménagement dès maintenant",
+    "month_30": "Dans les 30 jours",
+    "rent_later": "Plus tard / je me renseigne",
+    "sale_timing": "Délai de vente souhaité",
+    "sale_now": "Dès que possible",
+    "sale_90": "Dans les 3 mois",
+    "sale_later": "Plus tard / options à discuter",
+    "let_timing": "Disponibilité prévue",
+    "let_now": "Inoccupé / possibilité d’en discuter dès maintenant",
+    "let_30": "Disponibilité prévue dans les 30 jours",
+    "let_later": "Plus tard / date à discuter",
+    "authority": "Vous êtes *",
+    "owner": "Je suis propriétaire du bien",
+    "representative": "Je suis mandaté par le propriétaire du bien",
+    "property_details": "Informations sur le bien *",
+    "letting_details": "Informations sur le bien et sa mise en location *",
+    "resale_other": "Autres critères pour le bien",
+    "rent_other": "Autres critères de location",
+    "property_hint": "Immeuble ou résidence, nombre de chambres, surface approximative et statut d’occupation."
+  },
+  "keyword_intents": {
+    "resale": [
+      "acheter un appartement en revente à Dubaï",
+      "acheter un bien immobilier en revente à Dubaï",
+      "logements en revente à Dubaï",
+      "immobilier de revente à Dubaï",
+      "marché immobilier secondaire à Dubaï",
+      "appartements en revente à Dubaï",
+      "maisons en revente à Dubaï",
+      "biens immobiliers en revente à Dubaï",
+      "villas en revente à Dubaï"
+    ],
+    "rent": [
+      "appartements à louer à Dubaï",
+      "maisons à louer à Dubaï",
+      "biens immobiliers à louer à Dubaï",
+      "bien à louer à Dubaï",
+      "appartements à louer disponibles immédiatement à Dubaï",
+      "louer un appartement à Dubaï",
+      "louer une villa à Dubaï",
+      "villas à louer à Dubaï"
+    ],
+    "sell": [
+      "agent immobilier pour vendre un bien à Dubaï",
+      "mettre un bien en vente à Dubaï",
+      "vendre mon appartement à Dubaï",
+      "vendre ma maison à Dubaï",
+      "vendre mon bien immobilier à Dubaï",
+      "vendre ma villa à Dubaï"
+    ],
+    "let": [
+      "mettre mon bien en location à Dubaï",
+      "agent immobilier pour mise en location à Dubaï",
+      "proposer un bien à la location à Dubaï",
+      "mettre mon appartement en location à Dubaï",
+      "mettre mon bien immobilier en location à Dubaï",
+      "mettre ma villa en location à Dubaï"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Buy resale property in Dubai",
+    "rent": "Find a Dubai rental property",
+    "sell": "Sell your Dubai property",
+    "let": "Let your Dubai property",
+    "hub": "Dubai property enquiries"
+  },
+  "page_intros": {
+    "resale": "Tell us which Dubai areas and property types you are considering, your total budget and when you plan to buy. Confirm availability and purchase details before deciding.",
+    "rent": "Share the areas and property types you prefer, your annual rental budget and when you need to move. Confirm availability and rental terms before committing.",
+    "sell": "Tell us about your property, your authority to represent the owner and when you would like to sell. The team will review the details with you.",
+    "let": "Tell us about your property, your authority to represent the owner and when the property is available. The team will review your letting plans.",
+    "hub": "Choose the type of property enquiry that matches your plans."
+  },
+  "extra_form": {
+    "ready": "Fields marked * are required.",
+    "property_area": "Property community / area *",
+    "annual_budget": "Annual rental budget (AED) *",
+    "annual_budget_help": "Enter an annual amount. The form has no minimum budget.",
+    "rent_timing": "When do you need to move? *",
+    "rent_now": "Immediate / move now",
+    "month_30": "Within 30 days",
+    "rent_later": "Later / exploring",
+    "sale_timing": "Preferred selling timeline",
+    "sale_now": "As soon as practical",
+    "sale_90": "Within 3 months",
+    "sale_later": "Later / discussing options",
+    "let_timing": "Expected availability",
+    "let_now": "Vacant / available to discuss now",
+    "let_30": "Expected within 30 days",
+    "let_later": "Later / date to discuss",
+    "authority": "Your authority *",
+    "owner": "I am the property owner",
+    "representative": "I am authorized by the property owner",
+    "property_details": "Property details *",
+    "letting_details": "Property and letting details *",
+    "resale_other": "Other property requirements",
+    "rent_other": "Other rental requirements",
+    "property_hint": "Building or community, bedrooms, approximate size and occupancy."
+  },
+  "keyword_intents": {
+    "resale": [
+      "buy resale apartment dubai",
+      "buy resale property dubai",
+      "dubai resale homes for sale",
+      "dubai resale property",
+      "dubai secondary market property",
+      "resale apartments dubai",
+      "resale homes dubai",
+      "resale property for sale dubai",
+      "resale villas dubai"
+    ],
+    "rent": [
+      "apartments for rent dubai",
+      "dubai homes for rent",
+      "dubai rental properties",
+      "property for rent dubai",
+      "ready to move apartments for rent dubai",
+      "rent apartment dubai",
+      "rent villa dubai",
+      "villas for rent dubai"
+    ],
+    "sell": [
+      "dubai property selling agent",
+      "list property for sale dubai",
+      "sell my apartment dubai",
+      "sell my home dubai",
+      "sell my property dubai",
+      "sell my villa dubai"
+    ],
+    "let": [
+      "let my property dubai",
+      "letting agent dubai",
+      "list property for rent dubai",
+      "rent out my apartment dubai",
+      "rent out my property dubai",
+      "rent out my villa dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

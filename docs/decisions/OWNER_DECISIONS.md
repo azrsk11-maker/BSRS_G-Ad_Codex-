@@ -1,5 +1,13 @@
 # Owner decisions
 
+## One live delivery test without measurement — 26 November 2026
+
+The owner approved a single clearly labelled TEST off-plan enquiry to reconcile the Lead Sheet and Marketing email. The test must send no conversion. The existing release instruction still limits activation to verified off-plan campaigns in account 573-038-4686 at AED2,500 aggregate average per day. All other campaigns remain paused or removed.
+
+## Off-plan publication and conditional launch — 25 November 2026
+
+The owner renewed approval to publish off-plan pages on the existing Real Estate website and launch eligible off-plan campaigns in account 573-038-4686 after verifying the forms, lead delivery and conversion tracking. The five prepared budgets share AED2,500 average per day. All other campaigns remain paused or removed. The owner asked to retry Chrome. Publication still uses the native shared form and verified intake route. The approval does not supply new business evidence, staff coverage, an independent PR review or permission to change the release checks.
+
 ## Continued dependency-ordered preparation — 20 November 2026
 
 The owner renewed the instruction to resume from the latest handover, complete unblocked goals in dependency order, parallelize independent work and update GitHub with verified results and blockers while keeping production unchanged and Ads paused. This preserves every existing acceptance gate and supplies no independent reviewer, missing business evidence, library approval, provider event, sharing change, publication, live configuration, activation or spending authority. The existing no-independent-reviewer answer is retained without repeating the question. Unchanged verified work may be reused within its original scope.
@@ -195,3 +203,39 @@ Under unchanged Master section6 flexibility, the complete45-literal review and f
 The owner explicitly approved: “Approve repository-only Write access and invitation acceptance.” Fresh owner-side GitHub settings showed zero collaborators. BlackSwanBss3701 was invited only to azrsk11-maker/BSRS_G-Ad_Codex- and accepted through its existing Git connection; authenticated readback verifies Push=true, Admin=false and Maintain=false. The earlier no-new-collaborator repair proposal above is superseded only for this named account/repository/Write grant. GitHub sign-in remains the selected use; commit-author settings, Business Setup scope, organization-wide access, main protection and reviewer requirements remain unchanged.
 
 The verified feature changes were published through an ordinary fast-forward and exact tree readback. [Issue12 access resolution](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/12#issuecomment-6911089029) is closed and carries owner-decision-required. This access grant and successful upload do not constitute CI/native acceptance, human PR approval, merge, publication, live tracking, Ads changes or expenditure authorization. Production unchanged; Ads paused.
+
+## Lead-first off-plan scope — 21 November 2026
+
+The owner's latest instruction changes the immediate priority to345 new enquiries/day, **off-plan buyers only**, with **AED2,500 aggregate average daily media budget** across **UAE, Germany, France and Taiwan**. The owner confirmed these four markets and answered yes to Mandarin enquiry coverage. Russia is assessed separately; current Google policy blocks serving users located there. [Decision and outstanding Taiwan applicability facts](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14).
+
+This supersedes the earlier AED2,000/four-service launch for the current lead-first work. Resale/secondary-market, Owners, Tenants, Brand and legacy campaigns stay paused. In the retained Buyers campaign24372566774, only off-plan group204397706154/ad828621612892 is a dated reuse candidate; resale group204397706314 must remain paused. Fresh account readback is still required. “No secondary” refers to resale property, not the approved Secondary classification of accepted-enquiry action7873290954, which remains Count One/AED0 fallback without a duplicate GA4 import.
+
+The full libraries, qualification-history intelligence and qualified-lead optimization move out of this focused launch's critical path. The360-slot/300-brief/640-catalogue architecture and all94 incomplete roadmap tasks remain preserved for later; none is declared complete. Existing private Marketing email/Google Sheet routing remains, with no original-workbook sharing or CRM/Zoho synchronization.
+
+[The local country package](../../tools/offplan-lead-first/README.md) implements three customer-language WordPress draft blocks, localized RSA/keyword review files and a network-free compiler. The operator proposes UAE1,500/Germany350/France300/Taiwan350 within the approved total; this is not a performance forecast or new separate country budget authority. At the authorized average spend,345 enquiries would require aboutAED7.25/enquiry; volume and CPL are unproven.
+
+The new owner instruction authorizes the specified off-plan advertising scope and country-page work, but does not establish factual/legal permission, platform approval or functioning destinations. Current browser access is unavailable and a native URL-confidence safety stop remains; no live Ads/site changes were made. Native identity, existing-form delivery, applicable consent/privacy and country eligibility require actual verification. Taiwan overseas-property applicability remains unresolved. Independent human review and branch protection continue for source merges; no direct main write or protection bypass is authorized.
+
+## India included in the immediate off-plan scope —24November2026
+
+Latest owner instruction: continue off-plan launch in account573-038-4686, sharingAED2,500average/day acrossUAE,Germany,France,IndiaandTaiwan, with all other campaigns paused. This extends the21November four-market scope; it does not multiply the budget or reactivate resale/other/legacy campaigns. The proposed English India assets and1000/350/300/500/350country split are operator preparation within that total, not new factual language authority or a performance forecast. WordPress access is still unverified in the connected profile; no site/Ads mutation or gate waiver follows from the reported sign-in.
+
+## Authenticated continuation and validation before activation - 24 November 2026
+
+The owner confirmed the WordPress dashboard was visible and instructed continuation in Real Estate account573-038-4686 acrossUAE,Germany,France,IndiaandTaiwan, sharingAED2,500aggregate average/day, with landing pages and conversions verified before activation and all other campaigns paused. This confirms authentication/continuation and preserves the actual release gates; it is not an acceptance result, a review-protection waiver or separate authority for unrelated operations. The aggregate remains an average, not a hard daily spending ceiling. The operator allocation1000/350/300/500/350was applied to paused pools under that total; it is not owner-supplied performance evidence.
+
+Current authenticated technical findings are recorded in[the readiness summary](../../tools/offplan-lead-first/LIVE_READINESS_2026-11-24.json). No website/tracking publication or campaign activation followed from sign-in. Accepted enquiries remainSecondary/CountOne/AED0fallback with no duplicateGA4receipt import authorized; the fresh native action destination matches WordPress, while delivery is unverified.
+
+Pending owner fact in[issue14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14): can the team respond inGermanandFrench? Options presented are availablecoverage,Englishcallbacksonlywiththosemarketsheld,orarrangingcoverage. Recommendation: serve each language only when an identified staff member/interpreter can respond. Mandarin support is already confirmed; no German/French coverage is inferred from the earlier yes. Taiwan applicability evidence and independent human review remain held; the owner's prior no-independent-reviewer answer is retained without another invitation or permission change.
+
+## German and French coverage arrangement - 24 November 2026
+
+Owner answer to the scoped language question: **"I will arrange language coverage."** The owner has answered; do not repeat that question as unanswered. German/French operational coverage is still unconfirmed, so DEandFRremainPaused until a named responder/interpreter and coverage are established. Mandarin support remains previously confirmed, and India preparation remainsEnglish. This is not a staff/language acceptance result, permission to redistribute the five-market budgets, or approval to bypass any other release gate. Account573-038-4686 andAED2,500aggregate average/day are unchanged. [Issue14](https://github.com/azrsk11-maker/BSRS_G-Ad_Codex-/issues/14) retains the arrangement status and other outstanding business facts.
+
+## Global off-plan languages and geographic exclusions — 25 November 2026
+
+The owner identified 35 off-plan target markets, excluded Bangladesh and Pakistan, and approved the recommended language mix with English as the default in each campaign. Review the complete [market and locale list](../../tools/offplan-lead-first/global-localization/MARKETS.json). The English default is the primary content variant for each market. Native campaign acceptance and actual Search language matching remain to be checked. The five paused budget pools still total AED2,500 average per day. A split for the additional markets was not specified. This decision authorizes localization drafts and leaves the prior activation conditions in place.
+
+## Shared design, all service drafts and off-plan-only launch — 25 November 2026
+
+The owner requested consistent layout and field mapping for all existing property enquiries, including off-plan and secondary market. The [review catalogue](../../tools/offplan-lead-first/service-localization/README.md) covers the five registered service funnels and the brand hub. English is mandatory and the primary content in every market and service, alongside the approved regional language keywords. Release scope remains off-plan only, after the existing verification gates. The other services and brand are prepared as drafts for review. The 35-market scope and Bangladesh and Pakistan exclusions remain as recorded above.

@@ -1,0 +1,66 @@
+{
+  "schema": "bsre-offplan-review-bundle-v1",
+  "scope": "OFFLINE_DRAFTS_NOT_LIVE_ACCEPTANCE",
+  "inputs": {
+    "launch.json": {
+      "bytes": 7275,
+      "sha256": "3293d33cbcdf5f914a9998490a6f66f3efecbbb60ad6872c4cb55e21cf21587c"
+    },
+    "copy.json": {
+      "bytes": 15876,
+      "sha256": "eef24a1b7232e952de0c827f88b73d9e21c3e0de33a86dbf83107f10aa5fe673"
+    },
+    "keywords.json": {
+      "bytes": 21119,
+      "sha256": "f8dd086473a09cbc89f5ddc584bce6db03af121ca157be1931e6a74a37fca065"
+    },
+    "policy_sources.json": {
+      "bytes": 10344,
+      "sha256": "0d2a651bbf180cc16f0d086451df45e0a2ac6e9b104062ede80c117794e44640"
+    }
+  },
+  "outputs": {
+    "activation-review.json": {
+      "bytes": 6859,
+      "sha256": "cec29de846f5bb1966ed8f29bbba11e53e1565bdb7045d08642d6baac7de7626"
+    },
+    "keyword-review.csv": {
+      "bytes": 12848,
+      "sha256": "2d139ab9d48e4cf4d29ef0927a1382d64519a8d3c41b0a54efa6c44d2c18a943"
+    },
+    "native-pages.json": {
+      "bytes": 4349,
+      "sha256": "f889c1545f1459e62cd4bec61557b9e93f82cf6031491f74b370dc182a9f43ae"
+    },
+    "off-plan-dubai-de.html": {
+      "bytes": 2313,
+      "sha256": "9b21abde7c85ff7f89f7354760e2eab03680c3de69aeb76a795f7c3173b31b33"
+    },
+    "off-plan-dubai-fr.html": {
+      "bytes": 2397,
+      "sha256": "c0359592872e6b9c4c122153b93a6c7d5782c96be0c6c1b62ea47e15bb244c0d"
+    },
+    "off-plan-dubai-india.html": {
+      "bytes": 2076,
+      "sha256": "7dcb30dfa5852d1e33a845f56206a38526958a8ce9241f59f6a768d948f18b3c"
+    },
+    "off-plan-dubai-zh-tw.html": {
+      "bytes": 2043,
+      "sha256": "31c918b55c84d26eb51fcff2e081fb231b227b2734d77fd652dc953181367a91"
+    },
+    "rsa-review.csv": {
+      "bytes": 6178,
+      "sha256": "e19cc2a0c9ec76f77fb93a991e5950bb3018a4793c830d2a7bd40dfe0d0e3585"
+    }
+  },
+  "counts": {
+    "localized_pages": 4,
+    "distinct_authored_keyword_strings": 62,
+    "proposed_match_placements": 124,
+    "localized_RSA_assets": 76,
+    "new_live_campaigns": 0,
+    "published_pages": 0
+  },
+  "production_ads_mail_or_sheet_writes": 0,
+  "full_14000_library_admissions_added": 0
+}

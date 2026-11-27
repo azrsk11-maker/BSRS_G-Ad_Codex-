@@ -173,6 +173,8 @@ class ReleasePacketTests(unittest.TestCase):
                      "update_owner_ref": "TEST_ONLY:update-owner"} for resource in resources
                 ])
             if gate == "STAFF_CAPACITY" and kind == "ADS_ACTIVATION":
+                peak_timing = {"peak_first_contact_sample_count": 15, "peak_first_contact_max_seconds": 1800,
+                               "missing_first_attempt_count": 0, "late_first_attempt_count": 0}
                 result.update(method="OWNER_REVIEWED_BUSINESS_EVIDENCE", staff_capacity={
                     "completed_rehearsal_ref": "TEST_ONLY:rehearsal", "capacity_evidence_ref": "TEST_ONLY:capacity",
                     "workload_summary": self.write("workload-summary.json", {
@@ -182,8 +184,10 @@ class ReleasePacketTests(unittest.TestCase):
                         "sample_representativeness_verified": False,
                     }),
                     "measured_daily_capacity": 100, "reviewed_launch_daily_load": 90,
-                    "peak_first_contact_sample_count": 15, "peak_first_contact_max_seconds": 1800,
-                    "missing_first_attempt_count": 0, "late_first_attempt_count": 0,
+                    "timing_summary": self.write("timing-summary.json", {
+                        **peak_timing, "within_target_for_supplied_sample": True,
+                    }),
+                    **peak_timing,
                     "coverage": "DAILY_10:00_19:00_Asia/Dubai",
                     "pause_on_absence_or_unmanageable_backlog": True,
                 })
@@ -488,6 +492,51 @@ class ReleasePacketTests(unittest.TestCase):
                 result["staff_capacity"].update(changes)
                 evidence["file"] = self.write(path, result)
                 self.assertIn("PEAK_FIRST_CONTACT_EVIDENCE_WITHIN_30_MINUTES_REQUIRED", self.check(packet)["errors"])
+
+    def test_activation_holds_without_the_correct_timing_summary_reference(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(row for row in packet["evidence"] if row["gate_id"] == "STAFF_CAPACITY")
+        path = evidence["file"]["path"]
+        result = load_json(self.root / path)
+        capacity = result["staff_capacity"]
+        capacity.pop("timing_summary")
+        for swapped_ref in (False, True):
+            with self.subTest(swapped_ref=swapped_ref):
+                if swapped_ref:
+                    capacity["timing_summary"] = capacity["workload_summary"]
+                evidence["file"] = self.write(path, result)
+                self.reapprove(packet)
+                checked = self.check(packet)
+                self.assertEqual(checked["errors"], ["REVIEWED_PEAK_FIRST_CONTACT_MUST_MATCH_TIMING_SUMMARY"])
+                self.assertEqual(checked["next_gate"], "REPAIR_OR_COMPLETE_RELEASE_EVIDENCE")
+                self.assertFalse(checked["execution_allowed"])
+                self.assertFalse(checked["release_authorized"])
+
+    def test_activation_rejects_modified_timing_summary_bytes(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(row for row in packet["evidence"] if row["gate_id"] == "STAFF_CAPACITY")
+        capacity = load_json(self.root / evidence["file"]["path"])["staff_capacity"]
+        summary = self.root / capacity["timing_summary"]["path"]
+        summary.write_bytes(summary.read_bytes() + b" ")
+        self.assertEqual(self.check(packet)["errors"], ["MALFORMED_OR_UNREADABLE_PACKET:ValueError:ARTIFACT_HASH_MISMATCH"])
+
+    def test_activation_requires_active_timing_fields_to_match_exact_aggregate(self):
+        packet = self.fixture("ADS_ACTIVATION")
+        evidence = next(row for row in packet["evidence"] if row["gate_id"] == "STAFF_CAPACITY")
+        path = evidence["file"]["path"]
+        result = load_json(self.root / path)
+        capacity = result["staff_capacity"]
+        summary_path = capacity["timing_summary"]["path"]
+        timing = load_json(self.root / summary_path)
+        for changes in ({"peak_first_contact_sample_count": 14}, {"peak_first_contact_max_seconds": 1799},
+                        {"missing_first_attempt_count": False}, {"late_first_attempt_count": 0.0},
+                        {"within_target_for_supplied_sample": False}, {"within_target_for_supplied_sample": 1},
+                        {"unexpected_detail": "TEST_ONLY"}):
+            with self.subTest(changes=changes):
+                capacity["timing_summary"] = self.write(summary_path, {**timing, **changes})
+                evidence["file"] = self.write(path, result)
+                self.reapprove(packet)
+                self.assertEqual(self.check(packet)["errors"], ["REVIEWED_PEAK_FIRST_CONTACT_MUST_MATCH_TIMING_SUMMARY"])
 
     def test_activation_rejects_reenabled_held_account_lead_form(self):
         packet = self.fixture("ADS_ACTIVATION")

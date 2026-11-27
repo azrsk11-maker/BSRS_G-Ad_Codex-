@@ -1,0 +1,104 @@
+{
+  "schema": "bsre-native-wordpress-country-drafts-v1",
+  "site_origin": "https://blackswanrealestate.ae",
+  "pages": [
+    {
+      "country_code": "DE",
+      "locale": "de-DE",
+      "title": "Ihr Off-Plan-Kauf in Dubai beginnt mit Ihren Wünschen",
+      "proposed_slug": "off-plan-dubai-de",
+      "proposed_path": "/off-plan-dubai-de/",
+      "post_type": "page",
+      "requested_status": "draft",
+      "content_file": "off-plan-dubai-de.html",
+      "content_pin": {
+        "bytes": 2313,
+        "sha256": "9b21abde7c85ff7f89f7354760e2eab03680c3de69aeb76a795f7c3173b31b33"
+      },
+      "actual_cms_id": null,
+      "actual_live_url": null,
+      "created": false,
+      "published": false,
+      "document_language_hreflang_canonical_noindex_readback": "PENDING_NATIVE_CMS",
+      "form_language": "EXISTING_ENGLISH_FORM_WITH_LOCALIZED_STEP_NOTICE",
+      "localized_form_installed": false,
+      "form_delivery_and_consent_acceptance": "PENDING_LIVE_VERIFICATION",
+      "planning_360_identity": null,
+      "planning_note": "Supplemental country proposal; no canonical registry identity assigned or overwritten."
+    },
+    {
+      "country_code": "FR",
+      "locale": "fr-FR",
+      "title": "Votre achat sur plan à Dubaï commence par vos besoins",
+      "proposed_slug": "off-plan-dubai-fr",
+      "proposed_path": "/off-plan-dubai-fr/",
+      "post_type": "page",
+      "requested_status": "draft",
+      "content_file": "off-plan-dubai-fr.html",
+      "content_pin": {
+        "bytes": 2397,
+        "sha256": "c0359592872e6b9c4c122153b93a6c7d5782c96be0c6c1b62ea47e15bb244c0d"
+      },
+      "actual_cms_id": null,
+      "actual_live_url": null,
+      "created": false,
+      "published": false,
+      "document_language_hreflang_canonical_noindex_readback": "PENDING_NATIVE_CMS",
+      "form_language": "EXISTING_ENGLISH_FORM_WITH_LOCALIZED_STEP_NOTICE",
+      "localized_form_installed": false,
+      "form_delivery_and_consent_acceptance": "PENDING_LIVE_VERIFICATION",
+      "planning_360_identity": null,
+      "planning_note": "Supplemental country proposal; no canonical registry identity assigned or overwritten."
+    },
+    {
+      "country_code": "IN",
+      "locale": "en-IN",
+      "title": "Planning a Dubai Off-Plan Purchase from India?",
+      "proposed_slug": "off-plan-dubai-india",
+      "proposed_path": "/off-plan-dubai-india/",
+      "post_type": "page",
+      "requested_status": "draft",
+      "content_file": "off-plan-dubai-india.html",
+      "content_pin": {
+        "bytes": 2076,
+        "sha256": "7dcb30dfa5852d1e33a845f56206a38526958a8ce9241f59f6a768d948f18b3c"
+      },
+      "actual_cms_id": null,
+      "actual_live_url": null,
+      "created": false,
+      "published": false,
+      "document_language_hreflang_canonical_noindex_readback": "PENDING_NATIVE_CMS",
+      "form_language": "EXISTING_ENGLISH_FORM_WITH_LOCALIZED_STEP_NOTICE",
+      "localized_form_installed": false,
+      "form_delivery_and_consent_acceptance": "PENDING_LIVE_VERIFICATION",
+      "planning_360_identity": null,
+      "planning_note": "Supplemental country proposal; no canonical registry identity assigned or overwritten."
+    },
+    {
+      "country_code": "TW",
+      "locale": "zh-Hant-TW",
+      "title": "杜拜預售物業購屋諮詢｜Black Swan Real Estate",
+      "proposed_slug": "off-plan-dubai-zh-tw",
+      "proposed_path": "/off-plan-dubai-zh-tw/",
+      "post_type": "page",
+      "requested_status": "draft",
+      "content_file": "off-plan-dubai-zh-tw.html",
+      "content_pin": {
+        "bytes": 2043,
+        "sha256": "31c918b55c84d26eb51fcff2e081fb231b227b2734d77fd652dc953181367a91"
+      },
+      "actual_cms_id": null,
+      "actual_live_url": null,
+      "created": false,
+      "published": false,
+      "document_language_hreflang_canonical_noindex_readback": "PENDING_NATIVE_CMS",
+      "form_language": "EXISTING_ENGLISH_FORM_WITH_LOCALIZED_STEP_NOTICE",
+      "localized_form_installed": false,
+      "form_delivery_and_consent_acceptance": "PENDING_LIVE_VERIFICATION",
+      "planning_360_identity": null,
+      "planning_note": "Supplemental country proposal; no canonical registry identity assigned or overwritten."
+    }
+  ],
+  "publishing_or_import_api": null,
+  "note": "Use the existing native WordPress editor; this compiler never loads a synthetic writer or WordPress."
+}

@@ -1,5 +1,50 @@
 # Efficiency audit — 7 November 2026
 
+## Date-specific keyword fixture trials — 28 November 2026
+
+Two owned Windows Python 3.12.14 trials at `c6425cc0569bd4daab9bcfe0a5aeccca1348f011` preserved discovery of 59 modules and all 792 original case IDs. Each trial rebuilt the preceding history at the tests' fixed review date, compared every stage's pinned saved documents, and supplied detached inputs through the original fixture hooks. Apprenticeship retained its original extension through the base-only hook. Each original class recorded its own ordered cases and verdict. The isolated bytecode directories stayed empty.
+
+| Fixed review date | Original modules | Passed cases | Owned process wall time |
+| --- | ---: | ---: | ---: |
+| 12 November, Apprenticeship through Animal Care | 6 | 76 | 209.230 s |
+| 13 November, Bank Channel through Pool and Sprinkler | 6 | 99 | 226.786 s |
+
+Both trials had zero skips. The latter reproduced complete corpus SHA-256 `1dd9cd9a93f5cb78695846be7cf0767864c8d5bb20e94ab4a731a71f07ba27ae`. Their observed serial times sum to 436.015 seconds before the remaining 617 cases. The 617 include 73 in four legacy negative-library modules that explicitly assert fresh reconstruction, and 544 in 43 other modules. Parallel full-suite timing and memory headroom need independent verification before introducing either group into the default scheduler.
+
+## Current negative research composition — 28 November 2026
+
+The current composition check uses the verified valuation state and builds each of the following 14 stages once. Each original builder still checks its input, sources, chronology, retained prefix and protected queries. All four saved documents for each stage must match their pins before handing the generated state to the next builder. The saved indexes bind the complete input fingerprints. The standalone reference and its checks of caller-supplied state remain available. A changed source fingerprint selects the reference path.
+
+The instrumented full reference took 171.689 seconds, with 75.110 seconds in canonical serialization. The fresh build and saved-document comparison took 97.234 seconds in a separate run and produced the same complete input fingerprint and final report, covering 14,000 rows, 19,115 protections and zero computed conflicts. The named Foundation check passed in 117.278 seconds under its existing 120-second deadline. That run had 2.722 seconds of headroom. Full Foundation still requires its other checks, including the 792-case keyword suite.
+
+## Default single-worker keyword scheduling — 28 November 2026
+
+When the normal scheduler selects one worker, it runs the two measured suites consecutively in one owned process if their source pins match. The saved bank-output check and every other bank case must pass before the front-office suite can use a detached copy of the freshly verified history. The front-office suite still loads its reviewed sources and runs each original case. Each suite retains separate events, timing, output, and a verdict. The parent validates both receipts and the pair process outcome.
+
+With multiple workers, different test sources, or a different suite folder, the scheduler continues to use separate processes. If the freshly reconstructed history fails the handoff checks, front-office setup runs normally. All 59 modules and 792 original case identities remain discoverable under the same 300-second bound.
+
+The contained integration run discovered the full suite, then ran the exact 28-case pair through the default scheduler's one-worker path in 141.684588 seconds. All 28 passed with zero skips, distinct suite logs and verified reuse. The full efficiency group passed 160 tests with three platform skips in 23.193 seconds. The two contained stages do not establish full Foundation acceptance or a new whole-suite speed measurement.
+
+## Fresh bank and front-office test histories — 27 November 2026
+
+An ordered Windows Python 3.12.14 comparison ran the same 28 original bank-channel and front-office cases at `cbdf8ee032e8327b6a8a84f10ca371ef35d53779`. The bank class ran its original saved-output validation. The second arm passed a detached copy of that verified bank state through the front-office class's existing `FRESH_BASE` hook. Both arms ran each class's original tests and checked the saved front-office report. Case ID, Ofqual base, bank state, front-office state and report digests matched.
+
+Elapsed time was 236.472123 seconds for separate history setup and 124.482015 for the tested reuse. This pair observed 111.990108 seconds saved (47.36%) for these two suites. CPU time was 230.734375 and 121.265625 seconds. The baseline preceded the candidate. This covers 28 of 792 discovered cases and establishes no timing estimate for the remaining cases or aggregate Foundation.
+
+The existing pest/pool profile's documentation pin now matches the tracked keyword README at `cbdf8ee`. Its other 478 pins, 39 case identities and source/runtime checks are unchanged. `--inspect` completed with `READY` across all 479 files. The bank and front-office comparison measured the handoff separately from the default scheduler. The Foundation commands, full coverage requirement and time limits remain in place.
+
+## Optional Foundation progress journal — 27 November 2026
+
+Use `python -B tools/check_repository.py --progress-output test-output/foundation-progress-NEW.jsonl` to keep a flushed local record of check names, elapsed time and outcomes. Choose a new file for each run. The final report still controls acceptance. An interrupted run can retain finished-check observations without a `run_finished` record. The commands, order and per-check timeouts are the same with the journal enabled.
+
+The 24 November run reached its 600-second deadline without a final report. A time-correlated keyword journal shows its first active module for 180.476 seconds with no case started. The 18 November run separately hit 120 seconds in negative research composition and 300 seconds in keyword behavior. Use the progress journal to locate future incomplete checks before scheduling another full run.
+
+A 14-second controlled cutoff of the current Foundation command retained 34 journal rows and 16 completed-check observations. The final started check was `keyword-abu-sharjah-triage`. No full report or `run_finished` record was produced. The complete efficiency suite ran 154 tests in 24.287 seconds with 151 passes and three environment skips.
+
+The full local run at `77ad1e10c349940a2ba6b703cd31aa3851c09437` used `--require-php` and PHP 8.2.36 with the opt-in journal. It wrote its final report after 634.263498 seconds and passed 140 of 143 checks. Negative composition and keyword behavior hit their existing 120- and 300-second limits. The latter recorded 28 of 792 finished cases before timeout. The efficiency suite's Windows Git initialization error was reproduced after an environment-patching test. Mocking the observation module's environment lookup avoids modifying inherited Git configuration. With the fix, normal standalone efficiency discovery passed 151 tests, with three platform skips, in 27.087 seconds. Full Foundation acceptance remains open.
+
+An alternating local comparison removed three repeated JSON decodes for the real 259-record study-goods cohort while preserving raw pin checks. It decoded 10,402,898 fewer bytes, and all four outputs and audited reports matched. The two elapsed medians were 0.619 seconds before and 0.626 seconds after. The candidate was withdrawn because this comparison did not demonstrate a wall-time benefit. The existing keyword code and pins were restored.
+
 ## Current ARM result and follow-up — 13 November 2026
 
 Actual ARM execution completed all559keyword cases/44modules in169.343477s,zero skips,complete ordered coverage and no timeout under the original300s bound. Full acceptance was false because a filesystem-order-dependent tamper test targeted the preview. The follow-up selects the manifest-pinned source and requires an exact byte-hash rejection under both discovery orders; validator/data and case counts stay unchanged. The focused real reporting worker passes allthree cases. [Actual runtime, limits, root cause and current-CI requirement](../../docs/audit/ARM_RUNTIME_TRIAL_2026-11-13.json). Cloud hosts/images differ; no causal speedup percentage or passing combined CI is inferred from the first failed ARM run.

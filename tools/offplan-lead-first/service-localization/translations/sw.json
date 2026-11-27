@@ -1,0 +1,87 @@
+{
+  "page_titles": {
+    "resale": "Nunua mali isiyohamishika kwenye soko la mauzo ya pili Dubai",
+    "rent": "Tafuta mali isiyohamishika ya kukodi Dubai",
+    "sell": "Uza mali yako isiyohamishika Dubai",
+    "let": "Pangisha mali yako isiyohamishika Dubai",
+    "hub": "Maswali kuhusu mali isiyohamishika Dubai"
+  },
+  "page_intros": {
+    "resale": "Tuambie maeneo na aina za mali isiyohamishika unazozingatia Dubai, jumla ya bajeti yako na wakati unaopanga kununua. Hakikisha mali hiyo bado inapatikana na uhakiki maelezo ya ununuzi kabla ya kuamua.",
+    "rent": "Tuambie maeneo na aina za mali isiyohamishika unazopendelea, bajeti yako ya kodi kwa mwaka na wakati unaohitaji kuhamia. Hakikisha mali hiyo inapatikana na uhakiki masharti ya upangaji kabla ya kukubali.",
+    "sell": "Tuambie kuhusu mali yako, ikiwa wewe ndiye mmiliki au umeidhinishwa kumwakilisha mmiliki, na wakati ungependa kuuza. Timu itapitia maelezo hayo pamoja nawe.",
+    "let": "Tuambie kuhusu mali yako, ikiwa wewe ndiye mmiliki au umeidhinishwa kumwakilisha mmiliki, na wakati mali hiyo itapatikana. Timu itapitia mipango yako ya kupangisha.",
+    "hub": "Chagua aina ya swali kuhusu mali isiyohamishika inayolingana na mipango yako."
+  },
+  "extra_form": {
+    "ready": "Sehemu zenye alama ya * ni za lazima.",
+    "property_area": "Jumuiya ya makazi au eneo ilipo mali hiyo *",
+    "annual_budget": "Bajeti ya kodi kwa mwaka (AED) *",
+    "annual_budget_help": "Weka kiasi cha mwaka mzima. Fomu hii haiweki kiwango cha chini cha bajeti.",
+    "rent_timing": "Unahitaji kuhamia lini? *",
+    "rent_now": "Mara moja / nahitaji kuhamia sasa",
+    "month_30": "Ndani ya siku 30",
+    "rent_later": "Baadaye / nachunguza chaguo",
+    "sale_timing": "Wakati unaopendelea kuuza",
+    "sale_now": "Punde itakapowezekana",
+    "sale_90": "Ndani ya miezi 3",
+    "sale_later": "Baadaye / ningependa kujadili chaguo",
+    "let_timing": "Wakati mali inatarajiwa kupatikana",
+    "let_now": "Haina mkazi / tunaweza kujadili sasa",
+    "let_30": "Inatarajiwa kupatikana ndani ya siku 30",
+    "let_later": "Baadaye / tarehe itajadiliwa",
+    "authority": "Mamlaka yako *",
+    "owner": "Mimi ndiye mmiliki wa mali hiyo",
+    "representative": "Nimeidhinishwa na mmiliki wa mali hiyo",
+    "property_details": "Maelezo ya mali isiyohamishika *",
+    "letting_details": "Maelezo ya mali na mpango wa kuipangisha *",
+    "resale_other": "Mahitaji mengine kuhusu mali isiyohamishika",
+    "rent_other": "Mahitaji mengine kuhusu mali ya kukodi",
+    "property_hint": "Jengo au eneo la makazi, idadi ya vyumba vya kulala, takriban ukubwa na kama mali hiyo inakaliwa."
+  },
+  "keyword_intents": {
+    "resale": [
+      "nunua fleti inayouzwa tena Dubai",
+      "nunua mali isiyohamishika inayouzwa tena Dubai",
+      "nyumba zinazouzwa tena Dubai",
+      "mali isiyohamishika inayouzwa tena Dubai",
+      "soko la pili la mali isiyohamishika Dubai",
+      "fleti zinazouzwa tena Dubai",
+      "nyumba za mauzo ya pili Dubai",
+      "mali inayotolewa kwa mauzo ya pili Dubai",
+      "vila zinazouzwa tena Dubai"
+    ],
+    "rent": [
+      "fleti za kukodi Dubai",
+      "nyumba za kukodi Dubai",
+      "mali isiyohamishika ya kukodi Dubai",
+      "mali ya kukodi Dubai",
+      "fleti za kukodi zilizo tayari kuhamia Dubai",
+      "kodi fleti Dubai",
+      "kodi vila Dubai",
+      "vila za kukodi Dubai"
+    ],
+    "sell": [
+      "wakala wa kuuza mali isiyohamishika Dubai",
+      "tangaza mali yangu inauzwa Dubai",
+      "uza fleti yangu Dubai",
+      "uza nyumba yangu Dubai",
+      "uza mali yangu isiyohamishika Dubai",
+      "uza vila yangu Dubai"
+    ],
+    "let": [
+      "pangisha mali yangu isiyohamishika Dubai",
+      "wakala wa kupangisha mali Dubai",
+      "tangaza mali yangu ya kupangisha Dubai",
+      "pangisha fleti yangu Dubai",
+      "pangisha mali yangu Dubai",
+      "pangisha vila yangu Dubai"
+    ],
+    "hub": [
+      "black swan real estate",
+      "black swan real estate dubai",
+      "blackswan real estate",
+      "blackswan realestate"
+    ]
+  }
+}

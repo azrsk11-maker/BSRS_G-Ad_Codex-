@@ -1,0 +1,180 @@
+{
+  "scope": "OFFPLAN_ENGLISH_COUNTRY_RECOVERY_0221_REVIEW_ONLY",
+  "base_archive_sha256": "be8a76ba2a9cb3dfbfcad37767a5d72c06c9ea632597a6a83c9ef9b00f849be3",
+  "base_member_count": 53,
+  "candidate_member_count": 53,
+  "candidate_members": {
+    "assets/assets.css": "347efa236a0cc168031fe0f2843403cc43f2ad499edf4e0ed62cc18fdeb36b59",
+    "assets/consent-bridge.js": "490b50be1fa1113f8a152bd0fcb8899efc9d7a1f9e5a149798a851e342f1f993",
+    "assets/consent.css": "af2ff77a09eaa4e8d5ee5d94792b04caa8b5a60d1cf6e21de60a00b0dce5c75d",
+    "assets/country-advertising-consent.js": "5b77824143019768c28759888cc1cee32c1b6f1ba61b813273ea98a651acaeb0",
+    "assets/de-DE/consent-bridge.js": "7867801c9caa61e1f3bc1024851301d85541549b41141d7e9339fcdd27e4244e",
+    "assets/de-DE/lead.js": "ce2b24c130fcfe22dac481e10e0facffb4960e092350aa4c561ed38fef01927d",
+    "assets/en-IN/lead.js": "73829d0e009b91a732abe09a8e253880169bb570914f141da508400393a40941",
+    "assets/fr-FR/consent-bridge.js": "54be82cf6c97ad06853e08a05a60fdb4cb73d1c3d48cfbbb0610cbbf0a05a699",
+    "assets/fr-FR/lead.js": "e2c8f2e2f19b6f5cbb564acb1ed1598160f123b28ed4b1d1ac52137023332ab5",
+    "assets/google-measurement.js": "103307997d4a92b2ac5d0d299d878c5a610a9e5b5ab94b08c243d878b01a1f4a",
+    "assets/google-runtime.js": "3ad7c224484efd9376fc39197f6621690276e156cc6daf632514e6ebac511fd6",
+    "assets/hub.css": "7b0c700810cf63d4e2b18673a0f972169f79d3edefae74f12d6d26ba0449b093",
+    "assets/lead.js": "ee9d8df775ce71d8ff2a2ade86b9bf27a00a34a8baa3585830e69b036ab44cb6",
+    "assets/wordpress.js": "4899c4942bc021d6b46913cf4409990cfd4715471269363d28461c5a8550395f",
+    "assets/zh-Hant-TW/consent-bridge.js": "ffff43bd37d0d9da5a4efc9b70b7b3719d2b2697c6947678a640728b7048d4ec",
+    "assets/zh-Hant-TW/lead.js": "e816e2b98d6c0ac71c91d3d375a38373f77e84a8c1d40158623c306021bc8f02",
+    "bsre-enquiries.php": "c740d04eb057d58dc6f924db2cbb8d46652641a1f45e3a96fd321cea1c27333e",
+    "includes/admin.php": "b9085de788b5172ec82f30b3664487ce35774cde44c8c80772cb5b453cc683f3",
+    "includes/cli.php": "f0fcc427f52d7931708975272e0b2a21d327dabdf626e4777b345d429f54b0e0",
+    "includes/consent-export.php": "d93394f037a8391e64131fb0f5080064cbc6372017c04f681edd0d69d5b9c215",
+    "includes/consent-store.php": "b1b4b27b98a33b845df69b5f426d380543866b58c58f8959062dc98901be575e",
+    "includes/consent.php": "dd882c372f76241d3d6dda7f9346e197f4f621e3421aff41c89881db426903af",
+    "includes/drafts.php": "d4021ae8572da12111d74e0a9b54daba38a1beb34badb8b07930a8c73a784632",
+    "includes/enquiry-seo.php": "1c9f12e016f9437f7d6fc62cb61a25fcf0e605829120dfa04349f47fd10b827b",
+    "includes/measurement-runtime.php": "27a647ec6b63673b1731667dc9ed3b6057dcf1c198212b49f48d6a69673f6d36",
+    "includes/measurement-settings.php": "6920491c93e3e895d63d876a80da0c04fe6b127771401725d7b57ae114b29132",
+    "includes/measurement.php": "20acce22509af07e18257a3fcbbb2b0ae489717068528f687db28557219830e5",
+    "includes/offplan-country-advertising.php": "d80fdc08db82534a246a2f9d9f695bcab8c9f75ac4b329b86ad5e3969283f2b4",
+    "includes/offplan-country-pages.php": "79f0e50e77e4d8fdee323e09286f577b2edc0388c2f06c35aaf58baa03c6c822",
+    "includes/offplan-country-transport.php": "29a36c1eef36a40424cbb5b988b25c465b016e74b7dcb111e09b30f0ebc5413e",
+    "includes/offplan-india-measurement.php": "87930937ad53233bf3e14a6d3f2736c159019338f434f116c868aea1b70ec544",
+    "includes/offplan-india.php": "7d07b8f43e7bef18ef3ae6691fb3b3d3265409f52ea9a6f43bc0ec32fe955c43",
+    "includes/offplan-locale.php": "7468641661300006611d866693680a091ab0c49495dbb7ca5a62a648d7f8fb84",
+    "includes/offplan-protected-source.php": "412b9f1bbbb5835b0b4f6473e5cf77682a34532e0dd06273dfcab4a9e7e2f9b9",
+    "includes/offplan-variant.php": "41cd92c762b6786775e3699ac82b00b6fcad07db5e76d8481c78fa443e06fb3b",
+    "includes/parent-isolation.php": "3d609a24f4c7abf330396810c495d828ad40c019e42678a41321871db0a7ff83",
+    "includes/presentation.php": "a32c0bdbe77b475f5267c148456b0789e328ea85541ddfc4e7c4fff677cc785a",
+    "includes/protocol.php": "347fb027ff4f5288fcd0844e67ad7f6b6aa971ba3460952d90bbec2d23737e54",
+    "templates/hub.php": "7aff5a42cb1e8c90d347eb7f358f4fd44da22e13889811d74420c56807994d82",
+    "templates/offplan-locales/de-DE.json": "694438a751e1e89bd7e29c7d8a3ad799871537b47349c3b2ccee646f874d3d98",
+    "templates/offplan-locales/fr-FR.json": "d6879221be9d926f5188f1261bf7c523a08a24d5c16273eb93e6c172d41a3178",
+    "templates/offplan-locales/zh-Hant-TW.json": "064b158471b1527f25b002edd9625df868cf8496b4eab2b51d3ed6a8b113e56c",
+    "templates/page.php": "f54e908bdf3a0527bb921e9ca558cc906701c7124cf3ff836dc584d39e67827e",
+    "templates/source/hub.html": "4a20726a828e72b581d4e717dfee31d2f9b62c3d3f7a49a87199b5e5472ab6ff",
+    "templates/source/let.html": "f10999b657d5f15c27e29a891361f6efc936766bd612fcdfcde14f6c9b18c08e",
+    "templates/source/off-plan.de-DE.php": "308b2a88870fa01f4669db10e5f9e2011b965d19f423aae36c9d3b87d5b39866",
+    "templates/source/off-plan.en-IN.php": "d6cf490f79e18260964df21953e1f89c628f2d48938f165bbcd6ce5910b95f6d",
+    "templates/source/off-plan.fr-FR.php": "5e6eccdbda763841ec7a13abd88de55c37ac308830e42aa0aa60d08dafe6407d",
+    "templates/source/off-plan.html": "78e2349a7e1b1e2acee94e65d592d72a9d1902d6881040ec89bf7c38c5d8e05f",
+    "templates/source/off-plan.zh-Hant-TW.php": "040b59a4728e458616d75c5e129461d336575a5778ada86f4e024316cd1b3a5c",
+    "templates/source/rent.html": "e33e28ce93b742b757de41899e68841e3b3425dc28b0a5955486372aec49e947",
+    "templates/source/resale.html": "7419cbd288b4b9331e231afde6709eb26487f417f1e9732334774cb500de3172",
+    "templates/source/sell.html": "529d786aafa48cd85a66e05ca43f9997c48c90318051131fc3842efdc4bc50a0"
+  },
+  "changes": {
+    "bsre-enquiries.php": {
+      "before": "244f3db57fea97c9ed59e4d6a723ca7d90248ec13c48da825572d8643296be05",
+      "edits": [
+        {
+          "offset": 179,
+          "remove": 19,
+          "lines": [
+            " * Version: 0.2.21\n"
+          ]
+        },
+        {
+          "offset": 306,
+          "remove": 33,
+          "lines": [
+            "const PLUGIN_VERSION = '0.2.21';\n"
+          ]
+        }
+      ]
+    },
+    "includes/consent-store.php": {
+      "before": "12d7da50d2811a637ef24f9d8b1da620550fb8f0f7d6afa4e883c97a0bcc340f",
+      "edits": [
+        {
+          "offset": 1963,
+          "remove": 0,
+          "lines": [
+            "    }\n",
+            "    public function findCapture(string $request): ?array {\n",
+            "        return $this->row($this->db->prepare(\"SELECT request_id,fingerprint,subject_key,original_revision,decision_version,\n",
+            "            notice_version,analytics,ad_measurement,personalization,eligible,known,state,click_capture_state,\n",
+            "            lead_id,event_id,delivery_pending\n",
+            "            FROM {$this->captures} WHERE request_id=%s\", $request));\n"
+          ]
+        }
+      ]
+    },
+    "includes/offplan-country-transport.php": {
+      "before": "4141f44e93cf8a0ef73c6aa401876f009e8f104344e4cdc36782f6a7722e17eb",
+      "edits": [
+        {
+          "offset": 134,
+          "remove": 0,
+          "lines": [
+            "\n",
+            "const OFFPLAN_COUNTRY_RECOVERY_NOTICES = [\n",
+            "    '/off-plan-dubai-en-de/' => 'bsre-en-de-offplan-ads-review-v1',\n",
+            "    '/off-plan-dubai-en-fr/' => 'bsre-en-fr-offplan-ads-review-v1',\n",
+            "    '/off-plan-dubai-en-tw/' => 'bsre-en-tw-offplan-ads-review-v1',\n",
+            "];\n"
+          ]
+        },
+        {
+          "offset": 2294,
+          "remove": 0,
+          "lines": [
+            "function offplan_country_recover(string $raw, string $request_id, string $decision, string $notice): \\WP_REST_Response {\n",
+            "    try {\n",
+            "        $store = consent_repository();\n",
+            "        $row = $store->findCapture(strtolower($request_id));\n",
+            "        if (!$row || $row['notice_version'] !== $notice\n",
+            "            || !hash_equals($row['fingerprint'], hash('sha256', $raw)) || !hash_equals($row['decision_version'], $decision)\n",
+            "            || !in_array($row['state'], ['STAGED', 'ACCEPTED'], true)\n",
+            "            || (int) $row['known'] !== 1 || (int) $row['ad_measurement'] !== 1 || (int) $row['eligible'] !== 1\n",
+            "            || (int) $row['analytics'] !== 0 || (int) $row['personalization'] !== 0\n",
+            "            || (int) $row['original_revision'] < 1 || !preg_match('/^[a-f0-9]{64}$/D', $row['subject_key'])\n",
+            "            || $row['click_capture_state'] !== 'NOT_PERMITTED') return reply(409, 'REQUEST_ID_CONFLICT');\n",
+            "        if ($row['state'] === 'ACCEPTED') {\n",
+            "            if (!consent_valid_receipt_id($row['lead_id'], 'BSRE-')\n",
+            "                || !consent_valid_receipt_id($row['event_id'], 'evt_')) throw new \\RuntimeException();\n",
+            "            // Reuse the locally linked receipt without forwarding the body again.\n",
+            "            if ((int) $row['delivery_pending'] !== 0) {\n",
+            "                $store->link($row['request_id'], $row['fingerprint'], $row['lead_id'], $row['event_id']);\n",
+            "            }\n",
+            "            return response(200, ['accepted' => true, 'lead_id' => $row['lead_id'], 'event_id' => $row['event_id'],\n",
+            "                'measurement' => consent_denied_snapshot(), 'measurement_eligible' => false]);\n",
+            "        }\n",
+            "    } catch (\\Throwable $e) { return reply(503, 'ACCEPTANCE_UNCERTAIN_RETRY_SAME_ID', true); }\n",
+            "\n",
+            "    // Preserve the original capture. A successful receiver response must link\n",
+            "    // to it before acknowledging recovery, with every optional purpose denied.\n",
+            "    $capture = ['recorded' => true, 'row' => $row, 'repository' => $store];\n",
+            "    return relay_accepted_enquiry($raw, $capture, true, static function (array $handle, array $receipt): array {\n",
+            "        if (!consent_valid_receipt_id($receipt['lead_id'] ?? null, 'BSRE-')\n",
+            "            || !consent_valid_receipt_id($receipt['event_id'] ?? null, 'evt_')) throw new \\RuntimeException();\n",
+            "        $row = $handle['row'];\n",
+            "        $handle['repository']->link($row['request_id'], $row['fingerprint'], $receipt['lead_id'], $receipt['event_id']);\n",
+            "        return consent_denied_snapshot();\n",
+            "    });\n",
+            "}\n",
+            "\n"
+          ]
+        },
+        {
+          "offset": 3368,
+          "remove": 192,
+          "lines": [
+            "    if (($payload->attribution->first ?? null) !== null\n"
+          ]
+        },
+        {
+          "offset": 3659,
+          "remove": 0,
+          "lines": [
+            "    $notice = OFFPLAN_COUNTRY_RECOVERY_NOTICES[$path] ?? null;\n",
+            "    if (!in_array($decision, ['', 'none'], true)) {\n",
+            "        if (!preg_match('/^[a-f0-9]{32}$/D', $decision)) return reply(400, 'VALIDATION_FAILED');\n",
+            "        if ($notice !== null) {\n",
+            "            // The existing browser rotates the request ID after a validation error.\n",
+            "            if ($request->get_header('x-bsre-consent-retry') !== '1') return reply(409, 'REQUEST_ID_CONFLICT');\n",
+            "            return offplan_country_recover($raw, $payload->request_id, $decision, $notice);\n",
+            "        }\n",
+            "        if (!offplan_country_ad_binding_id($path)) return reply(400, 'VALIDATION_FAILED');\n",
+            "    }\n"
+          ]
+        }
+      ]
+    }
+  }
+}

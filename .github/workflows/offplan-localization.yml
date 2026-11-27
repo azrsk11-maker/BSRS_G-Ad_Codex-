@@ -1,0 +1,73 @@
+name: Off-plan localized draft checks
+on:
+  pull_request:
+    branches: [main, 'codex/**']
+    paths:
+      - '.github/workflows/offplan-localization.yml'
+      - 'tools/offplan-lead-first/**'
+      - 'tools/keyword-system/keyword_audit.py'
+      - 'tools/keyword-system/test_keyword_audit.py'
+      - 'tools/keyword-system/negative_review_match.py'
+      - 'tools/keyword-system/test_negative_review_match.py'
+      - 'tools/keyword-system/planner_discovery.py'
+      - 'tools/keyword-system/test_planner_discovery.py'
+      - 'tools/staging-lab/fixtures/bsre-enquiries/**'
+permissions:
+  contents: read
+concurrency:
+  group: offplan-localization-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  offplan-localization-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify localized copy and inert draft artifacts
+        run: |
+          python3 -B -m unittest discover -s tools/offplan-lead-first -p 'test_*.py' -v
+          python3 -B tools/offplan-lead-first/compile.py --verify
+      - name: Verify guarded localized form text candidates
+        env:
+          BSRE_FORM_SOURCE_ROOT: ${{ github.workspace }}
+        run: |
+          python3 -B -m unittest discover -s tools/offplan-lead-first/form-localization -p test_form_localization.py -v
+          python3 -B tools/offplan-lead-first/form-localization/compile_form.py --source-root "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/bsre-form-localization"
+          python3 -B tools/offplan-lead-first/form-localization/compile_form.py --source-root "$GITHUB_WORKSPACE" --out "$RUNNER_TEMP/bsre-form-localization" --check
+      - name: Verify installed-preimage localization guards
+        env:
+          BSRE_FORM_SOURCE_ROOT: ${{ github.workspace }}
+          BSRE_LOCALIZATION_TEST_SCOPE: ${{ runner.temp }}/bsre-localization-review-tests
+        run: |
+          mkdir -p "$BSRE_LOCALIZATION_TEST_SCOPE"
+          python3 -B -m unittest discover -s tools/offplan-lead-first/installed-localization -p test_derivation.py -v
+      - name: Verify protected WordPress off-plan locale selection
+        run: |
+          php -l tools/offplan-lead-first/installed-localization/offplan-locale.php
+          php -l tools/offplan-lead-first/installed-localization/offplan-locale.test.php
+          php tools/offplan-lead-first/installed-localization/offplan-locale.test.php
+          php -l tools/offplan-lead-first/installed-localization/offplan-country-pages.php
+          php tools/offplan-lead-first/installed-localization/offplan-country-pages.test.php
+      - name: Verify review-only measurement patch and rollback guards
+        env:
+          BSRE_SOURCE_ROOT: ${{ github.workspace }}
+          BSRE_MEASUREMENT_TEST_OUTPUT: ${{ runner.temp }}/bsre-measurement-review-tests
+        run: |
+          mkdir -p "$BSRE_MEASUREMENT_TEST_OUTPUT"
+          node --test tools/offplan-lead-first/measurement-release/build-review-bundle.test.mjs
+          python3 -B -m unittest discover -s tools/offplan-lead-first/measurement-release -p 'test_*.py' -v
+      - name: Verify Planner parsing and multilingual negative review
+        working-directory: tools/keyword-system
+        run: python3 -B -m unittest test_planner_discovery test_keyword_audit test_negative_review_match -v
+      - name: Verify 35-market landing pages and keyword review package
+        run: |
+          python3 -B tools/offplan-lead-first/global-localization/compile_review.py --out "$RUNNER_TEMP/bsre-global-market-review"
+          python3 -B tools/offplan-lead-first/global-localization/compile_review.py --out "$RUNNER_TEMP/bsre-global-market-review" --verify
+          python3 -B tools/offplan-lead-first/global-localization/check_review.py "$RUNNER_TEMP/bsre-global-market-review"
+      - name: Verify shared design, enquiry field mappings and launch separation
+        run: |
+          python3 -B tools/offplan-lead-first/service-localization/compile_review.py --out "$RUNNER_TEMP/bsre-service-market-review"
+          python3 -B tools/offplan-lead-first/service-localization/compile_review.py --out "$RUNNER_TEMP/bsre-service-market-review" --verify
+          python3 -B tools/offplan-lead-first/service-localization/check_review.py "$RUNNER_TEMP/bsre-service-market-review"

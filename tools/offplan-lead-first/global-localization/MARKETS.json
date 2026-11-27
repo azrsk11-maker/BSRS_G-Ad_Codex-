@@ -1,0 +1,335 @@
+{
+  "schema": "bsre-global-offplan-market-plan-v1",
+  "decision_date_dubai": "2026-11-25",
+  "account_id": "573-038-4686",
+  "intent": "OFF_PLAN_BUYERS_ONLY",
+  "default_language": "en",
+  "average_daily_budget_aed": 2500,
+  "allocation_status": "FIVE_PAUSED_POOLS_RECORDED_NO_NEW_ALLOCATION",
+  "markets": [
+    {
+      "code": "AT",
+      "name": "Austria",
+      "english_origin": "from Austria",
+      "locales": [
+        "en-AT",
+        "de-AT"
+      ]
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "english_origin": "from Bahrain",
+      "locales": [
+        "en-BH",
+        "ar-BH"
+      ]
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "english_origin": "from Belgium",
+      "locales": [
+        "en-BE",
+        "nl-BE",
+        "fr-BE"
+      ]
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "english_origin": "from Canada",
+      "locales": [
+        "en-CA",
+        "fr-CA"
+      ]
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "english_origin": "from China",
+      "locales": [
+        "en-CN",
+        "zh-Hans-CN"
+      ]
+    },
+    {
+      "code": "EG",
+      "name": "Egypt",
+      "english_origin": "from Egypt",
+      "locales": [
+        "en-EG",
+        "ar-EG"
+      ]
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "english_origin": "from France",
+      "locales": [
+        "en-FR",
+        "fr-FR"
+      ]
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "english_origin": "from Germany",
+      "locales": [
+        "en-DE",
+        "de-DE"
+      ]
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "english_origin": "from Hong Kong",
+      "locales": [
+        "en-HK",
+        "zh-Hant-HK"
+      ]
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "english_origin": "from India",
+      "locales": [
+        "en-IN",
+        "hi-IN"
+      ]
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "english_origin": "from Indonesia",
+      "locales": [
+        "en-ID",
+        "id-ID"
+      ]
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "english_origin": "from Ireland",
+      "locales": [
+        "en-IE"
+      ]
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "english_origin": "from Japan",
+      "locales": [
+        "en-JP",
+        "ja-JP"
+      ]
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "english_origin": "from Kenya",
+      "locales": [
+        "en-KE",
+        "sw-KE"
+      ]
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "english_origin": "from Kuwait",
+      "locales": [
+        "en-KW",
+        "ar-KW"
+      ]
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "english_origin": "from Malaysia",
+      "locales": [
+        "en-MY",
+        "ms-MY"
+      ]
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "english_origin": "from Nepal",
+      "locales": [
+        "en-NP",
+        "ne-NP"
+      ]
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "english_origin": "from the Netherlands",
+      "locales": [
+        "en-NL",
+        "nl-NL"
+      ]
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "english_origin": "from Nigeria",
+      "locales": [
+        "en-NG"
+      ]
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
+      "english_origin": "from Oman",
+      "locales": [
+        "en-OM",
+        "ar-OM"
+      ]
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "english_origin": "from the Philippines",
+      "locales": [
+        "en-PH",
+        "fil-PH"
+      ]
+    },
+    {
+      "code": "QA",
+      "name": "Qatar",
+      "english_origin": "from Qatar",
+      "locales": [
+        "en-QA",
+        "ar-QA"
+      ]
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "english_origin": "from Saudi Arabia",
+      "locales": [
+        "en-SA",
+        "ar-SA"
+      ]
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "english_origin": "from Singapore",
+      "locales": [
+        "en-SG",
+        "zh-Hans-SG"
+      ]
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "english_origin": "from South Africa",
+      "locales": [
+        "en-ZA"
+      ]
+    },
+    {
+      "code": "KR",
+      "name": "South Korea",
+      "english_origin": "from South Korea",
+      "locales": [
+        "en-KR",
+        "ko-KR"
+      ]
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "english_origin": "from Sri Lanka",
+      "locales": [
+        "en-LK",
+        "si-LK",
+        "ta-LK"
+      ]
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "english_origin": "from Switzerland",
+      "locales": [
+        "en-CH",
+        "de-CH",
+        "fr-CH",
+        "it-CH"
+      ]
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan",
+      "english_origin": "from Taiwan",
+      "locales": [
+        "en-TW",
+        "zh-Hant-TW"
+      ]
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "english_origin": "from Thailand",
+      "locales": [
+        "en-TH",
+        "th-TH"
+      ]
+    },
+    {
+      "code": "TR",
+      "name": "Türkiye",
+      "english_origin": "from Türkiye",
+      "locales": [
+        "en-TR",
+        "tr-TR"
+      ]
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "english_origin": "from the UAE",
+      "locales": [
+        "en-AE",
+        "ar-AE"
+      ]
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "english_origin": "from the UK",
+      "locales": [
+        "en-GB"
+      ]
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "english_origin": "from the US",
+      "locales": [
+        "en-US"
+      ]
+    },
+    {
+      "code": "VN",
+      "name": "Vietnam",
+      "english_origin": "from Vietnam",
+      "locales": [
+        "en-VN",
+        "vi-VN"
+      ]
+    }
+  ],
+  "excluded_geographies": [
+    {
+      "code": "BD",
+      "name": "Bangladesh"
+    },
+    {
+      "code": "PK",
+      "name": "Pakistan"
+    }
+  ]
+}

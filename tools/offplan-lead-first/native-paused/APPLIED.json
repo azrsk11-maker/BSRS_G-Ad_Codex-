@@ -1,0 +1,93 @@
+{
+  "schema": "bsre-live-paused-construction-readback-v1",
+  "date": "2026-11-24",
+  "account_id": "573-038-4686",
+  "evidence": "Connected Google Ads native Preview, one Apply, then refreshed live campaign inventory",
+  "native_upload_execution_id": "2445385847536906438",
+  "reviewed_input_csv_sha256": "007a3d85ac9210e9e12005239af4c69e98ad37b428b3784c79f6c1562b1a7d0f",
+  "native_preview": {
+    "changes": 5,
+    "successful": 5,
+    "errors": 0,
+    "downloaded_results_sha256": "889f13d3e2554d181dd84efbd705229d61e8f8e14efac56ff29d6af64c83b87a",
+    "all_input_statuses": "Paused",
+    "all_results": "# OK"
+  },
+  "apply_clicked_once": true,
+  "duplicate_apply_or_upload_performed": false,
+  "source_reviewed_before_apply": "0cdcd731c8cfcbf260f2be8dd6665ead12b5aca8",
+  "source_scoped_CI_passed_before_apply": true,
+  "initial_cached_inventory_count_after_apply": 20,
+  "provider_inventory_reloaded_before_acceptance": true,
+  "live_inventory": {
+    "total": 24,
+    "paused": 21,
+    "removed": 3,
+    "enabled": 0
+  },
+  "campaigns": [
+    {
+      "country": "AE",
+      "name": "BSRE_V2_SEARCH_BUYERS_UAE_EN",
+      "id": "24372566774",
+      "status": "Paused",
+      "average_daily_budget_AED": 1000,
+      "action": "Existing budget changed from1200to1000"
+    },
+    {
+      "country": "DE",
+      "name": "BSRE_OFFPLAN_SEARCH_DE_DE",
+      "id": "24546407422",
+      "status": "Paused",
+      "average_daily_budget_AED": 350,
+      "action": "Created paused shell"
+    },
+    {
+      "country": "FR",
+      "name": "BSRE_OFFPLAN_SEARCH_FR_FR",
+      "id": "24546407401",
+      "status": "Paused",
+      "average_daily_budget_AED": 300,
+      "action": "Created paused shell"
+    },
+    {
+      "country": "IN",
+      "name": "BSRE_OFFPLAN_SEARCH_IN_EN",
+      "id": "24540258368",
+      "status": "Paused",
+      "average_daily_budget_AED": 500,
+      "action": "Created paused shell"
+    },
+    {
+      "country": "TW",
+      "name": "BSRE_OFFPLAN_SEARCH_TW_ZH_TW",
+      "id": "24546407404",
+      "status": "Paused",
+      "average_daily_budget_AED": 350,
+      "action": "Created paused shell"
+    }
+  ],
+  "aggregate_offplan_average_daily_budget_AED": 2500,
+  "all_other_campaigns_paused_or_removed": true,
+  "website_changed": false,
+  "tracking_changed": false,
+  "ads_enabled": 0,
+  "activation_spend_committed": false,
+  "WordPress_auth_verified": false,
+  "new_country_ads_adgroups_keywords_created": false,
+  "new_country_locations_languages_presence_CPC_AI_Max_schedule_full_readback": false,
+  "full_goal_complete": false,
+  "replay_warning": "ALREADY APPLIED: never upload the original Add batch again. Use actual allowlisted campaign IDs and separately reviewed edits for later work.",
+  "automation_readback": {
+    "rules": "No entries visible in marketing account view",
+    "scripts": "No scripts visible in drilled Real Estate account",
+    "visibility_notice": "Google states bulk-action history visibility depends on signed-in account; manager/other-identity automation absence is not inferred."
+  },
+  "remaining": [
+    "Authenticated WordPress installed-byte and page/locale/asset/contact integration",
+    "New country campaign settings and paused child/asset construction",
+    "Genuine intake, optional consent/privacy, delivery and destination deduplication acceptance",
+    "Competent copy and applicable country/Taiwan approval",
+    "Human source review/protection and final serving readback before enabling"
+  ]
+}

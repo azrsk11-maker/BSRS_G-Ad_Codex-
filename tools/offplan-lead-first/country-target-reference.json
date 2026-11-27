@@ -1,0 +1,75 @@
+{
+  "schema": "bsre-offplan-country-target-reference-v1",
+  "status": "VERIFIED_PUBLIC_CATALOG_NOT_ACCOUNT_OR_POLICY_ACCEPTANCE",
+  "checked_on": "2026-11-21",
+  "source_page": "https://developers.google.com/google-ads/api/data/geotargets",
+  "source_catalog_url": "https://developers.google.com/static/google-ads/api/data/geo/geotargets-2026-10-06.csv.zip",
+  "source_catalog_date": "2026-10-06",
+  "zip_sha256": "90172fb3c7c7bc9967f24d0ced519e6422041501d99550a8cbd3ed6d9f0f85ee",
+  "zip_bytes": 3482503,
+  "csv_sha256": "e2f2a2be6759005266986384001358affeca7d6f5931e52a3eae6eb2a2524e4e",
+  "csv_bytes": 23475664,
+  "catalog_rows_scanned": 273674,
+  "selected_target_scope": "Blank-parent top-level market; Taiwan is officially type Region, others Country",
+  "selected_rows": [
+    {
+      "Criteria ID": "2784",
+      "Name": "United Arab Emirates",
+      "Canonical Name": "United Arab Emirates",
+      "Parent ID": "",
+      "Country Code": "AE",
+      "Target Type": "Country",
+      "Status": "Active"
+    },
+    {
+      "Criteria ID": "2276",
+      "Name": "Germany",
+      "Canonical Name": "Germany",
+      "Parent ID": "",
+      "Country Code": "DE",
+      "Target Type": "Country",
+      "Status": "Active"
+    },
+    {
+      "Criteria ID": "2250",
+      "Name": "France",
+      "Canonical Name": "France",
+      "Parent ID": "",
+      "Country Code": "FR",
+      "Target Type": "Country",
+      "Status": "Active"
+    },
+    {
+      "Criteria ID": "2356",
+      "Name": "India",
+      "Canonical Name": "India",
+      "Parent ID": "",
+      "Country Code": "IN",
+      "Target Type": "Country",
+      "Status": "Active"
+    },
+    {
+      "Criteria ID": "2158",
+      "Name": "Taiwan",
+      "Canonical Name": "Taiwan",
+      "Parent ID": "",
+      "Country Code": "TW",
+      "Target Type": "Region",
+      "Status": "Active"
+    }
+  ],
+  "country_scope": [
+    "AE",
+    "DE",
+    "FR",
+    "IN",
+    "TW"
+  ],
+  "account_acceptance_checked": false,
+  "campaign_binding_applied": false,
+  "country_legal_or_platform_eligibility_inferred": false,
+  "Russia_selected": false,
+  "verification_method": "One official catalog download, retained archive and CSV SHA256, exact name/ISO/type/blank-parent selection; no API or account mutation.",
+  "India_entry_extracted_on": "2026-11-24",
+  "India_evidence": "Same SHA256-verified6October2026 official catalog downloaded21November; cached parse only, no new account or policy acceptance."
+}
